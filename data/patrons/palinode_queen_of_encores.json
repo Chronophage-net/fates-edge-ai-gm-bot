@@ -1,0 +1,57 @@
+{
+  "name": "Palinode, Queen of Encores",
+  "slug": "palinode_queen_of_encores",
+  "domain": "Performance \\& Rapture",
+  "description": "<div class=\"patron-header\">\n            <h1 class=\"patron-title\">Palinode, Queen of Encores</h1>\n            <hr class=\"region-divider\">\n        </div>\n        <p class=\"region-text\">*{Lore Once a road-cantor who swore to reconcile feuding towns with procession and song, Palinode died between feasts with a chorus unfinished. Yet the refrain refused to end: it braided toasts, hymns, work-chants, and tavern rounds into a living current that still coils through markets and moots. Where a crowd leans forward and a maker holds breath, she arrives.</p> <p class=\"region-text\">Wherever she passes, signs appear: a cup that never quite empties; a candle that gutters only when silence reigns; a flawless bar or note that the hand cannot forget. She promises relief from solitude: an audience that always leans closer, a song that never dies, a bond that feels like family even if it devours you. Her rites grant the Cantor not only power but belonging---at the cost of their voice becoming more hers than their own.</p> <p class=\"region-text\">quote \"When she sang, the rafters bent to hear.\" \"Drink deep: the cup returns, but never empty.\" \"Encore is not request but command.\" quote</p> <p class=\"region-text\">*{Domain Focus itemize Ecstatic Performance: music, dance, theater, and the rapture of creation Unfinished Art: the power of the incomplete, the encore that never ends Audience Binding: captivating crowds, turning spectators into participants Inspired Craft: works that transcend their maker's intention itemize</p> <p class=\"region-text\">*{Thiasos and Codex (Runekeeper Options)</p> <p class=\"region-text\">A Runekeeper sworn to Palinode does not bind a living familiar. Their Thiasos is a fragment of unfinished art: a conductor's baton carved from a stage that was never completed, a silver bell that rings only when a performance is truly perfect, or a mask that holds the echo of a standing ovation. This object requires no food, but it must hear live applause or a sung note each day. If neglected for a week, the Thiasos becomes Compromised (its bell rings flat, imposing --1 die on all Performance rolls for its bearer).</p> <p class=\"region-text\">The Codex of Palinode is never a simple book of Rites. It may be a script with the final page torn out, a score where the last bar is unwritten, or a collection of audience flowers pressed between blank leaves. Because Palinode's art is never finished, the Codex requires upkeep: the Runekeeper must spend an hour each week adding a new variation to a known Rite (a different instrument, a changed tempo), or the Rites stored there become stale (treat as Compromised until refreshed).</p> <p class=\"region-text\">*{Patron's Gift (Imbuement)</p> <p class=\"region-text\">Once per scene as an action, a Runekeeper of Palinode may touch a held item (weapon, tool, or instrument) and hum an unfinished cadence. For the rest of the scene, the item grants +1 die to Performance or Sway rolls, and the first time each scene the bearer would fail a Performance or social roll, they may reroll one die. After the scene, the user marks +1 Obligation to Palinode.</p>",
+  "summary": "Palinode, Queen of Encores *{Lore Once a road-cantor who swore to reconcile feuding towns with procession and song, Palinode died between feasts with a chorus unfinished.",
+  "tags": [],
+  "source": "patron",
+  "file": "palinode.tex",
+  "rites": [
+    {
+      "name": "Rite of the Single True Note",
+      "description": "<p class=\"region-text\">(Basic, 5 XP) Instant; Self; No. Tags: , , Materials: A note held until your voice frays. Effect: For one scene you cannot produce an imperfect sound: all Performance rolls +2 dice. All other rolls --1 die from intrusive perfection. Push It: Extend to one ally; both mark 1 SB (Diamonds). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "For one scene you cannot produce an imperfect sound: all Performance rolls +2 dice. All other rolls --1 die from intrusive perfection. \\\\"
+    },
+    {
+      "name": "Rite of the Hooked Chorus",
+      "description": "<p class=\"region-text\">(Advanced, 7 XP) Scene; Near; Yes. Tags: , , Materials: A melody braided from the listener's secret want. Effect: Presence + Command vs. Resolve (DV 3). Success: target joins in. Partial: they resist but suffer --1 die to social rolls this scene. Failure: they follow entranced. Push It: Affects all in Near; start Compelled Audience [6] timer. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar + Codex (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "Presence + Command vs. Resolve (DV 3). Success: target joins in. Partial: they resist but suffer --1 die to social rolls this scene. Failure: they follow entranced. \\\\"
+    },
+    {
+      "name": "Rite of the Binding Hands",
+      "description": "<p class=\"region-text\">(Advanced, 8 XP) Scene; Self; No. Tags: , , Materials: Your hair woven into your instrument or tool. Effect: Enter ruthless focus: creative rolls +2 dice; ignore first 2 Fatigue from exertion. You are to the piece until completion or ruin. Push It: One ally is also bound; both mark 1 SB (Diamonds). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar + Codex (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "Enter ruthless focus: creative rolls +2 dice; ignore first 2 Fatigue from exertion. You are to the piece until completion or ruin. \\\\"
+    },
+    {
+      "name": "Rite of the Consecrated Stage",
+      "description": "<p class=\"region-text\">(Master, 13 XP) Extended; Zone; No. Tags: , , , Materials: A stage kissed with the blood of sworn singers. Effect: Hallow a venue. All performances +2 dice, +1 Effect. The space is ed: any disruption spawns 2 SB. The ward collapses if the performance ends. Push It: The stage sustains itself but drains life; start Performance Hunger [8] timer. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue. Cost: Mark +2 Obligation. Requires: Familiar + Codex + Tier III (Invoke: 2 Boons). Invoke: Extended action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +3) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "Hallow a venue. All performances +2 dice, +1 Effect. The space is ed: any disruption spawns 2 SB. The ward collapses if the performance ends. \\\\"
+    },
+    {
+      "name": "Rite of the Crownpiece",
+      "description": "<p class=\"region-text\">(Master, 14 XP) Extended; Touch; No. Tags: , , , Materials: Your greatest work and regret, destroyed together. Effect: Birth a transcendent masterpiece: +2 dice to creative rolls this session; immune to social manipulation. But all lesser works falter (mundane actions not directly related to the masterpiece suffer --1 die). Push It: The piece wakes and demands; mark Harm 1 (Stress); start Demanding Creation [6] timer. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue. Cost: Mark +2 Obligation. Requires: Familiar + Codex + Tier III (Invoke: 2 Boons). Invoke: Extended action. Duration: Session.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +3) or Mark +1 Fatigue. \\\\",
+      "duration": "Session.",
+      "action": null,
+      "effect": "Birth a transcendent masterpiece: +2 dice to creative rolls this session; immune to social manipulation. But all lesser works falter (mundane actions not directly related to the masterpiece suffer --1 die). \\\\"
+    }
+  ]
+}

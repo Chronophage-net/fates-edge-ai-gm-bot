@@ -1,0 +1,84 @@
+{
+  "name": "Lucky Jack The Lord of Thieves",
+  "slug": "lucky_jack_the_lord_of_thieves",
+  "domain": "Luck \\& The Heist",
+  "description": "<div class=\"patron-header\">\n            <h1 class=\"patron-title\">Lucky Jack The Lord of Thieves</h1>\n            <hr class=\"region-divider\">\n        </div>\n        <p class=\"region-text\">*{Lore Lucky Jack was once a mortal --- a thief so skilled that even the gods took notice. He stole a coin from the Hollow's own pocket, and the Hollow laughed. \"You are clever,\" it said. \"But cleverness is a debt. One day, I will collect.\" Jack has been collecting luck ever since.</p> <p class=\"region-text\">He is the Unspent Coin, the Magpie King, the patron of urchins, beggars, and thieves who plan their work and work their plan. His followers are not murderers --- they are professionals. They know that the greatest heist is the one that leaves no trace, no victims, and no debts. Yet every stroke of luck is a loan, and Jack's interest rates are legendary. When he comes to collect, you will wish you had never met him.</p> <p class=\"region-text\">Among the peoples of Fate's Edge, Lucky Jack is known by many names. In Silkstrand, he is the Cut Purse's Blessing, whispered by pickpockets who know that a moment's distraction is worth more than a year's labor. In Vhasia, he is the Gorget-Breaker, a patron of disgraced knights who have turned to thievery. In Zakov, he is the Tide-That-Eats-The-Shore, a slow, patient consumption that reshapes coastlines. In the Brass Coast, he is the Freedman's Luck, invoked by escaped slaves who steal to survive. Wherever a lock is picked, a purse is cut, or a plan comes together at the last possible second, Lucky Jack is already there --- tipping his cap and counting the interest.</p> <p class=\"region-text\">quote \"Luck is not a gift. It is a loan. Pay it forward, or pay it dearly. The coin that never spends is the debt that never dies.\" quote</p> <p class=\"region-text\">*{Domain Focus itemize The Heist: planning, execution, and the perfect getaway Luck as Resource: borrowing fortune, repaying obligation, the gamble that pays off The Unpayable Debt: every favor must be repaid; every stroke of luck is a loan with interest The Underworld: gutters, rooftops, and the spaces between laws itemize</p> <p class=\"region-text\">*{Thiasos and Codex (Runekeeper Options)</p> <p class=\"region-text\">A Runekeeper sworn to Lucky Jack does not bind a creature of hearth and home. Their Thiasos is a small creature of luck and observation: a magpie that collects shiny objects and knows every hiding place, a mouse that nests in counting-houses and nibbles the corners of unpaid bills, a spider that weaves webs in the shape of a question mark, or a cricket that chirps only when fortune is about to turn. This creature requires no food, but it must witness a successful theft or a clever deception each day. If neglected for a week, it becomes Compromised (it grows listless and its predictions turn sour, imposing --1 die on all Subterfuge and Stealth rolls for its bearer until they pull off a successful heist).</p> <p class=\"region-text\">The Codex of Lucky Jack is never a book of prayers. It is a stolen ledger, a floor plan of a place you have never robbed, or a collection of coins from failed heists. Because luck resists being written down, the Codex requires upkeep: the Runekeeper must spend an hour each week adding a new entry --- a plan, a sketch, a note on a mark's habits --- or the Rites stored there become stale (treat as Compromised until you case a new location).</p> <p class=\"region-text\">*{Patron's Gift (Imbuement)</p> <p class=\"region-text\">Once per scene as an action, a Runekeeper of Lucky Jack may touch a held item (weapon, tool, or a coin) and whisper a word of luck. For the rest of the scene, the item grants +1 die to Subterfuge or Stealth, and the first time each scene the bearer would roll a 1 on a roll involving deception or theft, they may reroll that die. After the scene, the user marks +1 Obligation to Lucky Jack.</p>",
+  "summary": "Lucky Jack The Lord of Thieves *{Lore Lucky Jack was once a mortal --- a thief so skilled that even the gods took notice. He stole a coin from the Hollow's own pocket, and the Hollow laughed. \"You are clever,\" it said. \"But cleverness is a debt. One day, I will collect.",
+  "tags": [],
+  "source": "patron",
+  "file": "lucky-jack.tex",
+  "rites": [
+    {
+      "name": "Rite of the Lucky Coin",
+      "description": "<p class=\"region-text\">(Basic, 4 XP) Instant; Self; No. Tags: , , Materials: A coin that has been in your pocket for at least a day. Effect: Spend 1 Boon to reroll one die that came up 1. You must keep the new result. If the reroll is also a 1, the GM gains 2 SB instead of 1 --- the luck has turned against you. Push It: Reroll two dice instead of one, but you must keep the second result. Cost: Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar (Invoke: 1 Boon). Invoke: 1 action. Duration: Instant.</p>",
+      "tags": [],
+      "cost": "Mark +1 Fatigue. \\\\",
+      "duration": "Instant.",
+      "action": null,
+      "effect": "Spend 1 Boon to reroll one die that came up 1. You must keep the new result. If the reroll is also a 1, the GM gains 2 SB instead of 1 --- the luck has turned against you. \\\\"
+    },
+    {
+      "name": "Rite of the Clever Hand",
+      "description": "<p class=\"region-text\">(Basic, 5 XP) Scene; Self; No. Tags: , , Materials: A piece of string tied in a simple knot. Effect: Gain +2 dice on a single Subterfuge, Craft, or Sleight of Hand roll. If you fail, the GM gains 1 SB as your hand slips at the worst moment. Push It: Extend the bonus to one ally within Near. Cost: Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "Gain +2 dice on a single Subterfuge, Craft, or Sleight of Hand roll. If you fail, the GM gains 1 SB as your hand slips at the worst moment. \\\\"
+    },
+    {
+      "name": "Rite of the Quick Exit",
+      "description": "<p class=\"region-text\">(Basic, 4 XP) Instant; Self; No. Tags: , , Materials: A handful of dust or sand, thrown over your shoulder. Effect: When you would be caught or cornered, you may reroll one failed escape roll. If you succeed, the GM gains 1 SB (your escape was too close). Push It: Also gain +1 Position on your next action. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar (Invoke: 1 Boon). Invoke: 1 action. Duration: Instant.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Instant.",
+      "action": null,
+      "effect": "When you would be caught or cornered, you may reroll one failed escape roll. If you succeed, the GM gains 1 SB (your escape was too close). \\\\"
+    },
+    {
+      "name": "Rite of the Plan That Never Fails",
+      "description": "<p class=\"region-text\">(Advanced, 8 XP) Scene; Zone; No. Tags: , , , Materials: A map, a floor plan, or a detailed description of the target. Effect: Spend a scene planning a heist. During the execution, all rolls that are part of the plan gain +2 dice. However, any unexpected complication (GM spends SB) doubles its severity. Create a 6-segment Heist Timer. Push It: The plan is so good it accounts for one unexpected complication --- the GM cannot spend SB on that specific type of complication for the remainder of the scene. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar + Codex (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "Spend a scene planning a heist. During the execution, all rolls that are part of the plan gain +2 dice. However, any unexpected complication (GM spends SB) doubles its severity. Create a 6-segment Heist Timer. \\\\"
+    },
+    {
+      "name": "Rite of the Crowd's Distraction",
+      "description": "<p class=\"region-text\">(Advanced, 7 XP) Scene; Near; No. Tags: , , Materials: A coin tossed into a crowd, or a loud noise made at the right moment. Effect: Create a distraction that affects all observers in Near range. Gain +2 dice to any Stealth or Subterfuge action taken during the distraction. The distraction lasts one exchange. Push It: The distraction lasts for the full scene. Cost: Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar + Codex (Invoke: 1 Boon). Invoke: 1 action. Duration: Exchange.</p>",
+      "tags": [],
+      "cost": "Mark +1 Fatigue. \\\\",
+      "duration": "Exchange.",
+      "action": null,
+      "effect": "Create a distraction that affects all observers in Near range. Gain +2 dice to any Stealth or Subterfuge action taken during the distraction. The distraction lasts one exchange. \\\\"
+    },
+    {
+      "name": "Rite of the Unseen Hand",
+      "description": "<p class=\"region-text\">(Advanced, 9 XP) Instant; Touch; No. Tags: , , Materials: A pair of gloves, or a small tool that has never been used for violence. Effect: You may pick any one lock, disarm any one trap, or bypass any one guard within the current scene as if you had +2 dice. If you fail, the GM gains 2 SB (the trap resets, the guard notices). Push It: You may also silence any noise the action makes. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar + Codex (Invoke: 1 Boon). Invoke: 1 action. Duration: Instant.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Instant.",
+      "action": null,
+      "effect": "You may pick any one lock, disarm any one trap, or bypass any one guard within the current scene as if you had +2 dice. If you fail, the GM gains 2 SB (the trap resets, the guard notices). \\\\"
+    },
+    {
+      "name": "Rite of the Magpie's Hoard",
+      "description": "<p class=\"region-text\">(Master, 13 XP) Scene; Self; No. Tags: , , , Materials: A collection of nine stolen items, each from a different target. Effect: You gain +2 dice to all rolls for the remainder of the session. However, Jack will demand repayment before the next session --- you must complete a heist of at least 6 segments, or lose all accumulated Boons. Push It: The bonus becomes +3 dice. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue. Cost: Mark +2 Obligation. Requires: Familiar + Codex + Tier III (Invoke: 2 Boons). Invoke: Extended action. Duration: Session.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +3) or Mark +1 Fatigue. \\\\",
+      "duration": "Session.",
+      "action": null,
+      "effect": "You gain +2 dice to all rolls for the remainder of the session. However, Jack will demand repayment before the next session --- you must complete a heist of at least 6 segments, or lose all accumulated Boons. \\\\"
+    },
+    {
+      "name": "Rite of the Unpayable Debt",
+      "description": "<p class=\"region-text\">(Master, 14 XP) Scene; Near; Yes (Resist). Tags: , , , Materials: A single coin that has been in the hands of nine thieves. Effect: You may demand one service from a creature who has accepted your help in the past. They must comply or gain a permanent Condition (Marked by Jack) that imposes --1 die on all luck-based rolls until they comply. The target may test Spirit + Resolve (DV 5) to resist. Push It: The service can be life-threatening. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue. Cost: Mark +2 Obligation. Requires: Familiar + Codex + Tier III (Invoke: 2 Boons). Invoke: Extended action. Duration: Campaign (once).</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +3) or Mark +1 Fatigue. \\\\",
+      "duration": "Campaign (once).",
+      "action": null,
+      "effect": "You may demand one service from a creature who has accepted your help in the past. They must comply or gain a permanent Condition (Marked by Jack) that imposes --1 die on all luck-based rolls until they comply. The target may test Spirit + Resolve (DV 5) to resist. \\\\"
+    }
+  ]
+}

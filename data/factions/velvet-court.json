@@ -1,0 +1,31 @@
+{
+  "id": "velvet-court",
+  "name": "The Velvet Court",
+  "standing": 0,
+  "agenda": "Control Silkstrand's underworld and expand influence to the Brass Coast",
+  "agendaTimer": {
+    "segments": 6,
+    "current": 0
+  },
+  "keyNPCs": [
+    "Madam Serafine — Mistress of the Velvet Court",
+    "Old Kes — Fence and smuggler",
+    "Sister Agatha — Sanctuary keeper",
+    "The Archivist — Legal forger",
+    "The Gray Eminence — Unknown power behind the scenes"
+  ],
+  "resources": "Information network, forgery, laundering, blackmail files, safehouses",
+  "hooks": [
+    "A rival faction is moving into the Dye District",
+    "Madam Serafine is still paying off a debt to Livaea",
+    "The Gray Eminence's true identity remains a mystery"
+  ],
+  "color": "#8b6bb5",
+  "icon": "🎭",
+  "source": "default",
+  "description": "The Velvet Court is not a building. It is a network—of whispers, of debts, of favors owed and collected. It has no single leader, though many claim the title. It has no charter, no treasury, no walls. It is the space between the legitimate and the condemned, and its members are the ones who know how to walk that line.",
+  "territory": "Silkstrand and the Brass Coast",
+  "allies": ["Livaea's Cult", "The Livaean Network"],
+  "enemies": ["The Watch", "The Ecktorian Censorate"],
+  "tier": "Paramount"
+}

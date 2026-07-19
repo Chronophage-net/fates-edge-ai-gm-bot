@@ -1,0 +1,68 @@
+{
+  "Light": {
+    "tags": ["ILLUMINATE"],
+    "dv": 2,
+    "effect": "Create a small sustained light (torch‑brightness) for the scene.",
+    "notes": "No backlash risk; lasts until dismissed."
+  },
+  "Heal (Cantrip)": {
+    "tags": ["HEAL"],
+    "dv": 2,
+    "effect": "Remove 1 Fatigue from yourself or a touched ally. Does not heal Harm.",
+    "notes": "Requires touch."
+  },
+  "Shield of Air": {
+    "tags": ["AIR", "DEFEND"],
+    "dv": 3,
+    "effect": "+1 die to next defense roll.",
+    "notes": "One use."
+  },
+  "Flame Cloak": {
+    "tags": ["FIRE", "AREA", "DEFEND"],
+    "dv": 4,
+    "effect": "Enemies –1 die to approach; caster +1 to defense vs. melee.",
+    "notes": "Two actions; creates difficult terrain."
+  },
+  "Teleport (Self)": {
+    "tags": ["AIR", "FOLD"],
+    "dv": 4,
+    "effect": "Teleport self within Near range.",
+    "notes": "Dangerous tag (+2 DV). Leaves faint afterimage."
+  },
+  "Wall of Stone": {
+    "tags": ["EARTH", "BARRIER", "FORTIFY"],
+    "dv": 4,
+    "effect": "Summon a 10‑foot stone wall. Provides cover; obstructs movement.",
+    "notes": "Scene duration; Integrity Timer 4."
+  },
+  "Heal Harm (with Purify)": {
+    "tags": ["HEAL", "PURIFY"],
+    "dv": 5,
+    "effect": "Restore 1 level of Harm (e.g., Harm 2 → 1).",
+    "notes": "Requires two actions; surcharge +2 DV. Also neutralises poison/disease."
+  },
+  "Fleet Step": {
+    "tags": ["AIR", "HASTE", "MOVE"],
+    "dv": 3,
+    "effect": "Double movement speed for one exchange.",
+    "notes": "Requires open area."
+  },
+  "Sleep's Gentle Touch": {
+    "tags": ["WATER", "DREAM", "COMMAND"],
+    "dv": 4,
+    "effect": "One target falls asleep (scene duration; Resist: Spirit+Resolve DV 2).",
+    "notes": "Harm wakes target. Dangerous if used in combat."
+  },
+  "Storm's Fury": {
+    "tags": ["AIR", "STORM", "AREA", "FORCE"],
+    "dv": 6,
+    "effect": "30‑foot storm cloud; lightning strikes random targets (Harm 2).",
+    "notes": "Scene duration; reduces visibility. Dangerous tag (+2 DV)."
+  },
+  "Earth's Tremor": {
+    "tags": ["EARTH", "QUAKE", "AREA"],
+    "dv": 5,
+    "effect": "20‑foot tremor; enemies test Body+Athletics (DV 3) or fall prone.",
+    "notes": "Destabilises structures; affects all in area."
+  }
+}

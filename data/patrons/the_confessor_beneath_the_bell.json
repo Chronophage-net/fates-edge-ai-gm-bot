@@ -1,0 +1,57 @@
+{
+  "name": "The Confessor Beneath the Bell",
+  "slug": "the_confessor_beneath_the_bell",
+  "domain": "Burden \\& Exchange",
+  "description": "<div class=\"patron-header\">\n            <h1 class=\"patron-title\">The Confessor Beneath the Bell</h1>\n            <hr class=\"region-divider\">\n        </div>\n        <p class=\"region-text\">*{Lore The Confessor waits in places where guilt gathers -- under church spires, in confessionals long abandoned, in the echo of unspoken sins. He does not judge, nor absolve. He takes. Each confession is a transaction: your burden for his silence, your pain for his weight. Those who serve him walk with bowed heads, their mouths stitched by invisible threads, ringing faintly when they speak. To follow the Confessor is to understand that sin does not vanish -- it migrates, carried from one soul to another until the bell tolls and the weight becomes unbearable.</p> <p class=\"region-text\">The Confessor is the sin-eater, the one who consumes guilt so that others may be light. But every meal leaves a stain. Those who take on the burdens of the guilty find that the guilt does not disappear -- it waits, grows, and eventually demands to be passed on.</p> <p class=\"region-text\">quote \"Speak, and be freed. But understand -- what you cast off, I will bear. And what I bear, you will one day inherit.\" quote</p> <p class=\"region-text\">*{Domain Focus itemize Sin Eating: absorbing guilt, shame, and spiritual debt Burden Transfer: moving conditions, curses, and story beats from one creature to another Confessional Exchange: hearing secrets, trading silence for obligation Weight of Ages: the slow accumulation of sin that must eventually be released itemize</p> <p class=\"region-text\">*{Thiasos and Codex (Runekeeper Options)</p> <p class=\"region-text\">A Runekeeper sworn to the Confessor does not bind a familiar of flash and fury. Their Thiasos is a small creature that thrives in silence and shadow: a gray mouse that nests in church walls and listens to whispered secrets, a bell-voiced cricket that chirps only when a confession is true, a tiny owl whose wide eyes see through deception, or a pale bell-frog whose croak sounds like a distant chime. This creature requires no food, but it must hear a secret or a confession each day. If neglected for a week, it becomes Compromised (it remains silent when it should ring, or chimes at the wrong moment, imposing --1 die on all social rolls involving trust or secrecy for its bearer).</p> <p class=\"region-text\">The Codex of the Confessor is never a book of spells. It may be a bell-ringer's log, each entry a sin recorded as a single bell-stroke; a leather strap knotted for each burden absorbed, the knots tightening as guilt accumulates; or a book of blank pages that fill with the handwriting of those who have confessed to the bearer. Because the Confessor's truths are written in silence, the Codex requires upkeep: the Runekeeper must spend an hour each week re-ringing the recorded sins (tapping a small bell once per knot) or the burdens stored there begin to fade (treat as Compromised until re-confessed).</p> <p class=\"region-text\">*{Patron's Gift (Imbuement)</p> <p class=\"region-text\">Once per scene as an action, a Runekeeper of the Confessor may touch a held item (weapon, shield, or tool) and whisper a single confessed sin. For the rest of the scene, the item grants +1 die to Insight or Command rolls when dealing with guilt, secrets, or coercion, and the first time each scene the bearer would be forced to tell a lie by magical compulsion, they may ignore it (the Confessor's silence protects them). After the scene, the user marks +1 Obligation to the Confessor.</p>",
+  "summary": "The Confessor Beneath the Bell *{Lore The Confessor waits in places where guilt gathers -- under church spires, in confessionals long abandoned, in the echo of unspoken sins. He does not judge, nor absolve. He takes.",
+  "tags": [],
+  "source": "patron",
+  "file": "confessor.tex",
+  "rites": [
+    {
+      "name": "Rite of the Absorbed Sin",
+      "description": "<p class=\"region-text\">(Low, 6 XP) Scene; Near/Touch; Yes. Tags: , , , Materials: A hollow vessel or the ringing of a bell, or a red cord/shared drink. Effect: Choose one: itemize Echo of Sin: Absorb 1 Story Beat (Hearts or Diamonds) from an ally or NPC within Near range. Convert it into +1 Obligation. You know the emotional nature of the sin but not its source. Burden Transference: Transfer one Condition, Fatigue, or 1 SB from another target to yourself. You may attempt to reduce their Harm by 1 level; if successful, mark 1 Fatigue. itemize Push It: (Echo) Absorb 2 SB at once; mark +1 Fatigue. (Transfer) Split the burden among two allies; mark 1 SB (Hearts). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar (Invoke: 1 Boon). Invoke: 1 action. Duration: Instant.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Instant.",
+      "action": null,
+      "effect": "Choose one: itemize Echo of Sin: Absorb 1 Story Beat (Hearts or Diamonds) from an ally or NPC within Near range. Convert it into +1 Obligation. You know the emotional nature of the sin but not its source. Burden Transference: Transfer one Condition, Fatigue, or 1 SB from another target to yourself. You may attempt to reduce their Harm by 1 level; if successful, mark 1 Fatigue. itemize"
+    },
+    {
+      "name": "Rite of Absolution by Ash",
+      "description": "<p class=\"region-text\">(Low, 5 XP) Scene; Touch; Yes (sustain by prayer). Tags: , , , Materials: A pinch of consecrated ash or soot from a burned confession. Effect: Lay hands upon a penitent and whisper a truth they cannot bear. Reduce their Corruption by 1. The sin transfers to you as Burdened Heart: mark 1 SB (Hearts) or +1 Obligation. Push It: Cleanse multiple targets within Close range (e.g., after a battle); each additional soul adds +1 Obligation. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar (Invoke: 1 Boon). Invoke: 1 action. Duration: Instant.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Instant.",
+      "action": null,
+      "effect": "Lay hands upon a penitent and whisper a truth they cannot bear. Reduce their Corruption by 1. The sin transfers to you as Burdened Heart: mark 1 SB (Hearts) or +1 Obligation. \\\\"
+    },
+    {
+      "name": "Rite of the Sin-Eater's Pact",
+      "description": "<p class=\"region-text\">(Standard, 8 XP) Scene; Touch; No. Tags: , , , Materials: Shared confession whispered into an object or tattooed sigil. Effect: Create a bond between you and the confessor; you may suffer 1 Fatigue to grant +2 dice to their Resolve test. If they fail, you suffer 1 Harm instead of them. Push It: You may take both Harm and a Condition; mark 1 SB (Clubs). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar + Codex (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "Create a bond between you and the confessor; you may suffer 1 Fatigue to grant +2 dice to their Resolve test. If they fail, you suffer 1 Harm instead of them. \\\\"
+    },
+    {
+      "name": "Rite of the Echoed Confession",
+      "description": "<p class=\"region-text\">(Standard, 7 XP) Scene; Self; No. Tags: , , , Materials: A small handbell or resonant surface. Effect: Once/scene, replay the echo of a confession you have absorbed. Compel a target who shares its nature (Guilt, Regret, Betrayal) to act or reveal truth; DV = your Presence. Push It: The echo manifests physically; mark +1 Obligation and 1 SB (Diamonds). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar + Codex (Invoke: 1 Boon). Invoke: 1 action. Duration: Instant.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Instant.",
+      "action": null,
+      "effect": "Once/scene, replay the echo of a confession you have absorbed. Compel a target who shares its nature (Guilt, Regret, Betrayal) to act or reveal truth; DV = your Presence. \\\\"
+    },
+    {
+      "name": "Rite of the Weight of Ages",
+      "description": "<p class=\"region-text\">(High, 14 XP) Extended; Touch/Zone; No. Tags: , , , , Materials: An ancient bell that has tolled for every execution in a kingdom, a chain forged from confession nails, the ashes of a martyr who died for silence. Effect: Transfer accumulated guilt of generations to a single target. Target must make Spirit+Resolve (DV 5) or become overwhelmed by ancestral shame, suffering automatic Harm 2. Alternatively, release all burdens at once: clear all absorbed SB and Obligation. Every affected ally rolls Resolve (DV 4) or relives their confessed sin as hallucination. Push It: (Transfer) The target's guilt infects their bloodline; mark 3 SB (Spades). (Release) Bind a spirit or soul within the toll; mark 1 SB (Spades) and +1 Obligation permanently. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue. Cost: Mark +2 Obligation. Requires: Familiar + Codex + Tier III (Invoke: 2 Boons). Invoke: Extended action. Duration: Instant.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +3) or Mark +1 Fatigue. \\\\",
+      "duration": "Instant.",
+      "action": null,
+      "effect": "Transfer accumulated guilt of generations to a single target. Target must make Spirit+Resolve (DV 5) or become overwhelmed by ancestral shame, suffering automatic Harm 2. Alternatively, release all burdens at once: clear all absorbed SB and Obligation. Every affected ally rolls Resolve (DV 4) or relives their confessed sin as hallucination. \\\\"
+    }
+  ]
+}

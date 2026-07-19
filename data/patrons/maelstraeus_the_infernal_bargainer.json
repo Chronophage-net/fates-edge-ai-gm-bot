@@ -1,0 +1,57 @@
+{
+  "name": "Maelstraeus, the Infernal Bargainer",
+  "slug": "maelstraeus_the_infernal_bargainer",
+  "domain": "Commerce \\& Exchange",
+  "description": "<div class=\"patron-header\">\n            <h1 class=\"patron-title\">Maelstraeus, the Infernal Bargainer</h1>\n            <hr class=\"region-divider\">\n        </div>\n        <p class=\"region-text\">*{Lore Maelstraeus is the Infernal Bargainer, the Prince of Ledgers, the shadow at every crossroads of exchange. He was born from the first inequity, when one gave and another took, and debt was chained into existence.</p> <p class=\"region-text\">He does not trade fairly --- he trades inevitably. Every pact carries a hidden surcharge, every kindness is collateral, every smile hides an interest rate. His realm is an endless market where stalls never close, contracts burn with invisible ink, and every bargain tilts toward him.</p> <p class=\"region-text\">To serve Maelstraeus is to admit the world itself is transactional --- that all things, from love to breath to soul, are bound in his ledger. He collects. He always collects.</p> <p class=\"region-text\">Among the peoples of Fate's Edge, Maelstraeus is the patron of merchants, usurers, and tax collectors. In Ecktoria, he is the Coin-House Factor, invoked before every contract. In Silkstrand, he is the Dyed Scale, whose symbol is stamped on letters of credit. In the Brass Coast, he is the Salt Ledger, to whom smugglers whisper a prayer before a deal. Wherever coin changes hands and someone gains an edge, Maelstraeus watches.</p> <p class=\"region-text\">quote A deal is never even. The scales tilt; the Merchant smiles. All debts come due. quote</p> <p class=\"region-text\">*{Domain Focus itemize Commerce as Conflict: negotiation, leverage, hidden clauses Debt as Power: obligation as currency, interest as weapon Inevitability: all accounts are settled, sooner or later Infernal Bargains: Faustian pacts, soul-ledgers, cursed credit itemize</p> <p class=\"region-text\">*{Thiasos and Codex (Runekeeper Options)</p> <p class=\"region-text\">A Runekeeper sworn to Maelstraeus does not bind a familiar of whimsy or war --- they bind a creature of shrewd calculation and hidden value. Their Thiasos is a small creature that embodies profit and accounting: a rat that counts coins with its paws, a ferret that steals only the most valuable trinkets, a magpie that hoards silver, a small brass spider that weaves ledgers in its web, or a gray mouse that lives in counting-houses and nibbles the corners of unpaid bills. This creature requires no food, but it must be given a small coin (or a written debt) each day. If neglected for a week, it becomes Compromised (it hoards the bearer's own valuables, hiding keys or coins, imposing --1 die on all Appraise and Bargain rolls for its bearer until a new coin is offered).</p> <p class=\"region-text\">The Codex of Maelstraeus is never a book of abstract knowledge. It may be a leather-bound ledger with brass corners, its pages ruled for double-entry accounting; a slate tablet that calculates interest on its own; a set of scales whose pans hold the Rites as weights; or a scroll of parchment that feels heavier when a debt is unpaid. Because Maelstraeus's truths are written in profit, the Codex requires upkeep: the Runekeeper must spend an hour each week balancing its accounts (adding a fictitious entry or correcting a deliberate error), or the numbers become scrambled (treat as Compromised until re-balanced).</p> <p class=\"region-text\">*{Patron's Gift (Imbuement)</p> <p class=\"region-text\">Once per scene as an action, a Runekeeper of Maelstraeus may touch a held item (weapon, tool, or coin) and whisper a clause of interest. For the rest of the scene, the item grants +1 die to Bargain or Appraise rolls, and the first time each scene the bearer would be cheated in a deal (sold a fake, paid counterfeit), they may reroll the opposed check (the scales tip in their favor). After the scene, the user marks +1 Obligation to Maelstraeus.</p>",
+  "summary": "Maelstraeus, the Infernal Bargainer *{Lore Maelstraeus is the Infernal Bargainer, the Prince of Ledgers, the shadow at every crossroads of exchange. He was born from the first inequity, when one gave and another took, and debt was chained into existence.",
+  "tags": [],
+  "source": "patron",
+  "file": "maelstraeus.tex",
+  "rites": [
+    {
+      "name": "Rite of Uneven Scales",
+      "description": "<p class=\"region-text\">(Basic, 4 XP) Scene; Near; No. Tags: , , Materials: A scale where one pan is shaved or weighted. Effect: Establish a trading ground. All parties gain +1 die to negotiate --- but you bank a [4] Hidden Profit timer to spend reducing complications in your favor. Push It: Compel one party to reveal their desperation or a hidden term; mark 1 SB (Hearts). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene. Timer: 4 segments (Hidden Profit).</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene. Timer: 4 segments (Hidden Profit).",
+      "action": null,
+      "effect": "Establish a trading ground. All parties gain +1 die to negotiate --- but you bank a [4] Hidden Profit timer to spend reducing complications in your favor. \\\\"
+    },
+    {
+      "name": "Rite of the Merchant's Gaze",
+      "description": "<p class=\"region-text\">(Basic, 5 XP) Scene; Self; No. Tags: , , , Materials: A coin pressed flat until its face is erased. Effect: +2 dice to appraise goods, favors, or leverage. Create a [6] Profit Margin timer. Push It: Perceive emotional or hidden value as well, but mark +1 Exposure and 1 SB (Diamonds). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene. Timer: 6 segments (Profit Margin).</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene. Timer: 6 segments (Profit Margin).",
+      "action": null,
+      "effect": "+2 dice to appraise goods, favors, or leverage. Create a [6] Profit Margin timer. \\\\"
+    },
+    {
+      "name": "Rite of the Weighted Contract",
+      "description": "<p class=\"region-text\">(Advanced, 8 XP) Scene; Near/Touch; No. Tags: , , , Materials: Two items, one secretly flawed, or a parchment scorched before stamping. Effect: Choose one: itemize Secret Advantage: Bind a bargain where you secretly shift one advantage in your favor. Both sides gain +1 Effect if honored. Create a [6] Shrewd Bargain timer. Seared Seal: Bind an agreement with a scorched seal. You gain +1 die to enforce compliance; breakers suffer --2 dice in all dealings until next session. Create an [8] Burned Ledger timer. itemize Push It: (Secret Advantage) Breaking terms lashes the weaker party with 1 SB (Hearts/Clubs). (Seared Seal) Breach burns the sigil into the breaker's hand, inflicting Harm 1 and 1 SB (Spades). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar + Codex (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene. (Secret Advantage: Timer 6 segments; Seared Seal: Timer 8 segments).</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene. (Secret Advantage: Timer 6 segments; Seared Seal: Timer 8 segments).",
+      "action": null,
+      "effect": "Choose one: itemize Secret Advantage: Bind a bargain where you secretly shift one advantage in your favor. Both sides gain +1 Effect if honored. Create a [6] Shrewd Bargain timer. Seared Seal: Bind an agreement with a scorched seal. You gain +1 die to enforce compliance; breakers suffer --2 dice in all dealings until next session. Create an [8] Burned Ledger timer. itemize"
+    },
+    {
+      "name": "Rite of the Infernal Bazaar",
+      "description": "<p class=\"region-text\">(Master, 13 XP) Scene; Zone; No. Tags: , , , , Materials: A canopy stitched from debtors' contracts. Effect: Create a cursed market-zone. Allies gain +1 Effect on bargains and may reroll one failed negotiation. Enemies suffer --1 die to deception. Start a [10] Predatory Market timer. Push It: Attract wealthy powers eager --- and doomed --- to deal. Mark 2 SB (Hearts/Clubs). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue. Cost: Mark +2 Obligation. Requires: Familiar + Codex + Tier III (Invoke: 2 Boons). Invoke: 1 action. Duration: Scene. Timer: 10 segments (Predatory Market).</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +3) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene. Timer: 10 segments (Predatory Market).",
+      "action": null,
+      "effect": "Create a cursed market-zone. Allies gain +1 Effect on bargains and may reroll one failed negotiation. Enemies suffer --1 die to deception. Start a [10] Predatory Market timer. \\\\"
+    },
+    {
+      "name": "Rite of the Cosmic Ledger",
+      "description": "<p class=\"region-text\">(Master, 14 XP) Extended; Self; No. Tags: , , , Materials: A book that writes entries in your blood (a personal ledger, each entry a drop). Effect: Once per session, convert one resource into another (e.g., Boon Fatigue, Obligation SB, Harm Debt Timer segments). All trades tilt slightly in your favor (you gain +1 die on the next roll related to that resource). Start a [6] Balance Owed timer. Push It: Make the trade brutally lopsided (double the conversion rate, e.g., 2 Boons 2 Fatigue). Create a [6] Cosmic Debt timer and mark 2 SB (Diamonds). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue. Cost: Mark +2 Obligation. Requires: Familiar + Codex + Tier III (Invoke: 2 Boons). Invoke: Extended action. Duration: Instant. Timer: 6 segments (Balance Owed; Cosmic Debt on push).</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +3) or Mark +1 Fatigue. \\\\",
+      "duration": "Instant. Timer: 6 segments (Balance Owed; Cosmic Debt on push).",
+      "action": null,
+      "effect": "Once per session, convert one resource into another (e.g., Boon Fatigue, Obligation SB, Harm Debt Timer segments). All trades tilt slightly in your favor (you gain +1 die on the next roll related to that resource). Start a [6] Balance Owed timer. \\\\"
+    }
+  ]
+}

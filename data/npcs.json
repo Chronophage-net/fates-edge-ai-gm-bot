@@ -1,0 +1,72 @@
+{
+  "Bandit": {
+    "cap": 1,
+    "harm": 1,
+    "armor": "None",
+    "dice_pools": { "Melee": 2, "Ranged": 2 },
+    "special": "Cowardly – when outnumbered or after taking Harm, test Spirit (DV 3) or flee."
+  },
+  "Guard": {
+    "cap": 2,
+    "harm": 2,
+    "armor": "Light",
+    "dice_pools": { "Melee": 4, "Athletics": 4 },
+    "special": "Patrol Training – +1 die to Notice when searching an area."
+  },
+  "Knight": {
+    "cap": 3,
+    "harm": 3,
+    "armor": "Heavy",
+    "dice_pools": { "Melee": 6, "Command": 5 },
+    "special": "Challenge – once/scene, force an enemy to engage in melee (Resist with Spirit, DV 4). Mounted."
+  },
+  "Cultist": {
+    "cap": 1,
+    "harm": 1,
+    "armor": "None",
+    "dice_pools": { "Arcana": 4, "Deception": 4 },
+    "special": "Ritual Chant – when three or more act together, they may perform a Low Rite as a group action."
+  },
+  "Bandit Leader": {
+    "cap": 3,
+    "harm": 3,
+    "armor": "Medium",
+    "dice_pools": { "Melee": 6, "Command": 5 },
+    "special": "Rally – once/scene, restore 1 Morale to a nearby bandit. Dirty Fighting – may spend 1 Boon to impose –1 die on target's next defense."
+  },
+  "Lesser Spirit": {
+    "cap": 1,
+    "harm": 1,
+    "armor": "None (incorporeal – half physical Harm)",
+    "dice_pools": { "Stealth": 5, "Arcana": 4 },
+    "special": "Incorporeal Movement – passes through small gaps. Sunlight Sensitivity – while in direct sunlight, –1 die to all actions."
+  },
+  "Greater Spirit": {
+    "cap": 3,
+    "harm": 3,
+    "armor": "Heavy (or Light + immunity)",
+    "dice_pools": { "primary": 7 },
+    "special": "Elemental Aura – creatures in Close suffer 1 Fatigue per round. Immutable – immune to poison and disease."
+  },
+  "Wraith": {
+    "cap": 2,
+    "harm": 2,
+    "armor": "None (incorporeal)",
+    "dice_pools": { "Stealth": 6, "Spirit+Resolve": 6 },
+    "special": "Life Drain – on a successful touch attack, target marks 1 Fatigue and wraith clears 1 Fatigue."
+  },
+  "Wolf": {
+    "cap": 1,
+    "harm": 2,
+    "armor": "None",
+    "dice_pools": { "Melee": 5, "Athletics": 5 },
+    "special": "Pack Tactics – when two or more wolves attack the same target, each gains +1 die. Blood Scent – +2 dice to track wounded prey."
+  },
+  "Dire Bear": {
+    "cap": 4,
+    "harm": 4,
+    "armor": "Medium",
+    "dice_pools": { "Melee": 8, "Endurance": 8 },
+    "special": "Terrifying Roar – all in Near test Resolve (DV 4) or become Shaken. Maul – on a Critical Hit, target is knocked prone and suffers +1 Harm."
+  }
+}

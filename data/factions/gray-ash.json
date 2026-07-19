@@ -1,0 +1,30 @@
+{
+  "id": "gray-ash",
+  "name": "Gray Ash Ykrul",
+  "standing": 1,
+  "agenda": "Secure winter grazing lands and protect the clan from Ecktorian encroachment",
+  "agendaTimer": {
+    "segments": 6,
+    "current": 0
+  },
+  "keyNPCs": [
+    "Khatun Sarnai — Proud chieftain of the Gray Ash",
+    "Yelü — Sarnai's daughter, child of a legionary",
+    "The Sky-Speaker — Shaman of storms",
+    "The Kon'reh Master — Geometry arbiter"
+  ],
+  "resources": "Steppe riders, remounts, steppe knowledge, hostage strings",
+  "hooks": [
+    "A white squall is coming",
+    "A hostage string has been cut—blood-price is due",
+    "The Khagan's health is failing"
+  ],
+  "color": "#5a8ab5",
+  "icon": "🐺",
+  "source": "default",
+  "description": "The Gray Ash are a Ykrul clan of the Violet Steppe, known for their wolf-standards and fierce independence. They measure distance in oaths and remounts, not miles. Every child learns: count your exits before you enter, never commit to a single path, and an ally untested is a blade without a sheath.",
+  "territory": "Violet Steppe, northern Acasia",
+  "allies": ["The Tulkani", "The Kuvani"],
+  "enemies": ["Ecktorian Censorate", "The Iron League"],
+  "tier": "Regional"
+}

@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc 3.10" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fate's Edge Essential Screene</title>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: 'Georgia', 'Times New Roman', serif;
+        max-width: 1100px;
+        margin: 2em auto;
+        padding: 0 1.5em;
+        line-height: 1.6;
+        background: #0d0b0f;
+        color: #e6dce8;
+    }
+    
+    .two-column {
+        column-count: 2;
+        column-gap: 2.5em;
+        column-rule: 1px solid #d4af37;
+    }
+    
+    .one-column {
+        column-count: 1;
+    }
+    
+    @media (max-width: 768px) {
+        .two-column {
+            column-count: 1;
+            column-rule: none;
+        }
+        body {
+            padding: 0 1em;
+        }
+    }
+    
+    /* Headers */
+    h1, h2, h3, h4 {
+        color: #d4af37;
+        break-after: avoid;
+    }
+    
+    h1 {
+        font-size: 2em;
+        border-bottom: 2px solid #d4af37;
+        padding-bottom: 0.3em;
+        margin-top: 1.5em;
+    }
+    
+    h2 {
+        font-size: 1.5em;
+        margin-top: 1.2em;
+        border-bottom: 1px solid #d4af37;
+        padding-bottom: 0.2em;
+    }
+    
+    h3 {
+        font-size: 1.2em;
+        margin-top: 1em;
+        color: #c8a050;
+    }
+    
+    h4 {
+        font-size: 1.05em;
+        margin-top: 0.8em;
+        color: #b89840;
+    }
+    
+    /* Title Page */
+    .titlepage {
+        text-align: center;
+        margin: 2em 0 3em 0;
+        page-break-after: avoid;
+    }
+    
+    .titlepage h1 {
+        font-size: 3em;
+        border-bottom: none;
+        margin-bottom: 0.1em;
+        letter-spacing: 2px;
+    }
+    
+    .titlepage h2 {
+        font-size: 2em;
+        font-weight: normal;
+        border-bottom: none;
+        margin-top: 0;
+    }
+    
+    .titlepage .subtitle {
+        font-size: 1.2em;
+        color: #b89840;
+        margin: 0.5em 0;
+    }
+    
+    .titlepage .author {
+        font-size: 1.1em;
+        margin-top: 1.5em;
+        color: #c8a050;
+    }
+    
+    .titlepage .date {
+        font-size: 0.95em;
+        color: #a09088;
+        margin-top: 0.2em;
+    }
+    
+    .titlepage .quote {
+        font-style: italic;
+        color: #c8a050;
+        margin: 1.5em 2em 0 2em;
+        font-size: 1.1em;
+        border-top: 1px solid #d4af37;
+        border-bottom: 1px solid #d4af37;
+        padding: 1em 0;
+    }
+    
+    .titlepage .quote .attribution {
+        font-style: normal;
+        font-size: 0.85em;
+        color: #a09088;
+    }
+    
+    /* Welcome Box */
+    .welcome-box {
+        background: #1a151c;
+        border-left: 4px solid #d4af37;
+        padding: 0.8em 1.2em;
+        margin: 1em 0;
+        border-radius: 4px;
+        break-inside: avoid;
+    }
+    
+    .welcome-box p {
+        margin: 0.3em 0;
+    }
+    
+    /* Tables */
+    table {
+        width: 100%;
+        margin: 0.8em 0;
+        border-collapse: collapse;
+        font-size: 0.9em;
+        break-inside: avoid;
+    }
+    
+    th, td {
+        padding: 0.4em 0.6em;
+        border: 1px solid #3a2f3e;
+        text-align: left;
+    }
+    
+    th {
+        background: #2a1f2e;
+        color: #d4af37;
+        font-weight: bold;
+    }
+    
+    tr:nth-child(even) {
+        background: #141017;
+    }
+    
+    .table-caption {
+        font-weight: bold;
+        color: #d4af37;
+        text-align: center;
+        margin: 0.5em 0 0.2em 0;
+        font-size: 0.95em;
+    }
+    
+    /* Callout Boxes */
+    .callout {
+        background: #1a1018;
+        border-left: 4px solid #8C1E1E;
+        padding: 0.6em 1em;
+        margin: 0.8em 0;
+        border-radius: 4px;
+        break-inside: avoid;
+        font-weight: bold;
+        color: #d4af37;
+    }
+    
+    .callout p {
+        margin: 0.2em 0;
+        font-weight: normal;
+        color: #e6dce8;
+    }
+    
+    .callout .callout-title {
+        font-weight: bold;
+        color: #d4af37;
+        display: block;
+        margin-bottom: 0.2em;
+    }
+    
+    .gmcallout {
+        background: #1a1018;
+        border: 2px solid #8C1E1E;
+        padding: 0.6em 1em;
+        margin: 0.8em 0;
+        border-radius: 4px;
+        break-inside: avoid;
+        font-weight: bold;
+        color: #d4af37;
+        text-align: center;
+    }
+    
+    .gmcallout p {
+        margin: 0.2em 0;
+        font-weight: normal;
+        color: #e6dce8;
+    }
+    
+    .sidebar {
+        background: #141017;
+        border: 1px solid #3a2f3e;
+        padding: 0.6em 1em;
+        margin: 0.8em 0;
+        border-radius: 4px;
+        break-inside: avoid;
+        font-size: 0.92em;
+    }
+    
+    .sidebar p {
+        margin: 0.3em 0;
+    }
+    
+    .sidebar .sidebar-title {
+        font-weight: bold;
+        color: #d4af37;
+        display: block;
+        margin-bottom: 0.2em;
+    }
+    
+    /* Lists */
+    ul, ol {
+        padding-left: 1.5em;
+        margin: 0.4em 0;
+    }
+    
+    li {
+        margin: 0.2em 0;
+    }
+    
+    /* Blockquotes */
+    blockquote {
+        font-style: italic;
+        text-align: center;
+        margin: 1.5em 2em;
+        color: #c8a050;
+        border-left: none;
+        padding: 0.5em 1em;
+        border-top: 1px solid #d4af37;
+        border-bottom: 1px solid #d4af37;
+    }
+    
+    blockquote .attribution {
+        font-style: normal;
+        font-size: 0.85em;
+        color: #a09088;
+        display: block;
+        margin-top: 0.3em;
+    }
+    
+    /* Horizontal Rule */
+    hr {
+        border: none;
+        border-top: 1px solid #d4af37;
+        margin: 1.5em 0;
+    }
+    
+    /* Code/Small Text */
+    code {
+        font-family: 'Courier New', monospace;
+        font-size: 0.85em;
+        background: #1a151c;
+        padding: 0.1em 0.3em;
+        border-radius: 3px;
+        color: #d4af37;
+    }
+    
+    .small {
+        font-size: 0.85em;
+        color: #a09088;
+    }
+    
+    /* Special formatting */
+    .center {
+        text-align: center;
+    }
+    
+    .math {
+        font-family: 'Times New Roman', serif;
+        font-style: italic;
+    }
+    
+    .gold {
+        color: #d4af37;
+    }
+    
+    .red {
+        color: #8C1E1E;
+    }
+    
+    /* Section break */
+    .section-break {
+        text-align: center;
+        margin: 1.5em 0;
+        color: #d4af37;
+        font-size: 1.2em;
+        letter-spacing: 0.5em;
+    }
+    
+    /* Copyright page */
+    .copyright-page {
+        text-align: center;
+        margin: 2em 0;
+        padding: 1.5em 0;
+        border-top: 2px solid #d4af37;
+        border-bottom: 2px solid #d4af37;
+        page-break-before: always;
+    }
+    
+    .copyright-page h1 {
+        border-bottom: none;
+        font-size: 2em;
+        margin-bottom: 0.2em;
+    }
+    
+    .copyright-page .license-text {
+        max-width: 700px;
+        margin: 1em auto;
+        font-size: 0.9em;
+        line-height: 1.5;
+        text-align: left;
+    }
+    
+    /* SRD Reference */
+    .srd-reference {
+        margin: 1.5em 0;
+        padding: 1em 0;
+        border-top: 1px solid #d4af37;
+        border-bottom: 1px solid #d4af37;
+        page-break-before: always;
+    }
+    
+    .srd-reference h2 {
+        text-align: center;
+        border-bottom: none;
+    }
+    
+    .srd-reference ul ul {
+        margin-bottom: 0.5em;
+    }
+    
+    /* Print styles */
+    @media print {
+        body {
+            background: white;
+            color: black;
+            font-size: 10pt;
+        }
+        h1, h2, h3, h4 {
+            color: #8C1E1E;
+        }
+        .callout, .gmcallout, .sidebar, .welcome-box {
+            background: #f5f0f0;
+            border-color: #8C1E1E;
+        }
+        .callout p, .gmcallout p, .sidebar p {
+            color: black;
+        }
+        .titlepage .quote {
+            border-color: #8C1E1E;
+        }
+        .copyright-page {
+            border-color: #8C1E1E;
+        }
+        .copyright-page h1 {
+            color: #8C1E1E;
+        }
+        .srd-reference {
+            border-color: #8C1E1E;
+        }
+        table {
+            border-color: #ccc;
+        }
+        th {
+            background: #eee;
+            color: #333;
+        }
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        .two-column {
+            column-rule: 1px solid #ccc;
+        }
+        blockquote {
+            border-color: #8C1E1E;
+        }
+        .gold {
+            color: #8C1E1E;
+        }
+        code {
+            background: #eee;
+            color: #8C1E1E;
+        }
+        .sidebar {
+            border-color: #ccc;
+        }
+    }
+</style>
+</head>
+<body>
+
+<!-- ==================== TITLE PAGE ==================== -->
+<div class="titlepage">
+    <h1>Fate's Edge</h1>
+    <h2>Essential Starting Screene</h2>
+    <p class="subtitle">GM &amp; Player Reference — One Region, One Road</p>
+    <div class="quote">
+        "The road remembers. Every broken wheel leaves a mark, every lit lamp bears witness. The only question is: what are you willing to owe?"
+        <span class="attribution">— Dusana of the Raven Road</span>
+    </div>
+    <div class="welcome-box">
+        <p><strong>Welcome to Fate's Edge.</strong> This guide contains everything you need to start playing—core rules, character creation, one region (Acasia), GM procedures, and a starter adventure hook. No other books required.</p>
+    </div>
+    <p class="author">Nicholas A. Gasper</p>
+    <p class="date">2026-07-10</p>
+</div>
+
+<!-- ==================== COPYRIGHT PAGE ==================== -->
+<div class="copyright-page">
+    <h1>Fate's Edge: Essential Screene</h1>
+    <p>Copyright &copy; Nicholas A. Gasper</p>
+    <p><em>First Edition, July 2026</em></p>
+
+    <hr style="width: 60%; margin: 1em auto;"/>
+
+    <p><strong>Important License Notice</strong></p>
+    <div class="license-text">
+        <p>The <em>Fate's Edge System Reference Document (SRD)</em> portions of this work<br/>
+        are licensed under the<br/>
+        <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.<br/>
+        To view a copy of this license, visit <a href="http://creativecommons.org/licenses/by-sa/4.0/">http://creativecommons.org/licenses/by-sa/4.0/</a>.</p>
+        <p>All other content—including but not limited to setting lore, original characters,<br/>
+        adventures, art, maps, and proprietary mechanics—is <strong>&copy; Nicholas A. Gasper, All Rights Reserved</strong>.<br/>
+        This proprietary content may not be reproduced, distributed, or transmitted<br/>
+        without prior written permission, except for brief quotations in reviews<br/>
+        and certain other noncommercial uses permitted by copyright law.</p>
+        <p><strong>The SRD is also available as a standalone free download</strong><br/>
+        at <a href="https://chronophage.github.io/kon-reh/build/html/srd.html">https://chronophage.github.io/kon-reh/build/html/srd.html</a>.<br/>
+        For permission requests regarding proprietary content, contact the author<br/>
+        through the publisher's website or at the address provided in the commercial edition.</p>
+    </div>
+
+    <hr style="width: 50%; margin: 1em auto;"/>
+
+    <p><em>"The coin that never spends is the one you don't remember taking."</em><br/>
+    — Serafine of the Velvet Touch</p>
+</div>
+
+<!-- ==================== SRD REFERENCE ==================== -->
+<div class="srd-reference">
+    <h2>System Reference Document (SRD) Reference</h2>
+
+    <ul>
+        <li><strong>What is the SRD?</strong> The open-license portion of this work (CC BY-SA 4.0), intended for third-party creators.</li>
+        <li><strong>Verified SRD Content Includes:</strong>
+            <ul>
+                <li>Core resolution mechanics (dice pools, Position, DV, Outcome Matrix)</li>
+                <li>Boon and Story Beat economies</li>
+                <li>Fatigue, Harm, and Armor Conversion systems</li>
+                <li>Attribute and Skill descriptions</li>
+                <li>Basic combat and action economy rules</li>
+                <li>Universal magic mechanics (TAGS, DV calculation, Backlash)</li>
+                <li>NPC templates and encounter guidelines</li>
+                <li>Equipment and gear tables</li>
+                <li>Character creation framework</li>
+            </ul>
+        </li>
+        <li><strong>Extended Content (Not SRD - Proprietary):</strong>
+            <ul>
+                <li>Setting lore (Acasia factions, The Curse, regional details)</li>
+                <li>Original characters, NPCs, and named figures</li>
+                <li>Adventure modules and scenario hooks</li>
+                <li>Patron descriptions, Rites, and exclusive mechanical content</li>
+                <li>Proprietary magic systems (Runekeeper, Invoker, Cantor, Summoner-specific)</li>
+                <li>Artwork, maps, and graphical elements</li>
+                <li>Faction descriptions and campaign-specific content</li>
+                <li>Original prose, framing devices, and narrative text</li>
+                <li><em>Note: Optional systems like Deck of Consequences, Crown Spread, and Travel Framework are proprietary content.</em></li>
+            </ul>
+        </li>
+        <li><strong>License Summary:</strong> SRD content licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. All extended content is <strong>&copy; Nicholas A. Gasper, All Rights Reserved</strong>. See copyright page for full license text.</li>
+    </ul>
+
+    <hr style="width: 50%; margin: 1em auto;"/>
+
+    <p><em>"The coin that never spends is the one you don't remember taking."</em><br/>
+    — Serafine of the Velvet Touch</p>
+</div>
+
+<!-- ==================== MAIN CONTENT ==================== -->
+<div class="two-column">
+
+<!-- ==================== SECTION 1: PHILOSOPHY ==================== -->
+<section>
+<h1>The Philosophy of Consequence</h1>
+
+<h2>Narrative First</h2>
+<p><strong>Every roll tells a story.</strong> In Fate's Edge, mechanics serve the story. When you roll dice, you are not asking "did I succeed?"—you are asking "what happens next?"</p>
+
+<div class="gmcallout">
+    <strong>The Golden Rule:</strong> When in doubt, make the choice that serves the story. Set DV=3, Position=Controlled, and let the dice fall.
+</div>
+
+<h2>Safety at the Table</h2>
+<p>Fate's Edge explores mature themes. Use these tools to keep play safe:</p>
+<ul>
+    <li><strong>X-Card:</strong> Any player may say "X" to stop a scene. No questions asked.</li>
+    <li><strong>Lines:</strong> Content that will not appear (e.g., "no harm to children").</li>
+    <li><strong>Veils:</strong> Content that fades to black (e.g., "romance is implied, not described").</li>
+</ul>
+<p>Establish these in Session Zero.</p>
+</section>
+
+<!-- ==================== SECTION 2: CORE RESOLUTION ==================== -->
+<section>
+<h1>The Core Resolution</h1>
+
+<h2>The 90-Second Loop</h2>
+<p>Every meaningful action follows this cycle:</p>
+<ol>
+    <li><strong>Declare</strong> your intent and approach (Attribute + Skill).</li>
+    <li><strong>GM sets DV</strong> (2–5+) and <strong>Position</strong> (Dominant/Controlled/Desperate).</li>
+    <li><strong>Roll</strong> dice pool (Attribute + Skill d10s).</li>
+    <li><strong>Count successes</strong> (6–10 = 1 success). Each 1 = Story Beat (SB) for GM.</li>
+    <li><strong>Apply outcome</strong> using the Outcome Matrix.</li>
+    <li><strong>GM spends SB</strong> to introduce complications.</li>
+</ol>
+
+<h2>Difficulty Value (DV)</h2>
+<p><span class="table-caption">Difficulty Values</span></p>
+<table>
+    <thead>
+        <tr><th>DV</th><th>When to Use</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>2</td><td>Routine — clear path, no pressure</td></tr>
+        <tr><td>3</td><td>Pressured — mild opposition (default)</td></tr>
+        <tr><td>4</td><td>Hard — serious resistance</td></tr>
+        <tr><td>5+</td><td>Extreme — dramatic gamble</td></tr>
+    </tbody>
+</table>
+<p><strong>Default DV is 3.</strong> Do not inflate DVs to "challenge" players—use Position instead.</p>
+
+<h2>Position</h2>
+<p>Position tells you how risky the action is and changes how dice behave:</p>
+<table>
+    <thead>
+        <tr><th>Position</th><th>Frame</th><th>Mechanical Effect</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Dominant</td><td>You press advantage</td><td>Re-roll one failure</td></tr>
+        <tr><td>Controlled</td><td>Balanced norm</td><td>No re-rolls</td></tr>
+        <tr><td>Desperate</td><td>Act under duress</td><td>Re-roll one success</td></tr>
+    </tbody>
+</table>
+<p><strong>Pro tip:</strong> Spend 1 Boon to improve Position by one step before rolling.</p>
+
+<h2>The Outcome Matrix</h2>
+<table>
+    <thead>
+        <tr><th>Roll Result</th><th>What Happens</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Successes ≥ DV, SB = 0</td><td><strong>Clean Success</strong> — Intent achieved, no complication.</td></tr>
+        <tr><td>Successes ≥ DV, SB > 0</td><td><strong>Success with SB</strong> — Intent achieved; GM spends SB.</td></tr>
+        <tr><td>0 &lt; Successes &lt; DV</td><td><strong>Partial</strong> — Progress; gain 1 Boon.</td></tr>
+        <tr><td>Successes = 0</td><td><strong>Miss</strong> — No progress; gain 2 Boons; GM spends SB.</td></tr>
+    </tbody>
+</table>
+
+<p><strong>A Partial is not failure.</strong> It moves the story forward: improve Position for next attempt, reduce DV, succeed at reduced scale, or reveal information.</p>
+
+<p><strong>A Miss is never "nothing happens."</strong> The GM must introduce a complication.</p>
+
+<h2>Critical Success (10s)</h2>
+<p>A roll of 10 counts as <strong>two successes</strong>. If the overall roll succeeds:</p>
+<ul>
+    <li><strong>1 ten:</strong> Strong success—improve Position or gain minor advantage.</li>
+    <li><strong>2 tens:</strong> Exceptional—choose two benefits.</li>
+    <li><strong>3+ tens:</strong> Legendary—decisive victory; clear 1 segment from a relevant timer.</li>
+</ul>
+</section>
+
+<!-- ==================== SECTION 3: BOONS & STORY BEATS ==================== -->
+<section>
+<h1>Resources: Boons &amp; Story Beats</h1>
+
+<h2>Boons — Player Currency</h2>
+<p>Boons represent luck, momentum, and narrative leverage. <strong>Spend them freely.</strong></p>
+
+<table>
+    <thead>
+        <tr><th>Earning Boons</th><th>Gain</th><th>Spending Boons</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Partial success</td><td>Gain 1</td><td>Re-roll a die (1 Boon)</td></tr>
+        <tr><td>Miss</td><td>Gain 2</td><td>Improve Position (1 Boon)</td></tr>
+        <tr><td>Bond-driven action</td><td>Gain 1 (once/bond/session)</td><td>Activate Asset (1 Boon)</td></tr>
+        <tr><td>GM award</td><td>+1 (rare)</td><td>Convert 2 → 1 XP (once/session)</td></tr>
+    </tbody>
+</table>
+
+<p><strong>Holding cap:</strong> 5 Boons. At end of scene, reduce to 2 (excess lost).</p>
+
+<div class="sidebar">
+    <span class="sidebar-title">The Math of Fun</span>
+    <p>Hoarding Boons for XP conversion starves the table of drama. A re-rolled failure or an improved Position creates a memorable moment. Spend Boons!</p>
+</div>
+
+<h2>Story Beats (SB) — GM Currency</h2>
+<p>Every time a player rolls a 1, the GM gains Story Beats. Spend SB to introduce complications:</p>
+
+<table>
+    <thead>
+        <tr><th>Cost</th><th>Complication</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>1 SB</td><td>Minor — noise, distraction, tick a timer +1</td></tr>
+        <tr><td>2 SB</td><td>Moderate — alarm raised, lose advantage, worsen Position</td></tr>
+        <tr><td>3+ SB</td><td>Major — reinforcements, scene shifts, break an asset</td></tr>
+    </tbody>
+</table>
+
+<p><strong>Be aggressive with SB.</strong> Unused pressure is wasted momentum.</p>
+</section>
+
+<!-- ==================== SECTION 4: HARM AND FATIGUE ==================== -->
+<section>
+<h1>Injury &amp; Exhaustion</h1>
+
+<h2>Fatigue — The Weight of the World</h2>
+<p>Each point of Fatigue worsens your Position. If already Desperate, each Fatigue imposes <span class="math">−1</span> die instead.</p>
+
+<table>
+    <thead>
+        <tr><th>Fatigue Level</th><th>Effect</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>1</td><td>Position worsens one step</td></tr>
+        <tr><td>2</td><td>If already Desperate, <span class="math">−1</span> die; otherwise Position worsens</td></tr>
+        <tr><td>3</td><td><span class="math">−2</span> dice (if already Desperate from Fatigue)</td></tr>
+        <tr><td>4+</td><td>Collapse, KO, incapacitated</td></tr>
+    </tbody>
+</table>
+
+<p><strong>Recovery:</strong> Short rest removes 2 Fatigue; full night's rest removes all.</p>
+
+<h2>Harm — Serious Injury</h2>
+<table>
+    <thead>
+        <tr><th>Harm Level</th><th>Effect</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Harm 1</td><td><span class="math">−1</span> die on related actions</td></tr>
+        <tr><td>Harm 2</td><td><span class="math">−1</span> dice on most actions</td></tr>
+        <tr><td>Harm 3</td><td>Incapacitated or dying</td></tr>
+    </tbody>
+</table>
+
+<h2>The Roller-Coaster Effect</h2>
+<p><strong>Taking Harm clears Fatigue.</strong> The shock of a wound resets your exhaustion. This creates dramatic swings—a character near collapse who takes a wound and finds a second wind.</p>
+
+<h2>Armor Conversion</h2>
+<p>When you take Harm, armor converts some to Fatigue:</p>
+
+<table>
+    <thead>
+        <tr><th>Armor</th><th>Harm 1</th><th>Harm 2</th><th>Harm 3</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Light</td><td>Fatigue 1</td><td>Harm 1 + Fatigue 1</td><td>Harm 2 + Fatigue 1</td></tr>
+        <tr><td>Medium</td><td>Fatigue 1</td><td>Fatigue 1</td><td>Harm 2 + Fatigue 1</td></tr>
+        <tr><td>Heavy</td><td>Fatigue 1</td><td>Fatigue 1</td><td>Fatigue 2</td></tr>
+    </tbody>
+</table>
+</section>
+
+<!-- ==================== SECTION 5: CHARACTER CREATION ==================== -->
+<section>
+<h1>Building Your Character</h1>
+
+<h2>10-Minute Checklist</h2>
+<p>Start with <strong>32 XP</strong> (max 36 with Bonds/Complications).</p>
+<ol>
+    <li><strong>Concept:</strong> One sentence (origin, profession, defining trait).</li>
+    <li><strong>Attributes (1–5):</strong> Spend XP—primary to 3 (9 XP), secondaries to 2 (6 XP each).</li>
+    <li><strong>Skills (0–5):</strong> Spend 8–12 XP on key skills.</li>
+    <li><strong>Talents:</strong> 1–3 talents (2–6 XP each).</li>
+    <li><strong>Patron (optional):</strong> Choose a Patron for magic.</li>
+    <li><strong>Assets/Followers (optional):</strong> Minor Asset (4 XP) or follower (Cap² XP).</li>
+    <li><strong>Bonds &amp; Complications:</strong> Up to +4 XP total.</li>
+</ol>
+
+<h2>Attributes</h2>
+<table>
+    <thead>
+        <tr><th>Attribute</th><th>What It Does</th><th>Example Skills</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Body</td><td>Strength, agility, endurance</td><td>Melee, Athletics, Stealth</td></tr>
+        <tr><td>Wits</td><td>Perception, quick thinking</td><td>Insight, Lore, Investigation</td></tr>
+        <tr><td>Spirit</td><td>Willpower, intuition</td><td>Arcana, Resolve, Survival</td></tr>
+        <tr><td>Presence</td><td>Charisma, leadership</td><td>Sway, Command, Deception</td></tr>
+    </tbody>
+</table>
+<p><strong>Cost to raise:</strong> New rating × 3 XP. Downtime = new rating in days.</p>
+
+<h2>Skills</h2>
+<p><strong>Cost to raise:</strong> New level × 2 XP. Downtime = new level in days.</p>
+
+<table>
+    <thead>
+        <tr><th>Combat</th><th>Physical</th><th>Social</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Melee</td><td>Athletics</td><td>Sway</td></tr>
+        <tr><td>Ranged</td><td>Stealth</td><td>Command</td></tr>
+        <tr><td>Brawl</td><td>Endurance</td><td>Deception</td></tr>
+        <tr><td>Tactics</td><td>Craft</td><td>Performance</td></tr>
+        <tr><td></td><td>Survival</td><td>Insight</td></tr>
+        <tr><td><strong>Knowledge</strong></td><td><strong>Magic</strong></td><td></td></tr>
+        <tr><td>Lore</td><td>Arcana</td><td></td></tr>
+        <tr><td>Investigation</td><td>Ritual</td><td></td></tr>
+        <tr><td>Medicine</td><td></td><td></td></tr>
+    </tbody>
+</table>
+
+<h2>Sample Starting Build — The Duelist (32 XP)</h2>
+<ul>
+    <li><strong>Attributes:</strong> Body 3 (15 XP), Wits 2 (6 XP)</li>
+    <li><strong>Skills:</strong> Melee 2 (6 XP), Athletics 1 (2 XP)</li>
+    <li><strong>Talent:</strong> Keen Senses (2 XP)</li>
+    <li><strong>Total:</strong> 31 XP (bank 1)</li>
+</ul>
+</section>
+
+<!-- ==================== SECTION 6: ACASIA ==================== -->
+<section>
+<h1>The Known World: Acasia</h1>
+<p><em>"The Broken Province"</em></p>
+
+<h2>Genre &amp; Mood</h2>
+<p><strong>Low fantasy / mercenary realism / border feud.</strong> Acasia festers between the fallen Utaran Empire and the ambitions of petty kings. Every bridge demands a price, and every road curves back to the same cursed crossroads.</p>
+
+<h2>What You Notice First</h2>
+<p>The smell of mildew on old parchment and wet ash. The way every milestone has been recarved. The silence of a village that heard you coming and chose not to open its gates.</p>
+
+<h2>The One Rule That Kills Newcomers</h2>
+<p><strong>Never sign a contract on a bridge.</strong> The river is a witness, and it never forgets a signature.</p>
+
+<h2>Key Factions</h2>
+<table>
+    <thead>
+        <tr><th>Faction</th><th>Leader</th><th>Goal</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Broken March</td><td>Margravine Mira</td><td>Keep the province from fracturing</td></tr>
+        <tr><td>Lame King's Claimants</td><td>Oren "Tin Crown"</td><td>Be recognized as true sovereign</td></tr>
+        <tr><td>Free Companies</td><td>Various captains</td><td>Find permanent contracts</td></tr>
+        <tr><td>Blackwood Matriarchs</td><td>Hedge-witches</td><td>Survive the Curse</td></tr>
+    </tbody>
+</table>
+
+<h2>The Curse of Acasia</h2>
+<p>The land remembers what we did—and what we failed to do. Every broken milestone is a forgotten promise.</p>
+<p><strong>Mechanical effect:</strong> When you cross a bridge or crossroads, roll Spirit + Resolve (DV 3). On a failure, the Curse stirs—gain 1 Fatigue or a minor complication (GM's choice).</p>
+
+<h2>Acasia Mini-Generator (d6)</h2>
+<ol>
+    <li>A bridge toll has tripled overnight; the toll-keeper is a deserter from your old company.</li>
+    <li>A hedge-witch offers to break your blood-debt—for the memory of your first kill.</li>
+    <li>The Lame King travels with a mute jester who writes prophecies on fallen leaves.</li>
+    <li>Bandits stole a Blackwood Matriarch's curse-box. Recover it before it opens.</li>
+    <li>A free company captain wants to hire you—but their last three hires died of "accidents."</li>
+    <li>The Margravine's seal is missing. Whoever finds it can rewrite border law.</li>
+</ol>
+</section>
+
+<!-- ==================== SECTION 7: RUNNING THE GAME ==================== -->
+<section>
+<h1>Running Fate's Edge</h1>
+
+<h2>The GM Mindset</h2>
+<p>You are not a referee. You are a <strong>co-creator of drama</strong>. Your tools (SB, timers) are how you play the game.</p>
+
+<h2>Your Defaults</h2>
+<p>When in doubt:</p>
+<ul>
+    <li><strong>DV: 3</strong></li>
+    <li><strong>Position: Controlled</strong></li>
+    <li><strong>Consequence:</strong> Fatigue, time pressure, or exposure</li>
+    <li><strong>Timers:</strong> One short timer tied to the scene</li>
+</ul>
+
+<h2>The Three-Timer Screneline</h2>
+<p>Keep 1–3 active timers per scene:</p>
+
+<table>
+    <thead>
+        <tr><th>Segments</th><th>When to Use</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>4</td><td>Short, straightforward challenge</td></tr>
+        <tr><td>6</td><td>Standard scene or tension</td></tr>
+        <tr><td>8</td><td>Extended or complex problem</td></tr>
+        <tr><td>10</td><td>Epic or campaign-long pressure</td></tr>
+    </tbody>
+</table>
+
+<h2>GM Survival Tips</h2>
+
+<h3>When Players Go Off the Rails</h3>
+<p>Do not panic. Ask: <em>"What is your goal?"</em> Name the simplest obstacle—then set Position and DV.</p>
+
+<h3>When Players Hoard Boons</h3>
+<p>Remind them: <em>"Boons are not XP tokens—they are dramatic fuel."</em> Introduce time pressure.</p>
+
+<h3>When a Scene Stalls</h3>
+<p>Ask a leading question, tick a timer, or cut to another player.</p>
+
+<h3>When You Don't Know a Rule</h3>
+<p>Make a ruling that keeps the story moving. Default to DV 3, Controlled Position. Look it up later.</p>
+</section>
+
+<!-- ==================== SECTION 8: COMMANDO GM ==================== -->
+<section>
+<h1>The Commando GM</h1>
+<p><em>"You can run Fate's Edge with zero prep. Here's how."</em></p>
+
+<h2>The Core Workflow</h2>
+
+<p><strong>Opening Scene:</strong></p>
+<ol>
+    <li>Draw Spade = Place, Heart = Actor, Club = Pressure</li>
+    <li>Ask: "How does the Pressure make the Actor's life harder?"</li>
+    <li>Write one sentence. Set a Timer based on the highest rank.</li>
+</ol>
+
+<p><strong>Player Action:</strong></p>
+<ol>
+    <li>Declare intent. Set DV = 3, Position = Controlled (unless fiction demands otherwise).</li>
+    <li>Player rolls.</li>
+    <li>On a 1: You get SB. Spend it. Tick a timer, worsen Position, or introduce a twist.</li>
+    <li>On a Partial/Miss: Player gains Boons. Introduce a complication. Draw a Club if stuck.</li>
+</ol>
+
+<p><strong>Scene Resolution:</strong></p>
+<ol>
+    <li>When the Timer fills, the scene resolves.</li>
+    <li>Victory, defeat, or a new, more complicated situation.</li>
+</ol>
+
+<div class="gmcallout">
+    <strong>The Commando GM's Mantra:</strong> No prep. No stress. Just reacting to dice and cards.
+</div>
+
+<h2>Zero-Prep Scene Generation</h2>
+<p>Draw three cards from a standard deck:</p>
+
+<table>
+    <thead>
+        <tr><th>Draw</th><th>Element</th><th>Question to Ask</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Spade</td><td>Place</td><td>Describe the immediate environment.</td></tr>
+        <tr><td>Heart</td><td>Actor</td><td>Who is the obstacle/NPC? What do they want?</td></tr>
+        <tr><td>Club</td><td>Pressure</td><td>What goes wrong right now?</td></tr>
+    </tbody>
+</table>
+
+<p><strong>Synthesis Question:</strong> "How does the Pressure make the Actor's life harder?" The answer is your opening hook.</p>
+
+<h2>The Deck of Consequences</h2>
+<p>When you don't know what happens next, draw a card.</p>
+
+<p><strong>Suit Interpretation:</strong></p>
+<ul>
+    <li><strong>Hearts:</strong> "Who is connected? What bond is at stake?"</li>
+    <li><strong>Spades:</strong> "What breaks? Who gets hurt?"</li>
+    <li><strong>Clubs:</strong> "What runs out? What must be sacrificed?"</li>
+    <li><strong>Diamonds:</strong> "What is hidden? What truth is revealed?"</li>
+</ul>
+
+<p><strong>Three-Card Synthesis:</strong> Draw three cards and force them into one sentence. If a card makes zero sense after 10 seconds, discard it and draw again.</p>
+
+<h2>Fast Adversary Generation</h2>
+<p>Roll 1d6 on each table:</p>
+
+<table>
+    <thead>
+        <tr><th>d6</th><th>Type</th><th>Descriptor</th><th>Motivation</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>1</td><td>Mortal</td><td>Patient</td><td>Protects a threshold</td></tr>
+        <tr><td>2</td><td>Unquiet Dead</td><td>Hungry</td><td>Hungers for memory</td></tr>
+        <tr><td>3</td><td>Cursed</td><td>Clever</td><td>Seeks a witness</td></tr>
+        <tr><td>4</td><td>Beast</td><td>Ancient</td><td>Obeys a patron</td></tr>
+        <tr><td>5</td><td>Fae/Threshold</td><td>Bound</td><td>Collects debts</td></tr>
+        <tr><td>6</td><td>Living Infrastructure</td><td>Echo</td><td>Wants to be left alone</td></tr>
+    </tbody>
+</table>
+
+<h2>Adversary Moves (SB-Powered)</h2>
+<p>Instead of rolling for enemies, spend SB:</p>
+
+<table>
+    <thead>
+        <tr><th>Move</th><th>SB Cost</th><th>Effect</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Strike</td><td>1</td><td>Deal Harm 1 to one target</td></tr>
+        <tr><td>Heavy Strike</td><td>2</td><td>Deal Harm 2 to one target</td></tr>
+        <tr><td>Shove</td><td>1</td><td>Push target 1 range band</td></tr>
+        <tr><td>Press</td><td>1</td><td>Worsen target's Position</td></tr>
+        <tr><td>Devastating Blow</td><td>3</td><td>Deal Harm 3 to one target</td></tr>
+        <tr><td>Call for Aid</td><td>3</td><td>1d4 reinforcements arrive</td></tr>
+    </tbody>
+</table>
+</section>
+
+<!-- ==================== SECTION 9: STARTER ADVENTURE ==================== -->
+<section>
+<h1>The Lantern at Dusk</h1>
+<p><em>A Starter Adventure in Acasia</em></p>
+
+<h2>Setup</h2>
+<p>The party is hired by <strong>Elder Sarai</strong> of Duskwood. A blight is spreading from the old barrow, where a cursed lantern was buried. The lantern must be brought to a stone circle to break the curse.</p>
+
+<h2>What the Party Knows</h2>
+<ul>
+    <li>The lantern is in the central chamber of the barrow.</li>
+    <li>The barrow is guarded by restless spirits (the Duskwights).</li>
+    <li>A rival treasure hunter, <strong>Quick Lena</strong>, has also entered the barrow.</li>
+    <li>The curse will kill the village's crops in three days.</li>
+</ul>
+
+<h2>Timers</h2>
+<table>
+    <thead>
+        <tr><th>Clock</th><th>Effect</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Barrow Collapse [6]</td><td>Ticks on failure inside. At 6, entrance seals.</td></tr>
+        <tr><td>Lena's Agenda [4]</td><td>Ticks each scene inside. At 4, Lena takes the lantern first.</td></tr>
+    </tbody>
+</table>
+
+<h2>Scenes</h2>
+
+<h3>Scene 1 — The Entry (DV 3, Controlled)</h3>
+<p><strong>Obstacle:</strong> Cave-in blocks the way (Body + Athletics).</p>
+<ul>
+    <li><strong>Partial:</strong> Tick Barrow Collapse +1.</li>
+    <li><strong>Miss:</strong> Mark Harm 1, tick Collapse +1.</li>
+</ul>
+
+<h3>Scene 2 — The Spirit Corridor (DV 3, Controlled)</h3>
+<p>Three Duskwights demand an offering (a memory or a secret). Roll Presence + Sway.</p>
+<ul>
+    <li><strong>Partial:</strong> They also steal random equipment.</li>
+    <li><strong>Miss:</strong> They attack (Cap 2, Harm 1 each).</li>
+</ul>
+
+<h3>Scene 3 — The Lantern Chamber</h3>
+<p>Quick Lena tries to pry the lantern loose. Confront her: Presence + Sway (DV 3).</p>
+<ul>
+    <li><strong>Partial:</strong> She agrees to split the reward but demands a later favor (start Debt Timer [4]).</li>
+</ul>
+
+<h3>Scene 4 — Escape (Skill Challenge)</h3>
+<p>The party needs <strong>3 successes before 2 failures</strong> to escape. DV 3, Position Desperate. Each failure ticks Barrow Collapse +1.</p>
+
+<h2>Resolution</h2>
+<p>Return the lantern to the stone circle. Break the curse with Spirit + Lore (DV 2).</p>
+<ul>
+    <li><strong>Partial:</strong> Curse lifts, but the lantern attracts another danger soon.</li>
+</ul>
+
+<h2>Advancement</h2>
+<p>Each PC earns <strong>6–10 XP</strong> at the end.</p>
+</section>
+
+<!-- ==================== SECTION 10: MAGIC ==================== -->
+<section>
+<h1>Basic Magic</h1>
+
+<h2>The Five Paths (Quick Reference)</h2>
+<table>
+    <thead>
+        <tr><th>Path</th><th>Complexity</th><th>Cost Type</th><th>Best For</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Runkeeper</td><td>Low</td><td>Obligation</td><td>First-timers, reliable casters</td></tr>
+        <tr><td>Cantor</td><td>Medium</td><td>Corruption</td><td>Bards, risk-takers</td></tr>
+        <tr><td>Invoker</td><td>Medium</td><td>Obligation + time</td><td>Ritual specialists</td></tr>
+        <tr><td>Summoner</td><td>High</td><td>Leash + Boons</td><td>Pet-class fans</td></tr>
+        <tr><td>Free Caster</td><td>High</td><td>Backlash</td><td>Improv players</td></tr>
+    </tbody>
+</table>
+<p><strong>For first magical characters, play a Runkeeper.</strong></p>
+
+<h2>Runkeeper — The Reliable Path</h2>
+<p><strong>Requirements:</strong> Familiar (Thiasos, 2 XP) + Codex (4 XP) + Patron.</p>
+<p><strong>Invoking a Rite:</strong> 1 action. Mark +1 Obligation. Effect works as written.</p>
+<p><strong>Push It:</strong> Once per scene, mark +1 Obligation to amplify (+1 die or +1 Effect).</p>
+<p><strong>Obligation Capacity:</strong> Spirit + Presence. Exceeding capacity = 1 Fatigue per segment.</p>
+
+<div class="sidebar">
+    <span class="sidebar-title">Kestra, Traveler's Runkeeper (36 XP)</span>
+    <ul>
+        <li>Spirit 3 (9 XP), Wits 2 (6 XP)</li>
+        <li>Lore 2 (6 XP), Insight 1 (2 XP), Sway 1 (2 XP)</li>
+        <li>Talents: Familiar (2 XP), Codex (4 XP)</li>
+        <li>Rites: Road-Sense (4 XP), Traveler's Boon (5 XP)</li>
+        <li>Obligation Capacity: 4 (Spirit 3 + Presence 1)</li>
+    </ul>
+</div>
+
+<h2>Free Casting — The TAGS System</h2>
+<p>For improvisational magic, construct spells using TAGS:</p>
+<p><span class="math">DV = 1 + number of TAGS</span></p>
+<p>Dangerous TAGS (Leap, Fold, Gate, Transform, Dominate) add <span class="math">+2</span> DV.</p>
+
+<h3>Example Spells</h3>
+<ul>
+    <li><strong>Light [Illuminate]</strong> — DV 2. Create small, sustained light.</li>
+    <li><strong>HEAL [HEAL]</strong> — DV 2. Remove 1 Fatigue from self or touched ally.</li>
+    <li><strong>Shield of Air [WARD] [DEFEND]</strong> — DV 3. Gain Position +1 on next defense.</li>
+    <li><strong>Flame Cloak [BURNING] [AREA]</strong> — DV 3. Enemies suffer <span class="math">−1</span> die to approach.</li>
+</ul>
+<p><strong>Backlash:</strong> On a Miss or when GM spends SB, magic backfires—Fatigue 1, Harm 1, or a thematic complication.</p>
+</section>
+
+<!-- ==================== SECTION 11: ADVANCEMENT ==================== -->
+<section>
+<h1>Advancement &amp; XP</h1>
+
+<h2>Earning XP (Per Session)</h2>
+<table>
+    <thead>
+        <tr><th>Achievement</th><th>XP</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Attendance</td><td>+2</td></tr>
+        <tr><td>Major objectives</td><td>+2–4</td></tr>
+        <tr><td>Discoveries</td><td>+1–2</td></tr>
+        <tr><td>Hard choices</td><td>+1–2</td></tr>
+        <tr><td>Story engagement</td><td>+1–3</td></tr>
+        <tr><td>Personal goals</td><td>+1–2</td></tr>
+    </tbody>
+</table>
+<p><strong>Game pace options:</strong> Gritty (4–6 XP/session), Standard (6–10), Epic (10–14).</p>
+
+<h2>Spending XP</h2>
+<table>
+    <thead>
+        <tr><th>Improvement</th><th>XP Cost</th><th>Downtime</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Attribute increase</td><td>New rating × 3</td><td>New rating in days</td></tr>
+        <tr><td>Skill increase</td><td>New level × 2</td><td>New level in days</td></tr>
+        <tr><td>Minor Asset</td><td>4 XP</td><td>1 day</td></tr>
+        <tr><td>Standard Asset</td><td>8 XP</td><td>1 week</td></tr>
+        <tr><td>Major Asset</td><td>12 XP</td><td>1 month</td></tr>
+        <tr><td>Minor Talent</td><td>2–4 XP</td><td>3–10 days</td></tr>
+        <tr><td>Major Talent</td><td>5–8 XP</td><td>1–2 weeks</td></tr>
+    </tbody>
+</table>
+
+<h2>Tiers of Play</h2>
+<table>
+    <thead>
+        <tr><th>Tier</th><th>XP Range</th><th>Reputation</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>I: Novice</td><td>0–40</td><td>Local</td></tr>
+        <tr><td>II: Seasoned</td><td>41–90</td><td>Regional</td></tr>
+        <tr><td>III: Veteran</td><td>91–150</td><td>National</td></tr>
+        <tr><td>IV: Paragon</td><td>151–220</td><td>Continental</td></tr>
+        <tr><td>V: Mythic</td><td>221+</td><td>Legendary</td></tr>
+    </tbody>
+</table>
+</section>
+
+</div><!-- end two-column -->
+
+<!-- ==================== SECTION 12: GM SCREEN ==================== -->
+<hr/>
+
+<div class="one-column">
+<h1>GM Screen — Quick Reference</h1>
+
+<hr/>
+
+<h2>Core Resolution</h2>
+<ol>
+    <li>Declare intent &amp; approach (Attribute + Skill)</li>
+    <li>Set DV (2–5+) and Position (Dominant/Controlled/Desperate)</li>
+    <li>Roll Attribute + Skill d10s</li>
+    <li>Count Successes (6+), SB (1s)</li>
+    <li>Apply Outcome Matrix</li>
+    <li>Spend SB on complications</li>
+</ol>
+
+<h2>Outcome Matrix</h2>
+<table>
+    <thead>
+        <tr><th>Result</th><th>What Happens</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>S ≥ DV, SB = 0</td><td>Clean Success — Intent achieved, no complication</td></tr>
+        <tr><td>S ≥ DV, SB > 0</td><td>Success with SB — Intent achieved; GM spends SB</td></tr>
+        <tr><td>0 &lt; S &lt; DV</td><td>Partial — Progress; gain 1 Boon</td></tr>
+        <tr><td>S = 0</td><td>Miss — No progress; gain 2 Boons; GM escalates</td></tr>
+    </tbody>
+</table>
+
+<h2>Position Effects</h2>
+<table>
+    <thead>
+        <tr><th>Position</th><th>Frame</th><th>Effect</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Dominant</td><td>Press advantage</td><td>Re-roll one failure</td></tr>
+        <tr><td>Controlled</td><td>Balanced norm</td><td>No re-rolls</td></tr>
+        <tr><td>Desperate</td><td>Under duress</td><td>Re-roll one success</td></tr>
+    </tbody>
+</table>
+
+<h2>DV Screene</h2>
+<table>
+    <thead>
+        <tr><th>DV</th><th>Situation</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>2</td><td>Routine — clear path, no pressure</td></tr>
+        <tr><td>3</td><td>Pressured — mild opposition (default)</td></tr>
+        <tr><td>4</td><td>Hard — serious resistance</td></tr>
+        <tr><td>5+</td><td>Extreme — dramatic gamble</td></tr>
+    </tbody>
+</table>
+
+<h2>SB Spend Menu</h2>
+<table>
+    <thead>
+        <tr><th>Cost</th><th>Complication</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>1 SB</td><td>Minor — noise, distraction, tick timer +1</td></tr>
+        <tr><td>2 SB</td><td>Moderate — alarm raised, lose advantage, worsen Position</td></tr>
+        <tr><td>3+ SB</td><td>Major — reinforcements, scene shifts, break an asset</td></tr>
+    </tbody>
+</table>
+
+<h2>Boons (Player)</h2>
+<table>
+    <thead>
+        <tr><th>Action</th><th>Effect</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Earn</td><td>Partial (1), Miss (2), Bond-driven (1), GM award</td></tr>
+        <tr><td>Spend</td><td>Re-roll die (1), Improve Position (1), Activate Asset (1)</td></tr>
+        <tr><td>Cap</td><td>5 held; reduce to 2 at scene end</td></tr>
+    </tbody>
+</table>
+
+<h2>Fatigue &amp; Harm</h2>
+<ul>
+    <li><strong>Fatigue:</strong> Worsens Position (or <span class="math">−1</span> die if Desperate)</li>
+    <li><strong>Overflow:</strong> Fatigue ≥ Body → Harm +1, clear Fatigue</li>
+    <li><strong>Harm:</strong> 1 (<span class="math">−1</span> die), 2 (<span class="math">−1</span> die most), 3 (incapacitated)</li>
+    <li><strong>Recovery:</strong> Short rest removes 2 Fatigue; full night removes all</li>
+</ul>
+
+<h2>Armor Conversion</h2>
+<table>
+    <thead>
+        <tr><th>Armor</th><th>Harm 1</th><th>Harm 2</th><th>Harm 3</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Light</td><td>F1</td><td>H1 + F1</td><td>H2 + F1</td></tr>
+        <tr><td>Medium</td><td>F1</td><td>F1</td><td>H2 + F1</td></tr>
+        <tr><td>Heavy</td><td>F1</td><td>F1</td><td>F2</td></tr>
+    </tbody>
+</table>
+
+<h2>Timers</h2>
+<ul>
+    <li><strong>Tick On:</strong> Partial/Miss, SB spend, fiction demands</li>
+    <li><strong>Sizes:</strong> 4 (short), 6 (standard), 8 (extended), 10+ (campaign)</li>
+    <li><strong>Progress Timers:</strong> Clean = +2, Partial = +1, Miss = 0 + 2 SB</li>
+</ul>
+
+<h2>The Commando GM Workflow</h2>
+<ol>
+    <li>Draw Spade (Place), Heart (Actor), Club (Pressure)</li>
+    <li>Ask: "How does Pressure make Actor's life harder?"</li>
+    <li>Set Timer (4/6/8)</li>
+    <li>Player acts: DV=3, Position=Controlled (default)</li>
+    <li>Resolve with Outcome Matrix</li>
+    <li>Spend SB on complications</li>
+</ol>
+
+<div class="gmcallout">
+    <strong>Golden Rule:</strong> When in doubt, make a ruling that keeps the story moving. Set DV=3, Position=Controlled, let the dice fall.
+</div>
+</div>
+
+<!-- ==================== SECTION 13: GM ADVICE ==================== -->
+<hr/>
+
+<div class="one-column">
+<h1>GM Advice — Print-Out</h1>
+
+<hr/>
+
+<h2>Core Principles</h2>
+<ol>
+    <li><strong>You are not a referee.</strong> You are a co-creator of drama.</li>
+    <li><strong>Narrative first.</strong> Mechanics serve the story, not the other way around.</li>
+    <li><strong>Fail forward.</strong> A Miss is never "nothing happens." Always escalate.</li>
+    <li><strong>Spend SB early and often.</strong> Unused pressure is wasted momentum.</li>
+    <li><strong>Set the DV low.</strong> Default to 3. Use Position and Timers for tension.</li>
+</ol>
+
+<h2>The GM's Defaults</h2>
+<ul>
+    <li>DV: 3</li>
+    <li>Position: Controlled</li>
+    <li>Consequence: Fatigue, time pressure, or exposure</li>
+    <li>Timers: One short timer per scene</li>
+</ul>
+
+<h2>The Three-Timer Rule</h2>
+<p>Keep 1–3 active timers per scene:</p>
+<ol>
+    <li><strong>Situation Timer</strong> — Immediate goal (persuasion, escape)</li>
+    <li><strong>Counter-Clock</strong> — Opposition pressure (guards, ritual)</li>
+    <li><strong>Campaign Timer</strong> — Long-term front (faction, curse)</li>
+</ol>
+
+<h2>When Players Go Off the Rails</h2>
+<ol>
+    <li>Do not panic.</li>
+    <li>Ask: "What is your goal?"</li>
+    <li>Name the simplest obstacle.</li>
+    <li>Set Position and DV.</li>
+    <li>Let the dice decide.</li>
+</ol>
+
+<h2>When You Don't Know the Rules</h2>
+<ul>
+    <li>Make a ruling that keeps the story moving.</li>
+    <li>Default to DV 3, Controlled Position.</li>
+    <li>Look it up after the session.</li>
+    <li>The story is more important than the rulebook.</li>
+</ul>
+
+<div class="gmcallout">
+    <strong>The Commando GM's Mantra:</strong> No prep. No stress. Just reacting to dice and cards.
+</div>
+
+<h2>Final Wisdom</h2>
+<blockquote>
+    "The road remembers. Every broken wheel leaves a mark, every lit lamp bears witness. The only question is: what are you willing to owe?"
+    <span class="attribution">— The Gray Wanderer</span>
+</blockquote>
+
+<blockquote>
+    "A single page, well-used, is worth more than a library of unopened tomes."
+    <span class="attribution">— The Gray Wanderer</span>
+</blockquote>
+</div>
+
+<!-- ==================== SECTION 14: QUICK REFERENCE TABLES ==================== -->
+<div class="two-column">
+
+<h1>Quick Reference Tables</h1>
+
+<h2>Combat in Brief</h2>
+<ul>
+    <li><strong>Turn:</strong> 1 Action + 1 Move</li>
+    <li><strong>Move:</strong> Shift one range band (Close ↔ Near ↔ Far)</li>
+    <li><strong>Opportunity Attack:</strong> Leaving Close range without Disengage provokes one free melee attack.</li>
+    <li><strong>Sidestep Strike:</strong> Move one band as part of melee attack; worsen Position by one step.</li>
+</ul>
+
+<h2>Weapon Modifiers</h2>
+
+<h3>Melee Weapons</h3>
+<table>
+    <thead>
+        <tr><th>Weight</th><th>Close</th><th>Near</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Light</td><td>+2d</td><td>+1d</td></tr>
+        <tr><td>Medium</td><td>+1d</td><td>+2d</td></tr>
+        <tr><td>Heavy</td><td><span class="math">−1</span>d</td><td>+3d</td></tr>
+    </tbody>
+</table>
+
+<h3>Ranged Weapons</h3>
+<table>
+    <thead>
+        <tr><th>Weight</th><th>Close</th><th>Near</th><th>Far</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Light</td><td>Controlled</td><td>+1d</td><td>—</td></tr>
+        <tr><td>Medium</td><td>Desperate</td><td>+2d</td><td>+1d</td></tr>
+        <tr><td>Heavy</td><td>Desperate</td><td>+1d</td><td>+3d</td></tr>
+    </tbody>
+</table>
+
+<h2>Range Bands</h2>
+<ul>
+    <li><strong>Close:</strong> Touching distance</li>
+    <li><strong>Near:</strong> Same room/area—a rush away</li>
+    <li><strong>Far:</strong> Same site but distant—requires route or time</li>
+</ul>
+
+<h2>Skill Synergies — Creative Pairs</h2>
+<table>
+    <thead>
+        <tr><th>Action</th><th>Standard Pair</th><th>Alternative Pair</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Climbing</td><td>Body + Athletics</td><td>Wits + Athletics (clever route)</td></tr>
+        <tr><td>Persuading</td><td>Presence + Sway</td><td>Wits + Sway (logical argument)</td></tr>
+        <tr><td>Investigating</td><td>Wits + Investigation</td><td>Spirit + Investigation (intuitive leap)</td></tr>
+        <tr><td>Feinting</td><td>Wits + Melee</td><td>Presence + Melee (intimidation)</td></tr>
+    </tbody>
+</table>
+
+</div>
+
+<!-- ==================== SECTION 15: SESSION ZERO CHECKLIST ==================== -->
+<hr/>
+
+<div class="one-column">
+<h1>Session Zero Checklist</h1>
+<ol>
+    <li><strong>Lines &amp; Veils</strong> — Off-limits or implied content?</li>
+    <li><strong>Tone</strong> — Action, survival, intrigue, or horror?</li>
+    <li><strong>Campaign length</strong> — One-shot, short arc, or long campaign?</li>
+    <li><strong>Character hooks</strong> — Each player shares one goal and one fear.</li>
+    <li><strong>Patron interest</strong> — Which Patrons are already watching?</li>
+    <li><strong>Starting situation</strong> — Where does the story begin?</li>
+    <li><strong>House rules</strong> — Any optional subsystems?</li>
+    <li><strong>Scheduling &amp; attendance</strong> — Logistics for your table.</li>
+    <li><strong>Player-GM contract</strong> — "We are co-creators, not adversaries."</li>
+    <li><strong>Resource mindset</strong> — "Boons are not XP tokens. Spend them. Embrace failure."</li>
+</ol>
+</div>
+
+<!-- ==================== SECTION 16: FINAL GM MANTRA ==================== -->
+<hr/>
+
+<div class="one-column">
+<div class="gmcallout">
+    <strong>Set the DV low. Make the world react honestly. Let the pressure do the work. And remember—you are playing the game too.</strong>
+</div>
+</div>
+
+<!-- ==================== BACK MATTER ==================== -->
+<hr/>
+
+<div class="one-column" style="text-align: center; padding: 2em 0;">
+    <div style="font-size: 2em; font-family: 'Georgia', serif; font-style: italic; color: #d4af37; margin-bottom: 0.5em;">
+        "The coin that never spends is the one you don't remember taking."
+    </div>
+    <div style="color: #a09088; font-size: 1.1em; margin-bottom: 2em;">
+        — Serafine of the Velvet Touch
+    </div>
+    
+    <hr style="width: 50%; margin: 1em auto;"/>
+    
+    <div style="font-size: 0.8em; color: #a09088;">
+        Fate's Edge Essential Screene — CC BY-SA 4.0 — Nicholas A. Gasper
+    </div>
+    <div style="font-size: 0.7em; color: #706060; margin-top: 0.3em;">
+        <em>Set down in Castra Ferrum, Year of the Iron Harvest</em>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+{
+  "name": "fates-edge-ai-gm-bot",
+  "version": "1.0.0",
+  "description": "AI Game Master bot for Fate’s Edge – connects via WebSocket to the server and uses LLMs (Ollama, OpenAI, DeepSeek)",
+  "main": "ai-gm-bot.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node ai-gm-bot.js",
+    "dev": "nodemon ai-gm-bot.js",
+    "configure": "node configure-bot.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-username/fates-edge-ai-gm-bot.git"
+  },
+  "keywords": [
+    "fate",
+    "rpg",
+    "ai",
+    "gm",
+    "websocket",
+    "ollama",
+    "openai",
+    "deepseek"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/your-username/fates-edge-ai-gm-bot/issues"
+  },
+  "homepage": "https://github.com/your-username/fates-edge-ai-gm-bot#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "openai": "^4.0.0",
+    "ws": "^8.17.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

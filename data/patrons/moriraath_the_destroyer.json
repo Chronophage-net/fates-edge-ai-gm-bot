@@ -1,0 +1,66 @@
+{
+  "name": "Mor'iraath The Destroyer",
+  "slug": "moriraath_the_destroyer",
+  "domain": "Annihilation \\& Inferno",
+  "description": "<div class=\"patron-header\">\n            <h1 class=\"patron-title\">Mor'iraath The Destroyer</h1>\n            <hr class=\"region-divider\">\n        </div>\n        <p class=\"region-text\">*{Lore Mor'iraath is the demon of absolute destruction---not the slow decay of rot, nor the patient erosion of water, but the joyful, all-consuming fire that reduces everything to ash and memory. He delights not in the process of ruination, but in the perfect moment of combustion, when something that was becomes something that never will be again.</p> <p class=\"region-text\">His followers become agents of finality, wielding flame that leaves no trace, no remains, and no possibility of reconstruction. To serve him is to embrace the beauty of endings and the power that comes from making things never have been. Where Malachai corrupts and Khemesh crushes, Mor'iraath ignites.</p> <p class=\"region-text\">Among the peoples of Fate's Edge, Mor'iraath is known by fearful names. In Zakov, he is the Sea-Scourge, invoked by pirates who burn their prizes to the waterline. In Aeler, he is the Deep Forge that consumes ore and returns only slag. In Linn, he is the Tide-That-Eats-The-Shore, a slow, patient consumption that reshapes coastlines. His followers are rarely beloved, but they are essential---for without destruction, there is no room for creation.</p> <p class=\"region-text\">quote \"Every treasure is fuel. Every pact is tinder. Ash is the only inheritance.\" quote</p> <p class=\"region-text\">*{Domain Focus itemize Fiery Annihilation: fire that consumes utterly, leaving only ash Absolute Endings: no trace, no memory, no return Cleansing Flame: burning away corruption, weakness, and existence Inferno as Art: the beauty of a perfect, final combustion itemize</p> <p class=\"region-text\">*{Thiasos and Codex (Runekeeper Options)</p> <p class=\"region-text\">A Runekeeper sworn to Mor'iraath does not bind a familiar of hearth and home---they bind a companion of ash and ember. Their Thiasos is a small creature touched by finality: a blackened salamander that sleeps in hot coals, a fire-scorpion whose sting leaves a cauterized wound, a soot-colored moth that leaves ash trails on whatever it touches, or a tiny phoenix fledgling that cannot yet rise from its own ashes (and may one day burn its keeper). This creature requires no food, but it must be fed a small amount of combustible material (charcoal, oil, or a burnt offering) each day. If neglected for a week, it becomes Compromised (it smolders constantly, emitting smoke that imposes --1 die on all Stealth rolls and attracts the attention of fire-wardens).</p> <p class=\"region-text\">The Codex of Mor'iraath is never a book of paper and ink. It may be a slab of fused glass etched with runes of ending, a set of iron plates that must be heated before the Rites become visible, or a scroll of asbestos that burns without being consumed. Because Mor'iraath's truths are written in ash, the Codex requires upkeep: the Runekeeper must spend an hour each week burning a small offering (a scrap of vellum, a lock of hair) and letting the smoke imprint the Rites anew, or the symbols fade (treat as Compromised until re-burned).</p> <p class=\"region-text\">*{Patron's Gift (Imbuement)</p> <p class=\"region-text\">Once per scene as an action, a Runekeeper of Mor'iraath may touch a held item (weapon, tool, or garment) and whisper a word of unmaking. For the rest of the scene, the item grants +1 die to Melee or Ranged attacks, and the first time each scene the bearer would reduce an enemy to 0 Harm, they may choose to utterly destroy that enemy (no remains, no regeneration, no trace). After the scene, the user marks +1 Obligation to Mor'iraath.</p>",
+  "summary": "Mor'iraath The Destroyer *{Lore Mor'iraath is the demon of absolute destruction---not the slow decay of rot, nor the patient erosion of water, but the joyful, all-consuming fire that reduces everything to ash and memory.",
+  "tags": [],
+  "source": "patron",
+  "file": "mor-iraath.tex",
+  "rites": [
+    {
+      "name": "Rite of the Perfect Ending",
+      "description": "<p class=\"region-text\">(Basic, 4 XP) Instant; Touch; No. Tags: , , Materials: The final component of something (last brick, final word, closing signature), or a pinch of ash from a previous fire. Effect: Cause one small object to be utterly consumed by flame---no remains, no trace, no possibility of reconstruction. Gain +1 die to rolls involving finality or absolute conclusions. Push It: The ending creates a beneficial void---gain 1 Boon as space opens for something else; mark 1 SB (Spades) as reality adjusts to the absence. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar (Invoke: 1 Boon). Invoke: 1 action. Duration: Instant.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Instant.",
+      "action": null,
+      "effect": "Cause one small object to be utterly consumed by flame---no remains, no trace, no possibility of reconstruction. Gain +1 die to rolls involving finality or absolute conclusions. \\\\"
+    },
+    {
+      "name": "Rite of the Unmaking Gaze",
+      "description": "<p class=\"region-text\">(Basic, 5 XP) Scene; Self; No. Tags: , , Materials: A lens of obsidian or fire-scarred glass. Effect: +2 dice to identify the precise weakness that will cause complete collapse. See the \"breaking point\" in any structure, plan, or construct---the spot where a single spark would bring it all down. Your next destructive action against the identified target gains +1 Effect. Push It: The gaze becomes prophetic---see three possible endings for one target; choose which occurs, but mark 1 SB (Diamonds) as fate resists your vision. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "+2 dice to identify the precise weakness that will cause complete collapse. See the ``breaking point'' in any structure, plan, or construct---the spot where a single spark would bring it all down. Your next destructive action against the identified target gains +1 Effect. \\\\"
+    },
+    {
+      "name": "Rite of the Cleansing Flame",
+      "description": "<p class=\"region-text\">(Advanced, 8 XP) Scene; Zone; No. Tags: , , , Materials: Fuel that was once part of what you intend to destroy (a beam from the building, a lock of hair from the person). Effect: Create a fire that burns not just substance but essence---what is consumed by this flame never existed. The zone becomes a pyre zone; anything entering risks being marked for erasure. Enemies suffer --2 dice to actions that would preserve or continue anything within the zone. Push It: The flame becomes selective---choose what is unmade and what remains; mark +1 Obligation as you assume judgment over existence itself. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar + Codex (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "Create a fire that burns not just substance but essence---what is consumed by this flame never existed. The zone becomes a pyre zone; anything entering risks being marked for erasure. Enemies suffer --2 dice to actions that would preserve or continue anything within the zone. \\\\"
+    },
+    {
+      "name": "Rite of the Absolute Negation",
+      "description": "<p class=\"region-text\">(Advanced, 9 XP) Instant; Near; No. Tags: , , , Materials: The complete destruction of a representation of the target (a lock for a door, a written name for a person, a fragment for a whole), burned to ash. Effect: The target suffers --2 dice to resist any effect that would cause their non-existence. If they are reduced to Harm 0 by your actions, they are utterly consumed by infernal flame---ed from all realities, never were, never could be. Push It: The negation becomes retroactive---the target never existed in your presence; mark 2 SB (Hearts) as the timeline rewrites around their absence. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar + Codex (Invoke: 1 Boon). Invoke: 1 action. Duration: Instant.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Instant.",
+      "action": null,
+      "effect": "The target suffers --2 dice to resist any effect that would cause their non-existence. If they are reduced to Harm 0 by your actions, they are utterly consumed by infernal flame---ed from all realities, never were, never could be. \\\\"
+    },
+    {
+      "name": "Rite of the Unraveling Inferno",
+      "description": "<p class=\"region-text\">(Master, 13 XP) Scene; Touch; No. Tags: , , , Materials: The foundational element of what you wish to unmake (keystone, cornerstone, source code, a written covenant). Effect: Your touch ignites a cascading dissolution. The target and all things fundamentally connected to it begin immediate combustion, crumbling to ash as if they had never been. Test DV = Complexity. itemize Success: Target and connections cease to exist. Partial: Significant damage, accelerated decay, but some remnants remain. Miss: Backlash; the fire turns on you---mark 2 SB and suffer Harm 1 (Burn). itemize Push It: The unraveling becomes contagious---similar things in Near range also ignite; mark +2 Obligation. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue. Cost: Mark +2 Obligation. Requires: Familiar + Codex + Tier III (Invoke: 2 Boons). Invoke: Extended action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +3) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "Your touch ignites a cascading dissolution. The target and all things fundamentally connected to it begin immediate combustion, crumbling to ash as if they had never been. Test DV = Complexity. itemize Success: Target and connections cease to exist. Partial: Significant damage, accelerated decay, but some remnants remain. Miss: Backlash; the fire turns on you---mark 2 SB and suffer Harm 1 (Burn). itemize"
+    },
+    {
+      "name": "Rite of the Final Pyre",
+      "description": "<p class=\"region-text\">(Master, 14 XP) Extended; Zone; No. Tags: , , , Materials: Complete dedication of the space to Mor'iraath---every flammable object arranged as a funeral offering, and a drop of your own blood to seal the pact. Effect: The zone becomes a pocket of absolute combustion. Anything that enters is set ablaze, suffering Harm 1 each round (ignores Armor). At the end of each round, they must test Spirit+Resolve (DV 5) or be consumed entirely (cease to exist). The space itself becomes a pyre scar---it remains hot to the touch for a year and a day, and nothing will grow there. Push It: The pyre becomes permanent and expands at 1 segment per scene; you suffer Harm 2 (Burn) and mark +3 Obligation as you become partially unmade yourself, your left hand now permanently blackened and smoking. Cost: Mark +1 Obligation (total +4) or Mark +1 Fatigue. Cost: Mark +2 Obligation. Requires: Familiar + Codex + Tier III (Invoke: 2 Boons). Invoke: Extended action. Duration: Permanent.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +4) or Mark +1 Fatigue. \\\\",
+      "duration": "Permanent.",
+      "action": null,
+      "effect": "The zone becomes a pocket of absolute combustion. Anything that enters is set ablaze, suffering Harm 1 each round (ignores Armor). At the end of each round, they must test Spirit+Resolve (DV 5) or be consumed entirely (cease to exist). The space itself becomes a pyre scar---it remains hot to the touch for a year and a day, and nothing will grow there. \\\\"
+    }
+  ]
+}

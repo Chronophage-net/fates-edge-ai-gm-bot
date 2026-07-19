@@ -1,0 +1,1866 @@
+[
+  {
+    "id": 1,
+    "title": "Follower (Cap 1)",
+    "category": "assets",
+    "body": "A novice helper who provides basic assistance. Loyalty and Fitness states apply.",
+    "tags": ["follower", "cap1", "assistant"],
+    "cost": 1
+  },
+  {
+    "id": 2,
+    "title": "Follower (Cap 2)",
+    "category": "assets",
+    "body": "A competent assistant who provides reliable support. Loyalty and Fitness states apply.",
+    "tags": ["follower", "cap2", "assistant"],
+    "cost": 4
+  },
+  {
+    "id": 3,
+    "title": "Follower (Cap 3)",
+    "category": "assets",
+    "body": "A skilled specialist who provides valuable aid. Loyalty and Fitness states apply.",
+    "tags": ["follower", "cap3", "specialist"],
+    "cost": 9
+  },
+  {
+    "id": 4,
+    "title": "Follower (Cap 4)",
+    "category": "assets",
+    "body": "An expert ally who provides significant capability. Can be delegated Assets. Loyalty and Fitness states apply.",
+    "tags": ["follower", "cap4", "expert"],
+    "cost": 16
+  },
+  {
+    "id": 5,
+    "title": "Follower (Cap 5)",
+    "category": "assets",
+    "body": "A master companion with exceptional ability. Can be delegated Assets. Loyalty and Fitness states apply.",
+    "tags": ["follower", "cap5", "master"],
+    "cost": 25
+  },
+  {
+    "id": 6,
+    "title": "Major Asset",
+    "category": "assets",
+    "body": "A large enterprise, fortress, or regional authority. Activation: spend 1 Boon for scene impact.",
+    "tags": ["asset", "major", "resource"],
+    "cost": 12
+  },
+  {
+    "id": 7,
+    "title": "Minor Asset",
+    "category": "assets",
+    "body": "A small resource such as a safehouse, workshop, or minor contact network. Activation: spend 1 Boon for scene impact.",
+    "tags": ["asset", "minor", "resource"],
+    "cost": 4
+  },
+  {
+    "id": 8,
+    "title": "Standard Asset",
+    "category": "assets",
+    "body": "A significant resource such as a guild membership, trading post, or spy network. Activation: spend 1 Boon for scene impact.",
+    "tags": ["asset", "standard", "resource"],
+    "cost": 8
+  },
+  {
+    "id": 9,
+    "title": "War Mount Asset",
+    "category": "assets",
+    "body": "A trained combat mount (warhorse, dune-strider, etc.). Increases overland travel speed and endurance. With Cavalier talent: +2d melee when moving Far→Near, +2d ranged when moving Near→Far.",
+    "tags": ["asset", "war mount", "combat"],
+    "cost": 8
+  },
+  {
+    "id": 10,
+    "title": "Action Economy",
+    "category": "combat",
+    "body": "Each turn: 1 Action and 1 Move. Move shifts one range band (Close ↔ Near ↔ Far). Actions include Attack, Disengage, Dash, Charge (full turn, costs 1 Fatigue), Skirmish (full turn, costs 1 Fatigue), Observe, Setup, Assist, Protect, Interact, Defend. Opportunity attacks occur when leaving Close without Disengage.",
+    "tags": ["action", "combat", "srd"]
+  },
+  {
+    "id": 11,
+    "title": "Adaptive Guard",
+    "category": "combat",
+    "body": "When you take the Defend action, declare your defense pool after the GM calls Position. Once per scene, choose the pool after seeing the roll result.",
+    "tags": ["talent", "combat", "defender"],
+    "cost": 4
+  },
+  {
+    "id": 12,
+    "title": "Armored Fence",
+    "category": "combat",
+    "body": "When you form a line with at least two other cataphracts, your unit gains +1 Armor and cannot be charged without the enemy first testing Resolve (DV 5). Breaking the formation costs 1 Fatigue. Requires Cataphract Charge, Heavy Armor Training.",
+    "tags": ["talent", "combat", "formation"],
+    "cost": 8
+  },
+  {
+    "id": 13,
+    "title": "Assassin's Mark",
+    "category": "combat",
+    "body": "Once per scene, when you attack a target while Hidden, you may declare an Assassin's Mark. You gain +1 Harm and ignore 1 point of Armor (stacks with Backstab and Called Shot). If the attack is a Critical Hit and the target is not a boss-tier enemy, they are instantly incapacitated. After the attack, you may immediately make a Stealth test (DV 3) to re-enter stealth. Cost: marks 1 Fatigue and consumes your movement for the turn. Requires Tier II, Stealth 3+, Backstab, Shadow Dance.",
+    "tags": ["talent", "combat", "rogue", "epic"],
+    "cost": 12
+  },
+  {
+    "id": 14,
+    "title": "Backstab",
+    "category": "combat",
+    "body": "When attacking from stealth, deal +1 Harm and ignore 1 point of Armor. Once per scene. Requires Stealth 2+.",
+    "tags": ["talent", "combat", "striker"],
+    "cost": 6
+  },
+  {
+    "id": 15,
+    "title": "Battlefield Mastery",
+    "category": "combat",
+    "body": "When engaged with 3+ opponents for 3 exchanges: melee attacks +1 Effect, enemies -1 die, your Position improves by one step, and you may convert one Harm 1 per exchange to Fatigue. Once per scene.",
+    "tags": ["talent", "combat", "striker"],
+    "cost": 6
+  },
+  {
+    "id": 16,
+    "title": "Battlefield Terror",
+    "category": "combat",
+    "body": "Enemies in Close range act at -1 die due to intimidation. Once per scene, convert an enemy's success to a partial with cost.",
+    "tags": ["talent", "combat", "prestige"],
+    "cost": 10
+  },
+  {
+    "id": 17,
+    "title": "Berserker Rage",
+    "category": "combat",
+    "body": "Once per scene, for 3 rounds: +2 dice melee, ignore first Harm 1 each round, ignore Harm/Fatigue penalties, Position becomes Desperate. When rage ends, mark Fatigue equal to Spirit. Cannot be ended early.",
+    "tags": ["talent", "combat", "striker"],
+    "cost": 6
+  },
+  {
+    "id": 18,
+    "title": "Blade Dance",
+    "category": "combat",
+    "body": "Once per scene, engage and attack up to 3 targets in one action. Each attack at -1 die, but your Position improves by one step. Requires Melee 5+, Duelist's Edge, Flurry Strike.",
+    "tags": ["talent", "combat", "striker", "epic"],
+    "cost": 18
+  },
+  {
+    "id": 19,
+    "title": "Called Shot",
+    "category": "combat",
+    "body": "Once per scene, declare a Called Shot against an Unaware or aimed target; on hit, deal +1 Harm, ignore 1 Armor, and choose a condition (Blind, Disarm, Hamstring, Vitals). On miss, you are Exposed. Requires Ranged 2+.",
+    "tags": ["talent", "combat", "ranged"],
+    "cost": 6
+  },
+  {
+    "id": 20,
+    "title": "Cataphract Charge",
+    "category": "combat",
+    "body": "Once per scene, when you charge with a kontos lance, your attack ignores 1 point of Armor and, on a hit, the target must test Resolve (DV 4) or be Shaken (–1 die to all actions for one exchange). Requires Heavy Armor Training, Weapon Mastery (lance).",
+    "tags": ["talent", "combat", "charge"],
+    "cost": 6
+  },
+  {
+    "id": 21,
+    "title": "Cavalier",
+    "category": "combat",
+    "body": "While mounted: +2 dice to melee attacks when moving Far→Near, or +2 dice to ranged attacks when moving Near→Far. Requires War Mount Asset.",
+    "tags": ["talent", "combat", "mounted"],
+    "cost": 4
+  },
+  {
+    "id": 22,
+    "title": "Combat Reflexes",
+    "category": "combat",
+    "body": "+1 DV on defense when surprised or flanked.",
+    "tags": ["talent", "combat", "defender"],
+    "cost": 2
+  },
+  {
+    "id": 23,
+    "title": "Curved Blade",
+    "category": "combat",
+    "body": "Your saber's curved edge is designed for slashing while riding past. When you make a melee attack from horseback and continue moving, your attack gains +1 die and, on a hit, you may move an additional Near distance after the strike. Requires Weapon Mastery (saber), Mounted Charger.",
+    "tags": ["talent", "combat", "mounted"],
+    "cost": 8
+  },
+  {
+    "id": 24,
+    "title": "Deathblow",
+    "category": "combat",
+    "body": "Once per scene, when you make a melee attack from stealth and score a Critical Hit (a roll of 10 counts as two successes), you may declare a Deathblow. The target is immediately reduced to Harm 3 (incapacitated) if they are not a boss-tier enemy (GM discretion). If they are a boss-tier enemy, the attack instead deals +2 Harm and ignores an additional 1 point of Armor. Cost: marks 1 Fatigue. If the target survives, you are revealed and cannot re-enter stealth until the end of your next turn. Requires Tier II, Melee 3+.",
+    "tags": ["talent", "combat", "rogue", "epic"],
+    "cost": 12
+  },
+  {
+    "id": 25,
+    "title": "Defensive Survival",
+    "category": "combat",
+    "body": "+1 to defense DV while engaged in melee. Once per scene, convert first Harm 1 from melee to Fatigue.",
+    "tags": ["talent", "combat", "defender"],
+    "cost": 3
+  },
+  {
+    "id": 26,
+    "title": "Deflect Projectiles",
+    "category": "combat",
+    "body": "When targeted by a ranged physical attack, roll Melee vs DV 3 to reduce or negate Harm.",
+    "tags": ["talent", "combat", "defender"],
+    "cost": 5
+  },
+  {
+    "id": 27,
+    "title": "Draconic Breath",
+    "category": "combat",
+    "body": "Once per session, unleash a Breath Attack as a risky or desperate action. Gain +2 Effect against a group or large target when you do so. After using it, mark +2 Fatigue. If this would cause overflow, the GM instead marks +1 SB and you gain a new visible draconic mutation (eyes, scales, voice, or other change). Requires Dragonfolk origin, Tier II+.",
+    "tags": ["talent", "dragonfolk", "element", "power"],
+    "cost": 12
+  },
+  {
+    "id": 28,
+    "title": "Duelist's Edge",
+    "category": "combat",
+    "body": "When engaged with a single opponent, +1 die to all melee rolls. Once per scene, ignore first Harm 1 or 2 from that opponent.",
+    "tags": ["talent", "combat", "striker"],
+    "cost": 6
+  },
+  {
+    "id": 29,
+    "title": "Effortless Charge",
+    "category": "combat",
+    "body": "Ignore the Fatigue cost of Charge once per scene.",
+    "tags": ["talent", "combat", "movement"],
+    "cost": 3
+  },
+  {
+    "id": 30,
+    "title": "Effortless Skirmish",
+    "category": "combat",
+    "body": "Ignore the Fatigue cost of Skirmish once per scene.",
+    "tags": ["talent", "combat", "movement"],
+    "cost": 3
+  },
+  {
+    "id": 31,
+    "title": "Elephant Charge",
+    "category": "combat",
+    "body": "Once per scene, your elephant may make a trample attack against all enemies in a Near zone. Each target must test Body + Athletics (DV 4) or take Harm 2 and be knocked prone. Using this ability costs 2 Fatigue for the elephant. Requires Mahout's Bond.",
+    "tags": ["talent", "combat", "area"],
+    "cost": 8
+  },
+  {
+    "id": 32,
+    "title": "Elusive Dodge",
+    "category": "combat",
+    "body": "Once per exchange, when targeted by a physical attack, enter Defend stance as a free reaction. Mark 1 Fatigue after use.",
+    "tags": ["talent", "combat", "defender"],
+    "cost": 6
+  },
+  {
+    "id": 33,
+    "title": "Feigned Flight",
+    "category": "combat",
+    "body": "Once per scene, you may pretend to retreat, luring an enemy into pursuit. Make a Deception test (DV 3). On a success, the enemy pursues, and on their next turn they must move toward you. On your following turn, you may turn and attack with +2 dice. This ability costs 1 Fatigue. Requires Light Cavalry, Deception 2+.",
+    "tags": ["talent", "combat", "deception"],
+    "cost": 6
+  },
+  {
+    "id": 34,
+    "title": "Fist of the Mountain",
+    "category": "combat",
+    "body": "Once per session, your unarmed strike becomes a cataclysmic blow. Deal +4 Harm, ignore all Armor, and the target is knocked back two range bands and stunned (loses next action). After the blow, you suffer 2 Fatigue from the strain. Requires Iron Fist Technique, Inevitable Strike, Body 5+.",
+    "tags": ["talent", "monk", "power", "epic"],
+    "cost": 15
+  },
+  {
+    "id": 35,
+    "title": "Flowing Spirit Technique",
+    "category": "combat",
+    "body": "Convert up to 1 Harm into Fatigue per attack; +1 die against fear or charm effects.",
+    "tags": ["talent", "combat", "monk"],
+    "cost": 6
+  },
+  {
+    "id": 36,
+    "title": "Flurry Strike",
+    "category": "combat",
+    "body": "Once per scene, make 2 attacks as one action, each at -1 die. Requires Melee 3+.",
+    "tags": ["talent", "combat", "striker"],
+    "cost": 6
+  },
+  {
+    "id": 37,
+    "title": "Furusiyya Training",
+    "category": "combat",
+    "body": "You have trained in the full art of the horse warrior: lance, saber, bow, and horsemanship. You gain +1 die to all Ride tests and may re-roll one failed attack with a lance or saber per scene. Requires Weapon Mastery (lance or saber), Desert Rider.",
+    "tags": ["talent", "mounted", "mastery"],
+    "cost": 6
+  },
+  {
+    "id": 38,
+    "title": "Glancing Failure",
+    "category": "combat",
+    "body": "When an enemy's attack against you results in a Partial, you may improve your Position by one step on your next action. Requires Body 2+, Spirit 2+.",
+    "tags": ["talent", "combat", "gambit"],
+    "cost": 3
+  },
+  {
+    "id": 39,
+    "title": "Harassing Skirmish",
+    "category": "combat",
+    "body": "Once per round, when you throw a javelin and then move away, your target suffers –1 die to their next action (distracted by the near miss). Requires Light Cavalry, Weapon Mastery (javelin).",
+    "tags": ["talent", "combat", "skirmish"],
+    "cost": 8
+  },
+  {
+    "id": 40,
+    "title": "High Stance Duelist",
+    "category": "combat",
+    "body": "While Defending, enemies suffer -1 die to attacks against you; on a Success, your riposte becomes Dominant instead of Controlled.",
+    "tags": ["talent", "combat", "prestige"],
+    "cost": 8
+  },
+  {
+    "id": 41,
+    "title": "Horse Archer's Art",
+    "category": "combat",
+    "body": "Treat Mounted Archery penalties as eliminated for walk/trot; gallop/evade penalty is -1 die instead of -2. Once per scene, Skirmish while mounted allows an extra band of movement. Requires Mounted Archery. Cultural Affinity: Ykrul and Kuvani characters may reduce cost to 4 XP.",
+    "tags": ["talent", "combat", "mounted"],
+    "cost": 5
+  },
+  {
+    "id": 42,
+    "title": "Howdah Archery",
+    "category": "combat",
+    "body": "You may fire a bow or throw a javelin from the howdah without penalty, even while the elephant is moving. Additionally, you gain +1 Armor while in the howdah (cover). Requires Mahout's Bond, Ranged 2+.",
+    "tags": ["talent", "mounted", "ranged"],
+    "cost": 6
+  },
+  {
+    "id": 43,
+    "title": "Inevitable Strike",
+    "category": "combat",
+    "body": "+2 dice to unarmed attacks; ignore 1 Armor; may counterattack when an enemy misses. Requires Iron Fist Technique + Perfect Timing Technique.",
+    "tags": ["talent", "combat", "monk", "prestige"],
+    "cost": 10
+  },
+  {
+    "id": 44,
+    "title": "Iron Fist Technique",
+    "category": "combat",
+    "body": "+1 die to unarmed attacks; strikes count as enchanted for harming supernatural creatures. Requires Disciplined Body.",
+    "tags": ["talent", "combat", "monk"],
+    "cost": 6
+  },
+  {
+    "id": 45,
+    "title": "Javelin Volley",
+    "category": "combat",
+    "body": "Once per scene, you carry four javelins. As an action, you may throw two of them at the same target. Resolve each attack separately. After the volley, you are unarmed until you retrieve more javelins. Requires Weapon Mastery (javelins).",
+    "tags": ["talent", "combat", "thrown"],
+    "cost": 6
+  },
+  {
+    "id": 46,
+    "title": "Khopesh Hook",
+    "category": "combat",
+    "body": "Once per scene, when you attack with a khopesh, you may declare a hook attempt. Make a normal attack roll. On a hit, you may choose to forgo damage and instead disarm the target or pull them off balance (–1 die to their next action). Requires Weapon Mastery (khopesh or light blades).",
+    "tags": ["talent", "combat", "control"],
+    "cost": 6
+  },
+  {
+    "id": 47,
+    "title": "Kontos Thrust",
+    "category": "combat",
+    "body": "The kontos lance is held with two hands and braced against the horse's neck. You may use it one-handed while carrying a shield, but your attack suffers –1 die. If you use it two-handed, you gain +1 die and +1 Harm, but cannot use a shield. Requires Weapon Mastery (lance).",
+    "tags": ["talent", "combat", "versatility"],
+    "cost": 6
+  },
+  {
+    "id": 48,
+    "title": "Lance Couch",
+    "category": "combat",
+    "body": "Once per scene, when you charge with a lance and hit, your target must test Body + Endurance (DV 4) or be knocked prone. If the target is prone, your next attack against them gains +1 die. Requires Weapon Mastery (lance), Mounted Charger.",
+    "tags": ["talent", "combat", "charge"],
+    "cost": 6
+  },
+  {
+    "id": 49,
+    "title": "Lance Recover",
+    "category": "combat",
+    "body": "After impaling an enemy with your lance, you may recover the weapon as a free action (you have trained to brace, strike, and withdraw in one motion). If you fail to recover, you must draw your saber.",
+    "tags": ["talent", "combat", "thrown"],
+    "cost": 6
+  },
+  {
+    "id": 50,
+    "title": "Miststep Reflex",
+    "category": "combat",
+    "body": "You are always treated as Defending against physical attacks unless Exposed, Grappled, or Surprised. If you take the Defend action, improve Position by +2 steps instead. Once per scene when you roll 1s while defending, you must mark 2 Fatigue or lose the benefit for the scene. Requires Elusive Dodge, Tier III, Stealth 4+, Athletics 3+.",
+    "tags": ["talent", "combat", "defender", "epic"],
+    "cost": 12
+  },
+  {
+    "id": 51,
+    "title": "Mystic Bulwark",
+    "category": "combat",
+    "body": "When you Defend, you may Shield an adjacent ally (they gain your Position bonus). Once per scene, spend 2 Fatigue to extend to all allies in Near.",
+    "tags": ["talent", "combat", "defender", "prestige"],
+    "cost": 8
+  },
+  {
+    "id": 52,
+    "title": "Perfect Timing Technique",
+    "category": "combat",
+    "body": "Twice per scene, improve Position by +1 step; +1 die to reaction rolls.",
+    "tags": ["talent", "combat", "monk"],
+    "cost": 6
+  },
+  {
+    "id": 53,
+    "title": "Precise Strike",
+    "category": "combat",
+    "body": "Once per scene, ignore armor on one attack if you had Dominant or Controlled position.",
+    "tags": ["talent", "combat", "striker"],
+    "cost": 2
+  },
+  {
+    "id": 54,
+    "title": "Relentless",
+    "category": "combat",
+    "body": "May Charge or Skirmish over difficult terrain (Fatigue cost still applies).",
+    "tags": ["talent", "combat", "movement"],
+    "cost": 6
+  },
+  {
+    "id": 55,
+    "title": "Riposte Instinct",
+    "category": "combat",
+    "body": "When you Defend and score a Success, you may make a free Melee attack against the attacker at Position -1. Once per scene.",
+    "tags": ["talent", "combat", "defender"],
+    "cost": 4
+  },
+  {
+    "id": 56,
+    "title": "Shadow Dance",
+    "category": "combat",
+    "body": "After successfully hitting from stealth, you may attempt to re-enter stealth (Stealth test DV 3) as a free action.",
+    "tags": ["talent", "combat", "rogue", "prestige"],
+    "cost": 10
+  },
+  {
+    "id": 57,
+    "title": "Shrike Parry",
+    "category": "combat",
+    "body": "When Defending against a melee attack: on Success, negate hit and make free attack; on Partial, reduce Harm by two levels; on Miss, improve Position next turn.",
+    "tags": ["talent", "combat", "prestige"],
+    "cost": 8
+  },
+  {
+    "id": 58,
+    "title": "Stalwart's Ledger",
+    "category": "combat",
+    "body": "When an enemy's attack against you results in a Miss, you may reposition one range band without provoking opportunity attacks. Once per scene.",
+    "tags": ["talent", "combat", "defender"],
+    "cost": 4
+  },
+  {
+    "id": 59,
+    "title": "Stampede",
+    "category": "combat",
+    "body": "Once per session, you may send your elephant into a stampede. All enemies in a Large zone must test Spirit + Resolve (DV 5) or flee in panic. Those who fail also take Harm 1 (trampled). After the stampede, your elephant is Winded (–1 die on all actions for the rest of the scene). Requires Elephant Charge, Mahout's Bond.",
+    "tags": ["talent", "combat", "area"],
+    "cost": 10
+  },
+  {
+    "id": 60,
+    "title": "Stubborn Pursuer",
+    "category": "combat",
+    "body": "When an opponent Disengages, you may use your reaction to move with them, staying in Close range. Once per round.",
+    "tags": ["talent", "combat", "defender"],
+    "cost": 6
+  },
+  {
+    "id": 61,
+    "title": "Tactical Movement",
+    "category": "combat",
+    "body": "Move within engagement zone as a Move action (instead of full action). Once per scene, disengage from Close as a Move action.",
+    "tags": ["talent", "combat", "movement"],
+    "cost": 4
+  },
+  {
+    "id": 62,
+    "title": "The Hollow Lance",
+    "category": "combat",
+    "body": "Once per session, your lance is made of a hollow tube that whistles when thrown. You may throw your lance as a ranged weapon (Near range). On a hit, the target is Shaken (–1 die to all actions) for one exchange, and the whistling sound panics nearby horses (they must test Resolve or flee). Requires Lance Recover, Weapon Mastery (lance).",
+    "tags": ["talent", "combat", "thrown"],
+    "cost": 10
+  },
+  {
+    "id": 63,
+    "title": "The Miss That Feeds",
+    "category": "combat",
+    "body": "When an enemy's attack against you results in a Miss, you gain +1 Position on your next action against that enemy. Requires Body 2+.",
+    "tags": ["talent", "combat", "flow"],
+    "cost": 2
+  },
+  {
+    "id": 64,
+    "title": "Transcendent Harmony",
+    "category": "combat",
+    "body": "Convert 2 Harm into Fatigue; once per session become immune to Harm; allies gain +1 defense. Requires Flowing Spirit Technique + Perfect Timing Technique, Spirit 4+.",
+    "tags": ["talent", "monk", "power", "epic"],
+    "cost": 18
+  },
+  {
+    "id": 65,
+    "title": "Untouchable Form",
+    "category": "combat",
+    "body": "+1 die to unarmed attacks; convert 2 Harm into Fatigue; cannot be grappled. Requires Iron Fist Technique + Flowing Spirit Technique.",
+    "tags": ["talent", "combat", "monk", "prestige"],
+    "cost": 10
+  },
+  {
+    "id": 66,
+    "title": "Wardbreaker Reflex",
+    "category": "combat",
+    "body": "When Defending against spells or supernatural effects, reroll 1 failed die; if it succeeds, mark +1 Fatigue.",
+    "tags": ["talent", "combat", "magic"],
+    "cost": 4
+  },
+  {
+    "id": 67,
+    "title": "Way of the Empty Mind",
+    "category": "combat",
+    "body": "Immune to fear effects and magical mind-reading. +2 dice to resist charm or mind control. Requires Spirit 3+ and Meditative Focus.",
+    "tags": ["talent", "combat", "monk", "prestige"],
+    "cost": 9
+  },
+  {
+    "id": 68,
+    "title": "Weapon Mastery",
+    "category": "combat",
+    "body": "Choose a weapon type; gain +2 dice when using it. Once per scene, +1 Effect with signature weapon.",
+    "tags": ["talent", "combat", "striker"],
+    "cost": 5
+  },
+  {
+    "id": 69,
+    "title": "Weapon Training",
+    "category": "combat",
+    "body": "+1 die with a chosen weapon category (instead of +2 from the Major version).",
+    "tags": ["talent", "combat", "mastery"],
+    "cost": 3
+  },
+  {
+    "id": 70,
+    "title": "Whirlwind Kick",
+    "category": "combat",
+    "body": "Once per scene, make an unarmed attack against all enemies in Close range. Roll once, compare to each target's defense. Requires Iron Fist Technique.",
+    "tags": ["talent", "combat", "monk"],
+    "cost": 5
+  },
+  {
+    "id": 71,
+    "title": "Buckler",
+    "category": "equipment",
+    "body": "Small shield. +1d to Defend actions once per scene. Off-hand occupied; -1d to ranged attacks.",
+    "tags": ["shield", "light"],
+    "cost": 4
+  },
+  {
+    "id": 72,
+    "title": "Heater Shield",
+    "category": "equipment",
+    "body": "Standard shield. +1d to Defend actions; 1 Harm → Fatigue per scene. Off-hand occupied; -1d to ranged attacks.",
+    "tags": ["shield", "medium"],
+    "cost": 8
+  },
+  {
+    "id": 73,
+    "title": "Heavy Armor",
+    "category": "equipment",
+    "body": "Heavy plate. Conversion: Harm 1 → Fatigue 1, Harm 2 → Fatigue 1, Harm 3 → Fatigue 2.",
+    "tags": ["armor", "heavy"],
+    "cost": 12
+  },
+  {
+    "id": 74,
+    "title": "Heavy Weapon",
+    "category": "equipment",
+    "body": "Punishing, slow. Harm 3. Close: -1d, Near: +3d. Tempo: Slow.",
+    "tags": ["weapon", "heavy", "melee"],
+    "cost": 12
+  },
+  {
+    "id": 75,
+    "title": "Light Armor",
+    "category": "equipment",
+    "body": "Light flexible armor. Conversion: Harm 1 → Fatigue 1, Harm 2 → Harm 1 + Fatigue 1, Harm 3 → Harm 2 + Fatigue 1.",
+    "tags": ["armor", "light"],
+    "cost": 4
+  },
+  {
+    "id": 76,
+    "title": "Light Weapon",
+    "category": "equipment",
+    "body": "Fast, concealable. Harm 1. Close: +2d, Near: +1d. Tempo: Fast.",
+    "tags": ["weapon", "light", "melee"],
+    "cost": 4
+  },
+  {
+    "id": 77,
+    "title": "Medium Armor",
+    "category": "equipment",
+    "body": "Balanced protection. Conversion: Harm 1 → Fatigue 1, Harm 2 → Fatigue 1, Harm 3 → Harm 2 + Fatigue 1.",
+    "tags": ["armor", "medium"],
+    "cost": 8
+  },
+  {
+    "id": 78,
+    "title": "Medium Weapon",
+    "category": "equipment",
+    "body": "Balanced, battlefield standard. Harm 2. Close: +1d, Near: +2d. Tempo: Standard.",
+    "tags": ["weapon", "medium", "melee"],
+    "cost": 8
+  },
+  {
+    "id": 79,
+    "title": "Pavise",
+    "category": "equipment",
+    "body": "Large shield. Plant to create heavy cover (one direction). Bulky; cannot move while planted.",
+    "tags": ["shield", "heavy"],
+    "cost": 12
+  },
+  {
+    "id": 80,
+    "title": "The Hollow",
+    "category": "lore",
+    "body": "The Hollow is the unpaid interest of every broken promise, erased name, or unsettled debt. It exists in gaps: the ninth step that isn't there, the ninth cup not poured. It does not hate—it remembers. It appears as Oath-Keepers, Still Voices, and other manifestations of forgotten obligation.",
+    "tags": ["hollow", "debt", "omen"]
+  },
+  {
+    "id": 81,
+    "title": "The Ninth Taboo",
+    "category": "lore",
+    "body": "The wise stop at eight: eight breaths, eight bells, eight cups. The ninth is the Hollow's share. To count to nine, speak the ninth name, or pour the ninth cup is to invite the Hollow's attention. The Ninth Taboo is a universal warning across cultures.",
+    "tags": ["taboo", "ninth", "hollow"]
+  },
+  {
+    "id": 82,
+    "title": "Backlash Siphon",
+    "category": "magic",
+    "body": "Once per scene, when you would suffer Backlash, mark 1 Obligation to a Patron (or gain Corruption) to negate it. Requires Spellcraft.",
+    "tags": ["talent", "magic", "free caster"],
+    "cost": 6
+  },
+  {
+    "id": 83,
+    "title": "Cantor (Songs)",
+    "category": "magic",
+    "body": "Cantors perform Low Rites as songs. Requires Cantor's Path (8 XP). Singing takes 1 action, resolves next turn. Roll Performance + Lore. Push to resolve instantly: mark Fatigue and advance Corruption timer (size = Spirit). When full, gain a thematic boon and burden.",
+    "tags": ["magic", "cantor", "songs"]
+  },
+  {
+    "id": 84,
+    "title": "Cantor's Path",
+    "category": "magic",
+    "body": "Required for Cantor. Grants access to Songs and a Corruption Timer (size = Spirit).",
+    "tags": ["talent", "magic", "cantor"],
+    "cost": 8
+  },
+  {
+    "id": 85,
+    "title": "Codex",
+    "category": "magic",
+    "body": "Required for Runekeeper. A personal record of Rites. Grants access to your Patron's Rites and starts the Obligation ledger.",
+    "tags": ["talent", "magic", "runekeeper"],
+    "cost": 4
+  },
+  {
+    "id": 86,
+    "title": "Controlled Burn",
+    "category": "magic",
+    "body": "When you roll a 1 on a Free Casting roll, you may gain 1 Boon (GM still gains the SB). Once per scene. Requires Spellcraft.",
+    "tags": ["talent", "magic", "free caster"],
+    "cost": 4
+  },
+  {
+    "id": 87,
+    "title": "Crack Specialist",
+    "category": "magic",
+    "body": "Reduce the Obligation cost of Crack the Seal by 1 (minimum +1). Requires 3 Patron Symbols.",
+    "tags": ["talent", "magic", "invoker", "prestige"],
+    "cost": 8
+  },
+  {
+    "id": 88,
+    "title": "Crack the Seal Mastery",
+    "category": "magic",
+    "body": "When Cracking the Seal, choose one: reduce Obligation cost by 1, prevent Symbol from becoming Compromised, or gain +1 Effect. With 4+ Symbols, reduce all ritual casting times by 1 round. Once per scene, Crack the Seal on up to 3 Symbols as one action. Ignore No Symbol penalties. Requires Tier III, Invoker's Grimoire, 3+ Patron Symbols.",
+    "tags": ["talent", "magic", "invoker", "epic"],
+    "cost": 18
+  },
+  {
+    "id": 89,
+    "title": "Craft of the Hedge",
+    "category": "magic",
+    "body": "You have learned the small magics of thresholds and edges. You gain two Hedge Gifts of your choice. You may perform Quick Workings (single-action threshold magic). Once per session, when you fail a Quick Working roll, you may convert the Miss into a Partial Success by marking 1 Fatigue. Requires Lore 1+ or Survival 1+.",
+    "tags": ["talent", "witchcraft", "threshold"],
+    "cost": 4
+  },
+  {
+    "id": 90,
+    "title": "Desperate Cadence (Malachai's False Note)",
+    "category": "magic",
+    "body": "Learn The Lucky Pick (Low: reroll a failed Stealth or Subterfuge roll, costs 1 Fatigue and 1 Corruption) and Blood Price (Standard: curse a rival, they suffer -1 die on next heist, costs 2 Fatigue and marks a Reckoning Timer). Requires Patron: Malachai.",
+    "tags": ["talent", "magic", "cantor", "prestige"],
+    "cost": 7
+  },
+  {
+    "id": 91,
+    "title": "Dual Covenant",
+    "category": "magic",
+    "body": "Maintain two active summoned spirits simultaneously. Requires Pact-Whisperer and Lesser Pactwright.",
+    "tags": ["talent", "magic", "summoner", "prestige"],
+    "cost": 8
+  },
+  {
+    "id": 92,
+    "title": "Efficient Invocation",
+    "category": "magic",
+    "body": "Reduce Obligation cost of one specific Low Rite by 1 (minimum 0). Requires Patron's Symbol or Familiar + Codex.",
+    "tags": ["talent", "magic", "runekeeper"],
+    "cost": 4
+  },
+  {
+    "id": 93,
+    "title": "Elemental Attunement",
+    "category": "magic",
+    "body": "Choose an element; reroll one failed die per casting of that element. +1 die to Arcana rolls to identify that element. Requires Spellcraft and Elemental Focus.",
+    "tags": ["talent", "magic", "free caster"],
+    "cost": 5
+  },
+  {
+    "id": 94,
+    "title": "Elemental Focus",
+    "category": "magic",
+    "body": "Choose one element (Fire, Water, Earth, Air). +1 die when casting spells of that element. Requires Spellcraft.",
+    "tags": ["talent", "magic", "free caster"],
+    "cost": 4
+  },
+  {
+    "id": 95,
+    "title": "Elemental Mastery",
+    "category": "magic",
+    "body": "Reduce Backlash severity by one step when casting with your focus elements. When casting with two focus elements, gain +2 dice and +1 Effect. Once per scene, cast a spell without generating SB on the Weave roll. Allies gain +1 die when you cast an aligned element spell. Requires Tier III, Spellcraft, Arcana 5, 2+ Focus Elements.",
+    "tags": ["talent", "magic", "free caster", "epic"],
+    "cost": 18
+  },
+  {
+    "id": 96,
+    "title": "Engraved Defense",
+    "category": "magic",
+    "body": "Your Codex grants +1 Armor. You may mark 1 Obligation to reduce incoming Harm by 1. Requires Physical Codex (Stone or Steel), Body 2+.",
+    "tags": ["talent", "runic warrior", "armor"],
+    "cost": 6
+  },
+  {
+    "id": 97,
+    "title": "Familiar (Thiasos)",
+    "category": "magic",
+    "body": "Required for Runekeeper. Grants a small creature bound to your Patron. Enables Patron's Gift (Imbuement).",
+    "tags": ["talent", "magic", "runekeeper"],
+    "cost": 2
+  },
+  {
+    "id": 98,
+    "title": "Flesh Codex",
+    "category": "magic",
+    "body": "Your Rites are tattooed, branded, or scarred onto your skin. Your Codex cannot be stolen, is always accessible, and requires no action to retrieve. However, damage to your skin may damage the Codex, and some cultures fear flesh-writing. Requires Body 3+.",
+    "tags": ["talent", "runic warrior", "ritual"],
+    "cost": 4
+  },
+  {
+    "id": 99,
+    "title": "Forbidden Knowledge",
+    "category": "magic",
+    "body": "Once per session, access one forbidden summon or dangerous rite without its normal prerequisites. The GM gains 2 SB.",
+    "tags": ["talent", "magic", "prestige"],
+    "cost": 8
+  },
+  {
+    "id": 100,
+    "title": "Free Caster (Spellcraft)",
+    "category": "magic",
+    "body": "Free casters shape raw magic using TAGS (e.g., [FIRE] [STRIKE]). DV = 1 + number of tags (dangerous tags +2). Roll Wits + Arcana. Backlash on miss or mixed result. Requires Spellcraft (6 XP).",
+    "tags": ["magic", "free caster", "spellcraft"]
+  },
+  {
+    "id": 101,
+    "title": "Greater Pactwright",
+    "category": "magic",
+    "body": "Allows a Summoner to call spirits of Capability 3.",
+    "tags": ["talent", "magic", "summoner"],
+    "cost": 4
+  },
+  {
+    "id": 102,
+    "title": "Hearth-Sense (Hedge Gift)",
+    "category": "magic",
+    "body": "Ask the GM one yes/no question about a threshold, boundary, or debt. Once per scene. No roll required.",
+    "tags": ["hedge gift", "witchcraft", "divination"],
+    "cost": 2
+  },
+  {
+    "id": 103,
+    "title": "Invoker (Symbols)",
+    "category": "magic",
+    "body": "Invokers perform rituals using a Patron's Symbol (4 XP each). Ritual takes DV+1 rounds. Display Symbol to reduce DV and Obligation cost by 1. Crack the Seal for instant cast at double Obligation cost, Symbol becomes Compromised.",
+    "tags": ["magic", "invoker", "symbols"]
+  },
+  {
+    "id": 104,
+    "title": "Knot of Mercy (Hedge Gift)",
+    "category": "magic",
+    "body": "Remove one Condition (Fear, Poisoned, Cursed, Marked) from a touched ally. Once per session; requires Significant Time.",
+    "tags": ["hedge gift", "witchcraft", "healing"],
+    "cost": 2
+  },
+  {
+    "id": 105,
+    "title": "Lesser Pactwright",
+    "category": "magic",
+    "body": "Allows a Summoner to call spirits of Capability 1.",
+    "tags": ["talent", "magic", "summoner"],
+    "cost": 2
+  },
+  {
+    "id": 106,
+    "title": "Living Thiasos",
+    "category": "magic",
+    "body": "You have a living Thiasos (warhorse, spirit-hound, wolf-ancestor, fungal familiar, or hollowed bird). Your Thiasos gains +1 Cap and may act independently once per scene. Requires Codex.",
+    "tags": ["talent", "runic warrior", "ally"],
+    "cost": 3
+  },
+  {
+    "id": 107,
+    "title": "Master Cantor",
+    "category": "magic",
+    "body": "Once per session, treat a significant Performance roll as one degree better (Miss→Partial, etc.). Once per arc, inspire a community; allies gain +1 die to a single goal for one session.",
+    "tags": ["talent", "magic", "cantor", "prestige"],
+    "cost": 10
+  },
+  {
+    "id": 108,
+    "title": "Obligation",
+    "category": "magic",
+    "body": "Obligation is the weight of promises owed to Patrons or terrestrial factions. Capacity = Spirit + Presence. Mark Obligation when invoking Rites, accepting favors, or breaking oaths. Exceed Capacity → 1 Fatigue per segment. Double Capacity → Patron Intrusion. Clear by Acts of Service or downtime.",
+    "tags": ["obligation", "patron", "debt"]
+  },
+  {
+    "id": 109,
+    "title": "Pact-Whisperer",
+    "category": "magic",
+    "body": "Base access to Summoning. Allows you to call and bind spirits.",
+    "tags": ["talent", "magic", "summoner"],
+    "cost": 2
+  },
+  {
+    "id": 110,
+    "title": "Patron's Favored",
+    "category": "magic",
+    "body": "Low Rite Discount: Reduce Obligation cost for Low Rites by 1 (minimum 0). Empower: Once per scene, spend 1 Action + 1 Boon – target gains +1 die to all rolls for 3 rounds. Empower Push: spend 1 Action + 1 Boon + 3 Obligation – target gains +2 dice for 3 rounds, gains Fatigue at end. Enhanced Gift: Patron's Gift now provides +2 dice instead of +1. Debt Bound: Cannot Empower again until all Obligation is cleared. Requires Tier III+, Codex, Familiar, 8+ total Obligation segments.",
+    "tags": ["talent", "runic warrior", "favor", "epic"],
+    "cost": 18
+  },
+  {
+    "id": 111,
+    "title": "Patron's Gift (Imbuement)",
+    "category": "magic",
+    "body": "Requires Familiar (Thiasos). Once per scene as an action, imbue a held item with +1 Melee and +1 Thematic skill for the scene. Costs +1 Obligation per use.",
+    "tags": ["talent", "magic", "runekeeper", "free"],
+    "cost": 0
+  },
+  {
+    "id": 112,
+    "title": "Patron's Symbol",
+    "category": "magic",
+    "body": "Required for Invoker. A consecrated Symbol that grants access to a Patron's Rites. One Symbol per Patron.",
+    "tags": ["talent", "magic", "invoker"],
+    "cost": 4
+  },
+  {
+    "id": 113,
+    "title": "Resonance Anchor",
+    "category": "magic",
+    "body": "The first time you would generate a Story Beat from a 1 in a scene, you may bank it for yourself (up to 2 SB) and spend it as Boons. Requires Spellcraft and Weave Resilience.",
+    "tags": ["talent", "magic", "free caster", "prestige"],
+    "cost": 9
+  },
+  {
+    "id": 114,
+    "title": "Ritual Mastery",
+    "category": "magic",
+    "body": "Reduce ritual casting time by one step (minimum 1 action). Requires Familiar or Patron's Symbol.",
+    "tags": ["talent", "magic", "runekeeper", "invoker"],
+    "cost": 4
+  },
+  {
+    "id": 115,
+    "title": "Runebound Resilience",
+    "category": "magic",
+    "body": "Harm Conversion: Once per round, convert up to 2 Harm levels to +2 Obligation instead of taking damage. Obligation Endurance: While at 6+ Obligation segments, gain +1 die to all Rite invocations. Patron's Shield: When reduced to Harm 3, immediately Invoke any known Rite without marking additional Obligation. Debt Fortification: At 8+ Obligation segments, ignore first Harm 1 each round. Once per scene use. Requires Tier III+, Codex, Spirit 4+.",
+    "tags": ["talent", "runic warrior", "endurance", "epic"],
+    "cost": 18
+  },
+  {
+    "id": 116,
+    "title": "Runekeeper (Rites)",
+    "category": "magic",
+    "body": "Runekeepers bind to a single Patron and learn Rites. Requires Familiar (Thiasos, 2 XP) and Codex (4 XP). Invoke Rite as 1 action, mark Obligation cost. Push it (+1 Obligation) for extra effect. DV = max(Obligation Cost – Spirit, Rite Tier).",
+    "tags": ["magic", "runekeeper", "rites"]
+  },
+  {
+    "id": 117,
+    "title": "Salt Line (Hedge Gift)",
+    "category": "magic",
+    "body": "Pour a line of salt; spirits must test Spirit+Resolve DV 3 to cross. Once per scene. No roll required.",
+    "tags": ["hedge gift", "witchcraft", "ward"],
+    "cost": 2
+  },
+  {
+    "id": 118,
+    "title": "Shadow Song (Ikasha's Whisper)",
+    "category": "magic",
+    "body": "Learn Cradle Song (Low: lull a single target, Resist DV 3, costs 1 Fatigue) and Lockpick's Refrain (Standard: unlock one mundane or warded lock, costs 1 Obligation). Requires Patron: Ikasha.",
+    "tags": ["talent", "magic", "cantor", "prestige"],
+    "cost": 7
+  },
+  {
+    "id": 119,
+    "title": "Shared Burden",
+    "category": "magic",
+    "body": "Once per scene, transfer 1 Fatigue to your Thiasos; it becomes Winded (–1 die) for the scene. Requires Living Thiasos.",
+    "tags": ["talent", "runic warrior", "ally"],
+    "cost": 6
+  },
+  {
+    "id": 120,
+    "title": "Spell Echo",
+    "category": "magic",
+    "body": "Once per session, when you roll a 1 on a Free Casting roll, reroll that die. Requires Spellcraft and Controlled Burn.",
+    "tags": ["talent", "magic", "free caster", "prestige"],
+    "cost": 8
+  },
+  {
+    "id": 121,
+    "title": "Spell Shaping",
+    "category": "magic",
+    "body": "When you Weave a spell, modify range, scale, or targeting by one step. Requires Spellcraft.",
+    "tags": ["talent", "magic", "free caster"],
+    "cost": 4
+  },
+  {
+    "id": 122,
+    "title": "Spellcraft",
+    "category": "magic",
+    "body": "Required for Free Caster (Weave & Cast) magic. Enables improvisational spellcasting using TAGS.",
+    "tags": ["talent", "magic", "free caster"],
+    "cost": 6
+  },
+  {
+    "id": 123,
+    "title": "Steady Hand (Hedge Gift)",
+    "category": "magic",
+    "body": "Remove 1 Fatigue from yourself or a touched ally. Once per scene. No roll required.",
+    "tags": ["hedge gift", "witchcraft", "healing"],
+    "cost": 2
+  },
+  {
+    "id": 124,
+    "title": "Subtle Casting",
+    "category": "magic",
+    "body": "Make a Performance + Lore roll to quietly cast a spell; success means the casting does not generate SB on the initial roll.",
+    "tags": ["talent", "magic", "stealth"],
+    "cost": 6
+  },
+  {
+    "id": 125,
+    "title": "Summoner (Pact-Whisperer)",
+    "category": "magic",
+    "body": "Summoners call and bind spirits. Requires Pact-Whisperer (2 XP). Call spirit (1 action), Bind (1 Boon or Fatigue). Leash Capacity = Cap + Spirit. Tick Leash when spirit takes Harm, acts against nature, crosses wards, or you split focus. When Leash fills, spirit acts to its nature then departs.",
+    "tags": ["magic", "summoner", "spirits"]
+  },
+  {
+    "id": 126,
+    "title": "Talking Weapon",
+    "category": "magic",
+    "body": "Your Thiasos is a sentient weapon that speaks aloud and counts as a witness. Requires Codex.",
+    "tags": ["talent", "runic warrior", "thiasos"],
+    "cost": 2
+  },
+  {
+    "id": 127,
+    "title": "The Unlit Candle (Hedge Gift)",
+    "category": "magic",
+    "body": "Extinguish a light source you can see; create dim light or darkness in Near range. Once per session. No roll required.",
+    "tags": ["hedge gift", "witchcraft", "stealth"],
+    "cost": 2
+  },
+  {
+    "id": 128,
+    "title": "Triad Bond",
+    "category": "magic",
+    "body": "Maintain three active summoned spirits simultaneously. Requires Dual Covenant and Tier III.",
+    "tags": ["talent", "magic", "summoner", "prestige"],
+    "cost": 10
+  },
+  {
+    "id": 129,
+    "title": "Velvet Hook (Livaea's Whisper)",
+    "category": "magic",
+    "body": "Learn Golden Tongue (Low: +2 dice to Sway for one social exchange, costs 1 Fatigue) and The Unrefusable Offer (Standard: sing a bargain, target must accept or suffer -2 dice until they do, costs 2 Obligation). Requires Patron: Livaea.",
+    "tags": ["talent", "magic", "cantor", "prestige"],
+    "cost": 7
+  },
+  {
+    "id": 130,
+    "title": "Way of the Horse",
+    "category": "magic",
+    "body": "Your Thiasos grants your mount +1 Speed and the ability to ignore difficult terrain for one scene. Mark 1 Obligation each time you use this ability. Requires Living Thiasos (mounted tradition).",
+    "tags": ["talent", "runic warrior", "mounted"],
+    "cost": 6
+  },
+  {
+    "id": 131,
+    "title": "Weave Harmonist",
+    "category": "magic",
+    "body": "Once per session, you may ignore all SB generated by a single Free Casting roll (the GM gains none). Additionally, whenever you generate a Story Beat from a 1, you may immediately spend 1 Boon to cancel that SB. You cannot cancel more than 3 SB per scene this way. Requires Spellcraft, Resonance Anchor, Tier III.",
+    "tags": ["talent", "magic", "free caster", "epic"],
+    "cost": 16
+  },
+  {
+    "id": 132,
+    "title": "Weave Resilience",
+    "category": "magic",
+    "body": "Reduce Backlash severity by one step (Catastrophic → Major → Moderate → Minor → none) once per scene. Requires Spellcraft.",
+    "tags": ["talent", "magic", "free caster"],
+    "cost": 4
+  },
+  {
+    "id": 133,
+    "title": "Witchcraft (Hedge Magic)",
+    "category": "magic",
+    "body": "Witchcraft works at thresholds with knots, salt, and promises. Requires Craft of the Hedge (4 XP). Hedge Gifts are no-roll, limited scope (e.g., Steady Hand, Salt Line). Quick Workings are single-action rolls. Full Rituals are extended, lasting effects. Identity Strain track for costs.",
+    "tags": ["magic", "witchcraft", "hedge"]
+  },
+  {
+    "id": 134,
+    "title": "Witnessed Scar",
+    "category": "magic",
+    "body": "Once per session, touch one of your three permanent Obligation scars and gain +1 die on any roll tied to that event. Requires three permanent Obligation scars.",
+    "tags": ["talent", "runic warrior", "memory"],
+    "cost": 8
+  },
+  {
+    "id": 135,
+    "title": "Carrion King (Patron)",
+    "category": "patrons",
+    "body": "Patron of decay and renewal. Rites include Rot's Touch, Earthen Bed, Carrion's Call. Thematic skill: Survival. Gift: Imbuement grants +1 Melee and +1 Thematic skill for a scene. Associated with undertakers and those who embrace endings.",
+    "tags": ["patron", "carrion", "decay"]
+  },
+  {
+    "id": 136,
+    "title": "Grimmir (The Old Man of the Forest)",
+    "category": "patrons",
+    "body": "Patron of primal mystery, seasonal sacrifice, and folk horror. Rites include Blood Offering, Speaking Roots, Twisted Path. Thematic skill: Survival. Gift: Imbuement grants +1 Melee and +1 Thematic skill for a scene. Favours druids and rangers.",
+    "tags": ["patron", "grimmir", "nature", "sacrifice"]
+  },
+  {
+    "id": 137,
+    "title": "Ikasha (She Who Sleeps)",
+    "category": "patrons",
+    "body": "Patron of shadow, secrets, and latent potential. Rites include Unlit Candle, Crossroads Raven, Umbral Reservoir. Thematic skill: Stealth. Gift: Imbuement grants +1 Melee and +1 Thematic skill for a scene. Favours rogues and spies.",
+    "tags": ["patron", "ikasha", "shadow", "secrets"]
+  },
+  {
+    "id": 138,
+    "title": "Inaea (Angel of the Spider)",
+    "category": "patrons",
+    "body": "Patron of webs, mercy, and patient predation. Rites include Hearth-Thread Knot, Snaring Filament, Strand of Inevitability. Thematic skill: Persuade. Gift: Imbuement grants +1 Melee and +1 Thematic skill for a scene. Favours healers and diplomats.",
+    "tags": ["patron", "inaea", "web", "mercy"]
+  },
+  {
+    "id": 139,
+    "title": "Oath of Flame & Light (Patron)",
+    "category": "patrons",
+    "body": "Patron of vows, radiance, and smiting. Rites include Kindle Vow, Lay on Hands, Radiant Smite. Thematic skill: Command. Gift: Imbuement grants +1 Melee and +1 Thematic skill for a scene. Associated with paladins and clerics.",
+    "tags": ["patron", "oath", "flame", "light"]
+  },
+  {
+    "id": 140,
+    "title": "Palinode (Queen of Encores)",
+    "category": "patrons",
+    "body": "Patron of performance, rapture, and unfinished art. Rites include Hymn Against Dread, Single True Note, Hooked Chorus. Thematic skill: Performance. Gift: Imbuement grants +1 Melee and +1 Thematic skill for a scene. Favours bards and performers.",
+    "tags": ["patron", "palinode", "performance", "art"]
+  },
+  {
+    "id": 141,
+    "title": "The Traveler (Patron)",
+    "category": "patrons",
+    "body": "Patron of roads, journeys, and safe passage. Rites include Road-Sense, Traveler's Boon, and Waymark. Low Obligation costs. Thematic skill: Navigation. Gift: Imbuement grants +1 Melee and +1 Thematic skill for a scene.",
+    "tags": ["patron", "traveler", "wayfinding"]
+  },
+  {
+    "id": 142,
+    "title": "The Witness (Patron)",
+    "category": "patrons",
+    "body": "Patron of truth, memory, and revelation. Rites include Lingering Trace, Uncomfortable Question, Immutable Record. Thematic skill: Notice. Gift: Imbuement grants +1 Melee and +1 Thematic skill for a scene. Favours investigators and archivists.",
+    "tags": ["patron", "witness", "truth"]
+  },
+  {
+    "id": 143,
+    "title": "Aeler (Dwarves)",
+    "category": "regions",
+    "body": "Aeler are dwarves of the mountain holds. They count breaths in eights, never nine. Measure air and water. Power flows through keystones and breath-bonds. The Deep Drake sleeps below, the pressure that thinks. Aeler outcasts maintain toll-roads and forges.",
+    "tags": ["region", "dwarves", "aeler", "mountain"]
+  },
+  {
+    "id": 144,
+    "title": "Mistlands",
+    "category": "regions",
+    "body": "The Mistlands are a protectorate of the Aeler, veiled in fog and bell-lines. Wraiths walk when bells fail. Ward-salt and breath-tolls keep the dead at bay. The ninth bell never rings—it would open the gate. The Gray Lady's agents watch.",
+    "tags": ["region", "mistlands", "fog", "bells"]
+  },
+  {
+    "id": 145,
+    "title": "Silkstrand",
+    "category": "regions",
+    "body": "Silkstrand is a city of bridges and canals. Power flows through silk, silver, and shadow. The Matron rules, but the Ragman, Tide Father, and Silk Mother hold the underworld. Favours are measured in threads, and the ninth bridge leads to the Sunken Quarter.",
+    "tags": ["region", "silkstrand", "city", "trade"]
+  },
+  {
+    "id": 146,
+    "title": "Thepyrgos",
+    "category": "regions",
+    "body": "Thepyrgos is the City of a Thousand Stairs, a coastal academic city. The Synod licenses magic; the Chain-Lanterns hunt untutored talent. The Unfinished Stair appears to those who ask forbidden questions. The Witness and the Ninth war in forgotten archives.",
+    "tags": ["region", "thepyrgos", "stairs", "synod"]
+  },
+  {
+    "id": 147,
+    "title": "Valewood",
+    "category": "regions",
+    "body": "The Valewood is an ancient forest of fading empires, fae courts, and beast-kin. Lethai-al and Lethai-thora guard star-roads and sealed vats. The Hazel Queen and Alder King rule the courts. The Ninth Leaf falls to hidden thresholds.",
+    "tags": ["region", "valewood", "forest", "fae"]
+  },
+  {
+    "id": 148,
+    "title": "Ykrul (Orcs)",
+    "category": "regions",
+    "body": "Ykrul are steppe nomads of the Violet Steppe. Honour measured in oaths and remounts. They ride between wolf standards. Kon'reh is their game of encirclement. They count in eights, fearing the ninth. The Khagan's Court rules from the saddle.",
+    "tags": ["region", "orcs", "ykrul", "steppe"]
+  },
+  {
+    "id": 149,
+    "title": "Armor Conversion",
+    "category": "rules",
+    "body": "Armor converts Harm to Fatigue. Light: Harm 1 → Fatigue 1, Harm 2 → Harm 1 + Fatigue 1, Harm 3 → Harm 2 + Fatigue 1. Medium: Harm 1 → Fatigue 1, Harm 2 → Fatigue 1, Harm 3 → Harm 2 + Fatigue 1. Heavy: Harm 1 → Fatigue 1, Harm 2 → Fatigue 1, Harm 3 → Fatigue 2. Minimum 1 Fatigue per hit.",
+    "tags": ["armor", "conversion", "srd"]
+  },
+  {
+    "id": 150,
+    "title": "Boons",
+    "category": "rules",
+    "body": "Boons are narrative tokens. Earn 1 on Partial, 2 on Miss. Max 5, trim to 2 at scene end. Spend 1 to: re-roll a die, improve Position, activate an Asset, or convert 2 Boons to 1 XP (once per session, max 2 XP).",
+    "tags": ["boons", "resource", "srd"]
+  },
+  {
+    "id": 151,
+    "title": "Core Resolution",
+    "category": "rules",
+    "body": "Every important action follows the loop: declare action and approach, GM sets Position and DV, roll dice pool (Attribute + Skill d10s), count successes (6+ = 1 success, 10 = 2 successes), count Story Beats (1s = SB for GM), compare to DV, apply outcome from the Outcome Matrix.",
+    "tags": ["resolution", "core", "srd"]
+  },
+  {
+    "id": 152,
+    "title": "Difficulty Value (DV)",
+    "category": "rules",
+    "body": "DV determines target successes needed. 2 = routine, 3 = default, 4 = hard, 5+ = extreme. Default DV is 3.",
+    "tags": ["dv", "difficulty", "srd"]
+  },
+  {
+    "id": 153,
+    "title": "Fatigue and Harm",
+    "category": "rules",
+    "body": "Fatigue track size = Body. Each point worsens Position; if already Desperate, -1 die per Fatigue. Overflow fills track → increase Harm by 1, clear Fatigue. Harm levels: 1 (–1 die), 2 (–1 die most actions), 3 (incapacitated). Taking Harm clears existing Fatigue first.",
+    "tags": ["fatigue", "harm", "health", "srd"]
+  },
+  {
+    "id": 154,
+    "title": "Outcome Matrix",
+    "category": "rules",
+    "body": "Successes ≥ DV, SB = 0 → Clean Success. Successes ≥ DV, SB > 0 → Success with SB (GM spends SB for complication). 0 < Successes < DV → Partial (gain 1 Boon). Successes = 0 → Miss (gain 2 Boons, GM escalates).",
+    "tags": ["outcome", "matrix", "srd"]
+  },
+  {
+    "id": 155,
+    "title": "Position",
+    "category": "rules",
+    "body": "Position reflects risk: Dominant (re-roll one failure), Controlled (no re-rolls), Desperate (re-roll one success). 10s are never re-rolled. Spending 1 Boon improves Position by one step.",
+    "tags": ["position", "risk", "srd"]
+  },
+  {
+    "id": 156,
+    "title": "Story Beats (SB)",
+    "category": "rules",
+    "body": "Each die showing a 1 gives the GM 1 Story Beat. Spend SB to introduce complications: 1 SB = minor (noise, tick timer), 2 SB = moderate (alarm, lesser foe), 3 SB = serious (reinforcements, gear breaks), 4+ SB = major (trap springs, scene shift).",
+    "tags": ["story beats", "sb", "gm", "srd"]
+  },
+  {
+    "id": 157,
+    "title": "Always Another Exit",
+    "category": "talents",
+    "body": "Once per session, declare a prepared escape route during a heist or when cornered. The GM may impose a cost, but you get out.",
+    "tags": ["talent", "rogue", "stealth"],
+    "cost": 4
+  },
+  {
+    "id": 158,
+    "title": "Arcane Dominance",
+    "category": "talents",
+    "body": "When contesting another magical effect, automatically overpower weaker effects (Tier II or lower). Requires Spirit 4, Arcana 4.",
+    "tags": ["talent", "magic", "prestige"],
+    "cost": 8
+  },
+  {
+    "id": 159,
+    "title": "Asset Network",
+    "category": "talents",
+    "body": "You may maintain twice the normal number of Assets. Additionally, once per session, you may use an Asset without spending the usual Boon. Requires Asset Crafter, Tier II.",
+    "tags": ["talent", "asset", "network", "prestige"],
+    "cost": 9
+  },
+  {
+    "id": 160,
+    "title": "Avatar of the Codex",
+    "category": "talents",
+    "body": "Once per session, you become the embodiment of your Codex: Body +2, your Thiasos fights as a second combatant. Mark 2 Fatigue and 1 Obligation after. Requires Tier III, physical Codex.",
+    "tags": ["talent", "runic warrior", "transformation", "prestige"],
+    "cost": 12
+  },
+  {
+    "id": 161,
+    "title": "Breath of Stillness",
+    "category": "talents",
+    "body": "Once per session, enter a deep meditative trance. Clear all Fatigue, remove one Harm level, and remove all Conditions. The meditation takes one full scene of uninterrupted peace. Requires Meditative Focus, Spirit 4+.",
+    "tags": ["talent", "monk", "recovery", "epic"],
+    "cost": 14
+  },
+  {
+    "id": 162,
+    "title": "Camouflage",
+    "category": "talents",
+    "body": "In natural terrain, spend an action to blend in; gain +2 dice to Stealth while remaining still; pursuers suffer –1 die to detect you. Once per scene.",
+    "tags": ["talent", "scout", "stealth"],
+    "cost": 4
+  },
+  {
+    "id": 163,
+    "title": "Captivating Performance",
+    "category": "talents",
+    "body": "Once per scene, perform for allies; they gain +1 die to resist fear, despair, or charm. Choose one ally to also gain +1 die on their next social roll. Requires Performance 2+.",
+    "tags": ["talent", "support", "performance"],
+    "cost": 4
+  },
+  {
+    "id": 164,
+    "title": "Command Presence",
+    "category": "talents",
+    "body": "+1 die on leadership and intimidation rolls.",
+    "tags": ["talent", "social", "leader"],
+    "cost": 4
+  },
+  {
+    "id": 165,
+    "title": "Conditioning",
+    "category": "talents",
+    "body": "Body attribute counts as +1 for Fatigue track calculations. +1 die to resist Fatigue overflow effects.",
+    "tags": ["talent", "defender", "endurance"],
+    "cost": 4
+  },
+  {
+    "id": 166,
+    "title": "Counterpoise",
+    "category": "talents",
+    "body": "When you take a Defend action and score a Partial, you may immediately move 1 range band or reposition within Near without provoking retaliation. Requires Athletics 1+ or Melee 1+.",
+    "tags": ["talent", "combat", "movement"],
+    "cost": 2
+  },
+  {
+    "id": 167,
+    "title": "Crowd Veil",
+    "category": "talents",
+    "body": "Vanish into crowds in populated areas; roll Stealth vs DV 3 to become Hidden in plain sight.",
+    "tags": ["talent", "rogue", "stealth"],
+    "cost": 4
+  },
+  {
+    "id": 168,
+    "title": "Delegated Upkeep",
+    "category": "talents",
+    "body": "A Cap 3+ follower can manage your Assets. Cap 3: 1 Minor Asset. Cap 4: 3 Assets. Cap 5: 5 Assets. The follower's upkeep covers the Assets.",
+    "tags": ["talent", "follower", "asset"],
+    "cost": 5
+  },
+  {
+    "id": 169,
+    "title": "Desert Rider",
+    "category": "talents",
+    "body": "You ignore the first environmental penalty from heat or sand. Your horse also ignores the first penalty. Requires Survival 1+.",
+    "tags": ["talent", "survival", "environment"],
+    "cost": 4
+  },
+  {
+    "id": 170,
+    "title": "Disciplined Body",
+    "category": "talents",
+    "body": "+1 die to unarmed combat attacks. Once per scene, convert 1 Harm to Fatigue, and once per scene improve Position by one step. Requires Melee 1+, Body 2+.",
+    "tags": ["talent", "monk", "strength"],
+    "cost": 3
+  },
+  {
+    "id": 171,
+    "title": "Ear to the Ground",
+    "category": "talents",
+    "body": "Once per session, when you spend at least an hour in a settlement, you may ask the GM one question about local rumors, faction activity, or recent events. The GM must answer truthfully, though the answer may be vague or incomplete.",
+    "tags": ["talent", "social", "information"],
+    "cost": 2
+  },
+  {
+    "id": 172,
+    "title": "Efficient Recruiter",
+    "category": "talents",
+    "body": "Reduce the XP cost to acquire a new follower by 1 (minimum 1).",
+    "tags": ["talent", "follower", "recruitment"],
+    "cost": 4
+  },
+  {
+    "id": 173,
+    "title": "Faction Ally",
+    "category": "talents",
+    "body": "You have a permanent ally within a faction of your choice. Once per session, you may call on them for information, safe passage, or a minor favor. The favor is not free; it may create a minor obligation. Requires Trusted Reputation, Tier II.",
+    "tags": ["talent", "social", "faction", "prestige"],
+    "cost": 8
+  },
+  {
+    "id": 174,
+    "title": "Field Dressing",
+    "category": "talents",
+    "body": "Once per scene, when a character within Touch range would take Harm that would reduce them to Harm 3 (Incapacitated or dying), you may use your reaction to stabilize them. They remain at Harm 2 (instead of Harm 3) and will not die from this wound for the rest of the scene. Requires Medicine 1+.",
+    "tags": ["talent", "healing", "stabilize"],
+    "cost": 2
+  },
+  {
+    "id": 175,
+    "title": "Friendly Face",
+    "category": "talents",
+    "body": "When you spend a scene socializing with a group, you gain +1 die on your next social roll against any member of that group within the same session.",
+    "tags": ["talent", "social", "rapport"],
+    "cost": 2
+  },
+  {
+    "id": 176,
+    "title": "Ghost Heist",
+    "category": "talents",
+    "body": "Once per arc, commit a crime that leaves no traceable evidence. Requires a downtime action preparing the scene, a String, and a Stealth or Subterfuge test (DV 4).",
+    "tags": ["talent", "rogue", "prestige"],
+    "cost": 7
+  },
+  {
+    "id": 177,
+    "title": "Harmonious Aid",
+    "category": "talents",
+    "body": "When you Assist (spend 1 Boon), the ally gains +2 dice instead of +1. Once per scene. Requires Performance 1+.",
+    "tags": ["talent", "support", "teamwork"],
+    "cost": 4
+  },
+  {
+    "id": 178,
+    "title": "Heavy Armor Training",
+    "category": "talents",
+    "body": "You ignore the first –1 die penalty for wearing heavy armor. Requires Body 3+.",
+    "tags": ["talent", "combat", "armor"],
+    "cost": 4
+  },
+  {
+    "id": 179,
+    "title": "Hoard-Sense",
+    "category": "talents",
+    "body": "You can feel where stories and value pool. When you Survey a location for treasure, secrets, or leverage, on a hit you may also ask: 'What here would I be most tempted to claim and keep?' If you pursue that answer, gain +1 die on the relevant action. If you walk away from it, the GM may mark +1 SB for future temptation. Requires Dragonfolk origin.",
+    "tags": ["talent", "dragonfolk", "sense", "value"],
+    "cost": 6
+  },
+  {
+    "id": 180,
+    "title": "Hollow-Touched",
+    "category": "talents",
+    "body": "When you would take Harm, mark that amount as Fatigue instead. If you do, either the GM gains 1 SB or you mark 1 Obligation to the Pale Shepherd. Requires Aelaerem affinity.",
+    "tags": ["talent", "survival", "prestige"],
+    "cost": 8
+  },
+  {
+    "id": 181,
+    "title": "Information Broker",
+    "category": "talents",
+    "body": "When successfully gathering information, ask the GM two questions instead of one.",
+    "tags": ["talent", "investigation", "utility"],
+    "cost": 4
+  },
+  {
+    "id": 182,
+    "title": "Iron Patience",
+    "category": "talents",
+    "body": "When you Defend, gain +1 die to resist Conditions (fear, charm, fatigue) for the rest of the exchange, even outside the triggering roll. Requires Resolve 1+.",
+    "tags": ["talent", "combat", "defender"],
+    "cost": 2
+  },
+  {
+    "id": 183,
+    "title": "Iron Resolve",
+    "category": "talents",
+    "body": "Once per scene, when reduced to 0 Harm, remain standing with 1 Harm and mark 2 Fatigue. Requires Body 3+, Scarred Resilience.",
+    "tags": ["talent", "combat", "survival"],
+    "cost": 7
+  },
+  {
+    "id": 184,
+    "title": "Iron Skin",
+    "category": "talents",
+    "body": "When you take physical Harm, you may convert the first point of Harm each scene to Fatigue instead. Requires Body 2+.",
+    "tags": ["talent", "monk", "endurance"],
+    "cost": 2
+  },
+  {
+    "id": 185,
+    "title": "Keen Senses",
+    "category": "talents",
+    "body": "+1 die on perception checks to spot danger or hidden details.",
+    "tags": ["talent", "scout", "perception"],
+    "cost": 2
+  },
+  {
+    "id": 186,
+    "title": "Keen Scent of the Valewood",
+    "category": "talents",
+    "body": "You can 'read' a scene with your senses. Once per scene in the Wilds, when you Study or Take Stock, you may ask one additional question on a hit. The GM marks +1 SB tied to an unseen predator, rival clan, or old obligation. Requires Beastfolk origin.",
+    "tags": ["talent", "beastfolk", "sense", "tracking"],
+    "cost": 6
+  },
+  {
+    "id": 187,
+    "title": "Keen Tracker",
+    "category": "talents",
+    "body": "When you attempt to track a creature or follow a trail, you may reroll one failed die on your Lore or Investigation roll. This does not apply to magical or supernatural tracking unless you have relevant magic. Requires Lore 1+ or Investigation 1+.",
+    "tags": ["talent", "tracking", "survival"],
+    "cost": 2
+  },
+  {
+    "id": 188,
+    "title": "Large Soul",
+    "category": "talents",
+    "body": "You may wear Heavy Armor and wield Heavy Weapons without restriction. You lose Small Folk racial bonuses. Requires Aelaerem or Aelinnel affinity.",
+    "tags": ["talent", "combat", "prestige"],
+    "cost": 8
+  },
+  {
+    "id": 189,
+    "title": "Light Cavalry",
+    "category": "talents",
+    "body": "You may ride without saddle or bridle; your horse responds to knee pressure and spoken commands. When you make a Ride test, you gain +1 die.",
+    "tags": ["talent", "mounted", "skirmish"],
+    "cost": 4
+  },
+  {
+    "id": 190,
+    "title": "Light Fingers",
+    "category": "talents",
+    "body": "Once per scene, when you attempt to lift a small object (purse, key, letter, seal) from a person or desk, treat your first Stealth or Subterfuge roll as Position +1.",
+    "tags": ["talent", "rogue", "agility"],
+    "cost": 2
+  },
+  {
+    "id": 191,
+    "title": "Loyalty Bond",
+    "category": "talents",
+    "body": "Your followers' Loyalty improves by one step (Wary → Steady → Devoted). Requires at least one follower.",
+    "tags": ["talent", "follower", "loyalty"],
+    "cost": 5
+  },
+  {
+    "id": 192,
+    "title": "Mahout's Bond",
+    "category": "talents",
+    "body": "You have bonded with a specific war elephant. While riding it, your melee reach extends to Near, and you may treat the elephant as having +1 Armor. Requires Animal Handling 2+.",
+    "tags": ["talent", "mounted", "bond"],
+    "cost": 6
+  },
+  {
+    "id": 193,
+    "title": "Master Artificer",
+    "category": "talents",
+    "body": "+1 die to all Craft rolls when creating or upgrading items. Once per downtime, halve the time to craft a mundane item. Requires Craft 2+.",
+    "tags": ["talent", "craft", "artificer"],
+    "cost": 5
+  },
+  {
+    "id": 194,
+    "title": "Master Craft",
+    "category": "talents",
+    "body": "+1 die to all Craft rolls when repairing, modifying, or maintaining equipment. Additionally, you may perform minor repairs on the go without a workshop (fix a broken lockpick, patch a leaky waterskin, reattach a strap) as a short action. Requires Craft 1+.",
+    "tags": ["talent", "craft", "repair"],
+    "cost": 2
+  },
+  {
+    "id": 195,
+    "title": "Master of Misdirection",
+    "category": "talents",
+    "body": "When discovered during a crime, spend 1 Boon to redirect suspicion to another person or faction. Roll Deception vs DV 4.",
+    "tags": ["talent", "rogue", "deception"],
+    "cost": 5
+  },
+  {
+    "id": 196,
+    "title": "Meditative Focus",
+    "category": "talents",
+    "body": "Once per session, spend a short rest in meditation to clear 2 Fatigue and remove one Condition.",
+    "tags": ["talent", "support", "recovery"],
+    "cost": 4
+  },
+  {
+    "id": 197,
+    "title": "Monk's Breath",
+    "category": "talents",
+    "body": "Once per session, you may clear 1 Fatigue by meditating for one minute uninterrupted. No roll required.",
+    "tags": ["talent", "monk", "recovery"],
+    "cost": 2
+  },
+  {
+    "id": 198,
+    "title": "Mounted Archery",
+    "category": "talents",
+    "body": "You ignore the usual –1 die penalty for firing a ranged weapon while your mount is moving at a walk or trot. When your mount is galloping or taking evasive action, you suffer only –1 die instead of –2. Requires Ranged 1+, Ride (or Athletics) 1+. Cultural Affinity: Ykrul and Kuvani characters may take this talent for 1 XP instead of 2.",
+    "tags": ["talent", "mounted", "ranged"],
+    "cost": 2
+  },
+  {
+    "id": 199,
+    "title": "Negotiation Stance",
+    "category": "talents",
+    "body": "Once per scene, when you propose a deal that both parties could reasonably accept (GM discretion), treat your Position as one step better (Controlled → Dominant, Desperate → Controlled). This talent cannot raise Position above Dominant.",
+    "tags": ["talent", "social", "bargain"],
+    "cost": 2
+  },
+  {
+    "id": 200,
+    "title": "Network Weaver",
+    "category": "talents",
+    "body": "Gain a minor contact in each new settlement visited.",
+    "tags": ["talent", "social", "influence"],
+    "cost": 4
+  },
+  {
+    "id": 201,
+    "title": "Oath-Bound",
+    "category": "talents",
+    "body": "Once per session, reroll a failed Body roll when serving a sworn oath. Requires Resolve 2+.",
+    "tags": ["talent", "runic warrior", "vow"],
+    "cost": 4
+  },
+  {
+    "id": 202,
+    "title": "Open Hand Technique",
+    "category": "talents",
+    "body": "Once per scene, when you hit with an unarmed attack, you may choose one: knock the target prone, push them back one range band, or force them to drop a held item. Requires Melee 1+, Body 2+.",
+    "tags": ["talent", "monk", "control"],
+    "cost": 2
+  },
+  {
+    "id": 203,
+    "title": "Projecting Voice",
+    "category": "talents",
+    "body": "Your voice carries clearly over crowds, wind, and moderate noise. You can be heard by any willing listener within Far range without rolling. When you attempt to calm, command, or inspire a crowd (DV 3–5), treat your Position as one step better (Controlled → Dominant, Desperate → Controlled). Requires Performance 1+.",
+    "tags": ["talent", "performance", "audience"],
+    "cost": 2
+  },
+  {
+    "id": 204,
+    "title": "Rapid Construction",
+    "category": "talents",
+    "body": "When building an Asset during downtime, halve the required time and reduce material cost by 1 (minimum 0). Requires Craft 2+.",
+    "tags": ["talent", "asset", "craft"],
+    "cost": 4
+  },
+  {
+    "id": 205,
+    "title": "Read Emotions",
+    "category": "talents",
+    "body": "Once per scene, automatically detect surface emotions in a social exchange.",
+    "tags": ["talent", "social", "insight"],
+    "cost": 2
+  },
+  {
+    "id": 206,
+    "title": "Run With the Pack",
+    "category": "talents",
+    "body": "When you fight or act alongside an ally who trusts you, you both gain +1 Effect when you coordinate using pack tactics (flanking, driving prey, trading blows). On a miss, the GM may mark +1 Harm or +1 Fatigue on an ally instead of you; your instinctive coordination pulls them into danger. Requires Beastfolk origin.",
+    "tags": ["talent", "beastfolk", "teamwork", "tactics"],
+    "cost": 8
+  },
+  {
+    "id": 207,
+    "title": "Scarred Resilience",
+    "category": "talents",
+    "body": "Once per scene, ignore 1 Fatigue from physical exertion. Requires Body 2+.",
+    "tags": ["talent", "runic warrior", "recovery"],
+    "cost": 3
+  },
+  {
+    "id": 208,
+    "title": "Second Wind",
+    "category": "talents",
+    "body": "Once per scene, clear 1 Fatigue when you take a moment to catch your breath.",
+    "tags": ["talent", "support", "recovery"],
+    "cost": 2
+  },
+  {
+    "id": 209,
+    "title": "Silk Palms",
+    "category": "talents",
+    "body": "When you bribe or gift a minor official, you gain a temporary String: Bought Silence. Once, you may activate this String to reduce DV by 1 on a Petition or Broker action involving that official. The String is consumed afterward.",
+    "tags": ["talent", "rogue", "influence"],
+    "cost": 2
+  },
+  {
+    "id": 210,
+    "title": "Silver Tongue",
+    "category": "talents",
+    "body": "+1 die on persuasion attempts.",
+    "tags": ["talent", "social", "persuasion"],
+    "cost": 2
+  },
+  {
+    "id": 211,
+    "title": "Smooth Talker",
+    "category": "talents",
+    "body": "When you make a social roll against a person you have never met before, you gain +1 die. Once the conversation ends, this bonus no longer applies to that NPC. Requires Presence 2+.",
+    "tags": ["talent", "social", "first impression"],
+    "cost": 2
+  },
+  {
+    "id": 212,
+    "title": "Spymaster",
+    "category": "talents",
+    "body": "Permanent network of informants in any city visited for at least a week. Once per session, ask the GM one detailed question about faction movements or secrets.",
+    "tags": ["talent", "social", "prestige"],
+    "cost": 8
+  },
+  {
+    "id": 213,
+    "title": "Stand Firm",
+    "category": "talents",
+    "body": "When you Defend and roll a Miss, downgrade incoming Harm by 1 level (minimum 0). Requires Body 2+.",
+    "tags": ["talent", "combat", "defender"],
+    "cost": 2
+  },
+  {
+    "id": 214,
+    "title": "Step Sideways",
+    "category": "talents",
+    "body": "Once per scene, when you move through a threshold (doorway, tree-line, fog bank, mirror, or similar boundary), you may reposition yourself or an ally fictionally: appear behind foes, bypass mundane guards, or 'skip' a short distance. Roll the appropriate move. On a hit, you arrive where and how you intended. On a miss, you arrive altered, late, or not alone. The GM marks +1 SB tied to what followed you. Requires Liminal origin (Other).",
+    "tags": ["talent", "liminal", "movement", "threshold"],
+    "cost": 8
+  },
+  {
+    "id": 215,
+    "title": "Still Point",
+    "category": "talents",
+    "body": "When you do not move during your turn, gain +1 die to your next defense roll. This benefit lasts until you move or take an aggressive action.",
+    "tags": ["talent", "monk", "focus"],
+    "cost": 2
+  },
+  {
+    "id": 216,
+    "title": "Stone-Bound Interdictor",
+    "category": "talents",
+    "body": "When you would take Harm, mark that amount as Fatigue instead. If you do, either spend 1 Boon or speak a binding condition. Requires Aelinnel affinity.",
+    "tags": ["talent", "survival", "prestige"],
+    "cost": 8
+  },
+  {
+    "id": 217,
+    "title": "The Forger's Eye",
+    "category": "talents",
+    "body": "Copy any handwriting, seal, or signature with uncanny accuracy. Roll Wits + Craft to forge documents.",
+    "tags": ["talent", "rogue", "deception"],
+    "cost": 4
+  },
+  {
+    "id": 218,
+    "title": "The Scar That Remembers",
+    "category": "talents",
+    "body": "Once per session, touch a scar and speak a sentence about the event that caused it. That sentence is considered witnessed truth in any court. Requires Witnessed Scar, Tier III.",
+    "tags": ["talent", "runic warrior", "memory", "prestige"],
+    "cost": 11
+  },
+  {
+    "id": 219,
+    "title": "The Unbroken Vow",
+    "category": "talents",
+    "body": "You have kept a sworn oath for one year. When you swear an oath before a witness, gain +2 dice to all actions serving it. Requires Oath-Bound, Witnessed Scar.",
+    "tags": ["talent", "runic warrior", "vow", "prestige"],
+    "cost": 10
+  },
+  {
+    "id": 220,
+    "title": "The Unlocked Window",
+    "category": "talents",
+    "body": "When infiltrating a structure you have cased for at least an hour, ignore one security obstacle (locked door, patrolled corridor, guard dog) per session. Describe how you already prepared for it.",
+    "tags": ["talent", "rogue", "agility"],
+    "cost": 2
+  },
+  {
+    "id": 221,
+    "title": "The Velvet Glove",
+    "category": "talents",
+    "body": "Once per session, declare a minor NPC owes you a favor. They provide a specific service; the GM may dictate a cost.",
+    "tags": ["talent", "rogue", "influence"],
+    "cost": 5
+  },
+  {
+    "id": 222,
+    "title": "Trackless Step",
+    "category": "talents",
+    "body": "Once per scene, leave no trail for the rest of the scene.",
+    "tags": ["talent", "scout", "stealth"],
+    "cost": 2
+  },
+  {
+    "id": 223,
+    "title": "Triage",
+    "category": "talents",
+    "body": "Once per scene, heal 1 Fatigue from an ally and reduce their Harm penalties by one step for the scene. Requires Medicine 2+.",
+    "tags": ["talent", "support", "healing"],
+    "cost": 4
+  },
+  {
+    "id": 224,
+    "title": "Trusted Reputation",
+    "category": "talents",
+    "body": "Once per session, when in good standing with a faction, call in a minor favor (discount, information, or small service).",
+    "tags": ["talent", "social", "favor"],
+    "cost": 4
+  },
+  {
+    "id": 225,
+    "title": "Unsettling Truth",
+    "category": "talents",
+    "body": "You can speak in the language of omens. When you Sway, Provoke, or Command by revealing a hidden truth, omen, or uncanny insight about someone, gain +1 Effect on a hit. The target is left shaken or marked by dread or hope (GM's choice). On a miss, they reject you and label you a danger or blasphemy; mark +1 Fatigue. Requires Liminal origin (Other).",
+    "tags": ["talent", "liminal", "social", "omen"],
+    "cost": 6
+  },
+  {
+    "id": 226,
+    "title": "Unshakeable Composure",
+    "category": "talents",
+    "body": "+1 die to resist intimidation, coercion, and social manipulation. Once per scene, ignore the first social Condition imposed on you.",
+    "tags": ["talent", "social", "resistance"],
+    "cost": 4
+  },
+  {
+    "id": 227,
+    "title": "Urban Navigation",
+    "category": "talents",
+    "body": "Never get lost in cities.",
+    "tags": ["talent", "utility", "navigation"],
+    "cost": 2
+  },
+  {
+    "id": 228,
+    "title": "Voice of Reason",
+    "category": "talents",
+    "body": "Once per scene, use Performance instead of Sway to de-escalate or convince a hostile NPC to stand down. Requires Performance 2+.",
+    "tags": ["talent", "social", "performance"],
+    "cost": 4
+  },
+  {
+    "id": 229,
+    "title": "Well-Timed Encore",
+    "category": "talents",
+    "body": "After a successful Performance roll before an audience, extend the effect for an additional scene; the GM gains 2 SB. Once per session.",
+    "tags": ["talent", "performance", "support"],
+    "cost": 5
+  },
+  {
+    "id": 230,
+    "title": "Wilderness Lore",
+    "category": "talents",
+    "body": "Automatically find food and water in hospitable biomes.",
+    "tags": ["talent", "scout", "survival"],
+    "cost": 2
+  },
+  {
+    "id": 231,
+    "title": "Acasia (Broken Marches)",
+    "category": "regions",
+    "body": "Acasia was the first province the Utaran Empire swallowed. Now it's a cursed borderland between Ecktoria and Vhasia. The Curse makes roads loop, bridges demand tolls in memory, and contracts become physically binding. The Margravine holds the last imperial seals; the Lame King travels with a debtor army; free companies sell loyalty to whoever pays first. Tagline: 'The Empire conquered it first. The Empire left it last. Now neither remembers why.' Core Conflict: Players are caught between the Margravine's iron law, the Lame King's desperate legitimacy, and the Curse that devours broken promises.",
+    "tags": ["region", "acasia", "broken marches", "curse"]
+  },
+  {
+    "id": 232,
+    "title": "Margravine of the Broken March",
+    "category": "people",
+    "body": "Elite NPC and ruler of Acasia. She holds the last valid Imperial seals and keeps the province from fracturing completely. Her method is iron law, feud tallies, and blood-oaths. She has never lost a feud; her sword is also a counting rod. She claims descent from the last Utaran governor. Why players care: She holds the only valid Imperial seals and can grant legitimacy – or declare blood-feud.",
+    "tags": ["acasia", "npc", "authority", "feud", "margravine"]
+  },
+  {
+    "id": 233,
+    "title": "The Lame King",
+    "category": "people",
+    "body": "NPC claimant to the throne of Acasia. He travels on a throne carried by debtors, making law by pointing. His grandfather was a free company captain who declared himself king. He controls the roads the Margravine cannot, and his legitimacy is built on promises to debtors. Why players care: He controls the roads and can issue decrees – but his authority is brittle, and he cannot pay the bridge toll he owes.",
+    "tags": ["acasia", "npc", "claimant", "lame king"]
+  },
+  {
+    "id": 234,
+    "title": "Curse of Acasia",
+    "category": "mechanics",
+    "body": "The Curse is a slow accumulation of broken promises and unpaid tolls. Track it as a Campaign Timer with size [10]. Advances when: a contract is broken on a bridge (+1), a character speaks the ninth word in a negotiation (+1), the party ignores a road omen (GM spends 1 SB to tick +1), or a free company flips allegiance (+2). At 4 segments: Navigation rolls in Acasia gain +1 DV (roads shift). At 8 segments: the Curse Stirrs complication triggers once per session (roll on the Curse Stirrs table). At 10 segments: the Curse manifests as a physical threat – a bridge eats a village, a road swallows a patrol, or the ghost of the last emperor rides.",
+    "tags": ["acasia", "curse", "timer", "mechanics"]
+  },
+  {
+    "id": 235,
+    "title": "Pale Causeway",
+    "category": "locations",
+    "body": "The last high road that survives the spring thaws in Acasia. The causeway is made of bones – the bones of the workers who built it. Crossing the Causeway at dusk forces a Resolve test (DV 4). On failure, you gain the Condition Debtor to the Dead (any spirit can demand one service from you). On a critical failure, the Curse Awakening timer ticks +2 immediately. It is a threshold of death and memory, where the Empire's last toll is still collected.",
+    "tags": ["acasia", "location", "road", "curse"]
+  },
+  {
+    "id": 236,
+    "title": "Free Companies (Acasia)",
+    "category": "factions",
+    "body": "Mercenary bands that are the only law between the Margravine and the Lame King. They trade loyalty like grain, swapping colors mid-march. Their goal: find a permanent contract before winter. Their method: selling loyalty, swapping sides for better pay. Why players care: They are the only armed force that can be hired, but they are unreliable – they may flip mid-battle, and breaking a contract with them ticks the Curse.",
+    "tags": ["acasia", "faction", "mercenary"]
+  },
+  {
+    "id": 237,
+    "title": "Hedge-witches (Acasia)",
+    "category": "lore",
+    "body": "Practitioners of threshold magic who tie red thread around bridges and leave offerings of salt at crossroads to keep the Curse from spreading. They know which bridges eat travelers. Their price is a story – one that ends badly. They are the living memory of Acasia's old ways, and they trade in debts, memories, and omens. The Margravine tolerates them; the Lame King ignores them; the Curse listens when they speak.",
+    "tags": ["acasia", "witchcraft", "hedge", "curse"]
+  },
+  {
+    "id": 238,
+    "title": "The Ninth (Acasia)",
+    "category": "lore",
+    "body": "In Acasia, the ninth toll paid at a bridge is never the last. The wise pay eight and barter for the ninth. The ninth toll is collected by a child with no name – the Curse's enforcer. To count to nine, speak the ninth name, or pour the ninth cup is to invite the Hollow's attention. The Ninth Taboo is a universal warning across cultures, but in Acasia it is a living law enforced by the land itself.",
+    "tags": ["acasia", "ninth", "taboo", "curse"]
+  }
+]

@@ -1,0 +1,57 @@
+{
+  "name": "Nidhoggr, the World-Worm",
+  "slug": "nidhoggr_the_worldworm",
+  "domain": "Dreaming Antiquity",
+  "description": "<div class=\"patron-header\">\n            <h1 class=\"patron-title\">Nidhoggr, the World-Worm</h1>\n            <hr class=\"region-divider\">\n        </div>\n        <p class=\"region-text\">*{Lore Beneath stone and sleep coils Nidhoggr, who gnaws at the roots of time. He does not speak quickly; he dreams in centuries. To press your ear to the earth is to risk drowning in the silence of eons. Yet for those who endure, he whispers truths long buried, memories fossilized in stone, and the slow inevitability of cycles unbroken. His followers walk in twilight between dream and ruin, bearing the weight of all that has been.</p> <p class=\"region-text\">Nidhoggr is the worm who knows the metaphorical bones of the earth -- the secret history hidden in every mountain, the forgotten temple beneath the marketplace, the name of the king whose tomb was erased from every chronicle. He is the patron of archaeologists, relic hunters, and those who understand that the past is never truly dead. It is merely sleeping.</p> <p class=\"region-text\">Among the peoples of Fate's Edge, Nidhoggr is called by many names. In Aeler, he is the World-Worm, whose dreaming coils are said to cause earthquakes. In the Mistlands, he is the Fog-Memory, the presence that makes the mist remember what the living forget. In Ykrul, he is the Bone-Reader, whose whispers guide shamans to ancient burial grounds. Wherever the earth holds secrets, Nidhoggr dreams.</p> <p class=\"region-text\">quote \"Press your ear to the earth and wait. If it remembers you, it will answer.\" quote</p> <p class=\"region-text\">*{Domain Focus itemize Ancient Knowledge: forgotten histories, buried truths, ancestral memory Stone Communion: speaking with earth, reading geological memory, stone lore Temporal Perception: seeing echoes of the past, prophetic dreams, slow time Cyclical Power: seasonal magic, ritual timing, patience as virtue Relic Hunter: unearthing the past, preserving what was lost itemize</p> <p class=\"region-text\">*{Thiasos and Codex (Runekeeper Options)</p> <p class=\"region-text\">A Runekeeper sworn to Nidhoggr does not bind a familiar of quick flesh -- they bind a companion of deep time and patience. Their Thiasos is a small creature of stone and slowness: a blind salamander that lives in caves and never ages, a fossilized beetle that occasionally twitches its legs, a snail whose shell records the layers of years, or a burrowing mole whose fur is always dusted with ancient soil. This creature requires no food, but it must spend at least an hour each day in contact with stone or earth (a cave, a grave, or a masonry wall). If neglected for a week, it becomes Compromised (it grows lethargic and its shell cracks, imposing --1 die on all Survival or Lore rolls involving ancient sites for its bearer until it is returned to stone).</p> <p class=\"region-text\">The Codex of Nidhoggr is never a fresh book. It may be a fossilized slab with impressions that change under moonlight, a bundle of slate tablets etched with runes that deepen with age, or a scroll of petrified leather that unrolls only when buried in soil. Because Nidhoggr's truths are written in the language of deep time, the Codex requires upkeep: the Runekeeper must spend an hour each week burying it in earth (or placing it against ancient stone) and listening for the whisper that refreshes the Rites. If neglected, it becomes Compromised: the symbols fade (treat as Compromised until re-interred).</p> <p class=\"region-text\">*{Patron's Gift (Imbuement)</p> <p class=\"region-text\">Once per scene as an action, a Runekeeper of Nidhoggr may touch a held item (weapon, tool, or archaeological find) and whisper a word of deep memory. For the rest of the scene, the item grants +1 die to Lore or Investigation rolls when examining ancient objects or sites, and the first time each scene the bearer would fail to notice a trap or hidden feature in a ruin, they may reroll the check (the stone whispers a warning). After the scene, the user marks +1 Obligation to Nidhoggr.</p>",
+  "summary": "Nidhoggr, the World-Worm *{Lore Beneath stone and sleep coils Nidhoggr, who gnaws at the roots of time. He does not speak quickly; he dreams in centuries. To press your ear to the earth is to risk drowning in the silence of eons.",
+  "tags": [],
+  "source": "patron",
+  "file": "nidhoggr.tex",
+  "rites": [
+    {
+      "name": "Rite of the Whispering Stone",
+      "description": "<p class=\"region-text\">(Basic, 5 XP) Scene; Touch/Self; Yes. Tags: , , Materials: Dust from weathered stone or an ancient artifact; or water poured over ancient stone, consumed ritually. Effect: Choose one: itemize Stone's Whisper: Stone reveals one hidden fact about its history. Gain +1 die to Lore about this object's origin and purpose. Dreaming Deep: Enter a brief trance to witness echoes of local history. Ask one specific question about past events here. itemize Push It: itemize Stone: The vision includes sensory details from the past. Dream: The vision reveals additional context or hidden connections; mark 1 SB (Clubs). itemize Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "Choose one: itemize Stone's Whisper: Stone reveals one hidden fact about its history. Gain +1 die to Lore about this object's origin and purpose. Dreaming Deep: Enter a brief trance to witness echoes of local history. Ask one specific question about past events here. itemize"
+    },
+    {
+      "name": "Rite of the Stone-Sleeper's Murmur",
+      "description": "<p class=\"region-text\">(Advanced, 8 XP) Scene; Zone; No. Tags: , , Materials: An ear pressed to bedrock or an ancient structure. Effect: Read accumulated memories in stone. Ask up to 3 questions about significant events witnessed here. Creates a 6-segment Memory Resonance timer. Push It: One memory unfolds with perfect clarity. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar + Codex (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "Read accumulated memories in stone. Ask up to 3 questions about significant events witnessed here. Creates a 6-segment Memory Resonance timer. \\\\"
+    },
+    {
+      "name": "Rite of Awakened Chronicle",
+      "description": "<p class=\"region-text\">(Advanced, 9 XP) Extended; Zone; No. Tags: , , , Materials: A chalk spiral, four local stones, an hour of meditation. Effect: The area replays ghostly echoes of a chosen past event. All witnesses gain +2 dice to Investigate/Recall related checks. Creates an 8-segment Echo Stability timer. Push It: View events from multiple perspectives. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar + Codex (Invoke: 1 Boon). Invoke: Extended action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "The area replays ghostly echoes of a chosen past event. All witnesses gain +2 dice to Investigate/Recall related checks. Creates an 8-segment Echo Stability timer. \\\\"
+    },
+    {
+      "name": "Rite of the World-Worm's Dream",
+      "description": "<p class=\"region-text\">(Master, 13 XP) Extended; Zone; Yes. Tags: , , , Materials: A circle of ancient stones, a night of vigil under stars. Effect: Access deep geological memory. Ask 3 questions about ancient history or receive a prophetic dream. Creates a 10-segment Deep Dream timer. Push It: Gain temporary skill mastery (+3 dice to one historical action). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue. Cost: Mark +2 Obligation. Requires: Familiar + Codex + Tier III (Invoke: 2 Boons). Invoke: Extended action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +3) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "Access deep geological memory. Ask 3 questions about ancient history or receive a prophetic dream. Creates a 10-segment Deep Dream timer. \\\\"
+    },
+    {
+      "name": "Rite of the Unburied Past",
+      "description": "<p class=\"region-text\">(Master, 14 XP) Extended; Large Zone; No. Tags: , , , Materials: Stones from three ancient sites, the blood of a history-keeper (a scholar, a chronicler, or a witness). Effect: Overlay a past reality onto the present location. Ruins partially reform, ghostly figures manifest. Allies gain +2 dice to Lore/Investigate; any modern technology or recent construction suffers --2 dice to function within the zone. Push It: The effect lasts until the next lunar cycle; start a Temporal Instability [8] timer. When it fills, the past and present become dangerously entangled -- a location may become inaccessible or a relic may begin to fade. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue. Cost: Mark +2 Obligation. Requires: Familiar + Codex + Tier III (Invoke: 2 Boons). Invoke: Extended action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +3) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "Overlay a past reality onto the present location. Ruins partially reform, ghostly figures manifest. Allies gain +2 dice to Lore/Investigate; any modern technology or recent construction suffers --2 dice to function within the zone. \\\\"
+    }
+  ]
+}

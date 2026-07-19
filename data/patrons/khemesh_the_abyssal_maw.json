@@ -1,0 +1,48 @@
+{
+  "name": "Khemesh The Abyssal Maw",
+  "slug": "khemesh_the_abyssal_maw",
+  "domain": "Depths, Inexorability, Eldritch Terror",
+  "description": "<div class=\"patron-header\">\n            <h1 class=\"patron-title\">Khemesh The Abyssal Maw</h1>\n            <hr class=\"region-divider\">\n        </div>\n        <p class=\"region-text\">*{Lore Khemesh is not merely a lord of the depths but the hunger beneath them, a pressure older than seas. Those who bargain with him are marked by the abyss --- seen in the way shadows cling, in the whispers heard when no voice speaks, in the certainty that all things will sink. He is the classic warlock's patron: distant, vast, and utterly indifferent to mortal morality. To serve Khemesh is to accept that the universe is cold, that the deep does not hate --- it simply consumes.</p> <p class=\"region-text\">quote \"In the trench without light, the Maw waits. Even silence drowns.\" quote</p> <p class=\"region-text\">*{Domain Focus itemize Depths and Pressure: crushing weight, darkness, the alien geometry of the abyss Inexorability: slow, unstoppable processes; the certainty of sinking Eldritch Terror: madness, whispers, perception beyond mortal limits Consumption: hunger that devours matter, memory, and hope itemize</p> <p class=\"region-text\">*{Thiasos and Codex (Runekeeper Options)</p> <p class=\"region-text\">A Runekeeper sworn to Khemesh does not keep a living familiar. Their Thiasos is a preserved remnant of the deep: a vial of abyssal water that never warms, a piece of coral that grows only in absolute darkness, or a polished tooth from a creature that has never seen the sun. This object pulses faintly when pressure changes. It requires no food, but it must be kept submerged in salt water when not in use. If left dry for a week, it becomes Compromised (it emits a distressing keening at random, imposing --1 die on Stealth rolls for its bearer).</p> <p class=\"region-text\">The Codex of Khemesh is never a book of paper. It may be a slab of slate etched with runes that weep condensation, a chain of iron links each inscribed with a single syllable, or the inside of a deep-sea diving helmet. Because the deep resists being fixed in writing, the Codex requires upkeep: the Runekeeper must immerse it in cold salt water for an hour each week, or the Rites stored there become illegible (treat as Compromised until restored).</p> <p class=\"region-text\">*{Patron's Gift (Imbuement)</p> <p class=\"region-text\">Once per scene as an action, a Runekeeper of Khemesh may touch a held item (weapon, shield, or tool) and whisper a promise of sinking. For the rest of the scene, the item grants +1 die to Intimidation or Endurance rolls, and its first use each scene ignores one point of Armor (the deep's pressure finds the cracks). After the scene, the user marks +1 Obligation to Khemesh.</p>",
+  "summary": "Khemesh The Abyssal Maw *{Lore Khemesh is not merely a lord of the depths but the hunger beneath them, a pressure older than seas.",
+  "tags": [],
+  "source": "patron",
+  "file": "khemesh.tex",
+  "rites": [
+    {
+      "name": "Rite of the Crushing Whisper",
+      "description": "<p class=\"region-text\">(Basic, 5 XP) Scene; Near; Yes. Tags: , , , Materials: A broken shell filled with ink-dark water. Effect: Choose one: itemize Whisper of the Trench: Target hears impossible echoes and suffers --1 die on their next action. Crushing Silence: Establish an oppressive silence in a zone; enemies in the zone suffer --1 die to coordination or morale-driven actions. itemize Push It: (Whisper) Echoes coil in your own skull --- take Fatigue 1, but the target also loses their next minor action. (Silence) A single enemy's voice is stolen entirely for the scene. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "Choose one: itemize Whisper of the Trench: Target hears impossible echoes and suffers --1 die on their next action. Crushing Silence: Establish an oppressive silence in a zone; enemies in the zone suffer --1 die to coordination or morale-driven actions. itemize"
+    },
+    {
+      "name": "Rite of the Abyssal Grasp",
+      "description": "<p class=\"region-text\">(Advanced, 7 XP) Scene; Near; No. Tags: , , Materials: A length of rusted chain submerged in water. Effect: Target is pinned by invisible crushing force: treat as with Great Effect if underwater or confined. Push It: Inflict Fatigue 1 on the target in addition to the restraint. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar + Codex (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "Target is pinned by invisible crushing force: treat as with Great Effect if underwater or confined. \\\\"
+    },
+    {
+      "name": "Rite of the Alien Gaze",
+      "description": "<p class=\"region-text\">(Advanced, 9 XP) Scene; Self; No. Tags: , , Materials: None (requires standing in absolute darkness or near deep water). Effect: You perceive the world as Khemesh does --- fractured, alien, crushing. Gain +2 dice to Notice and Arcana, and may ask one \"true nature\" question about a foe or structure. When the scene ends, you suffer Exposure +1 as your perception warps. Push It: Extend the vision to one ally, but both take Fatigue 1. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar + Codex (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "You perceive the world as Khemesh does --- fractured, alien, crushing. Gain +2 dice to Notice and Arcana, and may ask one ``true nature'' question about a foe or structure. When the scene ends, you suffer Exposure +1 as your perception warps. \\\\"
+    },
+    {
+      "name": "Rite of the Sundering Deep",
+      "description": "<p class=\"region-text\">(Master, 14 XP) Scene; Zone; No. Tags: , , , Materials: A sealed vessel of abyssal water, broken open. Effect: Reality in the zone folds inward like the crushing deep: itemize Enemies act at Desperate Position by default. Each beat, the GM may force 1 SB (Spades/Clubs favored) as the deep pressures reality. Structures, vessels, or wards fracture as if under immense weight. itemize Push It: For one beat, declare a single enemy \"crushed\" (severe harm/effect). You immediately suffer Fatigue 2. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue. Cost: Mark +2 Obligation. Requires: Familiar + Codex + Tier III (Invoke: 2 Boons). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +3) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "Reality in the zone folds inward like the crushing deep: itemize Enemies act at Desperate Position by default. Each beat, the GM may force 1 SB (Spades/Clubs favored) as the deep pressures reality. Structures, vessels, or wards fracture as if under immense weight. itemize"
+    }
+  ]
+}

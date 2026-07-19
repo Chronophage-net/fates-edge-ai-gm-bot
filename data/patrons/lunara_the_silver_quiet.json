@@ -1,0 +1,66 @@
+{
+  "name": "Lunara The Silver Quiet",
+  "slug": "lunara_the_silver_quiet",
+  "domain": "Moon \\& Mystery",
+  "description": "<div class=\"patron-header\">\n            <h1 class=\"patron-title\">Lunara The Silver Quiet</h1>\n            <hr class=\"region-divider\">\n        </div>\n        <p class=\"region-text\">*{Lore Lunara walks where torchlight falters: crossroads, tidal edges, shadowed sanctuaries. She is the whisper beneath silver skies, a torch-bearing guide to mysteries that lie between waking and dream. The ancients know her as triple-formed: maiden of new light, mother of full radiance, crone of waning shadow. Her worshippers --- night-scholars, dream-walkers, and hedge-priests --- seek her not for power over others, but for passage, reflection, and revelation.</p> <p class=\"region-text\">Her gifts are gentle yet perilous: a mirror that reveals as much of the seeker as the sought, a key that opens ways better left closed, a light that makes the unseen plain. Her sigil is the silver spiral, etched in water, mirror, or stone.</p> <p class=\"region-text\">Among the peoples of Fate's Edge, Lunara is called by many names. In Aeler, she is the Deep Silver, whose light guides miners through unlit shafts. In Aelinnel, she is the Silent Mirror, invoked by those who seek truth without violence. In the Mistlands, she is the Fog-Guide, whose pale radiance parts the mist for those who walk with pure intent. Wherever the moon casts its silver light on a hidden door, Lunara watches.</p> <p class=\"region-text\">quote \"Three faces gaze from the moon. Which one watches you tonight?\" quote</p> <p class=\"region-text\">*{Domain Focus itemize Moonlight Revelation: truth, hidden things, the seen in darkness Liminal Passage: thresholds, dreams, the space between waking and sleep Silver Mystery: reflection, illusion, the mirror's truth Lunar Cycles: change, phases, the passage of time as a gentle guide itemize</p> <p class=\"region-text\">*{Thiasos and Codex (Runekeeper Options)</p> <p class=\"region-text\">A Runekeeper sworn to Lunara does not bind a creature of shadow or flame. Their Thiasos is a small being of moonlight and stillness: a silver-eyed owl that flies only at moonrise, a pale moth that emerges only under the full moon, a small white fox that leaves no footprints in moonlight, a silver fish that swims in still water and reflects the night sky, or a moon-cat with eyes that change phase. This creature requires no food, but it must be shown moonlight each night (even a reflection in a mirror or a pool of water counts). If neglected for a week, it becomes Compromised (it grows restless and its silver aura dims, imposing --1 die on all rolls involving perception or stealth for its bearer until it next sees moonlight).</p> <p class=\"region-text\">The Codex of Lunara is never a book of ordinary script. It may be a mirror that shows only the moonshadow of a Rite, a set of silver leaves that tarnish as Rites are used and must be polished, a scroll of moon-calf skin that glows only under lunar light, or a spiral of polished stone that must be turned to reveal each Rite. Because Lunara's truths are written in phases, the Codex requires upkeep: the Runekeeper must spend an hour each week under open moonlight, re-reading each Rite by the moon's reflection, or the inscriptions fade (treat as Compromised until re-mooned).</p> <p class=\"region-text\">*{Patron's Gift (Imbuement)</p> <p class=\"region-text\">Once per scene as an action, a Runekeeper of Lunara may touch a held item (weapon, tool, or mirror) and whisper a silver word. For the rest of the scene, the item grants +1 die to Investigation or Stealth rolls made in dim light or darkness, and the first time each scene the bearer would be surprised by a hidden threat, they may roll Notice with +1 die (the moonlight warns them). After the scene, the user marks +1 Obligation to Lunara.</p>",
+  "summary": "Lunara The Silver Quiet *{Lore Lunara walks where torchlight falters: crossroads, tidal edges, shadowed sanctuaries. She is the whisper beneath silver skies, a torch-bearing guide to mysteries that lie between waking and dream.",
+  "tags": [],
+  "source": "patron",
+  "file": "lunara.tex",
+  "rites": [
+    {
+      "name": "Rite of the Moonlit Mirror",
+      "description": "<p class=\"region-text\">(Basic, 5 XP) Scene; Self; No. Tags: Materials: A mirror or bowl of still water under moonlight. Effect: Peer beyond surfaces. Gain +1 die to detect illusions, veils, or hidden motives. Once per scene, you may ask one veiled question about the present; the GM answers in riddle or omen. Push It: Glimpse too deeply --- gain the truth, but mark 1 SB (Diamonds) as the moon reveals more than you intended. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "Peer beyond surfaces. Gain +1 die to detect illusions, veils, or hidden motives. Once per scene, you may ask one veiled question about the present; the GM answers in riddle or omen. \\\\"
+    },
+    {
+      "name": "Rite of the Crescent Whisper",
+      "description": "<p class=\"region-text\">(Basic, 6 XP) Instant; Near; No. Tags: , Materials: A silvered thread knotted three times. Effect: Deliver a secret thought to a single target; they hear it as if whispered beside them. You gain +1 die to aid their next action. Push It: The whisper echoes beyond its mark, creating 1 SB (Hearts) as others sense your intrusion. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar (Invoke: 1 Boon). Invoke: 1 action. Duration: Instant.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Instant.",
+      "action": null,
+      "effect": "Deliver a secret thought to a single target; they hear it as if whispered beside them. You gain +1 die to aid their next action. \\\\"
+    },
+    {
+      "name": "Rite of the Triple Road",
+      "description": "<p class=\"region-text\">(Advanced, 9 XP) Scene; Zone; No. Tags: , , Materials: Three lit candles set at a crossroads. Effect: Reveal a hidden path, door, or liminal way. Allies gain +2 dice to traverse or escape; enemies suffer --1 die to pursue. Push It: The road opens farther than intended --- toward an unknown realm. Mark 1 SB (Spades). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar + Codex (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "Reveal a hidden path, door, or liminal way. Allies gain +2 dice to traverse or escape; enemies suffer --1 die to pursue. \\\\"
+    },
+    {
+      "name": "Rite of the Lunar Conjunction",
+      "description": "<p class=\"region-text\">(Advanced, 8 XP) Scene; Self; No. Tags: , , Materials: A ring of herbs burned beneath a dark moon. Effect: Commune with veiled knowledge or subtle entities. Ask two questions; answers come in omen, dream-symbol, or paradox. Push It: The answer is too direct --- gain it fully, but mark 1 SB (Diamonds). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar + Codex (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "Commune with veiled knowledge or subtle entities. Ask two questions; answers come in omen, dream-symbol, or paradox. \\\\"
+    },
+    {
+      "name": "Rite of the Silver Key",
+      "description": "<p class=\"region-text\">(Master, 13 XP) Scene; Zone; No. Tags: , , Materials: A silver key forged or anointed under a new moon. Effect: Open a way where none should exist --- between places, states, or wards. Creates a 6-segment Gateway timer. Push It: Something else comes through; mark 2 SB (Clubs). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue. Cost: Mark +2 Obligation. Requires: Familiar + Codex + Tier III (Invoke: 2 Boons). Invoke: 1 action. Duration: Timer: 6 segments.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +3) or Mark +1 Fatigue. \\\\",
+      "duration": "Timer: 6 segments.",
+      "action": null,
+      "effect": "Open a way where none should exist --- between places, states, or wards. Creates a 6-segment Gateway timer. \\\\"
+    },
+    {
+      "name": "Rite of the Moonbound Ascendant",
+      "description": "<p class=\"region-text\">(Master, 14 XP) Extended; Self; No. Tags: , , Materials: A cherished item surrendered under moonlight. Effect: Enter a heightened lunar state. Choose two of the following: +2 dice to Wits or Spirit; resist fear/beguilement; speak with unseen presences; trace hidden connections with +2 Effect. Begin a 6-segment Moonbound timer. Push It: Make it enduring --- mark Harm 2 and a permanent lunar stigma (your eyes reflect moonlight even in darkness). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue. Cost: Mark +2 Obligation. Requires: Familiar + Codex + Tier III (Invoke: 2 Boons). Invoke: Extended action. Duration: Timer: 6 segments.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +3) or Mark +1 Fatigue. \\\\",
+      "duration": "Timer: 6 segments.",
+      "action": null,
+      "effect": "Enter a heightened lunar state. Choose two of the following: +2 dice to Wits or Spirit; resist fear/beguilement; speak with unseen presences; trace hidden connections with +2 Effect. Begin a 6-segment Moonbound timer. \\\\"
+    }
+  ]
+}

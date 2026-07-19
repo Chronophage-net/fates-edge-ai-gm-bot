@@ -1,0 +1,57 @@
+{
+  "name": "Vorthak, the Hunger Unbound",
+  "slug": "vorthak_the_hunger_unbound",
+  "domain": "Consumption \\& Metamorphic Hunger",
+  "description": "<div class=\"patron-header\">\n            <h1 class=\"patron-title\">Vorthak, the Hunger Unbound</h1>\n            <hr class=\"region-divider\">\n        </div>\n        <p class=\"region-text\">*{Lore Vorthak is the principle of absolute consumption: an appetite that devours not only what is, but the very potential of what might be. Each feeding transforms both eater and eaten. His servants become conduits of metamorphosis through ingestion, learning to consume not only matter but also properties, identities, and even strands of fate. Power comes by taking in --- and the cost is becoming more like the hunger you channel.</p> <p class=\"region-text\">Among the peoples of Fate's Edge, Vorthak is known by many fearful names. In Aeler, he is the Deep Forge, the hunger of the mountain that consumes ore and returns steel. In Zakov, he is the Salt-Hunger, the appetite that preserves by consuming the moisture from flesh. In Linn, he is the Tide-That-Eats-The-Shore, a slow, patient consumption that reshapes coastlines. His followers are rarely beloved, but they are essential --- for without consumption, there is no transformation, and without transformation, there is only stagnation.</p> <p class=\"region-text\">quote \"To consume is to become. To devour is to transform. In Vorthak's embrace, the boundary between eater and eaten dissolves into something new --- and something hungry.\" quote</p> <p class=\"region-text\">*{Domain Focus itemize Metamorphic Consumption: transformation through ingestion of matter, energy, or concepts Essence Absorption: gaining properties by consuming them utterly Hunger Propagation: spreading consumption as a force of change Identity Metabolism: consuming and adopting aspects of others' natures itemize</p> <p class=\"region-text\">*{Thiasos and Codex (Runekeeper Options)</p> <p class=\"region-text\">A Runekeeper sworn to Vorthak does not bind a familiar of mere companionship --- their Thiasos is a small creature of endless appetite: a glossy black beetle that devours rot and grows more lustrous with each meal, a pale grub that pupates into a moth only after consuming something precious, a leech that clings to the shadow of the wounded, a small eel that lives in the bilge and grows an eye each time its master consumes an essence, or a rat with a second mouth that whispers the names of things recently devoured. This creature requires no food in the ordinary sense, but it must be allowed to consume something significant (a memory, a secret, a physical token) each week. If neglected, it becomes Compromised (it gnaws at its bearer's belongings, consumes a stray thought, and imposes --1 die on Concentration or memory rolls).</p> <p class=\"region-text\">The Codex of Vorthak is never a static record. It may be a stomach-bound journal written on cured hide, its pages growing thicker each time a Rite is performed; a set of teeth strung on a leather cord, each tooth etched with a consumed spell; or a wooden bowl stained with the residue of a thousand meals, the grain of the wood shifting as new essences are added. Because hunger is never satisfied, the Codex requires upkeep: the Runekeeper must spend an hour each week feeding it --- a drop of blood, a burnt letter, a morsel of rare meat --- or the Rites stored there become faint (treat as Compromised until re-fed).</p> <p class=\"region-text\">*{Patron's Gift (Imbuement)</p> <p class=\"region-text\">Once per scene as an action, a Runekeeper of Vorthak may touch a held item (weapon, tool, or piece of armor) and whisper a word of consumption. For the rest of the scene, the item grants +1 die to Survival or Craft rolls involving organic or consumable materials, and the first time each scene the bearer would take a Condition from poison, disease, or starvation, they may ignore it (the hunger consumes the affliction). After the scene, the user marks +1 Obligation to Vorthak.</p>",
+  "summary": "Vorthak, the Hunger Unbound *{Lore Vorthak is the principle of absolute consumption: an appetite that devours not only what is, but the very potential of what might be. Each feeding transforms both eater and eaten.",
+  "tags": [],
+  "source": "patron",
+  "file": "vorthak.tex",
+  "rites": [
+    {
+      "name": "Rite of the Hungry Touch",
+      "description": "<p class=\"region-text\">(Basic, 5 XP) Scene; Touch/Self; Yes. Tags: , , , Materials: A fragment of the thing to be consumed (food, substance, symbol); or an empty vessel or a place where something was devoured. Effect: Choose one: itemize Metabolic Touch: Absorb an essential trait of the target. Gain +1 die to actions aligned with the absorbed property for one scene. Hunger's Whisper: Sense what in the area may be consumed and the benefit it offers. Gain +1 die to Investigation when seeking consumable resources. itemize Push It: (Whisper only) The hunger turns contagious: nearby feel your appetite; mark 1 SB (Clubs). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "Choose one: itemize Metabolic Touch: Absorb an essential trait of the target. Gain +1 die to actions aligned with the absorbed property for one scene. Hunger's Whisper: Sense what in the area may be consumed and the benefit it offers. Gain +1 die to Investigation when seeking consumable resources. itemize"
+    },
+    {
+      "name": "Rite of the Essence Feast",
+      "description": "<p class=\"region-text\">(Advanced, 8 XP) Scene; Touch; Yes. Tags: , , , Materials: The complete consumption of a significant item (weapon, book, relic). Effect: Gain one minor property or +1 die to a closely related skill from the consumed item's nature. This benefit lasts for the remainder of the session. If the consumed item is truly legendary (a dragon's heart, a god's tooth, etc.), the GM may allow the absorption to be permanent at their discretion. The item is utterly destroyed. Push It: Take a major property instead of a minor one, but gain a permanent Hunger Mark (a visible scar or discoloration that imposes --1 die on social rolls with those who notice it). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar + Codex (Invoke: 1 Boon). Invoke: 1 action. Duration: Session.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Session.",
+      "action": null,
+      "effect": "Gain one minor property or +1 die to a closely related skill from the consumed item's nature. This benefit lasts for the remainder of the session. If the consumed item is truly legendary (a dragon's heart, a god's tooth, etc.), the GM may allow the absorption to be permanent at their discretion. The item is utterly destroyed. \\\\"
+    },
+    {
+      "name": "Rite of the Identity Meal",
+      "description": "<p class=\"region-text\">(Advanced, 7 XP) Scene; Near; Yes. Tags: , , , Materials: A personal token or a clear memory of the target. Effect: Temporarily adopt one aspect of a specific person's nature (a skill, a talent, or a defining trait). Gain +2 dice to actions matching that aspect for the remainder of the scene. The aspect cannot be a Patron-granted Rite or other supernatural ability without the GM's explicit permission. Push It: The adoption deepens and clings, lasting for the rest of the session; mark 1 SB (Hearts). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar + Codex (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "Temporarily adopt one aspect of a specific person's nature (a skill, a talent, or a defining trait). Gain +2 dice to actions matching that aspect for the remainder of the scene. The aspect cannot be a Patron-granted Rite or other supernatural ability without the GM's explicit permission. \\\\"
+    },
+    {
+      "name": "Rite of the Metamorphic Gluttony",
+      "description": "<p class=\"region-text\">(Master, 13 XP) Scene; Zone; Yes. Tags: , , , , Materials: A site scarred by great consumption. Effect: Become a locus of transformative hunger. All present may consume aspects (skills, memories, properties), but each must pass Spirit+Resolve (DV 4) or suffer uncontrolled transformation effects. Push It: Some changes become permanent; mark +1 Obligation (total +3). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue. Cost: Mark +2 Obligation. Requires: Familiar + Codex + Tier III (Invoke: 2 Boons). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +3) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "Become a locus of transformative hunger. All present may consume aspects (skills, memories, properties), but each must pass Spirit+Resolve (DV 4) or suffer uncontrolled transformation effects. \\\\"
+    },
+    {
+      "name": "Rite of the Hunger's Ascension",
+      "description": "<p class=\"region-text\">(Master, 14 XP) Extended; Self; Yes. Tags: , , , , Materials: The deliberate offering-up of your current limits to Vorthak. Effect: Consume your own constraints and transform. Choose two of the following benefits, which last for the remainder of the current scene: itemize +1 to any Attribute (temporarily) +2 dice to one skill (temporarily) Immunity to one Condition type (temporarily) One major supernatural capability (temporarily, GM discretion) itemize If you wish to make the benefits permanent, you must accept a permanent cost: lose a Bond, take a permanent Condition, or sacrifice a core identity trait (GM discretion). You may also choose to make one benefit permanent without the others by accepting a lesser permanent cost (e.g., a permanent Hunger Mark). Push It: Take all four benefits (instead of two) for the scene, but lose one core aspect of your original identity permanently; mark Harm 2. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue. Cost: Mark +2 Obligation. Requires: Familiar + Codex + Tier III (Invoke: 2 Boons). Invoke: Extended action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +3) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "Consume your own constraints and transform. Choose two of the following benefits, which last for the remainder of the current scene: itemize +1 to any Attribute (temporarily) +2 dice to one skill (temporarily) Immunity to one Condition type (temporarily) One major supernatural capability (temporarily, GM discretion) itemize If you wish to make the benefits permanent, you must accept a permanent cost: lose a Bond, take a permanent Condition, or sacrifice a core identity trait (GM discretion). You may also choose to make one benefit permanent without the others by accepting a lesser permanent cost (e.g., a permanent Hunger Mark). \\\\"
+    }
+  ]
+}

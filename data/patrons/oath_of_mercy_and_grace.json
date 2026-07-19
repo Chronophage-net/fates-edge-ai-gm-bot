@@ -1,0 +1,93 @@
+{
+  "name": "Oath of Mercy and Grace",
+  "slug": "oath_of_mercy_and_grace",
+  "domain": "Healing \\& Forgiveness",
+  "description": "<div class=\"patron-header\">\n            <h1 class=\"patron-title\">Oath of Mercy and Grace</h1>\n            <hr class=\"region-divider\">\n        </div>\n        <p class=\"region-text\">*{Lore The Oath of Mercy and Grace has no founder, no scripture, no single temple. It began in a hundred places --- a battlefield where a medic bound wounds without asking whose side; a plague village where a stranger stayed to dig graves; a debtor's cell where a guard looked away and said, \"I saw nothing.\" Those who swear the Oath do not worship a power; they embody a principle: that every act of care creates an obligation --- not to the giver, but to the next person in need. You do not pay back. You pay forward. The mercy spirals.</p> <p class=\"region-text\">But mercy is not weakness. The spiral does not forget. Those who strike a healer, who violate a sanctuary, who refuse the offered cup --- they find that grace has teeth, and forgiveness carries a price.</p> <p class=\"region-text\">Among the peoples of Fate's Edge, the Oath of Mercy and Grace is the patron of healers, hospice workers, and those who shelter the helpless. In Aelaerem, the Oath is kept by the Gray Spiral, a fellowship of lay healers who ask no payment. In Viterra, the Hospitaller Knights swear to defend the sick without drawing swords. In Zakov, the Tide-Watchers pull drowning sailors from the sea and ask only that the rescued help one stranger in turn. Wherever mercy is given without expectation of return, the spiral turns.</p> <p class=\"region-text\">quote \"You ask who owes what. We ask who needs what. The ledger is not the same as the meal. But woe to the one who mistakes the server for a servant.\" quote</p> <p class=\"region-text\">*{Domain Focus itemize Restorative Work: healing body, mind, and spirit; mending what is broken Spiral Mercy: paying obligation forward through acts of care Sanctuary: sheltering the hunted, feeding the hungry, accepting no payment --- but demanding respect for the threshold Unburdening: releasing others (and oneself) from the weight of unpaid debts, and binding aggressors to that same weight itemize</p> <p class=\"region-text\">*{Thiasos and Codex (Runekeeper Options)</p> <p class=\"region-text\">A Runekeeper sworn to the Oath of Mercy and Grace does not bind a creature of claw and fang. Their Thiasos is a small creature of gentle presence and quiet vigilance: a white dove that perches on the shoulder and coos when a lie is spoken in a place of sanctuary, a gray cat that curls on the laps of the dying and purrs away their fear, a small hedgehog that rolls into a ball to protect the vulnerable, or a firefly that glows warmly when a vow of mercy is kept. This creature requires no food, but it must witness an act of care (feeding the hungry, binding a wound, sheltering a fugitive) each day. If neglected for a week, it becomes Compromised (it hides or refuses to approach the sick, imposing --1 die on all healing and social rolls involving mercy for its bearer until an act of care is performed in its presence).</p> <p class=\"region-text\">The Codex of Mercy and Grace is never a book of spells alone. It may be a gray wool cord braided with nine knots, each knot tied while speaking a name of someone who was healed; a clay bowl fired from the clay of a hospice hearth, its inner surface inscribed with vows; or a ledger of debts forgiven, each page sealed with a thumbprint of ash. Because the spiral is written in acts, not ink, the Codex requires upkeep: the Runekeeper must spend an hour each week untying and retying each knot (or re-firing the bowl, or reviewing a page of forgiven debts), or the Rites become uncertain (treat as Compromised until restored by an act of mercy).</p> <p class=\"region-text\">*{Patron's Gift (Imbuement)</p> <p class=\"region-text\">Once per scene as an action, a Runekeeper of the Oath of Mercy and Grace may touch a held item (weapon, shield, or bandage) and whisper a word of unburdening. For the rest of the scene, the item grants +1 die to Medicine or Comfort rolls, and the first time each scene the bearer would take Harm while defending a helpless creature, they may reduce that Harm by 1 (to a minimum of 0) as the spiral catches the blow. After the scene, the user marks +1 Obligation to the Oath of Mercy and Grace.</p>",
+  "summary": "Oath of Mercy and Grace *{Lore The Oath of Mercy and Grace has no founder, no scripture, no single temple.",
+  "tags": [],
+  "source": "patron",
+  "file": "oath-mercy-grace.tex",
+  "rites": [
+    {
+      "name": "Rite of the Shared Bowl",
+      "description": "<p class=\"region-text\">(Basic, 4 XP) Action; Touch; No. Tags: , , Materials: A clay bowl of clean water, shared with a willing creature. Effect: You and the creature each clear 1 Fatigue. The creature gains +1 die on their next roll to resist fear or despair. Push It: Extend the benefit to all creatures who drink from the bowl (up to six). Mark +1 Obligation. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar (Invoke: 1 Boon). Invoke: 1 action. Duration: Instant.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Instant.",
+      "action": null,
+      "effect": "You and the creature each clear 1 Fatigue. The creature gains +1 die on their next roll to resist fear or despair. \\\\"
+    },
+    {
+      "name": "Rite of Healing Waters",
+      "description": "<p class=\"region-text\">(Basic, 5 XP) Instant; Touch; No. Tags: , , Materials: Water from a blessed source (a spring, a well, or a river where the Oath has been invoked), poured onto a wound. Effect: Remove 1 Harm from a touched creature. If the wound is cursed or poisoned, the GM may call for a Spirit+Lore test (DV 4). Push It: Also remove one Condition (e.g., Poisoned, Cursed, Blinded). Mark +1 Obligation. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar (Invoke: 1 Boon). Invoke: 1 action. Duration: Instant.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Instant.",
+      "action": null,
+      "effect": "Remove 1 Harm from a touched creature. If the wound is cursed or poisoned, the GM may call for a Spirit+Lore test (DV 4). \\\\"
+    },
+    {
+      "name": "Rite of the Vow of Pacifism",
+      "description": "<p class=\"region-text\">(Basic, 4 XP) Scene; Self; No. Tags: , , , Materials: A white cord tied around the weapon hand. Effect: You swear not to kill for the scene. In exchange, you gain +1 Armor and +1 die to all resist rolls. If a creature harms you while this vow is active, they immediately gain a Promise Timer [4] named \"Mercy's Reckoning.\" When that timer fills (by them continuing violence), they suffer Harm 1 (Stress) as their own aggression turns inward. Push It: Extend the protective effect to one ally within Near. Mark +1 Obligation. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "You swear not to kill for the scene. In exchange, you gain +1 Armor and +1 die to all resist rolls. If a creature harms you while this vow is active, they immediately gain a Promise Timer [4] named ``Mercy's Reckoning.'' When that timer fills (by them continuing violence), they suffer Harm 1 (Stress) as their own aggression turns inward. \\\\"
+    },
+    {
+      "name": "Rite of the Unburdened Circle",
+      "description": "<p class=\"region-text\">(Advanced, 8 XP) Scene; Zone; No. Tags: , , , Materials: At least three willing participants, a circle drawn in ash or flour, a single candle. Effect: Each participant clears 1 Obligation (to any patron or debt). One participant of the GM's choice gains a permanent String: Witnessed by the Circle --- they may call on any other participant for one act of care, once per campaign. Push It: The GM gains 3 Story Beats (the universe notes that a community of mutual aid is forming). Mark +1 Obligation. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar + Codex (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "Each participant clears 1 Obligation (to any patron or debt). One participant of the GM's choice gains a permanent String: Witnessed by the Circle --- they may call on any other participant for one act of care, once per campaign. \\\\"
+    },
+    {
+      "name": "Rite of the Sheltered Hearth",
+      "description": "<p class=\"region-text\">(Advanced, 9 XP) Scene; Zone; No. Tags: , , , , Materials: A door or threshold, a lit candle, a whispered vow of sanctuary. Effect: For one night, any fugitive, debtor, or refugee who crosses that threshold cannot be pursued or harmed within the zone. The sanctuary holds until dawn. Any creature that violates this sanctuary (by attacking or forcibly entering) gains a Promise Timer [6] named \"Sanctuary Breach.\" When full, they suffer a Curse chosen by the GM (e.g., \"doors close in your face,\" \"your name is forgotten by hosts\"). Push It: Extend the sanctuary to a full day. Mark +1 Obligation. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar + Codex (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "For one night, any fugitive, debtor, or refugee who crosses that threshold cannot be pursued or harmed within the zone. The sanctuary holds until dawn. Any creature that violates this sanctuary (by attacking or forcibly entering) gains a Promise Timer [6] named ``Sanctuary Breach.'' When full, they suffer a Curse chosen by the GM (e.g., ``doors close in your face,'' ``your name is forgotten by hosts''). \\\\"
+    },
+    {
+      "name": "Rite of the Shield of the Unburdened",
+      "description": "<p class=\"region-text\">(Advanced, 8 XP) Instant; Near; No. Tags: , , , Materials: A gray cloak or a bandage wrapped around your own arm. Effect: When an ally within Near would take Harm, you may interpose yourself and take that Harm instead. After doing so, the attacker must make a Spirit+Resolve test (DV 4) or gain a Promise Timer [4] named \"Debt of Blood.\" The timer ticks each time they refuse a genuine plea for mercy or aid. When full, they suffer Fatigue 2 as guilt manifests. Push It: You may also redirect a Condition (e.g., Poisoned, Cursed) from the ally to yourself. Mark +1 Obligation. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar + Codex (Invoke: 1 Boon). Invoke: 1 action. Duration: Instant.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Instant.",
+      "action": null,
+      "effect": "When an ally within Near would take Harm, you may interpose yourself and take that Harm instead. After doing so, the attacker must make a Spirit+Resolve test (DV 4) or gain a Promise Timer [4] named ``Debt of Blood.'' The timer ticks each time they refuse a genuine plea for mercy or aid. When full, they suffer Fatigue 2 as guilt manifests. \\\\"
+    },
+    {
+      "name": "Rite of the Spiral's Witness",
+      "description": "<p class=\"region-text\">(Advanced, 10 XP) Instant; Near; No. Tags: , , , Materials: A gray wool cord tied around the caster's wrist. Effect: Name a person crushed by debt or guilt. For one hour, they ignore all penalties from unpaid obligations (social, legal, or spiritual). They are not free; they are unburdened. If that person then commits an act of violence against an innocent, the unburdening reverses and they suffer double penalties. Push It: The effect lasts until the next dawn. Mark +1 Obligation. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar + Codex (Invoke: 1 Boon). Invoke: 1 action. Duration: 1 hour.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "1 hour.",
+      "action": null,
+      "effect": "Name a person crushed by debt or guilt. For one hour, they ignore all penalties from unpaid obligations (social, legal, or spiritual). They are not free; they are unburdened. If that person then commits an act of violence against an innocent, the unburdening reverses and they suffer double penalties. \\\\"
+    },
+    {
+      "name": "Rite of the Covenant of Shared Suffering",
+      "description": "<p class=\"region-text\">(Master, 13 XP) Scene; Zone; No. Tags: , , , , Materials: A circle of nine gray stones, a bowl of water, a candle lit at each cardinal point, and a drop of blood from each participant. Effect: All within the circle who accept the Oath's blessing are linked. For the scene: itemize Damage taken by any linked ally may be split among any other linked allies (each chooses to accept 1 Fatigue or 1 Harm). When you heal a linked ally, you may also heal yourself for half the amount (round down). The first time a linked ally would be reduced to 0 Harm, you may sacrifice 1 Fatigue to keep them standing. itemize Push It: The covenant persists for a full day. Mark +2 Obligation. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue. Cost: Mark +2 Obligation. Requires: Familiar + Codex + Tier III (Invoke: 2 Boons). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +3) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "All within the circle who accept the Oath's blessing are linked. For the scene: itemize Damage taken by any linked ally may be split among any other linked allies (each chooses to accept 1 Fatigue or 1 Harm). When you heal a linked ally, you may also heal yourself for half the amount (round down). The first time a linked ally would be reduced to 0 Harm, you may sacrifice 1 Fatigue to keep them standing. itemize"
+    },
+    {
+      "name": "Rite of the Endless Spiral",
+      "description": "<p class=\"region-text\">(Master, 14 XP) Extended; Zone; No. Tags: , , , , Materials: A circle of nine gray stones, a bowl of tears, and a candle lit at each cardinal point. Effect: All within the circle who accept the Oath's blessing clear 2 Fatigue and remove one Condition caused by despair or guilt. For the rest of the scene, any act of care performed within the zone costs the giver --1 Obligation (minimum 0). Additionally, any creature that harms a caregiver within the zone gains a Promise Timer [6] named \"Spiral's Debt.\" When full, they suffer Harm 2 (Stress) as the weight of their cruelty crushes them. Push It: The blessing persists for a full day. Mark +2 Obligation. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue. Cost: Mark +2 Obligation. Requires: Familiar + Codex + Tier III (Invoke: 2 Boons). Invoke: Extended action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +3) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "All within the circle who accept the Oath's blessing clear 2 Fatigue and remove one Condition caused by despair or guilt. For the rest of the scene, any act of care performed within the zone costs the giver --1 Obligation (minimum 0). Additionally, any creature that harms a caregiver within the zone gains a Promise Timer [6] named ``Spiral's Debt.'' When full, they suffer Harm 2 (Stress) as the weight of their cruelty crushes them. \\\\"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "name": "Oath of Flame \\& Light",
+  "slug": "oath_of_flame__light",
+  "domain": "Unknown",
+  "description": "<div class=\"patron-header\">\n            <h1 class=\"patron-title\">Oath of Flame \\& Light</h1>\n            <hr class=\"region-divider\">\n        </div>\n        <p class=\"region-text\">*{Lore The Oath of Flame & Light is no patron of half-measures. Its fire names, binds, and burns --- demanding that those who swear within its radiance stand openly, speak truly, and pay the cost of keeping their word. At dawn altars, the sworn kindle sparks of consecrated fire; in battle, they blaze as torches that hold back the night. To follow this Oath is to live in public truth, with no shadow to hide in and no retreat from the vow once spoken.</p> <p class=\"region-text\">The Oath appears in many guises across cultures, and is the patron most commonly called upon by the magic-users of the Church of Flame and the Temple of Light --- as well as any fire- or light-based faith or order: itemize The Everflame --- the unquenchable fire of promise, carried from shrine to shrine by wandering priests of the Church of Flame. Its censers never cool. Adur, the Light of Aeler --- worshiped as the sun's church-deity, whose flame consecrates oaths and consumes falsehood. Dwarven templars strike their oaths into stone with a brand. Adar, the Vilikari Dawnfire --- invoked as a war-god of vows and vengeance, whose rising light marks those who break faith. Cavalrymen light a single arrow before battle. The Watchfire of Vhasia --- a saint's flame that never gutters, tended by a silent order of healers who swear to harm no one --- and to let no one die alone. Others know the Oath only as the Flame or the Lantern, a nameless fire that still demands truth and punishes betrayal. itemize</p> <p class=\"region-text\">Wherever it manifests, the Oath of Flame & Light remains the same unyielding power: to swear beneath its dawn is to bind one's self to a truth that cannot be hidden, forgotten, or undone.</p> <p class=\"region-text\">quote \"Swear in the light. Keep it, or the light will keep you.\" quote</p> <p class=\"region-text\">*{Domain Focus itemize Sacred Vows: oath-keeping, truth-speaking, binding promises Divine Justice: retribution, smiting evil, protecting the innocent Radiant Power: healing light, purification, revealing truth Dawn's Hope: renewal, protection, driving back darkness itemize</p> <p class=\"region-text\">*{Thiasos and Codex (Runekeeper Options)</p> <p class=\"region-text\">A Runekeeper sworn to the Oath of Flame & Light does not bind a familiar of darkness or silence. Their Thiasos is a small creature of dawn and radiance: a fire-colored salamander that basks on hot coals, a small brass-plated lizard whose scales warm when a vow is true, a golden-eyed owl that hoots only at sunrise, or a tiny phoenix fledgling that glows faintly in darkness. This creature requires no food, but it must be present when the Runekeeper renews their daily vows (a short prayer at dawn). If neglected for a week, it becomes Compromised (its glow flickers or goes out, imposing --1 die on all social rolls involving oaths or truth for its bearer until a new vow is sworn in its presence).</p> <p class=\"region-text\">The Codex of the Oath is never a book of ink and paper. It may be a brass scroll etched with commandments that glow when read aloud, a set of consecrated candles whose flames spell out Rites, or a sun-stone carved with runes that only appear when touched by direct sunlight. Because the Oath's truths are written in light, the Codex requires upkeep: the Runekeeper must spend an hour each week in dawn light, re-reading each Rite aloud, or the engravings fade (treat as Compromised until re-consecrated at dawn).</p> <p class=\"region-text\">*{Patron's Gift (Imbuement)</p> <p class=\"region-text\">Once per scene as an action, a Runekeeper of the Oath of Flame & Light may touch a held item (weapon, shield, or badge) and whisper a vow of protection. For the rest of the scene, the item grants +1 die to Defend or Resist rolls, and the first time each scene the bearer would be forced to break a sworn oath by magical compulsion, they may ignore it (the flame burns through the coercion). After the scene, the user marks +1 Obligation to the Oath of Flame & Light.</p>",
+  "summary": "Oath of Flame \\& Light *{Lore The Oath of Flame & Light is no patron of half-measures. Its fire names, binds, and burns --- demanding that those who swear within its radiance stand openly, speak truly, and pay the cost of keeping their word.",
+  "tags": [],
+  "source": "patron",
+  "file": "oath-flame-light.tex",
+  "rites": [
+    {
+      "name": "Rite of Kindle Vow",
+      "description": "<p class=\"region-text\">(Basic, 4 XP) Action; Self/Ally; No. Tags: , Materials: A glass ampoule of consecrated flame. Effect: Declare a short vow for this scene (e.g., \"protect the villagers,\" \"speak only truth\"). The bearer gains +1 die to actions fulfilling it. Push It: The first hesitation forces 1 SB (Hearts) on the bearer. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "Declare a short vow for this scene (e.g., ``protect the villagers,'' ``speak only truth''). The bearer gains +1 die to actions fulfilling it. \\\\"
+    },
+    {
+      "name": "Rite of Lay on Hands",
+      "description": "<p class=\"region-text\">(Basic, 5 XP) Instant; Touch; No. Tags: , , Materials: A bare palm, a whispered vow. Effect: Cleanse an affliction, downgrade Harm by 1, or remove 1 Fatigue. For curses or poisons, test Spirit+Resolve (DV set by fiction). Push It: The target gains +1 die to their next Resist roll this scene; you mark Exposure +1. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar (Invoke: 1 Boon). Invoke: 1 action. Duration: Instant.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Instant.",
+      "action": null,
+      "effect": "Cleanse an affliction, downgrade Harm by 1, or remove 1 Fatigue. For curses or poisons, test Spirit+Resolve (DV set by fiction). \\\\"
+    },
+    {
+      "name": "Rite of Sunlit Parley",
+      "description": "<p class=\"region-text\">(Advanced, 8 XP) Scene; Zone; No. Tags: , , Materials: A vow-ring engraved with sunrise. Effect: Establish terms in open light. Honest persuasion gains +1 die; deceit suffers --1 die. Create a 6-segment Parley Accord timer. Push It: Demand one public answer; evasion forces 1 SB (Hearts) on the evader. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar + Codex (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "Establish terms in open light. Honest persuasion gains +1 die; deceit suffers --1 die. Create a 6-segment Parley Accord timer. \\\\"
+    },
+    {
+      "name": "Rite of Radiant Smite",
+      "description": "<p class=\"region-text\">(Advanced, 9 XP) Action; Self; No. Tags: , , Materials: A consecrated spark on a weapon or badge. Effect: Your next melee strike flares with dawnfire. Upgrade Effect by one step, add +1 Burn Harm, or impose --1 die on the target's next roll. Against undead, oath-breakers, or outsiders: oath-breakers suffer +1 Harm and --1 die; outsiders gain +1 leash ticks. Push It: The attack ignores the target's armor entirely (no armor conversion applies to this strike; the target marks direct Harm). Additionally, the burst drives back enemies in Close (worse Position). Mark +1 additional Obligation (total +3). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue. Cost: Mark +2 Obligation. Requires: Familiar + Codex (Invoke: 1 Boon). Invoke: 1 action. Duration: Instant.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +3) or Mark +1 Fatigue. \\\\",
+      "duration": "Instant.",
+      "action": null,
+      "effect": "Your next melee strike flares with dawnfire. Upgrade Effect by one step, add +1 Burn Harm, or impose --1 die on the target's next roll. Against undead, oath-breakers, or outsiders: oath-breakers suffer +1 Harm and --1 die; outsiders gain +1 leash ticks. \\\\"
+    },
+    {
+      "name": "Rite of Purge the Shadow",
+      "description": "<p class=\"region-text\">(Advanced, 10 XP) Instant; Near; No. Tags: , , Materials: A shattered consecrated spark. Effect: Reveal illusions and suppress one ongoing glamour or curse in Near range. Creates a 4-segment Purity's Light timer. Push It: Brand the source with a visible tell for this arc; mark 1 SB (Diamonds). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar + Codex (Invoke: 1 Boon). Invoke: 1 action. Duration: Instant.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Instant.",
+      "action": null,
+      "effect": "Reveal illusions and suppress one ongoing glamour or curse in Near range. Creates a 4-segment Purity's Light timer. \\\\"
+    },
+    {
+      "name": "Rite of Covenant Blaze",
+      "description": "<p class=\"region-text\">(Master, 13 XP) Scene; Zone; No. Tags: , , , Materials: A brazier lit while three names are spoken. Effect: The sworn within are haloed: they gain +1 die to keep their oath; aggressors suffer --1 die if violating the terms. Oath-breakers suffer 2 SB (Hearts/Spades) and Harm 1 (Burn). Push It: Sanctify a threshold with one beat of against oath-breakers; mark +2 Obligation. Cost: Mark +2 Obligation (total +4) or Mark +1 Fatigue. Cost: Mark +2 Obligation. Requires: Familiar + Codex + Tier III (Invoke: 2 Boons). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +2 Obligation (total +4) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "The sworn within are haloed: they gain +1 die to keep their oath; aggressors suffer --1 die if violating the terms. Oath-breakers suffer 2 SB (Hearts/Spades) and Harm 1 (Burn). \\\\"
+    }
+  ]
+}

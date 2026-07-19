@@ -1,0 +1,2024 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc 3.10" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fate's Edge Essentials</title>
+<style>
+    body {
+        font-family: 'Georgia', serif;
+        max-width: 800px;
+        margin: 2em auto;
+        padding: 0 1em;
+        line-height: 1.6;
+        background: #0d0b0f;
+        color: #e6dce8;
+    }
+    .titlepage {
+        text-align: center;
+        margin: 2em 0;
+        page-break-after: avoid;
+    }
+    .titlepage h1 {
+        font-size: 2.5em;
+        margin-bottom: 0.2em;
+    }
+    .titlepage h2 {
+        font-size: 1.8em;
+        font-weight: normal;
+        margin-top: 0;
+    }
+    .titlepage .author {
+        font-size: 1.2em;
+        margin-top: 1.5em;
+    }
+    .titlepage .date {
+        font-size: 1em;
+        margin-top: 0.2em;
+    }
+    .copyright-page {
+        text-align: center;
+        margin: 3em 0;
+        font-size: 0.95em;
+        border-top: 1px solid #d4af37;
+        border-bottom: 1px solid #d4af37;
+        padding: 1.5em 0;
+        page-break-before: always;
+    }
+    .copyright-page h1 {
+        font-size: 2em;
+        margin-bottom: 0.3em;
+    }
+    .copyright-page .license-text {
+        max-width: 600px;
+        margin: 1em auto;
+        font-size: 0.9em;
+        line-height: 1.5;
+    }
+    .srd-reference {
+        margin: 2em 0;
+        padding: 1em 0;
+        border-top: 1px solid #d4af37;
+        border-bottom: 1px solid #d4af37;
+        page-break-before: always;
+    }
+    .srd-reference h2 {
+        text-align: center;
+    }
+    .srd-reference ul {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    .srd-reference ul ul {
+        margin-bottom: 0.5em;
+    }
+    blockquote {
+        font-style: italic;
+        text-align: center;
+        margin: 2em 0;
+    }
+    h1, h2, h3 {
+        color: #d4af37;
+    }
+    a {
+        color: #d4af37;
+    }
+    hr {
+        border: none;
+        border-top: 1px solid #d4af37;
+        margin: 2em 0;
+    }
+    .center {
+        text-align: center;
+    }
+    table {
+        margin: 1em auto;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 0.3em 0.8em;
+        border: 1px solid #555;
+    }
+    th {
+        background: #2a1f2e;
+    }
+    .warningbox, .tipbox {
+        border-left: 4px solid #d4af37;
+        padding: 0.5em 1em;
+        margin: 1em 0;
+        background: #1a151c;
+    }
+    .multicols {
+        column-count: 2;
+        column-gap: 2em;
+    }
+    @media (max-width: 600px) {
+        .multicols { column-count: 1; }
+    }
+</style>
+</head>
+<body>
+
+<!-- ==================== TITLE PAGE ==================== -->
+<div class="titlepage">
+    <h1>Fate's Edge</h1>
+    <h2>Essential Guide</h2>
+    <p>A Complete Free Version of the Game</p>
+    <p class="author">Nicholas A. Gasper</p>
+    <p class="date">2026-07-10</p>
+</div>
+
+<!-- ==================== COPYRIGHT PAGE ==================== -->
+<div class="copyright-page">
+    <h1>Fate's Edge: Essential Guide</h1>
+    <p>Copyright &copy; Nicholas A. Gasper</p>
+    <p><em>First Edition, June 2026</em></p>
+
+    <hr style="width: 60%; margin: 1em auto;"/>
+
+    <p><strong>Important License Notice</strong></p>
+    <div class="license-text">
+        <p>The <em>Fate's Edge System Reference Document (SRD)</em> portions of this work<br/>
+        (clearly marked with <code>[SRD]</code> tags throughout) are licensed under the<br/>
+        <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.<br/>
+        To view a copy of this license, visit <a href="http://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</a>.</p>
+        <p>All other content—including but not limited to setting lore, original characters,<br/>
+        adventures, art, maps, and proprietary mechanics—is <strong>&copy; Nicholas A. Gasper, All Rights Reserved</strong>.<br/>
+        This proprietary content may not be reproduced, distributed, or transmitted<br/>
+        without prior written permission, except for brief quotations in reviews<br/>
+        and certain other noncommercial uses permitted by copyright law.</p>
+        <p><strong>The SRD is also available as a standalone free download</strong><br/>
+        at <a href="https://chronophage.github.io/kon-reh/build/html/srd.html">https://chronophage.github.io/kon-reh/build/html/srd.html</a>.<br/>
+        For permission requests regarding proprietary content, contact the author<br/>
+        through the publisher's website or at the address provided in the commercial edition.</p>
+    </div>
+
+    <hr style="width: 50%; margin: 1em auto;"/>
+
+    <p><em>"The coin that never spends is the one you don't remember taking."</em><br/>
+    — Serafine of the Velvet Touch</p>
+</div>
+
+<!-- ==================== SRD REFERENCE ==================== -->
+<div class="srd-reference">
+    <h2>System Reference Document (SRD) Reference</h2>
+
+    <ul>
+        <li><strong>What is the SRD?</strong> The open-license portion of this work (CC BY 4.0), intended for third-party creators. <em>All SRD content is marked with <code>[SRD]</code> tags in this book.</em></li>
+        <li><strong>Verified SRD Content Includes:</strong>
+            <ul>
+                <li>Core resolution mechanics (dice pools, Position, DV, Outcome Matrix)</li>
+                <li>Boon and Story Beat economies</li>
+                <li>Fatigue, Harm, and Armor Conversion systems</li>
+                <li>Attribute and Skill descriptions</li>
+                <li>Basic combat and action economy rules</li>
+                <li>Universal magic mechanics (TAGS, DV calculation, Backlash)</li>
+                <li>NPC templates and encounter guidelines</li>
+                <li>Equipment and gear tables</li>
+                <li>Character creation framework</li>
+            </ul>
+        </li>
+        <li><strong>Extended Content (Not SRD - Proprietary):</strong>
+            <ul>
+                <li>Setting lore (Acasia factions, The Curse, regional details)</li>
+                <li>Original characters, NPCs, and named figures</li>
+                <li>Adventure modules and scenario hooks</li>
+                <li>Patron descriptions, Rites, and exclusive mechanical content</li>
+                <li>Proprietary magic systems (Runekeeper, Invoker, Cantor, Summoner-specific)</li>
+                <li>Artwork, maps, and graphical elements</li>
+                <li>Faction descriptions and campaign-specific content</li>
+                <li>Original prose, framing devices, and narrative text</li>
+                <li><em>Note: Optional systems like Deck of Consequences, Crown Spread, and Travel Framework are proprietary content.</em></li>
+            </ul>
+        </li>
+        <li><strong>License Summary:</strong> SRD content licensed under <a href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. All extended content is <strong>&copy; Nicholas A. Gasper, All Rights Reserved</strong>. See copyright page for full license text.</li>
+    </ul>
+
+    <hr style="width: 50%; margin: 1em auto;"/>
+
+    <p><em>"The coin that never spends is the one you don't remember taking."</em><br/>
+    — Serafine of the Velvet Touch</p>
+</div>
+
+<!-- ==================== MAIN CONTENT ==================== -->
+<blockquote>
+    <p>"The coin that never spends is the one you don't remember taking."<br/>
+    — Serafine of the Velvet Touch</p>
+</blockquote>
+
+<section class="level1" id="ch:welcome">
+<h1>Welcome to Fate’s Edge</h1>
+<section class="level2" id="what-is-this-game">
+<h2>What Is This Game?</h2>
+<p><strong>Fate’s Edge</strong> is a tabletop roleplaying game where
+<em>every choice carries weight</em>. You are not playing a board game
+or a tactical simulator. You are telling a story together — a story of
+risk, consequence, and legacy.</p>
+<p>In this game, you play exiles, rogues, survivors, and heroes in a
+world of ancient magic, fallen empires, and vibrant cultures. The world
+remembers what you do. Every oath, every betrayal, every desperate
+gamble echoes forward.</p>
+<section class="level3 unnumbered" id="core-philosophy-narrative-first">
+<h3 class="unnumbered">Core Philosophy: Narrative First</h3>
+<p>The story is the reason the rules exist, not the other way around.
+When you sit down to play, you are not rolling dice to see what happens
+— you are telling a story, with dice as your co-authors.</p>
+<p><strong>Mechanics serve the story.</strong> A dice roll is never just
+pass/fail. It changes the fictional landscape.</p>
+<ul>
+<li><p><strong>Clean Success</strong> — The plan works as
+intended.</p></li>
+<li><p><strong>Success &amp; SB</strong> — You get what you want, but
+the world pushes back.</p></li>
+<li><p><strong>Partial</strong> — You make progress, but the situation
+remains unresolved.</p></li>
+<li><p><strong>Miss</strong> — You fail, and the situation
+escalates.</p></li>
+</ul>
+<p>Every roll matters. The story never stalls; it evolves.</p>
+</section>
+<section class="level3 unnumbered" id="risk-as-the-engine-of-drama">
+<h3 class="unnumbered">Risk as the Engine of Drama</h3>
+<p>Fate’s Edge is built on meaningful risk. Safety is boring. When your
+character has something to lose — reputation, allies, ideals, life —
+their actions become heroic or tragically memorable.</p>
+<p>Your primary tool for managing risk is the <strong>Story Beat
+(SB)</strong> economy. When the dice show a 1, the world reacts. The GM
+gains SB to introduce complications, escalate threats, or reveal hidden
+dangers.</p>
+<div class="warningbox">
+<p><strong>Important:</strong> SB are generated on <em>any</em> roll
+that produces a 1, whether the overall roll succeeds or fails. They are
+not punishment; they are fuel for an unpredictable, responsive
+narrative.</p>
+</div>
+</section>
+<section class="level3 unnumbered" id="characters-who-change-the-world">
+<h3 class="unnumbered">Characters Who Change the World</h3>
+<p>Character growth in Fate’s Edge is not about accumulating abstract
+power. It is meaningful growth rooted in the story. You earn
+<strong>Experience Points (XP)</strong> by engaging with challenges and
+complexities. You spend XP to improve capabilities, acquire assets, or
+unlock cultural talents.</p>
+<p>Advancement ties directly to narrative. A character becomes a
+legendary commander by leading armies, not by grinding monsters. A
+wizard masters forbidden lore by surviving backlash.</p>
+</section>
+<section class="level3 unnumbered" id="key-concepts-at-a-glance">
+<h3 class="unnumbered">Key Concepts at a Glance</h3>
+<ul>
+<li><p><strong>Dice Pool:</strong> Attribute + Skill d10s. 6+ = Success.
+1 = Story Beat (SB) for the GM.</p></li>
+<li><p><strong>Position &amp; Effect:</strong> Position
+(Dominant/Controlled/Desperate) defines stakes of failure. Effect
+(Limited/Standard/Great) describes what a clean success
+achieves.</p></li>
+<li><p><strong>Timers:</strong> Visual trackers for ongoing challenges
+(e.g., a 4-segment lock, an 8-segment faction rise).</p></li>
+<li><p><strong>Boons:</strong> Narrative tokens you earn by embracing
+risk. Spend them to re-roll dice, improve Position, or activate
+Assets.</p></li>
+</ul>
+</section>
+</section>
+<section class="level2" id="safety-tools-lines-veils-x-card">
+<h2>Safety Tools: Lines, Veils &amp; X-Card</h2>
+<p>Fate’s Edge explores mature themes — conflict, loss, horror,
+betrayal, and difficult choices. The table must always feel safe. Use
+these three simple tools.</p>
+<section class="level3 unnumbered" id="x-card">
+<h3 class="unnumbered">X-Card</h3>
+<p>Any player (including the GM) can[SRD] draw an X on a card or simply
+say “X” when a moment makes them uncomfortable. [/SRD]The described
+content is removed from the fiction — no questions, no explanations. The
+scene is retconned or redirected immediately.</p>
+</section>
+<section class="level3 unnumbered" id="lines">
+<h3 class="unnumbered">Lines</h3>
+<p>A Line is a hard boundary: content that will not appear in the game
+at all. Examples: “No sexual violence,” “No harm to children,” “No body
+horror.” Players name their Lines before the campaign; the group honors
+them.</p>
+</section>
+<section class="level3 unnumbered" id="veils">
+<h3 class="unnumbered">Veils</h3>
+<p>A Veil is a soft boundary: content that can happen “off screen” or
+fade to black. The event is acknowledged but not described. Example: “A
+romantic scene can happen, but fade to black before it becomes
+explicit.”</p>
+</section>
+<section class="level3 unnumbered" id="how-to-use-these-tools">
+<h3 class="unnumbered">How to Use These Tools</h3>
+<ul>
+<li><p>Establish Lines and Veils in Session Zero. Write them down where
+everyone can see them.</p></li>
+<li><p>Keep an X-Card visible on the table.</p></li>
+<li><p>Remind players they can use the X-Card at any time.</p></li>
+<li><p>When the X-Card is used, pause, rewind if needed, and move on. Do
+not interrogate.</p></li>
+<li><p>The GM is also a player; they may use the X-Card for their own
+comfort.</p></li>
+</ul>
+<p>These tools are not about censorship — they are about consent. They
+allow the table to tell darker, more intense stories because everyone
+knows they can tap out.</p>
+</section>
+</section>
+<section class="level2" id="session-zero-the-foundation-of-play">
+<h2>Session Zero: The Foundation of Play</h2>
+<p>Before your first dice roll, gather for a Session Zero. This is where
+you build the shared understanding that makes Fate’s Edge sing.</p>
+<section class="level3 unnumbered" id="session-zero-checklist">
+<h3 class="unnumbered">Session Zero Checklist</h3>
+<ol>
+<li><p><strong>Lines &amp; Veils:</strong> What content is off-limits
+(Lines) or only implied (Veils)?</p></li>
+<li><p><strong>Tone:</strong> Cinematic action? Grim survival? Political
+intrigue? Dark horror?</p></li>
+<li><p><strong>Campaign length:</strong> One-shot, short arc (3–6
+sessions), or long campaign?</p></li>
+<li><p><strong>Character hooks:</strong> Each player shares one goal and
+one fear for their character.</p></li>
+<li><p><strong>Starting situation:</strong> Where does the story
+begin?</p></li>
+<li><p><strong>Scheduling:</strong> How often do you meet? What happens
+if a player misses?</p></li>
+</ol>
+<p>Taking thirty minutes for Session Zero will save hours of
+mid-campaign friction.</p>
+</section>
+</section>
+</section>
+<section class="level1" id="ch:core-mechanics">
+<h1>Core Mechanics</h1>
+<div class="rulesummary">
+<p><strong>The Core Loop in 90 Seconds</strong></p>
+<ol>
+<li><p>Player declares intent and approach (Attribute + Skill).</p></li>
+<li><p>GM sets Position (Dominant/Controlled/Desperate) and Difficulty
+(DV 2-5+).</p></li>
+<li><p>Player rolls dice pool (Attribute + Skill d10s).</p></li>
+<li><p>Count Successes (6+ = success, 10 = 2 successes) and Story Beats
+(1s).</p></li>
+<li><p>Compare successes to DV using the Outcome Matrix.</p></li>
+<li><p>GM spends Story Beats (SB) for complications.</p></li>
+<li><p>Player marks resources (Boons, Fatigue, Harm).</p></li>
+</ol>
+</div>
+<section class="level2" id="the-resolution-loop">
+<h2>The Resolution Loop</h2>
+<p>Every meaningful action follows this simple cycle:</p>
+<section class="level3 unnumbered" id="declare-intent-and-approach">
+<h3 class="unnumbered">1. Declare Intent and Approach</h3>
+<p>The player states what they want to achieve and how (Attribute +
+Skill). Example: <em>“I want to sneak past the guard (Wits +
+Stealth).”</em></p>
+</section>
+<section class="level3 unnumbered" id="set-difficulty-value-dv">
+<h3 class="unnumbered">2. Set Difficulty Value (DV)</h3>
+<p>The GM sets the target number of successes needed.</p>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>DV</strong></th>
+<th style="text-align: left;"><strong>Situation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Routine, no pressure, almost
+guaranteed.</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Default — mild opposition, some risk.</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Hard — serious opposition or bad
+angle.</td>
+</tr>
+<tr>
+<td style="text-align: left;">5+</td>
+<td style="text-align: left;">Extreme — major boss or dramatic
+gamble.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="level3 unnumbered" id="set-position">
+<h3 class="unnumbered">3. Set Position</h3>
+<p>Position tells you how risky the action is and changes how dice
+behave.</p>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Position</strong></th>
+<th style="text-align: left;"><strong>Narrative Frame</strong></th>
+<th style="text-align: left;"><strong>Mechanical Effect</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Dominant</td>
+<td style="text-align: left;">You press advantage</td>
+<td style="text-align: left;">Re-roll one failure.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Controlled</td>
+<td style="text-align: left;">Balanced, normal</td>
+<td style="text-align: left;">No re-rolls.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Desperate</td>
+<td style="text-align: left;">You act under duress</td>
+<td style="text-align: left;">Re-roll one success.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>You can spend 1 Boon to improve Position by one step before
+rolling.</p>
+</section>
+<section class="level3 unnumbered" id="roll-the-dice">
+<h3 class="unnumbered">4. Roll the Dice</h3>
+<p>Roll Attribute + Skill d10s.</p>
+<ul>
+<li><p>Each die showing 6-9 = 1 success.</p></li>
+<li><p>Each die showing 10 = 2 successes (critical).</p></li>
+<li><p>Each die showing 1 = 1 Story Beat (SB) for the GM.</p></li>
+</ul>
+</section>
+<section class="level3 unnumbered" id="apply-the-outcome">
+<h3 class="unnumbered">5. Apply the Outcome</h3>
+<p>Compare successes to DV:</p>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Roll Result</strong></th>
+<th style="text-align: left;"><strong>Outcome</strong></th>
+<th style="text-align: left;"><strong>What Happens</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">S <span class="math inline">≥</span> DV,
+SB = 0</td>
+<td style="text-align: left;">Clean Success</td>
+<td style="text-align: left;">Intent achieved; no complication.</td>
+</tr>
+<tr>
+<td style="text-align: left;">S <span class="math inline">≥</span> DV,
+SB &gt; 0</td>
+<td style="text-align: left;">Success with SB</td>
+<td style="text-align: left;">Intent achieved; GM spends SB for
+complication.</td>
+</tr>
+<tr>
+<td style="text-align: left;">0 &lt; S &lt; DV</td>
+<td style="text-align: left;">Partial</td>
+<td style="text-align: left;">Progress made; player gains 1 Boon.</td>
+</tr>
+<tr>
+<td style="text-align: left;">S = 0</td>
+<td style="text-align: left;">Miss</td>
+<td style="text-align: left;">No progress; player gains 2 Boons; GM
+escalates.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section class="level2" id="boons-player-resource">
+<h2>Boons (Player Resource)</h2>
+<p>Boons represent momentum and narrative leverage. You may hold up to 5
+Boons.</p>
+<section class="level3 unnumbered" id="earning-boons">
+<h3 class="unnumbered">Earning Boons</h3>
+<ul>
+<li><p><strong>Partial:</strong> Gain 1 Boon.</p></li>
+<li><p><strong>Miss:</strong> Gain 2 Boons.</p></li>
+<li><p><strong>Bond-driven action:</strong> Once per bond per session,
+gain 1 Boon.</p></li>
+<li><p><strong>GM award:</strong> For creativity, sacrifice, or strong
+narrative play.</p></li>
+</ul>
+</section>
+<section class="level3 unnumbered" id="spending-boons">
+<h3 class="unnumbered">Spending Boons</h3>
+<ul>
+<li><p>Re-roll a single die (after seeing the result).</p></li>
+<li><p>Activate an on-screen Asset (1 Boon).</p></li>
+<li><p>Improve Position by one step before a roll.</p></li>
+<li><p>Power certain Rites or abilities.</p></li>
+<li><p>Convert 2 Boons <span class="math inline">→</span> 1 XP (once per
+session, max 2 XP via conversion).</p></li>
+</ul>
+</section>
+<section class="level3 unnumbered" id="limits">
+<h3 class="unnumbered">Limits</h3>
+<ul>
+<li><p>Maximum 5 Boons held.</p></li>
+<li><p>At end of each scene, reduce held Boons to maximum 2 (excess
+lost).</p></li>
+<li><p>At most 2 Boons from failures per character per scene.</p></li>
+</ul>
+</section>
+</section>
+<section class="level2" id="story-beats-gm-resource">
+<h2>Story Beats (GM Resource)</h2>
+<p>Every time a player rolls a 1, the GM gains a Story Beat (SB). Spend
+SB to introduce complications or escalate pressure.</p>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>SB Cost</strong></th>
+<th style="text-align: left;"><strong>Effect</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1 SB</td>
+<td style="text-align: left;">Minor: noise, trace, tick a timer +1.</td>
+</tr>
+<tr>
+<td style="text-align: left;">2 SB</td>
+<td style="text-align: left;">Moderate: alarm raised, lose Position,
+lesser foe appears.</td>
+</tr>
+<tr>
+<td style="text-align: left;">3+ SB</td>
+<td style="text-align: left;">Major: reinforcements, scene shifts, break
+an asset.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="tipbox">
+<p><strong>Be aggressive with Story Beats.</strong> Unused pressure is
+wasted momentum. One strong beat is better than many small penalties but
+you have to build towards them.</p>
+</div>
+</section>
+<section class="level2" id="fatigue-and-harm">
+<h2>Fatigue and Harm</h2>
+<section class="level3 unnumbered" id="fatigue">
+<h3 class="unnumbered">Fatigue</h3>
+<p>Each character has a Fatigue track equal to their Body attribute.</p>
+<ul>
+<li><p>Each point of Fatigue worsens your Position by one step (Dominant
+<span class="math inline">→</span> Controlled <span class="math inline">→</span> Desperate).</p></li>
+<li><p>If already Desperate, each additional Fatigue imposes –1
+die.</p></li>
+<li><p>When Fatigue track fills, increase Harm by 1 and clear all
+Fatigue.</p></li>
+</ul>
+</section>
+<section class="level3 unnumbered" id="harm">
+<h3 class="unnumbered">Harm</h3>
+<p>Harm represents serious injury.</p>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Harm Level</strong></th>
+<th style="text-align: left;"><strong>Effect</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Harm 1</td>
+<td style="text-align: left;">–1 die on related actions.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Harm 2</td>
+<td style="text-align: left;">–1 die on most actions.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Harm 3</td>
+<td style="text-align: left;">Incapacitated or dying.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="level3 unnumbered" id="armor-conversion">
+<h3 class="unnumbered">Armor Conversion</h3>
+<p>Armor does not reduce Harm directly. Instead, it converts Harm to
+Fatigue.</p>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Armor Type</strong></th>
+<th style="text-align: left;"><strong>Harm 1</strong></th>
+<th style="text-align: left;"><strong>Harm 2</strong></th>
+<th style="text-align: left;"><strong>Harm 3</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Light</td>
+<td style="text-align: left;">Fatigue 1</td>
+<td style="text-align: left;">Harm 1 + Fatigue 1</td>
+<td style="text-align: left;">Harm 2 + Fatigue 1</td>
+</tr>
+<tr>
+<td style="text-align: left;">Medium</td>
+<td style="text-align: left;">Fatigue 1</td>
+<td style="text-align: left;">Fatigue 1</td>
+<td style="text-align: left;">Harm 2 + Fatigue 1</td>
+</tr>
+<tr>
+<td style="text-align: left;">Heavy</td>
+<td style="text-align: left;">Fatigue 1</td>
+<td style="text-align: left;">Fatigue 1</td>
+<td style="text-align: left;">Fatigue 2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Minimum 1 Fatigue per hit, even if conversion would give
+0.</em></p>
+</section>
+<section class="level3 unnumbered" id="recovery">
+<h3 class="unnumbered">Recovery</h3>
+<ul>
+<li><p><strong>Fatigue:</strong> Short rest (1 hour) removes 2 Fatigue.
+Full night’s rest removes all.</p></li>
+<li><p><strong>Harm:</strong> Requires medical care (Medicine roll) or
+magical healing. Natural recovery takes one week per level.</p></li>
+</ul>
+</section>
+<section class="level3 unnumbered" id="timers">
+<h3 class="unnumbered">Timers</h3>
+<p>Timers are visual trackers for ongoing challenges and accumulating
+pressure.</p>
+<section class="level4 unnumbered" id="timer-sizes">
+<h4 class="unnumbered">Timer Sizes</h4>
+<ul>
+<li><p><strong>4 segments:</strong> Short-term pressure (a guard patrol
+arrives, a door breaks).</p></li>
+<li><p><strong>6 segments:</strong> Standard scene timer (a ritual
+completes, a rival escapes).</p></li>
+<li><p><strong>8+ segments:</strong> Multi-scene or campaign timer (a
+faction consolidates power).</p></li>
+</ul>
+</section>
+<section class="level4 unnumbered" id="when-to-tick-a-timer">
+<h4 class="unnumbered">When to Tick a Timer</h4>
+<ul>
+<li><p>On a Partial or Miss.</p></li>
+<li><p>When you spend Story Beats (1 SB = 1 tick typically).</p></li>
+<li><p>When the fiction demands it: <em>“While you argue, the fire
+spreads.”</em></p></li>
+</ul>
+</section>
+<section class="level4 unnumbered" id="when-a-timer-fills">
+<h4 class="unnumbered">When a Timer Fills</h4>
+<p>The defined event happens. The event should be visible and change the
+situation.</p>
+<p><strong>Examples:</strong></p>
+<ul>
+<li><p>A <strong>Guard Patrol [4]</strong> timer fills: guards
+arrive.</p></li>
+<li><p>A <strong>Ritual Completion [6]</strong> timer fills: the ritual
+finishes.</p></li>
+<li><p>An <strong>Alliance Forming [8]</strong> timer fills: a faction
+commits to action.</p></li>
+</ul>
+<div class="tipbox">
+<p><strong>Timers are visible.</strong> Show them to the players. Write
+<em>Cult Influence [6]</em> on an index card and place it on the table.
+Tick it aloud: <em>“The cult’s chant grows louder — the ritual
+advances.”</em></p>
+</div>
+</section>
+</section>
+</section>
+</section>
+<section class="level1" id="ch:character-creation">
+<h1>Character Creation</h1>
+<section class="level2" id="overview">
+<h2>Overview</h2>
+<p>Characters begin at Tier I (Novice) with <strong>32 Experience Points
+(XP)</strong>. You may gain up to +4 XP by taking meaningful Bonds (with
+other player characters) and Complications.</p>
+</section>
+<section class="level2" id="step-1-concept">
+<h2>Step 1: Concept</h2>
+<p>Write one sentence that describes your character’s origin,
+profession, and one defining trait.</p>
+<p>Examples:</p>
+<ul>
+<li><p><em>“An Aeler tunnel-wright who lost her breath-count and now
+hears stone sing.”</em></p></li>
+<li><p><em>“A Vhasian duelist with a scarred face and a vow to never
+lose again.”</em></p></li>
+</ul>
+</section>
+<section class="level2" id="step-2-attributes">
+<h2>Step 2: Attributes</h2>
+<p>You have four Attributes (1-5). Spend XP to raise them from a base of
+1 each.</p>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Attribute</strong></th>
+<th style="text-align: left;"><strong>Description</strong></th>
+<th style="text-align: left;"><strong>Cost</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Body</td>
+<td style="text-align: left;">Strength, endurance, physical
+resilience.</td>
+<td style="text-align: left;">new rating <span class="math inline">×</span> 3 XP</td>
+</tr>
+<tr>
+<td style="text-align: left;">Wits</td>
+<td style="text-align: left;">Perception, speed, quick thinking.</td>
+<td style="text-align: left;">new rating <span class="math inline">×</span> 3 XP</td>
+</tr>
+<tr>
+<td style="text-align: left;">Spirit</td>
+<td style="text-align: left;">Willpower, focus, connection to the
+intangible.</td>
+<td style="text-align: left;">new rating <span class="math inline">×</span> 3 XP</td>
+</tr>
+<tr>
+<td style="text-align: left;">Presence</td>
+<td style="text-align: left;">Charisma, command, force of
+personality.</td>
+<td style="text-align: left;">new rating <span class="math inline">×</span> 3 XP</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Cost is incremental:</strong></p>
+<ul>
+<li><p>1 <span class="math inline">→</span> 2 costs 6 XP (2 <span class="math inline">×</span> 3)</p></li>
+<li><p>2 <span class="math inline">→</span> 3 costs 9 XP (3 <span class="math inline">×</span> 3)</p></li>
+<li><p>3 <span class="math inline">→</span> 4 costs 12 XP (4 <span class="math inline">×</span> 3)</p></li>
+</ul>
+<p><strong>Recommended starting ranges:</strong></p>
+<ul>
+<li><p>Primary attribute (used most): <strong>3</strong> (costs 15 XP
+total: 1<span class="math inline">→</span>2 = 6, 2<span class="math inline">→</span>3 = 9)</p></li>
+<li><p>Secondary attributes: <strong>2</strong> each (costs 6 XP
+each)</p></li>
+</ul>
+</section>
+<section class="level2" id="step-3-skills">
+<h2>Step 3: Skills</h2>
+<p>Choose Skills (0-5) that match your concept. Key skills should be
+2-3; others 0-1.</p>
+<ul>
+<li><p>Cost: <strong>new level <span class="math inline">×</span> 2
+XP</strong> (incremental)</p></li>
+<li><p>Recommended starting total: Spend 8-12 XP on skills.</p></li>
+</ul>
+<p><strong>Cost is incremental:</strong></p>
+<ul>
+<li><p>0 <span class="math inline">→</span> 1 costs 2 XP (1 <span class="math inline">×</span> 2)</p></li>
+<li><p>1 <span class="math inline">→</span> 2 costs 4 XP (2 <span class="math inline">×</span> 2)</p></li>
+<li><p>2 <span class="math inline">→</span> 3 costs 6 XP (3 <span class="math inline">×</span> 2)</p></li>
+</ul>
+<section class="level3 unnumbered" id="core-skill-list">
+<h3 class="unnumbered">Core Skill List</h3>
+<p>The sixteen core skills are grouped by theme:</p>
+<div class="multicols">
+<p><span>2</span> <strong>Combat:</strong></p>
+<ul>
+<li><p>Melee</p></li>
+<li><p>Ranged</p></li>
+<li><p>Unarmed</p></li>
+</ul>
+<p><strong>Physical:</strong></p>
+<ul>
+<li><p>Athletics</p></li>
+<li><p>Stealth</p></li>
+<li><p>Endurance</p></li>
+<li><p>Craft</p></li>
+</ul>
+<p><strong>Social:</strong></p>
+<ul>
+<li><p>Sway</p></li>
+<li><p>Deception</p></li>
+<li><p>Subterfuge</p></li>
+<li><p>Performance</p></li>
+<li><p>Insight</p></li>
+</ul>
+<p><strong>Knowledge:</strong></p>
+<ul>
+<li><p>Lore</p></li>
+<li><p>Investigation</p></li>
+<li><p>Medicine</p></li>
+</ul>
+<p><strong>Magic:</strong></p>
+<ul>
+<li><p>Arcana</p></li>
+</ul>
+</div>
+</section>
+</section>
+<section class="level2" id="step-4-talents">
+<h2>Step 4: Talents</h2>
+<div class="tipbox">
+<p><strong>You don’t need Talents to be effective.</strong> A character
+with just Attributes and Skills is a complete, viable
+character—especially at Tier I.</p>
+</div>
+<p>Talents are special abilities. Start with <strong>0–3
+talents</strong>.</p>
+<section class="level3 unnumbered" id="sample-talents">
+<h3 class="unnumbered">Sample Talents</h3>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Talent</strong></th>
+<th style="text-align: left;"><strong>Cost</strong></th>
+<th style="text-align: left;"><strong>Effect</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><em>None</em></td>
+<td style="text-align: left;"><em>0 XP</em></td>
+<td style="text-align: left;"><em>A valid, complete character.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">Keen Senses</td>
+<td style="text-align: left;">2 XP</td>
+<td style="text-align: left;">+1 die to perception checks.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Weapon Mastery</td>
+<td style="text-align: left;">5 XP</td>
+<td style="text-align: left;">+2 dice with a chosen weapon.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Second Wind</td>
+<td style="text-align: left;">2 XP</td>
+<td style="text-align: left;">Clear 1 Fatigue once per scene.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Silver Tongue</td>
+<td style="text-align: left;">2 XP</td>
+<td style="text-align: left;">+1 die to persuasion attempts.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Command Presence</td>
+<td style="text-align: left;">4 XP</td>
+<td style="text-align: left;">+1 die to leadership and
+intimidation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Defensive Survival</td>
+<td style="text-align: left;">3 XP</td>
+<td style="text-align: left;">+1 to defense DV in melee.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section class="level2" id="step-5-bonds-and-complications">
+<h2>Step 5: Bonds and Complications</h2>
+<section class="level3 unnumbered" id="bonds">
+<h3 class="unnumbered">Bonds</h3>
+<p>Establish 1-2 bonds with other player characters. Each bond grants a
+once-per-session Boon when you act on it with intricate description.</p>
+<p><strong>Bond Example:</strong> <em>“She helped me escape the trial
+that ruined my family.”</em></p>
+</section>
+<section class="level3 unnumbered" id="complications">
+<h3 class="unnumbered">Complications</h3>
+<p>You may take up to two complications (e.g., a feud, a cursed item, a
+debt). Each gives +2 XP but each character with a complication adds +1
+banked Story Beat to early scenes.</p>
+<p><strong>Complication Example:</strong> <em>“The magistrate who
+condemned my family still hunts me.”</em></p>
+</section>
+</section>
+<section class="level2" id="step-6-gear">
+<h2>Step 6: Gear</h2>
+<p>You begin with:</p>
+<ul>
+<li><p>One set of clothing appropriate to your culture.</p></li>
+<li><p>A melee weapon (Light or Medium) or a ranged weapon with
+ammunition.</p></li>
+<li><p>Light armor.</p></li>
+<li><p>A backpack, waterskin, 1d6 days of rations, a knife, flint and
+steel, a small lantern or candle.</p></li>
+<li><p>Any tools required for your skills (e.g., lockpicks, healer’s
+kit).</p></li>
+</ul>
+</section>
+<section class="level2" id="build-examples">
+<h2>Build Examples</h2>
+<section class="level3 unnumbered" id="the-duelist-32-xp">
+<h3 class="unnumbered">The Duelist (32 XP)</h3>
+<ul>
+<li><p>Body 3 (15 XP), Wits 2 (6 XP) <span class="math inline">→</span>
+21 XP</p></li>
+<li><p>Melee 2 (6 XP), Athletics 1 (2 XP), Endurance 1 (2 XP) <span class="math inline">→</span> 10 XP</p></li>
+<li><p><strong>Total:</strong> 31 XP (bank 1 XP)</p></li>
+</ul>
+<p><em>Add a Bond for +2 XP to reach 33 XP.</em></p>
+</section>
+<section class="level3 unnumbered" id="the-scholar-32-xp">
+<h3 class="unnumbered">The Scholar (32 XP)</h3>
+<ul>
+<li><p>Wits 3 (15 XP), Spirit 2 (6 XP) <span class="math inline">→</span> 21 XP</p></li>
+<li><p>Lore 2 (6 XP), Investigation 1 (2 XP), Insight 1 (2 XP) <span class="math inline">→</span> 10 XP</p></li>
+<li><p><strong>Total:</strong> 31 XP (bank 1 XP)</p></li>
+</ul>
+<p><em>Add a Bond for +2 XP to reach 33 XP.</em></p>
+</section>
+<section class="level3 unnumbered" id="the-scout-32-xp">
+<h3 class="unnumbered">The Scout (32 XP)</h3>
+<ul>
+<li><p>Wits 3 (15 XP), Body 2 (6 XP) <span class="math inline">→</span>
+21 XP</p></li>
+<li><p>Stealth 2 (6 XP), Investigation 1 (2 XP) <span class="math inline">→</span> 8 XP</p></li>
+<li><p><strong>Total:</strong> 29 XP (bank 3 XP)</p></li>
+</ul>
+<p><em>Add Keen Senses (2 XP) and a Bond (+2 XP) for 33 XP.</em></p>
+</section>
+</section>
+</section>
+<section class="level1" id="ch:pregens">
+<h1>Pre-Generated Characters</h1>
+<p>Choose one. All are balanced for the starter adventure. Each PC
+starts with <strong>3 Boons</strong> and <strong>0
+Fatigue/Harm</strong>.</p>
+<section class="level2 unnumbered" id="levi-soldier">
+<h2 class="unnumbered">1. Levi — Soldier</h2>
+<p><em>Once a legionary, now a sellsword.</em></p>
+<table>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Body</strong></td>
+<td style="text-align: left;">3</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Wits</strong></td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Spirit</strong></td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Presence</strong></td>
+<td style="text-align: left;">1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Skills:</strong> Melee 2, Athletics 1, Endurance 1, Insight 1
+(for reading opponents)</p>
+<p><strong>Talent — Battle Instincts:</strong> Once per scene, reroll a
+failed defense roll.</p>
+<p><strong>Asset — Trusted Blade:</strong> Your sword never breaks on a
+Miss.</p>
+<p><strong>Bonds:</strong> (choose one with another PC) <em>“I saved
+your life outside Millhaven.”</em></p>
+<p><strong>XP:</strong> Body 3 (15), Wits 2 (6) = 21 XP. Melee 2 (6),
+Athletics 1 (2), Endurance 1 (2), Insight 1 (2) = 12 XP. Battle
+Instincts (2 XP). <strong>Total: 35 XP</strong> (with one Bond).</p>
+</section>
+<section class="level2 unnumbered" id="lyra-scholar">
+<h2 class="unnumbered">2. Lyra — Scholar</h2>
+<p><em>Expelled from the Academy for forbidden research.</em></p>
+<table>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Wits</strong></td>
+<td style="text-align: left;">3</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Spirit</strong></td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Body</strong></td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Presence</strong></td>
+<td style="text-align: left;">1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Skills:</strong> Lore 2, Arcana 1, Investigation 1, Insight
+1</p>
+<p><strong>Talent — Lorekeeper:</strong> Once per session, recall
+obscure history without rolling.</p>
+<p><strong>Asset — Scholar’s Satchel:</strong> Contains books, reagents,
+a small telescope.</p>
+<p><strong>Bonds:</strong> <em>“We both lost our place in
+Silkstrand.”</em></p>
+<p><strong>XP:</strong> Wits 3 (15), Spirit 2 (6) = 21 XP. Lore 2 (6),
+Arcana 1 (2), Investigation 1 (2), Insight 1 (2) = 12 XP. Lorekeeper (2
+XP). <strong>Total: 35 XP</strong> (with one Bond).</p>
+</section>
+<section class="level2 unnumbered" id="sera-shadow">
+<h2 class="unnumbered">3. Sera — Shadow</h2>
+<p><em>Former guild thief, now a wanderer.</em></p>
+<table>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Wits</strong></td>
+<td style="text-align: left;">3</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Body</strong></td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Spirit</strong></td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Presence</strong></td>
+<td style="text-align: left;">1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Skills:</strong> Stealth 2, Subterfuge 2, Insight 1 (to read
+marks)</p>
+<p><strong>Talent — Silver Tongue:</strong> +1 die to persuade or
+deceive through speech.</p>
+<p><strong>Asset — Shadow’s Cloak:</strong> +1 die to stealth rolls in
+dim light.</p>
+<p><strong>Bonds:</strong> <em>“You kept my secret when the guards
+came.”</em></p>
+<p><strong>XP:</strong> Wits 3 (15), Body 2 (6) = 21 XP. Stealth 2 (6),
+Subterfuge 2 (6), Insight 1 (2) = 14 XP. Silver Tongue (2 XP).
+<strong>Total: 37 XP</strong> (with one Bond — adjust by dropping
+Insight to 0 for 35 XP).</p>
+</section>
+<section class="level2 unnumbered" id="mira-healer">
+<h2 class="unnumbered">4. Mira — Healer</h2>
+<p><em>Accused of witchcraft for curing the incurable.</em></p>
+<table>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Spirit</strong></td>
+<td style="text-align: left;">3</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Wits</strong></td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Body</strong></td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Presence</strong></td>
+<td style="text-align: left;">1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Skills:</strong> Medicine 2, Investigation 1 (for
+diagnosing), Insight 2</p>
+<p><strong>Talent — Iron Stomach:</strong> Immune to mundane poisons and
+spoiled food.</p>
+<p><strong>Asset — Healer’s Kit:</strong> Bandages, herbs, basic medical
+supplies.</p>
+<p><strong>Bonds:</strong> <em>“You trusted me when no one else
+would.”</em></p>
+<p><strong>XP:</strong> Spirit 3 (15), Wits 2 (6) = 21 XP. Medicine 2
+(6), Investigation 1 (2), Insight 2 (6) = 14 XP. Iron Stomach (3 XP).
+<strong>Total: 38 XP</strong> (with one Bond — adjust: drop Insight to 1
+for 35 XP).</p>
+</section>
+<section class="level2 unnumbered" id="kael-runekeeper-optional-magic-user">
+<h2 class="unnumbered">5. Kael — Runekeeper (Optional Magic User)</h2>
+<p><em>A wanderer sworn to the Traveler.</em></p>
+<table>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Spirit</strong></td>
+<td style="text-align: left;">3</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Wits</strong></td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Body</strong></td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Presence</strong></td>
+<td style="text-align: left;">1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Skills:</strong> Lore 2, Arcana 1, Investigation 1, Insight
+1</p>
+<p><strong>Talents:</strong> Familiar (2 XP), Codex (4 XP)</p>
+<p><strong>Rites:</strong> Road-Sense (4 XP), Traveler’s Boon (5 XP) –
+these are special abilities, not skills.</p>
+<p><strong>Bonds:</strong> <em>“The road brought us together.”</em></p>
+<p><strong>XP:</strong> Spirit 3 (15), Wits 2 (6) = 21 XP. Lore 2 (6),
+Arcana 1 (2), Investigation 1 (2), Insight 1 (2) = 12 XP. Familiar (2),
+Codex (4) = 6 XP. Road-Sense (4), Traveler’s Boon (5) = 9 XP.
+<strong>Total: 48 XP</strong> (requires GM adjustment or starting at
+Tier II).</p>
+<div class="center">
+<p><span><strong>Untitled</strong></span><br/>
+Copyright © Nicholas A. Gasper<br/>
+<em>First Edition, June 2026</em><br/>
+</p>
+<hr/>
+<p><br/>
+<strong>Important License Notice</strong><br/>
+The <em>Fate’s Edge System Reference Document (SRD)</em> portions of
+this work<br/>
+(clearly marked with <code>[SRD]</code> tags throughout) are licensed
+under the<br/>
+<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative
+Commons Attribution-NonCommercial-ShareAlike 4.0 International
+License</a>.<br/>
+To view a copy of this license, visit <a class="uri" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">http://creativecommons.org/licenses/by-nc-sa/4.0/</a>.<br/>
+All other content—including but not limited to setting lore, original
+characters,<br/>
+adventures, art, maps, and proprietary mechanics—is <strong>© Nicholas
+A. Gasper, All Rights Reserved</strong>.<br/>
+This proprietary content may not be reproduced, distributed, or
+transmitted<br/>
+without prior written permission, except for brief quotations in
+reviews<br/>
+and certain other noncommercial uses permitted by copyright law.<br/>
+<strong>The SRD is also available as a standalone free
+download</strong><br/>
+at <a class="uri" href="https://chronophage.github.io/kon-reh/build/html/srd.html">https://chronophage.github.io/kon-reh/build/html/srd.html</a>.<br/>
+For permission requests regarding proprietary content, contact the
+author<br/>
+through the publisher’s website or at the address provided in the
+commercial edition.<br/>
+</p>
+<hr/>
+<p><br/>
+<em>“The coin that never spends is the one you don’t remember
+taking.”</em><br/>
+— Serafine of the Velvet Touch</p>
+</div>
+<div class="center">
+<p><span><strong>System Reference Document (SRD)
+Reference</strong></span><br/>
+</p>
+</div>
+<hr/>
+<ul>
+<li><p><strong>What is the SRD?</strong> The open-license portion of
+this work (CC BY-NC-SA 4.0), intended for third-party creators. <em>All
+SRD content is marked with <code>[SRD]</code> tags in this
+book.</em></p></li>
+<li><p><strong>Verified SRD Content Includes:</strong></p>
+<ul>
+<li><p>Core resolution mechanics (dice pools, Position, DV, Outcome
+Matrix)</p></li>
+<li><p>Boon and Story Beat economies</p></li>
+<li><p>Fatigue, Harm, and Armor Conversion systems</p></li>
+<li><p>Attribute and Skill descriptions</p></li>
+<li><p>Basic combat and action economy rules</p></li>
+<li><p>Universal magic mechanics (TAGS, DV calculation,
+Backlash)</p></li>
+<li><p>NPC templates and encounter guidelines</p></li>
+<li><p>Equipment and gear tables</p></li>
+<li><p>Character creation framework</p></li>
+</ul></li>
+<li><p><strong>Extended Content (Not SRD - Proprietary):</strong></p>
+<ul>
+<li><p>Setting lore (Acasia factions, The Curse, regional
+details)</p></li>
+<li><p>Original characters, NPCs, and named figures</p></li>
+<li><p>Adventure modules and scenario hooks</p></li>
+<li><p>Patron descriptions, Rites, and exclusive mechanical
+content</p></li>
+<li><p>Proprietary magic systems (Runekeeper, Invoker, Cantor,
+Summoner-specific)</p></li>
+<li><p>Artwork, maps, and graphical elements</p></li>
+<li><p>Faction descriptions and campaign-specific content</p></li>
+<li><p>Original prose, framing devices, and narrative text</p></li>
+<li><p><em>Note: Optional systems like Deck of Consequences, Crown
+Spread, and Travel Framework are proprietary content.</em></p></li>
+</ul></li>
+<li><p><strong>License Summary:</strong> SRD content licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA
+4.0</a>. All extended content is <strong>© Nicholas A. Gasper, All
+Rights Reserved</strong>. See copyright page for full license
+text.</p></li>
+</ul>
+<hr/>
+<div class="center">
+<p><em>“The coin that never spends is the one you don’t remember
+taking.”</em><br/>
+— Serafine of the Velvet Touch</p>
+</div>
+</section>
+</section>
+<section class="level1" id="ch:lantern-at-dusk">
+<h1>Starter Adventure: The Lantern at Dusk</h1>
+<section class="level2" id="setup">
+<h2>Setup</h2>
+<p>The party is hired by <strong>Elder Sarai</strong> of the remote
+village of <strong>Duskwood</strong>. A terrible blight is spreading
+from the old barrow in the hills — the same barrow where a cursed
+lantern was buried centuries ago. The lantern must be brought to a stone
+circle in the valley to break the curse. But the barrow is not
+empty.</p>
+</section>
+<section class="level2" id="what-the-party-knows">
+<h2>What the Party Knows</h2>
+<ul>
+<li><p>The lantern is in the central chamber of the barrow.</p></li>
+<li><p>The barrow is guarded by restless spirits (the
+<strong>Duskwights</strong>).</p></li>
+<li><p>A rival treasure hunter, <strong>Quick Lena</strong>, has also
+entered the barrow.</p></li>
+<li><p>The curse will kill the village’s crops in three days.</p></li>
+</ul>
+</section>
+<section class="level2" id="timers-1">
+<h2>Timers</h2>
+<ul>
+<li><p><strong>Barrow Collapse [6]</strong> — ticks when the party fails
+a roll inside (GM advances 1 segment per Miss). At 6, the entrance seals
+— escape becomes a Desperate group action.</p></li>
+<li><p><strong>Lena’s Agenda [4]</strong> — ticks at the end of each
+scene inside the barrow. When it fills, Lena has already taken the
+lantern; the party must chase her.</p></li>
+</ul>
+</section>
+<section class="level2" id="scene-1-the-entry">
+<h2>Scene 1 — The Entry</h2>
+<p>The barrow entrance is a narrow stone passage. A faint green glow
+pulses from deeper inside.</p>
+<p><strong>Obstacle:</strong> A cave-in blocks the way.</p>
+<ul>
+<li><p><strong>Roll:</strong> Body + Athletics (DV 3,
+Controlled).</p></li>
+<li><p><strong>Clean Success:</strong> You clear the rubble and
+enter.</p></li>
+<li><p><strong>Partial:</strong> You get through but disturb rubble —
+tick Barrow Collapse +1.</p></li>
+<li><p><strong>Miss:</strong> You are pinned by a rock — mark Harm 1 and
+tick Collapse +1.</p></li>
+</ul>
+</section>
+<section class="level2" id="scene-2-the-spirit-corridor">
+<h2>Scene 2 — The Spirit Corridor</h2>
+<p>The passage widens into a hall where three
+<strong>Duskwights</strong> drift. They do not attack unless provoked,
+but they will not let anyone pass without an offering.</p>
+<p><strong>Offer a memory or a secret.</strong></p>
+<ul>
+<li><p><strong>Roll:</strong> Presence + Sway (DV 3,
+Controlled).</p></li>
+<li><p><strong>Clean Success:</strong> They bow and let you
+pass.</p></li>
+<li><p><strong>Partial:</strong> They take your offering but also steal
+a random piece of equipment (GM chooses).</p></li>
+<li><p><strong>Miss:</strong> They attack as a single mob (Cap 2, Harm 1
+each, 2 Fatigue each on hit). Combat follows normal rules.</p></li>
+</ul>
+</section>
+<section class="level2" id="scene-3-the-lantern-chamber">
+<h2>Scene 3 — The Lantern Chamber</h2>
+<p>The lantern sits on a stone altar. <strong>Quick Lena</strong> is
+there, trying to pry it loose.</p>
+<p><strong>Confront Lena:</strong> She is not a fighter.</p>
+<ul>
+<li><p><strong>Roll:</strong> Presence + Sway (DV 3, Controlled) to
+offer a deal or intimidate her.</p></li>
+<li><p><strong>Clean Success:</strong> She leaves peacefully, but warns
+that “others will come for it.”</p></li>
+<li><p><strong>Partial:</strong> She agrees to split any reward but
+demands a favor later (start a Debt Timer [4]).</p></li>
+<li><p><strong>Miss:</strong> She triggers a trap — a stone door starts
+closing (tick Collapse +2).</p></li>
+</ul>
+</section>
+<section class="level2" id="scene-4-escape">
+<h2>Scene 4 — Escape</h2>
+<p>After you take the lantern, the barrow begins to collapse in
+earnest.</p>
+<p><strong>Group Skill Challenge:</strong> The party needs 3 successes
+before 2 failures to escape. Each PC describes how they help (e.g.,
+Athletics to brace a door, Investigation to read ancient escape
+runes).</p>
+<ul>
+<li><p><strong>Roll:</strong> Appropriate Attribute + Skill (DV 3,
+Position Desperate).</p></li>
+<li><p>Each failure ticks Collapse +1.</p></li>
+<li><p>If Collapse reaches 6 before you escape, the entrance seals — you
+must find another way (start a second Timer [4] to dig out, each success
+removes 1 segment; on failure, mark Fatigue).</p></li>
+</ul>
+<p><strong>Success:</strong> You burst into the moonlight, lantern in
+hand.</p>
+<p><strong>Failure:</strong> You escape, but someone is left behind —
+captured or lost. The remaining party must rescue them later.</p>
+</section>
+<section class="level2" id="resolution">
+<h2>Resolution</h2>
+<p>Return the lantern to the stone circle. Breaking the curse requires a
+simple ritual.</p>
+<ul>
+<li><p><strong>Roll:</strong> Spirit + Lore (DV 2) or Spirit + Arcana if
+using magical knowledge.</p></li>
+<li><p><strong>Clean Success:</strong> The blight lifts. Elder Sarai
+rewards each PC with a <strong>String</strong> — “The village owes
+you.”</p></li>
+<li><p><strong>Partial:</strong> The curse lifts, but the lantern cannot
+be destroyed — it will attract another danger soon.</p></li>
+<li><p><strong>Miss:</strong> The curse is only pushed back one year. A
+dark spirit escapes and will become a recurring enemy.</p></li>
+</ul>
+</section>
+<section class="level2" id="advancement">
+<h2>Advancement</h2>
+<p>Each PC earns <strong>6–10 XP</strong> at the end. XP can be
+spent:</p>
+<ul>
+<li><p>Raise an Attribute: new rating <span class="math inline">×</span>
+3 XP (downtime = new rating days).</p></li>
+<li><p>Raise a Skill: new level <span class="math inline">×</span> 2 XP
+(downtime = new level days).</p></li>
+<li><p>Learn a Minor Talent (2–4 XP) — examples: <em>Keen Senses</em>,
+<em>Second Wind</em>, <em>Combat Reflexes</em>.</p></li>
+<li><p>Acquire a Minor Asset (4 XP) — safehouse, contact, or special
+tool.</p></li>
+</ul>
+<p><strong>Rush Rule:</strong> Skip downtime by accepting a <em>Haste
+timer [4]</em>. If it fills before you finish, the new ability has a
+flaw (GM’s choice).</p>
+</section>
+</section>
+<section class="level1" id="ch:simplified-magic">
+<h1>Simplified Magic</h1>
+<p>This chapter covers two approaches to magic: <strong>Free
+Casting</strong> for players who want to improvise spells, and
+<strong>Hedge Gifts</strong> for players who want reliable, low-cost
+magical tricks without committing to a full magical path.</p>
+<section class="level2" id="free-casting-spellcraft">
+<h2>Free Casting (Spellcraft)</h2>
+<p>If a player wants an improvisational magical character, use these
+simplified rules (based on the <em>Free Caster</em> path). For full
+magic systems (Runekeepers, Invokers, Cantors), see the complete
+<em>Fate’s Edge Player’s Guide</em>.</p>
+<section class="level3 unnumbered" id="spellcasting">
+<h3 class="unnumbered">Spellcasting</h3>
+<p>Choose a magical <strong>Element</strong> (Fire, Water, Earth, Air,
+Fate, Life, Luck, Death). Describe your spell using
+<strong>TAGS</strong>. Each tag increases DV by 1. Dangerous tags
+(Teleport, Transform, Dominate) increase DV by +2 instead.</p>
+<p><span class="math display">DV = 1 + number of tags</span></p>
+<p>(maximum 6). Roll <strong>Spirit + Arcana</strong>.</p>
+</section>
+<section class="level3 unnumbered" id="example">
+<h3 class="unnumbered">Example</h3>
+<p><em>“I throw a [Burning] [Area] blast”</em> = DV 3.</p>
+</section>
+<section class="level3 unnumbered" id="backlash">
+<h3 class="unnumbered">Backlash</h3>
+<p>If you roll a Miss or the GM spends SB, magic backfires:</p>
+<ul>
+<li><p><strong>1–2 SB:</strong> minor flare, Fatigue 1, eerie
+sound.</p></li>
+<li><p><strong>3+ SB:</strong> Harm 1, the spell affects an ally, or a
+Patron omen appears.</p></li>
+</ul>
+</section>
+<section class="level3 unnumbered" id="sample-spells-dv-24">
+<h3 class="unnumbered">Sample Spells (DV 2–4)</h3>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Spell</strong></th>
+<th style="text-align: left;"><strong>TAGS</strong></th>
+<th style="text-align: left;"><strong>DV</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Light</td>
+<td style="text-align: left;">[Illuminate]</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr>
+<td style="text-align: left;">HEAL</td>
+<td style="text-align: left;">[HEAL]</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr>
+<td style="text-align: left;">Shield of Air</td>
+<td style="text-align: left;">[Ward] [Defend]</td>
+<td style="text-align: left;">3</td>
+</tr>
+<tr>
+<td style="text-align: left;">Flame Cloak</td>
+<td style="text-align: left;">[Burning] [Area]</td>
+<td style="text-align: left;">3</td>
+</tr>
+<tr>
+<td style="text-align: left;">Teleport</td>
+<td style="text-align: left;">[Leap] [Self]</td>
+<td style="text-align: left;">4</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="level3 unnumbered" id="light-illuminate-dv-2">
+<h3 class="unnumbered">Light [Illuminate] — DV 2</h3>
+<p>Create a small, sustained light.</p>
+</section>
+<section class="level3 unnumbered" id="heal-heal-dv-2">
+<h3 class="unnumbered">HEAL [HEAL] — DV 2</h3>
+<p>Heal 1 Fatigue from yourself or a touched ally.</p>
+</section>
+<section class="level3 unnumbered" id="shield-of-air-ward-defend-dv-3">
+<h3 class="unnumbered">Shield of Air [Ward] [Defend] — DV 3</h3>
+<p>Gain Position +1 on next defense.</p>
+</section>
+<section class="level3 unnumbered" id="flame-cloak-burning-area-dv-3">
+<h3 class="unnumbered">Flame Cloak [Burning] [Area] — DV 3</h3>
+<p>Enemies suffer –1 die to approach.</p>
+</section>
+</section>
+<section class="level2" id="hedge-gifts-simplified-witchcraft">
+<h2>Hedge Gifts (Simplified Witchcraft)</h2>
+<p>Hedge Gifts are simple, no-roll magical abilities. A character with
+the <strong>Craft of the Hedge</strong> talent learns two Hedge Gifts of
+their choice. These are small, reliable effects that never require dice
+rolls and never incur Obligation.</p>
+<section class="level3 unnumbered" id="requirements">
+<h3 class="unnumbered">Requirements</h3>
+<ul>
+<li><p><strong>Craft of the Hedge (4 XP):</strong> Requires Lore 1+ or
+Insight 1+.</p></li>
+<li><p>You learn <strong>two Hedge Gifts</strong> of your
+choice.</p></li>
+</ul>
+</section>
+<section class="level3 unnumbered" id="hedge-gifts">
+<h3 class="unnumbered">Hedge Gifts</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Gift</strong></th>
+<th style="text-align: left;"><strong>Effect</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Steady Hand</strong></td>
+<td style="text-align: left;">Once per scene, touch a wounded person
+(including yourself) and remove 1 Fatigue. No roll. May not be used on
+the same person twice in a scene.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Knot of Favor</strong></td>
+<td style="text-align: left;">Once per scene, tie a knot in a cord,
+thread, or cloth. Allies within Near gain +1 die to a single type of
+roll (choose when tying: stealth, persuasion, defense, or navigation).
+The knot must remain tied.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Warm Hand</strong></td>
+<td style="text-align: left;">Once per scene, touch someone. Their next
+physical action either gains +1 die (comfort) or suffers –1 die
+(warning). No roll.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Hearth-Sense</strong></td>
+<td style="text-align: left;">Once per scene, ask the GM one yes/no
+question about a threshold, boundary, or promise in the current scene.
+The GM must answer truthfully.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Salt Line</strong></td>
+<td style="text-align: left;">Once per scene, pour a handful of salt in
+a continuous line (move action). Any spirit, ghost, or cursed creature
+attempting to cross must test Spirit + Insight (DV 3) or be stopped for
+that exchange.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>The Unlit Candle</strong></td>
+<td style="text-align: left;">Once per session, declare that a light
+source you can see (lantern, candle, torch) falters or extinguishes.
+This creates a zone of dim light or darkness in Near range for one
+exchange.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section class="level3 unnumbered" id="example-build-the-hedge-witch-32-xp">
+<h3 class="unnumbered">Example Build: The Hedge-Witch (32 XP)</h3>
+<ul>
+<li><p><strong>Attributes:</strong> Spirit 3 (15 XP), Wits 2 (6 XP)
+<span class="math inline">→</span> 21 XP</p></li>
+<li><p><strong>Skills:</strong> Lore 2 (6 XP), Insight 1 (2 XP) <span class="math inline">→</span> 8 XP</p></li>
+<li><p><strong>Talent:</strong> Craft of the Hedge (4 XP) <span class="math inline">→</span> 4 XP</p></li>
+<li><p><strong>Hedge Gifts:</strong> Steady Hand, Knot of Favor</p></li>
+<li><p><strong>Total:</strong> 21 + 8 + 4 = <strong>33
+XP</strong></p></li>
+</ul>
+</section>
+<section class="level3 unnumbered" id="promise-timers">
+<h3 class="unnumbered">Promise Timers</h3>
+<p>Some Hedge Gift effects or rituals create obligations. Represent
+these with a <strong>Promise Timer</strong> (typically 4 segments):</p>
+<ul>
+<li><p>Mark the timer when the promise is ignored, deferred, or
+disrespected.</p></li>
+<li><p>When filled, the price comes due — socially, spiritually, or
+narratively.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section class="level1" id="ch:gm-tips">
+<h1>GM Tips: Running Your First Game</h1>
+<section class="level2" id="before-you-start">
+<h2>Before You Start</h2>
+<section class="level3 unnumbered" id="read-the-adventure-first">
+<h3 class="unnumbered">Read the Adventure First</h3>
+<p>Read through <em>The Lantern at Dusk</em> (Chapter 5) at least twice.
+You don’t need to memorize it, but you should know the major scenes and
+timers.</p>
+</section>
+<section class="level3 unnumbered" id="know-the-core-rules">
+<h3 class="unnumbered">Know the Core Rules</h3>
+<p>The core mechanics (Chapter 2) are your engine. If you forget a rule,
+default to:</p>
+<ul>
+<li><p>DV = 3</p></li>
+<li><p>Position = Controlled</p></li>
+<li><p>Effect = Standard</p></li>
+</ul>
+<p>You can look up the rule after the session.</p>
+</section>
+<section class="level3 unnumbered" id="print-the-reference-sheet">
+<h3 class="unnumbered">Print the Reference Sheet</h3>
+<p>Keep the Quick Reference (Chapter 9) handy at the table.</p>
+</section>
+</section>
+<section class="level2" id="during-the-session">
+<h2>During the Session</h2>
+<section class="level3 unnumbered" id="start-strong">
+<h3 class="unnumbered">Start Strong</h3>
+<p>Use a cold open: <em>“The barrow’s green light flickers. You smell
+rot. What do you do?”</em></p>
+</section>
+<section class="level3 unnumbered" id="set-dv-to-3-by-default">
+<h3 class="unnumbered">Set DV to 3 by Default</h3>
+<p>Only raise to 4 or 5 if the task is truly legendary. Your job is not
+to challenge the players with high numbers — it is to challenge them
+with interesting choices.</p>
+</section>
+<section class="level3 unnumbered" id="spend-story-beats-early-and-often">
+<h3 class="unnumbered">Spend Story Beats Early and Often</h3>
+<p>A single SB can turn a quiet scene into a tense one. Don’t hoard
+them.</p>
+</section>
+<section class="level3 unnumbered" id="fail-forward">
+<h3 class="unnumbered">Fail Forward</h3>
+<p>On a Miss, never say “nothing happens.” Always introduce a new
+complication or advance a timer.</p>
+</section>
+<section class="level3 unnumbered" id="use-the-pre-gens">
+<h3 class="unnumbered">Use the Pre-Gens</h3>
+<p>The pre-generated characters (Chapter 4) are designed to showcase
+different play styles. Let players choose one.</p>
+</section>
+<section class="level3 unnumbered" id="keep-the-spotlight-moving">
+<h3 class="unnumbered">Keep the Spotlight Moving</h3>
+<p>Ask quiet players directly: <em>“Sera, what are you doing while this
+happens?”</em></p>
+</section>
+<section class="level3 unnumbered" id="end-on-a-cliffhanger">
+<h3 class="unnumbered">End on a Cliffhanger</h3>
+<p>When the lantern is lifted, describe the ceiling cracking — then say
+“to be continued.”</p>
+</section>
+<section class="level3 unnumbered" id="using-timers-at-the-table">
+<h3 class="unnumbered">Using Timers at the Table</h3>
+<p>Timers are your primary tool for creating pressure. Use them visibly
+and consistently.</p>
+<ul>
+<li><p><strong>Name them descriptively:</strong> <em>“Ritual
+Completion”</em> not <em>“Timer 3”</em>.</p></li>
+<li><p><strong>Tick them aloud:</strong> <em>“The cult’s chant grows
+louder — Ritual Completion advances to 4 of 6.”</em></p></li>
+<li><p><strong>Link timer advances to fiction:</strong> Never just say
+<em>“tick timer.”</em> Describe what changes.</p></li>
+<li><p><strong>Place trackers centrally:</strong> Use index cards, poker
+chips, or dry-erase boards where all players can see them.</p></li>
+</ul>
+</section>
+<section class="level3 unnumbered" id="the-three-timer-rule">
+<h3 class="unnumbered">The Three-Timer Rule</h3>
+<p>At any given time, maintain at most three active timers in a scene.
+More creates cognitive overload.</p>
+<ul>
+<li><p><strong>Situation Timer:</strong> Tracks progress toward the
+scene’s immediate goal.</p></li>
+<li><p><strong>Counter-Clock:</strong> Tracks opposition
+pressure.</p></li>
+<li><p><strong>Campaign Timer:</strong> Tracks long-term front
+pressure.</p></li>
+</ul>
+</section>
+</section>
+<section class="level2" id="common-pitfalls-and-fixes">
+<h2>Common Pitfalls and Fixes</h2>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Pitfall</strong></th>
+<th style="text-align: left;"><strong>Fix</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Holding onto SB for a “big moment”</td>
+<td style="text-align: left;">Spend SB early. Pressure creates
+drama.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Setting DV too high (4-5 for routine)</td>
+<td style="text-align: left;">Default to DV 3. Use Position for
+tension.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Not knowing a rule</td>
+<td style="text-align: left;">Make a ruling that keeps the story
+moving.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Players get stuck</td>
+<td style="text-align: left;">Ask: <em>“What’s your goal?”</em> Then
+name the simplest obstacle.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="level2" id="handling-player-creativity">
+<h2>Handling Player Creativity</h2>
+<ul>
+<li><p><strong>Say “Yes, but” not “No.”</strong> Offer a cost, a timer,
+or a complication.</p></li>
+<li><p><strong>Use Setup and Assist actions.</strong> Let
+non-specialists contribute meaningfully.</p></li>
+<li><p><strong>Embrace unexpected solutions.</strong> If a player
+bypasses a planned encounter, let it work — then escalate somewhere
+else.</p></li>
+<li><p><strong>Fail forward.</strong> A missed roll should never stop
+the story; it should change direction.</p></li>
+</ul>
+</section>
+<section class="level2" id="after-the-session">
+<h2>After the Session</h2>
+<ul>
+<li><p>Award XP (6–10 XP per player).</p></li>
+<li><p>Advance or clear active timers.</p></li>
+<li><p>Ask players: <em>“One thing you loved, one thing you want more
+of.”</em></p></li>
+<li><p>Note any rulings you made to reconcile with rules text
+later.</p></li>
+</ul>
+</section>
+</section>
+<section class="level1" id="ch:next-steps">
+<h1>What Comes Next</h1>
+<section class="level2" id="ready-for-more">
+<h2>Ready for More?</h2>
+<p>This Essential Guide gives you a complete first session. For the full
+experience:</p>
+<ul>
+<li><p><strong>Player’s Guide:</strong> Attributes, Skills, Talents,
+magic systems, character advancement, and the world.</p></li>
+<li><p><strong>GM Guide:</strong> Timers, fronts, advanced Story Beat
+management, faction rules, and high-tier play.</p></li>
+<li><p><strong>Adventures:</strong> <em>Blood and Silk</em> (village
+defense), <em>Beyond Millhaven</em> (mediation), <em>The Brass Gate</em>
+(heist).</p></li>
+</ul>
+<p>All available under CC-BY from the author.</p>
+</section>
+<section class="level2" id="where-to-go-next">
+<h2>Where to Go Next</h2>
+<section class="level3 unnumbered" id="build-your-own-character">
+<h3 class="unnumbered">Build Your Own Character</h3>
+<p>Use the character creation rules in Chapter 3 to build a custom
+character. Experiment with different Attributes, Skills, and
+Talents.</p>
+</section>
+<section class="level3 unnumbered" id="run-your-own-adventure">
+<h3 class="unnumbered">Run Your Own Adventure</h3>
+<p>Use the framework from Chapter 5 to design your own adventures:</p>
+<ul>
+<li><p>Define a problem (the blight, the cursed lantern).</p></li>
+<li><p>Define a location (the barrow).</p></li>
+<li><p>Define a rival (Quick Lena).</p></li>
+<li><p>Set timers (Barrow Collapse, Lena’s Agenda).</p></li>
+<li><p>Let the players choose their path.</p></li>
+</ul>
+</section>
+<section class="level3 unnumbered" id="expand-the-world">
+<h3 class="unnumbered">Expand the World</h3>
+<p>Fate’s Edge is set in a rich world of ancient magic, fallen empires,
+and vibrant cultures. Explore the regions of the Amaranthine: Ecktoria’s
+marble halls, the fog-shrouded Mistlands, the fractured kingdom of
+Vhasia, and more.</p>
+</section>
+</section>
+<section class="level2" id="final-thought">
+<h2>Final Thought</h2>
+<blockquote>
+<p><em></em></p>
+</blockquote>
+<p>You have everything you need to play Fate’s Edge. Now gather your
+dice, take a breath, and step into the Edge. The world is waiting.</p>
+</section>
+</section>
+<section class="level1" id="ch:quick-reference">
+<h1>Quick Reference</h1>
+<section class="level2" id="core-resolution">
+<h2>Core Resolution</h2>
+<ol>
+<li><p>Declare intent and approach (Attribute + Skill).</p></li>
+<li><p>GM sets Position and DV.</p></li>
+<li><p>Roll dice pool.</p></li>
+<li><p>Count successes (6+; 10 = 2 successes) and Story Beats
+(1s).</p></li>
+<li><p>Apply Outcome Matrix.</p></li>
+<li><p>GM spends SB.</p></li>
+<li><p>Player marks resources.</p></li>
+</ol>
+</section>
+<section class="level2" id="difficulty-value-dv">
+<h2>Difficulty Value (DV)</h2>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>DV</strong></th>
+<th style="text-align: left;"><strong>Situation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Routine, no pressure.</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Default — mild opposition.</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Hard — serious resistance.</td>
+</tr>
+<tr>
+<td style="text-align: left;">5+</td>
+<td style="text-align: left;">Extreme — dramatic gamble.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="level2" id="position">
+<h2>Position</h2>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Position</strong></th>
+<th style="text-align: left;"><strong>Narrative</strong></th>
+<th style="text-align: left;"><strong>Effect</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Dominant</td>
+<td style="text-align: left;">Advantage</td>
+<td style="text-align: left;">Re-roll one failure.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Controlled</td>
+<td style="text-align: left;">Normal</td>
+<td style="text-align: left;">No re-rolls.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Desperate</td>
+<td style="text-align: left;">Under duress</td>
+<td style="text-align: left;">Re-roll one success.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="level2" id="outcome-matrix">
+<h2>Outcome Matrix</h2>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Roll Result</strong></th>
+<th style="text-align: left;"><strong>Outcome</strong></th>
+<th style="text-align: left;"><strong>What Happens</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">S <span class="math inline">≥</span> DV,
+SB = 0</td>
+<td style="text-align: left;">Clean Success</td>
+<td style="text-align: left;">Intent achieved.</td>
+</tr>
+<tr>
+<td style="text-align: left;">S <span class="math inline">≥</span> DV,
+SB &gt; 0</td>
+<td style="text-align: left;">Success with SB</td>
+<td style="text-align: left;">Intent achieved; GM spends SB.</td>
+</tr>
+<tr>
+<td style="text-align: left;">0 &lt; S &lt; DV</td>
+<td style="text-align: left;">Partial</td>
+<td style="text-align: left;">Progress; gain 1 Boon.</td>
+</tr>
+<tr>
+<td style="text-align: left;">S = 0</td>
+<td style="text-align: left;">Miss</td>
+<td style="text-align: left;">No progress; gain 2 Boons; GM
+escalates.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="level2" id="boons">
+<h2>Boons</h2>
+<ul>
+<li><p><strong>Max held:</strong> 5.</p></li>
+<li><p><strong>Earn:</strong> Partial (1 Boon), Miss (2 Boons),
+Bond-driven action (1 Boon).</p></li>
+<li><p><strong>Spend:</strong> Re-roll a die, improve Position, activate
+Asset.</p></li>
+<li><p><strong>Convert:</strong> 2 Boons <span class="math inline">→</span> 1 XP (once per session, max 2 XP via
+conversion).</p></li>
+</ul>
+</section>
+<section class="level2" id="fatigue-and-harm-1">
+<h2>Fatigue and Harm</h2>
+<ul>
+<li><p>Fatigue track = Body.</p></li>
+<li><p>Each Fatigue worsens Position (or –1 die if already
+Desperate).</p></li>
+<li><p>Fatigue overflow <span class="math inline">→</span> Harm +1,
+clear Fatigue.</p></li>
+<li><p>Harm: 1 (–1 die), 2 (–1 die), 3 (incapacitated).</p></li>
+</ul>
+</section>
+<section class="level2" id="armor-conversion-1">
+<h2>Armor Conversion</h2>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Armor</strong></th>
+<th style="text-align: left;"><strong>Harm 1</strong></th>
+<th style="text-align: left;"><strong>Harm 2</strong></th>
+<th style="text-align: left;"><strong>Harm 3</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Light</td>
+<td style="text-align: left;">Fatigue 1</td>
+<td style="text-align: left;">Harm 1 + Fatigue 1</td>
+<td style="text-align: left;">Harm 2 + Fatigue 1</td>
+</tr>
+<tr>
+<td style="text-align: left;">Medium</td>
+<td style="text-align: left;">Fatigue 1</td>
+<td style="text-align: left;">Fatigue 1</td>
+<td style="text-align: left;">Harm 2 + Fatigue 1</td>
+</tr>
+<tr>
+<td style="text-align: left;">Heavy</td>
+<td style="text-align: left;">Fatigue 1</td>
+<td style="text-align: left;">Fatigue 1</td>
+<td style="text-align: left;">Fatigue 2</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="level2" id="recovery-1">
+<h2>Recovery</h2>
+<ul>
+<li><p><strong>Fatigue:</strong> Short rest (1 hour) removes 2. Full
+night removes all.</p></li>
+<li><p><strong>Harm:</strong> Medical care or magical healing. Natural
+recovery: 1 week per level.</p></li>
+</ul>
+</section>
+<section class="level2" id="combat-quick-reference">
+<h2>Combat Quick Reference</h2>
+<ul>
+<li><p><strong>Turn:</strong> 1 Action + 1 Move.</p></li>
+<li><p><strong>Move:</strong> Shift one range band (Close <span class="math inline">↔︎</span> Near <span class="math inline">↔︎</span>
+Far).</p></li>
+<li><p><strong>Dash (Action):</strong> Move two bands; next defense
+Desperate.</p></li>
+<li><p><strong>Disengage (Action):</strong> Move does not provoke
+opportunity attacks.</p></li>
+<li><p><strong>Opportunity Attack:</strong> Leaving Close without
+Disengage provokes one free melee attack.</p></li>
+</ul>
+</section>
+<section class="level2" id="timers-quick-reference">
+<h2>Timers Quick Reference</h2>
+<ul>
+<li><p><strong>4 segments:</strong> Short-term (guard patrol, door
+breaking)</p></li>
+<li><p><strong>6 segments:</strong> Standard scene (ritual,
+escape)</p></li>
+<li><p><strong>8+ segments:</strong> Long-term (faction,
+campaign)</p></li>
+<li><p><strong>Tick on:</strong> Partial/Miss, SB spend, fiction
+demand</p></li>
+<li><p><strong>When full:</strong> Defined event occurs</p></li>
+<li><p><strong>Limit:</strong> 3 active timers per scene
+maximum</p></li>
+</ul>
+</section>
+<section class="level2" id="hedge-gifts-quick-reference">
+<h2>Hedge Gifts Quick Reference</h2>
+<ul>
+<li><p><strong>Craft of the Hedge (4 XP):</strong> Learn two Hedge
+Gifts.</p></li>
+<li><p><strong>No roll, no cost.</strong> Gifts work within their stated
+limits.</p></li>
+<li><p><strong>Steady Hand:</strong> Remove 1 Fatigue
+(once/scene).</p></li>
+<li><p><strong>Knot of Favor:</strong> +1 die to one type of roll
+(once/scene).</p></li>
+<li><p><strong>Warm Hand:</strong> Next physical action +1 die or –1
+die.</p></li>
+<li><p><strong>Hearth-Sense:</strong> Ask one yes/no question about a
+threshold.</p></li>
+<li><p><strong>Salt Line:</strong> Stop spirits from crossing.</p></li>
+<li><p><strong>The Unlit Candle:</strong> Extinguish a light source
+(once/session).</p></li>
+</ul>
+<div class="center">
+<hr/>
+<p><em>“The coin that never spends is the one you don’t remember
+taking.”</em></p>
+</div>
+</section>
+</section>
+</div></div>
+        <script>
+            function searchContent() {
+                const query = document.getElementById('searchInput').value.toLowerCase();
+                const content = document.getElementById('main-content') || document.querySelector('.main-content');
+                if (!content) return;
+                const elements = content.querySelectorAll('p, li, h1, h2, h3, h4, h5, h6, td, th, blockquote');
+                for (let el of elements) {
+                    const text = el.textContent.toLowerCase();
+                    if (query && text.includes(query)) {
+                        el.classList.add('highlight');
+                    } else {
+                        el.classList.remove('highlight');
+                    }
+                }
+            }
+        </script>
+        
+</body>
+</html>

@@ -1,0 +1,57 @@
+{
+  "name": "Xhak'Thul, the Thunder-Speaker",
+  "slug": "xhakthul_the_thunderspeaker",
+  "domain": "Storm, Shock \\& Awe",
+  "description": "<div class=\"patron-header\">\n            <h1 class=\"patron-title\">Xhak'Thul, the Thunder-Speaker</h1>\n            <hr class=\"region-divider\">\n        </div>\n        <p class=\"region-text\">*{Lore Before words, there was thunder. Before scripture, lightning carved its commandments into the bones of the world. Xhak'Thul is the Voice That Splits Mountains, the Drum That Shakes Foundations, a power born from the first storm that ever raged across the primal earth. His faithful are whirlwinds of action --- they do not study; they dance, they shout, they move with the sky's fury. His gifts are not gentle miracles but raw terror, awe, and vitality ripped from nature's heart.</p> <p class=\"region-text\">Among the peoples of Fate's Edge, Xhak'Thul is the patron of the pre-literate, the neolithic, those who have not yet built walls against the wild. In the deep Vhasian highlands, he is the Storm-Father, invoked by herders who watch lightning split the sky. In Ykrul, he is the Thunder-Hoof, the sound of a thousand horses stampeding. In Linn, he is the Raging Tide, the storm that comes without warning. His followers are not scholars; they are dancers, drummers, shamans, and warriors who feel the storm in their bones before they hear it in the sky. He favors those who act without hesitation, who embrace chaos, and who understand that the loudest voice is often the truest.</p> <p class=\"region-text\">quote \"Feel the drum in your bones before you hear it in the sky. When the storm speaks, you will already be dancing to its rhythm.\" quote</p> <p class=\"region-text\">*{Domain Focus itemize Primal Power: storm, thunder, lightning, earthquake, wildfire Shock and Awe: overwhelming sensory impact, terror as a weapon Fear-Eater: absorbing panic to fuel strength Immediate Magic: no rituals, no books --- only emotion, movement, and the moment itemize</p> <p class=\"region-text\">*{Thiasos and Codex (Runekeeper Options)</p> <p class=\"region-text\">A Runekeeper sworn to Xhak'Thul does not bind a quiet familiar. Their Thiasos is a small beast or mythological creature that embodies the storm's wild heart: an electric blue salamander that crackles when touched, a tiny hawk whose feathers hum with static, a mouse that drums its tail in thunderstorms, or a small snake that vibrates like a plucked string before lightning strikes. This creature requires no food, but it must feel the open sky and hear thunder each week --- a storm, a war drum, or even a slammed door. If neglected for a week, it becomes Compromised (it sparks uncontrollably, imposing --1 die on Stealth rolls for its bearer and occasionally setting small fires).</p> <p class=\"region-text\">The Codex of Xhak'Thul is never a book of quiet study. It may be a drumhead painted with storm-runes, a set of carved bones that rattle like thunder when shaken, a stone tablet scored by a lightning strike, or a bundle of twigs tied with sinew that snaps like a whip crack when a Rite is invoked. Because the storm resists stillness, the Codex requires upkeep: the Runekeeper must spend an hour each week beating a rhythm into it (or exposing it to loud percussion), or the Rites stored there become sluggish (treat as Compromised until re-awakened).</p> <p class=\"region-text\">*{Patron's Gift (Imbuement)</p> <p class=\"region-text\">Once per scene as an action, a Runekeeper of Xhak'Thul may touch a held item (weapon, shield, or drum) and whisper a thunder-name. For the rest of the scene, the item grants +1 die to Intimidation or Command rolls, and the first time each scene the bearer would be surprised or lose initiative, they may act as if they were not surprised (the storm warns them). After the scene, the user marks +1 Obligation to Xhak'Thul.</p>",
+  "summary": "Xhak'Thul, the Thunder-Speaker *{Lore Before words, there was thunder. Before scripture, lightning carved its commandments into the bones of the world.",
+  "tags": [],
+  "source": "patron",
+  "file": "xhak-thul.tex",
+  "rites": [
+    {
+      "name": "Rite of the Thunderous Presence",
+      "description": "<p class=\"region-text\">(Basic, 4 XP) Scene; Near; No. Tags: , , , Materials: A drum made from storm-felled wood or any suitable improvised percussion. Effect: Your presence becomes overwhelming. All NPCs within Near range must test Resolve (DV 2) or suffer --1 die to social actions due to awe or terror for the scene. Allies gain +1 die to Intimidation or Command actions. Push It: Extend the effect to Far range, but you mark 1 Fatigue and mark 1 SB (Hearts) as your presence becomes difficult to control. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "Your presence becomes overwhelming. All NPCs within Near range must test Resolve (DV 2) or suffer --1 die to social actions due to awe or terror for the scene. Allies gain +1 die to Intimidation or Command actions. \\\\"
+    },
+    {
+      "name": "Rite of the Storm's Step",
+      "description": "<p class=\"region-text\">(Basic, 5 XP) Scene; Self; No. Tags: , , Materials: Earth from a lightning strike site, worn boot leather. Effect: You move with the storm's speed. Gain +2 dice to Athletics or Stealth rolls. The first attack you make this scene gains +1 Effect. Push It: Gain +3 dice and move as a blur, becoming difficult to track or clearly remember; mark 1 SB (Diamonds). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "You move with the storm's speed. Gain +2 dice to Athletics or Stealth rolls. The first attack you make this scene gains +1 Effect. \\\\"
+    },
+    {
+      "name": "Rite of the Shattered Sky",
+      "description": "<p class=\"region-text\">(Advanced, 8 XP) Scene; Zone; No. Tags: , , , Materials: A shard of meteoric iron or metal touched by a severe storm. Effect: You call a localized, supernatural storm in a Zone. Choose one effect: itemize Lightning Strike: Single target, Harm 2. Wind Blast: Knockback, dispersing arrows or scattering foes. Hail Barrage: Harm 1 (AREA). itemize All enemies in the Zone suffer --1 die to actions from chaos and distraction. Push It: Double the chosen effect's scale or potency (e.g., Harm 3, large knockback), but the effect also applies to allies in the Zone; mark 2 SB (Clubs). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue. Cost: Mark +2 Obligation. Requires: Familiar + Codex (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +3) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "You call a localized, supernatural storm in a Zone. Choose one effect: itemize Lightning Strike: Single target, Harm 2. Wind Blast: Knockback, dispersing arrows or scattering foes. Hail Barrage: Harm 1 (AREA). itemize All enemies in the Zone suffer --1 die to actions from chaos and distraction. \\\\"
+    },
+    {
+      "name": "Rite of the Fear-Eater",
+      "description": "<p class=\"region-text\">(Advanced, 9 XP) Scene; Self; No. Tags: , , , Materials: Soil or dust from a place of great terror (battlefield, prison, ruins). Effect: You feed on the fear around you. For each Frightened target in the scene, gain +1 die on your next action (max +3). If you successfully Intimidate a target during this scene, you heal 1 Fatigue. Push It: Absorb all palpable fear in the scene, gaining a flat +3 dice bonus to your next action, but mark 1 permanent Scar related to fear. Mark 1 SB (Hearts). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar + Codex (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "You feed on the fear around you. For each Frightened target in the scene, gain +1 die on your next action (max +3). If you successfully Intimidate a target during this scene, you heal 1 Fatigue. \\\\"
+    },
+    {
+      "name": "Rite of the World's Drum",
+      "description": "<p class=\"region-text\">(Master, 14 XP) Extended; Zone; No. Tags: , , , , Materials: A drum fashioned from lightning-struck wood, with a hide from a beast killed by natural force. Effect: You become an incarnation of the storm for one scene: itemize Gain +2 dice to rolls based on strength, speed, and intimidation. Your anger echoes as thunder; attacks against you may be answered by lightning (GM decides, usually 1 SB and Harm 1 to the attacker). Enemies must test Resolve at --2 dice to resist Fear effects you create. itemize Start a 6-segment Natural Disasters timer; when it fills, the storm's wrath manifests as a random environmental hazard (landslide, lightning strike, flash flood). Push It: The transformation lingers after the scene, and your emotional state causes minor environmental effects (windows rattle, small fires flicker). Mark 2 SB (Diamonds) and advance the timer by 2 segments. Cost: Mark +1 Obligation (total +4) or Mark +1 Fatigue. Cost: Mark +3 Obligation. Requires: Familiar + Codex + Tier III (Invoke: 2 Boons). Invoke: Extended action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +4) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "You become an incarnation of the storm for one scene: itemize Gain +2 dice to rolls based on strength, speed, and intimidation. Your anger echoes as thunder; attacks against you may be answered by lightning (GM decides, usually 1 SB and Harm 1 to the attacker). Enemies must test Resolve at --2 dice to resist Fear effects you create. itemize Start a 6-segment Natural Disasters timer; when it fills, the storm's wrath manifests as a random environmental hazard (landslide, lightning strike, flash flood). \\\\"
+    }
+  ]
+}

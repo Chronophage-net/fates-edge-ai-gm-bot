@@ -1,0 +1,57 @@
+{
+  "name": "Raéyn, Mistress of the Sea",
+  "slug": "rayn_mistress_of_the_sea",
+  "domain": "Tides \\& Change",
+  "description": "<div class=\"patron-header\">\n            <h1 class=\"patron-title\">Raéyn, Mistress of the Sea</h1>\n            <hr class=\"region-divider\">\n        </div>\n        <p class=\"region-text\">*{Lore Raéyn is the tempestuous goddess of the sea, the restless tide that carries news between shores and the promise of change between lives. She is mother to all who sail, her voice the wind that fills sails and her moods the storms that test every mariner's resolve. In Kahfagia, she is called the Storm-Queen; in Linn, the Tide-Mother; in the Brass Coast, the Salt-Widow. Her cult is syncretic, blending the fierce protectiveness of a mother goddess with the practical cunning of a harbor-master.</p> <p class=\"region-text\">But Raéyn's heart is torn by her greatest tragedy: her son Khemesh, the Kraken of the Depths, who embodies the crushing inevitability of the ocean's dark heart. Where Raéyn brings change and opportunity, Khemesh brings the final, inescapable pressure that grinds all things to nothing. Sailors pray to Raéyn for safe passage and favorable winds, but whisper Khemesh's name when seeking to lay the dead to rest beneath the waves.</p> <p class=\"region-text\">Raéyn is passionate, mercurial, and fiercely protective of those who respect her domain. She favors those who read currents, bargain with weather, and carry news between shores. But cross her, and the sea itself becomes your enemy: fair weather turns to fury, and every wave a judgment.</p> <p class=\"region-text\">quote \"Mark the tide, name your course, and trust the wave-road. But speak ill of Khemesh, and even I may let the deep take you.\" quote</p> <p class=\"region-text\">*{Domain Focus itemize Tides and Currents: change, opportunity, the rhythm of the sea Maritime Trade and Travel: safe passage, navigation, weather Storm and Calm: the duality of protection and wrath Motherhood and Loss: fierce love, grief for Khemesh, the weight of a divided heart itemize</p> <p class=\"region-text\">*{Thiasos and Codex (Runekeeper Options)</p> <p class=\"region-text\">A Runekeeper sworn to Raéyn does not bind a creature of dry land---they bind a companion of the tides. Their Thiasos is a small sea-creature or mythological being of the waves: a storm-petrel that appears before gales and can sense pressure drops, a gray seal pup that sings in harmonic tones audible only underwater, a hermit crab whose shell is etched with wave-runes, a small octopus that changes color to reflect the weather, or a sea-horse that can hover in still air for a heartbeat. This creature requires no food in the usual sense, but it must be immersed in salt water (or exposed to sea spray) each day. If kept dry for more than a day, it becomes Compromised (it grows listless and its color fades; its bearer loses the benefit of Sailor's Instinct until it is returned to the sea).</p> <p class=\"region-text\">The Codex of Raéyn is never a book of dry paper. It may be a set of tide-charts etched on whalebone, a bundle of knotted cords that record the phases of the moon and the turn of currents, a conch shell whose interior spiral is inscribed with navigational verse, or a driftwood plank carved with wave-runes that only become visible when wet. Because the sea resists being fixed in writing, the Codex requires upkeep: the Runekeeper must spend an hour each week soaking it in salt water or tracing its symbols by the light of a tide pool, or the Rites stored there become faint (treat as Compromised until re-consecrated at the shore).</p> <p class=\"region-text\">*{Patron's Gift (Imbuement)</p> <p class=\"region-text\">Once per scene as an action, a Runekeeper of Raéyn may touch a held item (weapon, tool, or piece of gear) and whisper a promise of safe passage. For the rest of the scene, the item grants +1 die to Navigation or Athletics rolls when aboard a vessel or in water, and the first time each scene the bearer would suffer an environmental penalty from rough seas, wind, or rain, they may ignore it. After the scene, the user marks +1 Obligation to Raéyn.</p>",
+  "summary": "Raéyn, Mistress of the Sea *{Lore Raéyn is the tempestuous goddess of the sea, the restless tide that carries news between shores and the promise of change between lives. She is mother to all who sail, her voice the wind that fills sails and her moods the storms that test every mariner's resolve.",
+  "tags": [],
+  "source": "patron",
+  "file": "raeyn.tex",
+  "rites": [
+    {
+      "name": "Rite of the Wave-Tide",
+      "description": "<p class=\"region-text\">(Basic, 5 XP) Scene; Self; No. Tags: , , , Materials: A knotted length of salt-twine brushed with seawater, or a shell held to the ear while facing the wind. Effect: Choose one: itemize Tidemark's Blessing: Treat slick, swaying, or water-slicked footing as stable for this scene. Gain +1 die on boarding, balance, or shipboard movement. Create a 4-segment Tide's Favor timer to ignore one level of difficult terrain. Whispering Currents: Learn the safest near-term route across water or coastline, or gain +1 die to navigation checks for this scene. If Khemesh's influence is present, suffer --1 die from conflicting currents. itemize Push It: (Tidemark) Extend to one ally in Close for one beat, but generate 1 SB (Spades) as the deck shifts. (Currents) Also learn the fastest route, but mark Exposure +1 (leaving a telltale wake). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "Choose one: itemize Tidemark's Blessing: Treat slick, swaying, or water-slicked footing as stable for this scene. Gain +1 die on boarding, balance, or shipboard movement. Create a 4-segment Tide's Favor timer to ignore one level of difficult terrain. Whispering Currents: Learn the safest near-term route across water or coastline, or gain +1 die to navigation checks for this scene. If Khemesh's influence is present, suffer --1 die from conflicting currents. itemize"
+    },
+    {
+      "name": "Rite of the Changing Tide",
+      "description": "<p class=\"region-text\">(Advanced, 8 XP) Scene; Zone; No. Tags: , , , Materials: A handful of pebbles cast in a crescent. Effect: Bias currents and water levels in the zone (must be water-adjacent). Those moving with the tide gain +1 die; those moving against suffer --1 die. Small craft must test to hold position. Create a 6-segment Tidal Influence timer. Push It: Brief surge or drawdown (one beat): open a ford or swamp a skiff. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar + Codex (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "Bias currents and water levels in the zone (must be water-adjacent). Those moving with the tide gain +1 die; those moving against suffer --1 die. Small craft must test to hold position. Create a 6-segment Tidal Influence timer. \\\\"
+    },
+    {
+      "name": "Rite of the Wave-Road Consecration",
+      "description": "<p class=\"region-text\">(Advanced, 7 XP) Scene; Route; No. Tags: , , , Materials: Two sea-glass markers dropped overboard at start and end. Effect: Consecrate a wave-road between two visible points. Allies gain +2 dice on travel, evade, or carry actions at sea. Designated pursuers suffer --1 die to intercept. One active wave-road at a time. Create an 8-segment Blessed Passage timer. Push It: Extend the route's favor to an adjacent leg for one beat; mark +1 Obligation. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar + Codex (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "Consecrate a wave-road between two visible points. Allies gain +2 dice on travel, evade, or carry actions at sea. Designated pursuers suffer --1 die to intercept. One active wave-road at a time. Create an 8-segment Blessed Passage timer. \\\\"
+    },
+    {
+      "name": "Rite of the Storm-Queen's Hand",
+      "description": "<p class=\"region-text\">(Master, 13 XP) Scene; Zone; No. Tags: , , , , Materials: A vial of rainwater gathered at three crossings. Effect: Shape a storm-band over the zone (sea, shore, or open sky). Choose two modes at cast; switch one once per scene: itemize Propulsion: Vessel gains +1 band of movement per beat (or +1 Effect to maneuvers). Concealment: Veil of rain/spray; ranged targeting impaired; --1 die to hostile sighting. Smite: Once per beat, lash with wave or lightning as hazard. itemize Push It: Add a third mode for one beat, then the GM spends 1 SB on collateral. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue. Cost: Mark +2 Obligation. Requires: Familiar + Codex + Tier III (Invoke: 2 Boons). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +3) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "Shape a storm-band over the zone (sea, shore, or open sky). Choose two modes at cast; switch one once per scene: itemize Propulsion: Vessel gains +1 band of movement per beat (or +1 Effect to maneuvers). Concealment: Veil of rain/spray; ranged targeting impaired; --1 die to hostile sighting. Smite: Once per beat, lash with wave or lightning as hazard. itemize"
+    },
+    {
+      "name": "Rite of the Mother's Wrath",
+      "description": "<p class=\"region-text\">(Master, 14 XP) Extended; Zone; No. Tags: , , , , Materials: Tears of a betrayed lover mixed with salt from seven seas. Effect: Curse those who wronged you. The target suffers --2 dice to maritime/weather rolls for one session. At sea, they must roll Spirit+Resolve (DV 4) each day or suffer Harm 1 (Weather). Create a 6-segment Mother's Ire timer. Push It: The curse spreads to the target's allies or family; mark 2 SB (Diamonds). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue. Cost: Mark +2 Obligation. Requires: Familiar + Codex + Tier III (Invoke: 2 Boons). Invoke: Extended action. Duration: Session.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +3) or Mark +1 Fatigue. \\\\",
+      "duration": "Session.",
+      "action": null,
+      "effect": "Curse those who wronged you. The target suffers --2 dice to maritime/weather rolls for one session. At sea, they must roll Spirit+Resolve (DV 4) each day or suffer Harm 1 (Weather). Create a 6-segment Mother's Ire timer. \\\\"
+    }
+  ]
+}

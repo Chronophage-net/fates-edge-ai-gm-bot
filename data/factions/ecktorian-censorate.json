@@ -1,0 +1,30 @@
+{
+  "id": "ecktorian-censorate",
+  "name": "Ecktorian Censorate",
+  "standing": -1,
+  "agenda": "Root out heresy, illegal magic, and political dissent across the province",
+  "agendaTimer": {
+    "segments": 10,
+    "current": 4
+  },
+  "keyNPCs": [
+    "Censor Cassia — Aging magistrate with a silver eye",
+    "Prefect Gaius Marcellus — Commander of the garrison",
+    "The Grand Magistrate — Guardian of forms",
+    "High Priest of the Everflame — Smiles like law"
+  ],
+  "resources": "Legal authority, archive access, witch-hunters, military escorts",
+  "hooks": [
+    "They are investigating the party's activities",
+    "Censor Cassia is dying—she wants to destroy the Iron Seal before she goes",
+    "Prefect Marcellus has a secret cult of oath-breakers"
+  ],
+  "color": "#d48a5a",
+  "icon": "⚖️",
+  "source": "default",
+  "description": "The Ecktorian Censorate is the law enforcement and intelligence arm of the Utaran Imperium's successor states. They root out heresy, illegal magic, and political dissent with bureaucratic precision. Their clerks outnumber their soldiers, and their archives hold the secrets of a hundred fallen nobles.",
+  "territory": "Ecktoria, Castra Ferrum, and the Acasian border",
+  "allies": ["The Everflame Orthodoxy", "The Synod"],
+  "enemies": ["The Velvet Court", "The Gray Ash", "The Iron League"],
+  "tier": "Regional"
+}

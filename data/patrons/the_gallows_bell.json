@@ -1,0 +1,66 @@
+{
+  "name": "The Gallow's Bell",
+  "slug": "the_gallows_bell",
+  "domain": "Justice \\& Judgment",
+  "description": "<div class=\"patron-header\">\n            <h1 class=\"patron-title\">The Gallow's Bell</h1>\n            <hr class=\"region-divider\">\n        </div>\n        <p class=\"region-text\">*{Lore The Bell does not rage; it tolls. Cold and impartial, it measures all accounts in time. Its keepers are silent arbiters who weigh deeds against consequence, not out of anger but out of inevitability. To call upon the Bell is to bind oneself to the gravity of truth, where even silence is judged, and every oath leaves a resonance in iron.</p> <p class=\"region-text\">Among the peoples of Fate's Edge, the Gallow's Bell is the patron of judges, notaries, and those who speak final words. In Ecktoria, the Bell is invoked by Censor's clerks who stamp death warrants. In Viterra, hedge-courts ring a small iron bell to seal a verdict. In Linn, a broken bell at a Thing-holm is a sign that a judgment was unjust and the spirits are still listening. Wherever a reckoning must be witnessed, the Gallow's Bell tolls.</p> <p class=\"region-text\">quote \"What is broken must be mended, what is owed must be paid. The Bell remembers all reckonings.\" quote</p> <p class=\"region-text\">*{Domain Focus itemize Weighing of Deeds: measuring action against consequence, debt against payment Solemn Judgment: verdicts that cannot be appealed, sentences that must be carried out Compelled Truth: forcing honesty under threat of the Bell's toll Iron Witness: the Bell as an impartial recorder of oaths, lies, and reckonings itemize</p> <p class=\"region-text\">*{Thiasos and Codex (Runekeeper Options)</p> <p class=\"region-text\">A Runekeeper sworn to the Gallow's Bell does not bind a creature of force or threat. They bind a creature of quiet judgment. Their Thiasos is a small beast or mythological being that embodies impartial witness: a gray mouse that lives in courthouses and never cheeps false testimony, a small brass-bell frog whose croak sounds like a distant chime, a black-and-white cat that sits on the judge's bench and stares at those who lie, or a mechanical songbird that rings a tiny bell each time a promise is broken. This creature requires no food, but it must witness a formal promise or a judgment each day. If neglected for a week, it becomes Compromised (it rings at the wrong moment or remains silent when truth is spoken, imposing --1 die on all social rolls involving oaths or honesty for its bearer).</p> <p class=\"region-text\">The Codex of the Gallow's Bell is never a book of spells alone. It may be a court ledger bound in iron, each page sealed with a drop of wax for every case heard; a set of bronze bells, each inscribed with a precedent; or a slate tablet that records the last verdict as a faint, glowing chime. Because the Bell's judgments are final, the Codex requires upkeep: the Runekeeper must spend an hour each week ringing each bell or re-reading each precedent, or the Rites stored there become uncertain (treat as Compromised until re-rung).</p> <p class=\"region-text\">*{Patron's Gift (Imbuement)</p> <p class=\"region-text\">Once per scene as an action, a Runekeeper of the Gallow's Bell may touch a held item (weapon, shield, or tool) and speak a single word of judgment. For the rest of the scene, the item grants +1 die to Command or Insight rolls when delivering a verdict, enforcing an oath, or uncovering a lie. Additionally, the first time each scene the bearer would be deceived by a lie, they may reroll the opposed check (the Bell's resonance warns them). After the scene, the user marks +1 Obligation to the Gallow's Bell.</p>",
+  "summary": "The Gallow's Bell *{Lore The Bell does not rage; it tolls. Cold and impartial, it measures all accounts in time. Its keepers are silent arbiters who weigh deeds against consequence, not out of anger but out of inevitability.",
+  "tags": [],
+  "source": "patron",
+  "file": "gallows-bell.tex",
+  "rites": [
+    {
+      "name": "Rite of the Measured Debt",
+      "description": "<p class=\"region-text\">(Basic, 5 XP) Scene; Near; No. Tags: , Materials: A pair of scales balanced with tokens from both sides. Effect: Establish a temporary accord. Both parties suffer --1 die if they break it first. You gain +1 die to enforce compliance. Push It: The accord is mystically weighted; breach inflicts 1 SB (Hearts). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "Establish a temporary accord. Both parties suffer --1 die if they break it first. You gain +1 die to enforce compliance. \\\\"
+    },
+    {
+      "name": "Rite of the Weighed Heart",
+      "description": "<p class=\"region-text\">(Basic, 5 XP) Scene; Near; No. Tags: , Materials: A small brass scale touched briefly to the chest. Effect: Sense if the target acts against their nature or oath. Gain +1 die when pressing them. Push It: Target must test Resolve (DV 3) or disclose a hidden conflict. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar (Invoke: 1 Boon). Invoke: 1 action. Duration: Instant.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Instant.",
+      "action": null,
+      "effect": "Sense if the target acts against their nature or oath. Gain +1 die when pressing them. \\\\"
+    },
+    {
+      "name": "Rite of the Balanced Scales",
+      "description": "<p class=\"region-text\">(Advanced, 9 XP) Scene; Near; No. Tags: , , Materials: A set of scales inscribed with runes of parity. Effect: Exchange a burden between two willing parties (Harm for Fatigue, Debt for Favor, etc.). Both gain +1 die to cooperate. Push It: May compel an unwilling exchange with contested Command + Wits. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar + Codex (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "Exchange a burden between two willing parties (Harm for Fatigue, Debt for Favor, etc.). Both gain +1 die to cooperate. \\\\"
+    },
+    {
+      "name": "Rite of the Judge's Eye",
+      "description": "<p class=\"region-text\">(Advanced, 8 XP) Scene; Self; No. Tags: , Materials: A black hood worn in silence for one minute. Effect: Detect lies within Near range; +2 dice to Insight. Liars suffer --1 die to maintain their falsehood. Push It: All deception is laid bare for the scene, but mark Exposure +1. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar + Codex (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "Detect lies within Near range; +2 dice to Insight. Liars suffer --1 die to maintain their falsehood. \\\\"
+    },
+    {
+      "name": "Rite of the Final Reckoning",
+      "description": "<p class=\"region-text\">(Master, 13 XP) Scene; Zone; No. Tags: , , , Materials: A circle of iron bells, each etched with nameless runes. Effect: The Bell tolls through you. All present feel compelled to name a debt or wrongdoing. Those who lie suffer Harm 2; those who speak true gain +2 dice to persuasion for the scene. Push It: The Reckoning manifests as spectral echoes of past wrongs -- liars automatically suffer narrative punishment (Keeper decides). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue. Cost: Mark +2 Obligation. Requires: Familiar + Codex + Tier III (Invoke: 2 Boons). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +3) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "The Bell tolls through you. All present feel compelled to name a debt or wrongdoing. Those who lie suffer Harm 2; those who speak true gain +2 dice to persuasion for the scene. \\\\"
+    },
+    {
+      "name": "Rite of the Great Adjudication",
+      "description": "<p class=\"region-text\">(Master, 14 XP) Extended; Zone; No. Tags: , , , Materials: A consecrated gavel or a great bell struck three times. Effect: Convene an unseen tribunal. Shadows of former judges and wronged souls gather to preside. For the next session, disputes within the zone are judged formally: +2 dice to Command when speaking as arbiter, and honest testimony gains +1 die. Push It: The tribunal's verdict echoes beyond the zone, affecting one major conflict elsewhere. Mark 2 SB (Hearts) as higher powers of judgment take notice. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue. Cost: Mark +2 Obligation. Requires: Familiar + Codex + Tier III (Invoke: 2 Boons). Invoke: Extended action. Duration: Session.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +3) or Mark +1 Fatigue. \\\\",
+      "duration": "Session.",
+      "action": null,
+      "effect": "Convene an unseen tribunal. Shadows of former judges and wronged souls gather to preside. For the next session, disputes within the zone are judged formally: +2 dice to Command when speaking as arbiter, and honest testimony gains +1 die. \\\\"
+    }
+  ]
+}

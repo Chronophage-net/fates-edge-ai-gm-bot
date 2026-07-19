@@ -1,0 +1,30 @@
+{
+  "id": "bloody-fists",
+  "name": "Black Banner Mercenaries",
+  "standing": 0,
+  "agenda": "Secure profitable contracts and expand influence across the Acasian marches",
+  "agendaTimer": {
+    "segments": 6,
+    "current": 1
+  },
+  "keyNPCs": [
+    "Captain Rusk — Former Ykrul hostage, pragmatic commander",
+    "The Black Colonel — Legendary commander, possibly dead",
+    "The Veteran Sergeant — Counts scars like coin",
+    "The Banner-Captain — Griffon standard bearer"
+  ],
+  "resources": "Soldiers, siege equipment, camp followers, war horses",
+  "hooks": [
+    "A contract dispute is brewing",
+    "Payday is late—desertions are increasing",
+    "The Black Colonel's death is being covered up"
+  ],
+  "color": "#2c3e50",
+  "icon": "🏴",
+  "source": "default",
+  "description": "The Bloody Fist are the largest and most feared mercenary company in Acasia. Their standards are black, their contracts are iron, and their loyalty ends at the next payday. They have served every kingdom and betrayed every kingdom—but they always collect their coin.",
+  "territory": "Acasia, Vhasia, and the northern marches",
+  "allies": ["The Iron League", "House Contarini (sometimes)"],
+  "enemies": ["The Gray Ash", "The Ecktorian Censorate"],
+  "tier": "Regional"
+}

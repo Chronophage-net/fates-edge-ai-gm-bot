@@ -1,0 +1,57 @@
+{
+  "name": "Aveh, the Rider Behind the Storm",
+  "slug": "aveh_the_rider_behind_the_storm",
+  "domain": "Freedom \\& Erasure",
+  "description": "<div class=\"patron-header\">\n            <h1 class=\"patron-title\">Aveh, the Rider Behind the Storm</h1>\n            <hr class=\"region-divider\">\n        </div>\n        <p class=\"region-text\">*{Lore Aveh is the faceless rider at the horizon's edge, neither man nor woman, both and neither. The Ykrul call them Aveh, a liminal spirit beyond hearth and vow, a storm-shadow that offers liberty at the cost of belonging. To travel with Aveh is to taste unchained freedom --- and to risk being erased by the storm that follows. They are the patron of the outcast, the non-conforming, the genderless, and the forgotten. Aveh asks no oath and demands no loyalty, but every gift leaves a scar of absence.</p> <p class=\"region-text\">quote \"I am the track the storm devours. I am the freedom you fear and the silence you crave. To ride with me is to be unbound, and to be unbound is to vanish.\" quote</p> <p class=\"region-text\">*{Domain Focus itemize Freedom from Bonds: escape, liberation, shedding constraints Erasure: becoming forgotten, removing traces, vanishing from memory Liminal Identity: non-conforming, genderless, between categories Storm as Shelter: the chaos that hides and the wind that carries away itemize</p> <p class=\"region-text\">*{Thiasos and Codex (Runekeeper Options)</p> <p class=\"region-text\">A Runekeeper sworn to Aveh does not bind a willing servant --- they befriend a creature as fleeting as the wind. Their Thiasos is a small beast or mythological being that embodies freedom: a storm-petrel that appears before gales, a gray fox that leaves no tracks, a shadow-hound pup whose fur shifts like cloud, or a raven that knows every crossroads. This creature requires no food, but it must be allowed to run free each day; if confined for more than a day, it becomes Compromised (it refuses to return, or returns only to harry its keeper). The bond is one of mutual escape, not mastery.</p> <p class=\"region-text\">The Codex of Aveh is never a book bound in one place. It may be a leather strap knotted with wind-signs, a set of chalked symbols that blow away after each use, or a slate etched with runes that fade in rain. Because Aveh's truths are written in absence, the Codex requires upkeep: the Runekeeper must spend an hour each week rewriting its contents from memory (or letting the wind rearrange them), or the Rites stored there become uncertain (treat as Compromised until restored).</p> <p class=\"region-text\">*{Patron's Gift (Imbuement)</p> <p class=\"region-text\">Once per scene as an action, a Runekeeper of Aveh may touch a held item (weapon, tool, or cloak) and whisper a word of unbinding. For the rest of the scene, the item grants +1 die to Stealth or Escape rolls, and the first time each scene the bearer would provoke an opportunity attack, they may ignore it (they slip through the gap). After the scene, the user marks +1 Obligation to Aveh.</p>",
+  "summary": "Aveh, the Rider Behind the Storm *{Lore Aveh is the faceless rider at the horizon's edge, neither man nor woman, both and neither. The Ykrul call them Aveh, a liminal spirit beyond hearth and vow, a storm-shadow that offers liberty at the cost of belonging.",
+  "tags": [],
+  "source": "patron",
+  "file": "aveh.tex",
+  "rites": [
+    {
+      "name": "Rite of the Unlatched Step",
+      "description": "<p class=\"region-text\">(Basic, 5 XP) Scene; Self; Yes. Tags: , , Materials: A breath cast into the wind, or a line drawn in dust. Effect: Choose one: itemize Storm-Step: Slip free of notice or restraint. Gain +1 die on one escape or evasion roll this scene. Exile's Banner: Mark a target as \"outside.\" The target suffers --1 die on all social rolls for the scene. itemize Push It: (Storm-Step) Gain +2 dice instead, but mark 1 SB (Spades) as your absence unsettles the scene. (Exile's Banner) The target is fully estranged; allies treat them as forgotten, but you immediately advance your Corruption timer by 1 segment. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "Choose one: itemize Storm-Step: Slip free of notice or restraint. Gain +1 die on one escape or evasion roll this scene. Exile's Banner: Mark a target as ``outside.'' The target suffers --1 die on all social rolls for the scene. itemize"
+    },
+    {
+      "name": "Rite of the Forgotten Road",
+      "description": "<p class=\"region-text\">(Advanced, 9 XP) Scene; Zone; Yes. Tags: , , Materials: A threshold or roadway under open sky, or stormwater rubbed into skin. Effect: Choose one: itemize Erase the Road: All attempts to follow you this session suffer --2 dice. In exchange, erase part of your own path: lose a detail (a memory, a name) chosen by the GM. Rider's Mark: A companion gains +2 dice to resist capture or coercion, but others forget them more easily. itemize Push It: (Erase the Road) Expand the effect to an entire group, but mark 1 SB (Clubs) as reality warps around the erasure. (Rider's Mark) Grant +3 dice instead, but mark 1 SB (Diamonds) as the Rider's storm distorts bonds. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar + Codex (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "Choose one: itemize Erase the Road: All attempts to follow you this session suffer --2 dice. In exchange, erase part of your own path: lose a detail (a memory, a name) chosen by the GM. Rider's Mark: A companion gains +2 dice to resist capture or coercion, but others forget them more easily. itemize"
+    },
+    {
+      "name": "Rite of the Storm's Refuge",
+      "description": "<p class=\"region-text\">(Master, 12 XP) Scene; Zone; No. Tags: , , , Materials: A banner or cloak raised in storm. Effect: Your group is unseen or forgotten by pursuers for the scene. At the end, all present must mark 1 Corruption or forget one bond (their choice). Push It: Extend protection for an entire session, but mark 2 SB (Hearts). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue. Cost: Mark +2 Obligation. Requires: Familiar + Codex + Tier III (Invoke: 2 Boons). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +3) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "Your group is unseen or forgotten by pursuers for the scene. At the end, all present must mark 1 Corruption or forget one bond (their choice). \\\\"
+    },
+    {
+      "name": "Rite of the Unremembered Name",
+      "description": "<p class=\"region-text\">(Master, 13 XP) Extended; Self; Yes. Tags: , , , Materials: A circle of ash or dust drawn at a boundary, and a personal token (a lock of hair, a written name). Effect: For one week, your name is erased from mundane records and casual memory. Those who knew you must succeed on a Resolve test (DV 4) to recall you. You gain +2 dice to all rolls to avoid detection, impersonate another, or pass unseen. At the end of the week, the erasure fades, but the GM may retain one lingering rumor or false memory. Push It: The erasure becomes permanent --- your original identity is gone. You cannot recover it except by divine intervention or a major quest. Mark +3 Obligation. Cost: Mark +1 Obligation (total +4) or Mark +1 Fatigue. Cost: Mark +2 Obligation. Requires: Familiar + Codex + Tier III (Invoke: 2 Boons). Invoke: Extended action. Duration: 1 week.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +4) or Mark +1 Fatigue. \\\\",
+      "duration": "1 week.",
+      "action": null,
+      "effect": "For one week, your name is erased from mundane records and casual memory. Those who knew you must succeed on a Resolve test (DV 4) to recall you. You gain +2 dice to all rolls to avoid detection, impersonate another, or pass unseen. At the end of the week, the erasure fades, but the GM may retain one lingering rumor or false memory. \\\\"
+    },
+    {
+      "name": "Rite of the Horizon's Devour",
+      "description": "<p class=\"region-text\">(Master, 15 XP) Extended; Zone; No. Tags: , , , Materials: A circle of ash or dust drawn at a boundary, and a storm that answers. Effect: All thresholds in a zone collapse. Doors lead nowhere; borders dissolve; memory of the place becomes vague. In exchange, something of you is erased --- your reflection, your name, or your presence in a specific person's memory (GM's choice). Push It: The storm devours even time; mark 3 SB (Spades) as history forgets you. Cost: Mark +1 Obligation (total +4) or Mark +1 Fatigue. Cost: Mark +3 Obligation. Requires: Familiar + Codex + Tier III (Invoke: 2 Boons). Invoke: Extended action. Duration: Permanent.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +4) or Mark +1 Fatigue. \\\\",
+      "duration": "Permanent.",
+      "action": null,
+      "effect": "All thresholds in a zone collapse. Doors lead nowhere; borders dissolve; memory of the place becomes vague. In exchange, something of you is erased --- your reflection, your name, or your presence in a specific person's memory (GM's choice). \\\\"
+    }
+  ]
+}

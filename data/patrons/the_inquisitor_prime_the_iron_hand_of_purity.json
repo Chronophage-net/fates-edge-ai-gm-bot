@@ -1,0 +1,66 @@
+{
+  "name": "The Inquisitor Prime The Iron Hand of Purity",
+  "slug": "the_inquisitor_prime_the_iron_hand_of_purity",
+  "domain": "Purity \\& Domination",
+  "description": "<div class=\"patron-header\">\n            <h1 class=\"patron-title\">The Inquisitor Prime The Iron Hand of Purity</h1>\n            <hr class=\"region-divider\">\n        </div>\n        <p class=\"region-text\">*{Lore Among the Aeler Iron Avengers, zealots, and witch-hunters, the Inquisitor Prime is venerated as the hand of absolute purity and the sword of uncompromising order. Where others see nuance, the Inquisitor sees corruption; where others see difference, they see contamination.</p> <p class=\"region-text\">Those who march beneath their sigil believe that no society can stand if it tolerates the impure or the disobedient. They hunt the arcane and the aberrant, not merely to destroy them, but to bind them as slaves to order---believing even the tainted may yet serve, so long as they are shackled.</p> <p class=\"region-text\">The Inquisitor Prime appears in vision as a faceless figure clad in burnished iron, with eyes like furnace-doors and a voice like grinding chains. To serve them is to embrace judgment without mercy and to live in suspicion of all who walk outside the prescribed law.</p> <p class=\"region-text\">For the faithful, doubt is treason; compassion is weakness; and freedom is the seed of ruin. In the wake of their followers, only silence and ash remain.</p> <p class=\"region-text\">Among the peoples of Fate's Edge, the Inquisitor Prime is called by many names. In Ecktoria, the Prime is the Unquenchable Fire of the Everflame, whose censers never cool. In Aeler, the Prime is the Light of Forges, whose hearths are kindled with a brand from the temple's eternal flame. In Vhasia, the Prime is the Gilded Judge, invoked by templars who swear to root out heretical magic. Wherever law is written in iron and enforced with flame, the Inquisitor Prime watches.</p> <p class=\"region-text\">quote \"Mercy is weakness. Purity is survival. Where corruption hides, we carve it out.\" quote</p> <p class=\"region-text\">*{Domain Focus itemize Purity and Order: eradicating corruption, enforcing sacred law Judgment: condemning the guilty, burning the heretical Protection from the Tainted: warding against the supernatural Domination: binding the impure to serve the pure itemize</p> <p class=\"region-text\">*{Thiasos and Codex (Runekeeper Options)</p> <p class=\"region-text\">A Runekeeper sworn to the Inquisitor Prime does not bind a creature of darkness or wild impulse. Their Thiasos is a small creature of zealous loyalty and keen perception: a white hound with brass eyes that can smell lies and taint, a ferret that hunts rodents of corruption with relentless efficiency, a bronze-feathered hawk that circles above suspected heretics, or a small mechanical bird that sings hymns of purity at dawn. This creature requires no food, but it must be present at a daily prayer or rite of purification. If neglected for a week, it becomes Compromised (it growls at strangers or sings discordantly, imposing --1 die on all social rolls with those suspected of impurity for its bearer).</p> <p class=\"region-text\">The Codex of the Inquisitor Prime is never a book of common knowledge. It may be an iron-bound ledger with pages of sanctified vellum, each Rite sealed with a drop of wax; a slate tablet that records only the names of the damned; or a scroll of censure that burns heretical text upon reading. Because the Prime's laws are absolute, the Codex requires upkeep: the Runekeeper must spend an hour each week reciting each Rite aloud in a purified space, or the seals weaken (treat as Compromised until re-consecrated).</p> <p class=\"region-text\">*{Patron's Gift (Imbuement)</p> <p class=\"region-text\">Once per scene as an action, a Runekeeper of the Inquisitor Prime may touch a held item (weapon, shield, or badge of office) and speak a word of judgment. For the rest of the scene, the item grants +1 die to Investigation or Command rolls when confronting supernatural creatures, and the first time each scene the bearer would be affected by a magical illusion or fear effect, they may reroll the resistance check (the Prime's light burns through deception). After the scene, the user marks +1 Obligation to the Inquisitor Prime.</p>",
+  "summary": "The Inquisitor Prime The Iron Hand of Purity *{Lore Among the Aeler Iron Avengers, zealots, and witch-hunters, the Inquisitor Prime is venerated as the hand of absolute purity and the sword of uncompromising order.",
+  "tags": [],
+  "source": "patron",
+  "file": "inquisitor-prime.tex",
+  "rites": [
+    {
+      "name": "Rite of the Pure Flame",
+      "description": "<p class=\"region-text\">(Basic, 5 XP) Scene; Self; No. Tags: , , Materials: Ash from a burned grimoire or sigil-scarred candle. Effect: Gain +2 dice to resist supernatural influence (fear, charm, possession) and +1 Armor vs. magical attacks. Undead/demonic foes suffer --1 die against you. Push It: Extend the effect to allies in Near range, but supernatural entities sense you immediately; mark 1 SB (Diamonds). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "Gain +2 dice to resist supernatural influence (fear, charm, possession) and +1 Armor vs. magical attacks. Undead/demonic foes suffer --1 die against you. \\\\"
+    },
+    {
+      "name": "Rite of the Unclouded Eye",
+      "description": "<p class=\"region-text\">(Basic, 5 XP) Scene; Self; No. Tags: , Materials: Silver dust stirred into holy water. Effect: +2 dice to Investigate/Insight when spotting illusions, glamours, or magical deception. Cannot be surprised by sorcery this scene. Push It: For one exchange, pierce all illusions; mark 1 SB (Hearts). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "+2 dice to Investigate/Insight when spotting illusions, glamours, or magical deception. Cannot be surprised by sorcery this scene. \\\\"
+    },
+    {
+      "name": "Rite of the Marked Prey",
+      "description": "<p class=\"region-text\">(Basic, 6 XP) Scene; Near; No. Tags: , , Materials: A belonging of the target mixed with blessed salt. Effect: Mark a supernatural target: they suffer --1 die to all rolls and cannot hide with illusion. You gain +1 die to track or strike them. Undead/demonic take +1 Harm from you. Push It: Target cannot hide anywhere and suffers Fatigue 1; mark +1 Obligation. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar + Codex (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "Mark a supernatural target: they suffer --1 die to all rolls and cannot hide with illusion. You gain +1 die to track or strike them. Undead/demonic take +1 Harm from you. \\\\"
+    },
+    {
+      "name": "Rite of the Cleansing Light",
+      "description": "<p class=\"region-text\">(Advanced, 9 XP) Instant; Near; No. Tags: , , Materials: A shard of blessed mirror and consecrated oil. Effect: Target a magical effect (ward, curse, enchantment). Test DV = Tier. itemize On Hit: Dispel. On Partial: Weaken. On Miss: The effect lashes back, generating 1 SB. itemize Push It: Dispel absolutely and trace its caster; mark +1 Obligation and 1 SB (Spades). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar + Codex (Invoke: 1 Boon). Invoke: 1 action. Duration: Instant.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Instant.",
+      "action": null,
+      "effect": "Target a magical effect (ward, curse, enchantment). Test DV = Tier. itemize On Hit: Dispel. On Partial: Weaken. On Miss: The effect lashes back, generating 1 SB. itemize"
+    },
+    {
+      "name": "Rite of the Consecrated Ground",
+      "description": "<p class=\"region-text\">(Advanced, 10 XP) Extended; Zone; No. Tags: , , , Materials: Relics from three rival faiths, salt, crushed gemstones. Effect: Consecrate an area. Supernatural entities must pass Spirit+Resolve (DV 4) to enter. Undead/demonic suffer --2 dice inside. The site gains the tag. Push It: Permanently sanctify a larger area, but start a Magical Dead Zone [6] timer and mark +2 Obligation. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue. Cost: Mark +2 Obligation. Requires: Familiar + Codex + Tier III (Invoke: 2 Boons). Invoke: Extended action. Duration: Permanent.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +3) or Mark +1 Fatigue. \\\\",
+      "duration": "Permanent.",
+      "action": null,
+      "effect": "Consecrate an area. Supernatural entities must pass Spirit+Resolve (DV 4) to enter. Undead/demonic suffer --2 dice inside. The site gains the tag. \\\\"
+    },
+    {
+      "name": "Rite of the Final Admonition",
+      "description": "<p class=\"region-text\">(Master, 14 XP) Scene; Touch; No. Tags: , , , Materials: Ash from a destroyed spellbook, martyr's water, and the target's true name. Effect: Attempt to annihilate one supernatural foe. Target tests Spirit+Resolve (DV 5). On Fail: destroyed outright. On Success: suffer Harm 3 and --2 dice this scene. Once per target only. Push It: Absolute destruction leaves behind Sanctified Ground; mark 2 SB (Diamonds). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue. Cost: Mark +2 Obligation. Requires: Familiar + Codex + Tier III (Invoke: 2 Boons). Invoke: 1 action. Duration: Instant.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +3) or Mark +1 Fatigue. \\\\",
+      "duration": "Instant.",
+      "action": null,
+      "effect": "Attempt to annihilate one supernatural foe. Target tests Spirit+Resolve (DV 5). On Fail: destroyed outright. On Success: suffer Harm 3 and --2 dice this scene. Once per target only. \\\\"
+    }
+  ]
+}

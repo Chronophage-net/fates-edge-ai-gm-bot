@@ -1,0 +1,30 @@
+{
+  "id": "iron-league",
+  "name": "The Iron League",
+  "standing": 0,
+  "agenda": "Consolidate mercenary contracts and dominate the condotta market",
+  "agendaTimer": {
+    "segments": 8,
+    "current": 2
+  },
+  "keyNPCs": [
+    "The Black Colonel — Legendary commander, not seen in months",
+    "Captain Rusk — Pragmatic mercenary captain",
+    "The Veteran Sergeant — Counts scars like coins",
+    "Clan-Mother — Ykrul war-braid keeper"
+  ],
+  "resources": "Mercenary companies, military intelligence, siege equipment, camp followers",
+  "hooks": [
+    "Payday is late — morale is dropping",
+    "A condotta is threatening to flip sides mid-contract",
+    "The Black Colonel may be dead, but his banner still rides"
+  ],
+  "color": "#c45a5a",
+  "icon": "⚔️",
+  "source": "default",
+  "description": "The Iron League is a coalition of free companies, condottieri, and mercenary captains who sell steel to whoever can pay. They have no loyalty to any nation—only to the next payday. Their camps are ragged, their discipline iron, and their grudges longer than any contract.",
+  "territory": "Acasia, Vhasia, and the Violet Steppe",
+  "allies": ["The Black Banners", "House Contarini (sometimes)"],
+  "enemies": ["The Ykrul Gray Ash", "Ecktorian Censorate"],
+  "tier": "Regional"
+}

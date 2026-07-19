@@ -1,0 +1,57 @@
+{
+  "name": "Mab, Queen of Courts",
+  "slug": "mab_queen_of_courts",
+  "domain": "Glamour \\& Bargain",
+  "description": "<div class=\"patron-header\">\n            <h1 class=\"patron-title\">Mab, Queen of Courts</h1>\n            <hr class=\"region-divider\">\n        </div>\n        <p class=\"region-text\">*{Lore Mab the Hazel Queen, rules not from throne or blade, but from dance and debt. She is the smile that binds, the jest that ensnares, the hostess who makes guests complicit in her game. To speak in her Court is to pay; to receive her token is to owe.</p> <p class=\"region-text\">Mab is an Archfae -- one of the great powers of the Gloaming Courts, neither wholly cruel nor kind, but always bound by her own rules. She cannot lie, but she can mislead so beautifully that truth becomes irrelevant. She cannot break an oath, but she can interpret it until it screams. Her followers thrive on charm, wit, and story, spreading webs of bargains too subtle to escape. The Cantor's Path sings her name most sweetly, for every verse carries a price.</p> <p class=\"region-text\">Among the peoples of Fate's Edge, Mab is the patron of courtiers, actors, and those who live by their wits. In Aelinnel, she is the Unbounded Guest, whose arrival at a feast is marked by laughter and shattered glass -- and a new debt for the host. In Vilikari salons, she is the Gilded Tongue, invoked before every negotiation. Wherever masks are worn and words have double meanings, Mab watches.</p> <p class=\"region-text\">quote \"Every laugh is a promise. Every promise is a debt. Every debt belongs to Mab.\" quote</p> <p class=\"region-text\">*{Domain Focus itemize Fae Glamour: illusions, enchantments, the art of seeming Social Bargains: oaths, promises, debt as social glue Courtly Intrigue: etiquette, wordplay, the game of masks Trickster Arts: mischief, cleverness, the twist in the tale itemize</p> <p class=\"region-text\">*{Thiasos and Codex (Runekeeper Options)</p> <p class=\"region-text\">A Runekeeper sworn to Mab does not bind a familiar of raw power. Their Thiasos is a small creature of glamour and wit: a talking cricket that gives advice in riddles, a cat with mismatched eyes that appears at masquerades, a small fox that steals shiny baubles and leaves cryptic notes, a white jay that mimics voices with uncanny accuracy, or a spider that weaves its web in the shape of a courtly dance. This creature requires no food, but it must witness a promise or a performance each day. If neglected for a week, it becomes Compromised (it pulls pranks at the worst moments -- tugging a sleeve during a lie, knocking over a wine glass -- imposing --1 die on all Deception and Performance rolls for its bearer until it next witnesses a genuine oath).</p> <p class=\"region-text\">The Codex of Mab is never a book of straightforward text. It may be a deck of playing cards whose suits shift when no one is looking, a mirror that reflects only the backs of words, a set of silk handkerchiefs knotted into a puzzle, or a scroll that must be read while dancing. Because Mab's truths are written in misdirection, the Codex requires upkeep: the Runekeeper must spend an hour each week re-ordering the cards (or re-knotting the handkerchiefs) while recounting a story from memory, or the patterns become scrambled (treat as Compromised until re-woven).</p> <p class=\"region-text\">*{Patron's Gift (Imbuement)</p> <p class=\"region-text\">Once per scene as an action, a Runekeeper of Mab may touch a held item (weapon, tool, or garment) and whisper a jest. For the rest of the scene, the item grants +1 die to Deception or Performance rolls, and the first time each scene the bearer would be caught in a lie, they may roll Deception again (the glamour twists the truth). After the scene, the user marks +1 Obligation to Mab.</p>",
+  "summary": "Mab, Queen of Courts *{Lore Mab the Hazel Queen, rules not from throne or blade, but from dance and debt. She is the smile that binds, the jest that ensnares, the hostess who makes guests complicit in her game. To speak in her Court is to pay; to receive her token is to owe.",
+  "tags": [],
+  "source": "patron",
+  "file": "mab.tex",
+  "rites": [
+    {
+      "name": "Rite of the Trickster's Bargain",
+      "description": "<p class=\"region-text\">(Basic, 5 XP) Scene; Near; No. Tags: , , , Materials: A token freely given (flower, coin, ribbon). Effect: Offer a fae bargain. The target may accept (both gain +1 die to actions that uphold the terms) or refuse (target marks 1 Fatigue from social pressure). Push It: If the target later betrays the bargain, they suffer Harm 1 (Stress) and start an Oathbreaker [4] timer. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar (Invoke: 1 Boon). Invoke: 1 action. Duration: Timer: 4 segments (Bargain's Edge).</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Timer: 4 segments (Bargain's Edge).",
+      "action": null,
+      "effect": "Offer a fae bargain. The target may accept (both gain +1 die to actions that uphold the terms) or refuse (target marks 1 Fatigue from social pressure). \\\\"
+    },
+    {
+      "name": "Rite of Courtly Guise",
+      "description": "<p class=\"region-text\">(Basic, 4 XP) Scene; Self; No. Tags: , , Materials: A sprig of hawthorn or a silver thread worn visibly. Effect: Subtle glamour makes you appear as the expected rank or guest. Gain +1 die to social rolls in refined settings. Push It: Mask one personal tell (an accent, a scar, a nervous habit); the first probing question about it generates 1 SB (Hearts). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene.</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Scene.",
+      "action": null,
+      "effect": "Subtle glamour makes you appear as the expected rank or guest. Gain +1 die to social rolls in refined settings. \\\\"
+    },
+    {
+      "name": "Rite of the Price Agreed",
+      "description": "<p class=\"region-text\">(Advanced, 9 XP) Scene; Near; No. Tags: , , , Materials: Equal tokens exchanged ritually (two rings, two signed notes, two locks of hair). Effect: Bind a formal bargain. While the bargain is honored, both parties gain +1 Effect when cooperating. Breach forces 1 SB (Hearts/Diamonds) and a reputation penalty (--1 die to social rolls involving honor for one week). Push It: Add a minor boon to one party (+1 die once). If that party breaches, they suffer an additional 1 SB and you mark +1 Obligation. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar + Codex (Invoke: 1 Boon). Invoke: 1 action. Duration: Timer: 8 segments (Bargain Binding).</p>",
+      "tags": [],
+      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
+      "duration": "Timer: 8 segments (Bargain Binding).",
+      "action": null,
+      "effect": "Bind a formal bargain. While the bargain is honored, both parties gain +1 Effect when cooperating. Breach forces 1 SB (Hearts/Diamonds) and a reputation penalty (--1 die to social rolls involving honor for one week). \\\\"
+    },
+    {
+      "name": "Rite of the Sovereign Glamour",
+      "description": "<p class=\"region-text\">(Master, 13 XP) Extended; Zone; No. Tags: , , , , Materials: A circle of silk or green felt, courtly music, and a drop of honey (for sweetness) and vinegar (for the sting). Effect: Establish a fae court in the zone. For the scene: itemize Allies gain +1 die to social rolls; blunt threats (Intimidation, crude Force) suffer --1 die. Once per scene, you may strip an illusion or reveal a hidden motive as a free action (target tests Resolve DV 3 to resist). Violating a promise made within the zone triggers 2 SB and a visible glamour mark (a blush, a stutter) that lasts a day. itemize Push It: Impose a temporary Court Law (e.g., \"no steel,\" \"speak only truth,\" \"every third word must be a compliment\"). Violators suffer 2 SB. Cost: Mark +2 Obligation (total +4) or Mark +1 Fatigue. Cost: Mark +2 Obligation. Requires: Familiar + Codex + Tier III (Invoke: 2 Boons). Invoke: Extended action. Duration: Timer: 10 segments (Court Dominion).</p>",
+      "tags": [],
+      "cost": "Mark +2 Obligation (total +4) or Mark +1 Fatigue. \\\\",
+      "duration": "Timer: 10 segments (Court Dominion).",
+      "action": null,
+      "effect": "Establish a fae court in the zone. For the scene: itemize Allies gain +1 die to social rolls; blunt threats (Intimidation, crude Force) suffer --1 die. Once per scene, you may strip an illusion or reveal a hidden motive as a free action (target tests Resolve DV 3 to resist). Violating a promise made within the zone triggers 2 SB and a visible glamour mark (a blush, a stutter) that lasts a day. itemize"
+    },
+    {
+      "name": "Rite of the Gilded Jest",
+      "description": "<p class=\"region-text\">(Master, 14 XP) Extended; Large Zone; No. Tags: , , , , Materials: Masks for all participants (hand-made, never bought), enchanted music, and a cup of wine that has been blessed (or cursed) with a whispered lie. Effect: Create a lasting glamoured court -- a masquerade that persists for the duration of the event (hours or an entire evening). All social magic (Sway, Performance, Deception) gains +1 Effect. Outsiders who enter suffer --1 die to perceive truths, read emotions, or see through disguises. Any promise made while masked is magically witnessed; breaking it inflicts 2 SB and the mask of the oath-breaker cracks (visible to all). Push It: The masquerade persists between scenes for the rest of the session. Cost: Mark +3 Obligation (total +5) or Mark +1 Fatigue. Cost: Mark +2 Obligation. Requires: Familiar + Codex + Tier III (Invoke: 2 Boons). Invoke: Extended action. Duration: Timer: 8 segments (Glamour Maintenance).</p>",
+      "tags": [],
+      "cost": "Mark +3 Obligation (total +5) or Mark +1 Fatigue. \\\\",
+      "duration": "Timer: 8 segments (Glamour Maintenance).",
+      "action": null,
+      "effect": "Create a lasting glamoured court -- a masquerade that persists for the duration of the event (hours or an entire evening). All social magic (Sway, Performance, Deception) gains +1 Effect. Outsiders who enter suffer --1 die to perceive truths, read emotions, or see through disguises. Any promise made while masked is magically witnessed; breaking it inflicts 2 SB and the mask of the oath-breaker cracks (visible to all). \\\\"
+    }
+  ]
+}
