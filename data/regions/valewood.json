@@ -1,0 +1,877 @@
+{
+  "id": "valewood-empire-under-leaves",
+  "version": "1.0.0",
+  "type": "generator",
+  "title": "Valewood — Empire Under Leaves",
+  "label": "chap:valewood",
+  "key_demographic": "Lethai-al",
+  "manifest_path": "/data/docs/manifest.json",
+  "overview": {
+    "tagline": "The forest remembers. Speak truth, step lightly, and never eat the fruit of a tree with a face.",
+    "genre": "Dark forest, fey remnant, imperial echo, folk horror.",
+    "mood": "Leaves, Oaths, and Echoes",
+    "starting_location": "A moss-covered amphitheater where roots crawl through marble benches and owls whisper verdicts to the wind. An Owl-Sister speaks in riddles: 'The Lethai-ar stir. The paths remember your true name. Speak it into the hollow of this stone, or the forest will learn it from your footsteps.'",
+    "lore": {
+      "history": "The Valewood is older than kingdoms, older than the maps that skirt its borders. Beneath its canopy lie the bones of a Lethai empire whose name is forgotten, its towers swallowed by vine and root, its star-roads cracked and phasing between worlds. The air hums with half-remembered songs of magic, and the ruins bleed their mysteries into root and stream. To walk the Valewood is to risk being claimed by it: as guest, prey, heir—or trespasser. But the empire did not fall to war or plague alone. In their final centuries, the Lethai-thora — the high elf archivists and sorcerers — grew desperate to match the Astroegro Empire's arcane might. They turned to forbidden arts: flesh-shaping, soul-stitching, and the binding of patterns that should never have been woven. Deep beneath the Amber Ziggurat, in chambers sealed with runes that weep, they built the **Genesis Vats**. Here, elf and beast were combined, spirit and stone were fused, and the first beast-kin were born — not as servants, but as weapons. The vats still hum. The failures, the half-finished, the screaming ones, were loosed into the forest when the laboratories collapsed. They bred true. They became the monsters that now stalk the star-roads: the redcaps, the thorn-walkers, the things with too many eyes. The empire fell, yes. But something else came through the cracks. A scent of honey and rot. A laugh from a clearing that should not exist. The Lethai-thora sealed the deepest laboratories and burned their records. The few survivors spoke of a 'soft place' in the world's fabric, a realm of endless twilight where the fae had always waited. They carved warnings into stone: Do not open the ninth gate. Do not sing the song that calls them. The gates were sealed. The songs were forgotten. But the forest remembers. And in certain clearings, when the moon is wrong, the air smells of jasmine and grave-soil.",
+      "first_notice": "The smell of wet moss and old stone. The way the light filters through leaves like stained glass. The silence that falls when you speak a name too loudly.",
+      "rule_that_kills": "Never eat the fruit of a tree that has a face. The forest does not forget those who take, and the first bite is always a promise."
+    },
+    "entanglements": {
+      "west": "Mistlands — The Direwood's breath crosses the water; the bell-lines are the only thing keeping the forest from expanding. A fog that smells of honey is a warning from the fae.",
+      "north": "Linns — The Thin Coast portage brings iron and salt; the trees remember the old hunts. The forest's edge is a border that moves.",
+      "southwest": "Zakov (via Thin Coast) — Pirates and smugglers trade in star-road shards; the coast is a dangerous threshold. The Gray Lady's agents watch the treeline.",
+      "south": "Aelinnel / Aelaerem — The fae courts and the gnomes share a border of thorn and courtesy; the Green Gate is a two-way door. The Hazel Queen and the Stone Prince exchange warnings, not gifts."
+    }
+  },
+  "quotes": [
+    {
+      "speaker": "Hazel Queen (Elite)",
+      "text": "The forest here remembers empires that crumbled to dust, and its laws are older than your kingdoms. To walk these paths is to enter into covenant with powers that measure time in seasons, not years."
+    },
+    {
+      "speaker": "Pathweaver (Commoner)",
+      "text": "The woods here got a mind of their own — they'll lead you where you need to go if you ask right, but they'll just as soon lose you if you're carrying ill intent. Best know which is which before you wander off the path."
+    }
+  ],
+  "ninth_taboo": {
+    "title": "The Ninth Taboo Manifestation",
+    "description": "In the Valewood, the ninth leaf to fall from any tree points to a hidden threshold. The wise catch it or pretend not to see. Those who follow the leaf's direction find a place that was not there a moment ago, and something old waits inside. The threshold may lead to a sealed laboratory, a fae court, or a clearing where the air smells of jasmine and grave-soil. It is always warm."
+  },
+  "npcs": [
+    {
+      "name": "Queen Amalthea",
+      "role": "Hazel Queen, sovereign of the Hazel Court",
+      "motivation": "Preserve the old pacts and keep the empire from waking",
+      "quirk": "She has never spoken a lie. She has never needed to."
+    },
+    {
+      "name": "King Thorn",
+      "role": "Alder King, ruler of the Twilit Court",
+      "motivation": "Gather old promises and expand the forest's reach",
+      "quirk": "His crown is a noose of thorns. He wears it proudly."
+    },
+    {
+      "name": "Pathweaver Sila",
+      "role": "Lethai-ar guide (commoner exemplar)",
+      "motivation": "Knot safe routes and keep the star-roads from bleeding",
+      "quirk": "Her cord has eight knots; the ninth is the one she never ties."
+    },
+    {
+      "name": "Bramble",
+      "role": "Fox-headed courier of the beast-kin",
+      "motivation": "Deliver messages that cannot be written",
+      "quirk": "It asks something in return. What it asks is always a secret."
+    },
+    {
+      "name": "The Huntsman",
+      "role": "Antlered hunter of the Moonlit Ride",
+      "motivation": "Claim those who break the forest's laws",
+      "quirk": "His face is a stag's skull; his voice is the wind in the leaves."
+    },
+    {
+      "name": "Shardwright Jacob",
+      "role": "Artisan who repairs the star-roads",
+      "motivation": "Wake the ancient ways before they fade forever",
+      "quirk": "Her chisel is a tooth from the first dragon. She stole it."
+    },
+    {
+      "name": "The Genesis Keeper (Ghost)",
+      "role": "A Lethai-thora archivist who died sealing the vats",
+      "motivation": "Prevent anyone from opening the sealed laboratories",
+      "quirk": "She appears as a shimmer of heat, speaking in equations that no longer add up."
+    }
+  ],
+  "names": {
+    "first_male": [
+      "Caelith",
+      "Eryndor",
+      "Jacob",
+      "Oren",
+      "Riven",
+      "Thorn"
+    ],
+    "first_female": [
+      "Amalthea",
+      "Sila",
+      "Liriel",
+      "Vesper",
+      "Fenn",
+      "Myrin"
+    ],
+    "surnames": [
+      "Thornweave",
+      "Starfoot",
+      "Hawthorn",
+      "Silverbough",
+      "Mossglen",
+      "Gloaming"
+    ],
+    "epithets": [
+      "the Green",
+      "Oath-Woven",
+      "the Unseen",
+      "Hollow-Tongue",
+      "the Last",
+      "Ash-Finger"
+    ]
+  },
+  "places": [
+    {
+      "rank": 2,
+      "suit": "spade",
+      "title": "Star-Road Shard",
+      "subtitle": "[MAGIC]",
+      "description": "Pale flagstones hum when trod in sequence; a path between worlds.",
+      "flavor": "The sequence is always incomplete. The missing step is the one you hesitate to take.",
+      "mechanical_hook": "A successful Wits+Lore test (DV 4) reveals the next step in the sequence; on failure, the road phases and you lose your bearings."
+    },
+    {
+      "rank": 3,
+      "suit": "spade",
+      "title": "Rooted Amphitheater",
+      "subtitle": "[SOCIAL]",
+      "description": "Moss-seats remember speeches not yet given; a stage for fate.",
+      "flavor": "Sit in the high seat, and the roots will ask you a question. Answer wrong, and you may never stand.",
+      "mechanical_hook": "Spirit+Performance (DV 4) to answer the roots' riddle; success grants a boon, failure binds you to a geas."
+    },
+    {
+      "rank": 4,
+      "suit": "spade",
+      "title": "Moon-Cistern",
+      "subtitle": "[MAGIC] [TRUTH]",
+      "description": "Reflecting sky that isn't tonight's; water as a mirror of truth.",
+      "flavor": "The reflection shows what you lost, not what you carry. Look away before it names you.",
+      "mechanical_hook": "A Wits+Lore test (DV 3) lets you ask one question of the cistern; on failure, it asks a question of you."
+    },
+    {
+      "rank": 5,
+      "suit": "spade",
+      "title": "Glyphed Bridge",
+      "subtitle": "[TRUTH] [TRAVEL]",
+      "description": "Across a dry stream; glyphs glow when lies pass; truth as your passage.",
+      "flavor": "The bridge has no railings. Liars fall—into the stream, or into memory.",
+      "mechanical_hook": "Crossing requires a Resolve test (DV 4); failure means you are trapped in a memory of a broken oath."
+    },
+    {
+      "rank": 6,
+      "suit": "spade",
+      "title": "Glassleaf Gallery",
+      "subtitle": "[MAGIC]",
+      "description": "Boughs grown into panes, dust like constellations; beauty as a barrier.",
+      "flavor": "The dust is crushed star-road. Breathe it, and you will dream of the empire's fall.",
+      "mechanical_hook": "Endurance test (DV 3) to avoid inhaling the dust; on failure, gain 1 Fatigue and a vision of the past."
+    },
+    {
+      "rank": 7,
+      "suit": "spade",
+      "title": "Hollow Aqueduct",
+      "subtitle": "[MAGIC]",
+      "description": "Water runs uphill if the song is right; magic in the melody.",
+      "flavor": "The song has eight verses. The ninth is the silence that follows.",
+      "mechanical_hook": "A successful Spirit+Performance (DV 4) lets the water flow; on failure, the aqueduct floods (lose 1 Supply)."
+    },
+    {
+      "rank": 8,
+      "suit": "spade",
+      "title": "Calendar Grove",
+      "subtitle": "[RITUAL]",
+      "description": "Standing-trees aligned to solstices; one trunk is stone; time as architecture.",
+      "flavor": "The stone tree bleeds sap once a year. Collect it, and the forest remembers your name for a season.",
+      "mechanical_hook": "Collecting the sap grants +1 die on all navigation rolls in the Valewood for one session, but marks you as a debtor."
+    },
+    {
+      "rank": 9,
+      "suit": "spade",
+      "title": "Unfound Arcade",
+      "subtitle": "[MYSTERY]",
+      "description": "Arches appear at dusk, vanish at dawn; reality as a schedule.",
+      "flavor": "The arches have names—carved on the inside. You must walk through to read them.",
+      "mechanical_hook": "Walking through an arch without reading the name may teleport you randomly (1d6); reading the name gives you a clue about its destination."
+    },
+    {
+      "rank": 10,
+      "suit": "spade",
+      "title": "Breathing City",
+      "subtitle": "[DUNGEON]",
+      "description": "Vine-choked streets shift on the hour; a ruin as a living thing.",
+      "flavor": "The vines pulse with a slow heartbeat. The city is sleeping, not dead.",
+      "mechanical_hook": "Navigation rolls are Desperate; on a success, you find a useful ruin; on failure, you trigger a Ward-Trap."
+    },
+    {
+      "rank": 11,
+      "suit": "spade",
+      "title": "Amber Ziggurat",
+      "subtitle": "[LEGEND]",
+      "description": "Caught mid-construction for a thousand years; time as an artifact.",
+      "flavor": "The workers are statues of amber. Their eyes follow you. Beneath it, the Genesis Vats still hum.",
+      "mechanical_hook": "Approaching the ziggurat triggers the Genesis Vats timer; a Spirit test (DV 5) may resist the hum's influence."
+    },
+    {
+      "rank": 12,
+      "suit": "spade",
+      "title": "Ivory Observatory",
+      "subtitle": "[MAGIC]",
+      "description": "Brass orrery tracks two lost moons; the sky as memory.",
+      "flavor": "The moons are not in any sky you know. One of them is yours. One of them is a door.",
+      "mechanical_hook": "A Wits+Lore test (DV 4) may reveal a star-road route; on failure, the door in the moon opens (trigger a Fae encounter)."
+    },
+    {
+      "rank": 13,
+      "suit": "spade",
+      "title": "Throne-Bower",
+      "subtitle": "[AUTHORITY]",
+      "description": "Living alder and argent wire; the seat of forgotten power.",
+      "flavor": "Sit here, and the forest will crown you—or crush you. You won't know which until the leaves settle.",
+      "mechanical_hook": "Sitting requires Resolve test (DV 5); on success, gain Authority in the local area; on failure, gain a geas from the Alder King."
+    },
+    {
+      "rank": 14,
+      "suit": "spade",
+      "title": "Valeheart Spire",
+      "subtitle": "[LEGEND]",
+      "description": "The empire's axle; stairs that end where they began.",
+      "flavor": "The spire has no top. It has only a center. Finding it is the journey.",
+      "mechanical_hook": "Navigating the spire is a puzzle; each floor requires a different skill test (GM chooses). Reaching the center grants a Valeheart Clause."
+    }
+  ],
+  "people_and_factions": [
+    {
+      "rank": 2,
+      "suit": "heart",
+      "title": "Pathweaver",
+      "subtitle": "[SOCIAL]",
+      "description": "Lethai-ar guide who knots safe routes into cord; navigation as community.",
+      "flavor": "Her cord has eight knots. The ninth is the one she never ties.",
+      "what_they_carry": "She can provide a Way-Cord (Diamond) for a price: a story or a secret.",
+      "what_they_ask": "A lock of your hair. She will knot it into her cord, and you will never be lost—but you will also never truly leave."
+    },
+    {
+      "rank": 3,
+      "suit": "heart",
+      "title": "Fox-Courier",
+      "subtitle": "[SOCIAL]",
+      "description": "Promise braided into its tail; messages as living things.",
+      "flavor": "It will deliver anything—but asks something in return. What it asks is always a secret.",
+      "what_they_carry": "Can deliver a message safely for 1 Boon.",
+      "what_they_ask": "A true name you have never spoken. The fox will keep it—and use it if you break your word."
+    },
+    {
+      "rank": 4,
+      "suit": "heart",
+      "title": "Owl-Sister",
+      "subtitle": "[MAGIC]",
+      "description": "Pupils show yesterday; her hands show yours; sight as prophecy.",
+      "flavor": "She never blinks. If she does, the future has changed.",
+      "what_they_carry": "Offers a prophecy for 1 Supply; the GM must answer one yes/no question truthfully.",
+      "what_they_ask": "A feather from a bird you have never seen. She will know if you lie."
+    },
+    {
+      "rank": 5,
+      "suit": "heart",
+      "title": "Antler-Hunter",
+      "subtitle": "[COMBAT]",
+      "description": "Sworn to keep the cities sleeping; a guardian of rest.",
+      "flavor": "His spear is a sharpened root. It grows back when broken.",
+      "what_they_carry": "Can defend a campsite for one night for 1 Supply.",
+      "what_they_ask": "A promise not to enter the Breathing City. If you break it, he will hunt you."
+    },
+    {
+      "rank": 6,
+      "suit": "heart",
+      "title": "Moss-Scribe",
+      "subtitle": "[LAW]",
+      "description": "Writes deeds in lichen, reads stone like vellum; law as growth.",
+      "flavor": "Her ink is rainwater and regret. The words fade when the promise is kept.",
+      "what_they_carry": "Can record a binding oath for 1 Supply.",
+      "what_they_ask": "A story of a broken promise. She will scribe it into the lichen, and the forest will remember."
+    },
+    {
+      "rank": 7,
+      "suit": "heart",
+      "title": "Lark-Keeper",
+      "subtitle": "[OMEN]",
+      "description": "Caged bird sings warnings strangers can't hear; danger as song.",
+      "flavor": "The lark's song is a map. Learn it, and you can walk anywhere—once.",
+      "what_they_carry": "A Songstone that warns of danger once per session.",
+      "what_they_ask": "A seed from a tree with a face. The lark will eat it, and the forest will notice you."
+    },
+    {
+      "rank": 8,
+      "suit": "heart",
+      "title": "Green Neighbor",
+      "subtitle": "[FAE]",
+      "description": "Fae courtier wearing a borrowed smile and boots; hospitality as a trap.",
+      "flavor": "Never accept a gift from a Green Neighbor. It's never a gift.",
+      "what_they_carry": "Offers a boon (Diamond) for a price: a promise, a memory, or a name.",
+      "what_they_ask": "A seat at your fire. If you refuse, the forest will remember your inhospitality."
+    },
+    {
+      "rank": 9,
+      "suit": "heart",
+      "title": "Warden-Coterie",
+      "subtitle": "[COMMUNITY]",
+      "description": "Beast-kin (badger, stag, lynx); one law: no digging deep.",
+      "flavor": "They speak in growls and gestures. The lynx is the one who remembers faces. They do not speak of the vats.",
+      "what_they_carry": "Safe passage through beast-kin territory for a season (1 Supply).",
+      "what_they_ask": "A lock of hair from each party member. The lynx will know your faces forever."
+    },
+    {
+      "rank": 10,
+      "suit": "heart",
+      "title": "Echo-Legionary",
+      "subtitle": "[DEATH]",
+      "description": "Imperial shade bound to a patrol that never ends; duty as a curse.",
+      "flavor": "Its sword passes through stone but not through flesh. Run, don't fight.",
+      "what_they_carry": "Can be negotiated with, but only if you know the old legionary oath.",
+      "what_they_ask": "A name from the imperial roll. It will patrol the path you take, making it safe—but it will follow you forever."
+    },
+    {
+      "rank": 11,
+      "suit": "heart",
+      "title": "Shardwright",
+      "subtitle": "[CRAFT]",
+      "description": "Ancient artisan who wakes star-road with a chisel; craft as resurrection.",
+      "flavor": "Her chisel is a tooth from the first dragon. She stole it. She has seen the sealed doors. She will not speak of them.",
+      "what_they_carry": "Can repair a star-road segment for 2 Supply.",
+      "what_they_ask": "A piece of amber from the Ziggurat. She will use it to finish the work."
+    },
+    {
+      "rank": 12,
+      "suit": "heart",
+      "title": "Hazel Queen",
+      "subtitle": "[AUTHORITY]",
+      "description": "AKA *Mab*, Lethai-al sovereign in leaf and law; wisdom as authority.",
+      "flavor": "She has never spoken a lie. She has never needed to. Her court sings of a door that should stay closed.",
+      "what_they_carry": "Can grant a Hazel Token (Diamond) for a service.",
+      "what_they_ask": "A promise to speak no word of what lies beyond the Amber Ziggurat. She will know if you break it."
+    },
+    {
+      "rank": 13,
+      "suit": "heart",
+      "title": "Alder King",
+      "subtitle": "[AUTHORITY]",
+      "description": "AKA *Grimmir*, Twilit Court sovereign in shadow and promise; power as obligation.",
+      "flavor": "His crown is a noose of thorns. He wears it proudly. He knows what came through the door. He will not say.",
+      "what_they_carry": "Can grant an Alder Writ (Diamond) for a price.",
+      "what_they_ask": "A debt. He will collect it when the forest is at its darkest."
+    },
+    {
+      "rank": 14,
+      "suit": "heart",
+      "title": "The Genesis Keeper (Ghost)",
+      "subtitle": "[DEATH] [SPIRIT]",
+      "description": "A shimmer of heat, speaking in equations.",
+      "flavor": "She was an archivist who sealed the vats. She has been trying to finish the equation for a thousand years. It is almost complete.",
+      "what_they_carry": "Can reveal a clue about the vats in exchange for a memory.",
+      "what_they_ask": "A name. She will write it in her equation, and the vats will recognize you as the key."
+    }
+  ],
+  "complications": [
+    {
+      "rank": 2,
+      "suit": "club",
+      "title": "Sweet Wind",
+      "subtitle": "[WEATHER] [TRICK]",
+      "description": "Nudges landmarks hedge-width—enough to matter; navigation as deception.",
+      "flavor": "The wind smells of honey and lies. Do not trust your nose.",
+      "mechanical_hook": "All navigation rolls suffer -1 die. On a failure, the party becomes lost and must roll on the Forest Mood table."
+    },
+    {
+      "rank": 3,
+      "suit": "club",
+      "title": "Path Reversal",
+      "subtitle": "[MAGIC]",
+      "description": "Footprints vote to go elsewhere; direction as democracy.",
+      "flavor": "Your tracks point the way you came—even when you haven't turned.",
+      "mechanical_hook": "Navigation rolls are Desperate; on a Miss, you retrace your steps (lose 1 segment of progress)."
+    },
+    {
+      "rank": 4,
+      "suit": "club",
+      "title": "Ward-Trap",
+      "subtitle": "[TRAP]",
+      "description": "Ancient security treats you as yesterday's invader; the past as prison.",
+      "flavor": "The glyphs were set by a dead queen. She still enforces her grudges.",
+      "mechanical_hook": "A Wits+Lore test (DV 4) to disarm; on failure, suffer Harm 1 or trigger a geas."
+    },
+    {
+      "rank": 5,
+      "suit": "club",
+      "title": "Oath-Magnet",
+      "subtitle": "[OATH]",
+      "description": "Spoken promises stick and reshape plans; word as binding magic.",
+      "flavor": "Every 'I will' becomes a knot. Every 'I won't' becomes a chain.",
+      "mechanical_hook": "Create a Promise Timer [4] for any promise made. Each action against it ticks the timer; at 4, the forest claims a memory or inflicts a geas."
+    },
+    {
+      "rank": 6,
+      "suit": "club",
+      "title": "Geas Catch",
+      "subtitle": "[OATH]",
+      "description": "A careless word triggers a task that names itself; speech as summoning.",
+      "flavor": "You said 'if only.' Now the forest has heard you.",
+      "mechanical_hook": "The GM names a task (e.g., 'Retrieve the amber shard from the Ziggurat') that the party must complete or face a geas."
+    },
+    {
+      "rank": 7,
+      "suit": "club",
+      "title": "City Phase",
+      "subtitle": "[DUNGEON]",
+      "description": "Streets rotate; the exit becomes a balcony; space as puzzle.",
+      "flavor": "The city breathes. You are in its lungs.",
+      "mechanical_hook": "Navigation is Desperate; on a failure, the party is separated (each member appears in a different part of the city)."
+    },
+    {
+      "rank": 8,
+      "suit": "club",
+      "title": "Name-Theft",
+      "subtitle": "[DEATH] [FEAR]",
+      "description": "Something learns your true name's edges; the tests begin.",
+      "flavor": "First, you forget a minor bond. Then a friend's face. Then your own.",
+      "mechanical_hook": "The GM secretly records one piece of a character's identity. They suffer -1 die on any roll relying on that piece until restored via quest or bargain."
+    },
+    {
+      "rank": 9,
+      "suit": "club",
+      "title": "Ring Claim",
+      "subtitle": "[SOCIAL] [COMMUNITY]",
+      "description": "A circle names you host; feeding guests becomes law.",
+      "flavor": "The mushrooms are listening. They will remember what you serve.",
+      "mechanical_hook": "You must host a fae or beast-kin for one meal. Failure to provide suitable hospitality ticks a Promise Timer."
+    },
+    {
+      "rank": 10,
+      "suit": "club",
+      "title": "Mirror Rain",
+      "subtitle": "[MAGIC]",
+      "description": "Leaf-drips replay choices you didn't make; the past as echo.",
+      "flavor": "The rain shows you a path you refused. Now it offers it again—with weight.",
+      "mechanical_hook": "Each PC must make a choice: accept the offer (and a geas) or refuse (and suffer -1 die on all actions for the scene)."
+    },
+    {
+      "rank": 11,
+      "suit": "club",
+      "title": "Redcaps Abroad",
+      "subtitle": "[COMBAT] [FAE]",
+      "description": "Hats wet, boots quick, courtesies thin; violence as hospitality.",
+      "flavor": "They will ask for a kiss or a coin. Refuse, and they take both. Their boots are stained with the blood of failed experiments.",
+      "mechanical_hook": "Combat encounter (Cap 2), but they can be bargained with (Sway DV 4). On failure, they attack."
+    },
+    {
+      "rank": 12,
+      "suit": "club",
+      "title": "Court Claim",
+      "subtitle": "[SOCIAL] [OATH]",
+      "description": "Truth, song, or memory you'd miss; the cost is sacrifice.",
+      "flavor": "The courtier opens its hand. What you place there is never returned.",
+      "mechanical_hook": "A fae demands a sacrifice (memory, Boon, or secret). Refusal ticks a Promise Timer or triggers a Court interference."
+    },
+    {
+      "rank": 13,
+      "suit": "club",
+      "title": "Muster of Boughs",
+      "subtitle": "[WAR] [FEAR]",
+      "description": "Green banners rise; travel becomes trespass.",
+      "flavor": "The boughs bear old sigils. The war they remember ended a thousand years ago.",
+      "mechanical_hook": "The forest is hostile; all navigation rolls are Desperate. You must find shelter (Resolve DV 4) or be harried by fae patrols."
+    },
+    {
+      "rank": 14,
+      "suit": "club",
+      "title": "Empire Wakes",
+      "subtitle": "[APOCALYPSE]",
+      "description": "A district aligns; doors open, guardians open farther.",
+      "flavor": "The shades have orders. You are the target. Beneath the city, a vat cracks.",
+      "mechanical_hook": "Trigger the Genesis Vat Leak timer; imperial shades and vat horrors emerge. The party must flee or face a Boss Seed encounter."
+    }
+  ],
+  "rewards": [
+    {
+      "rank": 2,
+      "suit": "diamond",
+      "title": "Way-Cord",
+      "subtitle": "[TRAVEL]",
+      "description": "A knot points to the true next turn (once); navigation as a gift.",
+      "flavor": "The knot is a breath tied in silk. Untie it to find your way—or to lose it forever.",
+      "cost": "The cord unties itself after use, leaving you with a loose thread that may be used as a clue."
+    },
+    {
+      "rank": 3,
+      "suit": "diamond",
+      "title": "Dew-Mirror",
+      "subtitle": "[TRUTH]",
+      "description": "See a thing as it is, not as it is sung, for one scene; truth as a tool.",
+      "flavor": "The mirror is a drop of water on a leaf. It dries when the lie dies.",
+      "cost": "The mirror dries after one use; it may be recharged at a Moon-Cistern."
+    },
+    {
+      "rank": 4,
+      "suit": "diamond",
+      "title": "Hazel Token",
+      "subtitle": "[TRAVEL]",
+      "description": "Lawful crossing of a warded hedge without snag; permission as paper.",
+      "flavor": "The token is a hazelnut. Crack it open; the kernel is your password.",
+      "cost": "The token is consumed on use; if you're caught without it, the hedge will treat you as trespasser."
+    },
+    {
+      "rank": 5,
+      "suit": "diamond",
+      "title": "Honey-Right",
+      "subtitle": "[SOCIAL]",
+      "description": "Eat and speak safely at any bee-stone ring; hospitality as law.",
+      "flavor": "The honey is golden. Taste it, and the bees will know you as a guest—once.",
+      "cost": "The honey has a mark: you owe the bees a story. The story must be true. "
+    },
+    {
+      "rank": 6,
+      "suit": "diamond",
+      "title": "Name-Bead",
+      "subtitle": "[OATH]",
+      "description": "A kept promise warms; a broken one chills and glows; an oath as a magic item.",
+      "flavor": "The bead is warm in your palm. If it cools, you have forgotten someone.",
+      "cost": "If the bead cools, you lose a memory (the GM chooses a minor fact). The bead can only be re-warmed by a new oath."
+    },
+    {
+      "rank": 7,
+      "suit": "diamond",
+      "title": "Wind-Veil",
+      "subtitle": "[WEATHER]",
+      "description": "Mute a sweet wind's lies for a short walk; truth as protection.",
+      "flavor": "The veil is a scrap of silk. Breathe through it, and the wind cannot speak.",
+      "cost": "The veil frays after one use; it may be repaired by a Shardwright."
+    },
+    {
+      "rank": 8,
+      "suit": "diamond",
+      "title": "City-Shard",
+      "subtitle": "[MAGIC]",
+      "description": "Wake one gate or stair in a phasing ruin; a key as a catalyst.",
+      "flavor": "The shard is a piece of a star-road. Hold it to the lock, and the ruin answers.",
+      "cost": "Using the shard may advance the City Phase timer; the ruin may remember the key."
+    },
+    {
+      "rank": 9,
+      "suit": "diamond",
+      "title": "Truce-Bough",
+      "subtitle": "[SOCIAL]",
+      "description": "Hunt, cut, or camp without offense in a named copse; peace as a branch.",
+      "flavor": "The bough is green. Plant it in the ground, and the forest will not harm you—or help you.",
+      "cost": "The bough wilts after one season; you must return to the copse to renew it."
+    },
+    {
+      "rank": 10,
+      "suit": "diamond",
+      "title": "Oathsap",
+      "subtitle": "[OATH]",
+      "description": "Seal a pact that even echoes respect; a promise as a binding force.",
+      "flavor": "The sap is warm. Drink it, and your words become stone—for good or ill.",
+      "cost": "If you break the pact, the sap turns to ash and you suffer a geas."
+    },
+    {
+      "rank": 11,
+      "suit": "diamond",
+      "title": "Shardwright's Favor",
+      "subtitle": "[CRAFT]",
+      "description": "Repair or light a length of star-road; craft as power.",
+      "flavor": "The favor is a chip of amber. The Shardwright will come when you break it.",
+      "cost": "The Shardwright's aid costs a memory or a secret; she will ask for something in return."
+    },
+    {
+      "rank": 12,
+      "suit": "diamond",
+      "title": "Hazel Audience",
+      "subtitle": "[AUTHORITY]",
+      "description": "One whisper exits as policy; word as law.",
+      "flavor": "The audience is a leaf. Speak into its spine, and the Hazel Queen will listen—once.",
+      "cost": "The leaf withers after use; the Hazel Queen will know if you misuse it."
+    },
+    {
+      "rank": 13,
+      "suit": "diamond",
+      "title": "Alder Writ",
+      "subtitle": "[AUTHORITY]",
+      "description": "Levies defer, wardens guide, scribes stop arguing; authority as writ.",
+      "flavor": "The writ is a thorn. Carry it in your boot, and those bound to the Alder King will make way.",
+      "cost": "The writ is sharp; each use pricks the bearer (mark 1 Fatigue)."
+    },
+    {
+      "rank": 14,
+      "suit": "diamond",
+      "title": "Valeheart Clause",
+      "subtitle": "[LEGEND]",
+      "description": "A temporary exception to any local rule, spoken in leaves.",
+      "flavor": "The clause is a rustle. The forest will pretend it didn't hear—but it will remember.",
+      "cost": "The exception lasts only one scene; after that, the forest may claim a piece of you (1 Corruption or a memory)."
+    }
+  ],
+  "quick_use_notes": {
+    "draw_rules": "Draw until you have all four suits: Spade = place, Heart = actor, Club = pressure, Diamond = leverage. Highest rank sets the main Timer (2–5 → 4, 6–10 → 6, J/Q/K → 8, A → 10).",
+    "diamonds": "Diamonds are codified outcomes (charms/keys/passes) that change position rather than call for a roll.",
+    "empire_echo": "When a J/Q/K is the highest rank in your seed, add one visible relic-logic (floating stairs, singing locks, patrol shades).",
+    "ace_rule": "If any A appears, echo leaf and light motifs—paths that remember, leaves that whisper, light that moves like water."
+  },
+  "additional_features": [
+    {
+      "name": "Forest Claims",
+      "description": "Any oath, bargain, or gift exchanged binds with more weight. Once per session, a spoken promise becomes magically enforceable: breaking it creates 1d4 SB and echoes through scenes."
+    },
+    {
+      "name": "Ruins Awaken",
+      "description": "If you linger at an ancient site, roll or draw to see which mechanism stirs. May grant guidance (lit star-road, a memory shown) or danger (patrol shades, collapsing glyphs)."
+    },
+    {
+      "name": "Court Interference",
+      "description": "Encounters with fae or beast-kin are never neutral. Once per session, the GM may convert a Diamond into a demand for hospitality, tribute, or alliance—shifting the expedition's tone."
+    },
+    {
+      "name": "Genesis Vats Aftermath",
+      "description": "Any scene set in the deep ruins (Amber Ziggurat, Breathing City lower levels) has a chance to trigger a Vat Leak complication. Roll 1d6; on a 1–2, a failed experiment emerges (a redcap, a thorn-walker, or a patchwork horror). On a 3–4, a ghost of a Lethai-thora archivist appears and offers a bargain. On a 5–6, the party finds a sealed door. The door is warm."
+    },
+    {
+      "name": "Local Patrons (Syncretic Names)",
+      "description": "The Unseen Court — The Witness. A parliament of silent roots that remembers every broken promise. The Root-King — The Alder King (local aspect). Promise that grows like a vine, choked by its own leaves. The Star-Weaver — The Ninth. The missing thread in every star-road, the silence after the song. The Green Saint — Oath of Flame & Light (syncretic). A martyr who fed her own name to the Hollow to seal a breach. The Vat-Keeper — The Clockwork Monad (apocalyptic aspect). The pressure to perfect, to optimize, to finish the work."
+    },
+    {
+      "name": "Forest Mood Table (d6 per scene)",
+      "description": "1. Hazel's Favor — Paths open willingly. +1 die to navigation rolls this scene. 2. Alder's Hunger — A claim is made. Someone in the scene must offer a memory or service to proceed. 3. Empire Wakes — A patrol of imperial shades marches through. Avoid or leave something behind (1 Fatigue or a secret). 4. Beast-kin Moot — Animals gather and watch. They will not attack unless provoked, but they remember faces. 5. Sweet Wind — All navigation rolls suffer -1 die; landmarks shift subtly. 6. Green Gate Breath — A threshold appears. Crossing it leads to a different part of the forest (or a different time). The air smells of jasmine and rot."
+    },
+    {
+      "name": "Star-Road Discovery (d6)",
+      "description": "1. Singing Stones — The flagstones hum a tune. Anyone who sings along gains +1 die on the next roll. 2. Echo of an Emperor — A ghostly figure appears and asks a riddle. A correct answer grants a City-Shard. 3. Fractured Timeline — The road shows a glimpse of the future (1d6 scenes ahead). The GM must answer one yes/no question truthfully. 4. Ward-Trap — The segment is booby-trapped. Trigger a Ward-Trap complication. 5. Shardwright's Cache — Hidden nearby is a Shardwright's Favor (Diamond) or a rare component (e.g., amber shard). 6. The Ninth Step — The sequence has a hidden ninth stone. Stepping on it teleports the party to a Valeheart Spire or a court audience. The air tastes of honey."
+    },
+    {
+      "name": "Beast-kin Traits",
+      "description": "Scent Memory: +1 die to track a creature you have smelled before. Parliament Oath: Once per session, you may invoke the beast-kin moot to ask a local animal one simple question (the GM answers truthfully). Claw or Fang: Unarmed strikes deal Harm 1 and count as Light weapons. Vat Legacy: You have a fragment of a forgotten memory — a laboratory, a screaming face, a promise of perfection. Once per session, you may roll Spirit + Lore (DV 3) to recall a clue about a ruin or a monster's weakness. On a failure, the memory causes you 1 Fatigue. Lineage: Stag (+1 die to resist being moved or knocked prone), Lynx (+1 die to stealth in forest terrain), Badger (burrow through loose earth at half speed)."
+    },
+    {
+      "name": "The Lethai-al (Wood Elves)",
+      "description": "Beneath the courtly titles and the star-road records, the true wood elves endure. They call themselves the Lethai-al—those who remain when the tower falls. They do not walk the high roads; they mend them from below, speaking to roots instead of stars. Their elders are oaks, their children are saplings, and their grievances outlast stone. Where the Lethai-thora sought perfection and the courts seek dominion, the Lethai-al seek only reciprocity. They keep no scrolls and sign no contracts, yet nothing is given without expectation. A meal shared is a shield-pledge. A path shown is a future claimed. To them, the forest's question is not spoken but lived: What was taken, and what will be returned? Outsiders rarely recognize the weight of these moments until the trees lean in. The Lethai-al do not attend the parliaments of beast-kin or the audiences of Hazel. When they must speak with outsiders, they do so through intermediaries—moss-scribes, owl-sisters, or the rare gray pilgrim—so that the words are never truly theirs, and the obligation, if any, remains unrooted. They remember the sealed doors better than the archivists, for they were the ones who grew the thorns over them."
+    },
+    {
+      "name": "Beast-Kin Mini Generator",
+      "description": "Roll on each table to build a beast-kin NPC or ancestry concept. Animal Stock: 1. Stag or Elk, 2. Lynx or Wildcat, 3. Badger or Wolverine, 4. Fox or Coyote, 5. Owl or Raven, 6. Bear or Boar. Vat Mark: 1. Mismatched eyes—one animal, one elven, 2. Palms scarred in spiral patterns that weep sap under moonlight, 3. A pelt-patch that never stops growing; must be trimmed weekly, 4. Voice carries a faint harmonic hum, as if two throats speak, 5. Extra digits, clumsy but strangely lucky, 6. Shadow moves a half-step slower than the body. Parliament Role: 1. Sentinel, 2. Speaker, 3. Warden, 4. Seeker, 5. Binder, 6. Outcast. Hidden Need: 1. To silence a recurring dream of amber tubes and singing fluid, 2. To find a sibling taken by redcaps before the last thaw, 3. To burn a specific sealed door and whatever sleeps behind it, 4. To earn a true name among a different parliament, 5. To know whether the Hazel Queen was ever pulled from a vat, 6. To repay a kindness given without condition—a rare and troubling thing."
+    },
+    {
+      "name": "Star-Road Phase Timer [6]",
+      "description": "Tracks how often ancient roads realign. Tick when the party lingers or uses magic. At 4, navigation becomes Desperate; at 6, the road leads to the Amber Ziggurat."
+    },
+    {
+      "name": "Genesis Vat Leak Timer [8]",
+      "description": "Advances when the party disturbs sealed chambers or fails Spirit rolls near ruins. At 4, strange noises and whispers; at 8, a vat-born horror awakens (use Boss Seed)."
+    },
+    {
+      "name": "Favor of the Courts",
+      "description": "Earn Hazel Favor (by keeping promises) or Alder Favor (by collecting debts). Spend 3 favor to call a minor boon (safe passage, a single truthful answer from a fae)."
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "Leaf of the First Tree",
+      "description": "A fossilised leaf that never crumbles. Once per session, reroll a failed promise-related roll. After nine uses, it turns to dust and the Hollow gains a name."
+    },
+    {
+      "name": "The Genesis Key",
+      "description": "A brass tuning fork that can open any sealed vat door, but each use ticks the Vat Leak timer by +1."
+    },
+    {
+      "name": "Mirror of Unfinished Faces",
+      "description": "Shows not your reflection but the unfinished beast-kin you would have become. Use to intimidate fae (+1 die) but mark 1 Corruption."
+    }
+  ],
+  "lore_echoes": [
+    {
+      "title": "The Genesis Vats (The Clockwork Monad)",
+      "description": "Deep beneath the Amber Ziggurat lie the empire's failed laboratories. Here, the Lethai ancients combined elf and beast, hoping to create the perfect guardian — to match the Astroegro's engines of war. The vats still hum, and the beast-kin who survived do not speak of what they saw. The Shardwrights say the Monad's pressure is still optimizing the old designs, and that one day the vats will open again. When they do, the soft place will breathe deeper."
+    },
+    {
+      "title": "The Parliament of Claw and Fur (The Savage Heart)",
+      "description": "The beast-kin are not savages. They hold a moot once every season, deep in a clearing that no star-road touches. Their laws are carved in scent and scar, and their judgments are final. The Savage Heart speaks through their eldest, but it does not command—it suggests. Outsiders who attend the moot must bring a true name of a foe and leave it on the speaking stone. Those who lie are given fur and four legs, and are hunted at the next moon. The beast-kin do not speak of the vats. The Savage Heart remembers."
+    },
+    {
+      "title": "Saint Oren of the Unfinished Star (The Ninth)",
+      "description": "A Lethai-ar astronomer who calculated the exact angle at which the empire's star-roads would collapse. He was erased from the imperial records, but his ghost still walks the Ivory Observatory, tracing equations in starlight. Those who find him may ask one question about the forest's hidden geometry. The answer is always a single number, and that number binds you. He was trying to close the door. He failed."
+    },
+    {
+      "title": "The Gray Pilgrims (The Traveler)",
+      "description": "A wandering order of Lethai-ar who maintain the old way-cords. They wear gray cloaks woven from mist and speak only in riddles. It is said that if you give a Gray Pilgrim a lock of your hair, they will knot it into your way-cord, and you will never be lost in the Valewood again—but you will also never find a place you truly wish to leave. They know the location of the sealed doors. They will not speak of it."
+    },
+    {
+      "title": "The Daughters of the Cord (The Bitter Root)",
+      "description": "A renegade Sister hides among the moss-scribes of the Rooted Amphitheater, trying to untie her own cord from the Hazel Queen's design. She claims the queen's hospitality is a cage, and that the forest's memory is a trap. The Hazel Queen has not corrected her; she only smiles, and the roots grow tighter each night. The Sister whispers that the queen came through the door. No one knows if she means the door to the vats or the other door."
+    },
+    {
+      "title": "The Ninth",
+      "description": "In any Valewood scene, the ninth leaf to fall from a tree will land pointing to a hidden threshold. The wise catch it—or pretend they didn't see. Those who follow the leaf's direction find a place that was not there a moment ago, and something old waits inside. The threshold may lead to a sealed laboratory, a fae court, or a clearing where the air smells of jasmine. It is always warm."
+    }
+  ],
+  "superstitions": [
+    {
+      "name": "Bread to the Roots",
+      "effect": "Crumble a crust at the base of a standing stone. Ignore the first **Sweet Wind** penalty.",
+      "cost": "Burn for +1 die once"
+    },
+    {
+      "name": "Knot the Cord",
+      "effect": "Tie a single knot in a way-cord. Cancel **Oath-Magnet** or take -1 die on your next promise (your choice).",
+      "cost": "Burn for +1 die once"
+    },
+    {
+      "name": "Name to the Cistern",
+      "effect": "Whisper a dead enemy's name into the Moon-Cistern. Gain +1 Effect when evading fae this scene, but mark **Obligation** to the Alder King.",
+      "cost": "Burn for +1 die once"
+    },
+    {
+      "name": "Honey to the Threshold",
+      "effect": "Leave a drop of honey on a doorframe that should not exist. The door will not open for you, but it will not open behind you either.",
+      "cost": "Burn for +1 die once"
+    }
+  ],
+  "sb_spend_table": {
+    "minor_complications": [
+      "**Exposure:** Your actions draw attention from fae courtiers or beast-kin sentinels.",
+      "**Noise:** A rustle of leaves, a snapped twig, or a whispered word alerts nearby imperial shades.",
+      "**Trace:** Footprints on moss or disturbed lichen mark your passage for trackers.",
+      "**Delay:** A path reroutes, a bridge phases out, or a talking tree demands a riddle.",
+      "**Supply Strain:** Mark +1 segment on a relevant resource timer (food, light, memory)."
+    ],
+    "moderate_setbacks": [
+      "**Alarm Raised:** A Green Neighbor or an Owl-Sister becomes aware and begins a hunt.",
+      "**Position Lost:** Glamour fog or a sudden star-road shift costs you advantageous ground.",
+      "**Foe Appears:** A redcap, a thorn-walker, or a patchwork horror arrives.",
+      "**Gear Trouble:** A way-cord tangles, a dew-mirror cracks, a city-shard goes dark.",
+      "**Oath Strain:** A promise you made in the forest begins to tighten (tick a Promise Timer)."
+    ],
+    "serious_trouble": [
+      "**Reinforcements:** Additional fae courtiers, beast-kin, or imperial shades arrive.",
+      "**Key Gear Breaks:** A star-road shard crumbles, a truce-bough wilts, a name-bead cools permanently.",
+      "**Major Twist:** A sealed door opens, a vat leaks, the Hazel Queen revokes a protection.",
+      "**Rail Tick:** Advance a relevant campaign/front timer by 1 segment (e.g., Forest Waking, Court Schism).",
+      "**Condition Applied:** Mark Fatigue 1, Harm 1, or a condition (Geas-Touched, Name-Threaded)."
+    ],
+    "major_turns": [
+      "**Trap Springs:** A ward-trap activates, a star-road collapses, or a Genesis Vat failure emerges.",
+      "**Authority Arrival:** The Hazel Queen, the Alder King, or the Huntsman intervenes.",
+      "**Scene Shift:** The environment changes dramatically—a city phases in, a grove burns, the moon turns red.",
+      "**Patron Omen:** A fae omen appears (a singing stone, a weeping statue, a leaf that falls upward).",
+      "**Narrative Pivot:** The story reframes—the sealed door was a trap, the beast-kin are not the enemy, the soft place is already here."
+    ]
+  },
+  "pursuit_ladder": [
+    "**Advance/Withdraw (Wits + Lore):** On a hit, shift one band. On a strong hit, also impose *Leaf Blind* (pursuers lose scent).",
+    "**Cut the Star-Road (Presence + Lore):** On a hit, freeze range for one exchange; if a way-cord is in your possession, +1 die.",
+    "**Weather the Glamour (Endurance + Spirit):** On a hit in *Sweet Wind* or *Name-Theft*, you pick who keeps their bearings; on a miss, the GM does."
+  ],
+  "boss_archetypes": [
+    {
+      "name": "The Unsealed",
+      "tags": [
+        "Genesis Vat Horror"
+      ],
+      "description": "A vat-born horror that escaped the sealed laboratories.",
+      "phases": [
+        "Leak",
+        "Gestation",
+        "Unmaking"
+      ],
+      "cracks": [
+        "seal the vat with a shardwright's favor",
+        "offer a memory to the Genesis Keeper",
+        "collapse the Amber Ziggurat's keystone"
+      ]
+    },
+    {
+      "name": "The Thorn-King",
+      "tags": [
+        "Fae Usurper"
+      ],
+      "description": "A fae who seeks to claim the Alder King's throne by corrupting the forest's law.",
+      "phases": [
+        "Courtesy",
+        "Claim",
+        "Crown"
+      ],
+      "cracks": [
+        "refuse three gifts",
+        "name his true origin (a failed beast-kin)",
+        "burn the ninth grove"
+      ]
+    },
+    {
+      "name": "The Echo-Emperor",
+      "tags": [
+        "Imperial Shade"
+      ],
+      "description": "The ghost of a Lethai emperor who refuses to accept the empire's fall.",
+      "phases": [
+        "March",
+        "Patrol",
+        "Reckoning"
+      ],
+      "cracks": [
+        "perform the unfinished legionary oath",
+        "return a lost standard",
+        "remind him of the empire's fall"
+      ]
+    }
+  ],
+  "faction_entanglements": [
+    "**Hazel Court:** Keep promises and honor hospitality; break them and the court will name you oath-breaker.",
+    "**Alder Court:** Collect debts and enforce old laws; refuse and the forest's thorns will grow around you.",
+    "**Beast-kin Parliament:** Respect the old scars and the laws they imply; cross them and the animals will remember your scent.",
+    "**Gray Pilgrims:** Seek the old way-cords and the wisdom of the paths; disrespect them and the forest will lose you.",
+    "**Genesis Vats:** The deeper you go, the more the vats hum. The hum is a promise of perfection. The promise is a lie."
+  ],
+  "cross_regional_ties": [
+    "**Aelinnel (Gnomes):** The Green Gate is a two-way door; the fae courts exchange warnings, not gifts.",
+    "**Aelaerem (Halflings):** The Hollow's attention is a shared dread; the Hazel Queen does not speak of what lies beyond the ninth leaf.",
+    "**Mistlands (Direwood):** The forest's breath crosses the water; the bell-lines are the only thing keeping it at bay.",
+    "**Acasia (Broken Marches):** The Curse does not cross the Valewood's edge; the star-roads remember what the empire forgot."
+  ],
+  "patronage_and_power": {
+    "description": "In the Valewood, power flows through ancient magic, forgotten oaths, and the delicate balance between guest and host. The Lethai-ar maintain influence through their knowledge of paths and ruins, while the fae courts wield power through hospitality and geas. Beast-kin serve as guardians of the deeper mysteries, and the echoes of the empire still patrol their eternal rounds, enforcing laws written in starlight and stone. But beneath it all, the sealed doors wait. The fae courts are not the masters of the forest — they are its children, born from the soft place that pressed through when the empire's experiments tore the fabric. The Lethai-thora who survived burned their records and sealed their guilt in vaults of amber and iron. The beast-kin carry the memory in their bones. The monsters are the ones who remember too clearly.",
+    "for_the_gm": [
+      "Tie rewards to visible symbols (tokens, mirrors, cords) that can be challenged, stolen, or voided — and that may carry a whiff of the vats.",
+      "Let rival courts issue conflicting protections, forcing players to choose whose favor matters more — and which sealed door they are willing to approach.",
+      "Use the ruins, groves, and star-roads as arenas for social contests, where knowledge of ancient customs determines success — and where a misstep may lead to a place that was sealed for a reason.",
+      "Introduce the Genesis Vats Aftermath as a recurring tension. The deeper the party goes, the more they risk waking something that should sleep."
+    ]
+  },
+  "index": [
+    "Valewood",
+    "Empire Under Leaves generator",
+    "Genesis Vats",
+    "Lethai-thora experiments",
+    "Beast-kin origins",
+    "Fae incursion (hinted)",
+    "Soft place",
+    "Sealed doors",
+    "Valewood theme generator",
+    "Places!Valewood",
+    "People!Valewood",
+    "Complications!Valewood",
+    "Rewards!Valewood",
+    "Hazel Queen",
+    "Alder King",
+    "The Huntsman",
+    "Star-Road",
+    "Rooted Amphitheatre",
+    "Glyphed Bridge",
+    "Moon-Cistern",
+    "Breathing City",
+    "Valeheart Spire",
+    "Pathweaver",
+    "Owl-Sister",
+    "Moss-Scribe",
+    "Echo-Legionary",
+    "Shardwright",
+    "Way-Cord",
+    "Dew-Mirror",
+    "Valeheart Clause",
+    "Beast-kin",
+    "Gray Pilgrims",
+    "Forest Mood",
+    "Star-Road Discovery",
+    "Local Patrons!Valewood"
+  ],
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

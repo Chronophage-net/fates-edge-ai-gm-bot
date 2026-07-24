@@ -1,0 +1,832 @@
+{
+  "id": "dungeons-living-infrastructure",
+  "version": "1.0.0",
+  "type": "generator",
+  "title": "Dungeons — Living Infrastructure",
+  "label": "chap:dungeons",
+  "key_demographic": "Denizens (Mixed)",
+  "manifest_path": "/data/docs/manifest.json",
+  "overview": {
+    "tagline": "Beneath the surface, ancient places breathe with mechanical lungs and dream electric dreams. The walls remember every footfall; the air carries whispers of forgotten conversations.",
+    "genre": "Survival horror underground, infrastructure as adversary, eco-horror, forgotten machinery.",
+    "mood": "Living Infrastructure",
+    "starting_location": "A threshold where stone meets worked stone. The air tastes of copper and old keys. Your footsteps echo half a beat too late. The walls are warm—and they pulse like hearts. Before you stands a door that was not here when you looked away. It has a name carved into it: the name of the last person who entered and did not leave. The door is open. It has been waiting.",
+    "lore": {
+      "history": "Dungeons are not empty holes. They are **living infrastructure**—semi-sentient systems that remember, learn, and hunger. Their corridors shift when you aren't looking. Their doors open to places you did not intend. Their air tastes of copper, old keys, and the breath of something that has been waiting a very long time. Beneath the surface, ancient places breathe with mechanical lungs. The Aeler built many of them as overflow vaults and under-roads; the Covenant sealed others to contain what should not walk; the Sidhi mined a few and left behind ghost-workings. Some were never built at all. They grew from pressure, from forgotten oaths, from the weight of unresolved debts. A dungeon is not a place. It is a process. Like a fungus in the dark. Like a story told too many times. Like a curse that compounds.",
+      "first_notice": "The air tastes of copper and old keys. Your footsteps echo half a beat too late. The walls are warm—and they pulse like hearts.",
+      "rule_that_kills": "Never ignore a door that opens when you're not looking. The dungeon is offering you a choice. Refuse, and the next door may not open at all. Accept, and the door may lead to a room that was always there, waiting for someone to finally walk through. The room has been waiting for nine thousand years. It is not tired of waiting."
+    }
+  },
+  "quotes": [
+    {
+      "speaker": "The Dungeon's Architect (Elite)",
+      "text": "I am a Scholar-Prisoner. The walls here have a memory like old parchment—they remember every scream, every spell, every drop of blood spilled on the stones. And sometimes, when the air's just right, they whisper it back to you. The dungeon listens. The question is whether it learns. I have been here for nine years. I have heard it learning. It started with single words. Then sentences. Now it speaks in paragraphs. Last week, it finished my thoughts before I did."
+    },
+    {
+      "speaker": "Cavern-Crawler (Commoner)",
+      "text": "Dungeons are not ruins—they are systems. Ventilation shafts that breathe, water channels that pulse, doors that open and close without any hand to move them. The Aeler built many of them; the Covenant sealed others; the Sidhi mined a few; and some were never built at all. They grew. Like fungus in the dark. Like a story told too many times. Like a debt that compounds."
+    }
+  ],
+  "ninth_taboo": {
+    "description": "In any dungeon, the ninth door you open (counting only doors that required conscious choice) will lead to a room that is **not on your map**. The room is always warm. Something inside knows your name. If you enter, you may find treasure—or become part of the dungeon's memory. The wise open eight doors, then backtrack."
+  },
+  "quickstart": {
+    "steps": [
+      "**Choose a Dungeon Type:** Keystone Vault (Aeler), Sealed Catacomb (Covenant), Pressure Grotto (Mazereth), Spore Warren (Mycotheres), or Raw Vein (wild).",
+      "**Track Four Things:** Air [6], Light [6], Noise [4], Attention [6] (choose: Drake Notice, Cult Patrol, or Vein Unrest).",
+      "**Intent Dial (per room/zone):** Stealth / Speed / Survey / Communion (parley with place-spirits).",
+      "**Diamonds to Carry:** keystone courtesy, bell-wire, toll-chalk, web token, shed-skin writ, pressure map, reed charm.",
+      "**Etiquette on Entry:** Step on stone; speak under beam; ring once. (Grants Position +1 in first scene if observed.)"
+    ]
+  },
+  "dungeon_mechanics": {
+    "tracks": [
+      {
+        "name": "Air",
+        "max_segments": 6,
+        "description": "Stale pockets, smoke, gas leaks. When Air ≥ 4, all physical actions start –1 Position unless you have a bellows or mask. At Air = 0, suffocation begins—each PC tests Endurance (DV 4) or takes Harm 1."
+      },
+      {
+        "name": "Light",
+        "max_segments": 6,
+        "description": "Lamps, glow-silk, bioluminescence. At Light = 0, all actions are Desperate; wandering monsters find you automatically. If Light ≤ 2, all actions suffer -1 die from shadows and uncertainty."
+      },
+      {
+        "name": "Noise",
+        "max_segments": 4,
+        "description": "Clatter, echoes, spells. When Noise = 4, a patrol or predator arrives (GM chooses). Each point of Noise above 2 gives +1 die to any creature trying to track you."
+      },
+      {
+        "name": "Attention",
+        "max_segments": 6,
+        "description": "The dungeon's focus. When Attention = 6, the boss manifests or a catastrophic trap triggers. Reset to 0 after. At Attention ≥ 3, the dungeon begins to adapt—doors that were open are now closed, paths that were clear are now blocked."
+      }
+    ],
+    "intent_dial": {
+      "stealth": "Low Noise, slower. +1 Position to Hide Sign, but Distance advances slower.",
+      "speed": "Tick Noise to push distance; invites mishaps.",
+      "survey": "Read the stone/web/flow. On a hit, reduce Air or Light by 1.",
+      "communion": "Parley with place-spirits. Risky boons (a clue, a shortcut) but may tick Attention."
+    },
+    "three_timer_rule": "At most three active timers in a scene. The GM selects which of Air/Light/Noise/Attention are active. Long-term timers (Hoard's Attention, Promise Timer) are tracked between sessions."
+  },
+  "names": {
+    "first_male": [
+      "Korr",
+      "Thrain",
+      "Grimm",
+      "Veth",
+      "Rurik",
+      "Cael"
+    ],
+    "first_female": [
+      "Svala",
+      "Harken",
+      "Lira",
+      "Myrin",
+      "Tamsin",
+      "Nix"
+    ],
+    "clan_origin": [
+      "Deepforged",
+      "Ironbound",
+      "Root-Touched",
+      "Spore-Kin",
+      "Pressure-Born",
+      "Hollow-Kin"
+    ],
+    "epithets": [
+      "the Unseeing",
+      "the Candle-Eater",
+      "the Silent",
+      "the Soot-Scarred",
+      "the Echo-Thief",
+      "the Last Step"
+    ]
+  },
+  "places": [
+    {
+      "rank": 2,
+      "suit": "spade",
+      "title": "Air-Sealed Chamber",
+      "subtitle": "[SURVIVAL]",
+      "description": "A room with no obvious vent; the air is still, warm, and tastes of iron.",
+      "mechanical_hook": "Testing Air each scene; on a miss, start Suffocation [4]. The walls have tally marks in eights—someone counted their breaths here. They stopped at eight. The ninth breath is carved into the stone as a single line: 'I ran out of chalk.'",
+      "flavor": "Each scene spent here requires a group Endurance test (DV 3). On failure, the GM may tick Air +1."
+    },
+    {
+      "rank": 3,
+      "suit": "spade",
+      "title": "Whispering Gallery",
+      "subtitle": "[STEALTH]",
+      "description": "A long corridor where every sound echoes nine times.",
+      "mechanical_hook": "Any roll that produces noise ticks Noise +1; on a miss, the echo speaks a name. Stealth rolls are Desperate. A successful Crafting test (DV 4) can muffle the echoes for one scene. On a failure, the echo speaks a name from your past—tick Attention +1.",
+      "flavor": "If you speak the name aloud, the echoes will stop for one scene, but the dungeon now knows your voice."
+    },
+    {
+      "rank": 4,
+      "suit": "spade",
+      "title": "Flooded Vault",
+      "subtitle": "[TRAVEL]",
+      "description": "A submerged antechamber; pressure doors block the way.",
+      "mechanical_hook": "Crossing requires a Body+Athletics test (DV 4) or lose 1 Light (wet lamp). The water is cold—colder than it should be. A successful Wits+Lore test (DV 3) reveals a current that pulls toward a grate at the bottom.",
+      "flavor": "If you follow the current, you find a hidden passage (reduce Distance by 1) but lose 1 Fatigue from the cold. The water tastes of salt, even far from the sea."
+    },
+    {
+      "rank": 5,
+      "suit": "spade",
+      "title": "Clockwork Junction",
+      "subtitle": "[MAGIC]",
+      "description": "Gears turn in the walls; brass conduits hum.",
+      "mechanical_hook": "A successful Crafting test (DV 3) can shift one segment of any dungeon timer. On a 1, start Anomaly [4]. The gears turn in a rhythm—eight ticks, then a pause.",
+      "flavor": "If you can match the rhythm (Wits+Performance DV 4), the junction will reveal a hidden door. If you fail, the gears will shift in the wrong direction—tick Noise +1 and start Anomaly [4]. The Anomaly is always a door that leads somewhere it shouldn't."
+    },
+    {
+      "rank": 6,
+      "suit": "spade",
+      "title": "Spore Garden",
+      "subtitle": "[HEAL]",
+      "description": "Bioluminescent fungi carpet the floor; soft light, softer danger.",
+      "mechanical_hook": "Forage DV 2 (glow-spores, medicinal moss). On a miss, inhale spores → Weariness +1. The fungi pulse in a pattern—eight glows, then a pause.",
+      "flavor": "A successful Wits+Lore test (DV 3) identifies the pattern as a counting song. If you sing along, the spores will not harm you. If you harvest without singing, the fungi will remember your face—tick Attention +1."
+    },
+    {
+      "rank": 7,
+      "suit": "spade",
+      "title": "Bell-Line Corridor",
+      "subtitle": "[STEALTH]",
+      "description": "Ropes of copper bells hang from the ceiling; any movement rings them.",
+      "mechanical_hook": "Stealth rolls start Desperate. A successful Crafting test (DV 4) silences them for one scene. The bells have a pattern—eight rings, then a pause.",
+      "flavor": "If you ring the ninth bell, the corridor will fall silent—for one scene. But the ninth bell will also alert the dungeon's Voice (tick Attention +2). The bells were hung by someone who counted in eights. The ninth bell is a trap."
+    },
+    {
+      "rank": 8,
+      "suit": "spade",
+      "title": "Keystone Arch",
+      "subtitle": "[AUTHORITY]",
+      "description": "A stone doorway carved with ancient Aeler runes.",
+      "mechanical_hook": "Present a Keystone Courtesy or spend 1 Boon to open it without rolling. The arch has a seal—break it, and the dungeon notices (tick Attention +1).",
+      "flavor": "If you present a Keystone Courtesy, the arch will open silently. If you try to force it, roll Body+Athletics (DV 5). On failure, the arch collapses (Harm 1 to all in Close) and ticks Noise +2. The runes spell a name—the builder's name. If you speak it, the arch will open for you."
+    },
+    {
+      "rank": 9,
+      "suit": "spade",
+      "title": "Mirror Hall",
+      "subtitle": "[TRUTH]",
+      "description": "Walls of polished obsidian show reflections that move independently.",
+      "mechanical_hook": "Any lie spoken here is answered by a reflection that speaks the truth—at cost of 1 Fatigue to the liar. The reflections are getting closer. Each time you pass a mirror, the reflection takes one step forward.",
+      "flavor": "If you pass nine mirrors, the reflections will step out of the glass (treat as a Cap 3 adversary). To avoid them, you must speak a truth about yourself that you have never told anyone. The reflections will listen—and step back."
+    },
+    {
+      "rank": 10,
+      "suit": "spade",
+      "title": "Pressure Vent",
+      "subtitle": "[TRAVEL]",
+      "description": "A narrow shaft with rhythmic blasts of hot air.",
+      "mechanical_hook": "Crossing requires timing (Wits+Lore DV 4). On a miss, take Harm 1 (burn). The vent breathes—eight blasts, then a pause.",
+      "flavor": "If you count the blasts and move on the ninth, you will cross safely. If you count wrong, the vent will scorch you (take Harm 1) and tick Noise +1 (your scream echoes). The vent is a lung of the dungeon—it is breathing you."
+    },
+    {
+      "rank": 11,
+      "suit": "spade",
+      "title": "Hoard Chamber",
+      "subtitle": "[WEIGHT]",
+      "description": "A cavern of treasure, but every coin is warm and whispers.",
+      "mechanical_hook": "Taking anything starts Hoard's Attention [4]; on fill, a guardian awakens. The whispers are a counting song—eight verses, then a question.",
+      "flavor": "If you answer the question truthfully, you may take one item without waking the guardian. If you lie, or if you take more than one, the Hoard's Attention timer fills immediately. The guardian is a Hoard-Wyrd. The question is always about what you most desire—and what you most fear."
+    },
+    {
+      "rank": 12,
+      "suit": "spade",
+      "title": "Ossuary Forge",
+      "subtitle": "[CRAFT]",
+      "description": "Bones and scrap metal are smelted into crude tools.",
+      "mechanical_hook": "Can produce one Relic tag (e.g., BLEED, WARD) at cost of 1 Obligation (the dead remember). The forge is warm—it has been used recently.",
+      "flavor": "A successful Wits+Investigation test (DV 3) reveals a name carved into the anvil. If you speak the name, the forge will accept your offering without Obligation. If you don't, you owe the dead a story. The dead will collect."
+    },
+    {
+      "rank": 13,
+      "suit": "spade",
+      "title": "Observatory of Scars",
+      "subtitle": "[DIVINE]",
+      "description": "A domed chamber with sky-windows showing past wars, not current skies.",
+      "mechanical_hook": "Once per delve, ask the GM one question about the dungeon's history; the answer is true but cryptic. The scars on the floor are old blood—they're warm.",
+      "flavor": "If you touch them, you see a memory of the dungeon's past (the GM describes a scene). The memory always contains a clue about a hidden door or a treasure. But the dungeon will notice you touching its scars—tick Attention +1."
+    },
+    {
+      "rank": 14,
+      "suit": "spade",
+      "title": "The Heart",
+      "subtitle": "[LEGEND]",
+      "description": "The core of the dungeon: a beating crystal, a sleeping dragon, a coven of cultists, or a ticking machine.",
+      "mechanical_hook": "The boss lives here. Entering triggers the final phase. The heart beats in eights—eight pulses, then a pause. The pause is growing shorter.",
+      "flavor": "If you can stop the heart (a Craft or Lore test DV 5), the dungeon will fall silent—and you will be trapped until you start it again. If you destroy the heart, the dungeon will collapse. If you speak to it, it will answer in a voice that sounds like your own. The heart is the dungeon's memory. It remembers everything."
+    }
+  ],
+  "people_and_factions": [
+    {
+      "rank": 2,
+      "suit": "heart",
+      "title": "Cavern-Crawler",
+      "subtitle": "[SURVIVAL]",
+      "description": "A grimy survivor with a lamp and a longer list of scars.",
+      "mechanical_hook": "Knows one shortcut (reduce Distance by 1) but demands a share of the first Diamond found. The crawler's scars are from the last party they guided—they didn't share.",
+      "flavor": "If you agree to share, they will guide you through one hazardous zone (ignore one Clubs draw). If you try to cheat them, they will lead you into a dead end—and their scars will have company. They count their scars in eights. The ninth is always the most recent."
+    },
+    {
+      "rank": 3,
+      "suit": "heart",
+      "title": "Pressure Guilder (Mazereth)",
+      "subtitle": "[TRADE]",
+      "description": "A deep tunneler who counts breaths like coin.",
+      "mechanical_hook": "Offers a Pressure Map (Diamond) for 1 Supply or a story about a collapse. The guilders never use ink. Their maps are drawn in blood—their own.",
+      "flavor": "If you accept a map, you are now in their debt. They will call on you when they need a new map drawn. If you refuse, they will not offer again. The map shows safe routes through gas pockets—but it was drawn before the last collapse. Some routes no longer exist."
+    },
+    {
+      "rank": 4,
+      "suit": "heart",
+      "title": "Aeler Under-Mason",
+      "subtitle": "[CRAFT]",
+      "description": "A dwarf with a tuning fork and a level.",
+      "mechanical_hook": "Can stabilize one collapsing zone per delve at cost of 1 Fatigue. The under-mason carries a bell that rings in eights. They never ring it—they tap it once for each breath they take.",
+      "flavor": "If you ask them why, they will say: 'The ninth ring calls the mountain. The mountain always answers.' If you accept their help, they will stabilize one zone—but they will ask you to carry a message to the surface. The message is always the same: 'The stone remembers.'"
+    },
+    {
+      "rank": 5,
+      "suit": "heart",
+      "title": "Lethai-ar Silk-Warden",
+      "subtitle": "[SOCIAL]",
+      "description": "A masked elf whose web-token grants passage through disputed corridors.",
+      "mechanical_hook": "Will escort the party past one hazard if they swear an oath witnessed by her. The oath is binding—the silk remembers.",
+      "flavor": "If you break the oath, the warden will know—and the silk will tighten. The warden's mask hides a face that is not her own. She traded it for the web-token. If you ask her name, she will give you a false one. The true name is woven into the web."
+    },
+    {
+      "rank": 6,
+      "suit": "heart",
+      "title": "Spore-Speaker",
+      "subtitle": "[MAGIC]",
+      "description": "A mycothe priest who communes with fungal networks.",
+      "mechanical_hook": "Can clear 1 segment of Air or Light in exchange for a memory (erase a minor fact). The priest's voice is a low hum—eight notes, then a pause. They never speak the ninth.",
+      "flavor": "If you offer a memory, the priest will take it—and the fungi will clear the air or light. If you offer a false memory, the fungi will reject it—and the priest will know you lied. The fungi are the dungeon's nervous system. They remember everything."
+    },
+    {
+      "rank": 7,
+      "suit": "heart",
+      "title": "Drake-Touched Thrall",
+      "subtitle": "[FEAR]",
+      "description": "A cultist with scales growing from their arms.",
+      "mechanical_hook": "Offers a Drake's Whistle (summon a minor drake for one scene) at cost of starting Attention +1. The thrall's scales are warm. They count their breaths in eights—and they never reach the ninth.",
+      "flavor": "If you ask why, they will say: 'The ninth is the drake's breath. It is not for me.' The Drake's Whistle will summon a drake—but the drake will know who called it. Tick Attention +1. The drake will remember your face."
+    },
+    {
+      "rank": 8,
+      "suit": "heart",
+      "title": "Iron Avenger",
+      "subtitle": "[COMBAT]",
+      "description": "An Aeler feud-keeper hunting a fugitive in the deep.",
+      "mechanical_hook": "Will fight beside you against a common enemy, but will demand a blood-price afterward. The avenger carries a tally-stick notched with the names of the dead.",
+      "flavor": "They add a notch for each life you take together. At the end of the fight, they will demand a blood-price—the name of someone you have wronged. If you refuse, they will add your name to the tally. The avenger never forgets a debt."
+    },
+    {
+      "rank": 9,
+      "suit": "heart",
+      "title": "Fossil Juror",
+      "subtitle": "[JUSTICE]",
+      "description": "A sentient skeleton bound to judge intruders.",
+      "mechanical_hook": "Will not attack; instead, asks a riddle. Answer correctly to pass; fail and it demands a geas. The juror's riddle is always about a count—eight or nine. The answer is always eight. The ninth is the trap.",
+      "flavor": "If you answer correctly, the juror will step aside. If you answer incorrectly, it will demand a geas—a task you must perform before you leave the dungeon. The geas is always fair. The juror was a judge in life. It is still judging."
+    },
+    {
+      "rank": 10,
+      "suit": "heart",
+      "title": "Hoard-Wyrd",
+      "subtitle": "[DEATH]",
+      "description": "A ghost bonded to a specific treasure.",
+      "mechanical_hook": "It will let you take the item if you promise to return it after one use—or suffer a curse. The wyrd's voice is a whisper in eights. It counts the days since the treasure was taken. The count is a weight.",
+      "flavor": "If you promise to return the item, the wyrd will let you take it. If you break the promise, the wyrd will curse you—and the curse will spread to your bloodline. The wyrd is patient. It has been waiting for centuries."
+    },
+    {
+      "rank": 11,
+      "suit": "heart",
+      "title": "Ember Imp",
+      "subtitle": "[TRICK]",
+      "description": "A small, sharp-toothed creature that trades heat for secrets.",
+      "mechanical_hook": "Will light your lamp for 1 Fatigue, but will also steal a small item when you aren't looking. The imp's fire is cold—it burns blue. It has a name—but it won't tell you.",
+      "flavor": "If you offer a secret, it will light your lamp. If you offer a false secret, it will steal something more valuable. The imp is a creature of the deep—it belongs to the dungeon. It is always watching."
+    },
+    {
+      "rank": 12,
+      "suit": "heart",
+      "title": "Herald Gargoyle",
+      "subtitle": "[AUTHORITY]",
+      "description": "A stone sentinel that enforces the dungeon's etiquette.",
+      "mechanical_hook": "Demands a tithe (a story, a breath, a name) before allowing passage. The gargoyle's voice is the sound of grinding stone. It counts your breaths—eight, then a pause. It will not let you pass if you take the ninth.",
+      "flavor": "If you offer a story, it will listen and judge. If the story is true, it will let you pass. If the story is false, it will demand a name instead. The gargoyle never forgets a face."
+    },
+    {
+      "rank": 13,
+      "suit": "heart",
+      "title": "Wyrm-Bound Knight",
+      "subtitle": "[OATH]",
+      "description": "A fallen knight bound by a geas to a sleeping dragon.",
+      "mechanical_hook": "Will aid in a single combat if you promise to break their oath afterward. The knight's armor is rusted, but their blade is sharp. The geas is written on their shield—eight words, then a pause.",
+      "flavor": "If you promise to break the oath, they will fight beside you. After the fight, they will demand you break the geas—by speaking the ninth word. The ninth word is the dragon's name. If you speak it, the knight will be free. The dragon will wake."
+    },
+    {
+      "rank": 14,
+      "suit": "heart",
+      "title": "The Dungeon's Voice",
+      "subtitle": "[MYSTERY]",
+      "description": "A whisper from the walls, speaking in your own voice.",
+      "mechanical_hook": "It offers a shortcut or a treasure in exchange for a promise. Breaking it costs a memory. The voice counts your words—eight, then a pause. If you speak the ninth word, the voice will answer.",
+      "flavor": "The answer is always the truth. If you make a promise to the voice, you must keep it—or lose a memory. The voice is the dungeon's attention given form. It is always listening. It knows your name."
+    }
+  ],
+  "complications": [
+    {
+      "rank": 2,
+      "suit": "club",
+      "title": "Micro-Collapse",
+      "subtitle": "[DISASTER]",
+      "description": "A ceiling cracks; stone dust fills the air.",
+      "mechanical_hook": "Each PC tests Body+Athletics (DV 3) or takes Harm 1. Tick Noise +1. The dust has a pattern—eight particles, then a pause.",
+      "flavor": "If you hold your breath through eight counts, you avoid the worst of it. If you breathe on the ninth, you cough (mark 1 Fatigue). The dust settles in a shape that looks like a door. The door is not on your map."
+    },
+    {
+      "rank": 3,
+      "suit": "club",
+      "title": "Lantern Sputter",
+      "subtitle": "[LIGHT]",
+      "description": "Your light source gasses or gutters.",
+      "mechanical_hook": "Reduce Light by 1. On a miss, the lamp goes out entirely—start Stumble in Dark [4] timer. The darkness is warm.",
+      "flavor": "If you stand still and count to eight, you will see a faint glow from a direction you didn't notice. The glow is a Lantern-Eye. If you follow it, you may find a way out—or a way deeper. The lantern sputters because the dungeon is breathing. It is trying to extinguish you."
+    },
+    {
+      "rank": 4,
+      "suit": "club",
+      "title": "Pocket Gas",
+      "subtitle": "[AIR]",
+      "description": "A burst of foul air from a crack.",
+      "mechanical_hook": "Tick Air +1. Anyone in the scene who fails an Endurance test (DV 3) marks 1 Fatigue. The gas smells of iron and old keys—the dungeon's breath.",
+      "flavor": "If you light a flame, the gas will ignite (Harm 2 to everyone in Close). If you hold your breath, you avoid the worst. The gas has a rhythm—eight pulses, then a pause. The pause is when it's safe to breathe."
+    },
+    {
+      "rank": 5,
+      "suit": "club",
+      "title": "Echo-Lure",
+      "subtitle": "[TRAP]",
+      "description": "The dungeon mimics a voice you know, calling from a side passage.",
+      "mechanical_hook": "Whoever follows must test Wits+Resolve (DV 4) or be separated from the party for 1 scene. The voice is counting—eight, then a pause.",
+      "flavor": "If you answer on the ninth, the voice will respond. If you follow the voice, you will be led to a room that is not on your map. The room is always warm. Something inside knows your name. If you resist the lure, the voice will grow angry—tick Attention +1."
+    },
+    {
+      "rank": 6,
+      "suit": "club",
+      "title": "Leech Bloom",
+      "subtitle": "[COMBAT]",
+      "description": "A patch of carnivorous fungi awakens.",
+      "mechanical_hook": "Cap 2 adversary; if ignored, ticks Supplies –1 (they eat rations). The fungi have a rhythm—eight pulses, then a pause.",
+      "flavor": "If you move during the pause, they will not notice you. If you move during the pulse, they will attack. The fungi are the dungeon's teeth. They are always hungry."
+    },
+    {
+      "rank": 7,
+      "suit": "club",
+      "title": "Silk Strand Snaps",
+      "subtitle": "[TRAVEL]",
+      "description": "A Lethai-ar web bridge collapses.",
+      "mechanical_hook": "Distance –1; anyone on the bridge tests Body+Athletics or takes Harm 1. The strands are warm—they were woven by the dungeon itself.",
+      "flavor": "If you fall, you land in a chamber that is not on your map. The chamber is full of webs. Something is watching you from the ceiling. If you cut the strands, the dungeon will notice—tick Attention +1."
+    },
+    {
+      "rank": 8,
+      "suit": "club",
+      "title": "Oath-Magnet",
+      "subtitle": "[OATH]",
+      "description": "A spoken promise in this zone becomes magically binding.",
+      "mechanical_hook": "Any vow made here ticks a Promise Timer [4] that tightens on a lie. The dungeon is witness—it never forgets a promise.",
+      "flavor": "If you break your word, the Promise Timer will fill. When it fills, the dungeon will claim something from you—a memory, a name, or a breath. The oath-magnet is the dungeon's way of collecting debts. It is always collecting."
+    },
+    {
+      "rank": 9,
+      "suit": "club",
+      "title": "Drake Whisper",
+      "subtitle": "[ATTENTION]",
+      "description": "A distant roar echoes; the dungeon's attention sharpens.",
+      "mechanical_hook": "Tick Attention +1. On a miss, also mark Fatigue (fear). The roar has a rhythm—eight roars, then a pause.",
+      "flavor": "If you count them, you can predict when the drake will pass. If you are in its path, you must hide (Stealth test DV 4) or face the drake. The drake is the dungeon's pet. It is always hungry."
+    },
+    {
+      "rank": 10,
+      "suit": "club",
+      "title": "Patrol Net Tightens",
+      "subtitle": "[AUTHORITY]",
+      "description": "Sentinels or cultists adjust their routes.",
+      "mechanical_hook": "Next Stealth roll starts at Desperate Position. The patrols move in eights—eight steps, then a pause.",
+      "flavor": "If you move during the pause, you can avoid them. If you are caught, you must pay a toll—a story, a breath, or a name. The patrols are the dungeon's enforcers. They never sleep."
+    },
+    {
+      "rank": 11,
+      "suit": "club",
+      "title": "Lose the Bell-Wire",
+      "subtitle": "[TRAVEL]",
+      "description": "Your guide-rope is cut; you are lost.",
+      "mechanical_hook": "Distance +2 segments; all navigation rolls suffer –1 die until you find a landmark. The rope was cut with a sharp knife—it was intentional. Someone wanted you to be lost.",
+      "flavor": "If you follow the cut rope, it leads to a side passage. The passage is not on your map. If you take it, you find a cache (roll on Diamonds). If you don't, you must navigate by instinct (Wits+Lore DV 4). The rope was cut by the dungeon itself."
+    },
+    {
+      "rank": 12,
+      "suit": "club",
+      "title": "Task Loop",
+      "subtitle": "[MAGIC]",
+      "description": "The party repeats the same corridor; time loops.",
+      "mechanical_hook": "Tick Weariness +1. On a miss, a character forgets why they came (lose one Clue). The loop is a counting song—eight corridors, then a pause.",
+      "flavor": "If you count the corridors and take the ninth turn, you will escape the loop. If you don't, you will repeat the loop until you make the right choice. The loop is the dungeon's way of testing your patience. It is always testing."
+    },
+    {
+      "rank": 13,
+      "suit": "club",
+      "title": "Autonomous Spasm",
+      "subtitle": "[DISASTER]",
+      "description": "A clockwork mechanism runs wild.",
+      "mechanical_hook": "A random piece of gear becomes Compromised; on a critical, it explodes (Harm 1 to wielder). The mechanism ticks in eights—then it stops.",
+      "flavor": "If you can find the source (Wits+Crafting DV 4), you can stop it. If you can't, it will continue to run wild—and it will tick faster. The mechanism is the dungeon's muscle. It is always moving."
+    },
+    {
+      "rank": 14,
+      "suit": "club",
+      "title": "Convergence",
+      "subtitle": "[BOSS]",
+      "description": "The dungeon's Attention fills. The boss manifests immediately.",
+      "mechanical_hook": "Treat as a Major Turn (4+ SB); roll on the Boss Seed table. The boss has been waiting. It knows your name. It has been counting the seconds until you arrived.",
+      "flavor": "The Convergence is the dungeon's answer to your presence. It is not a coincidence. It is a judgment."
+    }
+  ],
+  "rewards": [
+    {
+      "rank": 2,
+      "suit": "diamond",
+      "title": "Pressure Map",
+      "subtitle": "[TRAVEL]",
+      "description": "A leather chart marked with safe routes.",
+      "mechanical_hook": "DV –1 to navigate collapses or gas pockets for one delve. The map is drawn in blood—the guilders' ink.",
+      "flavor": "It shows routes that no longer exist. If you follow it, you may find a passage that has collapsed since the map was made. If you find a new route, the map will update itself—the blood will shift to show the new path. The map is alive."
+    },
+    {
+      "rank": 3,
+      "suit": "diamond",
+      "title": "Bell-Wire Spool",
+      "subtitle": "[STEALTH]",
+      "description": "A coil of copper wire that rings when taut.",
+      "mechanical_hook": "Lay a witness line; convert one False Order/Echo Lure into a Confusion only. The wire has a tone—eight rings, then a pause.",
+      "flavor": "If you use it to lay a witness line, you will know when someone crosses it. The tone will tell you who. The wire remembers every footstep."
+    },
+    {
+      "rank": 4,
+      "suit": "diamond",
+      "title": "Keystone Courtesy",
+      "subtitle": "[AUTHORITY]",
+      "description": "A carved stone token.",
+      "mechanical_hook": "Once per leg, raise or lower a portcullis 'by the book' without a roll—if you can name the builder. The builder's name is carved on the back.",
+      "flavor": "If you read it aloud, the keystone will obey. If you can't read it, the keystone will ignore you. The builder was an Aeler under-mason. They have been dead for a century. Their name is still law."
+    },
+    {
+      "rank": 5,
+      "suit": "diamond",
+      "title": "Web-Token",
+      "subtitle": "[SOCIAL]",
+      "description": "A silk charm from a Lethai-ar warden.",
+      "mechanical_hook": "Enter parley with any faction in the dungeon from a position of safety once. The token is warm—it was woven by the dungeon itself.",
+      "flavor": "If you present it, the faction will listen. The web-token is a promise of safe passage. If you break the promise, the web will tighten. The token has a pattern—eight threads, then a pause. The ninth thread is a strand of the warden's hair."
+    },
+    {
+      "rank": 6,
+      "suit": "diamond",
+      "title": "Shed-Skin Writ",
+      "subtitle": "[LAW]",
+      "description": "A parchment signed in Isoka's rite.",
+      "mechanical_hook": "Voids one coercive clause (contract, geas, oath) at the cost of 1 Obligation (a future favor). The writ is written on snakeskin—it's still warm.",
+      "flavor": "If you use it to void a clause, the obligation will shift to you. You will owe a favor to Isoka. The writ is a way to escape a bond, but the bond is never truly broken. It is only transferred."
+    },
+    {
+      "rank": 7,
+      "suit": "diamond",
+      "title": "Reed-Charm (under-river)",
+      "subtitle": "[TRAVEL]",
+      "description": "A water-resistant talisman.",
+      "mechanical_hook": "Treat one blackwater reach as neutral terrain for a crossing. The charm has a rhythm—eight knots, then a pause.",
+      "flavor": "If you wear it, the water will not harm you. The water will remember your face. The charm was made by a Sidhi sailor who never returned from the deep. The water is still waiting for them."
+    },
+    {
+      "rank": 8,
+      "suit": "diamond",
+      "title": "Cinder Pearl",
+      "subtitle": "[MAGIC]",
+      "description": "A drake's tooth still warm.",
+      "mechanical_hook": "Add IGNITE to one small action (e.g., light a torch, spark a fuse) once. The tooth is warm—it's still growing.",
+      "flavor": "If you use it, it will grow colder. When it goes cold, it will crumble. The drake will know who took it. Tick Attention +1."
+    },
+    {
+      "rank": 9,
+      "suit": "diamond",
+      "title": "Gleam Reed",
+      "subtitle": "[LIGHT]",
+      "description": "A phosphorescent stem.",
+      "mechanical_hook": "Remove one Root/Slow effect; also restores 1 Light segment. The reed hums—eight notes, then a pause.",
+      "flavor": "If you break it, the light will last for one scene. The reed is the dungeon's way of saying: 'You are not alone.'"
+    },
+    {
+      "rank": 10,
+      "suit": "diamond",
+      "title": "Cold Scale",
+      "subtitle": "[WARD]",
+      "description": "A frost-wyrm scale.",
+      "mechanical_hook": "Ignore one chill or terror effect for a scene; then crumbles. The scale is cold—it never warms.",
+      "flavor": "If you use it, the cold will protect you from one fear. The wyrm will know who took its scale. Tick Attention +1."
+    },
+    {
+      "rank": 11,
+      "suit": "diamond",
+      "title": "Proof-Mote",
+      "subtitle": "[TRUTH]",
+      "description": "A floating mote of amber light.",
+      "mechanical_hook": "Ask the GM: 'What here is misfiled?' The answer is a clue about a hidden treasure or trap. The mote is warm—it knows you.",
+      "flavor": "If you ask it a question, it will answer in the voice of the dungeon. The answer is always true—but it is always a riddle. The mote is a fragment of the dungeon's memory."
+    },
+    {
+      "rank": 12,
+      "suit": "diamond",
+      "title": "Scale Draught",
+      "subtitle": "[FEAR]",
+      "description": "A vial of diluted wyrm blood.",
+      "mechanical_hook": "Resist fear in a tribunal or horror scene; after use, tick Attention +1 (the wyrm notices). The draught is warm—it pulses with the wyrm's heartbeat.",
+      "flavor": "If you drink it, you will feel no fear for one scene. The wyrm will notice your courage. Tick Attention +1."
+    },
+    {
+      "rank": 13,
+      "suit": "diamond",
+      "title": "Rime Crown",
+      "subtitle": "[WARD] [COLD]",
+      "description": "A circlet of frost-shaped bone.",
+      "mechanical_hook": "Once per session, gain COLD and WARD for a scene; then mark 1 Fatigue. The crown is cold—it remembers the wyrm's last breath.",
+      "flavor": "If you wear it, the cold will protect you. The crown will drain your warmth—mark 1 Fatigue at the end of the scene. The crown was made from the bones of a frost-wyrm. The wyrm is still dreaming."
+    },
+    {
+      "rank": 14,
+      "suit": "diamond",
+      "title": "The Egg That Will Not Hatch",
+      "subtitle": "[LEGEND]",
+      "description": "A cold, glass-smooth egg containing an idea.",
+      "mechanical_hook": "Whisper a question; the egg answers in dreams. It will only hatch when someone dies willingly for it. The egg is warm—it's counting.",
+      "flavor": "If you whisper a question, it will answer in your dreams. The answer is always a riddle. The egg will only hatch when someone dies willingly for it. Until then, it will wait. The egg is the dungeon's last secret."
+    }
+  ],
+  "quick_use_notes": {
+    "draw_rules": "Draw until you have all four suits: **Spade** = place, **Heart** = actor, **Club** = pressure, **Diamond** = treasure. Highest rank sets the main Timer (2–5 → 4, 6–10 → 6, J/Q/K → 8, A → 10).",
+    "diamonds": "Treasures (Diamonds) are codified outcomes that change position rather than call for a roll.",
+    "ace_rule": "If any **A** appears, echo infrastructure & survival motifs—air that tastes of metal, doors that open when you're not looking, walls that pulse with forgotten heat.",
+    "tracking": "Track **Air, Light, Noise, and Attention** as visible pressures. At Attention = 6, the boss manifests."
+  },
+  "additional_features": [
+    {
+      "name": "Dungeon Superstitions",
+      "entries": [
+        {
+          "name": "Bread to the Door",
+          "effect": "Crumble a crust at a sealed threshold. Ignore the first **Micro-Collapse** penalty.",
+          "cost": "Burn for +1 die once",
+          "flavor": "The door will remember your offering."
+        },
+        {
+          "name": "Knot the Bell-Wire",
+          "effect": "Tie a single knot in a guide rope. Cancel **Echo-Lure** or take –1 die on your next navigation roll (your choice).",
+          "cost": "Burn for +1 die once",
+          "flavor": "The knot is a promise to the dungeon. If you break it, the dungeon will know."
+        },
+        {
+          "name": "Name to the Wall",
+          "effect": "Whisper a dead explorer's name into a crack. Gain +1 Effect when negotiating with the dungeon's Voice this scene, but mark **Obligation** to the Architect.",
+          "cost": "Burn for +1 die once",
+          "flavor": "The wall will remember the name. It will ask for it back."
+        },
+        {
+          "name": "Salt to the Threshold",
+          "effect": "Leave a pinch of salt at a door you do not wish to open again. The door will not open from either side for one day.",
+          "cost": "Burn for +1 die once",
+          "flavor": "The salt is a barrier. The dungeon respects barriers."
+        }
+      ]
+    }
+  ],
+  "boss_seeds": [
+    {
+      "name": "The Hoard-Wyrm",
+      "type": "Crystalline Drake",
+      "phases": [
+        "Greed's Gleam",
+        "Scale Horde",
+        "Awaken the Hoard"
+      ],
+      "cracks": [
+        "feed it a cursed treasure",
+        "speak a true regret",
+        "shatter its heart-crystal with a memory of generosity"
+      ]
+    },
+    {
+      "name": "The Unburnt Cult",
+      "type": "Isoka Fanatics",
+      "phases": [
+        "Shedding Rite",
+        "Trial of Venom",
+        "The Fiery Dawn"
+      ],
+      "cracks": [
+        "refuse the cup three times",
+        "expose a false priest",
+        "force a Bowl (fairness) before a Fang (verdict)"
+      ]
+    },
+    {
+      "name": "The Deep Drake",
+      "type": "Pressure Below",
+      "phases": [
+        "Whisper",
+        "Knock",
+        "Invitation",
+        "Collection"
+      ],
+      "cracks": [
+        "offer a memory of sunlight",
+        "speak a true regret",
+        "allow a willing sacrifice to walk into the deep in your place"
+      ]
+    },
+    {
+      "name": "The Iron Avenger",
+      "type": "Aeler Feud-Keeper",
+      "phases": [
+        "Blood Ledger",
+        "Toll Demanded",
+        "Reckoning"
+      ],
+      "cracks": [
+        "pay the wergild in public works",
+        "expose a false claimant",
+        "complete the feud with a duel of witnesses (not blades)"
+      ]
+    },
+    {
+      "name": "The Mycothe Sovereign",
+      "type": "Spore Lord",
+      "phases": [
+        "Bloom",
+        "Court of Mold",
+        "The Great Reseeding"
+      ],
+      "cracks": [
+        "burn the central mycelium",
+        "negotiate a spore-truce (sacrifice 1 Supply of ash)",
+        "sing a counting song it has never heard"
+      ]
+    },
+    {
+      "name": "The Hollow Architect",
+      "type": "Ghost of a Forgotten Builder",
+      "phases": [
+        "Redraw the Map",
+        "Collapse the Approach",
+        "The Unfinished Stair"
+      ],
+      "cracks": [
+        "finish its blueprint (Craft test DV 5)",
+        "return a stolen keystone",
+        "convince it that the empire is truly dead"
+      ]
+    }
+  ],
+  "loot_generator": {
+    "stratum_a": [
+      "Scales of electrum stamped with extinct dynasties.",
+      "River-pearls that hum in rain. [WATER]",
+      "Salt-bricks worth a city's winter.",
+      "Demon-minted coppers—warm to touch. [BLIGHT]",
+      "Glass coins: spend with a lie, shatter on truth.",
+      "Star-iron beads (forge-grade). [RELIC]",
+      "Amber lumps with insects that whisper routes.",
+      "Scrip of a fallen bank; redeemable with the right story.",
+      "Temple tithes bound with blue twine (oath-sealed).",
+      "Trade bars etched with river-depth marks (pilot's tools).",
+      "Coral crowns; brittle but potent at sea. [COMMAND]",
+      "Black spice; anesthetic or poison by dose."
+    ],
+    "stratum_b": [
+      "Masks of the Seven Winds (sing for WIND once/scene).",
+      "Tapestry that updates current wars nightly.",
+      "Bone flutes that call extinct birds.",
+      "Chalice that refuses poisoned liquid.",
+      "Crown of Oaths: swearing while wearing binds magically. [BIND]",
+      "Twin mirrors: speak into one, echo from the other at midnight.",
+      "Zodiac astrolabe; points to eclipses. [DIVINE]",
+      "Ember harp; strings ignite when lies are told nearby.",
+      "Saint's gauntlet; unburnt by any fire.",
+      "Library sigil-stamp; seals are obeyed by lesser courts.",
+      "Fossil codex; pages of shale can be read once each.",
+      "Lantern with bottled dawn (3 uses). [LIGHT]"
+    ],
+    "stratum_c": [
+      "A king's true name in a lead vial.",
+      "A bridge's right-of-way (you collect the toll).",
+      "Seven unspent apologies; each removes one curse.",
+      "A ship's luck bound in twine; cut to claim it.",
+      "The deed to a moonlit crossroads.",
+      "A treaty's missing clause; add it to rewrite borders.",
+      "The last lullaby of a nation; sing to calm armies.",
+      "A festival's first toast; begin it to unite feuds.",
+      "Weather's favor over one valley for a year.",
+      "The memory of a siege ladder; place it to open a gate.",
+      "A duel's outcome, never fought; declare to bind fate.",
+      "The debt of a cathedral to its mason's bloodline."
+    ],
+    "stratum_d": [
+      "Taking coins awakens a Hoard-Wyrd.",
+      "The art objects are witnesses; they may testify in court.",
+      "Removing any crown asserts a claim; rivals appear.",
+      "Intangibles are tracked by Herald Gargoyles.",
+      "A rival dragon has a lien on half the hoard.",
+      "Curse of Counting: must tally treasure nightly or suffer Fatigue +1.",
+      "Hoard Scent: predators pursue the bearer.",
+      "Echo of Theft: the original owners dream of you.",
+      "Oath-Magnet: you attract sworn duels.",
+      "Tide-Tithe: waters reclaim 10% during each full moon."
+    ],
+    "quick_build": "Pick 1–2 from A, 1–2 from B, 1 from C, 1 from D. Assign 1–2 TAGS as properties. State a **Hoard Law**: who may touch what (breaking it triggers a Lair Move or Attention tick)."
+  },
+  "sb_spend_table": {
+    "minor_complications": [
+      "**Exposure:** A patrol or warden notices you.",
+      "**Noise:** Your footsteps echo; a nearby denizen stirs.",
+      "**Trace:** Scratched stone or spent lamp oil marks your route.",
+      "**Delay:** A door jams, a ladder breaks—lose time.",
+      "**Air Strain:** Tick Air +1 (stale pocket)."
+    ],
+    "moderate_setbacks": [
+      "**Alarm Raised:** A sentinel sounds a chime; Attention +1.",
+      "**Position Lost:** A floor collapses or a wall seals; you are separated.",
+      "**Foe Appears:** A minor drake, a fossil juror, or a cultist squad arrives.",
+      "**Gear Trouble:** A lamp sputters (Light –1) or a weapon snags.",
+      "**Lock/Barrier:** A keystone door now requires a test to open."
+    ],
+    "serious_trouble": [
+      "**Reinforcements:** A warband of Iron Avengers or a Hoard-Wyrd appears.",
+      "**Key Gear Breaks:** A bell-wire snaps, a pressure map tears.",
+      "**Major Twist:** The dungeon shifts—a corridor loops, a new path opens.",
+      "**Rail Tick:** Advance a campaign timer (e.g., Hoard's Attention, Manifestation).",
+      "**Condition Applied:** Mark **Fatigue 1** or **Harm 1** from gas or fall."
+    ],
+    "major_turns": [
+      "**Trap Springs:** A prepared seal activates (Harm 2, Area).",
+      "**Authority Arrival:** The Dungeon's Voice, a Herald Gargoyle, or the boss interrupts.",
+      "**Scene Shift:** A collapse seals the exit; the Heart chamber opens prematurely.",
+      "**Patron Omen:** A draconic echo or a Lethai-ar omen appears.",
+      "**Narrative Pivot:** The dungeon reveals a forgotten truth—a secret door, a hidden geas, a broken oath."
+    ]
+  },
+  "cross_regional_use": [
+    "**Aeler Holds:** A **Keystone Courtesy** can open sealed vaults; using it ticks **Ancestral Grudge** if the builder's lineage is insulted.",
+    "**Mistlands:** A **Bell-Wire Spool** can be used to rehang a broken bell-line; start **Witchlight Count** after.",
+    "**Ykrul Steppe:** A **Cold Scale** counts as a *Salt Allotment* in a kurgan negotiation; the dead will demand a story.",
+    "**Sihai:** A **Proof-Mote** may be accepted as a *Silence Token* in a Censorate audit; the auditor will ask where you found it.",
+    "**Valewood:** A **Rime Crown** can be offered to the Alder King as a winter tithe; he will ask for a memory of fire in return."
+  ],
+  "patronage_and_power": {
+    "description": "In a dungeon, power flows through breath, light, and the careful management of the dungeon's attention. The true authorities are those who understand its systems—the Aeler under-masons who know keystone law, the Lethai-ar silk-wardens who read web-law, the Mazereth pressure guilders who count every exhalation. But the dungeon itself is the final patron. It offers shortcuts, treasures, and secrets—always at a price. Accept a shortcut, and it may close behind you. Take a treasure, and the Hoard's Attention ticks. Speak a true name, and the dungeon learns your voice.",
+    "gm_advice": {
+      "tracks": "Use the four tracks (Air, Light, Noise, Attention) as visible pressure. Let players buy relief with Strings or etiquette, not just dice.",
+      "intent": "Enforce the **Intent Dial** each zone; switching intent costs a scene or a tick of Noise.",
+      "diamonds": "Offer one **Diamond** that could solve the current scene—but only if the party accepts a future Price (a geas, a curse, an obligation to a faction).",
+      "environment_first": "Spend SB as environment first (collapse, sputter, echo) before monsters. The dark should be the first antagonist, the denizens the second, the boss the third.",
+      "bosses": "Use the **Boss Seeds** as capstones for major delves. A boss is not a random encounter; it is the dungeon's answer to the party's intrusion."
+    }
+  },
+  "final_gm_mantra": "The under realms are not a pit to be cleared but a commons to be negotiated. Where lights are counted and breaths are tallied, procedure is mercy—and every crossing is a promise that must hold under weight.",
+  "index": [
+    "Dungeons",
+    "Living Infrastructure generator",
+    "Theme generator",
+    "Places!Dungeons",
+    "People!Dungeons",
+    "Complications!Dungeons",
+    "Rewards!Dungeons",
+    "Air track",
+    "Light track",
+    "Noise track",
+    "Attention track",
+    "Boss Seed",
+    "Hoard generator",
+    "Keystone Courtesy",
+    "Bell-Wire",
+    "Pressure Map",
+    "The Dungeon's Voice"
+  ],
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

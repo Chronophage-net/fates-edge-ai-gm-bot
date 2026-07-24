@@ -1,0 +1,1140 @@
+{
+  "id": "wilds-roads-ruins-weather",
+  "version": "1.0.0",
+  "type": "generator",
+  "title": "The Wilds — Roads, Ruins, and Weather",
+  "label": "chap:wilderness",
+  "key_demographic": "Various",
+  "manifest_path": "/data/docs/manifest.json",
+  "overview": {
+    "tagline": "The land walks when you don't watch it, and the roads remember who bled on them.",
+    "genre": "Hexcrawl wanderlust, ruin-haunted silence, weather as character.",
+    "mood": "The Land That Watches",
+    "starting_location": "A shelter hollow carved into a fallen giant's ribcage, moss glowing faintly under starlight. A Forager Child offers a route-song: 'The Bad Ground shifts, and the weather walks behind it. Sing with me, or walk alone.'",
+    "lore": {
+      "history": "Between towns and treaties lies the patience of the land. Old roads remember armies; cairns remember names no book keeps. In the Wilds, law thins to trail-marks and favors, and the weather keeps its own counsel. This is the country of the hexcrawl: a patchwork of hidden valleys, forgotten ruins, beast lairs, and the bones of failed settlements. No single authority rules here—instead, the land itself is the measure, and every crossing writes a new line. Walk soft, read the wind, bargain with whatever still listens, and keep one eye on the horizon. The next hex may hold water, treasure, or teeth.",
+      "first_notice": "The silence after a bird stops singing. The way a cairn seems to have shifted since you passed it last. The smell of rain on dry stone, even when the sky is clear.",
+      "rule_that_kills": "Never sleep in a hollow that has soot on the ceiling without adding your own to the fire. The land knows the difference between a guest and a thief."
+    },
+    "entanglements": {
+      "all": "The wilds connect all regions. Roads lead to the Violet Steppe, the Aelerian mountains, the Mistlands, and the Amaranthine coast. The land is the common thread between all settled lands."
+    }
+  },
+  "quotes": [
+    {
+      "speaker": "Claimant Chief (Elite)",
+      "text": "These lands answer not to charters but to those who can read their signs and respect their moods. Authority here is earned one campfire at a time, by proving you understand the difference between claiming and belonging."
+    },
+    {
+      "speaker": "Forager Child (Commoner)",
+      "text": "The wilds don't need your roads or your rules — they got their own ways of keeping score. Follow the cairns if you want to live, and always leave something behind to thank the land for letting you pass. Every hill hides a secret, and every hollow breathes."
+    }
+  ],
+  "wilds_timer": {
+    "name": "The Wilds Timer",
+    "max_segments": 6,
+    "advance_on": [
+      "The party ignores a cairn offering (+1)",
+      "The GM spends 2+ SB on environmental complications (+1)",
+      "A character speaks a true name aloud in an unmarked place (+2)",
+      "The party takes the ninth step without pausing (+1)"
+    ],
+    "thresholds": {
+      "3": "Navigation rolls gain +1 DV. Paths begin to loop.",
+      "6": "The land manifests — roll on the Manifestation table."
+    },
+    "ninth_taboo": "In any Wilds scene, the ninth cairn you pass in a day will be warm to the touch. Leave an offering—a pinch of salt, a copper coin, a single word spoken to the wind—or the path will forget you. Those who forget to pay find that the next crossing leads back to the same cairn, and the cairn has grown a new stone. The stone has their name on it."
+  },
+  "travel_system": {
+    "priorities": [
+      "Speed",
+      "Stealth",
+      "Safety",
+      "Survey"
+    ],
+    "weather_whims": [
+      {
+        "roll": 1,
+        "name": "Glass-clear",
+        "effect": "long sight, easy navigation. +1 to Survey actions."
+      },
+      {
+        "roll": 2,
+        "name": "Low fog",
+        "effect": "stealth advantage, speed suffers. +1 to Stealth, -1 to Speed."
+      },
+      {
+        "roll": 3,
+        "name": "Trickle rain",
+        "effect": "tracks wash, cold bites. First navigation or tracking roll at -1 die."
+      },
+      {
+        "roll": 4,
+        "name": "Dry cold / heat",
+        "effect": "resources drain faster. Mark +1 supply strain at end of leg."
+      },
+      {
+        "roll": 5,
+        "name": "Shifting wind",
+        "effect": "smoke and scent lie. Reroll one die on a weather-related check, but the GM may bank 1 SB."
+      },
+      {
+        "roll": 6,
+        "name": "Omen sky",
+        "effect": "the land is listening. The GM may ask one player to answer a single question about the party's future."
+      }
+    ],
+    "making_camp": {
+      "boons": [
+        "heal a piece of gear",
+        "clear 1 Fatigue",
+        "scout tomorrow's weather",
+        "share a story with a road spirit (gain a Truce Cord)"
+      ],
+      "risks": [
+        "thin shelter (next weather hits harder)",
+        "smoky fire (attracts prowlers)",
+        "exposed approach (ambush more likely)",
+        "hungry neighbors (locals or beasts appear)"
+      ]
+    }
+  },
+  "places": [
+    {
+      "rank": 2,
+      "suit": "spade",
+      "title": "Crossing Point",
+      "subtitle": "Ford, ice-span, stepping logs, dune saddle, reef shelf.",
+      "flavor": "The crossing has a price: a stone, a story, or a moment of silence. The water hums when it's satisfied.",
+      "mechanical_hook": "To cross without incident, offer something (1 Boon, a memory, or a story). The GM may accept or demand more. Refusal ticks the Wilds Timer +1."
+    },
+    {
+      "rank": 3,
+      "suit": "spade",
+      "title": "Lookout Knoll",
+      "subtitle": "Tor, cliff, dune, ridge with wind-carved marker.",
+      "flavor": "From here, you can see three hexes in clear weather—and one that shouldn't exist, flickering like a heat-shaped lie.",
+      "mechanical_hook": "Spend a scene observing. Roll Wits+Lore (DV 3). On success, learn the nature of one nearby hex. On a 1, the wind tells a lie — gain false information and tick the Wilds Timer +1."
+    },
+    {
+      "rank": 4,
+      "suit": "spade",
+      "title": "Old Road",
+      "subtitle": "Trace with cairns and switchbacks half-eaten by terrain.",
+      "flavor": "The cobbles are worn smooth by ghosts. They whisper directions at dusk. The directions are always true, but never complete.",
+      "mechanical_hook": "Walking the road at dusk gives +1 die to navigation, but the GM gains 1 SB (the ghosts will ask for a story before you leave). If you can't tell one, lose 1 Fatigue and tick the Wilds Timer +1."
+    },
+    {
+      "rank": 5,
+      "suit": "spade",
+      "title": "Shelter Hollow",
+      "subtitle": "Overhang, cave, root cellar; soot says 'used lately.'",
+      "flavor": "The soot is layered in thin, greasy rings. Someone has been coming here for a very long time. The hollow smells of wet fur and old secrets.",
+      "mechanical_hook": "Resting here clears 1 Fatigue. The soot on the ceiling is layered — each layer is a different color. If you leave your own mark, the hollow will remember you (gain +1 Position on your next roll in this hex)."
+    },
+    {
+      "rank": 6,
+      "suit": "spade",
+      "title": "Water Source",
+      "subtitle": "Spring, seep, fog net, snow pan, guarded by thorns or stone.",
+      "flavor": "The water tastes of iron and old bargains. Drink deep, but leave a coin—copper for a safe draw, silver for a question answered.",
+      "mechanical_hook": "Drinking here gives +1 die to the next roll. Leaving a coin gives +1 Position on the next encounter. The water is cold even in summer — something sleeps beneath it. If you take without offering, tick the Wilds Timer +1."
+    },
+    {
+      "rank": 7,
+      "suit": "spade",
+      "title": "Windbreak",
+      "subtitle": "Rock ribs, lee of pines, reed-wall berm.",
+      "flavor": "The windbreak smells of woodsmoke and wool. Someone camped here last night. Their fire is still warm.",
+      "mechanical_hook": "You may find a small cache (1 Supply) or a sign of who passed before you. Reading the sign (Wits+Lore DV 3) reveals their direction and number. If you use the fire without leaving fuel, tick the Wilds Timer +1."
+    },
+    {
+      "rank": 8,
+      "suit": "spade",
+      "title": "Ruined Outpost",
+      "subtitle": "Watchstack, wayside shrine, marker pile.",
+      "flavor": "The ruin's flagstones are warm, as if a great beast sleeps beneath them. The air tastes of rust and thyme.",
+      "mechanical_hook": "The ruin has a secret (a hidden door, a buried cache, a ghost). Searching takes a scene and a Wits+Investigation test (DV 4). On success, find 1 Diamond of the GM's choice. On failure, the land's attention sharpens — tick the Wilds Timer +1."
+    },
+    {
+      "rank": 9,
+      "suit": "spade",
+      "title": "Bad Ground",
+      "subtitle": "Sinkhole, bog crust, crevasse, loess slump.",
+      "flavor": "The ground breathes—a slow, deep inhalation that lifts your heels. Step lightly or it will swallow you.",
+      "mechanical_hook": "Crossing requires a Body+Athletics test (DV 4). On failure, lose 1 Supply (drowned) and tick the Wilds Timer +1. The ground has teeth — it remembers those who fall."
+    },
+    {
+      "rank": 10,
+      "suit": "spade",
+      "title": "Gate Gully",
+      "subtitle": "Pinch point between bluffs, dunes, or ice hummocks.",
+      "flavor": "The gully has a name carved in the rock. The name changes every season. Carve yours, and you may never leave.",
+      "mechanical_hook": "Carving your name in the gully grants +1 die to all rolls in this hex — but you are now part of its history. The next time you pass, the gully will remember you. The name carved deepest is a warning: 'They stayed too long.'"
+    },
+    {
+      "rank": 11,
+      "suit": "spade",
+      "title": "Boundary Row",
+      "subtitle": "Totems, standing stones, prayer flags bent by weather.",
+      "flavor": "The flags are faded. The last prayer was for rain—and it still hasn't come. The totems have grown moss in the shape of faces.",
+      "mechanical_hook": "Crossing the boundary without an offering angers the land. The totems have a pattern — eight in a row, then a gap. The ninth totem was taken. Whoever took it did not return. If you cross without offering, tick the Wilds Timer +2."
+    },
+    {
+      "rank": 12,
+      "suit": "spade",
+      "title": "Worksite",
+      "subtitle": "Abandoned mine, quarry, logging camp, salt pan.",
+      "flavor": "The tools are scattered, but none are rusted. Whoever left did not plan to return—or has not yet finished.",
+      "mechanical_hook": "A successful Craft test (DV 3) reveals the tools are still sharp. Someone comes back to use them. They will return within 1d4 days. If you wait, you may meet them. If you take tools without leaving payment, tick the Wilds Timer +1."
+    },
+    {
+      "rank": 13,
+      "suit": "spade",
+      "title": "Signal Height",
+      "subtitle": "Old fire-pit or mirror stand; smoke stains linger.",
+      "flavor": "Light the fire, and someone will answer. Whether they are friend or foe is your risk. The smoke always smells of your childhood.",
+      "mechanical_hook": "Lighting the fire summons someone — a guide, a warden, or a spirit. The GM rolls on the Hearts table. The fire also ticks the Wilds Timer +1. If you light it at the ninth hour, the one who answers is always the same — the Hollow's Own."
+    },
+    {
+      "rank": 14,
+      "suit": "spade",
+      "title": "Trail Nexus",
+      "subtitle": "Migratory, pack, or contraband paths knot here.",
+      "flavor": "Three trails meet, but only two are on any map. The third belongs to the dead. Their footprints point the wrong way.",
+      "mechanical_hook": "Following the dead's path leads to a thin place (see Ways Between). The footprints are fresh — someone walked this way recently. They did not come back. If you take the third path, roll Spirit+Resolve (DV 4). On failure, tick the Wilds Timer +2 and gain the Marked by the Dead condition."
+    }
+  ],
+  "people_and_factions": [
+    {
+      "rank": 2,
+      "suit": "heart",
+      "title": "Forager Child",
+      "subtitle": "Goat-herd or berry-picker with truer maps than yours.",
+      "flavor": "Their map is drawn on a scrap of bark. It shows a path that disappears at a standing stone. The stone is not on any other map.",
+      "what_they_carry": "The child will trade their map for a story or a piece of bread. The map is accurate — but the path only appears at dusk.",
+      "what_they_ask": "If you take the map without offering, the child's ghost will follow you (gain the Haunted condition for one session)."
+    },
+    {
+      "rank": 3,
+      "suit": "heart",
+      "title": "Guide",
+      "subtitle": "Three routes and one price (changes daily); navigation as negotiation.",
+      "flavor": "Their price is never coin. It is a favor, a secret, or a night's watch. They will not tell you which until you arrive.",
+      "what_they_carry": "The guide will not tell you the price until you reach the destination.",
+      "what_they_ask": "If you refuse to pay, they leave you at the last crossing. Their silence is a kind of judgment — you gain -1 Position on all navigation rolls in this region until you settle the debt."
+    },
+    {
+      "rank": 4,
+      "suit": "heart",
+      "title": "Warden Patrol",
+      "subtitle": "Local badges, local laws, local patience; order as familiarity.",
+      "flavor": "Their badge is a chipped sunburst. They serve a crown that no longer exists. The crown does not pay them. The land does.",
+      "what_they_carry": "The wardens will escort you through their territory — but they will ask questions.",
+      "what_they_ask": "Refusing answers starts a Suspicion [4] timer. When it fills, they detain you for 'questioning' (lose 1 segment of travel progress)."
+    },
+    {
+      "rank": 5,
+      "suit": "heart",
+      "title": "Caravan Crew",
+      "subtitle": "Drovers, porters, yarn-post hands trading speed for coin.",
+      "flavor": "They know every shortcut and every ambush. They will share both—for a price. Their silence is purchased in stories.",
+      "what_they_carry": "Traveling with the crew gives +1 die to navigation, but their loyalty is to their cargo, not to you.",
+      "what_they_ask": "If a better offer comes, they will abandon you. The crew leader carries a tally of every story they've been told — and every one they've sold."
+    },
+    {
+      "rank": 6,
+      "suit": "heart",
+      "title": "Pilgrims",
+      "subtitle": "Bound for a tucked-away shrine or stone; faith as a destination.",
+      "flavor": "Their shrine has no name. The stone there is warm, and it answers questions poorly. It prefers to ask them.",
+      "what_they_carry": "The pilgrims will guide you to the shrine if you walk with them for a day.",
+      "what_they_ask": "The shrine asks one question of each visitor. Answering truthfully grants a Boon; refusing ticks the Wilds Timer +2. The pilgrims do not speak of what they have been asked."
+    },
+    {
+      "rank": 7,
+      "suit": "heart",
+      "title": "Poachers",
+      "subtitle": "Know every snare and shortcut; survival as expertise.",
+      "flavor": "They wear the teeth of game wardens as necklaces. The game wardens are still alive. They are saving for a full set.",
+      "what_they_carry": "The poachers will trade information for silence — they don't want their route known.",
+      "what_they_ask": "Their information is always accurate. The price is a promise not to reveal their location. Breaking the promise ticks the Wilds Timer +3."
+    },
+    {
+      "rank": 8,
+      "suit": "heart",
+      "title": "Hermit-Healer",
+      "subtitle": "Dogs, geese, and opinions about weather; wisdom as isolation.",
+      "flavor": "Their poultices smell of grave-moss. They work anyway. The dogs do not bark at strangers—they judge them.",
+      "what_they_carry": "The healer will treat wounds for a story. If the story is true, they also give a charm (+1 die to resist poison for one session).",
+      "what_they_ask": "If false, the charm turns against you. The healer's dogs will remember which one you told."
+    },
+    {
+      "rank": 9,
+      "suit": "heart",
+      "title": "Prospectors",
+      "subtitle": "Salt, amber, iron, fungus; chasing rumors and glint.",
+      "flavor": "Their claim is marked with a knot of red thread. Cross it, and they will shoot. The thread glows when a stranger's foot touches it.",
+      "what_they_carry": "The prospectors will share their find if you help them work — a day of labor for a share of the claim.",
+      "what_they_ask": "The claim may be worthless — or it may be the mother lode. The red thread was tied by the land itself; cutting it ticks the Wilds Timer +2."
+    },
+    {
+      "rank": 10,
+      "suit": "heart",
+      "title": "War-Band",
+      "subtitle": "Reavers or 'escorts,' depending on your purse; violence as commerce.",
+      "flavor": "Their banner is a painted skull. The paint is from a dead comrade's blood. They add a finger bone to the standard after every contract.",
+      "what_they_carry": "The war-band will fight for you if you pay in silver or supplies. Their loyalty is to the purse, not to you.",
+      "what_they_ask": "If you can't pay, they may take what you have. Their banner has nine finger bones — the ninth is always the last contractor who couldn't pay."
+    },
+    {
+      "rank": 11,
+      "suit": "heart",
+      "title": "Monster-Hunter",
+      "subtitle": "Rite-keeper wearing yesterday's trophies; death as livelihood.",
+      "flavor": "Their trophy is still warm. The monster's mate is close behind. They are not running—they are leading.",
+      "what_they_carry": "The hunter knows the location of a nearby lair. They will guide you there — for a share of the kill.",
+      "what_they_ask": "The mate is already hunting them. If you accept, roll Wits+Lore (DV 4) to avoid the mate's ambush. On failure, the hunter dies and you gain a blood-debt (tick the Wilds Timer +2)."
+    },
+    {
+      "rank": 12,
+      "suit": "heart",
+      "title": "Quartermaster",
+      "subtitle": "Ledgers first, hospitality second; supply as authority.",
+      "flavor": "Their measure is written in a code only they understand. The code is their life story. The margins are full of regrets.",
+      "what_they_carry": "The quartermaster can supply your party — for a price. They have a ledger of debts owed to them.",
+      "what_they_ask": "You can pay in coin, labor, or a promise. The promise is always the most expensive. The ninth entry in their ledger is always blank — it awaits your name."
+    },
+    {
+      "rank": 13,
+      "suit": "heart",
+      "title": "Claimant Chief",
+      "subtitle": "Papers and spears to match; legitimacy as force.",
+      "flavor": "Their papers are stained with water and blood. Both are still wet. The water came from a spring they poisoned. The blood from the spring's keeper.",
+      "what_they_carry": "The chief will grant you passage — if you swear an oath to them.",
+      "what_they_ask": "The oath is witnessed by the land. Breaking it ticks the Wilds Timer +3. The chief's papers have a seal — a bell without a clapper. The silence is the signature."
+    },
+    {
+      "rank": 14,
+      "suit": "heart",
+      "title": "The Stranger",
+      "subtitle": "Spirit-touched nomad or emissary; rules bend near them.",
+      "flavor": "They have no shadow. The ground does not remember their footprints. Their voice echoes twice—once for them, once for the land.",
+      "what_they_carry": "The Stranger knows the Wilds Timer's true level. They will tell you — for a memory.",
+      "what_they_ask": "The memory must be something you cherish. They will not take it by force. They will ask. If you refuse, they will not speak again. If you offer a false memory, the land will know — tick the Wilds Timer +2."
+    }
+  ],
+  "additional_denizens": [
+    {
+      "rank": 15,
+      "suit": "heart",
+      "title": "Isolated Town (Palings)",
+      "subtitle": "A handful of families eking out a living behind a thorn hedge.",
+      "flavor": "The gate is a wagon axle lashed upright. They trade hides for salt and ask no questions. Their children have never seen a paved road.",
+      "what_they_carry": "The town will trade supplies for stories. They are desperate for news of the outside world.",
+      "what_they_ask": "If you bring news of a war, they will give you 2 Supply. If you bring news of peace, they will give you a Guide (treat as a Diamond, +1 die to navigation for one leg). Their children have never seen a road — they will follow you if you leave."
+    },
+    {
+      "rank": 16,
+      "suit": "heart",
+      "title": "Refugee Train",
+      "subtitle": "A column of worn carts and quieter people fleeing a war or a curse.",
+      "flavor": "Their leader carries a charter from a lord who is now dead. They will trade stories for passage and bury their dead without markers.",
+      "what_they_carry": "The refugees know the land ahead better than any map. They will share their knowledge if you help them bury their dead.",
+      "what_they_ask": "The dead have no markers — but the land remembers them. If you help, gain +1 die on all navigation rolls for one leg. If you refuse, the dead will remember you (tick the Wilds Timer +1)."
+    },
+    {
+      "rank": 17,
+      "suit": "heart",
+      "title": "Deserter Camp",
+      "subtitle": "Soldiers who threw down their colors, now living by stealth.",
+      "flavor": "They still drill at dawn and keep a sharp watch. Their loyalty is to each other, not to any flag. They may know the location of an abandoned fort.",
+      "what_they_carry": "The deserters will trade information for food or weapons. They know the location of a nearby fort (treat as a Spades draw for a Ruined Outpost).",
+      "what_they_ask": "If you give them weapons, they will fight for you once (Cap 2, one scene). If you give them food, they will guide you through one hazardous hex (ignore one Clubs draw)."
+    },
+    {
+      "rank": 18,
+      "suit": "heart",
+      "title": "Beastman Hunting Band",
+      "subtitle": "Feral-looking folk with antler charms and pelts stitched to skin.",
+      "flavor": "They do not speak Utaran. They communicate in growls and hand signs. They are not savages—they are the land's first children, and they remember when the roads were deer paths.",
+      "what_they_carry": "The beastmen will not attack if you approach slowly and show your palms. They speak in gestures — a successful Wits+Insight test (DV 3) allows basic communication.",
+      "what_they_ask": "They know the location of every water source in the hex. In exchange for a story about a hunt, they will lead you to water (clear 1 Supply strain). If you threaten them, they will vanish — and the land will remember your face."
+    },
+    {
+      "rank": 19,
+      "suit": "heart",
+      "title": "Lost Tribe (Cairn-Folk)",
+      "subtitle": "Descendants of a settlement that fell off every map.",
+      "flavor": "They wear the teeth of their ancestors and tattoo their lineage on their faces. They believe the Hollow is a sleeping god and that the party are its messengers. They are wrong—or are they?",
+      "what_they_carry": "The Cairn-Folk believe the Hollow will wake when the ninth stone is placed on the Great Cairn.",
+      "what_they_ask": "They will ask the party to bring them a stone from a distant mountain. If you accept, gain a Quest Timer [6]. If you refuse, they will not speak to you again. If you complete the quest, gain a permanent Cairn-Friend trait (+1 die on all rolls in this region)."
+    },
+    {
+      "rank": 20,
+      "suit": "heart",
+      "title": "Rootless Mercenaries",
+      "subtitle": "A dozen sell-swords between contracts, nursing old wounds.",
+      "flavor": "Their captain lost an eye to a mushroom spore. They will fight for coin, but they will also fight for a hot meal. They know the location of a forgotten cache of arms.",
+      "what_they_carry": "The mercenaries will fight for you if you pay in coin or supplies. They know the location of a cache of arms (treat as a Diamond, grants +1 die to combat for one scene).",
+      "what_they_ask": "The captain's lost eye was taken by a spore that still grows in his socket — he will trade the location for a cure (a Medicine test DV 4 or a story about a healer)."
+    },
+    {
+      "rank": 21,
+      "suit": "heart",
+      "title": "Anchorite in a Dead Tower",
+      "subtitle": "A holy woman who has not spoken in twenty years.",
+      "flavor": "She writes prophecies on the walls with charcoal. The prophecies are always about the next storm or the next stranger to arrive. She will not look at you if your shadow is wrong.",
+      "what_they_carry": "The Anchorite writes prophecies on the walls. A successful Wits+Lore test (DV 4) reveals the next weather omen (see Weather Omens table).",
+      "what_they_ask": "If your shadow is wrong (i.e., you have a Shadow Debt), she will not speak to you. If you ask her a question, she will write the answer — but it is always about a storm, not about what you asked."
+    },
+    {
+      "rank": 22,
+      "suit": "heart",
+      "title": "Feral Children",
+      "subtitle": "Orphaned by a raid or a plague, raised by wolves or worse.",
+      "flavor": "They know every hidden spring and every game trail. They will not come close, but they will watch. Leave them a piece of bread, and they may leave you a knapped arrowhead—or a warning.",
+      "what_they_carry": "The children will not approach. If you leave an offering (bread, salt, a shiny object), they will leave something in return.",
+      "what_they_ask": "Roll d6: 1-2: a knapped arrowhead (+1 die to one ranged attack); 3-4: a warning about the next hex (ignore one Clubs draw); 5-6: a map to a hidden cache (treat as a Diamond). If you try to follow them, they will vanish — and you will be lost (lose 1 segment of travel progress)."
+    },
+    {
+      "rank": 23,
+      "suit": "heart",
+      "title": "Cult of the Unburied",
+      "subtitle": "Grave-tenders who believe the dead should not be left to the land.",
+      "flavor": "They carry iron shovels and speak in hushed tones. They burn the bodies of the fallen they find, lest the Hollow take them. They may be willing to burn your dead as well—for a story.",
+      "what_they_carry": "The Cult will burn your dead for a story about the deceased.",
+      "what_they_ask": "The story must be true — they can tell if you lie. If you agree, gain +1 die on all rolls against spirits for one session. If you refuse, they will follow you until you bury your dead properly — and they are patient."
+    },
+    {
+      "rank": 24,
+      "suit": "heart",
+      "title": "Exiled Scholar",
+      "subtitle": "An academic who fled a city after proving the wrong theorem.",
+      "flavor": "He carries a single book—his own—and will trade a chapter for a night's shelter. The book contains a map to a ruin that does not appear on any official chart.",
+      "what_they_carry": "The scholar will trade a chapter of his book for shelter. Each chapter contains a clue to a ruin's location.",
+      "what_they_ask": "If you give him shelter, gain a Clue (treat as a String). If you steal his book, gain the ruin's location — but the scholar's ghost will follow you (gain the Haunted condition until you return the book)."
+    },
+    {
+      "rank": 25,
+      "suit": "heart",
+      "title": "The Gray Singer",
+      "subtitle": "A blind woman who wanders the wilds humming.",
+      "flavor": "Her songs calm territorial beasts and call down birds. She is looking for a melody she heard in a dream. If you help her find it, she will teach you a verse that quells a storm.",
+      "what_they_carry": "The Gray Singer is searching for a melody. If you help her (a Wits+Performance test DV 4), she will teach you a verse.",
+      "what_they_ask": "Singing the verse calms one weather hazard (cancel one Weather Turn complication). If you refuse, she will hum a different tune — and the weather will turn against you (tick the Wilds Timer +1)."
+    },
+    {
+      "rank": 26,
+      "suit": "heart",
+      "title": "Bandit King's Lookout",
+      "subtitle": "A scout for a large robber band, hiding in a hollow tree.",
+      "flavor": "He has a whistle that can summon a dozen riders. He is not cruel—just hungry. A bag of salt or a true story will buy his silence and his guidance around the ambush.",
+      "what_they_carry": "The lookout will guide you around the ambush — for a price.",
+      "what_they_ask": "Salt is acceptable. A true story is better. If you give him a story, he will tell you where the bandit king's treasure is hidden. If you give him salt, he will only guide you around the ambush. If you give him nothing, he will blow the whistle."
+    },
+    {
+      "rank": 27,
+      "suit": "heart",
+      "title": "The Hollow's Own",
+      "subtitle": "A figure dressed in gray rags, walking the same path every dusk.",
+      "flavor": "They have no face—only a smooth expanse where features should be. They do not attack. They point. The direction they point is the direction the Hollow will walk next.",
+      "what_they_carry": "The Hollow's Own appears when the Wilds Timer reaches 4 or higher.",
+      "what_they_ask": "They point in a direction. If you follow, you find a thin place (see Ways Between). If you ignore, the Hollow will walk in that direction at midnight — and you will be in its path. If you speak to them, they will answer in a voice that is not their own — the voice of someone you have wronged."
+    }
+  ],
+  "complications": [
+    {
+      "rank": 2,
+      "suit": "club",
+      "title": "Weather Turn",
+      "subtitle": "Heat snap, cold snap, fog, dust; plans sag like wet leather.",
+      "flavor": "The wind changes direction three times in an hour. Someone is watching. The air tastes of a season that hasn't come yet.",
+      "mechanical_hook": "All navigation rolls are Desperate for the scene. The air tastes of a season that hasn't come yet — if the party takes shelter, they may wait it out (lose 1 segment of travel progress) or push through (mark 1 Fatigue). Tick the Wilds Timer +1."
+    },
+    {
+      "rank": 3,
+      "suit": "club",
+      "title": "Doubleback",
+      "subtitle": "Tracks loop; the navigator swears the land moved underfoot.",
+      "flavor": "Your own footprints face you. They were made yesterday—or tomorrow. The toes point toward a future you have not chosen.",
+      "mechanical_hook": "To escape, the party must test Wits+Lore (DV 4) or lose 1 segment of travel progress. On a failure, the GM may tick the Wilds Timer +1. The footprints are warm — they were made recently. By you."
+    },
+    {
+      "rank": 4,
+      "suit": "club",
+      "title": "Prowlers Shadow",
+      "subtitle": "Wolves, jackals, ghouls, seals, ravens by night; hunt as a company.",
+      "flavor": "Their eyes reflect no light. Their teeth do. They are patient. They have been following since the last hex. You are only now noticing.",
+      "mechanical_hook": "The prowlers will attack at a moment of weakness. The party may make a group Stealth test (DV 4) to lose them. On failure, combat — treat as Cap 2 adversary with Pack Tactics (+1 die when adjacent to another prowler). They have been following for three hexes. They know your patterns."
+    },
+    {
+      "rank": 5,
+      "suit": "club",
+      "title": "Route Blocked",
+      "subtitle": "Deadfall, rockfall, dune shift, ice heave; the path as an obstacle.",
+      "flavor": "The blockage was placed. The toolmarks are fresh. Whoever cleared this path did not want you to follow—or wanted you to take the other way.",
+      "mechanical_hook": "Clearing the blockage takes a scene and a Body+Athletics test (DV 4). On success, the path is clear. On failure, the blockage shifts — lose 1 Fatigue and tick the Wilds Timer +1. The toolmarks are fresh — someone passed this way recently. They left a message carved in the stone: 'Go back.'"
+    },
+    {
+      "rank": 6,
+      "suit": "club",
+      "title": "Quarantine Sign",
+      "subtitle": "Camp fever; wardens sniff your packs for death.",
+      "flavor": "The sign is a ribbon tied in a figure-eight. Do not cross it. The ribbon is damp. It was tied recently. The wardens are still nearby.",
+      "mechanical_hook": "The wardens will detain the party for inspection. They are looking for a specific person — a fugitive, a deserter, or a ghost. The party may be mistaken for them. A successful Deception test (DV 4) avoids inspection; a failure starts a Detention [4] timer."
+    },
+    {
+      "rank": 7,
+      "suit": "club",
+      "title": "Territorial Beast",
+      "subtitle": "Charge, stampede, or swarm; your choice of which is wrong.",
+      "flavor": "The beast's lair is nearby. You can smell it—old blood and older musk. The ground is warm. You are standing on its pantry.",
+      "mechanical_hook": "The beast will attack if provoked. It can be avoided with a Stealth test (DV 4) or distracted with an offering (1 Supply). If combat occurs, treat as Cap 3 adversary with Lair Advantage (+1 die to attacks while in its territory). The beast's lair contains a cache (roll on Diamonds table)."
+    },
+    {
+      "rank": 8,
+      "suit": "club",
+      "title": "Elemental Front",
+      "subtitle": "Grassfire, peat-burn, canopy flare, blowing spindrift.",
+      "flavor": "The fire moves against the wind. The wind is lying. The smoke writes a word in a language you almost understand. It is a warning.",
+      "mechanical_hook": "The elemental front advances each scene. The party must outrun it (group Athletics test DV 4) or take Harm 1 from the elements. The smoke writes a word — reading it requires a Wits+Lore test (DV 4). On success, gain a warning about the next hex. On failure, the word is your name."
+    },
+    {
+      "rank": 9,
+      "suit": "club",
+      "title": "Paper vs Spear",
+      "subtitle": "Jurisdiction fight in the wilds stalls your day; law as argument.",
+      "flavor": "Two officials, one road. Both have seals. Neither will show them. The seals are warm. They have been used recently—on death warrants.",
+      "mechanical_hook": "The party must choose a side or find a third option. Choosing a side gains an ally and an enemy. The land is watching to see who you choose. If you choose poorly, tick the Wilds Timer +2. If you find a third option (a bribe, a story, a clever argument), gain a Favor from both sides."
+    },
+    {
+      "rank": 10,
+      "suit": "club",
+      "title": "Supply Pinch",
+      "subtitle": "Water, fuel, or feed low; pick what starves first.",
+      "flavor": "Your canteen is full. The water is from a source that dried up last year. You do not remember filling it. Someone did.",
+      "mechanical_hook": "The party must find new supplies. A Survival test (DV 3) locates water; a Craft test (DV 3) locates fuel. The water is cold — and it's watching. If you drink it without thanking the source, tick the Wilds Timer +1. The water tastes of iron and old bargains."
+    },
+    {
+      "rank": 11,
+      "suit": "club",
+      "title": "Pursuit",
+      "subtitle": "Hunters or avengers follow; signs say 'close.'",
+      "flavor": "The tracks are one hour old. They are gaining. The hunters do not need to sleep. They have not slept for three days. Neither have you.",
+      "mechanical_hook": "The pursuers will catch the party unless they find a way to slow them. An obstacle (a fallen tree, a false trail, a toll) costs 1 Supply or a Fatigue. If caught, the pursuers demand a debt be paid — a story, a memory, or a name. Refusal means combat (Cap 3)."
+    },
+    {
+      "rank": 12,
+      "suit": "club",
+      "title": "Bad Omen",
+      "subtitle": "Will-lights, taboo day, saint bells silent; locals refuse to move.",
+      "flavor": "The omen is written in bird droppings on a milestone. It is still accurate. The birds are watching. They are waiting for you to ignore it.",
+      "mechanical_hook": "Following the omen grants +1 die to the next roll; ignoring it ticks the Wilds Timer +2. The birds are waiting for you to choose. If you ignore the omen, the birds will follow you for the rest of the leg — and they are not silent."
+    },
+    {
+      "rank": 13,
+      "suit": "club",
+      "title": "General Alarm",
+      "subtitle": "Levy, muster, evacuation; all tracks become checkpoints.",
+      "flavor": "The alarm horn is cracked. It sounds like a scream. The scream is a name. The name is yours.",
+      "mechanical_hook": "The party is conscripted or questioned. A successful Deception test (DV 4) avoids the worst; a failure starts a Pursuit timer. The alarm horn is cracked — it sounds like a scream. The scream is your name. Someone is calling for you."
+    },
+    {
+      "rank": 14,
+      "suit": "club",
+      "title": "Catastrophe",
+      "subtitle": "Flood, whiteout, sandstorm, lahar; timers jump like frightened deer.",
+      "flavor": "The catastrophe has a name. The land remembers it. The land is shouting it now. The sound is the same as a heartbeat. Yours.",
+      "mechanical_hook": "The catastrophe advances each round. The party must find shelter (Survival test DV 5) or take Harm 2. The land's name is a warning. If you speak the name aloud, the catastrophe will pause for one round — but the land will remember your voice."
+    }
+  ],
+  "expanded_travel_hazards": [
+    {
+      "rank": 15,
+      "suit": "club",
+      "title": "Bell-Line Failure (Mistlands)",
+      "subtitle": "[DEATH]",
+      "description": "A ward-bell cracks. Wraiths cross the levee.",
+      "flavor": "Test Spirit + Resolve (DV 4) or gain the Marked by Mist condition (the next spirit encounter starts at Desperate Position).",
+      "mechanical_hook": "The wraiths are drawn to the party's warmth. If anyone carries a bell, they can ring it to drive them back — but the ring will attract something worse. Tick the Wilds Timer +1."
+    },
+    {
+      "rank": 16,
+      "suit": "club",
+      "title": "Star-Road Phasing (Valewood)",
+      "subtitle": "[MAGIC]",
+      "description": "An ancient Lethai road flickers in and out of reality.",
+      "flavor": "Navigation DV +2. On a failure, the party emerges in a different hex entirely (GM chooses).",
+      "mechanical_hook": "The road phases at the ninth hour. If the party walks it at dusk, they may emerge in a different hex — or a different time. The Lethai roads remember the empire. They are not always happy about it."
+    },
+    {
+      "rank": 17,
+      "suit": "club",
+      "title": "Spirit-Dust Storm (Ashaan)",
+      "subtitle": "[SPIRIT]",
+      "description": "Red sand from the Red Desert carries whispering spirits.",
+      "flavor": "All actions Desperate for the scene. On any 1, a bound spirit breaks free and attacks (Cap 2).",
+      "mechanical_hook": "The spirits are bound to the sand. If the party can speak their names, they will calm. A Wits+Lore test (DV 4) reveals a name. If you speak it, the spirit will answer one question before returning to the sand."
+    },
+    {
+      "rank": 18,
+      "suit": "club",
+      "title": "Ninth Night (Tulkani Circle)",
+      "subtitle": "[ATTENTION]",
+      "description": "The party has camped too long. The Hollow walks.",
+      "flavor": "An Oath-Keeper appears at midnight. It asks for a story, a memory, or a promise. Refusal deepens the land's watchfulness.",
+      "mechanical_hook": "The Oath-Keeper is patient. It will wait until midnight. If the party offers a story, it will listen and leave. If they offer a memory, it will take it and leave. If they offer a promise, it will remember — and return. Tick the Wilds Timer +1 for each refusal."
+    },
+    {
+      "rank": 19,
+      "suit": "club",
+      "title": "Well-Spirit Honored (Fhara)",
+      "subtitle": "[SPIRIT]",
+      "description": "A dry well suddenly flows, but the water carries minerals.",
+      "flavor": "The spirit asks for respect—an offering of dates or a true story. Granted, the water stays sweet; refused, it turns bitter for the next leg.",
+      "mechanical_hook": "The well-spirit is old and lonely. If the party offers a true story, the water will remain sweet. If they offer a false story, the water will turn bitter — and the spirit will follow them for the rest of the leg."
+    },
+    {
+      "rank": 20,
+      "suit": "club",
+      "title": "Toll Shift (Silkstrand/Brass Coast)",
+      "subtitle": "[AUTHORITY]",
+      "description": "A gatekeeper changes the crossing terms.",
+      "flavor": "All passage costs +1 Measure until the next landmark. Diplomacy requires a successful Presence + Sway (DV 4).",
+      "mechanical_hook": "The gatekeeper is testing the party. If they pay the toll, they pass. If they negotiate, they may pass for less. If they refuse, the gate will close — and the land will remember their name."
+    }
+  ],
+  "rewards": [
+    {
+      "rank": 2,
+      "suit": "diamond",
+      "title": "Cache Token",
+      "subtitle": "Key to a hidden food or fuel stash (once); preparation as power.",
+      "flavor": "The token is a knucklebone. The stash is marked with a cairn that has one stone missing. The missing stone is the token.",
+      "cost": "Using the cache gives 2 Supply. The token can be used once — after that, the stash is empty. The missing stone is now your debt — the land will remember that you took from it. If you return the stone, you may use the cache again."
+    },
+    {
+      "rank": 3,
+      "suit": "diamond",
+      "title": "Right-of-Pass",
+      "subtitle": "Recognized marker for a named trail or crossing.",
+      "flavor": "The marker is a notch carved in a milestone. The notch is shaped like a bird. The bird is an owl. The owl watches at dusk.",
+      "cost": "Showing the marker grants +1 Position on any travel roll on that trail. The owl watches at dusk — if you're still on the trail, the land will test you. The test is always a question: 'Why are you here?'"
+    },
+    {
+      "rank": 4,
+      "suit": "diamond",
+      "title": "Warden's Favor",
+      "subtitle": "Escort letter; 'they're with us' as a shield.",
+      "flavor": "The letter is stamped with a bell. The bell's clapper is missing. The absence of sound is the signature.",
+      "cost": "The favor grants safe passage through one warden patrol. The wardens will not question you — but they will remember your face. The letter's bell has no clapper — it cannot ring. The silence is the signature."
+    },
+    {
+      "rank": 5,
+      "suit": "diamond",
+      "title": "Weather Window",
+      "subtitle": "Good forecast and a narrow gate to use it.",
+      "flavor": "The window is a single hour at dawn. The birds will tell you when. They will stop singing. That is the signal.",
+      "cost": "The window grants +1 die to all travel rolls for one leg. The party must move quickly — the window closes at the next weather turn. If they miss it, the weather will turn against them (tick the Wilds Timer +1)."
+    },
+    {
+      "rank": 6,
+      "suit": "diamond",
+      "title": "Water Deed",
+      "subtitle": "Lawful draw at a scarce source; necessity as a right.",
+      "flavor": "The deed is a clay cup. Break it, and the spring will flow—once. The cup's shards can be traded for another deed. There are nine shards.",
+      "cost": "The deed grants access to water in a dry region. The spring is cold, and the water tastes of iron — but it's safe. The cup's shards can be traded to the spring's keeper for another deed. If you lose a shard, the spring will remember."
+    },
+    {
+      "rank": 7,
+      "suit": "diamond",
+      "title": "Route Song",
+      "subtitle": "A map scrap that actually works; knowledge as navigation.",
+      "flavor": "The song has eight verses. The ninth is humming. The humming is the sound of the road itself. It changes with the weather.",
+      "cost": "Singing the route song grants +1 die to navigation for one leg. The humming changes with the weather — it's the road's mood. If you sing the ninth verse (the humming), the road will speak to you. It will ask one question. Answer truthfully, and it will show you a shortcut."
+    },
+    {
+      "rank": 8,
+      "suit": "diamond",
+      "title": "Remount Hire",
+      "subtitle": "Fresh legs or hulls waiting at a post; speed as a service.",
+      "flavor": "The remounts have no names. They answer to whistles and bribes. They remember every rider. They do not forgive cruelty.",
+      "cost": "The remounts grant +1 Speed for one leg. They will not obey anyone who treats them poorly. They remember cruelty — if you mistreat them, they will throw you at the worst possible moment. If you treat them well, they will remember your kindness."
+    },
+    {
+      "rank": 9,
+      "suit": "diamond",
+      "title": "Truce Cord",
+      "subtitle": "Taboo exemption at a site (one scene); peace as a thread.",
+      "flavor": "The cord is braided from wool and ash. Burn it to invoke the truce. The ash must be from the same fire that warmed the truce.",
+      "cost": "The truce lasts one scene. No violence can occur within the site. The cord's ash must be from the same fire that warmed the truce — if you use different ash, the truce will not hold. If you break the truce, the land will remember (tick the Wilds Timer +3)."
+    },
+    {
+      "rank": 10,
+      "suit": "diamond",
+      "title": "Toll Waiver",
+      "subtitle": "A ferry, bridge, or reef gate honors this chit; passage as paper.",
+      "flavor": "The chit is a dried leaf. The toll-keeper will not touch it. They will nod and wave you through. They will not speak.",
+      "cost": "The waiver grants free passage through one toll. The toll-keeper will not speak to you — they will only nod. They will remember your face. If you try to use the waiver again, it will crumble in your hand."
+    },
+    {
+      "rank": 11,
+      "suit": "diamond",
+      "title": "Favor Owed",
+      "subtitle": "Locals owe you (or you owe them); trade for labor or insight.",
+      "flavor": "The favor is carved on a tally stick. Break it when the favor is done. The stick will not burn. It will only splinter.",
+      "cost": "The favor can be traded for labor, information, or safe passage. The tally stick will not burn — it will only splinter. If you break it, the favor is done. If you lose it, the favor is still owed. The land will remember."
+    },
+    {
+      "rank": 12,
+      "suit": "diamond",
+      "title": "Private Audience",
+      "subtitle": "A keeper, shrine-warden, or spirit of the place hears you alone.",
+      "flavor": "The audience is held at midnight. The spirit wears your face. It asks only one question. You will answer truthfully.",
+      "cost": "The spirit will answer one question truthfully — but it will ask one in return. The answer is always a weight. If you lie, the spirit will wear your face for a day. If you tell the truth, it will give you a boon (treat as a Diamond of your choice)."
+    },
+    {
+      "rank": 13,
+      "suit": "diamond",
+      "title": "Road Commission",
+      "subtitle": "Temporary authority over a stretch of wilds.",
+      "flavor": "The commission is a whistle. Blow it, and the land will listen—once. The whistle is carved from a bone that was never alive.",
+      "cost": "The commission grants temporary authority. The land will obey one command — but the land will remember your use of the whistle. If you use it to harm the land, tick the Wilds Timer +3. If you use it to protect the land, gain +1 Position on all rolls in this region for the rest of the session."
+    },
+    {
+      "rank": 14,
+      "suit": "diamond",
+      "title": "Earth's Exception",
+      "subtitle": "One temporary rule-bend (cross during a storm, pass uncounted, beasts ignore you).",
+      "flavor": "The exception is a secret. The land will forget it as soon as you use it. You will remember it every night for a year.",
+      "cost": "The exception lasts one scene. The land will forget it as soon as you use it — but you will remember it every night for a year. The exception is a secret — if you tell anyone, the land will remember and take it back. If you use it wisely, the land may offer you another."
+    }
+  ],
+  "wilds_manifestation_table": [
+    {
+      "roll": 1,
+      "manifestation": "**Cairn-Wight** — A stone guardian rises from a nearby cairn. It demands witness: the party must speak a truth about their journey. If they refuse, it attacks (Cap 3, Harm 4). If they speak truthfully, it grants them a Cache Token (see Diamonds)."
+    },
+    {
+      "roll": 2,
+      "manifestation": "**Weather Omen** — A storm follows the party for the rest of the leg. All travel rolls are Desperate. The storm has a name — it's the land's voice. If the party speaks the name, the storm will pause for one scene."
+    },
+    {
+      "roll": 3,
+      "manifestation": "**Path Shift** — The route ahead is no longer on any map. The party must navigate by instinct (Wits+Lore DV 5) or become lost (lose 2 segments of progress). The new path leads to a place that was never meant to be found."
+    },
+    {
+      "roll": 4,
+      "manifestation": "**Ghost Procession** — The land's memory walks. A spectral column crosses the party's path. They must wait (lose 1 segment) or try to cross through (Spirit+Resolve DV 4, or take Harm 1). The ghosts are counting — they count in eights. If you take the ninth step, they will follow you."
+    },
+    {
+      "roll": 5,
+      "manifestation": "**The Land Speaks** — The party hears a voice from the ground itself. It asks one question: 'What do you owe?' Answering costs a memory; silence costs a name. The voice is the land's — it has been waiting to speak to you."
+    },
+    {
+      "roll": 6,
+      "manifestation": "**The Ninth Step** — The party finds themselves at the same crossing they passed yesterday. The Wilds Timer resets to 0. The land has decided to give them another chance — or another test. The crossing has changed — there is a new cairn. It has your name on it."
+    }
+  ],
+  "quick_use_notes": {
+    "draw_rules": "Draw until you have all four suits: Spade = place, Heart = actor, Club = pressure, Diamond = leverage. Highest rank sets the main Timer (2–5 → 4, 6–10 → 6, J/Q/K → 8, A → 10).",
+    "diamonds": "Diamonds are codified outcomes (cache/pass/favor) that change position rather than call for a roll.",
+    "ace_rule": "If any A appears, add a lingering omen of the land (a smell on the wind, a sound that carries too far, tracks that shift) that you can echo in later scenes.",
+    "timer_visibility": "The Wilds Timer should be visible to players — the land's attention is a pressure they can feel."
+  },
+  "weather_omens": [
+    {
+      "roll": 1,
+      "meaning": "Three crows fly west—the next storm will carry voices from the past."
+    },
+    {
+      "roll": 2,
+      "meaning": "Moonring broken at midnight—the weather will shift twice before dawn."
+    },
+    {
+      "roll": 3,
+      "meaning": "Wind carries iron scent on clear air—storm approaches from the direction of old battlefields."
+    },
+    {
+      "roll": 4,
+      "meaning": "Stars vanish in pattern—the land is holding its breath; the next step decides fate."
+    },
+    {
+      "roll": 5,
+      "meaning": "Sun dogs flank the rising sun—blessing on journeys begun before noon."
+    },
+    {
+      "roll": 6,
+      "meaning": "Fog forms perfect circles—what is lost will return, but changed."
+    },
+    {
+      "roll": 7,
+      "meaning": "Lightning strikes twice in same spot—the Hollow marks this place for attention."
+    },
+    {
+      "roll": 8,
+      "meaning": "Rain falls upward for three breaths—a reversal is coming; prepare to give what you take."
+    },
+    {
+      "roll": 9,
+      "meaning": "Wind dies completely at noon—the land sleeps; move swiftly or become part of its dream."
+    },
+    {
+      "roll": 10,
+      "meaning": "Aurora pulses with your heartbeat—the sky knows your name and your burden."
+    }
+  ],
+  "ruin_findings": [
+    {
+      "roll": 1,
+      "discovery": "A mosaic floor depicting a migration no map remembers—follow the tiles to find a hidden valley."
+    },
+    {
+      "roll": 2,
+      "discovery": "Wind whistles through broken arches in a tune that feels like home—hum it to gain +1 Effect on the next social roll."
+    },
+    {
+      "roll": 3,
+      "discovery": "Stone faces weep clear liquid that tastes of the first rain of spring—drink to clear 1 Fatigue."
+    },
+    {
+      "roll": 4,
+      "discovery": "A single tile is warm to the touch—press it to reveal a compartment holding a perfectly preserved seed."
+    },
+    {
+      "roll": 5,
+      "discovery": "Shadows move opposite the light—stand in their intersection to become invisible for one exchange."
+    },
+    {
+      "roll": 6,
+      "discovery": "Carvings show hands exchanging not goods but breaths—press your palm to the wall to share a memory."
+    },
+    {
+      "roll": 7,
+      "discovery": "The air hums at a frequency that makes teeth ache—sing against it to gain +1 die on the next magical roll."
+    },
+    {
+      "roll": 8,
+      "discovery": "A doorway frame is grown over with living stone—walk through it to leave one burden behind."
+    }
+  ],
+  "trail_signs": [
+    {
+      "roll": 1,
+      "meaning": "Pebbles point not to the path but to a patch of edible mushrooms—the land offers sustenance if you look aside."
+    },
+    {
+      "roll": 2,
+      "meaning": "Grass grows in perfect spirals around a stone—walk the spiral three times to find your bearings if lost."
+    },
+    {
+      "roll": 3,
+      "meaning": "A single feather lies across the trail—it belongs to a bird that nests only in places of perfect safety."
+    },
+    {
+      "roll": 4,
+      "meaning": "Moss grows thickest on the north face of rocks—but here it thrives on the south; the land is confused or changed."
+    },
+    {
+      "roll": 5,
+      "meaning": "Twigs are arranged in a pattern that matches your boot tread—something has been watching your steps."
+    },
+    {
+      "roll": 6,
+      "meaning": "Water in a puddle holds a perfect reflection... of a place you've never been."
+    }
+  ],
+  "lore_echoes": [
+    {
+      "title": "The Bitter Root",
+      "description": "Daughters of the Cord use certain shelter hollows as waystations. A renegade Sister has hidden a Hollowed in a ruined outpost; the child has not moved in weeks. The outpost's flagstones are warm — they remember her."
+    },
+    {
+      "title": "The Threshold Compendium",
+      "description": "Old Roads are Class II Anchor sites—ghosts of imperial surveyors still measure the miles. Saikou Ira would leave a silver coin at every milestone. The ghosts count the coins. They have not finished counting."
+    },
+    {
+      "title": "Malachai, the Chained Angel",
+      "description": "A silver coin that never spends lies at the bottom of every spring. Take it, and the water will never run dry—but the spring will remember your face. The coin has eight edges. The ninth is a scratch."
+    },
+    {
+      "title": "The Gray Wanderer's Grimoire",
+      "description": "Wilds psions are called 'Stone-Listeners.' They hear the memory of old trails. Claimant chiefs pay well for their services—and dispose of those who hear too much. The stones speak in eights. The ninth word is always a name."
+    }
+  ],
+  "superstitions": [
+    {
+      "name": "Bread to the Cairn",
+      "effect": "Crumble a crust at a boundary stone. Ignore the first Bad Ground penalty.",
+      "cost": "Burn for +1 die once"
+    },
+    {
+      "name": "Knot the Trail",
+      "effect": "Tie a single knot in a piece of grass at a crossing. Cancel Doubleback or take –1 die on your next navigation roll (your choice).",
+      "cost": "Burn for +1 die once"
+    },
+    {
+      "name": "Name to the Spring",
+      "effect": "Whisper a dead traveler's name into a water source. Gain +1 Effect when foraging this scene, but mark Obligation to the land.",
+      "cost": "Burn for +1 die once"
+    }
+  ],
+  "sb_spend_table": {
+    "minor_complications": [
+      "**Exposure:** Your actions draw unwanted attention from **wardens or local hunters**.",
+      "**Noise:** Sounds of your actions alert nearby **prowlers or caravan guards**.",
+      "**Trace:** Evidence of your passage marks your route for **trackers or claimants**.",
+      "**Delay:** A brief but meaningful setback costs you **time or favorable weather**.",
+      "**Supply Strain:** Mark +1 segment on a relevant **resource timer**."
+    ],
+    "moderate_setbacks": [
+      "**Alarm Raised:** **Guide or warden patrol** becomes aware and begins responding.",
+      "**Position Lost:** You lose advantageous ground/cover/stealth due to **weather shift or route blockage**.",
+      "**Foe Appears:** A **war-band or territorial beast** arrives on scene.",
+      "**Gear Trouble:** A piece of equipment becomes **Compromised/Neglected**.",
+      "**Lock/Barrier:** A simple obstacle now requires a test to overcome."
+    ],
+    "serious_trouble": [
+      "**Reinforcements:** Additional **wardens, war-bands, or prowlers** arrive.",
+      "**Key Gear Breaks:** A crucial tool/weapon becomes temporarily unusable.",
+      "**Major Twist:** The situation fundamentally changes - **weather turns/catastrophe strikes/quarantine declared**.",
+      "**Rail Tick:** Advance a relevant campaign/front timer by 1 segment.",
+      "**Condition Applied:** Mark **Fatigue 1/Harm 1/Condition** appropriate to fiction."
+    ],
+    "major_turns": [
+      "**Trap Springs:** A prepared danger activates with full effect.",
+      "**Authority Arrival:** **Claimant chief, quartermaster, or The Stranger** intervenes.",
+      "**Scene Shift:** The environment changes dramatically - **weather shifts/blockage clears/catastrophe hits**.",
+      "**Patron Omen:** Divine/arcane forces take notice - **omen appears/blessing lost/curse manifests**.",
+      "**Narrative Pivot:** The story takes an unexpected turn that reframes objectives."
+    ],
+    "region_specific": [
+      "**Wilds (Weather):** Conditions shift without warning, storms arrive early, calm turns to chaos.",
+      "**Wilds (Navigation):** Trails reroute mid-journey, landmarks disappear, guides demand additional payment.",
+      "**Wilds (Local Customs):** Spirits demand tribute, territorial beasts become aggressive, local laws change with the terrain.",
+      "**Wilds (The Ninth):** The ninth step leads to a thin place. The ninth cairn is warm. The ninth offering is always accepted."
+    ]
+  },
+  "terrain_stock": [
+    "Fresh ash on an old fire ring; prints circle *around* it.",
+    "Boundary totems toppled but re-stack themselves if watched politely.",
+    "Broken wagon with salt-vein crystals growing through spokes.",
+    "Singing culvert; echo names the boldest listener wrongly.",
+    "Weather bell hung in a pine; tolling swaps rain and wind.",
+    "Cairn with a copper coin balanced on edge; don't breathe hard.",
+    "Fence of antlers pointing uphill; follow and skip one Bad Ground.",
+    "Mummified pack-beast wearing a courier's braid; letter hums.",
+    "Pebble mosaic of an old levy call; stepping it summons wardens.",
+    "Fossil rib arch; shelter under it and dream of tomorrow's route.",
+    "Abandoned hunter's cache; choice of food or rumor, not both.",
+    "Mirror-puddle; shows last night's sky whatever the hour.",
+    "Rope bridge made of prayer knots; one is freshly cut.",
+    "Scare-stakes dressed in saltcloth; something big respects them.",
+    "Stone with bite-marks; taste iron and remember a shortcut.",
+    "Old road mile-post defaced into a saint; offerings still fresh.",
+    "Thistle patch buzzing with coin-flies; feed them copper for safe passage.",
+    "Fallen giant's footprint now a pond; frogs chant a route-song.",
+    "Soot writing on cliff: 'Storm at Second Bell.' It's right.",
+    "Hollow tree full of carved names; the newest is yours."
+  ],
+  "lair_seeds": [
+    "**Fen Clockworks** — Bog-gears turn under peat; each tooth a drowned oath.",
+    "**Dry River Gallery** — Petroglyphs re-arrange at dusk; wrong reading summons bramble knights.",
+    "**Ice-Well Vault** — Stairs drilled through permafrost; breath blooms frost-runes that answer questions badly.",
+    "**Sunken Forum** — Pillars knee-deep in silt; rust moths nest in the rostrum.",
+    "**Pilgrim Kilns** — Charcoal mounds hike on stilt roots at night; a hermit-healer bargains weather for charcoal.",
+    "**Hanging Salt Chapel** — White stalactites ring like bells; grave-eels coil in the font.",
+    "**Thorn Maze Mill** — Waterwheel turns without water; phase panthers pace the sluice.",
+    "**Brewer's Hollow** — Barrels of wind; decant a gale or drink a calm.",
+    "**Antler Archive** — Tally carved on horn; theft awakens the cairn-wights' watcher.",
+    "**Black Lantern Mines** — Lantern-eyes nest like bats; light buys silence, darkness buys passage.",
+    "**Stormbone Spire** — Vertebrae tower; earth-sharks circle beneath like sharks in sand.",
+    "**Amber Orchard** — Trees fossilised mid-sway; trapped thunderflies grant Weather Window when freed."
+  ],
+  "wilderness_bestiary": [
+    {
+      "name": "Earth-Sharks",
+      "description": "Burrow beneath loess and tundra; dorsal ridges like plowshares.",
+      "signs": "furrows that breathe; pebbles rattle.",
+      "hook": "lure with drumbeats or goat bells. They count in eights — if you beat nine times, they will breach."
+    },
+    {
+      "name": "Phase Panthers",
+      "description": "Shadow-striped cats that step between gusts.",
+      "signs": "pawprints offset from themselves.",
+      "hook": "mirrored water or bell-silver disrupts the blink. The panthers phase at the ninth step — if you count their steps, you can predict where they'll appear."
+    },
+    {
+      "name": "Rust Moths",
+      "description": "Swarms that taste iron memory.",
+      "signs": "lacework mail; pitted nails.",
+      "hook": "feed them old keys; they ignore fresh steel. They have a ninth sense — they know when you're carrying a forgotten debt."
+    },
+    {
+      "name": "Lichen-Bears",
+      "description": "Moss-matted ursines with rock-teeth.",
+      "signs": "clawed bark with green scabs.",
+      "hook": "smoke of juniper calms; salt enrages. Their teeth are warm — they remember every meal."
+    },
+    {
+      "name": "Wind Drakes",
+      "description": "Rib-thin sky-serpents that ride fronts.",
+      "signs": "shed vanes; feathers like glass.",
+      "hook": "whistle back the storm to ground them. They have nine ribs — if you count them, they will notice."
+    },
+    {
+      "name": "Ooze-Remnants",
+      "description": "Alchemical slough from an old field lab.",
+      "signs": "boot-holes rounded smooth.",
+      "hook": "wood ash firms them; vinegar makes them sprint. They remember the last formula — it's written in their movement."
+    },
+    {
+      "name": "Fell Harts",
+      "description": "Antlered shades that herd the living toward cliffs.",
+      "signs": "hoofprints that don't compress soil.",
+      "hook": "speak a hunter's apology while walking backward. They count their herd in eights — the ninth is always a ghost."
+    },
+    {
+      "name": "Cairn-Wights",
+      "description": "Stone-stack custodians; patient as frost.",
+      "signs": "pebbles rearranged around your fire.",
+      "hook": "rebuild the stack correctly; they serve until dawn. They count in stones — if you add a ninth, they will wake."
+    },
+    {
+      "name": "Thundertusks",
+      "description": "Boars that store lightning in tusk-veins.",
+      "signs": "fused sand beads; singed roots.",
+      "hook": "ground your spear; throw shadow to draw the strike. Their tusks hum in eights — the ninth is a warning."
+    },
+    {
+      "name": "Lantern-Eyes",
+      "description": "Floating orbs of watchlight rumor; jealous of secrets.",
+      "signs": "daylight in ravines at midnight.",
+      "hook": "offer a whispered truth; they part like reeds. They count secrets in eights — the ninth is always yours."
+    },
+    {
+      "name": "Grave-Eels",
+      "description": "Burrow through barrow loam; taste names.",
+      "signs": "sinking turf over old wars.",
+      "hook": "sing lineage or throw false names to mislead. They have nine names — if you speak all of them, they will follow you."
+    },
+    {
+      "name": "Bramble Knights",
+      "description": "Empty helms grown through with thorn; patrol old borders.",
+      "signs": "briar in boot-grease.",
+      "hook": "present a hedge-blessing; they escort instead of impale. They count in thorns — the ninth is always sharp."
+    }
+  ],
+  "strange_finds": [
+    "**Route-stones** that warm near true north.",
+    "**Weather-bell clapper** that tolls only for lightning.",
+    "**Trail-right knot** dyed in berry law; locals honor it once.",
+    "**Salt-vein pick** that cuts oozes like cloth.",
+    "**Glass feather**; break to call a wind drake for one pass.",
+    "**Tally leaf** waterproofed with eel-fat; ink never runs, words drift.",
+    "**Thorn sigil** that bramble knights read as parley.",
+    "**Coin-fly cocoon**; hatch it for one honest guide to the nearest water.",
+    "**Bone flute** that calls earth-sharks to circle elsewhere.",
+    "**Lantern-eye husk**; squeeze for daylight the length of a camp prayer."
+  ],
+  "omens_and_signs": {
+    "sky_signs": [
+      "sun-dog",
+      "mare's tails",
+      "anvil cloud faces the wrong way",
+      "silent birds",
+      "far thunder without storm",
+      "moon with halo",
+      "ash scent on clear air",
+      "stars 'shiver'"
+    ],
+    "ground_signs": [
+      "cairn with new pebble",
+      "boot prints that end at rock",
+      "butchered game left neat",
+      "snapped twig at head height",
+      "ash under wet moss",
+      "ward-knot cut",
+      "trail beads on shrub",
+      "a single coin on a stone"
+    ]
+  },
+  "fast_reskin_palette": {
+    "forest": {
+      "swap": {
+        "dunes": "deadfall",
+        "spindrift": "canopy flare",
+        "prowlers": "boar/wolves"
+      },
+      "water": "spring/stream"
+    },
+    "desert": {
+      "swap": {
+        "bog": "salt pan",
+        "fog": "dust"
+      },
+      "shelter": "overhang/wadi",
+      "water": "seep/fog net"
+    },
+    "tundra/ice": {
+      "swap": {
+        "dune shift": "ice heave",
+        "fire": "spindrift",
+        "boats": "sleds"
+      },
+      "prowlers": "bears/wolves"
+    },
+    "coast/isles": {
+      "crossings": "reef shelves",
+      "prowlers": "seals/raiders",
+      "alarms": "harbor booms",
+      "fuel": "driftwood"
+    },
+    "swamp/fen": {
+      "crossings": "corduroy/log causeways",
+      "bad ground": "peat crust",
+      "prowlers": "gators/leeches"
+    },
+    "highlands": {
+      "crossings": "cols and scree traverses",
+      "alarms": "beacon chains",
+      "prowlers": "cats/eagles"
+    }
+  },
+  "index": [
+    "Wilderness",
+    "Roads, Ruins, and Weather generator",
+    "Hexcrawl",
+    "Trail rights",
+    "Weather whims",
+    "Supply and forage",
+    "Camps and watches",
+    "Road spirits",
+    "Claimant chief",
+    "Forager child",
+    "Cache token",
+    "Right-of-pass",
+    "Truce cord",
+    "Earth's Exception",
+    "Biome reskin",
+    "Isolated towns",
+    "Refugee train",
+    "Deserter camp",
+    "Beastman hunting band",
+    "Lost tribe",
+    "Rootless mercenaries",
+    "Feral children",
+    "Cult of the Unburied",
+    "The Gray Singer",
+    "The Hollow's Own",
+    "Expanded travel hazards",
+    "Bell-Line Failure",
+    "Star-Road Phasing",
+    "Spirit-Dust Storm",
+    "Ninth Night",
+    "Well-Spirit Honored",
+    "Toll Shift"
+  ],
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

@@ -1,0 +1,1136 @@
+{
+  "id": "thepyrgos-city-of-unfinished-proofs",
+  "version": "1.0.0",
+  "type": "generator",
+  "title": "Thepyrgos — The City of Unfinished Proofs",
+  "label": "chap:thepyrgos",
+  "key_demographic": "Humans",
+  "capital": "Thepyrgos",
+  "manifest_path": "/data/docs/manifest.json",
+  "overview": {
+    "tagline": "Every stair is a question. Every answer is a proof. The Ninth and the Witness argue over whose record holds the truth.",
+    "genre": "Scholarly vertical city, labyrinthine imperial bureaucracy, coastal peninsular folk horror, metaphysical war between memory and forgetting.",
+    "mood": "Stairs, Bells, and the Argument of Patrons",
+    "starting_location": "The Synod Hall at dusk. Gold-glass mosaics glitter as a Matriarch reads a scroll aloud. 'The Beacon Crown sees traitors in the smoke. A child's talent was surrendered to the Commissary last night. Find the informer—or the next stair seized will be yours. And if you hear a stair creak where none exists, do not turn around. The Ninth is counting.'",
+    "lore": {
+      "history": "Thepyrgos is both realm and city, built on the bones of the drowned Astroegro Empire. The capital rises in tiers of towers, terraces, and endless stairs above the Dolmis shore—but the stairs are not stone. They are fossilized vertebrae, the spine of a leviathan that Khemesh dragged under when the last emperor broke a covenant older than the sea. Once a Utaran province, now a nation unto itself, Thepyrgos is famed for its universities, libraries, and debating synods, where precedent and philosophy weigh as much as pikes or coin. The Astroegro were a human civilization of formidable magic, the ancient rivals of the Valewood's Empire of Leaves. Their ruins litter the hills and swamps south of the city, and their legacy haunts every threshold. When the Empire of Leaves fell, Lethai-thora refugees—high elves who had served as archivists and lore-keepers—fled across the Black River and were granted sanctuary in Thepyrgos. Generations later, their descendants still walk the city's tiers, their silver hair and ink-stained fingers a quiet reminder of a pact older than the synod.",
+      "first_notice": "The endless chime of bells from different tiers, never quite in sync. The smell of brine, olive oil, and candle wax. The way locals glance at the sky when a child coughs—and then at the nearest crossroads. The quiet grace of the Lethai-thora archivists, who never seem to blink.",
+      "rule_that_kills": "Never let a bell-ringer count your breaths. The Chain-Lanterns offer safe conduct to those who give names that ring false on the test stairs. But worse: never ask a question of a stair that has no end. The Ninth is listening, and it will answer."
+    },
+    "entanglements": {
+      "north": "Viterra — The Black River is a legal and physical border; hedge-law meets Synod edict here. Fugitives cross both ways; the Chain-Lanterns watch the fords.",
+      "east": "The Dolmis Sea — Zakov corsairs and Aelinnel tide-traders slip past the chain-towers. The boom is raised when the moon is high and the tide is low.",
+      "south": "The Hyro Hinterlands — Astroegro ruins leak forgotten magic; the Commissariat sweeps the villages for latent talent. The Ninth's Coterie moves freely in the ruins.",
+      "west": "Kahfagia — Signal-codes and beacon treaties are exchanged; the Lantern-Law and the Synod maintain a watchful peace. Neither trusts the other's mirrors."
+    }
+  },
+  "quotes": [
+    {
+      "speaker": "The Archon (Elite)",
+      "text": "Every stair climbed is a word in the great conversation between earth and sky. This city is not built—it is grown, stone by stone, law by law, until the very architecture speaks wisdom. But the stairs remember more than the living. They remember the ones who never came down."
+    },
+    {
+      "speaker": "Bell-Runner (Commoner)",
+      "text": "I know every step that creaks a warning and every landing that whispers gossip. The bells tell the city's mood better than any lord—three chimes means business, six means trouble, and nine means the hunters are coming. But on the ninth bell, the stairs themselves answer."
+    }
+  ],
+  "geographic_integration": {
+    "viterra": "Thepyrgos is separated from Viterra by the Black River and the Belmont Marshes. The marshy lowlands breed strange fogs and rarer creatures, and the border is porous—Viterran hedge-courts and Thepyrgos synods argue jurisdiction over every flooded farmstead.",
+    "vhasia": "A short boat ride from Fairport (Viterra) across the Belworth estuary brings travelers to Marcott in Vhasia, making Thepyrgos a quiet but crucial link in the riverine trade between the fractured sun-kingdom and the imperial remnant.",
+    "straits": "The city controls the Astroegro Straits—the narrow sea passage between the Dolmis and the Amaranthine—and maintains a few small colonies on the western coast of Hyaar, where olive oil and wine are exchanged for eastern silks and spices. Those colonies are run by exiled scholars and retired Chain-Lanterns, and they are said to be even more paranoid than the mother city."
+  },
+  "faction_timers": {
+    "archons_balance": {
+      "name": "Archon's Balance",
+      "max_segments": 6,
+      "advance_on": [
+        "The party exposes a Commissariat secret (+1)",
+        "A Synod edict is defied (+1)",
+        "A faction gains too much influence (+1)"
+      ],
+      "thresholds": {
+        "4": "The Archon's authority frays; all social rolls involving civic authority gain +1 DV.",
+        "6": "The Archon loses control of one faction—either the Commissariat runs wild, the Synod calls for his deposition, or the Ninth's Coterie operates openly. The party must choose which faction to support."
+      }
+    },
+    "commissariat_pressure": {
+      "name": "Commissariat Pressure",
+      "max_segments": 4,
+      "advance_on": [
+        "The party uses unsanctioned magic in the city (+1)",
+        "Helps a gifted child escape (+1)",
+        "Defies a Commissary warrant (+1)"
+      ],
+      "thresholds": {
+        "4": "The Commissariat conducts a city-wide sweep. All PCs must test Spirit+Resolve (DV 4) or be detained for questioning. A detainee may be released for 1 Boon or a favor to the Commissariat."
+      }
+    },
+    "ninths_progress": {
+      "name": "Ninth's Progress",
+      "max_segments": 8,
+      "advance_on": [
+        "The party opens a vault (+2)",
+        "Speaks a true name of an Astroegro ruin (+1)",
+        "Accepts a boon from the Ninth (+1)"
+      ],
+      "thresholds": {
+        "4": "The Coterie finds a vault entrance.",
+        "8": "They open a vault. The Unfinished Stair appears in the city. The party must decide: help them, stop them, or seal the vault themselves."
+      }
+    },
+    "witnesss_vigil": {
+      "name": "Witness's Vigil",
+      "max_segments": 6,
+      "advance_on": [
+        "The party records a truth in the Synod's archives (+1)",
+        "Seals a vault (+2)",
+        "Refuses a boon from the Ninth (+1)"
+      ],
+      "thresholds": {
+        "4": "The Witness's Archivists offer the party a boon (a free Synod Indulgence or Archive Hour).",
+        "6": "They demand a favor—record a dangerous truth or face their scrutiny."
+      }
+    }
+  },
+  "faction_relationship_dial": {
+    "name": "Witness ↔ Ninth",
+    "description": "Track the party's perceived allegiance between the Witness (memory, record, preservation) and the Ninth (forgetting, erasure, revelation).",
+    "witness_leaning": {
+      "bonuses": [
+        "+1 Position on social rolls with archivists, Synod clerks, and the Matriarch",
+        "The Chain-Lanterns view you as potential informants (first interrogation starts at +1 Position)"
+      ],
+      "penalties": "The Ninth's Coterie actively works against you (complications involving forgotten records or hidden stairs)"
+    },
+    "ninth_leaning": {
+      "bonuses": [
+        "+1 Effect when seeking hidden knowledge, forbidden texts, or vaults"
+      ],
+      "penalties": [
+        "The Commissariat views you as dangerous (first contact starts Desperate)",
+        "Archivists are wary of you; the Synod may call you to account"
+      ]
+    },
+    "centering_actions": {
+      "move_toward_witness": "Record a truth in the Synod's archives",
+      "move_toward_ninth": "Feed a memory to the Ninth's Coterie",
+      "center": "Perform a ritual that acknowledges both (center the dial, clear 1 segment from Unfinished Stair)"
+    }
+  },
+  "npcs": [
+    {
+      "name": "Archon Konstantinos",
+      "role": "Ruler of the city, elected by the wards",
+      "motivation": "Balance the synod, the guilds, and the Commissariat",
+      "quirk": "He wears a key around his neck; no one knows what it opens—or that it opens the Ninth's Vault."
+    },
+    {
+      "name": "Matriarch Eleni",
+      "role": "Synod primate, head of the Temple of Light's synod",
+      "motivation": "Keep the Everflame from reclaiming the province",
+      "quirk": "She speaks once a session; when she does, the bells listen. She has never spoken the ninth word."
+    },
+    {
+      "name": "Commissary Kyrillos",
+      "role": "Chain-Lantern commander",
+      "motivation": "Purge all untutored magic from the province",
+      "quirk": "His lantern shows not only latent talent but also the bearer's greatest fear. He refuses to look into it himself."
+    },
+    {
+      "name": "Sofia",
+      "role": "Bell-Runner (commoner exemplar)",
+      "motivation": "Outrun the hunters and protect the hidden gifted",
+      "quirk": "She ties a knot in her hair for each hunter she has outrun; her hair is a thicket. One knot is white—a hunter she could not outrun."
+    },
+    {
+      "name": "Nomophylax Zoe",
+      "role": "Law-scholar, master of citations",
+      "motivation": "Reform the synod from within",
+      "quirk": "She has never lost a case; her opponents have a habit of vanishing into the Unfinished Stair."
+    },
+    {
+      "name": "The Lighthouse-Patriarch",
+      "role": "Reclusive seer of the Beacon Crown",
+      "motivation": "Steer the city through the coming storm",
+      "quirk": "He has no eyes—only mirrors where his eyes should be. In the mirrors you see the faces of those whose names the Ninth holds."
+    },
+    {
+      "name": "Keeper Lian (Lethai-thora)",
+      "role": "High Archivist of the Library of Keys",
+      "motivation": "Preserve the Astroegro records and keep the Ninth's cult from the deepest vaults",
+      "quirk": "She has not spoken aloud in twenty years. She writes on water. The water never freezes."
+    }
+  ],
+  "archons_key": {
+    "description": "The Archon wears a key around his neck. No one knows what it opens. The key is a stair.",
+    "what_it_opens": "The Ninth Vault—the deepest of the Astroegro vaults, sealed by the first Archon. It contains the original Astroegro orrery, a working model of the cosmos that still ticks.",
+    "what_happens_if_used": {
+      "open": "The vault opens. The Ninth's Coterie is immediately aware.",
+      "witness_arrival": "The Witness's Archivists arrive within the hour.",
+      "choices": [
+        "Destroy the vault's contents (gain the Witness's favor)",
+        "Use them (gain the Ninth's favor)",
+        "Seal it again (gain the Archon's favor—and a permanent enemy in whichever faction you defied)"
+      ]
+    },
+    "how_to_learn": [
+      "A dying Archivist whispers it (cost: 1 SB)",
+      "The Lighthouse-Patriarch shows them in a mirror (cost: 1 Fatigue)",
+      "The Ninth's Coterie offers to trade the information (cost: 1 Obligation to the Ninth)"
+    ]
+  },
+  "lighthouse_patriarchs_mirror": {
+    "description": "Once per session, a character who spends a scene in the Lighthouse-Patriarch's presence may ask the GM one question about a hidden door or stair, the location of an Astroegro vault entrance, or a weakness of the Chain-Lanterns or the Ninth's Coterie.",
+    "cost": "The mirrors show the asker a face they have wronged. Mark 1 Fatigue (guilt).",
+    "limit": "The Patriarch will not answer the same question twice. He does not need to speak—the mirrors show the answer. If the party asks a question the Patriarch cannot answer, the mirrors show a blank expanse of water."
+  },
+  "names": {
+    "first_male": [
+      "Konstantinos",
+      "Dimitris",
+      "Kyrillos",
+      "Nikolas",
+      "Leonidas",
+      "Stephanos",
+      "Aerendil"
+    ],
+    "first_female": [
+      "Eleni",
+      "Zoe",
+      "Sofia",
+      "Anastasia",
+      "Irini",
+      "Fotini",
+      "Lian"
+    ],
+    "surnames": [
+      "Skalas",
+      "Platanos",
+      "Raptis",
+      "Laskaris",
+      "Makris",
+      "Koutroulis",
+      "Thoraen"
+    ],
+    "epithets": [
+      "the Stair-Wise",
+      "the Unseen",
+      "Bell-Sworn",
+      "the Accursed",
+      "Ash-Finger",
+      "the Silent",
+      "Archivist"
+    ]
+  },
+  "places": [
+    {
+      "rank": 2,
+      "suit": "spade",
+      "title": "Pilgrim's Stair",
+      "subtitle": "[TRAVEL] [RITUAL]",
+      "description": "Zig-zagging sea-cliff to wicket gate; ascent as devotion.",
+      "flavor": "Every hundredth step has a bell. Pilgrims ring once for mercy, twice for memory. The ninth bell has no clapper.",
+      "mechanical_hook": "Climbing the stair while ringing a bell grants +1 die to the next roll. The ninth bell has no clapper—if you try to ring it, the stair shifts."
+    },
+    {
+      "rank": 3,
+      "suit": "spade",
+      "title": "Tower Quarter",
+      "subtitle": "[SOCIAL]",
+      "description": "Family keeps stitched by ladders and bridges; vertical neighborhoods.",
+      "flavor": "The lowest rung of each ladder is painted red—a mark of the rope-guild's claim. The rope-guild's scroll is written in disappearing ink.",
+      "mechanical_hook": "Navigating the quarter requires a Wits+Lore test (DV 3) to avoid a rival guild's trap. On failure, lose 1 Supply to a 'guild tax.'"
+    },
+    {
+      "rank": 4,
+      "suit": "spade",
+      "title": "Chain-Barbican",
+      "subtitle": "[AUTHORITY]",
+      "description": "Harbor gate; capstans ready to raise the boom at horn's call.",
+      "flavor": "The capstan pins are carved from the thighbones of executed smugglers. The bones still warm in your hand.",
+      "mechanical_hook": "Passing through requires a harbor pass (Diamond) or a bribe (2 Supply). A successful Deception test (DV 4) can bluff past."
+    },
+    {
+      "rank": 5,
+      "suit": "spade",
+      "title": "Blue Cistern",
+      "subtitle": "[MAGIC] [PROOF]",
+      "description": "Under the forum; cool echo, strict tally; water as law.",
+      "flavor": "The water tastes of copper and old prayers. Drink deep, and you may forget a formula—but the water will remember your face.",
+      "mechanical_hook": "Drinking here clears 1 Fatigue but ticks the Unfinished Stair Timer +1. The water remembers faces—the GM gains a String on the drinker."
+    },
+    {
+      "rank": 6,
+      "suit": "spade",
+      "title": "Ropeyard Terrace",
+      "subtitle": "[LABOR]",
+      "description": "Cranes walk cargo up slope by treadwheel; muscle and machinery.",
+      "flavor": "The treadwheel operators sing in eights. The ninth beat is always silent—that is when the Stair moves.",
+      "mechanical_hook": "Using the crane gives +1 Position on a travel roll for one leg. The crane may attract the Ninth's attention (tick Unfinished Stair Timer +1)."
+    },
+    {
+      "rank": 7,
+      "suit": "spade",
+      "title": "Storm-Wall Arcades",
+      "subtitle": "[WEATHER]",
+      "description": "Wind shrieks through arched galleries; defense as architecture.",
+      "flavor": "The wind carries voices from the last siege. Some say they're warnings. Others say they're the Ninth rehearsing.",
+      "mechanical_hook": "A character who listens to the wind (Wits+Lore DV 4) hears a warning about the next weather hazard. On failure, the wind takes a memory (lose 1 XP, refundable)."
+    },
+    {
+      "rank": 8,
+      "suit": "spade",
+      "title": "Beacon Crown",
+      "subtitle": "[TRAVEL] [AUTHORITY]",
+      "description": "Ring of watchtowers signaling along the Dolmis; eyes of the city.",
+      "flavor": "The beacons burn juniper and saltpeter. Black smoke means fire; white smoke means hunters. Green smoke means the Stair is hungry.",
+      "mechanical_hook": "A character can signal a message to a specific tower for 1 Supply. The signal will be visible for miles—and may attract the Ninth's attention (tick Unfinished Stair Timer +1)."
+    },
+    {
+      "rank": 9,
+      "suit": "spade",
+      "title": "Library of Keys",
+      "subtitle": "[MAGIC] [SECRET]",
+      "description": "Archive vaults; shelves locked by rung and rite; knowledge as power.",
+      "flavor": "The keys are graded by the import of what they lock. The ninth key opens nothing—and everything. It is kept in a box that has no lid.",
+      "mechanical_hook": "Access requires an Archive Hour (Diamond) or a bribe (3 Supply). A successful Wits+Lore test (DV 4) finds a useful truth in the archives."
+    },
+    {
+      "rank": 10,
+      "suit": "spade",
+      "title": "Siege Court",
+      "subtitle": "[COMBAT]",
+      "description": "Test ramp and scarred stones; war never far from peace.",
+      "flavor": "The ramp's stones are stained with lamp oil and regret. Practice charges end in the cistern—or the Unfinished Stair.",
+      "mechanical_hook": "A PC can train here, gaining +1 die to their next combat roll. A failed practice charge may attract the Ninth's attention (tick Unfinished Stair Timer +1)."
+    },
+    {
+      "rank": 11,
+      "suit": "spade",
+      "title": "Ladder Monastery",
+      "subtitle": "[RITUAL]",
+      "description": "Perched on a needle of rock; monks climb toward truth.",
+      "flavor": "The monks never speak. They write commandments in chalk on the rungs. The ninth rung has no chalk—only a smear of ash.",
+      "mechanical_hook": "A character who climbs to the ninth rung may ask one question of the Ninth. The Ninth will answer—and ask one in return (lose a memory or a bond)."
+    },
+    {
+      "rank": 12,
+      "suit": "spade",
+      "title": "Synod Hall",
+      "subtitle": "[LAW]",
+      "description": "Gold-glass mosaics; judgment audible at a whisper's distance.",
+      "flavor": "The acoustics are enchanted. A lie told here echoes twice—once in the liar's voice, once in truth's. The Ninth's lies echo only once.",
+      "mechanical_hook": "A social roll made here is at +1 Position. A failed social roll may attract the Synod's attention (tick Archon's Balance +1)."
+    },
+    {
+      "rank": 13,
+      "suit": "spade",
+      "title": "Archon's Citadel",
+      "subtitle": "[AUTHORITY]",
+      "description": "Acropolis peak; mirror tiles glare like noon's justice.",
+      "flavor": "The mirrors were a gift from Kahfagia. They show not the sea, but the faces of those who bear the archive's mark—and sometimes a stair that was not there before.",
+      "mechanical_hook": "An audience with the Archon requires a petition (Presence+Sway DV 5) or a sealed invitation. The mirrors may reveal the Ninth's Coterie if they are present."
+    },
+    {
+      "rank": 14,
+      "suit": "spade",
+      "title": "The Unfinished Stair",
+      "subtitle": "[THRESHOLD] [MYSTERY]",
+      "description": "A hidden flight that appears only to those who have asked a question the Synod cannot answer.",
+      "flavor": "The stairs have no end. Each step is a different year. At the top, the Ninth and the Witness are playing knucklebones with forgotten names.",
+      "mechanical_hook": "Climbing the stair requires a Resolve test (DV 5). On success, the party may ask one question of the Ninth. On failure, they lose 1 Fatigue and tick the Unfinished Stair Timer +2."
+    }
+  ],
+  "people_and_factions": [
+    {
+      "rank": 2,
+      "suit": "heart",
+      "title": "Bell-Runner",
+      "subtitle": "[STEALTH]",
+      "description": "Child whose feet know every stair by heart; speed as currency.",
+      "flavor": "She ties a knot in her hair for each hunter she has outrun; her hair is a thicket. One knot is white—a hunter she could not outrun.",
+      "what_they_carry": "Knows the fastest routes through the city; will guide for 1 Supply.",
+      "what_they_ask": "A promise to help her find the hunter whose knot is white."
+    },
+    {
+      "rank": 3,
+      "suit": "heart",
+      "title": "Master of Ropes",
+      "subtitle": "[LABOR]",
+      "description": "Palms like oak, voice like a whistle; guild head of lifters.",
+      "flavor": "He lost two fingers to a frayed line. He keeps them in a jar as a warning. The jar is on the ninth shelf.",
+      "what_they_carry": "Can provide a Crane Allotment (Diamond) for 2 Supply.",
+      "what_they_ask": "A favor against the Rope Guild's rival—the Chain-Lanterns."
+    },
+    {
+      "rank": 4,
+      "suit": "heart",
+      "title": "Icon-Smith",
+      "subtitle": "[CRAFT]",
+      "description": "Portable shrine, temper about pigment; faith in detail.",
+      "flavor": "His pigments are ground from stolen icons. He calls it recycling the divine. The Ninth calls it preparation.",
+      "what_they_carry": "Can paint a small icon that grants +1 die to resist fear for one scene (1 Supply).",
+      "what_they_ask": "A piece of a broken icon—he will trade for a favor."
+    },
+    {
+      "rank": 5,
+      "suit": "heart",
+      "title": "Wall Strategos",
+      "subtitle": "[COMBAT]",
+      "description": "Drills levies on the test ramp; defense as daily ritual.",
+      "flavor": "She lost a son to a Linn raid. She trains orphans now—and keeps a list. The list has nine names.",
+      "what_they_carry": "Can provide a Siege Court training session (+1 die to next combat roll) for 1 Supply.",
+      "what_they_ask": "A name on her list—she does not say why."
+    },
+    {
+      "rank": 6,
+      "suit": "heart",
+      "title": "Chain-Keeper",
+      "subtitle": "[AUTHORITY]",
+      "description": "Harbor boom; hates 'surprises' at dusk; order as obsession.",
+      "flavor": "His bell never rings the same note twice. He says the tide changes its mind. The Ninth changes its tone.",
+      "what_they_carry": "Can lower the boom for a vessel (Harbor Pass) for 2 Supply.",
+      "what_they_ask": "A warning about a ship that should not be here."
+    },
+    {
+      "rank": 7,
+      "suit": "heart",
+      "title": "Oath-Examiner",
+      "subtitle": "[LAW]",
+      "description": "Weighs words like iron; notary of truth and consequence.",
+      "flavor": "She carries a scale with one pan empty. The empty pan is for lies. When the Ninth speaks, both pans tip.",
+      "what_they_carry": "Can administer an oath that binds both parties (1 Supply).",
+      "what_they_ask": "A truth she does not know—she pays for it."
+    },
+    {
+      "rank": 8,
+      "suit": "heart",
+      "title": "Archive Sister (Lethai-thora)",
+      "subtitle": "[SECRET]",
+      "description": "Key to the 'forbidden rung'; keeper of dangerous knowledge.",
+      "flavor": "Her left eye is milk-white—a cost for reading a cursed shelf. The shelf was a stair in a past life.",
+      "what_they_carry": "Can grant access to the Library of Keys for 2 Supply.",
+      "what_they_ask": "A memory she will record—she does not say whose."
+    },
+    {
+      "rank": 9,
+      "suit": "heart",
+      "title": "Salt-Fish Syndic",
+      "subtitle": "[TRADE]",
+      "description": "Warehouse queen of the quays; profit in preservation.",
+      "flavor": "Her salt is cut with ground bone meal. The fish stay fresh—and quiet. The bones were from a stair.",
+      "what_they_carry": "Can provide salt for a month (2 Supply) for 2 Supply.",
+      "what_they_ask": "A quiet place to store cargo—no questions."
+    },
+    {
+      "rank": 10,
+      "suit": "heart",
+      "title": "Nomophylax",
+      "subtitle": "[LAW]",
+      "description": "Law-scholar whose citations close mouths; precedent as weapon.",
+      "flavor": "He has never lost a case. His opponents have a habit of vanishing. The Unfinished Stair has a new step.",
+      "what_they_carry": "Can provide a Synod Indulgence (Diamond) for 2 Supply.",
+      "what_they_ask": "A citation he does not have—he will pay for it."
+    },
+    {
+      "rank": 11,
+      "suit": "heart",
+      "title": "Palikar Captain",
+      "subtitle": "[COMBAT]",
+      "description": "Tower guards; ladder-quick and letter-shy; strength in motion.",
+      "flavor": "His shield is painted with a ladder—each rung a battle he survived. The ninth rung is blank.",
+      "what_they_carry": "Can provide an escort through the Tower Quarter for 1 Supply.",
+      "what_they_ask": "A story of a fight he lost—he collects them."
+    },
+    {
+      "rank": 12,
+      "suit": "heart",
+      "title": "Matriarch of the Ladder",
+      "subtitle": "[AUTHORITY]",
+      "description": "Synod primate; calm as stone, wisdom in height.",
+      "flavor": "She speaks once a session. When she does, the bells listen. She has never spoken the ninth word.",
+      "what_they_carry": "Can grant a Synod Audience (Diamond) for a significant service.",
+      "what_they_ask": "A truth that will break the Synod—or save it."
+    },
+    {
+      "rank": 13,
+      "suit": "heart",
+      "title": "The Archon",
+      "subtitle": "[AUTHORITY]",
+      "description": "Elected, entrenched, counting bells; ruler of the ascent.",
+      "flavor": "He wears a key around his neck. No one knows what it opens. The key is a stair.",
+      "what_they_carry": "Can grant an Archon's Writ (Diamond) for a service to the city.",
+      "what_they_ask": "A threat to the city—or an opportunity."
+    },
+    {
+      "rank": 14,
+      "suit": "heart",
+      "title": "Lighthouse-Patriarch",
+      "subtitle": "[MYSTERY]",
+      "description": "Reclusive seer; said to steer beacons in storms.",
+      "flavor": "He has no eyes—only mirrors where his eyes should be. In the mirrors you see the Unfinished Stair.",
+      "what_they_carry": "Can answer one question about a hidden stair or vault.",
+      "what_they_ask": "A story of a broken promise—he collects them."
+    }
+  ],
+  "complications": [
+    {
+      "rank": 2,
+      "suit": "club",
+      "title": "Tremor",
+      "subtitle": "[DISASTER]",
+      "description": "Hairline cracks race down a stair; crowds freeze, dust speaks.",
+      "flavor": "The dust spells names. Yours appears if you've broken a stair-right—or if the Ninth is curious.",
+      "mechanical_hook": "All actions on stairs are Desperate for the scene. A Body+Athletics test (DV 4) avoids a fall. On a Miss, lose 1 Supply and tick the Unfinished Stair Timer +1."
+    },
+    {
+      "rank": 3,
+      "suit": "club",
+      "title": "Iconoclast Riot",
+      "subtitle": "[SOCIAL] [COMBAT]",
+      "description": "In the Tower Quarter; pigments and teeth fly through the air.",
+      "flavor": "The riot started over a missing icon's eye. The eye was a hunter's informer. The icon was a stair.",
+      "mechanical_hook": "A mob blocks your path. A Sway test (DV 4) calms them; a Stealth test avoids them. On failure, combat (Cap 2)."
+    },
+    {
+      "rank": 4,
+      "suit": "club",
+      "title": "Chain Jam",
+      "subtitle": "[TRAVEL]",
+      "description": "At the barbican; capstan pins shear at the worst moment.",
+      "flavor": "The pins were filed by a saboteur. The chain will hold—or not. The Ninth is keeping score.",
+      "mechanical_hook": "You cannot pass the barbican. You must wait (lose 1 segment) or find another route (Wits+Lore DV 4)."
+    },
+    {
+      "rank": 5,
+      "suit": "club",
+      "title": "Black Northerly",
+      "subtitle": "[WEATHER]",
+      "description": "Pins cranes; cargo hangs between tiers, prayers below.",
+      "flavor": "The wind smells of iron and ice. Someone is using weather magic. The Witness disapproves.",
+      "mechanical_hook": "All travel rolls are Desperate. On a Miss, lose 1 Supply (blown cargo). Tick the Unfinished Stair Timer +1."
+    },
+    {
+      "rank": 6,
+      "suit": "club",
+      "title": "Cistern Taint",
+      "subtitle": "[PROOF]",
+      "description": "Sour water; inspectors padlock spouts, thirst rises.",
+      "flavor": "The taint is sweet—too sweet. Someone poisoned the cistern to flush out a talent. The talent is a stair.",
+      "mechanical_hook": "You must find water elsewhere (Survival test DV 3) or pay double for water (2 Supply)."
+    },
+    {
+      "rank": 7,
+      "suit": "club",
+      "title": "Synod Summons",
+      "subtitle": "[LAW]",
+      "description": "A chant or badge is suddenly proscribed; law shifts like wind.",
+      "flavor": "The summons is written on a bell-clapper. Read it, and you are a witness. The Ninth writes the margin.",
+      "mechanical_hook": "You are called before the Synod. A Sway test (DV 4) avoids a fine; on failure, lose 2 Supply (fine)."
+    },
+    {
+      "rank": 8,
+      "suit": "club",
+      "title": "Rope Guild Interdict",
+      "subtitle": "[LABOR]",
+      "description": "No lifts until a grievance is heard; the city stops climbing.",
+      "flavor": "The guild's grievance is a single name. The name is yours. The name is also a stair.",
+      "mechanical_hook": "You must climb by stair (all travel takes +1 segment) or settle the grievance (Sway DV 4)."
+    },
+    {
+      "rank": 9,
+      "suit": "club",
+      "title": "Siege Drill Panic",
+      "subtitle": "[FEAR]",
+      "description": "Practice horns mistaken for real; chaos in the ranks.",
+      "flavor": "The horns were blown by a child who didn't know the difference. Or did they? The child is a step.",
+      "mechanical_hook": "A mob of panicked citizens blocks your path. A Stealth test (DV 4) avoids them; a Sway test calms them. On failure, lose 1 Fatigue."
+    },
+    {
+      "rank": 10,
+      "suit": "club",
+      "title": "Smuggler's Ladder",
+      "subtitle": "[STEALTH] [PROOF]",
+      "description": "Discovered; the whole stair sealed, routes rerouted.",
+      "flavor": "The ladder was built by a Hyro family. Now they are all 'guests' of the Commissariat. Their house is a stair.",
+      "mechanical_hook": "A key route is closed. Find another path (Wits+Lore DV 4) or pay a bribe (2 Supply)."
+    },
+    {
+      "rank": 11,
+      "suit": "club",
+      "title": "Ropeyard Fire",
+      "subtitle": "[DISASTER]",
+      "description": "Sparks leap uphill faster than boots; smoke chokes the ascent.",
+      "flavor": "The fire was set to cover a kidnapping. The victim's name is on the proscription list. The board is a stair.",
+      "mechanical_hook": "You must flee the fire (Body+Athletics DV 4) or take Harm 1. On success, you may rescue someone from the fire."
+    },
+    {
+      "rank": 12,
+      "suit": "club",
+      "title": "Exarch's Claim",
+      "subtitle": "[AUTHORITY]",
+      "description": "'Thepyrgos under my protection'; arrests follow the papers.",
+      "flavor": "The Exarch is a puppet of the Chain-Lanterns. His seal is a bell without a clapper. The Ninth has the clapper.",
+      "mechanical_hook": "You are arrested. A Sway test (DV 4) talks your way out; on failure, you are detained until a ransom (3 Supply) is paid."
+    },
+    {
+      "rank": 13,
+      "suit": "club",
+      "title": "General Watch",
+      "subtitle": "[AUTHORITY]",
+      "description": "All towers manned; levies seize carts 'for the walls.'",
+      "flavor": "The levies are looking for one thing: children who flinch at candle-smoke. The children are stairs.",
+      "mechanical_hook": "You are questioned. A Sway test (DV 4) avoids a search; on failure, you are detained (lose 1 segment of progress)."
+    },
+    {
+      "rank": 14,
+      "suit": "club",
+      "title": "The Unfinished Stair Awakens",
+      "subtitle": "[THRESHOLD] [BOSS]",
+      "description": "A hidden flight appears in the middle of a crowded tier. The Ninth's attention falls.",
+      "flavor": "The stairs have no end. The Witness is writing. The Ninth is counting. You are already on the third step.",
+      "mechanical_hook": "The party is drawn onto the stair. A Resolve test (DV 5) to resist; on failure, you must climb one step per scene. The Ninth will ask a question at the top."
+    }
+  ],
+  "rewards": [
+    {
+      "rank": 2,
+      "suit": "diamond",
+      "title": "Stair Token",
+      "subtitle": "[TRAVEL]",
+      "description": "Pass a barricaded stair without delay (once); height as right.",
+      "flavor": "The token is a bronze step. It fits into a missing rung. The missing rung is a secret.",
+      "cost": "Using the token may attract the Ninth's attention (tick Unfinished Stair Timer +1)."
+    },
+    {
+      "rank": 3,
+      "suit": "diamond",
+      "title": "Harbor Pass",
+      "subtitle": "[TRAVEL]",
+      "description": "Boom lowers for your vessel on command; sea as ally.",
+      "flavor": "The pass is a note written on a fish scale. The gate-keeper will not ask why. The fish was a witness.",
+      "cost": "Using it marks you as a trusted trader; the Commissariat may take interest."
+    },
+    {
+      "rank": 4,
+      "suit": "diamond",
+      "title": "Cistern Draw-Right",
+      "subtitle": "[SOCIAL]",
+      "description": "A named ward during scarcity; water as favor.",
+      "flavor": "The right is a clay cup. Break it to claim your share. The cup was a stair.",
+      "cost": "Using it may offend a rival ward; start a Feud Spark [4]."
+    },
+    {
+      "rank": 5,
+      "suit": "diamond",
+      "title": "Crane Allotment",
+      "subtitle": "[LABOR]",
+      "description": "One guaranteed lift on the Ropeyard Terrace; height as service.",
+      "flavor": "The allotment is a knotted rope. Cut a knot for each use. The ninth knot is a lie.",
+      "cost": "Each use requires a new knot; the ninth knot cannot be cut—it belongs to the Ninth."
+    },
+    {
+      "rank": 6,
+      "suit": "diamond",
+      "title": "Icon License",
+      "subtitle": "[SOCIAL]",
+      "description": "Display a disputed image without penalty; faith as leverage.",
+      "flavor": "The license is stamped with the Archon's ring. The ring is warm—the Archon is watching. The ring is a stair.",
+      "cost": "The license expires at the end of the season; renewing requires a favor."
+    },
+    {
+      "rank": 7,
+      "suit": "diamond",
+      "title": "Archive Hour",
+      "subtitle": "[SECRET]",
+      "description": "Library of Keys; one shelf opened to you; knowledge as power.",
+      "flavor": "The shelf is sealed with a riddle. Solve it, or the key will break. The riddle is about the ninth step.",
+      "cost": "The riddle may cost a memory to solve; on failure, the shelf remains sealed."
+    },
+    {
+      "rank": 8,
+      "suit": "diamond",
+      "title": "Bellmark",
+      "subtitle": "[AUTHORITY]",
+      "description": "Lawful ring at a fog-wick summons the watchers; law travels on sound.",
+      "flavor": "The bellmark is a brand on your palm. Show it, and the watch bleeds for you—once. The blood is a witness.",
+      "cost": "After use, the brand fades; the watch may remember your face."
+    },
+    {
+      "rank": 9,
+      "suit": "diamond",
+      "title": "Watchlight Code",
+      "subtitle": "[TRAVEL]",
+      "description": "Today's beacon and mirror signals; navigation as paper.",
+      "flavor": "The code is written in lemon juice. Heat it to read, then hide it again. The heat is a confession.",
+      "cost": "If the code is intercepted, the GM gains a String on the party."
+    },
+    {
+      "rank": 10,
+      "suit": "diamond",
+      "title": "Synod Indulgence",
+      "subtitle": "[MAGIC]",
+      "description": "One proscribed chant or rite permitted (for you).",
+      "flavor": "The indulgence is a bell-note held in a jar. Break the jar to release it. The bell-note is a name.",
+      "cost": "Using it may attract the Synod's attention (tick Archon's Balance +1)."
+    },
+    {
+      "rank": 11,
+      "suit": "diamond",
+      "title": "Pronoia Grant",
+      "subtitle": "[TRADE]",
+      "description": "Temporary stewardship of a terrace hamlet; land as standing.",
+      "flavor": "The grant is a wooden token. Present it to the village elder—if she is still alive. The elder is a stair.",
+      "cost": "The grant must be renewed annually; failure may start a feud."
+    },
+    {
+      "rank": 12,
+      "suit": "diamond",
+      "title": "Synod Audience",
+      "subtitle": "[SOCIAL]",
+      "description": "Private with the Matriarch and clerks; whispers become policy.",
+      "flavor": "The audience is held in a fog hollow. What is spoken there is never written. The fog is a witness.",
+      "cost": "If you speak a lie, the Synod will know—tick Archon's Balance +1."
+    },
+    {
+      "rank": 13,
+      "suit": "diamond",
+      "title": "Archon's Writ",
+      "subtitle": "[AUTHORITY]",
+      "description": "Palikars escort you between towers; authority as escort.",
+      "flavor": "The writ is a bell-rope. Tie it to your belt, and the guards will know your voice. The rope was a stair.",
+      "cost": "The escort will protect you, but they report to the Archon."
+    },
+    {
+      "rank": 14,
+      "suit": "diamond",
+      "title": "Golden Key",
+      "subtitle": "[MAGIC]",
+      "description": "Open or seal any city gate once; access as power.",
+      "flavor": "The key is a finger bone. The lock is a gauntleted fist. It will work—once. The fist is the Ninth's.",
+      "cost": "Using it may alert the Ninth's Coterie; they will know who opened the gate."
+    }
+  ],
+  "quick_use_notes": {
+    "draw_rules": "Draw until you have all four suits: Spade = place, Heart = actor, Club = pressure, Diamond = leverage. Highest rank sets the main Timer (2–5 → 4, 6–10 → 6, J/Q/K → 8, A → 10).",
+    "diamonds": "Diamonds are codified outcomes (keys/rites/papers) that change position rather than call for a roll.",
+    "ace_rule": "If any A appears, echo height and sound motifs—bells that carry, wind that remembers, stairs that echo with purpose."
+  },
+  "additional_features": [
+    {
+      "name": "Bell-Law",
+      "description": "Bells are law made sound. Once per session, a Bellmark or tower bell summons the watch, a levy, or a decree. False rings stain a reputation; the Synod may inquire. The ninth ring is never false—it is always the Ninth."
+    },
+    {
+      "name": "Stair-Rights",
+      "description": "Every stair is claimed, chartered, or under review. A token bypasses barricades and checkpoints; climbing the wrong stair without leave sparks a riot or a duel. The Unfinished Stair has no owner—only one who bears its mark."
+    },
+    {
+      "name": "The Unfinished Stair Timer",
+      "description": "Tracks the party's entanglement with the hidden architecture of Thepyrgos.\n- 0-2: The stairs are hidden. The party has not yet attracted the Ninth's attention.\n- 3-4: The stairs begin to appear. At night, the party sees an extra step where none should be. The Ninth's Coterie begins to take notice.\n- 5-6: The stairs appear in daylight. A character who walks an Unfinished Stair may ask one question of the Ninth—but the Ninth will ask one in return. The party is marked. The Chain-Lanterns receive visions of their faces.\n- 7-8: A vault entrance opens. The Ninth's Coterie is already there. The party must choose: enter the vault, seal it, or destroy it. The Unfinished Stair is now visible to all.\nTick the timer when you use a hidden stair, ask a question the Synod cannot answer, or speak a true name of an Astroegro ruin. Reduce the timer by feeding a memory to the Ninth's Coterie (lose a fact, a skill point, or a Bond) or by recording a truth in the Synod's archives (gain the Witness's Annotation)."
+    },
+    {
+      "name": "The Offering at the Crossroads (Hedge Gift)",
+      "description": "Once per session, a Hyro character (or someone who has learned their customs) may leave a substitute at a crossroads—a written name, a lock of hair, a childhood memory. For the next scene, they are invisible to the Chain-Lanterns (cannot be tracked or identified by candle-smoke). The substitute becomes an Unfinished Proof that the GM may call in later (the Hollow accepted it; the Hollow will ask for more)."
+    },
+    {
+      "name": "The Candle-Smoke Test (GM Tool)",
+      "description": "When the Chain-Lanterns test a village, the GM rolls 1d6. On a 1-2, they find a gifted child (the party must intervene or witness a tragedy). On a 3-4, they find a substitute (a false name, a hidden memory) and leave. On a 5-6, the village has already paid in silence—no raid occurs. The party can influence the roll by offering their own substitute (use a Boon to shift the result by 1)."
+    },
+    {
+      "name": "The Astroegro Singing (Player Tool)",
+      "description": "A Hyro character can hum a fragment of an old empire song. The song has no words—only pressure. When hummed at a ruin, it may open a hidden door. When hummed at a Chain-Lantern, it may cause their lantern to flicker. Each use advances the Unfinished Stair timer by 1 (the past is waking).\n**Consequences (d6):**\n1: The song attracts a Chain-Lantern patrol. They arrive in 1d4 scenes.\n2: A stone cracks nearby. A hidden door opens—or closes.\n3: A ghost of an Astroegro archivist appears. It will not speak, but it will point.\n4: The singer forgets the song. They cannot use it again until they learn a new fragment.\n5: The Hollow responds. The singer gains the Condition 'Heard by the Hollow' (the GM may spend 1 SB to have an Oath-Keeper appear).\n6: The song is heard by the Ninth's Coterie. They will offer a bargain within the day."
+    },
+    {
+      "name": "Lethai-thora Archivists",
+      "description": "The high elf refugees have integrated into the city's scholarly elite. They are the keepers of the deepest archives and the most secret keys. A character with Lethai-thora heritage (or who earns their trust) may gain access to the Archivists' Mark—a brass key that opens one restricted door in the Library of Keys per session. However, the Archivists are not monolithic; some serve the Witness, others the Ninth. Choosing a side may alienate the other faction."
+    },
+    {
+      "name": "Local Patrons (Syncretic Names)",
+      "description": "The Unwritten Citation — The Witness. A precedent that exists only in the margin.\nThe Bell-Founder — Mykkiel. The law that rings true, even when it hurts.\nThe Abyssal Pressure — Khemesh. The pressure beneath the city; the pressure that the deep remembers.\nThe Silent Stair — The Ninth. The step that is never counted, the threshold that opens only once."
+    }
+  ],
+  "astroegro_vaults": {
+    "description": "Beneath the city, nine vaults. The Synod knows of three and has sealed them with Witness-branded wax. The Ninth's Coterie has found a fourth. The other five are still buried.",
+    "contents": [
+      {
+        "roll": 1,
+        "name": "The Echo Forge",
+        "description": "A chamber of black glass gears that still turn. The forge produces a single perfect bell every nine years.",
+        "weapon": "A bell that, when rung, forces all who hear it to speak one true name (Resolve DV 4 to resist).",
+        "guardian": "A ghost-smith who does not attack—it asks you to complete the bell.",
+        "cost": "A year of your life to finish the forging."
+      },
+      {
+        "roll": 2,
+        "name": "The Unwritten Archive",
+        "description": "Shelves of blank stone tablets. The tablets are not blank—they are written in a script that only the dead can read.",
+        "weapon": "A quill that writes in disappearing ink; the words become true for one hour, then vanish.",
+        "guardian": "The archivist's ghost will answer one question about the vault's history, but will then ask for a number you have never written.",
+        "cost": "You must forget how to read for one day."
+      },
+      {
+        "roll": 3,
+        "name": "The Glass Orrery",
+        "description": "A working model of the Astroegro cosmos, its gears carved from abyssal glass. It still ticks.",
+        "weapon": "A lens that shows the death of anyone you name—but only once per person.",
+        "guardian": "A pressure-spirit that coils around the orrery; it will let you take the lens if you can answer its riddle.",
+        "cost": "A dream of drowning (you will dream of the sea every night until you return)."
+      },
+      {
+        "roll": 4,
+        "name": "The Bone Gallery",
+        "description": "A corridor lined with the remains of Astroegro archivists. Each skeleton wears a different style of bell-maker's apron.",
+        "weapon": "A finger bone that, when pointed at a door, opens it—once.",
+        "guardian": "The archivist whose bone you take will ask for a story about a door you should not have opened.",
+        "cost": "The archivist's ghost follows you until you close a door you left open."
+      },
+      {
+        "roll": 5,
+        "name": "The Counting Chamber",
+        "description": "A room where the walls are covered in tally marks—eight scratches, a gap, eight scratches. The marks are not in sequence.",
+        "weapon": "A hammer that can drive a copper nail into any surface, sealing a threshold for one scene.",
+        "guardian": "The wright will not attack—it will only count. If you interrupt the count, it becomes hostile.",
+        "cost": "You must leave a tally of your own—a memory, a name, a debt—on the wall."
+      },
+      {
+        "roll": 6,
+        "name": "The Sealed Heart",
+        "description": "A chamber of black glass and fossilized bone, where the heat of the earth meets the cold of the void.",
+        "weapon": "A scale that, when touched, grants +2 dice to resist fear for one scene—but the scale grows warm each time.",
+        "guardian": "The pressure that thinks. It does not attack; it invites you to stay.",
+        "cost": "A memory of sunlight. You will forget what warmth feels like for one day."
+      }
+    ],
+    "guardian_quirks": [
+      "**Counting Obsession:** The guardian will not attack unless you interrupt its count. It counts in eights. If you join the count correctly, it will give you a boon. If you miscount, it takes a memory.",
+      "**The Witness's Seal:** The guardian is bound by a Witness-branded wax seal. If you present a truth the Seal cannot refute, the guardian must let you pass. The truth must be witnessed by another living soul.",
+      "**Ninth's Silence:** The guardian only speaks in gaps—silences between words, spaces between steps. If you can answer a question in the silence, it will let you pass. If you speak over the silence, it attacks.",
+      "**Pressure Echo:** The guardian is a pressure-spirit; it only attacks when you are afraid. If you can pass a Resolve test (DV 4) and show no fear, it will let you pass. On a failure, it manifests and attacks (Cap 3).",
+      "**Archivist's Grief:** The guardian is the ghost of an archivist who failed to save a vault. It will let you pass if you can prove you have failed something important—a promise, a mission, a person. It will judge your failure. If it deems it worthy, you pass.",
+      "**The Hollow's Claim:** The guardian is Hollow-touched. It does not attack; it offers a bargain: one memory from each intruder, and the vault opens. Refusal means it takes a name instead."
+    ],
+    "costs": [
+      "**Memory of Salt Water:** You must forget a memory of the sea—a voyage, a ship, a drowning. You will remember that you forgot, but not what it was.",
+      "**Dream of Drowning:** You will dream of drowning every night until you return to the vault. Each morning, mark 1 Fatigue.",
+      "**Confession of Hubris:** You must speak aloud a time you were wrong and knew it, but refused to admit it. The confession must be witnessed.",
+      "**A True Name:** You must give the vault a true name—yours, or someone else's. The name will be added to the vault's records.",
+      "**A Year of Life:** You will age one year instantly. Gain 1 permanent Condition (e.g., gray hair, a limp, a tremor).",
+      "**A Bond Broken:** You must sever a Bond—a relationship, a promise, a debt. The loss is permanent, though the wound may heal."
+    ]
+  },
+  "province_generators": {
+    "village_situation": [
+      "**Quieted Village:** The Chain-Lanterns came last week. The gifted children are gone. The village is silent, and the elders will not speak to outsiders. A single child hides in the root cellar—too old to be taken, too young to understand why.",
+      "**Candle-Smoke Test Tomorrow:** The hunters are coming at dawn. The village is in a panic. One family has a child who flinched at the last test. They need a substitute—a lock of hair, a false name, a memory to offer at the crossroads.",
+      "**The Ninth's Coterie Visits:** A gray-robed figure has been seen in the village. They offer protection from the hunters in exchange for stories—true names, forgotten memories, fragments of the Astroegro past. The village is divided: some trust them, others fear them.",
+      "**The Hollow's Offering:** A child was born last night with eyes the color of the sea. The elders say the Hollow has accepted a substitute—a memory of the Astroegro fall. The child will never have talent. The village is grateful, but the child's mother is weeping.",
+      "**Ruin Singing:** The stones outside the village have started humming at night. A Hyro elder believes an Astroegro vault is surfacing—the pressure below is rising. She needs help to listen, to count the stones, to find the door before the hunters hear the song.",
+      "**The Bear Cult:** A group of villagers has taken to the hills, wearing cured skins and speaking in growls. They claim the only way to escape the hunters is to become the hunter. They are hunting Chain-Lantern patrols—and they are winning. The Archon has declared them outlaws, but the villagers leave offerings at their shrines."
+    ],
+    "hyro_encounter": [
+      "**Grieving Elder:** Their child was taken in the last sweep. They will help the party if the party helps them find the child. They know of a hidden stair that leads to the Beacon Crown's secret basement.",
+      "**Stone-Listener:** A hermit who hears the pressure below. They can identify a thin place, a vault entrance, or a route that the hunters do not watch. They demand a story about a dream in return.",
+      "**Substitute Keeper:** This villager sells false names and stolen memories to families who need to protect their children. They can provide a substitute for a candle-smoke test—but the Hollow will remember the debt.",
+      "**Chain-Lantern Informant:** A villager who reports gifted children to the hunters in exchange for protection. They are despised by the village but have useful information about the hunters' schedules. They are also deeply ashamed.",
+      "**Ruin Seeker:** A young Hyro who believes the Astroegro vaults contain the key to defeating the hunters. They are reckless, know a few fragments of the old songs, and will follow the party into any ruin.",
+      "**Hollow-Touched:** A villager who has given too many substitutes to the Hollow. They have begun to forget their own name. They speak in riddles and can see the Hollow's attention on others. They are useful, but dangerous to be around."
+    ],
+    "hunter_encounter": [
+      "**Routine Sweep:** The hunters are testing children with candle-smoke. They are bored, efficient, and will accept a bribe (1 Boon or 1 Supply) to skip a house. On a Miss, they notice the party's arcane talent.",
+      "**Targeted Raid:** The hunters have a warrant for a specific child. They will not be bribed. They will search every house. The party must hide the child, substitute a false name, or fight.",
+      "**Inquisitorial Audit:** A Chain-Lantern Captain is auditing the local Commissary. They are looking for corruption, not talent. They may accept information about a corrupt officer in exchange for ignoring a minor talent.",
+      "**Ninth Pursuit:** The hunters are not hunting talent—they are hunting the Ninth's Coterie. A gray-robed figure has been seen in the village, and the Chain-Lanterns want to question them. They will detain anyone who looks suspicious.",
+      "**Desperate Hunt:** The hunters have lost a prisoner—a gifted child who escaped. They are searching the village house by house. The child is hiding in a root cellar, and the hunters are getting closer.",
+      "**Pardon Offer:** The Exarch has offered a pardon to any family that surrenders their gifted child voluntarily. The village is divided—some families are considering it. The party may need to intervene."
+    ],
+    "hyro_discovery": [
+      "**Fragment of the Old Song:** A piece of the Astroegro empire's music. Humming it can open one hidden door or cause a Chain-Lantern's lantern to flicker. One use only.",
+      "**Substitute Cache:** A hidden stash of false names, locks of hair, and written memories. Enough substitutes for three candle-smoke tests. Using them will not anger the Hollow—this time.",
+      "**Kurgan Offering:** A stone marked with a Hyro offering. If you leave a memory here, the Hollow will accept it as a substitute for one child. The memory must be true and painful.",
+      "**Warden's Log:** A record of Chain-Lantern patrols, including schedules, informants, and the names of children taken. Valuable to the resistance—and dangerous to carry.",
+      "**Sealed Door:** A hidden door in a hillside, marked with an Astroegro seal. Opening it requires a true name—or a memory of the empire. The Hyro have kept it sealed for generations.",
+      "**The Singing Stones:** A circle of stones that hum at dusk. They are an Anchor site—a thin place where the pressure below is close. The Hyro leave offerings here. A character who offers a memory may ask one question of the Hollow."
+    ]
+  },
+  "lore_echoes": [
+    {
+      "title": "The Astroegro Remnant (Khemesh)",
+      "description": "Deep beneath the Beacon Crown, a sealed chamber contains a working Astroegro orrery. Its gears are carved from abyssal glass, and it still ticks. Those who listen too long hear a voice whispering the true names of drowned emperors. The Chain-Lanterns have posted a perpetual guard; they say the orrery is a beacon for something that should not surface."
+    },
+    {
+      "title": "Saint Methodia of the Silent Stair (The Witness)",
+      "description": "A legendary archivist who climbed the Ninth Stair of the Library of Keys and never came down. Her ghost is said to appear to those who speak a truth the Synod has buried, offering a single citation that can overturn any edict. The cost is a secret of equal measure, and the ghost never forgets."
+    },
+    {
+      "title": "The Cog-Cults of the Clockwork Monad",
+      "description": "Underground fraternities of gear-smiths and logicians who believe the Astroegro Empire fell because its geometry was imperfect. They meet in the basements of the Ropeyard Terrace, trying to reconstruct the lost orrery. The Chain-Lanterns tolerate them because their calculations sometimes predict talent blooms. Heretics from the Everflame call them timer-worshippers; the Cog-Cults call themselves the True Iterators."
+    },
+    {
+      "title": "The Daughters of the Cord (The Bitter Root)",
+      "description": "A hospice in the lower tiers is run by gray-robed women who ask no payment, but they take names. They are tolerated because they treat the poor for free, but the Commissariat suspects they also hide gifted children. A renegade Sister hides among the bell-runners, trying to unbind her Hollowed from the Chain-Lanterns' record."
+    },
+    {
+      "title": "The Savage Heart (Red Maw)",
+      "description": "In the highland villages west of the city, a bear cult has arisen. They believe the only way to escape the Commissariat's hunts is to become the hunter. They wear cured skins and speak in growls, and they have begun hunting Chain-Lantern patrols. The Archon has declared them outlaws, but the villagers leave offerings of raw meat at their shrines."
+    },
+    {
+      "title": "Zakov's Astroegro Foundation",
+      "description": "The pirate city of Zakov is built on top of a sunken Astroegro port. Smugglers occasionally pull up black glass artifacts from the deep channels, which find their way to Thepyrgos' black market. The Ninth's Coterie offers high standing for such relics; the Witness's archivists try to secure them first."
+    },
+    {
+      "title": "The Ninth",
+      "description": "In any Thepyrgos scene, the ninth bell rung in an hour opens a threshold. The wise stop at eight and cover their ears. Those who ring the ninth are said to see a pale figure standing on the Beacon Crown's mirror tiles—waiting to receive a name."
+    }
+  ],
+  "superstitions": [
+    {
+      "name": "Bread to the Stair",
+      "effect": "Toss a crust onto a rung before climbing. Ignore the first Tremor penalty.",
+      "cost": "Burn for +1 die once"
+    },
+    {
+      "name": "Knot the Rope",
+      "effect": "Tie a single knot in a crane line. Cancel Rope Guild Interdict or take –1 die on your next lift (your choice).",
+      "cost": "Burn for +1 die once"
+    },
+    {
+      "name": "Name to the Smoke",
+      "effect": "Whisper a hunter's name into the Beacon Crown's fire. Gain +1 Effect when evading the Chain-Lanterns this scene, but gain the Synod's Notice.",
+      "cost": "Burn for +1 die once"
+    },
+    {
+      "name": "Offer the Substitute",
+      "effect": "Leave a written false name at a crossroads. The next Candle-Smoke Test against you automatically fails—but the Hollow gains an Unfinished Proof on you.",
+      "cost": "Burn for +1 die once"
+    }
+  ],
+  "sb_spend_table": {
+    "minor_complications": [
+      "**Exposure:** Your actions draw unwanted attention from **tower guards or guild masters**.",
+      "**Noise:** Sounds of your actions alert nearby **bell-runners or civic patrols**.",
+      "**Trace:** Evidence of your passage marks your route for **trackers or archive keepers**.",
+      "**Delay:** A brief but meaningful setback costs you **time or favorable ascent**.",
+      "**Supply Strain:** Mark +1 segment on a relevant **resource timer**."
+    ],
+    "moderate_setbacks": [
+      "**Alarm Raised:** **Wall Strategos or guild head** becomes aware and begins responding.",
+      "**Position Lost:** You lose advantageous ground/cover/stealth due to **quake damage or stair closure**.",
+      "**Foe Appears:** A **rival faction or civic enforcer** arrives on scene.",
+      "**Gear Trouble:** A piece of equipment becomes **Compromised/Neglected**.",
+      "**Lock/Barrier:** A simple obstacle now requires a test to overcome."
+    ],
+    "serious_trouble": [
+      "**Reinforcements:** Additional **palikars, guild enforcers, synod guards, or crown militia** arrive.",
+      "**Key Gear Breaks:** A crucial tool/weapon becomes temporarily unusable.",
+      "**Major Twist:** The situation fundamentally changes—**taboo broken/green host rides/feud declared/crown warrant issued**.",
+      "**Rail Tick:** Advance a relevant campaign/front timer by 1 segment.",
+      "**Condition Applied:** Mark **Fatigue 1/Harm 1/Condition** appropriate to fiction."
+    ],
+    "major_turns": [
+      "**Trap Springs:** A prepared danger activates with full effect.",
+      "**Authority Arrival:** **King, Matron, Lady Beneath, or Viterran Governor** intervenes.",
+      "**Scene Shift:** The environment changes dramatically—**fog rises/bells ring/causeway shifts/crown forces arrive**.",
+      "**Patron Omen:** Divine/arcane forces take notice—**omen appears/blessing lost/curse manifests**.",
+      "**Narrative Pivot:** The story takes an unexpected turn that reframes objectives."
+    ],
+    "region_specific": [
+      "**Thepyrgos (Height & Law):** Stairs shift position, bells ring with the wrong tone, legal papers rewrite themselves.",
+      "**Thepyrgos (Synod Power):** Edicts change mid-speech, citations appear in the air, wisdom comes unbidden.",
+      "**Thepyrgos (Vertical City):** Ropes fray without warning, cranes swing cargo unexpectedly, tower windows show wrong views.",
+      "**Thepyrgos (The Unfinished Stair):** A hidden stair appears behind the party. The Ninth is counting. The Witness is writing. The stairs have no end."
+    ]
+  },
+  "pursuit_ladder": [
+    "**Advance/Withdraw (Wits + Stealth):** On a hit, shift one band. On a strong hit, also impose *Fog Bank*.",
+    "**Cut the Stair (Presence + Lore):** On a hit, freeze range for one exchange; if a stair token is in your possession, +1 die.",
+    "**Weather the Quake (Body + Athletics):** On a hit in *Tremor*, you pick who keeps their footing; on a miss, the GM does."
+  ],
+  "boss_archetypes": [
+    {
+      "name": "The Bell-Exarch (Nine Bans)",
+      "tags": [
+        "witch-hunter",
+        "inquisition"
+      ],
+      "description": "A leader of the Chain-Lanterns who has declared nine bans on the city's arcane practices. Each ban is a bell-stroke that all must obey—or be hunted.",
+      "phases": [
+        "Candle-Smoke Sweep",
+        "Orchestrated Silence",
+        "Synod Coup"
+      ],
+      "cracks": [
+        "ring a forgotten bell",
+        "expose a false bounty",
+        "survive a night in the Beacon Crown"
+      ]
+    },
+    {
+      "name": "The Astroegro Engine (Pressure from Below)",
+      "tags": [
+        "gear",
+        "cosmic"
+      ],
+      "description": "A vast orrery of black glass and abyssal gear that ticks with the weight of a forgotten empire. It hungers for true names.",
+      "phases": [
+        "Gears Turn",
+        "Whispers Become Names",
+        "Seiche"
+      ],
+      "cracks": [
+        "abyssal glass shard",
+        "survivor testimony",
+        "the Lighthouse-Patriarch's mirror turning clear"
+      ]
+    },
+    {
+      "name": "The Ninth's Advocate (Living Stair)",
+      "tags": [
+        "forgetting",
+        "threshold"
+      ],
+      "description": "A figure who serves the Ninth, appearing as a stair that should not exist. They ask questions that cannot be answered and remember only what they choose.",
+      "phases": [
+        "Count",
+        "Omit",
+        "Forget"
+      ],
+      "cracks": [
+        "speak a true name that the Ninth does not know",
+        "offer a memory the Witness has not recorded",
+        "climb the Unfinished Stair and refuse to answer the Ninth's question"
+      ]
+    }
+  ],
+  "magic_colleges": [
+    {
+      "name": "College of Ladders & Lines",
+      "description": "Geomancy, architecture, constraint; stairs as sigils, capstans as circles."
+    },
+    {
+      "name": "College of Bells & Beacons",
+      "description": "Acoustics, omen-fire, signal calculus; law made audible, augury made measurable."
+    },
+    {
+      "name": "College of Waters & Weights",
+      "description": "Alchemy, cistern rites, dyes; solutions, precipitates, and lawful flow."
+    },
+    {
+      "name": "College of Names & Oaths",
+      "description": "Nomikon theurgy; citations that bind, clauses that compel."
+    },
+    {
+      "name": "College of Mirrors & Haze",
+      "description": "Illusion, scrutiny; seeing, being seen, un-being seen."
+    },
+    {
+      "name": "College of Quiet",
+      "description": "Ethics of death, memory rites; permitted remembrances—anything more is heresy."
+    }
+  ],
+  "witch_hunter_province": {
+    "hunter_hearts": [
+      "**Commissary-Exarch** — Writs in triplicate; quotas in private.",
+      "**Index-Reader** — Calibrates children by the bell; 'verification' by smoke.",
+      "**Pardoner-Chaplain** — Sells absolution to informers; keeps a careful record.",
+      "**Stair-Runner Informant** — Knows which doors open to the right knock.",
+      "**Chain-Lantern Captain** — Commands the most feared order; his lantern reveals truth through flesh."
+    ],
+    "hunter_clubs": [
+      "**Notice Posting** — New warrant on 'untutored talent'; crowds turn into nets.",
+      "**Candle-Smoke Test** — Lines at the Blue Cistern; smoke curls toward the Gifted.",
+      "**Commissary Sweep** — Ladders chained; a whole tier searched under horn.",
+      "**Quieted Child** — An 'accident' near the Exam Stair; evidence goes missing.",
+      "**Chain-Lantern Raid** — Dawn assault on a hamlet; children taken before the rooster crows."
+    ],
+    "hunter_diamonds": [
+      "**Witness Pardon** — Informer absolved and commended; cancels one legal fallout *once*.",
+      "**Archon's Clemency** — Suspends a bounty timer for one named; bell-marked and public.",
+      "**Hidden Stair Token** — Through a maintenance run unseen; good for one group escape."
+    ]
+  },
+  "detection_and_denial": {
+    "scry_and_deny": [
+      "**Mask the Trace:** dye, salt, bell-oil; pick *one* (each grants +1 die to one approach).",
+      "**Pick the Test:** Smoke, Sound, Mirror. State how you spoof it (alchemical veil, bell overtones, angle games).",
+      "**On a hit:** cancel a Candle-Smoke Test or Proctors' Gate tag for this scene. **Consequence:** start Bell Mark [2] or Rector's Notice [2]."
+    ],
+    "examination_economy": [
+      "1. **Whisperer** (faint talent): 1 notation; informers abundant.",
+      "2. **Spark-Hand** (cantrip): 2 notations; 'rehabilitation' promised.",
+      "3. **Mirror-Bent** (glamour): 3 notations; seized at once.",
+      "4. **Bell-Singer** (acoustic): 4 notations; Synod claims jurisdiction.",
+      "5. **Oath-Breaker** (binding): 5 notations; Exarch insists on custody.",
+      "6. **Quiet-Worker** (death-ethic): 6 notations; College of Quiet petitions for trial."
+    ]
+  },
+  "scenario_starters": [
+    {
+      "title": "The Bright Child on the Exam Stair",
+      "hook": "A Bell-Runner begs you to get a latent child to campus before the dawn sweep.",
+      "complications": "Candle-Smoke Test, Commissary Sweep, a jealous Street Thaum.",
+      "relief": "Trade a Latency Seal for testimony; or ring a lawful Bellmark to create a corridor—accept Censure Murmurs [2]."
+    },
+    {
+      "title": "The Black Index of Accusations",
+      "hook": "The College of Quiet wants proof that a Commissary inflates rolls to fill quotas.",
+      "complications": "Synod Summons, Smuggler's Ladder, Chain Jam.",
+      "relief": "Publish via a Nomikon colloquy (gain Synod Indulgence); or submit it to the Archon (gain Archon's Clemency but start Faculty Feud [4])."
+    },
+    {
+      "title": "The Golden Key and the Silent Stair",
+      "hook": "A dying Archivist gives you a Golden Key. 'It opens the stair the hunters fear.'",
+      "truth": "The stair leads to the Beacon Crown's secret basement—a prison for children who passed the smoke test.",
+      "relief": "Free the children and expose the Commissariat (gain Archon's Clemency for the whole party, but start Exarch's Claim at full); or seal the stair forever (gain Golden Key to use elsewhere, but the children are lost to memory)."
+    },
+    {
+      "title": "The Ninth Vault",
+      "hook": "A fragment of an Astroegro weapon has been unearthed in a hill village. The Ninth's Coterie and the Synod both want it.",
+      "truth": "The weapon is a bell that rings the true name of anyone you name. Its guardian is the ghost of the Astroegro archivist who sealed it.",
+      "relief": "Climb the stair, speak the archivist's true name, and take the bell—but the stair adds a segment to the Unfinished Stair Timer. Or destroy the bell with a memory of the Astroegro's fall (lose a cherished memory permanently). Or give the bell to the Synod (gain a Synod Indulgence) or to the Ninth's Coterie (gain the Ninth's Annotation)."
+    }
+  ],
+  "index": [
+    "Thepyrgos",
+    "City of Unfinished Proofs generator",
+    "Theme generator",
+    "Places!Thepyrgos",
+    "People!Thepyrgos",
+    "Complications!Thepyrgos",
+    "Rewards!Thepyrgos",
+    "Archon",
+    "Matriarch of the Ladder",
+    "Lighthouse-Patriarch",
+    "Chain-Lantern order",
+    "Witch-Hunter Commissariat",
+    "Hyro people",
+    "Astroegro Empire",
+    "Khemesh",
+    "Lethai-thora",
+    "Blue Cistern",
+    "Beacon Crown",
+    "Library of Keys",
+    "Synod Hall",
+    "College of Ladders & Lines",
+    "College of Bells & Beacons",
+    "College of Waters & Weights",
+    "College of Names & Oaths",
+    "College of Mirrors & Haze",
+    "College of Quiet",
+    "Saint Methodia",
+    "Cog-Cults",
+    "Daughters of the Cord",
+    "Savage Heart",
+    "Unfinished Stair",
+    "Ninth (Patron)",
+    "Witness (Patron)",
+    "Astroegro Vaults",
+    "Zakov, connection to Astroegro",
+    "Archon's Balance (timer)",
+    "Commissariat Pressure (timer)",
+    "Ninth's Progress (timer)",
+    "Witness's Vigil (timer)",
+    "Faction Relationship Dial!Witness vs Ninth"
+  ],
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

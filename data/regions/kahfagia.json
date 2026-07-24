@@ -1,0 +1,1034 @@
+{
+  "id": "kahfagia-creole-thalassocracy",
+  "version": "1.0.0",
+  "type": "generator",
+  "title": "Kahfagia — The Creole Thalassocracy",
+  "label": "chap:kahfagia",
+  "key_demographic": "Humans",
+  "capital": "Kassamira",
+  "manifest_path": "/data/docs/manifest.json",
+  "overview": {
+    "tagline": "Every mirror is a blade, every beacon a promise. The sea obeys when we move the lights — but the spiders weave in the mirror-towers.",
+    "genre": "Creole thalassocracy, signal-and-lane politics, eldritch tide, secret infiltration.",
+    "mood": "The Lantern's Vigil & The Spider's Web",
+    "starting_location": "The Lantern Pier admiralty chapel, where votive ships hang from the ceiling and brine drips from the icon of a drowned saint. A sea-notary unlocks a salt-stained reliquary and produces a chart with gilt edges. 'Fetch the contraband bell from the corsair galleass **Santa Dolorosa** before moonrise — or the harbor names you accomplices. And watch for silk threads on the bollards. The Spider's children are everywhere.'",
+    "lore": {
+      "history": "Kahfagia is the Creole child of the Vilikari and the deep-sea traders — a thalassocracy where reckonings meet tide-law. The Admiralty of Lantern-Law rules not by armies but by light, yet the real power flows through a tangled web of oligarchic families, each with their own spies, their own private navies, and their own seat on the Shadow Council. Above them all floats a central Admiralty fleet, charged with protecting the beacon monopoly — and with watching the watchers. But the oligarchs are not the only players. Unseen, the Lethai-ar of Inaea have been infiltrating the mirror-towers for decades. A factor's trusted secretary, a harbor master's silent wife, a pilot's apprentice with too-still eyes — they weave their webs not for coin, but for **control**. They do not seek to destroy Kahfagia. They seek to **own** it, strand by strand, until the entire thalassocracy hums to the rhythm of the Spider's mercy.",
+      "first_notice": "The constant chime of bell-buoys. The smell of salt, tar, and burnt oil from a thousand lanterns. The way everyone — admiral to dockhand — glances at the tide timer before speaking. And the faint, almost invisible silk threads tied around the bollards of the wealthiest piers.",
+      "rule_that_kills": "Never argue with a Mirror-Keeper about where the channel lies. If they say the safe water moved, it moved. Your chart is already kindling. And if the Mirror-Keeper smiles too widely, check the back of their neck for a spider's brand."
+    },
+    "entanglements": {
+      "east": "Ecktoria — Grain and iron flow east; the Lantern-Law rarely shines that far inland. The vigilia of the Amber Palace have a standing file on every commodore.",
+      "north": "The Violet Steppe (Ykrul) — Nomadic raids sometimes reach the coastal olive groves. The Ykrul fear the sea more than they fear the khagan.",
+      "south": "The Amaranthine Sea — Naval rivalry with Thepyrgos and Zakov corsairs is endless. A false flag is always a breath away from war.",
+      "west": "The Western Reach — Rumors of islands that do not appear on charts, and of a fleet that sailed west and never returned."
+    }
+  },
+  "quotes": [
+    {
+      "speaker": "Admiral of Lantern-Law (Elite)",
+      "text": "Every mirror is a blade, every beacon a promise. The sea obeys when we move the lights — and woe to the fool who rows against them. Yet I have seen the reflection move before the hand that holds it. The tides are not the only ones with secrets."
+    },
+    {
+      "speaker": "Dockside Factor (Commoner)",
+      "text": "The pilots see farther than kings. A gesture in lantern-code can open ports, or close them. Keep your lamps trimmed and your signals clear. And if a gray-robed stranger offers to adjust your mirror for free — say no. The Lethai-ar have long memories, and longer webs."
+    }
+  ],
+  "regional_mood": "Power is visible here — literally. Every night, a thousand lamps burn along the channels, each a statement of control. To dim a light is to cede ground. To move a beacon is to declare war. Commodores sit in their mirror-towers, watching reflections, while tide-timers tick down to the next auction, the next inspection, the next quiet burial of a reputation. But beneath the visible power, another war is fought in whispers. The Lethai-ar agents of Inaea have spent a generation infiltrating the oligarchic families. A young heir who suddenly displays uncanny negotiating skill may not be talented — they may be **woven**. A Mirror-Keeper whose beacons never fail may be receiving guidance from a source that does not appear on any chart. The Spider's web is patient. It does not break the thalassocracy; it **guides** it.",
+  "oligarchic_houses": {
+    "description": "The true rulers of Kahfagia are not the Admiralty alone, but the **Shadow Council** of seven oligarchic families. Each controls a monopoly (spice, salt, silk, timber, pitch, shipbuilding, or intelligence). Each maintains its own private navy and network of spies. Each vies for the empty seat left by the family that the Lethai-ar have already **woven** into silence.",
+    "houses": [
+      {
+        "name": "House al-Kassam",
+        "monopoly": "Spice",
+        "description": "Oldest, proudest, most vulnerable. The Lethai-ar have already replaced the family steward."
+      },
+      {
+        "name": "House Carrasco",
+        "monopoly": "Salt",
+        "description": "Ruthless pragmatists; they suspect infiltration but cannot prove it."
+      },
+      {
+        "name": "House Mirat",
+        "monopoly": "Silk",
+        "description": "Secret allies of the Lethai-ar — they trade webs for influence."
+      },
+      {
+        "name": "House del Puerto",
+        "monopoly": "Shipbuilding",
+        "description": "Neutral; they build for anyone who pays."
+      },
+      {
+        "name": "House Henares",
+        "monopoly": "Timber",
+        "description": "Deeply weighed down by Admiralty claims; the Lethai-ar are slowly gathering leverage."
+      },
+      {
+        "name": "House Ira",
+        "monopoly": "\"Miscellaneous\"",
+        "description": "Neutral; Sells arcane goods, artifacts, weapons, and contraband to the highest bidder."
+      },
+      {
+        "name": "Naval Intelligence",
+        "monopoly": "Intelligence",
+        "description": "The Admiralty's own spy network — and already compromised."
+      },
+      {
+        "name": "The Empty Chair",
+        "monopoly": "Formerly House Morat",
+        "description": "The other houses whisper that the Morats were not destroyed — they were **rewoven**."
+      }
+    ]
+  },
+  "silk_vigil": {
+    "description": "Agents of Inaea, the Spider's children have spent a generation worming into Kahfagia's elite. They do not steal or sabotage — they **guide**. A decision that benefits House Carrasco is subtly nudged toward the Lethai-ar's long-term goal: a unified thalassocracy that answers not to the Admiralty, but to the Web.",
+    "signs_of_infiltration": [
+      "A factor's handwriting becomes unnaturally precise, the loops forming faint eight-shapes.",
+      "A Mirror-Keeper's reflections show the same face in every tower — a woman with chestnut-brown skin and eyes like polished jet.",
+      "A ship that should have foundered instead limps to port, its crew speaking of a gray-robed passenger who vanished before docking.",
+      "Silk threads appear on the rigging of a warship; the threads are too strong to break with bare hands.",
+      "A merchant's ledger contains entries in disappearing ink; heat reveals names of Lethai-ar contacts.",
+      "The Veiled Harpist's music is heard from a room that has no windows."
+    ],
+    "named_agents": [
+      {
+        "name": "The Veiled Harpist",
+        "role": "Leader",
+        "description": "No one knows her face. She plays only in mirror-lit rooms. Her music leaves threads of silk in the listeners' hair. She has woven three oligarchs into silence."
+      },
+      {
+        "name": "Sefu the Clerk",
+        "role": "Admiralty Archivist",
+        "description": "A quiet man in the Admiralty's archive. He adds clauses to treaties that favor House Mirat. He has not spoken above a whisper in seven years."
+      },
+      {
+        "name": "Liana of the Gray Shawl",
+        "role": "Pilot's Apprentice",
+        "description": "A pilot's apprentice with too-still eyes. She knows every reef and every patrol route. She has never been lost — only redirected."
+      }
+    ],
+    "mechanical_hook": "Once per session, a PC may roll Wits + Lore (DV 4) to notice a silken thread in an official's collar or a spider's brand on a dockhand's wrist. On success, they identify a Lethai-ar agent. On failure, the agent becomes aware of their scrutiny — and the Web tightens."
+  },
+  "npcs": [
+    {
+      "name": "Admiral Zafira",
+      "role": "Commander of Lantern-Law",
+      "motivation": "Keep the beacon monopoly intact",
+      "quirk": "She has never lost a ship to the reefs. Her charts are said to be drawn in water."
+    },
+    {
+      "name": "Mirza al-Qasr",
+      "role": "Mirror-Keeper of the Pointe",
+      "motivation": "Control the tides through light",
+      "quirk": "Her face is never seen — only reflected. Some say she has no shadow."
+    },
+    {
+      "name": "Ximena",
+      "role": "Dockside Factor",
+      "motivation": "Profit from every cargo, legal or not",
+      "quirk": "She keeps a hidden record in lemon juice; heat reveals the truth."
+    },
+    {
+      "name": "Captain Rodrigo",
+      "role": "Privateer with a crooked letter of marque",
+      "motivation": "Raid the corsair fleet and keep his crew loyal",
+      "quirk": "His ship flies three flags; the one he lowers last is the one that matters."
+    },
+    {
+      "name": "Sister Anabel",
+      "role": "Healer of the Hospitallers of the Salted Veil",
+      "motivation": "Tend the sick without asking for coin",
+      "quirk": "Her gray robes are said to be woven from old promises. They never stain."
+    },
+    {
+      "name": "Notary Farid",
+      "role": "Admiralty magistrate",
+      "motivation": "Resolve disputes before they reach the harbor master",
+      "quirk": "He carries a water-timer in his sleeve to measure the shifting of legal moods."
+    },
+    {
+      "name": "The Veiled Harpist",
+      "role": "Lethai-ar infiltrator (secret)",
+      "motivation": "Weaving through the oligarchs, strand by strand",
+      "quirk": "No one knows her face. She plays only in mirror-lit rooms, and her music leaves threads of silk in the listeners' hair."
+    }
+  ],
+  "names": {
+    "first_male": [
+      "Safir",
+      "Idris",
+      "Farid",
+      "Jabir",
+      "Rodrigo",
+      "Tarik"
+    ],
+    "first_female": [
+      "Zafira",
+      "Ximena",
+      "Layla",
+      "Aisha",
+      "Salma",
+      "Nura"
+    ],
+    "surnames": [
+      "al-Kassam",
+      "del Puerto",
+      "de la Vela",
+      "Carrasco",
+      "Mirat",
+      "Henares"
+    ],
+    "epithets": [
+      "the Lantern",
+      "Tide-Keeper",
+      "the Unlit",
+      "Mirror-Eye",
+      "Bell-Born",
+      "Ash-Sails"
+    ]
+  },
+  "places": [
+    {
+      "rank": 2,
+      "suit": "spade",
+      "title": "Tidal Mudflat",
+      "subtitle": "[STEALTH]",
+      "description": "Hidden plank-way at low water; smugglers' shortcut.",
+      "flavor": "At ebb, the planks rise like the ribs of a drowned whale.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 3,
+      "suit": "spade",
+      "title": "Salt-Scar Pier",
+      "subtitle": "[TRADE]",
+      "description": "Behind dawn spice auctions; where fortunes wash ashore.",
+      "flavor": "Inspectors check the salt-scars — white crust that proves cargo was cleaned, not stolen.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 4,
+      "suit": "spade",
+      "title": "Reedbelt Creeks",
+      "subtitle": "[STEALTH]",
+      "description": "Smuggler paths where tax boats won't follow.",
+      "flavor": "A hanged man's boots hang from a piling; those who pass tug their collars.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 5,
+      "suit": "spade",
+      "title": "Breakwater Gap",
+      "subtitle": "[TRAVEL]",
+      "description": "Under repair; cutters slip at dusk through the works.",
+      "flavor": "The stone is still loose. A wrong step, and the sea claims another toll.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 6,
+      "suit": "spade",
+      "title": "Dredged Channel",
+      "subtitle": "[TRAVEL]",
+      "description": "Fresh with temporary beacons; tomorrow's safe water.",
+      "flavor": "The buoys are painted yellow — the color of 'maybe.'",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 7,
+      "suit": "spade",
+      "title": "River Sluice",
+      "subtitle": "[AUTHORITY]",
+      "description": "Tide-gate and boom-chain; access controlled by rope and writ.",
+      "flavor": "The chain has a notch where a slaver's ship tried to flee. It still drips oil.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 8,
+      "suit": "spade",
+      "title": "Cutter Yard",
+      "subtitle": "[LABOR]",
+      "description": "Narrow-keel vessels; apprentices work night shifts.",
+      "flavor": "They sing old work songs — the kind that skip the ninth beat.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 9,
+      "suit": "spade",
+      "title": "Lantern Alley",
+      "subtitle": "[WEATHER]",
+      "description": "Fog-lane where beacons migrate with the tide.",
+      "flavor": "Follow the lights. Two blinks means you're expected. Three? You're prey.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 10,
+      "suit": "spade",
+      "title": "Admiralty Quay",
+      "subtitle": "[AUTHORITY]",
+      "description": "Bonded warehouses under seal; law walks the decks.",
+      "flavor": "The seal on the door changes with the tide. Today it's a serpent eating its tail.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 11,
+      "suit": "spade",
+      "title": "Red Shoal",
+      "subtitle": "[SOCIAL]",
+      "description": "Quiet water, loud reputations; where deals are made.",
+      "flavor": "Old barges moored together; a floating court with no bailiff.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 12,
+      "suit": "spade",
+      "title": "Mirror Tower",
+      "subtitle": "[JUSTICE]",
+      "description": "Pilot station that certifies safe water — today.",
+      "flavor": "The mirror at the top shows not the sea, but the face of the last captain who argued.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 13,
+      "suit": "spade",
+      "title": "Kassamira Port",
+      "subtitle": "[TRADE]",
+      "description": "Presidial; auctions at dawn, courts by noon.",
+      "flavor": "The auctioneer's gavel is wrapped in a page torn from a voided manifest.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 14,
+      "suit": "spade",
+      "title": "The Pointe",
+      "subtitle": "[DEATH]",
+      "description": "Strait of storm-lights and wreckers' tales.",
+      "flavor": "On still nights, you can hear the drowned singing the names of those who bear heavy burdens.",
+      "mechanical_hook": ""
+    }
+  ],
+  "people_and_factions": [
+    {
+      "rank": 2,
+      "suit": "heart",
+      "title": "Tide-Runner",
+      "subtitle": "[TRAVEL]",
+      "description": "Bell and rope; knows every tide-table by heart.",
+      "flavor": "'The table says high water at noon. The moon lies. Trust my rope.'",
+      "what_they_carry": "",
+      "what_they_ask": ""
+    },
+    {
+      "rank": 3,
+      "suit": "heart",
+      "title": "Pilot's Apprentice",
+      "subtitle": "[TRAVEL]",
+      "description": "Perfect memory for shoals; tomorrow's navigator.",
+      "flavor": "Touches a brass talisman before every sounding. No one knows why.",
+      "what_they_carry": "",
+      "what_they_ask": ""
+    },
+    {
+      "rank": 4,
+      "suit": "heart",
+      "title": "Lantern Clerk",
+      "subtitle": "[AUTHORITY]",
+      "description": "Knows which lights moved, and why; keeper of the shifts.",
+      "flavor": "Docks with a manifest that smells of smoke. Adds a surcharge for 'recent adjustments.'",
+      "what_they_carry": "",
+      "what_they_ask": ""
+    },
+    {
+      "rank": 5,
+      "suit": "heart",
+      "title": "Vilikari Factor",
+      "subtitle": "[TRADE]",
+      "description": "Two sets of books; one for Kahfagia, one for truth.",
+      "flavor": "The left column records bribes as 'conciliation fees.' The right one is never shown.",
+      "what_they_carry": "",
+      "what_they_ask": ""
+    },
+    {
+      "rank": 6,
+      "suit": "heart",
+      "title": "Dock-Syndic",
+      "subtitle": "[SOCIAL]",
+      "description": "Makes queues vanish; power in the pause.",
+      "flavor": "He never raises his voice. The harbor master listens anyway.",
+      "what_they_carry": "",
+      "what_they_ask": ""
+    },
+    {
+      "rank": 7,
+      "suit": "heart",
+      "title": "Lantern Advocate",
+      "subtitle": "[JUSTICE]",
+      "description": "'Jurisdiction moves like tide'; law in flux.",
+      "flavor": "She carries a water-timer in her sleeve to measure the shifting of legal moods.",
+      "what_they_carry": "",
+      "what_they_ask": ""
+    },
+    {
+      "rank": 8,
+      "suit": "heart",
+      "title": "Privateer Captain",
+      "subtitle": "[COMBAT]",
+      "description": "'Crooked' letter of convoy; profit in the margins.",
+      "flavor": "Her ship flies three flags; the one she lowers last is the one that matters.",
+      "what_they_carry": "",
+      "what_they_ask": ""
+    },
+    {
+      "rank": 9,
+      "suit": "heart",
+      "title": "Thalassoi Sergeant",
+      "subtitle": "[COMBAT]",
+      "description": "Shore leave but still on duty; marine precision.",
+      "flavor": "A tattoo of a lighthouse on his forearm; the light is his wife's name.",
+      "what_they_carry": "",
+      "what_they_ask": ""
+    },
+    {
+      "rank": 10,
+      "suit": "heart",
+      "title": "Admiralty Magistrate",
+      "subtitle": "[JUSTICE]",
+      "description": "Rules fast, travels faster; justice in a hurry.",
+      "flavor": "She once sentenced a man to the galleys and boarded the ship before he did.",
+      "what_they_carry": "",
+      "what_they_ask": ""
+    },
+    {
+      "rank": 11,
+      "suit": "heart",
+      "title": "Dredging Foreman",
+      "subtitle": "[LABOR]",
+      "description": "Channel follows their purse; water reshaped.",
+      "flavor": "His crew are ex-criminals; he pays them in salt pork and absolution.",
+      "what_they_carry": "",
+      "what_they_ask": ""
+    },
+    {
+      "rank": 12,
+      "suit": "heart",
+      "title": "Mirror-Keeper",
+      "subtitle": "[AUTHORITY]",
+      "description": "Commodore's confidante; places beacons that bind.",
+      "flavor": "Their faces are never seen — only reflected. Some say they have none.",
+      "what_they_carry": "",
+      "what_they_ask": ""
+    },
+    {
+      "rank": 13,
+      "suit": "heart",
+      "title": "Kahfagian Commodore",
+      "subtitle": "[AUTHORITY]",
+      "description": "Off the books but on the water; shadow admiral.",
+      "flavor": "His flagship is a fishing smack. Its nets drag up letters of marque.",
+      "what_they_carry": "",
+      "what_they_ask": ""
+    },
+    {
+      "rank": 14,
+      "suit": "heart",
+      "title": "Admiral of Red Shoal",
+      "subtitle": "[LEGEND]",
+      "description": "Offers wine, figs — once. Price in stories.",
+      "flavor": "She pours the first cup herself. If she pours a second, you've already agreed.",
+      "what_they_carry": "",
+      "what_they_ask": ""
+    }
+  ],
+  "complications": [
+    {
+      "rank": 2,
+      "suit": "club",
+      "title": "Early Tide",
+      "subtitle": "[WEATHER]",
+      "description": "Turns two bells early; grounding risk rises like the sea.",
+      "flavor": "Someone bribed the tide-clerk — or the moon is angry.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 3,
+      "suit": "club",
+      "title": "Smothering Fog",
+      "subtitle": "[WEATHER]",
+      "description": "Sound travels, sight does not; navigation by ear alone.",
+      "flavor": "You hear oars. Then you don't. Then they're behind you.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 4,
+      "suit": "club",
+      "title": "Boom Slam",
+      "subtitle": "[AUTHORITY]",
+      "description": "Harbor chain slams shut; wrong side means delay or danger.",
+      "flavor": "The chain's links are inscribed with names of those who defied the Admiralty. Each one rattles differently.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 5,
+      "suit": "club",
+      "title": "Light Shift",
+      "subtitle": "[TRAVEL]",
+      "description": "Beacons change mid-approach; your lane just moved.",
+      "flavor": "Someone paid the Lantern Clerk. Find out who — or drift into the reefs.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 6,
+      "suit": "club",
+      "title": "Pilot Strike",
+      "subtitle": "[LABOR]",
+      "description": "No escorts available; wages unpaid, risk assumed.",
+      "flavor": "The pilots sit in their guildhall, drinking tea, watching ships founder.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 7,
+      "suit": "club",
+      "title": "Customs Inspection",
+      "subtitle": "[AUTHORITY]",
+      "description": "Ladder audits cargo and crew; delays bite deep.",
+      "flavor": "The inspector has a silver tooth. He smiles when he sees a manifest.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 8,
+      "suit": "club",
+      "title": "Reef-Runners",
+      "subtitle": "[COMBAT]",
+      "description": "Corsair skiffs circle with boarding hooks; steel in the spray.",
+      "flavor": "Their leader wears a Mirror-Keeper's badge — stolen or earned, you cannot tell.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 9,
+      "suit": "club",
+      "title": "Jurisdiction Flip",
+      "subtitle": "[JUSTICE]",
+      "description": "Lantern-law shifts; your writ no longer bites.",
+      "flavor": "The tide turned. So did the magistrate. Your safe-conduct is now kindling.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 10,
+      "suit": "club",
+      "title": "Fire Risk",
+      "subtitle": "[DISASTER]",
+      "description": "Alchemical cargo aboard; quarantine if anything spills.",
+      "flavor": "A single spark and the whole quay becomes a crater. The factor wants you to know this.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 11,
+      "suit": "club",
+      "title": "Quartermaster Betrayal",
+      "subtitle": "[SOCIAL]",
+      "description": "Tide-tables sold to rival; route compromised.",
+      "flavor": "The betrayal is written in lemon juice; heat reveals the name.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 12,
+      "suit": "club",
+      "title": "Yellow Flag",
+      "subtitle": "[DEATH]",
+      "description": "Port quarantine; deadlines rot on the hook.",
+      "flavor": "The flag is dyed with turmeric and something else — something that smells sweet.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 13,
+      "suit": "club",
+      "title": "Fleet Redeploy",
+      "subtitle": "[AUTHORITY]",
+      "description": "'Safe' corridor becomes parade ground; chaos in formation.",
+      "flavor": "Admirals play chess with real ships, and you are a pawn.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 14,
+      "suit": "club",
+      "title": "Black Squall",
+      "subtitle": "[WEATHER] [DEATH]",
+      "description": "Scatters ships and stories alike.",
+      "flavor": "This is no natural storm. The water hisses. Something below is waking.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 15,
+      "suit": "club",
+      "title": "Web Unravelled",
+      "subtitle": "[POLITICS] [FEAR]",
+      "description": "A Lethai-ar agent is exposed. The oligarchs turn on each other, accusing every rival of being a spider.",
+      "flavor": "Silk threads appear on every doorknob. No one trusts their shadow.",
+      "mechanical_hook": ""
+    }
+  ],
+  "rewards": [
+    {
+      "rank": 2,
+      "suit": "diamond",
+      "title": "Mooring Chit",
+      "subtitle": "[TRAVEL]",
+      "description": "Skip the Mooring Roll once; harbor favors you.",
+      "flavor": "The chit is a dried seahorse shell. Keep it away from salt.",
+      "curse_cost": ""
+    },
+    {
+      "rank": 3,
+      "suit": "diamond",
+      "title": "Pilotage Token",
+      "subtitle": "[TRAVEL]",
+      "description": "One certified escort through a bad channel.",
+      "flavor": "The pilot who accepts it must touch your shoulder before speaking.",
+      "curse_cost": ""
+    },
+    {
+      "rank": 4,
+      "suit": "diamond",
+      "title": "Fee Waiver",
+      "subtitle": "[TRADE]",
+      "description": "Cargo cleared today; no questions asked.",
+      "flavor": "The clerk stamps it twice — once for the crown, once for the Hollow.",
+      "curse_cost": ""
+    },
+    {
+      "rank": 5,
+      "suit": "diamond",
+      "title": "Safe-Conduct",
+      "subtitle": "[TRAVEL]",
+      "description": "Along specific beaconed lane; law walks with you.",
+      "flavor": "The commodore's seal is warm. It cools as the exit nears.",
+      "curse_cost": ""
+    },
+    {
+      "rank": 6,
+      "suit": "diamond",
+      "title": "Salvage Rights",
+      "subtitle": "[TRADE]",
+      "description": "On named quay or reach; flotsam becomes fortune.",
+      "flavor": "You must name each piece before touching it. The wrong word forfeits the claim.",
+      "curse_cost": ""
+    },
+    {
+      "rank": 7,
+      "suit": "diamond",
+      "title": "Warehouse Access",
+      "subtitle": "[TRADE]",
+      "description": "Bonded storage; seal prize before rivals sniff.",
+      "flavor": "The key is a bronze finger. It fits only one lock — and breaks after use.",
+      "curse_cost": ""
+    },
+    {
+      "rank": 8,
+      "suit": "diamond",
+      "title": "Lantern Code",
+      "subtitle": "[TRAVEL]",
+      "description": "Tonight's signals revealed; navigation advantage.",
+      "flavor": "Three quick flashes: safe passage. One long, two short: the Admiralty is watching.",
+      "curse_cost": ""
+    },
+    {
+      "rank": 9,
+      "suit": "diamond",
+      "title": "Dredging Grant",
+      "subtitle": "[AUTHORITY]",
+      "description": "You decide where next channel runs; reshape the sea.",
+      "flavor": "The dredgers are convicts. They work faster if you promise a name in their favor.",
+      "curse_cost": ""
+    },
+    {
+      "rank": 10,
+      "suit": "diamond",
+      "title": "Letter of Marque",
+      "subtitle": "[COMBAT]",
+      "description": "Convoy protection for one season; legal blades.",
+      "flavor": "The ink is mixed with gunpowder. It smokes slightly when read.",
+      "curse_cost": ""
+    },
+    {
+      "rank": 11,
+      "suit": "diamond",
+      "title": "Admiralty Judgment",
+      "subtitle": "[JUSTICE]",
+      "description": "Precedent travels with you; law bends.",
+      "flavor": "The case number is burned into a leather tag. Tie it to a belt loop.",
+      "curse_cost": ""
+    },
+    {
+      "rank": 12,
+      "suit": "diamond",
+      "title": "Mirror Warrant",
+      "subtitle": "[AUTHORITY]",
+      "description": "Legal right to post a beacon; redraw the map.",
+      "flavor": "The Mirror-Keeper's seal, still warm. The channel you mark becomes law — until challenged.",
+      "curse_cost": ""
+    },
+    {
+      "rank": 13,
+      "suit": "diamond",
+      "title": "Spice Share",
+      "subtitle": "[TRADE]",
+      "description": "Stake in Kassamira auction floor; profit in pepper.",
+      "flavor": "The share is a peppercorn sealed in wax. Bite it to test authenticity.",
+      "curse_cost": ""
+    },
+    {
+      "rank": 14,
+      "suit": "diamond",
+      "title": "Lantern License",
+      "subtitle": "[AUTHORITY]",
+      "description": "Temporary authority to redefine the lane.",
+      "flavor": "The harbor master spits when he hands it over. Use it wisely — or not at all.",
+      "curse_cost": ""
+    }
+  ],
+  "quick_use_notes": {
+    "draw_rules": "Draw until you have all four suits: Spade = place, Heart = actor, Club = pressure, Diamond = leverage. Highest rank sets the main Timer (2–5 → 4, 6–10 → 6, J/Q/K → 8, A → 10).",
+    "diamonds": "Diamonds are codified outcomes (papers/rights/priority) that change position rather than call for a roll.",
+    "ace_rule": "If any A appears, echo **sea & signal** motifs — beacons that migrate, tides that remember, law that flows like water. If a King or Ace of Spades appears, also echo **web motifs** — silk threads on a bollard, a reflection that holds too long, the faint smell of spiced tea (the Lethai-ar are near)."
+  },
+  "additional_features": {
+    "pilots_mirror": "Kahfagia's strength is not its fleet but its monopoly on light and lane. To post a beacon is to redraw the map. Any character with a Mirror Warrant may permanently move a beacon or buoy (GM sets a 4-segment timer). For the duration of that timer, all navigation rolls on that lane are at +1 Position for the party and –1 Position for rivals.",
+    "lantern_law_privilege": "While flying an Admiralty flag or carrying a valid Lantern License, your ship may pass through chain-booms and customs points at +1 Position. The first time in a session you invoke this privilege, the GM gains 1 SB (the Admiralty is watching).",
+    "oligarchic_standing": "Instead of tracking coin weights, track **Standing** with the great families (al-Kassam, Carrasco, Mirat, etc.). Standing 1–3 gives you access to private docks, early auction warnings, and off-the-books pilots. Standing 4+ lets you call in a family to block a rival's safe-conduct or raise a false alarm on their ship.",
+    "webs_patience": "Tracks the Lethai-ar infiltration of the Shadow Council. The timer ticks when the party helps a Lethai-ar agent, exposes a rival house's secrets, or ignores a silken thread. At 3, the Harpist's name appears on a dockmaster's manifest. At 6, the Empty Chair is filled — and the new house head bows to a gray-robed stranger. The party may reduce the timer by exposing an agent or by warning an oligarch (requires spending 2 Standing).",
+    "western_reach_rumors": "Once per port visit, a character may roll Wits + Lore (DV 3) to hear a rumor from a captain returned from beyond the mirror. On success, the GM reveals one of the twelve rumors as a foreshadowing hook or a clue for an ongoing arc.",
+    "local_patrons": {
+      "lantern_bearer": "The Traveler. A light that never goes out; a promise that never sinks.",
+      "mirror_king": "The Witness. Reflections that remember every lie, every promise, every cargo.",
+      "tide_father": "Khemesh. The pressure beneath the keel; the weight that the sea holds at ebb.",
+      "spiders_daughter": "Inaea (secret). The web that binds the oligarchs, strand by patient strand.",
+      "the_unlit": "Ikasha. The ninth lamp that is never lit; the safe harbor that exists only in rumor."
+    }
+  },
+  "lore_echoes": [
+    {
+      "title": "Saint Alvaro of the Lantern",
+      "patron": "The Traveler",
+      "description": "The Admiralty's mirror-towers double as wayshrines for the Saint of Lost Channels. Sailors who light a candle before a voyage and whisper a destination to the mirror claim the tide will not turn against them before they reach it. The Mirror-Keepers charge a fee for this service — payable in salt, not silver."
+    },
+    {
+      "title": "The Silken Coup",
+      "patron": "Inaea",
+      "description": "The Lethai-ar call their infiltration the **Genteel Harvest**. They do not conquer; they adopt. An oligarch who accepts a gray-robed advisor finds that their children are betrothed to shadow-kin, their records are copied in disappearing ink, and their mirror-tower shows only the face they wish to see — not the one that watches them sleep."
+    },
+    {
+      "title": "The Tide-Sworn Compact",
+      "patron": "The Admiral of Sealed Tides",
+      "description": "A small but influential order of notaries based in Kassamira Port. They adjudicate disputes over beacon rights, cargo claims, and pilotage fees. Their judgments are always delivered in triplicate, and they accept no bribes — only sworn promises. Those who lie before a Covenant judge find that their next three voyages are plagued by contrary winds."
+    },
+    {
+      "title": "The Hospitallers of the Salted Veil",
+      "patron": "The Bitter Root",
+      "description": "A hospice on Deadman's Quay is run by gray-robed healers of the Order. They ask no payment, but they never forget a face. It is said that if you accept their care, the sea remembers your name — and the sea never forgets. Smugglers leave small offerings of fresh water on the pier to stay in the Order's good graces."
+    },
+    {
+      "title": "The Ninth Lantern Omen",
+      "description": "In any lantern-lit scene, the ninth lamp lit in a room reveals a threshold. The wise stop at eight. Those who light the ninth are said to see a figure standing on the water outside the window — waiting.",
+      "omens": [
+        "The figure is a drowned sailor you once knew. It speaks your name in a voice like breaking ice.",
+        "The lantern gutters and relights itself, burning green. The next ship to leave port will not return.",
+        "A reflection in the water shows a version of you that made a different choice. It is still alive. It is still waiting.",
+        "The flame casts no shadow. The Hollow has accepted your offering. You will not be asked to pay — tonight.",
+        "The lamp's oil turns to salt water. The figure is the Admiral of Red Shoal, and she offers a choice: a safe passage, or a secret.",
+        "The ninth lamp is not lit by your hand. Someone else lit it. They are standing behind you, and they have a question."
+      ]
+    }
+  ],
+  "superstitions": [
+    {
+      "name": "Bread to the Wake",
+      "effect": "Toss a crust over your shoulder before entering a new channel. Ignore the first **Smothering Fog** penalty.",
+      "cost": "Burn for +1 die once"
+    },
+    {
+      "name": "Turn the Lantern",
+      "effect": "Spin the binnacle lamp once counter-timerwise. Cancel **Boom Slam** or take –1 die on your next pilot check (your choice).",
+      "cost": "Burn for +1 die once"
+    },
+    {
+      "name": "Name to the Deep",
+      "effect": "Whisper a true name into a lead line. Gain +1 Effect against corsairs for the scene, but mark a **Burden** from the Tide Court.",
+      "cost": "Burn for +1 die once"
+    },
+    {
+      "name": "Cut the Thread",
+      "effect": "If you find a silk thread on your bollard, cut it with a silver knife. Negate the next **Web's Patience** tick.",
+      "cost": "Burn for +1 die once"
+    }
+  ],
+  "sb_spend_table": {
+    "minor_complications": [
+      "A lantern flickers; a signal is misread. Minor navigation error."
+    ],
+    "moderate_setbacks": [
+      "A rival ship appears on the horizon; a customs inspector boards."
+    ],
+    "serious_trouble": [
+      "The tide turns early; a beacon goes dark; a silk thread is found on your rigging."
+    ],
+    "major_turns": [
+      "The Web tightens (Timer ticks); The Admiralty revokes a license; A storm breaks without warning."
+    ]
+  },
+  "western_reach_rumors": [
+    "A harbor where bells toll under water; cargo **must** be named aloud.",
+    "A spice that stops bleeding — until moonrise.",
+    "A mirror-reef that reflects storms from a week ahead.",
+    "A pilotage guild that uses birds, not beacons.",
+    "A fleet that sails by **shadow** cast on fog.",
+    "A court that weighs promises in **breath**, not coin.",
+    "A lighthouse that burns a cold, blue flame; ships that follow it find a city of sunken glass.",
+    "A salt-crusted chart that shows islands that appear only on the ninth tide.",
+    "A bell that, when rung, forces all who hear it to speak one true name.",
+    "A smuggler's route that passes through a reef where the drowned hold court.",
+    "A spice ship that carries no cargo — only a single mirror, and the face of the merchant who sold it.",
+    "A harbor where the tide is measured not in feet, but in secrets."
+  ],
+  "pursuit_ladder": {
+    "advance_withdraw": "Advance/Withdraw (Sail + Wits): On a hit, shift one band. On a strong hit, also impose **Wake Surge**.",
+    "cut_the_lane": "Cut the Lane (Pilot + Tactics): On a hit, freeze range for one exchange; if a beacon is under your color, +1 die.",
+    "weather_the_squall": "Weather the Squall (Endurance + Sail): On a hit in **Black Squall**, you pick who drifts; on a miss, the Keeper does."
+  },
+  "boss_seeds": [
+    {
+      "name": "The Mirror-Keeper of Kassamira",
+      "type": "Signal Tyrant",
+      "phases": [
+        "Audit",
+        "Blacklist",
+        "Light Embargo"
+      ],
+      "cracks": [
+        "rival beacon logs",
+        "Tide Court precedent",
+        "stolen codebook"
+      ]
+    },
+    {
+      "name": "Corsair-Chaplain of the Pointe",
+      "type": "Relic Raider",
+      "phases": [
+        "Charm",
+        "Board",
+        "Bell-Wake"
+      ],
+      "cracks": [
+        "sanctified boom",
+        "cofradía oath",
+        "drowned-saint tithe"
+      ]
+    },
+    {
+      "name": "The Veiled Harpist",
+      "type": "Spider's Daughter",
+      "phases": [
+        "Whisper",
+        "Weave",
+        "Harvest"
+      ],
+      "cracks": [
+        "speak a true name of a Lethai-ar agent",
+        "cut a strand of the Web with silver",
+        "remind an oligarch of a promise older than the Spider's memory"
+      ]
+    }
+  ],
+  "patronage_and_power": {
+    "description": "In Kahfagia, power flows through control of the sea lanes themselves — and through the silken threads that bind the oligarchs to the Spider's will. The maritime oligarchs have built their empire not through conquest of territory but through mastery of navigation and the quiet manipulation of loyalty. Every beacon, every channel marker, every mirror-light is both a navigational aid and a legal instrument. But behind every mirror, a gray-robed woman watches. And she is very, very patient.",
+    "gm_advice": "Kahfagian patronage revolves around access — to channels, to cargo, to legal protection. Rewards often take the form of pilotage tokens, safe-conducts, or salvage rights. But the secret war of the Lethai-ar adds a new layer: players may be hired to expose an agent, to protect an oligarch from being 'woven,' or even to ally with the Spider's children for a share of the Harvest. Use the **Web's Patience** timer to track the infiltration; let players decide whether to slow it, accelerate it, or ride it to power."
+  },
+  "amaria": {
+    "name": "Amaria — The Iron Shore",
+    "description": "A small peninsula squeezed between Kahfagia's Akilan holdings and the Vilikari border, Amaria is a land of iron mines, coastal fog, and hybrid law. Ecktoria once claimed it; now it pays tribute to both Kahfagia and the Vilikari to stay independent. Its people speak a creole of Kahfagian maritime slang and Vilikari bureaucratic precision, and its courts rule by a blend of Admiralty tariff law and Vermilion Corps writ-law.",
+    "first_notice": "The smell of rust and brine. The way every official carries two seals — one for Kahfagia, one for the Vilikari. The constant ticking of water-timers that never agree on the hour.",
+    "rule_that_kills": "Never carry only one flag. Amarian vessels fly both the lantern and the grain sheaf. A single flag is a declaration of allegiance — and an invitation to be sunk by the other side.",
+    "places": [
+      {
+        "rank": 1,
+        "title": "Iron Quay",
+        "subtitle": "[INDUSTRY]",
+        "description": "A pier built from salvaged warship timbers. The nails are iron from the inland mines; they rust red, staining the water like blood."
+      },
+      {
+        "rank": 2,
+        "title": "Coin-House of Twin Books",
+        "subtitle": "[TRADE]",
+        "description": "A counting-house where every transaction is recorded twice — once for the Kahfagian tariff, once for the Vilikari grain tithe. The third book is the smuggler's."
+      },
+      {
+        "rank": 3,
+        "title": "Fog Lighthouse (Disputed)",
+        "subtitle": "[AUTHORITY]",
+        "description": "A stone tower with two lamps: one green for Kahfagia, one white for the Vilikari. Only one is lit at a time. The keeper changes them with the tide."
+      },
+      {
+        "rank": 4,
+        "title": "Smuggler's Rope-Walk",
+        "subtitle": "[STEALTH]",
+        "description": "A hidden cove where boats land at low tide. The rope-walk is a series of knotted lines that lead to a cave full of untaxed cargo."
+      },
+      {
+        "rank": 5,
+        "title": "Mine Shaft of the Ninth Vein",
+        "subtitle": "[MYSTERY]",
+        "description": "An iron mine that goes deeper than the surveyors mapped. The miners whisper of a sealed door at the bottom — Aeler work, they say."
+      },
+      {
+        "rank": 6,
+        "title": "Dual Customs Post",
+        "subtitle": "[AUTHORITY]",
+        "description": "A wooden shack with two windows: one for Kahfagian stamps, one for Vilikari seals. The line snakes between them. Smugglers pay both clerks and skip the line."
+      }
+    ],
+    "people": [
+      {
+        "rank": 1,
+        "title": "Twin-Book Clerk",
+        "subtitle": "[TRADE]",
+        "description": "Sits at a split desk, writing with two hands. Her left hand files Kahfagian tariffs; her right, Vilikari grain receipts. Her third hand — the one no one sees — writes the real numbers."
+      },
+      {
+        "rank": 2,
+        "title": "Iron Miner (Free)",
+        "subtitle": "[LABOR]",
+        "description": "A former indentured laborer who bought his freedom with a year's ore. His hands are stained red with rust. He knows the sealed door's location but will not speak of it."
+      },
+      {
+        "rank": 3,
+        "title": "Smuggler Captain",
+        "subtitle": "[STEALTH]",
+        "description": "Flies no flag. His ship's name changes with each port. He speaks four languages badly and navigates by the taste of salt on the wind."
+      },
+      {
+        "rank": 4,
+        "title": "Kahfagian Customs Agent",
+        "subtitle": "[AUTHORITY]",
+        "description": "A one-eyed woman with a brass hook for a hand. She stamps cargo with a bell-shaped seal. The seal rings when the declared value is a lie."
+      },
+      {
+        "rank": 5,
+        "title": "Vilikari Grain Auditor",
+        "subtitle": "[JUSTICE]",
+        "description": "Thin, spectacled, carries a grain balance. He measures every sack against the Widow's standard. He has found nine thieves this year. The tenth was his own clerk."
+      },
+      {
+        "rank": 6,
+        "title": "Fog Keeper (Lighthouse)",
+        "subtitle": "[WEATHER]",
+        "description": "An old sailor who lost his sight to a Kahfagian mirror flash. He tends the lamps by touch. He knows which flag flies by the heat of the glass — green is cool, white is warm."
+      }
+    ],
+    "complications": [
+      {
+        "rank": 1,
+        "title": "Tariff Double-Cross",
+        "subtitle": "[WEIGHT]",
+        "description": "Both Kahfagia and the Vilikari claim the same customs fee. Pay one, and the other impounds your cargo. Pay both, and you are ruined. Smuggle, and you are a patriot."
+      },
+      {
+        "rank": 2,
+        "title": "Mine Collapse (Sealed Door)",
+        "subtitle": "[DISASTER]",
+        "description": "A cave-in opens a passage to the sealed Aeler door. The miners are afraid. Something is breathing on the other side. The party is asked to investigate — or to seal it again."
+      },
+      {
+        "rank": 3,
+        "title": "Lighthouse Outage",
+        "subtitle": "[DEATH]",
+        "description": "Both lamps go dark. Ships founder on the reef. The keeper is found dead, one hand on each lamp. The cause of death: old age — or old promises broken."
+      },
+      {
+        "rank": 4,
+        "title": "Census Dispute",
+        "subtitle": "[POLITICS]",
+        "description": "The Vilikari claims Amaria's population for grain tithes; Kahfagia claims it for port taxes. The same people are counted twice — or not at all. The party is asked to review the records. The records are on fire."
+      },
+      {
+        "rank": 5,
+        "title": "Iron Embargo",
+        "subtitle": "[COMBAT]",
+        "description": "A rival faction sinks an ore barge. Both powers blame each other. The price of iron spikes. The party's cargo is now worth a fortune — and a target."
+      },
+      {
+        "rank": 6,
+        "title": "The Ninth Vein Opens",
+        "subtitle": "[MYSTERY]",
+        "description": "The sealed door cracks. A cold wind blows from the deep. The miners flee. A voice whispers a name — the name of the party member who casts the longest shadow."
+      }
+    ],
+    "rewards": [
+      {
+        "rank": 1,
+        "title": "Dual Customs Stamp",
+        "subtitle": "[TRAVEL]",
+        "description": "One stamp, two seals. Passes both Kahfagian and Vilikari checkpoints without inspection. Use once per journey."
+      },
+      {
+        "rank": 2,
+        "title": "Iron Ingot (Ninth Vein)",
+        "subtitle": "[TRADE]",
+        "description": "A bar of ore from the sealed door's chamber. It is warm to the touch. Aeler runes glow on its surface. Trade it to the True Masons for a favor."
+      },
+      {
+        "rank": 3,
+        "title": "Fog Keeper's Log",
+        "subtitle": "[WEATHER]",
+        "description": "A journal of tide and lamp schedules. Decode it to predict when the disputed lighthouse will be unguarded. Gain +1 Position on smuggling attempts."
+      },
+      {
+        "rank": 4,
+        "title": "Twin-Entry Receipt",
+        "subtitle": "[JUSTICE]",
+        "description": "A document that proves you paid both tariffs. It is written in disappearing ink. The ink vanishes after one use — but the paper remembers."
+      },
+      {
+        "rank": 5,
+        "title": "Miner's Compass",
+        "subtitle": "[TRAVEL]",
+        "description": "A brass needle that points to the sealed door. It also points to the nearest iron vein — and to the nearest heart that beats with greed."
+      },
+      {
+        "rank": 6,
+        "title": "Smuggler's Flag (Neutral)",
+        "subtitle": "[STEALTH]",
+        "description": "A plain gray banner. Fly it to pass between Kahfagian and Vilikari patrols unmolested. The patrols will not salute. They will not shoot. They will pretend they did not see you."
+      }
+    ]
+  },
+  "index": [
+    "Kahfagia",
+    "Pilot's Mirror generator",
+    "Theme generator",
+    "Places!Kahfagia",
+    "People!Kahfagia",
+    "Complications!Kahfagia",
+    "Rewards!Kahfagia",
+    "Kassamira",
+    "Mirror-Light Tower",
+    "Red Shoal",
+    "The Pointe",
+    "Pilots!Kahfagia",
+    "Privateers!Kahfagia",
+    "Admiralty",
+    "Lantern-law",
+    "Thalassoi marines",
+    "Dredging consortium",
+    "Spice auctions",
+    "Bonded warehouses",
+    "Letter of marque",
+    "Tide-runner",
+    "Mirror-keeper",
+    "Admiral of the Red Shoal",
+    "Local Patrons!Kahfagia",
+    "Inaea!Kahfagia",
+    "Lethai-ar!Kahfagia",
+    "The Spider's Daughter",
+    "Silk Vigil",
+    "Western Reach Rumors"
+  ],
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

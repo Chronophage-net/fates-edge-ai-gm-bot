@@ -1,68 +1,583 @@
 {
-  "Light": {
-    "tags": ["ILLUMINATE"],
-    "dv": 2,
-    "effect": "Create a small sustained light (torch‑brightness) for the scene.",
-    "notes": "No backlash risk; lasts until dismissed."
-  },
-  "Heal (Cantrip)": {
-    "tags": ["HEAL"],
-    "dv": 2,
-    "effect": "Remove 1 Fatigue from yourself or a touched ally. Does not heal Harm.",
-    "notes": "Requires touch."
-  },
-  "Shield of Air": {
-    "tags": ["AIR", "DEFEND"],
-    "dv": 3,
-    "effect": "+1 die to next defense roll.",
-    "notes": "One use."
-  },
-  "Flame Cloak": {
-    "tags": ["FIRE", "AREA", "DEFEND"],
-    "dv": 4,
-    "effect": "Enemies –1 die to approach; caster +1 to defense vs. melee.",
-    "notes": "Two actions; creates difficult terrain."
-  },
-  "Teleport (Self)": {
-    "tags": ["AIR", "FOLD"],
-    "dv": 4,
-    "effect": "Teleport self within Near range.",
-    "notes": "Dangerous tag (+2 DV). Leaves faint afterimage."
-  },
-  "Wall of Stone": {
-    "tags": ["EARTH", "BARRIER", "FORTIFY"],
-    "dv": 4,
-    "effect": "Summon a 10‑foot stone wall. Provides cover; obstructs movement.",
-    "notes": "Scene duration; Integrity Timer 4."
-  },
-  "Heal Harm (with Purify)": {
-    "tags": ["HEAL", "PURIFY"],
-    "dv": 5,
-    "effect": "Restore 1 level of Harm (e.g., Harm 2 → 1).",
-    "notes": "Requires two actions; surcharge +2 DV. Also neutralises poison/disease."
-  },
-  "Fleet Step": {
-    "tags": ["AIR", "HASTE", "MOVE"],
-    "dv": 3,
-    "effect": "Double movement speed for one exchange.",
-    "notes": "Requires open area."
-  },
-  "Sleep's Gentle Touch": {
-    "tags": ["WATER", "DREAM", "COMMAND"],
-    "dv": 4,
-    "effect": "One target falls asleep (scene duration; Resist: Spirit+Resolve DV 2).",
-    "notes": "Harm wakes target. Dangerous if used in combat."
-  },
-  "Storm's Fury": {
-    "tags": ["AIR", "STORM", "AREA", "FORCE"],
-    "dv": 6,
-    "effect": "30‑foot storm cloud; lightning strikes random targets (Harm 2).",
-    "notes": "Scene duration; reduces visibility. Dangerous tag (+2 DV)."
-  },
-  "Earth's Tremor": {
-    "tags": ["EARTH", "QUAKE", "AREA"],
-    "dv": 5,
-    "effect": "20‑foot tremor; enemies test Body+Athletics (DV 3) or fall prone.",
-    "notes": "Destabilises structures; affects all in area."
-  }
+  "spells": [
+    {
+      "id": "ember-flick",
+      "name": "Ember Flick",
+      "category": "Cantrip",
+      "tags": [
+        "BURNING",
+        "STRIKE"
+      ],
+      "dv": 3,
+      "effect": "Ignite a small, unattended flammable object within Close range. A candle, twist of paper, dry leaf. Not a person.",
+      "notes": "The Weave draws a line at arson. Wet leaves do not count."
+    },
+    {
+      "id": "hush",
+      "name": "Hush",
+      "category": "Cantrip",
+      "tags": [
+        "SILENCE"
+      ],
+      "dv": 2,
+      "effect": "Mutes all sound within a Close zone for a few heartbeats. A dropped key, a muttered curse, a footstep on a creaking stair.",
+      "notes": "The caster's own voice is not muted."
+    },
+    {
+      "id": "warmth",
+      "name": "Warmth",
+      "category": "Cantrip",
+      "tags": [
+        "HEAL"
+      ],
+      "dv": 2,
+      "effect": "Remove 1 point of Fatigue from the caster or a touched ally.",
+      "notes": "The Weave does not knit flesh; it merely reminds the body that it is tired."
+    },
+    {
+      "id": "folded-sight",
+      "name": "Folded Sight",
+      "category": "Cantrip",
+      "tags": [
+        "VEIL"
+      ],
+      "dv": 2,
+      "effect": "Blurs the caster's features for a single exchange. Not invisibility. The observer sees a tradesman, a servant, a face they will not remember.",
+      "notes": "The effect ends if the caster speaks their own name aloud."
+    },
+    {
+      "id": "knot-of-stillness",
+      "name": "Knot of Stillness",
+      "category": "Cantrip",
+      "tags": [
+        "BIND"
+      ],
+      "dv": 2,
+      "effect": "Holds a single small object in place—a door, a latch, a coin on a table. The Weave does not lock; it suggests. A determined child could overcome it.",
+      "notes": "A distracted guard will not notice."
+    },
+    {
+      "id": "pale-light",
+      "name": "Pale Light",
+      "category": "Cantrip",
+      "tags": [
+        "LIGHT"
+      ],
+      "dv": 2,
+      "effect": "Illuminates the caster's hand with a soft, steady glow. The light reaches Near range but dims before Far. Cannot be used to blind.",
+      "notes": "Cannot be used to start fires. The Weave is specific."
+    },
+    {
+      "id": "whisper",
+      "name": "Whisper",
+      "category": "Cantrip",
+      "tags": [
+        "MESSAGE"
+      ],
+      "dv": 2,
+      "effect": "Sends a sentence of up to eight words to a willing target within Near range. The target hears the words in the caster's voice, but no one else does.",
+      "notes": "The Weave does not deliver lies. It delivers sounds."
+    },
+    {
+      "id": "still-air",
+      "name": "Still Air",
+      "category": "Defensive",
+      "tags": [
+        "DEFEND"
+      ],
+      "dv": 2,
+      "effect": "A cushion of motionless air settles around the caster. The first physical attack against them within the next few heartbeats loses much of its force.",
+      "notes": "A sword that would have opened a vein leaves a bruise."
+    },
+    {
+      "id": "warded-threshold",
+      "name": "Warded Threshold",
+      "category": "Defensive",
+      "tags": [
+        "WARD"
+      ],
+      "dv": 2,
+      "effect": "The caster touches a door, window, or bridge. The Weave discourages crossing. A guard will find a reason to patrol elsewhere.",
+      "notes": "The effect is psychological, not physical. The Weave is polite."
+    },
+    {
+      "id": "intercept",
+      "name": "Intercept",
+      "category": "Defensive",
+      "tags": [
+        "PROTECT",
+        "NEAR"
+      ],
+      "dv": 3,
+      "effect": "When an ally within Near range is attacked, the caster may interpose themselves. The harm intended for the ally lands on the caster instead.",
+      "notes": "The Weave permits this transfer but does not mitigate it. Use sparingly."
+    },
+    {
+      "id": "unweave",
+      "name": "Unweave",
+      "category": "Defensive",
+      "tags": [
+        "COUNTER"
+      ],
+      "dv": 4,
+      "effect": "The caster watches an enemy cast and attempts to speak the counter-grammar before the Weave answers. On success, the enemy's spell dissipates harmlessly.",
+      "notes": "The Weave dislikes being interrupted. On failure, both spells may misfire."
+    },
+    {
+      "id": "shield-of-reflection",
+      "name": "Shield of Reflection",
+      "category": "Defensive",
+      "tags": [
+        "WARD",
+        "REFLECT"
+      ],
+      "dv": 5,
+      "effect": "A shimmering disc of barely-visible force hovers before the caster. The first projectile that strikes it is turned back toward its source.",
+      "notes": "The returned projectile is less accurate. The Weave does not aim. Dangerous tag."
+    },
+    {
+      "id": "circle-of-salt",
+      "name": "Circle of Salt",
+      "category": "Defensive",
+      "tags": [
+        "WARD",
+        "AREA"
+      ],
+      "dv": 3,
+      "effect": "The caster draws a line of salt, chalk, or ash around themselves and allies. Creatures of spirit—ghosts, wraiths, some fae—cannot cross the line for the scene.",
+      "notes": "Mortals may step over with a shrug. The Weave distinguishes between kinds of hunger."
+    },
+    {
+      "id": "phantom-parry",
+      "name": "Phantom Parry",
+      "category": "Defensive",
+      "tags": [
+        "DEFEND",
+        "STRIKE"
+      ],
+      "dv": 3,
+      "effect": "The Weave conjures a momentary replica of a blade the caster is holding. The replica intercepts one melee attack, then vanishes.",
+      "notes": "The caster must still breathe."
+    },
+    {
+      "id": "unspoken",
+      "name": "Unspoken",
+      "category": "Unseen Hand",
+      "tags": [
+        "SILENCE",
+        "TARGET"
+      ],
+      "dv": 3,
+      "effect": "You mute a single creature. They open their mouth. Nothing comes out. The Weave misplaces their voice for a few heartbeats.",
+      "notes": "The target will find their voice again—usually at the worst possible moment."
+    },
+    {
+      "id": "false-door",
+      "name": "False Door",
+      "category": "Unseen Hand",
+      "tags": [
+        "VEIL",
+        "ILLUSION"
+      ],
+      "dv": 3,
+      "effect": "You paint an archway onto a stone wall. It looks real. It feels real to the touch, for a moment. It is not real.",
+      "notes": "The Weave permits this deception, but it will remember that you lied."
+    },
+    {
+      "id": "crowds-shroud",
+      "name": "Crowd's Shroud",
+      "category": "Unseen Hand",
+      "tags": [
+        "VEIL",
+        "AREA"
+      ],
+      "dv": 4,
+      "effect": "You blur the entire party. To any observer more than Near away, you are indistinguishable from market-goers, cargo crates, or stray dogs.",
+      "notes": "The Weave does not make you invisible; it makes you boring."
+    },
+    {
+      "id": "distant-gaze",
+      "name": "Distant Gaze",
+      "category": "Unseen Hand",
+      "tags": [
+        "SCRY"
+      ],
+      "dv": 4,
+      "effect": "You close your eyes and see a location you have visited before within a mile. The vision is grainy, like a reflection in rippled water.",
+      "notes": "You cannot hear. You cannot act. Your body is helpless for the duration."
+    },
+    {
+      "id": "gloss-of-the-forgotten",
+      "name": "Gloss of the Forgotten",
+      "category": "Unseen Hand",
+      "tags": [
+        "MEMORY"
+      ],
+      "dv": 4,
+      "effect": "You touch a document, ledger, or letter. The Weave blurs a single word or number. The reader will see a smudge and assume the ink was wet.",
+      "notes": "The Weave does not destroy evidence; it delays discovery."
+    },
+    {
+      "id": "phantom-footstep",
+      "name": "Phantom Footstep",
+      "category": "Unseen Hand",
+      "tags": [
+        "ILLUSION",
+        "AREA"
+      ],
+      "dv": 3,
+      "effect": "You create the sound of footsteps moving away from you—down a corridor, up a stair, into a crowd. A pursuer will follow the sound.",
+      "notes": "For a few heartbeats, they will be looking in the wrong direction."
+    },
+    {
+      "id": "ember-dart",
+      "name": "Ember Dart",
+      "category": "Elemental",
+      "tags": [
+        "BURNING",
+        "STRIKE"
+      ],
+      "dv": 3,
+      "effect": "A bolt of concentrated heat flies from the caster's hand toward a single target within Near range. It sears cloth, singes skin, and spoils uncovered food.",
+      "notes": "Lethal? No. Distracting? Very."
+    },
+    {
+      "id": "rising-mist",
+      "name": "Rising Mist",
+      "category": "Elemental",
+      "tags": [
+        "WATER",
+        "AREA"
+      ],
+      "dv": 3,
+      "effect": "A thick, cool fog billows from a point the caster chooses, filling a Near zone within Near range. Vision beyond a few paces is impossible.",
+      "notes": "The fog persists for a few heartbeats, then dissipates. The Weave does not appreciate stasis."
+    },
+    {
+      "id": "stone-grip",
+      "name": "Stone Grip",
+      "category": "Elemental",
+      "tags": [
+        "EARTH",
+        "BIND"
+      ],
+      "dv": 3,
+      "effect": "Stone or packed earth beneath a target's feet softens, then hardens. The target's ankles are held fast.",
+      "notes": "A strong pull may break the bond. A wise target does not struggle."
+    },
+    {
+      "id": "sudden-gale",
+      "name": "Sudden Gale",
+      "category": "Elemental",
+      "tags": [
+        "AIR",
+        "FORCE"
+      ],
+      "dv": 3,
+      "effect": "A blast of wind erupts from the caster's palm, pushing a single target one range band away from the caster.",
+      "notes": "The Weave does not guarantee grace."
+    },
+    {
+      "id": "storm-spark",
+      "name": "Storm Spark",
+      "category": "Elemental",
+      "tags": [
+        "STORM",
+        "STRIKE"
+      ],
+      "dv": 3,
+      "effect": "A thin line of lightning jumps from the caster's finger to a metal object within Near range. The object becomes briefly hot. A creature holding it marks 1 Fatigue.",
+      "notes": "The crack of thunder is audible for a considerable distance."
+    },
+    {
+      "id": "rippling-step",
+      "name": "Rippling Step",
+      "category": "Elemental",
+      "tags": [
+        "WATER",
+        "LEAP"
+      ],
+      "dv": 4,
+      "effect": "The caster dissolves into a spray of droplets and reforms within Near range at a location they can see. Passing through grates or under doors is possible.",
+      "notes": "The Weave does not clean the caster's clothes. Dangerous tag."
+    },
+    {
+      "id": "dust-veil",
+      "name": "Dust Veil",
+      "category": "Elemental",
+      "tags": [
+        "EARTH",
+        "VEIL"
+      ],
+      "dv": 3,
+      "effect": "A cloud of fine dust rises around the caster, obscuring their exact position. Attacks against the caster suffer uncertainty.",
+      "notes": "The dust settles quickly. The caster's cough is not magical."
+    },
+    {
+      "id": "cinder-breath",
+      "name": "Cinder Breath",
+      "category": "Elemental",
+      "tags": [
+        "BURNING",
+        "AREA"
+      ],
+      "dv": 3,
+      "effect": "The caster exhales a cone of hot ash and cinders. Everyone in Close range before them must shield their eyes or suffer the distraction.",
+      "notes": "The caster's throat will be sore for an hour."
+    },
+    {
+      "id": "tremor-tap",
+      "name": "Tremor Tap",
+      "category": "Elemental",
+      "tags": [
+        "EARTH",
+        "WAVE"
+      ],
+      "dv": 3,
+      "effect": "The caster strikes the ground with their foot or a staff. A ripple of motion travels through the earth, knocking creatures in a Close line off balance.",
+      "notes": "The Weave amplifies the tap but does not aim."
+    },
+    {
+      "id": "threshold-step",
+      "name": "Threshold Step",
+      "category": "Dangerous",
+      "tags": [
+        "LEAP"
+      ],
+      "dv": 4,
+      "effect": "The caster vanishes and reappears anywhere within Near range that they can see. A wall is still a wall. A closed door is still a door.",
+      "notes": "Dangerous tag. The Weave does not give you eyes on the other side."
+    },
+    {
+      "id": "fold-the-wall",
+      "name": "Fold the Wall",
+      "category": "Dangerous",
+      "tags": [
+        "FOLD",
+        "AREA"
+      ],
+      "dv": 5,
+      "effect": "The caster bends space around a single barrier—a wall, a hedge, a line of guards. They and anyone holding their hand step through to the other side.",
+      "notes": "Dangerous tag. The Weave complains about the extra passengers."
+    },
+    {
+      "id": "open-the-way",
+      "name": "Open the Way",
+      "category": "Dangerous",
+      "tags": [
+        "GATE"
+      ],
+      "dv": 5,
+      "effect": "The caster creates a shimmering portal between two locations they have visited. The portal lasts for three heartbeats.",
+      "notes": "Dangerous tag. The Weave charges a toll in memory—a fact, a name, a recent conversation. You will not notice the loss until you need it."
+    },
+    {
+      "id": "new-skin",
+      "name": "New Skin",
+      "category": "Dangerous",
+      "tags": [
+        "TRANSFORM",
+        "SELF"
+      ],
+      "dv": 5,
+      "effect": "The caster alters their own appearance. Face, build, voice—all change. The new face is not a specific person's; it is a plausible stranger.",
+      "notes": "Dangerous tag. The Weave does not forge documents."
+    },
+    {
+      "id": "turn-the-blade",
+      "name": "Turn the Blade",
+      "category": "Dangerous",
+      "tags": [
+        "TRANSFORM",
+        "STRIKE"
+      ],
+      "dv": 5,
+      "effect": "The caster touches a weapon. The weapon becomes a harmless object—a flower, a ribbon, a dead fish. The effect lasts for a few heartbeats.",
+      "notes": "Dangerous tag. The Weave's sense of humour is evident in the result."
+    },
+    {
+      "id": "coin-from-ash",
+      "name": "Coin from Ash",
+      "category": "Dangerous",
+      "tags": [
+        "CREATE"
+      ],
+      "dv": 4,
+      "effect": "The caster clenches their fist and opens it to reveal a single silver coin. The coin is real for one scene, then crumbles.",
+      "notes": "Dangerous tag. The Weave does not care about inflation."
+    },
+    {
+      "id": "call-the-wisp",
+      "name": "Call the Wisp",
+      "category": "Dangerous",
+      "tags": [
+        "SUMMON"
+      ],
+      "dv": 4,
+      "effect": "The caster whistles a specific note. A minor spirit—a wisp, a shade, a house-brownie—appears within Near range.",
+      "notes": "Dangerous tag. The spirit is not a servant. It may be bargained with. The Weave does not mediate."
+    },
+    {
+      "id": "speak-my-will",
+      "name": "Speak My Will",
+      "category": "Dangerous",
+      "tags": [
+        "DOMINATE",
+        "TARGET"
+      ],
+      "dv": 5,
+      "effect": "The caster speaks a single imperative—'Stop.' 'Kneel.' 'Sleep.'—and the target must resist or obey.",
+      "notes": "Dangerous tag. The Weave does not care about the morality of the command."
+    },
+    {
+      "id": "breath-returned",
+      "name": "Breath Returned",
+      "category": "Dangerous",
+      "tags": [
+        "REVIVE",
+        "TOUCH"
+      ],
+      "dv": 6,
+      "effect": "The caster touches a creature that has died within the last few heartbeats. The Weave reverses time locally. The creature lives.",
+      "notes": "Dangerous tag. Something else dies in their place. The Weave does not explain the accounting."
+    },
+    {
+      "id": "heal-harm",
+      "name": "Heal Harm (with Purify)",
+      "category": "Advanced",
+      "tags": [
+        "HEAL",
+        "PURIFY"
+      ],
+      "dv": 5,
+      "effect": "Restore 1 level of Harm (e.g., Harm 2 → 1). Also neutralises poison or disease.",
+      "notes": "Requires two actions; surcharge +2 DV."
+    },
+    {
+      "id": "fleet-step",
+      "name": "Fleet Step",
+      "category": "Advanced",
+      "tags": [
+        "AIR",
+        "HASTE",
+        "MOVE"
+      ],
+      "dv": 3,
+      "effect": "Double movement speed for one exchange.",
+      "notes": "Requires open area."
+    },
+    {
+      "id": "sleeps-gentle-touch",
+      "name": "Sleep's Gentle Touch",
+      "category": "Advanced",
+      "tags": [
+        "WATER",
+        "DREAM",
+        "COMMAND"
+      ],
+      "dv": 4,
+      "effect": "One target falls asleep (scene duration; Resist: Spirit+Resolve DV 2).",
+      "notes": "Harm wakes target. Dangerous if used in combat."
+    },
+    {
+      "id": "storms-fury",
+      "name": "Storm's Fury",
+      "category": "Advanced",
+      "tags": [
+        "AIR",
+        "STORM",
+        "AREA",
+        "FORCE"
+      ],
+      "dv": 6,
+      "effect": "30‑foot storm cloud; lightning strikes random targets (Harm 2).",
+      "notes": "Scene duration; reduces visibility. Dangerous tag (+2 DV)."
+    },
+    {
+      "id": "earths-tremor",
+      "name": "Earth's Tremor",
+      "category": "Advanced",
+      "tags": [
+        "EARTH",
+        "QUAKE",
+        "AREA"
+      ],
+      "dv": 5,
+      "effect": "20‑foot tremor; enemies test Body+Athletics (DV 3) or fall prone.",
+      "notes": "Destabilises structures; affects all in area."
+    },
+    {
+      "id": "wall-of-stone",
+      "name": "Wall of Stone",
+      "category": "Advanced",
+      "tags": [
+        "EARTH",
+        "BARRIER",
+        "FORTIFY"
+      ],
+      "dv": 4,
+      "effect": "Summon a 10‑foot stone wall. Provides cover; obstructs movement.",
+      "notes": "Scene duration; Integrity Timer 4."
+    },
+    {
+      "id": "flame-cloak",
+      "name": "Flame Cloak",
+      "category": "Advanced",
+      "tags": [
+        "FIRE",
+        "AREA",
+        "DEFEND"
+      ],
+      "dv": 4,
+      "effect": "Enemies –1 die to approach; caster +1 to defense vs. melee.",
+      "notes": "Two actions; creates difficult terrain."
+    },
+    {
+      "id": "teleport-self",
+      "name": "Teleport (Self)",
+      "category": "Advanced",
+      "tags": [
+        "AIR",
+        "FOLD"
+      ],
+      "dv": 4,
+      "effect": "Teleport self within Near range.",
+      "notes": "Dangerous tag (+2 DV). Leaves faint afterimage."
+    },
+    {
+      "id": "shield-of-air",
+      "name": "Shield of Air",
+      "category": "Advanced",
+      "tags": [
+        "AIR",
+        "DEFEND"
+      ],
+      "dv": 3,
+      "effect": "+1 die to next defense roll.",
+      "notes": "One use."
+    },
+    {
+      "id": "light",
+      "name": "Light",
+      "category": "Cantrip",
+      "tags": [
+        "LIGHT"
+      ],
+      "dv": 2,
+      "effect": "Create a small sustained light (torch‑brightness) for the scene.",
+      "notes": "No backlash risk; lasts until dismissed."
+    },
+    {
+      "id": "heal-cantrip",
+      "name": "Heal (Cantrip)",
+      "category": "Cantrip",
+      "tags": [
+        "HEAL"
+      ],
+      "dv": 2,
+      "effect": "Remove 1 Fatigue from yourself or a touched ally. Does not heal Harm.",
+      "notes": "Requires touch."
+    }
+  ],
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
 }

@@ -1,0 +1,481 @@
+{
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "data": [
+    {
+      "id": "pont-du-tithe",
+      "name": "Pont-du-Tithe",
+      "region": "acasia-broken-marches",
+      "type": "town",
+      "population": 1200,
+      "description": "A fortified toll bridge town where three charters and two claimants contest every crossing. The bridge's arches are golden, its chains blessed by rival bishops, and its taverns full of mercenaries and pilgrims.",
+      "factions": [
+        "margravine",
+        "free-companies",
+        "the-lame-king"
+      ],
+      "notable_features": [
+        "The Toll-Gate with its war-guild signs",
+        "The Chapel of the Broken Sun",
+        "The Drowned Inn (where the ninth cup is never poured)"
+      ]
+    },
+    {
+      "id": "lence",
+      "name": "Lence",
+      "region": "acasia-broken-marches",
+      "type": "city",
+      "population": 5000,
+      "description": "The ruined capital of Acasia, still bearing the scars of the Fenwood sack. Its shuttered mirrors and brambled gardens are now a mockery of a court, where petty lords play at kingship and the Hollow's curse lurks in every shadow.",
+      "factions": [
+        "margravine",
+        "the-lame-king",
+        "two-crowns"
+      ],
+      "notable_features": [
+        "Sun Palace (shuttered mirrors)",
+        "The Queen's Causeway",
+        "Parlement Hall with faded tapestries"
+      ]
+    },
+    {
+      "id": "blackwood",
+      "name": "Blackwood",
+      "region": "acasia-broken-marches",
+      "type": "village",
+      "population": 300,
+      "description": "A village in the heart of the Blackwood, where charcoalers and hedge-witches keep the old ways. The Matriarch of the Blackwood tends her feuds like a garden, and the trees whisper promises to those who dare listen.",
+      "factions": [
+        "blackwood-matriarchs"
+      ],
+      "notable_features": [
+        "Charcoalers' Hollow",
+        "The Witch-Post Circle",
+        "The Blackwood Matriarch's Keep"
+      ]
+    },
+    {
+      "id": "margravines-keep",
+      "name": "Margravine's Keep",
+      "region": "acasia-broken-marches",
+      "type": "fortress",
+      "population": 400,
+      "description": "A grim fortress of iron and stone, seat of the Margravine of the Broken March. Her levy is law, her ledger is judgment, and her tally-stick is her sword. The land around it is scorched and hollow.",
+      "factions": [
+        "margravine"
+      ],
+      "notable_features": [
+        "The Tally Hall",
+        "The Iron Hook's Court",
+        "The Sealed Vault (where the Curse is kept)"
+      ]
+    },
+    {
+      "id": "amadell",
+      "name": "Amedell",
+      "region": "aelaerem-hearth-hollow",
+      "type": "city",
+      "population": 8000,
+      "description": "The largest halfling settlement, a city of red doors, warm hearths, and hidden hollows. Every threshold is marked with a red thread; every guest-right is sacred. The Apple-Matron holds court in the cider-barns, and the Hollow walks just beyond the hedge.",
+      "factions": [
+        "apple-matron",
+        "lantern-wardens",
+        "mummers-captain"
+      ],
+      "notable_features": [
+        "The Red Door Market",
+        "The Moot Oak",
+        "The Cup-Mark Stones"
+      ]
+    },
+    {
+      "id": "thorn-grove",
+      "name": "Thorn Grove",
+      "region": "aelaerem-hearth-hollow",
+      "type": "village",
+      "population": 200,
+      "description": "A hamlet wrapped in hawthorn hedges, where the watch-geese know every stranger's step. The Miller of the Watch-Geese lives here, and the Hedge-Witch Midwife ties red thread to keep the Hollow at bay.",
+      "factions": [
+        "hedge-witch",
+        "miller"
+      ],
+      "notable_features": [
+        "The Watch-Geese Ponds",
+        "The Hedge-Witch's Cottage",
+        "The Cup-Mark Stone on the Verge"
+      ]
+    },
+    {
+      "id": "keisanki",
+      "name": "Keisanki",
+      "region": "aelinnel-stone-bough-bright-things",
+      "type": "city",
+      "population": 12000,
+      "description": "The gnomish capital, a living city of stone and bough where the architecture shifts with the tide and the Green Gate opens at unexpected hours. The Stone Prince's hall of Aelinnel sits at the heart, and the Thorn Court's hawthorns grow in every garden.",
+      "factions": [
+        "stone-prince",
+        "lady-of-thorns",
+        "green-knight"
+      ],
+      "notable_features": [
+        "The Hall of Aelinnel",
+        "The Green Gate Sea-Arch",
+        "The Root Gallery"
+      ]
+    },
+    {
+      "id": "tide-gate-arch",
+      "name": "Tide-Gate Arch",
+      "region": "aelinnel-stone-bough-bright-things",
+      "type": "waystation",
+      "population": 80,
+      "description": "A threshold settlement built around the sea-arch that opens at certain tides. Traders and fae bargain here, and the counting-songs of the gnomes keep the gate from wandering.",
+      "factions": [
+        "stone-prince",
+        "lady-of-thorns"
+      ],
+      "notable_features": [
+        "The Sea-Arch",
+        "The Tide-Warden's Hut",
+        "The Counting-Stones"
+      ]
+    },
+    {
+      "id": "ecktoria",
+      "name": "Ecktoria City",
+      "region": "ecktoria",
+      "type": "city",
+      "population": 25000,
+      "description": "The heart of the old Utaran empire, now a marble-clad capital of bureaucratic splendour and fading glory. The Everflame burns eternally in its basilicas; the Grand Magistrate rules from the Amber Palace; and the Censorate's clerks redact history with quills dipped in ash.",
+      "factions": [
+        "grand-magistrate",
+        "everflame",
+        "censorate"
+      ],
+      "notable_features": [
+        "The Amber Palace",
+        "The Triumph Stairs",
+        "The Censor's Archives",
+        "The Forum of Marble Echoes"
+      ]
+    },
+    {
+      "id": "amber-palace",
+      "name": "The Amber Palace",
+      "region": "ecktoria",
+      "type": "palace",
+      "population": 2000,
+      "description": "The seat of imperial authority, a sprawling complex of courts, corridors, and sealed chambers. The Grand Magistrate holds court here, and the Everflame's censers never cool.",
+      "factions": [
+        "grand-magistrate",
+        "everflame"
+      ],
+      "notable_features": [
+        "The Throne Hall",
+        "The Catacomb Archive",
+        "The Everflame Basilica"
+      ]
+    },
+    {
+      "id": "lence-vhasia",
+      "name": "Lence (Vhasia)",
+      "region": "vhasia",
+      "type": "city",
+      "population": 7000,
+      "description": "The shattered capital of Vhasia, still claiming the Sun Court despite its ruin. The Sun Palace stands with covered mirrors; courtiers play at kingship while the Queen-Mother weaves alliances from the west.",
+      "factions": [
+        "queen-mother",
+        "two-crowns",
+        "marshal-exile"
+      ],
+      "notable_features": [
+        "The Sun Palace",
+        "The Parlement Hall",
+        "The Queen's Causeway"
+      ]
+    },
+    {
+      "id": "ethor",
+      "name": "Ethor",
+      "region": "vhasia",
+      "type": "city",
+      "population": 4000,
+      "description": "The western duchy where the Queen-Mother holds court, a riverside keep of bargains and secrets. She weaves alliances from here, and the Dauphin—real or false—hides within its walls.",
+      "factions": [
+        "queen-mother"
+      ],
+      "notable_features": [
+        "The Keep of the Broken Vow",
+        "The Secret Nursery",
+        "The Cantor's Gallery"
+      ]
+    },
+    {
+      "id": "adria",
+      "name": "Adria",
+      "region": "vhasia",
+      "type": "city",
+      "population": 5000,
+      "description": "The seat of Duke Valdais Longblood, the western claimant to the Sun Crown. A tournament city of gleaming lances and hidden poison, where chivalry is a thin veneer over ambition.",
+      "factions": [
+        "valdais-longblood"
+      ],
+      "notable_features": [
+        "The Tilt-Yard",
+        "The Duke's Hall",
+        "The Memory of Lence Shrine"
+      ]
+    },
+    {
+      "id": "valora",
+      "name": "Valora",
+      "region": "viterra",
+      "type": "city",
+      "population": 15000,
+      "description": "The capital of Viterra, a city of hedges and law, where the Queen's Justiciars ride and the Dawn-Knights patrol. The Hall of Dawning is its heart, and the Law Quarter hums with writs and seals.",
+      "factions": [
+        "warrior-queen",
+        "queens-justiciar",
+        "fen-reeves"
+      ],
+      "notable_features": [
+        "The Hall of Dawning",
+        "The Law Quarter",
+        "The Queen's Progress Camp"
+      ]
+    },
+    {
+      "id": "tarlington",
+      "name": "Tarlington",
+      "region": "viterra",
+      "type": "town",
+      "population": 3000,
+      "description": "A border town on the Belworth, where Vhasian claims and Viterran hedge-law meet. The counting fields are its lifeblood, and the tally-rooms are its courtrooms.",
+      "factions": [
+        "fen-reeves",
+        "queens-justiciar"
+      ],
+      "notable_features": [
+        "The Counting Fields",
+        "The Hedge-Moot Green",
+        "The Fen Causeway"
+      ]
+    },
+    {
+      "id": "midh-kakorum",
+      "name": "Midh-Kakorum",
+      "region": "ykrul",
+      "type": "camp-city",
+      "population": 10000,
+      "description": "The mobile capital of the Ykrul Khaganate, a vast ring of felt tents and horse-lines that moves with the seasons. The Khagan's station is its heart, and the hostage strings are its law.",
+      "factions": [
+        "khagan",
+        "khatun-of-ring",
+        "sky-speaker"
+      ],
+      "notable_features": [
+        "The Khagan's Ger",
+        "The Hostage String Line",
+        "The Bone-Singer's Circle"
+      ]
+    },
+    {
+      "id": "iron-grass-camp",
+      "name": "Iron Grass Camp",
+      "region": "ykrul",
+      "type": "camp",
+      "population": 2000,
+      "description": "A winter camp of the Eastern Ykrul, hard and frost-bitten, where the Kuvani clans are watched warily. The cold is deep, and the feuds are colder.",
+      "factions": [
+        "eastern-khatun",
+        "bone-singer"
+      ],
+      "notable_features": [
+        "The Frost-Reed Circle",
+        "The Salt Pan Shrine",
+        "The Wolf-Pact Cairn"
+      ]
+    },
+    {
+      "id": "silkstrand",
+      "name": "Silkstrand",
+      "region": "silkstrand",
+      "type": "city",
+      "population": 20000,
+      "description": "The City of Bridges and Dyewater, a mercantile metropolis of canals, condottas, and debt. The Matron rules from her palazzo, and the dyers' guilds hold the real power. The curse of the dyewater is always a breath away.",
+      "factions": [
+        "matron",
+        "dyers-guild",
+        "night-boat-smugglers"
+      ],
+      "notable_features": [
+        "The Dye District",
+        "The Exchange Hall",
+        "The Velvet Court",
+        "The Crooked Canal"
+      ]
+    },
+    {
+      "id": "bell-haven",
+      "name": "Bell-Haven",
+      "region": "mistlands",
+      "type": "town",
+      "population": 800,
+      "description": "A mist-wrapped settlement of ward-salt and bell-lines, clinging to the edge of the Direwood. The bell-wardens are the law, and the salt-monks guard the roads.",
+      "factions": [
+        "bell-wardens",
+        "salt-monks",
+        "legate-of-mists"
+      ],
+      "notable_features": [
+        "The Bell-Tower",
+        "The Salt-Works",
+        "The Gray Pilgrim's Hospice"
+      ]
+    },
+    {
+      "id": "thepyrgos",
+      "name": "Thepyrgos",
+      "region": "thepyrgos",
+      "type": "city",
+      "population": 30000,
+      "description": "The City of a Thousand Stairs, centre of learning and faith. The Synod debates in the Great Library, the Chain-Lanterns patrol the docks, and the Lighthouse-Patriarch watches from the highest tower.",
+      "factions": [
+        "synod",
+        "chain-lanterns",
+        "archon"
+      ],
+      "notable_features": [
+        "The Great Library",
+        "The Lighthouse Tower",
+        "The Unfinished Stair",
+        "The Palkar Garrison"
+      ]
+    },
+    {
+      "id": "galania",
+      "name": "Galania",
+      "region": "thepyrgos",
+      "type": "town",
+      "population": 3000,
+      "description": "A riverside town of scholars and pilgrims, where the Covenant of Mykkiel has a strong presence. The grand ledger is kept here, and the courts are always in session.",
+      "factions": [
+        "covenant",
+        "synod"
+      ],
+      "notable_features": [
+        "The Covenant Court",
+        "The Abbey of the Seal",
+        "The Ferry of Precedent"
+      ]
+    },
+    {
+      "id": "torhaven",
+      "name": "Torhaven",
+      "region": "ubral",
+      "type": "village",
+      "population": 400,
+      "description": "A highland village of stone and heather, where the Lady of Tor holds sway and the Council of Cairns judges disputes. Guest-right is sacred, and feuds run deep.",
+      "factions": [
+        "lady-of-tor",
+        "council-of-cairns"
+      ],
+      "notable_features": [
+        "The Cairn of Names",
+        "The Guest-House of the Broken Sword",
+        "The Dwarf Toll Road"
+      ]
+    },
+    {
+      "id": "hazel-court",
+      "name": "Hazel Court",
+      "region": "valewood",
+      "type": "fae-court",
+      "population": 2000,
+      "description": "The court of the Hazel Queen, a living grove of leaf and law. Its arches are living boughs, its judgments are sung, and its guests are bound by every word.",
+      "factions": [
+        "hazel-queen",
+        "huntsman"
+      ],
+      "notable_features": [
+        "The Throne-Bower",
+        "The Rooted Amphitheater",
+        "The Star-Road Shard"
+      ]
+    },
+    {
+      "id": "alder-court",
+      "name": "Alder Court",
+      "region": "valewood",
+      "type": "fae-court",
+      "population": 1500,
+      "description": "The shadowed court of the Alder King, where promises grow like thorns and debts are collected with interest. It lies beneath a canopy of eternal dusk.",
+      "factions": [
+        "alder-king"
+      ],
+      "notable_features": [
+        "The Thorn-King's Throne",
+        "The Tomb of Unspoken Names",
+        "The Gate of Falling Leaves"
+      ]
+    },
+    {
+      "id": "zakov",
+      "name": "Zakov",
+      "region": "zakov",
+      "type": "city",
+      "population": 25000,
+      "description": "The pirate-city built on the drowned bones of an Astroegro port. Its streets are piers, its courts are taverns, and its ruler is whoever the Syndicates fear most this season. The Reaping's crystal hum under the keel.",
+      "factions": [
+        "salt-prince",
+        "pirate-queen",
+        "syndicate-silent",
+        "krakens-tongue"
+      ],
+      "notable_features": [
+        "The Crimson Docks",
+        "The Sunken Quarter",
+        "The Serpent's Spine Reef",
+        "The Dregs Quarter",
+        "The Salt Prince's Palace"
+      ]
+    },
+    {
+      "id": "kassamira",
+      "name": "Kassamira",
+      "region": "kahfagia-creole-thalassocracy",
+      "type": "city",
+      "population": 18000,
+      "description": "The capital of Kahfagia, a creole port of mirror-towers and beacon-laws. The Admiralty of Lantern-Law rules the tides, but the Shadow Council of oligarchs holds the true power.",
+      "factions": [
+        "admiralty",
+        "oligarchs",
+        "mirror-keepers"
+      ],
+      "notable_features": [
+        "The Admiralty Quay",
+        "The Mirror Tower",
+        "The Red Shoal",
+        "The Lantern Alley"
+      ]
+    },
+    {
+      "id": "aeler-hold",
+      "name": "Aeler Hold",
+      "region": "aeler-crowns-under-vaults",
+      "type": "city",
+      "population": 12000,
+      "description": "A vast underground dwarven city, carved from living stone and lit by eternal forges. The Vault-Queen rules from the deepest hall, and the True Masons maintain the ancient stonework.",
+      "factions": [
+        "vault-queen",
+        "true-masons",
+        "high-king-beneath-peaks"
+      ],
+      "notable_features": [
+        "The Spine Underway",
+        "The Forge-Keep",
+        "The Deep Vaults",
+        "The Breath-Warden's Post"
+      ]
+    }
+  ]
+}

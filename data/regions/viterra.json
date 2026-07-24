@@ -1,0 +1,897 @@
+{
+  "id": "viterra-hedge-law-realm",
+  "version": "1.0.0",
+  "type": "generator",
+  "title": "Viterra — The Hedge-Law Realm",
+  "label": "chap:viterra",
+  "key_demographic": "Lethai-al",
+  "capital": "Valora",
+  "manifest_path": "/data/docs/manifest.json",
+  "overview": {
+    "tagline": "Every hedge is a boundary. Every boundary is a claim. Every claim is a blade.",
+    "genre": "Post-imperial consolidation, legal warfare as blood sport, border adventurism, fragile crown haunted by fratricide.",
+    "mood": "The Queen's Long Shadow",
+    "starting_location": "The Hall of Dawning tilt-yard at first light. Dawn-knights drill in armor polished like mirrors—each dent a story from last week's legal duel. Beside them, advocates rehearse arguments with the same intensity, palms slick on pommels. A Queen's Justiciar slides a parchment across an oaken rail, her seal ring catching the dawn. 'Three charters, one road across the Belworth. The Vhasian claimant says the bridge is theirs. The local reeve says it's crown land. The abbey says it's a pilgrimage, not a toll. Carry the Queen's writ, break the Quiet Tolls, and make them agree—by clause or by cut. The Earls are watching, and the Queen has only just secured the throne. Fail, and you'll give her enemies the excuse they need: that she is still Fenwood's bloody handmaiden, not Viterra's queen.'",
+    "lore": {
+      "history": "Viterra is a kingdom learning to stand alone after throwing off the Utaran yoke. Once a proud realm before the legions came, it never forgave the empire. Its hedge-laws and parish courts preserved a stubborn identity that parchment and wax could never erase. Now, under the young Warrior Queen Veralyn Everblood—ward of the Fenwood dukes, veteran of the sack of Lence, and still Duchess of Aberiel in Vhasia—Viterra is trying to remember what it means to rule itself. But the crown is not secure. Veralyn took the throne only after the sudden death of her brother, King Baldwyn Brightstide, whose two-year reign ended in a swift, mysterious illness. Rumors whisper it was Fenwood's doing, to clear the path for *their* claim. His death was a wound the kingdom has not healed. The northern earls, descendants of old hill-kings, watched for a misstep that proved she was still Fenwood's instrument. Some of them secretly funded the fanatics who killed her father, Wyllmot, five years earlier—a betrayal she has just finished rooting out with steel and statute. The eastern barons, who expected greater spoils from the Lence campaign because she was the Fenwood duke's ward, now grumble that she has rewarded loyalty to the crown, not to the sword. Every spring, the Queen's justiciars ride west with warrants. Every autumn, Vhasian routiers raid the grain convoys. The border is not a line on a map. It is an argument. And the Queen intends to win it—even if she must become the thing she swore to leave behind.",
+      "first_notice": "The smell of damp parchment laced with old iron. The clatter of writ-runners' boots on blood-soaked cobblestones. The way every noble's hand rests on a seal ring worn thin from constant gripping—and every commoner's hand rests on a hatchet notched with Vhasian blood.",
+      "rule_that_kills": "Never cross the Belworth without a charter recognized on both banks. Viterran law and Vhasian claim fight every crossing, and the river takes the losers—sometimes still clutching a forged writ to their chest."
+    },
+    "entanglements": {
+      "west": "Vhasia — The Belworth River is a border written in blood; chevauchée raids are a seasonal plague. The Queen's justiciars ride west every spring.",
+      "east": "The Dolmis Sea — Theona and Zakov are reachable by sea; the Queen's navy is small but fierce. The hedge-law does not extend past the tide line.",
+      "north": "Ubral — The highland clans owe no allegiance to the crown; tax collectors go armed. The Queen's writ is respected only where her knights ride.",
+      "south": "Thepyrgos — The Black River marks the boundary of Synod law; fugitives cross both ways. A Viterran warrant is kindling in Thepyrgos, and vice versa.",
+      "theona": "Eastern Viterran earls clamor to dominate the isles; the Abbess plays a dangerous game."
+    }
+  },
+  "quotes": [
+    {
+      "speaker": "Queen Veralyn Everblood (Elite)",
+      "text": "I was Fenwood's ward when I was sixteen. I took Lence's walls for him. I made the Vhasian Sun-court run red. Now I sit on a throne built of precedents—and I keep a dagger under my pillow. The hedge that is not defended is only a suggestion. The law that is not enforced is only a memory. I will have both remembered. But sometimes I wonder which hand shakes more when I seal a charter: the queen's, or the enforcer's."
+    },
+    {
+      "speaker": "Fen Reeve Cuthbert (Commoner)",
+      "text": "Barons to the west with blood on their hands, Earls to the east shapenin' their knives... Witches to the south and Dukes everywhere, laws everywhere. I keep my nose down, count my sheep, pay my tax, and obey my lord. That's enough for me."
+    }
+  ],
+  "ninth_taboo": {
+    "title": "The Ninth Taboo Manifestation",
+    "description": "In any Viterran court, the ninth citation of precedent voids all previous citations. The wise stop at eight and settle out of court. Those who cite the ninth are said to hear faint laughter from the marble walls—and their cases are never heard again. Some say the laughter is Baldwyn Brightstide's, still judging from the shadow of the throne. The ninth witness called to a hedge-moot is always a ghost. The wise stop at eight. Those who call a ninth find that the ghost speaks the truth—but the truth is always the worst possible version, and the living witnesses remember it as their own. The hedges themselves are full of these truths."
+  },
+  "npcs": [
+    {
+      "name": "Queen Veralyn Everblood",
+      "role": "Warrior Queen of Viterra",
+      "motivation": "Securing a contested throne through law and blade; haunted by her dead brother's shadow, her Fenwood upbringing, and the knowledge that northern gold paid for her father's murder.",
+      "quirk": "Sleeps with a dagger under her pillow. Her crown has no jewels—only seals from conquered claims, each one cold to the touch. Still signs some charters as Duchess of Aberiel, a Vhasian title she refuses to surrender."
+    },
+    {
+      "name": "Justiciar Elodie Venn",
+      "role": "Queen's Justiciar",
+      "motivation": "Raised from the fen marshes; defeats opponents legally and socially, leaving them ashamed.",
+      "quirk": "Carries a writ signed in Baldwyn Brightstide's blood as a lucky charm; has never lost a duel."
+    },
+    {
+      "name": "Baron Aldric",
+      "role": "Disgraced turncloak",
+      "motivation": "Stripped for oath-breaking during the succession crisis; patrols the northern marches to prove he still bleeds Viterran.",
+      "quirk": "Wears his stripped baron's belt as a sash; speaks only in legal precedent when agitated."
+    },
+    {
+      "name": "Ser Roran",
+      "role": "Knight of the Queen's household",
+      "motivation": "A Vhasian prisoner ransomed by the Queen; serves out of loyalty, not obligation.",
+      "quirk": "Never takes ransom. His left gauntlet is silver, etched with the Vhasian sun he once served."
+    },
+    {
+      "name": "Fen Reeve Cuthbert",
+      "role": "Keeper of the dike guilds",
+      "motivation": "Measures floods to atone for Fenwood sins and to ensure the Queen's tax men do not drown in the same waters that took Lence.",
+      "quirk": "Tally-rod notches from three floods; the next may be from a Vhasian raid he let pass to test the Queen's resolve."
+    },
+    {
+      "name": "Master Advocate Halric",
+      "role": "Legal duelist",
+      "motivation": "Believes law is the only true weapon left; refuses succession sides, making everyone suspect him of playing both ends.",
+      "quirk": "Has argued cases in Vhasian, Thepyrgos, and Ubral courts—and won all three using their own precedents against them."
+    },
+    {
+      "name": "Sister Oria",
+      "role": "Custodian of the Lantern-Rites House",
+      "motivation": "Keeps the old ways alive on the border; her threshold confuses ill intent.",
+      "quirk": "Has never drawn a blade; keeps a bowl of Vhasian tears by her door."
+    },
+    {
+      "name": "Earl Morcar of the North",
+      "role": "Leader of the northern earls",
+      "motivation": "Recently forced to kneel after his levy was shattered at the Fenmoor; now watches for any sign that the Queen's resolve is softening.",
+      "quirk": "Carries a shard of Lence's cathedral glass in his pommel; whispers to it before every moot. Secretly funded the fanatics who killed King Wyllmot."
+    }
+  ],
+  "names": {
+    "first_male": [
+      "Baldwyn",
+      "Cuthbert",
+      "Roran",
+      "Morcar",
+      "Leofric",
+      "Ghiro"
+    ],
+    "first_female": [
+      "Veralyn",
+      "Elodie",
+      "Oria",
+      "Aelfwyn",
+      "Celandine",
+      "Svanhild"
+    ],
+    "surnames": [
+      "Everblood",
+      "Fenwood",
+      "of the Scar",
+      "de la Marche",
+      "l'Argent",
+      "Riven"
+    ],
+    "epithets": [
+      "the Law-Giver",
+      "the Unbuckled",
+      "Bell-Sworn",
+      "the Hedge-Wise",
+      "the Silent",
+      "Ash-Banner"
+    ]
+  },
+  "player_hooks": {
+    "description": "The Hedge-Law Realm is about legal warfare, border disputes, and royal legitimacy. A party in Viterra will most often:",
+    "activities": [
+      "Resolve legal disputes between crown law, hedge-law, and Vhasian claims, often through duels or hedge-moots.",
+      "Navigate the Queen's fragile authority, choosing sides between the Crown, the northern earls, and the eastern barons.",
+      "Investigate the Succession's Shadow—the death of King Baldwyn Brightstide, the secret funding of King Wyllmot's murder, and Earl Morcar's ambitions.",
+      "Defend the border against Vhasian routiers, Ubral raiders, and the ever-present threat of the Belworth's claims."
+    ],
+    "key_hooks": [
+      "Three charters, one road across the Belworth. Which claimant will you support?",
+      "Earl Morcar of the North has been humbled. He is waiting for a misstep.",
+      "The Queen's crown has no jewels—only seals from conquered claims. She will not surrender her Vhasian title."
+    ]
+  },
+  "places": [
+    {
+      "rank": 2,
+      "suit": "spade",
+      "title": "Fen Causeway",
+      "subtitle": "[LAW] [TRADE]",
+      "description": "Stile with toll-rod and eel carts queueing; each reeve claims right under a different charter. Dueling advocates argue on platforms slick with river-mist.",
+      "flavor": "The causeway sinks an inch each year. The lawyers argue over whose fault it is—and whether the sinking is a sign from Lence's drowned kings.",
+      "mechanical_hook": "Crossing requires a valid charter or a successful Wits+Sway (DV 4). Failure starts a Border Snarl complication."
+    },
+    {
+      "rank": 3,
+      "suit": "spade",
+      "title": "Hedgerow Green",
+      "subtitle": "[LAW] [COMBAT]",
+      "description": "In the Dales; bows strung under apple trees where justices of the peace hold court beneath makeshift arbors. Court duels permitted for matters of honor and old scores.",
+      "flavor": "The apple tree is called 'the Hanging Judge.' Its fruit tastes of iron—not from the soil, but from the Vhasian claimant hanged from its branches for poaching Queen's deer.",
+      "mechanical_hook": "Legal duels may be fought here; the tree's fruit grants +1 die to Resolve tests if eaten before a duel."
+    },
+    {
+      "rank": 4,
+      "suit": "spade",
+      "title": "Beacon Hill",
+      "subtitle": "[AUTHORITY] [TRAVEL]",
+      "description": "Above the Highlands; fire-grate still warm from last winter's levy call, signal tower with semaphore arms for legal dispatches and military alerts.",
+      "flavor": "The hill has three beacons. One for Ubral raids. One for Vhasian incursions. One for paperwork—lit when the Queen's justiciars are lying.",
+      "mechanical_hook": "Lighting a beacon grants a travel advantage (one automatic success on navigation), but alerts all factions in the region."
+    },
+    {
+      "rank": 5,
+      "suit": "spade",
+      "title": "Belworth Stairs",
+      "subtitle": "[LAW] [TRAVEL]",
+      "description": "Ferry ledgers gone damp with river-mist; three manors claim toll rights, writs in three different hands.",
+      "flavor": "The stairs were repaired last year. The Vhasian side uses a different measurement—and a different kind of truth.",
+      "mechanical_hook": "Crossing requires navigating a legal maze; a successful Wits+Lore (DV 5) finds the correct charter."
+    },
+    {
+      "rank": 6,
+      "suit": "spade",
+      "title": "Bloom Quarry",
+      "subtitle": "[CRAFT] [AUTHORITY]",
+      "description": "Old iron-bloom turned drill yard; hammer echoes carry like war drums. Military contracts awarded through legal bidding wars.",
+      "flavor": "The forge-reeve has never lost a contract. His opponents have a habit of vanishing the night before the bid—leaving only their seals behind, still warm.",
+      "mechanical_hook": "Gaining a contract requires a successful Presence+Sway (DV 4) to outbid rivals or a legal duel to claim it."
+    },
+    {
+      "rank": 7,
+      "suit": "spade",
+      "title": "Parish Maze",
+      "subtitle": "[LAW] [RIDDLE]",
+      "description": "Stone maze where three maps disagree; hedge-priest's vote decides tithe and freehold. Legal disputes settled by navigating correctly—or accepting the priest's blessing.",
+      "flavor": "The maze changes at night. The hedge-priest says that's God's will—and the lawyers say that's when the Vhasian smugglers move their goods.",
+      "mechanical_hook": "Navigating the maze requires Wits+Lore (DV 4); success grants a legal ruling, failure starts a Map Correction reward."
+    },
+    {
+      "rank": 8,
+      "suit": "spade",
+      "title": "Fairport Works",
+      "subtitle": "[TRADE] [AUTHORITY]",
+      "description": "Tideworks at the Dolmis mouth; customs writs in three languages flutter like wounded birds. Maritime law enforcement includes boarding actions where the Queen's men find Vhasian coins stamped with Viterran seals.",
+      "flavor": "One language is Utaran. One is Linn. One is for the smugglers—written in salt and silence.",
+      "mechanical_hook": "Customs enforcement is strict; a successful Wits+Stealth (DV 4) can smuggle goods past. Failure may start a Delta Spat."
+    },
+    {
+      "rank": 9,
+      "suit": "spade",
+      "title": "Law Quarter",
+      "subtitle": "[LAW] [KNOWLEDGE]",
+      "description": "Valora archives, oath-rooms, Hall of Dawning where precedent is birthed in ink and sealed with wax. Adjacent training grounds for legal advocates who practice strikes on pells wrapped in old charters.",
+      "flavor": "The archives have a locked wing. The key is a legal argument no one has won—and no one dares to lose.",
+      "mechanical_hook": "Researching a precedent requires Wits+Lore (DV 4); success grants a one-time +1 die to any legal roll."
+    },
+    {
+      "rank": 10,
+      "suit": "spade",
+      "title": "Counting Fields",
+      "subtitle": "[AUTHORITY] [LABOR]",
+      "description": "Tarlington beside muster ground; wagons load, ledgers mis-sum—sometimes from Vhasian poison slipped into the ink by desperate clerks. Auditors with quill-pens sharp as daggers.",
+      "flavor": "The auditors carry swords. They say it's for counting cattle. No one asks further—but they watch the hands that hold the pens.",
+      "mechanical_hook": "Audits are frequent; a successful Presence+Sway (DV 4) can deflect scrutiny. Failure may start an Audit Freeze."
+    },
+    {
+      "rank": 11,
+      "suit": "spade",
+      "title": "Dike Crown",
+      "subtitle": "[COMMUNITY] [LAW]",
+      "description": "Ring of turf and timber; brotherhood bells warn of flood and spies who move like water through the fen. Legal sanctuary for those fleeing court judgments—if they can outrun the reeve's wrath.",
+      "flavor": "The sanctuary lasts for one tide. After that, the reeves can come—if they can find you before the Vhasian raiders do.",
+      "mechanical_hook": "Sanctuary lasts one scene; after that, the party must leave or face a levy call."
+    },
+    {
+      "rank": 12,
+      "suit": "spade",
+      "title": "Progress Camp",
+      "subtitle": "[AUTHORITY] [SOCIAL]",
+      "description": "Queen's canvas palisade, banners stiff. Old courtiers plot advancement through legal maneuver and sanctioned duels—each bout a test of whether the throne is steel or silk.",
+      "flavor": "The camp moves every week. The lawsuits follow at a measured pace—each one a step closer to the Queen proving she is more than Fenwood's shadow.",
+      "mechanical_hook": "Gaining the Queen's ear requires a successful audience (Presence+Sway DV 5) or a legal duel in her presence."
+    },
+    {
+      "rank": 13,
+      "suit": "spade",
+      "title": "Tilt-Yard",
+      "subtitle": "[COMBAT] [LAW]",
+      "description": "Hall of Dawning at first light; Dawn-knights drill clean, loyalties in contracts signed with careful pen. Legal challenges often end in trial by combat.",
+      "flavor": "The sand is raked between duels. Sometimes the rake turns up old blood—or old oaths sworn on dying breath.",
+      "mechanical_hook": "Legal duels here are binding; the winner's legal argument is automatically accepted for one season."
+    },
+    {
+      "rank": 14,
+      "suit": "spade",
+      "title": "Highway Stone",
+      "subtitle": "[AUTHORITY] [TRAVEL]",
+      "description": "Queen's milestone above the Dolmis road; three sheriffs post seals over hers, each claiming different jurisdiction. Territory disputes resolved through armed arbitration.",
+      "flavor": "The stone has been broken and reglued seven times. Each crack holds a forgotten compromise.",
+      "mechanical_hook": "A successful Wits+Lore (DV 4) can expose a forged seal; failure may start a Border Snarl."
+    }
+  ],
+  "people_and_factions": [
+    {
+      "rank": 2,
+      "suit": "heart",
+      "title": "Fen Reeve",
+      "subtitle": "[AUTHORITY] [COMMUNITY]",
+      "description": "Tally-rod; speaks for dike guilds, remembers every flood-year's debts. Authorized to call local levies and levy blood-price if the papers do not add up.",
+      "flavor": "His tally-rod has notches from three floods. The next notch may be from a Vhasian raid he let happen to test the Queen's resolve.",
+      "what_they_carry": "Can grant a Dike Allotment (Diamond) or call a levy if crossed.",
+      "what_they_ask": "A promise to defend the dikes—and a blood-price if you break it."
+    },
+    {
+      "rank": 3,
+      "suit": "heart",
+      "title": "River Syndic",
+      "subtitle": "[TRADE] [STEALTH]",
+      "description": "Moves grain faster than rumor; knows which writs matter and which customs officials can be persuaded. Maintains armed merchant guards.",
+      "flavor": "His ledger has a watermark—a crown on one side, a sunburst on the other. He shows the right side to the right audience.",
+      "what_they_carry": "Can offer a River Charter (Diamond) for a price: 1 Supply or a favor.",
+      "what_they_ask": "A blind eye to his cargo—and a share of the profit."
+    },
+    {
+      "rank": 4,
+      "suit": "heart",
+      "title": "Parish Surveyor",
+      "subtitle": "[KNOWLEDGE] [LAW]",
+      "description": "Three maps, one opinion—but the opinion changes with the wind and the weight of a Vhasian coin. Hedge-walks settle more disputes than courts.",
+      "flavor": "His chain is exactly one rod long—but the rod changes length depending on who is paying.",
+      "what_they_carry": "Can provide a Map Correction (Diamond) for 1 Supply.",
+      "what_they_ask": "A favor—to be named when his current patron's writ expires."
+    },
+    {
+      "rank": 5,
+      "suit": "heart",
+      "title": "Dawn Quartermaster",
+      "subtitle": "[AUTHORITY] [LABOR]",
+      "description": "Ledgers sharper than tongue; counts every farthing spent in the Queen's name. Legal authority over military supplies—and over the Queen's hesitation when the books do not balance.",
+      "flavor": "He once tracked a missing farthing to a Vhasian counting house. It was returned with interest, and a note in Vhasian script: 'Next time, we take the whole sack.'",
+      "what_they_carry": "Can expedite supplies for 1 Supply.",
+      "what_they_ask": "A record of your expenses—and a promise to settle any discrepancy."
+    },
+    {
+      "rank": 6,
+      "suit": "heart",
+      "title": "Levy Serjeant",
+      "subtitle": "[COMBAT] [LAW]",
+      "description": "Dales bow calm, cider breath, memory keen for every loophole in the mustering laws. Commands armed civilians in legal enforcement actions.",
+      "flavor": "His bowstring is made from a canceled writ—one that promised peace and delivered only war. He says it shoots truer now.",
+      "what_they_carry": "Can call a levy (2 Supply) for one scene.",
+      "what_they_ask": "A writ of pardon for a previous levy crime."
+    },
+    {
+      "rank": 7,
+      "suit": "heart",
+      "title": "Cleric-Pair",
+      "subtitle": "[SOCIAL] [LAW]",
+      "description": "Light preacher versus Everflame canon lawyer; debates decide tithe law. Religious law carries weight in secular courts—because even kings fear a god who keeps score.",
+      "flavor": "They share a room at the inn. They have not spoken outside court in seven years—but they still pass the salt with care.",
+      "what_they_carry": "Can provide a legal ruling (one-time +1 die to any law roll) for 1 Supply.",
+      "what_they_ask": "A donation to their respective causes—and a promise to keep the peace."
+    },
+    {
+      "rank": 8,
+      "suit": "heart",
+      "title": "Fairport Shipwright",
+      "subtitle": "[CRAFT] [STEALTH]",
+      "description": "Dolmis cousins; skiff carries more secrets than cargo. Expert in maritime law and naval combat—where the truth is in the hold and the lie in the manifest.",
+      "flavor": "Her skiff has no name. The customs clerks have given it three—and each one is a different kind of truth.",
+      "what_they_carry": "Can smuggle goods past customs (Wits+Stealth DV 4) for 1 Supply.",
+      "what_they_ask": "A secret—and a promise to keep hers."
+    },
+    {
+      "rank": 9,
+      "suit": "heart",
+      "title": "Fenwood Comptroller",
+      "subtitle": "[AUTHORITY] [TRADE]",
+      "description": "Conjures wagons with a signature, silence with a seal. Tracks every debt owed to the crown. Legal authority over taxation—and over the Queen's guilt when the books do not balance.",
+      "flavor": "His quill is a dagger. He has used it as both—to write, and to remind himself what happens when the ink runs dry.",
+      "what_they_carry": "Can waive a debt or grant a Ducal Warrant (Diamond) for 2 Supply.",
+      "what_they_ask": "A favor—to be named when the Queen's accounts next fail to balance."
+    },
+    {
+      "rank": 10,
+      "suit": "heart",
+      "title": "Queen's Justiciar",
+      "subtitle": "[LAW] [AUTHORITY]",
+      "description": "Law on the road, polite as a noose. Bearing three kings' judgments and a purse full of pardons. Authorized to conduct trial by combat.",
+      "flavor": "She has never lost a legal duel. Her opponents have a tendency to fall down stairs—and then lie very still.",
+      "what_they_carry": "Can grant a Duel Sanction (Diamond) for 1 Supply or a service.",
+      "what_they_ask": "A pledge to uphold the Queen's peace—or a writ of challenge to a rival."
+    },
+    {
+      "rank": 11,
+      "suit": "heart",
+      "title": "Border Routier",
+      "subtitle": "[STEALTH] [TRADE]",
+      "description": "Reads ledgers as ambushes and writes them as tribute. Serves two crowns, collects from both. Expert in frontier law enforcement—where the ledger is often the first thing to burn.",
+      "flavor": "His loyalty is to the highest bidder. The Queen and the Vhasian claimant are currently in a bidding war—and the currency is lives.",
+      "what_they_carry": "Can provide safe passage through the Belworth for 1 Supply.",
+      "what_they_ask": "A bribe—or a name to add to his list."
+    },
+    {
+      "rank": 12,
+      "suit": "heart",
+      "title": "Warrior Queen",
+      "subtitle": "[AUTHORITY] [LAW]",
+      "description": "Crown on helm, sword at side; the weight is familiar. Final arbiter in legal duels—where she wins not by being right, but by being willing to go further.",
+      "flavor": "Her crown has no jewels—only seals. Each seal is a conquered claim, still warm from the hand that took it. Still signs some charters as Duchess of Aberiel, a reminder that she has not forgotten her Vhasian title.",
+      "what_they_carry": "Can grant a Queen's Audience (Diamond) for a significant service.",
+      "what_they_ask": "Unquestioning loyalty—and proof that her enemies are not your friends."
+    },
+    {
+      "rank": 13,
+      "suit": "heart",
+      "title": "Crown Council",
+      "subtitle": "[POLITICS] [LAW]",
+      "description": "Fenwood dukes, guild envoys, abbots; weighing grain against glory and the shadow of Baldwyn Brightstide against them all. Legal battles fought through proxy advocates.",
+      "flavor": "The council has a standing rule: no weapons within the chamber. The advocates have found seventeen loopholes—and eighteen reasons to break it.",
+      "what_they_carry": "Can grant a writ or a pardon for 2 Supply.",
+      "what_they_ask": "A vote—and a promise to honor the council's ruling."
+    },
+    {
+      "rank": 14,
+      "suit": "heart",
+      "title": "Master Advocate Halric",
+      "subtitle": "[LAW] [COMBAT]",
+      "description": "Silver-tongued legal warrior who settles disputes through verbal duels that can end in physical combat. Keeper of legal combat traditions.",
+      "flavor": "He has won cases in Vhasian, Thepyrgos, and Ubral courts using their own precedents—and their own blades when the words ran out.",
+      "what_they_carry": "Can issue or defend a legal challenge for 1 Supply.",
+      "what_they_ask": "A case worth winning—and a client who will not betray him."
+    }
+  ],
+  "complications": [
+    {
+      "rank": 2,
+      "suit": "club",
+      "title": "Dike Breach",
+      "subtitle": "[DISASTER] [LAW]",
+      "description": "Black-rain; the wrong reeve claims credit while wagons drown. The water carries peat and the ghost of Lence's last stand. Legal liability demands armed enforcement.",
+      "flavor": "The river argues back, carrying old deeds and screams downstream.",
+      "mechanical_hook": "The party must assist in flood relief or face a levy call; a successful Body+Athletics (DV 4) saves the cargo."
+    },
+    {
+      "rank": 3,
+      "suit": "club",
+      "title": "Feast Clash",
+      "subtitle": "[SOCIAL] [LAW]",
+      "description": "Light versus Everflame processions collide; shutters slam, writs fly. Justices of the peace called to settle which holy day takes precedence. Honor disputes may require legal duels.",
+      "flavor": "The processions take different routes now. The clash was not an accident—it was an invitation.",
+      "mechanical_hook": "The party must take a side or mediate; a successful Presence+Sway (DV 5) calms the crowd."
+    },
+    {
+      "rank": 4,
+      "suit": "club",
+      "title": "Quiet Tolls",
+      "subtitle": "[AUTHORITY] [TRAVEL]",
+      "description": "Sprout on the Queen's Highway. Escorts sniff traps laid by smugglers and the Queen's own doubts. Sheriffs argue rights; customs officials demand duties no one knew existed.",
+      "flavor": "The toll posts have fresh paint from a Vhasian claimant's keep—and it's still wet.",
+      "mechanical_hook": "Passing requires a valid charter or a successful Wits+Sway (DV 4) to bluff."
+    },
+    {
+      "rank": 5,
+      "suit": "club",
+      "title": "Audit Freeze",
+      "subtitle": "[AUTHORITY] [DEBT]",
+      "description": "Counting-house freezes cargo. The ink was slipped with Vhasian poison by desperate clerks. Queen's seal versus old writs; auditors with quill-pens sharp as daggers.",
+      "flavor": "The auditors work by candlelight. The shadows on the walls look like gallows.",
+      "mechanical_hook": "Cargo is held; a successful Presence+Sway (DV 5) can secure release, or a legal duel may be required."
+    },
+    {
+      "rank": 6,
+      "suit": "club",
+      "title": "Border Snarl",
+      "subtitle": "[LAW] [COMBAT]",
+      "description": "Three courts arrest the same hay-cart. It's not about the hay; it's about whose charter was signed with cleaner hands. Bribes flow like wine—and Vhasian silver. Frontier justice involves armed standoffs.",
+      "flavor": "The hay is from a field that was Vhasian last spring. Now it's Viterran. The field hasn't moved—but the souls working it have.",
+      "mechanical_hook": "The party must produce a valid charter or fight a legal duel; a successful Wits+Lore (DV 5) finds the correct document."
+    },
+    {
+      "rank": 7,
+      "suit": "club",
+      "title": "Isle Refusal",
+      "subtitle": "[POLITICS] [LAW]",
+      "description": "Theona withholds levy. The quays choke on rumor and the old curses the Three Greens mutter when Viterran boots touch their soil. Ships idle while lawyers debate maritime law.",
+      "flavor": "Theona's envoy carries a hawthorn branch—not of peace, but of warning.",
+      "mechanical_hook": "The party must negotiate with the Theonan envoy; a successful Presence+Sway (DV 5) secures passage."
+    },
+    {
+      "rank": 8,
+      "suit": "club",
+      "title": "Delta Spat",
+      "subtitle": "[TRADE] [LAW]",
+      "description": "Fairport versus Marcott customs. Barges stack three deep; merchants pick sides for old scores. Inspectors examine every manifest for truth or the Vhasian tell.",
+      "flavor": "The magnifying glasses reveal truth—and also start fires. Both are useful.",
+      "mechanical_hook": "Customs dispute; a successful Wits+Stealth (DV 4) can smuggle goods past, or a legal duel can settle the claim."
+    },
+    {
+      "rank": 9,
+      "suit": "club",
+      "title": "Routier Arrears",
+      "subtitle": "[DEBT] [COMBAT]",
+      "description": "A free-company flips unless someone pays. It's about the name on the ledger and whether it's written in Vhasian silver or Queen's trust. Legal debts enforced through hired swords.",
+      "flavor": "The routiers have a list. Your name is on it—or will be by sunset.",
+      "mechanical_hook": "The party must pay 2 Supply or face a routier attack; a successful Presence+Sway (DV 5) negotiates a delay."
+    },
+    {
+      "rank": 10,
+      "suit": "club",
+      "title": "Salt Pinch",
+      "subtitle": "[WEATHER] [SOCIAL]",
+      "description": "Import spikes. Bakers barricade for old scores, not just profit. The Queen's promise tastes like thin gruel because of ash from the burned Vhasian customs post. Riots brew.",
+      "flavor": "The salt is gray. It was cut with ashes from a burned Vhasian customs post—and it still smells like smoke.",
+      "mechanical_hook": "Salt prices double; a successful Wits+Trade (DV 4) can secure a supply at the old rate."
+    },
+    {
+      "rank": 11,
+      "suit": "club",
+      "title": "Dawn Recall",
+      "subtitle": "[AUTHORITY] [TRAVEL]",
+      "description": "Escort pulled to a flood-struck parish. The writ argues with the river, and the river argues back, carrying the Queen's doubts. Justices demand inquiry into who neglected the dikes.",
+      "flavor": "The escorts are back in a week. They bring new writs—and fewer men.",
+      "mechanical_hook": "The party must travel without escort; a successful Wits+Scout (DV 4) avoids ambush."
+    },
+    {
+      "rank": 12,
+      "suit": "club",
+      "title": "Aberielist Intrigue",
+      "subtitle": "[POLITICS] [LAW]",
+      "description": "Royalist seals in wrong hands. Conspirators plot in quiet places where the law feels thin. Treason charges carry death penalty in legal duels.",
+      "flavor": "The seals are from a dead duke—and the duke's ghost is said to approve. Or to weep.",
+      "mechanical_hook": "The party discovers a conspiracy; they must choose to expose it or use it. A failed Wits+Investigate (DV 5) may implicate them."
+    },
+    {
+      "rank": 13,
+      "suit": "club",
+      "title": "Levy Call-Up",
+      "subtitle": "[AUTHORITY] [COMBAT]",
+      "description": "Dalesmen mustered. Wagons seized 'for the realm,' conscription writs signed with careful pen. Families left to tend fields alone. Legal authority backed by armed force.",
+      "flavor": "The conscription writs have a clause: 'void if Belworth freezes.' The river is still warm.",
+      "mechanical_hook": "The party must provide 1 Supply per person or be conscripted; a successful Presence+Sway (DV 5) may secure an exemption."
+    },
+    {
+      "rank": 14,
+      "suit": "club",
+      "title": "Legal Duel Challenge",
+      "subtitle": "[LAW] [COMBAT]",
+      "description": "Master Advocate Halric issues a formal challenge. Refuse and lose legal standing; accept and risk life and fortune in court-yard combat. The winner takes all legally.",
+      "flavor": "The challenge is written on both sides of the parchment—and there is no blank space to refuse.",
+      "mechanical_hook": "The party must accept or find a champion; a legal duel follows the Legal Duel Protocol. Victory grants a Duel Sanction."
+    }
+  ],
+  "rewards": [
+    {
+      "rank": 2,
+      "suit": "diamond",
+      "title": "Ferry Priority",
+      "subtitle": "[TRAVEL]",
+      "description": "Belworth crossing (once); a horn blown by a Vhasian defector now serving the Queen. Legal right of way backed by armed escort.",
+      "flavor": "The priority token is a writ signed by both banks. One side's ink is newer; the other still smells of Vhasian smoke.",
+      "cost": "Using it may anger the Vhasian claimant; a Border Snarl may follow."
+    },
+    {
+      "rank": 3,
+      "suit": "diamond",
+      "title": "Dike Allotment",
+      "subtitle": "[LABOR]",
+      "description": "Brotherhood labor granted, if three clerks can look past old scores. Work performed under legal contract with military oversight.",
+      "flavor": "The allotment includes a clause: 'as tides permit.' The reeve decides what the tides permit.",
+      "cost": "The contract is strict; failure to perform may result in a levy call."
+    },
+    {
+      "rank": 4,
+      "suit": "diamond",
+      "title": "Market License",
+      "subtitle": "[TRADE]",
+      "description": "Valora's square, if a guild nod is enough. Legal protection from merchant guild enforcement.",
+      "flavor": "The license is written on vellum from a Vhasian abbey. The irony is noted.",
+      "cost": "The guild may demand a share of profits; refusal may revoke the license."
+    },
+    {
+      "rank": 5,
+      "suit": "diamond",
+      "title": "Dawn Escort",
+      "subtitle": "[AUTHORITY]",
+      "description": "Four lances at dawn. Their presence keeps lesser men from troubling you. Legal authority to enforce your writs.",
+      "flavor": "The lances are from the Fenwood armory—and the Fenwood dukes have their own plans.",
+      "cost": "The escort lasts one leg of travel; they may have secret orders from the Queen."
+    },
+    {
+      "rank": 6,
+      "suit": "diamond",
+      "title": "River Charter",
+      "subtitle": "[TRAVEL]",
+      "description": "Guaranteed haul on a grain artery, if the weather permits. Legal right protected by river patrol.",
+      "flavor": "The charter is stamped with a seal that looks like a crown—or a sunburst. No one can agree.",
+      "cost": "Weather or rivals may delay the haul; a Wits+Lore (DV 4) may find a loophole."
+    },
+    {
+      "rank": 7,
+      "suit": "diamond",
+      "title": "Map Correction",
+      "subtitle": "[LAW]",
+      "description": "A hedge moves; the border shifts with the truth. Lawsuits bloom. A new survey can make or break a fortune overnight.",
+      "flavor": "The surveyors carry chains and swords. The swords are for when the chains disagree.",
+      "cost": "The correction may be contested; a legal duel may be required to enforce it."
+    },
+    {
+      "rank": 8,
+      "suit": "diamond",
+      "title": "Customs Seal",
+      "subtitle": "[TRADE]",
+      "description": "Fairport for Dolmis cargo. Legal immunity from customs enforcement.",
+      "flavor": "The seal is a wax crab. It pinches when pressed—and it remembers the hand that shaped it.",
+      "cost": "The seal is single-use; using it may attract scrutiny from customs officials."
+    },
+    {
+      "rank": 9,
+      "suit": "diamond",
+      "title": "Thing Ruling",
+      "subtitle": "[LAW]",
+      "description": "Sharp local bite; appeals run swifter than oaths. Court decisions enforceable by local levy.",
+      "flavor": "The ruling is carved on an oar. Break the oar, and the ruling breaks with it.",
+      "cost": "The ruling is local; it may not hold in the Queen's court."
+    },
+    {
+      "rank": 10,
+      "suit": "diamond",
+      "title": "Salt Allotment",
+      "subtitle": "[TRADE]",
+      "description": "Winter depot; the Queen's writ opens doors. The right connections ensure the best salt reaches the right tables.",
+      "flavor": "The salt is from a pan worked by Ubral exiles. They still count in clan measure.",
+      "cost": "The allotment is seasonal; rivals may try to seize it."
+    },
+    {
+      "rank": 11,
+      "suit": "diamond",
+      "title": "Wardship",
+      "subtitle": "[AUTHORITY]",
+      "description": "A minor fen-keep. Legal guardianship with military authority—and the quiet hope that the child is worth the trust.",
+      "flavor": "The ward is a child with a seal ring older than the kingdom.",
+      "cost": "The ward may be a target; defending them may draw the Queen's enemies."
+    },
+    {
+      "rank": 12,
+      "suit": "diamond",
+      "title": "Queen's Audience",
+      "subtitle": "[AUTHORITY]",
+      "description": "Private; her questions strike like thrusts. Royal decree carries immediate enforcement power.",
+      "flavor": "The audience lasts one hour. The paperwork lasts a generation.",
+      "cost": "The Queen will expect a return; refusing may be treason."
+    },
+    {
+      "rank": 13,
+      "suit": "diamond",
+      "title": "Ducal Warrant",
+      "subtitle": "[AUTHORITY]",
+      "description": "Fenwood to enforce customs. The parchment carries weight in any court—and old power bows before new.",
+      "flavor": "The warrant is signed in blood—or ink that looks like blood. The difference matters at trial.",
+      "cost": "Using the warrant may anger the Fenwood dukes' rivals; a Border Snarl may follow."
+    },
+    {
+      "rank": 14,
+      "suit": "diamond",
+      "title": "Duel Sanction",
+      "subtitle": "[LAW] [COMBAT]",
+      "description": "Right to challenge in legal combat; the Queen's seal makes it official. The winner takes all legally; the loser learns the cost of doubting the Queen's peace.",
+      "flavor": "The sanction is a coin. Heads you duel, tails your opponent chooses the weapon.",
+      "cost": "The duel is binding; losing may cost your life or legal standing."
+    }
+  ],
+  "quick_use_notes": {
+    "draw_rules": "Draw until you have all four suits: Spade = place, Heart = actor, Club = pressure, Diamond = leverage. Highest rank sets the main Timer (2–5 → 4, 6–10 → 6, J/Q/K → 8, A → 10).",
+    "diamonds": "Diamonds are codified outcomes (writs, charters, priority) that change position rather than call for a roll.",
+    "ace_rule": "If any Ace appears, echo hedge-law motifs—boundaries blur like old scars, charters contradict like guilty consciences, precedent splinters like shaky oaths, and the careful web of legal authority shows its living cracks. Legal warfare escalates to physical conflict not as failure, but as the only language left when words run dry."
+  },
+  "additional_features": [
+    {
+      "name": "Hedge-Law Momentum",
+      "description": "When a valid writ, charter, or warrant is presented in the proper parish with dry ink and unbroken seal, step Position up one category on social or logistical actions in that locale for the scene. The first contradiction starts the Border-Lace [4] timer."
+    },
+    {
+      "name": "Beacon & Bell Chain",
+      "description": "If two adjacent beacons or brotherhood bells are under your influence and lit for the correct reason, convert one Club draw into a travel delay for others while the party proceeds with improved Effect for movement and logistics. The signal draws scrutiny; the GM may bank 1 SB tied to local authority."
+    },
+    {
+      "name": "River-Right Window",
+      "description": "At a ferry, tidework, or customs stair, play any Diamond tied to crossings or seals to open a short window of lawful passage: one convoy passes uninspected, or one cargo clears at priority. The window closes immediately if a storm, audit, or levy card is revealed."
+    },
+    {
+      "name": "Legal Duel Protocol",
+      "description": "When legal disputes cannot be resolved through argument, parties may challenge each other to a duel. The winner's position becomes legally binding. Requires proper sanction and seconds (see Duel Sanction Diamond). If either party lacks a sanction, the duel is treated as assault under crown law."
+    },
+    {
+      "name": "Vhasian Claims",
+      "description": "Any Viterran noble with land across the Belworth may invoke a Ducal Warrant to attempt to collect rents or enforce judgments in Vhasia. Doing so starts a Border Snarl complication (or ticks Border-Lace), as Vhasian claimants are unlikely to cooperate. The Queen's own Vhasian title (Duchess of Aberiel) adds a layer of irony—and suspicion."
+    },
+    {
+      "name": "The Succession's Shadow",
+      "description": "Any legal dispute touching on inheritance, legitimacy, or royal authority is automatically one step more volatile. The GM may spend 1 SB to introduce a witness, document, or rumor related to Baldwyn Brightstide's death or the northern earls' secret funding of King Wyllmot's murder."
+    },
+    {
+      "name": "Courtroom Mini-Game (Fast Trial)",
+      "description": "Lay three stones: Precedent, Equity, Force. Argue a point (roll Wits + Sway vs. DV 3). On a hit, move one stone to your side. On a miss, the opposing advocate gains Citation Edge. Win two stones to secure a temporary Court Ruling (treat as a Diamond for one scene). Halric's Interjection (2 SB): flip Precedent, but start Whispered Precedent [2] with the losing side."
+    },
+    {
+      "name": "Cross-Border Tensions (Fast Pressure)",
+      "description": "Two opposed timers: Queen's Peace vs. Border Fire (size by highest rank in the seed). Each leg, choose Viterran Road (safe, slow), Vhasian Claim (fast, risky), or Ubral Pass (hidden, costly). Advantage: Vhasian Claim → Viterran Road (shortcuts), Ubral Pass → Vhasian Claim (concealment), Viterran Road → Ubral Pass (supplies). Spend a Ducal Warrant to shift one segment from Border Fire to Queen's Peace."
+    },
+    {
+      "name": "The Queen's Dial (Legitimacy ↔ Pragmatism)",
+      "description": "Track the party's footing between upholding the Queen's authority and making pragmatic compromises. Legitimacy High: +1 Position when invoking royal writs, crown law, or the Queen's name. First compromise or pragmatic choice each session starts one step worse. Pragmatism High: +1 Effect when brokering deals, accepting bribes, or negotiating with rivals. First appeal to royal authority each session starts one step worse. Center the dial by resolving a dispute in a way that satisfies both the Queen's law and local custom, or by winning a legal duel in the Queen's name."
+    },
+    {
+      "name": "Start-of-Scene Rumors",
+      "description": "Roll 1d6 at the start of a Viterran scene: 1. Wrong Wax: +1d to forgeries; 2. Empty Beacon: travel faster, scrutiny harsher; 3. Dawn-Lane Cleared: first convoy action +1 Position; 4. Clerk's Wedding: filings delayed; first petition ignores Audit Freeze; 5. Fen High Water: ferries slow; river-charters count double value; 6. Mask at Progress: someone uses your name at court; +1d to social opens, +1 SB banked by GM."
+    },
+    {
+      "name": "Timers",
+      "description": "Border-Lace [4]: Tracks competing legal claims. Ticks when a second valid writ is presented, a player steps up Position using Hedge-Law Momentum, or a Vhasian authority disputes a crown document. At 4: dispute escalates to riot, duel, or jurisdictional void. Succession's Shadow [6]: Tracks erosion of Queen Veralyn's legitimacy. Ticks when a document bearing Baldwyn's seal surfaces, a northern earl or eastern baron defies the crown, a legal duel is lost by the Queen's champion, or the GM spends 2 SB to introduce a related complication. At 3: Viterran officials suffer -1 die to social rolls. At 6: a serious claimant emerges. Queen's Peace [Front]: Once per session, if the party resolves a cross-border dispute in the Queen's favor without bloodshed, advance this front. If they escalate violence or validate a Vhasian claim, tick Succession's Shadow instead."
+    }
+  ],
+  "lore_echoes": [
+    {
+      "title": "The Hedge-Seal (The Dike Covenant)",
+      "description": "Covenant judges in the eastern parishes adjudicate river tolls and inheritance. They carry iron scales and a copy of the Hedge-Law Tables—each page stained by a different flood. A ruling is binding in both Viterra and the Vhasian marches, but any party who lies before them forfeits their right to appeal. The Warrior Queen has granted them a charter; the Fenwood dukes consider them spies."
+    },
+    {
+      "title": "Saint Cuthbert of the Fen (The Traveler)",
+      "description": "A legendary reeve who walked the flooded dikes during the Great Storm, lighting every beacon by hand. His shrines are stiles and bridge posts; travelers who touch the iron ring and speak a destination find the road holds firm. The fen folk leave offerings of eels at his cairns."
+    },
+    {
+      "title": "The Cog-Cults of the Northern Hills (The Clockwork Monad)",
+      "description": "Secret fraternities of millers and surveyors near the Ubral border believe law is a machine that can be perfected. They meet in abandoned watermills, measuring boundaries with brass chains and reciting the Canons of Proportion. The Everflame calls them heretics; the Queen's justiciars ignore them."
+    },
+    {
+      "title": "The Salt Sworn of the Eastern Coast (The Pale Shepherd)",
+      "description": "Along the Dolmis shore, a syncretic cult tends to the drowned. They build cairns of salt stone and leave no offerings—only the names of the lost, carved into driftwood. Temple of Light missions sent to suppress them have been found adrift with no crew and a single name carved into the mast: Oblivion."
+    }
+  ],
+  "superstitions": [
+    {
+      "name": "Bread to the Hedge",
+      "effect": "Crumble a crust at a parish boundary stone. Ignore the first Border Snarl penalty.",
+      "cost": "Burn for +1 die once"
+    },
+    {
+      "name": "Knot the Writ",
+      "effect": "Tie a single knot in a charter's ribbon. Cancel Audit Freeze or take –1 die on your next legal argument (your choice).",
+      "cost": "Burn for +1 die once"
+    },
+    {
+      "name": "Name to the River",
+      "effect": "Whisper a dead claimant's name into the Belworth. Gain +1 Effect when arguing against their heir's claim this scene, but mark Obligation to the Queen's Justiciar.",
+      "cost": "Burn for +1 die once"
+    },
+    {
+      "name": "The Brightstide Candle",
+      "effect": "Light a candle in memory of King Baldwyn before a difficult legal proceeding. On a roll that includes a 1, you may reroll that die once. If you still fail, the GM banks 1 SB.",
+      "cost": "Burn for +1 die once"
+    }
+  ],
+  "sb_spend_table": {
+    "minor_complications": [
+      "**Exposure:** Crown officials or rival advocates take notice.",
+      "**Noise:** Writ-runners or levy guards are alerted.",
+      "**Trace:** Trackers or customs inspectors mark your route.",
+      "**Delay:** Lose a favorable court date or legal window.",
+      "**Supply Strain:** Mark +1 segment on a relevant resource timer."
+    ],
+    "moderate_setbacks": [
+      "**Alarm Raised:** The Queen's Justiciar or a fen reeve responds.",
+      "**Position Lost:** Legal challenge or river closure costs you advantage.",
+      "**Foe Appears:** A rival claimant or border routier arrives.",
+      "**Gear Trouble:** A key item becomes Compromised or Neglected.",
+      "**Lock/Barrier:** A simple obstacle now requires a test to overcome."
+    ],
+    "serious_trouble": [
+      "**Reinforcements:** Dawn-knights, levy forces, or Vhasian routiers arrive.",
+      "**Key Gear Breaks:** A crucial tool or weapon becomes temporarily unusable.",
+      "**Major Twist:** Writ voided, duel declared, or levy called.",
+      "**Rail Tick:** Advance a relevant campaign/front timer by 1 segment.",
+      "**Condition Applied:** Mark Fatigue 1, Harm 1, or an appropriate Condition."
+    ],
+    "major_turns": [
+      "**Trap Springs:** A prepared danger activates with full effect.",
+      "**Authority Arrival:** The Warrior Queen, Crown Council, or Master Advocate Halric intervenes.",
+      "**Scene Shift:** Dike breaks, river floods, or court erupts.",
+      "**Patron Omen:** Divine or arcane forces manifest—an omen appears, a blessing is lost, or a curse manifests.",
+      "**Narrative Pivot:** The story reframes your objectives unexpectedly."
+    ],
+    "region_specific": [
+      "**Hedge Shift (1 SB):** A boundary stone shifts; increase DV by 1 for navigation or legal rolls this scene.",
+      "**Citation War (2 SB):** Increase DV by 1 unless you produce a precedent (spend a Diamond or recall a past ruling).",
+      "**Seal Crack (3+ SB):** A writ loses half its value until re-witnessed.",
+      "**Succession's Whisper (2 SB, Viterra only):** A document or rumor tied to Baldwyn Brightstide's death surfaces. The GM must answer one yes/no question about royal legitimacy or introduce a related complication. Earl Morcar's involvement may also be hinted."
+    ]
+  },
+  "boss_archetypes": [
+    {
+      "name": "The Violet Clerk",
+      "tags": [
+        "Master of Counter-Seals"
+      ],
+      "description": "A legal expert who masters the art of counter-seals and forged precedents.",
+      "phases": [
+        "Produce Earlier Patent",
+        "Split the Writ",
+        "Seal Fast"
+      ],
+      "cracks": [
+        "A Queen's Audience overrules his seal",
+        "a Duel Sanction forces personal combat",
+        "a Map Correction voids his boundary claim"
+      ]
+    },
+    {
+      "name": "The Thorn Captain",
+      "tags": [
+        "Queen's Quiet Hand"
+      ],
+      "description": "The Queen's enforcer, using legal means to crush opposition.",
+      "phases": [
+        "Queenspeace Zone",
+        "Duel Warrant",
+        "Swap the Field"
+      ],
+      "cracks": [
+        "A Map Correction reveals a loophole",
+        "a Dike Allotment lets you claim the field as 'flood zone'",
+        "a Border Routier testifies to the Queen's favor"
+      ]
+    },
+    {
+      "name": "The Saffron Abbess",
+      "tags": [
+        "Keeper of Bell-Law"
+      ],
+      "description": "A religious figure who uses bell-law and ritual to control disputes.",
+      "phases": [
+        "Wrong Hour",
+        "Bless or Damn",
+        "Mixed Tribunal"
+      ],
+      "cracks": [
+        "A Queen's Justiciar invokes crown supremacy",
+        "a Border Routier bribes her bell-ringer",
+        "a Thing Ruling from Theona forces her to recuse"
+      ]
+    },
+    {
+      "name": "The Brightstide Claimant",
+      "tags": [
+        "Pretender"
+      ],
+      "description": "A claimant to the throne using forged documents and northern support.",
+      "phases": [
+        "Produce the Lost Charter",
+        "Rally the Northern Earls",
+        "March on Valora"
+      ],
+      "cracks": [
+        "Find proof the charter is a forgery",
+        "convince Earl Morcar to stand with the Queen (or expose his role in Wyllmot's death)",
+        "survive a legal duel with the claimant's champion"
+      ]
+    }
+  ],
+  "faction_entanglements": [
+    "**Queen's Household:** Uphold the Queen's peace and enforce her writs; cross her and you'll face her justiciars.",
+    "**Crown Council:** Navigate the politics of dukes, guilds, and abbots; a misstep may lose you a charter or a life.",
+    "**Northern Earls:** Their loyalty is fragile; a show of strength or a clever bribe may win them over.",
+    "**Vhasian Claimants:** They cross the Belworth with writs and swords; proving a charter's superiority is a duel of both ink and iron.",
+    "**Border Routiers:** They serve the highest bidder; a Ducal Warrant may secure their aid—or their enmity."
+  ],
+  "cross_regional_ties": [
+    "**Ubral (Stone & Oath):** A Ducal Warrant acts as a Guest-Token once at a clan hearth. Starts a Feud Rekindled tick if you collect tolls twice in a tenday.",
+    "**Thepyrgos (Synod Law):** A Queen's Audience can suspend a synod interdict. Starts Whispered Precedent in Thepyrgos.",
+    "**Vhasia (Fractured Sun):** A Duel Sanction is recognized on the Pont-du-Tithe. A rival abbey can turn it into Parlement Divided on a Club draw. The Queen's own Vhasian title (Duchess of Aberiel) may be used as leverage—or as a weapon against her.",
+    "**Theona (No Ninth):** Ferry Priority overrides a local taboo once. If the Ninth custom is in play, the writ 'forgets' one clause on use (GM banks 1 SB)."
+  ],
+  "conspiracy_flourishes": [
+    "**Hedge-Moots at Dusk:** Parish elders 'trim hedges' while trading sealed whispers.",
+    "**Cipher Roses:** Folded writs stamped with thorn-petals; one petal missing marks a false clause.",
+    "**Mirror Hours:** Beacons flash lawful signals—reversed for those who know the counter-code.",
+    "**Eel-Letters:** Oiled parchment smuggled in eel-baskets; ink runs in water, truth does not.",
+    "**Quiet Steel, Quieter Quills:** Dawn-knights duel at first light; advocates settle three duels before breakfast with ink alone.",
+    "**Progress Masks:** Courtiers wear legal devices as masque motifs (seal, chain, beacon) to signal faction at a glance.",
+    "**Bell Penance:** A single off-hour peal grants amnesty to those who confess a clause before the twelfth echo.",
+    "**The Brightstide Prayer:** Whispering the dead king's name before a legal proceeding is said to turn the judge's heart—or curse the speaker. Some say Earl Morcar still whispers it each night."
+  ],
+  "patronage_and_power": {
+    "description": "In Viterra, power flows through the careful application of law—but beneath every charter runs the threat of steel. The Warrior Queen maintains authority through a combination of military might and legal precision, but the throne is fragile. The old duchies and local officials wield influence through knowledge of hedge-law and ancient custom. The true power lies not in the documents alone, but in the will to enforce them when the parchment fails.",
+    "for_the_gm": [
+      "Tie rewards to visible symbols (seals, writs, charters) that can be challenged, stolen, or voided.",
+      "Let rival duchies and Vhasian claimants issue conflicting authorities, forcing players to choose whose favor matters more.",
+      "Use the courts, parishes, and muster grounds as arenas for social contests, where knowledge of law and custom determines success.",
+      "When legal conflicts escalate beyond words, transition naturally to physical confrontation with appropriate stakes.",
+      "Introduce the Succession's Shadow as a recurring complication: old loyalties, forged documents, the ghost of Baldwyn Brightstide, and the secret funding of King Wyllmot's murder can upend any legal certainty."
+    ]
+  },
+  "index": [
+    "Viterra",
+    "Hedge-Law Realm generator",
+    "Places!Viterra",
+    "People!Viterra",
+    "Complications!Viterra",
+    "Rewards!Viterra",
+    "Warrior Queen",
+    "King Baldwyn Brightstide",
+    "King Wyllmot",
+    "Crown Council",
+    "Fenwood dukes",
+    "Belworth River",
+    "Theona",
+    "Queen's Justiciar",
+    "Master Advocate Halric",
+    "Law Quarter",
+    "Hall of Dawning",
+    "Dike Crown",
+    "Fairport Works",
+    "Legal duel",
+    "Duel Sanction",
+    "Vhasian claims",
+    "Succession crisis",
+    "Brightstide claimant",
+    "Local Patrons!Viterra",
+    "Saint Elodie",
+    "Hedge-Seal Covenant",
+    "Saint Cuthbert",
+    "Cog-Cults",
+    "Salt Sworn",
+    "Earl Morcar",
+    "Border-Lace timer",
+    "Succession's Shadow timer",
+    "Queen's Peace front",
+    "Queen's Dial"
+  ],
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

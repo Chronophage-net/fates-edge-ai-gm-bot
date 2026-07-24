@@ -1,0 +1,863 @@
+{
+  "id": "aelinnel-stone-bough-bright-things",
+  "version": "1.0.0",
+  "type": "generator",
+  "title": "Aelinnel — Stone, Bough, and Bright Things",
+  "label": "chap:aelinnel-gnomes",
+  "key_demographic": "Aelinnel (Gnomes)",
+  "capital": "Keisanki",
+  "manifest_path": "/data/docs/manifest.json",
+  "overview": {
+    "tagline": "Count the steps, weigh the words, and never trust a single telling.",
+    "genre": "Dark faerie tale, moonlit groves, polite iron, and the uncanny weight of a promise unsaid.",
+    "mood": "Stone, Bough, and Bright Things",
+    "starting_location": "A tide-shed at dawn, fog curling over anchored barges, gulls crying omens over the river's black glass. A gnomish reeve offers passage on a sealed barge: 'The Green Gate opens at neap tide. What we trade there, the Dolmis will not name. And if you hear someone counting your footsteps, do not turn around — they are only making sure you still have them.'",
+    "lore": {
+      "history": "The Aelinnel do not build cities. They **grow** them — from granite and hawthorn, from tide-polished bone and the shadow of a laugh. Their halls thread through sea-cliffs and root-galleries, their roads are counted by antler-posts that move at night, and their doors open only when you have forgotten why you came. Here, promises have **weight** — not the weight of ink on parchment, but the weight of a stone dropped into a still pool. The ripples go on forever. To the north, the Valewood breathes; to the south, the downs of Amedell where the Aelaerem tie red threads to keep the Hollow at bay. The Green Gate sometimes opens onto halfling barrows — a fact neither people speaks of aloud, because speaking aloud gives the gate permission to move. No single crown rules the gnomish lands. Dozens of courts, seasonal pacts, and garden societies weave a shifting lattice of loyalty. Some Aelinnel keep the old fae treaties, speaking in two voices and never carrying naked iron; others barter in the Green Market with memories instead of coin, treating courtesy as a kind of lockpicking. Still others vanish into the deep woods, listening to stag-roads where the trees whisper gossip about the living. The gnomish heart is divided — and that division is the only reason the fae haven't eaten them whole. Craft and courtesy govern every traffic between mortal keeps and the courts under the hill. Gnomish stone-singers hum bridges into alignment, their melodies keeping the Green Gate at bay. Forester-wardens hammer copper nails into thresholds because iron, they say, **startles the truth**. In markets under living roofs, a sentence can be folded like a napkin, and a memory can be wrapped for travel — but never opened before the second sunrise. Paths sometimes shorten for those who keep good count, and lengthen for those who sneer at patterns. The fae are never rude — but they are never, ever **safe**.",
+      "first_notice": "The smell of tide-wrack and hawthorn. The way every threshold has a copper nail at eye level. The silence that follows when you stop counting your steps aloud.",
+      "rule_that_kills": "Never accept a gift without naming its price. The giver will name it for you — and their price is always one word more than you wanted to pay. The ninth word is the one that binds."
+    },
+    "entanglements": {
+      "northeast": "Valewood -- The Green Gate and the star-roads connect the two; the gnomish courts watch the forest's phasing. The empire's fallen towers cast long shadows into the gnomish halls.",
+      "south": "Aelaerem -- The halfling downs are a friendly but wary neighbor; the barrows and the fae courts have an unspoken treaty. The red thread custom is shared, not owned.",
+      "west": "The Dolmis Sea -- Trade with Zakov and Thepyrgos; the tide-path keys are valued currency. The gnomish counting-songs are an eerie counterpoint to the Reaping's hum.",
+      "north": "The Valewood (deep) -- The empire's fallen towers are a source of treasure and terror; the star-roads are a shortcut that demands a toll in courtesy."
+    }
+  },
+  "quotes": [
+    {
+      "speaker": "Lady of Thorns (Fae Sovereign)",
+      "text": "The law here flows like water over stone — it finds its own path, and woe to those who try to dam it with paper and pretense. The earth itself will testify against the unjust. But the earth also lies — politely, and only when the moon is full."
+    },
+    {
+      "speaker": "Charcoal-burner (Commoner)",
+      "text": "Our kilns tell us more than your books ever could. When the smoke curls left, the tide's with you. When it splits in three, best stay by your own hearth till it burns straight again. And never trust a court that speaks in only one voice — the silence is always the second witness."
+    }
+  ],
+  "npcs": [
+    {
+      "name": "Thorn",
+      "role": "Lady of Thorns, Sovereign of the Hawthorn Court",
+      "motivation": "Remind mortals that courtesy is a leash, not a gift",
+      "quirk": "She never repeats herself. Her silences are verdicts — and her verdicts are always polite."
+    },
+    {
+      "name": "Caelum Viridant",
+      "role": "Green Knight, Warden of the Stag-Roads",
+      "motivation": "Test the worthy and trap the careless",
+      "quirk": "His armour is woven from living boughs that bleed when he lies. He has never bled."
+    },
+    {
+      "name": "Eilidh Stone-Prince",
+      "role": "Mortal ruler of the Hall of Aelinnel",
+      "motivation": "Keep the old pacts indexed and the fae at arm's length",
+      "quirk": "She speaks only in conditional tense. No one has heard a declarative sentence from her lips in seven years — not even her cat."
+    },
+    {
+      "name": "Riven",
+      "role": "Huntsman of the Moonlit Ride",
+      "motivation": "Chase down obligations and those who flee the Green Gate",
+      "quirk": "His horn is carved from a fossilised scream. He only blows it when a promise is nine days old — and nine days old is when the Hollow starts counting."
+    },
+    {
+      "name": "Tallow",
+      "role": "Charcoal-burner (commoner exemplar)",
+      "motivation": "Read the smoke and warn the village before the fae come",
+      "quirk": "He has never lost a sheep to the Hollow. He has lost three helpers who did not listen. Their shadows still work his kilns."
+    },
+    {
+      "name": "Sable",
+      "role": "Green-Market Broker",
+      "motivation": "Trade truths for trinkets, and never lose the margin",
+      "quirk": "Her receipts are written on leaf-vein paper. They curl when the bargain is unbalanced — and also when it rains, which is often, which is why she keeps a stone in her pocket."
+    }
+  ],
+  "names": {
+    "first_male": [
+      "Caelum",
+      "Riven",
+      "Tallow",
+      "Fennel",
+      "Osprey",
+      "Linden"
+    ],
+    "first_female": [
+      "Eilidh",
+      "Sable",
+      "Merrow",
+      "Briar",
+      "Vesper",
+      "Ash"
+    ],
+    "surnames": [
+      "Thornweave",
+      "Tidespeak",
+      "Evenstep",
+      "Hawthorn",
+      "Silverbough",
+      "Foxtail"
+    ],
+    "epithets": [
+      "the Green-Wise",
+      "Two-Tongue",
+      "the Unseen Guest",
+      "Barrow-Kept",
+      "the Uncounted",
+      "Ash-Finger"
+    ]
+  },
+  "places": [
+    {
+      "rank": 2,
+      "suit": "spade",
+      "title": "Tide-rift steps",
+      "subtitle": "[THRESHOLD]",
+      "description": "Cut into black rock; limpets and old votive nails keep count for those who forget.",
+      "flavor": "The ninth step is underwater — and it still counts.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 3,
+      "suit": "spade",
+      "title": "Moonwell basin",
+      "subtitle": "[MAGIC]",
+      "description": "A granite bowl; coins turn green in a week, names in a season, and memories in a year.",
+      "flavor": "The water never reflects the same face twice.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 4,
+      "suit": "spade",
+      "title": "Dolmen stair",
+      "subtitle": "[MUSIC]",
+      "description": "Up a ridge; each capstone rings a different interval if you tap it true.",
+      "flavor": "The ninth stone is silent — it only rings when someone lies.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 5,
+      "suit": "spade",
+      "title": "Charcoal coppice",
+      "subtitle": "[SECRET]",
+      "description": "Under witch-hazel; a neat ash-heap hides a door that opens on even knocks only.",
+      "flavor": "Knock an odd number, and the door will open — but not where you left it.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 6,
+      "suit": "spade",
+      "title": "Basalt organ cliffs",
+      "subtitle": "[NATURE]",
+      "description": "Sea-caves breathe like slow bellows; the wind prefers prime numbers.",
+      "flavor": "When it plays a ninth, the cliffs hum back.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 7,
+      "suit": "spade",
+      "title": "Stag Road",
+      "subtitle": "[TRAVEL]",
+      "description": "Game-trail marked by antler-posts; hooves know it best, maps accept it grudgingly.",
+      "flavor": "The posts move at night — not to confuse, but to keep the road honest.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 8,
+      "suit": "spade",
+      "title": "Quartz spring",
+      "subtitle": "[HEALING]",
+      "description": "Sand shines like ground stars; drinkers tell the same story with better structure.",
+      "flavor": "The ninth sip tastes of copper — and a promise you haven't made yet.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 9,
+      "suit": "spade",
+      "title": "Elf-causey",
+      "subtitle": "[FAE]",
+      "description": "Pale flags through a marsh; visible at dawn and dusk and whenever someone is counting aloud.",
+      "flavor": "Count to nine, and the flags turn to water.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 10,
+      "suit": "spade",
+      "title": "Root gallery",
+      "subtitle": "[UNDERGROUND]",
+      "description": "Under an oak hill; lanterns hang from living bark — two lit, one listening.",
+      "flavor": "The listening lantern is for the Hollow. It never lights.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 11,
+      "suit": "spade",
+      "title": "Barrow gallery",
+      "subtitle": "[DEATH]",
+      "description": "Stone chimes; a cold draft from below plays scales no throat can sing.",
+      "flavor": "The ninth note is always a sigh.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 12,
+      "suit": "spade",
+      "title": "Thorn Court ring",
+      "subtitle": "[FAE] [DANGER]",
+      "description": "Hawthorns trained into arches; petals fall like knife-points and settle into proofs.",
+      "flavor": "Step into the center, and the thorns will ask you a riddle. Answer wrong, and you become a hedge.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 13,
+      "suit": "spade",
+      "title": "Hall of Aelinnel",
+      "subtitle": "[CIVILISATION]",
+      "description": "A timber keep threaded between standing stones; floors level themselves for guests.",
+      "flavor": "The ninth stone in the floor is always warm — it remembers the last person who lied.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 14,
+      "suit": "spade",
+      "title": "The Green Gate",
+      "subtitle": "[GATE]",
+      "description": "In a sea-arch; at certain tides it opens to a forest not on any map, and expects exact change.",
+      "flavor": "It does not accept coin. It accepts **explanations**.",
+      "mechanical_hook": ""
+    }
+  ],
+  "people_and_factions": [
+    {
+      "rank": 2,
+      "suit": "heart",
+      "title": "Goat-herd of the stone edges",
+      "subtitle": "[SURVIVAL]",
+      "description": "Measures danger in hoof-widths; never wrong twice.",
+      "flavor": "The third time, she doesn't measure — she runs.",
+      "what_they_carry": "",
+      "what_they_ask": ""
+    },
+    {
+      "rank": 3,
+      "suit": "heart",
+      "title": "Charcoal-burner clan",
+      "subtitle": "[DIVINATION]",
+      "description": "Read draught and omen by smoke; their kilns hum in thirds.",
+      "flavor": "When the hum stops, someone has asked a question they shouldn't have.",
+      "what_they_carry": "",
+      "what_they_ask": ""
+    },
+    {
+      "rank": 4,
+      "suit": "heart",
+      "title": "Hedge-witch",
+      "subtitle": "[MAGIC] [SOCIAL]",
+      "description": "A pocket of thorns and prices stated in **unlesses**.",
+      "flavor": "Her fees are always conditional: 'I will heal your child, **unless** the moon is full, in which case I will only listen.'",
+      "what_they_carry": "",
+      "what_they_ask": ""
+    },
+    {
+      "rank": 5,
+      "suit": "heart",
+      "title": "Stone-singer (quarryman)",
+      "subtitle": "[CRAFT]",
+      "description": "Hum finds a seam and a secret; walls relax when they pass.",
+      "flavor": "The ninth hum is for doors that do not exist — yet.",
+      "what_they_carry": "",
+      "what_they_ask": ""
+    },
+    {
+      "rank": 6,
+      "suit": "heart",
+      "title": "Forester-warden",
+      "subtitle": "[NATURE]",
+      "description": "Copper nails and a polite dislike of iron; paths obey their hammer.",
+      "flavor": "They never cut a branch — they ask permission, and sometimes the branch says no.",
+      "what_they_carry": "",
+      "what_they_ask": ""
+    },
+    {
+      "rank": 7,
+      "suit": "heart",
+      "title": "Reed-net fisher",
+      "subtitle": "[TRADE]",
+      "description": "Knows when the selkies listen; mends nets to lullabies in 5s and 8s.",
+      "flavor": "The ninth verse is always for the drowned.",
+      "what_they_carry": "",
+      "what_they_ask": ""
+    },
+    {
+      "rank": 8,
+      "suit": "heart",
+      "title": "Oath-carver",
+      "subtitle": "[LAW] [OATH]",
+      "description": "Sets promises in quartz so they can be seen; breaks none, bends many.",
+      "flavor": "A broken quartz-oath turns to sand — and the sand remembers.",
+      "what_they_carry": "",
+      "what_they_ask": ""
+    },
+    {
+      "rank": 9,
+      "suit": "heart",
+      "title": "Way-keeper of the Stag Road",
+      "subtitle": "[GUIDE]",
+      "description": "Never lost, often followed, sometimes found ahead.",
+      "flavor": "When she stops at a crossroads, she always turns her back to the ninth path.",
+      "what_they_carry": "",
+      "what_they_ask": ""
+    },
+    {
+      "rank": 10,
+      "suit": "heart",
+      "title": "Green-market broker",
+      "subtitle": "[COMMERCE]",
+      "description": "Trading truths for trinkets and back again; receipts in leaf-vein script.",
+      "flavor": "The truth she sells is always true — but never the truth you asked for.",
+      "what_they_carry": "",
+      "what_they_ask": ""
+    },
+    {
+      "rank": 11,
+      "suit": "heart",
+      "title": "Green Knight",
+      "subtitle": "[FAE] [DUEL]",
+      "description": "Antler helm, mirror-bright blade, courtesy old as frost; keeps a tally of saved insults.",
+      "flavor": "He never unsheathes his sword — he only shows it, and that is usually enough.",
+      "what_they_carry": "",
+      "what_they_ask": ""
+    },
+    {
+      "rank": 12,
+      "suit": "heart",
+      "title": "Lady of Thorns",
+      "subtitle": "[FAE] [LAW]",
+      "description": "Sovereign of a hawthorn court; smiles like a snare and forgives in exact measures.",
+      "flavor": "Her forgiveness is always exactly one thorn's weight — no more, no less.",
+      "what_they_carry": "",
+      "what_they_ask": ""
+    },
+    {
+      "rank": 13,
+      "suit": "heart",
+      "title": "Stone Prince of Aelinnel",
+      "subtitle": "[AUTHORITY]",
+      "description": "Mortal crown with fae obligations properly indexed and current.",
+      "flavor": "He is the only gnome who has never lied — because he never speaks in declaratives.",
+      "what_they_carry": "",
+      "what_they_ask": ""
+    },
+    {
+      "rank": 14,
+      "suit": "heart",
+      "title": "Huntsman of the Moonlit Ride",
+      "subtitle": "[HUNT]",
+      "description": "His horn turns shortcuts into roads, and obligations into destinations.",
+      "flavor": "When he blows the ninth note, the hunt ends — but the hunted never comes back.",
+      "what_they_carry": "",
+      "what_they_ask": ""
+    }
+  ],
+  "complications": [
+    {
+      "rank": 2,
+      "suit": "club",
+      "title": "Glamour fog",
+      "subtitle": "[ILLUSION]",
+      "description": "Time drifts, footfalls don't match, conversations arrive neatly folded.",
+      "flavor": "Open a sentence, and you may find last Tuesday inside.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 3,
+      "suit": "club",
+      "title": "Iron offense",
+      "subtitle": "[SOCIAL] [WEIGHT]",
+      "description": "Someone brought the wrong nails to the right grove; paths take it personally.",
+      "flavor": "The trees do not speak — they **remember**.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 4,
+      "suit": "club",
+      "title": "Root-slide",
+      "subtitle": "[TRAVEL]",
+      "description": "Pulls a trail two ridges away while you blink; your footprints stay where they were.",
+      "flavor": "The footprints will wait for you — for nine days. After that, they walk home without you.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 5,
+      "suit": "club",
+      "title": "Wrong tide at the sea-arch",
+      "subtitle": "[WEATHER]",
+      "description": "Boats rise where arithmetic says no and physics excuses itself.",
+      "flavor": "The ninth wave is always the wrong one — it goes sideways.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 6,
+      "suit": "club",
+      "title": "Spoken geas",
+      "subtitle": "[MAGIC] [OATH]",
+      "description": "Catches on an unlucky word; the task names itself and refuses synonyms.",
+      "flavor": "You cannot say 'fetch' when you meant 'steal' — the geas knows the difference.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 7,
+      "suit": "club",
+      "title": "Green Market price",
+      "subtitle": "[COMMERCE] [WEIGHT]",
+      "description": "Payment demanded in names and memories; change returned in riddles.",
+      "flavor": "The riddles are always about thresholds. The answers are always doors.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 8,
+      "suit": "club",
+      "title": "Stone-wight stirs",
+      "subtitle": "[DEATH]",
+      "description": "In a barrow; echoes hate company and file complaints as drafts.",
+      "flavor": "The complaints are written in a language that only the dead speak — and they are **very** articulate.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 9,
+      "suit": "club",
+      "title": "Lost day",
+      "subtitle": "[TIME]",
+      "description": "The sun miscounts; your dawn arrives at supper and demands bread.",
+      "flavor": "The bread must be from a loaf you have not yet baked.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 10,
+      "suit": "club",
+      "title": "Thorn blight",
+      "subtitle": "[CURSE]",
+      "description": "Crawls across orchards; pruners bleed stories that grow where they drip.",
+      "flavor": "The stories are always about a door you left open.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 11,
+      "suit": "club",
+      "title": "Stag horn sounds",
+      "subtitle": "[HUNT] [WEIGHT]",
+      "description": "Everyone owes the chase — especially you, especially now.",
+      "flavor": "The horn does not say who is hunting. It only says that the hunt has begun.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 12,
+      "suit": "club",
+      "title": "Thorn Court tithe",
+      "subtitle": "[LAW] [SOCIAL]",
+      "description": "Levied on the Hall; arrests wear flowers and quote etiquette.",
+      "flavor": "The charge is always **insufficient courtesy**. The penalty is always **a lesson**.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 13,
+      "suit": "club",
+      "title": "Muster of the Bough",
+      "subtitle": "[CONFLICT]",
+      "description": "Forest banners rise; travel becomes trespass by default.",
+      "flavor": "The banners were trees yesterday. They are still adjusting.",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 14,
+      "suit": "club",
+      "title": "Green Gate yawns",
+      "subtitle": "[GATE] [MYSTERY]",
+      "description": "At the wrong hour; roads rewire across your path with excellent logic.",
+      "flavor": "The logic is always sound. The destination is always somewhere else.",
+      "mechanical_hook": ""
+    }
+  ],
+  "rewards": [
+    {
+      "rank": 2,
+      "suit": "diamond",
+      "title": "Hazel token",
+      "subtitle": "[PROTECTION]",
+      "description": "Step through a hedge uncut, once; the scratch you did not get will **remember** you kindly.",
+      "flavor": "The token is a nut. Crack it open, and the hedge will part — but it will also ask a question.",
+      "curse_cost": ""
+    },
+    {
+      "rank": 3,
+      "suit": "diamond",
+      "title": "Salt license",
+      "subtitle": "[UTILITY]",
+      "description": "Carry and use ward-salt where it's discouraged; doors frown and open anyway.",
+      "flavor": "The license is a pinch of salt in a silk pouch. The silk was a promise.",
+      "curse_cost": ""
+    },
+    {
+      "rank": 4,
+      "suit": "diamond",
+      "title": "Dolmen carving-right",
+      "subtitle": "[AUTHORITY]",
+      "description": "Inscribe a name or claim on a speaking stone; arguments quiet while you carve.",
+      "flavor": "The stone will remember your chisel's touch. It will also remember what you were thinking.",
+      "curse_cost": ""
+    },
+    {
+      "rank": 5,
+      "suit": "diamond",
+      "title": "Guest-bough",
+      "subtitle": "[HOSPITALITY]",
+      "description": "From the Thorn Court; one night's safe table among thorns; knives behave.",
+      "flavor": "The bough is a twig with three thorns. Break one thorn for each courtesy you ask. When all three are broken, the table becomes a door.",
+      "curse_cost": ""
+    },
+    {
+      "rank": 6,
+      "suit": "diamond",
+      "title": "Quarry allotment",
+      "subtitle": "[ACCESS]",
+      "description": "Of clear quartz; subtle doors open to its bearer if asked in the right tense.",
+      "flavor": "The right tense is not past or future — it is **conditional**.",
+      "curse_cost": ""
+    },
+    {
+      "rank": 7,
+      "suit": "diamond",
+      "title": "Green Market voucher",
+      "subtitle": "[COMMERCE]",
+      "description": "Buy a truth at face value (today only); tomorrow costs interest.",
+      "flavor": "The interest is always a memory — and the voucher chooses which one.",
+      "curse_cost": ""
+    },
+    {
+      "rank": 8,
+      "suit": "diamond",
+      "title": "Oath-bead",
+      "subtitle": "[OATH]",
+      "description": "A spoken promise warms the bead when kept, chills when not, glows if misunderstood.",
+      "flavor": "A glowing bead is not a broken promise — it is a promise that has learned to speak for itself.",
+      "curse_cost": ""
+    },
+    {
+      "rank": 9,
+      "suit": "diamond",
+      "title": "Tide-path key",
+      "subtitle": "[TRAVEL]",
+      "description": "Lawful crossing of a named sea-cave at neap; the cave will wait.",
+      "flavor": "The key is a piece of dried seaweed. It will dissolve after one use — but the cave will remember your face.",
+      "curse_cost": ""
+    },
+    {
+      "rank": 10,
+      "suit": "diamond",
+      "title": "Forest truce",
+      "subtitle": "[PERMISSION]",
+      "description": "Hunt, cut, or travel through a warded copse without offense; the birds file no reports.",
+      "flavor": "The truce is a single leaf. Carry it in your mouth, and the forest will not see you — but the Hollow will.",
+      "curse_cost": ""
+    },
+    {
+      "rank": 11,
+      "suit": "diamond",
+      "title": "Green Knight escort",
+      "subtitle": "[PROTECTION]",
+      "description": "From ridge to gate; watchers bow, paths part, insults lodge elsewhere.",
+      "flavor": "The Knight does not speak during the escort. The silence is the escort.",
+      "curse_cost": ""
+    },
+    {
+      "rank": 12,
+      "suit": "diamond",
+      "title": "Private audience",
+      "subtitle": "[AUTHORITY]",
+      "description": "With the Lady of Thorns; a whisper exits as policy with petals attached.",
+      "flavor": "The petals are sharp. Do not handle them carelessly — they cut what they agree with.",
+      "curse_cost": ""
+    },
+    {
+      "rank": 13,
+      "suit": "diamond",
+      "title": "Stone Prince's seal",
+      "subtitle": "[AUTHORITY]",
+      "description": "Levies defer, foresters guide, scribes stop arguing and fetch tea.",
+      "flavor": "The seal is a pebble. It only works when you are not looking at it.",
+      "curse_cost": ""
+    },
+    {
+      "rank": 14,
+      "suit": "diamond",
+      "title": "Wild Hunt clemency",
+      "subtitle": "[PROTECTION]",
+      "description": "Ride under the horn for one night; no hound will take you, no obligation will sleep.",
+      "flavor": "The clemency is a silver bell. Ring it, and the Hunt will pass you by — but the Hollow will ride behind you until dawn.",
+      "curse_cost": ""
+    }
+  ],
+  "quick_use_notes": {
+    "draw_rules": "Draw until you have all four suits: **Spade** = place, **Heart** = actor, **Club** = pressure, **Diamond** = treasure. Highest rank sets the main Timer (2–5 → 4, 6–10 → 6, J/Q/K → 8, A → 10).",
+    "diamonds": "Treasures (Diamonds) are codified outcomes (charms, passes, host-rights, exceptions) that change position rather than call for a roll.",
+    "ace_rule": "If any **A** appears, echo threshold & fae motifs — gates that open at the wrong tide, paths that count your footsteps, gifts that ask for a name in return.",
+    "obligation_tracking": "Track **Obligation to the Green Gate** as a persistent timer. Each crossing without proper payment ticks it toward a visit from the Huntsman."
+  },
+  "field_procedures": [
+    {
+      "name": "Two-Voice Talk",
+      "description": "When parley stalls, the GM asks: 'What was said? What was meant?' If players state both, cancel the first social SB this scene; if they refuse, the next bargain demands collateral (memory/name). The collateral is always returned — but never in the same condition."
+    },
+    {
+      "name": "Count or Be Counted",
+      "description": "At any fae-touched crossing, a player who audibly counts in a fitting sequence (steps, heartbeats, breaths) shifts **Position** one step safer for that crossing. Boasting or mocking numbers adds a free 'Geas Catches' SB. The geas is always about a door. The door is always behind you."
+    },
+    {
+      "name": "Copper Courtesy Check",
+      "description": "Producing copper/brass tools in a ritual space removes the first **Fae Offense** tag this scene; drawing iron instead escalates the next Complication by +1 Cap. The escalation is always polite. The result is never."
+    }
+  ],
+  "lore_echoes": [
+    {
+      "title": "The Ninth Step",
+      "description": "In Aelinnel, the ninth step is not a step. The ninth step is a door. The door is always open. You just have to remember how to knock — and the knock must be in prime numbers."
+    },
+    {
+      "title": "The Unsaid Clause",
+      "description": "The fae love what is not said. They will fill the silence with their own words — and their words have weight. A contract with a fae court always has an unsaid clause. The clause is always the one you left out because you thought it was obvious. It was not obvious to the fae. It was a gift."
+    },
+    {
+      "title": "The Hollow's Reflection",
+      "description": "In the deep woods, the Hollow sometimes walks in the shape of a fawn or a fox. Aelinnel hunters know to look at the feet — the Hollow always leaves no prints in the moss. It is also said that the Green Gate is the Hollow's shadow cast by moonlight. The Gate opens onto the Hollow's memory of a forest that never existed. The Hollow is homesick. It does not know why."
+    },
+    {
+      "title": "The Traveler",
+      "description": "A gray pilgrim sometimes appears on the Stag Road at dusk. He asks for a story about a door you have not yet opened. If you tell him one, the next door you open will lead to a place you have never been. If you refuse, he will give you a key that unlocks nothing — and that key is the most dangerous gift you can receive."
+    },
+    {
+      "title": "The Ninth Word",
+      "description": "Never accept a gift without naming its price. The giver will name it for you — and their price is always one word more than you wanted to pay. The ninth word is the one that binds. If you speak the ninth word, you have accepted the price. The price is always a door. The door is always the Hollow."
+    }
+  ],
+  "superstitions": [
+    {
+      "name": "Hazel to the Threshold",
+      "effect": "Carry a hazel twig when passing through a fae-touched gate. Ignore the first **Glamour Fog** penalty.",
+      "cost": "Burn for +1 die once"
+    },
+    {
+      "name": "Count the Steps",
+      "effect": "Audibly count your steps in primes (2, 3, 5, 7) when entering a thorn grove. Cancel **Thorn Court Tithe** or take –1 die on your next courtesy roll (your choice).",
+      "cost": "Burn for +1 die once"
+    },
+    {
+      "name": "Name the Gift",
+      "effect": "When receiving a gift from a fae, name its price aloud before touching it. Gain +1 Effect on one negotiation with the fae, but mark **Obligation** to the Green Gate.",
+      "cost": "Burn for +1 die once"
+    }
+  ],
+  "patronage_and_power": {
+    "description": "Among the Aelinnel, power flows through courtesy, oath, and the hidden geometry of the land. A Stone Prince's authority rests on indexed fae treaties; a Green Knight's on the trials he has witnessed. There is no single crown, only the shared understanding that a broken promise cuts deeper than a sword — and that a promise kept is a door that opens both ways.",
+    "gm_advice": {
+      "two_voice_courtesy": "Use **Two-Voice Courtesy** to reward players who pay attention to the unspoken. The unspoken is where the fae live.",
+      "copper_over_iron": "Enforce **Copper over Iron** — carrying iron is not forbidden, but it is a statement. The statement is always heard. The hearing is always remembered.",
+      "unsaid_clause": "Let **The Unsaid Clause** be a source of future complications; the fae love what is not said. They will fill the silence with their own words — and their words have weight.",
+      "obligation_tracking": "Track **Obligation to the Green Gate** as a persistent timer. Each crossing without proper payment ticks it toward a visit from the Huntsman. The Huntsman is always polite. The Huntsman is always hungry."
+    }
+  },
+  "sb_spend_table": {
+    "minor_complications": [
+      "**Exposure:** Your actions draw unwanted attention from **Thorn Court reeves or green-market brokers**.",
+      "**Noise:** Sounds of your actions alert nearby **forester-wardens or fae watchers**.",
+      "**Trace:** Evidence of your passage marks your route for **way-keepers or Huntsman's hounds**.",
+      "**Delay:** A brief but meaningful setback costs you **time or favorable tide**.",
+      "**Supply Strain:** Mark +1 segment on a relevant **resource timer**."
+    ],
+    "moderate_setbacks": [
+      "**Alarm Raised:** **Green Knight or Lady of Thorns' herald** becomes aware and begins responding.",
+      "**Position Lost:** You lose advantageous ground/cover due to **glamour fog or root-slide**.",
+      "**Foe Appears:** A **stone-wight or fae champion** arrives on scene.",
+      "**Gear Trouble:** A piece of equipment becomes **Compromised/Neglected**.",
+      "**Lock/Barrier:** A simple obstacle now requires a test to overcome."
+    ],
+    "serious_trouble": [
+      "**Reinforcements:** Additional **Thorn Court knights, forester-wardens, or Green Hunt** arrive.",
+      "**Key Gear Breaks:** A crucial tool/weapon becomes temporarily unusable.",
+      "**Major Twist:** The situation fundamentally changes - **geas spoken/gate yawns/Huntsman sounds**.",
+      "**Rail Tick:** Advance a relevant campaign/front timer by 1 segment.",
+      "**Condition Applied:** Mark **Fatigue 1/Harm 1/Condition** appropriate to fiction."
+    ],
+    "major_turns": [
+      "**Trap Springs:** A prepared danger activates with full effect.",
+      "**Authority Arrival:** **Lady of Thorns, Stone Prince, or Huntsman** intervenes.",
+      "**Scene Shift:** The environment changes dramatically - **tide turns/gate opens/forest marches**.",
+      "**Patron Omen:** Divine/arcane forces take notice - **omen appears/blessing lost/curse manifests**.",
+      "**Narrative Pivot:** The story takes an unexpected turn that reframes objectives."
+    ],
+    "region_specific": [
+      "**Aelinnel (Courtesy & Fae):** A courtesy is demanded that you cannot offer; the Green Gate's price changes mid-crossing; the Lady of Thorns remembers a slight you did not know you had given.",
+      "**Aelinnel (Glamour & Threshold):** The path you were following now leads to a place you have already been; your shadow walks one step ahead of you; a door that was locked is now open — and the door is the Hollow.",
+      "**Aelinnel (Oath & Iron):** An oath-bead chills in your pocket; iron is discovered in a grove; the Green Knight appears to demand a trial by path."
+    ]
+  },
+  "boss_archetypes": {
+    "court_and_courtesy": [
+      {
+        "name": "Lady of Thorns",
+        "tags": [
+          "Etiquette Engine"
+        ],
+        "description": "Punishes breaches with precise harms, rewards perfect courtesy with literal boons.",
+        "win_condition": "Satisfying three courtesies in sequence (no iron, two-voice speech, return the waymark). The third courtesy is always a riddle. The riddle is always about a door.",
+        "phases": [
+          "Courtesy Demanded",
+          "Thorn Tax Levied",
+          "Riddle of the Door"
+        ]
+      },
+      {
+        "name": "Green Knight",
+        "tags": [
+          "Trial by Pattern"
+        ],
+        "description": "Duel of paths and proofs, not blades.",
+        "win_condition": "Presenting a higher-count route (Fibonacci, even-steps) or yielding a deserved apology at the right number. The right number is never nine. The right number is always eight — and a pause.",
+        "phases": [
+          "Challenge Offered",
+          "Path Test",
+          "The Right Number"
+        ]
+      }
+    ],
+    "threshold_and_hunt": [
+      {
+        "name": "Moonlit Ride (Wild Hunt)",
+        "tags": [
+          "Hunt",
+          "Judgment"
+        ],
+        "description": "Three phases: **Sounding** (horns), **Coursing** (paths shorten for the bold), **Closing the Ring**.",
+        "win_condition": "Naming safe-clemency, joining the chase without taking a prey, or blowing the right counter-call (2–3–5). The counter-call must be a question. The question must be about the Hollow. The Hollow does not answer — but it listens.",
+        "phases": [
+          "Sounding",
+          "Coursing",
+          "Closing the Ring"
+        ]
+      },
+      {
+        "name": "Green Gate",
+        "tags": [
+          "Living Crossing"
+        ],
+        "description": "Demands exact change in truths.",
+        "win_condition": "Paying a memory that fits the posted proof; forcing passage triggers 'Roads Rewired.' The posted proof is always incomplete. The missing part is the ninth word.",
+        "phases": [
+          "Gate Yawns",
+          "Toll Demanded",
+          "Roads Rewired"
+        ]
+      }
+    ],
+    "numbers_and_glamour": [
+      {
+        "name": "Glamour Fog",
+        "tags": [
+          "Layered Illusion"
+        ],
+        "description": "Each layer dispelled by a correct count, courtesy, or copper rite.",
+        "win_condition": "Completing the **Three Proofs**: count aloud, return a borrowed path token, trade a said/meant receipt. The third proof is always a promise. The promise is always to a shadow.",
+        "phases": [
+          "Fog Gathers",
+          "Layer by Layer",
+          "The Third Proof"
+        ]
+      },
+      {
+        "name": "Lost Day",
+        "tags": [
+          "Time Miscount"
+        ],
+        "description": "The sun miscounts hours.",
+        "win_condition": "Reconciling two ledgers (what happened / what should have), then ringing a prime-number chime. The prime number is always 2, 3, 5, or 7 — never 9. 9 is not a number in Aelinnel. 9 is a **suggestion**.",
+        "phases": [
+          "Dawn at Supper",
+          "Reconcile the Ledgers",
+          "Prime Chime"
+        ]
+      }
+    ],
+    "market_and_oath": [
+      {
+        "name": "Green-Market Broker",
+        "tags": [
+          "Truth Arbitrage"
+        ],
+        "description": "Buys your meanings, sells your words.",
+        "win_condition": "Catching them in a one-voice statement or producing an Oath-Bead that chills (misunderstood clause). The misunderstood clause is always the one you left unsaid. The broker knew you would.",
+        "phases": [
+          "Bargain Offered",
+          "Truth Exchanged",
+          "The Unsaid Clause"
+        ]
+      },
+      {
+        "name": "Oath-Carver Gone Wrong",
+        "tags": [
+          "Quartz Tyrant"
+        ],
+        "description": "Binds towns with over-precise promises.",
+        "win_condition": "Carving a **Release Unless** into communal quartz at cost of a public truth. The truth must be one you have never told. The quartz will remember it. The quartz will also share it — politely, and only with the Hollow.",
+        "phases": [
+          "Quartz Bound",
+          "Towns Enslaved",
+          "Release Unless"
+        ]
+      }
+    ],
+    "stone_and_memory": [
+      {
+        "name": "Stone-Wight Chorus",
+        "tags": [
+          "Echo Jurors"
+        ],
+        "description": "Resent footsteps, adore proofs.",
+        "win_condition": "Tapping the dolmen scale that matches the grievance and returning a taken token to the barrow. The token is always a memory. The memory is always someone else's. Return it carefully — the dead are particular about provenance.",
+        "phases": [
+          "Footsteps Heard",
+          "Grievance Filed",
+          "Proof Demanded"
+        ]
+      }
+    ],
+    "boss_mechanics": {
+      "courtesy_currency": "In Aelinnel, social interactions operate on a hidden **Courtesy Counter**. Each polite gesture, correct honorific, or offered truth adds +1; each breach, slight, or falsehood subtracts. At 0, the GM gains an extra SB. At 5+, the party gains +1 die to their next social roll with fae courts."
+    }
+  },
+  "index": [
+    "Aelinnel",
+    "Stone, Bough, and Bright Things generator",
+    "Gnomes!Aelinnel",
+    "Faekin!Aelinnel",
+    "Places!Aelinnel",
+    "People!Aelinnel",
+    "Complications!Aelinnel",
+    "Rewards!Aelinnel",
+    "Green Gate",
+    "Thorn Court",
+    "Lady of Thorns",
+    "Green Knight",
+    "Stone Prince of Aelinnel",
+    "Huntsman of the Moonlit Ride",
+    "Elf-causey",
+    "Moonwell",
+    "Dolmen",
+    "Glamour fog",
+    "Stone-wight",
+    "Wild Hunt",
+    "Oath-bead",
+    "Green Market",
+    "Two-Voice Courtesy",
+    "Copper over iron",
+    "The ninth step",
+    "The Hollow"
+  ],
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

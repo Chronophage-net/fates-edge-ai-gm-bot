@@ -1,0 +1,223 @@
+{
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "data": [
+    {
+      "id": "bloody-fist",
+      "name": "The Bloody Fist",
+      "standing": 0,
+      "agenda": "Secure profitable contracts and expand influence across the Acasian marches",
+      "agendaTimer": {
+        "segments": 6,
+        "current": 1
+      },
+      "keyNPCs": [
+        "Captain Rusk — Former Ykrul hostage, pragmatic commander",
+        "The Black Colonel — Legendary commander, possibly dead",
+        "The Veteran Sergeant — Counts scars like coin",
+        "The Banner-Captain — Griffon standard bearer"
+      ],
+      "resources": "Soldiers, siege equipment, camp followers, war horses",
+      "hooks": [
+        "A contract dispute is brewing",
+        "Payday is late—desertions are increasing",
+        "The Black Colonel's death is being covered up"
+      ],
+      "color": "#2c3e50",
+      "icon": "🏴",
+      "source": "default",
+      "description": "The Bloody Fist are the largest and most feared mercenary company in Acasia. Their standards are black, their contracts are iron, and their loyalty ends at the next payday. They have served every kingdom and betrayed every kingdom—but they always collect their coin.",
+      "territory": "Acasia, Vhasia, and the northern marches",
+      "allies": [
+        "The Iron League",
+        "House Contarini (sometimes)"
+      ],
+      "enemies": [
+        "The Gray Ash",
+        "The Ecktorian Censorate"
+      ],
+      "tier": "Regional"
+    },
+    {
+      "id": "ecktorian-censorate",
+      "name": "Ecktorian Censorate",
+      "standing": -1,
+      "agenda": "Root out heresy, illegal magic, and political dissent across the province",
+      "agendaTimer": {
+        "segments": 10,
+        "current": 4
+      },
+      "keyNPCs": [
+        "Censor Cassia — Aging magistrate with a silver eye",
+        "Prefect Gaius Marcellus — Commander of the garrison",
+        "The Grand Magistrate — Guardian of forms",
+        "High Priest of the Everflame — Smiles like law"
+      ],
+      "resources": "Legal authority, archive access, witch-hunters, military escorts",
+      "hooks": [
+        "They are investigating the party's activities",
+        "Censor Cassia is dying—she wants to destroy the Iron Seal before she goes",
+        "Prefect Marcellus has a secret cult of oath-breakers"
+      ],
+      "color": "#d48a5a",
+      "icon": "⚖️",
+      "source": "default",
+      "description": "The Ecktorian Censorate is the law enforcement and intelligence arm of the Utaran Imperium's successor states. They root out heresy, illegal magic, and political dissent with bureaucratic precision. Their clerks outnumber their soldiers, and their archives hold the secrets of a hundred fallen nobles.",
+      "territory": "Ecktoria, Castra Ferrum, and the Acasian border",
+      "allies": [
+        "The Everflame Orthodoxy",
+        "The Synod"
+      ],
+      "enemies": [
+        "The Velvet Court",
+        "The Gray Ash",
+        "The Iron League"
+      ],
+      "tier": "Regional"
+    },
+    {
+      "id": "gray-ash",
+      "name": "Gray Ash Ykrul",
+      "standing": 1,
+      "agenda": "Secure winter grazing lands and protect the clan from Ecktorian encroachment",
+      "agendaTimer": {
+        "segments": 6,
+        "current": 0
+      },
+      "keyNPCs": [
+        "Khatun Sarnai — Proud chieftain of the Gray Ash",
+        "Yelü — Sarnai's daughter, child of a legionary",
+        "The Sky-Speaker — Shaman of storms",
+        "The Kon'reh Master — Geometry arbiter"
+      ],
+      "resources": "Steppe riders, remounts, steppe knowledge, hostage strings",
+      "hooks": [
+        "A white squall is coming",
+        "A hostage string has been cut—blood-price is due",
+        "The Khagan's health is failing"
+      ],
+      "color": "#5a8ab5",
+      "icon": "🐺",
+      "source": "default",
+      "description": "The Gray Ash are a Ykrul clan of the Violet Steppe, known for their wolf-standards and fierce independence. They measure distance in oaths and remounts, not miles. Every child learns: count your exits before you enter, never commit to a single path, and an ally untested is a blade without a sheath.",
+      "territory": "Violet Steppe, northern Acasia",
+      "allies": [
+        "The Tulkani",
+        "The Kuvani"
+      ],
+      "enemies": [
+        "Ecktorian Censorate",
+        "The Iron League"
+      ],
+      "tier": "Regional"
+    },
+    {
+      "id": "house-contarini",
+      "name": "House Contarini (Vilikari)",
+      "standing": 1,
+      "agenda": "Expand trade routes into Acasia and monopolize the grain trade",
+      "agendaTimer": {
+        "segments": 8,
+        "current": 3
+      },
+      "keyNPCs": [
+        "Tema — Vilikari merchant and grain factor",
+        "Factor Voss — Mid-level bureaucrat under audit",
+        "The Archivolot — Notary who seals fates with wax",
+        "The Federate King — Paramount ruler of the Vilikari"
+      ],
+      "resources": "Trade network, legal influence, grain, shipping, forged charters",
+      "hooks": [
+        "A rival house is undercutting their prices",
+        "The Valvano Ford is locked—grain cannot move",
+        "Tema has invested everything in this trade route"
+      ],
+      "color": "#2980b9",
+      "icon": "🏛️",
+      "source": "default",
+      "description": "House Contarini is one of the great Vilikari trading houses, controlling grain shipments, legal charters, and diplomatic connections across the Amaranthine. They are not a noble house in the traditional sense—they are a family of merchants whose wealth exceeds that of most kings.",
+      "territory": "Vilikari territories, Acasia, Vhasia",
+      "allies": [
+        "The Tulkani",
+        "The Fhara"
+      ],
+      "enemies": [
+        "The Iron League",
+        "The Ykrul Gray Ash"
+      ],
+      "tier": "Regional"
+    },
+    {
+      "id": "iron-league",
+      "name": "The Iron League",
+      "standing": 0,
+      "agenda": "Consolidate mercenary contracts and dominate the condotta market",
+      "agendaTimer": {
+        "segments": 8,
+        "current": 2
+      },
+      "keyNPCs": [
+        "The Black Colonel — Legendary commander, not seen in months",
+        "Captain Rusk — Pragmatic mercenary captain",
+        "The Veteran Sergeant — Counts scars like coins",
+        "Clan-Mother — Ykrul war-braid keeper"
+      ],
+      "resources": "Mercenary companies, military intelligence, siege equipment, camp followers",
+      "hooks": [
+        "Payday is late — morale is dropping",
+        "A condotta is threatening to flip sides mid-contract",
+        "The Black Colonel may be dead, but his banner still rides"
+      ],
+      "color": "#c45a5a",
+      "icon": "⚔️",
+      "source": "default",
+      "description": "The Iron League is a coalition of free companies, condottieri, and mercenary captains who sell steel to whoever can pay. They have no loyalty to any nation—only to the next payday. Their camps are ragged, their discipline iron, and their grudges longer than any contract.",
+      "territory": "Acasia, Vhasia, and the Violet Steppe",
+      "allies": [
+        "The Black Banners",
+        "House Contarini (sometimes)"
+      ],
+      "enemies": [
+        "The Ykrul Gray Ash",
+        "Ecktorian Censorate"
+      ],
+      "tier": "Regional"
+    },
+    {
+      "id": "velvet-court",
+      "name": "The Velvet Court",
+      "standing": 0,
+      "agenda": "Control Silkstrand's underworld and expand influence to the Brass Coast",
+      "agendaTimer": {
+        "segments": 6,
+        "current": 0
+      },
+      "keyNPCs": [
+        "Madam Serafine — Mistress of the Velvet Court",
+        "Old Kes — Fence and smuggler",
+        "Sister Agatha — Sanctuary keeper",
+        "The Archivist — Legal forger",
+        "The Gray Eminence — Unknown power behind the scenes"
+      ],
+      "resources": "Information network, forgery, laundering, blackmail files, safehouses",
+      "hooks": [
+        "A rival faction is moving into the Dye District",
+        "Madam Serafine is still paying off a debt to Livaea",
+        "The Gray Eminence's true identity remains a mystery"
+      ],
+      "color": "#8b6bb5",
+      "icon": "🎭",
+      "source": "default",
+      "description": "The Velvet Court is not a building. It is a network—of whispers, of debts, of favors owed and collected. It has no single leader, though many claim the title. It has no charter, no treasury, no walls. It is the space between the legitimate and the condemned, and its members are the ones who know how to walk that line.",
+      "territory": "Silkstrand and the Brass Coast",
+      "allies": [
+        "Livaea's Cult",
+        "The Livaean Network"
+      ],
+      "enemies": [
+        "The Watch",
+        "The Ecktorian Censorate"
+      ],
+      "tier": "Paramount"
+    }
+  ]
+}

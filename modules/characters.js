@@ -1,3 +1,4 @@
+// modules/characters.js
 let characters = {};
 
 function loadCharacters(charData) {
@@ -21,17 +22,16 @@ function get(name) {
         Arcana: 0
       },
       talents: [],
-      bonds: [],        // array of bond objects: { target: 'name', description: '...' }
-      complications: [], // array of complication strings
+      bonds: [],
+      complications: [],
       harm: 0,
       fatigue: 0,
       boons: 0,
-      obligation: 0,     // total obligation (for cosmic patrons)
-      corruption: 0,     // for Cantors
-      leash: 0,          // for Summoners
-      // Optional: per-patron obligation if needed, but we keep total for simplicity
-      assets: [],       // array of asset names or objects
-      followers: [],    // array of follower objects: { name, cap, loyalty: 'Faithful'|'Strained'|'Broken', fitness: 'Ready'|'Hurt'|'Down' }
+      obligation: 0,
+      corruption: 0,
+      leash: 0,
+      assets: [],
+      followers: [],
       xp: 0,
       tier: 1,
     };
@@ -55,7 +55,6 @@ function persist(name, saveCallback) {
   if (saveCallback) saveCallback();
 }
 
-// Get dice pool from attribute+skill expression, e.g., "Body+Melee"
 function getPool(name, expr) {
   const char = get(name);
   const parts = expr.split('+');
@@ -67,15 +66,12 @@ function getPool(name, expr) {
   return attrVal + skillVal;
 }
 
-// Apply resource change (harm, fatigue, boons, obligation, corruption, leash)
 function applyDelta(name, field, delta, saveCallback) {
   const char = get(name);
   if (field === 'harm') {
-    // Harm is capped at 3
     char.harm = Math.min(3, Math.max(0, char.harm + delta));
   } else if (field === 'fatigue') {
     char.fatigue = Math.max(0, char.fatigue + delta);
-    // Overflow: if fatigue >= Body, increase harm by 1 and clear fatigue
     const body = char.attributes.Body || 2;
     if (char.fatigue >= body) {
       char.harm = Math.min(3, char.harm + 1);
@@ -85,19 +81,15 @@ function applyDelta(name, field, delta, saveCallback) {
     char.boons = Math.min(5, Math.max(0, char.boons + delta));
   } else if (field === 'obligation') {
     char.obligation = Math.max(0, char.obligation + delta);
-    // Capacity = Spirit + Presence; if exceeded, mark fatigue
     const spirit = char.attributes.Spirit || 2;
     const presence = char.attributes.Presence || 2;
     const capacity = spirit + presence;
     if (char.obligation > capacity) {
       const overflow = char.obligation - capacity;
-      // Each overflow segment = 1 Fatigue
       applyDelta(name, 'fatigue', overflow, saveCallback);
-      // Optionally, if double capacity, trigger Patron Intrusion (handled by GM)
     }
   } else if (field === 'corruption') {
     char.corruption = Math.max(0, char.corruption + delta);
-    // Corruption timer size = Spirit; if full, bloom (handled by GM)
   } else if (field === 'leash') {
     char.leash = Math.max(0, char.leash + delta);
   }

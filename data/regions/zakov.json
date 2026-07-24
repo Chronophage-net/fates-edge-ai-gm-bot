@@ -1,0 +1,837 @@
+{
+  "id": "zakov-salt-serpent",
+  "version": "1.0.0",
+  "type": "generator",
+  "title": "Zakov — Salt & Serpent",
+  "label": "chap:zakov",
+  "key_demographic": "Humans",
+  "capital": "Zakov (the city has no other name)",
+  "manifest_path": "/data/docs/manifest.json",
+  "overview": {
+    "tagline": "The tide keeps a better tally than any scribe. The reef remembers every secret.",
+    "genre": "Lovecraftian dread meets pirate swagger; eldritch tide-horror, maritime noir, pressure as a living force.",
+    "mood": "Salt, Serpent, and the Crystalline Deep",
+    "starting_location": "A smuggler's gate built into the seawall, its iron mouth crusted with barnacles and secrets. The gatekeeper is a one-eyed woman who accepts payment in stories. Behind her, the Dregs Quarter stretches on stilts into the harbor, and the Salt Prince's flagship, the *Red Wake*, rides at anchor off the Iron Pier. 'The levy rises tonight,' she says, spitting into the water. 'Every ship pays, or every ship burns. You look like the burning type. Good. The Prince needs a reminder that the tide turns for everyone. And keep your eyes off the water at low tide. The Reaping doesn't like being watched. The Gray Lady has been asking about the Reaping. She's not the only one. The Oligarchs want the same thing. They're not allies. They're competition. You'd do well to remember which side you're on.'",
+    "lore": {
+      "history": "Zakov is the pirate-city of the Dolmis coast, built on the drowned bones of an Astroegro port city that sank beneath the waves when that ancient empire fell. The old stone ruins — shattered columns, flooded plazas, sealed vaults — lie only a few fathoms down, and at low tide you can see their roofs breaking the surface like the spines of dead leviathans. The city's streets are built on the rubble, its piers driven into the wreckage, and its deepest cellars open into sunken chambers where the water is warm and still. The Astroegro are gone, but their secrets remain: crystalline shards that hum with a terrible patience, sealed doors that weep brine, and the slow, creeping corruption that the locals call the Reaping. Above the water, three powers circle. Naval Intelligence watches from the *Ember*, a Kahfagian cutter permanently anchored in the smuggler's gate, waiting for the Syndicates to make a mistake. Patron Alaric funds the Oligarchs' artifact hunts from a counting-house in the Crimson Docks, a man whose glass eye records everything it sees. And the Salt-Bitten, a cult that worships the Reaping's hunger, grows in the sewers and the sunken cellars, fed by the Ordo Artificum's scholars and the Oligarchs' greed.",
+      "first_notice": "The smell of brine and tar. The constant slap of water against stone. The way every tavern has a door that leads to a different dock — and every dock has a name that changes with the tide. The faint, harmonic hum that comes from the deep, like a bell that never stops ringing. And the Gray Lady's mast, visible from every pier in the harbor, her steel hull dark against the salt-crusted wood.",
+      "rule_that_kills": "Never take a coin that tastes of brine. The Serpent's Mark is not a blessing. It is a weight that drowns. And never look into a still pool at low tide. The Reaping looks back. The Gray Lady's agents look too."
+    },
+    "entanglements": {
+      "west": "Thepyrgos — The chain-towers and the Synod's seal police the straits; the Reaping's crystal hums under the keel. A Zakov corsair is a pirate; a Thepyrgos privateer is a legal pirate.",
+      "north": "Valewood (Thin Coast) — Star-road shards and mist drift down the coast; the Gray Lady's agents watch the woods. The Reaping's influence does not cross the treeline.",
+      "south": "Theona — The Green Host does not ride the waves, but the Ninth Taboo is whispered in the coves. The Zakov smugglers know which coves avoid the Host's riders.",
+      "east": "Aelinnel — The gnomish tide-traders bring copper and counting-songs; the Reaping does not trust the fae. The gnomish courts have a standing offer on Astroegro artifacts."
+    }
+  },
+  "quotes": [
+    {
+      "speaker": "Salt Prince (Elite)",
+      "text": "The tide here keeps better tallies than any scribe, and the reefs remember every secret whispered above their depths. Power flows like the currents — those who understand them rule the waves. The Astroegro learned that. They are at the bottom now. The Kahfagians think they are different. They are not. The sea does not care about flags. It only cares about weight."
+    },
+    {
+      "speaker": "Dock-Rat (Commoner)",
+      "text": "The sewers and the sea both carry what folks want to forget, but they also remember everything. Best keep your business above water and your enemies guessing which dock you'll use next. The Salt Prince's crown floats, the Reaping grows in the dark, and the tide pulls for anyone with a sharp knife and a sharper tongue. Lately, the Gray Lady has been asking questions. She's not from here. She's from somewhere colder. And she's not the only one."
+    }
+  ],
+  "ninth_taboo": {
+    "title": "The Ninth Taboo Manifestation",
+    "description": "In any Zakov scene, the ninth ship to enter the harbor in a tide will be claimed by the reef. The wise wait for the tenth — or pay a name to the Kraken's Tongue. The reef is not a reef. It is a crystalline mouth. It has been feeding for centuries. It is still hungry. The Salt-Bitten are building it a new mouth."
+  },
+  "reaping_timer": {
+    "name": "Reaping's Corrosion",
+    "max_segments": 8,
+    "description": "The Reaping is not a monster to be fought. It is a pressure, a corruption, a slow unmaking of the soul. Track the party's entanglement with it.",
+    "advance_on": [
+      "A character accepts a bargain from the Salt Prince or a Syndicate factor.",
+      "A character uses a Serpent's Mark (see Diamonds).",
+      "A character fails a Resolve test while in Zakov (drowning dreams, crystalline whispers).",
+      "The party lingers in the Sunken Quarter or the Serpent's Spine for more than a scene.",
+      "The party handles an Astroegro artifact without protective measures.",
+      "The party accepts aid from Naval Intelligence, the Oligarchs, or the Salt-Bitten."
+    ],
+    "thresholds": {
+      "4": "The character gains the *Crystalline Whisper* condition (you hear the Reaping's voice in quiet moments; –1 die to resist fear). Their shadow begins to shimmer faintly.",
+      "8": "The character becomes **Harvested**. Their shadow detaches and walks into the sea, and they owe the Reaping a name (a true name of someone they love, or their own). They may still act, but they are marked. The GM may spend 2 SB to have a Collector — a crystalline spirit in the shape of a drowned sailor — appear and demand payment."
+    },
+    "clearing": [
+      "Offer the Reaping something it values more than a soul: a memory of a crime no one witnessed, a true name from the Astroegro era (found in the sunken vaults), or a shard of its own prison (a heist into the Salt Prince's vault).",
+      "Perform a deep-dive ritual at the Serpent's Spine, cutting a crystalline growth from the reef and replacing it with a lock of hair from a willing volunteer.",
+      "Deliver an Astroegro artifact to the Ordo Artificum for 'containment' — though this rarely ends well for the artifact."
+    ]
+  },
+  "npcs": [
+    {
+      "name": "Salt Prince Lev",
+      "role": "Nominal ruler of Zakov; keeper of the Reaping's seal",
+      "motivation": "Keep the syndicates from tearing the city apart",
+      "quirk": "His crown is a circlet of driftwood; he has never taken it off. Beneath it, his scalp is cracked like dry earth. Something crystalline moves in the cracks. He meets with Commodore Voss once a month. He always looks more tired afterward."
+    },
+    {
+      "name": "Pirate Queen Mila",
+      "role": "Rules the Shallows with charm and cutlass",
+      "motivation": "Carve out a kingdom free of the Salt Prince's levies",
+      "quirk": "Her cutlass was her grandmother's; the grandmother was also a queen. The grandmother was the first to see the Reaping and refuse it. The refusal cost her her shadow. She does not know her grandmother was a Kahfagian agent. She does not know she is one too."
+    },
+    {
+      "name": "Commodore Voss",
+      "role": "Commander, Kahfagian Naval Intelligence (Zakov station)",
+      "motivation": "Contain the Reaping; recover Astroegro artifacts; keep the Syndicates in check",
+      "quirk": "Her monocle is a polished Astroegro crystal shard. She sees the Reaping's corruption on anyone nearby. She has never taken it off. She sleeps with it on. She has not slept in three years."
+    },
+    {
+      "name": "Patron Alaric",
+      "role": "Oligarch factor; head of the Zakov artifact trade",
+      "motivation": "Acquire Astroegro artifacts; control the black market; feed the Ordo Artificum's research",
+      "quirk": "His left eye is a functional Astroegro recording device. Everything he sees is archived. He has sold copies of his recordings to the Syndicates, to Naval Intelligence, and to the Salt-Bitten. He knows where the Reaping's source is. He is not telling."
+    },
+    {
+      "name": "Kraken's Tongue",
+      "role": "Tide-oracle who speaks in riddles",
+      "motivation": "Survive another season without being harvested",
+      "quirk": "She lives in a bell tower that only exists at high tide; the bell does not ring. The bell is a fragment of the Reaping's prison. She tends it with her own blood. Her blood is crystalline. It glows in the dark. She has spoken to Commodore Voss once. She refused to tell her what she saw."
+    },
+    {
+      "name": "Scribe Marlo",
+      "role": "Ordo Artificum scholar",
+      "motivation": "Escape the Oligarchs' influence; expose the Ordo's true purpose",
+      "quirk": "His hands are stained with crystal dust from handling artifacts. The dust has begun to grow. He has begun to dream in crystalline. He is afraid of what he will become. He knows the Ordo Artificum is not studying the artifacts. They are *feeding* them."
+    },
+    {
+      "name": "The Salt-Bitten Queen",
+      "role": "Leader of the Reaping cult",
+      "motivation": "Awaken the Reaping; become its harvesters",
+      "quirk": "She has no eyes — only crystalline sockets. She can see the Reaping's future. She is leading her followers into the Sunken Quarter to build a crystalline cathedral. She has made a deal with Patron Alaric. He will not speak of it."
+    },
+    {
+      "name": "Dock-Master Olena",
+      "role": "Syndicate factor who 'loses' ships",
+      "motivation": "Own the waterfront, one weight at a time",
+      "quirk": "Her tally has a secret page that is a map of debtors' bones. The bones are crystalline. They move. She has sold information to Commodore Voss three times. She has sold information to Patron Alaric twice. She has not decided which side she is on."
+    },
+    {
+      "name": "The *Ember*'s Bosun",
+      "role": "Adjutant agent, Kahfagian Naval Intelligence",
+      "motivation": "Gather intelligence; maintain the Admiralty's presence",
+      "quirk": "Her left arm is prosthetic, made from salvaged Astroegro alloy. It never tarnishes. It hums at low tide. She has been in Zakov for twelve years. She does not remember what she was before. She does not want to."
+    }
+  ],
+  "names": {
+    "first_male": [
+      "Lev",
+      "Dmytro",
+      "Sarkis",
+      "Kostya",
+      "Ruslan",
+      "Taras"
+    ],
+    "first_female": [
+      "Mila",
+      "Olena",
+      "Anush",
+      "Zoya",
+      "Nadia",
+      "Halyna"
+    ],
+    "surnames": [
+      "Voloshyn",
+      "Bondarenko",
+      "Torosyan",
+      "Morozov",
+      "Kravchenko",
+      "Shevchenko"
+    ],
+    "epithets": [
+      "the Gray",
+      "Tide-Foot",
+      "the Unpaid",
+      "Bell-Sworn",
+      "Ash-Prow",
+      "the Silent"
+    ]
+  },
+  "places": [
+    {
+      "rank": 2,
+      "suit": "spade",
+      "title": "Salt Wharf",
+      "subtitle": "[TIDE]",
+      "description": "Cracked and crumbling; the tide brings back what law forgets.",
+      "flavor": "The wharf has a memory. It remembers every cargo that passed — and every captain that didn't. The stones are warm with crystal residue. The Gray Lady's agents watch from the roof of the chandlery. They are always watching.",
+      "mechanical_hook": "A successful Wits+Lore (DV 4) reveals a hidden cache; failure attracts Syndicate attention."
+    },
+    {
+      "rank": 3,
+      "suit": "spade",
+      "title": "Bone-Yard Beach",
+      "subtitle": "[DEATH]",
+      "description": "Wrecks and corpses tangled in kelp and rope.",
+      "flavor": "The bones are from three empires — Utaran, Astroegro, and older. They shift at high tide to form new constellations. The oldest bones are not bone; they are crystal. The Reaping's first harvest. The Oligarchs pay well for Astroegro bones. They do not ask what they are for.",
+      "mechanical_hook": "Salvage here requires a successful Spirit+Resolve (DV 4) to avoid attracting the Reaping's attention."
+    },
+    {
+      "rank": 4,
+      "suit": "spade",
+      "title": "Smuggler's Gate",
+      "subtitle": "[STEALTH]",
+      "description": "An alley behind the Fish Market; always unlocked, always watched.",
+      "flavor": "The lock is a riddle. The answer changes with the moon. The gatekeeper's eyes are the color of the deep. Her left eye is a polished crystal shard. She reports to the Syndicates. She reports to Naval Intelligence. She reports to the Oligarchs. She reports to no one.",
+      "mechanical_hook": "Passing requires a successful Wits+Stealth (DV 4) or a Smuggler's Token (Diamond)."
+    },
+    {
+      "rank": 5,
+      "suit": "spade",
+      "title": "The Shallows",
+      "subtitle": "[TRAVEL]",
+      "description": "A reef-ridden cut only locals dare; navigation as survival.",
+      "flavor": "The reef has a name: the Serpent's Spine. It grows longer each year. At night, it sings — a harmonic hum that draws ships onto the crystal teeth. The Gray Lady's cutter knows the passages. The Oligarchs have bribed the reef-captains. The reef does not accept bribes.",
+      "mechanical_hook": "Navigating requires a successful Wits+Ride (DV 5) or a Reef Guide (costs 1 Supply)."
+    },
+    {
+      "rank": 6,
+      "suit": "spade",
+      "title": "Dregs Quarter",
+      "subtitle": "[COMMUNITY]",
+      "description": "Shanties on stilts; boats tied to doorframes like pets.",
+      "flavor": "The stilts are whale ribs. The quarter rises and falls with the tide — and the mood. Some doorframes have no doors. Those houses are empty. The residents are still inside. They are waiting for the Reaping to finish. The Salt-Bitten recruit here. They offer freedom. They offer crystals.",
+      "mechanical_hook": "A successful Presence+Sway (DV 4) can gather rumors; failure attracts Salt-Bitten attention."
+    },
+    {
+      "rank": 7,
+      "suit": "spade",
+      "title": "Iron Pier",
+      "subtitle": "[AUTHORITY]",
+      "description": "Gangplank to the *Red Wake*, the corsair flagship; power as a vessel.",
+      "flavor": "The ship was a slaver once. It still smells of chains and salt. The Salt Prince's cabin has a locked hatch. No one asks what is below. The hatch is warm. It hums. Commodore Voss has asked. The Prince did not answer.",
+      "mechanical_hook": "Boarding requires an invitation or a successful Sway (DV 5). The hatch is a Reaping site."
+    },
+    {
+      "rank": 8,
+      "suit": "spade",
+      "title": "Crow's Roost",
+      "subtitle": "[SOCIAL]",
+      "description": "A tavern built into the hull of a beached galleon; the past as the present.",
+      "flavor": "The hull was a prize from a war that ended forty years ago. The crew who took it still drink there. They have not aged. They do not speak of the Reaping. Their reflections in the beer are crystalline. They do not speak of the Gray Lady either. She has not come in. She has not needed to.",
+      "mechanical_hook": "Information can be bought for 1 Supply; the tavern keeper remembers everything."
+    },
+    {
+      "rank": 9,
+      "suit": "spade",
+      "title": "Black Bazaar",
+      "subtitle": "[TRADE]",
+      "description": "Tents under tarps; goods that scream if you listen.",
+      "flavor": "The scream is not pain. It is a warning. The most expensive stall sells 'clean' souls — memories scrubbed of crystal contamination. No one knows what that means. The stall owner has no shadow. The Oligarchs own the stall. They sell clean souls and buy dirty ones.",
+      "mechanical_hook": "Artifacts can be bought for 2+ Supply; every purchase ticks Reaping's Corrosion."
+    },
+    {
+      "rank": 10,
+      "suit": "spade",
+      "title": "Salt Maze",
+      "subtitle": "[MYSTERY]",
+      "description": "Marsh paths only the lost know; confusion as protection.",
+      "flavor": "The maze was a graveyard. The dead rearranged the hedges. The center is a stone basin filled with water that reflects a sky you have never seen. The water is warm. It tastes of crystal and old tears. The Salt-Bitten gather here at the dark moon. They do not speak. They do not need to.",
+      "mechanical_hook": "Navigating requires a Wits+Lore (DV 5); success reveals a hidden truth, failure causes disorientation."
+    },
+    {
+      "rank": 11,
+      "suit": "spade",
+      "title": "Sunken Quarter",
+      "subtitle": "[DEATH] [STEALTH]",
+      "description": "Half the city is underwater at high tide; wealth as depth.",
+      "flavor": "The flooded houses have air pockets. People still live there — damply. They whisper about a door at the lowest tide, a door that leads to the vault where the first Salt Prince made his bargain. The door is warm. It hums. The Gray Lady has found the door. She has not opened it. The Oligarchs have found the door. They are trying to open it. The Salt-Bitten guard it.",
+      "mechanical_hook": "Entering requires a successful Endurance (DV 4) to avoid drowning; the vault is a major Reaping site."
+    },
+    {
+      "rank": 12,
+      "suit": "spade",
+      "title": "Crimson Docks",
+      "subtitle": "[WEIGHT] [AUTHORITY]",
+      "description": "Contracts signed in blood; commerce as violence.",
+      "flavor": "The blood is not always the signatory's. The docks do not care. The inkwells are filled from a common source — a crystalline spring that weeps from the reef. No one knows where the source is. The ink writes by itself. Patron Alaric owns the ink trade. He sells to both sides.",
+      "mechanical_hook": "Contracts signed here are binding and carry Reaping weight; a successful Wits+Lore (DV 5) can find a loophole."
+    },
+    {
+      "rank": 13,
+      "suit": "spade",
+      "title": "Anchorhead",
+      "subtitle": "[AUTHORITY]",
+      "description": "A floating fortress of the Pirate Syndicate; law as an anchor.",
+      "flavor": "The fortress is built from the hulls of seized ships. You can hear the captains weeping in the timbers. The lowest deck is sealed. The seal is warm. It is made of crystal. The Pirate Queen keeps the Oligarchs at bay here. She keeps Naval Intelligence at bay too. She keeps everyone at bay. She is losing.",
+      "mechanical_hook": "Gaining access requires a Letter of Marque or a successful Sway (DV 5)."
+    },
+    {
+      "rank": 14,
+      "suit": "spade",
+      "title": "Serpent's Spine",
+      "subtitle": "[MAGIC] [LEGEND]",
+      "description": "A reef pass to the city's secret heart; danger as a gateway.",
+      "flavor": "The pass is a submerged arch, carved with Astroegro glyphs that glow in the dark. Swim through, and the city shows you its true face — once. The true face is a wound. The wound is the Reaping. The arch is warm. It hums. The Ordo Artificum has mapped the arch. They have not mapped what lies beneath.",
+      "mechanical_hook": "Passing reveals a vision of the Reaping's source; ticks Reaping's Corrosion by +2."
+    }
+  ],
+  "people_and_factions": [
+    {
+      "rank": 2,
+      "suit": "heart",
+      "title": "Dock-Rat",
+      "subtitle": "[STEALTH]",
+      "description": "Pickpocket with a map tattoo and no fear; the street as education.",
+      "flavor": "His tattoo is of the Sunken Quarter at low tide. The buildings are upside down. The tattoo moves when he sleeps. The ink is mixed with crystal dust. He sells information to the Gray Lady. He sells information to the Oligarchs. He sells information to everyone.",
+      "what_they_carry": "Can provide a map or rumor for 1 Supply.",
+      "what_they_ask": "A secret to tattoo on his skin."
+    },
+    {
+      "rank": 3,
+      "suit": "heart",
+      "title": "Fence",
+      "subtitle": "[SOCIAL] [WEIGHT]",
+      "description": "Deals in stolen names and secondhand loyalties; trust as currency.",
+      "flavor": "Her tally is written in disappearing ink. She is the only one who knows the antidote. The antidote is a drop of Reaping-crystal brine. She keeps it under her tongue. Her tongue is forked. She owes Patron Alaric a debt. She does not remember what for.",
+      "what_they_carry": "Can fence stolen goods for 1 Supply.",
+      "what_they_ask": "A name she can sell — or forget."
+    },
+    {
+      "rank": 4,
+      "suit": "heart",
+      "title": "Tavern-Keeper",
+      "subtitle": "[SOCIAL]",
+      "description": "Remembers every face — and sells the list; hospitality as a trap.",
+      "flavor": "His memory is a curse from a fae court. He cannot forget — and he cannot stop talking. He is the only source of the Reaping's true name. He does not know he knows it. It is written on his skin in crystal. The Gray Lady visits him every week. She is the only one he does not sell to.",
+      "what_they_carry": "Sells rumors and information for 1 Supply.",
+      "what_they_ask": "A story he hasn't heard — he will pay for it."
+    },
+    {
+      "rank": 5,
+      "suit": "heart",
+      "title": "Corsair Lieutenant",
+      "subtitle": "[AUTHORITY]",
+      "description": "A letter of marque signed in blood; authority as paper.",
+      "flavor": "The letter is stained with a thumbprint. The thumb is still attached to the signatory. He has not aged in ten years. His blood is crystalline. He sails for the Syndicate. He sails for the Oligarchs. He sails for whoever pays. He has a gray thread tied around his wrist. He does not remember tying it.",
+      "what_they_carry": "Can grant a Corsair's Charter (Diamond) for 2 Supply.",
+      "what_they_ask": "A name to add to his letter — a debt he can collect."
+    },
+    {
+      "rank": 6,
+      "suit": "heart",
+      "title": "Dock-Master",
+      "subtitle": "[AUTHORITY] [WEIGHT]",
+      "description": "'Loses' ships that owe the Syndicate; bureaucracy as a weapon.",
+      "flavor": "Her tally has a secret page. The page is a map of debtor's bones. The bones are still warm. They hum at low tide. She has sold the map to the Gray Lady once. She has sold it to the Oligarchs twice. The map has changed. She does not know why.",
+      "what_they_carry": "Can 'lose' a ship for 2 Supply.",
+      "what_they_ask": "A share of the cargo — or a name to add to the map."
+    },
+    {
+      "rank": 7,
+      "suit": "heart",
+      "title": "Smuggler Captain",
+      "subtitle": "[STEALTH] [COMBAT]",
+      "description": "A false manifest and a quicker blade; honesty as a liability.",
+      "flavor": "She names her boats after dead lovers. The current boat is named 'Mistake.' The previous boat, 'Regret,' was taken by the Reaping. She does not speak of it. The boat's hull is crusted with crystal. She carries cargo for the Syndicate. She carries cargo for Naval Intelligence. She carries cargo for the Oligarchs. She does not ask what it is.",
+      "what_they_carry": "Can smuggle goods for 1 Supply.",
+      "what_they_ask": "A lover's name — she will add it to her list."
+    },
+    {
+      "rank": 8,
+      "suit": "heart",
+      "title": "Poison-Tongue",
+      "subtitle": "[SOCIAL] [MAGIC]",
+      "description": "Trades secrets like coin; words as blades.",
+      "flavor": "His tongue is forked — not by birth, but by a curse. He can speak two truths at once. The Reaping speaks through him in his sleep. He no longer sleeps. His dreams are harvested. He works for Patron Alaric. He does not know what he is carrying.",
+      "what_they_carry": "Sells secrets for 1 Supply or a favor.",
+      "what_they_ask": "A secret he doesn't know — he is always hungry for more."
+    },
+    {
+      "rank": 9,
+      "suit": "heart",
+      "title": "Exiled Admiral",
+      "subtitle": "[AUTHORITY]",
+      "description": "Runs a black-market shipyard; rank as a resource.",
+      "flavor": "Her flag is a torn imperial pennant. She keeps it to remind herself why she left. The real reason is a crystalline shard she found in a ship's hold. She keeps it in a lead box. The box is warm. It whispers her name. She sells ships to the Syndicate. She sells ships to Naval Intelligence. She sells ships to anyone who pays.",
+      "what_they_carry": "Can repair or sell ships for 2 Supply.",
+      "what_they_ask": "A story of betrayal — she collects them."
+    },
+    {
+      "rank": 10,
+      "suit": "heart",
+      "title": "Pirate Queen",
+      "subtitle": "[AUTHORITY] [SOCIAL]",
+      "description": "Rules the Shallows with charm and cutlass; beauty as power.",
+      "flavor": "Her cutlass was her grandmother's. The grandmother was also a queen. The grandmother was also the first person to see the Reaping and refuse it. The refusal cost her her shadow. She still has hers. It is the only thing she fears losing. She is a Kahfagian agent. She does not know it. Commodore Voss knows. She has not told her.",
+      "what_they_carry": "Can grant safe passage through the Shallows for 1 Supply.",
+      "what_they_ask": "A kiss — and a promise to remember it."
+    },
+    {
+      "rank": 11,
+      "suit": "heart",
+      "title": "Silent Syndicate",
+      "subtitle": "[MYSTERY]",
+      "description": "No names, just favors and faces; anonymity as strength.",
+      "flavor": "Their messenger is a child with no tongue. She writes in the air with smoke. The smoke smells of crystal and salt. The words appear on your skin. They fade after an hour. The Reaping does not forget. The Gray Lady has tried to recruit the child twice. The child has refused.",
+      "what_they_carry": "Can deliver messages that cannot be traced.",
+      "what_they_ask": "A favor — to be named when the smoke clears."
+    },
+    {
+      "rank": 12,
+      "suit": "heart",
+      "title": "Kraken's Tongue",
+      "subtitle": "[MAGIC] [DEATH]",
+      "description": "An oracle who speaks in riddles and tides; the future as a mystery.",
+      "flavor": "She lives in a bell tower that only exists at high tide. The bell does not ring. The bell is a fragment of the Reaping's prison. She tends it with her own blood. Her blood is crystalline. It glows in the dark. She has told Commodore Voss the fate of her mission. Voss has not listened.",
+      "what_they_carry": "Can read the tides for 1 Supply.",
+      "what_they_ask": "A name — and a promise to forget it."
+    },
+    {
+      "rank": 13,
+      "suit": "heart",
+      "title": "Salt Prince",
+      "subtitle": "[AUTHORITY]",
+      "description": "The nominal ruler; real power in the shadows; a crown as a mask.",
+      "flavor": "His crown is a circlet of driftwood. He has never taken it off. Beneath it, his scalp is cracked like dry earth. Something crystalline moves in the cracks. It is the Reaping. It is patient. He meets with Patron Alaric every full moon. He does not know what they discuss.",
+      "what_they_carry": "Can grant a Prince's Writ (Diamond) for a service.",
+      "what_they_ask": "A portion of your cargo — and your silence."
+    },
+    {
+      "rank": 14,
+      "suit": "heart",
+      "title": "Drowned Admiral",
+      "subtitle": "[DEATH] [LEGEND]",
+      "description": "A legend says he still gives orders from the deep; death as command.",
+      "flavor": "His orders arrive in bottles. The bottles are corked with finger bones. The ink is crystalline. It glows in the dark. The orders are always the same: 'Feed the reef.' The Ordo Artificum believes he is real. They are trying to contact him. The Salt-Bitten believe he is the Reaping's voice. They are listening.",
+      "what_they_carry": "Can provide a vision of the deep for 1 Supply.",
+      "what_they_ask": "A sailor's name — he will add it to his crew."
+    }
+  ],
+  "complications": [
+    {
+      "rank": 2,
+      "suit": "club",
+      "title": "Tide Shift",
+      "subtitle": "[TIDE] [TRAVEL]",
+      "description": "Turns early; your ship is now ashore on the wrong side.",
+      "flavor": "The tide stole a day. Your alibi is now a lie. The water has a new taste. It tastes of crystal. The reef is closer than it should be. The Gray Lady's cutter is already there.",
+      "mechanical_hook": "Navigation is Desperate; a successful Wits+Survival (DV 5) finds a new route; failure strands the party."
+    },
+    {
+      "rank": 3,
+      "suit": "club",
+      "title": "Warehouse Fire",
+      "subtitle": "[DISASTER] [WEIGHT]",
+      "description": "A rival syndicate burns it; your goods are inside.",
+      "flavor": "The fire is green. It burns paper and wood — and secrets. The smoke leaves a crystalline residue on the skin. The residue hums. The Oligarchs' factors were seen leaving the scene. Naval Intelligence was seen arriving.",
+      "mechanical_hook": "Lose 1 Supply; a successful Wits+Investigate (DV 4) may reveal who started it."
+    },
+    {
+      "rank": 4,
+      "suit": "club",
+      "title": "Cursed Cargo",
+      "subtitle": "[DEATH] [MAGIC]",
+      "description": "Something in the hold is *watching*; cargo as a curse.",
+      "flavor": "The cargo is a mirror. The reflection is not yours. The reflection has too many teeth. The frame is carved with Astroegro glyphs. They are instructions. You cannot read them. The Ordo Artificum will pay handsomely for it. They will pay in crystal.",
+      "mechanical_hook": "Ticks Reaping's Corrosion by +1; a successful Spirit+Resolve (DV 4) may resist its influence."
+    },
+    {
+      "rank": 5,
+      "suit": "club",
+      "title": "Storm Warning",
+      "subtitle": "[WEATHER] [FEAR]",
+      "description": "Ships flee, prices soar, lawmen vanish.",
+      "flavor": "The storm has a name. It is the name of a captain who swore revenge. The rain tastes of brine and old regrets. The lightning is green. It strikes the reef. The reef sings. The Gray Lady sails into the storm. She always comes back.",
+      "mechanical_hook": "All travel rolls are Desperate; a successful Wits+Survival (DV 5) finds shelter."
+    },
+    {
+      "rank": 6,
+      "suit": "club",
+      "title": "Double-Cross",
+      "subtitle": "[SOCIAL] [TRAP]",
+      "description": "You are holding a fake shipment and real enemies.",
+      "flavor": "The fake shipment is real. The real shipment is a trap. The trap is a shard of the Reaping. It whispers. It knows your bargains. It offers to clear them — for a price. The Oligarchs planned the double-cross. Naval Intelligence knew. They did not warn you.",
+      "mechanical_hook": "A successful Presence+Sway (DV 5) may negotiate the trap; failure triggers a Syndicate feud."
+    },
+    {
+      "rank": 7,
+      "suit": "club",
+      "title": "Prince's Levy",
+      "subtitle": "[AUTHORITY] [WEIGHT]",
+      "description": "Every ship pays tithe or gets sunk; tax as a threat.",
+      "flavor": "The levy collector wears a mask. The mask is the face of a dead admiral. The admiral's mouth moves. It asks for a name. The name must be written in blood on a crystal shard. The Salt Prince has been raising the levy. He is paying off a debt to Patron Alaric.",
+      "mechanical_hook": "Pay 1 Supply or face confiscation; a successful Sway (DV 5) may reduce the levy."
+    },
+    {
+      "rank": 8,
+      "suit": "club",
+      "title": "Plague Ship",
+      "subtitle": "[DEATH] [FEAR]",
+      "description": "Quarantine flags are ignored; sickness spreads.",
+      "flavor": "The plague is a cough that speaks the name of who infected you. The last name spoken is the Salt Prince's. He does not cough. His throat is crystalline. The Ordo Artificum has quarantined the ship. They are studying it.",
+      "mechanical_hook": "Infected characters lose 1 Fatigue per scene; a successful Endurance (DV 4) may resist."
+    },
+    {
+      "rank": 9,
+      "suit": "club",
+      "title": "Blood Feud",
+      "subtitle": "[COMBAT] [SOCIAL]",
+      "description": "Erupts between pirate crews; collateral damage mounts.",
+      "flavor": "The feud began over a stolen duck. The duck is still alive. The duck is made of crystal. No one admits to having seen it. It quacks in a harmonic tone. The reef answers. Naval Intelligence is trying to stop the feud. The Oligarchs are funding both sides.",
+      "mechanical_hook": "The party must choose a side or mediate; a successful Sway (DV 5) calms tensions."
+    },
+    {
+      "rank": 10,
+      "suit": "club",
+      "title": "Kraken Rising",
+      "subtitle": "[DEATH] [MAGIC]",
+      "description": "Reefs shift, ships vanish, sailors scream.",
+      "flavor": "The kraken is not a monster. It is a bargain that has grown teeth. The teeth are crystalline. They are the Reaping's first children. The kraken does not attack. It collects. The Salt-Bitten have been feeding it.",
+      "mechanical_hook": "A successful Spirit+Resolve (DV 5) may bargain with the kraken; failure costs 1 Supply."
+    },
+    {
+      "rank": 11,
+      "suit": "club",
+      "title": "Voided Contract",
+      "subtitle": "[WEIGHT] [AUTHORITY]",
+      "description": "Your protection now means nothing.",
+      "flavor": "The contract was written on shark skin. It dissolved in salt water. The shark still swims. It remembers your name. Its eyes are crystal. The Oligarchs voided the contract. They have already sold your debt.",
+      "mechanical_hook": "You lose a Syndicate ally; a successful Sway (DV 5) may restore the contract."
+    },
+    {
+      "rank": 12,
+      "suit": "club",
+      "title": "Syndicate Split",
+      "subtitle": "[AUTHORITY] [COMBAT]",
+      "description": "Zakov becomes a warzone overnight.",
+      "flavor": "The split was orchestrated by a third party. You are the third party. You do not remember agreeing. The Reaping remembers for you. Your signature is on the contract. It is written in crystal. The Gray Lady is watching. She is taking notes.",
+      "mechanical_hook": "The party must choose a side or flee; a successful Sway (DV 5) may broker a truce."
+    },
+    {
+      "rank": 13,
+      "suit": "club",
+      "title": "Naval Blockade",
+      "subtitle": "[AUTHORITY] [COMBAT]",
+      "description": "No ships in or out without a fight.",
+      "flavor": "The blockade is a fae illusion. The ships are real. The captains are hollow. Something else steers. Their eyes are crystal. Their orders come from the deep. The Gray Lady commanded the blockade. She is looking for something.",
+      "mechanical_hook": "Running the blockade requires a successful Wits+Ride (DV 5); failure means capture."
+    },
+    {
+      "rank": 14,
+      "suit": "club",
+      "title": "Tide Forgets",
+      "subtitle": "[DEATH] [MYSTERY]",
+      "description": "Half the city is cut off, drowning in secrets.",
+      "flavor": "The water is warm. The drowned are not dead — they are waiting. They are waiting for the Reaping to finish its work. Their mouths move. They are counting. The Salt-Bitten are already there. They are not counting. They are feeding.",
+      "mechanical_hook": "Entering the flooded area ticks Reaping's Corrosion by +2; a successful Endurance (DV 5) may avoid the worst."
+    }
+  ],
+  "rewards": [
+    {
+      "rank": 2,
+      "suit": "diamond",
+      "title": "Smuggler's Token",
+      "subtitle": "[STEALTH]",
+      "description": "Pass one checkpoint unseen; stealth as paper.",
+      "flavor": "The token is a dried eel skin. Show it, and the guards will not see you — or will pretend not to. The eel was not dead when skinned. It still twitches. Its blood is crystalline. The Gray Lady's agents recognize the token. They will not stop you. They will remember.",
+      "cost": "Using it ticks Reaping's Corrosion by +1; the Gray Lady's agents will remember your face."
+    },
+    {
+      "rank": 3,
+      "suit": "diamond",
+      "title": "Forged Manifest",
+      "subtitle": "[TRADE] [DECEPTION]",
+      "description": "Your cargo is now 'clean'; truth as forgery.",
+      "flavor": "The manifest is a leaf from a salt-cured book. The ink reads differently in moonlight. Under moonlight, it reads the true name of the Reaping. The Reaping does not like being named. The Oligarchs will pay for that name. They will pay very well.",
+      "cost": "Using it may attract the Reaping's attention; the Oligarchs may try to buy it from you."
+    },
+    {
+      "rank": 4,
+      "suit": "diamond",
+      "title": "Safe Berth",
+      "subtitle": "[TRAVEL]",
+      "description": "Bone-yard; no questions, no law; sanctuary as a wreck.",
+      "flavor": "The berth is a beached ship. Its captain still lives below decks — and does not age. He has been counting the same grain of sand for forty years. He will not tell you why. The sand is crystal. He is a retired Adjutant agent. He will not speak of his work.",
+      "cost": "The berth is safe, but the captain may demand a story in return for the space."
+    },
+    {
+      "rank": 5,
+      "suit": "diamond",
+      "title": "Corsair's Charter",
+      "subtitle": "[AUTHORITY] [COMBAT]",
+      "description": "Raid with impunity for one moon; violence as a license.",
+      "flavor": "The charter is a whip. Crack it, and the Syndicate will answer — or flog you. The whip's handle is carved from a piece of the Reaping's prison. It is warm. It whispers. It was a gift from Patron Alaric. He expects it to be used.",
+      "cost": "Using the charter ticks Reaping's Corrosion by +2; Patron Alaric will expect a return."
+    },
+    {
+      "rank": 6,
+      "suit": "diamond",
+      "title": "Prince's Writ",
+      "subtitle": "[AUTHORITY]",
+      "description": "Levies cannot touch you (yet); authority as a delay.",
+      "flavor": "The writ is a feather. The Salt Prince's signature is a claw mark. The feather came from a bird that drowned. It still tries to fly. Its eyes are crystal. The Gray Lady has a copy. She is waiting.",
+      "cost": "The writ expires after one use; the Gray Lady may use her copy to undermine you."
+    },
+    {
+      "rank": 7,
+      "suit": "diamond",
+      "title": "Black Tally",
+      "subtitle": "[WEIGHT] [INFORMATION]",
+      "description": "Names, weights, and where they sleep; knowledge as power.",
+      "flavor": "The tally is a skull. Read the names, and the skull will whisper their secrets. The skull's teeth are made of crystal. They hum. The tally was written by the Reaping. It is still writing. Naval Intelligence wants it. The Oligarchs want it more.",
+      "cost": "Reading the tally ticks Reaping's Corrosion by +1; the skull may demand a name in return."
+    },
+    {
+      "rank": 8,
+      "suit": "diamond",
+      "title": "Salvage Rights",
+      "subtitle": "[TRAVEL] [WEALTH]",
+      "description": "A named wreck; first claim, no questions.",
+      "flavor": "The wreck is a ghost ship. The ghost is the original owner. The ghost does not remember its name. It will trade the ship for a new one — a name, a memory, a drop of crystal brine. The Ordo Artificum wants the wreck. They want what is inside.",
+      "cost": "Salvaging the wreck may require a sacrifice (a memory or a name)."
+    },
+    {
+      "rank": 9,
+      "suit": "diamond",
+      "title": "Lighthouse Key",
+      "subtitle": "[AUTHORITY] [DECEPTION]",
+      "description": "Stolen; redirect ships where you will.",
+      "flavor": "The key is a tuning fork. Strike it, and the lighthouse will lie for you. The lie becomes truth for one tide. The lighthouse keeper weeps. Her tears are crystal. She is an Adjutant agent. She has been weeping for forty years.",
+      "cost": "Using the key may attract Naval Intelligence attention; the keeper may report you."
+    },
+    {
+      "rank": 10,
+      "suit": "diamond",
+      "title": "Weight-Marker",
+      "subtitle": "[SOCIAL] [WEIGHT]",
+      "description": "The Syndicate owes you a favor; obligation as an asset.",
+      "flavor": "The marker is a coin. The Syndicate's symbol is worn smooth — by regret. The coin is warm. It tastes of brine. It also tastes of crystal. The Syndicate will honor it — once. Then they will want it back. The Oligarchs have a standing offer to buy markers. They pay in favors.",
+      "cost": "Using the marker may escalate Syndicate expectations; they may demand more later."
+    },
+    {
+      "rank": 11,
+      "suit": "diamond",
+      "title": "Queen's Blessing",
+      "subtitle": "[TRAVEL] [SOCIAL]",
+      "description": "Safe passage through the Shallows; charm as protection.",
+      "flavor": "The blessing is a kiss. The Pirate Queen's lips taste of salt and blood. After the kiss, you dream of the Reaping. You wake with a new weight. The weight is written on your skin in crystal. It fades after a week. The Reaping does not forget. The Gray Lady has asked the Queen for a blessing. The Queen refused.",
+      "cost": "The blessing lasts one passage; the dream may tick Reaping's Corrosion by +1."
+    },
+    {
+      "rank": 12,
+      "suit": "diamond",
+      "title": "Kraken's Favor",
+      "subtitle": "[TRAVEL] [MAGIC]",
+      "description": "The tides part for your ship, once; nature as an ally.",
+      "flavor": "The favor is a tentacle wrung dry. When you need it, soak it in seawater. The tentacle will write a name in the foam. Do not speak that name. The name is the Reaping's. It will answer. The Salt-Bitten have offered a favor. They want something in return.",
+      "cost": "Using the favor ticks Reaping's Corrosion by +2; the Salt-Bitten may claim the debt."
+    },
+    {
+      "rank": 13,
+      "suit": "diamond",
+      "title": "Prince's Coin",
+      "subtitle": "[SOCIAL] [WEIGHT]",
+      "description": "Bribe any official, silence any witness.",
+      "flavor": "The coin is a finger bone. The official who takes it will not speak — or not listen. The bone belonged to the Salt Prince's predecessor. He is still alive. He is in the coin. He is made of crystal. Patron Alaric has a box of them. He is selling them.",
+      "cost": "Using the coin may attract Patron Alaric's attention; he may want to know where you got it."
+    },
+    {
+      "rank": 14,
+      "suit": "diamond",
+      "title": "Serpent's Mark",
+      "subtitle": "[TRAVEL] [MAGIC]",
+      "description": "The reef itself will guide you home; danger as a guide.",
+      "flavor": "The mark is a scar on your palm. The reef will cut you — but it will also open. The cut bleeds crystalline brine. The brine is the Reaping's attention. Use it sparingly. The Reaping will remember. It will ask for a name. The Salt-Bitten are marked. They have forgotten their names.",
+      "cost": "Using the mark ticks Reaping's Corrosion by +3; the Reaping will demand a name within one session."
+    }
+  ],
+  "quick_use_notes": {
+    "draw_rules": "Draw until you have all four suits: Spade = place, Heart = actor, Club = pressure, Diamond = leverage. Highest rank sets the main Timer (2–5 → 4, 6–10 → 6, J/Q/K → 8, A → 10).",
+    "diamonds": "Diamonds are codified outcomes (passes/contracts/goods) that change position rather than call for a roll.",
+    "ace_rule": "If any A appears, echo salt and serpent motifs — tides that remember, reefs that shift, the deep that listens, crystal that grows in the dark. If the A is a Heart, a Naval Intelligence agent appears. If the A is a Spade, a new artifact vault is discovered. If the A is a Club, the Reaping's influence spreads. If the A is a Diamond, an Oligarch factor offers a deal."
+  },
+  "additional_features": [
+    {
+      "name": "Tide Timer",
+      "description": "Scenes run on a four-segment Tide Timer (Low → Flood → Slack → Ebb). Each advance shifts Position: Low tide reveals hidden wrecks and bolt-holes; Flood tide drowns streets and seals doors. When the Timer turns, the Keeper may demand 1 SB tied to the waters."
+    },
+    {
+      "name": "Reaping's Corrosion (Timer [8])",
+      "description": "Tracks the slow corruption of the party's souls. See §5.1 for full mechanics."
+    },
+    {
+      "name": "Syndicate Weight",
+      "description": "Every deal leaves a mark. Track a single Weight value (0–3). At 3, the Syndicate calls it in: a betrayal, a levy, an unwanted escort. Clear 1 Weight by paying a Diamond or sacrificing a useful contact."
+    },
+    {
+      "name": "Adjutant Status",
+      "description": "Tracks the party's relationship with Naval Intelligence. Starts at 0. Advances when the party helps Naval Intelligence or recovers artifacts for them. At 3+, gain access to Adjutant resources (safe passage, intelligence reports, Ordo Artificum access). At negative, Naval Intelligence begins active surveillance."
+    },
+    {
+      "name": "Oligarch Standing",
+      "description": "Tracks the party's relationship with Patron Alaric's network. Advances when the party sells artifacts or accepts Oligarch patronage. At 3+, gain access to the black market and artifact auctions. At negative, Oligarch agents begin sabotaging the party's operations."
+    },
+    {
+      "name": "Whispers Deep",
+      "description": "Rumors carry teeth. When characters openly boast, bargain, or betray, roll 1d6: 1–3, Whispers spread, increasing SB generation; 4–6, Whispers favor the PCs, lowering suspicion until the tide turns. The Gray Lady's agents influence the roll."
+    },
+    {
+      "name": "Local Patrons (Syncretic Names)",
+      "description": "The Reckoner — Maelstraeus. Interest on every contract; the coin that always comes back. The Salt-Bitten Angel — Malachai. A silver coin that tastes of brine; a blessing that drowns. The Kraken's Father — Khemesh. The pressure beneath the keel; the weight the sea collects. The Tide Father — The Traveler. The current that carries you home — or to the reef. The Crystal Matrix — The Ninth. The Reaping's true nature; silence that has taken form. The Gray Lady's Lantern — The Witness (syncretic). The truth that Naval Intelligence records; the secret that cannot be hidden."
+    }
+  ],
+  "lore_echoes": [
+    {
+      "title": "The Bitter Root",
+      "description": "Daughters of the Cord run a hospice in the Sunken Quarter. They ask no payment — but they cut threads. A renegade Sister hides among the eel-cults, trying to untie her cord from the Salt Prince's tally. She claims the Reaping is the Cord's original sin. No one knows if she is right. Her cord is made of crystal. Commodore Voss has interviewed her. She did not tell her everything."
+    },
+    {
+      "title": "The Threshold Compendium",
+      "description": "The Serpent's Spine is a Class II Anchor site — the bound spirit of a drowned admiral. Saikou Ira would trade his silver mirror for a single reef chart. The mirror shows the Reaping as a crystalline spider. He has not slept since. His reflection is missing. The Ordo Artificum has a copy of his notes. They have added their own annotations."
+    },
+    {
+      "title": "Malachai, the Chained Angel",
+      "description": "A silver coin that never spends circulates among the smugglers. Take it, and your cargo always passes inspection — but the coin will taste of brine every time you touch it, and the Angel will ask for a favor before the next full moon. The favor is always to carry a message to the Salt Prince. The message is a single word: 'Soon.' The coin is warm. It grows warmer. The Gray Lady has a collection of them. She is not the one who spends them."
+    },
+    {
+      "title": "The Reckoner (Maelstraeus)",
+      "description": "The Crimson Docks keep a tally signed in salt water; those who borrow from the Reckoner find that their interest compounds with every tide. A captain who defaults may wake to find their ship's name struck from all records, as if it had never sailed. The Reckoner's ink is crystalline. It writes itself. It also writes the names of the dead. Patron Alaric has a standing account with the Reckoner. He has never defaulted."
+    },
+    {
+      "title": "The Gray Wanderer's Grimoire",
+      "description": "Zakov psions are called 'Tide-Readers.' They taste the future in the salt. The Pirate Queen employs two — and has never trusted a forecast that didn't cost blood. The Reaping's presence makes their predictions unreliable. They taste crystal instead of salt. They have stopped predicting. They only listen. Commodore Voss employs Tide-Readers too. She does not trust them. She keeps them close."
+    },
+    {
+      "title": "The Ninth",
+      "description": "In any Zakov scene, the ninth ship to enter the harbor in a tide will be claimed by the reef. The wise wait for the tenth — or pay a name to the Kraken's Tongue. The reef is not a reef. It is a crystalline mouth. It has been feeding for centuries. It is still hungry. The Salt-Bitten are building it a new mouth."
+    }
+  ],
+  "superstitions": [
+    {
+      "name": "Bread to the Tide",
+      "effect": "Toss a crust into the water before a voyage. Ignore the first Tide Shift penalty.",
+      "cost": "Burn for +1 die once"
+    },
+    {
+      "name": "Knot the Manifest",
+      "effect": "Tie a single knot in a corner of your cargo list. Cancel Voided Contract or take –1 die on your next customs check (your choice).",
+      "cost": "Burn for +1 die once"
+    },
+    {
+      "name": "Name to the Reef",
+      "effect": "Whisper a dead captain's name into the Serpent's Spine. Gain +1 Effect when navigating the Shallows this scene, but mark Obligation to the Kraken's Tongue.",
+      "cost": "Burn for +1 die once"
+    },
+    {
+      "name": "Crystal to the Deep",
+      "effect": "Drop a clear shard of glass (not crystal — glass) into the water at low tide. The Reaping will notice the deception — but it may be amused. Roll twice on the next Reaping's Corrosion tick and take the better result.",
+      "cost": "Burn for +1 die once"
+    },
+    {
+      "name": "Gray Thread to the Anchor",
+      "effect": "Tie a gray thread around a ship's anchor chain before sailing. Naval Intelligence will not stop you. They will watch. They always watch.",
+      "cost": "Burn for +1 die once"
+    }
+  ],
+  "sb_spend_table": {
+    "minor_complications": [
+      "**Exposure:** Your actions draw unwanted attention from syndicate enforcers, dock guards, Adjutant agents, or Oligarch factors.",
+      "**Noise:** Sounds of your actions alert nearby pirates, tavern patrons, Gray Lady's informants, or Ordo Artificum scholars.",
+      "**Trace:** Evidence of your passage marks your route for trackers, fence networks, Naval Intelligence surveillance, or Salt-Bitten cultists.",
+      "**Delay:** A brief but meaningful setback costs you time or favorable tide.",
+      "**Supply Strain:** Mark +1 segment on a relevant resource timer."
+    ],
+    "moderate_setbacks": [
+      "**Alarm Raised:** Dock-master, corsair lieutenant, Adjutant agent, or Oligarch factor becomes aware and begins responding.",
+      "**Position Lost:** You lose advantageous ground/cover/stealth due to tide shift, syndicate patrol, Adjutant sweep, or artifact hunt.",
+      "**Foe Appears:** A rival syndicate, pirate crew, Naval Intelligence team, or Salt-Bitten cultist cell arrives on scene.",
+      "**Gear Trouble:** A piece of equipment becomes Compromised/Neglected.",
+      "**Lock/Barrier:** A simple obstacle now requires a test to overcome.",
+      "**Adjutant Interest:** Naval Intelligence begins active surveillance. The Gray Lady's agents are watching."
+    ],
+    "serious_trouble": [
+      "**Reinforcements:** Additional syndicate enforcers, pirate crews, Naval Intelligence assets, Oligarch mercenaries, or Salt-Bitten cultists arrive.",
+      "**Key Gear Breaks:** A crucial tool/weapon becomes temporarily unusable.",
+      "**Major Twist:** The situation fundamentally changes — contract voided/storm hits/syndicate split/artifact stolen.",
+      "**Rail Tick:** Advance a relevant campaign/front timer by 1 segment.",
+      "**Condition Applied:** Mark Fatigue 1/Harm 1/Condition appropriate to fiction."
+    ],
+    "major_turns": [
+      "**Trap Springs:** A prepared danger activates with full effect.",
+      "**Authority Arrival:** Salt Prince, Pirate Queen, Commodore Voss, Patron Alaric, or Drowned Admiral intervenes.",
+      "**Scene Shift:** The environment changes dramatically — tide shifts/storm hits/blockade imposed/cathedral rises.",
+      "**Patron Omen:** Divine/arcane forces take notice — omen appears/blessing lost/curse manifests/Reaping surges.",
+      "**Narrative Pivot:** The story takes an unexpected turn that reframes objectives."
+    ],
+    "region_specific": [
+      "**Zakov (Tide Power):** Water levels change without warning, ships become stranded or flooded, tidal currents shift direction.",
+      "**Zakov (Syndicate Politics):** Protection money demands increase, rival factions make conflicting demands, contracts are voided mid-deal.",
+      "**Zakov (Pirate Culture):** Ships are commandeered, crews mutiny, pirate codes are enforced with violence.",
+      "**Zakov (Reaping Corruption):** A character's reflection speaks in a different voice, a crystalline growth appears on a weapon, the party hears a harmonic hum from the deep, a shadow walks past with no source.",
+      "**Zakov (Kahfagian Presence):** A Naval Intelligence surveillance team is spotted, an Oligarch factor makes a counter-offer, the Gray Lady's cutter changes position, the Ordo Artificum archives a new artifact."
+    ]
+  },
+  "patronage_and_power": {
+    "description": "In Zakov, power flows through the control of smuggling routes, the management of syndicate weights, and the ability to navigate the complex web of pirate politics. The Salt Prince maintains nominal authority, but real power lies with those who control the tides, the reefs, and the flow of information through the city's taverns and black markets. The true authorities are those who can provide safe passage, protect cargoes, and mediate between competing syndicates. The Kahfagians change everything. Above the syndicate politics, a quieter war is fought. Naval Intelligence wants to contain the Reaping and recover the artifacts. The Oligarchs want to control the artifacts and profit from the chaos. The Ordo Artificum serves both — and neither. Patron Alaric funds the artifact hunt. Commodore Voss commands the Adjutant agents. The Gray Lady's cutter is a permanent fixture in the smuggler's gate. Players who engage with the Kahfagian factions will find themselves caught between two imperial powers that do not trust each other and do not care about Zakov's survival. The Reaping changes everything else. Whoever controls the crystalline shard — or understands its nature — holds a weapon that could unmake the city or save it. The Salt Prince keeps the Reaping's location secret, but the Syndicates whisper that he is no longer its master. The Reaping has begun to act on its own. It reaches through the tide, through the dreams of the drowned, through the taste of brine in a smuggler's coin. Zakov is not ruled by the Prince. It is ruled by a hunger that has been patient for centuries. The Astroegro sealed it. The first Salt Prince bargained with it. Now the seal cracks, and the crystal grows. The Kahfagians know this. They are trying to stop it. They are also trying to exploit it.",
+    "for_the_gm": [
+      "Tie rewards to visible symbols (tokens, manifests, keys) that can be challenged, stolen, or voided — and that may carry a trace of crystal.",
+      "Let rival syndicates and Kahfagian factions issue conflicting protections, forcing players to choose whose favor matters more — and whose weights are safer.",
+      "Use the docks, taverns, and smuggling routes as arenas for social contests, where knowledge of custom and connections determines success — and where a character's shadow may betray them.",
+      "Track Reaping's Corrosion, Naval Intelligence Influence, and Oligarch Standing as campaign timers. Their advance is the city's slow death. The players can delay it, redirect it, or even embrace it — but they cannot ignore it. The Reaping is patient. The Gray Lady is watching. Patron Alaric is counting."
+    ]
+  },
+  "faction_entanglements": [
+    "**Salt Prince's Court:** Pay the levy and keep your head down; defy him and become a target for the Syndicates.",
+    "**Pirate Queen's Shallows:** Gain her favor through charm and daring; earn her enmity and the Shallows become a trap.",
+    "**Naval Intelligence (Adjutants):** They offer intelligence and protection — but at the cost of compliance and surveillance.",
+    "**Oligarchs (Patron Alaric):** They offer wealth and access — but demand loyalty and artifact deliveries.",
+    "**Salt-Bitten Cult:** They offer power and protection from the Reaping — but at the cost of your soul.",
+    "**Ordo Artificum:** They offer knowledge and artifact access — but their true purpose is to feed the Reaping, not contain it."
+  ],
+  "cross_regional_ties": [
+    "**Thepyrgos:** Chain-towers and Synod seal police the straits; a Zakov corsair is a pirate, a Thepyrgos privateer is a legal pirate.",
+    "**Valewood (Thin Coast):** Star-road shards and mist drift down the coast; the Gray Lady's agents watch the woods. The Reaping's influence does not cross the treeline.",
+    "**Theona:** The Green Host does not ride the waves, but the Ninth Taboo is whispered in the coves. Zakov smugglers know which coves avoid the Host's riders.",
+    "**Aelinnel:** Gnomish tide-traders bring copper and counting-songs; the Reaping does not trust the fae. The gnomish courts have a standing offer on Astroegro artifacts."
+  ],
+  "index": [
+    "Zakov",
+    "Salt and Serpent generator",
+    "Places!Zakov",
+    "People!Zakov",
+    "Complications!Zakov",
+    "Rewards!Zakov",
+    "Salt Prince",
+    "Pirate Queen",
+    "Kraken's Tongue",
+    "Drowned Admiral",
+    "Commodore Voss",
+    "Patron Alaric",
+    "Scribe Marlo",
+    "Salt-Bitten Queen",
+    "The Reckoner",
+    "The Salt-Bitten Angel",
+    "Crimson Docks",
+    "Sunken Quarter",
+    "Serpent's Spine",
+    "Tide Timer",
+    "Syndicate Weight",
+    "Adjutant Status",
+    "Oligarch Standing",
+    "Forged manifest",
+    "Black tally",
+    "Reef serpent",
+    "Brine wraith",
+    "Eel court",
+    "Name-mask",
+    "Local Patrons!Zakov",
+    "Reaping",
+    "Reaping's Corrosion",
+    "Astroegro ruins",
+    "Crystalline corruption",
+    "Naval Intelligence",
+    "Ordo Artificum",
+    "Gray Lady",
+    "Kahfagian Admiralty",
+    "Oligarchs",
+    "Salt-Bitten",
+    "Artifact Registry",
+    "Adjuvant agents",
+    "Patronage!Zakov"
+  ],
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

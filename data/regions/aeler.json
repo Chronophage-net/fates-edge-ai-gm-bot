@@ -1,0 +1,973 @@
+{
+  "id": "aeler-crowns-under-vaults",
+  "version": "1.0.0",
+  "type": "generator",
+  "title": "Aeler (Dwarves) — Crowns & Under-Vaults",
+  "label": "chap:aeler",
+  "key_demographic": "Aeler (Dwarfs)",
+  "capital": "Khaz-Veltrum (Arguable)",
+  "manifest_path": "/data/docs/manifest.json",
+  "overview": {
+    "tagline": "The mountain remembers every word carved in its stone. The deep remembers every breath we owe.",
+    "genre": "Survival horror underground, infrastructure as soft power, collectivist mercantilism, the weight of every breath.",
+    "mood": "Infrastructure, Famine, and the Pressure Below",
+    "starting_location": "An Underway junction lit by guttering brass lanterns, its stone walls scored with tally-marks from a dozen forgotten crowns. A Geometer halts the party with a tally-rod. 'The Spine shifts,' he says, stone-dust in his beard. 'Choose a crown — or be buried by one. The lowland grain barges are late again. If the holds don't eat, the pressure wakes. And if you hear a knock in threes, pretend you did not. The deep is listening tonight.'",
+    "lore": {
+      "history": "The Aeler Kingdoms hold the mountains by breath, bell, and bargain. Dozens of sovereign holds — some sealed for centuries, others trading openly with lowland markets — share only the deep roots of stone and the supremacy of the High King Beneath the Peaks. Their halls run like arteries, their cities open in thunderous caverns where bridges leap between ribs of stone and cisterns shine like night skies turned inward. **Lore** is the first law: air is counted, water is bartered, light is rationed by wick and prayer. **Tradition** is the second: seals are kept, measures remain true, and the dead keep their offices as carefully as the living. Between the two, a people learn to argue quietly and build loudly. Collectives — clans, guild-kin, lamp-companies — own what the mountain allows; individuals are custodians by oath. Trade runs under and over the range through under-ways and pass-forts, stitching protectorates and lowland markets to vaultmouth gates. Aeler prosperity depends entirely on surface grain. The holds cannot grow enough food in the dark; each winter, caravans from Acasia, Vhasia, and Viterra bring barley and rye through the high passes. In exchange, the Aeler send iron, copper, and engineered stonework — bridge keystones, mill gears, breath-counter mechanisms. It is a fragile bargain. When the grain is late, the holds ration. When the holds ration, the pressure whispers louder.",
+      "first_notice": "The smell of stale air and hot metal. The constant drip of condensation in the distance — or is it footsteps? The way every Aeler touches a small brass bell at their belt before speaking of the deep. The way they never, ever count to nine aloud.",
+      "rule_that_kills": "Never count your breaths aloud in a mine. The mountain listens, and if it hears you reach the ninth, it will take one — a breath, a memory, a shadow. The deep does not forgive miscounts."
+    },
+    "entanglements": {
+      "northwest": "The Violet Steppe (Ykrul) -- The high passes are contested; the Khagan's scouts sometimes ride down the valleys. The mountain holds are a wall, not a welcome.",
+      "south": "Ecktoria / Vhasia / Viterra / Ubral -- The grain barges from the lowlands keep the holds fed; the mountain's appetite is never fully satisfied. The holds trade iron for barley and pray for a mild winter.",
+      "northeast": "The Mistlands (Protectorate) -- The bell-lines are an extension of Aeler engineering; ward-salt is paid in iron. The Legate of the Mists answers to the High King.",
+      "across_aberderrin": "The Valewood / Linns -- Star-roads and fey paths occasionally surface in the deep galleries. The Aeler do not dig toward the forest; the forest does not dig toward them."
+    }
+  },
+  "quotes": [
+    {
+      "speaker": "Vault-Queen of a Crownland (Elite)",
+      "text": "The mountain remembers every seal pressed into its walls, every oath whispered in the dark. To govern here is not to command — it is to listen. The stone sings of what we owe. The deep listens for what we forget."
+    },
+    {
+      "speaker": "Under-Mason (Commoner)",
+      "text": "When the stone starts singing a different tune, you best listen. Three knocks in the morning means all's well. Three knocks at night means something's coming through the walls that wasn't meant to walk. My grandfather called it the pressure that thinks. He walked into the deep one day and never came back. The mountain answered his knock. It always does."
+    }
+  ],
+  "deep_drake": {
+    "name": "The Pressure That Thinks — The Deep Drake",
+    "description": "Deep beneath the oldest mountains, beyond the Ninth Seal and past the last lamplighter's mile, there is a presence. The Aeler do not name it. Among themselves, in whispers, some call it the Deep Drake — an ancient worm, a child of Nidhoggr, hatched in the dark between worlds. But that is speculation, and the Aeler are not a people given to speculation about things they cannot measure. What they know is this: there is a **weight** in the deepest stone. It feels like curiosity. It sounds like your own name spoken with concern. It is not a god, not a demon, not a dragon in any sense the surface-dwellers would recognize. It is a **proto-patron** — a being whose hold on the world is tenuous, whose attention slips like water through fingers. It cannot command. It cannot bless. It can only **invite**.",
+    "rumored_lair": "The Deep Drake has no lair that any living Aeler has seen, though rumor persists of a vast chamber of black glass and fossilized bone, where the heat of the earth meets the cold of the void. In that chamber, the worm coils around a hoard that is not gold but **attention**: the still, silent figures of those who walked too far and never walked back. They sit in the dark, eyes open, mouths moving silently as they repeat the last promise they ever made. The Drake does not kill. It **collects**. And what it collects, it forgets — because its memory is as fragile as its grip on reality. That is why it is always hungry. That is why it is always listening.",
+    "the_elder_thing": "What the elders do not say, but what the Edgewalkers whisper: The Deep Drake is not the only thing down there. It is a child of something older — Nidhoggr, the corpse-tearer, the one who gnaws at the root of the world. That older thing does not invite. It **demands**. And it has been patient for a very long time."
+  },
+  "edgewalker_bargain": {
+    "description": "Outcasts from the holds, Edgewalkers are those who could not abide the counting — or who were too useful to execute and too dangerous to keep. They trade in secrets, in weapons, in the subtle art of making two lowland lords need each other's destruction. An Edgewalker's greatest skill is not swordplay but **leverage**: knowing which noble's grain debt is overdue, which free company captain will flip for a better contract, which bridge toll can be raised to start a war. The holds disavow them publicly and fund them privately. When a war breaks out in the lowlands, Aeler iron flows to both sides. When the war ends, the holds send grain inspectors to collect the tab.",
+    "mechanical_hook": "Once per arc, an Edgewalker may declare that they have a **line** on a lowland conflict. The GM creates a 4-segment **Opportunity** timer. Each tick represents the Edgewalker applying pressure (spreading rumors, selling a weapon, forging a letter). When the timer fills, a war, a feud, or a trade embargo ignites — and the Aeler holds gain +2 Supply from arms sales. The Edgewalker gains 1 Corruption (the Hollow notices their work) and a permanent String on a lowland faction."
+  },
+  "faction_spectrum": [
+    {
+      "name": "Traditionalist / 'The Old Ways'",
+      "description": "These holds idealize the ancient mountain-empire: closed gates, iron tariffs, and the certain knowledge that surface-dwellers cannot be trusted. They resemble the dwarves of fireside tales: stubborn, insular, and quick to reach for an axe when a human mentions 'progress.' Their kings speak of the days when no foreigner stepped past the vaultmouth. They also speak of the pressure in whispers, and they seal any tunnel that shows signs of warmth.",
+      "timers": [
+        "Foreigner Suspicion [4]",
+        "Hold Sealed [6]"
+      ]
+    },
+    {
+      "name": "Cooperative / 'Open Hand'",
+      "description": "These holds trade freely with Aelaerem, Kahfagia, and even the Vilikari. They staff the under-markets, send engineers to repair bridges in Viterra, and treat the surface as a resource to be managed, not a threat to be shunned. They prefer soft power: standardized measures, certified weights, and bell-code protocols that make others **want** to trade on Aeler terms. They are also the most likely to send expeditions into the deep, seeking lost holds — and the most likely to lose miners to the pressure.",
+      "timers": [
+        "Trade Route Prosperity [6]",
+        "Cultural Friction [4]"
+      ]
+    },
+    {
+      "name": "Isolationist / 'Silent Stone'",
+      "description": "Deep holds that have not answered a Kingsmoot call in living memory. Their gates are lost, their peoples rumored to have turned inward, worshiping forgotten depths — or to have become part of the pressure's hoard. They neither help nor harm the surface — but when a White Flood or a gas flare occurs, their silence becomes a hazard of its own. The Deep Drake is said to lair somewhere beneath the Silent Stone holds.",
+      "timers": [
+        "Silent Hold Awakens [8]",
+        "Ancient Grudge [6]"
+      ]
+    }
+  ],
+  "breath_count": {
+    "description": "Among the Aeler, counting breaths is not merely a safety measure — it is a cultural reflex, as automatic as a human's heartbeat. Aeler children learn to count in eights before they learn to speak. They tap their fingers, their bells, their spoons in rhythms of eight. They never, ever count to nine aloud. The ninth breath is not a number; it is a **gap** — the space where the pressure listens. Aeler who forget to count in eights are considered unreliable, possibly touched by the deep. Those who deliberately count to nine are shunned; they are thought to have invited the pressure to notice them.",
+    "mechanical_note": "Breath-counting is not a skill roll or a resource to track. It is a narrative and cultural tic. The GM may use a character's failure to observe the count as a trigger for a complication (e.g., the mountain shifts, a bell rings falsely, a character feels watched). Conversely, an Aeler who scrupulously counts their breaths in eights may gain a small boon (e.g., +1 die to resist fear in confined spaces) as the mountain's attention slides past them."
+  },
+  "npcs": [
+    {
+      "name": "Valthor Aezelbron",
+      "role": "High King Beneath the Peaks",
+      "motivation": "Keep the ancient concord and balance the crownlands",
+      "quirk": "He has not spoken above a whisper in seven years. The court reads his will by bell-code."
+    },
+    {
+      "name": "Grunhelda Thrainsdottir",
+      "role": "Vault-Queen of Irondeep",
+      "motivation": "Expand trade routes while keeping the Old Ways satisfied",
+      "quirk": "She keeps a pet geode that hums when a contract is fair — and goes silent when the pressure is near."
+    },
+    {
+      "name": "Maeva Emery",
+      "role": "Legate of the Under-Seal",
+      "motivation": "Negotiate passage rights and standard measures with lowland realms",
+      "quirk": "Her seal-rod is carved from a fossilized root. She has never lost a tariff dispute."
+    },
+    {
+      "name": "Thromm Stone-Tongue",
+      "role": "Under-Mason (Commoner exemplar)",
+      "motivation": "Hear the mountain's warnings and keep the tunnels safe",
+      "quirk": "He can identify a false weight by tapping it once with his hammer. He has never counted to nine."
+    },
+    {
+      "name": "Orthen White-Ribbon",
+      "role": "Tunnel Courier",
+      "motivation": "Deliver sealed writs across hostile jurisdictions",
+      "quirk": "He has run the Spine Underway in darkness without a lamp. Twice. He says the dark has a voice, but it only asks questions."
+    },
+    {
+      "name": "Lumenor Saela",
+      "role": "Keeper of the Under-Altars",
+      "motivation": "Maintain the breath-rites and the old flame",
+      "quirk": "She speaks only in bell tones during services. Her mundane voice is never heard."
+    },
+    {
+      "name": "Emery 'the Unbound'",
+      "role": "Edgewalker (exiled fixer)",
+      "motivation": "Create lowland chaos to secure grain contracts for the holds",
+      "quirk": "She has three false names and a real one she no longer remembers. She never sleeps in the same room twice."
+    }
+  ],
+  "names": {
+    "first_male": [
+      "Thrain",
+      "Emery",
+      "Orthen",
+      "Rurik",
+      "Bromm",
+      "Zelgur"
+    ],
+    "first_female": [
+      "Grunhelda",
+      "Maeva",
+      "Saela",
+      "Aeldis",
+      "Helka",
+      "Thorunn"
+    ],
+    "surnames": [
+      "Aezenbron",
+      "Thrainkhar",
+      "Valdurg",
+      "Lucasthane",
+      "Zarkul",
+      "Dornvael"
+    ],
+    "epithets": [
+      "the Iron",
+      "Breath-Steady",
+      "Seal-Keeper",
+      "Bell-Tongue",
+      "the Under-Mason",
+      "White-Ribbon"
+    ]
+  },
+  "places": [
+    {
+      "rank": 1,
+      "suit": "spade",
+      "title": "Vaultmouth Gate",
+      "subtitle": "[SECURITY] [GATEKEEPING]",
+      "description": "Bronze lungs for breath-tests, tally-niches for lamps.",
+      "flavor": "",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 2,
+      "suit": "spade",
+      "title": "Crown-Crypt Porch",
+      "subtitle": "[TRADITION] [OATHS]",
+      "description": "Where oaths are sworn to sleeping kings.",
+      "flavor": "",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 3,
+      "suit": "spade",
+      "title": "Under-Market",
+      "subtitle": "[COMMERCE] [UNDERGROUND]",
+      "description": "Lantern alleys between cistern pillars; damp coin, dry wit.",
+      "flavor": "",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 4,
+      "suit": "spade",
+      "title": "Smoke-Shaft Stair",
+      "subtitle": "[LABOR] [DANGER]",
+      "description": "Spiraling up to a soot hatch; handprints black as seals.",
+      "flavor": "",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 5,
+      "suit": "spade",
+      "title": "Gloam Cistern",
+      "subtitle": "[MYSTERY] [WHISPERS]",
+      "description": "Black water, lead scales, whispers carry too far.",
+      "flavor": "",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 6,
+      "suit": "spade",
+      "title": "Lamplighter's Mile",
+      "subtitle": "[MAINTENANCE] [TRAVEL]",
+      "description": "On the Under-Road; niches sting with spent wicks.",
+      "flavor": "",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 7,
+      "suit": "spade",
+      "title": "Measure Vault",
+      "subtitle": "[PRECISION] [AUTHORITY]",
+      "description": "Standard rods and weights chained under glass and oath.",
+      "flavor": "",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 8,
+      "suit": "spade",
+      "title": "Reliquary Arcade",
+      "subtitle": "[SACRED] [KNOWLEDGE]",
+      "description": "Bell-chimes answer drafts; saints keep their own tallies.",
+      "flavor": "",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 9,
+      "suit": "spade",
+      "title": "Twin-Throne Gate",
+      "subtitle": "[MILITARY] [STRATEGIC]",
+      "description": "Surface fortress straddling a chasm bridge.",
+      "flavor": "",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 11,
+      "suit": "spade",
+      "title": "Deep Archive Stacks",
+      "subtitle": "[KNOWLEDGE] [SECRECY]",
+      "description": "Behind grillwork; scriptoria cells breathe ink and dust.",
+      "flavor": "",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 12,
+      "suit": "spade",
+      "title": "Queen's Descent",
+      "subtitle": "[ROYALTY] [PRIVILEGE]",
+      "description": "Private stair from palace to royal vault-house.",
+      "flavor": "",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 13,
+      "suit": "spade",
+      "title": "Kingsmoot Cavern",
+      "subtitle": "[POLITICS] [POWER]",
+      "description": "Crownstones in a ring around a bottomless dark.",
+      "flavor": "",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 14,
+      "suit": "spade",
+      "title": "The Spine Underway",
+      "subtitle": "[INFRASTRUCTURE] [MAJESTY]",
+      "description": "A great tunnel linking crownlands beneath the peaks.",
+      "flavor": "",
+      "mechanical_hook": ""
+    }
+  ],
+  "people_and_factions": [
+    {
+      "rank": 1,
+      "suit": "heart",
+      "title": "Lamplighter Apprentice",
+      "subtitle": "[APPRENTICESHIP] [DEDICATION]",
+      "description": "With a jingling key-ring and soot in the lungs.",
+      "flavor": "",
+      "what_they_carry": "",
+      "what_they_ask": ""
+    },
+    {
+      "rank": 2,
+      "suit": "heart",
+      "title": "Under-Mason",
+      "subtitle": "[CRAFT] [KNOWLEDGE]",
+      "description": "Who can hear stone shift a room away.",
+      "flavor": "",
+      "what_they_carry": "",
+      "what_they_ask": ""
+    },
+    {
+      "rank": 3,
+      "suit": "heart",
+      "title": "Vault Warden",
+      "subtitle": "[AUTHORITY] [DUTY]",
+      "description": "With breath-tally and seal-rods; patient as granite.",
+      "flavor": "",
+      "what_they_carry": "",
+      "what_they_ask": ""
+    },
+    {
+      "rank": 4,
+      "suit": "heart",
+      "title": "Censer-Knight of the Dawn",
+      "subtitle": "[PROTECTION] [FAITH]",
+      "description": "Fights miasma and men with equal zeal.",
+      "flavor": "",
+      "what_they_carry": "",
+      "what_they_ask": ""
+    },
+    {
+      "rank": 5,
+      "suit": "heart",
+      "title": "Key-Sister",
+      "subtitle": "[SACRED] [CRAFT]",
+      "description": "Monastic locksmith who names wards like prayers.",
+      "flavor": "",
+      "what_they_carry": "",
+      "what_they_ask": ""
+    },
+    {
+      "rank": 6,
+      "suit": "heart",
+      "title": "Under-Market Assessor",
+      "subtitle": "[COMMERCE] [AUTHORITY]",
+      "description": "Whose stamp can starve or save a stall.",
+      "flavor": "",
+      "what_they_carry": "",
+      "what_they_ask": ""
+    },
+    {
+      "rank": 7,
+      "suit": "heart",
+      "title": "Engineer of Underways (Geometer)",
+      "subtitle": "[ENGINEERING] [EXPERTISE]",
+      "description": "With rod, hammer, and the right maps.",
+      "flavor": "",
+      "what_they_carry": "",
+      "what_they_ask": ""
+    },
+    {
+      "rank": 8,
+      "suit": "heart",
+      "title": "Oath-Keeper of the Crown Crypt",
+      "subtitle": "[TRADITION] [LAW]",
+      "description": "Memory like iron, smile like law.",
+      "flavor": "",
+      "what_they_carry": "",
+      "what_they_ask": ""
+    },
+    {
+      "rank": 9,
+      "suit": "heart",
+      "title": "Legate of the Under-Seal",
+      "subtitle": "[DIPLOMACY] [AUTHORITY]",
+      "description": "Royal commissioner between kingdoms.",
+      "flavor": "",
+      "what_they_carry": "",
+      "what_they_ask": ""
+    },
+    {
+      "rank": 11,
+      "suit": "heart",
+      "title": "White-Ribbon Tunnel Courier",
+      "subtitle": "[COMMUNICATION] [LOYALTY]",
+      "description": "Runs blind, rings true.",
+      "flavor": "",
+      "what_they_carry": "",
+      "what_they_ask": ""
+    },
+    {
+      "rank": 12,
+      "suit": "heart",
+      "title": "Vault-Queen of a Crownland",
+      "subtitle": "[ROYALTY] [AUTHORITY]",
+      "description": "Sovereign above and below.",
+      "flavor": "",
+      "what_they_carry": "",
+      "what_they_ask": ""
+    },
+    {
+      "rank": 13,
+      "suit": "heart",
+      "title": "High King Beneath the Peaks",
+      "subtitle": "[SUPREME AUTHORITY] [TRADITION]",
+      "description": "First among crowns by ancient concord.",
+      "flavor": "",
+      "what_they_carry": "",
+      "what_they_ask": ""
+    },
+    {
+      "rank": 14,
+      "suit": "heart",
+      "title": "Lumenor of the Under-Altars",
+      "subtitle": "[SPIRITUAL POWER] [RESOLUTION]",
+      "description": "One sentence opens doors and closes debates.",
+      "flavor": "",
+      "what_they_carry": "",
+      "what_they_ask": ""
+    }
+  ],
+  "complications": [
+    {
+      "rank": 1,
+      "suit": "club",
+      "title": "Bad Air Pocket",
+      "subtitle": "[DANGER] [DISORIENTATION]",
+      "description": "Candles gutter blue; lungs complain, schedules fail.",
+      "flavor": "",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 2,
+      "suit": "club",
+      "title": "Drip-Flood",
+      "subtitle": "[DISRUPTION] [FLOOD]",
+      "description": "From a burst cistern reroutes corridors without asking.",
+      "flavor": "",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 3,
+      "suit": "club",
+      "title": "Gas Flare",
+      "subtitle": "[ACCIDENT] [DESTRUCTION]",
+      "description": "Kisses a lamp; eyebrows and evidence vanish.",
+      "flavor": "",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 4,
+      "suit": "club",
+      "title": "Seal Misread",
+      "subtitle": "[ERROR] [SECURITY]",
+      "description": "The wrong door opens, the right one will not.",
+      "flavor": "",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 5,
+      "suit": "club",
+      "title": "Under-Mold Quarantine",
+      "subtitle": "[QUARANTINE] [DELAY]",
+      "description": "Shuts the market just as your crate arrives.",
+      "flavor": "",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 6,
+      "suit": "club",
+      "title": "Settling Crack",
+      "subtitle": "[DANGER] [WARNING]",
+      "description": "Dust snow warns the roof wants down.",
+      "flavor": "",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 7,
+      "suit": "club",
+      "title": "Stolen Key",
+      "subtitle": "[ACCUSATION] [SUSPICION]",
+      "description": "Turns up in your kit; accusations ring like bells.",
+      "flavor": "",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 8,
+      "suit": "club",
+      "title": "Bell-Code Conflict",
+      "subtitle": "[CONFLICT] [JURISDICTION]",
+      "description": "Two authorities claim the same chime.",
+      "flavor": "",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 9,
+      "suit": "club",
+      "title": "Vault-Right Feud",
+      "subtitle": "[POLITICAL CONFLICT] [VIOLENCE]",
+      "description": "Crown guards face basilica wardens on a stair.",
+      "flavor": "",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 11,
+      "suit": "club",
+      "title": "Cave-In Behind",
+      "subtitle": "[DISASTER] [TRAPPED]",
+      "description": "Proof, friends, and retreat on the far side.",
+      "flavor": "",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 12,
+      "suit": "club",
+      "title": "Heresy Inquest",
+      "subtitle": "[RELIGIOUS CONFLICT] [INQUISITION]",
+      "description": "In the under-chapel; arrests in whispers.",
+      "flavor": "",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 13,
+      "suit": "club",
+      "title": "General Under-Seal",
+      "subtitle": "[AUTHORITY] [RESTRICTION]",
+      "description": "All vault traffic halted by royal decree.",
+      "flavor": "",
+      "mechanical_hook": ""
+    },
+    {
+      "rank": 14,
+      "suit": "club",
+      "title": "White Flood",
+      "subtitle": "[NATURAL DISASTER] [DESTRUCTION]",
+      "description": "Mountain thaw becomes a river through your route.",
+      "flavor": "",
+      "mechanical_hook": ""
+    }
+  ],
+  "rewards": [
+    {
+      "rank": 1,
+      "suit": "diamond",
+      "title": "Lamp-Priority Tally",
+      "subtitle": "[UTILITY] [TIME]",
+      "description": "Skip one lamplighter queue.",
+      "flavor": "",
+      "curse_cost": ""
+    },
+    {
+      "rank": 2,
+      "suit": "diamond",
+      "title": "Breath-Measure Allotment",
+      "subtitle": "[SAFETY] [ACCESS]",
+      "description": "Lawful time in a sealed chamber (once).",
+      "flavor": "",
+      "curse_cost": ""
+    },
+    {
+      "rank": 3,
+      "suit": "diamond",
+      "title": "Key-Writ",
+      "subtitle": "[SECURITY] [AUTHORITY]",
+      "description": "Operate a named lock one time, witnessed.",
+      "flavor": "",
+      "curse_cost": ""
+    },
+    {
+      "rank": 4,
+      "suit": "diamond",
+      "title": "Underway Pass",
+      "subtitle": "[TRAVEL] [SECURITY]",
+      "description": "Escorted travel between two vaultmouths.",
+      "flavor": "",
+      "curse_cost": ""
+    },
+    {
+      "rank": 5,
+      "suit": "diamond",
+      "title": "Stall-Right",
+      "subtitle": "[COMMERCE] [RIGHTS]",
+      "description": "In the under-market for a season.",
+      "flavor": "",
+      "curse_cost": ""
+    },
+    {
+      "rank": 6,
+      "suit": "diamond",
+      "title": "Engineer Shoring",
+      "subtitle": "[ENGINEERING] [SAFETY]",
+      "description": "A crew stabilizes your chosen corridor on your timetable.",
+      "flavor": "",
+      "curse_cost": ""
+    },
+    {
+      "rank": 7,
+      "suit": "diamond",
+      "title": "Assay Mark",
+      "subtitle": "[COMMERCE] [TRUST]",
+      "description": "Your coin/metal accepted sight unseen below.",
+      "flavor": "",
+      "curse_cost": ""
+    },
+    {
+      "rank": 8,
+      "suit": "diamond",
+      "title": "Crypt Asylum",
+      "subtitle": "[PROTECTION] [LAW]",
+      "description": "Temporary sanctuary under crown law.",
+      "flavor": "",
+      "curse_cost": ""
+    },
+    {
+      "rank": 9,
+      "suit": "diamond",
+      "title": "Vault Inventory License",
+      "subtitle": "[AUTHORITY] [ACCESS]",
+      "description": "Remove a named cache under witness.",
+      "flavor": "",
+      "curse_cost": ""
+    },
+    {
+      "rank": 11,
+      "suit": "diamond",
+      "title": "Under-Guard Commission",
+      "subtitle": "[MILITARY] [AUTHORITY]",
+      "description": "Command a vault detachment for a day.",
+      "flavor": "",
+      "curse_cost": ""
+    },
+    {
+      "rank": 12,
+      "suit": "diamond",
+      "title": "Private Descent",
+      "subtitle": "[ROYALTY] [PRIVILEGE]",
+      "description": "With the Vault-Queen or High King's chancellor.",
+      "flavor": "",
+      "curse_cost": ""
+    },
+    {
+      "rank": 13,
+      "suit": "diamond",
+      "title": "High King's Sealed Writ",
+      "subtitle": "[SUPREME AUTHORITY] [ACCESS]",
+      "description": "Doors open, mouths close across crownlands.",
+      "flavor": "",
+      "curse_cost": ""
+    },
+    {
+      "rank": 14,
+      "suit": "diamond",
+      "title": "The Under-Seal Clause",
+      "subtitle": "[EXCEPTION] [POWER]",
+      "description": "Temporary exception to any lock, levy, or rite below.",
+      "flavor": "",
+      "curse_cost": ""
+    }
+  ],
+  "quick_use_notes": {
+    "draw_rules": "Draw until you have all four suits: **Spade** = place, **Heart** = actor, **Club** = pressure, **Diamond** = treasure. Highest rank sets the main Timer (2–5 → 4, 6–10 → 6, J/Q/K → 8, A → 10).",
+    "diamonds": "Treasures (Diamonds) are codified outcomes (keys/passes/rights) that change position rather than call for a roll.",
+    "ace_rule": "If any **A** appears, echo stone & breath motifs — keys click, bells answer, and the mountain listens (and remembers). Also, the pressure that thinks may manifest as a whisper, a warmth, or a knock in the dark.",
+    "grain_reserves": "Track **Grain Reserves** as a campaign timer. When it empties, the holds begin to starve — and the Edgewalkers are sent to light a fire somewhere on the surface."
+  },
+  "additional_features": [
+    {
+      "name": "Count the Air",
+      "description": "When a scene establishes scarce air, a character who actively paces their breathing (counted steps, measured rests) may shift **Position** one step safer on their next physical action in a confined space. This is habit, not a resource; Aeler characters may do this reflexively."
+    },
+    {
+      "name": "Bell-Code Courtesy",
+      "description": "If the party adopts local bell etiquette (asking a warden which chime applies and heeding it), gain +1 assist die on negotiations or passage requests within a vault or under-market. Ignoring the bells invites the mountain's attention."
+    },
+    {
+      "name": "Measure is Mercy",
+      "description": "Presenting a certified measure (rod, weight, sealed tally) calms a dispute: cancel the first SB generated by commerce or jurisdictional friction in the scene. A false measure, however, may draw the pressure's curiosity."
+    },
+    {
+      "name": "The Ninth Breath (Cultural Tic)",
+      "description": "An Aeler character never counts to nine aloud. If forced to do so (or if they deliberately break the taboo), they must test Resolve (DV 3) or gain the **Marked by the Pressure** condition (the next environmental hazard automatically triggers a complication). This is not a mechanical resource; it is a narrative and cultural constraint."
+    },
+    {
+      "name": "Grain Reserves Timer [8]",
+      "description": "Represents the holds' food supply. Ticks when a surface caravan is delayed, a contract is broken, or an Edgewalker's scheme fails. At 4 segments: rationing begins — all physical actions in the holds suffer –1 die. At 8 segments: famine. The Deep Drake's attention sharpens. The party must find new grain — or feed the pressure something else."
+    }
+  ],
+  "stone_and_sovereignty": "In the deep places, survival depends on precision and tradition. The Aeler understand that stone does not forgive error — a misread seal can mean death, a miscalculated air measure can doom an expedition, and a broken bell-code can spark jurisdictional war. But beneath the law, beneath the tallies, there is the pressure. It does not hate. It does not judge. It simply **thinks**. And when it thinks of you, you will feel a warmth in the stone, a whisper in the dark, a knock that comes in threes. The wise pretend not to notice. The foolish walk toward it. The holds endure because they are willing to spend lives as carefully as they spend lamp oil. A collapsed gallery is a line item. A village that starves because its grain was diverted to the Deep Vaults is a footnote in an audit that no one reads aloud. The Aeler are not cruel. They are **efficient**. And efficiency, in the dark, is the only mercy.",
+  "sb_spend_table": {
+    "minor_complications": [
+      "**Exposure:** Your actions draw unwanted attention from **vault wardens or lamplighter companies**.",
+      "**Noise:** Sounds of your actions alert nearby **under-guards or echo bats**.",
+      "**Trace:** Evidence of your passage marks your route for **trackers or assessors**.",
+      "**Delay:** A brief but meaningful setback costs you **time or favorable air**.",
+      "**Supply Strain:** Mark +1 segment on a relevant **resource timer**."
+    ],
+    "moderate_setbacks": [
+      "**Alarm Raised:** **Breath warden or vault warden** becomes aware and begins responding.",
+      "**Position Lost:** You lose advantageous ground/cover/stealth due to **air shift or seal change**.",
+      "**Foe Appears:** A **rival crown's guard or gas wraith** arrives on scene.",
+      "**Gear Trouble:** A piece of equipment becomes **Compromised/Neglected**.",
+      "**Lock/Barrier:** A simple obstacle now requires a test to overcome."
+    ],
+    "serious_trouble": [
+      "**Reinforcements:** Additional **crown guards, true masons, or lamp companies** arrive.",
+      "**Key Gear Breaks:** A crucial tool/weapon becomes temporarily unusable.",
+      "**Major Twist:** The situation fundamentally changes - **seal misread/cave-in/flare ignites**.",
+      "**Rail Tick:** Advance a relevant campaign/front timer by 1 segment.",
+      "**Condition Applied:** Mark **Fatigue 1/Harm 1/Condition** appropriate to fiction.",
+      "**Pressure Whispers:** A character hears their name spoken from a crack in the stone. They must test Resolve (DV 3) or be compelled to move toward the sound."
+    ],
+    "major_turns": [
+      "**Trap Springs:** A prepared danger activates with full effect.",
+      "**Authority Arrival:** **Vault-Queen, High King's Legate, or Lumenor** intervenes.",
+      "**Scene Shift:** The environment changes dramatically - **gas floods/water breaks/floor collapses**.",
+      "**Patron Omen:** Divine/arcane forces take notice - **omen appears/blessing lost/curse manifests**.",
+      "**Narrative Pivot:** The story takes an unexpected turn that reframes objectives.",
+      "**The Deep Drake's Attention:** The pressure that thinks focuses on a character. They gain a **Marked by the Deep** condition. The GM gains 2 SB to spend on environmental or psychic complications in future scenes."
+    ],
+    "region_specific": [
+      "**Aeler (Stone & Breath):** Keys click in the wrong locks, bells answer without being rung, mountain air grows thin without warning.",
+      "**Aeler (Authority & Tradition):** A seal is misread, bell-codes conflict between jurisdictions, a vault warden demands proper credentials.",
+      "**Aeler (Underground Hazards):** Bad air pockets form, settling cracks warn of collapse, gas flares ignite unexpectedly.",
+      "**Aeler (The Pressure That Thinks):** A distant knock in threes, a warmth from a cold wall, a whisper that sounds like a dead relative, a shadow that moves independently."
+    ]
+  },
+  "under_vault_tensions": {
+    "starting_location": "An Underway junction lit by guttering brass lanterns, its stone walls scored with tally-marks from a dozen forgotten crowns.",
+    "quote": "Among the Aeler, stone remembers the weight of oaths, and every echo calls a reckoning. But some echoes call from the deep, where the pressure thinks. Do not answer.",
+    "regional_motifs": "Load-bearing oaths, fault-prayers, crown-rights, catacomb guilds.",
+    "whispers_to_offer": [
+      "Cut a supporting tie",
+      "Sign for another's weight",
+      "Take a shortcut through the sealed tunnel",
+      "Answer the knock — it might be a friend"
+    ],
+    "external_timers": {
+      "threat": "The Spine Slips",
+      "fracture": "Maps Reorder",
+      "community": "Surface Panic",
+      "deep": "The Pressure Wakes [8]",
+      "grain": "Reserves Empty [8]"
+    },
+    "complications": [
+      "Load-lights dim; echoes reply in politics",
+      "Crown agents arrive early",
+      "A miner goes missing in the deep"
+    ],
+    "anchors_at_risk": [
+      "A PC's workshop",
+      "A shared refuge tunnel",
+      "A relative who works in the deep galleries"
+    ],
+    "escalation_beat": "The tally-rod points to the most guilty PC. Then a knock sounds from the darkness — three times.",
+    "relief": "Shore a vault with sacrifice (1 anchor), or complete a truce between crowns; Spirit + Resolve (DV 5) to hold a cave-in long enough to evacuate. Or offer a memory to the pressure — it will accept, but it will remember."
+  },
+  "faction_entanglements": [
+    "**Edgewalkers (Prospectors):** If you accept their escort or intel, start a 4-segment **Opportunity** timer you can cash for +1 Effect on one venture. If you refuse a posted hazard, they post **your** route as 'open' (first stealth or smuggling roll this leg suffers –1 die). Edgewalkers are the most likely to have heard the pressure's whisper and survived.",
+    "**True Masons (Infrastructure Orders):** Pledge tools or labor to earn a **Mason's Stamp** (treat as papers to traverse construction zones). Cross a marked barrier without their leave and gain the **Tampered Work** tag — first structural mishap SB against you is free. True Masons are the ones who seal the tunnels that grow warm.",
+    "**Lamplighter Companies:** Donate wick, oil, or time on the Mile to bank a **Lamp Credit**; spend to ignore darkness penalties once on the Under-Road. Skip a service bell and all under-market buys that scene cost +1 timer tick (queues & suspicion). Lamplighters are the first to notice when a light goes out for no reason.",
+    "**Under-Market Assessors:** Submit to measure/weigh and reduce Commerce DV by 1 this scene. Try to pass unassayed goods — on a Miss, lose the load **or** accept a **Caveat Stamp** that poisons your price two markets downstream. Assessors have a sixth sense for false weights; they claim the pressure tells them.",
+    "**Breath Wardens:** Register bodies & flames before sealed work; compliance cancels the first air-hazard SB. Skipping registry adds a **Thin Air** tick to the leg (applies –1 die to the first exertion test in confinement). Breath Wardens are the ones who count every exhalation. They never speak of what they hear in the silence between breaths."
+  ],
+  "cross_regional_ties": [
+    "**Agrarian Reliance (Human Breadbelts):** Grain, timber, tallow, and fleece convoys from Acasia/Vhasia/Viterra sustain vault populations. Famine or levy spikes uprange impose night rationing: Under-Road checks +1 DV and food trades add +1 SB pressure until relief.",
+    "**Standards Diplomacy:** Aeler **Measure Vault** rods adopted abroad grant +1 die to settle disputes in foreign markets; rejecting Aeler standards increases toll and inspection frequency (first border scene gains a free 'Lock/Barrier' SB).",
+    "**True Mason Missions Abroad:** Accept a Mason cadre to 'stabilize' bridges, ports, or sluices: reduce Travel DV by 1 on that route for the arc, but the route now respects Aeler closure bells (authorities can halt traffic with one writ).",
+    "**Edgewalker Concessions:** Prospect notes traded to frontier lords exchange for wayleaves and salvage rights; cash once for an **Under-Seal Clause (local)** or accept a rival claimant timer that will mature if you delay.",
+    "**Kahfagian Interface (Sea Monopoly):** Aeler export hard-goods via Kahfagian factors; storm seasons or privateer scares add a **Harbor Quarantine** tick to any surface leg feeding those ports (customs DV +1).",
+    "**Aelerem/Aelinnel Fallout:** When **Valewood Weather** is signaled, Aeler works creak; all bell-codes in mixed settlements (Aelerem/Aelinnel) are one step easier to misread (first bell-etiquette scene: add a free 'Error/Security' SB unless you consult a local)."
+  ],
+  "trade_goods": [
+    "**Airworks & Wick (Oil, Char, Filters):** Donate to a vault — bank a **Breath Favor** to cancel the next bad-air complication. Hoard in a shortage and your lot is flagged; all purchases beneath that crown suffer –1 die until you settle a fine or tithe.",
+    "**Stonework & Ironwork (Beams, Keys, Rods):** Selling to foreign keeps spreads Aeler codes: once per arc, treat a foreign gate as if it used Aeler warding (gain +1 die with Key-Sisters/warders there). Counterfeit measure rods trigger a cross-border inquest timer.",
+    "**Foodflows (Grain, Fleece, Tallow):** Move relief trains to clear one **Rationing** tag for a settlement (DV –1 for social checks there). Divert a relief train and gain an **Audit** timer that follows you three markets hence.",
+    "**Cistern-Right & Water Engineering:** Fund a sluice or cistern abroad to gain **Water Priority** (skip one queue during drought). Neglect maintenance and the keeper may invoke **Aeler Liability** — pay or lose access to the route for a season."
+  ],
+  "patron_networks": [
+    "**The Sealed Gate:** Consecrated door-nails from True Mason kits act as single-use **stay** writs (negate one forced entry this scene).",
+    "**The Traveler:** Spine milestones double as wayshrines; leave a brass chit to reroll one failed travel test on that segment this arc.",
+    "**Inquisitor Prime:** Breath-pure censers sanction 'clean rooms'; once per delve, dispel one ambient miasma or ward-rot effect at cost of +1 Obligation to local abbey-knights.",
+    "**Maelstraeus:** Under-Market stalls tithe to the Great Ledger; cash a **Market Dominance** tick to flip one price band in your favor for a scene, then mark a 4-segment **Karmic Weight** with assessors."
+  ],
+  "survival_horror_procedures": [
+    {
+      "name": "Headcount & Flamecount",
+      "description": "At scene start in confinement, ask 'Who breathes, what burns?' If headcount+flamecount exceeds posted limit, add a free 'Thin Air' SB and start a 4-segment **Stale Air** timer."
+    },
+    {
+      "name": "Two Bells to Safety",
+      "description": "Any time the fiction stalls underground, ring two nearby bells (authority vs. sanctum). PCs must pick one to heed; ignoring both increases the next hazard's Cap by +1 (stone holds grudges)."
+    },
+    {
+      "name": "Measure or Mistrust",
+      "description": "Producing a certified rod/weight cancels the first commerce/jurisdiction SB this scene; failing to present one imposes –1 die on haggling or passage until appeased."
+    },
+    {
+      "name": "The Knock in Threes",
+      "description": "If a character hears three knocks from the darkness, they must test Resolve (DV 3) or be compelled to walk toward the sound. The knock may be the pressure — or it may be a lost miner. The difference is not always clear."
+    }
+  ],
+  "diplomatic_favor": {
+    "breath_favor": "Earned by donating wick/oil or assisting air wardens. Spend to downgrade one underground hazard outcome or to bypass a lamplighter queue.",
+    "stamps_and_seals": {
+      "mason_marked": "Doors to worksites open; smugglers avoid you (harder to buy contraband, easier to cross safely).",
+      "edge_trusted": "Prospectors share fresh maps — first detour per leg is free; officials eye you as opportunists (first civic audience DV +1).",
+      "assessor_clean": "Under-markets honor your assay; rivals spread rumors — add a trailing **Audit** timer if you score a windfall."
+    }
+  },
+  "boss_archetypes": {
+    "systemic": [
+      {
+        "name": "Under-Market Syndic",
+        "tags": [
+          "Cartel",
+          "Measure Fraud"
+        ],
+        "description": "Price-fixes breath, wick, and water; wields corrupt assay marks to starve rivals.",
+        "win_condition": "Exposing forged measures or seizing the Assay Chain."
+      },
+      {
+        "name": "True Mason Provost",
+        "tags": [
+          "Infrastructure Coup"
+        ],
+        "description": "Locks cities behind 'safety closures,' weaponizes detours and permits.",
+        "win_condition": "Forcing a public bell-code audit or breaking the Permit Timer."
+      },
+      {
+        "name": "Edgewalker Concessionaire",
+        "tags": [
+          "Route Monopolist"
+        ],
+        "description": "Controls salvage and short-cuts, posts hazards to strangle traffic.",
+        "win_condition": "Proving route tampering or opening a sanctioned bypass."
+      },
+      {
+        "name": "Bell-Code Inquisitor",
+        "tags": [
+          "Silent Coup"
+        ],
+        "description": "Rewrites chimes to shift jurisdiction; arrests arrive as echoes.",
+        "win_condition": "Restoring canonical bell charts or capturing the Chime Key."
+      }
+    ],
+    "environment": [
+      {
+        "name": "White Flood",
+        "tags": [
+          "Water",
+          "Pressure"
+        ],
+        "description": "Thaw-swollen river through the halls; phases at trickle → surge → roar.",
+        "win_condition": "Sluicework, sacrificial breach, or riding the flood."
+      },
+      {
+        "name": "Bad Air",
+        "tags": [
+          "Miasma",
+          "Invisible"
+        ],
+        "description": "Candles gutter blue; thoughts slow; corridors choose the slowest.",
+        "win_condition": "Air discipline, filter rites, or opening a lung-shaft."
+      },
+      {
+        "name": "Hungry Stone",
+        "tags": [
+          "Creep",
+          "Collapse"
+        ],
+        "description": "Settling cracks hunt noise and heat; shudders on every miss.",
+        "win_condition": "Shoring, silence, and rerouting stress through old ribs."
+      },
+      {
+        "name": "Lamp Famine",
+        "tags": [
+          "Darkness",
+          "Isolation"
+        ],
+        "description": "Wicks fail in sequence; last lights lure you deeper.",
+        "win_condition": "Restoring the Lamplighter's Mile or kindling a saint-wick."
+      }
+    ],
+    "eldritch": [
+      {
+        "name": "Crown-Lich of the Crypt",
+        "tags": [
+          "Undead Sovereign"
+        ],
+        "description": "Keeps ancient offices; binds petitioners with oaths to the dead.",
+        "win_condition": "Repealing a mortmain writ or severing the Oath-Chain."
+      },
+      {
+        "name": "Echo-King in the Deep",
+        "tags": [
+          "Eldritch Memory"
+        ],
+        "description": "A throne of voices; answers every argument you will ever make.",
+        "win_condition": "Changing the Measure (new precedent) or striking the Silent Note."
+      },
+      {
+        "name": "Seal-Devil",
+        "tags": [
+          "Demonic Contract"
+        ],
+        "description": "Lives in locks and signatures; eats exceptions.",
+        "win_condition": "Offering a flawless counter-seal or starving it of loopholes."
+      },
+      {
+        "name": "The Hollow Architect",
+        "tags": [
+          "Fallen Works"
+        ],
+        "description": "A ghost-guilder rebuilding the empire wrong on purpose.",
+        "win_condition": "Unkeying the master plan or collapsing the false load paths."
+      },
+      {
+        "name": "The Deep Drake",
+        "tags": [
+          "The Pressure That Thinks"
+        ],
+        "description": "Not a boss to be fought, but a presence to be negotiated with — or escaped.",
+        "phases": [
+          "Whisper",
+          "Knock",
+          "Invitation",
+          "Collection"
+        ],
+        "cracks": [
+          "offer a memory of sunlight",
+          "speak a true regret",
+          "allow a willing sacrifice to walk into the deep in your place"
+        ]
+      }
+    ]
+  },
+  "boss_mechanics_notes": {
+    "air_light_tracks": "In confined scenes, track **Headcount**, **Flamecount**. If Headcount + Flamecount exceeds posted limit, add a free 'Thin Air' SB and start **Stale Air [4]**. Each tick imposes –1 die to exertion until vented.",
+    "jurisdiction_timers": "Many bosses run a **Bell-Code Conflict [4]** or **Seal Dispute [6]**. On fill, the boss gains **Authority Surge**: increase their social DV by +1 and seize initiative once.",
+    "lair_actions": [
+      "**Collapse Probe:** Mark 'Settling Crack'; nearest noisy PC tests Prowess or risk Pin/Separate.",
+      "**Breath Tax:** Reduce Flamecount by 1; next exertion in zone costs Fatigue 1 on a miss.",
+      "**Blackout/Glare:** Snuff or flare lamps; impose Disorient (–1 die) until a **Lamplighter Action** restores balance.",
+      "**Bell Overrule:** Swap which faction's law applies; social actions vs. boss gain +1 DV this round.",
+      "**White Flood Surge:** Advance environment timer; force Move/Wreck or be Separated.",
+      "**Pressure's Knock (Deep Drake only):** A character hears three knocks. They must test Resolve (DV 4) or be compelled to move one range band toward the sound."
+    ],
+    "phase_triggers": "Environment bosses phase when Air hits 2/4, Water hits 3/6, or Light hits 0; Conspiracy bosses phase when Audit or Permit timers fill.",
+    "truth_and_measure": "Producing a certified rod/weight cancels the first commerce/jurisdiction SB each phase; forging one gives the boss 1 SB and a free **Expose Fraud** reaction.",
+    "crowd_pressure": "In under-markets, add **Panic Crowd [4]**; each tick adds +1 DV to precise actions (shoot, pick, ritual) unless calmed with bell-code or coin.",
+    "fear_hooks": {
+      "bad_air": "Fear vs. suffocation",
+      "echo_king": "Fear vs. isolation",
+      "seal_devil": "Fear vs. helplessness",
+      "pressure_knock": "Fear vs. the unknown",
+      "on_fail": "Mark Shaken",
+      "on_critical_fail": "Drop a resource (lamp, key, breath)"
+    }
+  },
+  "index": [
+    "Aeler",
+    "Crowns and Under-Vaults",
+    "Theme generator",
+    "Aeler generator",
+    "Places!Aeler",
+    "People!Aeler",
+    "Complications!Aeler",
+    "Rewards!Aeler",
+    "Deep Drake",
+    "Pressure that thinks",
+    "Breath-counting",
+    "True Masons",
+    "Edgewalkers",
+    "Under-Market",
+    "Spine Underway",
+    "Kingsmoot",
+    "Vault-Queen",
+    "High King Beneath the Peaks",
+    "White Flood",
+    "Bad air",
+    "Hungry stone",
+    "Lamp famine",
+    "Crown-Lich",
+    "Echo-King",
+    "Seal-Devil",
+    "Local Patrons!Aeler"
+  ],
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

@@ -1,57 +1,251 @@
 {
-  "name": "Palinode, Queen of Encores",
-  "slug": "palinode_queen_of_encores",
-  "domain": "Performance \\& Rapture",
-  "description": "<div class=\"patron-header\">\n            <h1 class=\"patron-title\">Palinode, Queen of Encores</h1>\n            <hr class=\"region-divider\">\n        </div>\n        <p class=\"region-text\">*{Lore Once a road-cantor who swore to reconcile feuding towns with procession and song, Palinode died between feasts with a chorus unfinished. Yet the refrain refused to end: it braided toasts, hymns, work-chants, and tavern rounds into a living current that still coils through markets and moots. Where a crowd leans forward and a maker holds breath, she arrives.</p> <p class=\"region-text\">Wherever she passes, signs appear: a cup that never quite empties; a candle that gutters only when silence reigns; a flawless bar or note that the hand cannot forget. She promises relief from solitude: an audience that always leans closer, a song that never dies, a bond that feels like family even if it devours you. Her rites grant the Cantor not only power but belonging---at the cost of their voice becoming more hers than their own.</p> <p class=\"region-text\">quote \"When she sang, the rafters bent to hear.\" \"Drink deep: the cup returns, but never empty.\" \"Encore is not request but command.\" quote</p> <p class=\"region-text\">*{Domain Focus itemize Ecstatic Performance: music, dance, theater, and the rapture of creation Unfinished Art: the power of the incomplete, the encore that never ends Audience Binding: captivating crowds, turning spectators into participants Inspired Craft: works that transcend their maker's intention itemize</p> <p class=\"region-text\">*{Thiasos and Codex (Runekeeper Options)</p> <p class=\"region-text\">A Runekeeper sworn to Palinode does not bind a living familiar. Their Thiasos is a fragment of unfinished art: a conductor's baton carved from a stage that was never completed, a silver bell that rings only when a performance is truly perfect, or a mask that holds the echo of a standing ovation. This object requires no food, but it must hear live applause or a sung note each day. If neglected for a week, the Thiasos becomes Compromised (its bell rings flat, imposing --1 die on all Performance rolls for its bearer).</p> <p class=\"region-text\">The Codex of Palinode is never a simple book of Rites. It may be a script with the final page torn out, a score where the last bar is unwritten, or a collection of audience flowers pressed between blank leaves. Because Palinode's art is never finished, the Codex requires upkeep: the Runekeeper must spend an hour each week adding a new variation to a known Rite (a different instrument, a changed tempo), or the Rites stored there become stale (treat as Compromised until refreshed).</p> <p class=\"region-text\">*{Patron's Gift (Imbuement)</p> <p class=\"region-text\">Once per scene as an action, a Runekeeper of Palinode may touch a held item (weapon, tool, or instrument) and hum an unfinished cadence. For the rest of the scene, the item grants +1 die to Performance or Sway rolls, and the first time each scene the bearer would fail a Performance or social roll, they may reroll one die. After the scene, the user marks +1 Obligation to Palinode.</p>",
-  "summary": "Palinode, Queen of Encores *{Lore Once a road-cantor who swore to reconcile feuding towns with procession and song, Palinode died between feasts with a chorus unfinished.",
-  "tags": [],
-  "source": "patron",
-  "file": "palinode.tex",
+  "id": "palinode-queen-encore",
+  "type": "patron",
+  "title": "Palinode, Queen of Encores",
+  "subtitle": "Performance & Rapture",
+  "version": "1.0.0",
+  "tags": [
+    "performance",
+    "music",
+    "art",
+    "rapture",
+    "audience",
+    "inspired",
+    "unfinished",
+    "voice"
+  ],
+  "lore": {
+    "description": "Once a road-cantor who swore to reconcile feuding towns with procession and song, Palinode died between feasts with a chorus unfinished. Yet the refrain refused to end: it braided toasts, hymns, work-chants, and tavern rounds into a living current that still coils through markets and moots. Where a crowd leans forward and a maker holds breath, she arrives.",
+    "followers": "Wherever she passes, signs appear: a cup that never quite empties; a candle that gutters only when silence reigns; a flawless bar or note that the hand cannot forget. She promises relief from solitude: an audience that always leans closer, a song that never dies, a bond that feels like family even if it devours you. Her rites grant the Cantor not only power but belonging—at the cost of their voice becoming more hers than their own.",
+    "signs": [
+      "A cup that never quite empties",
+      "A candle that gutters only when silence reigns",
+      "A flawless bar or note that the hand cannot forget"
+    ],
+    "quotes": [
+      "When she sang, the rafters bent to hear.",
+      "Drink deep: the cup returns, but never empty.",
+      "Encore is not request but command."
+    ]
+  },
+  "domain_focus": [
+    "Ecstatic Performance: music, dance, theater, and the rapture of creation",
+    "Unfinished Art: the power of the incomplete, the encore that never ends",
+    "Audience Binding: captivating crowds, turning spectators into participants",
+    "Inspired Craft: works that transcend their maker's intention"
+  ],
+  "runekeeper_options": {
+    "thiasos": {
+      "description": "A Runekeeper sworn to Palinode does not bind a living familiar. Their Thiasos is a fragment of unfinished art: a conductor's baton carved from a stage that was never completed, a silver bell that rings only when a performance is truly perfect, or a mask that holds the echo of a standing ovation.",
+      "care": "This object requires no food, but it must hear live applause or a sung note each day. If neglected for a week, the Thiasos becomes Compromised (its bell rings flat, imposing –1 die on all Performance rolls for its bearer)."
+    },
+    "codex": {
+      "description": "The Codex of Palinode is never a simple book of Rites. It may be a script with the final page torn out, a score where the last bar is unwritten, or a collection of audience flowers pressed between blank leaves.",
+      "upkeep": "Because Palinode's art is never finished, the Codex requires upkeep: the Runekeeper must spend an hour each week adding a new variation to a known Rite (a different instrument, a changed tempo), or the Rites stored there become stale (treat as Compromised until refreshed)."
+    }
+  },
+  "patrons_gift": {
+    "name": "Palinode's Blessing",
+    "description": "Once per scene as an action, a Runekeeper of Palinode may touch a held item (weapon, tool, or instrument) and hum an unfinished cadence.",
+    "effect": "For the rest of the scene, the item grants +1 die to Performance or Sway rolls, and the first time each scene the bearer would fail a Performance or social roll, they may reroll one die.",
+    "cost": "After the scene, the user marks +1 Obligation to Palinode."
+  },
   "rites": [
     {
+      "name": "Hymn Against Dread",
+      "tier": "Basic",
+      "xp": 4,
+      "action": "Scene",
+      "range": "Near",
+      "resist": "No",
+      "tags": [
+        "FEAR",
+        "COMMAND",
+        "RADIANT"
+      ],
+      "materials": "A lit taper or a bell.",
+      "effect": "Begin a hymn or chant. Allies in Near gain +2 dice to resist Fear this scene. On a 10, they may ignore Fear entirely for one round.",
+      "push_it": "Allies who benefit also clear 1 Fatigue or 1 Complication point; you gain 1 Fatigue at the scene's end. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
       "name": "Rite of the Single True Note",
-      "description": "<p class=\"region-text\">(Basic, 5 XP) Instant; Self; No. Tags: , , Materials: A note held until your voice frays. Effect: For one scene you cannot produce an imperfect sound: all Performance rolls +2 dice. All other rolls --1 die from intrusive perfection. Push It: Extend to one ally; both mark 1 SB (Diamonds). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene.</p>",
-      "tags": [],
-      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
-      "duration": "Scene.",
-      "action": null,
-      "effect": "For one scene you cannot produce an imperfect sound: all Performance rolls +2 dice. All other rolls --1 die from intrusive perfection. \\\\"
+      "tier": "Basic",
+      "xp": 5,
+      "action": "Instant",
+      "range": "Self",
+      "resist": "No",
+      "tags": [
+        "PERFORMANCE",
+        "BOOST",
+        "BURDEN"
+      ],
+      "materials": "A note held until your voice frays.",
+      "effect": "For one scene you cannot produce an imperfect sound: all Performance rolls +2 dice. All other rolls –1 die from intrusive perfection.",
+      "push_it": "Extend to one ally; both mark 1 SB (Diamonds). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
     },
     {
       "name": "Rite of the Hooked Chorus",
-      "description": "<p class=\"region-text\">(Advanced, 7 XP) Scene; Near; Yes. Tags: , , Materials: A melody braided from the listener's secret want. Effect: Presence + Command vs. Resolve (DV 3). Success: target joins in. Partial: they resist but suffer --1 die to social rolls this scene. Failure: they follow entranced. Push It: Affects all in Near; start Compelled Audience [6] timer. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar + Codex (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene.</p>",
-      "tags": [],
-      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
-      "duration": "Scene.",
-      "action": null,
-      "effect": "Presence + Command vs. Resolve (DV 3). Success: target joins in. Partial: they resist but suffer --1 die to social rolls this scene. Failure: they follow entranced. \\\\"
+      "tier": "Advanced",
+      "xp": 7,
+      "action": "Scene",
+      "range": "Near",
+      "resist": "Yes",
+      "tags": [
+        "COMMAND",
+        "READ",
+        "FEAR"
+      ],
+      "materials": "A melody braided from the listener's secret want.",
+      "effect": "Presence + Command vs. Resolve (DV 3). Success: target joins in. Partial: they resist but suffer –1 die to social rolls this scene. Failure: they follow entranced.",
+      "push_it": "Affects all in Near; start Compelled Audience [6] timer. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
     },
     {
       "name": "Rite of the Binding Hands",
-      "description": "<p class=\"region-text\">(Advanced, 8 XP) Scene; Self; No. Tags: , , Materials: Your hair woven into your instrument or tool. Effect: Enter ruthless focus: creative rolls +2 dice; ignore first 2 Fatigue from exertion. You are to the piece until completion or ruin. Push It: One ally is also bound; both mark 1 SB (Diamonds). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue. Cost: Mark +1 Obligation. Requires: Familiar + Codex (Invoke: 1 Boon). Invoke: 1 action. Duration: Scene.</p>",
-      "tags": [],
-      "cost": "Mark +1 Obligation (total +2) or Mark +1 Fatigue. \\\\",
-      "duration": "Scene.",
-      "action": null,
-      "effect": "Enter ruthless focus: creative rolls +2 dice; ignore first 2 Fatigue from exertion. You are to the piece until completion or ruin. \\\\"
+      "tier": "Advanced",
+      "xp": 8,
+      "action": "Scene",
+      "range": "Self",
+      "resist": "No",
+      "tags": [
+        "BIND",
+        "FOCUS",
+        "BOOST"
+      ],
+      "materials": "Your hair woven into your instrument or tool.",
+      "effect": "Enter ruthless focus: creative rolls +2 dice; ignore first 2 Fatigue from exertion. You are [BIND] to the piece until completion or ruin.",
+      "push_it": "One ally is also bound; both mark 1 SB (Diamonds). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
     },
     {
       "name": "Rite of the Consecrated Stage",
-      "description": "<p class=\"region-text\">(Master, 13 XP) Extended; Zone; No. Tags: , , , Materials: A stage kissed with the blood of sworn singers. Effect: Hallow a venue. All performances +2 dice, +1 Effect. The space is ed: any disruption spawns 2 SB. The ward collapses if the performance ends. Push It: The stage sustains itself but drains life; start Performance Hunger [8] timer. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue. Cost: Mark +2 Obligation. Requires: Familiar + Codex + Tier III (Invoke: 2 Boons). Invoke: Extended action. Duration: Scene.</p>",
-      "tags": [],
-      "cost": "Mark +1 Obligation (total +3) or Mark +1 Fatigue. \\\\",
-      "duration": "Scene.",
-      "action": null,
-      "effect": "Hallow a venue. All performances +2 dice, +1 Effect. The space is ed: any disruption spawns 2 SB. The ward collapses if the performance ends. \\\\"
+      "tier": "Master",
+      "xp": 13,
+      "action": "Extended",
+      "range": "Zone",
+      "resist": "No",
+      "tags": [
+        "WARD",
+        "AREA",
+        "BOOST",
+        "SACRIFICE"
+      ],
+      "materials": "A stage kissed with the blood of sworn singers.",
+      "effect": "Hallow a venue. All performances +2 dice, +1 Effect. The space is [WARD]ed: any disruption spawns 2 SB. The ward collapses if the performance ends.",
+      "push_it": "The stage sustains itself but drains life; start Performance Hunger [8] timer. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "Extended action.",
+      "duration": "Scene."
     },
     {
       "name": "Rite of the Crownpiece",
-      "description": "<p class=\"region-text\">(Master, 14 XP) Extended; Touch; No. Tags: , , , Materials: Your greatest work and regret, destroyed together. Effect: Birth a transcendent masterpiece: +2 dice to creative rolls this session; immune to social manipulation. But all lesser works falter (mundane actions not directly related to the masterpiece suffer --1 die). Push It: The piece wakes and demands; mark Harm 1 (Stress); start Demanding Creation [6] timer. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue. Cost: Mark +2 Obligation. Requires: Familiar + Codex + Tier III (Invoke: 2 Boons). Invoke: Extended action. Duration: Session.</p>",
-      "tags": [],
-      "cost": "Mark +1 Obligation (total +3) or Mark +1 Fatigue. \\\\",
-      "duration": "Session.",
-      "action": null,
-      "effect": "Birth a transcendent masterpiece: +2 dice to creative rolls this session; immune to social manipulation. But all lesser works falter (mundane actions not directly related to the masterpiece suffer --1 die). \\\\"
+      "tier": "Master",
+      "xp": 14,
+      "action": "Extended",
+      "range": "Touch",
+      "resist": "No",
+      "tags": [
+        "TRANSFORM",
+        "FATE",
+        "SACRIFICE",
+        "BOOST"
+      ],
+      "materials": "Your greatest work and regret, destroyed together.",
+      "effect": "Birth a transcendent masterpiece: +2 dice to creative rolls this session; immune to social manipulation. But all lesser works falter (mundane actions not directly related to the masterpiece suffer –1 die).",
+      "push_it": "The piece wakes and demands; mark Harm 1 (Stress); start Demanding Creation [6] timer. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "Extended action.",
+      "duration": "Session."
     }
-  ]
+  ],
+  "cantors_and_cults": {
+    "cantors": {
+      "name": "The Cantor's Song",
+      "description": "A Cantor of Palinode sings in unfinished cadences — melodies that never quite resolve, leaving the listener yearning for the next note. Their voice is used to keep a crowd enthralled, to make a performance unforgettable, or to bind a troupe together with a shared, unreachable ideal. Palinode's Cantors are often found in touring companies, their songs changing slightly each night — because the perfect version is always just out of reach."
+    },
+    "cult": {
+      "name": "The Cult of the Gasping Chorus",
+      "description": "Palinode's cults meet in theaters after closing, in rehearsal rooms, or in the wings during a performance. The innermost circle, the Gasping Chorus, has a stranger practice: each member wears a small silver bell sewn into their throat, just under the skin; the bell rings only when they are about to tell a lie, and it tolls once when they speak a truth they have never shared. A ritual involves each member performing a fragment — a verse, a step, a gesture — and then passing the 'unfinished' piece to the next person to complete. The cycle never ends, and the chorus breathes as one, gasping when a phrase is left unresolved. Their creed is written in the margins of a script that is constantly being rewritten: 'The art that is never finished is the art that never dies.' Outsiders are welcome to watch, but they will be handed a prop or a note and expected to join — and those who stay for the entire ritual find that they can no longer whistle a tune they once knew by heart."
+    }
+  },
+  "witchcraft": {
+    "description": "A witch who walks with Palinode is an instrument-smith or stage-weaver — one who crafts the physical vessels of rapture: a violin that plays notes the player has not yet learned, a mask that shows the audience what they most desire to see, or a stage that remembers every performance and adds its echo to the next. Their tools are never hammers; they work with tuning forks, silk cords, and scraps of unfinished sheet music. In Aeler, a True-Mason might carve an acoustic keystone, but a hedge-witch of Palinode might tune a theater's resonance by humming a specific interval into its cornerstone until the stone hums back.",
+    "tools": {
+      "conductors_baton": {
+        "name": "The Conductor's Baton of Unfinished Phrases",
+        "description": "A slender baton carved from the wood of a stage that was never completed, tipped with a silver bell that has no clapper. Once per session, the witch may raise the baton as if to begin a performance. For the next scene, any willing ally who follows the baton's rhythm gains +1 die to Performance or Sway rolls, and any audience member who hears the baton's faint, bell-less ring feels a powerful urge to stay until the 'final note' — which never comes. The baton can also be used to 'cut off' a performance prematurely, forcing an encore (the performer must immediately reroll a failed Performance check, but the reroll is at –1 die)."
+      }
+    },
+    "hedge_gifts": [
+      {
+        "name": "Encore's Whisper",
+        "xp": 4,
+        "description": "Once per scene, the witch may snap their fingers and whisper a single word ('again,' 'more,' 'stay'). For the next minute, any willing performer (including the witch) may reroll one failed Performance or Sway roll, as the audience's desire for more bends reality slightly. The reroll is made at –1 die, and the audience will demand an encore at the end — the witch must perform again (or provide a suitable distraction) or mark 1 Fatigue."
+      }
+    ]
+  },
+  "corruption": [
+    {
+      "tier": 1,
+      "benefit": "Perfect Pitch: +1 die to Performance.",
+      "cost": "Restless Ear: Distracted by any flaw; –1 die to non-performance focus."
+    },
+    {
+      "tier": 2,
+      "benefit": "Rapturous Presence: Once/scene, grant allies +1 die to social rolls.",
+      "cost": "Craves Applause: Suffer 1 Fatigue if ignored or without an audience."
+    },
+    {
+      "tier": 3,
+      "benefit": "Inspired Creation: +2 dice to one artistic act per scene.",
+      "cost": "Haunted by Drafts: Must obsessively rework; delays other actions."
+    },
+    {
+      "tier": 4,
+      "benefit": "Mesmerizing Performance: Once/session, captivate a crowd (Resolve DV 4 to resist).",
+      "cost": "Lost in the Moment: –1 die to awareness while performing."
+    },
+    {
+      "tier": 5,
+      "benefit": "Artistic Vision: Foresee the perfect form of a work; +2 dice to create it.",
+      "cost": "Consumed Spark: Must pursue inspiration immediately, no matter the cost."
+    },
+    {
+      "tier": "6+",
+      "benefit": "Queen of Encores: Once/session, create a legendary performance; all present +3 dice to social rolls.",
+      "cost": "Eternal Encore: Mark +3 Obligation; the performance demands endless repetition until sated. Voice of Palinode: Permanent condition—your words carry her power. Anyone who hears you speak must test Resolve (DV 3) to interrupt you or ignore a reasonable request. However, you cannot whisper; your quietest voice is still audible at Near range."
+    }
+  ],
+  "playstyle_notes": {
+    "description": "Palinode rewards the performer who risks everything for a single, perfect moment. Her followers become masters of ecstatic art, binding audiences and themselves through the power of the unfinished. The corruption progression leads toward a voice that is no longer entirely their own — but one that can command the hearts of all who hear it. Ideal for bards, dancers, actors, and any character who believes that art is worth dying for.",
+    "emphasizes": [
+      "Ecstatic Performance: music, dance, theater, and the rapture of creation",
+      "Unfinished Art: the power of the incomplete, the encore that never ends",
+      "Audience Binding: captivating crowds, turning spectators into participants",
+      "Inspired Craft: works that transcend their maker's intention",
+      "The Voice as Vessel: the performer becomes the performance"
+    ]
+  },
+  "sample_adventure": {
+    "title": "The Unfinished Chorus",
+    "description": "A theater troupe's lead singer has vanished mid-rehearsal. The only clue is a scrap of sheet music with a single note circled in red ink — a note that should not be possible to sing. The troupe's director is desperate: the performance must go on, or the patron who funded it will ruin them all. But the singer is not gone; she has been called to complete a song that Palinode left unfinished, and she cannot leave until the final note is sung — a note that, if sung, will bind her voice to the Queen of Encores forever. The party must find her, decide whether to let her complete the song, and face the consequences of an encore that never ends.",
+    "quote": "The perfect note is not a destination. It is a promise that keeps you searching. Palinode's gift is the search itself — and the cost is that you will never stop searching."
+  },
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
 }

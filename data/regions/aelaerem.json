@@ -1,0 +1,888 @@
+{
+  "id": "aelaerem-hearth-hollow",
+  "version": "1.0.0",
+  "type": "generator",
+  "title": "Aelaerem (Halflings) — Hearth & Hollow",
+  "label": "chap:aelaerem",
+  "key_demographic": "Aelaerem (Halfling)",
+  "capital": "Amedell",
+  "manifest_path": "/data/docs/manifest.json",
+  "overview": {
+    "tagline": "The hollow counts your steps. The thread remembers your name.",
+    "genre": "Pastoral folk horror, hearth magic, the weight of thresholds.",
+    "mood": "Warm Hearths, Cold Thresholds",
+    "starting_location": "A cider-press barn perfumed with crushed apples and rain, where masks hang from beams awaiting the next festival. The Apple-Matron sits on a stool of woven twigs. Behind her, a Moot Oak leaf bleeding red sap onto a stone. 'The Hollow walks early this year,' she says. 'The Moot Oak bleeds wine. Will you speak for the field, or let the Neighbors claim it? Speak true—the geese are listening.'",
+    "lore": {
+      "history": "In Amedell, the Aelaerem keep their bonds with bread, bells, and careful counting. Lanes run under ash and hawthorn; doors reddened with thread promise a seat and a story to any who step right. Their magic is housekeeping writ large — thresholds groomed, names jarred like jam, the Hollow fed with silence and the ninth cup left unpoured. When the Neighbors stir beneath the barrows, the folk answer with kettle songs and lantern law, and the fields behave because someone asked them to. Hospitality here is not kindness—it is a covenant. Every meal is a promise, every gift a thread, every candle an argument against the dark. Amedell lies south of the Aelinnel homeland of Aevrossa, separated by the rolling downs and the slow waters of the River Adder. The two small-folk peoples share trade in red thread, copper, and seasonal hospitality, though the Aelaerem keep a wary distance from the fae-touched gnomish courts. It lies on the southeastern coast of the Dolmis, although the Aelaerem are rarely out to sea beyond coastal fishing.",
+      "first_notice": "The smell of baking bread and old apples. The way every threshold has a red thread tied at eye level. The silence of children when a stranger passes the village stone.",
+      "rule_that_kills": "Never refuse an offered cup. The Hollow counts refusals as invitations. Pour the ninth cup for the empty chair, and you may feed it—or feed it."
+    },
+    "entanglements": {
+      "northeast": "Valewood -- The downs rise toward the forest; the Green Gate sometimes opens onto halfling barrows. The Hollow's attention is a shared dread.",
+      "north": "Aelinnel -- The gnomes trade in copper and courtesy; the two small-folk peoples share the red thread custom but distrust the fae. The barrows and the fae courts have an unspoken treaty.",
+      "west": "The Dolmis Sea -- Coastal fishing and rare trade with Zakov; the Hollow's attention does not cross salt water easily, but the tide brings strange things ashore.",
+      "southwest": "Theona (within the Dolmis) -- The Green Host's riders do not cross the water, but the Ninth Taboo echoes in the halfling tongue. The ninth cup is never poured on either shore."
+    }
+  },
+  "quotes": [
+    {
+      "speaker": "Apple-Matron (Elite)",
+      "text": "A proper harvest feast requires three things: the finest cider aged in the right barrel, a guest-loaf baked with intention, and the wisdom to know when to invite the quiet ones to sit by the fire."
+    },
+    {
+      "speaker": "Miller (Commoner)",
+      "text": "My geese know a stranger's step from a mile off, and they've never been wrong. If they start honking at noon, you best check your larder — someone's coming who wasn't invited. And when the Hollow walks, the only safe place is a lit hearth with the ninth cup unpoured."
+    }
+  ],
+  "hollow_timer": {
+    "name": "Hollow Attention",
+    "max_segments": 8,
+    "advance_on": [
+      "A character refuses an offered cup (+1)",
+      "A promise is broken on a threshold (+1)",
+      "The ninth cup is poured (+2)",
+      "A guest-right is violated (GM spends 1 SB to tick +1)",
+      "A child points at an empty chair (the Hollow is already listening; +0, but the GM gains 1 SB)"
+    ],
+    "thresholds": {
+      "4": "Lanterns flicker without wind. Dogs whine at nothing. The Hollow is watching.",
+      "8": "The Hollow manifests. Roll on the **Hollow Walks** table. The party must offer a story, a memory, or a name to appease it."
+    },
+    "stirrs_table": [
+      {
+        "roll": 1,
+        "complication": "A pale figure stands at the edge of the circle. It asks for a name. Give a name (living or dead) and it leaves. Refuse, and it takes your shadow (—1 die on stealth for a week)."
+      },
+      {
+        "roll": 2,
+        "complication": "The ninth cup pours itself. Whoever drinks from it forgets their greatest joy (lose 1 XP, refundable by a quest)."
+      },
+      {
+        "roll": 3,
+        "complication": "A red thread appears tied around every PC's wrist. It tightens when you lie. Cutting it costs 1 Corruption."
+      },
+      {
+        "roll": 4,
+        "complication": "The geese fall silent. The Hollow is inside the circle. It demands a story that ends with a death. If the story is true, it leaves. If false, it takes a memory."
+      },
+      {
+        "roll": 5,
+        "complication": "The Moot Oak bleeds sap. The Hollow speaks through it: 'One of you carries a promise unpaid. Settle it now.' The one named must offer 1 Boon or 1 Supply. Refusal ticks the timer again immediately."
+      },
+      {
+        "roll": 6,
+        "complication": "The empty chair is occupied by a figure in gray. It does not speak. It eats. If you serve it food, it leaves. If you ignore it, it eats your luck (all rolls are Desperate for the next scene)."
+      }
+    ]
+  },
+  "guest_right_violations": [
+    {
+      "roll": 1,
+      "consequence": "The host demands a price of 1 Supply (the cost of a broken loaf)."
+    },
+    {
+      "roll": 2,
+      "consequence": "The village stones turn inward. You are not welcome anywhere for a week (—1 Position on all social rolls)."
+    },
+    {
+      "roll": 3,
+      "consequence": "A red thread ties itself around your wrist. It tightens when you speak to an Aelaerem. Cut it with a silver knife (cost 1 Boon) or suffer —1 die on all interactions."
+    },
+    {
+      "roll": 4,
+      "consequence": "The watch-geese chase you from the village. Gain a **Marked by Geese** condition (animals are hostile; +1 DV to all Beastcraft rolls)."
+    },
+    {
+      "roll": 5,
+      "consequence": "The Hollow notices you. Tick **Hollow Attention +2**. The empty chair will be waiting at your next camp."
+    },
+    {
+      "roll": 6,
+      "consequence": "The Apple-Matron herself banishes you. Start a **Gate of Thorns [4]** timer — when full, you cannot enter any Aelaerem village until you pay a blood-price."
+    }
+  ],
+  "npcs": [
+    {
+      "name": "Oria 'Crimson Door'",
+      "role": "Apple-Matron of the Harvest Moot",
+      "motivation": "Keep the Hollow at bay and the feasts true",
+      "quirk": "She pours the first cup for the eldest, the ninth for the empty chair. Never takes the ninth herself."
+    },
+    {
+      "name": "Bram",
+      "role": "Miller of the Watch-Geese",
+      "motivation": "Protect the village from unseen strangers",
+      "quirk": "His geese have names; one is 'Stranger,' and it has never been wrong."
+    },
+    {
+      "name": "Celia",
+      "role": "Hedge-Witch Midwife",
+      "motivation": "Tie red thread and untie feuds before they fester",
+      "quirk": "Her thread is from her own hair. She never cuts it—only knots it."
+    },
+    {
+      "name": "Drogo",
+      "role": "Thresher-King (seasonal)",
+      "motivation": "Lead the harvest rites and keep the sheaf's secret",
+      "quirk": "Chosen by the last sheaf, which is always a little damp."
+    },
+    {
+      "name": "Alda",
+      "role": "Lantern-Warden of the Downs",
+      "motivation": "Trim the lamps and know which shadows are wrong",
+      "quirk": "Lights them in a pattern that is a prayer."
+    },
+    {
+      "name": "Finnian",
+      "role": "Mummers' Captain",
+      "motivation": "Guard the masks and the laws of festival",
+      "quirk": "The masks are not carved. They are grown."
+    }
+  ],
+  "names": {
+    "first_male": [
+      "Tolly",
+      "Bram",
+      "Corbin",
+      "Willum",
+      "Hodge",
+      "Pippin"
+    ],
+    "first_female": [
+      "Daisy",
+      "Posy",
+      "Marigold",
+      "Hazel",
+      "Fern",
+      "Ivy"
+    ],
+    "surnames": [
+      "Underhill",
+      "Bywater",
+      "Brookside",
+      "Holloway",
+      "Fielding",
+      "Hayward"
+    ],
+    "epithets": [
+      "the Red-Door",
+      "the Goose-Wise",
+      "Barrow-Born",
+      "Hollow-Touched",
+      "the Uninvited",
+      "Ash-Finger"
+    ]
+  },
+  "places": [
+    {
+      "rank": 2,
+      "suit": "spade",
+      "title": "Willow Ford",
+      "subtitle": "[RIVER] [OMEN]",
+      "description": "Flat stones, bowed pollard that remembers faces.",
+      "flavor": "The willow has a name. It will tell you if you sit beneath it and listen.",
+      "mechanical_hook": "To cross safely, you must whisper the willow's name (Wits+Lore DV 3). On failure, the ford rises — lose 1 Supply (drowned cargo). On a critical failure, the willow asks for a story. Refuse and tick **Hollow Attention +1**."
+    },
+    {
+      "rank": 3,
+      "suit": "spade",
+      "title": "Cider-Press Barn",
+      "subtitle": "[HARVEST] [MEMORY]",
+      "description": "Sweet reek, old songs, doors that stick after dusk.",
+      "flavor": "The press was built from a barrow oak. The oak still dreams.",
+      "mechanical_hook": "Sleeping here gives you dreams of the barrow. On a Spirit+Lore test (DV 4), you learn a secret of the dead (a Clue). On failure, the dream follows you — gain the Condition **Barrow-Dreamt** (—1 die on all Resolve tests for a day)."
+    },
+    {
+      "rank": 4,
+      "suit": "spade",
+      "title": "Chalk Sheep-Downs",
+      "subtitle": "[PASTURE] [RITUAL]",
+      "description": "Turf maze cut like a wheel; sheep know the pattern.",
+      "flavor": "The maze is a prayer. Walk it backward to ask a favor.",
+      "mechanical_hook": "Walking the maze backward (Body+Athletics DV 4) lets you ask one question of the land. The answer is a riddle. On a failure, you become lost — start a **Lost in the Maze [4]** timer."
+    },
+    {
+      "rank": 5,
+      "suit": "spade",
+      "title": "Millpond Under Alders",
+      "subtitle": "[WATER] [OMEN]",
+      "description": "The wheel turns some nights without water.",
+      "flavor": "The water is not water. It is the memory of rain.",
+      "mechanical_hook": "Drinking from the pond restores 1 Fatigue but gives you a vision of a forgotten promise. The GM gains 1 SB (the promise will surface later). Refusing to drink ticks **Hollow Attention +1** (the pond is offended)."
+    },
+    {
+      "rank": 6,
+      "suit": "spade",
+      "title": "Bluebell Wood Path",
+      "subtitle": "[FOREST] [WARD]",
+      "description": "Rabbit-gates and snares set by careful hands.",
+      "flavor": "The snares are for the Hollow. They catch only shadows—mostly.",
+      "mechanical_hook": "A character who trips a snare (failed Stealth) must test Resolve (DV 4) or lose their shadow for one scene (—1 Position on stealth). On a success, the snare catches a shadow — the Hollow gains +1 SB."
+    },
+    {
+      "rank": 7,
+      "suit": "spade",
+      "title": "Hedge-Tunnel Lane",
+      "subtitle": "[BOUNDARY] [TRICK]",
+      "description": "Between fields; nine stiles, locals count 'eight-and-one.'",
+      "flavor": "The ninth stile is a gap in the hedge. Step through, and the lane behind you changes.",
+      "mechanical_hook": "Count the stiles aloud. If you reach nine, the lane loops. Tick **Hollow Attention +1**. If you stop at eight and step through the gap, gain +1 Position on navigation for the next leg."
+    },
+    {
+      "rank": 8,
+      "suit": "spade",
+      "title": "Cup-Mark Stone on the Verge",
+      "subtitle": "[RITUAL] [OFFERING]",
+      "description": "Butter left in niches goes missing kindly.",
+      "flavor": "The butter vanishes before dawn. The Hollow leaves a pebble in exchange.",
+      "mechanical_hook": "Leave an offering (1 Supply) to clear 1 segment of **Hollow Attention**. If you take the pebble, you are marked — the GM may spend 1 SB to have the Hollow visit you in a dream."
+    },
+    {
+      "rank": 9,
+      "suit": "spade",
+      "title": "Barrow-by-the-Beech",
+      "subtitle": "[DEATH] [SILENCE]",
+      "description": "Bees go quiet at noon.",
+      "flavor": "The bees are not sleeping. They are listening.",
+      "mechanical_hook": "A character who listens to the bees (Wits+Lore DV 3) hears the name of the next person to die in the village. On a failure, the bees swarm — mark 1 Fatigue. Speaking the name aloud ticks **Hollow Attention +2**."
+    },
+    {
+      "rank": 10,
+      "suit": "spade",
+      "title": "Market Green",
+      "subtitle": "[COMMUNITY] [JUDGMENT]",
+      "description": "Maypole and stocks; carved village stones turned inward.",
+      "flavor": "The stones face the green. They watch the maypole dance—and the dancers.",
+      "mechanical_hook": "Any oath sworn on the green is witnessed by the stones. Breaking it ticks **Hollow Attention +2** and the stones will not forget — the GM gains a String on the oath-breaker."
+    },
+    {
+      "rank": 11,
+      "suit": "spade",
+      "title": "Dovecote Hill",
+      "subtitle": "[OMEN] [FEAR]",
+      "description": "The scarecrow faces the road, not the rows.",
+      "flavor": "The scarecrow has a face. It is the face of the last person who broke guest-right.",
+      "mechanical_hook": "If the scarecrow turns to face you, you have one hour to leave the village. Tick **Hollow Attention +1** for each hour you stay. The scarecrow can be appeased with a story (Spirit+Performance DV 4)."
+    },
+    {
+      "rank": 12,
+      "suit": "spade",
+      "title": "Mother's Orchard",
+      "subtitle": "[HARVEST] [PROMISE]",
+      "description": "Rows straighten if you don't look—curve if you do.",
+      "flavor": "The orchard is a promise. Break it, and the apples will taste of ash.",
+      "mechanical_hook": "Picking an apple without permission ticks **Hollow Attention +1**. Eating an apple restores 1 Fatigue but gives you a Condition: **Debtor to the Orchard** (the next time you break a promise, the orchard will claim a memory)."
+    },
+    {
+      "rank": 13,
+      "suit": "spade",
+      "title": "Moot Oak",
+      "subtitle": "[LAW] [MEMORY]",
+      "description": "Lantern nails hammered deep; benches at the roots.",
+      "flavor": "The nails are from a hundred feuds. Each one holds a grudge.",
+      "mechanical_hook": "A character who sits on the benches may be judged by the oak. On a Presence+Sway test (DV 4), you may settle a feud. On failure, the oak adds a nail for you — start a **Grudge of the Oak [4]**."
+    },
+    {
+      "rank": 14,
+      "suit": "spade",
+      "title": "Hollow Field",
+      "subtitle": "[CURSE] [DANGER]",
+      "description": "A ring where no plow will hold a line, not for any coin.",
+      "flavor": "The field is a mouth. It has not fed in a century.",
+      "mechanical_hook": "Entering the field forces a Resolve test (DV 4). On failure, you lose your appetite for a week (—1 die to all Endurance tests). The field can be fed a story or a memory to make it dormant for a year."
+    }
+  ],
+  "people_and_factions": [
+    {
+      "rank": 2,
+      "suit": "heart",
+      "title": "Hedge-Witch Midwife",
+      "subtitle": "[HEALING] [BOUNDARY]",
+      "description": "Ties red thread, unties feuds, and knows which births the Hollow watches.",
+      "flavor": "Her thread is from her own hair. She never cuts it—only knots it.",
+      "what_they_carry": "She once tied a knot around a stillborn child to keep the Hollow from claiming it. The knot is still there. If you help her cut it, she will teach you a thread-ward.",
+      "what_they_ask": "A lock of hair from a woman who has never lost a child. She will not say why."
+    },
+    {
+      "rank": 3,
+      "suit": "heart",
+      "title": "Miller",
+      "subtitle": "[WATCHFUL] [LOYALTY]",
+      "description": "Watch-geese that remember faces; better sentries than men.",
+      "flavor": "The geese have names. One is 'Stranger.' It has never been wrong.",
+      "what_they_carry": "The geese saved the village from a Hollow walk ten years ago. He has not slept since. If you watch the geese for a night (no roll), he will give you a **Goose Feather** (once, gain +1 die to detect ambush).",
+      "what_they_ask": "A name the geese do not know. He will carve it into a post."
+    },
+    {
+      "rank": 4,
+      "suit": "heart",
+      "title": "Orchard Reeve",
+      "subtitle": "[AUTHORITY] [HARVEST]",
+      "description": "Tally-stick, cider-stained smile, and a list of who owes what harvest.",
+      "flavor": "His tally-stick is an apple branch. The notches grow back.",
+      "what_they_carry": "He lost a notch to a thief. If you find the thief, he will waive your harvest tithe for a year.",
+      "what_they_ask": "A bushel of apples (1 Supply) or a story about a harvest that failed."
+    },
+    {
+      "rank": 5,
+      "suit": "heart",
+      "title": "Beekeeper",
+      "subtitle": "[SACRED] [SECRET]",
+      "description": "Keeps odd honey aside for 'winter churches.'",
+      "flavor": "The honey is from barrow flowers. It tastes of earth and old promises.",
+      "what_they_carry": "The winter church once saved her bees from a blight. She has been paying in honey ever since. If you deliver a jar to the church, she will give you a **Winter Honey** (heals 1 Corruption, but the GM gains 1 SB).",
+      "what_they_ask": "A piece of wax. Melt it to seal a promise (the promise cannot be broken without the Hollow's attention)."
+    },
+    {
+      "rank": 6,
+      "suit": "heart",
+      "title": "Shepherd",
+      "subtitle": "[COMMAND] [SPIRIT]",
+      "description": "Bone whistle that calls dogs—and other things.",
+      "flavor": "The whistle is from a wolf. The wolf still answers.",
+      "what_they_carry": "The wolf's ghost follows him. He wants to lay it to rest. If you help, he will teach you the whistle.",
+      "what_they_ask": "A wolf's tooth. He will not say where he got it."
+    },
+    {
+      "rank": 7,
+      "suit": "heart",
+      "title": "Lantern-Warden",
+      "subtitle": "[WARD] [RITUAL]",
+      "description": "Trims lamps and knows which shadow is wrong.",
+      "flavor": "She lights the lamps in a pattern. The pattern is a prayer to keep the Hollow back.",
+      "what_they_carry": "One lamp went out last winter. The Hollow almost entered. She needs a new wick made from a hairless sheep. Find it, and she will bless your own lamp.",
+      "what_they_ask": "A night of silence (no speaking). If you break silence, the lamp gutters and ticks **Hollow Attention +1**."
+    },
+    {
+      "rank": 8,
+      "suit": "heart",
+      "title": "Mummers' Captain",
+      "subtitle": "[TRANSFORMATION] [LAW]",
+      "description": "Chest of masks, stricter rules than church.",
+      "flavor": "The masks are not carved. They are grown.",
+      "what_they_carry": "A mask was stolen last festival. The thief wore it and became someone else. Find the mask (or the thief), and he will grant you a **Mummers' License**.",
+      "what_they_ask": "A story about a time you wore a false face. The mask will listen."
+    },
+    {
+      "rank": 9,
+      "suit": "heart",
+      "title": "Traveling Craft",
+      "subtitle": "[TRADE] [OATH]",
+      "description": "Bright kettles, dull knife for cutting oaths.",
+      "flavor": "The knife was his father's. His father used it to cut a promise with the Hollow.",
+      "what_they_carry": "The Hollow still wants the knife back. He will trade it for a story that makes the Hollow laugh. No one has succeeded.",
+      "what_they_ask": "A cut oath (void any minor promise). Using the knife ticks **Hollow Attention +1** (the Hollow is watching)."
+    },
+    {
+      "rank": 10,
+      "suit": "heart",
+      "title": "Bailiff of the Moot Oak",
+      "subtitle": "[LAW] [MEMORY]",
+      "description": "Polite as a noose, carries a tally of grudges.",
+      "flavor": "His tally is bark. The writing grows deeper each year.",
+      "what_they_carry": "He was once a hedge-witch's apprentice. She cursed him to carry the tally forever. If you lift the curse, he will give you a **Grudge Waiver** (once, cancel a feud).",
+      "what_they_ask": "A name from the tally. He will not say which one."
+    },
+    {
+      "rank": 11,
+      "suit": "heart",
+      "title": "Wold-Wardens",
+      "subtitle": "[TRADITION] [BOUNDARY]",
+      "description": "Elders who swear by hedges, not crowns.",
+      "flavor": "They measure time in hedge-layers. A hedge that has grown for a century has a hundred opinions.",
+      "what_they_carry": "They lost a hedge-layer to a fire. The hedge is growing wild. If you help re-lay it (Craft test DV 5), they will grant you safe passage through any Aelaerem boundary for a year.",
+      "what_they_ask": "A cutting from the hedge. Plant it to claim a temporary threshold."
+    },
+    {
+      "rank": 12,
+      "suit": "heart",
+      "title": "Apple-Matron",
+      "subtitle": "[AUTHORITY] [HOSPITALITY]",
+      "description": "Hostess of harvest feasts; power sits where she pours.",
+      "flavor": "She pours the first cup for the eldest, the second for the guest, the eighth for the fire. The ninth cup is for the empty chair.",
+      "what_they_carry": "She has never poured the ninth cup. The Hollow is waiting. If you offer to pour it for her (a sacrifice), she will grant you a **Blessing of the Hearth** (once, ignore a guest-right violation).",
+      "what_they_ask": "A cup of your own blood. She will not explain."
+    },
+    {
+      "rank": 13,
+      "suit": "heart",
+      "title": "Thresher-King",
+      "subtitle": "[SEASONAL] [SACRIFICE]",
+      "description": "A title that moves but never leaves; harvest robes, seasonal authority.",
+      "flavor": "He is chosen by the last sheaf. The sheaf is always a little damp.",
+      "what_they_carry": "The sheaf is damp because it was cut from the Hollow Field. He is the field's warden. If you help him harvest the field (a ritual), he will give you a **Sheaf of Plenty** (once, gain 1 Supply).",
+      "what_they_ask": "A sweat from your brow. The field is thirsty."
+    },
+    {
+      "rank": 14,
+      "suit": "heart",
+      "title": "The Pale Shepherd",
+      "subtitle": "[DEATH] [THRESHOLD]",
+      "description": "Comes when lambs are born and when people go missing.",
+      "flavor": "He has no face. His hat is a shadow.",
+      "what_they_carry": "He is the Hollow's messenger. He does not bargain. He only collects. If you meet him, you have one minute to offer a story, a memory, or a name.",
+      "what_they_ask": "Nothing. He is not a patron. He is a deadline."
+    }
+  ],
+  "complications": [
+    {
+      "rank": 2,
+      "suit": "club",
+      "title": "Unseasonal Fog",
+      "subtitle": "[WEATHER] [TRAP]",
+      "description": "The road walks you back to your own gate.",
+      "flavor": "The gate is closed. The latch is red. Do not touch it.",
+      "mechanical_hook": "Navigation rolls are Desperate. On a Miss, you find yourself at the gate of a house that does not exist. The door opens. Inside, the Hollow waits. Offer a story or lose 1 Boon."
+    },
+    {
+      "rank": 3,
+      "suit": "club",
+      "title": "Scarecrow Turns",
+      "subtitle": "[OMEN] [FEAR]",
+      "description": "It watches the lane, not the field.",
+      "flavor": "The scarecrow's head follows you. The crows are silent.",
+      "mechanical_hook": "The scarecrow has marked you. Tick **Hollow Attention +1**. Until dawn, all stealth rolls are at —1 die (the crows are watching). You can appease it by leaving a coin in its pocket (1 Boon)."
+    },
+    {
+      "rank": 4,
+      "suit": "club",
+      "title": "Soured Wassail",
+      "subtitle": "[RITUAL] [TOLL]",
+      "description": "The bowl gives back names you did not speak.",
+      "flavor": "The names are of people who died last winter. They are not listed in any tally.",
+      "mechanical_hook": "If you drink from the bowl, you hear the names. On a Spirit+Resolve test (DV 4), you gain a clue about a death. On failure, one of the names is yours — the Hollow will visit you within a week (GM gains 3 SB)."
+    },
+    {
+      "rank": 5,
+      "suit": "club",
+      "title": "Black Sow in the Orchard",
+      "subtitle": "[CURSE] [OMEN]",
+      "description": "Hooves scuff every charm.",
+      "flavor": "The sow was a woman once. She broke a vow.",
+      "mechanical_hook": "The sow curses anyone who harms her. If you attack her, you gain the Condition **Sow's Mark** (animals are hostile; +1 DV to all Beastcraft rolls). You can lift the curse by keeping a promise you have been avoiding."
+    },
+    {
+      "rank": 6,
+      "suit": "club",
+      "title": "Hive-Swarm at Dusk",
+      "subtitle": "[NATURE] [OMEN]",
+      "description": "Smoke curls the wrong way.",
+      "flavor": "The bees are spelling a word. The word is 'guest.'",
+      "mechanical_hook": "The bees are warning you. Tick **Hollow Attention +1**. If you ignore them, the next threshold you cross will be a trap (GM may spend 2 SB to worsen Position)."
+    },
+    {
+      "rank": 7,
+      "suit": "club",
+      "title": "Old Song Taken Up by Children",
+      "subtitle": "[MEMORY] [TABOO]",
+      "description": "Adults remember the verse none should sing.",
+      "flavor": "The verse is about a barrow that opened. The children think it is a lullaby.",
+      "mechanical_hook": "Any adult who hears the song must test Resolve (DV 4) or sing along. Singing ticks **Hollow Attention +1** and gives the GM a String on the singer (the barrow knows your name)."
+    },
+    {
+      "rank": 8,
+      "suit": "club",
+      "title": "Lanterns Burn Blue at the Ford",
+      "subtitle": "[THRESHOLD] [TOLL]",
+      "description": "Crossing costs more than coin.",
+      "flavor": "The blue light is a toll-keeper. Payment is a story—or a secret.",
+      "mechanical_hook": "To cross, a character must offer a story (Spirit+Performance DV 4). On failure, the toll-keeper takes a memory (lose 1 XP, refundable by a quest). Refusing to pay ticks **Hollow Attention +2**."
+    },
+    {
+      "rank": 9,
+      "suit": "club",
+      "title": "Out-of-Season Mumming",
+      "subtitle": "[TRANSFORMATION] [TRAP]",
+      "description": "Masks stick; faces won't come off.",
+      "flavor": "The masks are warm. They have a heartbeat.",
+      "mechanical_hook": "A character who wears a mask must test Spirit (DV 4) or the mask becomes their face for a day. While masked, they cannot speak their own name. Cutting the mask off costs 1 Harm."
+    },
+    {
+      "rank": 10,
+      "suit": "club",
+      "title": "Chalk Maze Fills with Mist",
+      "subtitle": "[DIMENSION] [DANGER]",
+      "description": "You step out somewhere older.",
+      "flavor": "The mist has a smell—old wool and older bread.",
+      "mechanical_hook": "Navigation is impossible. Roll 1d6 to determine where you emerge: 1–2: the Hollow Field, 3–4: a barrow, 5–6: the Moot Oak. The GM gains 1 SB per emergence."
+    },
+    {
+      "rank": 11,
+      "suit": "club",
+      "title": "Church Bell Rings Thirteen",
+      "subtitle": "[OMEN] [SPIRIT]",
+      "description": "Something attends the sermon.",
+      "flavor": "The thirteenth pew is empty. The dust on it is fresh.",
+      "mechanical_hook": "The Hollow is in the church. Anyone who prays here must test Resolve (DV 4) or the Hollow answers. On failure, the Hollow offers a bargain: a secret in exchange for a memory. Refusal ticks **Hollow Attention +2**."
+    },
+    {
+      "rank": 12,
+      "suit": "club",
+      "title": "Harvest Tithe Demanded",
+      "subtitle": "[TOLL] [SPIRIT]",
+      "description": "Hands gloved in leaves.",
+      "flavor": "The hands do not belong to anyone in the village.",
+      "mechanical_hook": "The tithe is 1 Supply or a story. If you pay with a story, the hands accept. If you refuse, the hands reach for your throat — start a **Harvest Hunt [4]** timer."
+    },
+    {
+      "rank": 13,
+      "suit": "club",
+      "title": "Moot Oak Bleeds Sap",
+      "subtitle": "[OMEN] [VIOLENCE]",
+      "description": "The color of wine; talk turns to knives.",
+      "flavor": "The sap is warm. It tastes of blood and honey.",
+      "mechanical_hook": "Any feud discussed under the oak escalates. The GM may spend 1 SB to turn a minor dispute into a blood feud. The sap can be collected and used to seal an oath (the oath cannot be broken without the oak's permission)."
+    },
+    {
+      "rank": 14,
+      "suit": "club",
+      "title": "The Hollow Opens",
+      "subtitle": "[CURSE] [DIMENSION]",
+      "description": "Burrows and barrows connect; footfalls answer underground.",
+      "flavor": "The footsteps are counting. They stop at eight.",
+      "mechanical_hook": "The Hollow is crossing. Any character who steps on a barrow must test Resolve (DV 5) or be pulled underground. The party has one scene to rescue them before they become a Neighbor. Tick **Hollow Attention** to zero — the Hollow has fed."
+    }
+  ],
+  "rewards": [
+    {
+      "rank": 2,
+      "suit": "diamond",
+      "title": "Guest-Loaf & Salt",
+      "subtitle": "[HOSPITALITY] [ONCE]",
+      "description": "One night's safe board anywhere with a red door.",
+      "flavor": "The loaf is barley and rye. Break it with the host, and the Hollow will not cross the threshold—for one night.",
+      "hollow_cost": "If you break guest-right while using the loaf, the Hollow enters immediately. Tick **Hollow Attention +4** and roll on the Hollow Walks table."
+    },
+    {
+      "rank": 3,
+      "suit": "diamond",
+      "title": "Cider-Mark",
+      "subtitle": "[SOCIAL] [ONCE]",
+      "description": "A free cup on the green buys gossip and patience.",
+      "flavor": "The mark is a notch on a barrel. The tapster will remember you—or pretend not to.",
+      "hollow_cost": "Drinking the cider clears 1 Fatigue but gives you a vision of a death. The GM gains 1 SB (the vision will come true unless you intervene)."
+    },
+    {
+      "rank": 4,
+      "suit": "diamond",
+      "title": "Hedge-Pass Ribbon",
+      "subtitle": "[TRAVEL] [ONCE]",
+      "description": "Step through any thicket unsnagged, once.",
+      "flavor": "The ribbon is red. Tie it to a branch, and the thorns will part—once.",
+      "hollow_cost": "After use, the ribbon turns white. The Hollow can now cross that threshold. The GM may spend 1 SB to have the Hollow follow you through that same path later."
+    },
+    {
+      "rank": 5,
+      "suit": "diamond",
+      "title": "Bee-Queen Share",
+      "subtitle": "[WARNING] [ONGOING]",
+      "description": "Honey and a warning from the hives when danger nears.",
+      "flavor": "The honey is from a queen who died last year. Her ghost still guards the comb.",
+      "hollow_cost": "The honey is addictive. Eating it gives +1 die to your next roll, but the Queen's ghost will visit you in dreams. The GM may spend 1 SB to have the ghost ask for a favor."
+    },
+    {
+      "rank": 6,
+      "suit": "diamond",
+      "title": "Shepherd's Whistle",
+      "subtitle": "[COMMAND] [ONCE]",
+      "description": "Dogs and door-bolts heed you for one scene.",
+      "flavor": "The whistle is a knucklebone. Blow it, and the dogs will obey—or they will hide.",
+      "hollow_cost": "The wolf's ghost follows the whistle. After use, you are haunted by the wolf for one day (—1 die on all stealth rolls). The wolf can be appeased with a story about a loyal animal."
+    },
+    {
+      "rank": 7,
+      "suit": "diamond",
+      "title": "Lantern-Writ",
+      "subtitle": "[LIGHT] [ONCE]",
+      "description": "The lamps stay lit along your path despite wind.",
+      "flavor": "The writ is a bell. Ring it, and the lamps will not flicker—until dawn.",
+      "hollow_cost": "The lanterns attract the Hollow. Tick **Hollow Attention +1**. The Hollow will watch your path. If you use the writ again in the same region, it will appear."
+    },
+    {
+      "rank": 8,
+      "suit": "diamond",
+      "title": "Mummers' License",
+      "subtitle": "[MASQUERADE] [ONCE]",
+      "description": "Lawful mask and after-dark crossing for a feast day.",
+      "flavor": "The license is a wooden mask. Wear it, and the Hollow will see a stranger—not a guest.",
+      "hollow_cost": "The mask has a face. After use, you may see that face in reflections. The GM gains 1 SB to use for a horror complication. The mask can be returned to the Mummers' Captain to clear this cost."
+    },
+    {
+      "rank": 9,
+      "suit": "diamond",
+      "title": "Orchard Right",
+      "subtitle": "[SECRET] [ONCE]",
+      "description": "Pick at Mother's Orchard without offense; the fruit hides a truth.",
+      "flavor": "The fruit is a secret. Bite it, and the secret will become yours—or it will become you.",
+      "hollow_cost": "The tree remembers your face. The next time you break a promise, the orchard will send a branch to claim you (GM may spend 2 SB to have a tree spirit attack)."
+    },
+    {
+      "rank": 10,
+      "suit": "diamond",
+      "title": "Mill Token",
+      "subtitle": "[UTILITY] [ONGOING]",
+      "description": "The wheel turns at any hour, grain or rumor ground.",
+      "flavor": "The token is a millstone chip. Feed it to the wheel, and it will grind anything—truths included.",
+      "hollow_cost": "The mill grinds memories, not grain. Feeding it a truth (a secret) allows you to clear 1 Corruption, but the truth becomes known to the Hollow. The GM gains a String on the truth."
+    },
+    {
+      "rank": 11,
+      "suit": "diamond",
+      "title": "Apple-Matron's Blessing",
+      "subtitle": "[PROTECTION] [ONCE]",
+      "description": "Hands help unseen when you ask no coin.",
+      "flavor": "The blessing is a cup. Pour it out in trouble, and the fields will send rain—or roots.",
+      "hollow_cost": "The fields remember. After use, the next time you camp on Aelaerem land, the grass will whisper your secrets to the Hollow (GM gains 1 SB per PC)."
+    },
+    {
+      "rank": 12,
+      "suit": "diamond",
+      "title": "Private Moot Under the Oak",
+      "subtitle": "[JUSTICE] [ONCE]",
+      "description": "Elders hear you alone; precedent sticks.",
+      "flavor": "The moot is held at midnight. The oak's roots are the jury.",
+      "hollow_cost": "The oak's judgment is binding. If you break it, the oak will add a nail for you. Start a **Grudge of the Oak [4]**. When full, the oak sends a root to drag you underground."
+    },
+    {
+      "rank": 13,
+      "suit": "diamond",
+      "title": "Thresher-King's Guard",
+      "subtitle": "[ESCORT] [FEAR]",
+      "description": "Six red-hooded harvesters escort you; doors open.",
+      "flavor": "Their hoods are the color of dried blood. They do not speak.",
+      "hollow_cost": "The harvesters are bound to the Hollow Field. After the escort, one of them will follow you until you pay a tithe (1 Supply or a story). Refusal ticks **Hollow Attention +2**."
+    },
+    {
+      "rank": 14,
+      "suit": "diamond",
+      "title": "Pale Shepherd's Clause",
+      "subtitle": "[IMMUNITY] [ONCE]",
+      "description": "Once, the Hollow will not notice you; pass uncounted.",
+      "flavor": "The clause is a silence. The Hollow will step aside—and will remember that it did.",
+      "hollow_cost": "The Hollow will remember your face. After use, tick **Hollow Attention +0** (the timer does not advance, but the GM gains a permanent String on you). The clause can only be used once per character per campaign."
+    }
+  ],
+  "quick_use_notes": {
+    "draw_rules": "Draw until you have all four suits: Spade = place, Heart = actor, Club = pressure, Diamond = treasure. Highest rank sets the main Timer (2–5 → 4, 6–10 → 6, J/Q/K → 8, A → 10).",
+    "diamonds": "Treasures (Diamonds) are codified outcomes (blessings/tokens/host-rights) that change position rather than call for a roll.",
+    "ace_rule": "If any A appears, echo Hearth & Hollow motifs—quiet bells, red thread, watch-geese, footsteps under the soil—so the dread feels woven through the hedges.",
+    "hollow_tracking": "Track the **Hollow Attention [8]** timer as a campaign-wide pressure. Use the **Hollow Walks** table when it reaches 8."
+  },
+  "additional_features": [
+    {
+      "name": "Bread & Lantern",
+      "description": "Presenting a guest-loaf and a lit lantern at a threshold shifts your next social action one step safer while you remain a guest of that hearth. The lantern must be lit from the host's fire."
+    },
+    {
+      "name": "Neighborly Courtesies",
+      "description": "When you keep local taboos (count 'eight-and-one,' turn village stones inward, leave butter at cup-marks), cancel the first SB generated by rites or negotiations in that scene."
+    },
+    {
+      "name": "Listen at the Stile",
+      "description": "A quiet pause at a stile, barrow, or hedge-tunnel yields a true omen—ask one short question about what the Hollow wants *here and now*; the answer arrives as a sign, a sound, or a small animal."
+    }
+  ],
+  "lore_echoes": [
+    {
+      "title": "The Sealed Gate",
+      "description": "Some Aelaerem thresholds are marked with a nail from the Sealed Gate's original shrines. A door with such a nail can be barred against any spirit for one night—but the nail must be removed before dawn, or the door will never open again."
+    },
+    {
+      "title": "The Savage Heart",
+      "description": "In the deepest hollows, the Hollow is said to wear a bear's shape during the winter famine. Hedge-keepers leave raw meat at the boundary, not as an offering but as a treaty: 'Eat this, not our children.'"
+    },
+    {
+      "title": "The Traveler",
+      "description": "Lantern-wardens sometimes find a gray pilgrim waiting at a stile at dusk. The pilgrim asks for directions to a village that no longer exists. Those who answer truthfully find that the next road they walk is half as long."
+    },
+    {
+      "title": "The Clockwork Monad",
+      "description": "Aeler engineers tried to map the hedge-tunnel lanes using breath-bonds and brass chains. The surveyors reported that the lanes would not hold still. The maps were burned. The Aelaerem still smile when asked about it."
+    },
+    {
+      "title": "Ikasha, She Who Sleeps",
+      "description": "The Hollow is sometimes called Ikasha's shadow—the part of her that did not fall asleep. Aelaerem children are taught never to whisper the name of the dreamer before bed, lest the Hollow mistake them for a messenger."
+    },
+    {
+      "title": "The Ninth",
+      "description": "On the ninth night of a feast, the empty chair is left for the Hollow. If a guest sits in it, the Hollow will take their place at the table. The feast will continue, but the guest will never be full again."
+    }
+  ],
+  "superstitions": [
+    {
+      "name": "Bread to the Barrow",
+      "effect": "Crumble a crust at a cup-mark stone. Ignore the first **Hive-Swarm** penalty.",
+      "cost": "Burn for +1 die once"
+    },
+    {
+      "name": "Knot the Ribbon",
+      "effect": "Tie a single knot in a red thread at a threshold. Cancel **Out-of-Season Mumming** or take —1 die on your next festival roll (your choice).",
+      "cost": "Burn for +1 die once"
+    },
+    {
+      "name": "Name to the Hollow",
+      "effect": "Whisper a dead person's name into an empty chair. Gain +1 Effect when invoking guest-right this scene, but mark **Obligation** to the Pale Shepherd.",
+      "cost": "Burn for +1 die once"
+    }
+  ],
+  "hearth_magic": "The Aelaerem weave their power through careful observance and small courtesies. Their magic lies not in grand gestures but in the precise attention to thresholds, seasons, and the proper ordering of things. Red thread binds more than wounds—it ties names to places, promises to people, and the living to the Hollow that walks beneath their feet. To offend a hedge-witch is to invite the Neighbors' attention; to earn an elder's blessing is to walk with the earth's favor.",
+  "sb_spend_table": {
+    "minor_complications": [
+      "**Exposure:** Your actions draw unwanted attention from **wardens or hedge-keepers**.",
+      "**Noise:** Sounds of your actions alert nearby **watch-geese or mummers**.",
+      "**Trace:** Evidence of your passage marks your route for **trackers or the Hollow**.",
+      "**Delay:** A brief but meaningful setback costs you **time or favorable light**.",
+      "**Supply Strain:** Mark +1 segment on a relevant **resource timer**."
+    ],
+    "moderate_setbacks": [
+      "**Alarm Raised:** **Orchard reeve or lantern-warden** becomes aware and begins responding.",
+      "**Position Lost:** You lose advantageous ground/cover/stealth due to **fog or threshold shift**.",
+      "**Foe Appears:** A **scarecrow or Hollow spirit** arrives on scene.",
+      "**Gear Trouble:** A piece of equipment becomes **Compromised/Neglected**.",
+      "**Lock/Barrier:** A simple obstacle now requires a test to overcome."
+    ],
+    "serious_trouble": [
+      "**Reinforcements:** Additional **wold-wardens, mummers, or Neighbors** arrive.",
+      "**Key Gear Breaks:** A crucial tool/weapon becomes temporarily unusable.",
+      "**Major Twist:** The situation fundamentally changes - **taboo broken/geese turn/Hollow stirs**.",
+      "**Rail Tick:** Advance a relevant campaign/front timer by 1 segment.",
+      "**Condition Applied:** Mark **Fatigue 1/Harm 1/Condition** appropriate to fiction."
+    ],
+    "major_turns": [
+      "**Trap Springs:** A prepared danger activates with full effect.",
+      "**Authority Arrival:** **Apple-Matron, Thresher-King, or Pale Shepherd** intervenes.",
+      "**Scene Shift:** The environment changes dramatically - **fog thickens/barrow opens/Hollow walks**.",
+      "**Patron Omen:** Divine/arcane forces take notice - **omen appears/blessing lost/curse manifests**.",
+      "**Narrative Pivot:** The story takes an unexpected turn that reframes objectives."
+    ],
+    "region_specific": [
+      "**Aelaerem (Hearth & Hollow):** Quiet bells toll for no reason; red thread appears tied to your belongings; watch-geese honk warnings in the night.",
+      "**Aelaerem (Threshold Magic):** A door you passed through earlier now leads somewhere else; your shadow walks behind you instead of beside you.",
+      "**Aelaerem (Folk Customs):** You forget a crucial local taboo and offend the Neighbors; small things begin to go wrong—milk sours, knots loosen, a child points at the empty chair."
+    ]
+  },
+  "boss_archetypes": [
+    {
+      "name": "The Scarecrow Regent",
+      "tags": [
+        "Omen",
+        "Threshold"
+      ],
+      "description": "A hedge-raised guardian wearing twelve charms and one wrong knot.",
+      "phases": [
+        "Stare of the Lane",
+        "Scare the Crows",
+        "Harvest of Faces"
+      ],
+      "cracks": [
+        "a **Guest-Loaf** offered to its post",
+        "a **Mummers' License** to wear a mask it cannot read"
+      ]
+    },
+    {
+      "name": "The Hollow Bride",
+      "tags": [
+        "Otherworld",
+        "Hospitality"
+      ],
+      "description": "A Neighbor wearing a borrowed name and wedding veil.",
+      "phases": [
+        "Invitation Drifted",
+        "Feast of Shadows",
+        "Ninth Cup Poured"
+      ],
+      "cracks": [
+        "a **Shepherd's Whistle** to call the dogs that guard the threshold",
+        "a **Lantern-Writ** to see her true face"
+      ]
+    },
+    {
+      "name": "Lantern Bailiff of the Moot",
+      "tags": [
+        "Justice",
+        "Order"
+      ],
+      "description": "Enforcer of hedge-law with warrant-nails and bell-keys.",
+      "phases": [
+        "Lantern Law",
+        "Midnight Moot",
+        "Binding Geas"
+      ],
+      "cracks": [
+        "a **Cider-Mark** to buy a night's silence",
+        "a **Moot Oak bench** to appeal his ruling"
+      ]
+    },
+    {
+      "name": "Beekeeper of Winter Church",
+      "tags": [
+        "Sacred",
+        "Whisper"
+      ],
+      "description": "Keeper of cold honey and sleeping hymns.",
+      "phases": [
+        "Swarm Omen",
+        "Waxed Vow",
+        "Memory Tithe"
+      ],
+      "cracks": [
+        "a **Bee-Queen Share** to call her swarm to heel",
+        "a **Lantern** lit from a winter church candle"
+      ]
+    }
+  ],
+  "faction_entanglements": [
+    "**Wold-Wardens:** Honor hedge-law (count stiles, turn stones inward) or suffer +1 SB on each night march; bringing steel disputes to the Moot Oak reduces the next travel DV by 1.",
+    "**Mummers' Companies:** Travel under mask grants advantage crossing parochial borders; anger them (perform out of season) and village gates close at dusk (Position —).",
+    "**Lantern-Wardens:** Donate oil or heal lamps to earn an escort marker; ignore a lit-lane and pay a 'darkness toll' (first Stealth/Scout roll each night suffers —1 die).",
+    "**Apple-Matron Circles:** Feast-days open barns and purses; snub an invitation and local prices double until amends are made.",
+    "**Neighbors (quiet powers):** Leave butter at cup-marks to cancel the first supernatural SB this leg; break taboo and the Hollow stirs (add a **Hollow Attention** tick)."
+  ],
+  "cross_regional_ties": [
+    "**Aeler Soft-Power:** Red-thread guest-right and courtesies are fashionable among Aeler houses; reputation for keeping hearth-law grants +1 die to parley with Aeler stewards and toll-clerks.",
+    "**Kahfagian Sea-Lanes:** Beeswax, cider-brandy, and wool ride river-to-coast. Storm seasons push Kahfagian factors inland—good silver, stricter contracts.",
+    "**Way of Silk Spurs:** Caravans detour across the downs for night-safe lanes under lantern law; counterfeit guest-loaf tokens discovered here echo as distrust along Silk waystations (Social DV +1 until cleared).",
+    "**Valewood Fallout (North):** Moon-sap and dream pollen drift on certain winds: chalk mazes misalign, barrow-whispers grow bold. When **Valewood Weather** is in effect, the first night omen is always true (good or ill)."
+  ],
+  "encounter_seeds": [
+    {
+      "title": "The Hollow Bride's Invitation",
+      "description": "A wedding invitation arrives at the inn. The bride is not from any village on the map. The groom has not been seen in a week. The ninth chair at the feast is already occupied."
+    },
+    {
+      "title": "The Scarecrow's Harvest",
+      "description": "Crows are building a nest on the scarecrow's shoulder. Inside the nest is a key. The key opens a door that should not exist."
+    },
+    {
+      "title": "The Beekeeper's Tithe",
+      "description": "The winter church's bees have stopped producing honey. They are producing wax effigies of the PCs. The beekeeper wants to know why."
+    }
+  ],
+  "index": [
+    "Aelaerem",
+    "Hearth and Hollow generator",
+    "Places!Aelaerem",
+    "People!Aelaerem",
+    "Complications!Aelaerem",
+    "Rewards!Aelaerem",
+    "Apple-Matron",
+    "Thresher-King",
+    "Pale Shepherd",
+    "Wold-Wardens",
+    "Mummers",
+    "Hedge-witch",
+    "Mother's Orchard",
+    "Moot Oak",
+    "Hollow Field",
+    "Red thread",
+    "Bone whistle",
+    "Watch-geese",
+    "Guest-loaf",
+    "Hedge-pass ribbon",
+    "Pale Shepherd's clause",
+    "Hollow Attention",
+    "Guest-right violations",
+    "Hollow Walks"
+  ],
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

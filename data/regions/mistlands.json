@@ -1,0 +1,927 @@
+{
+  "id": "mistlands-bells-salt-breath",
+  "version": "1.0.0",
+  "type": "generator",
+  "title": "Mistlands — Bells, Salt, and Breath",
+  "label": "chap:mistlands",
+  "key_demographic": "Humans and Dwarves",
+  "capital": "Payden's Port",
+  "manifest_path": "/data/docs/manifest.json",
+  "overview": {
+    "tagline": "The mist collects names, and the bells count every breath.",
+    "genre": "Folk horror, coastal gothic, bell-warding",
+    "mood": "Bells and Breath, Salt and Silence, The Weight of the Mist",
+    "starting_location": "Payden's Port, a city of salt-stained wharves and ringing bells. The inn, the Drowned Rat, has a bell that rings once for every sailor lost at sea. A fog-knight watches you from the corner. A salt-monk offers you a blessing for a single copper. The Legate's seal is on every door, and the Ninth Bell is never rung.",
+    "lore": {
+      "history": "The Mistlands lie north of the Aelerian mountains, where the Aberderrin Sea laps against reed-fens and drowned shores. To the west, the Direwood breathes; to the east, the salt tides of the Aberderrin. It is a Protectorate of the Aeler, but their iron passes only hold the southern roads — the land itself belongs to fog and bells. Every levee hums with ward-notes, every ferry takes salt as tithe, and every shadow is measured against the Direwood's endless breath. The people here live by the weight of salt, the echo of bells, and the hope that their names will not be spoken by the mists. The Aeler Protectorate maintains order with patrols, garrisons, and breath-bonds, but the real law is older: salt lines drawn at dusk, iron nails hammered into threshold posts, and the unspoken knowledge that the ninth bell must never ring. The Mistlands do not forgive forgetfulness. The mist has a long memory, and it shares its grudges freely.",
+      "first_notice": "The constant, distant chime of bells — never quite in sync. The taste of salt on your lips even inland. The way everyone holds their breath when crossing a bridge. The silence when a bell fails to ring.",
+      "rule_that_kills": "Never answer a voice that calls your name from the fog. The mist collects names, and once it has yours, the ferryman will always know where to find you."
+    },
+    "entanglements": {
+      "north": "The Violet Steppe (Ykrul) — Winter raids sometimes pierce the fog, but the mist is a better guardian than any wall. The Ykrul do not linger where the bells ring false.",
+      "south": "Aeler — Mistland caravans pass each other, carrying arms and bells one way, grain and uncertain futures, the other.",
+      "east": "(via the Aberderrin) The Linns — Longship raids come when the bell-lines are weak; the sea is the second border, and it does not ring. The fog-wardens watch the horizon as much as the bells.",
+      "west": "The mist rolls in from the heart of the wood, carrying whispers, wraiths, and death."
+    }
+  },
+  "quotes": [
+    {
+      "speaker": "Legate Halvar (Elite)",
+      "text": "The bells are the only law that matters in the Mistlands. Ring them correctly, and the mist parts. Ring them false, and you will find yourself lost, alone, and named. The Protectorate does not forgive ignorance. The mist forgives nothing."
+    },
+    {
+      "speaker": "Mother Anja, Salt-Monk (Commoner)",
+      "text": "You think the salt is for warding? No. The salt is for remembering. Every grain is a name we have not forgotten, a breath we have not lost. The Direwood takes the unmourned. We salt the mourned. It's the only difference between a ghost and a memory."
+    }
+  ],
+  "npcs": [
+    {
+      "name": "Legate Halvar",
+      "role": "Aeler governor of the Protectorate",
+      "motivation": "Keep the bell-lines intact and the grain flowing east",
+      "quirk": "She carries a bell that has never been rung. It will ring once, at the end of her reign."
+    },
+    {
+      "name": "Mother Anja",
+      "role": "Salt-Monk of the White Pans",
+      "motivation": "Preserve the old wards against the Direwood",
+      "quirk": "Her tongue is white with salt; she speaks only in blessings or silence."
+    },
+    {
+      "name": "Warden Lucas",
+      "role": "Bell-Warden of the High Line",
+      "motivation": "Protect his village from the mist and the Aeler law-men",
+      "quirk": "He refuses to write down the ninth note; it lives only in his fading memory."
+    },
+    {
+      "name": "Sister Darya",
+      "role": "Healer of the Gray Hospice of the Unnamed",
+      "motivation": "Tend the fog-sick and the drowned",
+      "quirk": "Her gray robes never stain, and she asks no payment — only a name to carry in her keeping."
+    },
+    {
+      "name": "Notary Voss",
+      "role": "Covenant judge (Mykkiel)",
+      "motivation": "Impose Aeler law on local customs",
+      "quirk": "He carries a water-timer to measure the shifting of legal moods. The mist ignores it."
+    },
+    {
+      "name": "The Ferryman",
+      "role": "Oath-ferryman of the Ghost Slip",
+      "motivation": "Gather tolls in salt and whispered names",
+      "quirk": "His left hand is always gloved; underneath, the names are carved into his palm."
+    }
+  ],
+  "names": {
+    "first_male": [
+      "Halvar",
+      "Lucas",
+      "Voss",
+      "Torben",
+      "Stian",
+      "Vidar"
+    ],
+    "first_female": [
+      "Anja",
+      "Darya",
+      "Pia",
+      "Lise",
+      "Ragna",
+      "Signe"
+    ],
+    "surnames": [
+      "Foss",
+      "Mork",
+      "Saltvedt",
+      "Kyst",
+      "Dyrep",
+      "Tangen"
+    ],
+    "epithets": [
+      "the Bell-Sworn",
+      "Fog-Born",
+      "the Unnamed",
+      "Breath-Thief",
+      "Ward-Keeper",
+      "Ash-Finger"
+    ]
+  },
+  "places": [
+    {
+      "rank": 2,
+      "suit": "spade",
+      "title": "Reed-Fen Causeway",
+      "subtitle": "[TRAVEL]",
+      "description": "Chalked ward-runes on every milestone; safe path through the mist.",
+      "flavor": "Step only on the chalked stones. The mud between has no bottom.",
+      "mechanical_hook": "Navigation is safe if you follow the runes. A successful Wits+Lore test (DV 4) reveals a hidden shortcut."
+    },
+    {
+      "rank": 3,
+      "suit": "spade",
+      "title": "Bell-Line Levee",
+      "subtitle": "[WARD]",
+      "description": "Iron posts, eight bells per span; one bracket empty, one note forbidden.",
+      "flavor": "The empty bracket is for the bell that never rings. The rope is still there.",
+      "mechanical_hook": "Crossing the levee requires a Spirit+Resolve test (DV 4) to resist the mist's pull. On failure, mark 1 Fatigue."
+    },
+    {
+      "rank": 4,
+      "suit": "spade",
+      "title": "Ghost-Ferry Slip",
+      "subtitle": "[DEATH] [TRAVEL]",
+      "description": "Rope crosses black water; toll taken in salt and whispered names.",
+      "flavor": "The ferryman never blinks. Some say he traded his eyelids for the right to collect.",
+      "mechanical_hook": "Pay 1 Supply or offer a name. If you offer a name, the ferryman will remember it — and may use it later."
+    },
+    {
+      "rank": 5,
+      "suit": "spade",
+      "title": "Pall Watch-Tower",
+      "subtitle": "[WARD]",
+      "description": "Piles above mire; mirrors face west to the Direwood's breath.",
+      "flavor": "The mirrors are silvered on both sides. The wardens watch their own reflections as much as the trees.",
+      "mechanical_hook": "A PC who studies the mirrors (Wits+Lore DV 4) gains a warning about the next Direwood omen."
+    },
+    {
+      "rank": 6,
+      "suit": "spade",
+      "title": "Mist-Chapel",
+      "subtitle": "[RITUAL]",
+      "description": "Stilted planks; votive lanterns gutter under damp rafters.",
+      "flavor": "The icon has no face. Worshippers say it lost its features to the fog, one by one.",
+      "mechanical_hook": "Offering a prayer (Spirit+Resolve DV 4) clears 1 Fatigue but marks you as 'noticed' by the mist."
+    },
+    {
+      "rank": 7,
+      "suit": "spade",
+      "title": "Dead-Cut Canal",
+      "subtitle": "[TRAVEL]",
+      "description": "Old imperial ditch; patrolled by eel boats and law.",
+      "flavor": "The eels have eyes like men. Fishermen throw back any that blink.",
+      "mechanical_hook": "Travel by boat; roll Wits+Navigation (DV 4) to avoid inspection. On failure, you are stopped by a Protectorate patrol."
+    },
+    {
+      "rank": 8,
+      "suit": "spade",
+      "title": "Drowned Copse",
+      "subtitle": "[DEATH]",
+      "description": "Root-tangles clutch tide like old hands; bones in the bark.",
+      "flavor": "The trees were planted on a mass grave. They grew twisted, hungry.",
+      "mechanical_hook": "Searching the copse (Wits+Lore DV 5) yields a clue or a token, but risks attracting a wraith."
+    },
+    {
+      "rank": 9,
+      "suit": "spade",
+      "title": "Fogmill Ridge",
+      "subtitle": "[WEATHER]",
+      "description": "Wind vanes vanish into cloud; gears hiss like prayers to fog.",
+      "flavor": "The miller grinds salt, not grain. The fog claims his breath each turning.",
+      "mechanical_hook": "The miller will trade salt for stories. A good story (Presence+Sway DV 4) grants a Salt Oath token."
+    },
+    {
+      "rank": 10,
+      "suit": "spade",
+      "title": "Salt-Pan Terraces",
+      "subtitle": "[RESOURCE]",
+      "description": "Patched with peat; ward-salt dries under nets, watched by monks.",
+      "flavor": "The monks chant without ceasing. If they stop, the salt spoils — and so does the warding.",
+      "mechanical_hook": "You may harvest 1 Supply of salt, but the monks demand a blessing (Spirit+Resolve DV 4) or a story."
+    },
+    {
+      "rank": 11,
+      "suit": "spade",
+      "title": "Fort-Stair",
+      "subtitle": "[AUTHORITY]",
+      "description": "Stacked timber and stone; flags swallowed by mist, guards by routine.",
+      "flavor": "The flags are changed daily. The ones that vanish are never spoken of again.",
+      "mechanical_hook": "Gaining entry requires a writ or a bribe (2 Supply). Inside, the fort holds a Protectorate garrison."
+    },
+    {
+      "rank": 12,
+      "suit": "spade",
+      "title": "Witchlight Bridge",
+      "subtitle": "[THRESHOLD]",
+      "description": "Over black runnel; ninth plank 'counted' but unseen.",
+      "flavor": "The missing plank is there — you just can't see it. Step where it should be, or don't step at all.",
+      "mechanical_hook": "Crossing requires a Resolve test (DV 5). On failure, you lose 1 Fatigue and are counted by the witchlights."
+    },
+    {
+      "rank": 13,
+      "suit": "spade",
+      "title": "High-Mist Pass",
+      "subtitle": "[TRAVEL]",
+      "description": "Through Aelerians; cairns ringed in iron nails, bells in the stones.",
+      "flavor": "Each cairn holds a bell that rang once at the death of a warden. They ring again when mist takes another.",
+      "mechanical_hook": "A PC who touches a cairn (Spirit+Resolve DV 4) may gain a warning of imminent danger. On failure, the bell rings and the mist takes notice."
+    },
+    {
+      "rank": 14,
+      "suit": "spade",
+      "title": "Weeping Gate",
+      "subtitle": "[WARD] [DEATH]",
+      "description": "Western palisade facing Direwood; bells wired to bones of trees.",
+      "flavor": "The gate weeps sap that smells of iron and old grief. Wardens collect it in silver cups.",
+      "mechanical_hook": "The gate is a threshold; crossing it invites the Direwood's attention. A Bell-Key or a Salt Oath may be required to pass safely."
+    }
+  ],
+  "people_and_factions": [
+    {
+      "rank": 2,
+      "suit": "heart",
+      "title": "Reed-Cutter",
+      "subtitle": "[TRAVEL]",
+      "description": "Peat-black hands, precise opinion on fog; knows every safe path.",
+      "flavor": "She cuts reeds in a pattern — one snip, two snips, then a pause for the ninth.",
+      "what_they_carry": "She knows a hidden route through the fens; will guide for 1 Supply.",
+      "what_they_ask": "A promise that you will not forget her name when you leave the Mistlands."
+    },
+    {
+      "rank": 3,
+      "suit": "heart",
+      "title": "Salt-Monk",
+      "subtitle": "[RITUAL]",
+      "description": "Blesses pans, keeps ward-measure honest; salt as both shield and vow.",
+      "flavor": "His tongue is white with salt. He speaks only in blessings or silence.",
+      "what_they_carry": "He can bless a handful of salt for warding (1 Supply).",
+      "what_they_ask": "A whispered confession; he will carry it to the salt pans."
+    },
+    {
+      "rank": 4,
+      "suit": "heart",
+      "title": "Bell-Warden",
+      "subtitle": "[WARD]",
+      "description": "Ringbook decides which notes keep which ghosts at bay.",
+      "flavor": "She refuses to write down the ninth note. It lives only in her memory — and that memory is fading.",
+      "what_they_carry": "She can teach you the correct bell sequence for a specific threshold (once).",
+      "what_they_ask": "A story from a world without fog. She needs to remember what clarity feels like."
+    },
+    {
+      "rank": 5,
+      "suit": "heart",
+      "title": "Oath-Ferryman",
+      "subtitle": "[DEATH] [SOCIAL]",
+      "description": "Toll taken in salt and names; remembers both, gathers both.",
+      "flavor": "His left hand is always gloved. Underneath, the names are carved into his palm.",
+      "what_they_carry": "He will ferry you across any black water for a name (yours or another's).",
+      "what_they_ask": "A true name; he will not explain why."
+    },
+    {
+      "rank": 6,
+      "suit": "heart",
+      "title": "Lantern Acolyte",
+      "subtitle": "[AUTHORITY]",
+      "description": "Trims wicks and arguments; light as law in the mist.",
+      "flavor": "He carries a bell on his belt. It rings once for each lie he hears.",
+      "what_they_carry": "He can issue a Lantern Writ for safe night travel (2 Supply).",
+      "what_they_ask": "A truthful answer to a single question. The bell will know if you lie."
+    },
+    {
+      "rank": 7,
+      "suit": "heart",
+      "title": "Mist-Pilot",
+      "subtitle": "[TRAVEL]",
+      "description": "Linn refugee; ghosts ships through reed-lace — if the cost is breath.",
+      "flavor": "She never speaks above a whisper. Her voice is currency, and she spends it carefully.",
+      "what_they_carry": "She can pilot a skiff through the fens unseen for 1 Supply.",
+      "what_they_ask": "A breath held for the length of the crossing. If you breathe, the mist will know."
+    },
+    {
+      "rank": 8,
+      "suit": "heart",
+      "title": "Protectorate Clerk",
+      "subtitle": "[AUTHORITY]",
+      "description": "Aeler oilskin folios, narrow smile; law in triplicate.",
+      "flavor": "His stamp is a bell. He presses it twice — once for the crown, once for the Hollow.",
+      "what_they_carry": "He can expedite a writ for 2 Supply.",
+      "what_they_ask": "A signed statement of loyalty to the Protectorate; refusal may mark you as suspect."
+    },
+    {
+      "rank": 9,
+      "suit": "heart",
+      "title": "Shroud-Diver",
+      "subtitle": "[STEALTH] [DEATH]",
+      "description": "Harvests tokens from drowned fields before dawn's false light.",
+      "flavor": "He wears a bell around his ankle. If it rings, he's stayed too long.",
+      "what_they_carry": "He can salvage a token (Diamond) from a flooded area for 1 Supply.",
+      "what_they_ask": "A bell that will not ring; he will pay well."
+    },
+    {
+      "rank": 10,
+      "suit": "heart",
+      "title": "Direwood Refugee",
+      "subtitle": "[FEAR]",
+      "description": "Cold breath, colder stories; knows what the trees whisper.",
+      "flavor": "She carved out her own tongue. The trees still speak through her — in a voice not her own.",
+      "what_they_carry": "She knows the Direwood's current mood; will share for a story.",
+      "what_they_ask": "A promise to burn the tree that speaks her name."
+    },
+    {
+      "rank": 11,
+      "suit": "heart",
+      "title": "Fog-Knight",
+      "subtitle": "[AUTHORITY] [COMBAT]",
+      "description": "Cavalry rides levee crowns by bellcode; mist as their steed.",
+      "flavor": "Their horses have no shadows. Some say they traded them for fog-sight.",
+      "what_they_carry": "A fog-knight escort will clear the path for 2 Supply.",
+      "what_they_ask": "A name to forget; they will forget it for you."
+    },
+    {
+      "rank": 12,
+      "suit": "heart",
+      "title": "Legate of Mists",
+      "subtitle": "[AUTHORITY]",
+      "description": "Aeler governor; equal parts mercy and decree, bells at their command.",
+      "flavor": "She carries a bell that has never been rung. It will ring once, at the end of her reign.",
+      "what_they_carry": "She can grant an Audience (Diamond) for a significant service.",
+      "what_they_ask": "A secret worth the mist's attention. She will judge its value."
+    },
+    {
+      "rank": 13,
+      "suit": "heart",
+      "title": "Lord Warden",
+      "subtitle": "[AUTHORITY]",
+      "description": "Local strong hand sworn to Legate's seal; law walks the fens.",
+      "flavor": "He lost an eye to a wight. He wears a bell in the socket.",
+      "what_they_carry": "He can enforce a Warden's Commission (Diamond) for 1 Supply.",
+      "what_they_ask": "A favour in the fens; he will call it in when the mist is thick."
+    },
+    {
+      "rank": 14,
+      "suit": "heart",
+      "title": "Mist-Seer",
+      "subtitle": "[MAGIC] [FEAR]",
+      "description": "Bargains breath for answers; candles shorten when she speaks.",
+      "flavor": "She has no shadow. The mist took it as a pledge.",
+      "what_they_carry": "She can answer one question about the mist for 1 Supply.",
+      "what_they_ask": "A breath held in silence; she will take it as payment."
+    }
+  ],
+  "complications": [
+    {
+      "rank": 2,
+      "suit": "club",
+      "title": "Ground-Mist",
+      "subtitle": "[WEATHER] [DEATH]",
+      "description": "Lifts from fen; eats tracks by the yard, names by the breath.",
+      "flavor": "Your footfalls vanish behind you. The mist is following, not rising.",
+      "mechanical_hook": "Navigation rolls are Desperate. On a Miss, you lose your way and gain 1 Fatigue."
+    },
+    {
+      "rank": 3,
+      "suit": "club",
+      "title": "Witchlight Count",
+      "subtitle": "[MAGIC] [FEAR]",
+      "description": "Trying to count you; step wrong and bridge forgets your path.",
+      "flavor": "The lights flicker in a pattern — two short, two long. They're signaling someone.",
+      "mechanical_hook": "You must test Resolve (DV 4) or be counted by the witchlights. On failure, the mist knows your location."
+    },
+    {
+      "rank": 4,
+      "suit": "club",
+      "title": "Ward-Salt Short",
+      "subtitle": "[RESOURCE] [WARD]",
+      "description": "Pans go green; bells ring, nothing answers from the other side.",
+      "flavor": "The salt is gray, not white. Someone cut it with grave dust.",
+      "mechanical_hook": "Your salt wards are ineffective. You must source new salt or risk spirit attacks."
+    },
+    {
+      "rank": 5,
+      "suit": "club",
+      "title": "Wrong Bell",
+      "subtitle": "[MAGIC]",
+      "description": "Cracked note opens a door the Legate can't close; mist takes the gap.",
+      "flavor": "The bell's clapper is a finger bone. The original owner wants it back.",
+      "mechanical_hook": "A wraith enters the scene (Cap 2). You may ring the correct bell sequence to banish it (Wits+Lore DV 5)."
+    },
+    {
+      "rank": 6,
+      "suit": "club",
+      "title": "Linn Raid",
+      "subtitle": "[COMBAT]",
+      "description": "Slips reed-maze; hearths douse, horns travel on the fog.",
+      "flavor": "The raiders wear bells on their belts — stolen from the last village.",
+      "mechanical_hook": "A raiding party attacks (Cap 3). You may flee or fight. If you flee, you lose 1 Supply."
+    },
+    {
+      "rank": 7,
+      "suit": "club",
+      "title": "Direwood Moan",
+      "subtitle": "[DEATH] [FEAR]",
+      "description": "At dusk; Weeping Gate ropes go taut by themselves.",
+      "flavor": "The moan has words. You don't want to understand them.",
+      "mechanical_hook": "All PCs must test Spirit+Resolve (DV 4) or gain the Condition 'Fog-Sick' (—1 die to all actions until dawn)."
+    },
+    {
+      "rank": 8,
+      "suit": "club",
+      "title": "Valewood Wind",
+      "subtitle": "[WEATHER] [MAGIC]",
+      "description": "Crosses Aberderrin; voices sweet, landmarks false.",
+      "flavor": "The wind smells of honey and rot. Do not follow it.",
+      "mechanical_hook": "Navigation rolls are at +1 DV. On a Miss, you follow a false landmark and lose 1 segment of progress."
+    },
+    {
+      "rank": 9,
+      "suit": "club",
+      "title": "Bell-Line Failure",
+      "subtitle": "[WARD] [DEATH]",
+      "description": "Levee breaks silence; wraith steps across like it owns the road.",
+      "flavor": "The wraith carries a lantern. The light is blue — the color of drowned breath.",
+      "mechanical_hook": "A wraith appears (Cap 2). You may pay a Salt Oath or ring the correct bell sequence to banish it."
+    },
+    {
+      "rank": 10,
+      "suit": "club",
+      "title": "Marsh-Quake",
+      "subtitle": "[DISASTER]",
+      "description": "Sod heaves, dyke slumps; causeways and bodies sink together.",
+      "flavor": "The ground exhales. Your name rises from it like smoke.",
+      "mechanical_hook": "You must test Body+Athletics (DV 4) or lose 1 Supply (sunk in the marsh)."
+    },
+    {
+      "rank": 11,
+      "suit": "club",
+      "title": "Protectorate Interdiction",
+      "subtitle": "[AUTHORITY] [TRAVEL]",
+      "description": "All ferries sealed 'until review'; routes dry up.",
+      "flavor": "The seals are stamped with a bell. The wax is mixed with bone ash.",
+      "mechanical_hook": "You cannot cross by ferry. You must find an alternate route (Wits+Lore DV 5) or bribe a ferryman (2 Supply)."
+    },
+    {
+      "rank": 12,
+      "suit": "club",
+      "title": "Rite-Purge",
+      "subtitle": "[AUTHORITY] [SOCIAL]",
+      "description": "Inspectors call local customs heresy; tempers at a boil.",
+      "flavor": "The inspectors carry blank books. They fill them with names of the accused.",
+      "mechanical_hook": "You are questioned. A successful Sway test (DV 4) avoids trouble. On failure, you are marked as a heretic (all social rolls at -1)."
+    },
+    {
+      "rank": 13,
+      "suit": "club",
+      "title": "General Alarm",
+      "subtitle": "[AUTHORITY] [FEAR]",
+      "description": "Pall horns sound; every lantern becomes law, every shadow suspect.",
+      "flavor": "The horns are made from the tusks of a sea beast. The beast's ghost is angry.",
+      "mechanical_hook": "You must find shelter or risk arrest. Stealth test (DV 4) to avoid patrols; on failure, you are detained."
+    },
+    {
+      "rank": 14,
+      "suit": "club",
+      "title": "Tide-Mist",
+      "subtitle": "[WEATHER] [DEATH]",
+      "description": "Rolls from Aberderrin; spirits ride the white and won't be named.",
+      "flavor": "The spirits have no faces — only the faces of the drowned.",
+      "mechanical_hook": "All rolls against spirits are at -1 die. A Salt Oath can temporarily ward them off."
+    }
+  ],
+  "rewards": [
+    {
+      "rank": 2,
+      "suit": "diamond",
+      "title": "Ward-Salt",
+      "subtitle": "[WARD]",
+      "description": "Pure measure draws safe circle once; mist parts, briefly.",
+      "flavor": "The salt is warm. It knows it will be used.",
+      "cost": "Using it consumes the salt. The circle lasts one scene."
+    },
+    {
+      "rank": 3,
+      "suit": "diamond",
+      "title": "Ferry Token",
+      "subtitle": "[TRAVEL]",
+      "description": "Cross named black runnel regardless of curfew or tide.",
+      "flavor": "The token is a knuckle bone. The ferryman accepts it without comment.",
+      "cost": "The token is a bone; the ferryman may ask for its owner's name."
+    },
+    {
+      "rank": 4,
+      "suit": "diamond",
+      "title": "Bell-Key",
+      "subtitle": "[MAGIC]",
+      "description": "Unlock and set one bell on the Line to your note; change the song.",
+      "flavor": "The key is a tuning fork. Strike it once to claim your note.",
+      "cost": "Using the key may attract the attention of the Ninth Bell Ringer."
+    },
+    {
+      "rank": 5,
+      "suit": "diamond",
+      "title": "Lantern Writ",
+      "subtitle": "[TRAVEL] [AUTHORITY]",
+      "description": "Lawful travel at night along levee crown with escort.",
+      "flavor": "The writ is written on dried bladder. It crinkles when you lie.",
+      "cost": "The escort will report any suspicious activity to the Legate."
+    },
+    {
+      "rank": 6,
+      "suit": "diamond",
+      "title": "Exorcist's Seal",
+      "subtitle": "[MAGIC]",
+      "description": "Stamped clause downgrades 'haunt' to 'nuisance.'",
+      "flavor": "The seal is a bell without a clapper. It's silent, like the wraiths it binds.",
+      "cost": "The seal works once; the wraith will remember your face."
+    },
+    {
+      "rank": 7,
+      "suit": "diamond",
+      "title": "Codeleaf",
+      "subtitle": "[TRAVEL]",
+      "description": "Today's mirror and horn sequences; fog cannot hide what you know.",
+      "flavor": "The leaf is soaked in brine. Read it before it dries.",
+      "cost": "If the leaf dries, the code is lost. Keep it in a sealed container."
+    },
+    {
+      "rank": 8,
+      "suit": "diamond",
+      "title": "Protectorate Mark",
+      "subtitle": "[RESOURCE]",
+      "description": "Priority rations and rope from Fort-Stair stores.",
+      "flavor": "The mark is a brand. It smokes when you show it.",
+      "cost": "The mark must be used within a season; after that, the brand fades."
+    },
+    {
+      "rank": 9,
+      "suit": "diamond",
+      "title": "Wraith-Pardon",
+      "subtitle": "[AUTHORITY]",
+      "description": "Pardon for desperate deeds done while spirits press near.",
+      "flavor": "The pardon is signed in salt water. It will dissolve if you misuse it.",
+      "cost": "The pardon is a one-use; it dissolves in the presence of a spirit."
+    },
+    {
+      "rank": 10,
+      "suit": "diamond",
+      "title": "Bone-Field License",
+      "subtitle": "[RESOURCE]",
+      "description": "Salvage rights at drowned hamlet (with witnesses).",
+      "flavor": "The license is a map drawn on a shroud. Follow the stitch marks.",
+      "cost": "The witnesses are the dead. They will judge your claim."
+    },
+    {
+      "rank": 11,
+      "suit": "diamond",
+      "title": "Refuge-Right",
+      "subtitle": "[SOCIAL]",
+      "description": "Move a named household through Gate unchallenged; breath as token.",
+      "flavor": "The right is a bell-rope. Tie it to your belt. The gate will ask.",
+      "cost": "The right is a bell-rope; if it is cut, the right is forfeit."
+    },
+    {
+      "rank": 12,
+      "suit": "diamond",
+      "title": "Legate's Audience",
+      "subtitle": "[AUTHORITY]",
+      "description": "One whisper exits as policy; bells ring your decree.",
+      "flavor": "The Legate's ear is a silver bell. Speak into it once.",
+      "cost": "The Legate will remember your name. She may call upon you."
+    },
+    {
+      "rank": 13,
+      "suit": "diamond",
+      "title": "Warden's Commission",
+      "subtitle": "[AUTHORITY]",
+      "description": "Raise levee guards; local doors open, and trust follows.",
+      "flavor": "The commission is a whistle. Blow it, and the fens answer.",
+      "cost": "The commission is a whistle; it may be heard by the wrong ears."
+    },
+    {
+      "rank": 14,
+      "suit": "diamond",
+      "title": "Pall Indulgence",
+      "subtitle": "[MAGIC] [AUTHORITY]",
+      "description": "Temporary exception to ward law, spoken and sealed by bell.",
+      "flavor": "The indulgence is a single bell-note, held in a jar. Break the jar to release it.",
+      "cost": "The indulgence is a single bell-note; if the jar breaks, the ward fails."
+    }
+  ],
+  "quick_use_notes": {
+    "draw_rules": "Draw until you have all four suits: Spade = place, Heart = actor, Club = pressure, Diamond = leverage. Highest rank sets the main Timer (2–5 → 4, 6–10 → 6, J/Q/K → 8, A → 10).",
+    "diamonds": "Diamonds are codified outcomes (passes/seals/tokens) that change position rather than call for a roll.",
+    "ace_rule": "If any A appears, echo breath and boundary — bells answering across water, salt that won't dry, voices returning late."
+  },
+  "additional_features": [
+    {
+      "name": "Breath-Toll",
+      "description": "Many claim the mist remembers every breath. Travelers hold breath crossing bridges, fearing the mist will count them wrong. Mechanically, when you cross a threshold without a ward-salt or bell, roll Spirit + Resolve (DV 3). On a failure, the mist learns your name — gain the MARKED condition (the next spirit encounter starts at Desperate Position)."
+    },
+    {
+      "name": "Salt as Promise",
+      "description": "A handful of salt is more than warding — it is a vow. Spill it on plank or stone to swear safety. Once per session, a character may spend a handful of ward-salt to create a Salt Oath [4] timer. While the timer has segments, the oath-taker gains +1 die to resist fear or possession. If the oath is broken, the timer fills and the breaker takes Harm 1 (spiritual backlash)."
+    },
+    {
+      "name": "The Ninth Bell",
+      "description": "Legends say a ninth bell once rang on the Line. The note is not in any ringbook; no warden speaks of it. Some nights, though, it rings — and gates open where none should be. When the GM spends 3+ SB in a scene, they may declare that the Ninth Bell rings. All characters must test Spirit + Resolve (DV 4) or lose 1 Fatigue (the sound steals breath)."
+    },
+    {
+      "name": "Payden's Port",
+      "description": "The only true city in the Mistlands, huddled on the western coast of the Aberderrin. Its wharves are built from salvaged longship timber, and its law is split between the Aeler Legate's seal and the old bell-wardens' traditions. Grain ships leave from its harbour each autumn, carrying the Protectorate's due east — and returning with iron, engineers, and the occasional missionary. The port's inn, the Drowned Rat, has a bell that rings once for every sailor lost at sea. It rings often."
+    },
+    {
+      "name": "Local Patrons (Syncretic Names)",
+      "description": "The Bell-Keeper — The Sealed Gate. A bell that never rings, yet holds the threshold closed. The Salted One — Oath of Mercy and Grace. A prayer that preserves body and soul, but remembers the name of everyone it saves. The Mist-Father — Khemesh. The pressure beneath the fog; the hunger that waits in still air. The Lantern Bearer — The Traveler. The light that guides lost ships — and lost souls."
+    }
+  ],
+  "lore_echoes": [
+    {
+      "title": "Saint Lucas of the Iron Bell (The Sealed Gate)",
+      "description": "The bell-wardens venerate a legendary warden who hammered a ninth bell into the Weeping Gate to seal a Direwood breach. The bell cracked, but the breach closed. His chisel is kept at Payden's Port; it is said to quench the mist for an hour if struck against an iron post. The Aeler Protectorate has tried to confiscate it twice; both attempts ended with the confiscators lost in fog."
+    },
+    {
+      "title": "Saint Anja of the White Pans (Oath of Mercy and Grace)",
+      "description": "A salt-monk who died blessing the pans during a tide-mist. Her body never decayed, and her chapel now serves as a hospice for fog-sick sailors. The Temple of Light sends offerings of fresh water each spring; the Everflame considers her a heretic. Pilgrims who pray at her shrine may ask one question of a drowned ancestor — but the answer is always a single word, and that word is never given freely."
+    },
+    {
+      "title": "The Gray Hospice of the Unnamed",
+      "description": "Sister Darya runs a hospice near Payden's Port. She asks no payment, but she records every patient's name in a book that never dries. The Aeler clerks suspect she is erasing names, not healing wounds. She has been investigated three times; each time, the investigator vanished into the fog and returned with no memory of why they came."
+    },
+    {
+      "title": "The Bell-Ringer's Covenant (The Keeper of the Silent Seal)",
+      "description": "Notary Voss is the Protectorate's appointed judge, charged with imposing Aeler law on local customs. He carries a water-timer to measure the shifting of legal moods, but the mist ignores it. His rulings are always delivered in triplicate, and the bell-wardens obey them — slowly. Those who lie before him find that their next passage through the Ghost-Ferry Slip is denied; the ferryman refuses to name them."
+    },
+    {
+      "title": "The Ninth",
+      "description": "In any Mistlands scene, the ninth person to speak in a room draws the mist's attention. The wise hold their tongues until someone else breaks the count. Those who speak ninth are said to see a pale figure standing at the foot of the bed that night — waiting to take a breath."
+    },
+    {
+      "title": "The Black Barrow Keep (Aelinnel Ruin)",
+      "description": "Looming over Payden's Port, this ancient workshop of bell-automata and ward-forges is sealed by the Protectorate — but smugglers and treasure-hunters still enter. Locals whisper that the lowest catacombs connect to the Ways Between. The Aeler have tried to collapse the upper levels three times; each time, the rubble was found cleared by morning, with no tracks in the fog."
+    }
+  ],
+  "superstitions": [
+    {
+      "name": "Bread to the Fog",
+      "effect": "Toss a crust into the mist before crossing a bridge. Ignore the first Ground-Mist penalty.",
+      "cost": "Burn for +1 die once"
+    },
+    {
+      "name": "Hold the Ninth Breath",
+      "effect": "Cross a threshold while holding your breath. Cancel Witchlight Count or take –1 die on your next action (your choice).",
+      "cost": "Burn for +1 die once"
+    },
+    {
+      "name": "Name to the Salt",
+      "effect": "Whisper a dead enemy's name into a salt pan. Gain +1 Effect against undead for the scene, but mark Obligation to the Legate.",
+      "cost": "Burn for +1 die once"
+    }
+  ],
+  "sb_spend_table": {
+    "minor_complications": [
+      "**Exposure:** Your actions draw unwanted attention from **wardens or fog-knights**.",
+      "**Noise:** Sounds of your actions alert nearby **spirits or patrol boats**.",
+      "**Trace:** Evidence of your passage marks your route for **trackers or mist-spirits**.",
+      "**Delay:** A brief but meaningful setback costs you **time or favorable tide**.",
+      "**Supply Strain:** Mark +1 segment on a relevant **resource timer**."
+    ],
+    "moderate_setbacks": [
+      "**Alarm Raised:** **Protectorate forces or local warden** becomes aware and begins responding.",
+      "**Position Lost:** You lose advantageous ground/cover/stealth due to **mist shift or bell failure**.",
+      "**Foe Appears:** A **wraith, raiding party, or inspector** arrives on scene.",
+      "**Gear Trouble:** A piece of equipment becomes **Compromised/Neglected**.",
+      "**Lock/Barrier:** A simple obstacle now requires a test to overcome."
+    ],
+    "serious_trouble": [
+      "**Reinforcements:** Additional **fog-knights, spirits, or Aeler forces** arrive.",
+      "**Key Gear Breaks:** A crucial tool/weapon becomes temporarily unusable.",
+      "**Major Twist:** The situation fundamentally changes — **bell-line fails/ward broken/mist claims name**.",
+      "**Rail Tick:** Advance a relevant campaign/front timer by 1 segment.",
+      "**Condition Applied:** Mark **Fatigue 1/Harm 1/Condition** appropriate to fiction."
+    ],
+    "major_turns": [
+      "**Trap Springs:** A prepared danger activates with full effect.",
+      "**Authority Arrival:** **Legate, Lord Warden, or Mist-Seer** intervenes.",
+      "**Scene Shift:** The environment changes dramatically — **mist thickens/bells ring/forest breathes**.",
+      "**Patron Omen:** Divine/arcane forces take notice — **omen appears/blessing lost/curse manifests**.",
+      "**Narrative Pivot:** The story takes an unexpected turn that reframes objectives."
+    ],
+    "region_specific": [
+      "**Mistlands (Bells & Breath):** Bells ring without cause, breath forms visible words, mirrors reflect wrong faces.",
+      "**Mistlands (Salt & Warding):** Salt refuses to dry, ward-runes bleed color, protection tokens crack.",
+      "**Mistlands (Direwood Threat):** Trees whisper your name, roots shift position, forest breath grows stronger."
+    ]
+  },
+  "pursuit_ladder": [
+    "**Advance/Withdraw (Wits + Navigation):** On a hit, shift one band. On a strong hit, also impose *Fog Bank*.",
+    "**Silence the Bell (Presence + Stealth):** On a hit, freeze range for one exchange; if a ward-salt pouch is in your possession, +1 die.",
+    "**Weather the Tide (Endurance + Survival):** On a hit in *Tide-Mist*, you pick who keeps their bearings; on a miss, the GM does."
+  ],
+  "boss_archetypes": [
+    {
+      "name": "The Ninth Bell Ringer",
+      "tags": [
+        "Direwood herald"
+      ],
+      "description": "A spectral figure who rings the forbidden ninth bell, opening gates to the Direwood.",
+      "phases": [
+        "Lost Names",
+        "Broken Lines",
+        "Open Gate"
+      ],
+      "cracks": [
+        "restore a ringbook",
+        "trade a breath",
+        "rehang a forbidden bell with copper nails"
+      ]
+    },
+    {
+      "name": "Queen of Counting Lights",
+      "tags": [
+        "fae arbiter"
+      ],
+      "description": "A fae entity who counts names and breaths, and demands payment in forgotten things.",
+      "phases": [
+        "Courtesies",
+        "Geas-Market",
+        "Counting of Leaves"
+      ],
+      "cracks": [
+        "return stolen way-marks",
+        "speak said and meant",
+        "gild the iron"
+      ]
+    },
+    {
+      "name": "Reed-Wolf Captain",
+      "tags": [
+        "Linn raider"
+      ],
+      "description": "A ruthless Linn raider who plunders the fens during tide-mists.",
+      "phases": [
+        "Smoke Signals",
+        "Night Oars",
+        "Thing Verdict"
+      ],
+      "cracks": [
+        "name a feud-token",
+        "win a skald-duel",
+        "force harbour-truce under bell and banner"
+      ]
+    }
+  ],
+  "encounter_seeds": [
+    {
+      "title": "The Drowned Rat's Guest",
+      "description": "A stranger in the inn asks you to ring a bell that has not been rung in a century. The reward is a key to the Black Barrow Keep. The risk is that the bell's note will open a gate to the Direwood."
+    },
+    {
+      "title": "The Salt-Monk's Tithe",
+      "description": "Mother Anja's salt pans have gone gray. Someone is stealing the ward-salt. The trail leads to a smuggler's tunnel beneath the Gray Hospice — and a cult that worships the mist."
+    },
+    {
+      "title": "The Weeping Gate's Sap",
+      "description": "The gate is weeping black sap. The wardens say the Direwood is hungry. They need a volunteer to carry a bell to the forest's edge and ring it until the sap stops. The volunteer may not return."
+    }
+  ],
+  "faction_entanglements": [
+    "**Aeler Protectorate:** They enforce standardized bell-codes and salt-tithes; anger them and you face fines, arrest, or exile to the Direwood.",
+    "**Bell-Wardens:** They keep the old ways; cross them and your name will be omitted from the ward-records, leaving you vulnerable to the mist.",
+    "**Salt-Monks:** They bless the salt; offend them and your salt will spoil, your wards will fail, and the mist will find you.",
+    "**Direwood Refugees:** They carry the forest's secrets; earn their trust and learn the true name of the mist — or betray them and awaken the forest's wrath.",
+    "**Linn Raiders:** They come for the salt and the bells; pay them tribute or fight them off. They respect strength and cruelty, not mercy."
+  ],
+  "cross_regional_ties": [
+    "**Aeler:** The Protectorate supplies the Mistlands with iron, engineers, and missionaries; they seek to standardize the bell-lines and bring the region under imperial law.",
+    "**Ykrul:** The Violet Steppe's riders avoid the Mistlands; the fog and bells are a better border than any wall. Those who wander in rarely find their way out.",
+    "**Linns:** Longship raids prey on the coast; the Linns trade iron for salt when they are not raiding. Their skalds tell stories of the Mistlands as a haunted shore.",
+    "**Direwood:** The forest breathes; its breath is the mist. The Weeping Gate holds it back — but the gate is old, and the forest is patient."
+  ],
+  "black_barrow_keep": {
+    "title": "Black Barrow Keep — The Ruin Above Payden's Port",
+    "description": "Looming over the eastern edge of Payden's Port, Black Barrow Keep is a jagged wound in the skyline. Its basalt walls weep salt, and its broken towers lean into the fog like old men listening for a bell that never rings. The Aelinnel built it in a forgotten age—not as a fortress, but as a workshop. Here, they forged bell-automata, copper sentinels, and the first ward-lines that still keep the Direwood at bay. When the Mistlands became a Protectorate, the Aelinnel sealed the deep forges and retreated. The locals say the keep is haunted. The truth is worse: it is not haunted—it is occupied.",
+    "access": "The main gate is chained with a bell-lock that requires a copper key and the correct sequence of rings (eight, never nine). Side entrances include a collapsed ropeway from the salt pans, a flooded stair from the Ghost-Ferry Slip, and a smugglers' tunnel that exits near the Gray Hospice.",
+    "depth_timer": {
+      "name": "Depth Timer",
+      "max_segments": 6,
+      "thresholds": {
+        "3": "All navigation rolls gain +1 DV (the walls shift).",
+        "6": "The party reaches a sealed level that requires a bell-key, a blood offering, or a true name to open. The deepest level connects to the Ways Between."
+      }
+    },
+    "rooms": [
+      {
+        "roll": 1,
+        "title": "The Hanging Bell-Garden",
+        "description": "A collapsed floor reveals a chamber where bells grow from the ceiling like stalactites. Each bell has a clapper shaped like a finger bone.",
+        "effect": "A bell that rings once for each secret spoken beneath it. The ringing can be heard throughout the keep."
+      },
+      {
+        "roll": 2,
+        "title": "The Copper Forge",
+        "description": "Still warm, though the fire went out centuries ago. A half-completed automaton sits on the anvil. Its brass skull is hinged open; inside, a nest of salt-eels writhes.",
+        "effect": "The forge can be reactivated with a bell-key, producing a single ward-salt token per scene."
+      },
+      {
+        "roll": 3,
+        "title": "The Oubliette of the Unnamed",
+        "description": "A pit lined with counting marks — eight scratches, a gap, eight scratches. At the bottom, a wright's skeleton still holds a hammer. The hammer rings when you touch it.",
+        "effect": "The hammer can drive a copper nail into any surface, sealing a threshold for one scene."
+      },
+      {
+        "roll": 4,
+        "title": "The Echo Scriptorium",
+        "description": "Shelves of slate tablets, each inscribed with a single number. The numbers are not in sequence. A ghost wright sits at a desk, writing the same number over and over.",
+        "effect": "The ghost will answer one question about the keep's history, but will then ask for a number you have never written."
+      },
+      {
+        "roll": 5,
+        "title": "The Drowned Armoury",
+        "description": "Sealed by a slow leak from the salt pans. Weapons float in brine. One of them — a bell-hilted sword — hums when you near it.",
+        "effect": "The sword counts your heartbeats. If you draw it in combat, you gain +1 die, but the sword will demand a name at the end of the scene."
+      },
+      {
+        "roll": 6,
+        "title": "The Weeping Cistern",
+        "description": "A stone basin filled with black water. The water rises when you speak. A voice from below asks, 'What is the ninth number?'",
+        "effect": "Answer with silence, and the water recedes, revealing a sealed door. Answer incorrectly, and the cistern floods the room."
+      },
+      {
+        "roll": 7,
+        "title": "The Cogwheel Choir",
+        "description": "A chamber of interlocking copper gears, each tooth stamped with a rune. When the wind blows through the broken wall, the gears turn and the runes sing a cracked hymn.",
+        "effect": "A character who learns the tune may reroll one failed navigation test while in the Mistlands (once)."
+      },
+      {
+        "roll": 8,
+        "title": "The Salt-Liche's Studio",
+        "description": "A wright who refused to die. Its flesh is replaced by salt-cured leather and copper wire. It still tries to finish a bell that has no clapper.",
+        "effect": "The salt-liche is not hostile, but will trade a bell-key for a memory of fresh water."
+      },
+      {
+        "roll": 9,
+        "title": "The Unstable Lift",
+        "description": "A chain-hoist that descends into darkness. The chains are warm. The lift stops at every eighth floor, never the ninth.",
+        "effect": "Riding the lift skips two levels of the catacombs, but ticks the Depth Timer by 1."
+      },
+      {
+        "roll": 10,
+        "title": "The Bone Gallery",
+        "description": "A corridor lined with the remains of wrights from every generation. Each skeleton wears a different style of bell-maker's apron. The newest apron is still damp.",
+        "effect": "A PC may spend a scene searching; on a Wits+Lore roll (DV 4), they find a key, a token, or a warning."
+      },
+      {
+        "roll": 11,
+        "title": "The Ticking Heart",
+        "description": "A sealed chamber behind a copper door. Something inside ticks at a steady rhythm. The rhythm changes when you lie.",
+        "effect": "The door requires a blood offering and a true confession to open. Inside is a working that can reset one broken bell-line — but it will ask for a year of your life."
+      },
+      {
+        "roll": 12,
+        "title": "The Ninth Gate",
+        "description": "A door that appears only when the keep's bells have rung eight times in sequence. Beyond it, a spiral stair descends into absolute silence. No echo returns.",
+        "effect": "This leads to the lowest catacomb, where the first wright's original bell-line generator still turns. Activating it would drive the Direwood back a mile — but the noise would wake the Ninth Bell Ringer."
+      }
+    ],
+    "factions": [
+      {
+        "name": "The Bell-Wrights' Ghosts",
+        "description": "Ancient Aelinnel spirits who still maintain the lower forges. They ignore the living unless the forges are disturbed. Offerings of copper nails or a correctly rung bell will buy safe passage."
+      },
+      {
+        "name": "The Protectorate Salvage Team",
+        "description": "Aeler engineers and a squad of fog-knights, ostensibly 'surveying' the keep for hazards. They will confiscate any working bell they find and arrest anyone without a Protectorate writ. Their captain has a brass hand that is also a tuning fork."
+      },
+      {
+        "name": "The Hollow's Anticipators",
+        "description": "A cult that believes the keep was built to contain the Hollow's attention. They leave offerings of salt and silence. They are not dangerous — but they will follow you, writing down every bell you ring and every name you speak."
+      }
+    ]
+  },
+  "index": [
+    "Mistlands",
+    "Bells, Salt, and Breath generator",
+    "Theme generator",
+    "Places!Mistlands",
+    "People!Mistlands",
+    "Complications!Mistlands",
+    "Rewards!Mistlands",
+    "Aeler!Mistlands",
+    "Protectorate!Mistlands",
+    "Weeping Gate",
+    "Witchlight Bridge",
+    "Bell-Line levee",
+    "Ghost-ferry",
+    "Pall Watch-tower",
+    "High-Mist Pass",
+    "Legate of the Mists",
+    "Lord Warden of the Fens",
+    "Mist-Seer",
+    "Fog-knight",
+    "Oath-ferryman",
+    "Bell-warden",
+    "Salt-monk",
+    "Shroud-diver",
+    "Ward-salt",
+    "Pall Indulgence",
+    "Wraith-pardon",
+    "Direwood",
+    "Valewood",
+    "Payden's Port",
+    "Black Barrow Keep",
+    "Saint Lucas of the Iron Bell",
+    "Saint Anja of the White Pans",
+    "Gray Hospice of the Unnamed",
+    "Bell-Ringer's Covenant",
+    "Local Patrons!Mistlands"
+  ],
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}
