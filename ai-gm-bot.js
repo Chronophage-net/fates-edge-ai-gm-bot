@@ -105,7 +105,7 @@ try {
   } else if (AI_PROVIDER === 'deepseek') {
     const DeepSeekDriver = require('./drivers/deepseek-driver');
     driver = new DeepSeekDriver();
-    console.log(`🤖 Loaded DeepSeek driver (model: ${process.env.DEEPSEEK_MODEL || 'deepseek-chat'})`);
+    console.log(`🤖 Loaded DeepSeek driver (model: ${process.env.DEEPSEEK_MODEL || 'deepseek-v4-pro'})`);
   } else {
     console.error(`❌ Unsupported AI provider: ${AI_PROVIDER}`);
     process.exit(1);
@@ -438,8 +438,34 @@ function generateCrownSpreadInterpretation(positions, regionData, regionName, wo
 // 9. Message handler
 // -------------------------------------------------------------------
 async function handleMessage(msg) {
-  if (msg.type === 'state-updated') return;
+if (msg.type === 'state-updated') {
+  // Extract characters from either msg.characters or msg.state.characters
+  let charList = null;
+  if (msg.characters && Array.isArray(msg.characters)) {
+    charList = msg.characters;
+  } else if (msg.state && msg.state.characters && Array.isArray(msg.state.characters)) {
+    charList = msg.state.characters;
+  }
 
+  if (charList && charList.length > 0) {
+    // Convert array → object keyed by lowercase name
+    const charObj = {};
+    for (const c of charList) {
+      if (c.name) {
+        charObj[c.name.toLowerCase()] = { ...c };
+      }
+    }
+    // Import into the bot's local cache
+    const { loadCharacters } = require('./modules/characters');
+    loadCharacters(charObj);
+    console.log(`📥 Auto‑synced ${charList.length} characters from state-updated.`);
+  } else {
+    console.log('ℹ️  state-updated received with no character data.');
+  }
+
+  // Do NOT process this as a chat message
+  return;
+}
   if (msg.type === 'crown-spread') {
     processCrownSpread(msg);
     return;
