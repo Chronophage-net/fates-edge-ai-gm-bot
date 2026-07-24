@@ -1009,7 +1009,7 @@ async function handleBotCommand(sender, text, context) {
 }
 
 // ─── Special tag processing ────────────────────────────────────────
-function processSpecialTags(text, context) {
+function processSpecialTags(text, context, senderName = null) {
     const charactersModule = context.charactersModule;
     if (!charactersModule) {
         return text;
@@ -1024,11 +1024,20 @@ function processSpecialTags(text, context) {
 
     let output = text;
 
-    // [ROLL ...]
+    // Helper to resolve character name
+    const resolveCharName = (name) => {
+        if (name === 'me' && senderName) {
+            return senderName;
+        }
+        return name;
+    };
+
+    // [ROLL ...] – now supports "me" placeholder
     const rollRegex = /\[ROLL "([^"]+)" ([A-Za-z\+]+) DV(\d+) ([A-Za-z]+)\]/gi;
     let match;
     while ((match = rollRegex.exec(text)) !== null) {
-        const name = match[1];
+        let name = match[1];
+        name = resolveCharName(name);
         const poolExpr = match[2];
         const dv = parseInt(match[3]);
         const position = match[4];
@@ -1050,7 +1059,7 @@ function processSpecialTags(text, context) {
         output = output.replace(match[0], formatted);
     }
 
-    // [SET POSITION ...]
+    // [SET POSITION ...] – no character name
     const posRegex = /\[SET POSITION ([A-Za-z]+)\]/gi;
     while ((match = posRegex.exec(text)) !== null) {
         const pos = match[1];
@@ -1059,7 +1068,7 @@ function processSpecialTags(text, context) {
         output = output.replace(match[0], `*(Position set to ${pos})*`);
     }
 
-    // [SET DV ...]
+    // [SET DV ...] – no character name
     const dvRegex = /\[SET DV (\d+)\]/gi;
     while ((match = dvRegex.exec(text)) !== null) {
         const dv = parseInt(match[1]);
@@ -1068,11 +1077,12 @@ function processSpecialTags(text, context) {
         output = output.replace(match[0], `*(Default DV set to ${dv})*`);
     }
 
-    // [APPLY ...]
+    // [APPLY ...] – supports "me" placeholder
     const applyRegex = /\[APPLY (HARM|FATIGUE|BOON|OBLIGATION|CORRUPTION|LEASH) ([A-Za-z0-9_]+) (\d+)(?:\s+(\d+))?\]/gi;
     while ((match = applyRegex.exec(text)) !== null) {
         const type = match[1].toLowerCase();
-        const name = match[2];
+        let name = match[2];
+        name = resolveCharName(name);
         const amount = parseInt(match[3]);
         const extra = match[4] ? parseInt(match[4]) : null;
         if (type === 'harm') {
@@ -1086,7 +1096,7 @@ function processSpecialTags(text, context) {
         }
     }
 
-    // [TICK TIMER ...]
+    // [TICK TIMER ...] – no character name
     const tickRegex = /\[TICK TIMER "([^"]+)" (\d+)\]/gi;
     while ((match = tickRegex.exec(text)) !== null) {
         const name = match[1];
@@ -1106,7 +1116,7 @@ function processSpecialTags(text, context) {
         saveCampaign();
     }
 
-    // [TIMER ...]
+    // [TIMER ...] – no character name
     const createRegex = /\[TIMER "([^"]+)" (\d+) "([^"]*)"\]/gi;
     while ((match = createRegex.exec(text)) !== null) {
         const name = match[1];
@@ -1117,8 +1127,7 @@ function processSpecialTags(text, context) {
         output = output.replace(match[0], `*(Timer "${name}" created with ${max} segments)*`);
     }
 
-    // ─── Deck tags (now via WebSocket) ─────────────────────────────
-    // [DRAW ...] – WebSocket deck-draw
+    // [DRAW ...] – WebSocket deck-draw (no character)
     const drawRegex = /\[DRAW (\d+) (\w+)\]/gi;
     while ((match = drawRegex.exec(text)) !== null) {
         const count = parseInt(match[1]);
@@ -1131,7 +1140,7 @@ function processSpecialTags(text, context) {
         }
     }
 
-    // [CROWN ...] – WebSocket crown-spread
+    // [CROWN ...] – WebSocket crown-spread (no character)
     const crownRegex = /\[CROWN (\w+)\]/gi;
     while ((match = crownRegex.exec(text)) !== null) {
         const region = match[1];
@@ -1143,7 +1152,7 @@ function processSpecialTags(text, context) {
         }
     }
 
-    // [SPEND SB ...]
+    // [SPEND SB ...] – no character
     const sbRegex = /\[SPEND SB (\d+)\]/gi;
     while ((match = sbRegex.exec(text)) !== null) {
         const cost = parseInt(match[1]);
@@ -1156,7 +1165,7 @@ function processSpecialTags(text, context) {
         }
     }
 
-    // [FACT ...]
+    // [FACT ...] – no character
     const factRegex = /\[FACT (.+?) (.+?)\]/gi;
     while ((match = factRegex.exec(text)) !== null) {
         const key = match[1].trim();
@@ -1166,11 +1175,12 @@ function processSpecialTags(text, context) {
         output = output.replace(match[0], '');
     }
 
-    // ─── NPC CAST: GM spends SB to have an NPC cast a spell ──
+    // [NPC CAST ...] – supports "me" placeholder for target
     const npcCastRegex = /\[NPC CAST "([^"]+)" ([^\]]+)\]/gi;
     while ((match = npcCastRegex.exec(text)) !== null) {
         const spellName = match[1];
-        const target = match[2].trim();
+        let target = match[2].trim();
+        target = resolveCharName(target);
         const spell = context.orchestrator?.world?.getSpell(spellName);
         if (!spell) {
             output = output.replace(match[0], `*(NPC spell "${spellName}" not found)*`);
