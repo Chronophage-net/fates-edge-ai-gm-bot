@@ -1,0 +1,534 @@
+{
+  "id": "censors-daughter",
+  "title": "The Censor's Daughter",
+  "description": "In Ecktoria, a fourteen-year-old girl speaks in forgotten tongues and the Inquisition has set a date for her burning. Her father, a man who has never believed in anything except the ledger, refuses to help. But his books hold a secret: the demon's name is a debt, and debts can be paid. The party has three days to uncover the truth and perform an exorcism that will either save a child or doom her soul forever.",
+  "tier": "III",
+  "author": "Nicholas A. Gasper",
+  "sessions": "1-2",
+  "themes": ["Exorcism", "Investigation", "Faith", "Debt", "Cosmic Horror", "Redemption"],
+  "bestiary": [
+    {
+      "id": "harperar",
+      "name": "Harperar (Marquis Possessor)",
+      "tl": 4,
+      "class": "IV",
+      "category": "demon",
+      "description": "A Class C Possessor demon that manifests as a ledger-clutching figure in mirrors. Harperar feeds on unpaid debts and broken promises, binding itself to the debtor's lineage until the interest is paid in full. It speaks through its host in whispers of forgotten obligations, and its favorite food is the taste of ash from a burned contract.",
+      "stats": { "Spirit": 4, "Presence": 4, "arcane_resistance": 2, "host_boost": 2 },
+      "traits": ["Incorporeal (unless possessing)", "Intelligent", "Malicious"],
+      "attacks": {
+        "possessing": "Use host's physical stats +2",
+        "fear_aura": "DV 3, Fear effect"
+      },
+      "complications": ["Cannot be harmed directly while possessing", "Exorcism required"],
+      "resolution": "The Sentinel's exorcism ritual (DV 5, requires three witnesses and the demon's true name)",
+      "timers": { "Possession Depth": 8 },
+      "sb_spends": [
+        { "cost": 1, "name": "Whisper the Ledger", "effect": "Harperar recites a forgotten debt; a PC must test Resolve (DV 3) or mark 1 Fatigue." },
+        { "cost": 2, "name": "Impossible Interest", "effect": "The demon compounds a debt in the party's mind; all social rolls are at -1 die until the debt is spoken aloud." },
+        { "cost": 3, "name": "The Unpaid Clause", "effect": "Harperar reveals a hidden obligation in a PC's past; that PC gains 1 Obligation to someone they thought they had paid." },
+        { "cost": 4, "name": "The Ledger Opens", "effect": "Harperar speaks through the host and recites the true name of a PC's greatest failure. The PC must test Spirit+Resolve (DV 5) or be Stunned for one exchange." }
+      ],
+      "lore": "Harperar was once a contract clause—a hidden interest rate on a loan that could never be repaid. When the original debtor died, the clause didn't vanish. It learned to walk, then to speak, then to wear faces. Now it feeds on obligation, growing stronger with each unpaid promise. Its true name is the interest rate itself, the first lie it told to enter the world."
+    },
+    {
+      "id": "weeping-shade",
+      "name": "Weeping Shade (Class II Spirit)",
+      "tl": 2,
+      "class": "II",
+      "category": "spirit",
+      "description": "A pale, translucent figure with a hand clasped over its mouth. Tears run down its face but evaporate before they touch the ground. It is bound by a secret promise of silence—the spirit of a witness who died without speaking the truth.",
+      "stats": { "Spirit": 2, "Presence": 1 },
+      "traits": ["Incorporeal", "Bound by Silence"],
+      "attacks": {
+        "Manifestation": "DV 3, Fatigue 1",
+        "Touch of Silence": "Target cannot speak for one exchange (Resolve DV 4)"
+      },
+      "complications": ["Cannot be reasoned with directly; it cannot speak"],
+      "resolution": "Someone who knows the secret it protects must speak it aloud in the presence of a witness",
+      "timers": { "Silence's Weight": 6 },
+      "sb_spends": [
+        { "cost": 1, "name": "Press the Secret", "effect": "It pushes a secret into a PC's mind; they must share it or mark 1 Fatigue." },
+        { "cost": 2, "name": "Speak for Me", "effect": "It offers to reveal a hidden door or passage if a PC swears to carry its message to the living." }
+      ],
+      "lore": "The Weeping Shade was once a maid who witnessed a murder in the Censor's house. She swore to tell the truth, but the murderer silenced her before she could speak. Now she haunts the archives, waiting for someone to speak the words she could not."
+    },
+    {
+      "id": "flame-warden-zealot",
+      "name": "Flame-Warden Zealot",
+      "tl": 3,
+      "class": "III",
+      "category": "mortal",
+      "description": "A fanatical member of the Everflame's inquisitorial arm, wearing an iron mask and carrying a censer that smokes with blessed coal. They are utterly convinced of their righteousness and will burn a heretic without hesitation—or die trying.",
+      "stats": { "Body": 3, "Spirit": 2, "Presence": 2, "armor": 1, "hp": 20 },
+      "traits": ["Zealous", "Uncompromising"],
+      "attacks": {
+        "Censer Strike": "DV 3, Harm 1 + Fatigue 1 (holy smoke)",
+        "Brand of Purity": "DV 4, Harm 1 + Shaken (Resolve DV 3)"
+      },
+      "complications": ["Will not negotiate with heretics", "If reduced to 0 Harm, detonates a blessed flask (Harm 1 to all in Close)"],
+      "resolution": "Defeat, negotiation, or exposure of their own heresy",
+      "sb_spends": [
+        { "cost": 1, "name": "Censure", "effect": "The Warden declares a PC guilty; all social rolls with the Everflame are at -1 die for the scene." },
+        { "cost": 2, "name": "Purge the Impure", "effect": "The Warden attacks with righteous fury; +1 die on all attacks this scene." },
+        { "cost": 3, "name": "The Ninth Citation", "effect": "The Warden invokes the forbidden passage; one PC is marked for execution without trial." }
+      ],
+      "lore": "The Flame-Wardens are the iron fist of the Everflame, trained to root out heresy wherever it hides. They have no mercy because mercy is weakness. They carry the weight of every heretic they have burned, and they call it faith."
+    }
+  ],
+  "acts": [
+    {
+      "id": "act-1-investigation",
+      "title": "The First Day: The Weight of the Ledger",
+      "description": "The party arrives in Ecktoria to find a city on edge. The Inquisition has set a date for the burning. The Censor's daughter is held in a silver-lined cell. And her father—a man who has never believed in anything except the ledger—refuses to help. The party must investigate the Censor's books, find the demon's true name, and prepare for the exorcism. They have three days.",
+      "scenes": [
+        {
+          "id": "scene-1-1-the-censors-house",
+          "title": "The Censor's House",
+          "description": "Fabius Valerius sits in his study, surrounded by ledgers. He is a man who has spent his life enforcing contracts; he cannot admit that he broke one. His daughter, Livia, has been possessed for three years—ever since the night his wife died. The loan he took to pay for her medicine was sold to a collector, then to a broker, then to something that has forgotten it was ever human. The demon is the debt, given will. And it has been living in his ledger for three years.",
+          "timers": [
+            { "name": "Inquisition's Schedule", "segments": 6, "current": 0, "description": "Ticks each day. When full, Livia is burned at the Triumph. The demon escapes into the crowd." },
+            { "name": "Demon's Grip", "segments": 8, "current": 0, "description": "Ticks each time Livia speaks in a forgotten tongue, each time a witness looks away. When full, the demon permanently possesses her." },
+            { "name": "Mirror Integrity", "segments": 4, "current": 0, "description": "Ticks each time the prison's silvered mirrors crack. When full, the demon walks through the reflections." }
+          ],
+          "encounters": [
+            {
+              "name": "Confront Fabius",
+              "dv": 4,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "Fabius confesses. He gives the party access to his private archive and a vial of his blood. Gain +1 die on all Archive checks.",
+                "partial": "He gives you the archive key but refuses to confess. He is shaken, but will not help further.",
+                "miss": "He calls the guards. The party must escape—or fight."
+              }
+            },
+            {
+              "name": "Investigate the Ledger",
+              "dv": 5,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "You find the hidden page—the loan that was sold to a collector who died, the interest compounded beyond the ability to pay. Discover the demon's first lie: the interest rate was never disclosed. Discover Harperar's third trait: Invisible Contract.",
+                "partial": "You find the loan, but the key detail is missing. You know there is a hidden clause, but not what it is.",
+                "miss": "The book is sealed. You must find another way—or break the seal."
+              }
+            },
+            {
+              "name": "Audit the Hole (The Witness)",
+              "dv": 5,
+              "position": "Dominant",
+              "outcomes": {
+                "clean": "You place a silver mirror at the threshold where the demon entered. The smoke reveals the memory: Fabius, weeping, signing a loan he could not read. The demon's first lie was the hidden interest rate. Gain Harperar's true name.",
+                "partial": "The vision is fragmented. You know the demon's nature, but not its name. You must find the original contract.",
+                "miss": "The mirror cracks. The Witness is silent. You have gained nothing—and ticked Demon's Grip +1."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-1-2-the-prison",
+          "title": "The Silvered Cell",
+          "description": "Livia Valerius is held in a cell lined with silvered mirrors—the Inquisition's crude attempt to contain the demon. The mirrors are cracking. The Inquisition has scheduled her burning for the Triumph in three days. The party must decide: negotiate with the Inquisition, break her out, or perform the exorcism in the cell under the watchful eyes of the Flame-Wardens.",
+          "timers": [
+            { "name": "Inquisition's Schedule", "segments": 6, "current": 0 },
+            { "name": "Mirror Integrity", "segments": 4, "current": 0 }
+          ],
+          "encounters": [
+            {
+              "name": "Speak to Livia",
+              "dv": 4,
+              "position": "Desperate",
+              "outcomes": {
+                "clean": "Livia's own voice breaks through for a moment. She begs you to save her. She gives you a hint: 'The interest is all he remembers.' Gain +1 die on all Archive checks to find the original contract.",
+                "partial": "The demon speaks through her. It recites the names of everyone her father has bankrupted. You hear her true name—Livia—through the noise.",
+                "miss": "The demon seizes control. It speaks in a language that makes the mirrors sweat. Tick Demon's Grip +1."
+              }
+            },
+            {
+              "name": "Audit the Cell",
+              "dv": 5,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "You find the hidden crack—a place where the silver has peeled away from the stone. This is where the demon enters and exits. Gain +1 die on the exorcism check.",
+                "partial": "You find the crack, but it's watched. You must act quickly or be discovered.",
+                "miss": "A guard spots you. Tick Inquisition's Schedule +1."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-1-3-the-archive",
+          "title": "The Censor's Archive",
+          "description": "Fabius's private archive is sealed with a ward keyed to his blood. Inside are the forbidden texts—the ledgers of the dead, the contracts of the damned. Somewhere among them is the demon's true name.",
+          "timers": [
+            { "name": "Inquisition's Schedule", "segments": 6, "current": 0 },
+            { "name": "Demon's Grip", "segments": 8, "current": 0 }
+          ],
+          "encounters": [
+            {
+              "name": "Search the Archive",
+              "dv": 5,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "You find the original contract. The interest rate was hidden—a number that could never be paid. Harperar's true name is the interest rate itself. Gain all three traits: Invisible Contract, Ledger Debt, Impossible Debt.",
+                "partial": "You find the contract, but the text is obscured. You know the demon's name is a number, but not which one.",
+                "miss": "A Weeping Shade emerges from a sealed drawer. It blocks your path until you speak the secret it protects."
+              }
+            },
+            {
+              "name": "The Weeping Shade",
+              "dv": 4,
+              "position": "Desperate",
+              "outcomes": {
+                "clean": "You speak the maid's secret: the murderer was Fabius's brother. The Shade passes, and you gain access to the hidden compartment where the contract is stored.",
+                "partial": "You speak the secret, but the Shade is not satisfied. It demands a promise to tell the truth. You must swear to reveal the murderer.",
+                "miss": "The Shade's Silence's Weight timer advances. You must leave and return with the truth."
+              }
+            }
+          ],
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "act-2-the-exorcism",
+      "title": "The Second Day: The Three Calls",
+      "description": "The party has the demon's true name. Now they must perform the exorcism—a ritual in three mirrors, witnessed by three souls. The circle must be drawn, the mirrors placed, and the Three Calls spoken. If they fail, the demon will possess the exorcist's mirror and walk free. If they succeed, the girl will be saved—but the exorcist will pay a price.",
+      "scenes": [
+        {
+          "id": "scene-2-1-the-circle",
+          "title": "The Circle of Salt and Iron",
+          "description": "The exorcism must be performed in a space that can be sealed. The prison cell is the obvious choice—but the Inquisition watches. The party must draw the circle, place the mirrors, and invoke the Sentinel. They have one chance.",
+          "timers": [
+            { "name": "Possession Depth", "segments": 8, "current": 0, "description": "Ticks each time the demon speaks through the host, each time a witness looks away, each time the exorcist fails a call. When full, the demon achieves total breakthrough." },
+            { "name": "Mirror Integrity", "segments": 3, "current": 0, "description": "Ticks on a partial or miss. At 0, that mirror shatters—the demon gains control of that reflection." },
+            { "name": "Inquisition's Schedule", "segments": 6, "current": 0 }
+          ],
+          "encounters": [
+            {
+              "name": "Draw the Circle",
+              "dv": 4,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "The circle is drawn perfectly. The demon is contained. Gain +1 die on all exorcism calls.",
+                "partial": "The circle is drawn, but there is a flaw. The demon can whisper through the gap. All exorcism calls are at -1 die.",
+                "miss": "The circle is incomplete. Tick Possession Depth +2."
+              }
+            },
+            {
+              "name": "Place the Mirrors",
+              "dv": 4,
+              "position": "Dominant",
+              "outcomes": {
+                "clean": "All three mirrors are placed perfectly. The three reflections form a perfect triangle.",
+                "partial": "The mirrors are placed, but one is slightly off. The Witness is weakened—all exorcism calls are at -1 die.",
+                "miss": "A mirror cracks. Tick Mirror Integrity +1."
+              }
+            },
+            {
+              "name": "The First Call: Seen and Witnessed",
+              "dv": 5,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "The demon is forced into the host mirror. It cannot hide. Proceed to Second Call.",
+                "partial": "The demon speaks through the host. It gains one thread—it can force the host to take one action on its turn. Proceed to Second Call.",
+                "miss": "The demon breaks eye contact; the exorcist mirror cracks. Tick Possession Depth +1 and Mirror Integrity +1."
+              },
+              "requires_traits": 1,
+              "traits": ["Invisible Contract"],
+              "ritual_phase": "First Call"
+            },
+            {
+              "name": "The Second Call: Bound and Contained",
+              "dv": 5,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "The demon is bound. Its power is contained. Proceed to Third Call.",
+                "partial": "The demon thrashes. The host marks 1 Fatigue. Proceed to Third Call.",
+                "miss": "The demon breaks eye contact; the exorcist mirror cracks. Tick Possession Depth +1 and Mirror Integrity +1."
+              },
+              "requires_traits": 2,
+              "traits": ["Invisible Contract", "Ledger Debt"],
+              "ritual_phase": "Second Call"
+            },
+            {
+              "name": "The Third Call: Unmade",
+              "dv": 5,
+              "position": "Desperate",
+              "outcomes": {
+                "clean": "The demon mirror shatters. The shards fly inward. The demon is trapped in the exorcist's mirror. Livia is free.",
+                "partial": "The demon is forced into the exorcist's mirror, but it resists. You must seal the shards immediately or it will escape.",
+                "miss": "The demon possesses the exorcist mirror. It smiles and walks out of the glass. The exorcism has failed."
+              },
+              "requires_traits": 3,
+              "traits": ["Invisible Contract", "Ledger Debt", "Impossible Debt"],
+              "ritual_phase": "Third Call"
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-2-2-seal-the-shards",
+          "title": "Sealing the Shards",
+          "description": "The demon is trapped in the exorcist's mirror—but the mirror is shattered. Each shard must be wrapped in black cloth and disposed of in separate bodies of water. If any two shards are brought together, the demon can reform.",
+          "timers": [
+            { "name": "Possession Depth", "segments": 8, "current": 0 }
+          ],
+          "encounters": [
+            {
+              "name": "Seal the Shards",
+              "dv": 4,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "All shards are sealed and distributed. The demon is truly distributed. It cannot reform.",
+                "partial": "Most shards are sealed, but one is missing. It will reform in 1d4 days unless found.",
+                "miss": "Two shards are brought together. The demon reforms. The exorcism has failed."
+              }
+            }
+          ],
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "act-3-aftermath",
+      "title": "The Aftermath: The Price of Witness",
+      "description": "The girl is saved—but the exorcist paid a price. A memory is gone, and the debt never closes. Fabius must face the consequences of his actions. The Inquisition watches. The chain-lanterns of the Quiet Seal know what happened. And the demon's shards are scattered, waiting to be found.",
+      "scenes": [
+        {
+          "id": "scene-3-1-the-censors-confession",
+          "title": "The Censor's Confession",
+          "description": "Fabius Valerius confesses to loansharking. The Inquisition arrests him. Livia is freed, but she never speaks again—not because she cannot, but because she has nothing left to say. The Chain-Lanterns of the Quiet Seal offer the party a choice: help them expose the Inquisition's corruption, or disappear before the Flame-Wardens arrive.",
+          "encounters": [
+            {
+              "name": "Confront Fabius",
+              "dv": 3,
+              "position": "Dominant",
+              "outcomes": {
+                "clean": "Fabius confesses to the Inquisition. He is arrested. The party gains favor with the Quiet Seal.",
+                "partial": "Fabius confesses, but he asks for one condition: the party must keep his daughter safe. He will cooperate if they promise.",
+                "miss": "Fabius is arrested, but he refuses to confess. The Inquisition will try him. The party is now a target."
+              }
+            },
+            {
+              "name": "Chain-Lantern Negotiation",
+              "dv": 4,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "The Chain-Lanterns offer the party sanctuary and resources in exchange for helping them expose the Inquisition's corruption.",
+                "partial": "The Chain-Lanterns offer protection, but only if the party performs a task for them first.",
+                "miss": "The Chain-Lanterns cannot help. The party is on their own."
+              }
+            }
+          ],
+          "completed": false
+        }
+      ]
+    }
+  ],
+  "exorcism_mini_game": {
+    "title": "The Three Calls: An Exorcism Deduction Mini-Game",
+    "core_concept": "The demon's true name is its first lie—the clause it hid, the violence it used as a key, the moment the host said 'yes' to something they should have refused. Players must uncover three traits through research and investigation, then speak the name during a three-stage exorcism ritual.",
+    "traits": [
+      {
+        "id": "invisible-contract",
+        "name": "Invisible Contract",
+        "description": "The demon's first lie was a hidden clause in a contract. The Censor signed a loan he could not read.",
+        "discovery_method": "Audit the hole with The Witness, or find the original contract in the archive."
+      },
+      {
+        "id": "ledger-debt",
+        "name": "Ledger Debt",
+        "description": "The demon's name is recorded in the Censor's private ledger—a debt that was sold to a collector who died.",
+        "discovery_method": "Investigate the Censor's ledgers, or interrogate Fabius."
+      },
+      {
+        "id": "impossible-debt",
+        "name": "Impossible Debt",
+        "description": "The interest on the loan could never be paid. The debt is eternal—and that is the demon's nature.",
+        "discovery_method": "Cross-reference loan records, or discover that the collector died before the debt could be settled."
+      }
+    ],
+    "trait_discovery": {
+      "investigation_during_ritual": {
+        "roll": "Presence+Command vs. DV 12",
+        "success": "1 trait; Critical = 2 traits; Failure = nothing (+1 timer tick)"
+      },
+      "research_pre_ritual": {
+        "description": "No time cost; reveals traits through records, interviews, observation."
+      },
+      "weakness_test": {
+        "description": "Attempt suspected weakness (e.g., holy water, salt circle, iron). Success confirms trait."
+      }
+    },
+    "possession_depth_timer": {
+      "segments": 8,
+      "current": 0,
+      "triggers": [
+        { "trigger": "Failed Investigation during ritual", "effect": "+1 segment; demon whispers three names the next morning." },
+        { "trigger": "Call attempt with < required traits", "effect": "+1 segment; demon mocks the attempt." },
+        { "trigger": "Call attempt with correct name but insufficient traits", "effect": "+1 segment; proceed to roll." },
+        { "trigger": "Call attempt with wrong name (≥ required traits)", "effect": "+2 segments; host convulses; 1 witness must look away." },
+        { "trigger": "Call attempt with correct name (≥ required traits)", "effect": "0 segments; proceed to roll." },
+        { "trigger": "1 Action spent researching during Step 1 (Draw Circle)", "effect": "–1 segment; gain 1 trait (if undiscovered)." },
+        { "trigger": "Call roll result: Miss (0 successes)", "effect": "+1 segment; demon gains 1 thread (can force the host to take one action on its turn)." },
+        { "trigger": "Call roll result: Partial (0 < successes < DV)", "effect": "0 segments; no timer advance." }
+      ],
+      "breakthrough": "When the timer fills, the host's eyes glow with the demon's true form. Silver mirrors fog and crack inward. The demon speaks through the host's mouth—not in lies, but in the awful truth of its first lie. The ritual fails; the demon must be re-bound. Consequences: Host remains possessed (+2 DV on future exorcism rolls); one mirror permanently shattered; each witness who looked away gains 1 Trauma."
+    },
+    "mirror_integrity": {
+      "per_mirror": 3,
+      "ticks": "On a partial or miss. At 0, that mirror shatters – demon gains control of that reflection.",
+      "tags": {
+        "WITNESS": "The neutral witness adds +1 die to all Spirit+Lore rolls during the exorcism.",
+        "MIRROR": "Destroying a mirror mid-ritual resets the Possession Depth timer by –2, but the demon escapes into the nearest reflection.",
+        "SHATTER": "On a critical success, the exorcist may choose to distribute the demon so thoroughly that its true name is erased – cost: the exorcist forgets the host's name as well."
+      }
+    },
+    "exorcism_phases": {
+      "first_call": {
+        "words": "I name you [TRUE NAME]. You are seen. You are witnessed.",
+        "requires_traits": 1,
+        "dv": 5,
+        "success": "Proceed to Second Call.",
+        "failure": "Demon gains 1 thread; +1 segment."
+      },
+      "second_call": {
+        "words": "I name you [TRUE NAME]. You are bound. You are contained.",
+        "requires_traits": 2,
+        "dv": 5,
+        "success": "Proceed to Third Call.",
+        "failure": "Host gains 1 FATIGUE; demon breaks eye contact; +1 segment."
+      },
+      "third_call": {
+        "words": "I name you [TRUE NAME]. You are unmade.",
+        "requires_traits": 3,
+        "dv": 5,
+        "success": "Demon mirror shatters; shards fly inward.",
+        "failure": "Demon possesses exorcist mirror."
+      }
+    }
+  },
+  "npcs": [
+    {
+      "id": "npc-livia-valerius",
+      "name": "Livia Valerius",
+      "role": "Possessed Child, Daughter of the Censor",
+      "motivation": "To be free. To speak her own name.",
+      "stats": "Spirit 1, Body 1, Presence 1",
+      "secret": "She has known the demon's name for three years, but she could not speak it—the demon bound her tongue. She is not the demon. She is collateral."
+    },
+    {
+      "id": "npc-fabius-valerius",
+      "name": "Fabius Valerius",
+      "role": "Censor, Father of Livia",
+      "motivation": "To save his daughter—but he cannot admit he broke an oath. He has spent his life enforcing contracts; he cannot admit he broke one.",
+      "stats": "Spirit 2, Presence 3, Wits 3",
+      "secret": "The loan he took to pay for his wife's medicine was sold to a collector, then to a broker, then to something that has forgotten it was ever human. The demon is the debt, given will. It has been living in his ledger for three years."
+    },
+    {
+      "id": "npc-saikou-ira",
+      "name": "Saikou Ira (Optional Cameo)",
+      "role": "Invoker of The Witness",
+      "motivation": "To bear witness. To pay the price.",
+      "stats": "Spirit 4, Presence 3, Lore 4",
+      "secret": "He has forgotten his daughter's face. He will forget yours too. The debt never closes."
+    },
+    {
+      "id": "npc-flame-warden-ervin",
+      "name": "Flame-Warden Ervin",
+      "role": "Inquisitor of the Everflame",
+      "motivation": "Burn the heretic. Serve the empire. Do not ask questions.",
+      "stats": "Body 3, Spirit 3, Presence 3",
+      "secret": "He knows the Ninth Citation. He has used it twice. He does not sleep well."
+    },
+    {
+      "id": "npc-chain-lantern-silva",
+      "name": "Chain-Lantern Silva",
+      "role": "Agent of the Quiet Seal",
+      "motivation": "Expose the Inquisition's corruption. Save Livia from the flames.",
+      "stats": "Spirit 3, Presence 3, Deception 3",
+      "secret": "She was conscripted at seven. She does not remember her name before the Temple. She thinks the party might help her find it."
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc-censors-house",
+      "name": "The Censor's House",
+      "description": "A stone mansion in the heart of Ecktoria, surrounded by ledgers and the weight of a man's failure. The study smells of old paper and stale regret.",
+      "tags": ["urban", "investigation", "ledger"]
+    },
+    {
+      "id": "loc-prison-cell",
+      "name": "The Silvered Cell",
+      "description": "A stone room lined with silvered mirrors—the Inquisition's crude attempt to contain a demon. The mirrors are cracking. The air smells of copper and fear.",
+      "tags": ["prison", "silver", "possession"]
+    },
+    {
+      "id": "loc-archive",
+      "name": "The Censor's Archive",
+      "description": "A sealed room beneath the Censor's house, holding the forbidden texts—the ledgers of the dead, the contracts of the damned. The door is keyed to Fabius's blood.",
+      "tags": ["archive", "secret", "contracts"]
+    }
+  ],
+  "factions": [
+    {
+      "id": "faction-everflame-inquisition",
+      "name": "The Everflame Inquisition",
+      "goals": "Burn the heretic. Maintain order. Serve the empire.",
+      "relationship": "They have arrested Livia and plan to burn her at the Triumph. They will not negotiate."
+    },
+    {
+      "id": "faction-quiet-seal",
+      "name": "The Chain-Lanterns of the Quiet Seal",
+      "goals": "Expose the Inquisition's corruption. Save innocents from the flames.",
+      "relationship": "They believe Livia may be innocent. They will help the party—but only if they promise to bring Fabius to justice."
+    },
+    {
+      "id": "faction-the-witness",
+      "name": "The Witness (Patron)",
+      "goals": "Reveal the truth. Bear witness. Preserve the record.",
+      "relationship": "The Witness is not a faction—it is a presence. It will reveal the demon's true name to those who seek it, but it demands the truth in return."
+    }
+  ],
+  "campaignTimers": [
+    {
+      "name": "Inquisition's Schedule",
+      "segments": 6,
+      "current": 0,
+      "description": "Ticks each day. When full, Livia is burned at the Triumph. The demon escapes into the crowd."
+    },
+    {
+      "name": "Demon's Grip",
+      "segments": 8,
+      "current": 0,
+      "description": "Ticks each time Livia speaks in a forgotten tongue, each time a witness looks away. When full, the demon permanently possesses her."
+    },
+    {
+      "name": "Mirror Integrity",
+      "segments": 4,
+      "current": 0,
+      "description": "Ticks each time the prison's silvered mirrors crack. When full, the demon walks through the reflections."
+    },
+    {
+      "name": "Possession Depth",
+      "segments": 8,
+      "current": 0,
+      "description": "Exorcism timer. Ticks each time the demon speaks through the host, each time a witness looks away, each time the exorcist fails a call. When full, the demon achieves total breakthrough."
+    }
+  ],
+  "rewards": {
+    "xp": 8,
+    "boons": 3,
+    "obligation_clear": "The party may clear 2 Obligation to The Sentinel if they successfully complete the exorcism."
+  },
+  "notes": "This adventure is adapted from Saikou Ira's case files. The exorcism mini-game is the mechanical centerpiece—players must conduct research, gather witnesses, and perform the Three Calls while managing the Possession Depth timer. The adventure supports multiple resolution paths: expose the Censor, perform a secret exorcism, or break the girl out. Each path has its own costs and consequences. The themes of debt, obligation, and witness are central—the party must decide what they are willing to pay to save a child. Designed for a single session of 4–6 hours, but can be extended into a mini-campaign by expanding the investigation phase.",
+  "currentAct": 0,
+  "currentScene": 0,
+  "startedAt": null,
+  "completedAt": null,
+  "status": "planned",
+  "createdAt": "2026-07-29T00:00:00.000Z",
+  "updatedAt": "2026-07-29T00:00:00.000Z"
+}

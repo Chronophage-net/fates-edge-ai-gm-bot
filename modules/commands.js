@@ -1,6 +1,7 @@
 // modules/commands.js
 const diceModule = require('./dice');
 const timersModule = require('./timers');
+const adventureDirector = require('./adventure-director');
 // characters module is passed via context
 
 // ─── Helper: derive HTTP API base from WebSocket URL ─────────────
@@ -230,6 +231,11 @@ async function handleBotCommand(sender, text, context) {
 !gm whiteboard - show whiteboard summary (drawings, notes, images)
 !gm grid - show grid combat status (tokens, enabled)
 !gm modules - list loaded modules (if any)`;
+    }
+
+    // ─── Adventure command (handled by adventure-director) ────────
+    if (cmd === 'adventure') {
+        return await adventureDirector.handleAdventureCommand(sender, args, context);
     }
 
     // ─── Create ──────────────────────────────────────────────────
@@ -1009,7 +1015,7 @@ async function handleBotCommand(sender, text, context) {
 }
 
 // ─── Special tag processing ────────────────────────────────────────
-function processSpecialTags(text, context, senderName = null) {
+async function processSpecialTags(text, context, senderName = null) {
     const charactersModule = context.charactersModule;
     if (!charactersModule) {
         return text;
@@ -1032,7 +1038,7 @@ function processSpecialTags(text, context, senderName = null) {
         return name;
     };
 
-    // [ROLL ...] – now supports "me" placeholder
+    // ─── [ROLL ...] – supports "me" placeholder ────────────────────
     const rollRegex = /\[ROLL "([^"]+)" ([A-Za-z\+]+) DV(\d+) ([A-Za-z]+)\]/gi;
     let match;
     while ((match = rollRegex.exec(text)) !== null) {
@@ -1059,7 +1065,7 @@ function processSpecialTags(text, context, senderName = null) {
         output = output.replace(match[0], formatted);
     }
 
-    // [SET POSITION ...] – no character name
+    // ─── [SET POSITION ...] ────────────────────────────────────────
     const posRegex = /\[SET POSITION ([A-Za-z]+)\]/gi;
     while ((match = posRegex.exec(text)) !== null) {
         const pos = match[1];
@@ -1068,7 +1074,7 @@ function processSpecialTags(text, context, senderName = null) {
         output = output.replace(match[0], `*(Position set to ${pos})*`);
     }
 
-    // [SET DV ...] – no character name
+    // ─── [SET DV ...] ──────────────────────────────────────────────
     const dvRegex = /\[SET DV (\d+)\]/gi;
     while ((match = dvRegex.exec(text)) !== null) {
         const dv = parseInt(match[1]);
@@ -1077,7 +1083,7 @@ function processSpecialTags(text, context, senderName = null) {
         output = output.replace(match[0], `*(Default DV set to ${dv})*`);
     }
 
-    // [APPLY ...] – supports "me" placeholder
+    // ─── [APPLY ...] – supports "me" placeholder ───────────────────
     const applyRegex = /\[APPLY (HARM|FATIGUE|BOON|OBLIGATION|CORRUPTION|LEASH) ([A-Za-z0-9_]+) (\d+)(?:\s+(\d+))?\]/gi;
     while ((match = applyRegex.exec(text)) !== null) {
         const type = match[1].toLowerCase();
@@ -1096,7 +1102,7 @@ function processSpecialTags(text, context, senderName = null) {
         }
     }
 
-    // [TICK TIMER ...] – no character name
+    // ─── [TICK TIMER ...] ──────────────────────────────────────────
     const tickRegex = /\[TICK TIMER "([^"]+)" (\d+)\]/gi;
     while ((match = tickRegex.exec(text)) !== null) {
         const name = match[1];
@@ -1116,7 +1122,7 @@ function processSpecialTags(text, context, senderName = null) {
         saveCampaign();
     }
 
-    // [TIMER ...] – no character name
+    // ─── [TIMER ...] – create timer ───────────────────────────────
     const createRegex = /\[TIMER "([^"]+)" (\d+) "([^"]*)"\]/gi;
     while ((match = createRegex.exec(text)) !== null) {
         const name = match[1];
@@ -1127,7 +1133,7 @@ function processSpecialTags(text, context, senderName = null) {
         output = output.replace(match[0], `*(Timer "${name}" created with ${max} segments)*`);
     }
 
-    // [DRAW ...] – WebSocket deck-draw (no character)
+    // ─── [DRAW ...] – WebSocket deck-draw ──────────────────────────
     const drawRegex = /\[DRAW (\d+) (\w+)\]/gi;
     while ((match = drawRegex.exec(text)) !== null) {
         const count = parseInt(match[1]);
@@ -1140,7 +1146,7 @@ function processSpecialTags(text, context, senderName = null) {
         }
     }
 
-    // [CROWN ...] – WebSocket crown-spread (no character)
+    // ─── [CROWN ...] – WebSocket crown-spread ──────────────────────
     const crownRegex = /\[CROWN (\w+)\]/gi;
     while ((match = crownRegex.exec(text)) !== null) {
         const region = match[1];
@@ -1152,7 +1158,7 @@ function processSpecialTags(text, context, senderName = null) {
         }
     }
 
-    // [SPEND SB ...] – no character
+    // ─── [SPEND SB ...] ────────────────────────────────────────────
     const sbRegex = /\[SPEND SB (\d+)\]/gi;
     while ((match = sbRegex.exec(text)) !== null) {
         const cost = parseInt(match[1]);
@@ -1165,7 +1171,7 @@ function processSpecialTags(text, context, senderName = null) {
         }
     }
 
-    // [FACT ...] – no character
+    // ─── [FACT ...] ────────────────────────────────────────────────
     const factRegex = /\[FACT (.+?) (.+?)\]/gi;
     while ((match = factRegex.exec(text)) !== null) {
         const key = match[1].trim();
@@ -1175,7 +1181,7 @@ function processSpecialTags(text, context, senderName = null) {
         output = output.replace(match[0], '');
     }
 
-    // [NPC CAST ...] – supports "me" placeholder for target
+    // ─── [NPC CAST ...] – supports "me" placeholder ───────────────
     const npcCastRegex = /\[NPC CAST "([^"]+)" ([^\]]+)\]/gi;
     while ((match = npcCastRegex.exec(text)) !== null) {
         const spellName = match[1];
@@ -1215,6 +1221,30 @@ function processSpecialTags(text, context, senderName = null) {
         }
         saveCampaign();
         output = output.replace(match[0], resultMsg);
+    }
+
+    // ─── [ENCOUNTER RESOLVE outcome "notes"] ──────────────────────
+    const encResolveRegex = /\[ENCOUNTER RESOLVE\s+(clean|partial|miss)(?:\s+"([^"]*)")?\]/gi;
+    while ((match = encResolveRegex.exec(text)) !== null) {
+        const outcome = match[1];
+        const notes = match[2] || '';
+        try {
+            const apiRequest = context.apiRequest;
+            if (apiRequest) {
+                const result = await apiRequest('POST', ['adventure', 'encounter', 'resolve'], { outcome, notes });
+                if (result && result.lastResolution) {
+                    const r = result.lastResolution;
+                    const msg = `⚔️ Encounter "${r.encounter || 'Unknown'}" resolved as ${r.outcome}.${r.result ? ' ' + r.result : ''}`;
+                    output = output.replace(match[0], msg);
+                } else {
+                    output = output.replace(match[0], '⚔️ Encounter resolved.');
+                }
+            } else {
+                output = output.replace(match[0], '⚠️ Encounter resolution failed (API not available).');
+            }
+        } catch (e) {
+            output = output.replace(match[0], `⚠️ Encounter resolution error: ${e.message}`);
+        }
     }
 
     return output;
@@ -1280,5 +1310,6 @@ module.exports = {
     handleBotCommand,
     processSpecialTags,
     generateStartupMessage,
-    generateEtiquetteReminder
+    generateEtiquetteReminder,
+    globalApiRequest
 };

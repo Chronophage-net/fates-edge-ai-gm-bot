@@ -1,0 +1,578 @@
+[
+  {
+    "Echo (Class I Spirit)": {
+      "page": "Echo",
+      "summary": "A psychic recording of a traumatic death, repeating endlessly. Cannot be negotiated with.",
+      "locations": ["Sites of violent death", "Aeler mining tunnels", "Haunted battlefields"],
+      "lore": "Not truly a spirit, but an imprint. Requires a witness to speak the truth of the event to fade.",
+      "connections": ["The Witness"]
+    }
+  },
+  {
+    "Anchor (Class II Spirit)": {
+      "page": "Anchor",
+      "summary": "A spirit bound to an object, location, or person by unresolved emotion. Possesses will and memory.",
+      "locations": ["Vilikari hearths", "Aeler watchtowers", "Places of betrayal"],
+      "lore": "Can be negotiated with to fulfill unfinished business.",
+      "connections": ["The Hearth-Bound", "The Duty-Bound", "The Wronged"]
+    }
+  },
+  {
+    "Poltergeist (Class IV Spirit)": {
+      "page": "Poltergeist",
+      "summary": "A corrupted Anchor, driven by rage or hunger. A wound that has learned to strike back.",
+      "locations": ["Plague houses", "Sites of unresolved grief", "The Plague House of Port Shed"],
+      "lore": "Progresses through stages from The Knock to The Mask (possession).",
+      "connections": ["The Sentinel"]
+    }
+  },
+  {
+    "Ghoul (Starved Anchor)": {
+      "page": "Ghoul",
+      "summary": "An Anchor that has begun consuming life force to sustain itself. Retains intelligence.",
+      "locations": ["Crypts", "Battlefields", "The sewers of Port Shed"],
+      "lore": "Can be negotiated with if fed; fire and silver are key weaknesses.",
+      "connections": ["Malachai", "The Well of Ichor"]
+    }
+  },
+  {
+    "Linn Sea-Wolf (Lycanthrope)": {
+      "page": "Linn_Sea-Wolf",
+      "summary": "A lycanthrope that transforms into a massive seal or walrus. Solitary and melancholic.",
+      "locations": ["Linn coastline", "Northern seas"],
+      "lore": "Transforms during the first winter storm after a kill. Vulnerable to silver.",
+      "connections": ["Malachai"]
+    }
+  },
+  {
+    "Ykrul Sky-Hound (Lycanthrope)": {
+      "page": "Ykrul_Sky-Hound",
+      "summary": "A hawk-headed hunter that transforms during the day to hunt oath-breakers.",
+      "locations": ["Ykrul steppes"],
+      "lore": "Triggered by the sight of blood on fresh snow. Hunts for justice, not flesh.",
+      "connections": ["Malachai"]
+    }
+  },
+  {
+    "Valewood Root-Walker (Lycanthrope)": {
+      "page": "Valewood_Root-Walker",
+      "summary": "Transforms into a tree, immobile but all-seeing. Guardians, not predators.",
+      "locations": ["The Valewood", "Ancient groves"],
+      "lore": "Triggered by a witnessed promise of hospitality.",
+      "connections": ["Malachai", "The Green Court"]
+    }
+  },
+  {
+    "Aeler Stone-Hide (Lycanthrope)": {
+      "page": "Aeler_Stone-Hide",
+      "summary": "Massive, slow lycanthrope that transforms only underground. Nearly invulnerable.",
+      "locations": ["Aeler mines", "Deep under-vaults"],
+      "lore": "Cannot transform in sunlight. Silver weapon to the heart or brain.",
+      "connections": ["Malachai"]
+    }
+  },
+  {
+    "Baron Quentin Asselin (Vampire)": {
+      "page": "Baron_Quentin_Asselin",
+      "summary": "The first vampire and one of the Thirteen. Disillusioned and melancholic.",
+      "locations": ["A secluded estate in a remote valley"],
+      "lore": "Converts guests or drives them mad. Never accept his wine.",
+      "connections": ["Malachai", "The Thirteen First Vampires"]
+    }
+  },
+  {
+    "Sister Maris (Vampire)": {
+      "page": "Sister_Maris",
+      "summary": "One of the Thirteen. Runs a children's hospice where the children never leave.",
+      "locations": ["Eastern swamps"],
+      "lore": "The Everflame has tried to destroy her hospice four times, but the children defend her.",
+      "connections": ["Malachai", "The Thirteen First Vampires"]
+    }
+  },
+  {
+    "The Sparrow (Vampire)": {
+      "page": "The_Sparrow",
+      "summary": "One of the Thirteen. Kills only the wicked, or so he claims.",
+      "locations": ["No fixed domain"],
+      "lore": "Cannot look at mirrors. Has saved Saikou Ira's life twice.",
+      "connections": ["Malachai", "The Thirteen First Vampires"]
+    }
+  },
+  {
+    "Linn Draugr (Vampire)": {
+      "page": "Linn_Draugr",
+      "summary": "Vampires that breathe underwater, trapped by sea-salt circles.",
+      "locations": ["Linn coastline", "Shipwrecks"],
+      "lore": "A lesser bloodline of the Thirteen.",
+      "connections": ["Malachai"]
+    }
+  },
+  {
+    "Aeler Stone-Sleepers (Vampire)": {
+      "page": "Aeler_Stone-Sleepers",
+      "summary": "Vampires that drink breath, awakened by bronze bells at dawn.",
+      "locations": ["Aeler deep mines"],
+      "lore": "A lesser bloodline.",
+      "connections": ["Malachai"]
+    }
+  },
+  {
+    "Ykrul Bone-Eaters (Vampire)": {
+      "page": "Ykrul_Bone-Eaters",
+      "summary": "Vampires that turn to dust when killed but rise if their name is spoken.",
+      "locations": ["Ykrul steppes"],
+      "lore": "Erase the name to destroy them permanently.",
+      "connections": ["Malachai"]
+    }
+  },
+  {
+    "Vhasian Candle-Wights (Vampire)": {
+      "page": "Vhasian_Candle-Wights",
+      "summary": "Vampires that extinguish flames through windows. A lit candle at the threshold bars them.",
+      "locations": ["Vhasia"],
+      "lore": "A lesser bloodline.",
+      "connections": ["Malachai"]
+    }
+  },
+  {
+    "Lethai-ar Silk-Drinkers (Vampire)": {
+      "page": "Lethai-ar_Silk-Drinkers",
+      "summary": "Vampires that feed on desire. Vulnerable to vows witnessed by a third party.",
+      "locations": ["Lethai-ar territories", "The Court Painter of Mbaro's domain"],
+      "lore": "A lesser bloodline.",
+      "connections": ["Malachai"]
+    }
+  },
+  {
+    "The Oath-Keeper (Possessor Variant)": {
+      "page": "Oath-Keeper_Possessor",
+      "summary": "A spirit of unpaid obligation that wears the face of the person you failed.",
+      "locations": ["Anywhere a debt is owed"],
+      "lore": "Manifests from your own memory. It accuses, does not attack. Can possess a host.",
+      "connections": ["The Hollow", "Daughters of the Unbroken Cord"]
+    }
+  },
+  {
+    "The Counting Wraith": {
+      "page": "Counting_Wraith",
+      "summary": "A ghost of an error that appears when someone miscounts nine steps, cups, or breaths.",
+      "locations": ["Thresholds", "Stairways", "Counting-houses"],
+      "lore": "Can only be resolved by a correct count. Takes memories as payment for errors.",
+      "connections": ["The Hollow"]
+    }
+  },
+  {
+    "The Weeping Shade": {
+      "page": "Weeping_Shade",
+      "summary": "A ghost bound by a secret promise of silence, unable to speak its unfinished business.",
+      "locations": ["Where secrets were made", "Rooms with hidden doors"],
+      "lore": "Can only be resolved by someone speaking the secret aloud in the presence of a witness.",
+      "connections": ["The Hollow", "Daughters of the Unbroken Cord"]
+    }
+  },
+  {
+    "The Unwitnessed Door": {
+      "page": "Unwitnessed_Door",
+      "summary": "A threshold entity that appears as a gray door where no door stood before.",
+      "locations": ["Thresholds", "The space between places"],
+      "lore": "Opens to a room with two mirrors. Choosing one transforms the character.",
+      "connections": ["The Witness", "Aveh", "The Hollow"]
+    }
+  },
+  {
+    "The Deep Drake (Pressure that Thinks)": {
+      "page": "Deep_Drake",
+      "summary": "A mythic creature dwelling in the deepest galleries beneath Khaz-Vurim.",
+      "locations": ["Khaz-Vurim deep galleries", "The Heart of the Ninth Gallery"],
+      "lore": "A wyrm, child of Nidhoggr. It invites intruders to count their breaths, then consumes them.",
+      "connections": ["Nidhoggr", "The Aeler"]
+    }
+  },
+  {
+    "Whisperer (Imp - Rank I Demon)": {
+      "page": "Whisperer_Demon",
+      "summary": "A demon of small bargains, offering power through contracts witnessed by no one.",
+      "locations": ["Crossroads", "Thresholds", "The space between deals"],
+      "lore": "A contract sealed without a third party is a hole shaped like your own hand.",
+      "connections": ["The Abyss"]
+    }
+  },
+  {
+    "Ravager (Fury - Rank II Demon)": {
+      "page": "Ravager_Demon",
+      "summary": "A demon summoned by violence or mass death. It does not speak; it erases.",
+      "locations": ["Battlefields", "Sites of massacre"],
+      "lore": "Banishment requires overwhelming witness—three or more souls refusing to look away.",
+      "connections": ["The Abyss"]
+    }
+  },
+  {
+    "Possessor (Marquis - Rank III Demon)": {
+      "page": "Possessor_Demon",
+      "summary": "A demon that possesses a host, slowly eroding their identity.",
+      "locations": ["Ecktoria", "Where a soul has said 'yes' to something they should have refused"],
+      "lore": "Exorcism requires a witness from the host's faith and the demon's true name.",
+      "connections": ["The Abyss"]
+    }
+  },
+  {
+    "Parasite (Duke - Rank IV Demon)": {
+      "page": "Parasite_Demon",
+      "summary": "A demon that embodies an emotion: fear, grief, or ambition, starving the body.",
+      "locations": ["Inside a host's psyche"],
+      "lore": "Countered by rigorous emotional discipline and sensory deprivation.",
+      "connections": ["The Abyss"]
+    }
+  },
+  {
+    "Trow (Shadow Bargainer)": {
+      "page": "Trow",
+      "summary": "Enigmatic fey who keep to thresholds and almost-there spaces. Bound by courtesy.",
+      "locations": ["Thresholds", "Crossroads", "The space between departure and arrival"],
+      "lore": "Hint at an unnamed patron like the Gray Benefactor. Payment must be in honest memory.",
+      "connections": ["The Gray Benefactor", "The Under-Guest"]
+    }
+  },
+  {
+    "The Neighbors": {
+      "page": "Neighbors",
+      "summary": "The forest's awareness of intruders, manifesting as silence and watching.",
+      "locations": ["The Valewood", "Thin places"],
+      "lore": "Manifest as an Oath-Keeper when a taboo is broken.",
+      "connections": ["The Hollow"]
+    }
+  },
+  {
+    "Hazel Queen's Emissary": {
+      "page": "Hazel_Emissary",
+      "summary": "A fae courtier wearing leaves and law, bound by the Green Court's rules.",
+      "locations": ["The Green Court", "Where the Hazel Queen's influence holds"],
+      "lore": "Cannot lie but may omit. Any gift accepted creates a debt.",
+      "connections": ["The Green Court", "The Hazel Queen"]
+    }
+  },
+  {
+    "Lady of Thorns": {
+      "page": "Lady_of_Thorns",
+      "summary": "Sovereign of a hawthorn court. She never lies; she simply doesn't need to.",
+      "locations": ["The Hawthorn Court", "The Valewood"],
+      "lore": "Cannot be fought or bargained with on unequal terms. Offer a gift of equal value.",
+      "connections": ["The Green Court"]
+    }
+  },
+  {
+    "Stone Giant": {
+      "page": "Stone_Giant",
+      "summary": "A giant of living rock, found in mountain passes and under-vaults.",
+      "locations": ["Ubral", "Aeler deep under-vaults"],
+      "lore": "Pacified by a correct count of eight. Count to nine, and it will become hostile.",
+      "connections": ["The Tall Folk"]
+    }
+  },
+  {
+    "Frost Giant": {
+      "page": "Frost_Giant",
+      "summary": "A giant wrapped in permafrost, appearing during the deepest winters.",
+      "locations": ["Himadri", "Northern Reaches"],
+      "lore": "Driven back by a true fire, a hearth-fire that has burned for nine generations.",
+      "connections": ["The Tall Folk"]
+    }
+  },
+  {
+    "Dream Giant": {
+      "page": "Dream_Giant",
+      "summary": "A giant that appears in thin places and dreams, asking questions.",
+      "locations": ["The Valewood", "Ways Between"],
+      "lore": "Banished by answering its question truthfully or by refusing to answer at all.",
+      "connections": ["The Tall Folk", "The Hollow"]
+    }
+  },
+  {
+    "Debt-Ogre": {
+      "page": "Debt-Ogre",
+      "summary": "An ogre drawn to broken promises, taking the memory of the broken promise.",
+      "locations": ["Acasia", "Ubral"],
+      "lore": "Can be satisfied by speaking the broken promise aloud, even if you don't remember it.",
+      "connections": ["The Tall Folk", "The Hollow"]
+    }
+  },
+  {
+    "Flesh-Ogre": {
+      "page": "Flesh-Ogre",
+      "summary": "A huge, bloated ogre drawn to battlefields, scavenging the dead and living.",
+      "locations": ["Black Banners", "Zakov"],
+      "lore": "Driven off by fire or a more appealing offering.",
+      "connections": ["The Tall Folk", "The Hollow"]
+    }
+  },
+  {
+    "Stone-Ogre": {
+      "page": "Stone-Ogre",
+      "summary": "An ogre covered in rocky hide, guarding places where the earth has been wounded.",
+      "locations": ["Aeler", "Ubral"],
+      "lore": "Pacified by repairing the wound to the land.",
+      "connections": ["The Tall Folk", "The Hollow"]
+    }
+  },
+  {
+    "Crater Oni": {
+      "page": "Crater_Oni",
+      "summary": "A vast oni sleeping beneath a caldera, dreaming of waking.",
+      "locations": ["Nihori", "Western ash wastes"],
+      "lore": "Sealed by performing the old rites: a pilgrimage, a true name spoken at midnight.",
+      "connections": ["The Oni-Eyed daimyo", "The Tall Folk"]
+    }
+  },
+  {
+    "River Oni": {
+      "page": "River_Oni",
+      "summary": "A clever oni dwelling in deep pools, offering bargains to the lost and desperate.",
+      "locations": ["Ayokha", "Great rivers"],
+      "lore": "Driven off by a true name.",
+      "connections": ["The Tall Folk"]
+    }
+  },
+  {
+    "Dream Oni": {
+      "page": "Dream_Oni",
+      "summary": "An oni that appears in dreams, offering bargains and taking memories.",
+      "locations": ["Ways Between", "Dreams"],
+      "lore": "Banished by speaking a truth never told or by waking.",
+      "connections": ["The Tall Folk", "The Hollow"]
+    }
+  },
+  {
+    "Goblin Scavenger": {
+      "page": "Goblin_Scavenger",
+      "summary": "Common pests in the Crown Spread, known for their greed and cowardice.",
+      "locations": ["The Mudflats", "Old Dwarven Road"],
+      "lore": "Hunger's fingers. Can be bribed, threatened, or tricked.",
+      "connections": ["The Hunger Beneath"]
+    }
+  },
+  {
+    "Tunnel-Goblin": {
+      "page": "Tunnel-Goblin",
+      "summary": "Pale, blind, and skittering goblins adapted to the darkness of the deep ways.",
+      "locations": ["Aeler Underways"],
+      "lore": "Navigate by echolocation. Weak to bright light.",
+      "connections": ["The Hunger Beneath"]
+    }
+  },
+  {
+    "Ember-Goblin": {
+      "page": "Ember-Goblin",
+      "summary": "Goblins touched by the fires of Zahk'Kozahn, carrying the heat of Malachai's forge.",
+      "locations": ["Zahk'Kozahn Fringes"],
+      "lore": "Explode in a burst of ash and heat when killed. Weak to water.",
+      "connections": ["The Hunger Beneath", "Malachai"]
+    }
+  },
+  {
+    "Sea-Goblin": {
+      "page": "Sea-Goblin",
+      "summary": "Webbed-fingered goblins that patrol the tide-lines, scavenging what the sea brings.",
+      "locations": ["Linn Coast"],
+      "lore": "Amphibious and opportunistic.",
+      "connections": ["The Hunger Beneath"]
+    }
+  },
+  {
+    "Star-Goblin": {
+      "page": "Star-Goblin",
+      "summary": "Dust-gray goblins living in the high passes, their eyes reflecting constellations.",
+      "locations": ["High Passes"],
+      "lore": "Star-touched, leaving behind a glowing crystal shard when killed.",
+      "connections": ["The Hunger Beneath"]
+    }
+  },
+  {
+    "Hobgoblin": {
+      "page": "Hobgoblin",
+      "summary": "Taller, disciplined goblinoids acting as the Hunger's enforcers.",
+      "locations": ["Broken Marches", "Where order has broken down"],
+      "lore": "Hunger's fist. Respect strength and order. Can be reasoned with from a position of strength.",
+      "connections": ["The Hunger Beneath"]
+    }
+  },
+  {
+    "Bugbear": {
+      "page": "Bugbear",
+      "summary": "Large, silent hunters of the goblinoid kind, patient and relentless.",
+      "locations": ["Wilderness", "Where something has been lost"],
+      "lore": "Hunger's stalker. Cannot be bargained with; can only be distracted or out-hunted.",
+      "connections": ["The Hunger Beneath"]
+    }
+  },
+  {
+    "Warg": {
+      "page": "Warg",
+      "summary": "Lean, wolf-like predators that patrol boundary edges, drawn to frayed balance.",
+      "locations": ["Boundary edges", "Where balance has frayed"],
+      "lore": "Hunger's reminder. Respond to imbalance, not aggression.",
+      "connections": ["The Hunger Beneath"]
+    }
+  },
+  {
+    "Earth-Shark": {
+      "page": "Earth-Shark",
+      "summary": "A burrowing predator with a dorsal ridge like a plowshare.",
+      "locations": ["Steppe", "Tundra"],
+      "lore": "Something older that learned hunger from the sea and brought it to land.",
+      "connections": ["The Wilds"]
+    }
+  },
+  {
+    "Dust Hulk": {
+      "page": "Dust_Hulk",
+      "summary": "A wind-packed silhouette that rises from dunes, a memory given weight by thirst.",
+      "locations": ["Deserts", "Dunes"],
+      "lore": "Cannot cross running water. Spill water on its shadow to dissolve it.",
+      "connections": ["The Wilds"]
+    }
+  },
+  {
+    "Bone Kite": {
+      "page": "Bone_Kite",
+      "summary": "A carrion bird with rune-etched pinions, feeding on the dying.",
+      "locations": ["Steppe", "Battlefields"],
+      "lore": "Can see the weight of unfulfilled promises. Accepts name-stakes as barter.",
+      "connections": ["The Wilds"]
+    }
+  },
+  {
+    "Salt Screamer": {
+      "page": "Salt_Screamer",
+      "summary": "A pale eel in dry salt pans with a voice like a flute. Its scream is a question.",
+      "locations": ["Dry salt pans"],
+      "lore": "Asks 'What is your name?' Answering truthfully grants a boon; lying advances its patience.",
+      "connections": ["The Wilds"]
+    }
+  },
+  {
+    "Phase Panther": {
+      "page": "Phase_Panther",
+      "summary": "A shadow-striped cat that steps between gusts of wind.",
+      "locations": ["Forests", "Jungles"],
+      "lore": "Cannot phase through mirrored water. A silver mirror fascinates it.",
+      "connections": ["The Wilds"]
+    }
+  },
+  {
+    "Lichen-Bear": {
+      "page": "Lichen-Bear",
+      "summary": "A moss-matted ursine with rock-teeth, carrying the memory of a lost forest.",
+      "locations": ["Ancient forests"],
+      "lore": "Smoke of juniper calms it; salt enrages it. Burn the moss to kill it.",
+      "connections": ["The Wilds"]
+    }
+  },
+  {
+    "Bramble Knight": {
+      "page": "Bramble_Knight",
+      "summary": "An empty helm grown through with thorn, a hedge that learned to walk.",
+      "locations": ["Forests", "Hedges"],
+      "lore": "Cannot cross a line of salt. Accepts a hedge-blessing as safe passage.",
+      "connections": ["The Wilds"]
+    }
+  },
+  {
+    "Reef Serpent": {
+      "page": "Reef_Serpent",
+      "summary": "A kelp-maned constrictor nesting in pilings, a rope that forgot it was tied.",
+      "locations": ["Coasts", "Pilings"],
+      "lore": "Beat a drum in a rhythm it doesn't recognize to confuse it.",
+      "connections": ["The Wilds"]
+    }
+  },
+  {
+    "Grave-Eel": {
+      "page": "Grave-Eel",
+      "summary": "An eel that burrows through barrow loam and tastes names.",
+      "locations": ["Graves", "Barrows"],
+      "lore": "A question that learned to wiggle. Feed it a false name to confuse it.",
+      "connections": ["The Wilds"]
+    }
+  },
+  {
+    "Vein-Serpent": {
+      "page": "Vein-Serpent",
+      "summary": "A serpent of polished copper and malachite, swimming through stone.",
+      "locations": ["Aeler Underways"],
+      "lore": "The mountain's blood given form. Can be negotiated with to maintain the stone.",
+      "connections": ["The Wilds", "The Aeler"]
+    }
+  },
+  {
+    "Wind Drake": {
+      "page": "Wind_Drake",
+      "summary": "A rib-thin sky serpent that rides storm fronts.",
+      "locations": ["Mountains", "Skies"],
+      "lore": "Whistle back the storm to calm it. Ground it with a copper-weighted net.",
+      "connections": ["The Wilds"]
+    }
+  },
+  {
+    "Rust Moth": {
+      "page": "Rust_Moth",
+      "summary": "A swarm of iron-scaled moths that taste memory and rust metal.",
+      "locations": ["Dungeons", "Ruins"],
+      "lore": "Attracted to old keys. Repelled by a copper bell.",
+      "connections": ["Dungeon Living Infrastructure"]
+    }
+  },
+  {
+    "Lantern-Eye": {
+      "page": "Lantern-Eye",
+      "summary": "A floating orb of watchlight, jealous of secrets.",
+      "locations": ["Dungeons", "Ruins"],
+      "lore": "The dungeon's attention made visible. Offer a whispered truth to pacify it.",
+      "connections": ["Dungeon Living Infrastructure"]
+    }
+  },
+  {
+    "Skeleton Knight": {
+      "page": "Skeleton_Knight",
+      "summary": "Ancient guardians of forgotten tombs, often found in barrows.",
+      "locations": ["Barrows", "Forgotten tombs"],
+      "lore": "Believed to be the remains of a fallen order of paladins.",
+      "connections": ["The Unquiet Dead"]
+    }
+  },
+  {
+    "Thorn Dryad": {
+      "page": "Thorn_Dryad",
+      "summary": "Fey guardians that are fiercely protective of old forests.",
+      "locations": ["Old forests", "The Valewood"],
+      "lore": "Connected to the Green Court and the Queen of Thorns.",
+      "connections": ["The Green Court", "The Queen of Thorns"]
+    }
+  },
+  {
+    "Slavering Hound": {
+      "page": "Slavering_Hound",
+      "summary": "Used by the Salt Prince's huntsmen to track fugitives.",
+      "locations": ["Zakov", "The Salt Prince's domain"],
+      "lore": "Relentless trackers.",
+      "connections": ["The Salt Prince"]
+    }
+  },
+  {
+    "Cultist Fanatic": {
+      "page": "Cultist_Fanatic",
+      "summary": "Devotees of the Drowned God, eager to die for their faith.",
+      "locations": ["Coastal temples", "Zakov"],
+      "lore": "Eager to die for their faith.",
+      "connections": ["The Drowned God"]
+    }
+  },
+  {
+    "Shadow Wraith": {
+      "page": "Shadow_Wraith",
+      "summary": "Souls twisted by despair, lingering in the place of their death.",
+      "locations": ["Shadow-haunted ruins", "Places of despair"],
+      "lore": "Souls twisted by despair.",
+      "connections": ["The Unquiet Dead"]
+    }
+  }
+]

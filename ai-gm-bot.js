@@ -6,8 +6,9 @@ const path = require('path');
 const { spawnSync } = require('child_process');
 const WebSocket = require('ws');
 const characters = require('./modules/characters');
-
 const commandHandler = require('./modules/commands');
+const adventureDirector = require('./modules/adventure-director');
+const adventureContext = require('./modules/adventure-context');
 const { generateStartupMessage, generateEtiquetteReminder } = commandHandler;
 
 // -------------------------------------------------------------------
@@ -128,6 +129,13 @@ const MAX_HISTORY = parseInt(process.env.MAX_HISTORY || '20', 10);
 const SUMMARISE_EVERY = parseInt(process.env.SUMMARISE_EVERY || '10', 10);
 const API_KEY = process.env.API_KEY || '';
 
+// ---- GM takeover delay (milliseconds) ----
+const GM_TAKEOVER_DELAY = parseInt(process.env.GM_TAKEOVER_DELAY) || 10000;
+// ---- max clients to remember for whisper dedupe ----
+const MAX_WHISPERED_CLIENTS = 10;
+// ---- aggressive sync interval ----
+const SYNC_INTERVAL_MS = parseInt(process.env.SYNC_INTERVAL_MS) || 30000;
+
 const API_BASE = getApiBaseUrl(WS_URL);
 console.log(`🌐 API base: ${API_BASE}`);
 
@@ -147,7 +155,12 @@ const BASE_SYSTEM_PROMPT = (process.env.SYSTEM_PROMPT ||
   '[NPC CAST "Spell Name" TargetName]\n' +
   'The bot will deduct Story Beats (SB) from the GM\'s pool and resolve the effect.\n' +
   'Spell names must match entries in the spellbook (e.g., "Ember Dart", "Hush").\n' +
-  'Target can be a player character name or a generic target like "the guard".\n\n';
+  'Target can be a player character name or a generic target like "the guard".\n' +
+  'When you need the party to roll, use the [ROLL "CharacterName" Attribute+Skill DV Position] tag.\n' +
+  'On a Partial or Miss, the scene timer will auto-tick. You can also manually tick timers with [TICK TIMER "name" N].\n' +
+  'When an encounter is complete, resolve it with [ENCOUNTER RESOLVE outcome "notes"] where outcome is clean, partial, or miss.\n' +
+  'Use timers to build pressure; when a timer fills, advance the scene or introduce a complication.\n' +
+  'If the party succeeds in an encounter, decide the outcome and narrate the result.\n\n';
 
 // -------------------------------------------------------------------
 // 5. WebSocket and connection
@@ -164,6 +177,153 @@ let playerCount = 0;
 let charactersExist = false;
 let campaignSeeded = false;
 let seedRequested = false;
+
+// ---- GM auto‑claim state ----
+let currentGMId = null;
+let gmTakeoverTimer = null;
+let gmTakeoverWarningSent = false;
+
+// ---- whisper dedupe list ----
+let lastWhisperedClients = [];
+
+// ---- aggressive sync ----
+let syncInterval = null;
+let initialSyncDone = false;
+
+// -------------------------------------------------------------------
+// Helpers
+// -------------------------------------------------------------------
+function getSocketId() {
+    return ws ? ws._socketId || null : null;
+}
+let mySocketId = null;
+
+function shouldWhisper(clientId) {
+    return clientId && clientId !== mySocketId && !lastWhisperedClients.includes(clientId);
+}
+
+function sendWhisper(targetClientId, text) {
+    const message = {
+        text: String(text),
+        sender: 'GM',
+        recipient: targetClientId,
+        whisper: true,
+        time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+        timestamp: Date.now(),
+        id: `msg_${Date.now()}_${Math.random().toString(36).substr(2, 6)}`,
+        local: false,
+        sent: false
+    };
+    console.log(`📤 Sending whisper to ${targetClientId}:`, text.slice(0, 60) + '…');
+    sendWS('chat-message', { message });
+}
+
+function buildGreetingMessage(clientName) {
+    let msg = `👋 Welcome, ${clientName}! I am ${BOT_NAME}, your AI Game Master.\n\n`;
+    if (orchestrator) {
+        const state = orchestrator.campaign.state;
+        if (state && state.scene) {
+            const scene = state.scene;
+            const region = scene.region || 'unknown';
+            const location = scene.location || 'unknown';
+            const position = scene.position || 'Controlled';
+            const sb = state.sb || 0;
+            msg += `📍 **Current Scene:** ${location} (${region})\n`;
+            msg += `⚔️ **Position:** ${position}\n`;
+            msg += `🎲 **Story Beats:** ${sb}\n`;
+            if (state.adventure && state.adventure.module) {
+                msg += `📖 **Adventure:** ${state.adventure.module.title}\n`;
+                const act = state.adventure.currentAct;
+                const sceneIdx = state.adventure.currentScene;
+                if (act !== undefined && sceneIdx !== undefined) {
+                    const actObj = state.adventure.module.acts[act];
+                    if (actObj) {
+                        msg += `📌 **Act:** ${actObj.title}\n`;
+                        const sceneObj = actObj.scenes[sceneIdx];
+                        if (sceneObj) msg += `🎭 **Scene:** ${sceneObj.title}\n`;
+                    }
+                }
+            }
+        }
+        msg += `\nUse \`!gm help\` to see available commands. Let's begin!`;
+    } else {
+        msg += `📡 I'm still syncing with the campaign data. Stand by…`;
+    }
+    return msg;
+}
+
+// GM takeover timer
+function startGmTakeoverTimer() {
+    if (gmTakeoverTimer) return;
+    if (myRole === 'gm') return;
+    if (!gmTakeoverWarningSent) {
+        sendChat(`⚠️ The Game Master has disconnected. I will assume the role in ${GM_TAKEOVER_DELAY/1000} seconds unless another player takes over.`);
+        gmTakeoverWarningSent = true;
+    }
+    gmTakeoverTimer = setTimeout(() => {
+        gmTakeoverTimer = null;
+        gmTakeoverWarningSent = false;
+        if (myRole !== 'gm' && !currentGMId) {
+            console.log('👑 No GM present – requesting GM role.');
+            sendWS('request_gm');
+        } else {
+            console.log('ℹ️ GM takeover cancelled – GM already exists or I am GM.');
+        }
+    }, GM_TAKEOVER_DELAY);
+}
+
+function cancelGmTakeoverTimer() {
+    if (gmTakeoverTimer) {
+        clearTimeout(gmTakeoverTimer);
+        gmTakeoverTimer = null;
+        gmTakeoverWarningSent = false;
+    }
+}
+
+// ---- Aggressive sync functions ----
+async function performAggressiveSync() {
+    if (!orchestrator || myRole !== 'gm') {
+        return;
+    }
+    try {
+        const charData = await apiRequest('GET', ['characters']);
+        if (charData && charData.characters) {
+            const charObj = {};
+            for (const c of charData.characters) {
+                if (c.name) {
+                    charObj[c.name.toLowerCase()] = { ...c };
+                }
+            }
+            const { loadCharacters } = require('./modules/characters');
+            loadCharacters(charObj);
+            console.log('🔄 Aggressive sync: loaded characters from server.');
+        }
+        await adventureContext.invalidate();
+        initialSyncDone = true;
+    } catch (e) {
+        console.warn('⚠️ Aggressive sync failed:', e.message);
+    }
+}
+
+function startAggressiveSync() {
+    if (syncInterval) {
+        clearInterval(syncInterval);
+        syncInterval = null;
+    }
+    if (myRole === 'gm') {
+        performAggressiveSync().catch(() => {});
+        syncInterval = setInterval(performAggressiveSync, SYNC_INTERVAL_MS);
+        console.log(`🔄 Aggressive sync started (every ${SYNC_INTERVAL_MS/1000}s)`);
+    }
+}
+
+function stopAggressiveSync() {
+    if (syncInterval) {
+        clearInterval(syncInterval);
+        syncInterval = null;
+        console.log('🔄 Aggressive sync stopped');
+    }
+}
 
 function connect() {
   if (reconnectTimer) { clearTimeout(reconnectTimer); reconnectTimer = null; }
@@ -194,6 +354,7 @@ function connect() {
   ws.on('close', (code, reason) => {
     connected = false;
     console.log(`🔌 Disconnected (code ${code})${reason ? `: ${reason}` : ''}`);
+    stopAggressiveSync();
     scheduleReconnect();
   });
   ws.on('error', (err) => console.error('🔴 WebSocket error:', err.message));
@@ -435,45 +596,91 @@ function generateCrownSpreadInterpretation(positions, regionData, regionName, wo
 }
 
 // -------------------------------------------------------------------
-// 9. Message handler
+// 9. Message handler – UPDATED with whisper, GM takeover, and aggressive sync
 // -------------------------------------------------------------------
 async function handleMessage(msg) {
-if (msg.type === 'state-updated') {
-  // Extract characters from either msg.characters or msg.state.characters
-  let charList = null;
-  if (msg.characters && Array.isArray(msg.characters)) {
-    charList = msg.characters;
-  } else if (msg.state && msg.state.characters && Array.isArray(msg.state.characters)) {
-    charList = msg.state.characters;
-  }
-
-  if (charList && charList.length > 0) {
-    // Convert array → object keyed by lowercase name
-    const charObj = {};
-    for (const c of charList) {
-      if (c.name) {
-        charObj[c.name.toLowerCase()] = { ...c };
-      }
+  // ─── STATE UPDATED – auto‑sync characters ──────────────────────────
+  if (msg.type === 'state-updated') {
+    let charList = null;
+    if (msg.characters && Array.isArray(msg.characters)) {
+      charList = msg.characters;
+    } else if (msg.state && msg.state.characters && Array.isArray(msg.state.characters)) {
+      charList = msg.state.characters;
     }
-    // Import into the bot's local cache
-    const { loadCharacters } = require('./modules/characters');
-    loadCharacters(charObj);
-    console.log(`📥 Auto‑synced ${charList.length} characters from state-updated.`);
-  } else {
-    console.log('ℹ️  state-updated received with no character data.');
+    if (charList && charList.length > 0) {
+      const charObj = {};
+      for (const c of charList) {
+        if (c.name) {
+          charObj[c.name.toLowerCase()] = { ...c };
+        }
+      }
+      const { loadCharacters } = require('./modules/characters');
+      loadCharacters(charObj);
+      console.log(`📥 Auto‑synced ${charList.length} characters from state-updated.`);
+    } else {
+      console.log('ℹ️  state-updated received with no character data.');
+    }
+    return;
   }
 
-  // Do NOT process this as a chat message
-  return;
-}
+  // ─── CROWN SPREAD ──────────────────────────────────────────────────
   if (msg.type === 'crown-spread') {
     processCrownSpread(msg);
     return;
   }
 
+  // ─── PRESENCE – track GM and player count ────────────────────────
   if (msg.type === 'presence') {
     const clients = msg.clients || [];
     playerCount = clients.length;
+    const gmClient = clients.find(c => c.role === 'gm');
+    const previousGMId = currentGMId;
+    currentGMId = gmClient ? gmClient.id : null;
+
+    if (!currentGMId && myRole !== 'gm') {
+      startGmTakeoverTimer();
+    } else if (currentGMId) {
+      cancelGmTakeoverTimer();
+    }
+
+    const myClient = clients.find(c => c.id === mySocketId);
+    if (myClient && myClient.role !== myRole) {
+      myRole = myClient.role;
+      console.log(`🔁 Role updated from presence: ${myRole}`);
+      if (myRole === 'gm') {
+        startAggressiveSync();
+      } else {
+        stopAggressiveSync();
+      }
+    }
+
+    // ─── ROLL RESULT ────────────────────────────────────────────────
+    if (msg.type === 'roll-result' || msg.type === 'roll-dice') {
+        const outcome = msg.outcome || '';
+        const storyBeats = msg.storyBeats || 0;
+        
+        // Auto-tick scene timer on Partial or Miss
+        if (outcome === 'Partial' || outcome === 'Miss') {
+            try {
+                await apiRequest('POST', ['adventure', 'timer'], { 
+                    ref: 'Scene Progress', 
+                    amount: 1, 
+                    scope: 'scene' 
+                });
+                console.log('⏱️ Auto-ticked Scene Progress timer due to Partial/Miss.');
+            } catch (e) {
+                console.warn('Failed to auto-tick timer:', e.message);
+            }
+        }
+        
+        // Add story beats
+        if (storyBeats > 0 && orchestrator) {
+            orchestrator.addStoryBeats(storyBeats);
+            await orchestrator.campaign.save();
+            console.log(`🎲 Added ${storyBeats} Story Beats from roll.`);
+        }
+        return;
+    }
     console.debug(`👥 ${playerCount} clients in room`);
     if (!startupMessageSent && connected && myRole === 'gm' && orchestrator) {
       scheduleStartupMessage();
@@ -481,9 +688,26 @@ if (msg.type === 'state-updated') {
     return;
   }
 
+  // ─── PLAYER‑JOINED – whisper greeting ────────────────────────────
+  if (msg.type === 'player-joined') {
+    const clientId = msg.clientId;
+    const clientName = msg.clientName || 'Player';
+    if (shouldWhisper(clientId)) {
+      const greeting = buildGreetingMessage(clientName);
+      sendWhisper(clientId, greeting);
+      lastWhisperedClients.push(clientId);
+      if (lastWhisperedClients.length > MAX_WHISPERED_CLIENTS) {
+        lastWhisperedClients.shift();
+      }
+    }
+    return;
+  }
+
+  // ─── HANDSHAKE ACK ────────────────────────────────────────────────
   if (msg.type === 'handshake_ack') {
     myRole = msg.clientRole || msg.role || 'player';
-    console.log(`🤝 Handshake OK. Role: ${myRole}`);
+    mySocketId = msg.clientId || null;
+    console.log(`🤝 Handshake OK. Role: ${myRole}, ClientID: ${mySocketId}`);
     if (myRole !== 'gm') {
       console.log('📢 I am not the GM – will request GM role.');
       sendWS('request_gm');
@@ -498,26 +722,59 @@ if (msg.type === 'state-updated') {
           seedCampaign();
         }
       }, 5000);
+
+      setTimeout(() => {
+        adventureDirector.maybePromptOnStartup({
+          orchestrator,
+          apiRequest,
+          globalApiRequest: commandHandler.globalApiRequest,
+          driver,
+          sendChat,
+          playerCount,
+        }).catch(err => console.warn('[AdventureDirector] startup prompt failed:', err.message));
+      }, 5500);
+
+      startAggressiveSync();
+    }
+    cancelGmTakeoverTimer();
+    return;
+  }
+
+  // ─── GM VOTE REQUEST ──────────────────────────────────────────────
+  if (msg.type === 'gm_vote_request') {
+    if (myRole === 'gm') {
+      console.log(`🗳️  Auto‑approving GM request from ${msg.requesterName}`);
+      sendWS('approve_gm', { targetId: msg.requesterId });
     }
     return;
   }
 
-  if (msg.type === 'gm_vote_request') {
-    if (myRole === 'gm') { console.log(`🗳️  Approving GM request from ${msg.requesterName}`); sendWS('approve_gm', { targetId: msg.requesterId }); }
-    return;
-  }
-
+  // ─── GM ROLE UPDATE (for this bot) ───────────────────────────────
   if (msg.type === 'gm_role_update') {
-    myRole = msg.role; console.log(`🔁 Role changed: ${myRole}`); if (myRole === 'gm') sendChat('*I am now the Game Master.*');
+    const newRole = msg.role;
+    if (newRole === 'gm' && myRole !== 'gm') {
+      cancelGmTakeoverTimer();
+      sendChat(`👑 I have assumed the role of Game Master.`);
+      startAggressiveSync();
+    } else if (newRole !== 'gm' && myRole === 'gm') {
+      stopAggressiveSync();
+    }
+    myRole = newRole;
+    console.log(`🔁 Role changed to: ${myRole}`);
     return;
   }
 
-  if (msg.type === 'player-joined') {
-    const newPlayerName = msg.clientName || 'Player';
-    sendChat(`*Welcome, ${newPlayerName}! I am the Game Master. Type !gm help to see commands, or !gm etiquette for game etiquette. Let's begin.*`);
+  // ─── SERVER ANNOUNCEMENT ──────────────────────────────────────────
+  if (msg.type === 'server_announcement') {
+    const text = msg.message || '';
+    if (text.includes('Game Master has disconnected') && myRole !== 'gm') {
+      startGmTakeoverTimer();
+    }
+    sendChat(`*${text}*`);
     return;
   }
 
+  // ─── CHAT MESSAGES ────────────────────────────────────────────────
   let text = '', sender = 'Unknown';
   if (msg.type === 'chat-message' && msg.message) {
     text = msg.message.text || '';
@@ -535,6 +792,7 @@ if (msg.type === 'state-updated') {
 
   if (sender === BOT_NAME || sender === 'GM') return;
 
+  // ─── !GM COMMAND ──────────────────────────────────────────────────
   if (text.startsWith('!gm')) {
     try {
       const response = await commandHandler.handleBotCommand(sender, text, {
@@ -544,7 +802,10 @@ if (msg.type === 'state-updated') {
           ws,
           apiRequest,
           myRole,
-          seedCampaign: () => seedCampaign()
+          seedCampaign: () => seedCampaign(),
+          driver,
+          playerCount,
+          globalApiRequest: commandHandler.globalApiRequest,
       });
       if (response && typeof response === 'string') {
         sendChat(response);
@@ -557,6 +818,7 @@ if (msg.type === 'state-updated') {
     return;
   }
 
+  // ─── AI RESPONSE (only if GM) ────────────────────────────────────
   if (myRole !== 'gm') return;
 
   if (!orchestrator) {
@@ -589,7 +851,15 @@ if (msg.type === 'state-updated') {
   const factsText = orchestrator.campaign.state.facts ? Object.entries(orchestrator.campaign.state.facts).map(([k,v]) => `- ${k}: ${v}`).join('\n') : '';
   if (factsText) fullSystemPrompt += '\n\nCurrent World Facts:\n' + factsText;
 
-  // ADD: Character sheets
+  // Live adventure scene context
+  try {
+      const sceneContext = await adventureContext.getSceneContextForPrompt({ apiRequest });
+      if (sceneContext) fullSystemPrompt += sceneContext;
+  } catch (e) {
+      console.warn('[AdventureContext] Failed to build scene context for prompt:', e.message);
+  }
+
+  // Character sheets
   const allChars = characters.getAll();
   const charNames = Object.keys(allChars);
   if (charNames.length > 0) {
@@ -633,15 +903,14 @@ if (msg.type === 'state-updated') {
     });
 
     let clean = reply.trim();
-
-    clean = commandHandler.processSpecialTags(clean, {
-        orchestrator,
-        charactersModule: characters,
-        sendChat,
-        ws,
-        apiRequest,
-        myRole
-    });
+    clean = await commandHandler.processSpecialTags(clean, {
+      orchestrator,
+      charactersModule: characters,
+      sendChat,
+      ws,
+      apiRequest,
+      myRole
+    });;
 
     if (clean) {
       sendChat(clean);
@@ -657,7 +926,7 @@ if (msg.type === 'state-updated') {
 }
 
 // -------------------------------------------------------------------
-// 10. Summarisation
+// 10. Summarisation (unchanged)
 // -------------------------------------------------------------------
 async function summariseStory() {
   if (!driver || !orchestrator) return;
@@ -679,7 +948,7 @@ async function summariseStory() {
 }
 
 // -------------------------------------------------------------------
-// 11. Startup Message Scheduler
+// 11. Startup Message Scheduler (unchanged)
 // -------------------------------------------------------------------
 function scheduleStartupMessage() {
   if (startupMessageSent) return;
@@ -721,6 +990,7 @@ async function main() {
 
 process.on('SIGINT', async () => {
   console.log('\n🛑 Shutting down…');
+  stopAggressiveSync();
   if (orchestrator) {
     await orchestrator.campaign.save();
   }

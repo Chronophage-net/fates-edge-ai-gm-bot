@@ -1,0 +1,207 @@
+{
+  "id": "grumbling-vault",
+  "title": "The Grumbling Vault",
+  "description": "Deep beneath the Aelerian foothills, a sealed chamber holds the Keystone of Unmaking – a fist-sized chunk of obsidian that can destabilize any ward within a mile. The Aeler locked it away centuries ago, but the wards have grown senile. They tick and pulse like a failing heart. Your goal: retrieve the keystone for a bitter old drunk who claims it's owed to him. By his beard, you'll earn every coin.",
+  "tier": "II",
+  "author": "Nicholas A. Gasper",
+  "sessions": "1",
+  "themes": ["Dungeon Delve", "Traps", "Magic vs. Muscle", "Grumpy Old Men"],
+  "bestiary": [
+    {
+      "id": "iron-wraith",
+      "name": "Iron Wraith",
+      "tl": 3,
+      "class": "III",
+      "category": "construct",
+      "description": "A towering suit of Aelerian armor, animated by ancient grudges. It moves with a grinding, clockwork precision, and its joints weep rust. It's resistant to magic – spells slide off its plates like water off a duck's back. Best to hit it with something heavy.",
+      "stats": { "Body": 3, "Spirit": 2, "Presence": 1, "armor": 2, "hp": 25 },
+      "sb_spends": [
+        { "cost": 1, "name": "Sundering Bash", "effect": "The Wraith shatters a piece of cover or equipment; a PC loses one Minor Asset until repaired." },
+        { "cost": 2, "name": "Rust Cloud", "effect": "The Wraith shakes itself, releasing a cloud of rust; all in Near range must test Body+Endurance or gain 1 Fatigue." }
+      ],
+      "lore": "The Aeler didn't just build guards – they built accountants of violence. Each Wraith was once a Spirit Shield warrior, bound to the armor after death to continue their duty. They don't remember their names, but they remember their oaths."
+    },
+    {
+      "id": "rune-wisp",
+      "name": "Rune Wisp",
+      "tl": 1,
+      "class": "I",
+      "category": "elemental",
+      "description": "A flickering, cackling ball of magical energy that escaped a broken ward. It's not intelligent – just hungry for attention. And light. And your eyebrows.",
+      "stats": { "Spirit": 2, "Arcana": 2, "hp": 8 },
+      "sb_spends": [
+        { "cost": 1, "name": "Flash of Light", "effect": "A PC is Blinded for one exchange (all actions at Desperate)." }
+      ]
+    },
+    {
+      "id": "ward-primus",
+      "name": "Ward-Primus",
+      "tl": 5,
+      "class": "V",
+      "category": "construct",
+      "description": "The vault's ultimate guardian – a crackling humanoid shape of living runes and stored arcane energy. It is immune to magic; spells simply feed it. Only cold steel, a well-aimed hammer, or a clever word can stop it.",
+      "stats": { "Body": 5, "Spirit": 5, "Presence": 3, "armor": 3, "hp": 45 },
+      "sb_spends": [
+        { "cost": 2, "name": "Absorb Magic", "effect": "The Primus negates the next spell cast and heals 2 Harm." },
+        { "cost": 3, "name": "Force Burst", "effect": "All in Near range take Harm 2; Body+Endurance DV 4 halves." },
+        { "cost": 2, "name": "Rune Lock", "effect": "The Primus seals a door or passage, trapping a PC away from the group." }
+      ],
+      "lore": "The Primus was not built to fight – it was built to enforce the vault's internal laws. It doesn't hate you; it simply cannot allow you to leave with what is not yours. It can be reasoned with, if you offer it something it values more than the keystone – like a fresh memory of a sunrise, or a promise to destroy a rival's ward elsewhere."
+    }
+  ],
+  "acts": [
+    {
+      "id": "act-1-the-grumbling-vault",
+      "title": "The Grumbling Vault",
+      "description": "Three chambers. One grumpy dwarf. A timer that ticks with every spell. Let's do this.",
+      "scenes": [
+        {
+          "id": "scene-1-1-the-sealed-door",
+          "title": "Chamber 1: The Sealed Door",
+          "description": "A massive bronze door, etched with Aeler runes that pulse faintly. No handle. No keyhole. Durin belches. The door hums with ancient power – and it's hungry for a reaction.",
+          "timers": [
+            { "name": "Ward Resonance", "segments": 8, "current": 0, "description": "Every spell or rite ticks this up. When full, the Ward-Primus awakens." },
+            { "name": "Durin's Debt", "segments": 4, "current": 0, "description": "Each time you use Durin's advice, tick this. When full, he demands his 'trinket'." }
+          ],
+          "encounters": [
+            {
+              "name": "The Door",
+              "dv": 4,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "You open the door without using magic. Ward Resonance does not advance.",
+                "partial": "You open it, but a Rune Wisp escapes. Tick Ward Resonance +1.",
+                "miss": "The door resists. Tick Ward Resonance +2 and trigger the alarm."
+              }
+            },
+            {
+              "name": "Ask Durin",
+              "dv": 3,
+              "position": "Dominant",
+              "outcomes": {
+                "clean": "Durin grumbles about a pressure plate under the third stone. You find a crawl space. No magic needed.",
+                "partial": "He gives you a vague hint – but you waste time. Tick Durin's Debt +1.",
+                "miss": "He falls asleep. You're on your own."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-1-2-hall-of-sundered-oaths",
+          "title": "Chamber 2: The Hall of Sundered Oaths",
+          "description": "A long hall lined with suits of animated Aeler armor – three Iron Wraiths. They do not move until a spell is cast or a loud noise is made. They are resistant to magic, but vulnerable to being sundered.",
+          "timers": [
+            { "name": "Ward Resonance", "segments": 8, "current": 0 }
+          ],
+          "encounters": [
+            {
+              "creatureId": "iron-wraith",
+              "quantity": 3,
+              "position": "Controlled",
+              "dv": 4,
+              "outcomes": {
+                "clean": "You destroy the Wraiths without triggering the timer. Tick Ward Resonance -1 for each successful sunder.",
+                "partial": "You destroy them, but one explodes in a rust cloud – all in Near take 1 Fatigue.",
+                "miss": "The Wraiths counterattack. Tick Ward Resonance +2 and take Harm 1."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-1-3-heart-of-silence",
+          "title": "Chamber 3: The Heart of Silence",
+          "description": "A domed chamber. The Keystone of Unmaking floats above a black altar. Four pillars pulse with light. The Ward Resonance Timer is visible as a glowing ring around the keystone. If the timer fills, the Ward-Primus rises.",
+          "timers": [
+            { "name": "Ward Resonance", "segments": 8, "current": 0 }
+          ],
+          "encounters": [
+            {
+              "name": "Stealth Retrieval",
+              "dv": 5,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "You snatch the keystone without awakening the Primus. Success.",
+                "partial": "You grab it, but you trigger a minor ward. Tick Ward Resonance +1.",
+                "miss": "The Primus awakens. Combat begins."
+              }
+            },
+            {
+              "creatureId": "ward-primus",
+              "quantity": 1,
+              "position": "Desperate",
+              "dv": 5,
+              "outcomes": {
+                "clean": "You defeat the Primus. The keystone is yours.",
+                "partial": "You defeat it, but it explodes – all in Near take Harm 2.",
+                "miss": "The Primus overwhelms you. You must flee."
+              }
+            }
+          ],
+          "completed": false
+        }
+      ]
+    }
+  ],
+  "npcs": [
+    {
+      "id": "npc-durin-stoneshield",
+      "name": "Durin Stoneshield",
+      "role": "Iron Avenger (Retired, Drunk)",
+      "motivation": "Get the keystone to settle an old debt – or just to have something to complain about.",
+      "stats": "Body 2, Spirit 1, Presence 1",
+      "secret": "He was never an Iron Avenger. He was a cook. But he tells a good story, and that's what matters."
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc-vault-entrance",
+      "name": "The Sealed Door",
+      "description": "A massive bronze door, etched with Aeler runes that pulse faintly. No handle. No keyhole. The runes seem to watch you.",
+      "tags": ["door", "ward", "trap"]
+    },
+    {
+      "id": "loc-hall-of-oaths",
+      "name": "The Hall of Sundered Oaths",
+      "description": "A long hall lined with suits of animated Aeler armor. The air is thick with the memory of broken promises.",
+      "tags": ["hall", "guardians", "combat"]
+    },
+    {
+      "id": "loc-heart-of-silence",
+      "name": "The Heart of Silence",
+      "description": "A domed chamber where the Keystone of Unmaking floats above a black altar. The walls pulse with stored energy.",
+      "tags": ["altar", "keystone", "boss"]
+    }
+  ],
+  "factions": [
+    {
+      "id": "faction-aeler-vault",
+      "name": "The Aeler Vault Guardians",
+      "goals": "Protect the keystone at all costs, even if their wards are senile.",
+      "relationship": "The guardians are remnants of a long-dead order. They don't negotiate – they just enforce."
+    }
+  ],
+  "campaignTimers": [
+    {
+      "name": "Ward Resonance",
+      "segments": 8,
+      "current": 0,
+      "description": "Each spell, rite, or magical action ticks this up. When full, the Ward-Primus awakens."
+    },
+    {
+      "name": "Durin's Debt",
+      "segments": 4,
+      "current": 0,
+      "description": "Each time you rely on Durin's advice, tick this. When full, he demands his 'trinket' – a rusty belt buckle."
+    }
+  ],
+  "notes": "This is a classic dungeon crawl with a twist: magic is actively punished. The Ward Resonance Timer forces players to think about whether to use spells or rely on muscle and wits. Durin is a comic relief NPC whose advice is half-true – players who fact-check him gain an edge. The final boss (Ward-Primus) is immune to magic, so melee characters get a chance to shine. Designed for a single session of 3–4 hours.",
+  "currentAct": 0,
+  "currentScene": 0,
+  "startedAt": null,
+  "completedAt": null,
+  "status": "planned",
+  "createdAt": "2026-07-28T00:00:00.000Z",
+  "updatedAt": "2026-07-28T00:00:00.000Z"
+}

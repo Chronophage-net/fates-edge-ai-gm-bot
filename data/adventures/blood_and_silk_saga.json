@@ -1,0 +1,829 @@
+{
+  "id": "blood-and-silk-saga",
+  "title": "Blood and Silk: The Complete Saga",
+  "description": "The full Blood and Silk campaign arc - from exile in Silkstrand to the Bronze Gate. Follow a group of exiles as they carve a place for themselves in the broken world of Fate's Edge. This saga includes The Velvet War of Silkstrand (prequel), Blood and Silk (Millhaven), Beyond Millhaven (the Valvano Ford), and The Brass Gate (Castra Ferrum).",
+  "tier": "I",
+  "author": "Nicholas A. Gasper",
+  "saga": true,
+  "sagaParts": [
+    "the-velvet-war-of-silkstrand",
+    "blood-and-silk",
+    "beyond-millhaven",
+    "the-brass-gate"
+  ],
+  "bestiary": [
+    {
+      "id": "garrick-ursillo",
+      "name": "Garrick Ursillo",
+      "tl": 3,
+      "class": "III",
+      "category": "humanoid",
+      "description": "A cruel bandit leader with a personal code of honour. He is a veteran fighter with scars that tell stories of countless battles. His sword is well-maintained and deadly, and his eyes burn with the fury of a man who has lost everything.",
+      "stats": { "Body": 4, "Melee": 4, "Spirit": 3, "Command": 2, "hp": 40 },
+      "sb_spends": [
+        { "cost": 1, "name": "Intimidating Presence", "effect": "Opponents start Desperate (generates 1 SB)." },
+        { "cost": 2, "name": "Tactical Awareness", "effect": "Redirect an attack to a minion (once per round)." },
+        { "cost": 2, "name": "Berserker Rage", "effect": "When wounded to Harm 2, gains +1 die to all attacks but loses defensive options." }
+      ],
+      "lore": "A faded brand on his forearm marks him as a deserter from the Vhasian army – a secret he kills to protect."
+    },
+    {
+      "id": "ursillo-bandit",
+      "name": "Ursillo Bandit",
+      "tl": 2,
+      "class": "II",
+      "category": "humanoid",
+      "description": "A common thug in Garrick's gang. They fight with crude weapons and intimidation.",
+      "stats": { "Body": 2, "Melee": 2, "Athletics": 1, "hp": 20 },
+      "sb_spends": [
+        { "cost": 1, "name": "Rough Tackle", "effect": "Knock a target Prone." }
+      ]
+    },
+    {
+      "id": "voss-aeler",
+      "name": "Factor Voss",
+      "tl": 2,
+      "class": "II",
+      "category": "humanoid",
+      "description": "A mid-level Aeler bureaucrat under audit. He is desperate to show revenue and save face.",
+      "stats": { "Wits": 3, "Lore": 2, "Command": 2, "hp": 15 },
+      "sb_spends": []
+    },
+    {
+      "id": "captain-rusk",
+      "name": "Captain Rusk",
+      "tl": 3,
+      "class": "III",
+      "category": "humanoid",
+      "description": "A pragmatic Black Banner mercenary captain who sells steel to whoever can pay. He is haunted by a promise made to a dying legionary.",
+      "stats": { "Body": 3, "Melee": 3, "Command": 2, "hp": 35 },
+      "sb_spends": [
+        { "cost": 1, "name": "Weathered Soldier", "effect": "Ignore one point of Fatigue for the scene." },
+        { "cost": 2, "name": "Call in Favours", "effect": "Summon a squad of mercenaries (Cap 2) to assist." }
+      ],
+      "lore": "He carries Varus's badge of rank and owes a debt to a smuggler named Peyton."
+    },
+    {
+      "id": "khatun-sarnai",
+      "name": "Khatun Sarnai",
+      "tl": 3,
+      "class": "III",
+      "category": "humanoid",
+      "description": "The proud and grieving chieftain of the Ykrul Gray Ash clan. She respects those who keep their word.",
+      "stats": { "Body": 3, "Melee": 3, "Command": 2, "hp": 30 },
+      "sb_spends": [
+        { "cost": 1, "name": "Hunting Cry", "effect": "Allies gain +1 die on their next attack." },
+        { "cost": 2, "name": "Steppe Tactics", "effect": "The party gains Dominant Position for the next exchange." }
+      ],
+      "secret": "Her daughter Yelü is the child of a legionary who defected."
+    },
+    {
+      "id": "quick-lena",
+      "name": "Quick Lena",
+      "tl": 2,
+      "class": "II",
+      "category": "humanoid",
+      "description": "A Sidhi rogue with mismatched eyes and a nervous laugh. She works for Rusk, not out of loyalty but desperation.",
+      "stats": { "Wits": 3, "Stealth": 3, "Subterfuge": 2, "hp": 18 },
+      "sb_spends": [
+        { "cost": 1, "name": "Light Fingers", "effect": "Steal a weapon mid‑combat (Wits+Subterfuge vs target's Wits+Notice)." },
+        { "cost": 2, "name": "Always Another Exit", "effect": "Escape a scene without a roll (once per session)." }
+      ],
+      "secret": "She was an apprentice of the Silk Coin who ran when the Velvet Court came."
+    },
+    {
+      "id": "prefect-marcellus",
+      "name": "Prefect Gaius Marcellus",
+      "tl": 4,
+      "class": "IV",
+      "category": "humanoid",
+      "description": "Commander of Castra Ferrum, a wiry, scarred veteran with a voice like a parade ground. He genuinely believes the seal will bring peace – and consolidate his power.",
+      "stats": { "Body": 3, "Command": 3, "Spirit": 3, "hp": 45 },
+      "sb_spends": [
+        { "cost": 1, "name": "Legionary Discipline", "effect": "Allies gain +1 die to resist Fear." },
+        { "cost": 3, "name": "Invoke the Curse", "effect": "Target must test Resolve or gain Varus's Whispers ( –1 die to resist persuasion)." }
+      ],
+      "secret": "He leads a cult of oathbreakers who worship Varus's ghost. His younger brother died in a Ykrul raid."
+    },
+    {
+      "id": "censor-cassia",
+      "name": "Censor Cassia",
+      "tl": 3,
+      "class": "III",
+      "category": "humanoid",
+      "description": "A thin, aging woman with ink‑stained fingers. Her left eye is a polished silver disc – a magical lens that reveals lies.",
+      "stats": { "Wits": 4, "Lore": 3, "Arcana": 2, "hp": 20 },
+      "sb_spends": [
+        { "cost": 1, "name": "Silver Eye", "effect": "Automatically detect Deception of DV 4 or less." },
+        { "cost": 2, "name": "Archive Secrets", "effect": "Gain +2 dice on Lore rolls for the rest of the scene." }
+      ],
+      "secret": "She is dying of a slow fever; destroying the seal is her last act."
+    },
+    {
+      "id": "varus-ghost",
+      "name": "Ghost of the Ninth Legion's Commander",
+      "tl": 5,
+      "class": "V",
+      "category": "undead",
+      "description": "The betrayed commander of the Ninth Hispania Legion, now a vengeful spirit bound to the Iron Seal.",
+      "stats": { "Spirit": 4, "Resolve": 4, "hp": 50 },
+      "sb_spends": [
+        { "cost": 2, "name": "Cry of Betrayal", "effect": "All in Near range must test Spirit or be Shaken ( –1 die)." },
+        { "cost": 3, "name": "The Ninth Clause", "effect": "If the ghost speaks his own name, the curse ends." }
+      ]
+    },
+    {
+      "id": "silken-blade",
+      "name": "The Silken Blade",
+      "tl": 4,
+      "class": "IV",
+      "category": "humanoid",
+      "description": "A masked enforcer of the Velvet Court, armed with a poisoned stiletto. She is the Court's most deadly assassin.",
+      "stats": { "Body": 3, "Melee": 4, "Stealth": 4, "hp": 30 },
+      "sb_spends": [
+        { "cost": 1, "name": "Poisoned Blade", "effect": "Target tests Resolve or gains 1 Fatigue." },
+        { "cost": 2, "name": "Shadow Meld", "effect": "Become invisible until you attack." }
+      ]
+    },
+    {
+      "id": "black-banner-squad",
+      "name": "Black Banner Mercenary Squad",
+      "tl": 2,
+      "class": "II",
+      "category": "humanoid",
+      "description": "A squad of professional sellswords. They fight as a unit.",
+      "stats": { "Body": 3, "Melee": 2, "Athletics": 2, "hp": 25 },
+      "sb_spends": [
+        { "cost": 1, "name": "Coordinated Strike", "effect": "Gain +1 die on all attacks for the round." }
+      ]
+    }
+  ],
+  "acts": [
+    {
+      "id": "act-prequel",
+      "title": "Prologue: The Velvet War of Silkstrand",
+      "description": "The fall of the Silk Coin, a principled thieves' guild. The player characters make choices that cost them their place in Silkstrand. Their Legacy Tokens carry into the main adventure.",
+      "scenes": [
+        {
+          "id": "scene-prequel-1",
+          "title": "The Velvet Court's Gambit",
+          "description": "Madam Serafine has declared the Silk Coin a threat to her operations. The guildhall is surrounded. Old Kes urges the characters to flee while they still can. The players must decide: stand and fight for a doomed cause, or run and carry the Silk Coin's legacy into exile.",
+          "timers": [
+            { "name": "The Court's Net", "segments": 4, "current": 0, "description": "How quickly the Velvet Court closes in" }
+          ],
+          "encounters": [
+            {
+              "name": "The Last Job",
+              "dv": 3,
+              "position": "Desperate",
+              "outcomes": {
+                "clean": "You escape with a valuable Legacy Token - a parting gift that will serve you in exile.",
+                "partial": "You escape, but the Court takes something: a name, a memory, a promise. Gain a Debt timer.",
+                "miss": "You are captured and must bargain your way free. Begin with a String of obligation to Serafine."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-prequel-2",
+          "title": "The City You Left Behind",
+          "description": "Silkstrand is a city of bridges and dyewater. The Matron rules from a palazzo of velvet and iron. Your names no longer appear on guild rolls. Your friends have forgotten your faces - or claim they have.",
+          "timers": [],
+          "encounters": [],
+          "completed": false
+        },
+        {
+          "id": "scene-prequel-3",
+          "title": "The Road to Exile",
+          "description": "You have been erased. The road ahead is uncertain. Millhaven is just a name on a map - a chance to start over where no one knows your story. Or so you believe.",
+          "timers": [],
+          "encounters": [],
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "act-1",
+      "title": "Act I: Blood and Silk - The Defense of Millhaven",
+      "description": "The exiles arrive in Millhaven, a farming village threatened by the Ursillo Gang. They must earn the villagers' trust, defend the settlement, and decide whether to stand and fight or flee once more.",
+      "scenes": [
+        {
+          "id": "scene-1-1",
+          "title": "Arrival at Millhaven",
+          "description": "The party arrives at Millhaven to find a village under siege. Elder Thorne explains the Ursillo Gang's demands and the villagers' dwindling options. The party must decide: help the village or move on?",
+          "timers": [
+            { "name": "Village Safety", "segments": 6, "current": 0, "description": "How close the village is to being overrun" },
+            { "name": "Ursillo Threat", "segments": 8, "current": 0, "description": "How much the Ursillo Gang is organizing against the village" }
+          ],
+          "encounters": [
+            {
+              "name": "Meeting Elder Thorne",
+              "dv": 3,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "Thorne trusts you immediately. Gain the Elder's Trust asset.",
+                "partial": "Thorne is cautious but willing to give you a chance.",
+                "miss": "Thorne sees you as just more trouble. You must prove yourselves."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-1-2",
+          "title": "The Ursillo Gang's Ultimatum",
+          "description": "Garrick Ursillo and his men arrive to collect 'protection money.' The villagers have nothing left to give. The party must choose: pay the gang, fight them, or negotiate.",
+          "timers": [
+            { "name": "Ursillo Threat", "segments": 8, "current": 0 }
+          ],
+          "encounters": [
+            {
+              "creatureId": "garrick-ursillo",
+              "quantity": 1,
+              "position": "Controlled",
+              "dv": 4,
+              "outcomes": {
+                "clean": "Garrick is impressed by your defiance. He leaves - for now. Gain a String: Garrick's Respect.",
+                "partial": "Garrick reduces his demand but takes a hostage. Tick Village Safety +1.",
+                "miss": "Garrick attacks immediately. Combat begins."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-1-3",
+          "title": "The Strategic Crossroads",
+          "description": "Elder Thorne and the party must decide on a primary strategy. Option A: Fortify and Hold - build defenses, train a militia. Option B: Strike First - take the fight to the Ursillo camp.",
+          "timers": [],
+          "encounters": [
+            {
+              "name": "The War Council",
+              "dv": 3,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "The village rallies behind your plan. Gain the Village Militia asset.",
+                "partial": "Some villagers are skeptical. You'll need to prove your plan works.",
+                "miss": "The village is divided. Morale suffers. Tick Village Safety +1."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-1-4",
+          "title": "The Final Stand",
+          "description": "Garrick Ursillo has gathered all his forces for one final assault on Millhaven. The battle will decide the village's fate. The Ursillo Morale Timer and Village Defense Timer will determine the outcome.",
+          "timers": [
+            { "name": "Village Defense", "segments": 6, "current": 0, "description": "How well the village holds out" },
+            { "name": "Ursillo Morale", "segments": 8, "current": 0, "description": "How close the Ursillo are to breaking and running" }
+          ],
+          "encounters": [
+            {
+              "creatureId": "garrick-ursillo",
+              "quantity": 1,
+              "position": "Desperate",
+              "dv": 4,
+              "outcomes": {
+                "clean": "The village stands. Garrick is defeated. Each PC gains 2 Boons and the Village Trust minor asset.",
+                "partial": "The village holds, but Garrick escapes. He will return.",
+                "miss": "The village falls. The party must flee with survivors. Begin the Refugee Caravan arc."
+              }
+            },
+            {
+              "name": "Confronting Garrick",
+              "dv": 5,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "You defeat Garrick in single combat. His gang scatters.",
+                "partial": "Garrick is wounded but escapes. He swears revenge.",
+                "miss": "Garrick overpowers you. You must bargain for your lives."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-1-5",
+          "title": "Aftermath: The Village Stands or Falls",
+          "description": "The battle is over. If the village stands, the party has earned a home. If it falls, the survivors must decide where to go next. Tema the Vilikari merchant offers a path forward in either case.",
+          "timers": [],
+          "encounters": [],
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "act-2",
+      "title": "Act II: Beyond Millhaven - The Ford of Three Promises",
+      "description": "The party escorts a grain caravan to the Valvano Ford, where Ykrul herders, Aeler toll-keepers, and Vilikari merchants are locked in a standoff. They must mediate or risk all-out war.",
+      "scenes": [
+        {
+          "id": "scene-2-1",
+          "title": "Sorian Tabb's Offer",
+          "description": "The party meets Sorian Tabb, a Vilikari caravan master, at the Muddy Stilt. He offers honest work: escort a cargo of grain seed to the monastery of St. Arilan. The pay is modest. The real prize is a Letter of Introduction - a chance to leave Acasia behind.",
+          "timers": [],
+          "encounters": [
+            {
+              "name": "The Contract",
+              "dv": 3,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "Sorian trusts you. Gain the Letter of Introduction.",
+                "partial": "Sorian offers the job, but asks for a demonstration of your skills first.",
+                "miss": "Sorian withdraws the offer. You must find another way."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-2-2",
+          "title": "Arrival at the Valvano Ford",
+          "description": "The ford is closed. A silence furlong seals the east bank. A keystone clause locks the bridge. A Black Banner mercenary counts coin while three factions refuse to move. The party must break the deadlock.",
+          "timers": [
+            { "name": "Ford Standoff", "segments": 8, "current": 0, "description": "How long until the standoff collapses" }
+          ],
+          "encounters": [
+            {
+              "name": "Reading the Scene",
+              "dv": 3,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "You understand each faction's true needs. Gain +1 die to all social rolls against them.",
+                "partial": "You understand some of the factions' needs.",
+                "miss": "You misread the situation. Tick Ford Standoff +1."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-2-3",
+          "title": "The Three Promises",
+          "description": "The party must meet each faction and uncover their hidden needs. The Ykrul demand honor restoration. The Aeler need a face-saving audit. The Vilikari need to hide a salt cache. The Black Banner needs payment. Mediation will require leveraging these needs against each other.",
+          "timers": [
+            { "name": "Ford Standoff", "segments": 8, "current": 0 }
+          ],
+          "encounters": [
+            {
+              "creatureId": "khatun-sarnai",
+              "quantity": 1,
+              "position": "Controlled",
+              "dv": 4,
+              "outcomes": {
+                "clean": "Sarnai respects your directness. She offers a Ykrul Guide as an asset.",
+                "partial": "Sarnai agrees to talk, but her terms are stiff.",
+                "miss": "Sarnai dismisses you as a foreigner. Tick Ford Standoff +1."
+              }
+            },
+            {
+              "creatureId": "voss-aeler",
+              "quantity": 1,
+              "position": "Controlled",
+              "dv": 4,
+              "outcomes": {
+                "clean": "Voss reveals his audit anxiety. You have leverage.",
+                "partial": "Voss is evasive. You learn something, but not everything.",
+                "miss": "Voss clams up. Tick Ford Standoff +1."
+              }
+            },
+            {
+              "creatureId": "captain-rusk",
+              "quantity": 1,
+              "position": "Controlled",
+              "dv": 3,
+              "outcomes": {
+                "clean": "Rusk names his price. You can pay it or negotiate.",
+                "partial": "Rusk gives you a deadline. Tick Ford Standoff +1 if you miss it.",
+                "miss": "Rusk sides with the highest bidder. Tick Ford Standoff +1."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-2-4",
+          "title": "The Mediation",
+          "description": "The moot is held. The party must bring the factions to agreement. Every success cools the standoff; every failure advances the timer. If the timer fills, the standoff collapses into violence.",
+          "timers": [
+            { "name": "Ford Standoff", "segments": 8, "current": 0 }
+          ],
+          "encounters": [
+            {
+              "name": "The Moot",
+              "dv": 5,
+              "position": "Desperate",
+              "outcomes": {
+                "clean": "The ford opens. The parties agree. Gain Strings with all three factions.",
+                "partial": "A partial agreement is reached. The ford opens, but tensions remain.",
+                "miss": "The moot fails. Roll on the First Striker table."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-2-5",
+          "title": "The Road Ahead",
+          "description": "The ford is open. The party has earned a reputation as negotiators. Tema offers a share in her future profits. The road to the Bronze Gate lies ahead, carrying rumors of a cursed seal and a heist.",
+          "timers": [],
+          "encounters": [],
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "act-3",
+      "title": "Act III: The Brass Gate - Heist, Curse, and the Fall of the Ninth Legion",
+      "description": "The party is hired by Tema to steal the Iron Seal of Varus from Prefect Marcellus's tribunal. The seal can bind oaths with a wasting curse - and Marcellus intends to use it on the Ykrul. The party must navigate a heist, a curse, and the politics of Castra Ferrum.",
+      "scenes": [
+        {
+          "id": "scene-3-1",
+          "title": "Tema's Warehouse - The Job",
+          "description": "Tema offers a fortune in silver to retrieve the Iron Seal of Varus from the Prefect's tribunal. She wants to give it to Khatun Sarnai as a peace offering, opening the steppe trade route. The party must choose: accept the job, or find another path.",
+          "timers": [
+            { "name": "Heist Timer", "segments": 6, "current": 0, "description": "When full, Quick Lena steals the seal first" }
+          ],
+          "encounters": [
+            {
+              "name": "The Offer",
+              "dv": 3,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "Tema trusts you. Gain Tema's Trust asset.",
+                "partial": "Tema offers the job, but asks for a demonstration of your skills.",
+                "miss": "Tema withdraws the offer. You must find another way."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-3-2",
+          "title": "The Bronze Gate - A Tour of Factions",
+          "description": "The party must navigate the politics of Castra Ferrum. Prefect Marcellus commands the tribunal. Censor Cassia watches from the archives. Khatun Sarnai camps outside the walls. Captain Rusk sells steel to whoever can pay. Quick Lena is already casing the tribunal.",
+          "timers": [
+            { "name": "Heist Timer", "segments": 6, "current": 0 },
+            { "name": "Watch Patrol", "segments": 4, "current": 0, "description": "Failed Stealth ticks this timer" },
+            { "name": "Cult of Varus", "segments": 8, "current": 0, "description": "Secret cult of oathbreakers" }
+          ],
+          "encounters": [
+            {
+              "creatureId": "prefect-marcellus",
+              "quantity": 1,
+              "position": "Controlled",
+              "dv": 4,
+              "outcomes": {
+                "clean": "Marcellus offers you a job. Accepting starts his Debt Timer.",
+                "partial": "Marcellus is interested, but suspicious.",
+                "miss": "Marcellus dismisses you. He will remember your faces."
+              }
+            },
+            {
+              "creatureId": "censor-cassia",
+              "quantity": 1,
+              "position": "Controlled",
+              "dv": 4,
+              "outcomes": {
+                "clean": "Cassia offers a counter-job. She wants Marcellus exposed.",
+                "partial": "Cassia gives you a lead, but demands a favor.",
+                "miss": "Cassia refuses to speak with you."
+              }
+            },
+            {
+              "creatureId": "khatun-sarnai",
+              "quantity": 1,
+              "position": "Controlled",
+              "dv": 4,
+              "outcomes": {
+                "clean": "Sarnai remembers you from the ford. She offers a Ykrul Guide.",
+                "partial": "Sarnai agrees to talk, but her daughter Yelü challenges you to a horse race.",
+                "miss": "Sarnai refuses to trust outsiders."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-3-3",
+          "title": "The Tribunal Heist",
+          "description": "The party must infiltrate the Prefect's tribunal and steal the Iron Seal of Varus. Quick Lena is already inside, working for Captain Rusk. The Watch Patrol timer advances on failed Stealth rolls. The Heist Timer advances each downtime scene.",
+          "timers": [
+            { "name": "Heist Timer", "segments": 6, "current": 0 },
+            { "name": "Watch Patrol", "segments": 4, "current": 0 }
+          ],
+          "encounters": [
+            {
+              "name": "Chamber One - The Armory",
+              "dv": 4,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "You bypass the trap. A curse tablet reveals Marcellus has been using the seal to curse rivals. Gain a String: Marcellus's Treason.",
+                "partial": "You trigger a bell, but escape the net. Tick Watch Patrol +1.",
+                "miss": "The trap catches you. Tick Watch Patrol +2."
+              }
+            },
+            {
+              "name": "Chamber Two - The Scriptorium",
+              "dv": 4,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "You find a map of the city and a forged census tablet. Gain another String.",
+                "partial": "You find one of the two items.",
+                "miss": "A guard finds you. Combat begins."
+              }
+            },
+            {
+              "creatureId": "quick-lena",
+              "quantity": 1,
+              "position": "Desperate",
+              "dv": 5,
+              "outcomes": {
+                "clean": "You reach the seal first. Quick Lena is still trying to crack the lock.",
+                "partial": "You arrive at the same time as Lena. A tense standoff ensues.",
+                "miss": "Lena has already taken the seal. You must chase her."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-3-4",
+          "title": "The Curse Unsealed",
+          "description": "The seal is in the party's possession - but it carries the old curse. Anyone who sleeps near it must test Spirit+Resolve or gain Varus's Whispers. The curse worsens each night. The party must decide how to break the curse: return it to the Ykrul, destroy it with fire, or bind it with a new oath.",
+          "timers": [],
+          "encounters": [
+            {
+              "creatureId": "khatun-sarnai",
+              "quantity": 1,
+              "position": "Controlled",
+              "dv": 4,
+              "outcomes": {
+                "clean": "Sarnai buries the seal under a cairn. The curse ends. Sarnai opens the trade route. Gain Sarnai's Oath.",
+                "partial": "The ritual is incomplete. The curse lingers, but weaker.",
+                "miss": "The ritual fails. The seal must be destroyed or bound."
+              }
+            },
+            {
+              "name": "Destroy with Fire",
+              "dv": 6,
+              "position": "Desperate",
+              "outcomes": {
+                "clean": "The seal shatters. The curse ends. Gain a Censor's Seal.",
+                "partial": "The seal shatters, but the curse transfers to the one who struck it. That PC gains Varus's Scourge.",
+                "miss": "The seal is damaged but not destroyed. The curse intensifies."
+              }
+            },
+            {
+              "creatureId": "prefect-marcellus",
+              "quantity": 1,
+              "position": "Controlled",
+              "dv": 5,
+              "outcomes": {
+                "clean": "A treaty is sworn between Marcellus, Sarnai, and Tema. The curse transforms into a blessing. Gain Strings with all three factions.",
+                "partial": "A partial treaty is sworn. The curse is weakened, but not gone.",
+                "miss": "The oath-swearing fails. Marcellus's cultists attack."
+              }
+            },
+            {
+              "creatureId": "varus-ghost",
+              "quantity": 1,
+              "position": "Dominant",
+              "dv": 5,
+              "outcomes": {
+                "clean": "You summon the ghost of the Ninth Legion's commander. He speaks his own name, ending the curse forever. Gain a Legendary String: The Ninth Legion's Gratitude.",
+                "partial": "The ghost appears but requires a sacrifice.",
+                "miss": "The ghost attacks. Combat begins."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-3-5",
+          "title": "The Gate Opens",
+          "description": "At dawn, the portcullis rises. The Ykrul riders wait. The merchants line up with their carts. The legionaries salute. The party has earned a place in Fate's Edge.",
+          "timers": [],
+          "encounters": [
+            {
+              "name": "The Ending",
+              "dv": 3,
+              "position": "Dominant",
+              "outcomes": {
+                "clean": "Tema gives you a silver medallion. 'Show this to any Vilikari trader. They will know you are trusted.'",
+                "partial": "The gate opens, but not everyone is satisfied.",
+                "miss": "The gate opens, but the party is marked as troublemakers."
+              }
+            }
+          ],
+          "completed": false
+        }
+      ]
+    }
+  ],
+  "npcs": [
+    {
+      "id": "npc-elder-thorne",
+      "name": "Elder Thorne",
+      "role": "Village Leader of Millhaven",
+      "motivation": "Protect his people at all costs",
+      "stats": "Presence 2, Spirit 3, Command 2, Lore 1",
+      "secret": "He knows the old Imperial bridge was the site of a broken promise. He still leaves milk on the bridge steps every full moon."
+    },
+    {
+      "id": "npc-mira-baker",
+      "name": "Mira the Baker",
+      "role": "Village Representative",
+      "motivation": "Feed her family and keep the community together",
+      "stats": "Presence 2, Spirit 2, Sway 2, Lore 1",
+      "secret": "Her grandmother was the last person to see the tax collector before he vanished. She knows where the broken promise was sworn."
+    },
+    {
+      "id": "npc-tom-smith",
+      "name": "Tom the Smith",
+      "role": "Village Defender",
+      "motivation": "Protect his forge and the tools that feed his family",
+      "stats": "Body 3, Melee 2, Craft 2, Command 1"
+    },
+    {
+      "id": "npc-tema",
+      "name": "Tema",
+      "role": "Vilikari Merchant",
+      "motivation": "Open the steppe trade route, save her business",
+      "stats": "Presence 2, Sway 2, Commerce 2",
+      "secret": "She has invested everything in this trade route. If the seal is not recovered, she will be ruined."
+    },
+    {
+      "id": "npc-sorian-tabb",
+      "name": "Sorian Tabb",
+      "role": "Vilikari Caravan Master",
+      "motivation": "Get the grain seeds to the monastery before the first frost",
+      "stats": "Body 2, Presence 3, Command 2, Commerce 2"
+    },
+    {
+      "id": "npc-yelu",
+      "name": "Yelü",
+      "role": "Sarnai's Daughter",
+      "motivation": "Prove herself worthy of leadership",
+      "stats": "Body 3, Melee 2, Ride 3"
+    },
+    {
+      "id": "npc-old-kes",
+      "name": "Old Kes",
+      "role": "Silk Coin Fence (Deceased)",
+      "motivation": "Keep the Silk Coin's principles alive",
+      "stats": "Presence 3, Sway 3, Lore 2",
+      "secret": "He taught the exiles to keep their word even when it cost everything."
+    },
+    {
+      "id": "npc-mareth",
+      "name": "Mareth",
+      "role": "Exiled Scholar of Thepyrgos",
+      "motivation": "Guide the exiles, atone for past mistakes",
+      "stats": "Wits 4, Lore 4, Arcana 3",
+      "secret": "They were a Runekeeper of the Traveler, expelled for unlocking forbidden way-routes."
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc-silkstrand",
+      "name": "Silkstrand",
+      "description": "A city of bridges and canals where favours are measured in threads. The Matron rules, but the Ragman, Tide Father, and Silk Mother hold the underworld. The ninth bridge leads to the Sunken Quarter.",
+      "tags": ["city", "trade", "canals", "velvet-court"]
+    },
+    {
+      "id": "loc-millhaven",
+      "name": "Millhaven",
+      "description": "A small farming community in the Acasian marches. The village sits in a fertile valley surrounded by rolling hills, its thatched-roof cottages clustered around a central square where the weekly market is held.",
+      "tags": ["village", "farm", "acasia"]
+    },
+    {
+      "id": "loc-old-imperial-bridge",
+      "name": "The Old Imperial Bridge",
+      "description": "A bridge over the millstream with nine arches. The locals count only eight. The ninth arch is there, but they will not look at it. The site of a broken promise - a tax collector swore an oath on his child's life and then defaulted.",
+      "tags": ["bridge", "threshold", "curse"]
+    },
+    {
+      "id": "loc-pale-causeway",
+      "name": "The Pale Causeway",
+      "description": "The last high road that survives the spring thaws in Acasia. The causeway is made of bones - the bones of the workers who built it. Crossing the Causeway at dusk forces a Resolve test (DV 4).",
+      "tags": ["road", "bones", "curse"]
+    },
+    {
+      "id": "loc-valvano-ford",
+      "name": "The Valvano Ford",
+      "description": "A contested crossing where Ykrul herders, Aeler toll-keepers, and Vilikari merchants stare at one another across a span of gray stone. The bridge has nine arches. The locals count only eight.",
+      "tags": ["ford", "bridge", "standoff", "acasia", "ecktoria", "ykrul"]
+    },
+    {
+      "id": "loc-castra-ferrum",
+      "name": "Castra Ferrum",
+      "description": "A walled city built atop a Ykrul burial ground. The Bronze Gate is the only pass through the mountains for three weeks' march. Ecktorian officers, tax farmers, and priest-magistrates hold sway through a web of patronage.",
+      "tags": ["city", "ecktoria", "military", "bronze-gate"]
+    },
+    {
+      "id": "loc-bronze-gate",
+      "name": "The Bronze Gate",
+      "description": "A portcullis of bronze-banded iron, etched with the names of every legionary who died defending it. A Censor's clerk keeps the Ledger of Blood - a book recording every soul who passes. The Ykrul call it the Weeping Gate.",
+      "tags": ["gate", "threshold", "ecktoria", "legion"]
+    },
+    {
+      "id": "loc-praetorium",
+      "name": "The Praetorium",
+      "description": "The fortified hall where Prefect Marcellus holds his tribunal. Inside, the Iron Seal of Varus rests in a lead-lined chest on an altar to Mars.",
+      "tags": ["tribunal", "military", "ecktoria"]
+    },
+    {
+      "id": "loc-archive",
+      "name": "The Archive",
+      "description": "A labyrinth of scrolls and curse tablets awaiting destruction. Censor Cassia's office is filled with the weight of history and secrets.",
+      "tags": ["archive", "scrolls", "censor"]
+    }
+  ],
+  "factions": [
+    {
+      "id": "faction-silk-coin",
+      "name": "The Silk Coin",
+      "goals": "A principled thieves' guild that kept its word even when it cost everything. Now fallen.",
+      "relationship": "The characters are exiles who carry the Silk Coin's legacy."
+    },
+    {
+      "id": "faction-velvet-court",
+      "name": "The Velvet Court",
+      "goals": "Control Silkstrand's underworld through velvet gloves and iron fists.",
+      "relationship": "The characters are enemies of the Velvet Court. Madam Serafine erased them from Silkstrand."
+    },
+    {
+      "id": "faction-ursillo-gang",
+      "name": "The Ursillo Gang",
+      "goals": "Extract 'protection money' from villages, grow their power in Acasia.",
+      "relationship": "The characters have defeated them in Millhaven. Garrick Ursillo may return."
+    },
+    {
+      "id": "faction-vilikari-traders",
+      "name": "The Vilikari Traders",
+      "goals": "Open trade routes, profit from grain and goods.",
+      "relationship": "The characters have Tema as an ally and Sorian Tabb as a contact."
+    },
+    {
+      "id": "faction-ykrul-gray-ash",
+      "name": "The Ykrul Gray Ash Clan",
+      "goals": "Protect their people, restore clan honor, reopen trade.",
+      "relationship": "The characters have negotiated with Khatun Sarnai and may have earned her trust."
+    },
+    {
+      "id": "faction-aeler-guild",
+      "name": "The Aeler Guild",
+      "goals": "Maintain the toll rights and charter at Valvano Ford.",
+      "relationship": "The characters have negotiated with Factor Voss."
+    },
+    {
+      "id": "faction-black-banner",
+      "name": "The Black Banner Mercenaries",
+      "goals": "Get paid, get out. Sell steel to whoever can pay.",
+      "relationship": "The characters have dealt with Captain Rusk, who may be an enemy or ally."
+    },
+    {
+      "id": "faction-ecktorian-tribunal",
+      "name": "The Ecktorian Tribunal",
+      "goals": "Enforce order, control the Bronze Gate, use the seal to force oaths.",
+      "relationship": "Prefect Marcellus is a major antagonist."
+    }
+  ],
+  "campaignTimers": [
+    {
+      "name": "The Hollow's Attention",
+      "segments": 6,
+      "current": 0,
+      "description": "How much the Curse of Acasia has noticed the party. Ticks when characters break Acasian customs, spend 2+ SB on supernatural complications, or swear oaths on bridges or at crossroads."
+    },
+    {
+      "name": "The Curse of Acasia",
+      "segments": 10,
+      "current": 0,
+      "description": "A slow accumulation of broken promises and unpaid tolls. Ticks when a contract is broken on a bridge, a character speaks the ninth word in a negotiation, the party ignores a road omen, or a free company flips allegiance."
+    },
+    {
+      "name": "Ursillo Remnants",
+      "segments": 8,
+      "current": 0,
+      "description": "How close Garrick Ursillo's remaining forces are to regrouping and seeking revenge."
+    },
+    {
+      "name": "Political Pressure",
+      "segments": 6,
+      "current": 0,
+      "description": "External forces trying to manipulate or eliminate the party. Ticks when they make enemies or uncover secrets."
+    }
+  ],
+  "notes": "The Blood and Silk saga is a complete campaign arc following exiles from Silkstrand as they defend Millhaven, mediate at the Valvano Ford, and heist the Iron Seal of Varus at the Bronze Gate. The Curse of Acasia is a persistent threat throughout. Key themes: redemption, community, second chances, the weight of exile, and the power of belonging.",
+  "currentAct": 0,
+  "currentScene": 0,
+  "startedAt": null,
+  "completedAt": null,
+  "status": "planned",
+  "createdAt": "2026-07-28T00:00:00.000Z",
+  "updatedAt": "2026-07-28T00:00:00.000Z"
+}

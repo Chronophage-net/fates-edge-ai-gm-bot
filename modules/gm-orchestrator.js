@@ -4,12 +4,14 @@
  * 
  * The brain of the AI GM bot. Integrates all other modules.
  * Now uses the campaign manager's state as the single source of truth.
+ * Adventure-aware NPC generation added via adventureContext.
  */
 
 const { WorldManager, CampaignManager } = require('./world-manager.js');
 const deck = require('./deck.js');
 const timers = require('./timers.js');
 const characters = require('./characters.js');
+const adventureContext = require('./adventure-context.js');
 
 // ============================================================
 // NPC TEMPLATES (unchanged)
@@ -619,6 +621,44 @@ class Orchestrator {
     }
 
     return npc;
+  }
+
+  /**
+   * Adventure-aware NPC lookup/generation. Checks the CURRENTLY LOADED
+   * adventure's own npcs[] and bestiary[] first (via adventure-context.js
+   * -- exactly what the module's author wrote for this specific story),
+   * and only falls back to generateNPC()'s generic per-region templates
+   * if nothing matches or no adventure is loaded. `context` here is the
+   * same { apiRequest, ... } shape passed to !gm command handlers.
+   */
+  async generateNPCAware(context, name, region = null, overrides = {}) {
+    if (name) {
+      const activeNpc = await adventureContext.getActiveNpc(context, name);
+      if (activeNpc) {
+        return {
+          name: activeNpc.name,
+          role: activeNpc.role || 'NPC',
+          motivation: activeNpc.motivation || '',
+          region: region || this.currentScene?.region || this.options.defaultRegion,
+          source: 'adventure', // distinguishes a real module NPC from a generated one
+          ...overrides,
+        };
+      }
+      const activeCreature = await adventureContext.getActiveCreature(context, name);
+      if (activeCreature) {
+        return {
+          name: activeCreature.name,
+          role: activeCreature.class || activeCreature.category || 'Creature',
+          stats: activeCreature.stats,
+          sb_spends: activeCreature.sb_spends,
+          region: region || this.currentScene?.region || this.options.defaultRegion,
+          source: 'adventure',
+          ...overrides,
+        };
+      }
+    }
+    // Fall through to the existing generic generator -- unchanged.
+    return this.generateNPC(region, overrides);
   }
 
   generateName(region) {

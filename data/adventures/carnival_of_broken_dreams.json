@@ -1,0 +1,494 @@
+{
+  "id": "carnival-of-broken-dreams",
+  "title": "The Carnival of Broken Dreams",
+  "description": "A traveling night-market of tents, music, and miracles glides the trade-roads between Silkstrand and Thepyrgos. It grants wishes—precisely—and charges a price in things people didn't know they valued. As the Desire Index rises, a town's intangibles unravel: lullabies vanish, bell-rights lapse, markets drift off schedule. The party can expose terms, retune the engine, or divert its appetite before the carnival moves on.",
+  "tier": "I",
+  "author": "Nicholas A. Gasper",
+  "tierRange": "I–III",
+  "sessions": "3–6",
+  "themes": ["Temptation", "Public Goods", "Predatory Spectacle", "Folk Horror"],
+  "bestiary": [
+    {
+      "id": "maestra-pann",
+      "name": "Maestra Pann",
+      "tl": 3,
+      "class": "III",
+      "category": "humanoid",
+      "description": "The ringmaster of the Carnival of Broken Dreams. She speaks with velvet coaxing, bell cues, and a relentless focus on spectacle. She is not evil—she is the carnival's heart, and its prisoner. The calliope chose her, and she cannot leave.",
+      "stats": { "Presence": 4, "Sway": 3, "Command": 3, "hp": 25 },
+      "sb_spends": [
+        { "cost": 1, "name": "Change the Beat", "effect": "The scene's rhythm shifts; all actions become Desperate for one exchange." },
+        { "cost": 2, "name": "Elevate the Stakes", "effect": "A public spectacle demands a sacrifice; one PC must offer something or lose a Boon." },
+        { "cost": 2, "name": "Flatter a Rival", "effect": "A rival NPC becomes compliant for one scene, but gains a String on the flatterer." }
+      ],
+      "lore": "She did not choose this life. The calliope chose her. Two-finger bell count before a hard turn.",
+      "secret": "She is the carnival's heart—and its prisoner. She has tried to leave three times. The calliope always calls her back."
+    },
+    {
+      "id": "mr-vellum",
+      "name": "Mr. Vellum",
+      "tl": 2,
+      "class": "II",
+      "category": "humanoid",
+      "description": "The carnival's ledger-clerk. A papery whisper of a man with ink under his nails. He balances the books—on his own terms. He was once a Silkstrand notary who made a wish he couldn't afford.",
+      "stats": { "Wits": 4, "Lore": 3, "Investigation": 3, "hp": 18 },
+      "sb_spends": [
+        { "cost": 1, "name": "Correct the Contract", "effect": "A contract gains a hidden clause; one PC is bound until they discover it." },
+        { "cost": 2, "name": "Split the Cost", "effect": "The price of a wish is divided among bystanders; the party must choose who bears it." },
+        { "cost": 2, "name": "Misfile Your Name", "effect": "A PC's name is lost in the ledgers; they cannot prove their identity for one scene." }
+      ],
+      "lore": "He checks his quill nib before lying. He writes the carnival's prices in negative space—only those who know where to look can read them.",
+      "secret": "He was a Silkstrand notary who made a wish he couldn't afford. Now he writes the carnival's prices to pay the debt."
+    },
+    {
+      "id": "cotton-witch",
+      "name": "The Cotton Witch",
+      "tl": 3,
+      "class": "III",
+      "category": "humanoid",
+      "description": "A Livaea-touched enchantress with sugared lips and cravings-as-magic. She feeds your appetite until you consent to anything. She hums when you hesitate.",
+      "stats": { "Presence": 4, "Arcana": 3, "Sway": 3, "hp": 22 },
+      "sb_spends": [
+        { "cost": 1, "name": "Sweet Trial", "effect": "Offer a minor wish; the taker must test Spirit or gain a Compulsion." },
+        { "cost": 2, "name": "Mirror Your Desire", "effect": "She reflects a PC's deepest want back at them; they act at Desperate until they resist." },
+        { "cost": 2, "name": "Name Your Envy", "effect": "She names a PC's secret envy aloud; the PC loses 1 Boon unless they confess." }
+      ],
+      "lore": "She was once a Thepyrgos academic who craved popularity. The carnival gave her an audience that never leaves. She hums when you hesitate.",
+      "secret": "She was once a Thepyrgos academic who craved popularity. The carnival gave her an audience that never leaves—but she cannot leave either."
+    },
+    {
+      "id": "harlequin-courts",
+      "name": "Harlequin of Courts",
+      "tl": 3,
+      "class": "III",
+      "category": "humanoid",
+      "description": "Mab's envoy to the carnival. They enforce order, pretty rules, and public victories. They bow before cuts, and they serve a court that demands obedience.",
+      "stats": { "Presence": 3, "Melee": 2, "Sway": 3, "hp": 28 },
+      "sb_spends": [
+        { "cost": 1, "name": "Demand Apology", "effect": "A PC must apologize or be marked by the Court; -1 die to social rolls until they do." },
+        { "cost": 2, "name": "Set a Forfeit", "effect": "A contest is declared; the loser must offer a String or a Boon." },
+        { "cost": 2, "name": "Bind to Theater", "effect": "A PC is compelled to play a role; they cannot act against that role for the scene." }
+      ],
+      "lore": "They bow before cuts. They are not cruel—they serve a court that demands obedience.",
+      "secret": "They are not truly cruel—they serve a court that demands obedience, and the carnival is their only escape from endless etiquette."
+    },
+    {
+      "id": "ticket-twins",
+      "name": "The Ticket Twins",
+      "tl": 1,
+      "class": "I",
+      "category": "humanoid",
+      "description": "The carnival's ushers. Synchronized blinks, bright patter, and a relentless focus on throughput and safety theater. They are the carnival's children—foundlings raised in the tents.",
+      "stats": { "Wits": 2, "Stealth": 2, "Sway": 2, "hp": 12 },
+      "sb_spends": [
+        { "cost": 1, "name": "Reassign Seating", "effect": "The party is separated; one PC cannot assist another for the scene." },
+        { "cost": 2, "name": "Isolate Meddlers", "effect": "A PC is surrounded by staff; they act at Desperate until they escape." },
+        { "cost": 2, "name": "Edit Consent", "effect": "A contract is 'checked' after signing; the terms have changed." }
+      ],
+      "lore": "Synchronized blinks before speaking. They have never known a world without the calliope.",
+      "secret": "They are the carnival's children—foundlings raised in the tents. They have never known a world without the calliope."
+    },
+    {
+      "id": "carnival-staff",
+      "name": "Carnival Staff",
+      "tl": 1,
+      "class": "I",
+      "category": "humanoid",
+      "description": "Generic carnival workers. They keep the show running, manage crowds, and enforce the carnival's rules—such as they are.",
+      "stats": { "Body": 2, "Sway": 1, "Athletics": 1, "hp": 10 },
+      "sb_spends": [
+        { "cost": 1, "name": "Crowd Control", "effect": "The staff redirects the crowd; one PC is separated from the group." }
+      ]
+    }
+  ],
+  "acts": [
+    {
+      "id": "act-1-firelight",
+      "title": "Act I — Firelight",
+      "description": "The carnival parade arrives; a 'free wish' hooks an important NPC. The party sees a miracle, then discovers the missing price. Gain your first Diamond (Witness Seal) through a fair-game contest or etiquette duel.",
+      "scenes": [
+        {
+          "id": "scene-1-1-parade",
+          "title": "The Firelight Parade",
+          "description": "Lanterns, brass, thrilled hush. The carnival arrives with a parade of wonders. A free raffle-wish is 'won' by a sympathetic NPC. Staff 'clarifies' nothing. The crowd is entranced. Something is wrong.",
+          "timers": [
+            { "name": "Desire Index", "segments": 6, "current": 0, "description": "Local wish-rate and price magnitude" },
+            { "name": "Community Unraveling", "segments": 6, "current": 0, "description": "Customs, names, and bonds fray" }
+          ],
+          "encounters": [
+            {
+              "name": "The Raffle Wish",
+              "dv": 3,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "You see the miracle clearly and notice something missing. Gain a clue about the Desire Tax.",
+                "partial": "You see the miracle, but the price is hidden. Tick Desire Index +1.",
+                "miss": "You are caught up in the wonder. Tick Desire Index +2 and Community Unraveling +1."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-1-2-witness-seal",
+          "title": "The Witness Seal",
+          "description": "To expose the carnival's terms, you must win a Witness Seal—a Diamond that compels staff to name the exact price aloud. Compete in a fair-game or etiquette duel to earn it.",
+          "timers": [
+            { "name": "Desire Index", "segments": 6, "current": 0 },
+            { "name": "Spotlight Heat", "segments": 4, "current": 0, "description": "How targeted the party is by staff" }
+          ],
+          "encounters": [
+            {
+              "creatureId": "harlequin-courts",
+              "quantity": 1,
+              "position": "Controlled",
+              "dv": 4,
+              "outcomes": {
+                "clean": "You win the Witness Seal. Staff must name prices aloud. Gain Diamond: Witness Seal.",
+                "partial": "You win, but the contest draws attention. Tick Spotlight Heat +1.",
+                "miss": "You lose the contest. You must find another way."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-1-3-firelight-fallout",
+          "title": "Firelight Fallout",
+          "description": "The first wish has been granted. The price is being collected. The community is beginning to fray. The party must decide how to proceed.",
+          "timers": [
+            { "name": "Desire Index", "segments": 6, "current": 0 },
+            { "name": "Community Unraveling", "segments": 6, "current": 0 },
+            { "name": "Carnival Appetite", "segments": 8, "current": 0, "description": "Grand act when filled" },
+            { "name": "Spotlight Heat", "segments": 4, "current": 0 }
+          ],
+          "encounters": [],
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "act-2-mirrors-ledgers",
+      "title": "Act II — Mirrors & Ledgers",
+      "description": "Investigate the carnival's tents, negotiate terms, steal leverage from the Ledger Wagon, and win Diamonds to constrain predation. Visit the House of Honest Mirrors, the Wishwright's Tent, and the Ledger Wagon.",
+      "scenes": [
+        {
+          "id": "scene-2-1-house-of-mirrors",
+          "title": "House of Honest Mirrors",
+          "description": "The mirrors show visitors as they believe themselves to be—and hold their price ledger. Break a mirror under Mirror Warrant to read its ledger safely. Each test without refusal ticks Desire Index +1.",
+          "timers": [
+            { "name": "Desire Index", "segments": 6, "current": 0 },
+            { "name": "Spotlight Heat", "segments": 4, "current": 0 }
+          ],
+          "encounters": [
+            {
+              "name": "The Mirror Reading",
+              "dv": 4,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "You read the ledger without triggering the mirror. Gain a Mirror Warrant.",
+                "partial": "You read the ledger, but the mirror shatters. Tick Spotlight Heat +1.",
+                "miss": "The mirror shards animate and reassign masks mid-scene. Tick Spotlight Heat +2."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-2-2-wishwrights-tent",
+          "title": "The Wishwright's Tent",
+          "description": "Velvet-law negotiation. Staff 'assumes the difference' unless you have leverage. Divination finds missing clauses but attracts Livaea-touched attendants.",
+          "timers": [
+            { "name": "Desire Index", "segments": 6, "current": 0 },
+            { "name": "Carnival Appetite", "segments": 8, "current": 0 }
+          ],
+          "encounters": [
+            {
+              "creatureId": "mr-vellum",
+              "quantity": 1,
+              "position": "Controlled",
+              "dv": 4,
+              "outcomes": {
+                "clean": "You negotiate favorable terms. Gain a Stage Permit.",
+                "partial": "You make progress, but the Wishwright gains an advantage. Tick Carnival Appetite +1.",
+                "miss": "The negotiation fails. Tick Desire Index +1."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-2-3-ledger-wagon",
+          "title": "The Ledger Wagon Heist",
+          "description": "The carnival's traveling records office. Prices are written as negative space on vellum. Copying a ledger grants leverage to unwind a price—but the reader temporarily loses a related social grace.",
+          "timers": [
+            { "name": "Carnival Appetite", "segments": 8, "current": 0 },
+            { "name": "Spotlight Heat", "segments": 4, "current": 0 }
+          ],
+          "encounters": [
+            {
+              "name": "The Ledger Heist",
+              "dv": 5,
+              "position": "Desperate",
+              "outcomes": {
+                "clean": "You copy the ledger. Gain leverage to unwind a price.",
+                "partial": "You copy the ledger, but you lose a social grace temporarily.",
+                "miss": "You are caught. Tick Spotlight Heat +2 and Carnival Appetite +1."
+              }
+            }
+          ],
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "act-3-calliope-heart",
+      "title": "Act III — The Calliope Heart",
+      "description": "A public performance powers the engine. Break one pillar—Rhythm, Mask Index, or Ticket Chain—to starve it or retool it. Choose an ending: Expose & Regulate, Starve the Engine, or Divert the Appetite.",
+      "scenes": [
+        {
+          "id": "scene-3-1-the-performance",
+          "title": "The Performance",
+          "description": "The calliope plays. The engine feeds on the crowd's desire. The three pillars are vulnerable: Rhythm (crowd cadence), Mask Index (who plays which role), and Ticket Chain (consent tokens).",
+          "timers": [
+            { "name": "Desire Index", "segments": 6, "current": 0 },
+            { "name": "Community Unraveling", "segments": 6, "current": 0 },
+            { "name": "Carnival Appetite", "segments": 8, "current": 0 },
+            { "name": "Spotlight Heat", "segments": 4, "current": 0 }
+          ],
+          "encounters": [
+            {
+              "name": "Break the Rhythm",
+              "dv": 5,
+              "position": "Desperate",
+              "outcomes": {
+                "clean": "You break the rhythm. The engine staggers.",
+                "partial": "You disrupt the rhythm, but the engine adapts. Tick Carnival Appetite +1.",
+                "miss": "The rhythm overwhelms you. Tick Carnival Appetite +2."
+              }
+            },
+            {
+              "name": "Scramble the Mask Index",
+              "dv": 5,
+              "position": "Desperate",
+              "outcomes": {
+                "clean": "You scramble the masks. The engine loses its anchor.",
+                "partial": "You scramble some masks, but others remain in place. Tick Carnival Appetite +1.",
+                "miss": "The masks turn on you. Tick Spotlight Heat +2."
+              }
+            },
+            {
+              "name": "Break the Ticket Chain",
+              "dv": 5,
+              "position": "Desperate",
+              "outcomes": {
+                "clean": "You break the consent chain. The engine starves.",
+                "partial": "You break part of the chain. The engine weakens.",
+                "miss": "The chain tightens around you. Tick Carnival Appetite +2."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-3-2-ending-expose",
+          "title": "Ending: Expose & Regulate",
+          "description": "The carnival stays—but all wishes require informed, spoken terms. Unraveling clears. Livaea's devotees take interest in you.",
+          "timers": [],
+          "encounters": [
+            {
+              "creatureId": "maestra-pann",
+              "quantity": 1,
+              "position": "Controlled",
+              "dv": 4,
+              "outcomes": {
+                "clean": "The carnival agrees to fair terms. Community Unraveling clears.",
+                "partial": "The carnival agrees to some terms. Unraveling reduces but doesn't clear.",
+                "miss": "The carnival rejects your terms. Tick Community Unraveling +2."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-3-3-ending-starve",
+          "title": "Ending: Starve the Engine",
+          "description": "Break a pillar. The tents collapse. Debts become letters and must be hand-delivered back to their owners.",
+          "timers": [],
+          "encounters": [
+            {
+              "name": "The Collapse",
+              "dv": 4,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "The engine starves. The carnival dissolves.",
+                "partial": "The engine starves, but some debts remain unresolved.",
+                "miss": "The engine fights back. You must escape."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-3-4-ending-divert",
+          "title": "Ending: Divert the Appetite",
+          "description": "Offer a greater, voluntary group vow. The carnival leaves on a promise and returns when it matures. The debt is deferred—but not forgotten.",
+          "timers": [],
+          "encounters": [
+            {
+              "creatureId": "cotton-witch",
+              "quantity": 1,
+              "position": "Controlled",
+              "dv": 5,
+              "outcomes": {
+                "clean": "The carnival accepts your vow. It leaves on a promise.",
+                "partial": "The carnival accepts, but your vow has a hidden cost.",
+                "miss": "The carnival rejects your vow. Tick Carnival Appetite +2."
+              }
+            }
+          ],
+          "completed": false
+        }
+      ]
+    }
+  ],
+  "npcs": [
+    {
+      "id": "npc-maestra-pann",
+      "name": "Maestra Pann",
+      "role": "Ringmaster",
+      "motivation": "Growth, clean shows, no scandal",
+      "stats": "Presence 4, Sway 3, Command 3",
+      "secret": "She is the carnival's heart—and its prisoner. She did not choose this life. The calliope chose her.",
+      "tell": "Two-finger bell count before a hard turn."
+    },
+    {
+      "id": "npc-mr-vellum",
+      "name": "Mr. Vellum",
+      "role": "Ledger-Clerk",
+      "motivation": "Balanced books (on their terms)",
+      "stats": "Wits 4, Lore 3, Investigation 3",
+      "secret": "He was a Silkstrand notary who made a wish he couldn't afford. Now he writes the carnival's prices.",
+      "tell": "Checks quill nib before lying."
+    },
+    {
+      "id": "npc-cotton-witch",
+      "name": "The Cotton Witch",
+      "role": "Livaea-touched Enchantress",
+      "motivation": "Feed your appetite until you consent to anything",
+      "stats": "Presence 4, Arcana 3, Sway 3",
+      "secret": "She was once a Thepyrgos academic who craved popularity. The carnival gave her an audience that never leaves.",
+      "tell": "Hums when you hesitate."
+    },
+    {
+      "id": "npc-harlequin-courts",
+      "name": "Harlequin of Courts",
+      "role": "Mab's Envoy",
+      "motivation": "Order, pretty rules, public victories",
+      "stats": "Presence 3, Melee 2, Sway 3",
+      "secret": "They are not truly cruel—they serve a court that demands obedience, and the carnival is their only escape from endless etiquette.",
+      "tell": "Bows before cuts."
+    },
+    {
+      "id": "npc-ticket-twins",
+      "name": "The Ticket Twins",
+      "role": "Ushers",
+      "motivation": "Throughput, safety theater",
+      "stats": "Wits 2, Stealth 2, Sway 2",
+      "secret": "They are the carnival's children—foundlings raised in the tents. They have never known a world without the calliope.",
+      "tell": "Synchronized blinks before speaking."
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc-carnival-grounds",
+      "name": "The Carnival Grounds",
+      "description": "A traveling night-market of tents, music, and miracles. The grounds shift each night—the same attractions, but the layout changes. The calliope plays constantly, a song that worms into your dreams.",
+      "tags": ["carnival", "tents", "wonders", "threshold"]
+    },
+    {
+      "id": "loc-firelight-parade",
+      "name": "The Firelight Parade",
+      "description": "The opening spectacle. Lanterns, brass, thrilled hush. The parade marches through the town's main square, drawing the crowd into the carnival's embrace.",
+      "tags": ["parade", "spectacle", "threshold"]
+    },
+    {
+      "id": "loc-house-of-mirrors",
+      "name": "The House of Honest Mirrors",
+      "description": "A tent filled with mirrors that show visitors as they believe themselves to be—and hold their price ledger. Each mirror is a contract, waiting to be read.",
+      "tags": ["mirrors", "ledger", "truth", "illusion"]
+    },
+    {
+      "id": "loc-wishwrights-tent",
+      "name": "The Wishwright's Tent",
+      "description": "Velvet-law negotiation. The Wishwright offers wishes at a price. The terms are never quite clear. Leather-bound books hold the carnival's hidden clauses.",
+      "tags": ["wishes", "contracts", "velvet-law"]
+    },
+    {
+      "id": "loc-ledger-wagon",
+      "name": "The Ledger Wagon",
+      "description": "The carnival's traveling records office. Prices are written as negative space on vellum—you can only read them by holding the page to the light. The wagon is guarded by the Ticket Twins.",
+      "tags": ["wagon", "ledger", "records", "heist"]
+    },
+    {
+      "id": "loc-calliope-heart",
+      "name": "The Calliope Heart",
+      "description": "Beneath the main stage, the engine of desire. Three pillars power it: Rhythm (crowd cadence), Mask Index (roles), and Ticket Chain (consent tokens). The heart beats with the crowd's longing.",
+      "tags": ["engine", "heart", "ritual", "threshold"]
+    }
+  ],
+  "factions": [
+    {
+      "id": "faction-carnival-staff",
+      "name": "The Carnival Staff",
+      "goals": "Keep the show running, grow the desire index, feed the calliope",
+      "relationship": "The staff are not evil—they are trapped. The calliope feeds on desire, and they are its keepers."
+    },
+    {
+      "id": "faction-livaea-devotees",
+      "name": "Devotees of Livaea (Desire)",
+      "goals": "Feed desire, spread the carnival's influence, find new wishes to grant",
+      "relationship": "The Cotton Witch is Livaea-touched. They see the carnival as a temple to desire."
+    },
+    {
+      "id": "faction-mabs-envoys",
+      "name": "Mab's Envoys (Etiquette)",
+      "goals": "Enforce proper conduct, ensure the show proceeds with due ceremony",
+      "relationship": "The Harlequin of Courts serves Mab. They are not cruel—they are simply bound to the mask."
+    }
+  ],
+  "campaignTimers": [
+    {
+      "name": "Desire Index",
+      "segments": 6,
+      "current": 0,
+      "description": "Each granted wish (+1), heavy crowd teaser (+1 if unopposed). Price magnitude escalates with the index."
+    },
+    {
+      "name": "Community Unraveling",
+      "segments": 6,
+      "current": 0,
+      "description": "Any wish taken without informed terms (+1), public goods priced (+1). Customs, names, and bonds fray."
+    },
+    {
+      "name": "Carnival Appetite",
+      "segments": 8,
+      "current": 0,
+      "description": "Each botched sabotage the engine can 'eat' (+1), retuning misfire (+1). When full, the carnival performs its grand act."
+    },
+    {
+      "name": "Spotlight Heat",
+      "segments": 4,
+      "current": 0,
+      "description": "Public confrontations, breaking taboos, or humiliating staff (+1). How targeted the party is by staff."
+    }
+  ],
+  "notes": "This adventure leans on core Fate's Edge procedures: Position & DV (earn leverage first), Timers (visible pressure), SB spends (on 1s), and Diamonds (codified outcomes). The Desire Tax custom procedure: every fulfilled wish costs something the wisher didn't know they valued. As more wishes accrue, the Desire Index rises and prices escalate. The party can expose terms, retune the engine, or divert its appetite before the carnival moves on.",
+  "currentAct": 0,
+  "currentScene": 0,
+  "startedAt": null,
+  "completedAt": null,
+  "status": "planned",
+  "createdAt": "2026-07-28T00:00:00.000Z",
+  "updatedAt": "2026-07-28T00:00:00.000Z"
+}

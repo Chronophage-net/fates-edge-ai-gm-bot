@@ -222,7 +222,7 @@
 
     ## 📜 License
 
-    This bot is part of the Fate's Edge project.  
+    This bot is part of Nick Gasper.  
     The code is provided under the same license as the main repository.  
     See [LICENSE](../LICENSE) for details.
 
