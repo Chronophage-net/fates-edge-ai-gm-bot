@@ -21,10 +21,6 @@ const SKILL_NAMES = [
 ];
 
 const BOONS_MAX = 5;
-// NOTE: dice.js's applyHarmAndFatigue() never caps Harm — this cap only
-// applies to direct manual adjustments (!gm harm <name> <amount>). If your
-// rules define a hard Harm track size, set it here and consider enforcing
-// the same cap in dice.js so both paths agree.
 const HARM_MAX = 5;
 
 const DEFAULT_ATTRIBUTES = { Body: 2, Wits: 2, Spirit: 2, Presence: 2 };
@@ -65,11 +61,6 @@ function resolveKey(input, canonicalList) {
 }
 
 // ─── Load / bulk replace ─────────────────────────────────────────────
-
-/**
- * Replace the entire in-memory roster (e.g. on `state-updated` sync).
- * Preserves whatever "name" casing the incoming data provides.
- */
 function loadCharacters(charData) {
   characters = {};
   for (const [key, value] of Object.entries(charData)) {
@@ -77,17 +68,10 @@ function loadCharacters(charData) {
   }
 }
 
-/**
- * Does this character already exist locally? Use this instead of
- * `!!get(name)` — get() auto-creates, so it always returns truthy.
- */
 function exists(name) {
   return Object.prototype.hasOwnProperty.call(characters, name.toLowerCase());
 }
 
-/**
- * Get a character, creating a default one if it doesn't exist yet.
- */
 function get(name) {
   const key = name.toLowerCase();
   if (!characters[key]) {
@@ -100,9 +84,6 @@ function getAll() {
   return characters;
 }
 
-/**
- * Remove a character entirely (e.g. an admin `!gm delete <name>` command).
- */
 function remove(name) {
   const key = name.toLowerCase();
   const existed = exists(key);
@@ -111,12 +92,6 @@ function remove(name) {
 }
 
 // ─── Update ──────────────────────────────────────────────────────────
-
-/**
- * Merge `changes` into a character. Deep-merges attributes/skills so a
- * partial update like `{ attributes: { Body: 3 } }` doesn't wipe out the
- * character's other attributes.
- */
 function update(name, changes, saveCallback) {
   const char = get(name);
   const { attributes, skills, ...rest } = changes || {};
@@ -133,10 +108,14 @@ function persist(name, saveCallback) {
   if (saveCallback) saveCallback();
 }
 
-// ─── Dice pool resolution ────────────────────────────────────────────
-
+// ─── Dice pool resolution (CASE‑INSENSITIVE LOOKUP) ────────────────
 /**
  * Resolve "Attribute+Skill" (case-insensitive) into a dice pool size.
+ * 
+ * FIXED: now looks up attribute and skill values using case‑insensitive
+ * matching on the character’s actual keys. This ensures that even if
+ * the stored object uses "body" instead of "Body", the pool is still
+ * resolved correctly.
  */
 function getPool(name, expr) {
   const char = get(name);
@@ -146,17 +125,28 @@ function getPool(name, expr) {
   const attrKey = resolveKey(parts[0], ATTRIBUTE_NAMES);
   const skillKey = resolveKey(parts[1], SKILL_NAMES);
 
-  const attrVal = char.attributes[attrKey] ?? 0;
-  const skillVal = char.skills[skillKey] ?? 0;
+  // Case‑insensitive lookup in attributes
+  let attrVal = 0;
+  if (char.attributes && typeof char.attributes === 'object') {
+    const foundAttr = Object.keys(char.attributes).find(
+      k => k.toLowerCase() === attrKey.toLowerCase()
+    );
+    attrVal = foundAttr ? char.attributes[foundAttr] : 0;
+  }
+
+  // Case‑insensitive lookup in skills
+  let skillVal = 0;
+  if (char.skills && typeof char.skills === 'object') {
+    const foundSkill = Object.keys(char.skills).find(
+      k => k.toLowerCase() === skillKey.toLowerCase()
+    );
+    skillVal = foundSkill ? char.skills[foundSkill] : 0;
+  }
+
   return attrVal + skillVal;
 }
 
 // ─── Resource deltas ─────────────────────────────────────────────────
-
-/**
- * Apply a signed delta to a resource field, with the correct clamping and
- * overflow-conversion rules (fatigue -> harm, obligation -> fatigue).
- */
 function applyDelta(name, field, delta, saveCallback) {
   const char = get(name);
   delta = Number(delta);
@@ -173,7 +163,6 @@ function applyDelta(name, field, delta, saveCallback) {
     case 'fatigue': {
       char.fatigue = Math.max(0, char.fatigue + delta);
       const body = char.attributes.Body || 2;
-      // Cascade overflow: every full "Body" of fatigue converts to 1 Harm.
       while (char.fatigue >= body && body > 0) {
         char.fatigue -= body;
         char.harm = Math.min(HARM_MAX, char.harm + 1);
@@ -192,7 +181,6 @@ function applyDelta(name, field, delta, saveCallback) {
       if (char.obligation > capacity) {
         const overflow = char.obligation - capacity;
         char.obligation = capacity;
-        // Cascades further into fatigue (and potentially harm) via recursion.
         applyDelta(name, 'fatigue', overflow, null);
       }
       break;
@@ -206,8 +194,6 @@ function applyDelta(name, field, delta, saveCallback) {
       break;
     }
     default: {
-      // Generic fallback for fields like xp/tier that don't need special
-      // clamping logic, instead of silently doing nothing.
       const current = typeof char[field] === 'number' ? char[field] : 0;
       char[field] = Math.max(0, current + delta);
       break;
@@ -228,7 +214,6 @@ module.exports = {
   persist,
   getPool,
   applyDelta,
-  // Constants exposed for validation elsewhere (e.g. !gm setattr/setskill)
   ATTRIBUTE_NAMES,
   SKILL_NAMES,
   BOONS_MAX,

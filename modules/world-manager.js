@@ -7,6 +7,33 @@
  * Integrates with the deck module for regional generation.
  * 
  * Updated to load data/rules.txt for LLM context.
+ *
+ * v2 (this pass) -- TWO PERSISTENCE FIXES, see CampaignManager below:
+ *   1. `this.state` (conversation history, facts, scene, Story Beats, and
+ *      all of adventure-director.js's own bookkeeping -- pendingSelection,
+ *      customAdventures, adventureArchive) is bolted onto CampaignManager
+ *      instances from OUTSIDE this class, by Orchestrator's own `get
+ *      state()` getter in gm-orchestrator.js. This class's save()/load()
+ *      never knew that property existed, so it was NEVER persisted or
+ *      restored -- every single orchestrator.campaign.save() call (which
+ *      fires after nearly every command) silently discarded conversation
+ *      history, facts, and all adventure state. This explains a
+ *      previously-reported symptom exactly: the welcome message and
+ *      "no adventure loaded" menu re-firing mid-session, as if a full
+ *      restart had wiped everything -- it effectively had, every time,
+ *      just via this specific gap rather than the filesystem.
+ *   2. save() used to generate a brand NEW random campaign code on every
+ *      single call, tracking "which one is current" only via a local
+ *      file (campaigns/{ROOM}_code.txt). If that file lives on ephemeral
+ *      disk (common for containerized deployments), a restart loses the
+ *      pointer to the latest save entirely, orphaning it -- a second,
+ *      independent point of fragility on top of (1). Now saves/loads
+ *      through a deterministic per-room "auto-save" slot (keyed by room
+ *      code itself, not a random code), so there's no separate pointer
+ *      file to lose at all. The old random-code endpoints are still used,
+ *      but only for the EXPLICIT manual share flow (!gm upload / !gm load
+ *      <code>), which is a deliberately different, opt-in mechanism from
+ *      automatic restart-survival persistence.
  */
 
 const fs = require('fs');           // synchronous methods (existsSync, mkdirSync, writeFileSync)
@@ -465,35 +492,84 @@ class CampaignManager {
 
         // Track faction events for reporting
         this.factionEvents = [];
+
+        // NOTE: `this.state` is NOT declared here -- it's bolted on
+        // dynamically from OUTSIDE this class by Orchestrator's own
+        // `get state()` getter in gm-orchestrator.js (`this.campaign.state
+        // = this._defaultCampaignState()`). It holds conversation history,
+        // facts, scene position, Story Beats, and adventure-director.js's
+        // own bookkeeping (pendingSelection, customAdventures,
+        // adventureArchive). save()/load() below now explicitly persist
+        // and restore it, since that never happened before -- see the
+        // file-header comment for the full explanation of what broke and
+        // why.
     }
 
     /**
-     * Load campaign state from the socket server or local file.
-     * @param {string} campaignCode - Optional 6-character campaign code.
-     * @returns {Promise<CampaignManager>} - this instance on success, or null if no campaign.
+     * Load campaign state.
+     *
+     * FIXED (two issues):
+     *   1. Now restores `this.state` from the saved payload (previously
+     *      never touched at all -- conversation/facts/scene/adventure-
+     *      director bookkeeping was silently lost on every load).
+     *   2. When called with NO explicit campaignCode (the normal
+     *      startup path), now loads from a DETERMINISTIC per-room
+     *      auto-save slot instead of depending on a local
+     *      `{ROOM}_code.txt` pointer file to know which random code is
+     *      "current" -- removing a second, independent point of fragility
+     *      (that file living on disk that might not survive a restart).
+     *      Passing an explicit campaignCode (e.g. from `!gm load <code>`,
+     *      importing someone else's shared snapshot) still uses the old
+     *      random-code lookup -- that's a deliberately different, opt-in
+     *      mechanism from automatic restart-survival persistence.
+     *
+     * @param {string} campaignCode - Optional. Only for importing an
+     *   explicitly shared snapshot code; omit for normal auto-load.
+     * @returns {Promise<CampaignManager>} - this instance.
      */
     async load(campaignCode) {
-        // If no code provided, try to read from local file
-        if (!campaignCode) {
-            try {
-                if (fs.existsSync(this.codeFilePath)) {
-                    campaignCode = fs.readFileSync(this.codeFilePath, 'utf-8').trim();
-                }
-            } catch (e) { /* ignore */ }
+        if (campaignCode) {
+            return this._loadByCode(campaignCode);
         }
-        if (!campaignCode) {
+        return this._loadAutoSave();
+    }
+
+    /** NEW: load from the deterministic per-room auto-save slot. */
+    async _loadAutoSave() {
+        const url = `${this.apiBase}/rooms/${this.roomCode}/campaigns/auto-save`;
+        try {
+            const response = await fetch(url, {
+                headers: { 'x-api-key': this.apiKey }
+            });
+            if (!response.ok) {
+                if (response.status === 404) {
+                    console.log(`📭 No auto-saved campaign found for room ${this.roomCode}. Starting fresh.`);
+                    this.loaded = true;
+                    return this;
+                }
+                throw new Error(`HTTP ${response.status}: ${await response.text()}`);
+            }
+            const data = await response.json();
+            this._applyLoadedData(data);
+            console.log(`✅ Auto-loaded campaign for room ${this.roomCode}`);
+            return this;
+        } catch (e) {
+            console.error('Failed to auto-load campaign:', e.message);
+            // Don't block bot startup on a persistence hiccup -- start
+            // fresh rather than crash.
             this.loaded = true;
-            console.log('No campaign code found. Starting new campaign.');
             return this;
         }
+    }
 
+    /** Old path: load an explicitly-shared snapshot by its random code. */
+    async _loadByCode(campaignCode) {
         const url = `${this.apiBase}/rooms/${this.roomCode}/campaigns/${campaignCode}`;
         try {
             const response = await fetch(url, {
                 headers: { 'x-api-key': this.apiKey }
             });
             if (!response.ok) {
-                // If 404, treat as "no campaign" rather than throwing
                 if (response.status === 404) {
                     console.log(`📭 No campaign found for code ${campaignCode}. Starting fresh.`);
                     this.loaded = true;
@@ -503,27 +579,48 @@ class CampaignManager {
             }
             const data = await response.json();
             this.campaignCode = campaignCode;
-            this.factions = data.factions || {};
-            this.trusts = data.trusts || {};
-            this.assets = data.assets || {};
-            this.timers = data.timers || {};
-            this.mandate = data.mandate || 0;
-            this.crisis = data.crisis || 0;
-            this.meta = data.meta || {};
-            this.characters = data.characters || {};
-            this.loaded = true;
+            this._applyLoadedData(data);
             console.log(`✅ Loaded campaign ${campaignCode} for room ${this.roomCode}`);
             return this;
         } catch (e) {
             console.error('Failed to load campaign:', e.message);
-            // Re-throw only if it's not a 404 (which we already handle)
             throw e;
         }
     }
 
+    /** Shared field-restoration logic for both load paths above. */
+    _applyLoadedData(data) {
+        this.factions = data.factions || {};
+        this.trusts = data.trusts || {};
+        this.assets = data.assets || {};
+        this.timers = data.timers || {};
+        this.mandate = data.mandate || 0;
+        this.crisis = data.crisis || 0;
+        this.meta = data.meta || {};
+        this.characters = data.characters || {};
+        // FIXED: this.state was never restored before at all.
+        if (data.state) {
+            this.state = data.state;
+        }
+        this.loaded = true;
+    }
+
     /**
-     * Save current campaign state to the socket server.
-     * @returns {Promise<string>} The campaign code.
+     * Save current campaign state.
+     *
+     * FIXED (two issues):
+     *   1. Payload now includes `this.state` (see file header) -- it was
+     *      silently omitted before, so conversation history, facts, scene
+     *      position, and all adventure-director bookkeeping never
+     *      actually persisted despite this method being called after
+     *      nearly every single command.
+     *   2. Now saves to the SAME deterministic per-room auto-save slot
+     *      every time, instead of generating a brand-new random code on
+     *      every call and relying on a local pointer file to track which
+     *      one is current. Removes that pointer file as a separate point
+     *      of failure entirely for automatic persistence.
+     *
+     * @returns {Promise<void>}
      */
     async save() {
         const payload = {
@@ -535,11 +632,12 @@ class CampaignManager {
             crisis: this.crisis,
             meta: this.meta,
             characters: this.characters,
+            state: this.state, // FIXED: previously omitted entirely
             factionEvents: this.factionEvents.slice(-20), // keep last 20 events
             timestamp: Date.now()
         };
 
-        const url = `${this.apiBase}/rooms/${this.roomCode}/campaigns`;
+        const url = `${this.apiBase}/rooms/${this.roomCode}/campaigns/auto-save`;
         try {
             const response = await fetch(url, {
                 method: 'POST',
@@ -552,24 +650,57 @@ class CampaignManager {
             if (!response.ok) {
                 throw new Error(`HTTP ${response.status}: ${await response.text()}`);
             }
-            const result = await response.json();
-            if (result.code) {
-                this.campaignCode = result.code;
-                // Write to local file
-                try {
-                    const dir = path.dirname(this.codeFilePath);
-                    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-                    fs.writeFileSync(this.codeFilePath, result.code);
-                } catch (e) { /* ignore */ }
-                console.log(`✅ Campaign saved with code ${this.campaignCode}`);
-                return this.campaignCode;
-            } else {
-                throw new Error('Server did not return a campaign code');
-            }
         } catch (e) {
-            console.error('Failed to save campaign:', e.message);
+            console.error('Failed to auto-save campaign:', e.message);
             throw e;
         }
+    }
+
+    /**
+     * NEW: explicit manual snapshot export for sharing -- generates a
+     * random shareable code via the OLD (unchanged) random-code endpoint.
+     * This is a deliberately different, opt-in mechanism from the
+     * automatic auto-save above (e.g. "give this code to a friend to
+     * import your campaign into a different room"), not something that
+     * needs to survive this bot's own restarts on its own.
+     * @returns {Promise<string>} the shareable campaign code.
+     */
+    async exportSnapshot() {
+        const payload = {
+            factions: this.factions,
+            trusts: this.trusts,
+            assets: this.assets,
+            timers: this.timers,
+            mandate: this.mandate,
+            crisis: this.crisis,
+            meta: this.meta,
+            characters: this.characters,
+            state: this.state,
+            factionEvents: this.factionEvents.slice(-20),
+            timestamp: Date.now()
+        };
+        const url = `${this.apiBase}/rooms/${this.roomCode}/campaigns`;
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'x-api-key': this.apiKey },
+            body: JSON.stringify(payload)
+        });
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}: ${await response.text()}`);
+        }
+        const result = await response.json();
+        if (!result.code) throw new Error('Server did not return a campaign code');
+        this.campaignCode = result.code;
+        console.log(`✅ Campaign snapshot exported with code ${this.campaignCode}`);
+        return this.campaignCode;
+    }
+
+    /**
+     * NEW: explicit manual snapshot import by a shared code (e.g. !gm
+     * load <code>). Distinct from the automatic auto-save load path.
+     */
+    async importSnapshot(campaignCode) {
+        return this._loadByCode(campaignCode);
     }
 
     /**

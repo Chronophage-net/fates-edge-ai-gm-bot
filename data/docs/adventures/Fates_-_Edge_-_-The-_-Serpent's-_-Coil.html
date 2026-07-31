@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Serpent's Coil</title>
+    <style>
+        :root {
+            --bg1: #0a0a12;
+            --bg2: #141425;
+            --bg3: #1e1e35;
+            --bg4: #2a2a45;
+            --text: #e0e0e8;
+            --text2: #b0b0c0;
+            --text3: #808098;
+            --gold: #c9a84c;
+            --gold-hover: #d4b85c;
+            --border: #2a2a45;
+            --red: #b03a2a;
+            --green: #27ae60;
+            --blue: #2980b9;
+            --purple: #8e44ad;
+            --orange: #e67e22;
+            --teal: #1abc9c;
+            --radius: 8px;
+            --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: var(--bg1);
+            color: var(--text);
+            font-family: var(--font);
+            padding: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4, h5 { color: var(--gold); margin: 0.5rem 0 0.3rem; }
+        h1 { font-size: 1.8rem; border-bottom: 2px solid var(--gold); padding-bottom: 0.3rem; }
+        h2 { font-size: 1.4rem; border-bottom: 1px solid var(--border); padding-bottom: 0.2rem; }
+        h3 { font-size: 1.1rem; }
+        h4 { font-size: 0.95rem; color: var(--text); }
+        .panel {
+            background: var(--bg2);
+            border-radius: var(--radius);
+            padding: 0.6rem 0.8rem;
+            border: 1px solid var(--border);
+            margin: 0.5rem 0;
+        }
+        .panel-gold { border-left: 4px solid var(--gold); }
+        .panel-red { border-left: 4px solid var(--red); }
+        .panel-blue { border-left: 4px solid var(--blue); }
+        .panel-green { border-left: 4px solid var(--green); }
+        .panel-purple { border-left: 4px solid var(--purple); }
+        .panel-teal { border-left: 4px solid var(--teal); }
+        .panel-orange { border-left: 4px solid var(--orange); }
+        .badge {
+            display: inline-block;
+            padding: 0.05rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.65rem;
+            font-weight: 600;
+        }
+        .badge-gold { background: var(--gold); color: #1a1400; }
+        .badge-red { background: var(--red); color: #fff; }
+        .badge-green { background: var(--green); color: #fff; }
+        .badge-blue { background: var(--blue); color: #fff; }
+        .badge-purple { background: var(--purple); color: #fff; }
+        .badge-orange { background: var(--orange); color: #fff; }
+        .badge-gray { background: var(--bg4); color: var(--text3); }
+        .badge-teal { background: var(--teal); color: #000; }
+        .flex { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
+        .flex-between { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.3rem; }
+        .text-muted { color: var(--text3); }
+        .text-gold { color: var(--gold); }
+        .text-sm { font-size: 0.85rem; }
+        .text-xs { font-size: 0.7rem; }
+        .mt-1 { margin-top: 0.5rem; }
+        .gap-1 { gap: 0.3rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+        @media (max-width: 600px) { .grid-2 { grid-template-columns: 1fr; } }
+        .scene-card {
+            background: var(--bg3);
+            border-radius: var(--radius);
+            padding: 0.4rem 0.6rem;
+            margin: 0.3rem 0;
+            border-left: 3px solid var(--gold);
+        }
+        .scene-card .scene-title { font-weight: 600; font-size: 0.9rem; }
+        .scene-card .scene-desc { font-size: 0.8rem; color: var(--text2); }
+        .timer-bar {
+            background: var(--bg4);
+            border-radius: 4px;
+            height: 6px;
+            overflow: hidden;
+            flex: 1;
+            min-width: 60px;
+        }
+        .timer-bar-fill { height: 100%; border-radius: 4px; transition: width 0.3s; }
+        .npc-card {
+            background: var(--bg3);
+            border-radius: var(--radius);
+            padding: 0.3rem 0.5rem;
+            margin: 0.15rem 0;
+            border-left: 2px solid var(--gold);
+        }
+        .npc-card .npc-name { font-weight: 600; font-size: 0.85rem; }
+        .npc-card .npc-role { font-size: 0.7rem; color: var(--text3); }
+        .npc-card .npc-motivation { font-size: 0.75rem; color: var(--text2); }
+        hr { border: none; border-top: 1px solid var(--border); margin: 0.5rem 0; }
+        .toc { background: var(--bg3); border-radius: var(--radius); padding: 0.5rem 0.8rem; border: 1px solid var(--border); }
+        .toc a { color: var(--text2); display: block; padding: 0.1rem 0; font-size: 0.85rem; }
+        .toc a:hover { color: var(--gold); }
+        .mechanics-box {
+            background: var(--bg4);
+            border-radius: var(--radius);
+            padding: 0.4rem 0.6rem;
+            border-left: 3px solid var(--purple);
+            font-size: 0.8rem;
+            margin: 0.3rem 0;
+        }
+        .corruption-track {
+            display: flex;
+            gap: 0.2rem;
+            flex-wrap: wrap;
+        }
+        .corruption-track .seg {
+            width: 28px;
+            height: 28px;
+            border-radius: 4px;
+            background: var(--bg4);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.6rem;
+            color: var(--text3);
+        }
+        .corruption-track .seg.filled { background: var(--purple); border-color: var(--purple); color: #fff; }
+        .corruption-track .seg.filled-high { background: var(--red); border-color: var(--red); color: #fff; }
+        .barbarian-note {
+            background: var(--bg4);
+            border-radius: var(--radius);
+            padding: 0.3rem 0.6rem;
+            border-left: 3px solid var(--orange);
+            font-size: 0.8rem;
+            color: var(--text2);
+            font-style: italic;
+            margin: 0.2rem 0;
+        }
+        .barbarian-note strong { color: var(--gold); }
+    </style>
+</head>
+<body>
+
+<h1>🐍 The Serpent's Coil</h1>
+<p style="color:var(--text2);margin-bottom:1rem;">
+    <span class="badge badge-gold">Tier II</span>
+    <span class="badge badge-blue">3 Sessions</span>
+    <span class="badge badge-teal">Sword & Sorcery</span>
+    <span class="badge badge-gray">Author: Nicholas A. Gasper</span>
+</p>
+<p style="color:var(--text2);margin-bottom:0.5rem;">
+    <em>By Crom! A Tale of Sorcery, Serpents, and Stubborn Heroes.</em>
+    The city of Midh Ahkaz runs with fear, though nobody will admit it. A serpent cult has grown fat on
+    whispered promises, and the Governor's Palace now houses something that doesn't cast a proper shadow.
+    The heroes—whatever combination of muscle, blade, and questionable morals brought them together—are
+    about to stumble into the middle of it.
+</p>
+
+<div class="barbarian-note">
+    <strong>⚔️ The Heroes Are Not the Sharpest Swords</strong>
+    They solve problems with axes, miss clues until they trip over them, and tend to believe the first
+    explanation offered. Play them with affection. A heavy brow and a trusting nature are their own kind of courage.
+</div>
+
+<div class="toc">
+    <strong style="color:var(--gold);">📑 Table of Contents</strong>
+    <a href="#act-1">Session 1: A Simple Job</a>
+    <a href="#act-2">Session 2: Breaking and Entering</a>
+    <a href="#act-3">Session 3: The Snake Pit</a>
+    <a href="#npcs">👤 Key NPCs</a>
+    <a href="#locations">📍 Locations</a>
+    <a href="#factions">🏛️ Factions</a>
+    <a href="#timers">⏱️ Timers</a>
+    <a href="#mechanics">⚙️ Special Mechanics</a>
+</div>
+
+<hr>
+
+<!-- ===== SESSION 1 ===== -->
+<h2 id="act-1">🍺 Session 1: A Simple Job (What Could Go Wrong?)</h2>
+<p><span class="badge badge-gold">Tier I–II</span> <span class="badge badge-blue">1 Session</span></p>
+
+<div class="scene-card">
+    <div class="scene-title">🍺 The Black Goat Tavern</div>
+    <div class="scene-desc">An ancient Ykrul chieftain sits in the flickering lamplight, clutching a purse heavy with gold. "They took her," he whispers. "My Yara. Said she'd become the cornerstone of some... serpent age." The heroes accept the job. What could go wrong?</div>
+    <div class="flex text-xs mt-1">
+        <span class="badge badge-gray">Timer: City Corruption [4]</span>
+        <span class="badge badge-gray">Timer: Cult Ascendancy [6]</span>
+        <span class="badge badge-orange">Encounter: The Investigation (DV 3, Controlled)</span>
+    </div>
+</div>
+
+<div class="scene-card">
+    <div class="scene-title">👁️ The Temple of Open Sky Visions</div>
+    <div class="scene-desc">A vision comes: serpents coiling around the city's heart, whispers of transformation, the taste of bitter corruption. The heroes see something ominous—and then immediately forget half of it.</div>
+    <div class="flex text-xs mt-1">
+        <span class="badge badge-gray">Timer: Serpent's Favor (Secret) [13]</span>
+        <span class="badge badge-purple">Encounter: The Vision (DV 4, Controlled)</span>
+    </div>
+</div>
+
+<div class="scene-card">
+    <div class="scene-title">🏛️ The City Approach</div>
+    <div class="scene-desc">Midh Ahkaz looms like a hungry beast. The gates are reinforced with iron that gleams like fangs. A curfew has been imposed. Your forged passage papers feel sticky with something suspiciously red.</div>
+    <div class="flex text-xs mt-1">
+        <span class="badge badge-red">Encounter: Entering the City (DV 4, Desperate)</span>
+    </div>
+</div>
+
+<hr>
+
+<!-- ===== SESSION 2 ===== -->
+<h2 id="act-2">🗡️ Session 2: Breaking and Entering (But for a Good Cause)</h2>
+<p><span class="badge badge-gold">Tier II</span> <span class="badge badge-blue">1 Session</span></p>
+
+<div class="scene-card">
+    <div class="scene-title">🏰 Palace Penetration</div>
+    <div class="scene-desc">The walls are carved with serpent motifs that writhe in torchlight. The hallways bend in ways that hurt the head. The guards move too fluidly, their armor gleaming with an oily sheen. Their eyes are all black.</div>
+    <div class="flex text-xs mt-1">
+        <span class="badge badge-gray">Timer: City Corruption [4]</span>
+        <span class="badge badge-gray">Timer: Cult Ascendancy [6]</span>
+        <span class="badge badge-red">Encounter: Palace Guards (DV 4, Desperate)</span>
+    </div>
+</div>
+
+<div class="scene-card">
+    <div class="scene-title">🐍 The Serpent Spawn Ambush</div>
+    <div class="scene-desc">Nightmares made flesh—grotesque fusions of human and serpent. Their mouths drip venom that sizzles on stone. They climb walls. They have no sense of humor.</div>
+    <div class="flex text-xs mt-1">
+        <span class="badge badge-gray">Timer: Cult Ascendancy [6]</span>
+        <span class="badge badge-red">Encounter: Ambush (DV 5, Desperate)</span>
+    </div>
+</div>
+
+<div class="scene-card">
+    <div class="scene-title">👩 Yara's Revelation</div>
+    <div class="scene-desc">Yara is beautiful but twisted—patches of iridescent scales, vertical pupils, a smile that's too wide. She is not a victim. She's a volunteer. She thinks becoming a snake-person is "cool." The heroes must explain why this is a bad idea. With small words.</div>
+    <div class="flex text-xs mt-1">
+        <span class="badge badge-orange">Encounter: The Revelation (DV 4, Controlled)</span>
+    </div>
+</div>
+
+<hr>
+
+<!-- ===== SESSION 3 ===== -->
+<h2 id="act-3">🐍 Session 3: The Snake Pit (With Actual Snakes)</h2>
+<p><span class="badge badge-gold">Tier II–III</span> <span class="badge badge-blue">1 Session</span></p>
+
+<div class="scene-card">
+    <div class="scene-title">⚡ The Chamber of Transformation</div>
+    <div class="scene-desc">The ceiling disappears into shadow. The walls pulse with a heartbeat that's not human. The air tastes of copper and ruin. The cult is ready to complete its ritual. The heroes must act.</div>
+    <div class="flex text-xs mt-1">
+        <span class="badge badge-gray">Timer: Cult Ascendancy [6]</span>
+        <span class="badge badge-red">Encounter: The Chamber Fight (DV 5, Desperate)</span>
+    </div>
+</div>
+
+<div class="scene-card panel-purple">
+    <div class="scene-title">🐍 Isoka's Manifestation</div>
+    <div class="scene-desc">She is beautiful and terrible—a serpent the size of a building, with the face of every person you've ever loved and hated. Her voice is honey and razors. "Become my children. I will give you power beyond mortal dreams."</div>
+    <div class="flex text-xs mt-1">
+        <span class="badge badge-gray">Timer: Corruption Score [16]</span>
+        <span class="badge badge-purple">Encounter: The Offer (DV 4, Controlled)</span>
+    </div>
+</div>
+
+<div class="scene-card panel-gold">
+    <div class="scene-title">⚔️ The Final Choice</div>
+    <div class="scene-desc">The moment of decision. The chanting swells. The air crackles. The heroes must choose their path: Greater Good, Heroic Stand, Tactical Retreat, Power Bargain, or Sacrifice Play.</div>
+    <div class="flex text-xs mt-1">
+        <span class="badge badge-gold">Encounter: The Choice (DV 5, Controlled)</span>
+    </div>
+</div>
+
+<div class="scene-card">
+    <div class="scene-title">🌅 Resolution</div>
+    <div class="scene-desc">The aftermath tastes of copper, sweat, and victory—or bitter defeat. The city will remember the heroes, whether they want it to or not. The bards will sing. The songs will be mostly accurate.</div>
+</div>
+
+<hr>
+
+<!-- ===== NPCS ===== -->
+<h2 id="npcs">👤 Key NPCs</h2>
+<div class="grid-2">
+    <div class="npc-card">
+        <div class="npc-name">Orun of the Gray Ash</div>
+        <div class="npc-role">Ykrul Chieftain (Quest Giver)</div>
+        <div class="npc-motivation">🎯 Rescue his daughter Yara</div>
+    </div>
+    <div class="npc-card">
+        <div class="npc-name">Yara</div>
+        <div class="npc-role">Orun's Daughter / Cult Volunteer</div>
+        <div class="npc-motivation">🎯 Thinks becoming a snake-person is "cool"</div>
+    </div>
+    <div class="npc-card">
+        <div class="npc-name">Captain James "The Disgraced" Dravik</div>
+        <div class="npc-role">Former Black Banner, Current Drunk</div>
+        <div class="npc-motivation">🎯 Broods, then charges. Often useful.</div>
+    </div>
+    <div class="npc-card">
+        <div class="npc-name">Korvash the Iron-Blooded</div>
+        <div class="npc-role">Vilikari Warrior</div>
+        <div class="npc-motivation">🎯 Swings axe, says something about his ancestors, swings again</div>
+    </div>
+    <div class="npc-card">
+        <div class="npc-name">Szik the Swift</div>
+        <div class="npc-role">Ykrul Rogue</div>
+        <div class="npc-motivation">🎯 Rolls his eyes, picks the lock, disappears when fighting starts</div>
+    </div>
+    <div class="npc-card">
+        <div class="npc-name">Isoka, Angel of Serpents</div>
+        <div class="npc-role">Cosmic Entity / Patron</div>
+        <div class="npc-motivation">🎯 Not entirely sure this whole cult thing was her idea</div>
+    </div>
+    <div class="npc-card">
+        <div class="npc-name">Thaliss</div>
+        <div class="npc-role">High Priest of the Serpent Cult</div>
+        <div class="npc-motivation">🎯 Complete the ritual, ascend to serpent-hood</div>
+    </div>
+</div>
+
+<hr>
+
+<!-- ===== LOCATIONS ===== -->
+<h2 id="locations">📍 Locations</h2>
+<div class="grid-2">
+    <div class="panel panel-gold"><strong>The Black Goat Tavern</strong> — Not as scary as it smells. The barmaid is a cultist, but she's just in it for the dental plan.</div>
+    <div class="panel panel-purple"><strong>The Temple of Open Sky</strong> — Definitely not a trap. The visions are real. The headaches are also real.</div>
+    <div class="panel panel-red"><strong>The Governor's Palace</strong> — Architecture that actively hates you. The guards are polite until they're not.</div>
+    <div class="panel panel-orange"><strong>The Chamber of Transformation</strong> — Where the snake happens. The heroes will likely set something on fire. Improvise.</div>
+</div>
+
+<hr>
+
+<!-- ===== FACTIONS ===== -->
+<h2 id="factions">🏛️ Factions</h2>
+<div class="grid-2">
+    <div class="panel panel-red"><strong>The Serpent Cult of Midh Ahkaz</strong> — Complete the ritual, ascend to serpent-hood, bring Isoka's influence into the world.</div>
+    <div class="panel panel-green"><strong>The Gray Ash Clan</strong> — Rescue Yara, protect their people from the cult's influence.</div>
+    <div class="panel panel-purple"><strong>Devotees of Isoka</strong> — Embrace transformation, serve the Angel of Serpents. Isoka finds them exhausting.</div>
+</div>
+
+<hr>
+
+<!-- ===== TIMERS ===== -->
+<h2 id="timers">⏱️ Timers</h2>
+<div class="grid-2">
+    <div class="panel panel-red">
+        <div style="display:flex;justify-content:space-between;font-size:0.8rem;">
+            <strong>🏙️ City Corruption</strong>
+            <span>0/4</span>
+        </div>
+        <div class="timer-bar"><div class="timer-bar-fill" style="width:0%;background:var(--red);"></div></div>
+        <div class="text-xs text-muted">How much the serpent influence has spread</div>
+    </div>
+    <div class="panel panel-orange">
+        <div style="display:flex;justify-content:space-between;font-size:0.8rem;">
+            <strong>🐍 Cult Ascendancy</strong>
+            <span>0/6</span>
+        </div>
+        <div class="timer-bar"><div class="timer-bar-fill" style="width:0%;background:var(--orange);"></div></div>
+        <div class="text-xs text-muted">How close the ritual is to completion</div>
+    </div>
+    <div class="panel panel-purple">
+        <div style="display:flex;justify-content:space-between;font-size:0.8rem;">
+            <strong>🕵️ Serpent's Favor (Secret)</strong>
+            <span>0/13</span>
+        </div>
+        <div class="timer-bar"><div class="timer-bar-fill" style="width:0%;background:var(--purple);"></div></div>
+        <div class="text-xs text-muted">Secret per-character track. Subtle luck and strange intuitions.</div>
+    </div>
+    <div class="panel panel-teal">
+        <div style="display:flex;justify-content:space-between;font-size:0.8rem;">
+            <strong>🔄 Corruption Score</strong>
+            <span>0/16</span>
+        </div>
+        <div class="timer-bar"><div class="timer-bar-fill" style="width:0%;background:var(--teal);"></div></div>
+        <div class="text-xs text-muted">The actual transformation track. Players see this.</div>
+    </div>
+</div>
+
+<hr>
+
+<!-- ===== MECHANICS ===== -->
+<h2 id="mechanics">⚙️ Special Mechanics</h2>
+
+<div class="mechanics-box">
+    <strong>🐍 Serpent's Favor (GM Eyes Only)</strong>
+    <div style="font-size:0.75rem;color:var(--text2);margin-top:0.2rem;">
+        A secret track the GM keeps for each character. Starts at 0. Increases when Isoka's influence touches them.
+        As Favor rises, the character experiences subtle luck—coincidences, good timing, strange intuitions.
+        They think they're becoming a legendary hero. They are, but also they're becoming something else.
+    </div>
+    <div style="font-size:0.7rem;margin-top:0.2rem;">
+        <strong>0–3:</strong> Nothing yet.<br>
+        <strong>4–7:</strong> +1 die once per scene from "instinct."<br>
+        <strong>8–12:</strong> +1 die to all rolls involving "serpent intuition."<br>
+        <strong>13+:</strong> +2 dice, but civilized folk start giving you strange looks.
+    </div>
+</div>
+
+<div class="mechanics-box">
+    <strong>🔄 Corruption Score</strong>
+    <div style="font-size:0.75rem;color:var(--text2);margin-top:0.2rem;">
+        Track separately from Favor. This is the actual transformation. Players see it. Starts at 0.
+    </div>
+    <div style="font-size:0.7rem;margin-top:0.2rem;">
+        <strong>0–5:</strong> None. Just a bit of dry skin.<br>
+        <strong>6–10:</strong> Gain Serpent's Senses (+1 die to Notice in dark/underground places).<br>
+        <strong>11–15:</strong> Gain Scaled Skin (+1 Armor). People start edging away from you.<br>
+        <strong>16+:</strong> Gain Cosmic Insight (once/session, ask a question about cosmic threats). You also hiss your "s"s.
+    </div>
+</div>
+
+<div class="mechanics-box">
+    <strong>⚔️ Resolution Paths</strong>
+    <div style="font-size:0.75rem;margin-top:0.2rem;">
+        <strong>Greater Good:</strong> Embrace transformation on your own terms. +5 Corruption. New cosmic allies/enemies.<br>
+        <strong>Heroic Stand:</strong> Smash the altar, rally the guards. +2 Corruption. The city builds statues.<br>
+        <strong>Tactical Retreat:</strong> Blow up the ichor pools and escape with Yara. +1 Corruption. Sequel hooks abound.<br>
+        <strong>Power Bargain:</strong> Negotiate a limited transformation. +3 Corruption. Isoka finds you interesting.<br>
+        <strong>Sacrifice Play:</strong> One hero holds the portal closed. +10 Corruption for the fallen. The others gain a Legendary Bond.
+    </div>
+</div>
+
+<hr>
+
+<div style="font-size:0.75rem;color:var(--text3);text-align:center;padding:1rem 0;">
+    The Serpent's Coil — A Fate's Edge Adventure<br>
+    © Nicholas A. Gasper — For use with the Fate's Edge RPG
+</div>
+
+</body>
+</html>

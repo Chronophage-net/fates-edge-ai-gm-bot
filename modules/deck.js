@@ -360,19 +360,32 @@ async function drawCards(count, regionId = 'generic', includeMeanings = true) {
 }
 
 /**
- * Perform a Crown Spread (5 cards: 4 main + 1 wildcard).
- * @param {string} regionId - Region slug.
- * @returns {Promise<Object>} Object with positions, cards, meanings, synthesis.
+ * Compose Crown Spread positions/timer/synthesis from ALREADY-DRAWN
+ * cards, without drawing anything itself.
+ *
+ * FIXED: this function didn't exist before, but server/api.js's
+ * POST /api/rooms/:code/deck/crown route was calling
+ * `deck.synthesiseCrownSpread(mainCards, wildcard, regionData)` on every
+ * single request -- a guaranteed `TypeError: ... is not a function`,
+ * caught by that route's try/catch and surfaced as a 404 error. This
+ * broke every REST-driven Crown Spread, including
+ * adventure-director.js's "Draw a Crown Spread and build a new
+ * adventure" flow. Extracted from crownSpread()'s own composition logic
+ * below so callers that already have room-drawn cards (api.js draws
+ * from the room's own persistent, shared deck state, so deckHistory/
+ * remaining-card-count stay consistent with ordinary draws) can compose
+ * a spread without crownSpread()'s own internal fresh-shuffle-every-time
+ * behavior.
+ *
+ * @param {Array} mainCards - exactly 4 cards for Root/Crest/Crown/Left Hand.
+ * @param {Object} wildcard - the 5th card.
+ * @param {Object} regionData - already-loaded region data (or null for generic).
+ * @param {string} regionId - region slug string, needed for getAceEffect()'s
+ *   own fallback lookup (it indexes ACE_EFFECTS by this string, separately
+ *   from regionData).
+ * @returns {Object} { positions, wildcard, timer, highestCard, aceEffects, synthesis }
  */
-async function crownSpread(regionId = 'generic') {
-  const deck = shuffle(buildDeck());
-  const cards = deck.slice(0, 5);
-  const mainCards = cards.slice(0, 4);
-  const wildcard = cards[4];
-
-  const regionData = regionId !== 'generic' ? await loadRegionData(regionId) : null;
-
-  // Build position cards
+function synthesiseCrownSpread(mainCards, wildcard, regionData, regionId = 'generic') {
   const positionCards = mainCards.map((card, idx) => {
     const pos = CROWN_POSITIONS[idx];
     const meaning = getCardMeaningFromRegion(card.suit.toLowerCase(), card.rank, regionData);
@@ -386,27 +399,26 @@ async function crownSpread(regionId = 'generic') {
     };
   });
 
-  // Wildcard meaning
   const wildcardMeaning = getWildcardMeaning(regionData);
 
-  // Determine highest card (for timer suggestion)
-  const rankOrder = { 'A': 14, 'K': 13, 'Q': 12, 'J': 11, '10': 10, '9': 9, '8': 8, '7': 7, '6': 6, '5': 5, '4': 4, '3': 3, '2': 2 };
-  const suitOrder = { 'Spades': 4, 'Hearts': 3, 'Diamonds': 2, 'Clubs': 1 };
+  // Determine highest card (for timer suggestion). NEW: also exposed on
+  // the return value as `highestCard` -- e.g. for feeding a "narrative
+  // tension" signal into an LLM adventure-generation prompt, as a
+  // subtle weighting rather than a hard mechanical theme dictation.
   let highest = mainCards[0];
   for (const card of mainCards) {
-    const r1 = rankOrder[highest.rank] || 0;
-    const r2 = rankOrder[card.rank] || 0;
+    const r1 = POKER_RANK[highest.rank] || 0;
+    const r2 = POKER_RANK[card.rank] || 0;
     if (r2 > r1) highest = card;
     else if (r2 === r1) {
-      const s1 = suitOrder[highest.suit] || 0;
-      const s2 = suitOrder[card.suit] || 0;
+      const s1 = SUIT_ORDER[highest.suit] || 0;
+      const s2 = SUIT_ORDER[card.suit] || 0;
       if (s2 > s1) highest = card;
     }
   }
   let timer = null;
-  let timerCard = '';
   if (highest) {
-    const rankVal = rankOrder[highest.rank] || 0;
+    const rankVal = POKER_RANK[highest.rank] || 0;
     let segments = 4;
     if (rankVal >= 14) segments = 10;
     else if (rankVal >= 13) segments = 8;
@@ -437,8 +449,33 @@ async function crownSpread(regionId = 'generic') {
     positions: positionCards,
     wildcard: { card: wildcard, meaning: wildcardMeaning, display: cardDisplay(wildcard) },
     timer,
+    highestCard: highest, // NEW: exposed for callers that want to use it as a soft signal
     aceEffects,
-    synthesis,
+    synthesis
+  };
+}
+
+/**
+ * Perform a Crown Spread (5 cards: 4 main + 1 wildcard). Draws its own
+ * fresh shuffled deck internally (does NOT use any room's persistent
+ * deck state) -- delegates the actual position/timer/synthesis
+ * composition to synthesiseCrownSpread() above, so the two never drift
+ * out of sync with each other.
+ * @param {string} regionId - Region slug.
+ * @returns {Promise<Object>} Object with positions, cards, meanings, synthesis.
+ */
+async function crownSpread(regionId = 'generic') {
+  const deck = shuffle(buildDeck());
+  const cards = deck.slice(0, 5);
+  const mainCards = cards.slice(0, 4);
+  const wildcard = cards[4];
+
+  const regionData = regionId !== 'generic' ? await loadRegionData(regionId) : null;
+
+  const result = synthesiseCrownSpread(mainCards, wildcard, regionData, regionId);
+
+  return {
+    ...result,
     rawCards: cards
   };
 }
@@ -519,6 +556,7 @@ module.exports = {
   shuffle,
   drawCards,
   crownSpread,
+  synthesiseCrownSpread, // NEW -- see fix comment above crownSpread()
   cardToString,
   cardDisplay,
   loadRegionData,

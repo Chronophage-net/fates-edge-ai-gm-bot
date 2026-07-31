@@ -2,6 +2,10 @@
 const diceModule = require('./dice');
 const timersModule = require('./timers');
 const adventureDirector = require('./adventure-director');
+// CHANGED: WebSocket.OPEN is referenced below (region set, deck commands)
+// but this module never imported it -- every one of those branches threw
+// "ReferenceError: WebSocket is not defined" the moment it ran.
+const WebSocket = require('ws');
 // characters module is passed via context
 
 // ─── Helper: derive HTTP API base from WebSocket URL ─────────────
@@ -28,7 +32,22 @@ function globalApiRequest(path, method = 'GET', body = null) {
         },
         body: body ? JSON.stringify(body) : undefined,
     }).then(async (res) => {
-        const data = await res.json();
+        // CHANGED: same fix as apiRequest() in index.js -- read as text
+        // first so a non-JSON response (HTML fallback page from a route
+        // that doesn't exist, proxy error page, etc.) reports what
+        // actually went wrong instead of a bare JSON.parse crash.
+        const raw = await res.text();
+        let data;
+        try {
+            data = raw ? JSON.parse(raw) : {};
+        } catch (e) {
+            const snippet = raw.slice(0, 120).replace(/\s+/g, ' ').trim();
+            throw new Error(
+                `API returned non-JSON response (HTTP ${res.status} ${res.statusText}) ` +
+                `for ${method} ${fullUrl} -- likely a route that doesn't exist server-side. ` +
+                `Body starts with: "${snippet}"`
+            );
+        }
         if (!res.ok) throw new Error(data.error || `HTTP ${res.status}`);
         return data;
     });
@@ -87,6 +106,51 @@ async function ensureCharacterOnServer(name, context) {
         console.warn(`Failed to create character ${name} on server: ${e.message}`);
         return false;
     }
+}
+
+/**
+ * NEW: extracted from the !gm discover command body so it can also be
+ * used by index.js's performAggressiveSync() -- which previously did its
+ * own SEPARATE, cruder implementation (a full wholesale replace via
+ * characters.loadCharacters(), rather than this field-by-field merge).
+ * Having the same logic live in two places is exactly the kind of
+ * duplication that caused the case-sensitivity fragmentation bug a few
+ * fixes back, and the wholesale-replace version was also strictly more
+ * dangerous: it discards any local-only state that hasn't yet round-
+ * tripped through the server between sync ticks. This is the one true
+ * implementation now; both callers share it.
+ *
+ * @param {object} context - needs { apiRequest, charactersModule }
+ * @returns {Promise<{synced: number, error?: string}>}
+ */
+async function syncCharactersFromServer(context) {
+    const listData = await context.apiRequest('GET', ['characters']);
+    if (!listData || !Array.isArray(listData.characters)) {
+        return { synced: 0, error: 'No character data from server.' };
+    }
+    const serverChars = listData.characters;
+    let synced = 0;
+    for (const data of serverChars) {
+        if (!data || !data.name) continue;
+        const char = context.charactersModule.get(data.name);
+        if (data.harm !== undefined) char.harm = data.harm;
+        if (data.fatigue !== undefined) char.fatigue = data.fatigue;
+        if (data.obligation !== undefined) char.obligation = data.obligation;
+        if (data.boons !== undefined) char.boons = data.boons;
+        if (data.leash !== undefined) char.leash = data.leash;
+        if (data.corruption !== undefined) char.corruption = data.corruption;
+        if (data.attributes) char.attributes = { ...char.attributes, ...data.attributes };
+        if (data.skills) char.skills = { ...char.skills, ...data.skills };
+        if (data.talents) char.talents = data.talents;
+        if (data.bonds) char.bonds = data.bonds;
+        if (data.complications) char.complications = data.complications;
+        if (data.assets) char.assets = data.assets;
+        if (data.followers) char.followers = data.followers;
+        if (data.tier !== undefined) char.tier = data.tier;
+        if (data.xp !== undefined) char.xp = data.xp;
+        synced++;
+    }
+    return { synced };
 }
 
 // ─── Helper: NPC action resolver (unchanged) ──────────────────────
@@ -182,7 +246,7 @@ async function handleBotCommand(sender, text, context) {
     }
     const campaignState = context.orchestrator.campaign.state;
     const saveCampaign = () => context.orchestrator.campaign.save();
-    const ws = context.ws; // WebSocket for real-time deck commands
+    const ws = context.ws;
 
     const { cmd, args } = parseArgs(text);
 
@@ -191,6 +255,8 @@ async function handleBotCommand(sender, text, context) {
         return `Available commands:
 !gm help - this list
 !gm create <name> - create a new character (default stats)
+!gm delete <name> - delete a character permanently
+!gm characters cleanup - merge any duplicate/case-fragmented character records (GM only)
 !gm status [name] - show character stats (list all if no name)
 !gm dice XdY - roll generic dice
 !gm roll "Name" Attribute+Skill DV Position - roll Fate's Edge pool
@@ -202,7 +268,7 @@ async function handleBotCommand(sender, text, context) {
 !gm complication <name> "<description>" - add a complication
 !gm asset <name> add/remove <asset name> - manage assets
 !gm follower <name> add/remove <follower name> [cap] - manage followers
-!gm timer add/tick/remove <name> [segments] [onFill] - manage timers
+!gm timer add/tick/remove <name> [segments] [onFill] - manage local timers
 !gm fact <key> <value> - update a fact
 !gm sync - sync existing characters from server
 !gm discover - discover and sync all characters from server
@@ -217,6 +283,16 @@ async function handleBotCommand(sender, text, context) {
 !gm etiquette - show game etiquette reminder
 !gm region - show current region info
 !gm region set <name> - set the campaign region (syncs to VTT)
+!gm adventure - show adventure status or selection menu
+!gm adventure choose <n> - pick an adventure from the menu (GM only)
+!gm adventure preview [n] - preview the active adventure, or a pending menu option (any player)
+!gm adventure crown - jump straight to a Crown Spread (GM only)
+!gm adventure vote abandon - vote to abandon the current adventure
+!gm adventure reset - restart the current adventure from the top (GM only)
+!gm adventure debug - full adventure state + reference data dump (GM only)
+!gm session end - mark a real-world play session as ended (dynamic-growth adventures)
+!gm npc create "Name" ["Role"] ["Motivation"] - register an ad-hoc NPC into the current adventure
+!gm resume - show current adventure status (shortcut for !gm adventure)
 !gm seed - seed campaign with Crown Spread (GM only)
 !gm spell <name> - show details of a spell
 !gm spells - list all available spells
@@ -236,6 +312,24 @@ async function handleBotCommand(sender, text, context) {
     // ─── Adventure command (handled by adventure-director) ────────
     if (cmd === 'adventure') {
         return await adventureDirector.handleAdventureCommand(sender, args, context);
+    }
+
+    // ─── Resume adventure (alias for adventure status) ─────────────
+    // NEW: `!gm resume` is a shortcut for `!gm adventure status`. Any
+    // trailing words (e.g. `!gm resume adventure`) are ignored since the
+    // parser already treats `resume` itself as the whole command -- that's
+    // fine, `handleAdventureCommand` with no sub-args just shows status.
+    if (cmd === 'resume') {
+        return await adventureDirector.handleAdventureCommand(sender, [], context);
+    }
+
+    // ─── Session end (dynamic-growth adventures: climax/session tracking) ──
+    // NEW: manual marker for "a real-world play session just ended" --
+    // see the DEFAULT_CLIMAX_AFTER_SESSIONS comment in adventure-director.js
+    // for why this can't be inferred from chat volume alone.
+    if (cmd === 'session' && (args[0] || '').toLowerCase() === 'end') {
+        if (context.myRole !== 'gm') return 'Only the GM can end a session.';
+        return await adventureDirector.handleSessionEnd(context);
     }
 
     // ─── Create ──────────────────────────────────────────────────
@@ -273,6 +367,22 @@ async function handleBotCommand(sender, text, context) {
         return `Created character "${name}" with default stats. Use !gm setattr to customize.`;
     }
 
+    // ─── Delete ──────────────────────────────────────────────────
+    // NEW: characters.js has always exported remove(name), but nothing
+    // ever called it -- there was no way to clean up a mistakenly-created
+    // character (e.g. the "0"/"1" bogus entries the !gm discover bug
+    // above used to create) without restarting the whole bot process.
+    if (cmd === 'delete') {
+        if (context.myRole !== 'gm') return 'Only the GM can delete characters.';
+        const name = args.join(' ');
+        if (!name) return 'Usage: !gm delete <name>';
+        const existed = charactersModule.remove(name);
+        await saveCampaign();
+        return existed
+            ? `Deleted character "${name}".`
+            : `No character named "${name}" was found locally.`;
+    }
+
     // ─── Status ──────────────────────────────────────────────────
     if (cmd === 'status') {
         const allChars = charactersModule.getAll();
@@ -289,14 +399,20 @@ async function handleBotCommand(sender, text, context) {
         } else {
             const name = args.join(' ');
             const char = charactersModule.get(name);
+            // Safely handle arrays
+            const talents = char.talents || [];
+            const bonds = char.bonds || [];
+            const complications = char.complications || [];
+            const assets = char.assets || [];
+            const followers = char.followers || [];
             return `${name} → Harm: ${char.harm}, Fatigue: ${char.fatigue}, Boons: ${char.boons}, Obligation: ${char.obligation}, Corruption: ${char.corruption}, Leash: ${char.leash}` +
                 `\nAttributes: ${JSON.stringify(char.attributes)}` +
                 `\nSkills: ${JSON.stringify(char.skills)}` +
-                `\nTalents: ${char.talents.join(', ') || 'None'}` +
-                `\nBonds: ${char.bonds.map(b => `${b.target} (${b.description})`).join(', ') || 'None'}` +
-                `\nComplications: ${char.complications.join(', ') || 'None'}` +
-                `\nAssets: ${char.assets.join(', ') || 'None'}` +
-                `\nFollowers: ${char.followers.map(f => `${f.name} (Cap ${f.cap}, Loyalty: ${f.loyalty}, Fitness: ${f.fitness})`).join(', ') || 'None'}`;
+                `\nTalents: ${talents.join(', ') || 'None'}` +
+                `\nBonds: ${bonds.map(b => `${b.target} (${b.description})`).join(', ') || 'None'}` +
+                `\nComplications: ${complications.join(', ') || 'None'}` +
+                `\nAssets: ${assets.join(', ') || 'None'}` +
+                `\nFollowers: ${followers.map(f => `${f.name} (Cap ${f.cap}, Loyalty: ${f.loyalty}, Fitness: ${f.fitness})`).join(', ') || 'None'}`;
         }
     }
 
@@ -380,40 +496,43 @@ async function handleBotCommand(sender, text, context) {
         return result;
     }
 
+    // ─── Characters cleanup ─────────────────────────────────────────
+    // NEW: one-time merge of any pre-existing case-fragmented character
+    // records ("Khor" vs "khor" as separate server-side entries) left
+    // over from before room.js's character storage normalized casing.
+    // See room.js's mergeDuplicateCharacters() for the merge heuristic
+    // and its known limitations -- worth a !gm status check afterward.
+    if (cmd === 'characters' && (args[0] || '').toLowerCase() === 'cleanup') {
+        if (context.myRole !== 'gm') return 'Only the GM can run character cleanup.';
+        try {
+            const result = await context.apiRequest('POST', ['characters', 'cleanup'], {});
+            if (result.merged === 0) {
+                return '✅ No duplicate character records found -- nothing to clean up.';
+            }
+            return `✅ Merged ${result.merged} duplicate character record${result.merged === 1 ? '' : 's'}. ` +
+                `Removed keys: ${result.removedKeys.join(', ')}. ` +
+                `Run \`!gm status\` to confirm the merged stats look right -- this is a best-effort merge, not guaranteed perfect for every field.`;
+        } catch (e) {
+            return `Cleanup failed: ${e.message}`;
+        }
+    }
+
     // ─── Discover ──────────────────────────────────────────────────
+    // FIXED: GET /api/rooms/:code/characters returns
+    // { characters: Object.values(chars) } -- an ARRAY of full character
+    // objects (index.js's performAggressiveSync() already correctly
+    // treats it this way). This command instead did
+    // `Object.keys(serverChars)` on that array, which returns numeric
+    // string INDICES ("0", "1", ...) rather than names, then used those
+    // indices as character names -- creating bogus characters literally
+    // named "0" and "1" (with the real character's stats copied onto
+    // them) every time this ran. Now iterates the array directly and
+    // reads each character's own `.name` field.
     if (cmd === 'discover') {
         if (context.myRole !== 'gm') return 'Only the GM can discover characters.';
         try {
-            const listData = await context.apiRequest('GET', ['characters']);
-            if (!listData || !listData.characters) {
-                return 'No character data from server.';
-            }
-            const serverChars = listData.characters;
-            const names = Object.keys(serverChars);
-            if (names.length === 0) return 'No characters on server.';
-            let synced = 0;
-            for (const name of names) {
-                const char = charactersModule.get(name);
-                const data = serverChars[name];
-                if (data) {
-                    if (data.harm !== undefined) char.harm = data.harm;
-                    if (data.fatigue !== undefined) char.fatigue = data.fatigue;
-                    if (data.obligation !== undefined) char.obligation = data.obligation;
-                    if (data.boons !== undefined) char.boons = data.boons;
-                    if (data.leash !== undefined) char.leash = data.leash;
-                    if (data.corruption !== undefined) char.corruption = data.corruption;
-                    if (data.attributes) char.attributes = { ...char.attributes, ...data.attributes };
-                    if (data.skills) char.skills = { ...char.skills, ...data.skills };
-                    if (data.talents) char.talents = data.talents;
-                    if (data.bonds) char.bonds = data.bonds;
-                    if (data.complications) char.complications = data.complications;
-                    if (data.assets) char.assets = data.assets;
-                    if (data.followers) char.followers = data.followers;
-                    if (data.tier !== undefined) char.tier = data.tier;
-                    if (data.xp !== undefined) char.xp = data.xp;
-                    synced++;
-                }
-            }
+            const { synced, error } = await syncCharactersFromServer(context);
+            if (error) return error;
             await saveCampaign();
             return `Discovered and synced ${synced} characters from server.`;
         } catch (e) {
@@ -507,31 +626,41 @@ async function handleBotCommand(sender, text, context) {
     }
 
     // ─── Room state ─────────────────────────────────────────────────
+    // CHANGED: this used to call context.apiRequest('GET', ['state']),
+    // i.e. GET /api/rooms/:code/state -- a route that doesn't exist
+    // anywhere in server/api.js. Every call fell through to the
+    // server's catch-all and came back as an HTML page, which then
+    // failed JSON parsing with the cryptic "Unexpected token '<'" error.
+    // The fields this command actually wants (location, position,
+    // effect, defaultDV, timers, npcs) are an exact match for the BOT'S
+    // OWN local campaignState.scene (see gm-orchestrator.js's
+    // _defaultCampaignState()) -- this was never server data, it's
+    // right here in memory. No network call needed at all.
     if (cmd === 'room-state') {
         if (context.myRole !== 'gm') return 'Only the GM can view room state.';
-        try {
-            const data = await context.apiRequest('GET', ['state']);
-            if (!data) return 'No room state data.';
-            let result = '🏠 **Room State:**\n';
-            result += `Location: ${data.location || 'unknown'}\n`;
-            result += `Position: ${data.position || 'Controlled'}\n`;
-            result += `Effect: ${data.effect || 'Standard'}\n`;
-            result += `Default DV: ${data.defaultDV || 3}\n`;
-            if (data.timers && data.timers.length > 0) {
-                result += `Timers:\n`;
-                for (const timer of data.timers) {
-                    result += `  - ${timer.name}: ${timer.current}/${timer.max}\n`;
-                }
-            } else {
-                result += 'Timers: None\n';
+        const scene = campaignState.scene || {};
+        let result = '🏠 **Room State:**\n';
+        result += `Location: ${scene.location || 'unknown'}\n`;
+        result += `Position: ${scene.position || 'Controlled'}\n`;
+        result += `Effect: ${scene.effect || 'Standard'}\n`;
+        result += `Default DV: ${scene.defaultDV || 3}\n`;
+        const sceneTimers = scene.timers || [];
+        if (sceneTimers.length > 0) {
+            result += `Timers:\n`;
+            for (const timer of sceneTimers) {
+                result += `  - ${timer.name}: ${timer.current}/${timer.max}\n`;
             }
-            if (data.npcs && data.npcs.length > 0) {
-                result += `NPCs: ${data.npcs.join(', ')}\n`;
-            }
-            return result;
-        } catch (e) {
-            return `Room state failed: ${e.message}`;
+        } else {
+            result += 'Timers: None\n';
         }
+        const sceneNpcs = scene.npcs || [];
+        if (sceneNpcs.length > 0) {
+            // npcs may be plain name strings or full NPC objects (see
+            // generateNPC() in gm-orchestrator.js) -- handle both.
+            const npcNames = sceneNpcs.map(n => (typeof n === 'string' ? n : (n?.name || 'Unknown')));
+            result += `NPCs: ${npcNames.join(', ')}\n`;
+        }
+        return result;
     }
 
     // ─── setattr ────────────────────────────────────────────────────
@@ -543,7 +672,6 @@ async function handleBotCommand(sender, text, context) {
         await ensureCharacterOnServer(name, context);
         const char = charactersModule.get(name);
         char.attributes[attr] = value;
-        // Sync full character to server (we'll update via API)
         try {
             const updates = { [name]: { attributes: char.attributes } };
             await context.apiRequest('POST', ['characters', 'update'], { updates });
@@ -677,7 +805,9 @@ async function handleBotCommand(sender, text, context) {
         }
     }
 
-    // ─── Timer management ──────────────────────────────────────────
+    // ─── Timer management (LOCAL orchestrator timers -- see note in
+    // processSpecialTags below about how these differ from the server
+    // adventure engine's scene/campaign timers) ────────────────────
     if (cmd === 'timer') {
         const sub = args[0];
         if (sub === 'add') {
@@ -858,6 +988,26 @@ async function handleBotCommand(sender, text, context) {
     if (cmd === 'npc') {
         if (context.myRole !== 'gm') return 'Only the GM can command NPCs.';
         const sub = args[0];
+
+        // NEW: !gm npc create "Name" ["Role"] ["Motivation"] -- manual
+        // variant of the [NPC CREATE ...] tag the AI emits automatically;
+        // useful if a human GM wants to register an ad-hoc NPC by hand.
+        // Registers into the currently loaded adventure's own npcs[] so
+        // it's a real, trackable NPC from here on (see server/adventure.js
+        // addNpc()), not disposable narration.
+        if (sub === 'create') {
+            const rest = text.slice(text.toLowerCase().indexOf('create') + 'create'.length);
+            const quoted = [...rest.matchAll(/"([^"]*)"/g)].map(m => m[1]);
+            if (quoted.length < 1) return 'Usage: !gm npc create "Name" ["Role"] ["Motivation"]';
+            const [name, role, motivation] = quoted;
+            try {
+                await context.apiRequest('POST', ['adventure', 'npc'], { npc: { name, role: role || 'NPC', motivation: motivation || '' } });
+                return `✅ "${name}"${role ? ` (${role})` : ''} is now a recognized part of this adventure.`;
+            } catch (e) {
+                return `Failed to register NPC: ${e.message}`;
+            }
+        }
+
         const npcName = args[1];
         const target = args[2];
         const extra = args.slice(3).join(' ');
@@ -865,7 +1015,8 @@ async function handleBotCommand(sender, text, context) {
         if (!sub || !npcName || !target) {
             return 'Usage: !gm npc attack <npc> <target> [harm]\n' +
                    '       !gm npc social <npc> <target> <tactic>\n' +
-                   '       !gm npc spell <npc> <target> <spell>';
+                   '       !gm npc spell <npc> <target> <spell>\n' +
+                   '       !gm npc create "Name" ["Role"] ["Motivation"]';
         }
 
         let options = {};
@@ -1031,30 +1182,40 @@ async function processSpecialTags(text, context, senderName = null) {
     let output = text;
 
     // Helper to resolve character name
+    // CHANGED: a real production log showed a roll card displaying
+    // "Unknown" as the character name (e.g. "Unknown rolls Body+Athletics
+    // ..."). Whether that came from the model genuinely writing
+    // `[ROLL "Unknown" ...]` because it wasn't sure which character was
+    // acting, or from a hallucinated card that slipped past the strip
+    // filters, the right fix is the same either way: "Unknown" almost
+    // certainly means "whoever is actually speaking right now," so
+    // resolve it to the real sender exactly like "me" already is,
+    // instead of silently creating/rolling for a bogus character
+    // literally named "Unknown".
     const resolveCharName = (name) => {
-        if (name === 'me' && senderName) {
+        if ((name === 'me' || (typeof name === 'string' && name.toLowerCase() === 'unknown')) && senderName) {
             return senderName;
         }
         return name;
     };
 
-    // ─── [ROLL ...] – supports "me" placeholder ────────────────────
-    const rollRegex = /\[ROLL "([^"]+)" ([A-Za-z\+]+) DV(\d+) ([A-Za-z]+)\]/gi;
-    let match;
-    while ((match = rollRegex.exec(text)) !== null) {
-        let name = match[1];
+    // ─── Helper: process a single roll tag ─────────────────────────
+    async function processRollTag(name, poolExpr, dv, position, fullTag) {
         name = resolveCharName(name);
-        const poolExpr = match[2];
-        const dv = parseInt(match[3]);
-        const position = match[4];
+        const char = charactersModule.get(name);
+        const hasAttributes = char && Object.keys(char.attributes || {}).some(k => char.attributes[k] !== undefined);
+
+        if (!hasAttributes) {
+            return `*(⚠️ Character "${name}" not found. Please select a character in the VTT or create one with \`!gm create "${name}"\`.)*`;
+        }
+
         const diceCount = charactersModule.getPool(name, poolExpr);
         if (diceCount === 0) {
-            output = output.replace(match[0], `*(Could not resolve dice pool for ${name}.)*`);
-            continue;
+            return `*(Could not resolve dice pool for ${name} with "${poolExpr}". Check attribute/skill names.)*`;
         }
+
         let result = diceModule.rollDice(diceCount);
         result = diceModule.applyPosition(result, position);
-        const char = charactersModule.get(name);
         const formatted = diceModule.formatRollResult(name, poolExpr, diceCount, result, dv, position, char);
         const outcome = diceModule.determineOutcome(result.successes, dv, result.sb);
         if (outcome.boonGain > 0) {
@@ -1062,12 +1223,59 @@ async function processSpecialTags(text, context, senderName = null) {
         }
         campaignState.sb = (campaignState.sb || 0) + result.sb;
         saveCampaign();
-        output = output.replace(match[0], formatted);
+        return formatted;
+    }
+
+    // ─── [ROLL ...] – supports "me" placeholder ────────────────────
+    // First, try the regex approach with flexible spacing
+    const rollRegex = /\[ROLL\s*"([^"]+)"\s*([A-Za-z\+]+)\s*DV\s*(\d+)\s*([A-Za-z]+)\s*\]/gi;
+    let match;
+    let foundAny = false;
+    console.log('🔍 [processSpecialTags] Processing text for roll tags:', text.slice(0, 200));
+    while ((match = rollRegex.exec(text)) !== null) {
+        foundAny = true;
+        console.log('🔍 [processSpecialTags] Found roll tag via regex:', match[0]);
+        const name = match[1];
+        const poolExpr = match[2];
+        const dv = parseInt(match[3]);
+        const position = match[4];
+        const replacement = await processRollTag(name, poolExpr, dv, position, match[0]);
+        output = output.replace(match[0], replacement);
+        console.log('🔍 [processSpecialTags] Replaced with:', replacement);
+    }
+
+    // If regex found nothing, try a more manual parser (more forgiving of whitespace)
+    if (!foundAny) {
+        console.log('🔍 [processSpecialTags] Regex found no roll tags, trying manual parser...');
+        let startIdx = 0;
+        while (true) {
+            const rollStart = output.indexOf('[ROLL "', startIdx);
+            if (rollStart === -1) break;
+            const rollEnd = output.indexOf(']', rollStart);
+            if (rollEnd === -1) break;
+            const fullTag = output.slice(rollStart, rollEnd + 1);
+            const tagContent = output.slice(rollStart + 7, rollEnd); // after '[ROLL "'
+            // Parse: "name" whitespace Attribute+Skill whitespace DV number whitespace Position
+            const parts = tagContent.match(/"([^"]+)"\s*([A-Za-z\+]+)\s*DV\s*(\d+)\s*([A-Za-z]+)/);
+            if (parts) {
+                const name = parts[1];
+                const poolExpr = parts[2];
+                const dv = parseInt(parts[3]);
+                const position = parts[4];
+                console.log('🔍 [processSpecialTags] Found roll tag via manual parser:', fullTag);
+                const replacement = await processRollTag(name, poolExpr, dv, position, fullTag);
+                output = output.replace(fullTag, replacement);
+                console.log('🔍 [processSpecialTags] Replaced with:', replacement);
+                startIdx = rollEnd + 1;
+            } else {
+                startIdx = rollEnd + 1;
+            }
+        }
     }
 
     // ─── [SET POSITION ...] ────────────────────────────────────────
     const posRegex = /\[SET POSITION ([A-Za-z]+)\]/gi;
-    while ((match = posRegex.exec(text)) !== null) {
+    while ((match = posRegex.exec(output)) !== null) {
         const pos = match[1];
         campaignState.scene.position = pos;
         saveCampaign();
@@ -1076,7 +1284,7 @@ async function processSpecialTags(text, context, senderName = null) {
 
     // ─── [SET DV ...] ──────────────────────────────────────────────
     const dvRegex = /\[SET DV (\d+)\]/gi;
-    while ((match = dvRegex.exec(text)) !== null) {
+    while ((match = dvRegex.exec(output)) !== null) {
         const dv = parseInt(match[1]);
         campaignState.scene.defaultDV = dv;
         saveCampaign();
@@ -1084,8 +1292,14 @@ async function processSpecialTags(text, context, senderName = null) {
     }
 
     // ─── [APPLY ...] – supports "me" placeholder ───────────────────
-    const applyRegex = /\[APPLY (HARM|FATIGUE|BOON|OBLIGATION|CORRUPTION|LEASH) ([A-Za-z0-9_]+) (\d+)(?:\s+(\d+))?\]/gi;
-    while ((match = applyRegex.exec(text)) !== null) {
+    // CHANGED: the system prompt (index.js) instructs the model to use
+    // "[ADD BOON Name N]" for boons, but this regex only ever matched
+    // the literal word APPLY -- so every boon grant the model actually
+    // followed instructions for silently failed to parse. Also added
+    // support for negative amounts (e.g. removing a boon/spending one
+    // via a tag) which the old `(\d+)` couldn't match at all.
+    const applyRegex = /\[(?:APPLY|ADD)\s+(HARM|FATIGUE|BOON|OBLIGATION|CORRUPTION|LEASH)\s+([A-Za-z0-9_]+)\s+(-?\d+)(?:\s+(\d+))?\]/gi;
+    while ((match = applyRegex.exec(output)) !== null) {
         const type = match[1].toLowerCase();
         let name = match[2];
         name = resolveCharName(name);
@@ -1103,8 +1317,19 @@ async function processSpecialTags(text, context, senderName = null) {
     }
 
     // ─── [TICK TIMER ...] ──────────────────────────────────────────
+    // NOTE: this ticks the LOCAL orchestrator scene timer
+    // (campaignState.scene.timers), a different system from the server
+    // adventure engine's own scene/campaign timers (server/adventure.js
+    // tickTimer(), reached via apiRequest POST ['adventure','timer']).
+    // The two are not reconciled -- a [TICK TIMER "X" N] tag here will
+    // silently create/advance a LOCAL timer named X even if an adventure
+    // module timer with the same name already exists server-side. If you
+    // want the AI's [TICK TIMER] tags to drive the adventure engine's
+    // scene timers instead, route this branch through
+    // context.apiRequest('POST', ['adventure','timer'], {ref:name, amount:ticks, scope:'scene'})
+    // and drop the local timersModule call.
     const tickRegex = /\[TICK TIMER "([^"]+)" (\d+)\]/gi;
-    while ((match = tickRegex.exec(text)) !== null) {
+    while ((match = tickRegex.exec(output)) !== null) {
         const name = match[1];
         const ticks = parseInt(match[2]);
         const filled = timersModule.tickTimer(campaignState, name, ticks);
@@ -1124,7 +1349,7 @@ async function processSpecialTags(text, context, senderName = null) {
 
     // ─── [TIMER ...] – create timer ───────────────────────────────
     const createRegex = /\[TIMER "([^"]+)" (\d+) "([^"]*)"\]/gi;
-    while ((match = createRegex.exec(text)) !== null) {
+    while ((match = createRegex.exec(output)) !== null) {
         const name = match[1];
         const max = parseInt(match[2]);
         const onFill = match[3] || 'Timer fills.';
@@ -1134,8 +1359,11 @@ async function processSpecialTags(text, context, senderName = null) {
     }
 
     // ─── [DRAW ...] – WebSocket deck-draw ──────────────────────────
-    const drawRegex = /\[DRAW (\d+) (\w+)\]/gi;
-    while ((match = drawRegex.exec(text)) !== null) {
+    // CHANGED: \w+ doesn't match hyphens, so a region like
+    // "acasia-broken-marches" (the actual default region) never matched
+    // and this tag silently failed to fire for the default region.
+    const drawRegex = /\[DRAW (\d+) ([\w-]+)\]/gi;
+    while ((match = drawRegex.exec(output)) !== null) {
         const count = parseInt(match[1]);
         const region = match[2];
         if (ws && ws.readyState === WebSocket.OPEN) {
@@ -1147,8 +1375,9 @@ async function processSpecialTags(text, context, senderName = null) {
     }
 
     // ─── [CROWN ...] – WebSocket crown-spread ──────────────────────
-    const crownRegex = /\[CROWN (\w+)\]/gi;
-    while ((match = crownRegex.exec(text)) !== null) {
+    // CHANGED: same hyphen fix as [DRAW] above.
+    const crownRegex = /\[CROWN ([\w-]+)\]/gi;
+    while ((match = crownRegex.exec(output)) !== null) {
         const region = match[1];
         if (ws && ws.readyState === WebSocket.OPEN) {
             ws.send(JSON.stringify({ type: 'crown-spread', region }));
@@ -1160,7 +1389,7 @@ async function processSpecialTags(text, context, senderName = null) {
 
     // ─── [SPEND SB ...] ────────────────────────────────────────────
     const sbRegex = /\[SPEND SB (\d+)\]/gi;
-    while ((match = sbRegex.exec(text)) !== null) {
+    while ((match = sbRegex.exec(output)) !== null) {
         const cost = parseInt(match[1]);
         if (campaignState.sb >= cost) {
             campaignState.sb -= cost;
@@ -1173,7 +1402,7 @@ async function processSpecialTags(text, context, senderName = null) {
 
     // ─── [FACT ...] ────────────────────────────────────────────────
     const factRegex = /\[FACT (.+?) (.+?)\]/gi;
-    while ((match = factRegex.exec(text)) !== null) {
+    while ((match = factRegex.exec(output)) !== null) {
         const key = match[1].trim();
         const value = match[2].trim();
         campaignState.facts[key] = value;
@@ -1183,7 +1412,7 @@ async function processSpecialTags(text, context, senderName = null) {
 
     // ─── [NPC CAST ...] – supports "me" placeholder ───────────────
     const npcCastRegex = /\[NPC CAST "([^"]+)" ([^\]]+)\]/gi;
-    while ((match = npcCastRegex.exec(text)) !== null) {
+    while ((match = npcCastRegex.exec(output)) !== null) {
         const spellName = match[1];
         let target = match[2].trim();
         target = resolveCharName(target);
@@ -1223,9 +1452,54 @@ async function processSpecialTags(text, context, senderName = null) {
         output = output.replace(match[0], resultMsg);
     }
 
+    // ─── [SCENE COMPLETE "notes"] ──────────────────────────────────
+    // NEW: this is the actual scene-advancement mechanism -- previously
+    // nothing in the bot ever called the adventure engine's advanceScene()
+    // at all, so the "current scene" never moved forward regardless of
+    // how the story actually progressed. The AI emits this tag when a
+    // scene's dramatic question has resolved and it's time to move on;
+    // adventureDirector.handleSceneComplete() decides whether that's a
+    // plain advance, generating a new scene (dynamic-growth adventures
+    // with content running low), generating a climax (session threshold
+    // reached), or letting the adventure complete and archiving a summary.
+    const sceneCompleteRegex = /\[SCENE COMPLETE(?:\s+"([^"]*)")?\]/gi;
+    while ((match = sceneCompleteRegex.exec(output)) !== null) {
+        const notes = match[1] || '';
+        let resultMsg;
+        try {
+            resultMsg = await adventureDirector.handleSceneComplete(context, notes);
+        } catch (e) {
+            resultMsg = `*(Scene completion error: ${e.message})*`;
+        }
+        output = output.replace(match[0], resultMsg || '');
+    }
+
+    // ─── [NPC CREATE "Name" "Role" "Motivation"] ───────────────────
+    // NEW: registers an ad-hoc NPC the AI just invented (mid-narration)
+    // into the currently loaded adventure's own npcs[] array, so it
+    // becomes a real, trackable NPC from here on (matched by
+    // adventure-context.js's getActiveNpc() the same as any pre-authored
+    // one) instead of vanishing the moment the scene ends. Deliberately
+    // silent on success -- the name already appears naturally in the
+    // AI's own sentence; a visible confirmation would be redundant
+    // clutter every time a new character is introduced. Fails silently
+    // (logged only) if no adventure is loaded, e.g. during freeform play.
+    const npcCreateRegex = /\[NPC CREATE "([^"]+)"(?:\s+"([^"]*)")?(?:\s+"([^"]*)")?\]/gi;
+    while ((match = npcCreateRegex.exec(output)) !== null) {
+        const name = match[1];
+        const role = match[2] || 'NPC';
+        const motivation = match[3] || '';
+        try {
+            await context.apiRequest('POST', ['adventure', 'npc'], { npc: { name, role, motivation } });
+        } catch (e) {
+            console.warn(`[NPC CREATE] failed to register "${name}":`, e.message);
+        }
+        output = output.replace(match[0], '');
+    }
+
     // ─── [ENCOUNTER RESOLVE outcome "notes"] ──────────────────────
     const encResolveRegex = /\[ENCOUNTER RESOLVE\s+(clean|partial|miss)(?:\s+"([^"]*)")?\]/gi;
-    while ((match = encResolveRegex.exec(text)) !== null) {
+    while ((match = encResolveRegex.exec(output)) !== null) {
         const outcome = match[1];
         const notes = match[2] || '';
         try {
@@ -1311,5 +1585,6 @@ module.exports = {
     processSpecialTags,
     generateStartupMessage,
     generateEtiquetteReminder,
-    globalApiRequest
+    globalApiRequest,
+    syncCharactersFromServer, // NEW: shared with index.js's performAggressiveSync
 };
