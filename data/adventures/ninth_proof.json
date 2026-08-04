@@ -1,0 +1,476 @@
+{
+  "id": "the-ninth-proof",
+  "title": "The Ninth Proof",
+  "description": "A scholar has vanished from the University of Thepyrgos, leaving behind a notebook filled with diagrams of a forbidden game called Kon'reh. The Ninth Proof is a mathematical demonstration that reality is a board — and completing it could unmake the boundaries between what is and what could be. The party must navigate the war between the Witness's Archivists and the Ninth's Coterie, rescue the missing scholar, and decide the fate of the proof itself.",
+  "tier": "II-III",
+  "author": "Nicholas A. Gasper",
+  "saga": false,
+  "bestiary": [
+    {
+      "id": "hollow-bride",
+      "name": "The Hollow Bride",
+      "tl": 4,
+      "class": "IV",
+      "category": "outsider",
+      "description": "A manifestation of the Ninth, appearing when the proof is near completion. She offers bargains that seem fair — but she collects her price in names, memories, and promises. Her voice is honey and razors.",
+      "stats": { "Spirit": 4, "Presence": 4, "Resolve": 3, "hp": 35 },
+      "sb_spends": [
+        { "cost": 1, "name": "Whisper of Honey", "effect": "Target gains a Boon but marks 1 Obligation to the Ninth." },
+        { "cost": 2, "name": "Razor's Edge", "effect": "Target must answer a question truthfully or take Harm 1 (Mental)." },
+        { "cost": 3, "name": "The Ninth's Bargain", "effect": "Target is bound by a geas until they complete a task. Breaking it costs 1 Corruption." }
+      ],
+      "weakness": "Cannot cross a line of salt. Cannot harm those who speak a true regret aloud."
+    },
+    {
+      "id": "voice-of-the-ninth",
+      "name": "The Voice of the Ninth",
+      "tl": 3,
+      "class": "III",
+      "category": "humanoid",
+      "description": "The leader of the Ninth's Coterie. Speaks in paradoxes. Offers bargains that seem reasonable — but every bargain erases a memory.",
+      "stats": { "Presence": 4, "Sway": 3, "Lore": 3, "hp": 20 },
+      "sb_spends": [
+        { "cost": 1, "name": "Paradox", "effect": "Target must reroll a success." },
+        { "cost": 2, "name": "Bargain of Forgetting", "effect": "Target gains +1 die for the scene but loses a minor memory (GM chooses)." },
+        { "cost": 3, "name": "The Ninth's Authority", "effect": "Target must obey one command or take Harm 2 (Mental)." }
+      ]
+    },
+    {
+      "id": "paper-wraith",
+      "name": "Paper Wraith",
+      "tl": 3,
+      "class": "III",
+      "category": "undead",
+      "description": "Ninth-created entities that erase knowledge and memories. They appear in the archives when the proof is disturbed.",
+      "stats": { "Spirit": 3, "Wits": 2, "hp": 15 },
+      "sb_spends": [
+        { "cost": 1, "name": "Memory Drain", "effect": "Target loses a minor memory (a face, a name, a place)." },
+        { "cost": 2, "name": "Ink Blot", "effect": "A document or book is erased, becoming unreadable." },
+        { "cost": 3, "name": "Erasure", "effect": "Target loses one skill die for the scene." }
+      ]
+    },
+    {
+      "id": "archive-guardian",
+      "name": "Archive Guardian",
+      "tl": 3,
+      "class": "III",
+      "category": "construct",
+      "description": "Witness-created constructs that preserve and protect the archives. They attack intruders with precision and silence.",
+      "stats": { "Body": 3, "Melee": 3, "Resolve": 2, "hp": 25 },
+      "sb_spends": [
+        { "cost": 1, "name": "Precision Strike", "effect": "Deal Harm 2, ignoring light armor." },
+        { "cost": 2, "name": "Silent Alarm", "effect": "Summon 1d4 additional guardians; ticks Witness's Vigil +1." }
+      ]
+    },
+    {
+      "id": "echo-scholar",
+      "name": "Echo Scholar",
+      "tl": 2,
+      "class": "II",
+      "category": "humanoid",
+      "description": "A scholar who has been partially consumed by the Ninth's influence. They speak in half-remembered truths and offer dangerous knowledge.",
+      "stats": { "Wits": 3, "Lore": 3, "Presence": 2, "hp": 15 },
+      "sb_spends": [
+        { "cost": 1, "name": "Fragmented Truth", "effect": "Reveal a clue, but the scholar gains 1 Obligation on the recipient." },
+        { "cost": 2, "name": "Echo of Memory", "effect": "The scholar remembers a name. That name is now a target for the Ninth." }
+      ]
+    }
+  ],
+  "acts": [
+    {
+      "id": "act-1",
+      "title": "The Game Awakens",
+      "description": "The party investigates Lerris's disappearance, discovering the Kon'reh notebook and the secret society of scholars who play it. They must navigate the University's politics while the game begins to reveal its true nature.",
+      "scenes": [
+        {
+          "id": "scene-1-1",
+          "title": "The Missing Scholar",
+          "description": "Markus Fenwood, Lerris's brother, is desperate. He has found a notebook in Lerris's quarters filled with cryptic diagrams. The last entry reads: 'The Ninth Rim opens at the salt-pressed hour. I will count to eight and leave the ninth for the door.'",
+          "timers": [
+            { "name": "Lerris's Fate", "segments": 8, "current": 0, "description": "How close Lerris is to being lost to the game" },
+            { "name": "Hollow Attention", "segments": 6, "current": 0, "description": "How much the Hollow has noticed the party" }
+          ],
+          "encounters": [
+            {
+              "name": "The Notebook",
+              "dv": 3,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "You decode the notebook's basic structure — Kon'reh is a game of encirclement and escape, but the diagrams suggest something more: a proof that rewrites the rules of the board.",
+                "partial": "You understand the game's surface, but the deeper meaning eludes you. The GM gains 1 SB to use on a 'Ninth Rim' complication.",
+                "miss": "You misread a diagram; the Hollow notices. Tick Hollow Attention +1 and the GM gains 2 SB."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-1-2",
+          "title": "The Game Begins",
+          "description": "The party is approached by a scholar from the Ninth's Coterie. They offer a deal: help them complete the proof, and they will reveal Lerris's location. But their offer is a trap — the proof requires a sacrifice.",
+          "timers": [
+            { "name": "Ninth's Progress", "segments": 8, "current": 0, "description": "How close the Coterie is to completing the proof" },
+            { "name": "Witness's Vigil", "segments": 6, "current": 0, "description": "How close the Archivists are to seizing the proof" }
+          ],
+          "encounters": [
+            {
+              "creatureId": "voice-of-the-ninth",
+              "quantity": 1,
+              "position": "Controlled",
+              "dv": 4,
+              "outcomes": {
+                "clean": "You extract information without committing. You learn that Lerris is being held in the Sunken Archive — a forbidden section of the University sealed by the Witness.",
+                "partial": "You learn Lerris's location, but you owe the Coterie a favor. Mark 1 Obligation to the Ninth.",
+                "miss": "You accept a poisoned deal. Tick Ninth's Progress +2. The Coterie now has leverage over you."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-1-3",
+          "title": "The Sunken Archive",
+          "description": "The archive is a labyrinth of forbidden texts, sealed by the Witness's Archivists. It is here that Lerris is being held — and where the Kon'reh board is being assembled. The party must infiltrate the archive and rescue Lerris before the proof is completed.",
+          "timers": [
+            { "name": "Lerris's Fate", "segments": 8, "current": 0 },
+            { "name": "Witness's Vigil", "segments": 6, "current": 0 }
+          ],
+          "encounters": [
+            {
+              "name": "Infiltrate the Archive",
+              "dv": 4,
+              "position": "Desperate",
+              "outcomes": {
+                "clean": "You reach Lerris. He is alive, but changed — he has been playing Kon'reh for days, and the game has begun to affect his mind. He mutters: 'The ninth rim is not a rule. It is a door. The Hollow answered.'",
+                "partial": "You find Lerris, but the Archivists are alerted. You must escape through the Whispering Gallery.",
+                "miss": "You are caught. The Archivists detain you. Tick Witness's Vigil +2."
+              }
+            },
+            {
+              "creatureId": "archive-guardian",
+              "quantity": "1d3",
+              "position": "Desperate",
+              "dv": 4,
+              "outcomes": {
+                "clean": "You defeat the guardians and escape with Lerris.",
+                "partial": "You escape, but one guardian follows. It will appear again at a critical moment.",
+                "miss": "You are overwhelmed. Tick Witness's Vigil +2 and mark 1 Fatigue for each PC."
+              }
+            }
+          ],
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "act-2",
+      "title": "The Ninth Rim",
+      "description": "Lerris is free, but the game is already in motion. The party must learn the true nature of Kon'reh, navigate the war between the Witness and the Ninth, and decide which faction — if any — to support.",
+      "scenes": [
+        {
+          "id": "scene-2-1",
+          "title": "Lerris's Revelation",
+          "description": "Lerris explains: Kon'reh is not just a game. It is a proof — a mathematical demonstration that reality is a board. The ninth rim is the edge of the board. Those who cross it can rewrite the rules of existence. The proof is almost complete. The Coterie wants to complete it. The Witness wants to seal it.",
+          "timers": [
+            { "name": "Ninth's Progress", "segments": 8, "current": 0 },
+            { "name": "Witness's Vigil", "segments": 6, "current": 0 }
+          ],
+          "encounters": [
+            {
+              "name": "The Proof Explained",
+              "dv": 5,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "You fully understand the proof's nature. You gain +1 die on all rolls involving Kon'reh for the rest of the adventure.",
+                "partial": "You understand the basics, but the deeper implications elude you. The GM may spend 1 SB to confuse a key detail.",
+                "miss": "Lerris's explanation is fragmented by fear. You gain the condition 'Haunted by the Ninth' (-1 die to Resolve tests)."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-2-2",
+          "title": "The Archivists' Demand",
+          "description": "The Witness's Archivists arrive. They demand that the party hand over the Kon'reh notebook and any fragments of the proof. They offer protection in exchange. But their protection is a cage — they will seal the knowledge away, and Lerris with it.",
+          "timers": [
+            { "name": "Witness's Vigil", "segments": 6, "current": 0 }
+          ],
+          "encounters": [
+            {
+              "name": "The Archivists' Offer",
+              "dv": 4,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "You convince the Archivists to share information without surrendering the notebook. You learn that the proof was originally discovered by Aqyl the Elder — and that he sealed it for a reason.",
+                "partial": "You negotiate a compromise: you will share the proof, but you keep the original. The Archivists agree — but they will watch you closely.",
+                "miss": "The Archivists seize the notebook. Tick Witness's Vigil +2. You must recover it."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-2-3",
+          "title": "The Game Board",
+          "description": "The Coterie has assembled the Kon'reh board in a hidden chamber beneath the University. The board is not a game — it is a prayer. Each piece is a name. Each move is a memory. The final move — the Ninth Proof — will be played at the next salt-pressed hour.",
+          "timers": [
+            { "name": "Ninth's Progress", "segments": 8, "current": 0 },
+            { "name": "Hollow Attention", "segments": 6, "current": 0 }
+          ],
+          "encounters": [
+            {
+              "name": "The Board",
+              "dv": 5,
+              "position": "Desperate",
+              "outcomes": {
+                "clean": "You understand the board's true nature. You may attempt to sabotage the proof (requires a Craft or Lore test, DV 5).",
+                "partial": "You gain a clue about the proof's weakness, but the Coterie notices your presence. Tick Ninth's Progress +1.",
+                "miss": "The board speaks to you. Tick Hollow Attention +2. You now know the name of the final piece — and it is yours."
+              }
+            }
+          ],
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "act-3",
+      "title": "The Final Proof",
+      "description": "The salt-pressed hour approaches. The party must decide the fate of the Ninth Proof: complete it, seal it, or destroy it. The Hollow is watching. The Ninth is waiting. And the game is almost over.",
+      "scenes": [
+        {
+          "id": "scene-3-1",
+          "title": "The Salt-Pressed Hour",
+          "description": "The Coterie is gathered in the chamber beneath the University. The board is complete. The salt ring glows. The Hollow watches. The Ninth Proof is one move away. The party must act now — or the door will open.",
+          "timers": [
+            { "name": "Ninth's Progress", "segments": 8, "current": 0 },
+            { "name": "Witness's Vigil", "segments": 6, "current": 0 },
+            { "name": "Hollow Attention", "segments": 6, "current": 0 }
+          ],
+          "encounters": [
+            {
+              "creatureId": "hollow-bride",
+              "quantity": 1,
+              "position": "Dominant",
+              "dv": 6,
+              "outcomes": {
+                "clean": "You resist her influence and make your choice freely. The party gains +1 die on the final resolution roll.",
+                "partial": "You resist, but the Hollow Bride claims a memory from each PC. Mark 1 Fatigue.",
+                "miss": "You accept a bargain. The Hollow Bride claims a name from the party. Mark 1 Corruption."
+              }
+            },
+            {
+              "name": "The Final Choice",
+              "dv": 6,
+              "position": "Desperate",
+              "outcomes": {
+                "clean": "You resolve the proof on your terms. See Resolution Paths below.",
+                "partial": "You resolve the proof, but at a cost. The Hollow gains a foothold. Tick Hollow Attention to 0 — but the party is marked.",
+                "miss": "The proof is completed. The door opens. The Ninth Proof is played. Reality rewrites itself. The party must escape."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-3-2",
+          "title": "Resolution Paths",
+          "description": "The party has four options — each with lasting consequences.",
+          "timers": [],
+          "encounters": [
+            {
+              "name": "Complete the Proof",
+              "dv": 5,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "The Ninth Proof is played. Reality rewrites itself. The party gains immense knowledge — but the Hollow gains a foothold in the world. Lerris is lost to the game. Award 18-20 XP. Gain a permanent connection to the Ninth.",
+                "partial": "The proof is partially completed. The party gains some knowledge, but the Hollow's influence spreads. Award 12-15 XP.",
+                "miss": "The proof is completed, but the party is caught in the backlash. All PCs mark 1 Corruption."
+              }
+            },
+            {
+              "name": "Seal the Proof",
+              "dv": 5,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "The party aligns with the Witness's Archivists. The proof is sealed away — but the knowledge is lost. The Coterie is destroyed. Award 12-15 XP. Gain a permanent connection to the Witness.",
+                "partial": "The proof is sealed, but some fragments survive. The Ninth's influence lingers. Award 8-10 XP.",
+                "miss": "The sealing fails. The proof is lost, and the Archivists blame the party. Gain a Black Mark with the Witness."
+              }
+            },
+            {
+              "name": "Destroy the Proof",
+              "dv": 6,
+              "position": "Desperate",
+              "outcomes": {
+                "clean": "The party destroys the board and the notebook. The proof is lost forever. The Ninth's Coterie is shattered. Award 10-12 XP. Gain a permanent enemy in the Ninth's Coterie.",
+                "partial": "The board is destroyed, but the notebook survives. The Coterie will return. Award 8-10 XP.",
+                "miss": "The destruction fails. The proof is completed. The party must flee."
+              }
+            },
+            {
+              "name": "The Ninth's Bargain",
+              "dv": 6,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "The party negotiates with the Ninth itself. The proof is not completed, but the Ninth is appeased. Award 15-18 XP. Gain a Ninth's Boon (once per session, reroll any roll). The party is forever marked by the Hollow.",
+                "partial": "The bargain is struck, but the price is steep. Each PC loses a memory. Award 10-12 XP.",
+                "miss": "The Ninth refuses the bargain. The proof is completed. The party must flee."
+              }
+            }
+          ],
+          "completed": false
+        }
+      ]
+    }
+  ],
+  "npcs": [
+    {
+      "id": "npc-markus-fenwood",
+      "name": "Markus Fenwood",
+      "role": "Junior Archivist, Valvano Bequest",
+      "motivation": "Find his brother Lerris",
+      "stats": "Wits 3, Lore 3, Insight 2",
+      "secret": "Haunted by his father's Concordance. Fears the Hollow more than he admits."
+    },
+    {
+      "id": "npc-lerris-fenwood",
+      "name": "Lerris Fenwood",
+      "role": "Scholar, Ninth's Coterie",
+      "motivation": "Complete the Ninth Proof",
+      "stats": "Wits 4, Lore 4, Presence 2",
+      "secret": "He believes the proof will set him free. He is wrong."
+    },
+    {
+      "id": "npc-aqyl-son-of-aqyl",
+      "name": "Aqyl, Son of Aqyl",
+      "role": "Tutor, Keeper of the Salt-Pressed Leaves",
+      "motivation": "Preserve the old knowledge",
+      "stats": "Wits 4, Lore 4, Insight 3",
+      "secret": "He knows the proof's true nature. He will not speak of it unless asked thrice."
+    },
+    {
+      "id": "npc-voice-of-the-ninth",
+      "name": "The Voice of the Ninth",
+      "role": "Avatar of the Ninth's Coterie",
+      "motivation": "Complete the proof, awaken the Ninth",
+      "stats": "Presence 4, Sway 4, Lore 3",
+      "secret": "Speaks in paradoxes. Offers bargains that seem fair. Remembers every name spoken in its presence."
+    },
+    {
+      "id": "npc-keeper-lian",
+      "name": "Keeper Lian",
+      "role": "High Archivist, Library of Keys",
+      "motivation": "Seal the proof, protect the University",
+      "stats": "Wits 4, Lore 5, Command 3",
+      "secret": "She has not spoken aloud in twenty years. She writes on water. Her silence is a judgment."
+    },
+    {
+      "id": "npc-hollow-bride",
+      "name": "The Hollow Bride",
+      "role": "Manifestation of the Ninth",
+      "motivation": "Collect the debt of the proof",
+      "stats": "Presence 5, Spirit 4, Sway 5",
+      "secret": "She appears when the proof is near completion. Her voice is honey and razors. She will offer a bargain — and collect the price."
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc-lerris-study",
+      "name": "Lerris's Study",
+      "description": "A cramped room in the University's north wing. The walls are covered in Kon'reh diagrams. The salt ring on the desk is still damp.",
+      "tags": ["university", "study"]
+    },
+    {
+      "id": "loc-sunken-archive",
+      "name": "The Sunken Archive",
+      "description": "A sealed section of the Library of Keys. The books here are forbidden. The Archivists guard them with their lives — and their silence.",
+      "tags": ["archive", "forbidden"]
+    },
+    {
+      "id": "loc-salt-pressed-chamber",
+      "name": "The Salt-Pressed Chamber",
+      "description": "A hidden room beneath the University. The floor is a Kon'reh board. The walls are lined with names. The air tastes of salt and old promises.",
+      "tags": ["chamber", "ritual"]
+    },
+    {
+      "id": "loc-archivolt",
+      "name": "The Archivolt",
+      "description": "The main hall of the Library of Keys. The Witness's Archivists hold court here. The books whisper truths — and lies.",
+      "tags": ["library", "witness"]
+    },
+    {
+      "id": "loc-ninth-rim",
+      "name": "The Ninth Rim",
+      "description": "The outermost edge of the Kon'reh board. To cross it is to leave the game. The party may be forced to cross — or to prevent others from doing so.",
+      "tags": ["threshold", "game"]
+    }
+  ],
+  "factions": [
+    {
+      "id": "faction-markus",
+      "name": "Markus Fenwood",
+      "goals": "Save his brother Lerris",
+      "relationship": "The party's first contact and a moral compass. Desperate, loyal, and willing to bend the rules."
+    },
+    {
+      "id": "faction-ninth-coterie",
+      "name": "The Ninth's Coterie",
+      "goals": "Complete the Ninth Proof",
+      "relationship": "They believe the Ninth will bring liberation — but the Ninth only brings forgetting. Their leader is the Voice of the Ninth."
+    },
+    {
+      "id": "faction-witness-archivists",
+      "name": "The Witness's Archivists",
+      "goals": "Seal the proof and protect the University",
+      "relationship": "They believe knowledge must be preserved and protected. They are willing to sacrifice Lerris to keep the proof hidden."
+    },
+    {
+      "id": "faction-aqyl",
+      "name": "Aqyl, Son of Aqyl",
+      "goals": "Preserve the truth for the right time",
+      "relationship": "Keeper of the Salt-Pressed Leaves. Knows the proof's true nature. Speaks only when asked thrice."
+    },
+    {
+      "id": "faction-hollow",
+      "name": "The Hollow",
+      "goals": "Watch and wait for the door to open",
+      "relationship": "Not a faction, but a pressure. Patient, hungry, and eternal. It watches the proof. It waits for the door to open."
+    }
+  ],
+  "campaignTimers": [
+    {
+      "name": "Lerris's Fate",
+      "segments": 8,
+      "current": 0,
+      "description": "How close Lerris is to being lost to the game. Advances when the party delays, when the Coterie completes a move, or when the party ignores a clue. When full, Lerris becomes the final piece — the Ninth Proof is played."
+    },
+    {
+      "name": "Ninth's Progress",
+      "segments": 8,
+      "current": 0,
+      "description": "How close the Ninth's Coterie is to completing the proof. Advances when the party accepts Coterie bargains, fails to stop a move, or ignores a warning. When full, the Ninth Proof is complete — the door opens."
+    },
+    {
+      "name": "Witness's Vigil",
+      "segments": 6,
+      "current": 0,
+      "description": "How close the Witness's Archivists are to seizing the proof. Advances when the party aids the Coterie, avoids the Archivists, or breaks archive rules. When full, the Archivists raid the party's safehouse and seize the notebook."
+    },
+    {
+      "name": "Hollow Attention",
+      "segments": 6,
+      "current": 0,
+      "description": "How much the Hollow has noticed the party's involvement. Advances when the party speaks names, completes moves, or lingers in sealed chambers. When full, the Hollow Bride appears — offering a bargain, demanding a price."
+    }
+  ],
+  "notes": "A cosmic horror investigation set in the University of Thepyrgos. The party must navigate the war between the Witness and the Ninth while a forbidden game threatens to rewrite reality. Themes: the price of knowledge, the Hollow's attention, and the nature of proof. Inspired by Kon'reh: The Ninth Rim.",
+  "currentAct": 0,
+  "currentScene": 0,
+  "startedAt": null,
+  "completedAt": null,
+  "status": "planned",
+  "createdAt": "2026-08-03T00:00:00.000Z",
+  "updatedAt": "2026-08-03T00:00:00.000Z"
+}

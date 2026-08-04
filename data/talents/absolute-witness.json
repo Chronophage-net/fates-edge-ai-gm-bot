@@ -1,0 +1,16 @@
+{
+  "id": "absolute-witness",
+  "name": "Absolute Witness",
+  "cost": 11,
+  "tier": "epic",
+  "activation": "passive",
+  "category": "investigation",
+  "useLimit": "passive",
+  "prerequisites": "Insight 4+, Requires: Tier IV",
+  "effect": "+2d Insight",
+  "effects": [
+    { "type": "die_bonus", "scope": "skill", "key": "insight", "amount": 2 }
+  ],
+  "description": "Within Near range, deception simply doesn't work on you — lies still get told, but you always know it. Mechanically represented as a heavy passive bonus to Insight.",
+  "source": "guide"
+}

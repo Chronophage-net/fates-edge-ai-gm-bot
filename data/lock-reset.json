@@ -1,0 +1,4 @@
+{
+    "_instructions": "Emergency reset for the local screen lock (js/core/local-lock.js). If a GM forgets their local lock password, they can click 'Forgot password?' on the lock screen and enter a plain-text reset CODE (not the hash below) to regain access. This unlocks the app AND clears the forgotten lock password, so set a new one afterward. To configure: 1) Pick a secret reset code and keep it somewhere safe offline (a password manager, etc.) — it is never stored in this file. 2) Hash it with SHA-256 and paste the result into resetCodeHash below. You can generate the hash in any browser's console with: crypto.subtle.digest('SHA-256', new TextEncoder().encode('your-reset-code-here')).then(buf => console.log(Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join(''))) — copy the printed string. 3) Leave resetCodeHash empty (as below) to disable the emergency reset entirely.",
+    "resetCodeHash": ""
+}

@@ -222,9 +222,11 @@
 
     ## 📜 License
 
-    This bot is part of Nick Gasper.  
-    The code is provided under the same license as the main repository.  
-    See [LICENSE](../LICENSE) for details.
+    The bot's code is licensed under the **MIT License**. The bundled game data
+    (`data/`, `campaigns/` — regions, patrons, talents, etc.) is Fate's Edge
+    proprietary content, © Nicholas A. Gasper, used here by the author's own
+    permission; any SRD-marked material is CC BY-NC-SA 4.0. See [LICENSE](LICENSE)
+    for the full split.
 
     ---
 

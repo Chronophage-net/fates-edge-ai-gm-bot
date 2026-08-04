@@ -1,0 +1,16 @@
+{
+  "id": "second-wind",
+  "name": "Second Wind",
+  "cost": 3,
+  "tier": "minor",
+  "activation": "active",
+  "category": "general",
+  "useLimit": "once-scene",
+  "prerequisites": "",
+  "effect": "Ignore 1d of Fatigue penalty once per scene",
+  "effects": [
+    { "type": "ignore_penalty", "source": "fatigue", "amount": 1 }
+  ],
+  "description": "Once per scene, you push through exhaustion for a single action — the GM should still see a Fatigue step marked as normal, but its penalty doesn't apply to this one roll. Refreshes at scene end.",
+  "source": "guide"
+}

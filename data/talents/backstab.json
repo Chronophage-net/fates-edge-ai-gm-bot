@@ -1,0 +1,17 @@
+{
+  "id": "backstab",
+  "name": "Backstab",
+  "cost": 8,
+  "tier": "prestige",
+  "activation": "reactive",
+  "category": "rogue-thief",
+  "useLimit": "once-scene",
+  "prerequisites": "Stealth 3+, Requires: Tier III",
+  "effect": "+1d Melee or Unarmed once per scene when attacking from Stealth",
+  "effects": [
+    { "type": "die_bonus", "scope": "skill", "key": "melee", "amount": 1 },
+    { "type": "die_bonus", "scope": "skill", "key": "unarmed", "amount": 1 }
+  ],
+  "description": "Once per scene, when you attack a target that hasn't noticed you, add the bonus to that single strike. The GM should confirm the target is genuinely unaware before this applies.",
+  "source": "guide"
+}

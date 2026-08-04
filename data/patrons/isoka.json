@@ -1,0 +1,284 @@
+{
+  "id": "isoka-angel-serpents",
+  "type": "patron",
+  "title": "Isoka, Angel of Serpents",
+  "subtitle": "Transformation & Renewal",
+  "version": "1.0.0",
+  "tags": [
+    "transformation",
+    "renewal",
+    "shedding",
+    "venom",
+    "serpent",
+    "change",
+    "identity",
+    "rebirth",
+    "alchemy"
+  ],
+  "lore": {
+    "description": "Isoka, sister to Ikasha (Shadow) and Inaea (Mercy), completes the Triad of Transformation. Where thresholds and compassion mark her sisters' domains, Isoka teaches that every self is temporary — identity is a skin to be shed so growth can continue. Her serpents are omens and teachers: each cast skin a lesson in release; each venom a catalyst for necessary change. Those who walk her path become alchemists of the self, embracing dissolution as the first motion of rebirth.",
+    "followers": "Her followers range from quiet hedgewitches who use venom to heal and shed skins to ease grief, to the darker cults of the Coiled Heart, where initiates drink serpent venom to burn away their old selves and emerge as something new — or something monstrous. Isoka does not judge; she offers the knife and the poison both. The choice is the seeker's. Among the peoples of Fate's Edge, Isoka is called by many names. In Zakov, she is the Tide-Shedder, to whom pirates leave a lock of hair and a name at her sunken temple; eels eat both. In Acasia, she is the Copperhead, a hedge-cult that sheds identities to infiltrate noble houses. In the Valewood, her witches are called Scale-Mothers, who tend the boundary between the living and the shedding dead. Wherever change is feared or embraced, Isoka watches.",
+    "quote": "Do not mourn the skin you shed. It was never meant to last. The venom that burns away the old self is the same that grants the strength to become new."
+  },
+  "domain_focus": [
+    "Serpentine Transformation: shedding identity, renewal through dissolution",
+    "Venom as Catalyst: poison that heals or destroys, the paradox of change",
+    "Shedding the Past: erasing debts, memories, and old allegiances",
+    "Healthy Change to Monstrous Rebirth: from gentle alchemy to sword-and-sorcery cults"
+  ],
+  "runekeeper_options": {
+    "thiasos": {
+      "description": "A Runekeeper sworn to Isoka does not bind a familiar of permanence. Their Thiasos is a small creature of shedding and renewal: a snake that sheds its skin weekly, a gecko that regrows its tail, a salamander that thrives in the ashes of a burned identity, a small adder that sheds its venom with each bite, or a blind worm that lives beneath the earth and emerges only to transform.",
+      "care": "This creature requires no food in the usual sense, but it must be allowed to shed something (skin, a tooth, a claw) each week. If neglected for a week, it becomes Compromised (it grows dull and sluggish, and its keeper suffers –1 die on rolls to resist unwanted transformation or change until it next sheds)."
+    },
+    "codex": {
+      "description": "The Codex of Isoka is never a book of fixed ink. It may be a bundle of shed snakeskins, each inscribed with a single Rite that fades as the skin dries; a slate that must be washed clean after each reading; a scroll of living parchment that flakes away as the Rite is learned; or a set of obsidian tablets that must be shattered and recarved after each use.",
+      "upkeep": "Because Isoka's truths are written in the act of shedding, the Codex requires upkeep: the Runekeeper must spend an hour each week re-inscribing the Rites from memory onto fresh material (new skin, new slate), or the patterns become illegible (treat as Compromised until re-inscribed)."
+    }
+  },
+  "patrons_gift": {
+    "name": "Isoka's Blessing",
+    "description": "Once per scene as an action, a Runekeeper of Isoka may touch a held item (weapon, tool, or garment) and whisper a word of shedding.",
+    "effect": "For the rest of the scene, the item grants +1 die to Escape or Deception rolls, and the first time each scene the bearer would be bound, grappled, or restrained, they may break free as a free action (shedding the constraint like a snake sheds its skin).",
+    "cost": "After the scene, the user marks +1 Obligation to Isoka."
+  },
+  "rites": [
+    {
+      "name": "Rite of the Loosening Skin",
+      "tier": "Low",
+      "xp": 5,
+      "action": "Scene",
+      "range": "Self",
+      "resist": "No",
+      "tags": ["HEAL", "LIBERATE", "PURIFY"],
+      "materials": "A discarded snakeskin or a strand of your own hair.",
+      "effect": "Shrug off a temporary burden. Remove one Condition (Fear, Poison, Fatigue, or a minor social stain) that you have acquired this scene. Alternatively, reroll one failed roll to escape restraint or pursuit.",
+      "push_it": "Also ignore one environmental penalty (difficult terrain, smoke, etc.) for the scene, but leave a visible trace of your passage. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Forked Tongue",
+      "tier": "Low",
+      "xp": 6,
+      "action": "Scene",
+      "range": "Self",
+      "resist": "Yes",
+      "tags": ["DECEPTION", "BOOST", "RISK"],
+      "materials": "A harmless lie whispered to a mirror.",
+      "effect": "For one scene, you may speak ambiguously without penalty. When you use Deception or Sway to conceal your true intent or pass as someone else, you may treat a Partial Success as a Clean Success (the lie holds). On a Miss, however, the GM gains 2 SB as your deceit unravels in an embarrassing way.",
+      "push_it": "Extend the effect to one willing ally; they may also lie freely for the scene. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Shedded Self",
+      "tier": "Standard",
+      "xp": 9,
+      "action": "Scene",
+      "range": "Self",
+      "resist": "No",
+      "tags": ["TRANSFORM", "ERASURE", "LIBERATE", "DEBT"],
+      "materials": "A complete change of clothing and a token from your former role (a badge, a lock of hair, a written name).",
+      "effect": "You shed one persistent identity — a title, a bond, a debt, or a reputation. For the remainder of the scene, you are treated as a stranger to those who knew you in that role. You gain +2 dice on any roll to avoid detection, escape pursuit, or convince others that you are not yourself. Create a 6-segment Shed Identity timer; when it fills, the old identity returns as a separate NPC (a rival, a witness, or a ghost).",
+      "push_it": "Immediately erase one minor obligation (a Debt Timer segment or 1 Obligation to a Patron) as you slough it off. Mark 1 SB (Clubs) as the discarded debt finds a new debtor. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of Venom's Paradox",
+      "tier": "Standard",
+      "xp": 10,
+      "action": "Instant",
+      "range": "Touch",
+      "resist": "No",
+      "tags": ["CONSUME", "HEAL", "CURSE"],
+      "materials": "A drop of venom from a serpent that has shed its skin within the last day.",
+      "effect": "Inflict or cure through poison's paradox. Choose one: Cursed Venom: Touch a creature and inject venom. They suffer +1 Harm (poison) and must test Resolve (DV 4) or gain the Poisoned Condition (–1 die to physical actions until cured). Mercy's Antidote: Touch a poisoned or diseased creature. The venom neutralizes the malady; remove one Poisoned or Diseased Condition, and the target clears 1 Fatigue.",
+      "push_it": "Apply both effects to the same target (curse and cleanse in a painful purge, representing a violent rebirth), or affect two different targets. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Instant."
+    },
+    {
+      "name": "Rite of Unremembered Metamorphosis",
+      "tier": "High",
+      "xp": 14,
+      "action": "Extended",
+      "range": "Self",
+      "resist": "Yes",
+      "tags": ["TRANSFORM", "ERASURE", "FATE"],
+      "materials": "A full identity kit, a serpent's shed skin, and a personal item from the life you are leaving (or records of your old life to burn).",
+      "effect": "Choose one: Complete Metamorphosis: After an hour of ritual, you emerge with a new face, voice, and documented identity. For one week, you are immune to recognition by anyone who knew your previous self, and gain +2 dice on all Deception and Stealth rolls related to that new identity. Create an 8-segment New Identity timer; when it fills, the old self may reassert itself (GM's discretion). Cast-Off History: After a full night's ritual burning all mundane records of your old life, your previous identity becomes unreliable. Common records and casual memories become vague; those who track you via that identity suffer –2 dice. You gain +2 dice on rolls relying on your new identity. Create a 6-segment Erased Past timer; when it fills, one intimate from your old life senses the deception and may investigate.",
+      "push_it": "Extend the metamorphosis to a willing ally, make the change permanent (lose access to one Bond or Minor Asset), or arrange a plausible 'death' for your old self (a funeral, a witness). Mark +2 Obligation and the GM gains 2 SB (the world strains to remember what was lost). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "Extended action.",
+      "duration": "1 week."
+    }
+  ],
+  "cantors_and_cults": {
+    "cantors": {
+      "name": "The Cantor's Song",
+      "description": "A Cantor of Isoka sings in whispers of shedding — melodies that rise and fall like a serpent's undulation, with harmonies that slither rather than resolve. Their voice is used to ease a difficult transformation (ritual scarring, a change of identity, the acceptance of loss) or to accelerate a foe's destructive change (madness, mutation, despair). Isoka's Cantors are often found in snake cults, their songs weaving venom and mercy in equal measure."
+    },
+    "cult": {
+      "name": "The Cult of the Coiled Heart",
+      "description": "Isoka's cults are secretive, dangerous, and obsessed with metamorphosis. They gather in sunken temples, caverns beneath city sewers, or groves where adders nest. A ritual of the Coiled Heart involves each member holding a live serpent while speaking a name they wish to shed: a debt, a crime, a former allegiance. The serpent is then released into a central pit. Then they drink a tea brewed from shed snake skin and a drop of venom — the tea induces vivid dreams of their old self dying and a new self emerging. The most devoted replace one of their teeth with a hollow fang, allowing them to deliver a venomous bite (once per session, treat as a light melee weapon with the [POISON] tag). Their creed is carved in ouroboros rings: 'What devours itself is never consumed by another.' Outsiders are rarely invited; those who stumble into a rite are offered a choice — join, drink venom and be remade, or be forgotten as the cult sheds their memory."
+    }
+  },
+  "witchcraft": {
+    "name": "The Art of the Scale and Venom",
+    "description": "A witch who walks with Isoka is a scale-smith or venomer — one who understands that transformation is a craft. Their magic works with the materials of change: a forge that tempers steel by 'shedding' impurities, an alembic that distills venom into medicine, or a loom that weaves a new identity from discarded threads. Unlike the darker cults, these witches focus on healing and gentle release — helping a grief-stricken parent shed their sorrow, or a recovering addict shed their craving. Their tools are delicate: obsidian blades, silver alembics, and bundles of shed snakeskin. Isoka's witches craft poisons, but also transformation potions and magical clothing to alter appearance — they understand that the truest magic is not in changing the world, but in changing the self.",
+    "color": "#6b2b8a",
+    "lore": "The scale-smith's path is the art of transformation. They learn that every self is temporary, every identity a skin to be shed, and every ending a beginning. Isoka teaches that the venom that burns is the same that heals, and that the knife that cuts away the old self is the same that carves the new. These witches are found in quiet workshops, tending alembics and looms, their hands stained with venom and their eyes always searching for the next change.",
+    "signature_rite": "Rite of the Loosening Skin",
+    "quote": "Do not mourn the skin you shed. It was never meant to last.",
+    "tools": {
+      "shedding_knife": {
+        "name": "The Shedding Knife",
+        "description": "A small, curved blade of obsidian or serpentine, never used for combat — only for cutting away what is no longer needed. Once per session, the witch may cut a physical token of an old identity (a lock of hair, a uniform patch, a letter) and burn it. For the remainder of the session, they gain +1 die on all rolls to deceive, hide, or escape detection, as the old self's traces are literally erased. The knife can also be used to 'shed' a minor curse or enchantment from a willing subject (remove one magical Condition with a touch, costing 1 Fatigue)."
+      }
+    },
+    "hedge_gifts": [
+      {
+        "name": "Venom's Mercy",
+        "xp": 5,
+        "description": "Once per scene, the witch may apply a drop of harmless (or carefully dosed) venom to a wound, a drink, or a lock. Choose one effect: remove 1 Fatigue from an ally (as a mild stimulant), impose –1 die on a target's next physical roll (a mild paralytic), or force a target to speak a single truthful sentence (a truth serum). The victim may resist with a Resolve test (DV 3) if they are aware of the venom."
+      },
+      {
+        "name": "Shedding Skin",
+        "xp": 3,
+        "description": "You may shed a minor physical tell — a scar, a birthmark, a distinctive tattoo — as if it were a snake shedding its skin. The tell regrows in a week unless you maintain the shedding. Once per session."
+      },
+      {
+        "name": "Venomous Alchemy",
+        "xp": 4,
+        "description": "You may brew a single dose of a transformative potion during downtime. Choose one: a healing tincture (clears 1 Fatigue), a truth serum (target must test Resolve DV 3 to lie), or a mild poison (imposes –1 die on a target's next physical action). Requires an alembic and one scene of work."
+      },
+      {
+        "name": "Serpent's Grace",
+        "xp": 2,
+        "description": "You gain +1 die to Athletics rolls involving climbing, squeezing, or balancing. Additionally, you may squeeze through gaps that would normally be too narrow for your frame. Passive."
+      }
+    ]
+  },
+  "monastic_tradition": {
+    "name": "The Way of the Coiled Serpent",
+    "description": "Monks of the Coiled Serpent embody Isoka's philosophy of transformation. They move with the fluidity of a snake, strike with the precision of a viper, and shed their old selves as easily as a serpent sheds its skin. They understand that the greatest strength is not in holding on, but in letting go — of debts, of identities, of attachments that no longer serve. In the quiet of the monastery, they practice the art of shedding, learning that every ending is a beginning, and that the venom that burns away the old self is the same that grants the strength to become new.",
+    "color": "#6b2b8a",
+    "prerequisites": "Spirit 3+, Body 2+, Rite of the Loosening Skin or Cantor of Isoka.",
+    "quote": "Do not mourn the skin you shed. It was never meant to last.",
+    "debt_resistant_frame": "Serpents shed obligation as they shed skin. Monks of the Coiled Serpent gain +1 die to ignore or break a magical debt, geas, or contract (once per scene). When they do, a phantom snakeskin sloughs off them — the creditor may find an empty husk instead of a debtor.",
+    "techniques": {
+      "basic": {
+        "name": "Venom Strike",
+        "xp": 5,
+        "description": "Unarmed hit can inject poison: choose –1 die to target's physical actions, or the target must speak a single truthful sentence (Resolve DV 3 to resist).",
+        "cost": "1 Boon",
+        "prereq": "Spirit 3+"
+      },
+      "advanced": {
+        "name": "Hypnotic Sway",
+        "xp": 8,
+        "description": "Once per scene, roll Presence + Lore vs. Resolve (DV 3) to mesmerize a single target. Your serpentine gaze holds them in thrall.",
+        "cost": "Free",
+        "prereq": "Tier II, Spirit 3+"
+      },
+      "master": {
+        "name": "Ascendant Serpent",
+        "xp": 13,
+        "description": "Once per session, gain a partial serpent-body: immune to mundane poison, +2 dice to Body rolls, and you may 'shed' one active debt or obligation entirely (the paperwork turns to dust). After the scene, you gain a permanent Debt Scar — a subtle pattern of scales on your arm — but you also gain +1 die on all rolls to resist future debts (the Hollow is less interested in those who have already shed so much).",
+        "cost": "2 Fatigue and +1 Obligation to Isoka",
+        "prereq": "Tier III, Spirit 4+"
+      }
+    },
+    "corruption": [
+      {
+        "tier": 1,
+        "benefit": "Serpent's Gaze: +1 die on Intimidation or social rolls using menace.",
+        "cost": "Cold-Blooded: –1 die on Empathy or warmth-based Persuasion."
+      },
+      {
+        "tier": 2,
+        "benefit": "Shed the Old Skin: Once/session, negate one Condition (Fear, Fatigue, Poison) by discarding it like molted skin.",
+        "cost": "Mark of Scales: Faint reptilian patches visible, causing +1 SB in social encounters if noticed."
+      },
+      {
+        "tier": 3,
+        "benefit": "Venomous Strike: Bite or kiss may inflict Poison (DV 2).",
+        "cost": "Hungry Coil: Must consume raw meat or eggs weekly, or mark 1 Fatigue."
+      },
+      {
+        "tier": 4,
+        "benefit": "Serpentine Grace: +2 dice to Stealth or Evasion rolls, ignore minor movement penalties.",
+        "cost": "Slitted Eyes: Bright light imposes –1 die on Notice rolls."
+      },
+      {
+        "tier": 5,
+        "benefit": "Hypnotic Sway: Once/scene, roll Presence + Lore vs. Resolve (DV 3) to mesmerize a single target.",
+        "cost": "Forked Tongue: –1 die on Deception when attempting warmth or sincerity."
+      },
+      {
+        "tier": "6+",
+        "benefit": "Ascendant Form: Partial serpent-body; immune to mundane poison, +2 dice on Body rolls.",
+        "cost": "Monstrous Aspect: Cannot easily hide your nature; every session begins with 1 SB that may be compelled by the GM."
+      }
+    ]
+  },
+  "corruption": [
+    {
+      "tier": 1,
+      "benefit": "Serpent's Gaze: +1 die on Intimidation or social rolls using menace.",
+      "cost": "Cold-Blooded: –1 die on Empathy or warmth-based Persuasion."
+    },
+    {
+      "tier": 2,
+      "benefit": "Shed the Old Skin: Once/session, negate one Condition (Fear, Fatigue, Poison) by discarding it like molted skin.",
+      "cost": "Mark of Scales: Faint reptilian patches visible, causing +1 SB in social encounters if noticed."
+    },
+    {
+      "tier": 3,
+      "benefit": "Venomous Strike: Bite or kiss may inflict Poison (DV 2).",
+      "cost": "Hungry Coil: Must consume raw meat or eggs weekly, or mark 1 Fatigue."
+    },
+    {
+      "tier": 4,
+      "benefit": "Serpentine Grace: +2 dice to Stealth or Evasion rolls, ignore minor movement penalties.",
+      "cost": "Slitted Eyes: Bright light imposes –1 die on Notice rolls."
+    },
+    {
+      "tier": 5,
+      "benefit": "Hypnotic Sway: Once/scene, roll Presence + Lore vs. Resolve (DV 3) to mesmerize a single target.",
+      "cost": "Forked Tongue: –1 die on Deception when attempting warmth or sincerity."
+    },
+    {
+      "tier": "6+",
+      "benefit": "Ascendant Form: Partial serpent-body; immune to mundane poison, +2 dice on Body rolls.",
+      "cost": "Monstrous Aspect: Cannot easily hide your nature; every session begins with 1 SB that may be compelled by the GM."
+    }
+  ],
+  "playstyle_notes": {
+    "description": "Isoka is the patron of transformation in all its forms — from the gentle shedding of grief to the violent rebirth of a cult assassin. Her witches are often healers and alchemists who use venom to cure and snakeskin to symbolize release. Her cults are darker, obsessed with forced change, venom initiation, and the dangerous edge of metamorphosis. Isoka does not judge; she offers the knife and the poison both. The player chooses how far to lean into the serpent's coil. Ideal for characters who undergo profound personal change, whether by choice or by circumstance.",
+    "emphasizes": [
+      "Serpentine Transformation: shedding old selves, growing new ones",
+      "Venom as Dual Force: healing or destroying, depending on intent",
+      "Healthy Change vs. Sword-and-Sorcery Cults: from gentle alchemy to monstrous rebirth",
+      "Erasure of the Past: forgetting debts, identities, and old allegiances",
+      "Obsidian and Scale: the witch's craft of delicate shedding vs. the cult's venomous bite"
+    ]
+  },
+  "sample_adventure": {
+    "title": "The Coiled Heart's Venom",
+    "description": "A member of the Coiled Heart cult has been found dead, their body covered in serpentine markings that were not there before. The cult believes they were trying to shed their humanity — and failed. Now the markings are spreading to others who were present at the ritual. The party must investigate the cult, discover the source of the markings, and decide whether to help the survivors complete their transformation, or to sever their connection to Isoka before the serpent claims them all. But some of the marked do not want to be saved — they have tasted the venom of change, and they hunger for more.",
+    "quote": "The serpent does not ask permission to shed. It simply grows until the skin splits, and then it leaves the old behind. Some transformations are chosen. Others are endured. And some — the most dangerous — are desired."
+  },
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

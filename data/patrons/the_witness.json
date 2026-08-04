@@ -1,0 +1,322 @@
+{
+  "id": "the_witness",
+  "type": "patron",
+  "title": "The Witness",
+  "subtitle": "Truth & Revelation",
+  "version": "1.0.0",
+  "tags": [
+    "truth",
+    "revelation",
+    "secrets",
+    "memory",
+    "inconvenient_knowledge",
+    "investigation",
+    "confession",
+    "burden",
+    "witness",
+    "unmasking"
+  ],
+  "lore": {
+    "description": "The Witness remembers what others bury. Every shadow cast and oath broken is a line in her unending ledger. She is the keeper of inconvenient truths, the patron of those who seek to expose lies or recover forgotten knowledge. Her followers learn that knowledge comes with a price—the weight of remembering what others would forget. The Witness has no will, only a ledger; no mercy, only accuracy. She does not demand confessions, but she ensures that every lie leaves a stain, every secret a trace. Those who serve her become archivists of the uncomfortable, witnesses to the truths that others would kill to keep hidden. To walk her path is to accept that some truths are weapons, and that the truth_teller is never loved.",
+    "followers": "Among the peoples of Fate's Edge, the Witness is known by many names. In Ecktoria, she is the Ink_Eye, the Censor's clerk who copies every redacted line onto a private scroll. In Vhasia, she is the Fractured Mirror, prayed to by spies who seek to reveal a rival's true loyalty. In the Mistlands, she is the Fog_Scribe, whose name is whispered when a bell_line fails and the dead must be identified by their secrets. And in the shadows of every great city, there are those who follow the Apocalyptic Witness—a doomsaying cult that believes the world will end when the last hidden truth is finally spoken aloud, and who work to hasten that revelation by exposing every lie, no matter the cost.",
+    "signs": [
+      "A scrap of parchment with a name you recognise, found where you least expect it",
+      "A sudden, vivid memory of a lie you told years ago",
+      "A sense that you are being watched by something that does not blink"
+    ],
+    "quotes": [
+      "\"I will show you what you would rather forget. But first, you must forget what you think you know.\"",
+      "\"Truth is not a gift. It is a burden. Carry it well, or it will crush you.\"",
+      "\"When all that is hidden is seen, the world will either break or be free. We will be there to witness which.\""
+    ]
+  },
+  "domain_focus": [
+    "Truth Revelation: exposing lies, uncovering secrets, forcing confessions",
+    "Memory Keeping: preserving knowledge, recalling forgotten facts",
+    "Inconvenient Knowledge: learning what others wish to hide",
+    "Prophetic Warning: seeing the consequences of hidden truths",
+    "Burden of Witness: the psychological weight of knowing too much"
+  ],
+  "runekeeper_options": {
+    "thiasos": {
+      "description": "A Runekeeper sworn to the Witness does not bind a familiar of flesh and comfort. Their Thiasos is a small creature that embodies memory and revelation: a raven that collects shiny objects and recites forgotten names, a silverfish that eats lies from parchment and leaves truth behind, a small brass beetle whose shell opens to reveal a perfect mirror, a white mouse that nests in archive drawers and remembers every page it has slept upon, or a cricket that chirps in the key of the last secret spoken nearby.",
+      "care": "This creature requires no food, but it must witness something significant (a lie told, a secret revealed, a confession made) each week. If neglected, it becomes Compromised (it grows silent and still, and its bearer loses +1 die on all Investigation rolls until it is shown a hidden truth)."
+    },
+    "codex": {
+      "description": "The Codex of the Witness is never a book that can be closed. It may be a set of loose_leaf pages that reorganise themselves each dawn, a scroll that writes itself when no one is looking, a chalkboard that cannot be erased, or a stack of wax tablets that melt and reset each season.",
+      "upkeep": "Because the Witness values accuracy over permanence, the Codex requires upkeep: the Runekeeper must spend an hour each week correcting a single error in its records (a misspelled name, a misdated event) or the Rites stored there become garbled (treat as Compromised until restored)."
+    }
+  },
+  "patrons_gift": {
+    "name": "Word of Truth",
+    "description": "Once per scene as an action, a Runekeeper of the Witness may touch a held item (weapon, tool, or writing implement) and whisper a word of truth.",
+    "effect": "For the rest of the scene, the item grants +1 die to Insight or Investigation rolls, and the first time each scene the bearer would be deceived by an illusion or a lie, they may roll twice and take the better result.",
+    "cost": "After the scene, the user marks +1 Obligation to the Witness."
+  },
+  "rites": [
+    {
+      "name": "Rite of the Lingering Trace",
+      "tier": "Low",
+      "xp": 4,
+      "action": "Instant",
+      "range": "Near",
+      "resist": "Yes (Investigation/Notice only)",
+      "tags": ["INVESTIGATION", "TRUTH"],
+      "materials": "A trace of the thing to be remembered (hair, dust, a spoken name).",
+      "effect": "You follow a hidden thread. Gain +1 die to investigate or notice something directly related to the trace within the current scene. Additionally, you may ask the GM one yes/no question about whether the trace is connected to a specific person, event, or object.",
+      "push_it": "Gain +2 dice instead, but mark 1 segment on a Memory Strain Timer [4]. If the timer fills, you gain Fatigue 1 and suffer –1 die on Investigation/Notice rolls until the end of the next scene (the Witness taxes your mind). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Uncomfortable Question",
+      "tier": "Low",
+      "xp": 5,
+      "action": "Scene",
+      "range": "Near",
+      "resist": "No",
+      "tags": ["COMMAND", "FEAR", "TRUTH"],
+      "materials": "A circle drawn with chalk or string while focusing on a specific person.",
+      "effect": "You force a moment of raw honesty. Ask one question of a target within the zone. They may either answer truthfully (the GM must give a true answer, though it may be cryptic) or mark 1 Fatigue and gain a Guilty Tell Condition (–1 die to all social rolls until they confess the truth to someone).",
+      "push_it": "The target must also reveal a surface emotion or a forgotten detail (GM's choice). Mark 1 SB (Hearts) as the Witness records the strain. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Echoing Truth",
+      "tier": "Standard",
+      "xp": 8,
+      "action": "Instant",
+      "range": "Near",
+      "resist": "No",
+      "tags": ["READ", "TRUTH", "FEAR"],
+      "materials": "A reflective surface (mirror, still water, polished metal) used to focus on the target.",
+      "effect": "The target must make a Resolve test (DV 3) or suffer –1 die to rolls involving memory, deception, or resisting interrogation for the scene. If they fail, you may ask one specific, factual question about something they know, and they must answer truthfully or suffer 1 SB (Hearts) as the memory is forcibly drawn forth.",
+      "push_it": "If the target fails their Resolve test, you may ask a second question, but the mental intrusion causes them Harm 1 (Stress). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Immutable Record",
+      "tier": "Standard",
+      "xp": 7,
+      "action": "Scene",
+      "range": "Near",
+      "resist": "No",
+      "tags": ["VOW", "BOND", "TRUTH"],
+      "materials": "A document signed by all parties within the zone, or a spoken pact witnessed by the caster.",
+      "effect": "Bind the agreement. Any party who knowingly breaches it suffers 1 SB (Hearts) immediately and gains a persistent Oathbreaker's Mark Condition (–1 die on social rolls involving honor, trust, or oaths until amends are made or a significant act redeems them).",
+      "push_it": "The bond becomes magically enforced for one specific, crucial clause: violation automatically inflicts Harm 1 (Stress) on the breaker in addition to the SB and Mark. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Campaign (once)."
+    },
+    {
+      "name": "Rite of the Shared Burden",
+      "tier": "Standard",
+      "xp": 9,
+      "action": "Instant",
+      "range": "Touch",
+      "resist": "No",
+      "tags": ["HEAL", "DEBT", "READ"],
+      "materials": "A written secret (yours or another's) and a candle.",
+      "effect": "You transfer the weight of a truth. Choose one: you may remove a Guilty Tell, Haunted, or similar psychological Condition from yourself and give it to a willing or unwilling target (they resist with Resolve DV 4). Alternatively, you may share a secret with an ally; both of you clear 1 Fatigue as the burden is halved.",
+      "push_it": "Transfer a Condition without the target's consent (they automatically resist, but on failure they gain it). Mark 1 SB (Spades) as the secret stains them. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Instant."
+    },
+    {
+      "name": "Rite of the Unveiled Heart",
+      "tier": "High",
+      "xp": 12,
+      "action": "Scene",
+      "range": "Near",
+      "resist": "No",
+      "tags": ["MANIPULATION", "FEAR", "TRUTH", "AREA"],
+      "materials": "A private setting where the target feels safe or is speaking freely.",
+      "effect": "The target suffers –2 dice to all attempts to conceal true emotions, intentions, or lies for the scene. Any successful social roll (Sway, Command, Deceit) made by the target generates 1 SB (Hearts) as the effort to maintain falsehoods under the Witness's gaze creates internal discord.",
+      "push_it": "You may designate one specific, complex question about the target's motivations, fears, or hidden loyalties. If you successfully use Sway or Insight against them this scene, you automatically learn the answer to that question. The intense scrutiny marks 1 SB (Spades) for you as the Witness's attention lingers. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Final Reckoning",
+      "tier": "High",
+      "xp": 13,
+      "action": "Scene",
+      "range": "Zone",
+      "resist": "No",
+      "tags": ["AREA", "COMMAND", "TRUTH", "FEAR"],
+      "materials": "A formally called gathering (court, council, family meeting) within the consecrated zone.",
+      "effect": "All present must speak their greatest debt, wrongdoing, or hidden truth related to the gathering's purpose. Those who lie or withhold suffer Harm 2 (Stress/Reputation). Truth_tellers gain +2 dice to social actions for the remainder of the scene within the zone.",
+      "push_it": "The truth becomes inescapable—even indirect lies or evasions related to the core topic suffer the Harm 2 penalty. The absolute nature of the revelation creates 2 SB (Diamonds) as the disruption to fates and secrets resonates. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "Extended action.",
+      "duration": "Scene."
+    }
+  ],
+  "cantors_and_cults": {
+    "cantors": {
+      "name": "The Cantor's Song",
+      "description": "A Cantor of the Witness sings in truth_tolling—clear, piercing melodies that cut through evasion, harmonies that make the hidden surface. Their voice is used to compel a confession, to sound an alarm that a secret is about to be spoken, or to sing a historical record into being, each note a word in a ledger. The Witness's Cantors are often found in courtrooms, in archive vaults, and at the bedsides of the dying, singing the last truth."
+    },
+    "cult": {
+      "name": "The Congregation of the Unmasking",
+      "description": "The most feared of the Witness's cults, the Congregation of the Unmasking believes that the world will end when the last hidden truth is finally revealed—and that this ending is not a catastrophe but a liberation. They seek to expose every lie, every buried crime, every forgotten promise, no matter the cost. A ritual of the Congregation involves each member speaking aloud a truth they have kept secret, then burning a representation of the lie that concealed it. Their creed is painted on a scroll that is never fully unrolled: 'When all that is hidden is seen, the world will either break or be free. We will be there to witness which.' Outsiders are not welcome; they are potential sources of truth—or obstacles to be unmasked. The Congregation has been known to destroy families, topple governments, and start wars in their pursuit of total revelation. They are loved by none and feared by all, but even their enemies cannot deny that they are right: some secrets truly are worth dying to expose."
+    }
+  },
+  "witchcraft": {
+    "name": "The Art of the Record",
+    "description": "A witch who walks with the Witness is a ledger_scribe or seal_breaker—one who crafts the tools of permanent record: a book that cannot be altered once written, a quill that writes in ink that fades only when the truth it records is fulfilled, or a press that stamps each page with a sigil of authenticity. Their magic works through the materials of documentation: a chisel that carves a truth into stone so that it cannot be erased, a needle that sews a confession into a garment so that the wearer cannot deny it, or a forge that tempers a door that can only be opened by someone who has never told a lie.",
+    "color": "#2d2d2d",
+    "lore": "The ledger_scribe's path is the art of memory. They learn that every truth is a weight and every lie is a stain. To serve the Witness is to accept that you will never be loved—but you will never be deceived.",
+    "signature_rite": "Rite of the Lingering Trace",
+    "quote": "Truth is not a gift. It is a burden.",
+    "tools": {
+      "quill_of_unwritten_truths": {
+        "name": "The Quill of Unwritten Truths",
+        "description": "A quill carved from a raven's feather, its nib dipped in ink made from lampblack and a drop of the witch's blood. Once per session, the witch may write a single sentence on a piece of parchment, then seal it with a drop of wax. For the next day, anyone other than the witch who reads the sentence must make a Resolve test (DV 3) or forget it immediately after reading. The witch may also use the quill to 'seal' a spoken secret, causing the speaker's voice to catch if they try to repeat it for the rest of the scene."
+      }
+    },
+    "hedge_gifts": [
+      {
+        "name": "Record of a Breath",
+        "xp": 4,
+        "description": "Once per scene, the witch may hold a blank piece of parchment up to a person's lips as they speak. The parchment absorbs the spoken words, recording them exactly as they were said—including tone, hesitation, and any unconscious meaning. The parchment can be read by anyone (the words appear in the speaker's own handwriting), but it crumbles to dust after being read aloud. The witch may also use this ability to record the final words of the dying, preserving them for one day."
+      },
+      {
+        "name": "The Truth_Teller's Eye",
+        "xp": 3,
+        "description": "When you look into someone's eyes, you may ask the GM one yes/no question about a lie they are currently telling. The GM must answer truthfully, but the question must be specific (e.g., 'Are they lying about where they were last night?'). Once per scene."
+      },
+      {
+        "name": "The Unforgotten Name",
+        "xp": 4,
+        "description": "Once per session, you may perfectly recall any name, face, or detail you have ever seen or heard. This does not grant new knowledge—only perfect memory of what you have already experienced."
+      }
+    ]
+  },
+  "monastic_tradition": {
+    "name": "The Way of the Unmasked Fist",
+    "description": "I will show you what you would rather forget. Unmasked Fists understand that truth is a weapon—and that the truth_teller is never loved. They are archivists of the uncomfortable, witnesses to the truths that others would kill to keep hidden. To walk this path is to accept that some truths are weapons, and that the weight of memory is a burden that only grows heavier.",
+    "color": "#2d2d2d",
+    "prerequisites": "Spirit 3+, Wits 2+, Rite of the Lingering Trace or Cantor of The Witness.",
+    "quote": "I will show you what you would rather forget.",
+    "debt_resistant_frame": "The Witness records, but does not collect. Monks of the Unmasked Fist gain +1 die to resist any magical debt or obligation that would force them to conceal the truth or perjure themselves. If they succeed, the creditor's ledger will show a blank where their name should be.",
+    "techniques": {
+      "basic": {
+        "name": "Lingering Trace",
+        "xp": 4,
+        "effect": "Follow a hidden thread. Gain +1 die to investigate a specific trace within the current scene.",
+        "cost": "1 Fatigue",
+        "prereq": "Wits 2+"
+      },
+      "advanced": {
+        "name": "Shared Burden",
+        "xp": 9,
+        "effect": "Transfer a psychological Condition (Guilty, Haunted) from yourself to a target (Resist DV 4) or share a secret with an ally to clear 1 Fatigue each.",
+        "cost": "1 Boon",
+        "prereq": "Spirit 3+"
+      },
+      "master": {
+        "name": "Absolute Witness",
+        "xp": 12,
+        "effect": "Once per session, become living truth for one scene: all deceptions within Near range automatically fail. You may demand a single truthful answer to one question from any creature, and they cannot refuse (no resistance roll) as long as the question pertains to the current scene or the target's immediate knowledge.",
+        "cost": "After the scene, you gain a permanent Debt Scar (your eyes reflect light like a brass mirror) and may ignore one debt or obligation that would require you to lie—the creditor sees only the truth of your refusal.",
+        "prereq": "Tier III"
+      }
+    },
+    "corruption": [
+      {
+        "tier": 1,
+        "benefit": "Truth's Sight: +1 die to Insight when detecting deception or hidden motives.",
+        "cost": "Burden of Knowledge: –1 die to social rolls involving lies or deception; others become uncomfortable with your piercing gaze."
+      },
+      {
+        "tier": 2,
+        "benefit": "Memory's Keeper: Once/scene, recall one specific detail from a previous scene with perfect clarity.",
+        "cost": "Compulsive Honesty: Must correct obvious falsehoods witnessed, even when tactically disadvantageous."
+      },
+      {
+        "tier": 3,
+        "benefit": "Revelation's Power: +2 dice to rolls involving exposing secrets, uncovering lies, or forcing confessions.",
+        "cost": "Truth_Blind: Suffer 1 Fatigue when exposed to comforting lies or willful ignorance."
+      },
+      {
+        "tier": 4,
+        "benefit": "Witness's Authority: Once/session, force one target to make a Resolve test (DV 4) or reveal a significant hidden truth.",
+        "cost": "Isolation: –1 die to rolls requiring trust or close relationships; others fear your ability to uncover their secrets."
+      },
+      {
+        "tier": 5,
+        "benefit": "Omniscient Gaze: Once/session, see through all deceptions and lies for one exchange, gaining +3 dice to related actions.",
+        "cost": "Paranoia: –1 die to rolls involving personal peace or rest; the weight of all truths witnessed creates constant mental strain."
+      },
+      {
+        "tier": "6+",
+        "benefit": "Absolute Witness: Once/session, become the living embodiment of truth. For one scene, all deceptions within Near range automatically fail.",
+        "cost": "Truth's Prison: Mark +3 Obligation when using this power; become unable to tolerate any form of deception, making normal social interaction nearly impossible. The Unmasking Beckons: The apocalyptic urge grows—you may be called to expose a truth that will destroy a community, a nation, or yourself."
+      }
+    ]
+  },
+  "corruption": [
+    {
+      "tier": 1,
+      "benefit": "Truth's Sight: +1 die to Insight when detecting deception or hidden motives.",
+      "cost": "Burden of Knowledge: –1 die to social rolls involving lies or deception; others become uncomfortable with your piercing gaze."
+    },
+    {
+      "tier": 2,
+      "benefit": "Memory's Keeper: Once/scene, recall one specific detail from a previous scene with perfect clarity.",
+      "cost": "Compulsive Honesty: Must correct obvious falsehoods witnessed, even when tactically disadvantageous."
+    },
+    {
+      "tier": 3,
+      "benefit": "Revelation's Power: +2 dice to rolls involving exposing secrets, uncovering lies, or forcing confessions.",
+      "cost": "Truth_Blind: Suffer 1 Fatigue when exposed to comforting lies or willful ignorance."
+    },
+    {
+      "tier": 4,
+      "benefit": "Witness's Authority: Once/session, force one target to make a Resolve test (DV 4) or reveal a significant hidden truth.",
+      "cost": "Isolation: –1 die to rolls requiring trust or close relationships; others fear your ability to uncover their secrets."
+    },
+    {
+      "tier": 5,
+      "benefit": "Omniscient Gaze: Once/session, see through all deceptions and lies for one exchange, gaining +3 dice to related actions.",
+      "cost": "Paranoia: –1 die to rolls involving personal peace or rest; the weight of all truths witnessed creates constant mental strain."
+    },
+    {
+      "tier": "6+",
+      "benefit": "Absolute Witness: Once/session, become the living embodiment of truth. For one scene, all deceptions within Near range automatically fail.",
+      "cost": "Truth's Prison: Mark +3 Obligation when using this power; become unable to tolerate any form of deception, making normal social interaction nearly impossible. The Unmasking Beckons: The apocalyptic urge grows—you may be called to expose a truth that will destroy a community, a nation, or yourself."
+    }
+  ],
+  "playstyle_notes": {
+    "description": "The Witness rewards curiosity, patience, and a willingness to bear uncomfortable knowledge. Her followers are not merely investigators but archivists of the real—they record what others would erase. The Witness does not demand that you expose every secret; she simply ensures that you cannot forget the ones you learn. Intrusions often take the form of dreams showing a hidden crime, a sudden memory of a lie you told years ago, or the appearance of a scrap of parchment containing a truth you wish you had never read. High_Tier followers may find that secrets begin to seek them out—people confess unprompted, documents fall open to damning pages, and the world becomes a book that cannot be closed.",
+    "emphasizes": [
+      "Truth as Burden: every secret known is a weight carried",
+      "Investigation as Ritual: uncovering lies is a sacred act",
+      "Memory as Weapon: forgetting can be as powerful as remembering",
+      "The Unmasking: exposing a truth can be an act of mercy or destruction",
+      "Witness as Isolation: those who know too much are seldom loved"
+    ]
+  },
+  "sample_adventure": {
+    "title": "The Truth That Burns",
+    "description": "A powerful noble has been murdered, and the party is hired to investigate. But every clue leads to a dead end—until they discover that the noble was killed to protect a secret that could topple a kingdom. The party must decide: expose the secret and risk war, or bury it and become complicit in the very lies they swore to reveal. The Witness watches, and she will not forget which path they choose.",
+    "quote": "I will show you what you would rather forget. But first, you must forget what you think you know."
+  },
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

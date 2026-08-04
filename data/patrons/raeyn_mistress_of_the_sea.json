@@ -1,0 +1,289 @@
+{
+  "id": "raeyn_mistress_of_the_sea",
+  "type": "patron",
+  "title": "Raéyn — Mistress of the Sea",
+  "subtitle": "Tides & Change",
+  "version": "1.0.0",
+  "tags": [
+    "sea",
+    "tides",
+    "storms",
+    "change",
+    "sailors",
+    "navigation",
+    "weather",
+    "motherhood",
+    "protection",
+    "wrath"
+  ],
+  "lore": {
+    "description": "Raéyn is the tempestuous goddess of the sea, the restless tide that carries news between shores and the promise of change between lives. She is mother to all who sail, her voice the wind that fills sails and her moods the storms that test every mariner's resolve. In Kahfagia, she is called the Storm_Queen; in Linn, the Tide_Mother; in the Brass Coast, the Salt_Widow. Her cult is syncretic, blending the fierce protectiveness of a mother goddess with the practical cunning of a harbor_master. But Raéyn's heart is torn by her greatest tragedy: her son Khemesh, the Kraken of the Depths, who embodies the crushing inevitability of the ocean's dark heart. Where Raéyn brings change and opportunity, Khemesh brings the final, inescapable pressure that grinds all things to nothing. Sailors pray to Raéyn for safe passage and favorable winds, but whisper Khemesh's name when seeking to lay the dead to rest beneath the waves. Raéyn is passionate, mercurial, and fiercely protective of those who respect her domain. She favors those who read currents, bargain with weather, and carry news between shores. But cross her, and the sea itself becomes your enemy: fair weather turns to fury, and every wave a judgment.",
+    "followers": "Among the peoples of Fate's Edge, Raéyn is called by many names. In Kahfagia, she is the Storm_Queen; in Linn, the Tide_Mother; in the Brass Coast, the Salt_Widow. Her cult is syncretic, blending the fierce protectiveness of a mother goddess with the practical cunning of a harbor_master.",
+    "signs": [
+      "A sudden shift in the wind that favours your course",
+      "A wave that rises higher than the rest, then calms",
+      "The smell of salt water on a windless day"
+    ],
+    "quotes": [
+      "\"Mark the tide, name your course, and trust the wave_road. But speak ill of Khemesh, and even I may let the deep take you.\"",
+      "\"The sea does not hate you. It tests you. Pass, and the waves remember your name.\"",
+      "\"The sea gives, the sea takes. We who love her learn to swim.\""
+    ]
+  },
+  "domain_focus": [
+    "Tides and Currents: change, opportunity, the rhythm of the sea",
+    "Maritime Trade and Travel: safe passage, navigation, weather",
+    "Storm and Calm: the duality of protection and wrath",
+    "Motherhood and Loss: fierce love, grief for Khemesh, the weight of a divided heart"
+  ],
+  "runekeeper_options": {
+    "thiasos": {
+      "description": "A Runekeeper sworn to Raéyn does not bind a creature of dry land—they bind a companion of the tides. Their Thiasos is a small sea_creature or mythological being of the waves: a storm_petrel that appears before gales and can sense pressure drops, a gray seal pup that sings in harmonic tones audible only underwater, a hermit crab whose shell is etched with wave_runes, a small octopus that changes color to reflect the weather, or a sea_horse that can hover in still air for a heartbeat.",
+      "care": "This creature requires no food in the usual sense, but it must be immersed in salt water (or exposed to sea spray) each day. If kept dry for more than a day, it becomes Compromised (it grows listless and its color fades; its bearer loses the benefit of Sailor's Instinct until it is returned to the sea)."
+    },
+    "codex": {
+      "description": "The Codex of Raéyn is never a book of dry paper. It may be a set of tide_charts etched on whalebone, a bundle of knotted cords that record the phases of the moon and the turn of currents, a conch shell whose interior spiral is inscribed with navigational verse, or a driftwood plank carved with wave_runes that only become visible when wet.",
+      "upkeep": "Because the sea resists being fixed in writing, the Codex requires upkeep: the Runekeeper must spend an hour each week soaking it in salt water or tracing its symbols by the light of a tide pool, or the Rites stored there become faint (treat as Compromised until re_consecrated at the shore)."
+    }
+  },
+  "patrons_gift": {
+    "name": "Promise of Safe Passage",
+    "description": "Once per scene as an action, a Runekeeper of Raéyn may touch a held item (weapon, tool, or piece of gear) and whisper a promise of safe passage.",
+    "effect": "For the rest of the scene, the item grants +1 die to Navigation or Athletics rolls when aboard a vessel or in water, and the first time each scene the bearer would suffer an environmental penalty from rough seas, wind, or rain, they may ignore it.",
+    "cost": "After the scene, the user marks +1 Obligation to Raéyn."
+  },
+  "rites": [
+    {
+      "name": "Rite of the Wave_Tide",
+      "tier": "Low",
+      "xp": 5,
+      "action": "Scene",
+      "range": "Self",
+      "resist": "No",
+      "tags": ["MOVEMENT", "NAVIGATION", "BOOST", "RISK"],
+      "materials": "A knotted length of salt_twine brushed with seawater, or a shell held to the ear while facing the wind.",
+      "effect": "Choose one: (a) Tidemark's Blessing: Treat slick, swaying, or water_slicked footing as stable for this scene. Gain +1 die on boarding, balance, or shipboard movement. Create a 4_segment Tide's Favor timer to ignore one level of difficult terrain. (b) Whispering Currents: Learn the safest near_term route across water or coastline, or gain +1 die to navigation checks for this scene. If Khemesh's influence is present, suffer –1 die from conflicting currents.",
+      "push_it": "(Tidemark) Extend to one ally in Close for one beat, but generate 1 SB (Spades) as the deck shifts. (Currents) Also learn the fastest route, but mark Exposure +1 (leaving a telltale wake). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Changing Tide",
+      "tier": "Standard",
+      "xp": 8,
+      "action": "Scene",
+      "range": "Zone",
+      "resist": "No",
+      "tags": ["TERRAIN", "AREA", "MOVEMENT", "PRESSURE"],
+      "materials": "A handful of pebbles cast in a crescent.",
+      "effect": "Bias currents and water levels in the zone (must be water_adjacent). Those moving with the tide gain +1 die; those moving against suffer –1 die. Small craft must test to hold position. Create a 6_segment Tidal Influence timer.",
+      "push_it": "Brief surge or drawdown (one beat): open a ford or swamp a skiff. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Wave_Road Consecration",
+      "tier": "Standard",
+      "xp": 7,
+      "action": "Scene",
+      "range": "Route",
+      "resist": "No",
+      "tags": ["GUIDANCE", "BOOST", "BOND", "FATE"],
+      "materials": "Two sea_glass markers dropped overboard at start and end.",
+      "effect": "Consecrate a wave_road between two visible points. Allies gain +2 dice on travel, evade, or carry actions at sea. Designated pursuers suffer –1 die to intercept. One active wave_road at a time. Create an 8_segment Blessed Passage timer.",
+      "push_it": "Extend the route's favor to an adjacent leg for one beat; mark +1 Obligation. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Storm_Queen's Hand",
+      "tier": "High",
+      "xp": 13,
+      "action": "Scene",
+      "range": "Zone",
+      "resist": "No",
+      "tags": ["WEATHER", "AREA", "COMMAND", "FEAR", "BOOST"],
+      "materials": "A vial of rainwater gathered at three crossings.",
+      "effect": "Shape a storm_band over the zone (sea, shore, or open sky). Choose two modes at cast; switch one once per scene: (a) Propulsion: Vessel gains +1 band of movement per beat (or +1 Effect to maneuvers). (b) Concealment: Veil of rain/spray; ranged targeting impaired; –1 die to hostile sighting. (c) Smite: Once per beat, lash with wave or lightning as [AREA] hazard.",
+      "push_it": "Add a third mode for one beat, then the GM spends 1 SB on collateral. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Mother's Wrath",
+      "tier": "High",
+      "xp": 14,
+      "action": "Extended",
+      "range": "Zone",
+      "resist": "No",
+      "tags": ["CURSE", "DEBT", "FEAR", "AREA", "FATE"],
+      "materials": "Tears of a betrayed lover mixed with salt from seven seas.",
+      "effect": "Curse those who wronged you. The target suffers –2 dice to maritime/weather rolls for one session. At sea, they must roll Spirit+Resolve (DV 4) each day or suffer Harm 1 (Weather). Create a 6_segment Mother's Ire timer.",
+      "push_it": "The curse spreads to the target's allies or family; mark 2 SB (Diamonds). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "Extended action.",
+      "duration": "Session."
+    }
+  ],
+  "cantors_and_cults": {
+    "cantors": {
+      "name": "The Cantor's Song",
+      "description": "A Cantor of Raéyn sings in shanties of the turning tide—melodies that rise and fall with the rhythm of waves, harmonies that mimic the creak of rigging and the cry of gulls. Their voice is used to calm a restless sea, to call a favorable wind, or to sing a drowned sailor's soul back to shore. Raéyn's Cantors are often found aboard ships, their songs becoming part of the vessel's luck."
+    },
+    "cult": {
+      "name": "The Cult of the Salt_Washed Circle",
+      "description": "Raéyn's cults gather on beaches at low tide, in sea_caves, and aboard ships during storms. The Salt_Washed Circle is a fellowship of sailors, pilots, fisherfolk, and coastal dwellers who honor the sea's gifts and respect its rages. A ritual of the Circle involves each member pouring a libation of fresh water into the sea (to honor Raéyn's tears for Khemesh) while speaking a wish for safe passage or a warning of danger ahead. Their creed is carved into driftwood and left on the tide: 'The sea gives, the sea takes. We who love her learn to swim.' Outsiders are welcome to join a libation, but they must bring salt from their home shore."
+    }
+  },
+  "witchcraft": {
+    "name": "The Art of the Tide",
+    "description": "A witch who walks with Raéyn is a net_mender or tide_seer—one who crafts with the materials of the tide: a hull carved from wood seasoned by sea_salt, a sail woven with a prayer for fair wind, or a net tied with knots that remember every fish they have caught. In Aeler, a True_Mason might carve a 'tide stone' at a harbor entrance, but a witch of Raéyn would instead tie a salt_twine knot around a piling, so that the current remembers to favor outgoing vessels.",
+    "color": "#1a4d6e",
+    "lore": "The tide_seer's path is the art of reading the sea. They learn that the tide does not ask permission—it simply moves. To serve Raéyn is to understand that change is the only constant, and that the sea rewards those who respect its rhythm.",
+    "signature_rite": "Rite of the Wave_Tide",
+    "quote": "Mark the tide, name your course, and trust the wave_road.",
+    "tools": {
+      "wave_seer_shell": {
+        "name": "The Wave_Seer's Shell",
+        "description": "A large conch shell, its inner spiral polished to a mirror sheen, rimmed with brass. Once per session, the witch may hold the shell to their ear and listen to the 'tide's memory.' For the next scene, they gain +2 dice to navigation or weather_reading rolls, and may ask the GM one yes/no question about hidden currents, reefs, or approaching storms (the shell whispers the answer in a voice like waves). The shell can also be used to 'mark' a threshold: placing it on a ship's prow or a harbor gate grants +1 die to all rolls made to defend that vessel or harbor until the next dawn."
+      }
+    },
+    "hedge_gifts": [
+      {
+        "name": "Salt_Kissed Rope",
+        "xp": 4,
+        "description": "Once per scene, the witch may tie a simple knot in a rope, cord, or strand of hair while speaking a short prayer to Raéyn. The knot becomes a tide_knot—when the witch unties it (as a free action), the nearest body of water (a puddle, a river, the sea) briefly rises or falls by a few inches, as if a small tide has turned. This can unstick a boat, wet a fire, or startle a guard—but never causes direct harm."
+      },
+      {
+        "name": "The Mariner's Compass",
+        "xp": 3,
+        "description": "Once per voyage (or per session, if not at sea), you may ask the GM one yes/no question about the weather or the state of the sea for the next 24 hours. The GM must answer truthfully."
+      },
+      {
+        "name": "The Drowned Sailor's Blessing",
+        "xp": 4,
+        "description": "When you or an ally falls overboard, you may call on Raéyn. The water will bear you up for one exchange, granting +2 dice to any check to climb back aboard or swim to safety."
+      }
+    ]
+  },
+  "monastic_tradition": {
+    "name": "The Way of the Storm Pilot",
+    "description": "The sea does not hate you. It tests you. Pass, and the waves remember your name. Storm Pilots understand that the sea is not an enemy—it is a teacher. They read currents, bargain with weather, and carry news between shores. To walk this path is to accept that the tide that lifts you can also drag you down, and that the only way to master the sea is to respect its power.",
+    "color": "#1a4d6e",
+    "prerequisites": "Wits 3+, Spirit 2+, Rite of the Wave_Tide or Cantor of Raéyn.",
+    "quote": "The sea does not hate you. It tests you. Pass, and the waves remember your name.",
+    "debt_resistant_frame": "The sea's debts are tides, not chains. Monks of the Storm Pilot tradition gain +1 die to resist any magical debt or geas that would bind them to a fixed port or restrict their freedom to sail. If they succeed, the contract's ink runs like water and the obligation washes away.",
+    "techniques": {
+      "basic": {
+        "name": "Sea Legs",
+        "xp": 4,
+        "effect": "You ignore all penalties from rough seas or slippery decks.",
+        "cost": "Passive",
+        "prereq": "Body 2+"
+      },
+      "advanced": {
+        "name": "Call the Breeze",
+        "xp": 8,
+        "effect": "Once per scene, increase your vessel's speed by one band for one exchange.",
+        "cost": "1 Fatigue",
+        "prereq": "Tier II"
+      },
+      "master": {
+        "name": "Eye of the Storm",
+        "xp": 12,
+        "effect": "Once per session, you may calm a supernatural storm or redirect a natural one for one scene. All weather_based penalties are negated for your vessel and allies within Near.",
+        "cost": "After the scene, you gain a permanent Storm_Touched Eye (one iris glimmers with distant lightning, and the sea will occasionally call you to calm another tempest). You may ignore one Obligation to Raéyn, but the next natural storm you encounter will find you regardless of shelter.",
+        "prereq": "Tier III"
+      }
+    },
+    "corruption": [
+      {
+        "tier": 1,
+        "benefit": "Sailor's Instinct: +1 die to Navigation and maritime survival rolls.",
+        "cost": "Sea_Sick on Land: –1 die to rolls requiring prolonged time away from water or open spaces."
+      },
+      {
+        "tier": 2,
+        "benefit": "Tide's Favor: Once/scene, treat a failed maritime or weather_related roll as a success, but mark 1 SB (Clubs).",
+        "cost": "Weather Sensitive: Must make a Resolve test (DV 3) to resist acting on every weather change or maritime opportunity."
+      },
+      {
+        "tier": 3,
+        "benefit": "Storm's Child: +2 dice to rolls involving weather manipulation or sea_based combat.",
+        "cost": "Tempestuous Nature: Suffer 1 Fatigue when denied access to open water or weather changes for extended periods."
+      },
+      {
+        "tier": 4,
+        "benefit": "Mother's Protection: Once/session, call upon Raéyn's favor to protect a vessel or coastal area from harm.",
+        "cost": "Protective Instinct: –1 die to rolls involving personal safety when others are endangered nearby."
+      },
+      {
+        "tier": 5,
+        "benefit": "Wave_Rider: Once/session, navigate any water_based obstacle or hazard with perfect ease.",
+        "cost": "Restless Spirit: –1 die to rolls requiring patience or stillness; the call of the sea is constant."
+      },
+      {
+        "tier": "6+",
+        "benefit": "Storm Queen: Once/session, become the living embodiment of the sea's power. For one scene, control weather and tides within Near range.",
+        "cost": "Mother's Burden: Mark +2 Obligation when using this power; the weight of protecting all who sail becomes overwhelming, causing Harm 1 (Stress) until the storm passes. Khemesh's Attention: The Kraken's gaze turns your way; the GM may introduce oceanic complications (rogue waves, crushing pressure) as narrative fallout."
+      }
+    ]
+  },
+  "corruption": [
+    {
+      "tier": 1,
+      "benefit": "Sailor's Instinct: +1 die to Navigation and maritime survival rolls.",
+      "cost": "Sea_Sick on Land: –1 die to rolls requiring prolonged time away from water or open spaces."
+    },
+    {
+      "tier": 2,
+      "benefit": "Tide's Favor: Once/scene, treat a failed maritime or weather_related roll as a success, but mark 1 SB (Clubs).",
+      "cost": "Weather Sensitive: Must make a Resolve test (DV 3) to resist acting on every weather change or maritime opportunity."
+    },
+    {
+      "tier": 3,
+      "benefit": "Storm's Child: +2 dice to rolls involving weather manipulation or sea_based combat.",
+      "cost": "Tempestuous Nature: Suffer 1 Fatigue when denied access to open water or weather changes for extended periods."
+    },
+    {
+      "tier": 4,
+      "benefit": "Mother's Protection: Once/session, call upon Raéyn's favor to protect a vessel or coastal area from harm.",
+      "cost": "Protective Instinct: –1 die to rolls involving personal safety when others are endangered nearby."
+    },
+    {
+      "tier": 5,
+      "benefit": "Wave_Rider: Once/session, navigate any water_based obstacle or hazard with perfect ease.",
+      "cost": "Restless Spirit: –1 die to rolls requiring patience or stillness; the call of the sea is constant."
+    },
+    {
+      "tier": "6+",
+      "benefit": "Storm Queen: Once/session, become the living embodiment of the sea's power. For one scene, control weather and tides within Near range.",
+      "cost": "Mother's Burden: Mark +2 Obligation when using this power; the weight of protecting all who sail becomes overwhelming, causing Harm 1 (Stress) until the storm passes. Khemesh's Attention: The Kraken's gaze turns your way; the GM may introduce oceanic complications (rogue waves, crushing pressure) as narrative fallout."
+    }
+  ],
+  "playstyle_notes": {
+    "description": "Raéyn is the patron of sailors, navigators, storm_callers, and anyone who lives by the sea's rhythm. Her followers gain power over tides, currents, and weather, but pay with a restless spirit and a fierce protectiveness that can turn to wrath. The rivalry with her son Khemesh is ever_present—Raéyn's gifts bring change and opportunity, but the deep always waits. Ideal for characters who love the sea, embrace change, and understand that the tide that lifts you can also drag you down.",
+    "emphasizes": [
+      "Tides and Change: power over currents, weather, and the rhythm of the sea",
+      "Maritime Syncretism: a goddess of creole Kahfagia, blending mother, warrior, and storm",
+      "Storm and Calm: the duality of protection and wrath",
+      "Motherhood and Loss: fierce love for sailors, grief for Khemesh",
+      "Khemesh's Shadow: the Kraken is always beneath the waves, watching"
+    ]
+  },
+  "sample_adventure": {
+    "title": "The Kraken's Wake",
+    "description": "A fleet of merchant ships has been vanishing without a trace in the Sea of Thorns. The survivors speak of a massive shape beneath the waves, of a pressure that crushes hulls and a silence that swallows screams. The party must sail into the heart of the deep to confront the truth—but the truth is that Khemesh has awakened, and Raéyn cannot protect those who sail into his domain. The party must choose: face the Kraken, or turn back and let the sea claim more.",
+    "quote": "Mark the tide, name your course, and trust the wave_road. But speak ill of Khemesh, and even I may let the deep take you."
+  },
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

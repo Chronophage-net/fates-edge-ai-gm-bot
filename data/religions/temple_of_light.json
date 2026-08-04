@@ -1,0 +1,99 @@
+{
+  "id": "temple-of-light",
+  "type": "religion",
+  "title": "The Temple of Light",
+  "subtitle": "The Faith of Viterra and Thepyrgos",
+  "version": "1.0.0",
+  "tags": [
+    "illumination",
+    "mercy",
+    "rehabilitation",
+    "reform",
+    "truth",
+    "refraction",
+    "compassion"
+  ],
+  "lore": {
+    "description": "The Temple of Light is the faith of Viterra and Thepyrgos, born from a reform movement that refused to burn. Its priests are teachers. Its knights are protectors. Its inquisitors are called Chain-Lanterns, and they carry lanterns on chains to remind themselves that power must be restrained. The Temple teaches that the divine is not a single flame but a spectrum. It refracts into three aspects: Gold (justice), Silver (truth), and White (mercy). No single aspect is complete without the others.",
+    "followers": "The Temple is evangelical—it sends missionaries to the Linn, the Mistlands, and the Thepyrgosian countryside, offering medicine, education, and catechism. The Temple's mercy has teeth, and those teeth are sharp. Its healers are beloved. Its Chain-Lanterns are feared. Both are necessary.",
+    "names_across_regions": {
+      "viterra": "The Temple of Light, the official faith of the hedge-law kingdom",
+      "thepyrgos": "The City of Two Fires—the Temple's heart and the Everflame's foothold",
+      "linn": "The Light-Bringers, missionaries who offer grain and catechism"
+    },
+    "quote": "The Light is not a flame but a lens. The divine shines through all things, refracted into Gold, Silver, and White."
+  },
+  "domain_focus": [
+    "The Refraction of the Divine: the divine is a spectrum, refracted into Gold (justice), Silver (truth), and White (mercy)",
+    "Confession and Rehabilitation: confession is private; the goal is not punishment but reintegration",
+    "The Chain-Lanterns: the inquisitorial arm; they carry iron lanterns on chains to remind themselves of restraint",
+    "The Bell-Toll Ordeal: a suspect placed in a chamber with a bell; lies cause the bell to ring—or so they are told",
+    "The White Mirror: a polished silver surface used to detect unsanctioned magic; the reflection is slightly delayed"
+  ],
+  "doctrines": [
+    "The divine is a spectrum, not a single flame. It refracts into Gold, Silver, and White.",
+    "No single aspect is complete without the others. Justice without mercy is cruelty. Mercy without truth is weakness.",
+    "Confession is private. The priest does not report what is heard. The goal is reintegration.",
+    "Heretics are not burned. They are re-educated. The Temple maintains sanctuaries for the possessed and the wayward."
+  ],
+  "practices": [
+    "The Bell-Toll Ordeal: a suspect is placed in a chamber with a single bell; each lie causes the bell to ring—or so they are told",
+    "The White Mirror: a polished silver surface used to detect unsanctioned magic; the longer the delay, the more dangerous the mage",
+    "Private Confession: the penitent speaks to a priest in a candle-lit room; the priest does not report what is heard",
+    "The Chain-Lanterns: the Temple's inquisitors, spies, and secret police, carrying lanterns on chains"
+  ],
+  "hierarchy": {
+    "synod": "A council of bishops, abbots, and lay scholars. Meets twice yearly in Thepyrgos. Elects the Archon of Light, who serves as spiritual leader but has no temporal authority.",
+    "dawn_knights": "Warriors who protect pilgrims, guard sanctuaries, and hunt rogue magic users. They are forbidden from initiating violence—they may only respond.",
+    "chain_lanterns": "The Temple's inquisitorial arm. They carry iron lanterns on chains—the flame is visible, the chain is a reminder of restraint. They investigate, detain, and rehabilitate. They are also the Temple's spies, assassins, and secret police."
+  },
+  "orders": [
+    {
+      "id": "oath_of_flame__light_dawn_knights",
+      "name": "Oath of Flame & Light (Dawn-Knights)",
+      "role": "Protectors and guardians",
+      "description": "The warrior's path—but the Temple emphasizes protection, not destruction. Dawn-Knights pray for the strength to shield the innocent. Their Rites grant +1 die when defending another and +1 Armor when protecting a sanctuary."
+    },
+    {
+      "id": "inquisitor_prime_chain_lanterns",
+      "name": "Inquisitor Prime (Chain-Lanterns)",
+      "role": "Investigators and examiners",
+      "description": "The judge's path—but the Temple emphasizes investigation, not sentencing. Chain-Lanterns pray for the patience to find the truth. Their Rites grant +1 die to detect lies and +1 Effect when exposing corruption."
+    },
+    {
+      "id": "oath_of_mercy_and_grace_hospitallers",
+      "name": "Oath of Mercy and Grace (Hospitallers)",
+      "role": "Healers and caretakers",
+      "description": "The healer's path—and the Temple gives them autonomy. Hospitallers may treat anyone, regardless of faith or crime. They are not required to report what they hear. This autonomy has produced the Temple's most beloved saints—and its most dangerous secrets."
+    }
+  ],
+  "relationship_to_patrons": {
+    "oath_of_flame__light": "Dawn-Knights—the warrior's path. Emphasizes protection, not destruction. Rites grant +1 die when defending another.",
+    "inquisitor_prime": "Chain-Lanterns—the investigator's path. Emphasizes truth-finding, not sentencing. Rites grant +1 die to detect lies.",
+    "oath_of_mercy_and_grace": "Hospitallers—the healer's path. Autonomy granted; they may treat anyone regardless of faith or crime."
+  },
+  "schism": {
+    "with_everflame": "The Temple of Light began as a reform movement within the Everflame. The Synod of Thepyrgos declared independence in Year 478 AR. The Everflame's Grand Magistrate declared the Synod heretical. Both sides excommunicated each other. The Temple's mercy has teeth, and those teeth are sharp.",
+    "key_differences": [
+      "Temple: Rehabilitation (re-education) vs Everflame: Execution (stake)",
+      "Temple: Unsanctioned magic = mental illness vs Everflame: Unsanctioned magic = heresy",
+      "Temple: Paternal control vs Everflame: Administrative cruelty",
+      "Temple: Synod as source of authority vs Everflame: Empire as source of authority"
+    ]
+  },
+  "controversies": {
+    "conscription_of_children": "The Temple's most controversial practice. Children with arcane talent are identified and taken to sanctuaries for 'rehabilitation.' Most never leave. Some become Chain-Lanterns themselves.",
+    "chain_lantern_abuses": "The Chain-Lanterns have grown more aggressive over time. The chain that symbolized restraint has become a weapon. They operate illegally in Ecktoria, hunting heretics who have fled Temple justice.",
+    "the_white_mirror": "A prop that has never failed to produce a confession. The mirror is not magical. The Chain-Lanterns' judgment is the only test that matters."
+  },
+  "adventure_seed": {
+    "title": "The Child Who Spoke in Tongues",
+    "description": "A Linn child begins reciting the Codex of Illumination in a language no one taught her. The Temple wants her for their school. The Everflame wants her for their pyre. The child's clan wants her back. The child wants to go home. No one asks what the child wants.",
+    "quote": "The Temple's mercy has teeth, and those teeth are sharp. I have seen a Chain-Lantern weep over a child she was forced to take. I have also seen a Chain-Lantern smile while a child's memory was erased."
+  },
+  "sample_npc": {
+    "name": "A Chain-Lantern",
+    "description": "Conscripted at seven. Forty now. Has never slept without a candle burning. She does not know why. She carries a white mirror and a bell on a chain. She has never failed to find what she was looking for."
+  },
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

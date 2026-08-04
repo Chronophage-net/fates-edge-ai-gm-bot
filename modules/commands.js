@@ -53,6 +53,101 @@ function globalApiRequest(path, method = 'GET', body = null) {
     });
 }
 
+// ─── Whiteboard grid-combat token sync ────────────────────────────
+// NEW: lets the AI GM actually WRITE to the whiteboard (previously
+// `!gm whiteboard`/`!gm grid` could only read a summary). Tokens are
+// addressed by a stable slug derived from the character/NPC name, so
+// repeated tag calls for the same name update the same token instead of
+// creating duplicates. Positions are grid CELLS (col/row), not pixels --
+// the server converts using the room's cellSize, since the bot has no
+// canvas of its own to reason about.
+function slugifyTokenId(name) {
+    return 'npc-' + String(name).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+}
+
+// Simple round-robin slot picker so tokens the AI places without an
+// explicit position don't all stack on the same cell. Not persisted
+// across process restarts -- purely a "spread them out a bit" default;
+// the AI (or a human) can always reposition via [TOKEN MOVE ...] / drag.
+let _autoTokenSlot = 0;
+function nextAutoTokenCell() {
+    const col = 2 + (_autoTokenSlot % 6);
+    const row = 1 + Math.floor(_autoTokenSlot / 6);
+    _autoTokenSlot++;
+    return { col, row };
+}
+
+function inferFaction(role, motivation) {
+    const text = `${role || ''} ${motivation || ''}`.toLowerCase();
+    if (/\b(ally|allied|companion|friend|guide|helper|patron|mentor)\b/.test(text)) return 'ally';
+    return 'enemy';
+}
+
+async function placeOrUpdateToken(context, { name, faction, col, row, vision, body }) {
+    if (!context.apiRequest) return null;
+    const id = slugifyTokenId(name);
+    const pos = (Number.isFinite(col) && Number.isFinite(row)) ? { col, row } : nextAutoTokenCell();
+    try {
+        const result = await context.apiRequest('POST', ['whiteboard', 'tokens'], {
+            token: {
+                id,
+                label: name,
+                faction: faction || 'enemy',
+                col: pos.col,
+                row: pos.row,
+                vision: Number.isFinite(vision) ? vision : (faction === 'ally' ? 3 : 0),
+                body: Number.isFinite(body) ? body : 3
+            }
+        });
+        return result;
+    } catch (e) {
+        console.warn(`[Whiteboard] Failed to place token for "${name}":`, e.message);
+        return null;
+    }
+}
+
+async function moveToken(context, name, col, row) {
+    if (!context.apiRequest) return null;
+    const id = slugifyTokenId(name);
+    try {
+        return await context.apiRequest('POST', ['whiteboard', 'tokens', encodeURIComponent(id), 'move'], { col, row });
+    } catch (e) {
+        console.warn(`[Whiteboard] Failed to move token "${name}":`, e.message);
+        return null;
+    }
+}
+
+async function removeToken(context, name) {
+    if (!context.apiRequest) return null;
+    const id = slugifyTokenId(name);
+    try {
+        return await context.apiRequest('DELETE', ['whiteboard', 'tokens', encodeURIComponent(id)]);
+    } catch (e) {
+        // Not fatal -- token may never have been placed (e.g. an NPC that
+        // was only ever named, never actually put in a fight).
+        return null;
+    }
+}
+
+// Clear every enemy-faction token off the grid, e.g. once an encounter
+// resolves. Deliberately scoped to faction:'enemy' only -- ally/PC
+// tokens (which this bot never creates itself, only humans do via the
+// whiteboard UI) are left alone, so resolving one fight can't silently
+// wipe party tokens a human placed.
+async function clearEnemyTokens(context) {
+    if (!context.apiRequest) return;
+    try {
+        const board = await context.apiRequest('GET', ['whiteboard']);
+        const tokens = board?.gridCombat?.tokens || [];
+        const enemyIds = tokens.filter(t => t.faction === 'enemy').map(t => t.id);
+        for (const id of enemyIds) {
+            await context.apiRequest('DELETE', ['whiteboard', 'tokens', encodeURIComponent(id)]).catch(() => {});
+        }
+    } catch (e) {
+        console.warn('[Whiteboard] Failed to clear enemy tokens after encounter resolve:', e.message);
+    }
+}
+
 // ─── Command parser ────────────────────────────────────────────────
 function parseArgs(text) {
     const parts = text.split(/\s+/);
@@ -306,6 +401,10 @@ async function handleBotCommand(sender, text, context) {
 !gm deck history - show recent draws (if supported)
 !gm whiteboard - show whiteboard summary (drawings, notes, images)
 !gm grid - show grid combat status (tokens, enabled)
+!gm token place <name> <col> <row> [ally|enemy] - place a token on the grid
+!gm token move <name> <col> <row> - move an existing token
+!gm token remove <name> - remove a token
+!gm token clear - remove all enemy tokens
 !gm modules - list loaded modules (if any)`;
     }
 
@@ -1133,7 +1232,16 @@ async function handleBotCommand(sender, text, context) {
                 result += `Cell Size: ${gc.cellSize || 40}\n`;
                 result += `Tokens: ${gc.tokens?.length || 0}\n`;
                 if (gc.tokens && gc.tokens.length) {
-                    const tokenList = gc.tokens.map(t => `${t.name} (${t.x},${t.y})`).join(', ');
+                    // CHANGED: was `t.name`, which tokens don't have (the
+                    // field is `label` -- see room.js's default token shape
+                    // and placeOrUpdateToken() above) -- every token printed
+                    // as "undefined". Also show grid cell instead of raw
+                    // pixel x/y, since that's what a human or the AI would
+                    // actually reference (e.g. via !gm token move).
+                    const cellSize = gc.cellSize || 40;
+                    const tokenList = gc.tokens
+                        .map(t => `${t.label || t.id} [${t.faction || '?'}] (${Math.round((t.x||0)/cellSize)},${Math.round((t.y||0)/cellSize)})`)
+                        .join(', ');
                     result += `  Tokens: ${tokenList}\n`;
                 }
             }
@@ -1141,6 +1249,47 @@ async function handleBotCommand(sender, text, context) {
         } catch (e) {
             return `Grid status failed: ${e.message}`;
         }
+    }
+
+    // ─── Manual token control (place / move / remove) ──────────────
+    // Mirrors the [TOKEN MOVE ...]/[TOKEN REMOVE ...] tags and NPC-create
+    // auto-placement above, but for a human GM (or the AI, via a plain
+    // !gm command instead of an inline tag) driving it directly.
+    if (cmd === 'token') {
+        if (context.myRole !== 'gm') return 'Only the GM can control tokens.';
+        const sub = (args[0] || '').toLowerCase();
+        if (sub === 'place' || sub === 'add') {
+            const name = args[1];
+            const col = parseInt(args[2], 10);
+            const row = parseInt(args[3], 10);
+            const faction = (args[4] || 'enemy').toLowerCase();
+            if (!name || !Number.isFinite(col) || !Number.isFinite(row)) {
+                return 'Usage: !gm token place <name> <col> <row> [ally|enemy]';
+            }
+            const result = await placeOrUpdateToken(context, { name, faction, col, row });
+            return result ? `📍 Placed "${name}" at (${col},${row}).` : `❌ Failed to place token for "${name}".`;
+        }
+        if (sub === 'move') {
+            const name = args[1];
+            const col = parseInt(args[2], 10);
+            const row = parseInt(args[3], 10);
+            if (!name || !Number.isFinite(col) || !Number.isFinite(row)) {
+                return 'Usage: !gm token move <name> <col> <row>';
+            }
+            const result = await moveToken(context, name, col, row);
+            return result ? `📍 Moved "${name}" to (${col},${row}).` : `❌ Failed to move token "${name}" (does it exist?).`;
+        }
+        if (sub === 'remove' || sub === 'delete') {
+            const name = args[1];
+            if (!name) return 'Usage: !gm token remove <name>';
+            await removeToken(context, name);
+            return `🗑️ Removed token "${name}" (if it existed).`;
+        }
+        if (sub === 'clear') {
+            await clearEnemyTokens(context);
+            return '🗑️ Cleared all enemy tokens.';
+        }
+        return 'Usage: !gm token place <name> <col> <row> [ally|enemy]\n       !gm token move <name> <col> <row>\n       !gm token remove <name>\n       !gm token clear';
     }
 
     // ─── Modules ──────────────────────────────────────────────────
@@ -1494,6 +1643,36 @@ async function processSpecialTags(text, context, senderName = null) {
         } catch (e) {
             console.warn(`[NPC CREATE] failed to register "${name}":`, e.message);
         }
+        // NEW: also drop a token for them on the whiteboard grid, so a
+        // newly-introduced NPC is visible on the map the moment they're
+        // named, not just tracked in text. Best-effort/non-blocking --
+        // failures here shouldn't affect the narration itself.
+        placeOrUpdateToken(context, { name, faction: inferFaction(role, motivation) }).catch(() => {});
+        output = output.replace(match[0], '');
+    }
+
+    // ─── [TOKEN MOVE "Name" col row] ────────────────────────────────
+    // Lets the AI reposition a combatant on the grid as a fight moves
+    // (e.g. an enemy closing distance, a PC retreating). Silent on
+    // success like [NPC CREATE] -- the movement should already be
+    // implied by the narration around it.
+    const tokenMoveRegex = /\[TOKEN MOVE "([^"]+)"\s+(-?\d+)\s+(-?\d+)\]/gi;
+    while ((match = tokenMoveRegex.exec(output)) !== null) {
+        const name = match[1];
+        const col = parseInt(match[2], 10);
+        const row = parseInt(match[3], 10);
+        moveToken(context, name, col, row).catch(() => {});
+        output = output.replace(match[0], '');
+    }
+
+    // ─── [TOKEN REMOVE "Name"] ───────────────────────────────────────
+    // Take a token off the board (fled, defeated and dragged off,
+    // teleported away, etc.) without necessarily resolving a whole
+    // encounter -- e.g. one enemy out of several going down.
+    const tokenRemoveRegex = /\[TOKEN REMOVE "([^"]+)"\]/gi;
+    while ((match = tokenRemoveRegex.exec(output)) !== null) {
+        const name = match[1];
+        removeToken(context, name).catch(() => {});
         output = output.replace(match[0], '');
     }
 
@@ -1506,6 +1685,9 @@ async function processSpecialTags(text, context, senderName = null) {
             const apiRequest = context.apiRequest;
             if (apiRequest) {
                 const result = await apiRequest('POST', ['adventure', 'encounter', 'resolve'], { outcome, notes });
+                // Fight's over -- clear enemy tokens off the grid. Best-effort;
+                // never lets a whiteboard hiccup break the resolution message.
+                clearEnemyTokens(context).catch(() => {});
                 if (result && result.lastResolution) {
                     const r = result.lastResolution;
                     const msg = `⚔️ Encounter "${r.encounter || 'Unknown'}" resolved as ${r.outcome}.${r.result ? ' ' + r.result : ''}`;

@@ -1,0 +1,16 @@
+{
+  "id": "untouchable-form",
+  "name": "Untouchable Form",
+  "cost": 12,
+  "tier": "epic",
+  "activation": "reactive",
+  "category": "monk-unarmed",
+  "useLimit": "once-session",
+  "prerequisites": "Unarmed 4+, Requires: Monastic Training",
+  "effect": "Reroll a failing die once per session",
+  "effects": [
+    { "type": "reroll", "trigger": "always", "dice": 1 }
+  ],
+  "description": "Your body moves before the blow lands. Once per session, reroll a single failing die on any physical roll — narrate it as slipping the strike rather than absorbing it.",
+  "source": "guide"
+}

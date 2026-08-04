@@ -1,0 +1,305 @@
+{
+  "id": "the_riven_path",
+  "type": "patron",
+  "title": "The Riven Path",
+  "subtitle": "Passion & Power",
+  "version": "1.0.0",
+  "tags": [
+    "passion",
+    "power",
+    "liberation",
+    "domination",
+    "strength",
+    "will",
+    "breaking_chains",
+    "self_determination",
+    "rage",
+    "freedom"
+  ],
+  "lore": {
+    "description": "The Riven Path does not command. It offers. It is the heat in the blood, the fire in the belly, the voice that whispers 'Take what is yours.' Those who walk this path learn that power is not given—it is seized. Chains are not broken by asking nicely. They are shattered by will. Followers of the Riven Path are conquerors, liberators, and survivors. They serve no master—not even the Path itself. When a tyrant rises, they do not negotiate—they overthrow. When a wall stands in their way, they do not climb—they break. When a rival challenges them, they do not yield—they prove.",
+    "followers": "Among the peoples of Fate's Edge, the Riven Path is known by names that frighten children and inspire revolutionaries. In Silkstrand, it is the Cut Purse's Blessing, whispered by thieves who take from those who stole first. In Vhasia, it is the Gorget_Breaker, a philosophy of the duelist who refuses to wear armor. In Zakov, it is the Tide_That_Eats_The_Shore, a slow, patient consumption that reshapes coastlines. Wherever the oppressed dream of rising, the Riven Path waits.",
+    "signs": [
+      "A chain that rattles without a hand to shake it",
+      "The sound of breaking stone, heard from miles away",
+      "A sudden heat in the air, like the moment before a fire catches"
+    ],
+    "quotes": [
+      "\"The chain that binds you is the chain you refuse to break. The hand that holds you down is the hand you have not yet bitten.\"",
+      "\"I owe nothing. I serve no one. I am my own.\"",
+      "\"The Riven Path does not forgive debts—it collects them.\""
+    ]
+  },
+  "domain_focus": [
+    "Liberation Through Power: freedom as the right of the strong, justice as the will of the victorious",
+    "Passion as Fuel: anger, desire, fear, and love—all are fires to be stoked and aimed",
+    "Crushing Dominance: victory through overwhelming force, intimidation, and the willing display of power",
+    "Self_Determination: no chains, no masters, no debt that is not paid in blood"
+  ],
+  "runekeeper_options": {
+    "thiasos": {
+      "description": "A Runekeeper sworn to the Riven Path does not bind a living creature of loyalty or service—they bind a fragment of broken power. Their Thiasos is a cracked crystal: a focus that was once whole, now broken, now more. It burns warm when they are angry and grows hot when they are in danger.",
+      "care": "It requires no food, but they must feed it a drop of their own blood each day (mark 1 Fatigue once per week if neglected). If neglected for a week, it becomes Compromised (it goes cold, imposing –1 die on all Intimidation and Command rolls until they feed it)."
+    },
+    "codex": {
+      "description": "The Codex of the Riven Path is never a book of prayers. It is a manifesto—a collection of maxims, battle cries, and personal victories. It cannot be read in the usual way; the follower must earn each Rite by proving their worth through combat, theft, or domination.",
+      "upkeep": "Because the Path's truths are written in acts of dominance, the Codex requires upkeep: the Runekeeper must perform one act of dominance per week (win a spar, intimidate someone, break something that held them back). If neglected, it becomes Compromised (the Rites become illegible until you win a meaningful victory)."
+    }
+  },
+  "patrons_gift": {
+    "name": "The Broken Chain",
+    "description": "Once per scene as an action, a Runekeeper of the Riven Path may touch a held weapon or focus and whisper a command of breaking.",
+    "effect": "For the rest of the scene, the item grants +1 die to Melee or Intimidation rolls, and the first time each scene the bearer would be disarmed or restrained, they may reroll the resistance check (the Path's fury surges).",
+    "cost": "After the scene, the user marks +1 Obligation to the Riven Path."
+  },
+  "rites": [
+    {
+      "name": "Rite of Feasting on Fear",
+      "tier": "Low",
+      "xp": 4,
+      "action": "Instant",
+      "range": "Self",
+      "resist": "No",
+      "tags": ["DRAIN", "FEAR"],
+      "materials": "A target that is actively frightened or in your power.",
+      "effect": "When you cause a creature to become Frightened or gain a fear_based Condition, you immediately clear 1 Fatigue. The terror of others sustains you.",
+      "push_it": "Clear 2 Fatigue instead of 1. Mark 1 SB (Hearts) as the fear becomes palpable to nearby observers. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Instant."
+    },
+    {
+      "name": "Rite of the Crushing Grip",
+      "tier": "Low",
+      "xp": 5,
+      "action": "Instant",
+      "range": "Near",
+      "resist": "Yes",
+      "tags": ["FORCE", "STRANGLE"],
+      "materials": "A closed hand, reaching toward the target, fingers slowly tightening.",
+      "effect": "One target within Near must test Body + Athletics vs. your Spirit + Lore. On a failure, they take 1 Harm and cannot speak, breathe, or cast spells with verbal components until they break free (test again as an action each round). You must maintain concentration (cannot take other actions) or the effect ends.",
+      "push_it": "The target also suffers –1 die to all actions while gripped. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Cracking Lightning",
+      "tier": "Standard",
+      "xp": 9,
+      "action": "Instant",
+      "range": "Close",
+      "resist": "Yes",
+      "tags": ["STORM", "STRIKE", "AREA"],
+      "materials": "A raised hand, fingers spread, as if holding a sphere of static.",
+      "effect": "A cone of arcing lightning lashes from your hand. All targets in Close range must test Body + Athletics (DV 4) or take Harm 2. Those who succeed take Harm 1 instead.",
+      "push_it": "The range extends to Near. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Instant."
+    },
+    {
+      "name": "Rite of the Battle Rage",
+      "tier": "Standard",
+      "xp": 8,
+      "action": "Scene",
+      "range": "Self",
+      "resist": "No",
+      "tags": ["PASSION", "BOOST"],
+      "materials": "A moment of silent, building fury.",
+      "effect": "For the next three exchanges, you gain +2 dice to all melee attacks, ignore the first Harm 1 each round, and ignore all Fatigue penalties. However, your Position becomes Desperate (reroll one success) for the duration—you are reckless, not careful. When the rage ends, mark 1 Fatigue.",
+      "push_it": "The rage lasts for the full scene. Mark 2 Obligation and mark 1 SB (Diamonds) as collateral damage. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "3 exchanges."
+    },
+    {
+      "name": "Rite of the Crushing Dark",
+      "tier": "High",
+      "xp": 13,
+      "action": "Instant",
+      "range": "Zone",
+      "resist": "Yes",
+      "tags": ["FORCE", "AREA", "FEAR", "PRESSURE"],
+      "materials": "A clenched fist and a whispered promise of pain.",
+      "effect": "Invisible pressure descends on all enemies within the zone. Each target must test Body + Endurance (DV 4) or suffer Harm 1 (crushing) and be knocked prone. Even on a successful save, the target suffers 1 Fatigue from the sheer pressure and cannot voluntarily move closer to you until the end of their next turn (they are held at bay).",
+      "push_it": "The pressure intensifies to a bone_crushing degree. All enemies in the zone who fail their save instead suffer Harm 2 and are Stunned (lose their next action). Those who succeed still suffer 1 Fatigue and are pushed back one range band. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "Extended action.",
+      "duration": "Instant."
+    },
+    {
+      "name": "Rite of the Riven Fury",
+      "tier": "High",
+      "xp": 13,
+      "action": "Scene",
+      "range": "Self",
+      "resist": "No",
+      "tags": ["STRIKE", "BRUTAL"],
+      "materials": "A blade or bo staff held in a defensive stance.",
+      "effect": "For the rest of the scene, you gain +1 defense dice. Once per round, when you are targeted by a melee attack, you may make a counter_attack against the attacker. You reduce the Harm you would have taken from the triggering attack by 1 (minimum 0). The counter_attack gains +1 die and deals +1 Harm on a hit.",
+      "push_it": "The counter_attack also ignores the attacker's Armor. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    }
+  ],
+  "cantors_and_cults": {
+    "cantors": {
+      "name": "The Cantor's Song",
+      "description": "A Cantor of the Riven Path sings in war cries—rhythmic chants that build into ecstatic frenzy, that drive soldiers to charge and cowards to flee. Their voice is used to terrify enemies, to rally allies on the brink of breaking, or simply to announce their presence in a room. A Cantor may learn any Low Rite of the Riven Path as a Song (Performance + Lore, resolves next turn). Corruption accumulates when they use their voice for restraint, for mercy, or to calm a situation they could have escalated."
+    },
+    "cult": {
+      "name": "The Cult of the Chain_Breakers",
+      "description": "The Riven Path's cults gather in places where chains have been broken—former slave quarters, prisons after a riot, the ruins of a tyrant's palace. The Chain_Breakers are a fellowship of escaped captives, freed debtors, and those who have chosen to owe nothing to anyone. A ritual of the Cult involves each member speaking aloud a chain they still wear—a fear, a debt, a relationship that controls them—and then breaking a physical chain (rope, iron links, a leather cord) in front of witnesses. The broken pieces are thrown into a fire. Their creed is shouted, never whispered: 'I owe nothing. I serve no one. I am my own.' Outsiders are not welcome unless they bring a chain to break. Those who break a chain with sincerity may stay for the feast. Those who hesitate are watched until they leave."
+    }
+  },
+  "witchcraft": {
+    "name": "The Art of Unmaking",
+    "description": "A witch who walks with the Riven Path is a chain_shatterer or oath_breaker—one who crafts through the art of destruction. Their magic works through the materials of power seized: a hammer that breaks locks, a key that opens any door once (then crumbles), or a brand that leaves a mark that cannot be healed. In Zakov, a pirate captain might use a mutineer's compass that always points to the nearest source of fear, but a witch of the Riven Path would instead carry the fingerbone of a captain they killed, and the bone points to that captain's hidden treasure.",
+    "color": "#8b1a1a",
+    "lore": "The chain_shatterer's path is the art of breaking. They learn that true freedom is not given—it is taken. Every lock is a challenge, every chain is an insult, every wall is an opportunity to prove that you will not be contained.",
+    "signature_rite": "Rite of Feasting on Fear",
+    "quote": "The chain that binds you is the chain you refuse to break.",
+    "tools": {
+      "chain_breaker_hammer": {
+        "name": "The Chain_Breaker's Hammer",
+        "description": "A blacksmith's hammer with a cracked handle, wrapped in leather from a slaver's belt. Once per session, the witch may strike a lock, a chain, or a sealed document with the hammer. The target does not break—it ceases to be locked. The mechanism is not damaged; it simply no longer functions as a barrier. The lock remains, but it will not close. The chain remains, but it will not hold. The seal remains, but it will not seal. The effect is permanent. The hammer may be used on magical seals, but the witch must succeed on a Spirit + Lore test (DV 4) or the hammer cracks further (treat as Compromised until repaired with a drop of blood)."
+      }
+    },
+    "hedge_gifts": [
+      {
+        "name": "The Unbound Step",
+        "xp": 4,
+        "description": "Once per scene, the witch may ignore one physical restraint—ropes, manacles, a grappling hand, a closed door—as if it were not there for a single exchange. They do not break it; they simply are not bound by it. The rope still exists. The manacles are still closed. But the witch is standing three feet away. The GM gains 1 SB (the world takes a moment to notice the absence). This gift cannot be used again until the gained SB is spent or the scene ends."
+      },
+      {
+        "name": "The Breaking Word",
+        "xp": 3,
+        "description": "Once per scene, you may speak a single word of power ('break,' 'shatter,' 'fall') to a small object (a lock, a rope, a seal). The object cracks, snaps, or otherwise ceases to function as intended. This does not work on magical items or objects larger than a shield."
+      },
+      {
+        "name": "The Unbowed",
+        "xp": 4,
+        "description": "You cannot be forced to kneel, bow, or show submission. Any attempt to force you to do so is opposed by your Spirit + Resolve, and on a success, the attempt fails and the one who tried suffers 1 Fatigue from the effort."
+      }
+    ]
+  },
+  "monastic_tradition": {
+    "name": "The Way of the Riven_Fist",
+    "description": "The chain that binds you is the chain you refuse to break. The hand that holds you down is the hand you have not yet bitten. Riven_Fists understand that power is not given—it is seized. They are conquerors, liberators, and survivors, serving no master and owing no debt. To walk this path is to accept that every chain is an insult and every wall is a challenge to prove you will not be contained.",
+    "color": "#8b1a1a",
+    "prerequisites": "Body 3+, Spirit 2+, Rite of Feasting on Fear or Cantor of the Riven Path.",
+    "quote": "The chain that binds you is the chain you refuse to break.",
+    "debt_resistant_frame": "The Riven Path does not forgive debts—it collects them. Monks of the Riven_Fist gain +1 die to resist any magical debt, geas, or contract that would compel them to submit or yield. If they succeed, the creditor feels a momentary chill, as if they have offended something hungry—and the GM gains 1 SB (the Path notes a new target).",
+    "techniques": {
+      "basic": {
+        "name": "Feast on Fear",
+        "xp": 5,
+        "effect": "When you cause a creature to become Frightened, clear 1 Fatigue. The terror sustains you.",
+        "cost": "1 Boon",
+        "prereq": "Spirit 2+"
+      },
+      "advanced": {
+        "name": "Battle Rage",
+        "xp": 8,
+        "effect": "For 3 exchanges: +2 dice melee, ignore first Harm 1/round, ignore Fatigue penalties, Position Desperate. End: 1 Fatigue.",
+        "cost": "1 Boon",
+        "prereq": "Body 3+, Tier II"
+      },
+      "master": {
+        "name": "Unbound",
+        "xp": 12,
+        "effect": "Once per session, ignore all penalties from Fatigue and Harm for one scene. You feel no pain, no doubt, no hesitation—only the ecstasy of action.",
+        "cost": "After the scene, you gain a permanent Riven Scar (your eyes are slightly wrong—the pupils are vertical slits for one heartbeat when you are angry). You may ignore one Obligation call from the Riven Path—but the Path will remember, and the next call will be louder.",
+        "prereq": "Tier III"
+      }
+    },
+    "corruption": [
+      {
+        "tier": 1,
+        "benefit": "Predator's Focus: +1 die to Intimidation and Command rolls.",
+        "cost": "Hunger: –1 die to resist acting on strong emotion (anger, lust, greed, vengeance)."
+      },
+      {
+        "tier": 2,
+        "benefit": "Blood Scent: Once/scene, automatically locate the nearest wounded creature within Far range.",
+        "cost": "Mercy Blind: –1 die to show compassion, restraint, or forgiveness."
+      },
+      {
+        "tier": 3,
+        "benefit": "Unstoppable: +2 dice to resist being grappled, bound, or restrained.",
+        "cost": "Reckless: –1 die to defensive actions (you favor attack over parry)."
+      },
+      {
+        "tier": 4,
+        "benefit": "Fear Eater: Once/scene, when you cause a creature to become Frightened, gain 1 Boon.",
+        "cost": "Isolation: –1 die to social rolls with anyone you have not intimidated."
+      },
+      {
+        "tier": 5,
+        "benefit": "Crack the Chain: Once/session, automatically break any mundane restraint (rope, manacles, cage, locked door).",
+        "cost": "Hunted: A rival from your past appears. The GM gains 1 SB per session to spend on their pursuit."
+      },
+      {
+        "tier": "6+",
+        "benefit": "Unbound: Once/session, ignore all penalties from Fatigue and Harm for one scene.",
+        "cost": "The Rift Claims You: Mark +3 Obligation. You may no longer take any action that requires submission, surrender, or yielding. You cannot be reasoned with—only fought or fled."
+      }
+    ]
+  },
+  "corruption": [
+    {
+      "tier": 1,
+      "benefit": "Predator's Focus: +1 die to Intimidation and Command rolls.",
+      "cost": "Hunger: –1 die to resist acting on strong emotion (anger, lust, greed, vengeance)."
+    },
+    {
+      "tier": 2,
+      "benefit": "Blood Scent: Once/scene, automatically locate the nearest wounded creature within Far range.",
+      "cost": "Mercy Blind: –1 die to show compassion, restraint, or forgiveness."
+    },
+    {
+      "tier": 3,
+      "benefit": "Unstoppable: +2 dice to resist being grappled, bound, or restrained.",
+      "cost": "Reckless: –1 die to defensive actions (you favor attack over parry)."
+    },
+    {
+      "tier": 4,
+      "benefit": "Fear Eater: Once/scene, when you cause a creature to become Frightened, gain 1 Boon.",
+      "cost": "Isolation: –1 die to social rolls with anyone you have not intimidated."
+    },
+    {
+      "tier": 5,
+      "benefit": "Crack the Chain: Once/session, automatically break any mundane restraint (rope, manacles, cage, locked door).",
+      "cost": "Hunted: A rival from your past appears. The GM gains 1 SB per session to spend on their pursuit."
+    },
+    {
+      "tier": "6+",
+      "benefit": "Unbound: Once/session, ignore all penalties from Fatigue and Harm for one scene.",
+      "cost": "The Rift Claims You: Mark +3 Obligation. You may no longer take any action that requires submission, surrender, or yielding. You cannot be reasoned with—only fought or fled."
+    }
+  ],
+  "playstyle_notes": {
+    "description": "The Riven Path is the ideal patron for players who want to play an aggressive, self_determined character—a warlord, a revolutionary, a dark knight, or simply someone who refuses to bow. Its Rites reward aggression, intimidation, and the willingness to take what you want. The cost is isolation—the power that lets you break chains also breaks relationships, trust, and your ability to see others as anything but obstacles or tools. Intrusions often take the form of a rival who has also broken their chains and now wants yours, a debt you cannot pay (because you broke the contract), or a situation where mercy would be easier than violence—forcing you to choose between your principles and your mission. Ideal for sith analogues, warlocks, berserkers, and any character who believes that freedom is the right of the strong and that weakness is a choice.",
+    "emphasizes": [
+      "Liberation Through Power: freedom as the right of the strong",
+      "Passion as Fuel: anger, desire, fear—all are fires to be stoked",
+      "Crushing Dominance: victory through overwhelming force",
+      "Self_Determination: no chains, no masters, no debt without blood",
+      "The Breaking Wave: the joy of watching something that held you crumble"
+    ]
+  },
+  "sample_adventure": {
+    "title": "The Chains That Bind",
+    "description": "A powerful merchant lord has been using a network of magical contracts to bind the citizens of a city in debt slavery. The party is hired to free the city—but the merchant lord is not just a villain; he is a former follower of the Riven Path who broke his own chains and now wears the chains of others. To defeat him, the party must confront not only his power but also the question: what makes them different from him? The Riven Path offers power without mercy—will they take it?",
+    "quote": "The chain that binds you is the chain you refuse to break. The hand that holds you down is the hand you have not yet bitten."
+  },
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

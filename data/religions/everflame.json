@@ -1,0 +1,94 @@
+{
+  "id": "everflame",
+  "type": "religion",
+  "title": "The Everflame",
+  "subtitle": "The Imperial Fire of Ecktoria",
+  "version": "1.0.0",
+  "tags": [
+    "judgment",
+    "purity",
+    "empire",
+    "censure",
+    "record-keeping",
+    "fire",
+    "truth"
+  ],
+  "lore": {
+    "description": "The Everflame is the faith of Ecktoria, and Ecktoria is the remnant of an empire that refuses to admit it has fallen. Its priests carry censers and gavels in equal measure. Its cathedrals are courthouses. Its saints are magistrates. The Everflame teaches that the world was kindled by a single fire, which then divided into three aspects: the Gleaming (justice, oaths, protection), the Searing (purification, judgment, truth), and the Warming (mercy, healing, forgiveness). Each aspect is embodied by a Patron, but the Patrons are not worshipped as gods—they are witnesses.",
+    "followers": "The flame does not judge. The flame witnesses. The judge is the empire. The Everflame's followers are magistrates, inquisitors, soldiers, and bureaucrats who believe that justice requires memory. A crime forgotten is a crime unpunished, and a crime unpunished is an invitation. In a world of broken oaths and forgotten debts, the Everflame keeps the ledger.",
+    "names_across_regions": {
+      "ecktoria": "The Everflame, the state religion of the Ecktorian Empire",
+      "zakov": "The Salt-Fire, a harsh interpretation that burns more than it illuminates",
+      "thepyrgos": "The Imperial Fire, viewed with suspicion by the Temple of Light"
+    },
+    "quote": "The flame does not judge. The flame witnesses. The judge is the empire."
+  },
+  "domain_focus": [
+    "The Flame as Witness: fire remembers; a candle lit in testimony cannot be extinguished until the truth is spoken",
+    "Confession and Censure: confession must be public and permanent; a heretic's name is struck from the parish registry",
+    "The Three Orders: Oath of Flame & Light (warriors), Inquisitor Prime (prosecutors), Oath of Mercy and Grace (healers)",
+    "The Candle Test: a suspected heretic is questioned before a candle; guttering flame indicates deception",
+    "The Unspoken Ninth Citation: a procedural loophole allowing execution without confession"
+  ],
+  "doctrines": [
+    "The flame does not judge. The flame witnesses. The judge is the empire.",
+    "Confession must be public. A candle lit in testimony cannot be extinguished until the truth is spoken.",
+    "Censure is public and permanent. A heretic's name is struck from the parish registry. Their family may not pray for them.",
+    "There is no hell. There is only record-keeping."
+  ],
+  "practices": [
+    "The Candle Test: a suspected heretic is seated in a room with a single candle; the flame's behavior reveals truth or deception",
+    "The Unspoken Ninth Citation: a redacted passage that permits execution without confession, never spoken aloud",
+    "Public Confession: the penitent speaks before a flame; if the candle gutters, the confession is incomplete",
+    "The Great Purge: systematic suppression of unsanctioned magic; the Flame-Wardens were established"
+  ],
+  "hierarchy": {
+    "grand_magistrate": "Elected by the High Synod of Ecktoria. Serves for life or until removed for heresy. The current Grand Magistrate is His Eminence Varrus the Steadfast.",
+    "flame_wardens": "The inquisitorial arm. They wear iron masks and carry censers that smoke with blessed coal. Their authority extends to any territory claimed by Ecktoria. They answer only to the Grand Magistrate.",
+    "censorate": "Bureaucrats who review confessions, maintain heretical registries, and approve burnings. They are the most feared office because they are the least visible."
+  },
+  "orders": [
+    {
+      "id": "oath_of_flame__light",
+      "name": "Oath of Flame & Light",
+      "role": "Warriors and crusaders",
+      "description": "The warrior's path. Everflame adherents emphasize the flame's consuming nature. They pray for the strength to burn corruption. Their Rites grant +1 die against heretics and +1 Harm against unsanctioned magic users."
+    },
+    {
+      "id": "inquisitor_prime",
+      "name": "Inquisitor Prime (Flame-Wardens)",
+      "role": "Prosecutors and executioners",
+      "description": "The judge's path. Everflame inquisitors view the Inquisitor Prime as a divine prosecutor. Their Rites grant +1 die to detect lies and +1 Effect when sentencing the guilty."
+    },
+    {
+      "id": "oath_of_mercy_and_grace",
+      "name": "Oath of Mercy and Grace (Hospitaliers)",
+      "role": "Healers and confessors",
+      "description": "The healer's path—but watched. Everflame healers must report any heretic they treat. A confessor who shields a heretic from justice is herself a heretic. The Order of Mercy and Grace has produced more martyrs than any other."
+    }
+  ],
+  "relationship_to_patrons": {
+    "oath_of_flame__light": "Orthodox—the warrior's path. Emphasizes the flame's consuming nature. Rites grant +1 die against heretics.",
+    "inquisitor_prime": "Prosecutors. Viewed as a divine prosecutor. Rites grant +1 die to detect lies.",
+    "oath_of_mercy_and_grace": "Watched. Healers must report heretics; shielding a heretic is itself heresy."
+  },
+  "schism": {
+    "with_temple_of_light": "The Temple of Light began as a reform movement within the Everflame. The Synod of Thepyrgos declared independence in Year 478 AR, citing the Everflame's corruption by imperial politics. The Grand Magistrate declared the Synod heretical. Both sides excommunicated each other. Neither has rescinded the excommunication.",
+    "key_differences": [
+      "Everflame: Execution (stake) vs Temple: Rehabilitation (re-education)",
+      "Everflame: Unsanctioned magic = heresy vs Temple: Unsanctioned magic = mental illness",
+      "Everflame: Administrative cruelty vs Temple: Paternal control",
+      "Everflame: Empire as source of authority vs Temple: Synod as source of authority"
+    ]
+  },
+  "adventure_seed": {
+    "title": "The Candle That Would Not Die",
+    "description": "A village's sacred flame refuses to be extinguished. The Everflame calls it a miracle. The Temple calls it unsanctioned magic. The party must discover the truth before the two faiths burn the village fighting over it. The truth is simple: the candle is a hoax. The truth is also irrelevant.",
+    "quote": "A village that remembered its debts was a village that paid its debts. A village that paid its debts was a village that was not burned."
+  },
+  "sample_npc": {
+    "name": "Brother Mavron",
+    "description": "A former prisoner of Rothari's camp, now a scribe and confessor. He has worn chains beneath four faiths and written this treatise as an act of witness. He is not neutral—he is proximate."
+  },
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

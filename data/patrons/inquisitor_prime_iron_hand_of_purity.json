@@ -1,0 +1,273 @@
+{
+  "id": "inquisitor-prime",
+  "type": "patron",
+  "title": "The Inquisitor Prime — The Iron Hand of Purity",
+  "subtitle": "Purity & Domination",
+  "version": "1.0.0",
+  "tags": [
+    "purity",
+    "judgment",
+    "zeal",
+    "exorcism",
+    "witch-hunter",
+    "law",
+    "order",
+    "protection",
+    "domination"
+  ],
+  "lore": {
+    "description": "Among the Aeler Iron Avengers, zealots, and witch-hunters, the Inquisitor Prime is venerated as the hand of absolute purity and the sword of uncompromising order. Where others see nuance, the Inquisitor sees corruption; where others see difference, they see contamination. Those who march beneath their sigil believe that no society can stand if it tolerates the impure or the disobedient. They hunt the arcane and the aberrant, not merely to destroy them, but to bind them as slaves to order—believing even the tainted may yet serve, so long as they are shackled.",
+    "followers": "The Inquisitor Prime appears in vision as a faceless figure clad in burnished iron, with eyes like furnace-doors and a voice like grinding chains. To serve them is to embrace judgment without mercy and to live in suspicion of all who walk outside the prescribed law. For the faithful, doubt is treason; compassion is weakness; and freedom is the seed of ruin. In the wake of their followers, only silence and ash remain.",
+    "names_across_regions": {
+      "ecktoria": "The Unquenchable Fire of the Everflame, whose censers never cool",
+      "aeler": "The Light of Forges, whose hearths are kindled with a brand from the temple's eternal flame",
+      "vhasia": "The Gilded Judge, invoked by templars who swear to root out heretical magic"
+    },
+    "quote": "Mercy is weakness. Purity is survival. Where corruption hides, we carve it out."
+  },
+  "domain_focus": [
+    "Purity and Order: eradicating corruption, enforcing sacred law",
+    "Judgment: condemning the guilty, burning the heretical",
+    "Protection from the Tainted: warding against the supernatural",
+    "Domination: binding the impure to serve the pure"
+  ],
+  "runekeeper_options": {
+    "thiasos": {
+      "description": "A Runekeeper sworn to the Inquisitor Prime does not bind a creature of darkness or wild impulse. Their Thiasos is a small creature of zealous loyalty and keen perception: a white hound with brass eyes that can smell lies and taint, a ferret that hunts rodents of corruption with relentless efficiency, a bronze-feathered hawk that circles above suspected heretics, or a small mechanical bird that sings hymns of purity at dawn.",
+      "care": "This creature requires no food, but it must be present at a daily prayer or rite of purification. If neglected for a week, it becomes Compromised (it growls at strangers or sings discordantly, imposing –1 die on all social rolls with those suspected of impurity for its bearer)."
+    },
+    "codex": {
+      "description": "The Codex of the Inquisitor Prime is never a book of common knowledge. It may be an iron-bound ledger with pages of sanctified vellum, each Rite sealed with a drop of wax; a slate tablet that records only the names of the damned; or a scroll of censure that burns heretical text upon reading.",
+      "upkeep": "Because the Prime's laws are absolute, the Codex requires upkeep: the Runekeeper must spend an hour each week reciting each Rite aloud in a purified space, or the seals weaken (treat as Compromised until re-consecrated)."
+    }
+  },
+  "patrons_gift": {
+    "name": "The Iron Hand",
+    "description": "Once per scene as an action, a Runekeeper of the Inquisitor Prime may touch a held item (weapon, shield, or badge of office) and speak a word of judgment.",
+    "effect": "For the rest of the scene, the item grants +1 die to Investigation or Command rolls when confronting supernatural creatures, and the first time each scene the bearer would be affected by a magical illusion or fear effect, they may reroll the resistance check (the Prime's light burns through deception).",
+    "cost": "After the scene, the user marks +1 Obligation to the Inquisitor Prime."
+  },
+  "rites": [
+    {
+      "name": "Rite of the Pure Flame",
+      "tier": "Low",
+      "xp": 5,
+      "action": "Scene",
+      "range": "Self",
+      "resist": "No",
+      "tags": ["PROTECT", "RADIANT", "FEAR"],
+      "materials": "Ash from a burned grimoire or sigil-scarred candle.",
+      "effect": "Gain +2 dice to resist supernatural influence (fear, charm, possession) and +1 Armor vs. magical attacks. Undead/demonic foes suffer –1 die against you.",
+      "push_it": "Extend the effect to allies in Near range, but supernatural entities sense you immediately; mark 1 SB (Diamonds). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Unclouded Eye",
+      "tier": "Low",
+      "xp": 5,
+      "action": "Scene",
+      "range": "Self",
+      "resist": "No",
+      "tags": ["TRUTH", "RADIANT"],
+      "materials": "Silver dust stirred into holy water.",
+      "effect": "+2 dice to Investigate/Insight when spotting illusions, glamours, or magical deception. Cannot be surprised by sorcery this scene.",
+      "push_it": "For one exchange, pierce all illusions; mark 1 SB (Hearts). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Cleansing Light",
+      "tier": "Standard",
+      "xp": 9,
+      "action": "Instant",
+      "range": "Near",
+      "resist": "No",
+      "tags": ["DISPEL", "RADIANT", "FORCE"],
+      "materials": "A shard of blessed mirror and consecrated oil.",
+      "effect": "Target a magical effect (ward, curse, enchantment). Test DV = Tier. On Hit: Dispel. On Partial: Weaken. On Miss: The effect lashes back, generating 1 SB.",
+      "push_it": "Dispel absolutely and trace its caster; mark +1 Obligation and 1 SB (Spades). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Instant."
+    },
+    {
+      "name": "Rite of the Consecrated Ground",
+      "tier": "Standard",
+      "xp": 10,
+      "action": "Extended",
+      "range": "Zone",
+      "resist": "No",
+      "tags": ["WARD", "AREA", "FORCE", "SANCTUARY"],
+      "materials": "Relics from three rival faiths, salt, crushed gemstones.",
+      "effect": "Consecrate an area. Supernatural entities must pass Spirit+Resolve (DV 4) to enter. Undead/demonic suffer –2 dice inside. The site gains the [WARD] tag.",
+      "push_it": "Permanently sanctify a larger area, but start a Magical Dead Zone [6] timer and mark +2 Obligation. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "Extended action.",
+      "duration": "Permanent."
+    },
+    {
+      "name": "Rite of the Final Admonition",
+      "tier": "High",
+      "xp": 14,
+      "action": "Scene",
+      "range": "Touch",
+      "resist": "No",
+      "tags": ["DEATH", "BANISH", "FORCE", "FEAR"],
+      "materials": "Ash from a destroyed spellbook, martyr's water, and the target's true name.",
+      "effect": "Attempt to annihilate one supernatural foe. Target tests Spirit+Resolve (DV 5). On Fail: destroyed outright. On Success: suffer Harm 3 and –2 dice this scene. Once per target only.",
+      "push_it": "Absolute destruction leaves behind Sanctified Ground; mark 2 SB (Diamonds). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "1 action.",
+      "duration": "Instant."
+    }
+  ],
+  "cantors_and_cults": {
+    "cantors": {
+      "name": "The Cantor's Song",
+      "description": "A Cantor of the Inquisitor Prime does not sing melodies – they chant liturgies of excision, flat, rhythmic recitations that scrub the air of taint. Their voice is used to purify a space before a hunt, to drown out a heretic's dying curse, or to march troops into battle with a single, unified note. Inquisitorial Cantors are rarely loved, but they are feared – and their songs are remembered long after the pyre has cooled."
+    },
+    "cult": {
+      "name": "The Cult of the Iron Chorus",
+      "description": "The Prime's cults are militant orders – the Chain-Lanterns of Thepyrgos, the Censer-Knights of Ecktoria, the Spirit-Shield Correctors of Aeler. They gather in fortified chapter houses, not temples. A ritual of the Iron Chorus involves each member testifying to a corruption they have purged, then striking an iron bell with a hammer. The bell's tone is harsh and final. Their creed is stamped into every seal: 'What is pure endures. What is not is fuel.' Outsiders are not welcome; they are suspects until proven clean."
+    }
+  },
+  "witchcraft": {
+    "name": "The Rite of Purification",
+    "description": "A witch who walks with the Inquisitor Prime is often an exorcist scribe, a censer-bearer, or an inquisitorial archivist – a nun, monk, or scholar of one of the great purifying orders. Their magic is the art of liturgical cleansing: copying purification rites into iron-bound codices, blending ash and myrrh into sealing wax that repels spirits, or maintaining the reliquaries that hold the bones of saints who died hunting heretics. Their tools are not forge-hammers but censers, seals, and scourges – instruments of penitence and judgment.",
+    "color": "#6b3a2a",
+    "lore": "The inquisitorial witch learns to wield faith as a weapon. They are not healers – they are surgeons of the soul, cutting out corruption with cold precision. Their path is one of absolute certainty, and they walk it without mercy.",
+    "signature_rite": "Rite of the Pure Flame",
+    "quote": "Mercy is weakness. Purity is survival.",
+    "tools": {
+      "censer": {
+        "name": "The Censer of the Unforgiving Flame",
+        "description": "A brass censer hung on three chains, each link etched with a clause of the Inquisitor's Creed. Once per session, the witch may swing the censer to fill a zone with thick, bitter smoke. For the scene, any supernatural creature within the smoke suffers –1 die to all rolls, and any magical effect passing through the smoke is treated as one Tier lower for resistance. The censer can also be used to 'cense' a threshold: sprinkling ash from the censer across a doorway applies the [WARD] tag against minor spirits and undead until the next dawn."
+      }
+    },
+    "hedge_gifts": [
+      {
+        "name": "Rite of the Soot Line",
+        "xp": 4,
+        "description": "Once per scene, the witch may draw a line of ash and salt across a threshold (a door, a bridge, a window) while reciting a single verse from the Inquisitor's Litany. Until the next dawn, that line functions as a [WARD] against minor spirits (Cap 1–2) and all undead of Cap 2 or lower. A creature attempting to cross must test Spirit+Resolve (DV 3) or be turned back for that exchange. The line glows faintly when a lie is spoken within Near range."
+      }
+    ]
+  },
+  "monastic_tradition": {
+    "name": "The Iron Hand",
+    "description": "Monks of the Iron Hand are living weapons of purity—trained to root out corruption, resist the taint of the supernatural, and deliver judgment without hesitation. They are relentless, incorruptible, and utterly without mercy for the guilty.",
+    "color": "#6b3a2a",
+    "prerequisites": "Spirit 3+, Resolve 2+, Rite of the Pure Flame or Cantor of the Inquisitor Prime.",
+    "quote": "What is pure endures. What is not is fuel.",
+    "debt_resistant_frame": "The Iron Hand does not borrow—it confiscates. Monks of the Inquisitor Prime gain +1 die to resist any magical debt, geas, or contract that would compel them to tolerate corruption or spare the guilty. If they succeed, the creditor's demand burns away in the light of purity—the obligation is annulled.",
+    "techniques": {
+      "basic": {
+        "name": "Hunter's Instinct",
+        "xp": 5,
+        "effect": "You gain +1 die to Investigation and Notice when tracking or detecting supernatural creatures. Once per scene, you may ask the GM one yes/no question about a creature's nature or weakness.",
+        "cost": "Passive",
+        "prereq": "Spirit 3+"
+      },
+      "advanced": {
+        "name": "Cleansing Strike",
+        "xp": 8,
+        "effect": "When you hit a supernatural creature with a melee attack, you may choose to deal +1 Harm and impose –1 die on their next action as the Prime's light sears them.",
+        "cost": "1 Fatigue per use",
+        "prereq": "Tier II, Melee 3+"
+      },
+      "master": {
+        "name": "Absolute Judgment",
+        "xp": 12,
+        "effect": "Once per session, name a supernatural foe as utterly corrupt. For that scene, gain +3 dice against them, and any critical hit against them deals +2 Harm and may banish them permanently.",
+        "cost": "2 Fatigue and +1 Obligation to the Inquisitor Prime",
+        "prereq": "Tier III, Spirit 4+"
+      }
+    },
+    "corruption": [
+      {
+        "tier": 1,
+        "benefit": "Hunter's Instinct: +1 die to Notice magical auras or traps.",
+        "cost": "Black-and-White Thinking: Must label others 'pure' or 'corrupt'; –1 die when navigating moral nuance."
+      },
+      {
+        "tier": 2,
+        "benefit": "Sanctified Weapon: Once/scene, your weapon ignores 1 Armor/Resist from supernatural foes.",
+        "cost": "Purity Zeal: Exposure to filth or corruption causes 1 Fatigue."
+      },
+      {
+        "tier": 3,
+        "benefit": "Cold Clarity: +2 dice to resist deception, illusion, or mental sway.",
+        "cost": "Suspicion: –1 die to social rolls with anyone you suspect of 'impurity.'"
+      },
+      {
+        "tier": 4,
+        "benefit": "Burning Truth: Once/session, compel one target to answer truthfully (Resolve DV 4).",
+        "cost": "Compulsion: Cannot ignore supernatural activity; hesitation costs 1 SB (Clubs)."
+      },
+      {
+        "tier": 5,
+        "benefit": "Sterile Aura: Once/session, emit a presence that suppresses supernatural abilities (–2 dice in Near).",
+        "cost": "Purity Addiction: Suffer 1 Fatigue when in a supernatural area without taking action against it."
+      },
+      {
+        "tier": "6+",
+        "benefit": "Absolute Judgment: Once/session, name a supernatural foe as utterly corrupt. For that scene, gain +3 dice against them.",
+        "cost": "Monomania: When invoked, you tunnel on that target, suffering –2 dice to all else. Your eyes glow faintly with inner flame, and heretics recognize you on sight."
+      }
+    ]
+  },
+  "corruption": [
+    {
+      "tier": 1,
+      "benefit": "Hunter's Instinct: +1 die to Notice magical auras or traps.",
+      "cost": "Black-and-White Thinking: Must label others 'pure' or 'corrupt'; –1 die when navigating moral nuance."
+    },
+    {
+      "tier": 2,
+      "benefit": "Sanctified Weapon: Once/scene, your weapon ignores 1 Armor/Resist from supernatural foes.",
+      "cost": "Purity Zeal: Exposure to filth or corruption causes 1 Fatigue."
+    },
+    {
+      "tier": 3,
+      "benefit": "Cold Clarity: +2 dice to resist deception, illusion, or mental sway.",
+      "cost": "Suspicion: –1 die to social rolls with anyone you suspect of 'impurity.'"
+    },
+    {
+      "tier": 4,
+      "benefit": "Burning Truth: Once/session, compel one target to answer truthfully (Resolve DV 4).",
+      "cost": "Compulsion: Cannot ignore supernatural activity; hesitation costs 1 SB (Clubs)."
+    },
+    {
+      "tier": 5,
+      "benefit": "Sterile Aura: Once/session, emit a presence that suppresses supernatural abilities (–2 dice in Near).",
+      "cost": "Purity Addiction: Suffer 1 Fatigue when in a supernatural area without taking action against it."
+    },
+    {
+      "tier": "6+",
+      "benefit": "Absolute Judgment: Once/session, name a supernatural foe as utterly corrupt. For that scene, gain +3 dice against them.",
+      "cost": "Monomania: When invoked, you tunnel on that target, suffering –2 dice to all else. Your eyes glow faintly with inner flame, and heretics recognize you on sight."
+    }
+  ],
+  "playstyle_notes": {
+    "description": "The Inquisitor Prime rewards uncompromising zeal and the courage to root out corruption wherever it hides. Followers become living instruments of judgment – feared by the guilty and dangerous to the tainted. The price is a growing intolerance for ambiguity, an inability to see shades of gray, and the slow loss of mercy. Intrusions often take the form of a heresy revealed close to home, a purged corruption that returns in a new form, or a demand to judge someone you love. Ideal for paladins, witch-hunters, and characters who believe that the only way to protect the innocent is to destroy the corrupt – utterly.",
+    "emphasizes": [
+      "Purity and Order: eradicating corruption, enforcing sacred law",
+      "Judgment: condemning the guilty, burning the heretical",
+      "Protection from the Tainted: warding against the supernatural",
+      "Domination: binding the impure to serve the pure"
+    ]
+  },
+  "sample_adventure": {
+    "title": "The Heretic's Mask",
+    "description": "A village on the edge of the Mistlands has been harboring a fugitive witch who fled the Inquisition. The Inquisitor Prime has dispatched a Censer-Knight to bring her to justice. The party must decide: protect the witch, who claims she is innocent, or aid the Inquisitor in their hunt. The village's bell-line is failing, and the fog is rising. Whoever wins, the dead will not stay quiet for long.",
+    "quote": "The flame that reveals the truth also burns the hand that holds it. Choose carefully, for the Inquisitor does not forgive."
+  },
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

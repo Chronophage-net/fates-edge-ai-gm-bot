@@ -1,0 +1,1092 @@
+[
+  {
+    "id": "the-cursed-caravan",
+    "title": "The Cursed Caravan",
+    "description": "A merchant caravan has been cursed while crossing the Pale Causeway. Supplies rot, animals die, and strange omens appear. The players must escort the caravan to safety while uncovering a conspiracy involving a powerful entity that feeds on suffering. Folk horror and survival with multiple moral resolutions.",
+    "tier": "II",
+    "author": "Nicholas A. Gasper",
+    "saga": false,
+    "bestiary": [
+      {
+        "id": "hungering-dark",
+        "name": "The Hungering Dark",
+        "tl": 4,
+        "class": "IV",
+        "category": "outsider",
+        "description": "An ancient entity that feeds on suffering, despair, and life force. It spreads its curse through manipulation, emotion, and possession.",
+        "stats": { "Spirit": 4, "Resolve": 4, "Presence": 3, "hp": 40 },
+        "sb_spends": [
+          { "cost": 1, "name": "Whisper of Despair", "effect": "Target gains 1 Fatigue and must test Resolve or mark Dread." },
+          { "cost": 2, "name": "Grip of the Curse", "effect": "All enemies in Near zone suffer -1 die to actions for one exchange." },
+          { "cost": 3, "name": "Manifest Hunger", "effect": "The entity manifests partially, dealing Harm 2 to all in zone and advancing the Curse Escalation timer by 1." }
+        ]
+      },
+      {
+        "id": "mistwraith",
+        "name": "Mistwraith",
+        "tl": 3,
+        "class": "III",
+        "category": "undead",
+        "description": "Secrets made flesh; they feed on awareness and fear. They appear where the party hesitates or falters.",
+        "stats": { "Spirit": 3, "Resolve": 2, "hp": 20 },
+        "sb_spends": [
+          { "cost": 1, "name": "Ethereal Touch", "effect": "Target loses 1 Fatigue and gains a Condition: Haunted." }
+        ]
+      },
+      {
+        "id": "shadewalker",
+        "name": "Shadewalker",
+        "tl": 3,
+        "class": "III",
+        "category": "undead",
+        "description": "Corpse-puppets bound in root and bone. Slow, relentless, territorial.",
+        "stats": { "Body": 3, "Melee": 3, "hp": 25 },
+        "sb_spends": [
+          { "cost": 1, "name": "Relentless Advance", "effect": "Ignore one point of Fatigue and gain +1 die to next attack." }
+        ]
+      }
+    ],
+    "acts": [
+      {
+        "id": "act-1",
+        "title": "The Cursed Caravan",
+        "description": "Players encounter the caravan and experience the curse's immediate effects. They must decide to help and begin investigating the source.",
+        "scenes": [
+          {
+            "id": "scene-1-1",
+            "title": "The Desperate Merchant",
+            "description": "The party finds the caravan stalled on the road. Merchant Aldric Thorne offers a reward for help. The curse manifests as supplies rot and animals die.",
+            "timers": [
+              { "name": "Curse Escalation", "segments": 8, "current": 0, "description": "How quickly the curse worsens" },
+              { "name": "Caravan Supplies", "segments": 6, "current": 0, "description": "Depletes as supplies rot" }
+            ],
+            "encounters": [
+              {
+                "name": "First Signs",
+                "dv": 3,
+                "position": "Controlled",
+                "outcomes": {
+                  "clean": "You stabilize the immediate crisis and gain the merchant's trust.",
+                  "partial": "You save some supplies, but the curse shows its teeth.",
+                  "miss": "Animals die and supplies rot further. Tick Curse Escalation +1 and Caravan Supplies -1."
+                }
+              }
+            ],
+            "completed": false
+          },
+          {
+            "id": "scene-1-2",
+            "title": "The Hedge-Witch's Warning",
+            "description": "Hedge-Witch Mira Blackwood approaches in a tavern, warning of the dark force moving along the trade routes.",
+            "timers": [],
+            "encounters": [
+              {
+                "name": "Gaining Knowledge",
+                "dv": 4,
+                "position": "Controlled",
+                "outcomes": {
+                  "clean": "You learn that the curse is tied to a sealed chest and can be contained with folk rituals.",
+                  "partial": "You gain some information, but she demands a favor.",
+                  "miss": "She clams up, sensing you are not ready for the truth."
+                }
+              }
+            ],
+            "completed": false
+          }
+        ]
+      },
+      {
+        "id": "act-2",
+        "title": "Into the Blackwood",
+        "description": "The party seeks help from the hedge-witch and faces the growing influence of the Hungering Dark.",
+        "scenes": [
+          {
+            "id": "scene-2-1",
+            "title": "The Chest Investigation",
+            "description": "The party examines the mysterious sealed cargo item that is the source of the curse.",
+            "timers": [
+              { "name": "Curse Escalation", "segments": 8, "current": 0 },
+              { "name": "Hungering Dark's Strength", "segments": 6, "current": 0 }
+            ],
+            "encounters": [
+              {
+                "name": "Examining the Chest",
+                "dv": 5,
+                "position": "Desperate",
+                "outcomes": {
+                  "clean": "You discover the chest contains a bound entity and learn how to perform a containment ritual.",
+                  "partial": "You learn the nature of the curse but trigger a minor backlash. Tick Curse Escalation +1.",
+                  "miss": "The chest lashes out, causing Harm 1 to the party and advancing Hungering Dark's Strength +2."
+                }
+              }
+            ],
+            "completed": false
+          },
+          {
+            "id": "scene-2-2",
+            "title": "The Protective Ritual",
+            "description": "Using the hedge-witch's knowledge, the party performs a protective ritual to resist the curse.",
+            "timers": [],
+            "encounters": [
+              {
+                "name": "Ritual of Warding",
+                "dv": 4,
+                "position": "Controlled",
+                "outcomes": {
+                  "clean": "You gain Folk Protection Tokens (salt, red thread, butter-left charm) and reduce the Curse Escalation by 1.",
+                  "partial": "The ritual works but consumes materials and leaves you exposed.",
+                  "miss": "The ritual fails, and the entity takes notice. Tick Hungering Dark's Strength +1."
+                }
+              }
+            ],
+            "completed": false
+          }
+        ]
+      },
+      {
+        "id": "act-3",
+        "title": "The Cursed Crossroads",
+        "description": "The final confrontation at the Cursed Crossroads, where the party must choose between containment, bargain, or destruction.",
+        "scenes": [
+          {
+            "id": "scene-3-1",
+            "title": "The Confrontation",
+            "description": "The party faces the Hungering Dark's strongest influence at the crossroads.",
+            "timers": [
+              { "name": "Curse Escalation", "segments": 8, "current": 0 }
+            ],
+            "encounters": [
+              {
+                "creatureId": "hungering-dark",
+                "quantity": 1,
+                "position": "Desperate",
+                "dv": 6,
+                "outcomes": {
+                  "clean": "You successfully contain the curse through ritual or destroy the entity. Resolution achieved.",
+                  "partial": "You strike a bargain with the entity, buying safety at a cost.",
+                  "miss": "The entity escapes, and the curse spreads further. The caravan is lost."
+                }
+              },
+              {
+                "name": "The Cursed Child",
+                "dv": 6,
+                "position": "Desperate",
+                "outcomes": {
+                  "clean": "You negotiate a terrible bargain that ends the immediate threat but leaves a lasting debt.",
+                  "partial": "You narrowly escape, but the entity's influence remains.",
+                  "miss": "You are overwhelmed; the curse claims you."
+                }
+              }
+            ],
+            "completed": false
+          }
+        ]
+      }
+    ],
+    "npcs": [
+      {
+        "id": "npc-aldric-thorne",
+        "name": "Merchant Aldric Thorne",
+        "role": "Caravan Leader",
+        "motivation": "Save his livelihood and family reputation",
+        "stats": "Command 3, Lore 3, Sway 2",
+        "secret": "He knows the chest was given to him by a stranger who warned him not to open it."
+      },
+      {
+        "id": "npc-mira-blackwood",
+        "name": "Hedge-Witch Mira Blackwood",
+        "role": "Local Supernatural Practitioner",
+        "motivation": "Protect the community from supernatural threats",
+        "stats": "Arcana 4, Lore 3, Insight 3",
+        "secret": "She knows more than she reveals; she has personal stake in the curse."
+      },
+      {
+        "id": "npc-margravine-xara",
+        "name": "Margravine Xara Rothari",
+        "role": "Regional Ruler",
+        "motivation": "Maintain order and authority",
+        "stats": "Command 4, Insight 3, Sway 3",
+        "secret": "She is aware of the curse but sees it as a tool to control the region."
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc-pale-causeway",
+        "name": "The Pale Causeway",
+        "description": "The last high road that survives the spring thaws. Crossings are perilous, and the road seems to shift and change.",
+        "tags": ["road", "curse"]
+      },
+      {
+        "id": "loc-blackwood-hollow",
+        "name": "Blackwood Hollow",
+        "description": "A charcoal burner's clearing with a hedge-witch's dwelling, protected by strong wards.",
+        "tags": ["forest", "sanctuary"]
+      },
+      {
+        "id": "loc-cursed-crossroads",
+        "name": "The Cursed Crossroads",
+        "description": "Meeting point of multiple roads, a place of choice and consequence where the Hungering Dark's influence is strongest.",
+        "tags": ["crossroads", "threshold"]
+      }
+    ],
+    "factions": [
+      {
+        "id": "faction-caravan",
+        "name": "The Merchant's Caravan",
+        "goals": "Survive and reach safety",
+        "relationship": "The characters are hired to protect them."
+      },
+      {
+        "id": "faction-hungering-dark",
+        "name": "The Hungering Dark",
+        "goals": "Feed on suffering and break free of its prison.",
+        "relationship": "The party must confront or contain it."
+      }
+    ],
+    "campaignTimers": [
+      {
+        "name": "Curse Escalation",
+        "segments": 8,
+        "current": 0,
+        "description": "Advances when the party fails to contain the curse or when the entity feeds."
+      },
+      {
+        "name": "Caravan Supplies",
+        "segments": 6,
+        "current": 0,
+        "description": "Depletes as supplies rot. When empty, the caravan cannot continue."
+      },
+      {
+        "name": "Hungering Dark's Strength",
+        "segments": 6,
+        "current": 0,
+        "description": "Increases when the entity gains power through fear and suffering."
+      }
+    ],
+    "notes": "A folk horror survival module with multiple resolutions: contain the curse, strike a bargain, or destroy the entity. The tone is bleak and desperate.",
+    "currentAct": 0,
+    "currentScene": 0,
+    "startedAt": null,
+    "completedAt": null,
+    "status": "planned",
+    "createdAt": "2026-08-03T00:00:00.000Z",
+    "updatedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "id": "silk-and-velvet",
+    "title": "Silk & Velvet",
+    "description": "Urban intrigue across the trade-bridge city of Silkstrand, a night of high etiquette at Ravenswood Manor, and the stair-ruled metropolis of Thepyrgos. The players must navigate contracts, masks, and glamour to prevent a ritual that would swap the souls of the city's elite.",
+    "tier": "I-III",
+    "author": "Nicholas A. Gasper",
+    "saga": false,
+    "bestiary": [
+      {
+        "id": "glamour-ghost",
+        "name": "Glamour Ghost",
+        "tl": 3,
+        "class": "III",
+        "category": "undead",
+        "description": "An illusion given form, used by the Crimson Masque troupe to confuse and misdirect.",
+        "stats": { "Spirit": 3, "Presence": 3, "hp": 15 },
+        "sb_spends": [
+          { "cost": 1, "name": "Illusory Double", "effect": "Create a duplicate that forces opponents to reroll attacks." }
+        ]
+      }
+    ],
+    "acts": [
+      {
+        "id": "act-1",
+        "title": "A Song of Poison and Plague",
+        "description": "Urban investigation as the Gemcutters and Alchemists edge toward riots, while a bard of Desire plays both sides.",
+        "scenes": [
+          {
+            "id": "scene-1-1",
+            "title": "The Redwater Audit",
+            "description": "The party must enter the dyeworks with forged or earned permits to investigate the source of the poisoned water.",
+            "timers": [
+              { "name": "City Unrest", "segments": 6, "current": 0 },
+              { "name": "Poisonings", "segments": 4, "current": 0 },
+              { "name": "Sel's Glamour Net", "segments": 4, "current": 0 }
+            ],
+            "encounters": [
+              {
+                "name": "Gaining Entry",
+                "dv": 3,
+                "position": "Dominant",
+                "outcomes": {
+                  "clean": "You gain entry and find evidence linking the alchemists to the poison.",
+                  "partial": "You enter but alert a guard; tick City Unrest +1.",
+                  "miss": "You are barred; tick Poisonings +1."
+                }
+              }
+            ],
+            "completed": false
+          },
+          {
+            "id": "scene-1-2",
+            "title": "The Alleyway Serenade",
+            "description": "Sel Virelle 'rescues' a bystander to win the party's trust. Reading her tells can downshift DV.",
+            "timers": [],
+            "encounters": [
+              {
+                "name": "Reading the Bard",
+                "dv": 4,
+                "position": "Controlled",
+                "outcomes": {
+                  "clean": "You see through her performance and gain leverage over her.",
+                  "partial": "You earn her trust but she escapes your scrutiny.",
+                  "miss": "She charms you and gains a hold on the party."
+                }
+              }
+            ],
+            "completed": false
+          }
+        ]
+      },
+      {
+        "id": "act-2",
+        "title": "The Gilded Cage",
+        "description": "A night of velvet hospitality at Ravenswood Manor. Each room is a social encounter with taboos and tells.",
+        "scenes": [
+          {
+            "id": "scene-2-1",
+            "title": "Conservatory of Masks",
+            "description": "Choose alliances and navigate the etiquette of masks. Violating taboos advances Etiquette Breach.",
+            "timers": [
+              { "name": "Midnight Duel", "segments": 8, "current": 0 },
+              { "name": "Etiquette Breach", "segments": 4, "current": 0 }
+            ],
+            "encounters": [
+              {
+                "name": "The Masked Ball",
+                "dv": 4,
+                "position": "Controlled",
+                "outcomes": {
+                  "clean": "You gain an important alliance and learn a rival's schedule.",
+                  "partial": "You avoid insult but miss a key clue.",
+                  "miss": "You commit a faux pas; tick Etiquette Breach +1."
+                }
+              }
+            ],
+            "completed": false
+          }
+        ]
+      },
+      {
+        "id": "act-3",
+        "title": "The Crimson Masque",
+        "description": "A public ritual threatens to swap souls. The party must infiltrate rehearsals and stop the rite on stage.",
+        "scenes": [
+          {
+            "id": "scene-3-1",
+            "title": "The On-Stage Challenge",
+            "description": "Dismantle the ritual pillars (Bell Cadence, Mask Index, Applause Escrow) before the final bell.",
+            "timers": [
+              { "name": "Act Countdown", "segments": 6, "current": 0 }
+            ],
+            "encounters": [
+              {
+                "name": "Breaking the Pillars",
+                "dv": 6,
+                "position": "Desperate",
+                "outcomes": {
+                  "clean": "You stop the ritual and expose the Masque Director.",
+                  "partial": "You stop it but at great cost; some souls are swapped.",
+                  "miss": "The ritual completes; the city's elite are replaced."
+                }
+              }
+            ],
+            "completed": false
+          }
+        ]
+      }
+    ],
+    "npcs": [
+      {
+        "id": "npc-guildmistress-kavra",
+        "name": "Guildmistress Kavra",
+        "role": "Gemcutters Guild Leader",
+        "motivation": "Stability and monopoly on luxury",
+        "stats": "Command 4, Sway 3, Lore 2",
+        "secret": "She knows about the poison but sees it as a way to discredit the Alchemists."
+      },
+      {
+        "id": "npc-master-orun",
+        "name": "Master Orun",
+        "role": "Alchemists Guild Master",
+        "motivation": "Legitimacy and funding",
+        "stats": "Lore 4, Craft 3, Insight 2",
+        "secret": "He is producing the poison but blames the Gemcutters."
+      },
+      {
+        "id": "npc-sel-virelle",
+        "name": "Sel Virelle",
+        "role": "Bard of Desire",
+        "motivation": "Acclaim and volatility",
+        "stats": "Presence 4, Sway 4, Performance 3",
+        "secret": "She is orchestrating the chaos for the Crimson Masque."
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc-silkstrand",
+        "name": "Silkstrand",
+        "description": "A city of canals, dyed waterways, and legal bridges. Permits and seals are visible power.",
+        "tags": ["city", "trade", "canals"]
+      },
+      {
+        "id": "loc-ravenswood-manor",
+        "name": "Ravenswood Manor",
+        "description": "A noble estate where the party must survive a night of velvet hospitality and intricate social traps.",
+        "tags": ["manor", "social"]
+      },
+      {
+        "id": "loc-thepyrgos",
+        "name": "Thepyrgos",
+        "description": "A stair-ruled metropolis where bell-law and stair-rights can crown or crush reputations overnight.",
+        "tags": ["city", "law", "stairs"]
+      }
+    ],
+    "factions": [
+      {
+        "id": "faction-gemcutters",
+        "name": "The Gemcutters Guild",
+        "goals": "Maintain monopoly on luxury goods.",
+        "relationship": "Potential allies or rivals."
+      },
+      {
+        "id": "faction-alchemists",
+        "name": "The Alchemists Guild",
+        "goals": "Gain legitimacy and funding.",
+        "relationship": "Potential allies or rivals."
+      },
+      {
+        "id": "faction-crimson-masque",
+        "name": "The Crimson Masque",
+        "goals": "Swap souls of the elite for power.",
+        "relationship": "Antagonists."
+      }
+    ],
+    "campaignTimers": [
+      {
+        "name": "City Unrest",
+        "segments": 6,
+        "current": 0,
+        "description": "Advances when guild tensions escalate."
+      },
+      {
+        "name": "Poisonings",
+        "segments": 4,
+        "current": 0,
+        "description": "Advances as the poison spreads."
+      },
+      {
+        "name": "Sel's Glamour Net",
+        "segments": 4,
+        "current": 0,
+        "description": "Advances when Sel gains influence over the party or city."
+      },
+      {
+        "name": "Midnight Duel",
+        "segments": 8,
+        "current": 0,
+        "description": "Advances as the rival's plot reaches its peak."
+      },
+      {
+        "name": "Etiquette Breach",
+        "segments": 4,
+        "current": 0,
+        "description": "Advances when the party violates social taboos at Ravenswood."
+      },
+      {
+        "name": "Act Countdown",
+        "segments": 6,
+        "current": 0,
+        "description": "Advances as the performance night approaches."
+      }
+    ],
+    "notes": "Urban intrigue module with strong social mechanics. Can be run as three separate arcs or a single campaign. Emphasis on Position, DV, and leverage via Diamonds.",
+    "currentAct": 0,
+    "currentScene": 0,
+    "startedAt": null,
+    "completedAt": null,
+    "status": "planned",
+    "createdAt": "2026-08-03T00:00:00.000Z",
+    "updatedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "id": "the-dwarven-debt",
+    "title": "The Dwarven Debt",
+    "description": "A dwarven merchant house calls in an ancient debt, demanding the party retrieve the Forgefather's Voice, a sacred artifact from the dangerous Spine Underway. The party must navigate dwarven law, honor, and the supernatural forces that guard the artifact.",
+    "tier": "II-III",
+    "author": "Nicholas A. Gasper",
+    "saga": false,
+    "bestiary": [
+      {
+        "id": "stone-singer",
+        "name": "The Stone-Singer",
+        "tl": 5,
+        "class": "V",
+        "category": "outsider",
+        "description": "An ancient entity bound to the stone, communicating through resonance and dreams. It guards the Forgefather's Crypt.",
+        "stats": { "Spirit": 4, "Resolve": 4, "hp": 45 },
+        "sb_spends": [
+          { "cost": 2, "name": "Stone Resonance", "effect": "All enemies in zone take Harm 1 and must test Athletics or be pinned." },
+          { "cost": 3, "name": "Dream of the Deep", "effect": "Target falls into a vision, losing their next action." }
+        ]
+      }
+    ],
+    "acts": [
+      {
+        "id": "act-1",
+        "title": "The Debt Called",
+        "description": "The party is summoned by Clan-Speaker Thrain Ironhold to fulfill an ancient contract. They must navigate dwarven customs and the financial desperation of House Khaz-Vurim.",
+        "scenes": [
+          {
+            "id": "scene-1-1",
+            "title": "The Legal Consultation",
+            "description": "Clan-Speaker Thrain explains the contract's details and the history of the Forgefather's Voice.",
+            "timers": [
+              { "name": "Debt Resolution", "segments": 8, "current": 0 },
+              { "name": "Dwarven Honor", "segments": 6, "current": 0 }
+            ],
+            "encounters": [
+              {
+                "name": "Understanding the Debt",
+                "dv": 4,
+                "position": "Controlled",
+                "outcomes": {
+                  "clean": "You fully understand the contract and its loopholes.",
+                  "partial": "You grasp the basics but miss a key clause.",
+                  "miss": "You insult the dwarves; tick Dwarven Honor -1."
+                }
+              }
+            ],
+            "completed": false
+          }
+        ]
+      },
+      {
+        "id": "act-2",
+        "title": "Into the Deep",
+        "description": "The party descends into the Spine Underway, facing ancient mechanisms and supernatural disturbances.",
+        "scenes": [
+          {
+            "id": "scene-2-1",
+            "title": "The Spine Underway",
+            "description": "Navigate the dangerous tunnels and encounter the first signs of the Deep Stirrings.",
+            "timers": [
+              { "name": "Ancient Ward Stability", "segments": 6, "current": 0 },
+              { "name": "Stone-Song Resonance", "segments": 4, "current": 0 }
+            ],
+            "encounters": [
+              {
+                "name": "Ancient Mechanism",
+                "dv": 5,
+                "position": "Controlled",
+                "outcomes": {
+                  "clean": "You bypass the mechanism safely and gain a clue to the artifact's location.",
+                  "partial": "You trigger a trap but survive; tick Ancient Ward Stability +1.",
+                  "miss": "The mechanism collapses a passage; tick Stone-Song Resonance +1."
+                }
+              }
+            ],
+            "completed": false
+          }
+        ]
+      },
+      {
+        "id": "act-3",
+        "title": "The Forgefather's Crypt",
+        "description": "The party reaches the sacred resting place of the Forgefather's Voice and must decide its fate.",
+        "scenes": [
+          {
+            "id": "scene-3-1",
+            "title": "The Crypt Confrontation",
+            "description": "The party faces the Stone-Singer and must choose between restoration, legal victory, or supernatural compromise.",
+            "timers": [
+              { "name": "Debt Resolution", "segments": 8, "current": 0 }
+            ],
+            "encounters": [
+              {
+                "creatureId": "stone-singer",
+                "quantity": 1,
+                "position": "Desperate",
+                "dv": 6,
+                "outcomes": {
+                  "clean": "You perform the ancient ritual to restore the artifact, satisfying all parties.",
+                  "partial": "You secure the artifact but at a cost; tick Debt Resolution +1.",
+                  "miss": "You anger the Stone-Singer; combat begins and the artifact is lost."
+                }
+              }
+            ],
+            "completed": false
+          }
+        ]
+      }
+    ],
+    "npcs": [
+      {
+        "id": "npc-thora-stonebeard",
+        "name": "Vault-Queen Thora Stonebeard",
+        "role": "Leader of House Khaz-Vurim",
+        "motivation": "Honor house obligations while preserving tradition",
+        "stats": "Command 4, Lore 3, Craft 3",
+        "secret": "She knows the artifact was never properly transferred."
+      },
+      {
+        "id": "npc-thrain-ironhold",
+        "name": "Clan-Speaker Thrain Ironhold",
+        "role": "Diplomatic Representative",
+        "motivation": "Resolve the situation without conflict",
+        "stats": "Sway 3, Lore 3, Command 2",
+        "secret": "He is prepared to enforce the house rights if necessary."
+      },
+      {
+        "id": "npc-durin-emberheart",
+        "name": "Forge-Master Durin Emberheart",
+        "role": "Elder Master Smith",
+        "motivation": "Restore proper balance",
+        "stats": "Craft 5, Arcana 2, Lore 4",
+        "secret": "He knows the true nature of the Forgefather's Voice and its connection to the Deep Stirrings."
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc-khaz-vurim-halls",
+        "name": "Khaz-Vurim Halls",
+        "description": "Ancestral home carved from massive stone formation. Perfect stonework and intricate metalwork.",
+        "tags": ["dwarven", "halls"]
+      },
+      {
+        "id": "loc-spine-underway",
+        "name": "The Spine Underway",
+        "description": "Vast network of ancient tunnels connecting dwarven holds. Remnants of pre-dwarven civilizations.",
+        "tags": ["underground", "tunnels"]
+      },
+      {
+        "id": "loc-forgefathers-crypt",
+        "name": "The Forgefather's Crypt",
+        "description": "Sacred resting place of the Forgefather's Voice, protected by ancient wards and the Stone-Singer.",
+        "tags": ["crypt", "artifact"]
+      }
+    ],
+    "factions": [
+      {
+        "id": "faction-khaz-vurim",
+        "name": "House Khaz-Vurim",
+        "goals": "Restore financial stability and honor ancient contracts.",
+        "relationship": "The party is bound by debt to them."
+      },
+      {
+        "id": "faction-deep-stirrings",
+        "name": "The Deep Stirrings",
+        "goals": "Protect the artifact and the balance of the deep places.",
+        "relationship": "They may be allies or obstacles."
+      }
+    ],
+    "campaignTimers": [
+      {
+        "name": "Debt Resolution",
+        "segments": 8,
+        "current": 0,
+        "description": "Advances as the legal pressure mounts."
+      },
+      {
+        "name": "Ancient Ward Stability",
+        "segments": 6,
+        "current": 0,
+        "description": "Advances when the party disrupts the crypt's defenses."
+      },
+      {
+        "name": "Stone-Song Resonance",
+        "segments": 4,
+        "current": 0,
+        "description": "Advances as the artifact calls to return home."
+      },
+      {
+        "name": "Dwarven Honor",
+        "segments": 6,
+        "current": 0,
+        "description": "Tracks the party's standing with dwarven society."
+      }
+    ],
+    "notes": "A moral and legal drama set in dwarven culture. Themes of honor, tradition, and supernatural balance. Multiple resolution paths: restoration, legal victory, or supernatural compromise.",
+    "currentAct": 0,
+    "currentScene": 0,
+    "startedAt": null,
+    "completedAt": null,
+    "status": "planned",
+    "createdAt": "2026-08-03T00:00:00.000Z",
+    "updatedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "id": "ashes-of-the-infernal-accord",
+    "title": "Ashes of the Infernal Accord",
+    "description": "An epic-tier adventure where the party is drawn into infernal politics. Maelstraeus offers a deal to stop Mor'iraath's expansion, but accepting grants Obligation. The party must navigate the City of Cinder, confront the Demon of Fire and Destruction, and decide whether to uphold or break their infernal bargains.",
+    "tier": "Epic (220+ XP)",
+    "author": "Nicholas A. Gasper",
+    "saga": false,
+    "bestiary": [
+      {
+        "id": "moriraath-avatar",
+        "name": "Mor'iraath's Avatar",
+        "tl": 6,
+        "class": "VI",
+        "category": "outsider",
+        "description": "An avatar of the Demon of Fire and Destruction, a being of entropic consumption.",
+        "stats": { "Body": 5, "Spirit": 5, "Presence": 4, "hp": 60 },
+        "sb_spends": [
+          { "cost": 2, "name": "Conflagration", "effect": "Deal Harm 2 to all enemies in a zone and advance the Consumption Timer." },
+          { "cost": 3, "name": "Infernal Audit", "effect": "Target loses 1 Obligation and suffers a curse." }
+        ]
+      }
+    ],
+    "acts": [
+      {
+        "id": "act-1",
+        "title": "Descent",
+        "description": "The party journeys to the City of Cinder, facing early encounters with Mor'iraath's agents and the whispers of Livaea.",
+        "scenes": [
+          {
+            "id": "scene-1-1",
+            "title": "The Journey",
+            "description": "Travel through the shifting landscapes to the City of Cinder, encountering a minor Mor'iraath agent or a Livaea whisper test.",
+            "timers": [
+              { "name": "Mor'iraath's Expansion", "segments": 8, "current": 0 },
+              { "name": "Cinder Market Stability", "segments": 6, "current": 0 },
+              { "name": "Livaea's Manipulation", "segments": 6, "current": 0 }
+            ],
+            "encounters": [
+              {
+                "name": "The Whisper Test",
+                "dv": 4,
+                "position": "Controlled",
+                "outcomes": {
+                  "clean": "You resist Livaea's temptation and learn a useful secret.",
+                  "partial": "You are tempted but resist; tick Livaea's Manipulation +1.",
+                  "miss": "You accept a deal; gain 1 Obligation to Livaea."
+                }
+              }
+            ],
+            "completed": false
+          }
+        ]
+      },
+      {
+        "id": "act-2",
+        "title": "The Infernal Bazaar",
+        "description": "Navigate the City of Cinder's factions, gather information, and make deals. Livaea's influence foreshadows the final manipulation.",
+        "scenes": [
+          {
+            "id": "scene-2-1",
+            "title": "The Grand Exchange",
+            "description": "The party must broker a deal with a faction to gain access to the Fractured Court.",
+            "timers": [
+              { "name": "Cinder Market Stability", "segments": 6, "current": 0 }
+            ],
+            "encounters": [
+              {
+                "name": "The Auction",
+                "dv": 5,
+                "position": "Controlled",
+                "outcomes": {
+                  "clean": "You secure a powerful ally and gain a Market Stabilizer.",
+                  "partial": "You gain some leverage but tick Cinder Market Stability +1.",
+                  "miss": "You anger a faction; tick Cinder Market Stability +2."
+                }
+              }
+            ],
+            "completed": false
+          }
+        ]
+      },
+      {
+        "id": "act-3",
+        "title": "The Fractured Court",
+        "description": "The final confrontation: choose between Direct Confrontation or Infernal Subterfuge. Livaea's manipulation is revealed, and the party must decide whether to complete Maelstraeus's goal or defy him.",
+        "scenes": [
+          {
+            "id": "scene-3-1",
+            "title": "The Revelation",
+            "description": "Livaea's scheme is exposed; the party must make a hard choice.",
+            "timers": [
+              { "name": "Mor'iraath's Expansion", "segments": 8, "current": 0 }
+            ],
+            "encounters": [
+              {
+                "name": "The Choice",
+                "dv": 6,
+                "position": "Desperate",
+                "outcomes": {
+                  "clean": "You successfully navigate the court and contain the threat.",
+                  "partial": "You contain the threat but incur major Obligation.",
+                  "miss": "The infernal accord shatters; Mor'iraath's expansion continues."
+                }
+              }
+            ],
+            "completed": false
+          }
+        ]
+      }
+    ],
+    "npcs": [
+      {
+        "id": "npc-maelstraeus",
+        "name": "Maelstraeus",
+        "role": "Infernal Patron of Webs",
+        "motivation": "Build webs of interdependence and stop Mor'iraath.",
+        "stats": "Presence 5, Sway 5, Command 4",
+        "secret": "He has his own hidden agenda beyond stopping Mor'iraath."
+      },
+      {
+        "id": "npc-moriraath",
+        "name": "Mor'iraath",
+        "role": "Demon of Fire and Destruction",
+        "motivation": "Consume all value and reduce the world to ash.",
+        "stats": "Body 5, Spirit 5, Presence 4",
+        "secret": "He is the principle of entropic consumption, not just a being."
+      },
+      {
+        "id": "npc-livaea",
+        "name": "Livaea",
+        "role": "Patron of Desire and Manipulation",
+        "motivation": "Tempt and manipulate all parties for her own ends.",
+        "stats": "Presence 5, Sway 5, Insight 4",
+        "secret": "She is the unseen hand behind many deals."
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc-city-of-cinder",
+        "name": "City of Cinder",
+        "description": "A sprawling marketplace built from the calcified remnants of broken dreams. Currency is concepts: fragments of soul, moments of joy, oaths.",
+        "tags": ["infernal", "bazaar"]
+      },
+      {
+        "id": "loc-fractured-court",
+        "name": "The Fractured Court",
+        "description": "The seat of power where the fate of the infernal accord is decided.",
+        "tags": ["court", "confrontation"]
+      }
+    ],
+    "factions": [
+      {
+        "id": "faction-maelstraeus",
+        "name": "Maelstraeus's Web",
+        "goals": "Interdependent control and stability.",
+        "relationship": "The party may owe Obligation to him."
+      },
+      {
+        "id": "faction-moriraath",
+        "name": "Mor'iraath's Horde",
+        "goals": "Destruction and consumption.",
+        "relationship": "The party must stop them."
+      },
+      {
+        "id": "faction-livaea",
+        "name": "Livaea's Manipulators",
+        "goals": "Use desire to control outcomes.",
+        "relationship": "She may be an ally or enemy."
+      }
+    ],
+    "campaignTimers": [
+      {
+        "name": "Mor'iraath's Expansion",
+        "segments": 8,
+        "current": 0,
+        "description": "Advances as Mor'iraath's forces gain ground."
+      },
+      {
+        "name": "Cinder Market Stability",
+        "segments": 6,
+        "current": 0,
+        "description": "Advances as the City of Cinder becomes unstable."
+      },
+      {
+        "name": "Livaea's Manipulation",
+        "segments": 6,
+        "current": 0,
+        "description": "Advances as Livaea's influence grows."
+      }
+    ],
+    "notes": "Epic-tier infernal politics module with cosmic stakes. Focus on Obligation and hard choices. The City of Cinder generator provides faction and location variety.",
+    "currentAct": 0,
+    "currentScene": 0,
+    "startedAt": null,
+    "completedAt": null,
+    "status": "planned",
+    "createdAt": "2026-08-03T00:00:00.000Z",
+    "updatedAt": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "id": "the-ninth-bell",
+    "title": "The Ninth Bell",
+    "description": "In Theona, a cultural taboo has been broken. The Ninth Law states: 'The ninth word is never spoken, the ninth path is hidden, and the ninth name is erased from history.' A bell has begun ringing where no bell should ring, marking the countdown to the Green Host's arrival. The horror is inevitable; the only choice is how to appease the land.",
+    "tier": "II",
+    "author": "Nicholas A. Gasper",
+    "saga": false,
+    "bestiary": [
+      {
+        "id": "green-host",
+        "name": "The Green Host",
+        "tl": 5,
+        "class": "V",
+        "category": "concept",
+        "description": "Not a physical entity but a force of cultural consequence. The land's enforcement mechanism for broken oaths.",
+        "stats": { "Spirit": 6, "Resolve": 6, "hp": 0 },
+        "sb_spends": [
+          { "cost": 2, "name": "Claim the Unmourned", "effect": "Target is marked for death; must make Resolve DV 5 or be claimed." }
+        ]
+      }
+    ],
+    "acts": [
+      {
+        "id": "act-1",
+        "title": "The Bell Rings",
+        "description": "The party encounters the ringing bell and the silent village. They learn of the Ninth Law and the countdown to the ninth chime.",
+        "scenes": [
+          {
+            "id": "scene-1-1",
+            "title": "The Silent Village",
+            "description": "Arriving at a village where no one speaks, the party discovers the bell tolling at the edge of town.",
+            "timers": [
+              { "name": "Bell's Countdown", "segments": 9, "current": 0 }
+            ],
+            "encounters": [
+              {
+                "name": "Investigating the Bell",
+                "dv": 3,
+                "position": "Controlled",
+                "outcomes": {
+                  "clean": "You find handprints in the snow leading to the bell but ending where no human could stand.",
+                  "partial": "You learn the bell is a warning; tick Bell's Countdown +1.",
+                  "miss": "You trigger a supernatural echo; tick Bell's Countdown +2."
+                }
+              }
+            ],
+            "completed": false
+          }
+        ]
+      },
+      {
+        "id": "act-2",
+        "title": "The Land Remembers",
+        "description": "The land's memory becomes active; cold spots, visual distortions, and the Green Host draws near. The party must find the person who broke the Ninth Law.",
+        "scenes": [
+          {
+            "id": "scene-2-1",
+            "title": "The Unmarked Grave",
+            "description": "The party finds a fresh grave with no marker, dug by the land itself.",
+            "timers": [
+              { "name": "Bell's Countdown", "segments": 9, "current": 0 }
+            ],
+            "encounters": [
+              {
+                "name": "The Grave",
+                "dv": 4,
+                "position": "Controlled",
+                "outcomes": {
+                  "clean": "You learn the name of the dead person and the ninth name that was spoken.",
+                  "partial": "You find a clue but not the full name.",
+                  "miss": "The land hinders you; tick Bell's Countdown +1."
+                }
+              }
+            ],
+            "completed": false
+          }
+        ]
+      },
+      {
+        "id": "act-3",
+        "title": "The Ninth Chime",
+        "description": "Dawn approaches. The party must perform the proper ritual of appeasement to prevent the Green Host from claiming the village.",
+        "scenes": [
+          {
+            "id": "scene-3-1",
+            "title": "The Ritual of Appeasement",
+            "description": "The party must speak all nine names, perform the Silent Vigil, and take the Ninth Path.",
+            "timers": [
+              { "name": "Bell's Countdown", "segments": 9, "current": 0 }
+            ],
+            "encounters": [
+              {
+                "name": "The Ritual",
+                "dv": 5,
+                "position": "Desperate",
+                "outcomes": {
+                  "clean": "The land is appeased; the bell stops ringing. The village is saved.",
+                  "partial": "The Green Host claims only the one who broke the law; the bell stops.",
+                  "miss": "The Green Host claims the entire village; the bell rings eternally."
+                }
+              }
+            ],
+            "completed": false
+          }
+        ]
+      }
+    ],
+    "npcs": [
+      {
+        "id": "npc-jordan",
+        "name": "Jordan",
+        "role": "Keeper of the Silent Bell",
+        "motivation": "Protect the village from the consequences of the broken taboo.",
+        "stats": "Lore 3, Notice 2, Command 2",
+        "secret": "His son spoke the ninth name of a dead man."
+      },
+      {
+        "id": "npc-elyra",
+        "name": "Elyra",
+        "role": "Village Elder",
+        "motivation": "Maintain cultural traditions and protect the community.",
+        "stats": "Command 3, Lore 3, Insight 2",
+        "secret": "Her silence is punishment for not preventing the taboo."
+      }
+    ],
+    "locations": [
+      {
+        "id": "loc-silent-bell",
+        "name": "The Silent Bell",
+        "description": "A bell hanging from a single iron post on a windswept hill. No rope, no striker—yet it rings.",
+        "tags": ["bell", "threshold"]
+      },
+      {
+        "id": "loc-stone-silent",
+        "name": "The Village of Stone-Silent",
+        "description": "A village where no doors are locked but no voices are heard. Ritual silence is observed.",
+        "tags": ["village", "silence"]
+      },
+      {
+        "id": "loc-unmarked-grave",
+        "name": "The Unmarked Grave",
+        "description": "A fresh grave in a field with no marker, dug by the land itself. A ninth flower grows in the center.",
+        "tags": ["grave", "omen"]
+      }
+    ],
+    "factions": [
+      {
+        "id": "faction-law-keepers",
+        "name": "The Law-Keepers of Theona",
+        "goals": "Uphold the Ninth Law.",
+        "relationship": "They may help or hinder the party."
+      }
+    ],
+    "campaignTimers": [
+      {
+        "name": "Bell's Countdown",
+        "segments": 9,
+        "current": 0,
+        "description": "Advances each hour until dawn. When full, the Green Host arrives."
+      }
+    ],
+    "notes": "A short, low-fantasy horror module about cultural consequences. Combat is minimal; the focus is on investigation, ritual, and moral choice.",
+    "currentAct": 0,
+    "currentScene": 0,
+    "startedAt": null,
+    "completedAt": null,
+    "status": "planned",
+    "createdAt": "2026-08-03T00:00:00.000Z",
+    "updatedAt": "2026-08-03T00:00:00.000Z"
+  }
+]

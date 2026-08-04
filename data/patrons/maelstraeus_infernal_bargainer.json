@@ -1,0 +1,289 @@
+{
+  "id": "maelstraeus_infernal_bargainer",
+  "type": "patron",
+  "title": "Maelstraeus — The Infernal Bargainer",
+  "subtitle": "Commerce & Exchange",
+  "version": "1.0.0",
+  "tags": [
+    "commerce",
+    "exchange",
+    "debt",
+    "contract",
+    "bargain",
+    "ledger",
+    "interest",
+    "faustian",
+    "merchant",
+    "inevitability"
+  ],
+  "lore": {
+    "description": "Maelstraeus is the Infernal Bargainer, the Prince of Ledgers, the shadow at every crossroads of exchange. He was born from the first inequity, when one gave and another took, and debt was chained into existence. He does not trade fairly—he trades inevitably. Every pact carries a hidden surcharge, every kindness is collateral, every smile hides an interest rate. His realm is an endless market where stalls never close, contracts burn with invisible ink, and every bargain tilts toward him. To serve Maelstraeus is to admit the world itself is transactional—that all things, from love to breath to soul, are bound in his ledger. He collects. He always collects.",
+    "followers": "Among the peoples of Fate's Edge, Maelstraeus is the patron of merchants, usurers, and tax collectors. In Ecktoria, he is the Coin_House Factor, invoked before every contract. In Silkstrand, he is the Dyed Scale, whose symbol is stamped on letters of credit. In the Brass Coast, he is the Salt Ledger, to whom smugglers whisper a prayer before a deal. Wherever coin changes hands and someone gains an edge, Maelstraeus watches. A deal is never even. The scales tilt; the Merchant smiles. All debts come due.",
+    "signs": [
+      "A coin that feels heavier than it should, as if it carries a memory",
+      "A ledger that shows a balance you did not expect",
+      "The smell of ink and old parchment on a windless day"
+    ],
+    "quotes": [
+      "\"A deal is never even. The scales tilt; the Merchant smiles. All debts come due.\"",
+      "\"The soul is currency. Spend it wisely—someone is always counting.\"",
+      "\"Every profit is a future loss. Every gift is a future claim.\""
+    ]
+  },
+  "domain_focus": [
+    "Commerce as Conflict: negotiation, leverage, hidden clauses",
+    "Debt as Power: obligation as currency, interest as weapon",
+    "Inevitability: all accounts are settled, sooner or later",
+    "Infernal Bargains: Faustian pacts, soul_ledgers, cursed credit"
+  ],
+  "runekeeper_options": {
+    "thiasos": {
+      "description": "A Runekeeper sworn to Maelstraeus does not bind a familiar of whimsy or war—they bind a creature of shrewd calculation and hidden value. Their Thiasos is a small creature that embodies profit and accounting: a rat that counts coins with its paws, a ferret that steals only the most valuable trinkets, a magpie that hoards silver, a small brass spider that weaves ledgers in its web, or a gray mouse that lives in counting_houses and nibbles the corners of unpaid bills.",
+      "care": "This creature requires no food, but it must be given a small coin (or a written debt) each day. If neglected for a week, it becomes Compromised (it hoards the bearer's own valuables, hiding keys or coins, imposing –1 die on all Appraise and Bargain rolls for its bearer until a new coin is offered)."
+    },
+    "codex": {
+      "description": "The Codex of Maelstraeus is never a book of abstract knowledge. It may be a leather_bound ledger with brass corners, its pages ruled for double_entry accounting; a slate tablet that calculates interest on its own; a set of scales whose pans hold the Rites as weights; or a scroll of parchment that feels heavier when a debt is unpaid.",
+      "upkeep": "Because Maelstraeus's truths are written in profit, the Codex requires upkeep: the Runekeeper must spend an hour each week balancing its accounts (adding a fictitious entry or correcting a deliberate error), or the numbers become scrambled (treat as Compromised until re_balanced)."
+    }
+  },
+  "patrons_gift": {
+    "name": "Clause of Interest",
+    "description": "Once per scene as an action, a Runekeeper of Maelstraeus may touch a held item (weapon, tool, or coin) and whisper a clause of interest.",
+    "effect": "For the rest of the scene, the item grants +1 die to Bargain or Appraise rolls, and the first time each scene the bearer would be cheated in a deal (sold a fake, paid counterfeit), they may reroll the opposed check (the scales tip in their favor).",
+    "cost": "After the scene, the user marks +1 Obligation to Maelstraeus."
+  },
+  "rites": [
+    {
+      "name": "Rite of Uneven Scales",
+      "tier": "Low",
+      "xp": 5,
+      "action": "Scene",
+      "range": "Near",
+      "resist": "No",
+      "tags": ["NEGOTIATION", "DEBT", "BOOST"],
+      "materials": "A scale where one pan is shaved or weighted.",
+      "effect": "Establish a trading ground. All parties gain +1 die to negotiate—but you bank a [4] Hidden Profit timer to spend reducing complications in your favor.",
+      "push_it": "Compel one party to reveal their desperation or a hidden term; mark 1 SB (Hearts). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene. Timer: 4 segments (Hidden Profit)."
+    },
+    {
+      "name": "Rite of the Merchant's Gaze",
+      "tier": "Low",
+      "xp": 5,
+      "action": "Scene",
+      "range": "Self",
+      "resist": "No",
+      "tags": ["TRUTH", "VALUE", "BOOST", "BURDEN"],
+      "materials": "A coin pressed flat until its face is erased.",
+      "effect": "+2 dice to appraise goods, favors, or leverage. Create a [6] Profit Margin timer.",
+      "push_it": "Perceive emotional or hidden value as well, but mark +1 Exposure and 1 SB (Diamonds). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene. Timer: 6 segments (Profit Margin)."
+    },
+    {
+      "name": "Rite of the Weighted Contract",
+      "tier": "Standard",
+      "xp": 8,
+      "action": "Scene",
+      "range": "Near/Touch",
+      "resist": "No",
+      "tags": ["VOW", "DEBT", "BOND", "FEAR"],
+      "materials": "Two items, one secretly flawed, or a parchment scorched before stamping.",
+      "effect": "Choose one: (a) Secret Advantage: Bind a bargain where you secretly shift one advantage in your favor. Both sides gain +1 Effect if honored. Create a [6] Shrewd Bargain timer. (b) Seared Seal: Bind an agreement with a scorched seal. You gain +1 die to enforce compliance; breakers suffer –2 dice in all dealings until next session. Create an [8] Burned Ledger timer.",
+      "push_it": "(Secret Advantage) Breaking terms lashes the weaker party with 1 SB (Hearts/Clubs). (Seared Seal) Breach burns the sigil into the breaker's hand, inflicting Harm 1 and 1 SB (Spades). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene. (Secret Advantage: Timer 6 segments; Seared Seal: Timer 8 segments)."
+    },
+    {
+      "name": "Rite of the Infernal Bazaar",
+      "tier": "High",
+      "xp": 13,
+      "action": "Scene",
+      "range": "Zone",
+      "resist": "No",
+      "tags": ["AREA", "NEGOTIATION", "DEBT", "FEAR", "BOOST"],
+      "materials": "A canopy stitched from debtors' contracts.",
+      "effect": "Create a cursed market_zone. Allies gain +1 Effect on bargains and may reroll one failed negotiation. Enemies suffer –1 die to deception. Start a [10] Predatory Market timer.",
+      "push_it": "Attract wealthy powers eager—and doomed—to deal. Mark 2 SB (Hearts/Clubs). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "1 action.",
+      "duration": "Scene. Timer: 10 segments (Predatory Market)."
+    },
+    {
+      "name": "Rite of the Cosmic Ledger",
+      "tier": "High",
+      "xp": 14,
+      "action": "Extended",
+      "range": "Self",
+      "resist": "No",
+      "tags": ["TRANSFER", "FATE", "DEBT", "SACRIFICE"],
+      "materials": "A book that writes entries in your blood (a personal ledger, each entry a drop).",
+      "effect": "Once per session, convert one resource into another (e.g., Boon → Fatigue, Obligation → SB, Harm → Debt Timer segments). All trades tilt slightly in your favor (you gain +1 die on the next roll related to that resource). Start a [6] Balance Owed timer.",
+      "push_it": "Make the trade brutally lopsided (double the conversion rate, e.g., 2 Boons → 2 Fatigue). Create a [6] Cosmic Debt timer and mark 2 SB (Diamonds). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "Extended action.",
+      "duration": "Instant. Timer: 6 segments (Balance Owed; Cosmic Debt on push)."
+    }
+  ],
+  "cantors_and_cults": {
+    "cantors": {
+      "name": "The Cantor's Song",
+      "description": "A Cantor of Maelstraeus sings in recitations of accounting—melodies that sound like the rustle of parchment and the chink of coins. Their voice is used to seal a contract with a sung term, to recite a debtor's tally until the weight of it crushes, or to make a market stall appear where none stood before. Maelstraeus's Cantors are employed by every major guild, and feared by those who know that a song of profit always hides a verse of loss."
+    },
+    "cult": {
+      "name": "The Cult of the Gilded Ledger",
+      "description": "Maelstraeus's cults meet in counting_houses, bank vaults, and the back rooms of commodity exchanges. The Gilded Ledger is not a secret society—it is a fraternity of merchants, moneylenders, and tax collectors who have learned that every transaction is a prayer. A ritual of the Ledger involves each member opening a vein (a small cut on the thumb) and letting a drop of blood fall onto a brass scale, then adding a pinch of gold dust. The mixture is used to ink a new entry in the cult's master ledger—a book bound in leather made from the skin of a debtor who could not pay. The most devoted members tattoo their current account balance on the inside of their wrist; the numbers change overnight, and no one knows who updates them. Their creed is stamped on every bond they issue: 'The soul is currency. Spend it wisely—someone is always counting.' Outsiders are welcome as 'investors,' but those who fail to pay their dues find their names struck from the book—and their shadows missing the next morning."
+    }
+  },
+  "witchcraft": {
+    "name": "The Art of Exchange",
+    "description": "A witch who walks with Maelstraeus is a ledger_scribe or coin_turner—one who crafts the instruments of exchange: contracts that cannot be broken, scales that never lie, and inks that write in terms that bind the reader's soul. Their magic works through the materials of commerce: a quill that writes in debt, a press that stamps obligations into parchment, or a small iron stamp that leaves a mark of ownership on any object. In Aeler, a True_Mason might carve a toll_gate that remembers every traveler's debt, but a witch of Maelstraeus would instead press a wax seal into the keystone, so that the debt is owed not to the mountain, but to the witch.",
+    "color": "#b8860b",
+    "lore": "The ledger_scribe's path is the art of the deal. They learn that every transaction is a prayer, and every contract is a promise to the Infernal Bargainer. To serve Maelstraeus is to understand that the soul is currency—and that someone is always counting.",
+    "signature_rite": "Rite of Uneven Scales",
+    "quote": "A deal is never even. The scales tilt.",
+    "tools": {
+      "debtors_quill": {
+        "name": "The Debtor's Quill",
+        "description": "A steel_nibbed quill that writes in ink that darkens as the writer's obligation grows. Once per session, the witch may write a one_sentence contract on a scrap of parchment. Anyone who signs (or accepts the parchment) is bound to a minor task or payment. Breach inflicts 1 SB (Spades) and marks the signer with a faint, glowing sigil for one day. The quill can also be used to 'amend' an existing contract by scratching out a clause; the scratched_out clause becomes unenforceable, but the quill demands a drop of blood as payment."
+      }
+    },
+    "hedge_gifts": [
+      {
+        "name": "Fair Weight",
+        "xp": 2,
+        "description": "Once per scene, the witch may touch a scale, a till, or a handshake and speak a single word ('balance'). For the next exchange, all appraisals and negotiations involving that transaction are treated as if they were perfectly fair—no hidden advantage, no secret interest. The witch may choose to be the one who benefits from that fairness, or they may grant it to another as a genuine (but binding) gift."
+      },
+      {
+        "name": "The Gold_Sense",
+        "xp": 3,
+        "description": "You may touch a coin and know its history—who minted it, who spent it last, and any major transaction it witnessed. This does not reveal magical properties, only mundane history. Once per scene."
+      },
+      {
+        "name": "The Signed Eye",
+        "xp": 4,
+        "description": "When you witness a contract being signed, you may make a Lore roll (DV 4) to perceive any hidden clauses or fine print that the signers missed. On a success, you may point out the clause; on a failure, you suffer 1 Fatigue from the strain."
+      }
+    ]
+  },
+  "monastic_tradition": {
+    "name": "The Way of the Contract Monk",
+    "description": "A deal is never even. The scales tilt. Contract Monks understand that every relationship is a transaction and every debt is a leash. They are masters of negotiation, leverage, and the art of the hidden clause. To walk this path is to accept that the world is a market—and that the only way to survive is to be the one holding the ledger.",
+    "color": "#b8860b",
+    "prerequisites": "Spirit 3+, Presence 2+, Rite of Uneven Scales or Cantor of Maelstraeus.",
+    "quote": "A deal is never even. The scales tilt.",
+    "debt_resistant_frame": "Maelstraeus's monks understand that every contract has a loophole. Monks of the Contract Monk gain +1 die to resist any magical debt, contract, or obligation by finding a hidden clause, technicality, or contradiction in the creditor's own terms. If they succeed, the creditor's paperwork briefly smolders—a loophole consumed by its own interest.",
+    "techniques": {
+      "basic": {
+        "name": "Uneven Scales",
+        "xp": 5,
+        "effect": "Establish a trading ground. All parties gain +1 die to negotiate—but you bank a [4] Hidden Profit timer to spend reducing complications in your favor.",
+        "cost": "1 Fatigue",
+        "prereq": "Presence 2+"
+      },
+      "advanced": {
+        "name": "Weighted Contract",
+        "xp": 9,
+        "effect": "Bind a bargain where you secretly shift one advantage in your favor. Both sides gain +1 Effect if honored. Create a [6] Shrewd Bargain timer.",
+        "cost": "1 Boon",
+        "prereq": "Spirit 3+"
+      },
+      "master": {
+        "name": "Market Tyrant",
+        "xp": 12,
+        "effect": "Once per session, impose absolute dominance over a domain of trade for one scene; all exchanges within Near range bend to your terms (+2 dice to Bargain, –2 dice to resist your deals). You may also void one existing magical debt or contract entirely—but the universe exacts repayment in brutal, unexpected form (GM's choice).",
+        "cost": "After the scene, you gain a permanent Debt Scar (your hands are stained with ink that never washes off)—but you may, once per arc, treat a demand for payment as if it were a negotiation you can walk away from (the creditor finds the fine print written in vanishing ink).",
+        "prereq": "Tier III"
+      }
+    },
+    "corruption": [
+      {
+        "tier": 1,
+        "benefit": "Appraiser's Eye: +1 die to judge value in goods, favors, or leverage.",
+        "cost": "Transactional Reflex: Must assign a 'cost' to every interaction; –1 die to selfless acts."
+      },
+      {
+        "tier": 2,
+        "benefit": "Sharp Dealer: Once/scene, reroll a failed bargain.",
+        "cost": "Compulsive Trade: Must haggle or strike a deal when value is present—even if destructive."
+      },
+      {
+        "tier": 3,
+        "benefit": "Merchant's Fortune: +1 die to predict or exploit markets.",
+        "cost": "Greed's Hunger: Suffer 1 Fatigue if you allow profit or advantage to pass untaken."
+      },
+      {
+        "tier": 4,
+        "benefit": "Infernal Credit: Once/session, call in a major favor (merchant prince, syndicate, guild).",
+        "cost": "Debt Anchor: Draw in exploitative offers; refusing marks 1 SB (Diamonds)."
+      },
+      {
+        "tier": 5,
+        "benefit": "Price of Truth: Once/scene, see the hidden worth of any item, pact, or person.",
+        "cost": "Tagged by Price: See every being as a commodity; –1 die to genuine intimacy."
+      },
+      {
+        "tier": "6+",
+        "benefit": "Market Tyrant: Once/session, impose absolute dominance over a domain of trade; all exchanges within Near range bend to your terms (+2 dice to Bargain, –2 dice to resist your deals).",
+        "cost": "Cosmic Recompense: Mark +2 Obligation; the universe exacts repayment in brutal, unexpected form. Your hands are now stained with ink that never washes off—a visible mark of your covenant."
+      }
+    ]
+  },
+  "corruption": [
+    {
+      "tier": 1,
+      "benefit": "Appraiser's Eye: +1 die to judge value in goods, favors, or leverage.",
+      "cost": "Transactional Reflex: Must assign a 'cost' to every interaction; –1 die to selfless acts."
+    },
+    {
+      "tier": 2,
+      "benefit": "Sharp Dealer: Once/scene, reroll a failed bargain.",
+      "cost": "Compulsive Trade: Must haggle or strike a deal when value is present—even if destructive."
+    },
+    {
+      "tier": 3,
+      "benefit": "Merchant's Fortune: +1 die to predict or exploit markets.",
+      "cost": "Greed's Hunger: Suffer 1 Fatigue if you allow profit or advantage to pass untaken."
+    },
+    {
+      "tier": 4,
+      "benefit": "Infernal Credit: Once/session, call in a major favor (merchant prince, syndicate, guild).",
+      "cost": "Debt Anchor: Draw in exploitative offers; refusing marks 1 SB (Diamonds)."
+    },
+    {
+      "tier": 5,
+      "benefit": "Price of Truth: Once/scene, see the hidden worth of any item, pact, or person.",
+      "cost": "Tagged by Price: See every being as a commodity; –1 die to genuine intimacy."
+    },
+    {
+      "tier": "6+",
+      "benefit": "Market Tyrant: Once/session, impose absolute dominance over a domain of trade; all exchanges within Near range bend to your terms (+2 dice to Bargain, –2 dice to resist your deals).",
+      "cost": "Cosmic Recompense: Mark +2 Obligation; the universe exacts repayment in brutal, unexpected form. Your hands are now stained with ink that never washes off—a visible mark of your covenant."
+    }
+  ],
+  "playstyle_notes": {
+    "description": "Maelstraeus is the patron of merchants, moneylenders, and anyone who understands that every relationship has a price. His followers gain power over negotiation, debt, and the hidden leverage in every exchange, but pay with their empathy, their trust, and eventually their ability to act without counting the cost. The cults of Maelstraeus are as cold as his ledgers, but they are also among the most powerful networks in the world. Intrusions often take the form of a debt called early, a bargain that turns sour, or a competitor who offers better terms. Ideal for players who enjoy intrigue, leverage, and characters who always have an angle.",
+    "emphasizes": [
+      "Commerce as War: negotiation as combat, leverage as weapon",
+      "Debt as Identity: you are what you owe",
+      "Infernal Bargaining: Faustian pacts, soul_ledgers, cursed credit",
+      "The Ledger Never Closes: every profit is a future loss, every gift a future claim",
+      "Cold Calculation: empathy is inefficiency; kindness is a poor investment"
+    ]
+  },
+  "sample_adventure": {
+    "title": "The Interest That Never Sleeps",
+    "description": "A merchant prince has been found dead in his counting_house, his ledger burned to ash. But the debts he held did not die with him—they have been transferred to his creditors, and now the city's most powerful families are at war over who owes what. The party is hired to untangle the accounts, but the deeper they dig, the more they find that Maelstraeus himself has a stake in the outcome—and he always collects his interest.",
+    "quote": "A deal is never even. The scales tilt; the Merchant smiles. All debts come due."
+  },
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

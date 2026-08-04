@@ -1,0 +1,16 @@
+{
+  "id": "weapon-mastery",
+  "name": "Weapon Mastery",
+  "cost": 5,
+  "tier": "major",
+  "activation": "passive",
+  "category": "combat",
+  "useLimit": "passive",
+  "prerequisites": "Melee 2+",
+  "effect": "+2d Melee",
+  "effects": [
+    { "type": "die_bonus", "scope": "skill", "key": "melee", "amount": 2 }
+  ],
+  "description": "You've drilled with your chosen weapon until it feels like an extension of your arm. Applies to all Melee rolls, not just a single named weapon — keep it simple at the table.",
+  "source": "guide"
+}

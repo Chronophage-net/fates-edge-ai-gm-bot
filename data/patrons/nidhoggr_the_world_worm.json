@@ -1,0 +1,276 @@
+{
+  "id": "nidhoggr-world-worm",
+  "type": "patron",
+  "title": "Nidhoggr — The World-Worm",
+  "subtitle": "Dreaming Antiquity",
+  "version": "1.0.0",
+  "tags": [
+    "ancient",
+    "earth",
+    "memory",
+    "stone",
+    "secrets",
+    "time",
+    "archaeology",
+    "relic-hunter",
+    "forgotten",
+    "cyclical"
+  ],
+  "lore": {
+    "description": "Beneath stone and sleep coils Nidhoggr, who gnaws at the roots of time. He does not speak quickly; he dreams in centuries. To press your ear to the earth is to risk drowning in the silence of eons. Yet for those who endure, he whispers truths long buried, memories fossilized in stone, and the slow inevitability of cycles unbroken. His followers walk in twilight between dream and ruin, bearing the weight of all that has been.",
+    "followers": "Nidhoggr is the worm who knows the metaphorical bones of the earth – the secret history hidden in every mountain, the forgotten temple beneath the marketplace, the name of the king whose tomb was erased from every chronicle. He is the patron of archaeologists, relic hunters, and those who understand that the past is never truly dead. It is merely sleeping.",
+    "names_across_regions": {
+      "aeler": "The World-Worm, whose dreaming coils are said to cause earthquakes",
+      "mistlands": "The Fog-Memory, the presence that makes the mist remember what the living forget",
+      "ykrul": "The Bone-Reader, whose whispers guide shamans to ancient burial grounds"
+    },
+    "quote": "Press your ear to the earth and wait. If it remembers you, it will answer."
+  },
+  "domain_focus": [
+    "Ancient Knowledge: forgotten histories, buried truths, ancestral memory",
+    "Stone Communion: speaking with earth, reading geological memory, stone lore",
+    "Temporal Perception: seeing echoes of the past, prophetic dreams, slow time",
+    "Cyclical Power: seasonal magic, ritual timing, patience as virtue",
+    "Relic Hunter: unearthing the past, preserving what was lost"
+  ],
+  "runekeeper_options": {
+    "thiasos": {
+      "description": "A Runekeeper sworn to Nidhoggr does not bind a familiar of quick flesh – they bind a companion of deep time and patience. Their Thiasos is a small creature of stone and slowness: a blind salamander that lives in caves and never ages, a fossilized beetle that occasionally twitches its legs, a snail whose shell records the layers of years, or a burrowing mole whose fur is always dusted with ancient soil.",
+      "care": "This creature requires no food, but it must spend at least an hour each day in contact with stone or earth (a cave, a grave, or a masonry wall). If neglected for a week, it becomes Compromised (it grows lethargic and its shell cracks, imposing –1 die on all Survival or Lore rolls involving ancient sites for its bearer until it is returned to stone)."
+    },
+    "codex": {
+      "description": "The Codex of Nidhoggr is never a fresh book. It may be a fossilized slab with impressions that change under moonlight, a bundle of slate tablets etched with runes that deepen with age, or a scroll of petrified leather that unrolls only when buried in soil.",
+      "upkeep": "Because Nidhoggr's truths are written in the language of deep time, the Codex requires upkeep: the Runekeeper must spend an hour each week burying it in earth (or placing it against ancient stone) and listening for the whisper that refreshes the Rites. If neglected, it becomes Compromised: the symbols fade (treat as Compromised until re-interred)."
+    }
+  },
+  "patrons_gift": {
+    "name": "The Stone's Memory",
+    "description": "Once per scene as an action, a Runekeeper of Nidhoggr may touch a held item (weapon, tool, or archaeological find) and whisper a word of deep memory.",
+    "effect": "For the rest of the scene, the item grants +1 die to Lore or Investigation rolls when examining ancient objects or sites, and the first time each scene the bearer would fail to notice a trap or hidden feature in a ruin, they may reroll the check (the stone whispers a warning).",
+    "cost": "After the scene, the user marks +1 Obligation to Nidhoggr."
+  },
+  "rites": [
+    {
+      "name": "Rite of the Whispering Stone",
+      "tier": "Low",
+      "xp": 5,
+      "action": "Scene",
+      "range": "Touch/Self",
+      "resist": "Yes",
+      "tags": ["TRUTH", "DREAM", "TIME"],
+      "materials": "Dust from weathered stone or an ancient artifact; or water poured over ancient stone, consumed ritually.",
+      "effect": "Choose one: Stone's Whisper: Stone reveals one hidden fact about its history. Gain +1 die to Lore about this object's origin and purpose. Dreaming Deep: Enter a brief trance to witness echoes of local history. Ask one specific question about past events here.",
+      "push_it": "Stone: The vision includes sensory details from the past. Dream: The vision reveals additional context or hidden connections; mark 1 SB (Clubs). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Stone-Sleeper's Murmur",
+      "tier": "Standard",
+      "xp": 8,
+      "action": "Scene",
+      "range": "Zone",
+      "resist": "No",
+      "tags": ["TRUTH", "AREA", "TIME"],
+      "materials": "An ear pressed to bedrock or an ancient structure.",
+      "effect": "Read accumulated memories in stone. Ask up to 3 questions about significant events witnessed here. Creates a 6-segment Memory Resonance timer.",
+      "push_it": "One memory unfolds with perfect clarity. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of Awakened Chronicle",
+      "tier": "Standard",
+      "xp": 9,
+      "action": "Extended",
+      "range": "Zone",
+      "resist": "No",
+      "tags": ["TRUTH", "AREA", "TIME", "BOOST"],
+      "materials": "A chalk spiral, four local stones, an hour of meditation.",
+      "effect": "The area replays ghostly echoes of a chosen past event. All witnesses gain +2 dice to Investigate/Recall related checks. Creates an 8-segment Echo Stability timer.",
+      "push_it": "View events from multiple perspectives. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "Extended action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the World-Worm's Dream",
+      "tier": "High",
+      "xp": 13,
+      "action": "Extended",
+      "range": "Zone",
+      "resist": "Yes",
+      "tags": ["TRUTH", "DREAM", "TIME", "PROPHECY"],
+      "materials": "A circle of ancient stones, a night of vigil under stars.",
+      "effect": "Access deep geological memory. Ask 3 questions about ancient history or receive a prophetic dream. Creates a 10-segment Deep Dream timer.",
+      "push_it": "Gain temporary skill mastery (+3 dice to one historical action). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "Extended action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Unburied Past",
+      "tier": "High",
+      "xp": 14,
+      "action": "Extended",
+      "range": "Large Zone",
+      "resist": "No",
+      "tags": ["TRUTH", "AREA", "TIME", "PRESSURE"],
+      "materials": "Stones from three ancient sites, the blood of a history-keeper (a scholar, a chronicler, or a witness).",
+      "effect": "Overlay a past reality onto the present location. Ruins partially reform, ghostly figures manifest. Allies gain +2 dice to Lore/Investigate; any modern technology or recent construction suffers –2 dice to function within the zone.",
+      "push_it": "The effect lasts until the next lunar cycle; start a Temporal Instability [8] timer. When it fills, the past and present become dangerously entangled – a location may become inaccessible or a relic may begin to fade. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "Extended action.",
+      "duration": "Scene."
+    }
+  ],
+  "cantors_and_cults": {
+    "cantors": {
+      "name": "The Cantor's Song",
+      "description": "A Cantor of Nidhoggr sings in geological time – melodies so slow that a single note may stretch across a minute, harmonics that evoke the groan of shifting plates. Their voice is used to lull a city to sleep so that its buried secrets may be heard, or to sing a stone back to its ancient shape. Nidhoggr's Cantors are often found in deep caves, whispering to stalactites that remember the dawn of the world."
+    },
+    "cult": {
+      "name": "The Cult of the Sleeping Stone",
+      "description": "Nidhoggr's cults gather in places where time feels heavy: ancient barrows, fossil beds, the roots of mountains. The Sleeping Stone is a fellowship of dreamers, historians, and those who have learned that the world remembers everything – and sometimes forgets on purpose. A ritual of the Cult involves each member pressing their ear to a stone and listening for a full hour in absolute silence. When one of them hears a whisper, they speak it aloud, and the stone's memory is recorded. Their creed is carved into a single erratic boulder that moves about the landscape once a century: 'What is buried is not lost. What is forgotten is only waiting.' Outsiders are welcome to listen, but they must bring a stone from their homeland and leave it behind."
+    }
+  },
+  "witchcraft": {
+    "name": "The Art of Stone Memory",
+    "description": "A witch who walks with Nidhoggr is a fossil-scribe or stone-dreamer – one who crafts with the memory of the earth. Their magic works through the materials of deep time: a piece of amber that preserves a forgotten scene, a lens ground from a fossilized shell that magnifies the past, or a bowl carved from a meteorite that holds visions of the sky when the world was young.",
+    "color": "#5a6a5a",
+    "lore": "The stone-dreamer learns that the earth remembers everything. Every footstep, every burial, every broken promise is etched into the stone. They do not create—they uncover. Their craft is the art of listening, and they practice it with every stone they touch.",
+    "signature_rite": "Rite of the Whispering Stone",
+    "quote": "Press your ear to the earth and wait. If it remembers you, it will answer.",
+    "tools": {
+      "eye_of_world_worm": {
+        "name": "The Eye of the World-Worm",
+        "description": "A smooth, oval stone, polished to a mirror sheen, with a spiral fossil embedded at its center. Once per session, the witch may hold the stone to their eye and look at any ancient structure, fossil, or relic. For the next scene, they see the last significant event that occurred near that object as a ghostly overlay – the mason carving the keystone, the dinosaur stepping into the tar pit, the priest sealing the tomb. The vision is silent but detailed; the GM must describe one useful fact (e.g., 'the entrance was hidden behind a tapestry,' 'the fossil's tail points north'). The stone grows warm when it is ready to be used again."
+      }
+    },
+    "hedge_gifts": [
+      {
+        "name": "Echo of the Deep",
+        "xp": 2,
+        "description": "Once per scene, the witch may place a hand on a stone structure (a wall, a bridge, a cliff) and speak a single word. The stone 'repeats' the last word spoken in its presence by any creature – but the word is always in the voice of the last person who touched it, even if they are long dead. This can be used to identify the inhabitants of a ruin, or to frighten the superstitious."
+      }
+    ]
+  },
+  "monastic_tradition": {
+    "name": "Way of the Stone Dreamer",
+    "description": "Press your ear to the earth and wait. Monks of the Stone Dreamer tradition learn that the world remembers everything. They are patient, deliberate, and attuned to the deep rhythms of the earth. Their power lies not in speed but in endurance—they outlast their enemies, their debts, and their own mortality.",
+    "color": "#5a6a5a",
+    "prerequisites": "Wits 3+, Spirit 2+, Rite of the Whispering Stone or Cantor of Nidhoggr.",
+    "quote": "Press your ear to the earth and wait.",
+    "debt_resistant_frame": "The World-Worm dreams in centuries; debts are but a heartbeat. Monks of the Stone Dreamer gain +1 die to resist any magical debt or obligation that would bind them for a limited time – they simply wait it out, and the creditor's urgency crumbles like old stone. If they succeed, the obligation is delayed by one day per rank of the monk's Spirit (minimum one day).",
+    "techniques": {
+      "basic": {
+        "name": "Rooted Patience",
+        "xp": 4,
+        "effect": "When you stand still for one full exchange, gain +1 die to your next action (as the earth steadies you).",
+        "cost": "Passive",
+        "prereq": "Spirit 2+"
+      },
+      "advanced": {
+        "name": "Earth Whisper",
+        "xp": 8,
+        "effect": "+2 dice to commune with stone, read echoes, or interpret ancient sites.",
+        "cost": "1 Fatigue",
+        "prereq": "Tier II"
+      },
+      "master": {
+        "name": "World-Memory",
+        "xp": 12,
+        "effect": "Once per session, become a living archive for one scene: gain +3 dice to historical knowledge, and you may ask the GM one question about a forgotten event or debt. The answer is always true. After the scene, you gain a permanent Debt Scar (your eyes are flecked with gray, like granite) but you may also, once per arc, ignore the time limit on any obligation – you simply outwait it, and the creditor moves on to more impatient debtors.",
+        "cost": "Free (once per session)",
+        "prereq": "Tier III"
+      }
+    },
+    "corruption": [
+      {
+        "tier": 1,
+        "benefit": "Stone Sense: +1 die to detect ancient sites, hidden history, or geological features.",
+        "cost": "Temporal Drift: Speak in archaic patterns; –1 die to modern social interactions."
+      },
+      {
+        "tier": 2,
+        "benefit": "Memory Echo: Once/session, perfectly recall one historical fact as if witnessed.",
+        "cost": "Heavy Presence: 1 Fatigue in places with no history or recent construction."
+      },
+      {
+        "tier": 3,
+        "benefit": "Earth Whisper: +2 dice to commune with stone, read echoes, or interpret ancient sites.",
+        "cost": "Rooted: –1 die to actions requiring rapid movement or aerial maneuvers."
+      },
+      {
+        "tier": 4,
+        "benefit": "Dream Prophet: Once/scene, gain +1 die to actions tied to ancient mysteries.",
+        "cost": "Ancestral Haunting: Visions interrupt sleep; mark 1 SB if rest is disturbed."
+      },
+      {
+        "tier": 5,
+        "benefit": "Timeless Gaze: Once/session, witness distant past events through stone communion.",
+        "cost": "Geological Pace: –1 die to reactions requiring haste; act with deliberate slowness."
+      },
+      {
+        "tier": "6+",
+        "benefit": "World-Memory: Become a living archive for one scene (+3 dice to historical knowledge).",
+        "cost": "Time's Weight: Mark +2 Obligation; risk permanent Harm from temporal overload."
+      }
+    ]
+  },
+  "corruption": [
+    {
+      "tier": 1,
+      "benefit": "Stone Sense: +1 die to detect ancient sites, hidden history, or geological features.",
+      "cost": "Temporal Drift: Speak in archaic patterns; –1 die to modern social interactions."
+    },
+    {
+      "tier": 2,
+      "benefit": "Memory Echo: Once/session, perfectly recall one historical fact as if witnessed.",
+      "cost": "Heavy Presence: 1 Fatigue in places with no history or recent construction."
+    },
+    {
+      "tier": 3,
+      "benefit": "Earth Whisper: +2 dice to commune with stone, read echoes, or interpret ancient sites.",
+      "cost": "Rooted: –1 die to actions requiring rapid movement or aerial maneuvers."
+    },
+    {
+      "tier": 4,
+      "benefit": "Dream Prophet: Once/scene, gain +1 die to actions tied to ancient mysteries.",
+      "cost": "Ancestral Haunting: Visions interrupt sleep; mark 1 SB if rest is disturbed."
+    },
+    {
+      "tier": 5,
+      "benefit": "Timeless Gaze: Once/session, witness distant past events through stone communion.",
+      "cost": "Geological Pace: –1 die to reactions requiring haste; act with deliberate slowness."
+    },
+    {
+      "tier": "6+",
+      "benefit": "World-Memory: Become a living archive for one scene (+3 dice to historical knowledge).",
+      "cost": "Time's Weight: Mark +2 Obligation; risk permanent Harm from temporal overload."
+    }
+  ],
+  "playstyle_notes": {
+    "description": "Nidhoggr rewards patience, curiosity, and a reverence for the past. Followers excel as archaeologists, relic hunters, and scholars who uncover truths that others would leave buried. The corruption progression leads characters toward becoming living libraries of forgotten lore, but at the cost of connection to the present moment – and sometimes the loss of their own identity in the weight of ages. Intrusions often take the form of prophetic dreams that blur past and present, a relic that begins to speak, or a demand to return a stolen artifact to its proper grave. Ideal for players who love exploration, mystery, and the thrill of unearthing what was never meant to be found.",
+    "emphasizes": [
+      "Ancient Knowledge: the past is a resource, not a relic",
+      "Stone Communion: the earth remembers everything",
+      "Relic Hunting: every ruin is a story, every artifact a clue",
+      "Temporal Patience: some secrets take centuries to ripen",
+      "Metaphorical Bones: history is not dead – it is dreaming"
+    ]
+  },
+  "sample_adventure": {
+    "title": "The Whispering Vault",
+    "description": "Deep beneath the Aelerian foothills, a vault has been sealed for centuries. The miners who found it heard whispers in their sleep—a voice counting backward from nine. The local vent-prior believes it is Nidhoggr's attention, and the vault is a door to a memory that was never meant to be unearthed. The party must descend into the vault, uncover its secret, and decide whether to seal it again—or let the world remember what was buried.",
+    "quote": "The past is not dead. It is merely sleeping. And some doors, once opened, do not close."
+  },
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

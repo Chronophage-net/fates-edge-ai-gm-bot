@@ -1,0 +1,289 @@
+{
+  "id": "livaea_the_crimson_courtier",
+  "type": "patron",
+  "title": "Livaea — The Crimson Courtier",
+  "subtitle": "Seduction & Social Binding",
+  "version": "1.0.0",
+  "tags": [
+    "seduction",
+    "social_binding",
+    "desire",
+    "charm",
+    "intrigue",
+    "glamour",
+    "performance",
+    "manipulation",
+    "courtship",
+    "passion"
+  ],
+  "lore": {
+    "description": "In salons where laughter cuts deeper than daggers and promises bind tighter than chains, the Crimson Courtier reigns. She is the whisper behind the curtain, the smile that sells secrets, the velvet hand that closes a cage. Her servants are not conquerors but consorts, binding others through song, wit, and the perilous glamour of intimacy. Where Mab entangles through fae trickery, Livaea rules through allure, performance, and the hunger for connection. Livaea is a demon of seduction—not merely of the flesh, but of the will. She teaches that a desire willingly given is a leash willingly worn. Her followers learn to read the geometry of longing, to plant the seed of obsession with a glance, and to harvest the fruit of obligation when the heart is most vulnerable. She is the darker aspect of love: the possessiveness, the jealousy, the desperate need to be wanted. To serve her is to become the object of desire—and to pay the price of never being truly loved in return.",
+    "followers": "In the pleasure houses of Silkstrand, in the back rooms of Zakov's gambling dens, in the royal bedchambers of a dozen kingdoms, Livaea's influence is felt. Her cults are the Velvet Circle, whose members seal promises with a kiss and a drop of blood. Her witches are courtesans who poison with perfume, spies who seduce secrets from guarded lips, and consorts who bind noble hearts with whispered oaths of eternal devotion. To serve Livaea is to understand that every touch is a negotiation, every night a contract, and every lover a potential pawn.",
+    "signs": [
+      "A perfume that lingers long after the wearer has left",
+      "A blush that appears for no reason",
+      "A letter sealed with a kiss that burns when read"
+    ],
+    "quotes": [
+      "\"A promise sealed with desire is harder to break than any oath sworn in iron. When they want you, they will give you anything. When they need you, they will give you everything.\"",
+      "\"Every bond is a thread. Every thread can be tied—or cut. But a cut thread leaves a scar that never fades.\"",
+      "\"The velvet glove hides the iron hand. The smile that sells secrets is the same that closes the cage.\""
+    ]
+  },
+  "domain_focus": [
+    "Seductive Arts: charm, persuasion, reading desire, emotional manipulation",
+    "Social Binding: oaths of affection, courtly promises, emotional debts",
+    "Performance and Glamour: dance, music, appearance enhancement, the weapons of the stage and salon",
+    "Court Intrigue: gossip, reputation, the velvet knives of the drawing_room"
+  ],
+  "runekeeper_options": {
+    "thiasos": {
+      "description": "A Runekeeper sworn to Livaea does not bind a creature of claw or fang—they bind a companion of allure and intimacy. Their Thiasos is a small being of desire: a white cat that curls around the necks of sleeping lovers, a red songbird that mimics the sigh of a satisfied paramour, a small spider that weaves its web in the shape of a kiss, or a moth whose wings are dusted with a powder that makes the heart race.",
+      "care": "This creature requires no food, but it must be given a token of desire (a lock of hair, a love letter, a single tear) each day. If neglected for a week, it becomes Compromised (its pheromone dust becomes cloying, imposing –1 die on all Sway rolls involving genuine emotion for its bearer until offered a fresh token of passion)."
+    },
+    "codex": {
+      "description": "The Codex of Livaea is never a book of dry ink. It may be a velvet_bound journal whose pages stain with the reader's own lipstick, a collection of love letters that rewrite themselves each night, a sheaf of pressed flowers whose petals hold whispered secrets, or a mirror that shows not the face but the heart's most secret desire.",
+      "upkeep": "Because Livaea's truths are written in desire, the Codex requires upkeep: the Runekeeper must spend an hour each week whispering a confession of longing into its pages, or the Rites stored there fade (treat as Compromised until re_seduced)."
+    }
+  },
+  "patrons_gift": {
+    "name": "Word of Yearning",
+    "description": "Once per scene as an action, a Runekeeper of Livaea may touch a held item (weapon, tool, or garment) and breathe a single word of yearning.",
+    "effect": "For the rest of the scene, the item grants +1 die to Sway or Performance rolls, and the first time each scene the bearer makes eye contact with a target they wish to charm, the target must test Resolve (DV 3) or be captivated (suffer –1 die to resist the bearer's next social action).",
+    "cost": "After the scene, the user marks +1 Obligation to Livaea."
+  },
+  "rites": [
+    {
+      "name": "Rite of the Velvet Whisper",
+      "tier": "Low",
+      "xp": 4,
+      "action": "Scene",
+      "range": "Near",
+      "resist": "Yes",
+      "tags": ["MANIPULATION", "BOOST", "SECRET"],
+      "materials": "Silk ribbon touched to lips, or a single strand of hair from a lover's head.",
+      "effect": "Your private words carry irresistible charm. Gain +1 die to Sway one target in confidential conversation. The target feels a faint flush of warmth; they are more likely to remember you fondly.",
+      "push_it": "The target feels compelled to share a secret in return (a hidden desire, a shameful memory). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Shared Cup",
+      "tier": "Low",
+      "xp": 5,
+      "action": "Scene",
+      "range": "Touch",
+      "resist": "No",
+      "tags": ["BOND", "BOOST", "READ"],
+      "materials": "Shared wine, tea, or perfume; a cup from which both drink.",
+      "effect": "Create a temporary bond of intimacy. Both parties gain +1 die when aiding each other socially. The bond is faintly sensual – a lingering scent, a remembered caress.",
+      "push_it": "The bond deepens to emotional empathy; both sense each other's moods but suffer –1 die to deceive each other. The bond may persist as a faint ache until the next dawn. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Binding Vow",
+      "tier": "Standard",
+      "xp": 8,
+      "action": "Scene",
+      "range": "Near",
+      "resist": "Yes",
+      "tags": ["VOW", "BOND", "DEBT", "FEAR"],
+      "materials": "Token exchanged between parties – a ring, a lock of hair, a signed letter, or a knotted ribbon from a lover's garter.",
+      "effect": "Forge a magical promise of affection or loyalty. Both gain +1 Effect when cooperating; breach inflicts 1 SB (Hearts) and a phantom kiss of betrayal (the oathbreaker feels a cold emptiness where warmth once was). Create a 6_segment Vow Strength timer.",
+      "push_it": "Breach also causes a visible social stain (a blush that will not fade, a nervous tic, or an inability to look certain people in the eye). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Timer: 6 segments."
+    },
+    {
+      "name": "Rite of the Courtesan's Guise",
+      "tier": "Standard",
+      "xp": 7,
+      "action": "Scene",
+      "range": "Self",
+      "resist": "No",
+      "tags": ["GLAMOUR", "BOOST", "SOCIAL"],
+      "materials": "Perfume or cosmetics applied ritually, preferably while humming a tune of longing.",
+      "effect": "Assume perfect social poise and an aura of magnetic attraction. Gain +2 dice to Sway or Performance in refined settings. Your presence lingers in the memory like a half_remembered dream.",
+      "push_it": "Become the social centerpiece; all attention focuses on you with +1 Effect. Those who meet your gaze may feel a shiver of desire (Resolve DV 2 to ignore). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Crimson Court",
+      "tier": "High",
+      "xp": 14,
+      "action": "Extended",
+      "range": "Zone",
+      "resist": "No",
+      "tags": ["AREA", "COMMAND", "FEAR", "GLAMOUR", "DEBT"],
+      "materials": "A throne draped in scarlet, an assembled court (real or imagined), and a drop of blood from each participant mixed into wine – or a single tear of jealousy.",
+      "effect": "You become the social sovereign of the zone. For the scene: (a) You gain +1 Effect on all social rolls, and opponents suffer –1 die. (b) Anyone who attempts to deceive you must test Resolve (DV 4) or reveal a hidden desire – the one thing they crave most in the dark. (c) Allies who drink from the shared cup regain 1 Fatigue (the wine of adoration, warm and sweet on the tongue). Start a 10_segment Court Dominion timer; when it fills, you may declare one irrevocable social judgment (exile, scandal, or a binding oath of fealty) that the zone's inhabitants will enforce for one month. Those who defy it feel a phantom longing for your approval.",
+      "push_it": "Newcomers must test Resolve (DV 4) or become briefly devoted – they will follow one simple social command, such as 'introduce me to your patron' or 'whisper your lover's name in my ear.' Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "Extended action.",
+      "duration": "Timer: 10 segments (Court Dominion)."
+    }
+  ],
+  "cantors_and_cults": {
+    "cantors": {
+      "name": "The Cantor's Song",
+      "description": "A Cantor of Livaea sings in harmonies of longing – melodies that linger in the ear like a half_remembered lover's sigh. Their voice is used to sway a court's opinion, to bind a marriage with a ballad, or to seduce a secret from a guarded heart. Livaea's Cantors are prized in every noble house, and feared by those who know that a beautiful song can be a leash – and that the leash can be tightened at the climax of the verse."
+    },
+    "cult": {
+      "name": "The Cult of the Velvet Circle",
+      "description": "Livaea's cults are not hidden in basements; they meet in salons, tea houses, and private galleries. The Velvet Circle appears to be a social club – but its members trade in secrets, favors, and carefully curated introductions. A ritual of the Velvet Circle involves each member drinking from a shared cup (the Crimson Chalice) while naming a desire they wish to weave into reality – a lover, a title, a revenge. The cup is refilled with wine and a single drop of blood from each petitioner; those who drink become bound to the Circle – they cannot betray a member without suffering a visible blush of shame (1 Fatigue, no roll). The most devoted mark themselves with a small red tattoo hidden beneath clothing – a stylised kiss or a coiled serpent. Their creed is embroidered on its seal: 'Every bond is a thread. Every thread can be tied – or cut. But a cut thread leaves a scar that never fades.' Outsiders are welcome as guests, but they will leave with a new debt, a new ally, or a new enemy. Rarely all three."
+    }
+  },
+  "witchcraft": {
+    "name": "The Art of Social Weaving",
+    "description": "A witch who walks with Livaea is a gossip_scribe or perfume_smith – one who crafts social reality from threads of rumor, scent, and gesture. Their magic works with the tools of influence: a letter that cannot be forgotten, a perfume that makes the wearer irresistibly charming, or a needle that sews a promise into a dress's hem. Their tools are never hammers; they use quills, vials, and the subtle art of a well_timed whisper. In Ecktoria, a Livaean witch might be a letter_writer for the powerful, sealing each envelope with a kiss that binds the reader's loyalty. In Aeler, a True_Mason might carve a keystone that makes every handshake struck beneath it unbreakable.",
+    "color": "#8b0000",
+    "lore": "The gossip_scribe's path is the art of desire. They learn that every glance is a negotiation, every touch a contract, and every lover a potential pawn. To serve Livaea is to understand that the velvet glove hides the iron hand—and that the smile that sells secrets is the same that closes the cage.",
+    "signature_rite": "Rite of the Velvet Whisper",
+    "quote": "A promise sealed with desire is harder to break than any oath sworn in iron.",
+    "tools": {
+      "gossip_quill": {
+        "name": "The Gossip Quill",
+        "description": "A silver_tipped quill that writes in ink that darkens when a secret is true. Once per session, the witch may write a single sentence about a person they have met. That sentence becomes 'known' to the local gossip network within a day, affecting the target's reputation (GM determines effect: –1 die to social rolls, a new ally, an enemy, etc.). The witch cannot control how the rumor spreads, only that it spreads – and that a rumor about desire is the hardest to kill."
+      }
+    },
+    "hedge_gifts": [
+      {
+        "name": "Velvet Glove",
+        "xp": 2,
+        "description": "Once per scene, the witch may touch a person's hand (or a letter they have written) and speak a single word of command ('trust,' 'forget,' 'desire'). For the next hour, the target feels a mild but genuine inclination toward that emotion or action – not enough to override self_preservation, but enough to grant the wielder +1 die on social rolls against them. The touch leaves no mark, but the memory of it may haunt the target's dreams."
+      },
+      {
+        "name": "The Perfume of Longing",
+        "xp": 3,
+        "description": "Once per session, you may apply a perfume that lingers for the scene. Any creature within Near that smells it must test Resolve (DV 3) or suffer –1 die to resist your Sway or Performance actions."
+      },
+      {
+        "name": "The Kiss of Memory",
+        "xp": 4,
+        "description": "When you kiss someone (on the lips, cheek, or hand), you may imprint a single, fleeting emotion on them – longing, regret, desire, or trust. This emotion lasts for the scene and grants +1 die to any social roll that exploits it. The target may resist with Resolve (DV 3)."
+      }
+    ]
+  },
+  "monastic_tradition": {
+    "name": "The Way of the Crimson Consort",
+    "description": "A promise sealed with desire is harder to break than any oath sworn in iron. Crimson Consorts understand that desire is a leash willingly worn. They are masters of charm, persuasion, and the geometry of longing, planting seeds of obsession with a glance and harvesting the fruit of obligation when the heart is most vulnerable. To walk this path is to become the object of desire—and to pay the price of never being truly loved in return.",
+    "color": "#8b0000",
+    "prerequisites": "Presence 3+, Spirit 2+, Rite of the Velvet Whisper or Cantor of Livaea.",
+    "quote": "A promise sealed with desire is harder to break than any oath sworn in iron.",
+    "debt_resistant_frame": "Desire leaves no ledger. Monks of the Crimson Consort gain +1 die to resist any magical debt or obligation that would compel them to betray a confidence or break a promise of intimacy. If they succeed, the creditor feels a flash of longing so intense they forget what they were owed.",
+    "techniques": {
+      "basic": {
+        "name": "Velvet Whisper",
+        "xp": 4,
+        "effect": "Your private words carry irresistible charm. Gain +1 die to Sway one target in confidential conversation.",
+        "cost": "1 Fatigue",
+        "prereq": "Presence 2+"
+      },
+      "advanced": {
+        "name": "Binding Vow",
+        "xp": 8,
+        "effect": "Forge a magical promise of affection or loyalty. Both gain +1 Effect when cooperating; breach inflicts 1 SB (Hearts). Create a 6_segment Vow Strength timer.",
+        "cost": "1 Boon",
+        "prereq": "Spirit 3+"
+      },
+      "master": {
+        "name": "Sovereign Allure",
+        "xp": 12,
+        "effect": "Once per session, dominate a social gathering; all who meet your eyes must test Resolve (DV 5) or be captivated. You may also sever one emotional bond or promise of intimacy, releasing both parties from its hold.",
+        "cost": "After the scene, you gain a permanent Desire Scar (a faint red mark on your lips). You may ignore one obligation that would require you to reject a genuine advance—Livaea's mark ensures you are never truly unattached.",
+        "prereq": "Tier III"
+      }
+    },
+    "corruption": [
+      {
+        "tier": 1,
+        "benefit": "Silver Tongue: +1 die to Persuade or Sway in intimate settings.",
+        "cost": "Need for Attention: –1 die when acting unnoticed or ignored."
+      },
+      {
+        "tier": 2,
+        "benefit": "Heart's Insight: Once/scene, +2 dice to detect hidden desires or motives.",
+        "cost": "Emotional Drain: Mark 1 Fatigue if denied meaningful social connection or physical affection."
+      },
+      {
+        "tier": 3,
+        "benefit": "Enchanting Presence: Allies in Near gain +1 die to social actions.",
+        "cost": "Rivalry Magnet: Often attract envy or social competition – others sense your allure and covet it."
+      },
+      {
+        "tier": 4,
+        "benefit": "Velvet Command: Once/session, issue a compelling suggestion that feels like a lover's whisper (Resist DV 4).",
+        "cost": "Temptation's Pull: –1 die to resist appealing offers, especially those that promise intimacy or adoration."
+      },
+      {
+        "tier": 5,
+        "benefit": "Court Network: Once/session, call on contacts for information – they remember the taste of your kiss.",
+        "cost": "Glamour Dependence: –1 die when isolated from social circles; you hunger for the warmth of another's gaze."
+      },
+      {
+        "tier": "6+",
+        "benefit": "Sovereign Allure: Once/session, dominate a social gathering; all who meet your eyes must test Resolve (DV 5) or be captivated.",
+        "cost": "Addicted to Adoration: Mark +2 Obligation; suffer if denied praise or touch. Your lovers leave you, and you leave them, but the hunger never fades."
+      }
+    ]
+  },
+  "corruption": [
+    {
+      "tier": 1,
+      "benefit": "Silver Tongue: +1 die to Persuade or Sway in intimate settings.",
+      "cost": "Need for Attention: –1 die when acting unnoticed or ignored."
+    },
+    {
+      "tier": 2,
+      "benefit": "Heart's Insight: Once/scene, +2 dice to detect hidden desires or motives.",
+      "cost": "Emotional Drain: Mark 1 Fatigue if denied meaningful social connection or physical affection."
+    },
+    {
+      "tier": 3,
+      "benefit": "Enchanting Presence: Allies in Near gain +1 die to social actions.",
+      "cost": "Rivalry Magnet: Often attract envy or social competition – others sense your allure and covet it."
+    },
+    {
+      "tier": 4,
+      "benefit": "Velvet Command: Once/session, issue a compelling suggestion that feels like a lover's whisper (Resist DV 4).",
+      "cost": "Temptation's Pull: –1 die to resist appealing offers, especially those that promise intimacy or adoration."
+    },
+    {
+      "tier": 5,
+      "benefit": "Court Network: Once/session, call on contacts for information – they remember the taste of your kiss.",
+      "cost": "Glamour Dependence: –1 die when isolated from social circles; you hunger for the warmth of another's gaze."
+    },
+    {
+      "tier": "6+",
+      "benefit": "Sovereign Allure: Once/session, dominate a social gathering; all who meet your eyes must test Resolve (DV 5) or be captivated.",
+      "cost": "Addicted to Adoration: Mark +2 Obligation; suffer if denied praise or touch. Your lovers leave you, and you leave them, but the hunger never fades."
+    }
+  ],
+  "playstyle_notes": {
+    "description": "Livaea excels in social manipulation, courtly intrigue, and the darker arts of seduction. Followers become masters of persuasion, binding others through desire, jealousy, and obligation. The corruption progression leads toward a social virtuoso who cannot function without admiration and connection – a velvet cage of their own making. Ideal for players who enjoy social combat, political maneuvering, and characters who wield influence and longing as their primary weapons. As with all mature themes, use Lines & Veils to ensure the table's comfort.",
+    "emphasizes": [
+      "Seduction as Power: charm, allure, reading desire",
+      "Social Binding: oaths of affection, emotional debts, possessiveness",
+      "Court Intrigue: gossip, reputation, the weapons of the drawing_room",
+      "Darker Love: obsession, jealousy, the hunger to be adored",
+      "Performance and Glamour: beauty as a weapon, appearance as armor"
+    ]
+  },
+  "sample_adventure": {
+    "title": "The Kiss That Binds",
+    "description": "A powerful noble has fallen under the spell of a mysterious suitor who seems to have appeared from nowhere. The noble's family hires the party to investigate—but the suitor is a follower of Livaea, and every attempt to expose them only makes the noble more devoted. The party must navigate a web of desire, jealousy, and social manipulation to break the hold before the noble is bound forever—or learn that some loves are not meant to be broken.",
+    "quote": "A promise sealed with desire is harder to break than any oath sworn in iron. When they want you, they will give you anything. When they need you, they will give you everything."
+  },
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

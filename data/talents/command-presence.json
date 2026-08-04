@@ -1,0 +1,17 @@
+{
+  "id": "command-presence",
+  "name": "Command Presence",
+  "cost": 4,
+  "tier": "major",
+  "activation": "passive",
+  "category": "social",
+  "useLimit": "passive",
+  "prerequisites": "Presence 2+",
+  "effect": "+1d Sway | +1d Performance",
+  "effects": [
+    { "type": "die_bonus", "scope": "skill", "key": "sway", "amount": 1 },
+    { "type": "die_bonus", "scope": "skill", "key": "performance", "amount": 1 }
+  ],
+  "description": "You lead a room without needing to raise your voice. A signature talent for officers, faction leaders, and anyone who needs a crowd to fall in line.",
+  "source": "guide"
+}

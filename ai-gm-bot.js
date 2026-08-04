@@ -221,7 +221,11 @@ const BASE_SYSTEM_PROMPT = (process.env.SYSTEM_PROMPT ||
   'Use this naturally at real scene breaks -- not every exchange, only when this beat of the story has actually concluded.\n\n' +
 
   'Whenever you introduce a new named character who isn\'t already established, use [NPC CREATE "Name" "Role" "Motivation"] once, inline, the first time they appear (e.g. right after describing them). ' +
-  'This registers them so they can be referenced consistently later. This tag produces no visible output -- keep narrating normally around it.\n\n' +
+  'This registers them so they can be referenced consistently later, AND automatically drops a token for them onto the tabletop\'s grid combat map -- you don\'t need a separate tag for that part. This tag produces no visible output -- keep narrating normally around it.\n\n' +
+
+  'During a fight, as combatants move around, use [TOKEN MOVE "Name" col row] to reposition their token on the grid map (col/row are small integers, e.g. 0-10 -- think of it as "a few cells left" or "closing to melee", not exact coordinates; approximate is fine). ' +
+  'Use [TOKEN REMOVE "Name"] if a specific combatant is taken off the board mid-fight (flees, is dragged away, teleports out) without the whole encounter ending. ' +
+  'Neither tag produces visible output. You do not need to place a token for a character who already has one (e.g. via [NPC CREATE]) -- [TOKEN MOVE] on an existing name just repositions it. When [ENCOUNTER RESOLVE] fires, enemy tokens are cleared automatically -- no manual cleanup needed.\n\n' +
 
   'Use timers to build pressure; when a timer fills, advance the scene or introduce a complication.\n\n' +
 

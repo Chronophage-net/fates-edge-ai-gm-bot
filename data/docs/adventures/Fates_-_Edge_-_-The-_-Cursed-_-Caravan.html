@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cursed Caravan — Folk Horror on the Pale Causeway</title>
+    <style>
+        :root {
+            --bg1: #0d0d1a;
+            --bg2: #1a1a2e;
+            --bg3: #252540;
+            --bg4: #2f2f4a;
+            --text: #e8e8f0;
+            --text2: #b8b8c8;
+            --text3: #8888a0;
+            --gold: #c9a84c;
+            --gold-hover: #d4b85c;
+            --border: #333355;
+            --red: #c0392b;
+            --green: #27ae60;
+            --blue: #2980b9;
+            --purple: #8e44ad;
+            --orange: #e67e22;
+            --radius: 8px;
+            --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: var(--bg1);
+            color: var(--text);
+            font-family: var(--font);
+            padding: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4, h5 { color: var(--gold); margin: 0.5rem 0 0.3rem; }
+        h1 { font-size: 1.8rem; border-bottom: 2px solid var(--gold); padding-bottom: 0.3rem; }
+        h2 { font-size: 1.4rem; border-bottom: 1px solid var(--border); padding-bottom: 0.2rem; }
+        h3 { font-size: 1.1rem; }
+        h4 { font-size: 0.95rem; color: var(--text); }
+        a { color: var(--gold); text-decoration: none; }
+        .panel {
+            background: var(--bg2);
+            border-radius: var(--radius);
+            padding: 0.6rem 0.8rem;
+            border: 1px solid var(--border);
+            margin: 0.5rem 0;
+        }
+        .panel-gold { border-left: 4px solid var(--gold); }
+        .panel-red { border-left: 4px solid var(--red); }
+        .panel-blue { border-left: 4px solid var(--blue); }
+        .panel-green { border-left: 4px solid var(--green); }
+        .panel-purple { border-left: 4px solid var(--purple); }
+        .panel-orange { border-left: 4px solid var(--orange); }
+        .badge {
+            display: inline-block;
+            padding: 0.05rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.65rem;
+            font-weight: 600;
+        }
+        .badge-gold { background: var(--gold); color: #1a1400; }
+        .badge-red { background: var(--red); color: #fff; }
+        .badge-green { background: var(--green); color: #fff; }
+        .badge-blue { background: var(--blue); color: #fff; }
+        .badge-purple { background: var(--purple); color: #fff; }
+        .badge-orange { background: var(--orange); color: #fff; }
+        .badge-gray { background: var(--bg4); color: var(--text3); }
+        .flex { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
+        .flex-between { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.3rem; }
+        .text-muted { color: var(--text3); }
+        .text-gold { color: var(--gold); }
+        .text-sm { font-size: 0.85rem; }
+        .text-xs { font-size: 0.7rem; }
+        .mt-1 { margin-top: 0.5rem; }
+        .mb-1 { margin-bottom: 0.5rem; }
+        .gap-1 { gap: 0.3rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+        @media (max-width: 600px) { .grid-2 { grid-template-columns: 1fr; } }
+        .scene-card {
+            background: var(--bg3);
+            border-radius: var(--radius);
+            padding: 0.4rem 0.6rem;
+            margin: 0.3rem 0;
+            border-left: 3px solid var(--gold);
+        }
+        .scene-card.completed { opacity: 0.6; border-left-color: var(--green); }
+        .scene-card .scene-title { font-weight: 600; font-size: 0.9rem; }
+        .scene-card .scene-desc { font-size: 0.8rem; color: var(--text2); }
+        .scene-card .scene-horror { border-left-color: var(--purple); background: rgba(142, 68, 173, 0.05); }
+        .timer-bar {
+            background: var(--bg4);
+            border-radius: 4px;
+            height: 6px;
+            overflow: hidden;
+            flex: 1;
+            min-width: 60px;
+        }
+        .timer-bar-fill { height: 100%; border-radius: 4px; transition: width 0.3s; }
+        .npc-card, .loc-card {
+            background: var(--bg3);
+            border-radius: var(--radius);
+            padding: 0.3rem 0.5rem;
+            margin: 0.15rem 0;
+            border-left: 2px solid var(--gold);
+        }
+        .npc-card .npc-name { font-weight: 600; font-size: 0.85rem; }
+        .npc-card .npc-role { font-size: 0.7rem; color: var(--text3); }
+        .npc-card .npc-motivation { font-size: 0.75rem; color: var(--text2); }
+        .creature-stats {
+            background: var(--bg4);
+            border-radius: var(--radius);
+            padding: 0.3rem 0.5rem;
+            margin: 0.2rem 0;
+            font-size: 0.8rem;
+            border-left: 2px solid var(--red);
+        }
+        .toc { background: var(--bg3); border-radius: var(--radius); padding: 0.5rem 0.8rem; border: 1px solid var(--border); }
+        .toc a { color: var(--text2); display: block; padding: 0.1rem 0; font-size: 0.85rem; }
+        .toc a:hover { color: var(--gold); }
+        hr { border: none; border-top: 1px solid var(--border); margin: 0.5rem 0; }
+        .timers-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.3rem; }
+        blockquote {
+            border-left: 3px solid var(--purple);
+            padding-left: 1rem;
+            margin: 0.5rem 0;
+            color: var(--text2);
+            font-style: italic;
+        }
+        .whisper-box {
+            background: rgba(142, 68, 173, 0.08);
+            border: 1px solid var(--purple);
+            border-radius: var(--radius);
+            padding: 0.3rem 0.6rem;
+            margin: 0.2rem 0;
+            font-size: 0.8rem;
+            color: var(--text2);
+        }
+        .whisper-box strong { color: var(--purple); }
+        .outcome-table { font-size: 0.8rem; border-collapse: collapse; width: 100%; margin: 0.2rem 0; }
+        .outcome-table td { padding: 0.1rem 0.3rem; vertical-align: top; }
+        .outcome-table .outcome-label { color: var(--gold); font-weight: 600; }
+        .creature-name { color: var(--red); font-weight: 600; }
+    </style>
+</head>
+<body>
+
+<h1>🐪 The Cursed Caravan</h1>
+<p style="color:var(--text2);margin-bottom:1rem;">
+    <span class="badge badge-gold">Tier II</span>
+    <span class="badge badge-blue">3 Sessions</span>
+    <span class="badge badge-purple">Folk Horror</span>
+    <span class="badge badge-gray">Author: Nicholas A. Gasper</span>
+</p>
+<p style="color:var(--text2);margin-bottom:0.5rem;">
+    A merchant caravan has been cursed while crossing the Pale Causeway. Supplies rot, animals die, and strange omens appear. The players must escort the caravan to safety while uncovering a conspiracy involving a powerful entity that feeds on suffering. Folk horror and survival with multiple moral resolutions.
+</p>
+
+<blockquote>
+    "The Pale Causeway remembers every footstep. It also remembers every soul that never reached the other side."
+    — Dusana of the Raven Road
+</blockquote>
+
+<!-- Table of Contents -->
+<div class="toc">
+    <strong style="color:var(--gold);">📑 Table of Contents</strong>
+    <a href="#act-1">Act I: The Cursed Caravan</a>
+    <a href="#act-2">Act II: Into the Blackwood</a>
+    <a href="#act-3">Act III: The Cursed Crossroads</a>
+    <a href="#npcs">👤 Key NPCs</a>
+    <a href="#locations">📍 Key Locations</a>
+    <a href="#factions">🏛️ Factions</a>
+    <a href="#timers">⏱️ Campaign Timers</a>
+    <a href="#bestiary">🐉 Bestiary</a>
+</div>
+
+<hr>
+
+<!-- ===== ACT I ===== -->
+<h2 id="act-1">⚔️ Act I: The Cursed Caravan</h2>
+<p><span class="badge badge-gold">Tier II</span> <span class="badge badge-blue">1 Session</span></p>
+<p style="color:var(--text2);">Players encounter the caravan and experience the curse's immediate effects. They must decide to help and begin investigating the source.</p>
+
+<div class="scene-card">
+    <div class="scene-title">🛑 The Desperate Merchant</div>
+    <div class="scene-desc">The party finds the caravan stalled on the road. Merchant Aldric Thorne offers a reward for help. The curse manifests as supplies rot and animals die.</div>
+    <div class="flex text-xs mt-1">
+        <span class="badge badge-gray">Timer: Curse Escalation [8]</span>
+        <span class="badge badge-gray">Timer: Caravan Supplies [6]</span>
+        <span class="badge badge-orange">Encounter: First Signs (DV 3, Controlled)</span>
+    </div>
+    <div class="outcome-table mt-1">
+        <tr><td class="outcome-label">Clean:</td><td>You stabilize the immediate crisis and gain the merchant's trust.</td></tr>
+        <tr><td class="outcome-label">Partial:</td><td>You save some supplies, but the curse shows its teeth.</td></tr>
+        <tr><td class="outcome-label">Miss:</td><td>Animals die and supplies rot further. Tick Curse Escalation +1 and Caravan Supplies -1.</td></tr>
+    </div>
+</div>
+
+<div class="scene-card scene-horror">
+    <div class="scene-title">🧙 The Hedge-Witch's Warning</div>
+    <div class="scene-desc">Hedge-Witch Mira Blackwood approaches in a tavern, warning of the dark force moving along the trade routes.</div>
+    <div class="flex text-xs mt-1">
+        <span class="badge badge-orange">Encounter: Gaining Knowledge (DV 4, Controlled)</span>
+    </div>
+    <div class="outcome-table mt-1">
+        <tr><td class="outcome-label">Clean:</td><td>You learn that the curse is tied to a sealed chest and can be contained with folk rituals.</td></tr>
+        <tr><td class="outcome-label">Partial:</td><td>You gain some information, but she demands a favor.</td></tr>
+        <tr><td class="outcome-label">Miss:</td><td>She clams up, sensing you are not ready for the truth.</td></tr>
+    </div>
+</div>
+
+<hr>
+
+<!-- ===== ACT II ===== -->
+<h2 id="act-2">🌲 Act II: Into the Blackwood</h2>
+<p><span class="badge badge-gold">Tier II</span> <span class="badge badge-blue">1 Session</span></p>
+<p style="color:var(--text2);">The party seeks help from the hedge-witch and faces the growing influence of the Hungering Dark.</p>
+
+<div class="scene-card scene-horror">
+    <div class="scene-title">📦 The Chest Investigation</div>
+    <div class="scene-desc">The party examines the mysterious sealed cargo item that is the source of the curse.</div>
+    <div class="flex text-xs mt-1">
+        <span class="badge badge-gray">Timer: Curse Escalation [8]</span>
+        <span class="badge badge-gray">Timer: Hungering Dark's Strength [6]</span>
+        <span class="badge badge-red">Encounter: Examining the Chest (DV 5, Desperate)</span>
+    </div>
+    <div class="outcome-table mt-1">
+        <tr><td class="outcome-label">Clean:</td><td>You discover the chest contains a bound entity and learn how to perform a containment ritual.</td></tr>
+        <tr><td class="outcome-label">Partial:</td><td>You learn the nature of the curse but trigger a minor backlash. Tick Curse Escalation +1.</td></tr>
+        <tr><td class="outcome-label">Miss:</td><td>The chest lashes out, causing Harm 1 to the party and advancing Hungering Dark's Strength +2.</td></tr>
+    </div>
+</div>
+
+<div class="scene-card">
+    <div class="scene-title">🕯️ The Protective Ritual</div>
+    <div class="scene-desc">Using the hedge-witch's knowledge, the party performs a protective ritual to resist the curse.</div>
+    <div class="flex text-xs mt-1">
+        <span class="badge badge-blue">Encounter: Ritual of Warding (DV 4, Controlled)</span>
+    </div>
+    <div class="outcome-table mt-1">
+        <tr><td class="outcome-label">Clean:</td><td>You gain Folk Protection Tokens (salt, red thread, butter-left charm) and reduce the Curse Escalation by 1.</td></tr>
+        <tr><td class="outcome-label">Partial:</td><td>The ritual works but consumes materials and leaves you exposed.</td></tr>
+        <tr><td class="outcome-label">Miss:</td><td>The ritual fails, and the entity takes notice. Tick Hungering Dark's Strength +1.</td></tr>
+    </div>
+</div>
+
+<hr>
+
+<!-- ===== ACT III ===== -->
+<h2 id="act-3">⚡ Act III: The Cursed Crossroads</h2>
+<p><span class="badge badge-gold">Tier II</span> <span class="badge badge-blue">1 Session</span></p>
+<p style="color:var(--text2);">The final confrontation at the Cursed Crossroads, where the party must choose between containment, bargain, or destruction.</p>
+
+<div class="scene-card scene-horror">
+    <div class="scene-title">🌑 The Confrontation</div>
+    <div class="scene-desc">The party faces the Hungering Dark's strongest influence at the crossroads.</div>
+    <div class="flex text-xs mt-1">
+        <span class="badge badge-gray">Timer: Curse Escalation [8]</span>
+        <span class="badge badge-red">Encounter: The Hungering Dark (DV 6, Desperate)</span>
+        <span class="badge badge-red">Encounter: The Cursed Child (DV 6, Desperate)</span>
+    </div>
+    <div class="outcome-table mt-1">
+        <tr><td class="outcome-label">Clean:</td><td>You successfully contain the curse through ritual or destroy the entity. Resolution achieved.</td></tr>
+        <tr><td class="outcome-label">Partial:</td><td>You strike a bargain with the entity, buying safety at a cost.</td></tr>
+        <tr><td class="outcome-label">Miss:</td><td>The entity escapes, and the curse spreads further. The caravan is lost.</td></tr>
+    </div>
+</div>
+
+<hr>
+
+<!-- ===== NPCS ===== -->
+<h2 id="npcs">👤 Key NPCs</h2>
+<div class="grid-2">
+    <div class="npc-card">
+        <div class="npc-name">Merchant Aldric Thorne</div>
+        <div class="npc-role">Caravan Leader</div>
+        <div class="npc-motivation">🎯 Save his livelihood and family reputation</div>
+        <div class="text-xs text-muted">Knows the chest was given to him by a stranger who warned him not to open it.</div>
+    </div>
+    <div class="npc-card">
+        <div class="npc-name">Hedge-Witch Mira Blackwood</div>
+        <div class="npc-role">Local Supernatural Practitioner</div>
+        <div class="npc-motivation">🎯 Protect the community from supernatural threats</div>
+        <div class="text-xs text-muted">Knows more than she reveals; she has personal stake in the curse.</div>
+    </div>
+    <div class="npc-card">
+        <div class="npc-name">Margravine Xara Rothari</div>
+        <div class="npc-role">Regional Ruler</div>
+        <div class="npc-motivation">🎯 Maintain order and authority</div>
+        <div class="text-xs text-muted">She is aware of the curse but sees it as a tool to control the region.</div>
+    </div>
+</div>
+
+<hr>
+
+<!-- ===== LOCATIONS ===== -->
+<h2 id="locations">📍 Key Locations</h2>
+<div class="grid-2">
+    <div class="loc-card"><strong>The Pale Causeway</strong> — The last high road that survives the spring thaws. Crossings are perilous, and the road seems to shift and change.</div>
+    <div class="loc-card"><strong>Blackwood Hollow</strong> — A charcoal burner's clearing with a hedge-witch's dwelling, protected by strong wards.</div>
+    <div class="loc-card"><strong>The Cursed Crossroads</strong> — Meeting point of multiple roads, a place of choice and consequence where the Hungering Dark's influence is strongest.</div>
+</div>
+
+<hr>
+
+<!-- ===== FACTIONS ===== -->
+<h2 id="factions">🏛️ Factions</h2>
+<div class="panel panel-green">
+    <strong>The Merchant's Caravan</strong> — Survive and reach safety. The party is hired to protect them.
+</div>
+<div class="panel panel-red">
+    <strong>The Hungering Dark</strong> — Feed on suffering and break free of its prison. The party must confront or contain it.
+</div>
+
+<hr>
+
+<!-- ===== TIMERS ===== -->
+<h2 id="timers">⏱️ Campaign Timers</h2>
+<div class="timers-grid">
+    <div class="panel panel-red">
+        <div style="display:flex;justify-content:space-between;font-size:0.8rem;">
+            <strong>🌑 Curse Escalation</strong>
+            <span>0/8</span>
+        </div>
+        <div class="timer-bar"><div class="timer-bar-fill" style="width:0%;background:var(--red);"></div></div>
+        <div class="text-xs text-muted">How quickly the curse worsens. Advances when the party fails to contain it or when the entity feeds.</div>
+    </div>
+    <div class="panel panel-orange">
+        <div style="display:flex;justify-content:space-between;font-size:0.8rem;">
+            <strong>📦 Caravan Supplies</strong>
+            <span>0/6</span>
+        </div>
+        <div class="timer-bar"><div class="timer-bar-fill" style="width:0%;background:var(--orange);"></div></div>
+        <div class="text-xs text-muted">Depletes as supplies rot. When empty, the caravan cannot continue.</div>
+    </div>
+    <div class="panel panel-purple">
+        <div style="display:flex;justify-content:space-between;font-size:0.8rem;">
+            <strong>🌀 Hungering Dark's Strength</strong>
+            <span>0/6</span>
+        </div>
+        <div class="timer-bar"><div class="timer-bar-fill" style="width:0%;background:var(--purple);"></div></div>
+        <div class="text-xs text-muted">Increases when the entity gains power through fear and suffering.</div>
+    </div>
+</div>
+
+<hr>
+
+<!-- ===== BESTIARY ===== -->
+<h2 id="bestiary">🐉 Bestiary</h2>
+<div class="creature-stats">
+    <div class="creature-name">The Hungering Dark</div>
+    <span class="badge badge-gold">Tier IV</span>
+    <span class="badge badge-purple">Outsider</span>
+    <span class="badge badge-red">Harm 6</span>
+    <div class="text-xs text-muted">An ancient entity that feeds on suffering, despair, and life force. It spreads its curse through manipulation, emotion, and possession.</div>
+    <div class="text-xs text-muted mt-1"><strong>SB Spends:</strong> 1 – Whisper of Despair (target gains 1 Fatigue and must test Resolve or mark Dread); 2 – Grip of the Curse (all enemies in Near zone suffer -1 die to actions for one exchange); 3 – Manifest Hunger (deal Harm 2 to all in zone and advance Curse Escalation by 1).</div>
+</div>
+
+<div class="creature-stats">
+    <div class="creature-name">Mistwraith</div>
+    <span class="badge badge-gold">Tier III</span>
+    <span class="badge badge-purple">Undead</span>
+    <span class="badge badge-red">Harm 3</span>
+    <div class="text-xs text-muted">Secrets made flesh; they feed on awareness and fear. Appear where the party hesitates or falters.</div>
+    <div class="text-xs text-muted mt-1"><strong>SB Spends:</strong> 1 – Ethereal Touch (target loses 1 Fatigue and gains Condition: Haunted).</div>
+</div>
+
+<div class="creature-stats">
+    <div class="creature-name">Shadewalker</div>
+    <span class="badge badge-gold">Tier III</span>
+    <span class="badge badge-purple">Undead</span>
+    <span class="badge badge-red">Harm 4</span>
+    <div class="text-xs text-muted">Corpse-puppets bound in root and bone. Slow, relentless, territorial.</div>
+    <div class="text-xs text-muted mt-1"><strong>SB Spends:</strong> 1 – Relentless Advance (ignore one point of Fatigue and gain +1 die to next attack).</div>
+</div>
+
+<hr>
+
+<div style="font-size:0.75rem;color:var(--text3);text-align:center;padding:1rem 0;">
+    The Cursed Caravan — A Fate's Edge Adventure<br>
+    © Nicholas A. Gasper — For use with the Fate's Edge RPG
+</div>
+
+</body>
+</html>

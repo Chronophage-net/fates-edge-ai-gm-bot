@@ -1,0 +1,16 @@
+{
+  "id": "keen-senses",
+  "name": "Keen Senses",
+  "cost": 2,
+  "tier": "minor",
+  "activation": "passive",
+  "category": "investigation",
+  "useLimit": "passive",
+  "prerequisites": "",
+  "effect": "+1d Investigation",
+  "effects": [
+    { "type": "die_bonus", "scope": "skill", "key": "investigation", "amount": 1 }
+  ],
+  "description": "You notice what others miss — a stray thread, a too-quiet room, a face that doesn't belong. This bonus is always on; it never needs to be activated or spent.",
+  "source": "guide"
+}

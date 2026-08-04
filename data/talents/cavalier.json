@@ -1,0 +1,16 @@
+{
+  "id": "cavalier",
+  "name": "Cavalier",
+  "cost": 6,
+  "tier": "major",
+  "activation": "passive",
+  "category": "movement",
+  "useLimit": "passive",
+  "prerequisites": "Requires: mounted War Mount asset",
+  "effect": "+2d Melee when moving Near→Far on a mount",
+  "effects": [
+    { "type": "die_bonus", "scope": "skill", "key": "melee", "amount": 2 }
+  ],
+  "description": "You fight best in the saddle, striking as you close distance. Matches the mechanical shorthand already used in the War Mount asset write-up.",
+  "source": "wiki"
+}

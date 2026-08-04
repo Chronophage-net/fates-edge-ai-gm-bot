@@ -1,0 +1,326 @@
+{
+  "id": "lucky-jack-lord-thieves",
+  "type": "patron",
+  "title": "Lucky Jack — The Lord of Thieves",
+  "subtitle": "Luck & The Heist",
+  "version": "1.0.0",
+  "tags": [
+    "luck",
+    "heist",
+    "theft",
+    "gambling",
+    "debt",
+    "underworld",
+    "rogue",
+    "planning"
+  ],
+  "lore": {
+    "description": "Lucky Jack was once a mortal — a thief so skilled that even the gods took notice. He stole a coin from the Hollow's own pocket, and the Hollow laughed. 'You are clever,' it said. 'But cleverness is a debt. One day, I will collect.' Jack has been collecting luck ever since. He is the Unspent Coin, the Magpie King, the patron of urchins, beggars, and thieves who plan their work and work their plan. His followers are not murderers — they are professionals. They know that the greatest heist is the one that leaves no trace, no victims, and no debts. Yet every stroke of luck is a loan, and Jack's interest rates are legendary. When he comes to collect, you will wish you had never met him.",
+    "followers": "Among the peoples of Fate's Edge, Lucky Jack is known by many names. In Silkstrand, he is the Cut Purse's Blessing, whispered by pickpockets who know that a moment's distraction is worth more than a year's labor. In Vhasia, he is the Gorget-Breaker, a patron of disgraced knights who have turned to thievery. In Zakov, he is the Tide-That-Eats-The-Shore, a slow, patient consumption that reshapes coastlines. In the Brass Coast, he is the Freedman's Luck, invoked by escaped slaves who steal to survive. Wherever a lock is picked, a purse is cut, or a plan comes together at the last possible second, Lucky Jack is already there — tipping his cap and counting the interest.",
+    "quote": "Luck is not a gift. It is a loan. Pay it forward, or pay it dearly. The coin that never spends is the debt that never dies."
+  },
+  "domain_focus": [
+    "The Heist: planning, execution, and the perfect getaway",
+    "Luck as Resource: borrowing fortune, repaying obligation, the gamble that pays off",
+    "The Unpayable Debt: every favor must be repaid; every stroke of luck is a loan with interest",
+    "The Underworld: gutters, rooftops, and the spaces between laws"
+  ],
+  "runekeeper_options": {
+    "thiasos": {
+      "description": "A Runekeeper sworn to Lucky Jack does not bind a creature of hearth and home. Their Thiasos is a small creature of luck and observation: a magpie that collects shiny objects and knows every hiding place, a mouse that nests in counting-houses and nibbles the corners of unpaid bills, a spider that weaves webs in the shape of a question mark, or a cricket that chirps only when fortune is about to turn.",
+      "care": "This creature requires no food, but it must witness a successful theft or a clever deception each day. If neglected for a week, it becomes Compromised (it grows listless and its predictions turn sour, imposing –1 die on all Subterfuge and Stealth rolls for its bearer until they pull off a successful heist)."
+    },
+    "codex": {
+      "description": "The Codex of Lucky Jack is never a book of prayers. It is a stolen ledger, a floor plan of a place you have never robbed, or a collection of coins from failed heists.",
+      "upkeep": "Because luck resists being written down, the Codex requires upkeep: the Runekeeper must spend an hour each week adding a new entry — a plan, a sketch, a note on a mark's habits — or the Rites stored there become stale (treat as Compromised until you case a new location)."
+    }
+  },
+  "patrons_gift": {
+    "name": "Jack's Luck",
+    "description": "Once per scene as an action, a Runekeeper of Lucky Jack may touch a held item (weapon, tool, or a coin) and whisper a word of luck.",
+    "effect": "For the rest of the scene, the item grants +1 die to Subterfuge or Stealth, and the first time each scene the bearer would roll a 1 on a roll involving deception or theft, they may reroll that die.",
+    "cost": "After the scene, the user marks +1 Obligation to Lucky Jack."
+  },
+  "rites": [
+    {
+      "name": "Rite of the Lucky Coin",
+      "tier": "Low",
+      "xp": 4,
+      "action": "Instant",
+      "range": "Self",
+      "resist": "No",
+      "tags": ["LUCK", "BOOST", "DEBT"],
+      "materials": "A coin that has been in your pocket for at least a day.",
+      "effect": "Spend 1 Boon to reroll one die that came up 1. You must keep the new result. If the reroll is also a 1, the GM gains 2 SB instead of 1 — the luck has turned against you.",
+      "push_it": "Reroll two dice instead of one, but you must keep the second result. Cost: Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Instant."
+    },
+    {
+      "name": "Rite of the Clever Hand",
+      "tier": "Low",
+      "xp": 5,
+      "action": "Scene",
+      "range": "Self",
+      "resist": "No",
+      "tags": ["STEALTH", "DEXTERITY", "TRICK"],
+      "materials": "A piece of string tied in a simple knot.",
+      "effect": "Gain +2 dice on a single Subterfuge, Craft, or Sleight of Hand roll. If you fail, the GM gains 1 SB as your hand slips at the worst moment.",
+      "push_it": "Extend the bonus to one ally within Near. Cost: Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Quick Exit",
+      "tier": "Low",
+      "xp": 4,
+      "action": "Instant",
+      "range": "Self",
+      "resist": "No",
+      "tags": ["ESCAPE", "MOVEMENT", "LUCK"],
+      "materials": "A handful of dust or sand, thrown over your shoulder.",
+      "effect": "When you would be caught or cornered, you may reroll one failed escape roll. If you succeed, the GM gains 1 SB (your escape was too close).",
+      "push_it": "Also gain +1 Position on your next action. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Instant."
+    },
+    {
+      "name": "Rite of the Plan That Never Fails",
+      "tier": "Standard",
+      "xp": 8,
+      "action": "Scene",
+      "range": "Zone",
+      "resist": "No",
+      "tags": ["PLANNING", "BOOST", "FATE", "DEBT"],
+      "materials": "A map, a floor plan, or a detailed description of the target.",
+      "effect": "Spend a scene planning a heist. During the execution, all rolls that are part of the plan gain +2 dice. However, any unexpected complication (GM spends SB) doubles its severity. Create a 6-segment Heist Timer.",
+      "push_it": "The plan is so good it accounts for one unexpected complication — the GM cannot spend SB on that specific type of complication for the remainder of the scene. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Crowd's Distraction",
+      "tier": "Standard",
+      "xp": 7,
+      "action": "Scene",
+      "range": "Near",
+      "resist": "No",
+      "tags": ["SOCIAL", "STEALTH", "TRICK"],
+      "materials": "A coin tossed into a crowd, or a loud noise made at the right moment.",
+      "effect": "Create a distraction that affects all observers in Near range. Gain +2 dice to any Stealth or Subterfuge action taken during the distraction. The distraction lasts one exchange.",
+      "push_it": "The distraction lasts for the full scene. Cost: Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Exchange."
+    },
+    {
+      "name": "Rite of the Unseen Hand",
+      "tier": "Standard",
+      "xp": 9,
+      "action": "Instant",
+      "range": "Touch",
+      "resist": "No",
+      "tags": ["STEALTH", "TRICK", "ACCESS"],
+      "materials": "A pair of gloves, or a small tool that has never been used for violence.",
+      "effect": "You may pick any one lock, disarm any one trap, or bypass any one guard within the current scene as if you had +2 dice. If you fail, the GM gains 2 SB (the trap resets, the guard notices).",
+      "push_it": "You may also silence any noise the action makes. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Instant."
+    },
+    {
+      "name": "Rite of the Magpie's Hoard",
+      "tier": "High",
+      "xp": 13,
+      "action": "Scene",
+      "range": "Self",
+      "resist": "No",
+      "tags": ["LUCK", "FATE", "DEBT", "BOOST"],
+      "materials": "A collection of nine stolen items, each from a different target.",
+      "effect": "You gain +2 dice to all rolls for the remainder of the session. However, Jack will demand repayment before the next session — you must complete a heist of at least 6 segments, or lose all accumulated Boons.",
+      "push_it": "The bonus becomes +3 dice. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "Extended action.",
+      "duration": "Session."
+    },
+    {
+      "name": "Rite of the Unpayable Debt",
+      "tier": "High",
+      "xp": 14,
+      "action": "Scene",
+      "range": "Near",
+      "resist": "Yes",
+      "tags": ["DEBT", "FATE", "CURSE", "COMMAND"],
+      "materials": "A single coin that has been in the hands of nine thieves.",
+      "effect": "You may demand one service from a creature who has accepted your help in the past. They must comply or gain a permanent Condition (Marked by Jack) that imposes –1 die on all luck-based rolls until they comply. The target may test Spirit + Resolve (DV 5) to resist.",
+      "push_it": "The service can be life-threatening. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "Extended action.",
+      "duration": "Campaign (once)."
+    }
+  ],
+  "cantors_and_cults": {
+    "cantors": {
+      "name": "The Cantor's Song",
+      "description": "A Cantor of Lucky Jack sings in working chants — rhythms that synchronize a crew's movements, melodies that calm a mark's suspicions, and harmonies that mask the sound of a lock turning. Their voice is used to coordinate a heist, to lull a guard into inattention, or to signal a getaway without a single word spoken aloud. A Cantor may learn any Basic Rite of Lucky Jack as a Song (Performance + Lore, resolves next turn). Corruption accumulates when they use their voice for a heist that leaves victims, rather than marks."
+    },
+    "cult": {
+      "name": "The Cult of the Unlucky Coin",
+      "description": "Lucky Jack's cults gather in places where thieves naturally congregate: taverns, rooftops, the back rooms of pawn shops, and the spaces beneath bridges where urchins sleep. The Unlucky Coin is not a secret society — it is a fraternity of professionals. A ritual of the Cult involves each member placing a single coin in a central pot, then telling a story of a heist that went wrong. The best story wins the pot; the loser must buy drinks for the circle. The coins are then melted down and reforged into a single Unlucky Coin that is passed to the most deserving thief of the season. Their creed is stamped on every coin they pass: 'Luck is not a gift. It is a loan. Pay it forward, or pay it dearly.' Outsiders are welcome to listen, but they must speak a single truth about a crime they have committed — or leave before the stories begin."
+    }
+  },
+  "witchcraft": {
+    "name": "The Art of the Lock and Coin",
+    "description": "A witch who walks with Lucky Jack is a lock-breaker or coin-turner — one who crafts the tools of the trade: a pick that never breaks, a coin that always lands heads, or a mask that makes the wearer forgettable. Their magic works through the materials of the underworld: a bent nail that opens any lock once, a scrap of silk that muffles the sound of footsteps, or a shard of glass that shows the guard's patrol route. In the Brass Coast, a Sidhi freedman might carry a Freedman's Knife that cuts only the chains of the enslaved, but a witch of Lucky Jack would instead carry a thief's coin that glows when a mark is worth the risk.",
+    "color": "#d4af37",
+    "lore": "The lock-breaker's path is the art of the perfect plan. They learn that every lock has a flaw, every guard has a blind spot, and every mark has a weakness. Lucky Jack teaches that the greatest heist is not the one that takes the most gold, but the one that leaves no trace and no victims. These witches are found in the shadows of every city, their hands stained with ink and their eyes always searching for the next mark.",
+    "signature_rite": "Rite of the Unseen Hand",
+    "quote": "Luck is not a gift. It is a loan. Pay it forward, or pay it dearly.",
+    "tools": {
+      "thiefs_coin": {
+        "name": "The Thief's Coin",
+        "description": "A worn copper coin, its face worn smooth by a thousand hands, its edge notched with nine marks. Once per session, the witch may flip the coin and call heads or tails. If they call correctly, they gain +2 dice on their next Subterfuge or Stealth roll. If they call incorrectly, the GM gains 2 SB as luck turns sour. The coin can also be used to bribe a minor official — the coin is accepted as good luck, and the official will look the other way once."
+      }
+    },
+    "hedge_gifts": [
+      {
+        "name": "The Magpie's Eye",
+        "xp": 4,
+        "description": "Once per scene, the witch may ask the GM one yes/no question about a target's weakness, habit, or hidden valuables. The GM must answer truthfully, but the answer may be cryptic (e.g., 'they sleep with their left hand under the pillow,' or 'they count their coins twice before locking the chest'). The witch gains +1 die on any roll that uses this information."
+      },
+      {
+        "name": "Quick Fingers",
+        "xp": 2,
+        "description": "You may pick a pocket or lift a small object as a free action once per scene. If you fail, the GM gains 1 SB."
+      },
+      {
+        "name": "The Unlocked Window",
+        "xp": 3,
+        "description": "When infiltrating a structure you have cased for at least an hour, ignore one security obstacle (locked door, patrolled corridor, guard dog) per session. Describe how you already prepared for it."
+      }
+    ]
+  },
+  "monastic_tradition": {
+    "name": "The Way of the Magpie Monk",
+    "description": "Monks of the Magpie Monk tradition embody Lucky Jack's philosophy of cleverness over strength. They move through the world like shadows, seeing every lock as a puzzle, every guard as a distraction, and every plan as a prayer. They are not fighters — they are professionals. They know that the greatest heist is the one that leaves no trace, no victims, and no debts. In the quiet of the monastery, they practice the art of the perfect plan, learning that the best way to avoid a debt is to be someone else when the collector arrives.",
+    "color": "#d4af37",
+    "prerequisites": "Wits 3+, Subterfuge 2+, Rite of the Lucky Coin or Cantor of Lucky Jack.",
+    "quote": "The plan is the prayer. The heist is the sacrament. The getaway is the blessing.",
+    "debt_resistant_frame": "Jack teaches that the best way to avoid a debt is to be someone else when the collector arrives. Monks of the Magpie Monk gain +1 die to resist any magical debt or obligation that would compel them to repay a favor or reveal a confidence. If they succeed, the creditor finds that the monk's signature is slightly wrong — the debt was never theirs to owe.",
+    "techniques": {
+      "basic": {
+        "name": "Sleight of Hand",
+        "xp": 4,
+        "description": "You may pick a pocket or lift a small object as a free action. If you fail, the GM gains 1 SB.",
+        "cost": "1 Boon",
+        "prereq": "Wits 3+"
+      },
+      "advanced": {
+        "name": "The Unseen Hand",
+        "xp": 8,
+        "description": "Pick one lock, disarm one trap, or bypass one guard as if you had +2 dice. The hand that cannot be seen cannot be stopped.",
+        "cost": "1 Boon",
+        "prereq": "Tier II, Subterfuge 3+"
+      }
+    },
+    "master_technique": {
+      "name": "The Unpayable Debt",
+      "xp": 12,
+      "description": "Once per session, you may demand one service from a creature who has accepted your help in the past. They must comply or gain a permanent Condition (Marked by Jack) that imposes –1 die on all luck-based rolls until they comply. After the scene, you gain a permanent Debt Scar — a coin-shaped mark on your palm, warm to the touch. You may ignore one forced obligation from Jack himself (the mark confuses the creditor), but the next time Jack appears, he will remember.",
+      "cost": "2 Fatigue and +1 Obligation to Lucky Jack",
+      "prereq": "Tier III, Wits 4+"
+    },
+    "corruption": [
+      {
+        "tier": 1,
+        "benefit": "Thief's Instinct: +1 die to Notice traps, hidden doors, and valuable objects.",
+        "cost": "Compulsive Gambler: Must take a risk when one is presented; –1 die to refuse a bet."
+      },
+      {
+        "tier": 2,
+        "benefit": "Lucky Break: Once/scene, treat a failed Subterfuge or Stealth roll as a success, but mark 1 SB (Hearts).",
+        "cost": "Debt-Blind: –1 die to recall any debt owed to you; Jack collects the interest."
+      },
+      {
+        "tier": 3,
+        "benefit": "Crowd's Eye: +2 dice to blend into crowds or find a mark in a busy place.",
+        "cost": "Restless Hands: –1 die to resist picking a pocket or taking a shiny object that is unguarded."
+      },
+      {
+        "tier": 4,
+        "benefit": "Unseen Step: Once/session, automatically succeed on one escape or evasion roll.",
+        "cost": "Marked by the Coin: A rival thief knows your face; the GM gains 1 SB per session to spend on their pursuit."
+      },
+      {
+        "tier": 5,
+        "benefit": "The Unspent Coin: Once/session, spend 1 Boon to ignore any one penalty from a debt or obligation — Jack has forgotten you owe.",
+        "cost": "The Interest Comes Due: Every time you use this benefit, mark 1 permanent Obligation to Jack."
+      },
+      {
+        "tier": "6+",
+        "benefit": "Magpie King's Mantle: Once/session, become the embodiment of luck for one scene. All allies within Near gain +2 dice to Subterfuge and Stealth; all enemies suffer –1 die to detect them.",
+        "cost": "The Hollow's Coin: Mark +3 Obligation. You can no longer refuse a heist — the plan is always there, waiting. You must attempt any theft that is presented to you, or suffer 1 Fatigue per day until you do. Your reflection shows a coin where your face should be."
+      }
+    ]
+  },
+  "corruption": [
+    {
+      "tier": 1,
+      "benefit": "Thief's Instinct: +1 die to Notice traps, hidden doors, and valuable objects.",
+      "cost": "Compulsive Gambler: Must take a risk when one is presented; –1 die to refuse a bet."
+    },
+    {
+      "tier": 2,
+      "benefit": "Lucky Break: Once/scene, treat a failed Subterfuge or Stealth roll as a success, but mark 1 SB (Hearts).",
+      "cost": "Debt-Blind: –1 die to recall any debt owed to you; Jack collects the interest."
+    },
+    {
+      "tier": 3,
+      "benefit": "Crowd's Eye: +2 dice to blend into crowds or find a mark in a busy place.",
+      "cost": "Restless Hands: –1 die to resist picking a pocket or taking a shiny object that is unguarded."
+    },
+    {
+      "tier": 4,
+      "benefit": "Unseen Step: Once/session, automatically succeed on one escape or evasion roll.",
+      "cost": "Marked by the Coin: A rival thief knows your face; the GM gains 1 SB per session to spend on their pursuit."
+    },
+    {
+      "tier": 5,
+      "benefit": "The Unspent Coin: Once/session, spend 1 Boon to ignore any one penalty from a debt or obligation — Jack has forgotten you owe.",
+      "cost": "The Interest Comes Due: Every time you use this benefit, mark 1 permanent Obligation to Jack."
+    },
+    {
+      "tier": "6+",
+      "benefit": "Magpie King's Mantle: Once/session, become the embodiment of luck for one scene. All allies within Near gain +2 dice to Subterfuge and Stealth; all enemies suffer –1 die to detect them.",
+      "cost": "The Hollow's Coin: Mark +3 Obligation. You can no longer refuse a heist — the plan is always there, waiting. You must attempt any theft that is presented to you, or suffer 1 Fatigue per day until you do. Your reflection shows a coin where your face should be."
+    }
+  ],
+  "playstyle_notes": {
+    "description": "Lucky Jack is the ideal patron for players who want to play a rogue, a thief, or a confidence artist — someone who solves problems with cleverness and timing, not just violence. His Rites reward planning, preparation, and the willingness to take risks. The cost is debt — every stroke of luck must be repaid, and Jack's interest rates are steep. Intrusions often take the form of a past heist catching up with you, a rival thief who has stolen your luck, or a debt you cannot pay — forcing you to choose between your freedom and your principles. Ideal for rogues, con artists, and any character who believes that the perfect plan is the only thing worth praying to.",
+    "emphasizes": [
+      "The Heist: planning, execution, and the perfect getaway",
+      "Luck as Resource: borrowing fortune, repaying obligation, the gamble that pays off",
+      "The Underworld: gutters, rooftops, and the spaces between laws",
+      "The Unpayable Debt: every favor must be repaid; every stroke of luck is a loan with interest",
+      "The Magpie's Hoard: the joy of a plan that comes together at the last second"
+    ]
+  },
+  "sample_adventure": {
+    "title": "The Unlucky Coin",
+    "description": "A member of the Unlucky Coin cult has been found dead, the Unlucky Coin missing from their hand. The cult is in chaos — without the coin, their rituals cannot continue, and they believe Jack has withdrawn his favor. The party must find the coin, discover who stole it, and decide whether to return it to the cult or keep it for themselves. But the coin is not just a symbol — it is a debt, and whoever carries it owes Jack a heist. The party must plan a heist to pay the debt, or face the consequences of Jack's interest.",
+    "quote": "The coin that never spends is the debt that never dies. Some debts are worth paying. Others are worth stealing."
+  },
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

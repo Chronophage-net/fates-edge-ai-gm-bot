@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  install-and-check:
+    name: Install & sanity-check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: npm ci
+        run: npm ci
+
+      - name: Syntax-check all JS files
+        run: |
+          set -e
+          find . -name "*.js" \
+            -not -path "./node_modules/*" \
+            -not -path "./data/*" \
+            -not -path "./campaigns/*" \
+            -print0 | xargs -0 -n1 node --check
+
+      - name: Verify drivers load
+        run: |
+          node -e "
+            const fs = require('fs');
+            const path = require('path');
+            const dir = path.join(process.cwd(), 'drivers');
+            for (const f of fs.readdirSync(dir)) {
+              if (!f.endsWith('.js')) continue;
+              try {
+                require(path.join(dir, f));
+                console.log('OK  ', f);
+              } catch (e) {
+                console.log('FAIL', f, '-', e.message);
+                process.exitCode = 1;
+              }
+            }
+          "

@@ -1,0 +1,289 @@
+{
+  "id": "morag_the_hag",
+  "type": "patron",
+  "title": "Morag the Hag",
+  "subtitle": "Faerie Bargains & Hidden Costs",
+  "version": "1.0.0",
+  "tags": [
+    "bargain",
+    "faerie",
+    "hidden_costs",
+    "debt",
+    "exchange",
+    "cunning",
+    "thresholds",
+    "hedge_witch",
+    "consequence",
+    "old_cleverness"
+  ],
+  "lore": {
+    "description": "In the hour between twilight and dawn, where borders thin and mortal cunning meets older cleverness, Morag sets her webs of bargain and consequence. She is the grandmother who offers exactly what you need, the forest crone with a perfect solution, the crossroads dweller who makes dreams come true—for a price that only reveals itself once the road bends back. Her wisdom is simple and sharp: every gift carries obligation, every kindness creates debt, and every wish must be paid in coin not named aloud. Morag is cruel, but not evil. She does not delight in suffering; she delights in the precision of a bargain perfectly struck. She will take your last coin and smile, but she will not cheat you—the terms were always there, written in thorn_scratch, waiting for you to read them. Her cruelty is the cruelty of the market, of the turning year, of a grandmother who knows that the child who burns their hand on the stove will not touch it again. Her bargains are never unfair—only incomplete. She grants what is promised; the true cost lies in what is unspoken, written in thorn_scratch, and due when the moon has turned thrice.",
+    "followers": "Among the peoples of Fate's Edge, Morag is the patron of hedges_witches, debt_collectors, and those who deal in the spaces between law and mercy. In Aelaerem, she is the Kettle_Crone, invoked before any serious bargain. In Viterra, she is the Crossroads Wife, whose thorn_marked stones mark the boundaries of hedge_courts. In Zakov, she is the Tide_Mother who sets the price for smuggled cargo. Wherever a promise is made and a price is hidden, Morag watches.",
+    "signs": [
+      "A thorn_marked stone at a crossroads",
+      "A knotted cord tied around a door handle",
+      "The feeling that a bargain was easier than it should have been"
+    ],
+    "quotes": [
+      "\"She gives you the gold, but not the weight it carries. She grants your heart's desire, but not the hunger it awakens. She answers your plea, but not the price that pleases her. In Morag's court, every 'yes' is a 'yes, but...'\"",
+      "\"What is freely given can never be reclaimed. What is bargained can always be renegotiated.\"",
+      "\"Every gift carries obligation. Every kindness creates debt. Every wish must be paid in coin not named aloud.\""
+    ]
+  },
+  "domain_focus": [
+    "Hidden Obligations: reading the unspoken costs in every bargain",
+    "Faerie Cunning: strict courtesy, sharp clauses, old_road law",
+    "Hearth_Way Wisdom: folk practice for spirits, thresholds, and natural justice",
+    "Consequential Magic: power that always arrives with strings attached"
+  ],
+  "runekeeper_options": {
+    "thiasos": {
+      "description": "A Runekeeper sworn to Morag does not bind a familiar of brute force. Their Thiasos is a small creature of cunning and patience: a gray mouse that nests in counting_houses, a raven that steals shiny objects and hoards them as bargaining chips, a garden spider that weaves its web in the shape of a contract, or a small black cat whose purr soothes contentious negotiators.",
+      "care": "This creature requires no food, but it must be given a small token of a bargain (a signed scrap, a broken seal, a strand of hair from a debtor) each week. If neglected for a week, it becomes Compromised (it hides things of value or tangles ledgers, imposing –1 die on all negotiation rolls for its bearer)."
+    },
+    "codex": {
+      "description": "The Codex of Morag is never a book written in plain ink. It may be a leather satchel of knotted cords, each knot representing a promise kept or broken; a slate tablet that only reveals its writing when a debt is paid; or a wooden spindle wrapped with thread dyed in three colors (white for truth, black for secret, red for blood).",
+      "upkeep": "Because Morag's truths are written in the spaces between words, the Codex requires upkeep: the Runekeeper must spend an hour each week reviewing all current bargains and knots, tightening those that hold and loosening those that have been fulfilled, or the Rites become uncertain (treat as Compromised until re_knotted)."
+    }
+  },
+  "patrons_gift": {
+    "name": "Hidden Clause",
+    "description": "Once per scene as an action, a Runekeeper of Morag may touch a held item (weapon, tool, or document) and whisper a hidden clause.",
+    "effect": "For the rest of the scene, the item grants +1 die to Sway or Insight rolls when negotiating, and the first time each scene the bearer would be deceived about the terms of a bargain, they may reroll the opposed check (the hidden cost reveals itself).",
+    "cost": "After the scene, the user marks +1 Obligation to Morag."
+  },
+  "rites": [
+    {
+      "name": "Rite of the Unfinished Promise",
+      "tier": "Low",
+      "xp": 4,
+      "action": "Scene",
+      "range": "Near/Touch",
+      "resist": "Yes",
+      "tags": ["BARGAIN", "BOOST", "DEBT", "FATE"],
+      "materials": "A half_written contract or a promise spoken but not sealed; or a token of good fortune from someone who recently succeeded.",
+      "effect": "Frame a bargain with an escape clause only you understand. Gain +1 die when the other party acts to fulfill their obligation; you may interpret ambiguous terms in your favor.",
+      "push_it": "Instead of the clause, you may borrow another's fresh luck: gain +2 dice on one roll that benefits from their good fortune, but the original bearer suffers misfortune later. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Speaking Knot",
+      "tier": "Standard",
+      "xp": 8,
+      "action": "Scene",
+      "range": "Near",
+      "resist": "Yes",
+      "tags": ["BIND", "DEBT", "FEAR", "FATE"],
+      "materials": "Cord or thread tied with counted knots while speaking the bargain.",
+      "effect": "Bind a promise with fae knots that tighten when broken. Both parties gain +1 die while keeping the bargain; breaking it escalates consequences (Harm 1, then Harm 2, then Curse).",
+      "push_it": "The knots grow willful and seek payment from the breaker's kin; mark +1 Obligation. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Threefold Exchange",
+      "tier": "Standard",
+      "xp": 7,
+      "action": "Scene",
+      "range": "Near",
+      "resist": "Yes",
+      "tags": ["TRADE", "DEBT", "BOOST", "FATE"],
+      "materials": "Three items of equal seeming value but different true worth.",
+      "effect": "Broker a trade where each party yields hidden value. All participants gain +1 die when the exchange benefits them; Morag claims the difference in true worth as her tithe.",
+      "push_it": "The exchange binds across generations; mark 1 SB (Spades) as ancestral debts stir. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Instant."
+    },
+    {
+      "name": "Rite of the Cauldron's Secret",
+      "tier": "High",
+      "xp": 12,
+      "action": "Extended",
+      "range": "Zone",
+      "resist": "Yes",
+      "tags": ["CRAFT", "HEAL", "DEBT", "FATE", "SACRIFICE"],
+      "materials": "A cauldron never yet empty, ingredients dearer than coin, and a willing gift of time.",
+      "effect": "Brew a solution to any problem, but the cauldron asks one more ingredient—one the brewer does not realize they are providing until too late (a memory, a name, a year of life).",
+      "push_it": "The remedy works perfectly but breeds dependence—users must return or suffer withdrawal. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "Extended action.",
+      "duration": "Instant (the solution's effect may be permanent)."
+    },
+    {
+      "name": "Rite of the Crossroads Court",
+      "tier": "High",
+      "xp": 14,
+      "action": "Extended",
+      "range": "Zone",
+      "resist": "Yes",
+      "tags": ["AREA", "BARGAIN", "DEBT", "FATE", "FEAR"],
+      "materials": "A true crossroads at twilight, offerings set to the four ways, and the tears of one who bargained thrice.",
+      "effect": "Convene Morag's court: all present must bargain. Each pact grants a marked boon and hides a cost that will ripen at the worst time (the GM notes the cost; it becomes due when dramatically appropriate).",
+      "push_it": "Judgments bind across realms and seasons; mark +2 Obligation and begin Entangled Fates [6]. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "Extended action.",
+      "duration": "Scene; the court's boons and debts may endure longer."
+    }
+  ],
+  "cantors_and_cults": {
+    "cantors": {
+      "name": "The Cantor's Song",
+      "description": "A Cantor of Morag sings in harmonies of the half_heard—melodies that seem to come from just over your shoulder, from a room you left, from a memory you forgot. Their voice is used to sweeten a bitter bargain, to make a debtor forget the interest rate until it is too late, or to call a crossroads spirit to witness an oath. Morag's Cantors are often found in marketplaces, singing the fine print into existence."
+    },
+    "cult": {
+      "name": "The Cult of the Tarnished Cauldron",
+      "description": "Morag's cults meet at crossroads, in root cellars, and around cauldrons that never cool. The Tarnished Cauldron is a fellowship of hedge_witches, debt_collectors, and those who have learned that every gift is a hook. A ritual of the Cult involves each member adding an ingredient to the cauldron (a hair, a coin, a written wish) while speaking a price they are willing to pay—a price that the cauldron remembers. Once per season, the cauldron's surface goes still, and it speaks a single sentence—the name of a debt that is about to come due, somewhere in the world. The cult members then argue over who will collect it. Their creed is written in chalk on the cauldron's belly: 'What is freely given can never be reclaimed. What is bargained can always be renegotiated.' Outsiders are welcome to bring a gift and ask a boon—but they will leave with a debt, and the cauldron will remember their voice."
+    }
+  },
+  "witchcraft": {
+    "name": "The Art of the Hag's Work",
+    "description": "A witch who walks with Morag is a knot_wife or cauldron_tender—one who crafts bargains into being with thread, iron, and simmering pot. Their magic works through the tools of the hedge: a needle that sews a promise into a hem, a pair of shears that cut an obligation cleanly (or not), or a ladle that stirs consequence into soup. In Aeler, a True_Mason might carve a 'bargain stone' at a bridge's midpoint, but a witch of Morag would instead tie a red thread around the keystone, binding every crossing into a silent contract. Their tools are never hammers; they use needles, shears, and the patient heat of a hearth.",
+    "color": "#2f4f2f",
+    "lore": "The knot_wife's path is the art of the bargain. They learn that every gift is a hook and every promise is a thread that can be pulled. To serve Morag is to understand that the true cost of a bargain is never paid at the time of the deal—it is paid when the moon has turned thrice.",
+    "signature_rite": "Rite of the Unfinished Promise",
+    "quote": "Every gift carries obligation. Every kindness creates debt.",
+    "tools": {
+      "bargain_needle": {
+        "name": "The Bargain Needle",
+        "description": "A needle of cold iron, its eye shaped like a knot. Once per session, the witch may sew a 'bargain seam' into a garment, a threshold, or a document. The seam is invisible to all but those who owe a debt to Morag. When the bargain is fulfilled (or broken), the thread loosens (or tightens). The witch may also use the needle to 'unpick' a broken promise, resetting a failed negotiation timer by 1 segment at the cost of 1 Fatigue."
+      }
+    },
+    "hedge_gifts": [
+      {
+        "name": "Cauldron's Whisper",
+        "xp": 4,
+        "description": "Once per scene, the witch may stir any pot or bowl of liquid (water, broth, wine) with a finger and speak a name. For the next hour, the liquid will 'remember' any promise or debt spoken over it. Drinking from the liquid grants the drinker +1 die to recall the terms of a bargain, or to detect if someone is lying about an obligation. The liquid tastes faintly of iron and hawthorn."
+      },
+      {
+        "name": "The Thorn_Mark",
+        "xp": 3,
+        "description": "You may carve a simple thorn_mark (three scratches) into a threshold (a door, a gate, a window) while speaking the name of a debtor. For the next day, any attempt by that debtor to cross the threshold without fulfilling their obligation suffers –1 die to all actions."
+      },
+      {
+        "name": "The Unspoken Clause",
+        "xp": 4,
+        "description": "Once per scene, when you are negotiating a deal, you may name a hidden term that was 'always there.' The target may test Resolve (DV 4) to notice the clause; on a failure, they accept it. The clause cannot be malicious (e.g., 'you owe me your soul'), but it can be disadvantageous (e.g., 'you will pay double if you fail')."
+      }
+    ]
+  },
+  "monastic_tradition": {
+    "name": "The Way of the Hag's Bargain",
+    "description": "Every gift carries obligation. Every kindness creates debt. Hag's Bargain monks understand that the world is a web of bargains and that the only way to survive is to read the fine print. They are negotiators, tricksters, and those who have learned that the true cost of a deal is never paid at the time of the bargain—it is paid when the moon has turned thrice.",
+    "color": "#2f4f2f",
+    "prerequisites": "Spirit 3+, Presence 2+, Rite of the Unfinished Promise or Cantor of Morag.",
+    "quote": "Every gift is a hook. Every promise is a thread that can be pulled.",
+    "debt_resistant_frame": "Morag's bargains are never unfair—only incomplete. Monks of the Hag's Bargain gain +1 die to resist any magical contract or obligation by finding the hidden clause or unspoken cost. If they succeed, the creditor's terms are revealed to be flawed, and the obligation is reduced by one tier.",
+    "techniques": {
+      "basic": {
+        "name": "Unfinished Promise",
+        "xp": 4,
+        "effect": "Frame a bargain with an escape clause only you understand. Gain +1 die when the other party acts to fulfill their obligation; you may interpret ambiguous terms in your favor.",
+        "cost": "1 Boon",
+        "prereq": "Presence 2+"
+      },
+      "advanced": {
+        "name": "Speaking Knot",
+        "xp": 8,
+        "effect": "Bind a promise with fae knots that tighten when broken. Both parties gain +1 die while keeping the bargain; breaking it escalates consequences (Harm 1, then Harm 2, then Curse).",
+        "cost": "1 Fatigue",
+        "prereq": "Tier II"
+      },
+      "master": {
+        "name": "Hag's Court",
+        "xp": 12,
+        "effect": "Once per session, arbitrate any bargain; your terms bind all parties. You may also find and exploit one hidden clause in a binding contract or oath, reducing or redirecting its obligation.",
+        "cost": "After the scene, you gain a permanent Bargain Scar (a faint thorn_mark on your tongue). You may ignore one obligation that would require you to keep a bargain you did not fully understand—the Hag's memory of the deal is sufficient.",
+        "prereq": "Tier III"
+      }
+    },
+    "corruption": [
+      {
+        "tier": 1,
+        "benefit": "Faerie Sight: +1 die to Notice hidden obligations or unspoken costs.",
+        "cost": "Bargain Sensitivity: –1 die when refusing offers or walking away; the urge to negotiate bites."
+      },
+      {
+        "tier": 2,
+        "benefit": "Cunning Exchange: Once/scene, propose a trade where you gain equal or greater value for lesser seeming payment.",
+        "cost": "Debt Awareness: Ever_counting ledgers of owed/owing; suffer Fatigue 1 in crowded markets."
+      },
+      {
+        "tier": 3,
+        "benefit": "Old_Road Wisdom: +2 dice when dealing with spirits, fae, or ancient powers.",
+        "cost": "Obligation Magnet: 'Fair trades' find you—each with costs not yet clear."
+      },
+      {
+        "tier": 4,
+        "benefit": "Bargain Mastery: Once/session, set terms so favorable that even the other party feels satisfied (for now).",
+        "cost": "Price Collector: Collect on at least one outstanding debt each session or suffer –1 die to social rolls."
+      },
+      {
+        "tier": 5,
+        "benefit": "Crossroads Power: Once/session, call on a crossroads where you bargained before.",
+        "cost": "Fate Entanglement: Your pacts snag your circles; –1 die to keep agreements purely personal."
+      },
+      {
+        "tier": "6+",
+        "benefit": "Hag's Court: Once/session, arbitrate any bargain; your terms bind all parties.",
+        "cost": "Debt Incarnate: Mark +3 Obligation; risk becoming a walking covenant, unable to act without minting new debts."
+      }
+    ]
+  },
+  "corruption": [
+    {
+      "tier": 1,
+      "benefit": "Faerie Sight: +1 die to Notice hidden obligations or unspoken costs.",
+      "cost": "Bargain Sensitivity: –1 die when refusing offers or walking away; the urge to negotiate bites."
+    },
+    {
+      "tier": 2,
+      "benefit": "Cunning Exchange: Once/scene, propose a trade where you gain equal or greater value for lesser seeming payment.",
+      "cost": "Debt Awareness: Ever_counting ledgers of owed/owing; suffer Fatigue 1 in crowded markets."
+    },
+    {
+      "tier": 3,
+      "benefit": "Old_Road Wisdom: +2 dice when dealing with spirits, fae, or ancient powers.",
+      "cost": "Obligation Magnet: 'Fair trades' find you—each with costs not yet clear."
+    },
+    {
+      "tier": 4,
+      "benefit": "Bargain Mastery: Once/session, set terms so favorable that even the other party feels satisfied (for now).",
+      "cost": "Price Collector: Collect on at least one outstanding debt each session or suffer –1 die to social rolls."
+    },
+    {
+      "tier": 5,
+      "benefit": "Crossroads Power: Once/session, call on a crossroads where you bargained before.",
+      "cost": "Fate Entanglement: Your pacts snag your circles; –1 die to keep agreements purely personal."
+    },
+    {
+      "tier": "6+",
+      "benefit": "Hag's Court: Once/session, arbitrate any bargain; your terms bind all parties.",
+      "cost": "Debt Incarnate: Mark +3 Obligation; risk becoming a walking covenant, unable to act without minting new debts."
+    }
+  ],
+  "playstyle_notes": {
+    "description": "Morag favors negotiators who read the said and the meant at once. She rewards courtesy kept, clauses counted, and solutions bought with clever coin. The cost is a life lived on ledgers: every boon with a braid, every kindness with a key. She is cruel, but not evil—she will not twist a bargain out of malice, but she will not warn you of the thorn hiding in the rose. That is your job. Intrusions often take the form of a past debt resurfacing, a hidden cost that comes due at the worst moment, or a bargain renegotiated by a third party who claims your original deal had a loophole. Ideal for negotiators, tricksters, and characters who understand that every gift is a hook.",
+    "emphasizes": [
+      "Faerie Bargaining: strict forms, sharp prices, safe exits",
+      "Hidden Costs: the string on every gift",
+      "Hearth_Way Wisdom: spirits, thresholds, and natural justice",
+      "Consequential Magic: boons that demand upkeep",
+      "Cruel Precision: the sharp joy of a perfectly balanced account"
+    ]
+  },
+  "sample_adventure": {
+    "title": "The Thorn That Was Not Seen",
+    "description": "A village has been cursed to suffer a strange blight—each household has lost something precious, but no one can agree on what. The party discovers that the village elder made a bargain with Morag years ago, trading the village's luck for a generation of peace. Now the debt is coming due, and Morag has come to collect. The party must negotiate with the Hag—or find a way to break a bargain that was never fully written.",
+    "quote": "She gives you the gold, but not the weight it carries. She grants your heart's desire, but not the hunger it awakens. In Morag's court, every 'yes' is a 'yes, but...'"
+  },
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

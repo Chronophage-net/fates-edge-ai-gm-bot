@@ -1,0 +1,149 @@
+name: Build, Publish & Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  packages: write
+
+env:
+  GHCR_REGISTRY: ghcr.io
+  IMAGE_NAME: fates-edge-ai-gm-bot
+
+jobs:
+  # ─── Package a source tarball + verify install/build ────────────
+  build:
+    name: Build & Package
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: npm ci
+        run: npm ci
+
+      - name: npm run build (if present)
+        run: npm run build --if-present
+
+      - name: Prune to production deps for the release tarball
+        run: npm prune --production
+
+      - name: Package source tarball
+        run: |
+          tar -czf fates-edge-ai-gm-bot.tar.gz \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='*.env' \
+            --exclude='.env' \
+            --exclude='output.txt' \
+            .
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: fates-edge-ai-gm-bot-package
+          path: fates-edge-ai-gm-bot.tar.gz
+
+  # ─── Build & push Docker image to Docker Hub + GHCR ──────────────
+  docker-push:
+    name: Build & Push Docker Image
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Determine version
+        id: version
+        run: |
+          if [[ "${{ github.ref_type }}" == "tag" ]]; then
+            echo "version=${{ github.ref_name }}" >> $GITHUB_OUTPUT
+          else
+            echo "version=dev-${{ github.sha }}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Log in to Docker Hub
+        if: ${{ secrets.DOCKERHUB_USERNAME != '' }}
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.GHCR_REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Determine tags
+        id: tags
+        run: |
+          VERSION="${{ steps.version.outputs.version }}"
+          SHA="${{ github.sha }}"
+          OWNER_LOWER=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
+
+          TAGS="${GHCR_REGISTRY}/${OWNER_LOWER}/${IMAGE_NAME}:${VERSION},${GHCR_REGISTRY}/${OWNER_LOWER}/${IMAGE_NAME}:${SHA}"
+          if [[ "$VERSION" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            TAGS="${TAGS},${GHCR_REGISTRY}/${OWNER_LOWER}/${IMAGE_NAME}:latest"
+          fi
+
+          if [ -n "${{ secrets.DOCKERHUB_USERNAME }}" ]; then
+            TAGS="${TAGS},${{ secrets.DOCKERHUB_USERNAME }}/${IMAGE_NAME}:${VERSION}"
+            if [[ "$VERSION" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+              TAGS="${TAGS},${{ secrets.DOCKERHUB_USERNAME }}/${IMAGE_NAME}:latest"
+            fi
+          fi
+
+          echo "tags=${TAGS}" >> $GITHUB_OUTPUT
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.tags.outputs.tags }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  # ─── Create the GitHub Release ────────────────────────────────────
+  create-release:
+    name: Create Release
+    needs: [build, docker-push]
+    runs-on: ubuntu-latest
+    if: github.ref_type == 'tag'
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: fates-edge-ai-gm-bot-package
+          path: artifacts/
+
+      - name: Create Release and upload asset
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: ${{ github.ref_name }}
+          body: |
+            ## Fate's Edge AI GM Bot ${{ github.ref_name }}
+            - **Commit**: ${{ github.sha }}
+            - **Docker**: `ghcr.io/${{ github.repository_owner }}/fates-edge-ai-gm-bot:${{ github.ref_name }}`
+
+            See attached source tarball, or pull the Docker image above.
+          files: artifacts/*.tar.gz
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

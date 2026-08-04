@@ -1,0 +1,259 @@
+{
+  "id": "pale-shepherd",
+  "type": "patron",
+  "title": "The Pale Shepherd — Guide of Transitions",
+  "subtitle": "Passage & Melancholic Wisdom",
+  "version": "1.0.0",
+  "tags": [
+    "passage",
+    "guidance",
+    "liminal",
+    "grief",
+    "death-doula",
+    "melancholy",
+    "thresholds",
+    "memory",
+    "transition"
+  ],
+  "lore": {
+    "description": "The Pale Shepherd walks the seam between all things – life and death, joy and sorrow, memory and forgetting, the known and the unmarked. Neither wholly kind nor cruel, the Shepherd guides those who must pass through the hardest doors. Cloaked, with shadow-sheep that bear the shed wool of old possibilities, the Shepherd offers safe conduct through liminal space for a price paid in memory, feeling, or fate. Those who walk this road learn the hidden routes between states of being and can lead others through their hardest crossings – but each passage leaves them more attuned to endings than beginnings.",
+    "followers": "Among the Aelaerem, the Shepherd is called the Pale Gardener, who walks the hedgerows at twilight, collecting the souls of those who die far from home. In Aeler, the Breath-Watcher weighs the last exhalation of the dying. In Linn, the Fog-Walker appears on the horizon before a storm. In Viterra, the Silent Notary witnesses deathbed testaments. Wherever mortals face the hardest thresholds, the Pale Shepherd is there – not to judge, not to command, but to accompany.",
+    "names_across_regions": {
+      "aelaerem": "The Pale Gardener, who walks the hedgerows at twilight",
+      "aeler": "The Breath-Watcher, who weighs the last exhalation of the dying",
+      "linn": "The Fog-Walker, who appears on the horizon before a storm",
+      "viterra": "The Silent Notary, who witnesses deathbed testaments"
+    },
+    "quote": "The Shepherd goes where feet fail, speaks where voices thin, and points where paths run dim. Each journey loosens the knot that tied you to the life you left behind."
+  },
+  "domain_focus": [
+    "Liminal Navigation: walking and reading thresholds, dusk-roads, and in-betweens",
+    "Passage Guidance: steadying hands through grief, change, and transformation",
+    "Melancholic Wisdom: understanding born of farewells and last looks",
+    "Memory Shepherding: gathering, carrying, and setting down weighted moments"
+  ],
+  "runekeeper_options": {
+    "thiasos": {
+      "description": "A Runekeeper sworn to the Pale Shepherd does not bind a creature of fierce guardianship — they bind a companion of gentle thresholds. Their Thiasos is a small beast or being that embodies passage and memory: a gray mouse that nests in graveyards and knows every hidden crack, a moth with dusty wings that lands on the hands of the dying, a small lamb with wool the color of ash that appears only at crossroads, a pale fox that leaves no footprints in fresh snow, or a white-breasted raven that calls once when a soul is ready to cross.",
+      "care": "This creature requires no food, but it must witness a farewell or a threshold crossing each day (a death, a departure, or a significant goodbye). If neglected for a week, it becomes Compromised (it grows silent, refusing to guide; its bearer suffers –1 die to all rolls involving thresholds or transitions until the creature is shown a proper farewell)."
+    },
+    "codex": {
+      "description": "The Codex of the Pale Shepherd is never a book of spells alone. It may be a ledger of names written in disappearing ink that reappears only at twilight, a bundle of woolen cords each tied for a soul guided, a series of river stones stacked in a cairn that shifts with each passing, or a smooth slate etched with the outline of a door that never quite closes.",
+      "upkeep": "Because the Shepherd's truths are written in passage, the Codex requires upkeep: the Runekeeper must spend an hour each week whispering the names of those they have guided, or the Rites stored there become faint (treat as Compromised until re-dedicated at a threshold)."
+    }
+  },
+  "patrons_gift": {
+    "name": "The Shepherd's Staff",
+    "description": "Once per scene as an action, a Runekeeper of the Pale Shepherd may touch a held item (weapon, tool, or garment) and whisper a word of crossing.",
+    "effect": "For the rest of the scene, the item grants +1 die to Insight or Medicine rolls when dealing with the dying, the grieving, or those undergoing great change, and the first time each scene the bearer would suffer a Condition from fear or despair, they may ignore it (the Shepherd steadies their hand).",
+    "cost": "After the scene, the user marks +1 Obligation to the Pale Shepherd."
+  },
+  "rites": [
+    {
+      "name": "Rite of the Gentle Guide",
+      "tier": "Low",
+      "xp": 5,
+      "action": "Scene",
+      "range": "Near/Self",
+      "resist": "Yes",
+      "tags": ["GUIDANCE", "BOOST", "THRESHOLD", "RISK"],
+      "materials": "A small stone from a grave or threshold, warmed in the palm; or a thread from a worn garment and a pinch of dawn mist.",
+      "effect": "Choose one: Gentle Guidance: Ease a hard crossing. One target gains +1 die to rolls involving change, decision, or emotional steadiness this scene. Hidden Path: Find or make a way where none is seen. Gain +2 dice to Navigation or Investigation when seeking unconventional routes.",
+      "push_it": "(Hidden Path only) The way runs through a true between-place; gain the route but mark 1 SB (Spades) as boundary powers take notice. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Passing Flock",
+      "tier": "Standard",
+      "xp": 8,
+      "action": "Scene",
+      "range": "Touch/Zone",
+      "resist": "Yes",
+      "tags": ["GUIDANCE", "TRUTH", "HEAL", "AREA", "RISK"],
+      "materials": "Black wool and a personal token of the one to be guided; or ash of burned letters and wool shaped into little sheep.",
+      "effect": "Choose one: Shadow Passage: Open a brief passage through shadow-realms. The target bypasses one insurmountable obstacle or reaches a place normally shut. Memory Flock: Call shadow-sheep that carry fragments of weighty moments. Retrieve lost details, soothe grief, or glean counsel from what was.",
+      "push_it": "(Passage) The passage leaves a scent-trail; mark 1 SB (Clubs) as something may follow. (Flock) The memories ride too close to the skin – participants relive them as their own; mark 1 SB (Hearts). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Unburdened Farewell",
+      "tier": "Low",
+      "xp": 6,
+      "action": "Instant",
+      "range": "Touch",
+      "resist": "No",
+      "tags": ["HEAL", "CLEANSE", "DEBT", "FEAR"],
+      "materials": "A personal letter never sent, burned in a copper dish.",
+      "effect": "Speak a final goodbye to someone who is not present – a lost lover, a dead parent, a friend you wronged. Clear 1 Fatigue and remove one psychological Condition (e.g., Haunted, Guilty) caused by that relationship. The GM gains 1 SB as the words drift into the threshold.",
+      "push_it": "The farewell also grants +1 die on your next roll related to moving on from that relationship. Mark +1 Obligation. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Instant."
+    },
+    {
+      "name": "Rite of the Threshold Bond",
+      "tier": "High",
+      "xp": 13,
+      "action": "Extended",
+      "range": "Touch",
+      "resist": "Yes",
+      "tags": ["BOND", "FATE", "DEBT", "THRESHOLD"],
+      "materials": "Two keepsakes: one of what is left, one of what is sought.",
+      "effect": "Bind two states, places, or conditions with a felt thread. Those bound can sense across the threshold and lend one another strength during change.",
+      "push_it": "The bond sets like iron – permanent and inescapable. Mark +2 Obligation. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "Extended action.",
+      "duration": "Permanent."
+    }
+  ],
+  "cantors_and_cults": {
+    "cantors": {
+      "name": "The Cantor's Song",
+      "description": "A Cantor of the Pale Shepherd sings in passing tones – melodies that begin in a major key and end in a minor one, or that fade to silence rather than resolve. Their voice is used to ease a dying person's passage, to comfort the grieving at a funeral, or to lull a restless spirit back to the threshold. The Shepherd's Cantors are often found at hospices, battlefields, and the bedsides of the old, singing the softest of farewells."
+    },
+    "cult": {
+      "name": "The Cult of the Gray Flock",
+      "description": "The Shepherd's cults meet in liminal places: cemeteries at dusk, crossroads at midnight, the rooms above funeral parlors. The Gray Flock is a fellowship of death-doulas, grief counselors, and those who have lost so much that they have become experts in loss. A ritual of the Flock involves each member speaking the name of someone they have guided – and then a moment of silence for those they could not save. Their creed is embroidered on a woolen banner that is never washed: 'The door is never locked. We only hold it open.' Outsiders are welcome to sit quietly, but they must bring a memory to share."
+    }
+  },
+  "witchcraft": {
+    "name": "The Art of the Threshold",
+    "description": "A witch who walks with the Shepherd is a shroud-weaver or threshold-carver – one who crafts the tools of safe passage: a woolen shroud that keeps the dead from wandering, a stone carved with a doorway that leads to the next room (or the next life), or a bell that rings only when a soul is ready to cross. Their tools are not hammers; they use spindles, wool, and the gentle pressure of a hand on a doorframe. In Aeler, a True-Mason might carve a 'threshold stone' at a hospice's entrance, but a witch of the Shepherd would instead wind a memory cord around the lintel.",
+    "color": "#c0c0c0",
+    "lore": "The threshold-witch learns that passage is not a destination—it is a journey. They carry the weight of farewells, and they know that every ending is a new beginning. Their craft is the art of accompaniment, and they practice it with every step.",
+    "signature_rite": "Rite of the Unburdened Farewell",
+    "quote": "The door is never locked. We only hold it open.",
+    "tools": {
+      "wool-winder": {
+        "name": "The Wool-Winder",
+        "description": "A wooden spindle carved from a branch that grew over a grave. Once per session, the witch may wind a length of undyed wool around their hand while speaking a name. The wool becomes a memory cord – a physical thread that holds one specific memory of the named person. The cord can be given to another to grant them a single vivid memory of the deceased (e.g., 'grandmother's hands knitting'), or it can be burned to release the memory into the threshold, easing grief."
+      }
+    },
+    "hedge_gifts": [
+      {
+        "name": "Shepherd's Stone",
+        "xp": 4,
+        "description": "Once per scene, the witch may touch a small, smooth stone – preferably from a grave or a threshold – and place it on a dying person's chest (or on a doorframe before a difficult journey). The stone glows faintly, and for the next hour, the person feels no fear of the passage ahead. They gain +1 die to any roll involving courage, acceptance, or farewells, and may ignore one point of Fatigue from emotional distress."
+      }
+    ]
+  },
+  "monastic_tradition": {
+    "name": "Way of the Crossing Monk",
+    "description": "The door is never locked. I only hold it open. Monks of the Crossing Monk tradition are guides through life's hardest thresholds. They walk beside the dying, the grieving, and the lost, offering presence rather than answers. They have learned that the kindest act is sometimes just to walk beside.",
+    "color": "#c0c0c0",
+    "prerequisites": "Spirit 3+, Wits 2+, Rite of the Gentle Guide or Cantor of the Pale Shepherd.",
+    "quote": "The door is never locked. I only hold it open.",
+    "debt_resistant_frame": "The Shepherd guides, but does not collect. Monks of the Crossing Monk gain +1 die to resist any magical debt or obligation that would prevent them from passing through a threshold (literal or metaphorical). If they succeed, the creditor finds the way barred – but the monk has already walked through.",
+    "techniques": {
+      "basic": {
+        "name": "Guide's Step",
+        "xp": 5,
+        "effect": "On an unarmed hit, you may force the target to move one range band in a direction you choose (even into hazards). The movement does not provoke opportunity attacks.",
+        "cost": "1 Fatigue",
+        "prereq": "Spirit 3+"
+      },
+      "advanced": {
+        "name": "Threshold Bond",
+        "xp": 9,
+        "effect": "Bind two states, places, or conditions with a felt thread. Those bound can sense across the threshold and lend one another strength during change.",
+        "cost": "1 Fatigue",
+        "prereq": "Tier II"
+      },
+      "master": {
+        "name": "The Unburdened Crossing",
+        "xp": 13,
+        "effect": "Once per session, when a willing creature (including yourself) is about to die, you may guide them across the threshold. They experience no fear, no pain, and may speak a final sentence before they pass. After the scene, you gain a permanent Debt Scar (a pale handprint on your shoulder). You may ignore one debt that would otherwise be transferred to you, but you must offer to guide a lost soul within the next arc – the Shepherd's path remains open only so long as it is walked.",
+        "cost": "Free (once per session)",
+        "prereq": "Tier III, Spirit 4+"
+      }
+    },
+    "corruption": [
+      {
+        "tier": 1,
+        "benefit": "Boundary Sense: +1 die to Notice thresholds, limens, and turning-moments.",
+        "cost": "Melancholic Aura: –1 die to bright company and celebrations; your presence gentles joy."
+      },
+      {
+        "tier": 2,
+        "benefit": "Passage Insight: Once/scene, guide another through change (+1 die to their action).",
+        "cost": "Compulsive Counsel: Urge to advise even when unwelcome."
+      },
+      {
+        "tier": 3,
+        "benefit": "Shadow Comfort: +2 dice to soothe the distressed or those nearing an end.",
+        "cost": "Near to Death: In lively places, suffer Fatigue 1 from the sting of contrast."
+      },
+      {
+        "tier": 4,
+        "benefit": "Memory Keeper: Once/session, recall a marked moment of your past with perfect clarity.",
+        "cost": "Burdened Sight: –1 die on hopeful framings; farewells tint your view."
+      },
+      {
+        "tier": 5,
+        "benefit": "Liminal Mastery: Once/session, find a path through any maze, snare, or barred way.",
+        "cost": "Unmoored: –1 die to acts that demand firm anchoring in the present."
+      },
+      {
+        "tier": "6+",
+        "benefit": "Shepherd's Crown: Once/session, be the sure guide for any great passage.",
+        "cost": "Soul's Weight: Mark +3 Obligation; risk binding to the between, never wholly in one state."
+      }
+    ]
+  },
+  "corruption": [
+    {
+      "tier": 1,
+      "benefit": "Boundary Sense: +1 die to Notice thresholds, limens, and turning-moments.",
+      "cost": "Melancholic Aura: –1 die to bright company and celebrations; your presence gentles joy."
+    },
+    {
+      "tier": 2,
+      "benefit": "Passage Insight: Once/scene, guide another through change (+1 die to their action).",
+      "cost": "Compulsive Counsel: Urge to advise even when unwelcome."
+    },
+    {
+      "tier": 3,
+      "benefit": "Shadow Comfort: +2 dice to soothe the distressed or those nearing an end.",
+      "cost": "Near to Death: In lively places, suffer Fatigue 1 from the sting of contrast."
+    },
+    {
+      "tier": 4,
+      "benefit": "Memory Keeper: Once/session, recall a marked moment of your past with perfect clarity.",
+      "cost": "Burdened Sight: –1 die on hopeful framings; farewells tint your view."
+    },
+    {
+      "tier": 5,
+      "benefit": "Liminal Mastery: Once/session, find a path through any maze, snare, or barred way.",
+      "cost": "Unmoored: –1 die to acts that demand firm anchoring in the present."
+    },
+    {
+      "tier": "6+",
+      "benefit": "Shepherd's Crown: Once/session, be the sure guide for any great passage.",
+      "cost": "Soul's Weight: Mark +3 Obligation; risk binding to the between, never wholly in one state."
+    }
+  ],
+  "playstyle_notes": {
+    "description": "The Pale Shepherd favors those who steady others at the edge of change. Its gifts open hidden roads, soften endings, and lend courage to cross. Its prices lean toward memory, ease, and the simple warmth of belonging – spent to buy safe passage when it matters most. The Shepherd never demands; it only offers. When a follower accumulates enough Obligation, an intrusion might be a sudden need to guide a dying stranger, a forgotten threshold that now calls to them, or a dream of a road that must be walked before dawn. Refusing the intrusion does not incur wrath – merely the quiet withdrawal of the Shepherd's favor until the follower once again chooses to accompany someone through their hardest door. Ideal for death-doulas, grief counselors, and anyone who understands that the kindest act is sometimes just to walk beside.",
+    "emphasizes": [
+      "Liminal Mastery: reading and walking the in-between",
+      "Passage Guidance: anchoring companions through turns of fate",
+      "Melancholic Wisdom: counsel drawn from endings",
+      "Memory Shepherding: carrying and setting down what weighs",
+      "Threshold Navigation: ways through walls the world insists upon"
+    ]
+  },
+  "sample_adventure": {
+    "title": "The Road That Forgets",
+    "description": "A small village has been plagued by a strange malady: its inhabitants are forgetting their own names, their loved ones' faces, and the way home. The local priest believes it is a curse, but the Pale Shepherd's followers know it is a threshold—a door that has been left open too long. The party must find the forgotten threshold, close it, and help the villagers remember who they are before the forgetting consumes them all.",
+    "quote": "The door is never locked. We only hold it open. But some doors are better left closed."
+  },
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

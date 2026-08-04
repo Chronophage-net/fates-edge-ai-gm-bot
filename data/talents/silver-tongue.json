@@ -1,0 +1,16 @@
+{
+  "id": "silver-tongue",
+  "name": "Silver Tongue",
+  "cost": 2,
+  "tier": "minor",
+  "activation": "passive",
+  "category": "social",
+  "useLimit": "passive",
+  "prerequisites": "",
+  "effect": "+1d Sway",
+  "effects": [
+    { "type": "die_bonus", "scope": "skill", "key": "sway", "amount": 1 }
+  ],
+  "description": "Words come easily to you, and people tend to want to agree with the last thing you said.",
+  "source": "guide"
+}

@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/your-username/fates-edge-ai-gm-bot.git"
+    "url": "git+https://github.com/Chronophage-net/fates-edge-ai-gm-bot.git"
   },
   "keywords": [
     "fate",
@@ -24,12 +24,12 @@
     "openai",
     "deepseek"
   ],
-  "author": "Your Name",
+  "author": "Nicholas A. Gasper",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/your-username/fates-edge-ai-gm-bot/issues"
+    "url": "https://github.com/Chronophage-net/fates-edge-ai-gm-bot/issues"
   },
-  "homepage": "https://github.com/your-username/fates-edge-ai-gm-bot#readme",
+  "homepage": "https://github.com/Chronophage-net/fates-edge-ai-gm-bot#readme",
   "dependencies": {
     "dotenv": "^16.4.5",
     "openai": "^4.0.0",
@@ -41,5 +41,5 @@
   "engines": {
     "node": ">=18.0.0"
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Code: MIT. Bundled game data (data/regions, data/patrons, campaigns/, etc.): CC BY-NC-SA 4.0 for SRD-marked material, All Rights Reserved otherwise, used by permission of the author. See LICENSE. © 2024 Nicholas A. Gasper."
 }

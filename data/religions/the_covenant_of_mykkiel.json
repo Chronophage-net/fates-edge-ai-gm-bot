@@ -1,0 +1,100 @@
+{
+  "id": "covenant-of-mykkiel",
+  "type": "religion",
+  "title": "The Covenant of Mykkiel",
+  "subtitle": "The Faith of the Contract",
+  "version": "1.0.0",
+  "tags": [
+    "law",
+    "contract",
+    "oath",
+    "judgment",
+    "ledger",
+    "arbiter",
+    "witness",
+    "justice"
+  ],
+  "lore": {
+    "description": "The Covenant is the faith of the Pereshi highlands, of Galanina and the Fhara trade routes. It is legalistic, stern, and uncompromising. Its God is the Law—not human law, but the divine order that underpins reality. Its symbol is a broken chain, signifying that even when empires fall, the law remains. The Covenant teaches that the universe is a contract. In the beginning, the great powers entered into a binding agreement to govern the chaos of existence. That contract is the Covenant, and it endures not because it is enforced but because it is true.",
+    "followers": "Mykkiel, called the Arbiter, is the living seal of this contract. He does not create law; he remembers it. His followers are judges, not legislators. They do not interpret the Covenant; they apply it. There is a terrible beauty in that. There is also a terrible coldness.",
+    "names_across_regions": {
+      "pereshi": "The Covenant, the ancient law of the highlands and trade routes",
+      "galanina": "The Grand Ledger's Faith, centered around the brass-bound book in the vault",
+      "ashaan": "The Oath-Keeper, viewed with suspicion by the Veiled Sisters' remnants",
+      "thepyrgos": "The Law-Bringers, mediators in disputes between the Two Fires"
+    },
+    "quote": "The law is not written in sand, but in stone. The Covenant is not suggestion, but command. Transgressors shall be purged, the faithful exalted."
+  },
+  "domain_focus": [
+    "The Divine Contract: the universe is an agreement; those who honor it align with reality",
+    "The Role of Mykkiel: the Arbiter, the living seal of the Covenant",
+    "The Grand Ledger: every judgment recorded; a name struck from it is struck from the community",
+    "The Unspoken Ninth Clause: a ruling that was never recorded—judgment without presence"
+  ],
+  "doctrines": [
+    "The universe is a contract. In the beginning, the great powers entered into a binding agreement to govern chaos.",
+    "Those who honor the Covenant align themselves with the fundamental structure of reality.",
+    "Those who break the Covenant become dissonant, unmoored, and eventually erased by the world's rejection.",
+    "Mykkiel does not create law; he remembers it. His followers are judges, not legislators."
+  ],
+  "practices": [
+    "Worship is conducted in courts, not temples. A service involves reading a case, hearing testimony, and pronouncing judgment.",
+    "Every judgment is recorded in the Grand Ledger, a brass-bound book kept in a vault in Galanina.",
+    "A name struck from the Ledger is struck from the Covenant community—they may be treated as outlaws.",
+    "The Unspoken Ninth Clause allows trials in absentia—condemning the dead, the exiled, and the unreachable."
+  ],
+  "hierarchy": {
+    "order_of_mykkiel": "Judges, notaries, and law-scholars. They settle disputes, draft contracts, and administer the Covenant Courts. Hierarchical, with High Justiciars at the top and Circuit Judges who travel the roads.",
+    "order_of_the_inquisitor_prime": "The Accuser—the one who brings hidden sins to light. They investigate broken oaths, expose secret perjury, and demand restitution. Secretive and decentralized. Identified by their iron scales and violet sash.",
+    "order_of_the_oath_of_flame__light": "Healers with a contract: the patient must swear to live a more lawful life. Healing always comes with a binding agreement."
+  },
+  "orders": [
+    {
+      "id": "order_of_mykkiel",
+      "name": "The Order of Mykkiel",
+      "role": "Judges and notaries",
+      "description": "The orthodox judges, notaries, and law-scholars. They settle disputes, draft contracts, and administer the Covenant Courts. Their authority is recognized wherever trade and treaties require a trusted third party."
+    },
+    {
+      "id": "order_of_the_inquisitor_prime",
+      "name": "The Order of the Inquisitor Prime",
+      "role": "Prosecutors and auditors",
+      "description": "The Accuser—the one who brings hidden sins to light. They investigate broken oaths, expose secret perjury, and demand restitution. Their Rites are those of revelation and correction. They carry no swords—only iron scales and a copy of the Canons of Obligation."
+    },
+    {
+      "id": "order_of_the_oath_of_flame__light_covenant",
+      "name": "The Order of the Oath of Flame & Light (Hospitalier)",
+      "role": "Healers and covenant-keepers",
+      "description": "In the Covenant, the Oath of Flame & Light is not a warrior's path but a healer's. They tend to the wounded in body and soul, but their healing always comes with a contract: the patient must swear to live a more lawful life. Their Rites are those of purification, cleansing, and bound mercy."
+    }
+  ],
+  "relationship_to_patrons": {
+    "mykkiel": "The Arbiter—the living seal of the Covenant. His followers are judges, not legislators.",
+    "inquisitor_prime": "The Accuser—the one who brings hidden sins to light. They investigate and expose, but do not execute.",
+    "oath_of_flame__light": "The Healer with a contract—healing always comes with a binding agreement to live a lawful life."
+  },
+  "relationship_to_two_fires": {
+    "cooperation": "Shared inquisitions: when a heretic flees across borders, the Covenant's Inquisitors, the Everflame's Flame-Wardens, and the Temple's Chain-Lanterns may coordinate pursuit. The cooperation is transactional but effective.",
+    "conflict": "Jurisdiction disputes: the Covenant claims universal authority over all oaths and contracts. The Everflame claims universal authority over all heresy. The Temple claims universal authority over all miracles. When a case involves all three, no one can agree on who has jurisdiction."
+  },
+  "crusades": {
+    "ashaan_crusade": "The Ashaan Crusade (890–901 AR) was the largest military expedition in modern memory. Three faiths—the Everflame, the Temple of Light, and the Covenant—joined forces to liberate the Pereshi highlands from the Veiled Sisters. The Covenant was the driving force behind the Crusade. Its judges had long memories of the Veiled Sisters' crimes.",
+    "linn_crusade": "The Linn Crusade is not a military campaign—it is a Crusade of education, conversion, and cultural replacement. The Temple sends teachers, healers, and grain. The Everflame sends missionaries, guards, and basilicas. The Covenant sends judges and notaries, offering to mediate disputes between the two.",
+    "doctrine": "The Covenant views Crusades as properly ordered violence—a form of law enforcement on a divine scale. A Crusade is not a war of conquest but a judgment: a verdict pronounced by the divine, executed by the faithful."
+  },
+  "the_ninth_clause": {
+    "description": "The Unspoken Ninth Clause is a ruling that was never recorded—a judgment that exists only in the memory of the judge who pronounced it. The ruling holds that 'in cases where the accused is not present, and no witness can be found, the judge may pronounce judgment based on the weight of testimony already recorded.'",
+    "uses": "Justifies trials in absentia—condemning the dead, the exiled, and the unreachable. Also used to justify preemptive judgment—convicting someone before they have committed the crime.",
+    "secrecy": "The Covenant's orthodox authorities deny that the Unspoken Ninth Clause exists. They know that it does. The clause is a secret passed from judge to judge, never written down, but always remembered."
+  },
+  "adventure_seed": {
+    "title": "The Missing Ledger",
+    "description": "A Covenant Circuit Judge has vanished while investigating a series of broken oaths in the Mistlands. The judge's ledger, containing sensitive testimony, is missing. The party must find the judge—or the ledger—before the Chain-Lanterns do. The ledger contains names that could destabilize the fragile peace between the Two Fires.",
+    "quote": "The Covenant is not a third fire—it is a ledger. It does not seek to burn or illuminate; it seeks to record. In a world of schism and crusade, the Covenant offers a different path: one of law, duty, and the weight of the word spoken and kept."
+  },
+  "sample_npc": {
+    "name": "A Covenant Judge",
+    "description": "A judge who carries an iron seal and a copy of the Canons of Obligation. They do not smile. They do not weep. They weigh testimony, pronounce judgment, and strike names from the Grand Ledger. The silence in their court is heavier than any flame."
+  },
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

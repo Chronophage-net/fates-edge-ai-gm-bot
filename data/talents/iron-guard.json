@@ -1,0 +1,16 @@
+{
+  "id": "iron-guard",
+  "name": "Iron Guard",
+  "cost": 4,
+  "tier": "major",
+  "activation": "passive",
+  "category": "defense",
+  "useLimit": "passive",
+  "prerequisites": "Body 3+",
+  "effect": "ignore armor penalty",
+  "effects": [
+    { "type": "ignore_penalty", "source": "armor", "amount": 1 }
+  ],
+  "description": "Years of drilling in heavy plate mean it slows you down less than it slows most people. Cancels 1 die of the current armor's physical-skill penalty.",
+  "source": "guide"
+}

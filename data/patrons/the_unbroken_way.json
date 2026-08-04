@@ -1,0 +1,305 @@
+{
+  "id": "the_unbroken_way",
+  "type": "patron",
+  "title": "The Unbroken Way",
+  "subtitle": "Balance & Control",
+  "version": "1.0.0",
+  "tags": [
+    "balance",
+    "control",
+    "discipline",
+    "restraint",
+    "stillness",
+    "perception",
+    "calm",
+    "meditation",
+    "peace",
+    "equilibrium"
+  ],
+  "lore": {
+    "description": "The Unbroken Way does not speak. It listens. It is the pause between breaths, the space between thoughts, the stillness at the heart of motion. Those who walk this path learn that strength is not in the clenched fist but in the open hand—and that the greatest power is the power you do not use. Followers of the Unbroken Way are mediators, guardians, and seekers of equilibrium. They serve not kings or gods but the balance itself. When a tyrant rises, they do not kill—they redirect. When a village starves, they do not feed—they teach. When a student falters, they do not punish—they guide.",
+    "followers": "Among the peoples of Fate's Edge, the Unbroken Way is known by many names. In Thepyrgos, it is the Still Point, studied by monks who seek to transcend the body. In Vhasia, it is the Open Gorget, a philosophy of mercy over force. In the Valewood, it is the Root That Does Not Break, a survival technique of the Lethai_al. Wherever warriors seek to master themselves rather than their enemies, the Unbroken Way waits.",
+    "signs": [
+      "A perfect stillness in the air, as if the world is holding its breath",
+      "A sense of being watched by something vast and patient",
+      "The feeling of having been here before, in exactly this moment"
+    ],
+    "quotes": [
+      "\"The blade that is not drawn cannot be broken. The hand that is not clenched cannot be bound.\"",
+      "\"The way is not a destination. It is the walking.\"",
+      "\"Strength is not in the clenched fist but in the open hand.\""
+    ]
+  },
+  "domain_focus": [
+    "Perfect Balance: equilibrium in all things, neither too much nor too little",
+    "Disciplined Restraint: power held in reserve, strength shown through mercy",
+    "Clear Perception: seeing without judgment, acting without attachment",
+    "Protective Service: guarding the innocent, teaching the willing, guiding the lost"
+  ],
+  "runekeeper_options": {
+    "thiasos": {
+      "description": "A Runekeeper sworn to the Unbroken Way does not bind a creature of claw and fang. Their Thiasos is a focus crystal—a translucent stone that hums faintly when they are at peace and grows cold when they are in danger. It requires no food, but they must meditate with it for one hour each day.",
+      "care": "If neglected for a week, it becomes Clouded (its hum becomes discordant, imposing –1 die on all Resolve rolls until they spend a scene in silent meditation)."
+    },
+    "codex": {
+      "description": "The Codex of the Unbroken Way is never a book of spells. It is a meditation manual—a collection of koans, breathing exercises, and ethical precepts. It cannot be read in the usual way; the follower must practice each Rite before it becomes legible.",
+      "upkeep": "Because the Way resists being fixed in ink, the Codex requires upkeep: one hour of practice per week. If neglected, the Rites become faded (treat as Compromised until re_practiced)."
+    }
+  },
+  "patrons_gift": {
+    "name": "The Still Hand",
+    "description": "Once per scene as an action, a Runekeeper of the Unbroken Way may touch a held weapon or focus.",
+    "effect": "For the rest of the scene, the item grants +1 die to Melee and +1 die to Insight. The wielder feels a profound calm, as if the universe has paused to watch.",
+    "cost": "After the scene, the user marks +1 Obligation to the Unbroken Way."
+  },
+  "rites": [
+    {
+      "name": "Rite of the Sensing Current",
+      "tier": "Low",
+      "xp": 4,
+      "action": "Scene",
+      "range": "Self",
+      "resist": "No",
+      "tags": ["SENSE", "BOOST"],
+      "materials": "A moment of stillness, eyes closed, breath held for one heartbeat.",
+      "effect": "For the next scene, gain +1 die to all Perception and Insight rolls. You feel the presence of living things within Near range and can sense strong emotions (fear, rage, joy) as faint temperature changes.",
+      "push_it": "Extend the effect to the full session. Cost: Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Gentle Push",
+      "tier": "Low",
+      "xp": 5,
+      "action": "Instant",
+      "range": "Near",
+      "resist": "Yes",
+      "tags": ["FORCE", "PRESSURE"],
+      "materials": "An open palm, facing the target.",
+      "effect": "A wave of invisible pressure pushes one target within Near back one range band (Close → Near, or Near → Far). The target must test Body + Athletics vs. your Spirit + Lore. On a failure, they are shoved and lose their next Move action.",
+      "push_it": "Push two targets instead of one; mark 1 SB (Spades) as the force ripples visibly through the air. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Instant."
+    },
+    {
+      "name": "Rite of the Quiet Suggestion",
+      "tier": "Standard",
+      "xp": 8,
+      "action": "Instant",
+      "range": "Near",
+      "resist": "Yes",
+      "tags": ["COMMAND", "DECEPTION"],
+      "materials": "Eye contact with the target, sustained for a full heartbeat.",
+      "effect": "One willing or unsuspecting target within Near hears a short suggestion (eight words or fewer) that they believe is their own thought. The suggestion cannot be obviously self_destructive or impossible. Test Spirit + Lore vs. Wits + Resolve.",
+      "push_it": "The suggestion lasts until the target completes it (instead of a single action). Mark +1 Obligation (total +2). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Instant."
+    },
+    {
+      "name": "Rite of the Flowing Parry",
+      "tier": "Standard",
+      "xp": 7,
+      "action": "Scene",
+      "range": "Self",
+      "resist": "No",
+      "tags": ["WARD", "PROTECT"],
+      "materials": "A weapon in hand, or empty hands held in a defensive posture.",
+      "effect": "For the rest of the scene, you may Defend against ranged attacks as a reaction. On a success, the attack misses entirely. On a partial, reduce Harm by 1 (minimum 0). You cannot use this Rite while wearing heavy armor.",
+      "push_it": "Extend the protection to one adjacent ally. Cost: Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Flowing Blade",
+      "tier": "Standard",
+      "xp": 9,
+      "action": "Instant",
+      "range": "Self",
+      "resist": "No",
+      "tags": ["STRIKE"],
+      "materials": "A light blade (one_handed sword, knife, or equivalent), held in a relaxed grip.",
+      "effect": "Your next melee attack with a light blade gains +2 dice, ignores 1 Armor, and deals +1 Harm to any creature actively using dark or corrupting powers (GM discretion). The blade seems to move before you do.",
+      "push_it": "The attack also disarms the target (they drop one held item). Cost: Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Instant."
+    },
+    {
+      "name": "Rite of the Still Mind",
+      "tier": "High",
+      "xp": 12,
+      "action": "Scene",
+      "range": "Zone",
+      "resist": "No",
+      "tags": ["BOOST", "AREA", "DEBUFF"],
+      "materials": "A moment of silence, eyes closed, breath held at the still point.",
+      "effect": "For the next scene, all allies within Near gain +1 die to all rolls, and all enemies within Near suffer –1 die to all rolls. You must concentrate (cannot take other actions) or the effect ends at the end of the current exchange.",
+      "push_it": "The effect lasts for the full scene even if you act, but you mark 2 Obligation. Cost: Mark +2 Obligation (total +4) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "Extended action.",
+      "duration": "Scene."
+    }
+  ],
+  "cantors_and_cults": {
+    "cantors": {
+      "name": "The Cantor's Song",
+      "description": "A Cantor of the Unbroken Way sings in hummed koans—melodic fragments that have no resolution, no cadence, no satisfying end. Their voice is used to calm a riot, to focus a meditation circle, or to signal an ally across a battlefield without drawing the enemy's attention. A Cantor may learn any Low Rite of the Unbroken Way as a Song (Performance + Lore, resolves next turn). Corruption accumulates when they use their voice for selfish ends, for violence, or to manipulate the innocent."
+    },
+    "cult": {
+      "name": "The Cult of the Watchers",
+      "description": "The Unbroken Way's cults are not secret, but they are invisible—they meet in plain sight, in meditation halls, in public gardens, in the pauses between conversations. The Watchers are a fellowship of retired soldiers, reformed criminals, and those who have seen what unchecked power does to the soul. A ritual of the Cult involves each member sitting in silence for one hour, counting their breaths to eight—and only eight, never nine—then speaking aloud one thing they have forgiven themselves for. Their creed is written on a single slip of paper, folded eight times, passed from member to member: 'The way is not a destination. It is the walking.' Outsiders are welcome to sit in silence with them. There is no pressure to speak. There is no pressure to stay."
+    }
+  },
+  "witchcraft": {
+    "name": "The Art of Stillness",
+    "description": "A witch who walks with the Unbroken Way is a breath_shaper or still_point_weaver—one who crafts through the art of patient attention. Their magic works through the materials of calm: a bell that rings only when rung with perfect intention, a candle that burns without smoke when lit by a steady hand, or a stone that does not roll when placed on a slope. In Thepyrgos, a True_Mason might carve a keystone that makes the arch above it stand for a thousand years, but a witch of the Unbroken Way would instead sit beneath the arch and breathe until the stone remembered how to hold itself.",
+    "color": "#4a6a7f",
+    "lore": "The breath_shaper's path is the art of patience. They learn that true strength is not in the action but in the pause between actions. To serve the Unbroken Way is to understand that the world will wait—and that waiting is itself a form of power.",
+    "signature_rite": "Rite of the Sensing Current",
+    "quote": "The blade that is not drawn cannot be broken.",
+    "tools": {
+      "stillness_bell": {
+        "name": "The Stillness Bell",
+        "description": "A small bronze bell with no clapper—it cannot be rung by force. It rings only when the one who holds it achieves a moment of perfect stillness, and the ring is felt rather than heard. Once per session, the witch may ring the Stillness Bell to impose a single heartbeat of absolute calm in a Near zone—no violence, no action, no speech. Everyone (including allies) simply pauses. The witch may act during this pause, but only to observe, to move, or to speak a single word. The effect ends as soon as the witch acts beyond that word."
+      }
+    },
+    "hedge_gifts": [
+      {
+        "name": "The Unstruck Note",
+        "xp": 4,
+        "description": "Once per scene, the witch may snap their fingers. For the next exchange, they may treat any failed Resolve, Insight, or Perception roll as a Partial Success instead of a Miss. The GM gains 1 SB (the world notices the stillness bending around you)."
+      },
+      {
+        "name": "Stillness of Breath",
+        "xp": 3,
+        "description": "Once per scene, you may calm a target by matching your breath to theirs. They gain +1 die to resist fear, panic, or rage until the end of the scene."
+      },
+      {
+        "name": "The Open Hand",
+        "xp": 4,
+        "description": "You may render a weapon (or a hostile creature's hand) as 'not a threat' for one exchange. The target cannot use that weapon or hand for that exchange unless they succeed on a Resolve test (DV 3)."
+      }
+    ]
+  },
+  "monastic_tradition": {
+    "name": "The Way of the Still_Point",
+    "description": "The blade that is not drawn cannot be broken. The hand that is not clenched cannot be bound. Still_Point monks understand that true power lies not in action but in the pause between actions—the stillness that observes, that redirects, that chooses not to strike. They are mediators, guardians, and seekers of equilibrium, serving the balance itself rather than any king or god.",
+    "color": "#4a6a7f",
+    "prerequisites": "Wits 3+, Spirit 2+, Rite of the Sensing Current or Cantor of the Unbroken Way.",
+    "quote": "The blade that is not drawn cannot be broken. The hand that is not clenched cannot be bound.",
+    "debt_resistant_frame": "The Unbroken Way does not collect debts—it rebalances. Monks of the Still_Point gain +2 dice to resist any magical debt, geas, or contract that would compel them to act against their principles. If they succeed, the creditor finds only silence—but the Way marks a Balance Debt that will come due as a difficult choice later. The GM gains 1 SB (the scales tip).",
+    "techniques": {
+      "basic": {
+        "name": "Sensing Current",
+        "xp": 4,
+        "effect": "For one scene, gain +1 die to all Perception and Insight rolls. You sense living creatures and strong emotions within Near.",
+        "cost": "1 Fatigue",
+        "prereq": "Wits 3+"
+      },
+      "advanced": {
+        "name": "Quiet Suggestion",
+        "xp": 8,
+        "effect": "Target hears an 8_word suggestion they believe is their own thought. Not self_destructive. Resist Wits+Resolve vs. Spirit+Lore.",
+        "cost": "1 Boon",
+        "prereq": "Wits 3+, Spirit 2+"
+      },
+      "master": {
+        "name": "Empty Vessel",
+        "xp": 12,
+        "effect": "Once per session, become immune to all mind_affecting magic, fear, and charm for one scene. You may also end one ongoing emotional effect (rage, despair, terror) on a touched ally.",
+        "cost": "After the scene, you gain a permanent Stillness Scar (your reflection is slightly delayed, as if the world is not sure you are there). You may ignore one Obligation call from the Unbroken Way—the Way simply waits. It is patient.",
+        "prereq": "Tier III"
+      }
+    },
+    "corruption": [
+      {
+        "tier": 1,
+        "benefit": "Calm Presence: +1 die to resist fear, intimidation, or emotional manipulation.",
+        "cost": "Emotion Leak: –1 die to social rolls involving passion (love, rage, joy, grief)."
+      },
+      {
+        "tier": 2,
+        "benefit": "Clarity of Purpose: Once/scene, reroll a failed Resolve test.",
+        "cost": "Detachment: –1 die to empathize with others' suffering or to share genuine emotional connection."
+      },
+      {
+        "tier": 3,
+        "benefit": "Flowing Defense: +2 dice to Defend actions when unarmored or in light armor.",
+        "cost": "Rigid Form: –1 die to improvise, adapt, or act on instinct rather than training."
+      },
+      {
+        "tier": 4,
+        "benefit": "Stillness of Mind: Immune to magical fear and charm effects.",
+        "cost": "Isolation: –1 die to all social rolls; others find your calm unsettling."
+      },
+      {
+        "tier": 5,
+        "benefit": "Current of Peace: Once/session, end all ongoing fear effects within Near.",
+        "cost": "Emotion Blind: Cannot recognize strong emotions in others without a successful Insight roll (DV 4)."
+      },
+      {
+        "tier": "6+",
+        "benefit": "Empty Vessel: Once/session, become immune to all mind_affecting magic for one scene.",
+        "cost": "The Stillness Claims You: Mark +3 Obligation. You may no longer take any action that would cause direct harm to another living creature."
+      }
+    ]
+  },
+  "corruption": [
+    {
+      "tier": 1,
+      "benefit": "Calm Presence: +1 die to resist fear, intimidation, or emotional manipulation.",
+      "cost": "Emotion Leak: –1 die to social rolls involving passion (love, rage, joy, grief)."
+    },
+    {
+      "tier": 2,
+      "benefit": "Clarity of Purpose: Once/scene, reroll a failed Resolve test.",
+      "cost": "Detachment: –1 die to empathize with others' suffering or to share genuine emotional connection."
+    },
+    {
+      "tier": 3,
+      "benefit": "Flowing Defense: +2 dice to Defend actions when unarmored or in light armor.",
+      "cost": "Rigid Form: –1 die to improvise, adapt, or act on instinct rather than training."
+    },
+    {
+      "tier": 4,
+      "benefit": "Stillness of Mind: Immune to magical fear and charm effects.",
+      "cost": "Isolation: –1 die to all social rolls; others find your calm unsettling."
+    },
+    {
+      "tier": 5,
+      "benefit": "Current of Peace: Once/session, end all ongoing fear effects within Near.",
+      "cost": "Emotion Blind: Cannot recognize strong emotions in others without a successful Insight roll (DV 4)."
+    },
+    {
+      "tier": "6+",
+      "benefit": "Empty Vessel: Once/session, become immune to all mind_affecting magic for one scene.",
+      "cost": "The Stillness Claims You: Mark +3 Obligation. You may no longer take any action that would cause direct harm to another living creature."
+    }
+  ],
+  "playstyle_notes": {
+    "description": "The Unbroken Way is the ideal patron for players who want to play a disciplined martial artist, a diplomatic guardian, or a meditative warrior. Its Rites reward patience, perception, and restraint. The cost is emotional disconnection—the calm that protects you also isolates you. Intrusions often take the form of a challenge to your calm (a situation designed to provoke rage or fear), a student who needs teaching, or a conflict that cannot be resolved without violence—forcing you to choose between your principles and your mission. Ideal for paladins (reflavored), monks, jedi analogues, and any character who believes that strength is not in what you can do, but in what you can choose not to do.",
+    "emphasizes": [
+      "Perfect Balance: equilibrium in all things, neither too much nor too little",
+      "Disciplined Restraint: power held in reserve, strength shown through mercy",
+      "Clear Perception: seeing without judgment, acting without attachment",
+      "Protective Service: guarding the innocent, teaching the willing, guiding the lost",
+      "The Stillness Within: the calm at the center of every storm"
+    ]
+  },
+  "sample_adventure": {
+    "title": "The Balance That Must Be Kept",
+    "description": "A powerful warlord has arisen in the east, conquering villages and threatening the fragile peace of the region. The party is asked to stop him—but not to kill him. The Unbroken Way demands that they find a solution that restores balance without taking a life. The warlord is not evil; he is desperate, driven by a famine that only he can solve. The party must navigate a web of politics, diplomacy, and restraint to end the threat without becoming what they oppose.",
+    "quote": "The blade that is not drawn cannot be broken. The hand that is not clenched cannot be bound."
+  },
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}
