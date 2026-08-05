@@ -148,18 +148,29 @@ class WorldManager {
         }
 
         // --- Load regions ---
+        //
+        // BUGFIX: this used to key this.regions off each file's own
+        // top-level `id` field. But that field is a full slug of the
+        // region's *title including its subtitle*
+        // (data/regions/acasia.json's `id` is "acasia-broken-marches",
+        // black_banners.json's is "black-banners-condotta-crowns") -- NOT
+        // the filename. Every other consumer of region data in this
+        // codebase (deck.js's file-path fallback, the socket server's
+        // loadRegionDataSync, the web client) locates a region by
+        // filename stem (e.g. "acasia", "black_banners"), so keying this
+        // map by the internal `id` field meant getRegion()/listRegions()
+        // could never agree with the rest of the pipeline on what a
+        // region's id even was -- every lookup by filename-shaped id
+        // missed. Key by filename stem instead, so this module's notion
+        // of "region id" is the same one everything else already uses.
         try {
             const regionFiles = await fsPromises.readdir(REGION_DATA_DIR);
             for (const file of regionFiles) {
-                if (file.endsWith('.json')) {
-                    const data = await loadJSON(path.join(REGION_DATA_DIR, file));
-                    if (data && data.id) {
-                        this.regions[data.id] = data;
-                    } else if (data && data.name) {
-                        // Use name as id if no id field
-                        const id = data.name.toLowerCase().replace(/\s+/g, '-');
-                        this.regions[id] = data;
-                    }
+                if (!file.endsWith('.json') || file === 'manifest.json') continue;
+                const stem = file.slice(0, -'.json'.length);
+                const data = await loadJSON(path.join(REGION_DATA_DIR, file));
+                if (data) {
+                    this.regions[stem] = data;
                 }
             }
             console.log(`Loaded ${Object.keys(this.regions).length} regions.`);
@@ -333,10 +344,34 @@ class WorldManager {
 
     /**
      * Get a region by ID or name.
+     *
+     * BUGFIX: region ids/filenames use underscores for multi-word regions
+     * (e.g. "black_banners", "the_wilds", "midh_ahkaz", "the_ways_between"
+     * -- see loadAll() above, which keys this.regions off each file's own
+     * `id` field). This used to normalize display names to HYPHENS
+     * ("Black Banners" -> "black-banners"), which never matched any key
+     * in this.regions, so every multi-word region silently missed here
+     * and fell back to "no detailed data available" everywhere this is
+     * called from. Single-word regions (Acasia, Ecktoria, ...) were
+     * unaffected, which is why this went unnoticed.
      */
     getRegion(idOrName) {
-        idOrName = idOrName.toLowerCase().replace(/\s+/g, '-');
+        idOrName = idOrName.toLowerCase().trim().replace(/\s+/g, '_');
         return this.regions[idOrName] || null;
+    }
+
+    /**
+     * List all loaded regions as sorted {id, title} pairs, for
+     * presentation (e.g. a multi-column region picker). `id` is the
+     * filename-stem key this.regions is keyed by (see loadAll() above) --
+     * the same id deck.js/the socket server expect back — NOT each
+     * file's own internal `id` field, which is a full slug of the title
+     * and subtitle and won't resolve to any actual file.
+     */
+    listRegions() {
+        return Object.entries(this.regions)
+            .map(([id, r]) => ({ id, title: r.title || r.label || id }))
+            .sort((a, b) => a.title.localeCompare(b.title));
     }
 
     /**

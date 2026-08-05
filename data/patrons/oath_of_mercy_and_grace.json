@@ -1,0 +1,257 @@
+{
+  "id": "oath-mercy-grace",
+  "type": "patron",
+  "title": "Oath of Mercy and Grace",
+  "subtitle": "Forgiveness & Healing",
+  "version": "1.0.0",
+  "tags": [
+    "mercy",
+    "forgiveness",
+    "healing",
+    "compassion",
+    "redemption",
+    "second-chances",
+    "grace",
+    "peace"
+  ],
+  "lore": {
+    "description": "The Oath of Mercy and Grace is the gentler face of divine law—a patron of healing, compassion, and second chances. Where the Oath of Flame & Light burns with righteous fire, this Oath offers cool water to the weary. Its followers are healers, mediators, and those who believe that no soul is beyond redemption. They are the hands that tend the wounded, the voices that calm the angry, and the presence that brings peace to the dying.",
+    "followers": "In the infirmaries of battle-scarred cities, in the kitchens of refugee caravans, in the night vigils beside dying friends, the Oath's influence is felt. Its cults are the Mended Circle, whose members exchange not blood, but strips of cloth from garments worn through shared hardship. Its witches are midwives who calm laboring mothers with hummed lullabies, neighbors who leave bread on doorsteps without expectation, and elders who recall forgotten names to soothe the lonely. To serve the Oath is to understand that love's truest magic is not in changing another, but in being changed by them.",
+    "names_across_regions": {
+      "vhasia": "Saint Valerie of the Unbroken Thread, patron of healers and peacemakers",
+      "ecktoria": "The Quiet Candle, a flame that burns without heat, lighting the way to repentance",
+      "aeler": "The Breath-Watcher, who guides the dying gently into the next world"
+    },
+    "quote": "A bond forged in presence needs no seal. When you stay because you choose to—not because you must—you become the anchor that lets another soul find its tide."
+  },
+  "domain_focus": [
+    "Forgiveness: absolution, redemption, letting go of guilt",
+    "Healing: mending wounds, calming minds, restoring hope",
+    "Compassion: empathy, presence, the simple act of being there",
+    "Second Chances: offering grace to those who have erred, believing in the possibility of change"
+  ],
+  "runekeeper_options": {
+    "thiasos": {
+      "description": "A Runekeeper sworn to the Oath of Mercy and Grace does not bind a creature of fury or judgment. Their Thiasos is a small being of quiet devotion: a pair of lovebirds that preen each other's feathers in silence, a stone that stays warm when held between two palms, a moth whose wings bear the imprint of two touching fingers, or a sprout that grows only when watered by shared tears.",
+      "care": "This creature requires no food, but it must be given a token of shared presence each day (a pressed flower from a joint walk, a sip from the same cup, a moment of silent eye-contact). If neglected for a week, it becomes Compromised (its aura of calm turns heavy, imposing –1 die on all Sway rolls involving genuine empathy for its bearer until offered a fresh token of mutual presence)."
+    },
+    "codex": {
+      "description": "The Codex of Mercy and Grace is never a book of dry ink. It may be a braided cord whose knots tighten with each shared hardship, a collection of mended garments whose patches tell stories of repair, a hollow stone filled with rainwater that reflects both holders' faces, or a journal where each page bears the fingerprints of two hands writing in turn.",
+      "upkeep": "Because the Oath's truths are written in shared silence, the Codex requires upkeep: the Runekeeper must spend an hour each week sitting in quiet companionship with another (speaking no more than three sentences total), or the Rites stored there fade (treat as Compromised until re-silenced)."
+    }
+  },
+  "patrons_gift": {
+    "name": "The Unbroken Thread",
+    "description": "Once per scene as an action, a Runekeeper of Mercy and Grace may touch a held item (weapon, tool, or garment) and breathe a single word of 'remain.'",
+    "effect": "For the rest of the scene, the item grants +1 die to Sway or Medicine rolls, and the first time each scene the bearer makes eye contact with a target they wish to comfort, the target must test Resolve (DV 3) or feel a wave of profound ease (suffer –1 die to resist the bearer's next supportive action).",
+    "cost": "After the scene, the user marks +1 Obligation to the Oath of Mercy and Grace."
+  },
+  "rites": [
+    {
+      "name": "Rite of the Shared Breath",
+      "tier": "Low",
+      "xp": 4,
+      "action": "Scene",
+      "range": "Near",
+      "resist": "Yes",
+      "tags": ["BOND", "HEAL", "SECRET"],
+      "materials": "Two cups filled from the same source, or a strip of cloth worn against both heartbeats.",
+      "effect": "Your quiet presence becomes a balm. Gain +1 die to Sway one target in a supportive conversation. The target feels a subtle lifting of burden; they are more likely to confide a worry.",
+      "push_it": "The target feels safe enough to name a fear they've hidden (a secret weakness, a past failure). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Mended Cloth",
+      "tier": "Low",
+      "xp": 5,
+      "action": "Scene",
+      "range": "Touch",
+      "resist": "No",
+      "tags": ["MEND", "BOND", "READ"],
+      "materials": "A torn garment or cloth, needle and thread touched to both participants' lips.",
+      "effect": "Create a temporary bond of mutual care. Both parties gain +1 die when aiding each other in acts of nurturing (Medicine, Craft, Sway). The bond manifests as a shared warmth, like sunlight on wool.",
+      "push_it": "The bond deepens to shared vulnerability; both sense when the other is hiding pain but suffer –1 die to conceal their own distress. The bond may persist as a gentle ache until the next dusk. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Unbroken Vow",
+      "tier": "Standard",
+      "xp": 8,
+      "action": "Scene",
+      "range": "Near",
+      "resist": "Yes",
+      "tags": ["VOW", "BOND", "HEAL", "FEAR"],
+      "materials": "Token exchanged between parties — a knot tied from both hairs, a cup shared at dawn and dusk, or a stone warmed by mutual grip.",
+      "effect": "Forge a promise of enduring presence. Both gain +1 Effect when cooperating in acts of care or healing; breach inflicts 1 SB (Hearts) and a hollow ache where warmth once was (the oathbreaker feels inexplicable loneliness amid company). Create a 6-segment Vow Strength timer.",
+      "push_it": "Breach also causes a visible withdrawal (a reluctance to meet eyes, a tendency to fade from gatherings, or an inability to accept comfort). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Timer: 6 segments."
+    },
+    {
+      "name": "Rite of the Hearth's Embrace",
+      "tier": "Standard",
+      "xp": 7,
+      "action": "Scene",
+      "range": "Self",
+      "resist": "No",
+      "tags": ["GLAMOUR", "BOOST", "SOCIAL"],
+      "materials": "A blanket shared during storytelling, or a meal prepared while humming a tune of quiet joy.",
+      "effect": "Assume an aura of profound calm and magnetic steadiness. Gain +2 dice to Sway or Medicine in settings of distress or vulnerability. Your presence lingers in the memory like a safe harbor remembered in storm.",
+      "push_it": "Become the emotional anchor; all who seek comfort gravitate toward you with +1 Effect. Those who confide in you may feel a shiver of relief (Resolve DV 2 to resist sharing deeper burdens). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    }
+  ],
+  "cantors_and_cults": {
+    "cantors": {
+      "name": "The Cantor's Song",
+      "description": "A Cantor of Mercy and Grace sings in harmonies of stillness – melodies that linger like the hush between heartbeats, the breath before a vow. Their voice is used to calm a rioted crowd, to seal a pact of mutual aid with a hum, or to draw out the unspoken sorrow in a guarded heart. These Cantors are sought in hospitals and hospices, and valued by those who know that true comfort needs no grand gesture—only the courage to be truly present."
+    },
+    "cult": {
+      "name": "The Cult of the Mended Circle",
+      "description": "Mercy and Grace's cults meet in community kitchens, infirmary gardens, and porch swings at twilight. The Mended Circle appears to be a mutual aid society—but its members trade in time, labor, and the quiet gift of being seen. A ritual involves each member placing a strip of cloth (from a garment worn through hardship) into a central bowl while naming a burden they wish to share—a grief, a fear, a hope. The bowl is filled with water from a common source; those who draw a strip become bound to the Circle—they cannot ignore a member's plea for aid without suffering a visible heaviness (1 Fatigue, no roll). The most devoted wear a simple braid of three threads (one their own, one from a loved one, one from a stranger helped) woven into their clothing—a symbol that no bond is ever truly solitary. Their creed is embroidered on its seal: 'Every tear shared is a thread strengthened. Every thread strengthened makes the web unbreakable.' Outsiders are welcome as guests, but they will leave with a lighter heart, a new responsibility, or a new understanding of quiet strength."
+    }
+  },
+  "witchcraft": {
+    "name": "The Way of the Healer",
+    "description": "A witch who walks with Mercy and Grace is a hearth-keeper or tear-weaver—one who crafts social reality from threads of shared silence, mended things, and the courage to stay. Their magic works with the tools of care: a letter that bears the scent of shared tea, a blanket that holds the warmth of two bodies, or a needle that sews a promise into a hem's frayed edge. Their tools are never weapons; they use looms, ladles, and the subtle art of the well-timed 'I am here.'",
+    "color": "#8fbc8f",
+    "lore": "The healer-witch learns that presence is the greatest medicine. They do not cure with spells—they cure with attention, with patience, with the simple refusal to leave. Their craft is the art of staying, and they practice it with every breath.",
+    "signature_rite": "Rite of the Unbroken Vow",
+    "quote": "A bond forged in presence needs no seal.",
+    "tools": {
+      "needle": {
+        "name": "The Mending Needle",
+        "description": "A bone-tipped needle that glows faintly when two truths are spoken in shared silence. Once per session, the witch may mend a single torn object (cloth, leather, wood) while focusing on a person they have met. That object becomes a token of shared presence—when held by that person, it grants +1 die to resist despair or isolation (GM determines effect: +1 die to Sway when comforting, –1 die to succumb to hopelessness, etc.). The witch cannot control how the token is used, only that it exists—and that a token born of shared silence is the hardest to discard."
+      }
+    },
+    "hedge_gifts": [
+      {
+        "name": "Steady Hand",
+        "xp": 2,
+        "description": "Once per scene, the witch may touch a wounded person (including themselves) and speak a single word of intent ('hold,' 'mend,' 'stay'). For the next hour, the target feels a mild but genuine inclination toward that emotion or action—not enough to override self-preservation, but enough to grant the wielder +1 die on social rolls against them when offering care. The touch leaves no mark, but the memory of it may haunt the target's dreams as a feeling of being truly seen."
+      }
+    ]
+  },
+  "monastic_tradition": {
+    "name": "Way of the Mender",
+    "description": "Monks of the Mender tradition are healers of body and spirit. They do not judge—they mend. They believe that every soul is a garment that can be rewoven, every wound a story that can be told, every heart a hearth that can be rekindled. Their strength is in their gentleness, and their power is in their presence.",
+    "color": "#8fbc8f",
+    "prerequisites": "Spirit 3+, Presence 2+, Rite of the Shared Breath or Cantor of Mercy and Grace.",
+    "quote": "Every tear shared is a thread strengthened.",
+    "debt_resistant_frame": "What is mended cannot be broken again. Monks of the Mender tradition gain +1 die to resist any magical debt, geas, or contract that would compel them to abandon those they have sworn to heal. If they succeed, the creditor's demand is simply unwound—the obligation is forgotten, and the monk's presence becomes a balm.",
+    "techniques": {
+      "basic": {
+        "name": "Calm Presence",
+        "xp": 4,
+        "effect": "You gain +1 die to all rolls made to soothe, comfort, or calm a distressed creature. Additionally, once per scene, you may remove a minor Condition (Fear, Shaken, Guilty) from a willing creature by touch.",
+        "cost": "Passive",
+        "prereq": "Spirit 3+"
+      },
+      "advanced": {
+        "name": "Shared Burden",
+        "xp": 7,
+        "effect": "When an ally within Near range is suffering from a Condition or Harm, you may take that Condition or Harm onto yourself (reducing their penalty, and taking it on yourself). You may do this once per scene.",
+        "cost": "1 Fatigue and +1 Obligation to the Oath",
+        "prereq": "Tier II, Spirit 3+"
+      },
+      "master": {
+        "name": "The Unbroken Thread",
+        "xp": 12,
+        "effect": "Once per session, you may declare a bond between two characters (including yourself) to be unbreakable for one scene. Both characters gain +2 dice to Aid each other, and neither can be forced to betray the other by any magical or mundane means. After the scene, you gain 1 Obligation to the Oath, and the bond leaves a gentle mark—a shared scar or a matching tattoo that appears overnight.",
+        "cost": "2 Fatigue and +1 Obligation",
+        "prereq": "Tier III, Spirit 4+"
+      }
+    },
+    "corruption": [
+      {
+        "tier": 1,
+        "benefit": "Healer's Touch: +1 die to Medicine or Sway when comforting or aiding.",
+        "cost": "Empathic Overload: Suffer 1 Fatigue when immersed in strong conflict or grief."
+      },
+      {
+        "tier": 2,
+        "benefit": "Gentle Presence: Once/scene, treat a failed Sway roll as a success when offering comfort.",
+        "cost": "Burden of Care: Must aid those in need when asked; hesitation costs 1 SB (Hearts)."
+      },
+      {
+        "tier": 3,
+        "benefit": "Shared Strength: +2 dice to resist despair or hopelessness when aiding another.",
+        "cost": "Fragile Peace: –1 die when facing cruelty or indifference; you are shaken by callousness."
+      },
+      {
+        "tier": 4,
+        "benefit": "Healing Grace: Once/session, fully remove one Condition from an ally by taking it onto yourself.",
+        "cost": "Self-Sacrifice: You cannot ignore suffering; taking the Condition also costs 1 Fatigue."
+      },
+      {
+        "tier": 5,
+        "benefit": "Unbroken Presence: Your aura soothes; allies within Near gain +1 die to resist fear and despair.",
+        "cost": "Inexorable Hope: You cannot act against a promise to help; breaking a vow of care costs 1 Obligation."
+      },
+      {
+        "tier": "6+",
+        "benefit": "Avatar of Mercy: Once/session, become a living embodiment of grace. All allies within Near gain +2 dice to resist harm and +1 die to all actions for one scene.",
+        "cost": "The Price of Grace: Mark +2 Obligation; you are physically weakened (Harm 1) after the scene, and you cannot refuse a plea for help for the next 24 hours."
+      }
+    ]
+  },
+  "corruption": [
+    {
+      "tier": 1,
+      "benefit": "Healer's Touch: +1 die to Medicine or Sway when comforting or aiding.",
+      "cost": "Empathic Overload: Suffer 1 Fatigue when immersed in strong conflict or grief."
+    },
+    {
+      "tier": 2,
+      "benefit": "Gentle Presence: Once/scene, treat a failed Sway roll as a success when offering comfort.",
+      "cost": "Burden of Care: Must aid those in need when asked; hesitation costs 1 SB (Hearts)."
+    },
+    {
+      "tier": 3,
+      "benefit": "Shared Strength: +2 dice to resist despair or hopelessness when aiding another.",
+      "cost": "Fragile Peace: –1 die when facing cruelty or indifference; you are shaken by callousness."
+    },
+    {
+      "tier": 4,
+      "benefit": "Healing Grace: Once/session, fully remove one Condition from an ally by taking it onto yourself.",
+      "cost": "Self-Sacrifice: You cannot ignore suffering; taking the Condition also costs 1 Fatigue."
+    },
+    {
+      "tier": 5,
+      "benefit": "Unbroken Presence: Your aura soothes; allies within Near gain +1 die to resist fear and despair.",
+      "cost": "Inexorable Hope: You cannot act against a promise to help; breaking a vow of care costs 1 Obligation."
+    },
+    {
+      "tier": "6+",
+      "benefit": "Avatar of Mercy: Once/session, become a living embodiment of grace. All allies within Near gain +2 dice to resist harm and +1 die to all actions for one scene.",
+      "cost": "The Price of Grace: Mark +2 Obligation; you are physically weakened (Harm 1) after the scene, and you cannot refuse a plea for help for the next 24 hours."
+    }
+  ],
+  "playstyle_notes": {
+    "description": "The Oath of Mercy and Grace is the patron of healers, mediators, and redemption-seekers. Followers excel at mending wounds, calming conflicts, and offering second chances. The corruption progression leads toward a caregiver who cannot function without being needed—a harbor that risks drying up when the tide recedes. Ideal for players who enjoy playing the rock in others' storms, characters who wield patience and presence as their primary weapons, and narratives where healing is won through shared silence rather than grand gestures.",
+    "emphasizes": [
+      "Love as Sanctuary: presence, active listening, emotional holding space",
+      "Steadfast Bonding: oaths of loyalty, healing through presence, enduring commitments",
+      "Rituals of Care: shared meals, mending crafts, vigils, the sacred ordinary",
+      "Healing Through Connection: soothing distress, restoring trust, communal resilience",
+      "Nurturing Presence: calm as authority, comfort as power, the strength of remaining"
+    ]
+  },
+  "sample_adventure": {
+    "title": "The Wound That Would Not Heal",
+    "description": "A village healer has been unable to cure a mysterious wasting sickness that afflicts the children. The local lord blames the Oath of Mercy and Grace, claiming its followers have failed. The party must investigate the source of the sickness—perhaps it is a curse from a rival cult, a broken promise from the lord's past, or a natural plague that requires a different kind of healing. They must decide whether to offer mercy to the lord or seek justice for the afflicted.",
+    "quote": "To heal is not to erase the wound, but to sit beside it until it becomes bearable."
+  },
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

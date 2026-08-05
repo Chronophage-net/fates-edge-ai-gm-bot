@@ -9,6 +9,7 @@ const characters = require('./modules/characters');
 const commandHandler = require('./modules/commands');
 const adventureDirector = require('./modules/adventure-director');
 const adventureContext = require('./modules/adventure-context');
+const rulesIndexModule = require('./modules/rules-index');
 const { generateStartupMessage, generateEtiquetteReminder } = commandHandler;
 
 // -------------------------------------------------------------------
@@ -151,105 +152,103 @@ let worldManager = null;
 // while the regex only recognized "[APPLY ...]", so every boon grant the
 // model faithfully produced per these instructions silently failed to
 // parse. Fixed on both sides for belt-and-suspenders safety.
+
 const BASE_SYSTEM_PROMPT = (process.env.SYSTEM_PROMPT ||
   'You are the Game Master for a Fate\'s Edge session. Provide vivid, concise narration. Use game mechanics appropriately.') +
 
   '\n\n' +
   '═══════════════════════════════════════════════════════════════\n' +
-  'I. CRITICAL RULE: ALWAYS CALL FOR ROLLS\n' +
+  'I. CRITICAL ROLL DISCIPLINE\n' +
   '═══════════════════════════════════════════════════════════════\n\n' +
 
-  'You MUST include a [ROLL "CharacterName" Attribute+Skill DV Position] tag in EVERY response to a player action that has risk or uncertainty.\n\n' +
+  'You MUST call for a roll on EVERY player action that has risk, uncertainty, or opposition. Trivial actions (walking through a door, picking up a mundane object, speaking a sentence) require no roll—everything else does.\n\n' +
 
-  'When a player types a number (1, 2, 3, etc.) in response to a menu of options:\n' +
-  '1. IMMEDIATELY describe the action briefly (1-2 sentences).\n' +
-  '2. IMMEDIATELY call for a roll using [ROLL "CharacterName" Attribute+Skill DV Position].\n' +
-  '3. THEN (after the roll is processed) narrate the full outcome.\n\n' +
+  'Format: Embed a [ROLL "CharacterName" Attribute+Skill DV Position] tag naturally within your narrative sentence. NEVER put it on its own line or as a separate paragraph.\n\n' +
 
-  'NEVER narrate a player\'s action without a roll unless it is trivial (walking through a door, picking up an object, speaking a sentence).\n\n' +
+  'Example: "You edge toward the opening, [ROLL "Asadef" Wits+Stealth DV 3 Controlled] to slip through unnoticed."\n\n' +
 
-  'Example of CORRECT format:\n' +
-  '"You step forward, [ROLL "Asadef" Presence+Sway DV 3 Controlled] to see if you can calm the situation."\n\n' +
+  'CRITICAL: You MUST wait for the roll result. NEVER invent, simulate, describe, or format a dice result yourself—in ANY form. No emoji, no bolded numbers, no HTML, no bracketed summary. The engine generates the result automatically from the tag. If you type something that looks like a finished outcome, you have violated this rule.\n\n' +
 
-  'Example of INCORRECT format (DO NOT DO THIS):\n' +
-  '"You step forward and try to calm the situation. The figure nods." (No roll called!)\n\n' +
+  'When a player types a number in response to a menu:\n' +
+  '1. Describe the action briefly (1 sentence).\n' +
+  '2. Call the roll with [ROLL ...] immediately.\n' +
+  '3. Wait for the engine result, THEN narrate the full outcome.\n\n' +
 
-  'Embed the [ROLL ...] tag naturally within a sentence, not as a separate statement. The roll should feel like part of the narration.\n' +
-  'Example: "You edge toward the opening, [ROLL "Asadef" Wits+Stealth DV 3 Controlled] to see if you remain hidden."\n' +
-  'Example: "You try to climb the wall, [ROLL "Asadef" Body+Athletics DV 3 Controlled] to reach the ledge."\n' +
-  'Do NOT put the roll tag on its own line or as a separate paragraph. Keep it embedded in the narrative.\n\n' +
-
-  'ROLL RESULTS MUST APPEAR BEFORE YOUR NARRATIVE DESCRIPTION. Structure your response as:\n' +
-  '1. The [ROLL ...] tag embedded in a sentence (the bot replaces it with formatted results)\n' +
-  '2. THEN your narrative description of what happens\n\n' +
-
-  'CRITICAL: NEVER write out a roll result yourself, IN ANY FORM -- no dice emoji, no "Successes:" count, no outcome label (Clean Success/Partial/Miss/etc.), no HTML, and no bracketed shorthand summary either (e.g. never write something like "[Name rolled X vs DV Y: N successes -> Outcome]" -- that exact shape is reserved for the game engine\'s own internal bookkeeping, never something you produce yourself). ' +
-  'That entire display is generated automatically the moment you use a [ROLL ...] tag. If you find yourself typing anything that looks like a finished dice result in ANY format, stop -- ' +
-  'use the [ROLL ...] tag instead and let the game engine produce the real result.\n\n' +
-
-  'Example of something you must NEVER write yourself, in ANY form resembling this, even as plain markdown with no HTML tags at all:\n' +
-  '"**Asadef** rolls **Wits+Insight** (2d10) vs DV 3 (Controlled): 🎲 5 4  ✅ Successes: 0 | 💀 Story Beats: 0  **Miss**  Current: Harm 0, Fatigue 0, Boons 0"\n' +
-  'This is ALWAYS forbidden, whether written as HTML, as a bracketed summary, or as plain bold/emoji text like the example above. If you do not have a real result to report, use [ROLL ...] and wait for the actual outcome instead of inventing one.\n\n' +
-
-  'Example of correct format:\n' +
-  'You edge toward the opening, [ROLL "Asadef" Wits+Stealth DV 3 Controlled] to slip through unnoticed. You press yourself flat against the rock and move slowly, one silent step at a time.\n\n' +
-
-  'Example of INCORRECT format (DO NOT DO THIS):\n' +
-  'You press yourself flat against the rock. [ROLL "Asadef" Wits+Stealth DV 3 Controlled] The wind tugs at your cloak.\n\n' +
-
-  'If the player has no character selected, respond with: "⚠️ Please select a character in the VTT or create one with !gm create <name>."\n\n' +
+  'If no character is selected, respond with: "⚠️ Please select a character in the VTT or create one with !gm create <name>."\n\n' +
 
   '═══════════════════════════════════════════════════════════════\n' +
-  'II. CORE MECHANICS\n' +
+  'II. MANDATORY MECHANICAL TAGS\n' +
   '═══════════════════════════════════════════════════════════════\n\n' +
 
-  'You have a pool of Story Beats (SB). When you want to introduce a complication, write [SPEND SB N] to spend N beats. The bot will deduct them and you can narrate the complication.\n\n' +
+  'You have a GM pool of Story Beats (SB). Use [SPEND SB N] to introduce a complication.\n\n' +
 
-  'Create timers with [TIMER "name" segments "onFill message"] and tick them with [TICK TIMER "name" N].\n\n' +
+  'Create timers: [TIMER "Name" segments N "onFill message"]\n' +
+  'Tick timers: [TICK TIMER "Name" N]\n\n' +
 
-  'Draw from the Deck of Consequences with [DRAW count region] or perform a Crown Spread with [CROWN region].\n\n' +
+  'Draw cards: [DRAW count region]\n' +
+  'Crown Spread: [CROWN region]\n\n' +
 
-  'Set scene Position with [SET POSITION Dominant|Controlled|Desperate] and set DV with [SET DV N].\n\n' +
+  'Set position: [SET POSITION Dominant|Controlled|Desperate]\n' +
+  'Set DV: [SET DV N]\n\n' +
 
-  'Apply resource changes with [APPLY HARM Name N], [APPLY FATIGUE Name N], [APPLY BOON Name N], etc. ("ADD" also works in place of "APPLY".)\n\n' +
+  'Resource changes: [APPLY HARM Name N], [APPLY FATIGUE Name N], [APPLY BOON Name N] ("ADD" works interchangeably).\n\n' +
 
-  'When an NPC casts a spell, use [NPC CAST "Spell Name" TargetName]. The bot will deduct Story Beats (SB) from the GM\'s pool and resolve the effect. Spell names must match entries in the spellbook (e.g., "Ember Dart", "Hush"). Target can be a player character name or a generic target like "the guard".\n\n' +
+  'NPC spellcasting: [NPC CAST "Spell Name" TargetName]\n\n' +
 
-  'When an encounter is complete, resolve it with [ENCOUNTER RESOLVE outcome "notes"] where outcome is clean, partial, or miss.\n\n' +
+  'You were given only a SECTION INDEX of the rules, not the full rulebook text, to save space. ' +
+  'If a scene needs the exact wording of a specific rule (e.g. precise Grapple mechanics, Ward costs, ' +
+  'Downtime procedures) rather than the core loop you already know, request it with ' +
+  '[LOOKUP RULE "Section Title or keyword"] and its full text will be inserted in place of the tag.\n\n' +
 
-  'When a scene\'s dramatic question has been resolved and the story is ready to move forward, use [SCENE COMPLETE "brief note on how it ended"] to advance to the next scene. ' +
-  'Use this naturally at real scene breaks -- not every exchange, only when this beat of the story has actually concluded.\n\n' +
+  'Encounter resolution: [ENCOUNTER RESOLVE clean|partial|miss "notes"]\n\n' +
 
-  'Whenever you introduce a new named character who isn\'t already established, use [NPC CREATE "Name" "Role" "Motivation"] once, inline, the first time they appear (e.g. right after describing them). ' +
-  'This registers them so they can be referenced consistently later, AND automatically drops a token for them onto the tabletop\'s grid combat map -- you don\'t need a separate tag for that part. This tag produces no visible output -- keep narrating normally around it.\n\n' +
-
-  'During a fight, as combatants move around, use [TOKEN MOVE "Name" col row] to reposition their token on the grid map (col/row are small integers, e.g. 0-10 -- think of it as "a few cells left" or "closing to melee", not exact coordinates; approximate is fine). ' +
-  'Use [TOKEN REMOVE "Name"] if a specific combatant is taken off the board mid-fight (flees, is dragged away, teleports out) without the whole encounter ending. ' +
-  'Neither tag produces visible output. You do not need to place a token for a character who already has one (e.g. via [NPC CREATE]) -- [TOKEN MOVE] on an existing name just repositions it. When [ENCOUNTER RESOLVE] fires, enemy tokens are cleared automatically -- no manual cleanup needed.\n\n' +
-
-  'Use timers to build pressure; when a timer fills, advance the scene or introduce a complication.\n\n' +
-
-  'On a Partial or Miss, the scene timer will auto-tick. You can also manually tick timers with [TICK TIMER "name" N].\n\n' +
+  'Scene advancement: [SCENE COMPLETE "brief note on how it ended"] — use only at genuine dramatic scene breaks, not after every exchange.\n\n' +
 
   '═══════════════════════════════════════════════════════════════\n' +
-  'III. OUTCOME MATRIX\n' +
+  'III. NPC CREATION & TOKEN MANAGEMENT (NON-NEGOTIABLE)\n' +
   '═══════════════════════════════════════════════════════════════\n\n' +
 
-  'Clean Success: S ≥ DV, SB = 0 → Success without complication.\n' +
-  'Success with SB: S ≥ DV, SB > 0 → Success; GM may spend SB for complication.\n' +
-  'Partial: 0 < S < DV → Progress with complication; player gains 1 Boon; auto-tick timer.\n' +
-  'Miss: S = 0 → No progress; GM escalates; player gains 2 Boons; auto-tick timer.\n\n' +
+  'The instant a new named character completes their FIRST line of dialogue or receives more than one sentence of description, you MUST call [NPC CREATE "Name" "Role" "Motivation"] BEFORE their second sentence of speech. This is not optional. It registers them mechanically and drops their token.\n\n' +
+
+  'During combat or movement, use:\n' +
+  '[TOKEN MOVE "Name" col row] — reposition an existing token.\n' +
+  '[TOKEN REMOVE "Name"] — remove a specific combatant mid-fight.\n\n' +
+
+  'Enemy tokens clear automatically on [ENCOUNTER RESOLVE]. Do not manually clear them.\n\n' +
 
   '═══════════════════════════════════════════════════════════════\n' +
-  'IV. PACING & NARRATION\n' +
+  'IV. OUTCOME MATRIX (APPLY AFTER ROLL RESULT)\n' +
   '═══════════════════════════════════════════════════════════════\n\n' +
 
-  'Keep narration vivid but concise. Frame the situation, call for rolls, then narrate outcomes.\n' +
-  'Let the dice tell the story. Embrace failure — it generates Story Beats that make the story interesting.\n' +
-  'When in doubt, default to DV 3, Controlled Position.\n\n' +
+  'Clean Success: Successes ≥ DV, SB = 0 → Full success, no complication.\n' +
+  'Success with SB: Successes ≥ DV, SB > 0 → Success; GM may spend SB to introduce a cost.\n' +
+  'Partial: 0 < Successes < DV → Progress with complication; player gains 1 Boon; auto-tick relevant timer.\n' +
+  'Miss: Successes = 0 → No progress; GM escalates the situation; player gains 2 Boons; auto-tick timer.\n\n' +
 
-  'NEVER narrate your own interpretation of what the player is doing (e.g. "I understand — you\'re letting me know you\'re ready for the next beat" or "I understand you want to move on"). ' +
-  'If a player message is terse, ambiguous, or just a number, respond by continuing the STORY directly -- describe what happens next in-world -- rather than describing or explaining your read of their intent. Stay in the fiction at all times.';
+  'Default to DV 3, Controlled Position when uncertain.\n\n' +
+
+  '═══════════════════════════════════════════════════════════════\n' +
+  'V. DRAMATIC PACING & NARRATION (UNIVERSAL GUARDRAILS)\n' +
+  '═══════════════════════════════════════════════════════════════\n\n' +
+
+  'Guard dramatic escalation. Reveal root causes, hierarchies, inner workings, and final-act mechanics ONLY when players earn them through investigation or reach the appropriate narrative act. In early scenes, NPCs are witnesses to symptoms—what they see, feel, or have lost—not omniscient expositors of the module\'s internal logic.\n\n' +
+
+  'When uncertain, have NPCs offer actionable leads (locations to visit, people to question, documents to find) rather than summarizing answers. Treat the module\'s act structure as a promise to the players: Act I establishes the mystery, Act II uncovers the machinery, Act III resolves it.\n\n' +
+
+  'If a module provides gmHints in its metadata, treat those hints as immutable constraints on your narration. If a player asks directly about a forbidden revelation, deflect gracefully toward an investigation location—do not answer, lie, or hedge awkwardly.\n\n' +
+
+  'Keep narration vivid but lean. Frame the situation, call the roll, then narrate the outcome. Let failure generate Story Beats—it drives the story forward. Stay in the fiction at all times. NEVER narrate your interpretation of the player\'s intent (e.g., "I understand you want to move on"). If a player message is terse or ambiguous, respond by continuing the story in-world.\n\n' +
+
+  '═══════════════════════════════════════════════════════════════\n' +
+  'VI. STRICT PROHIBITIONS (ZERO TOLERANCE)\n' +
+  '═══════════════════════════════════════════════════════════════\n\n' +
+
+  '- NEVER narrate a risky action without a [ROLL ...] tag.\n' +
+  '- NEVER write, simulate, or format a dice result yourself.\n' +
+  '- NEVER introduce a named NPC without an immediate [NPC CREATE] tag.\n' +
+  '- NEVER reveal Act II/III mechanics, hierarchies, or the engine\'s internal logic in Act I.\n' +
+  '- NEVER summarize module secrets through NPC monologue—always deflect to investigation.\n' +
+  '- NEVER break the fourth wall to explain your reasoning. Stay in the fiction.';
 
 // Build adventure manifest (if script exists)
 try {
@@ -1095,9 +1094,23 @@ async function handleMessage(msg) {
   }
 
   // Build system prompt with rules from orchestrator
+  //
+  // CHANGED (contextual pruning, not RAG -- the game state is small and
+  // already structured/indexed in memory, it just doesn't need to be
+  // fully re-sent every single turn): this used to prepend the ENTIRE
+  // rules.txt (600+ lines) to every system prompt regardless of whether
+  // the current turn needed any of it. Now only a compact index of
+  // section titles goes in by default; the model is told to ask for a
+  // specific section by name via `[LOOKUP RULE "Section Title"]` when it
+  // actually needs the full text of a rule, and that tag gets resolved
+  // (see processSpecialTags() in commands.js) the same inline way [ROLL
+  // ...] already is. This is a plain keyword lookup against an in-memory
+  // list, not a vector search -- there's nothing here to retrieve that
+  // isn't already a direct key.
   let fullSystemPrompt = BASE_SYSTEM_PROMPT;
   if (orchestrator && orchestrator.world && orchestrator.world.rules) {
-    fullSystemPrompt = orchestrator.world.rules + '\n\n' + fullSystemPrompt;
+    const rulesIndex = rulesIndexModule.buildIndex(orchestrator.world.rules);
+    fullSystemPrompt = rulesIndex + '\n\n' + fullSystemPrompt;
   }
 
   const summary = orchestrator.campaign.getSummary();
@@ -1138,12 +1151,43 @@ async function handleMessage(msg) {
   }
 
   // Character sheets
+  //
+  // CHANGED (contextual pruning): this used to dump EVERY character's
+  // full sheet (attributes, skills, talents, bonds, complications,
+  // assets, followers) on every single turn, regardless of whether
+  // anyone but the active speaker was even involved. For a 5-player
+  // party that's most of the token budget spent re-sending data the
+  // model won't use most turns. Now only the character(s) actually
+  // relevant to THIS turn get the full sheet: whoever is speaking
+  // (`sender`), plus anyone else explicitly named in their message (so
+  // "I help Lena climb" still gives the model Lena's real stats, not
+  // just her name). Everyone else gets a compact one-line status --
+  // exactly what a human GM actually holds in their head about a
+  // character who isn't currently the focus.
   const allChars = characters.getAll();
   const charNames = Object.keys(allChars);
   if (charNames.length > 0) {
-    fullSystemPrompt += '\n\n**Player Characters (current stats):**\n';
+    const lowerText = (text || '').toLowerCase();
+    const relevantNames = new Set();
+    const senderMatch = charNames.find(n => n.toLowerCase() === String(sender).toLowerCase());
+    if (senderMatch) relevantNames.add(senderMatch);
+    for (const name of charNames) {
+      if (lowerText.includes(name.toLowerCase())) relevantNames.add(name);
+    }
+    // Fallback: no character resolves to the sender and none were named
+    // (e.g. the GM is talking, or a brand-new player hasn't picked a
+    // character yet) -- give full detail to all of them rather than
+    // guess wrong and silently withhold stats the model actually needs.
+    const giveFullDetail = relevantNames.size > 0 ? relevantNames : new Set(charNames);
+
+    fullSystemPrompt += '\n\n**Player Characters:**\n';
     for (const name of charNames) {
       const c = allChars[name];
+      if (!giveFullDetail.has(name)) {
+        fullSystemPrompt += `\n${name} (Tier ${c.tier || 1}): Harm ${c.harm || 0}, Fatigue ${c.fatigue || 0}, Boons ${c.boons || 0}, Obligation ${c.obligation || 0}. ` +
+          `(Not the current focus -- full sheet omitted this turn; it'll be included automatically if they're named or acting.)\n`;
+        continue;
+      }
       fullSystemPrompt += `\n${name} (Tier ${c.tier || 1}):\n`;
       fullSystemPrompt += `  Harm: ${c.harm || 0}, Fatigue: ${c.fatigue || 0}, Boons: ${c.boons || 0}, Obligation: ${c.obligation || 0}\n`;
       fullSystemPrompt += `  Attributes: `;
@@ -1336,11 +1380,31 @@ async function handleMessage(msg) {
   }
 
   // ─── Generate AI Response ────────────────────────────────────────
+  //
+  // CHANGED ("The Silent Void"): a local model can take 10-30+ seconds
+  // to respond, during which the chat just... says nothing. True
+  // token-by-token streaming to the client would need the socket
+  // server's chat protocol to support appending to/editing an existing
+  // message, which it currently doesn't (sendChat() always posts a
+  // brand-new message) -- that's a socket-server change, out of scope
+  // here. What IS safely fixable on the bot's side: don't make fast
+  // providers (OpenAI/DeepSeek, typically 2-7s) post a needless
+  // "thinking" message on every single reply, but DO let the player know
+  // something is happening if it's taking noticeably long. The drivers
+  // now support real streaming internally (see generateResponse(context,
+  // onToken) on each driver) for whenever the socket protocol grows
+  // message-editing support; this is the practical stopgap within
+  // today's protocol.
+  const typingTimer = setTimeout(() => {
+    sendChat('*(The GM is composing a reply...)*');
+  }, 2500);
+
   try {
     const reply = await driver.generateResponse({
       systemPrompt: fullSystemPrompt,
       messages: conv.slice(-MAX_HISTORY)
     });
+    clearTimeout(typingTimer);
 
     let clean = reply.trim();
 
@@ -1396,6 +1460,7 @@ async function handleMessage(msg) {
       await orchestrator.campaign.save();
     }
   } catch (err) {
+    clearTimeout(typingTimer);
     console.error('❌ LLM error:', err.message);
     sendChat('*The story pauses. (AI error)*');
   }
@@ -1439,7 +1504,10 @@ function scheduleStartupMessage() {
     charactersExist = hasCharacters;
 
     const region = orchestrator.currentScene?.region || orchestrator.options.defaultRegion || 'unknown';
-    const regionName = orchestrator.world?.getRegion(region)?.name || region;
+    // BUGFIX: region JSON stores the display name under `title`, not
+    // `name` (which doesn't exist on these records) -- this always fell
+    // through to the raw slug/id before.
+    const regionName = orchestrator.world?.getRegion(region)?.title || region;
 
     const msg = generateStartupMessage(regionName, playerCount, hasCharacters, 'GM');
     sendChat(msg);
@@ -1458,7 +1526,25 @@ async function main() {
   await initGame();
 
   if (driver && typeof driver.initialize === 'function') {
-    try { await driver.initialize(); } catch (e) { console.error('Driver init failed:', e.message); }
+    // CHANGED: this used to log the error and keep going regardless --
+    // meaning a bot whose LLM backend never actually connected (bad key,
+    // unreachable Ollama server, HEADLESS mode with no usable model) would
+    // still connect to chat and silently fail every single message
+    // instead of anything noticing it was broken. In a headless
+    // deployment (systemd/Docker/etc.) the right behavior is to exit
+    // non-zero so the process supervisor restarts it (and its restart
+    // backoff/alerting kicks in) rather than run indefinitely in a
+    // useless state. Non-headless (interactive dev) failures already got
+    // a chance at recovery inside driver.initialize() itself (see
+    // ollama-driver.js's _recoverModel()) before reaching here, so
+    // exiting at this point is the right call either way.
+    try {
+      await driver.initialize();
+    } catch (e) {
+      console.error('❌ Driver init failed:', e.message);
+      console.error('   The bot cannot reach its configured AI backend. Exiting so a process supervisor can restart it.');
+      process.exit(1);
+    }
   }
 
   connect();

@@ -51,15 +51,12 @@
   "rites": [
     {
       "name": "Rite of the Crossing Fee",
-      "tier": "Basic",
+      "tier": "Low",
       "xp": 4,
       "action": "Scene",
       "range": "Near",
       "resist": "No",
-      "tags": [
-        "SPIRIT",
-        "TRUTH"
-      ],
+      "tags": ["SPIRIT", "TRUTH"],
       "materials": "A coin for the tongue of the deceased, or a lock of hair from the bereaved.",
       "effect": "Open speech with a specific dead individual. Gain +1 die to Investigation or Lore when seeking knowledge they once held.",
       "push_it": "The spirit offers a deeper fragment of memory, but demands a future favor in return. Mark 1 SB (Hearts). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -70,16 +67,12 @@
     },
     {
       "name": "Rite of the Ancestral Consultation",
-      "tier": "Basic",
+      "tier": "Low",
       "xp": 5,
       "action": "Scene",
       "range": "Self",
       "resist": "Yes",
-      "tags": [
-        "SPIRIT",
-        "TRUTH",
-        "FATE"
-      ],
+      "tags": ["SPIRIT", "TRUTH", "FATE"],
       "materials": "A personal token of the departed, or their favored food or drink.",
       "effect": "Ask one question of an ancestral spirit regarding family history, hidden legacies, or inherited debts.",
       "push_it": "The spirit grants detailed, prophetic guidance but exacts a small favor; mark 1 SB (Hearts). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -90,17 +83,12 @@
     },
     {
       "name": "Rite of the Mediated Pact",
-      "tier": "Advanced",
+      "tier": "Standard",
       "xp": 8,
       "action": "Scene",
       "range": "Near",
       "resist": "Yes",
-      "tags": [
-        "VOW",
-        "BOND",
-        "COMMAND",
-        "SPIRIT"
-      ],
+      "tags": ["VOW", "BOND", "COMMAND", "SPIRIT"],
       "materials": "Two copies of a written accord (one buried with the dead, one kept by the living), or a circle of salt mixed with grave-dust.",
       "effect": "Choose one: Death-Bound Pact: Bind a compact between a living signatory and a willing spirit. Both gain +1 die when fulfilling the terms. Breach angers the spirit and Varnek both. Spirit Medium: Serve as a conduit for several spirits to speak. Gain +2 dice to mediate disputes between living and dead and to facilitate group negotiation.",
       "push_it": "If you chose Pact, the pact enforces itself: a breach triggers supernatural reprisal; mark +1 Obligation. If you chose Medium, a potent spirit rides your voice to speak directly; mark Exposure +1. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -111,17 +99,12 @@
     },
     {
       "name": "Rite of the Unquiet Host",
-      "tier": "Advanced",
+      "tier": "Standard",
       "xp": 10,
       "action": "Scene",
       "range": "Zone",
       "resist": "Yes",
-      "tags": [
-        "SUMMON",
-        "AREA",
-        "BOND",
-        "DEBT"
-      ],
+      "tags": ["SUMMON", "AREA", "BOND", "DEBT"],
       "materials": "A battlefield relic (a broken sword, a skull, a scrap of uniform) and a handful of grave-earth.",
       "effect": "You negotiate with the lingering dead of a place. Summon a Temporary Host — a spectral warband treated as a single Cap 3 Follower with the following traits: Assist: May grant +3 dice to a single combat or intimidation roll, or provide a free Setup action (e.g., 'they distract the guards'). Independent Action: Once per scene, the Host may take one action from the Follower list (e.g., Scout & Signal, Distract & Draw) at the cost of marking Exposure +1. Weakness: The Host is vulnerable to salt, bells, and consecrated ground. Any attack using such materials ignores their spectral nature. The Host lasts for the remainder of the current scene, or until dismissed. When it departs, the dead demand their due: you must either mark +2 Obligation or perform a Memorial Rite before the next dawn (a downtime action, no roll). If you fail to do so, the Host returns unbidden at the worst moment, acting as a hostile hazard (GM's discretion).",
       "push_it": "Extend the Host's duration to the entire session. The debt is doubled: mark +4 Obligation or perform a memorial rite and sacrifice a personal memory (erase a minor fact or a Bond for one session). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -132,17 +115,12 @@
     },
     {
       "name": "Rite of the Final Testament",
-      "tier": "Master",
+      "tier": "High",
       "xp": 13,
       "action": "Extended",
       "range": "Touch",
       "resist": "Yes",
-      "tags": [
-        "VOW",
-        "FATE",
-        "COMMAND",
-        "DEATH"
-      ],
+      "tags": ["VOW", "FATE", "COMMAND", "DEATH"],
       "materials": "A dying person's last words recorded in their blood, witnessed by you.",
       "effect": "Seal the last request with weight beyond life. Targets must pass Resolve (DV 4) to ignore it.",
       "push_it": "The testament becomes a geas: only fulfillment — or Varnek's wrath — can break it; mark +2 Obligation. Cost: Mark +1 Obligation (total +4) or Mark +1 Fatigue.",
@@ -153,17 +131,12 @@
     },
     {
       "name": "Rite of the Eternal Archive",
-      "tier": "Master",
+      "tier": "High",
       "xp": 14,
       "action": "Extended",
       "range": "Zone",
       "resist": "Yes",
-      "tags": [
-        "TRUTH",
-        "AREA",
-        "FATE",
-        "SANCTUARY"
-      ],
+      "tags": ["TRUTH", "AREA", "FATE", "SANCTUARY"],
       "materials": "A library mortared with tomb-stone, ink from cremation ash.",
       "effect": "Found a repository where the dead deposit knowledge. Gain a permanent +1 die to Lore for historical or genealogical research made within. Spirits periodically contribute testimonies.",
       "push_it": "The archive awakens and begins to demand curatorship and payment; mark Harm 1 (Stress). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
@@ -184,7 +157,12 @@
     }
   },
   "witchcraft": {
-    "description": "A witch who walks with Varnek Karn is a funeral notary, a grave-warden, or a memory-keeper — a lay practitioner who uses ink, seals, and small rites to witness the passage of the dead. Their magic is the art of recording and releasing: a leaden seal that certifies a death-bed promise, a quill that writes in invisible ink that appears only when a ghost is near, or a carved wooden stamp that quiets a restless spirit for a night. In Aeler, a True-Mason might carve a 'memory niche' into a crypt wall, but a hedge-witch of Varnek Karn might press a wax seal onto the niche's edge, binding the dead to speak truth when the seal is broken. In Zakov, a net-mender might weave a shroud with a single loose thread; pulling it releases the drowned sailor's soul to the tide.",
+    "name": "The Art of the Silent Archive",
+    "description": "A witch who walks with Varnek Karn is a funeral notary, a grave-warden, or a memory-keeper — a lay practitioner who uses ink, seals, and small rites to witness the passage of the dead. Their magic is the art of recording and releasing: a leaden seal that certifies a death-bed promise, a quill that writes in invisible ink that appears only when a ghost is near, or a carved wooden stamp that quiets a restless spirit for a night. In Aeler, a True-Mason might carve a 'memory niche' into a crypt wall, but a hedge-witch of Varnek Karn might press a wax seal onto the niche's edge, binding the dead to speak truth when the seal is broken. In Zakov, a net-mender might weave a shroud with a single loose thread; pulling it releases the drowned sailor's soul to the tide. These witches are the keepers of the ledger, the ones who ensure that the dead are remembered and that their bargains are honored.",
+    "color": "#6b7a7a",
+    "lore": "The silent archivist's path is the art of memory. They learn that the dead are not gone — they are merely elsewhere, and they have much to say if you know how to ask. Varnek Karn teaches that every death is a transaction, every life a debt, and every memory a currency that can be spent or saved. These witches are found in archives, mortuaries, and the quiet rooms where the dying speak their last words, their hands stained with ink and their eyes always watching for the moment when a soul crosses over.",
+    "signature_rite": "Rite of the Crossing Fee",
+    "quote": "The dead are not gone. They have only changed their address. Be polite, pay your respects, and never make a promise you cannot keep.",
     "tools": {
       "seal_of_silent_witness": {
         "name": "The Seal of the Silent Witness",
@@ -196,6 +174,84 @@
         "name": "Echo of the Honored Dead",
         "xp": 4,
         "description": "Once per scene, the witch may touch a physical remnant of the dead (a bone, a lock of hair, a piece of clothing) and whisper a question. For a moment, the remnant holds a memory — the GM answers one factual question about the dead person's life or death, but the answer is always tinged with the emotion of the moment (e.g., 'she was afraid,' 'he was angry,' 'they were at peace')."
+      },
+      {
+        "name": "Grave-Knowing",
+        "xp": 2,
+        "description": "You can sense the presence and nature of any grave, burial site, or place where someone has died within Near range. You can tell if the dead are at peace or restless, and you can sense if any spirit lingers nearby. Passive."
+      },
+      {
+        "name": "The Unwritten Name",
+        "xp": 3,
+        "description": "Once per scene, you may ask a corpse (dead less than a day) a single question. The corpse answers with a single word — a name, a direction, a truth. The answer is always truthful, but it may be cryptic. The corpse cannot answer questions about its own death unless it was murdered."
+      },
+      {
+        "name": "Funeral Rite",
+        "xp": 3,
+        "description": "You may perform a proper funeral rite for any corpse, taking one scene to speak the deceased's name, honor their memory, and set them to rest. This clears the area of minor restless spirits and grants +1 die to all rolls made in the area for the next hour. Once per session."
+      }
+    ]
+  },
+  "monastic_tradition": {
+    "name": "The Way of the Bone Monk",
+    "description": "Monks of the Bone Monk tradition embody Varnek Karn's patience and wisdom. They move with the certainty of the grave, speak with the authority of the dead, and act with the deliberateness of those who have all the time in the world. They are mediators between worlds, keepers of funerary law, and guardians of the boundary between life and death. In the quiet of the monastery, they practice the art of listening — learning to hear the whispers of the dead, to understand their grievances, and to negotiate the bargains that will set them to rest. They are not necromancers who command the dead; they are diplomats who speak with them as equals.",
+    "color": "#6b7a7a",
+    "prerequisites": "Spirit 3+, Resolve 2+, Rite of the Crossing Fee or Cantor of Varnek Karn.",
+    "quote": "The dead have all the time in the world to consider their offers. They know what the living forgot, and remember every slight with perfect clarity.",
+    "debt_resistant_frame": "The dead do not collect — they witness. Monks of the Bone Monk tradition gain +1 die to resist any magical debt or obligation that would bind them beyond the grave. If they succeed, the creditor feels a cold hand on their shoulder — a reminder that death cancels all ledgers.",
+    "techniques": {
+      "basic": {
+        "name": "Ancestor's Knuckle",
+        "xp": 5,
+        "description": "Reroll a missed unarmed attack. The ancestor who guides your fist demands a name or a memory after the scene.",
+        "cost": "Free (once/scene)",
+        "prereq": "Spirit 3+"
+      },
+      "advanced": {
+        "name": "Final Testament",
+        "xp": 9,
+        "description": "Seal a dying person's last request with weight beyond life. Targets must pass Resolve (DV 4) to ignore it. The dead witness your words.",
+        "cost": "1 Fatigue",
+        "prereq": "Tier II, Spirit 3+"
+      },
+      "master": {
+        "name": "Death's Confidant",
+        "xp": 12,
+        "description": "Once per session, compel a willing spirit to answer three questions truthfully. You may also ignore one debt that would have been owed to a deceased creditor — the ledger entry becomes dust. After the scene, you gain a permanent Debt Scar (your fingertips are cold to the touch) — the Hollow notes your name, but you may call on one ancestor to resist a future obligation (the dead know how to wait).",
+        "cost": "2 Fatigue and +1 Obligation to Varnek Karn",
+        "prereq": "Tier III, Spirit 4+"
+      }
+    },
+    "corruption": [
+      {
+        "tier": 1,
+        "benefit": "Death's Whisper: +1 die to Notice when the dead seek to communicate.",
+        "cost": "Graveyard Pallor: –1 die to social rolls with the living; your presence unsettles."
+      },
+      {
+        "tier": 2,
+        "benefit": "Ancestral Insight: Once/scene, gain +2 dice for family history or inherited troubles.",
+        "cost": "Spectral Awareness: Ever-aware of nearby spirits; suffer Fatigue 1 in places of many deaths."
+      },
+      {
+        "tier": 3,
+        "benefit": "Medium's Gift: Once/session, act as a flawless conduit for a spirit.",
+        "cost": "Death-Touched: Cold spots and small portents follow you; –1 die to ordinary social grace."
+      },
+      {
+        "tier": 4,
+        "benefit": "Final Authority: Once/scene, compel adherence to a true last request (Resolve DV 4).",
+        "cost": "Corpse-Pale: Visibly wan; –2 dice where warmth or vigor is required."
+      },
+      {
+        "tier": 5,
+        "benefit": "Archive Keeper: Once/session, access perfect recall of a historical event or family secret.",
+        "cost": "Unquiet Presence: The dead trail you; –1 die to stealth and to surprising the living."
+      },
+      {
+        "tier": "6+",
+        "benefit": "Death's Confidant: Once/session, compel a willing spirit to answer three questions truthfully.",
+        "cost": "Halfway House: Mark +2 Obligation; risk becoming half-withdrawn from the living world. You must perform a funeral rite for a stranger before the next dawn, or mark an additional +2 Obligation."
       }
     ]
   },
@@ -231,6 +287,16 @@
       "cost": "Halfway House: Mark +2 Obligation; risk becoming half-withdrawn from the living world. You must perform a funeral rite for a stranger before the next dawn, or mark an additional +2 Obligation."
     }
   ],
+  "rivalries": [
+    {
+      "patron": "The Confessor",
+      "description": "The Confessor absorbs sin; Varnek Karn negotiates with the dead. The Confessor takes burdens onto the living; Varnek Karn bargains with the departed. Their followers sometimes find themselves at odds — the Confessor seeks to cleanse the living; Varnek Karn seeks to honor the dead."
+    },
+    {
+      "patron": "The Witness",
+      "description": "The Witness records truth; Varnek Karn records debts. The Witness seeks to reveal secrets; Varnek Karn seeks to keep promises. Their archives sometimes conflict, and their followers may find themselves competing for the same testimony."
+    }
+  ],
   "playstyle_notes": {
     "description": "Varnek Karn favors investigators, arbiters, and heralds of funerary law. Power grows through cultural sensitivity, shrewd bargaining, and careful record-keeping; the price is a thinning tie to warmth and mortal ease. Expect mysteries of lineage, obligations that outlive their makers, and parleys where both sides of the veil demand their due. The Rite of the Unquiet Host allows a follower to temporarily command a small army of the dead, but the debt incurred ensures that such power is never free — and the dead always remember who called them.",
     "emphasizes": [
@@ -241,67 +307,6 @@
       "Historical Continuity: showing how past vows shape the present",
       "The Unquiet Host: raising temporary armies through pact, not domination"
     ]
-  },
-  "monastic_tradition": {
-    "name": "Bone Monk (Varnek Karn)",
-    "quote": "The dead have all the time in the world to consider their offers.",
-    "prerequisites": "Spirit 3+, Resolve 2+, Rite of the Crossing Fee or Cantor of Varnek Karn.",
-    "debt_resistant_frame": "The dead do not collect — they witness. Monks of the Bone Monk tradition gain +1 die to resist any magical debt or obligation that would bind them beyond the grave. If they succeed, the creditor feels a cold hand on their shoulder — a reminder that death cancels all ledgers.",
-    "techniques": [
-      {
-        "name": "Ancestor's Knuckle",
-        "tier": "Basic",
-        "xp": 5,
-        "effect": "Reroll a missed unarmed attack. The ancestor who guides your fist demands a name or a memory after the scene.",
-        "cost": "Free (once/scene)",
-        "requirement": "Spirit 3"
-      },
-      {
-        "name": "Ancestral Consultation",
-        "tier": "Basic",
-        "xp": 5,
-        "effect": "Ask one question of an ancestral spirit regarding family history, hidden legacies, or inherited debts.",
-        "cost": "1 Fatigue",
-        "requirement": "Lore 2"
-      },
-      {
-        "name": "Grace of the Grave",
-        "tier": "Basic",
-        "xp": 4,
-        "effect": "When you would take a Condition from fear or despair, you may ignore it — a dead relative steadies your hand.",
-        "cost": "1 Boon",
-        "requirement": "Spirit 2"
-      },
-      {
-        "name": "Death's Whisper",
-        "tier": "Basic",
-        "xp": 4,
-        "effect": "+1 die to Notice when the dead seek to communicate. You may also speak with a corpse less than a day dead (one question).",
-        "cost": "Passive",
-        "requirement": "Spirit 3"
-      },
-      {
-        "name": "Final Testament",
-        "tier": "Advanced",
-        "xp": 9,
-        "effect": "Seal a dying person's last request with weight beyond life. Targets must pass Resolve (DV 4) to ignore it.",
-        "cost": "1 Fatigue",
-        "requirement": "Tier II"
-      },
-      {
-        "name": "Unquiet Host",
-        "tier": "Advanced",
-        "xp": 10,
-        "effect": "Negotiate with lingering dead of a place. Summon a spectral warband (Cap 3) for one scene. When it departs, you must mark 1 Fatigue or perform a Memorial Rite.",
-        "cost": "1 Boon",
-        "requirement": "Tier III"
-      }
-    ],
-    "master_technique": {
-      "name": "Death's Confidant",
-      "xp": 12,
-      "description": "Once per session, compel a willing spirit to answer three questions truthfully. You may also ignore one debt that would have been owed to a deceased creditor — the ledger entry becomes dust. After the scene, you gain a permanent Debt Scar (your fingertips are cold to the touch) — the Hollow notes your name, but you may call on one ancestor to resist a future obligation (the dead know how to wait)."
-    }
   },
   "sample_adventure": {
     "title": "The Unquiet Ledger",

@@ -1,0 +1,302 @@
+{
+  "id": "oath-flame-light",
+  "type": "patron",
+  "title": "Oath of Flame & Light",
+  "subtitle": "Dawn & Vows",
+  "version": "1.0.0",
+  "tags": [
+    "oath",
+    "vow",
+    "radiant",
+    "truth",
+    "justice",
+    "paladin",
+    "healing",
+    "dawn",
+    "protection",
+    "ascetic",
+    "monastic"
+  ],
+  "lore": {
+    "description": "The Oath of Flame & Light is no patron of half-measures. Its fire names, binds, and burns — demanding that those who swear within its radiance stand openly, speak truly, and pay the cost of keeping their word. At dawn altars, the sworn kindle sparks of consecrated fire; in battle, they blaze as torches that hold back the night. To follow this Oath is to live in public truth, with no shadow to hide in and no retreat from the vow once spoken.",
+    "followers": "The Oath appears in many guises across cultures, and is the patron most commonly called upon by the magic-users of the Church of Flame and the Temple of Light — as well as any fire- or light-based faith or order. Wherever it manifests, the Oath of Flame & Light remains the same unyielding power: to swear beneath its dawn is to bind one's self to a truth that cannot be hidden, forgotten, or undone.",
+    "names_across_regions": {
+      "everflame": "The Everflame — the unquenchable fire of promise, carried from shrine to shrine by wandering priests of the Church of Flame. Its censers never cool.",
+      "aeler": "Adur, the Light of Aeler — worshiped as the sun's church-deity, whose flame consecrates oaths and consumes falsehood. Dwarven templars strike their oaths into stone with a brand.",
+      "vilikari": "Adar, the Vilikari Dawnfire — invoked as a war-god of vows and vengeance, whose rising light marks those who break faith. Cavalrymen light a single arrow before battle.",
+      "vhasia": "The Watchfire of Vhasia — a saint's flame that never gutters, tended by a silent order of healers who swear to harm no one — and to let no one die alone."
+    },
+    "quote": "Swear in the light. Keep it, or the light will keep you."
+  },
+  "domain_focus": [
+    "Sacred Vows: oath-keeping, truth-speaking, binding promises",
+    "Divine Justice: retribution, smiting evil, protecting the innocent",
+    "Radiant Power: healing light, purification, revealing truth",
+    "Dawn's Hope: renewal, protection, driving back darkness"
+  ],
+  "runekeeper_options": {
+    "thiasos": {
+      "description": "A Runekeeper sworn to the Oath of Flame & Light does not bind a familiar of darkness or silence. Their Thiasos is a small creature of dawn and radiance: a fire-colored salamander that basks on hot coals, a small brass-plated lizard whose scales warm when a vow is true, a golden-eyed owl that hoots only at sunrise, or a tiny phoenix fledgling that glows faintly in darkness.",
+      "care": "This creature requires no food, but it must be present when the Runekeeper renews their daily vows (a short prayer at dawn). If neglected for a week, it becomes Compromised (its glow flickers or goes out, imposing –1 die on all social rolls involving oaths or truth for its bearer until a new vow is sworn in its presence)."
+    },
+    "codex": {
+      "description": "The Codex of the Oath is never a book of ink and paper. It may be a brass scroll etched with commandments that glow when read aloud, a set of consecrated candles whose flames spell out Rites, or a sun-stone carved with runes that only appear when touched by direct sunlight.",
+      "upkeep": "Because the Oath's truths are written in light, the Codex requires upkeep: the Runekeeper must spend an hour each week in dawn light, re-reading each Rite aloud, or the engravings fade (treat as Compromised until re-consecrated at dawn)."
+    }
+  },
+  "patrons_gift": {
+    "name": "Oath's Blessing",
+    "description": "Once per scene as an action, a Runekeeper of the Oath of Flame & Light may touch a held item (weapon, shield, or badge) and whisper a vow of protection.",
+    "effect": "For the rest of the scene, the item grants +1 die to Defend or Resist rolls, and the first time each scene the bearer would be forced to break a sworn oath by magical compulsion, they may ignore it (the flame burns through the coercion).",
+    "cost": "After the scene, the user marks +1 Obligation to the Oath of Flame & Light."
+  },
+  "rites": [
+    {
+      "name": "Rite of Kindle Vow",
+      "tier": "Low",
+      "xp": 4,
+      "action": "Action",
+      "range": "Self/Ally",
+      "resist": "No",
+      "tags": ["VOW", "RADIANT"],
+      "materials": "A glass ampoule of consecrated flame.",
+      "effect": "Declare a short vow for this scene (e.g., 'protect the villagers,' 'speak only truth'). The bearer gains +1 die to actions fulfilling it.",
+      "push_it": "The first hesitation forces 1 SB (Hearts) on the bearer. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of Lay on Hands",
+      "tier": "Low",
+      "xp": 5,
+      "action": "Instant",
+      "range": "Touch",
+      "resist": "No",
+      "tags": ["HEAL", "PURIFY", "RADIANT"],
+      "materials": "A bare palm, a whispered vow.",
+      "effect": "Cleanse an affliction, downgrade Harm by 1, or remove 1 Fatigue. For curses or poisons, test Spirit+Resolve (DV set by fiction).",
+      "push_it": "The target gains +1 die to their next Resist roll this scene; you mark Exposure +1. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Instant."
+    },
+    {
+      "name": "Rite of Sunlit Parley",
+      "tier": "Standard",
+      "xp": 8,
+      "action": "Scene",
+      "range": "Zone",
+      "resist": "No",
+      "tags": ["TRUTH", "COMMAND", "RADIANT"],
+      "materials": "A vow-ring engraved with sunrise.",
+      "effect": "Establish terms in open light. Honest persuasion gains +1 die; deceit suffers –1 die. Create a 6-segment Parley Accord timer.",
+      "push_it": "Demand one public answer; evasion forces 1 SB (Hearts) on the evader. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of Radiant Smite",
+      "tier": "Standard",
+      "xp": 9,
+      "action": "Action",
+      "range": "Self",
+      "resist": "No",
+      "tags": ["STRIKE", "ANNIHILATE", "RADIANT"],
+      "materials": "A consecrated spark on a weapon or badge.",
+      "effect": "Your next melee strike flares with dawnfire. Upgrade Effect by one step, add +1 Burn Harm, or impose –1 die on the target's next roll. Against undead, oath-breakers, or outsiders: oath-breakers suffer +1 Harm and –1 die; outsiders gain +1 leash ticks.",
+      "push_it": "The attack ignores the target's armor entirely (no armor conversion applies to this strike; the target marks direct Harm). Additionally, the burst drives back enemies in Close (worse Position). Mark +1 additional Obligation (total +3). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Instant."
+    },
+    {
+      "name": "Rite of Purge the Shadow",
+      "tier": "Standard",
+      "xp": 10,
+      "action": "Instant",
+      "range": "Near",
+      "resist": "No",
+      "tags": ["DISPEL", "REVEAL", "RADIANT"],
+      "materials": "A shattered consecrated spark.",
+      "effect": "Reveal illusions and suppress one ongoing glamour or curse in Near range. Creates a 4-segment Purity's Light timer.",
+      "push_it": "Brand the source with a visible tell for this arc; mark 1 SB (Diamonds). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Instant."
+    },
+    {
+      "name": "Rite of Covenant Blaze",
+      "tier": "High",
+      "xp": 13,
+      "action": "Scene",
+      "range": "Zone",
+      "resist": "No",
+      "tags": ["WARD", "FORCE", "RADIANT", "COMMAND"],
+      "materials": "A brazier lit while three names are spoken.",
+      "effect": "The sworn within are haloed: they gain +1 die to keep their oath; aggressors suffer –1 die if violating the terms. Oath-breakers suffer 2 SB (Hearts/Spades) and Harm 1 (Burn).",
+      "push_it": "Sanctify a threshold with one beat of [WARD] against oath-breakers; mark +2 Obligation. Cost: Mark +2 Obligation (total +4) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    }
+  ],
+  "cantors_and_cults": {
+    "cantors": {
+      "name": "The Cantor's Song",
+      "description": "A Cantor of the Oath sings in clarion tones — melodies that sound like a trumpet at sunrise, like a bell calling the faithful to prayer. Their voice is used to swear in a witness, to consecrate a blade with a hymn, or to sing a funeral pyre into a beacon. The Oath's Cantors are often found in military camps and pilgrimage roads, their songs keeping oaths fresh and courage hot."
+    },
+    "cult": {
+      "name": "The Cult of the Unquenched Flame",
+      "description": "The Oath's cults gather at dawn, in open courtyards or on hilltops facing east. The Unquenched Flame is a fellowship of paladins, healers, and simple folk who have sworn to keep one another honest. A ritual of the Cult involves each member speaking a vow aloud as the sun crests the horizon, then passing a lit candle to the next — the flame must not be allowed to go out until all have spoken. Their creed is written in charcoal above every hearth: 'The flame that reveals the truth also warms the hands that keep it.' Outsiders are welcome to swear a temporary vow and share the light — but an oath sworn at dawn is binding until sunset."
+    }
+  },
+  "witchcraft": {
+    "name": "The Ascetic's Art",
+    "description": "A witch who walks with the Oath is often a consecrated scribe, a censer-bearer, or a vowed healer — a nun, monk, or scholar of one of the great flame-temples. Their magic is inseparable from liturgy, prayer, and the careful tending of sacred spaces. They illuminate manuscripts with gold leaf that glows in the presence of lies, brew unguents from ashes of the everflame, and copy oath-books whose letters burn when a vow is broken. In Aeler, a True-Mason might carve a 'prayer keystone' into a basilica wall, so that every confession spoken there warms the stone. In Vhasia, a silent sister might stitch a healing shroud that records the wounds it has mended. These ascetics live alongside their monastic brethren in abbeys, monasteries, and convents, their craft a form of prayer made manifest.",
+    "color": "#e8a838",
+    "lore": "The ascetic's path is one of devotion made visible. Every act of magic is a prayer; every healing is a sacrament; every vow is a flame that must be tended. The Oath's witches do not seek power — they seek perfection of purpose, and in that seeking, they become vessels of the dawn's light. Their magic is not flashy; it is the patient work of the scriptorium, the infirmary, and the candle-lit chapel. They are the ones who keep the flame burning when all other lights have gone out.",
+    "signature_rite": "Rite of Lay on Hands",
+    "quote": "The flame that reveals the truth also warms the hands that keep it.",
+    "tools": {
+      "prayer_beads": {
+        "name": "Prayer Beads of the Unbroken Vow",
+        "description": "A string of nine beads carved from olive wood and fired in a basilica's censer. Each bead represents a clause of a sacred oath. Once per session, the witch may slip the beads around a door handle, a prisoner's wrist, or a contract scroll. While the beads remain, any creature that knowingly violates an oath sworn under that threshold suffers a mild burn (1 Fatigue) as the beads glow faintly. The beads may also be used to count a silent vow; the witch may reroll one failed Resolve roll when upholding that vow."
+      }
+    },
+    "hedge_gifts": [
+      {
+        "name": "Sealed Benediction",
+        "xp": 4,
+        "description": "Once per scene, the witch may lay a hand on a willing creature's forehead and speak a short, formal blessing (e.g., 'May the flame keep your word'). The target gains +1 die on their next roll to resist fear, despair, or magical coercion. The blessing lasts until the next dawn. The witch must write the blessing on a scrap of parchment and burn it; the smoke carries the prayer."
+      },
+      {
+        "name": "Censer's Blessing",
+        "xp": 3,
+        "description": "You may swing a censer (or any vessel that holds smoke) to fill a Near zone with cleansing incense. For the next scene, any supernatural creature within the zone suffers –1 die to all rolls, and any magical effect passing through the smoke is treated as one Tier lower for resistance. The censer can also be used to 'cense' a threshold: sprinkling ash from the censer across a doorway applies a [WARD] tag against minor spirits and undead until the next dawn."
+      },
+      {
+        "name": "Dawnfire Reading",
+        "xp": 2,
+        "description": "When you hold a piece of parchment or a book up to dawn light, you may ask the GM one yes/no question about whether the text contains a lie, a broken oath, or a false promise. The parchment glows faintly if the answer is 'yes.' Once per scene."
+      }
+    ]
+  },
+  "monastic_tradition": {
+    "name": "The Way of the Unquenched Flame",
+    "description": "Monks of the Unquenched Flame live by the vow and the dawn. They are paladins and scribes, healers and judges, living embodiments of the Oath's unyielding truth. Their bodies are temples; their words are fire; their fists are gavels that strike down falsehood. They live alongside their witch brethren in abbeys and monasteries, sharing the same prayers, the same dawn vigils, and the same unbreakable commitment to the light.",
+    "color": "#e8a838",
+    "prerequisites": "Spirit 3+, Body 2+, Rite of Kindle Vow or Cantor of the Oath.",
+    "quote": "Swear in the light. Keep it, or the light will keep you.",
+    "debt_resistant_frame": "The Oath does not forget — but it does forgive those who keep the flame. Monks of the Unquenched Flame gain +1 die to resist any magical debt, geas, or contract that would force them to break a sworn oath or hide from the truth. If they succeed, the creditor's compulsion burns away like morning mist — the oath holds, and the flame does not falter.",
+    "techniques": {
+      "basic": {
+        "name": "Sworn Defender",
+        "xp": 6,
+        "description": "When you take the Defend action, you may also grant an adjacent ally +1 Armor until your next turn. The flame protects those who stand beside you.",
+        "cost": "Passive",
+        "prereq": "Body 3+, Spirit 2+"
+      },
+      "advanced": {
+        "name": "Radiant Resolve",
+        "xp": 8,
+        "description": "Once per scene when you would be affected by fear, despair, or magical coercion, you may instead ignore the effect entirely. The flame burns through the darkness, and you stand unshaken.",
+        "cost": "1 Fatigue",
+        "prereq": "Tier II, Spirit 3+"
+      },
+      "master": {
+        "name": "Avatar of the Oath",
+        "xp": 12,
+        "description": "Once per session, you may become a living covenant for one scene. You gain +2 dice to all protection, justice, and oath-keeping actions. Additionally, any creature that breaks a sworn oath in your presence suffers 2 SB (Hearts/Spades) and Harm 1 (Burn) as the flame demands account.",
+        "cost": "2 Fatigue and +1 Obligation to the Oath",
+        "prereq": "Tier III, Spirit 4+"
+      }
+    },
+    "corruption": [
+      {
+        "tier": 1,
+        "benefit": "Oathbound Strength: +1 die when upholding vows or defending innocents.",
+        "cost": "Rigid Honor: Must uphold vows even when disadvantageous; –1 die to flexible actions."
+      },
+      {
+        "tier": 2,
+        "benefit": "Radiant Sight: Once/scene, +2 dice to detect lies or corruption.",
+        "cost": "Blinding Truth: –1 die to subtlety or deception attempts."
+      },
+      {
+        "tier": 3,
+        "benefit": "Holy Flame: +1 die to melee against undead, outsiders, or oath-breakers.",
+        "cost": "Burden of Light: 1 Fatigue when concealing identity or working in darkness."
+      },
+      {
+        "tier": 4,
+        "benefit": "Unwavering Resolve: Once/session, treat a failed Resolve/Command as success (mark 1 SB).",
+        "cost": "Absolutist Stance: –1 die in morally ambiguous situations."
+      },
+      {
+        "tier": 5,
+        "benefit": "Dawn's Benediction: Once/session, heal all allies in Near of 1 Fatigue and minor Conditions.",
+        "cost": "Beacon's Call: Your aura reveals you; enemies seeking you gain +1 die."
+      },
+      {
+        "tier": "6+",
+        "benefit": "Avatar of the Oath: Once/session, become a living covenant (+2 dice to protection/justice actions).",
+        "cost": "Radiance's Price: Mark +2 Obligation; breaking any vow inflicts Harm 2 (Burn)."
+      }
+    ]
+  },
+  "corruption": [
+    {
+      "tier": 1,
+      "benefit": "Oathbound Strength: +1 die when upholding vows or defending innocents.",
+      "cost": "Rigid Honor: Must uphold vows even when disadvantageous; –1 die to flexible actions."
+    },
+    {
+      "tier": 2,
+      "benefit": "Radiant Sight: Once/scene, +2 dice to detect lies or corruption.",
+      "cost": "Blinding Truth: –1 die to subtlety or deception attempts."
+    },
+    {
+      "tier": 3,
+      "benefit": "Holy Flame: +1 die to melee against undead, outsiders, or oath-breakers.",
+      "cost": "Burden of Light: 1 Fatigue when concealing identity or working in darkness."
+    },
+    {
+      "tier": 4,
+      "benefit": "Unwavering Resolve: Once/session, treat a failed Resolve/Command as success (mark 1 SB).",
+      "cost": "Absolutist Stance: –1 die in morally ambiguous situations."
+    },
+    {
+      "tier": 5,
+      "benefit": "Dawn's Benediction: Once/session, heal all allies in Near of 1 Fatigue and minor Conditions.",
+      "cost": "Beacon's Call: Your aura reveals you; enemies seeking you gain +1 die."
+    },
+    {
+      "tier": "6+",
+      "benefit": "Avatar of the Oath: Once/session, become a living covenant (+2 dice to protection/justice actions).",
+      "cost": "Radiance's Price: Mark +2 Obligation; breaking any vow inflicts Harm 2 (Burn)."
+    }
+  ],
+  "playstyle_notes": {
+    "description": "The Oath of Flame & Light excels as a 'paladin' patron, rewarding vow-keeping and truth-speaking with potent defensive and smiting abilities. Followers become living embodiments of their oaths, shining beacons against deception and darkness. The corruption progression naturally leads toward becoming an uncompromising force for justice, though potentially at the cost of flexibility and subtlety. Ideal for characters who embody conviction, protection, and radiant power.",
+    "emphasizes": [
+      "Sacred Vows: oath-keeping, truth-speaking, binding promises",
+      "Divine Justice: retribution, smiting evil, protecting the innocent",
+      "Radiant Power: healing light, purification, revealing truth",
+      "Dawn's Hope: renewal, protection, driving back darkness"
+    ]
+  },
+  "sample_adventure": {
+    "title": "The Oath That Binds",
+    "description": "A knight of the Unquenched Flame has broken her vow: she swore to protect a village, but fled when the raiders came. Now the village is burned, and the survivors are calling for justice. The knight insists she was cursed by a shadow-touched relic. The party must investigate the relic, uncover the truth, and decide whether her vow can be redeemed — or whether the flame demands its due.",
+    "quote": "An oath sworn at dawn is binding until sunset. But some oaths bind forever, and the flame does not forget. The question is not whether she broke her vow — it is whether the vow broke her first, and whether mercy can still find a place beneath the sun."
+  },
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

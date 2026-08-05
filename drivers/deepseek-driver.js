@@ -18,6 +18,9 @@ class DeepSeekDriver extends AIDriver {
         this.temperature = parseFloat(process.env.DEEPSEEK_TEMPERATURE || '0.8');
         this.timeoutMs = parseInt(process.env.DEEPSEEK_TIMEOUT_MS || '30000', 10);
         this.maxRetries = parseInt(process.env.DEEPSEEK_MAX_RETRIES || '2', 10);
+        // DeepSeek V4's real context window; overridable in case a
+        // different model alias is configured.
+        this.contextWindow = parseInt(process.env.DEEPSEEK_CONTEXT_WINDOW || '64000', 10);
     }
 
     /**
@@ -105,15 +108,24 @@ class DeepSeekDriver extends AIDriver {
         console.log(`✅ DeepSeek connection OK (model: ${this.model})`);
     }
 
-    async generateResponse(context) {
+    async generateResponse(context, onToken) {
         if (!context || typeof context.systemPrompt !== 'string') {
             throw new Error('generateResponse() requires a string context.systemPrompt');
         }
-        const history = Array.isArray(context.messages) ? context.messages : [];
+        // Trim to fit this model's real context window BEFORE sending --
+        // see ai-driver.js's trimToFit(). This is a last-resort safety
+        // net; the orchestrator should already be sending a pruned
+        // prompt, but a driver should never blindly trust that and let
+        // the provider silently truncate whatever it feels like instead.
+        const { systemPrompt, messages: history } = this.trimToFit(context);
+
+        if (onToken && typeof onToken === 'function') {
+            return this._generateStreaming(systemPrompt, history, onToken);
+        }
 
         const body = {
             model: this.model,
-            messages: [{ role: 'system', content: context.systemPrompt }, ...history],
+            messages: [{ role: 'system', content: systemPrompt }, ...history],
             max_tokens: this.maxTokens,
             temperature: this.temperature,
             stream: false
@@ -123,7 +135,7 @@ class DeepSeekDriver extends AIDriver {
         try {
             data = await this._request(body, { retries: this.maxRetries });
         } catch (e) {
-            console.error('DeepSeek request failed. Prompt length:', context.systemPrompt.length,
+            console.error('DeepSeek request failed. Prompt length:', systemPrompt.length,
                 'History length:', history.length);
             throw e;
         }
@@ -138,6 +150,86 @@ class DeepSeekDriver extends AIDriver {
         }
 
         return (choice.message?.content || '').trim();
+    }
+
+    /**
+     * Streaming path (OpenAI-compatible SSE). No retry here -- a stream
+     * that fails partway through can't be resumed transparently, so this
+     * makes a single attempt and lets the caller fall back to a
+     * non-streaming retry if it cares to. Always resolves with the full
+     * assembled text, same as the non-streaming path, so callers that
+     * don't care about the intermediate onToken events still work.
+     */
+    async _generateStreaming(systemPrompt, history, onToken) {
+        const controller = new AbortController();
+        const timer = setTimeout(() => controller.abort(), this.timeoutMs);
+        let full = '';
+        try {
+            const response = await fetch(API_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${this.apiKey}`
+                },
+                body: JSON.stringify({
+                    model: this.model,
+                    messages: [{ role: 'system', content: systemPrompt }, ...history],
+                    max_tokens: this.maxTokens,
+                    temperature: this.temperature,
+                    stream: true
+                }),
+                signal: controller.signal
+            });
+
+            if (!response.ok) {
+                const errText = await response.text().catch(() => '(no body)');
+                throw new Error(this._describeError(response.status, errText));
+            }
+            if (!response.body) {
+                throw new Error('DeepSeek streaming response had no body.');
+            }
+
+            for await (const chunk of parseSSEStream(response.body)) {
+                if (chunk === '[DONE]') break;
+                try {
+                    const parsed = JSON.parse(chunk);
+                    const delta = parsed.choices?.[0]?.delta?.content;
+                    if (delta) {
+                        full += delta;
+                        onToken(delta);
+                    }
+                } catch (e) {
+                    // Malformed/partial SSE frame -- skip it rather than abort the whole stream.
+                }
+            }
+            return full.trim();
+        } finally {
+            clearTimeout(timer);
+        }
+    }
+}
+
+/**
+ * Parses a fetch() Response body (Node ReadableStream) of OpenAI-style
+ * SSE ("data: {...}\n\n" frames) into an async iterator of raw data
+ * payload strings. Shared shape with any other OpenAI-compatible SSE
+ * stream, so it's exported for reuse rather than duplicated per driver.
+ */
+async function* parseSSEStream(body) {
+    const decoder = new TextDecoder();
+    let buffer = '';
+    for await (const bytes of body) {
+        buffer += decoder.decode(bytes, { stream: true });
+        let idx;
+        while ((idx = buffer.indexOf('\n\n')) !== -1) {
+            const frame = buffer.slice(0, idx);
+            buffer = buffer.slice(idx + 2);
+            for (const line of frame.split('\n')) {
+                if (line.startsWith('data:')) {
+                    yield line.slice(5).trim();
+                }
+            }
+        }
     }
 }
 

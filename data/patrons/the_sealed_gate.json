@@ -12,7 +12,9 @@
     "boundary",
     "exclusion",
     "permission",
-    "sentinel"
+    "sentinel",
+    "abjuration",
+    "exorcist"
   ],
   "lore": {
     "description": "The Sealed Gate stands where realities meet, embodying the sacred power of thresholds, boundaries, and containment. Its followers are wardens, exorcists, and philosophers of separation who believe some things must be kept apart for the world to function. The Gate manifests as an impassive judge whose shifting sigils — binding runes, exclusion marks, or acceptance glyphs — determine what may cross.",
@@ -44,15 +46,12 @@
   "rites": [
     {
       "name": "Rite of the Sealed Threshold",
-      "tier": "Basic",
+      "tier": "Low",
       "xp": 4,
       "action": "Scene",
       "range": "Touch",
       "resist": "No",
-      "tags": [
-        "WARD",
-        "BIND"
-      ],
+      "tags": ["WARD", "BIND"],
       "materials": "Chalk, iron dust, or sanctified cord.",
       "effect": "Mark a doorway or passage as sealed. Unauthorized crossing tests Spirit+Resolve (DV 3) or suffers a Position penalty. Creates a 4-segment Ward Integrity timer.",
       "push_it": "The barrier becomes a visible shimmer, imposing –1 die on attempts to cross it. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -63,15 +62,12 @@
     },
     {
       "name": "Rite of the Key's Rebuke",
-      "tier": "Basic",
+      "tier": "Low",
       "xp": 5,
       "action": "Instant",
       "range": "Near",
       "resist": "No",
-      "tags": [
-        "FORCE",
-        "BANISH"
-      ],
+      "tags": ["FORCE", "BANISH"],
       "materials": "A gesture of denial or a barrier symbol.",
       "effect": "The target must test Body+Resolve (DV 3) or be pushed back from the threshold. On success, create a Rebuke Echo token granting +1 die to the next boundary defense.",
       "push_it": "The rebuke lingers — the target cannot cross this threshold for the rest of the scene. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -82,16 +78,12 @@
     },
     {
       "name": "Rite of the Circle of Denial",
-      "tier": "Advanced",
+      "tier": "Standard",
       "xp": 8,
       "action": "Scene",
       "range": "Zone",
       "resist": "No",
-      "tags": [
-        "WARD",
-        "AREA",
-        "BANISH"
-      ],
+      "tags": ["WARD", "AREA", "BANISH"],
       "materials": "A salt ring, iron filings, or boundary stones.",
       "effect": "Create a protective circle. Supernatural beings test against the caster's Spirit+Arcana (DV 4) to cross. Mortals suffer –2 dice to force entry. Creates a 6-segment Circle Integrity timer.",
       "push_it": "The circle becomes a two-way barrier (no one can cross). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -102,16 +94,12 @@
     },
     {
       "name": "Rite of the Writ of Passage",
-      "tier": "Advanced",
+      "tier": "Standard",
       "xp": 7,
       "action": "Scene",
       "range": "Zone",
       "resist": "No",
-      "tags": [
-        "BOND",
-        "COMMAND",
-        "MOVEMENT"
-      ],
+      "tags": ["BOND", "COMMAND", "MOVEMENT"],
       "materials": "Signed authorization or spoken permissions.",
       "effect": "Designate an authorized passage route. Allies gain Position +1 when using the route. Unauthorized intruders suffer –1 die to movement or stealth. Creates an 8-segment Writ Authority timer.",
       "push_it": "Extend authorization to additional allies; mark +1 Obligation. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -122,16 +110,12 @@
     },
     {
       "name": "Rite of the Banishment Knot",
-      "tier": "Master",
+      "tier": "High",
       "xp": 13,
       "action": "Instant",
       "range": "Near",
       "resist": "No",
-      "tags": [
-        "BANISH",
-        "FORCE",
-        "FEAR"
-      ],
+      "tags": ["BANISH", "FORCE", "FEAR"],
       "materials": "A knotted cord sealed with a gate-sigil.",
       "effect": "The target supernatural entity tests against the caster's Spirit+Resolve (DV = entity Cap). On success, the entity is forced to immediately depart the scene. A failed attempt creates a 4-segment Banishment Backlash timer.",
       "push_it": "The banishment lasts until the next moon phase. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
@@ -142,17 +126,12 @@
     },
     {
       "name": "Rite of the Consecrated Barrier",
-      "tier": "Master",
+      "tier": "High",
       "xp": 14,
       "action": "Extended",
       "range": "Zone",
       "resist": "No",
-      "tags": [
-        "WARD",
-        "AREA",
-        "SANCTUARY",
-        "FATE"
-      ],
+      "tags": ["WARD", "AREA", "SANCTUARY", "FATE"],
       "materials": "Relics from three traditions, boundary markers, a trespasser's acknowledgment.",
       "effect": "Consecrate an area against all unauthorized passage. The tests required scale with the intrusion attempt's severity. A 10-segment Sacred Boundary timer tracks the barrier's strength.",
       "push_it": "Make the barrier semi-permanent (lasts one season); start a Maintenance [6] timer. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
@@ -173,7 +152,12 @@
     }
   },
   "witchcraft": {
-    "description": "A witch who walks with the Sealed Gate is a ward-keeper, an exorcist archivist, or a boundary-scholar — one who uses seals, litanies, and physical tokens to enforce separation. Their magic is not forged but written or sung: sealing wax mixed with iron filings, a bell that rings only when a threshold is violated, or a bound notebook of exclusion rites whose pages turn black when a spirit tries to cross. In Aeler, a True-Mason might carve a 'ward stone' into a lintel, but a hedge-witch of the Gate might daub a lignite sigil on a doorframe while reciting the Ninth Clause of Stillness. In Viterra, a village exorcist might carry a small iron seal to stamp the corners of a haunted room.",
+    "name": "The Art of the Unbroken Seal",
+    "description": "A witch who walks with the Sealed Gate is a ward-keeper, an exorcist archivist, or a boundary-scholar — one who uses seals, litanies, and physical tokens to enforce separation. Their magic is not forged but written or sung: sealing wax mixed with iron filings, a bell that rings only when a threshold is violated, or a bound notebook of exclusion rites whose pages turn black when a spirit tries to cross. In Aeler, a True-Mason might carve a 'ward stone' into a lintel, but a hedge-witch of the Gate might daub a lignite sigil on a doorframe while reciting the Ninth Clause of Stillness. In Viterra, a village exorcist might carry a small iron seal to stamp the corners of a haunted room. These witches are the quiet guardians of boundaries — they do not seek glory, only the peace of a well-guarded threshold.",
+    "color": "#4a6a8a",
+    "lore": "The ward-keeper's path is the art of the boundary. They learn that every threshold is a story — a place where something enters and something else leaves, where power is tested and permission is granted or denied. The Sealed Gate teaches that the most powerful magic is not in grand gestures but in the quiet certainty of a properly sealed door. These witches are found in archives, prisons, and the quiet rooms where dangerous things are kept contained, their hands stained with ink and salt, their eyes always watching for the breach.",
+    "signature_rite": "Rite of the Sealed Threshold",
+    "quote": "What is sealed stays sealed. What stays sealed protects the living.",
     "tools": {
       "iron_seal": {
         "name": "The Seal of the Unbroken Gate",
@@ -185,6 +169,84 @@
         "name": "Sealed Lips",
         "xp": 4,
         "description": "Once per scene, the witch may touch a person's lips (or a letter's seal) and whisper a litany of the Gate. For the next hour, that person cannot speak a specific secret or name (chosen by the witch). If they try, their voice fails — they cough, stutter, or simply cannot form the words. This effect can be removed by the witch or by a Resolve test (DV 4) made once per day."
+      },
+      {
+        "name": "Threshold Sense",
+        "xp": 2,
+        "description": "You can sense the presence and strength of any magical ward, seal, or boundary within Near range. You know if a ward is intact, weakened, or broken, and you can identify the type of threshold (containment, exclusion, or permission). Passive."
+      },
+      {
+        "name": "Ward-Keeper's Eye",
+        "xp": 3,
+        "description": "Once per scene, you may touch a ward or seal and immediately know the exact nature of what it is holding back or keeping out. You may ask the GM one question about the ward's purpose, its creator, or its weakness. The GM must answer truthfully."
+      },
+      {
+        "name": "Safe Passage",
+        "xp": 3,
+        "description": "You may touch a willing ally and grant them safe passage through a single threshold you have sealed or marked. For the next hour, they are treated as authorized to cross that boundary without penalty. Once per session."
+      }
+    ]
+  },
+  "monastic_tradition": {
+    "name": "The Way of the Unbroken Seal",
+    "description": "Monks of the Unbroken Seal embody the Gate's immovable certainty. They train their bodies to be boundaries — their stillness is a wall, their presence is a lock, their silence is a seal. They are sentinels who do not move, guardians who do not yield, and exorcists who do not flinch. In the quiet of the monastery, they practice the art of not being moved, learning that the greatest strength is the strength to stand still while the world breaks around them.",
+    "color": "#4a6a8a",
+    "prerequisites": "Spirit 3+, Wits 2+, Rite of the Sealed Threshold or Cantor of the Sealed Gate.",
+    "quote": "You define what passes and what remains. Every boundary remembers your judgment.",
+    "debt_resistant_frame": "A threshold does not owe — it defines. Monks of the Unbroken Seal gain +1 die to resist any magical debt or obligation that would force them to cross a boundary they do not wish to cross. If they succeed, the debtor finds the way inexplicably barred — a door will not open, a contract will not bind, and the obligation loses its hold.",
+    "techniques": {
+      "basic": {
+        "name": "Iron Rebuke",
+        "xp": 5,
+        "description": "When an enemy enters your Close range, you may make a free unarmed strike. On a hit, they cannot move closer this exchange. The boundary holds.",
+        "cost": "1 Fatigue",
+        "prereq": "Body 3+"
+      },
+      "advanced": {
+        "name": "Sanctuary Step",
+        "xp": 9,
+        "description": "When you would be moved against your will (shoved, pulled, or teleported), you may ignore it. The Gate holds you where you stand. Once per scene.",
+        "cost": "Passive",
+        "prereq": "Spirit 3+, Tier II"
+      },
+      "master": {
+        "name": "Threshold Incarnate",
+        "xp": 12,
+        "description": "Once per session, become a living ward for one scene. Allies within Near gain +1 Armor; any creature attempting to pass a threshold you guard must test Spirit+Resolve (DV 5) or be turned back. After the scene, you gain a permanent Debt Scar (a door-shaped mark on your palm) — but you may ignore one debt or obligation that would force you to abandon your guard (the creditor finds themselves facing a wall where once there was a door).",
+        "cost": "2 Fatigue and +1 Obligation to the Gate",
+        "prereq": "Tier III, Spirit 4+"
+      }
+    },
+    "corruption": [
+      {
+        "tier": 1,
+        "benefit": "Threshold Sense: +1 die to detect weak points, unauthorized passage, or boundary violations.",
+        "cost": "Paranoid Vigilance: Must repeatedly check seals; –1 die to trust-based actions."
+      },
+      {
+        "tier": 2,
+        "benefit": "Ward Resonance: Once/scene, treat a failed protection roll as a success (mark 1 SB).",
+        "cost": "Isolation Tendency: 1 Fatigue in unsecured or open spaces."
+      },
+      {
+        "tier": 3,
+        "benefit": "Boundary Mastery: +2 dice to ward, barrier, or containment magic.",
+        "cost": "Compulsive Sealing: Must secure any vulnerability noticed."
+      },
+      {
+        "tier": 4,
+        "benefit": "Absolute Barrier: Once/session, create an impenetrable barrier (size of a door) for one exchange.",
+        "cost": "Prison Mindset: –1 die to freedom or escape actions."
+      },
+      {
+        "tier": 5,
+        "benefit": "Gate Sovereign: Once/session, banish a major threat with a single test (Spirit+Resolve vs Cap+1).",
+        "cost": "Boundary Obsession: –1 die to non-containment actions."
+      },
+      {
+        "tier": "6+",
+        "benefit": "Threshold Incarnate: For one scene, become a living ward. Allies within Near gain +1 Armor; any creature attempting to pass a threshold you guard must test Spirit+Resolve (DV 5) or be turned back.",
+        "cost": "Ultimate Containment Risk: Mark +3 Obligation. You cannot leave the warded area until the scene ends, and you suffer 1 Fatigue."
       }
     ]
   },
@@ -220,6 +282,12 @@
       "cost": "Ultimate Containment Risk: Mark +3 Obligation. You cannot leave the warded area until the scene ends, and you suffer 1 Fatigue."
     }
   ],
+  "rivalries": [
+    {
+      "patron": "The Traveler",
+      "description": "The Traveler opens paths; the Sealed Gate closes them. Their followers often find themselves at odds — one seeking to cross a threshold, the other determined to keep it sealed. Neither is wrong; their purposes simply oppose."
+    }
+  ],
   "playstyle_notes": {
     "description": "The Sealed Gate patron excels in defensive, control-oriented play. Followers shape battlefields through strategic boundary placement and become invaluable when dealing with supernatural intrusions or securing locations. The corruption progression naturally leads characters toward becoming immovable guardians at the cost of flexibility and freedom. Ideal for abjurists, exorcists, sentinels, and any character whose duty is to keep things apart.",
     "emphasizes": [
@@ -229,67 +297,6 @@
       "Permission: safe passage, authorized access, controlled crossing",
       "Immovable Guardian: the follower becomes a wall given will"
     ]
-  },
-  "monastic_tradition": {
-    "name": "Threshold Monk (Sealed Gate)",
-    "quote": "You define what passes and what remains.",
-    "prerequisites": "Spirit 3+, Wits 2+, Rite of the Sealed Threshold or Cantor of the Sealed Gate.",
-    "debt_resistant_frame": "A threshold does not owe — it defines. Monks of the Threshold Monk tradition gain +1 die to resist any magical debt or obligation that would force them to cross a boundary they do not wish to cross. If they succeed, the debtor finds the way inexplicably barred (a door will not open, a contract will not bind).",
-    "techniques": [
-      {
-        "name": "Iron Rebuke",
-        "tier": "Basic",
-        "xp": 5,
-        "effect": "When an enemy enters your Close range, make a free unarmed strike. On a hit, they cannot move closer this exchange.",
-        "cost": "1 Fatigue",
-        "requirement": "Body 3"
-      },
-      {
-        "name": "Seal the Threshold",
-        "tier": "Basic",
-        "xp": 4,
-        "effect": "Mark a doorway or passage as sealed. Unauthorized crossing tests Spirit+Resolve (DV 3) or suffers a Position penalty. Create a 4-segment Ward Integrity timer.",
-        "cost": "1 Boon",
-        "requirement": "Spirit 3"
-      },
-      {
-        "name": "Key's Rebuke",
-        "tier": "Basic",
-        "xp": 5,
-        "effect": "Force target to test Body+Resolve (DV 3) or be pushed back from a threshold you guard.",
-        "cost": "1 Fatigue",
-        "requirement": "Wits 2"
-      },
-      {
-        "name": "Circle of Denial",
-        "tier": "Advanced",
-        "xp": 8,
-        "effect": "Create a protective circle (salt or chalk). Supernatural beings test against your Spirit+Arcana (DV 4) to enter. Mortals suffer –2 dice to force entry. Create a 6-segment Circle Integrity timer.",
-        "cost": "1 Boon",
-        "requirement": "Tier II"
-      },
-      {
-        "name": "Sanctuary Step",
-        "tier": "Advanced",
-        "xp": 9,
-        "effect": "When you would be moved against your will (shoved, pulled, teleported), you may ignore it.",
-        "cost": "Once per scene",
-        "requirement": "Spirit 3"
-      },
-      {
-        "name": "Banishment Knot",
-        "tier": "Advanced",
-        "xp": 10,
-        "effect": "Force a supernatural entity to test Spirit+Resolve (DV = entity Cap) or depart the scene immediately.",
-        "cost": "1 Fatigue + 1 Boon",
-        "requirement": "Tier III"
-      }
-    ],
-    "master_technique": {
-      "name": "Threshold Incarnate",
-      "xp": 12,
-      "description": "Once per session, become a living ward for one scene. Allies within Near gain +1 Armor; any creature attempting to pass a threshold you guard must test Spirit+Resolve (DV 5) or be turned back. After the scene, you gain a permanent Debt Scar (a door-shaped mark on your palm) — but you may ignore one debt or obligation that would force you to abandon your guard (the creditor finds themselves facing a wall where once there was a door)."
-    }
   },
   "sample_adventure": {
     "title": "The Unsealed Vault",

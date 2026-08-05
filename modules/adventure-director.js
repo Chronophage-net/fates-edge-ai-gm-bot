@@ -54,6 +54,7 @@
 //     and silently fell back to the generic filler adventure every time.
 
 const adventureContext = require('./adventure-context');
+const { formatColumns, shortTitle } = require('./format-utils');
 
 const MAX_CUSTOM_ADVENTURES = 5;
 const ABANDON_VOTE_RATIO = 0.5; // majority of currently-present players
@@ -124,15 +125,52 @@ function resetNarrativeState(orchestrator) {
     }
 }
 
-// ─── Region list (reuses data/regions.js, already loaded elsewhere) ──
-
-function getRegionNames() {
+// ─── Region list ───────────────────────────────────────────────────
+//
+// BUGFIX: this used to `require('../data/regions.js')` — but that file's
+// content is a bare JSON object literal (`{ "Kahfagia": {...}, ... }`)
+// with a `.js` extension and no `module.exports =`. A top-level `{` is
+// parsed by Node as a block statement, and `"Kahfagia": {...}` inside it
+// is not valid JS (string literals can't be statement labels), so the
+// require() ALWAYS threw a SyntaxError and this function ALWAYS fell
+// back to the single hardcoded ['Acasia'] — every Crown Spread region
+// picker only ever offered one region, no matter how many were actually
+// loaded. It's also a second, separately-maintained 16-region dataset
+// that had already drifted from the real 23-region data/regions/*.json
+// set (missing Dungeons, Midh Ahkaz, Silkstrand, The Wilds, The Ways
+// Between, Theona, Vilikari), and its Title-Case keys ("Black Banners")
+// don't match the underscore ids ("black_banners") the deck/card-meaning
+// system looks files up by.
+//
+// Fix: read straight from WorldManager's already-loaded region set (the
+// same data deck.js/world-manager.js's getRegion() use), returning
+// {id, title} pairs. `id` is what gets sent on to the deck/Crown Spread
+// endpoint; `title` is only for display. Falls back to the static file
+// (now fixed to be valid JS — see data/regions.js) only if WorldManager
+// hasn't loaded any regions for some reason, and to a single safe
+// default after that.
+function getRegionList(context) {
+    const world = context?.orchestrator?.world;
+    if (world && typeof world.listRegions === 'function') {
+        const regions = world.listRegions();
+        if (regions.length > 0) return regions;
+    }
     try {
         const regions = require('../data/regions.js');
-        return Object.keys(regions);
+        return Object.keys(regions).map(title => ({ id: title.toLowerCase().replace(/\s+/g, '_'), title }));
     } catch (e) {
-        return ['Acasia']; // safe fallback -- matches the server/deck default region
+        return [{ id: 'acasia', title: 'Acasia' }]; // safe fallback -- matches the server/deck default region
     }
+}
+
+// Formats a region list as a numbered, `ls`-style multi-column block —
+// there are 20+ regions, and a one-per-line list runs off the screen.
+// Uses the short form of each title (drops the " — Subtitle" flavor
+// text) so labels are compact enough to actually land more than one per
+// row; the full title still shows once a region is chosen.
+function formatRegionMenu(regions) {
+    const items = regions.map((r, i) => `${i + 1}. ${shortTitle(r.title)}`);
+    return formatColumns(items, { width: 60, maxCols: 4 });
 }
 
 // ─── Building the selection menu ─────────────────────────────────────
@@ -424,12 +462,24 @@ function buildFallbackAdventure(synthesis, cardsText, region) {
  * would not settle" errors, confirm your deployed deck.js actually
  * exports `synthesiseCrownSpread`.
  */
-async function runCrownSpreadFlow(context, region) {
-    context.sendChat(`*Drawing a Crown Spread for ${region}...*`);
+async function runCrownSpreadFlow(context, regionArg) {
+    // Accept either a {id, title} pair (from the region picker, post-
+    // getRegionList()) or a plain string (backward compatible with any
+    // other caller / a typed-in name) -- normalize to both forms here.
+    // BUGFIX: every region's `title` includes a display subtitle (e.g.
+    // "Black Banners — Condotta & Crowns"), which the server's slugifier
+    // can't turn back into a filename. The deck/Crown Spread API call
+    // MUST use the bare `id` (e.g. "black_banners", matching
+    // data/regions/black_banners.json); only chat narration should use
+    // the human-readable `title`.
+    const regionId = (regionArg && typeof regionArg === 'object') ? regionArg.id : regionArg;
+    const regionTitle = (regionArg && typeof regionArg === 'object') ? (regionArg.title || regionArg.id) : regionArg;
+
+    context.sendChat(`*Drawing a Crown Spread for ${regionTitle}...*`);
 
     let crownResult;
     try {
-        crownResult = await context.apiRequest('POST', ['deck', 'crown'], { region });
+        crownResult = await context.apiRequest('POST', ['deck', 'crown'], { region: regionId });
     } catch (e) {
         context.sendChat(`*The cards would not settle: ${e.message}*`);
         return;
@@ -467,7 +517,7 @@ async function runCrownSpreadFlow(context, region) {
     try {
         const raw = await context.driver.generateResponse({
             systemPrompt: 'You are a Fate\'s Edge adventure designer. You output only valid JSON, nothing else.',
-            messages: [{ role: 'user', content: buildAdventurePrompt(synthesis, cardsText, region, tension) }]
+            messages: [{ role: 'user', content: buildAdventurePrompt(synthesis, cardsText, regionTitle, tension) }]
         });
         adventureContent = parseAdventureJson(raw);
         if (!adventureContent.title || !Array.isArray(adventureContent.acts) || adventureContent.acts.length === 0) {
@@ -475,7 +525,7 @@ async function runCrownSpreadFlow(context, region) {
         }
     } catch (e) {
         console.warn('[AdventureDirector] LLM adventure generation failed, using fallback:', e.message);
-        adventureContent = buildFallbackAdventure(synthesis, cardsText, region);
+        adventureContent = buildFallbackAdventure(synthesis, cardsText, regionTitle);
     }
 
     const customId = `custom_${Date.now()}`;
@@ -599,10 +649,9 @@ async function handleAdventureCommand(sender, args, context) {
 
         if (chosen.kind === 'crown') {
             dir.pendingSelection.awaitingRegion = true;
-            const regions = getRegionNames();
-            const lines = regions.map((r, i) => `${i + 1}. ${r}`).join('\n');
+            const regions = getRegionList(context);
             dir.pendingSelection.regionOptions = regions;
-            return `**Choose a region for the Crown Spread:**\n${lines}\n\nType \`!gm adventure region <number>\`.`;
+            return `**Choose a region for the Crown Spread (${regions.length}):**\n\`\`\`\n${formatRegionMenu(regions)}\n\`\`\`\nType \`!gm adventure region <number>\`.`;
         }
 
         if (chosen.kind === 'module') {
@@ -657,10 +706,9 @@ async function handleAdventureCommand(sender, args, context) {
 
     // ─── !gm adventure crown  (shortcut straight into Crown Spread, skipping the menu) ───
     if (sub === 'crown') {
-        const regions = getRegionNames();
+        const regions = getRegionList(context);
         dir.pendingSelection = { options: [{ kind: 'crown', label: 'Crown Spread' }], awaitingRegion: true, regionOptions: regions };
-        const lines = regions.map((r, i) => `${i + 1}. ${r}`).join('\n');
-        return `**Choose a region for the Crown Spread:**\n${lines}\n\nType \`!gm adventure region <number>\`.`;
+        return `**Choose a region for the Crown Spread (${regions.length}):**\n\`\`\`\n${formatRegionMenu(regions)}\n\`\`\`\nType \`!gm adventure region <number>\`.`;
     }
 
     // ─── !gm adventure vote abandon ─────────────────────────────────

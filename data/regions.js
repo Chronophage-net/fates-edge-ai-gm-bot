@@ -1,4 +1,4 @@
-{
+module.exports = {
   "Kahfagia": {
     "subgenre": "Creole thalassocracy, signal‑lane politics",
     "key_conflicts": "Lantern‑law vs. oligarchs, Lethai‑ar infiltration, sea‑lane rivalry",
@@ -102,3 +102,4 @@
     "description": "The tide keeps better tallies than any scribe. The reef remembers every secret. Beneath the city, the Reaping grows in the dark, and the Gray Lady watches."
   }
 }
+;

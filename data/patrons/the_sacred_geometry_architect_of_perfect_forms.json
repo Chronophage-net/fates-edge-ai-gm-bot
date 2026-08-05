@@ -13,7 +13,8 @@
     "konreh",
     "measurement",
     "architecture",
-    "order"
+    "order",
+    "zen"
   ],
   "lore": {
     "description": "The Sacred Geometry teaches that perfect forms underlie all seeming chaos: the divine ratios that steer the spiral of galaxies, the symmetry that lattices frost, the measures that turn sound into song. Not merely a calculus but the hidden architecture of the world, it makes artists of order from those who serve it. Devotees do not count to chill the heart; they weigh and tune until beauty and structure converge, revealing that disorder is often only unrecognized design waiting to be drawn true.",
@@ -51,16 +52,12 @@
   "rites": [
     {
       "name": "Rite of the Harmonic Alignment",
-      "tier": "Basic",
+      "tier": "Low",
       "xp": 4,
       "action": "Scene",
       "range": "Self",
       "resist": "No",
-      "tags": [
-        "BALANCE",
-        "FOCUS",
-        "BOOST"
-      ],
+      "tags": ["BALANCE", "FOCUS", "BOOST"],
       "materials": "A tool calibrated to pristine ratios (e.g., golden ratio gauge, well-cut compass arc, a Kon'reh piece set to true measure).",
       "effect": "Align to natural harmonics. Gain +1 die to actions involving balance, proportion, cadence, or keeping true time.",
       "push_it": "The resonance sharpens to a faultless edge: gain +2 dice instead, but mark 1 SB (Diamonds) as nearby imperfect forms momentarily warp. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -71,16 +68,12 @@
     },
     {
       "name": "Rite of the Perfect Structure",
-      "tier": "Basic",
+      "tier": "Low",
       "xp": 5,
       "action": "Scene",
       "range": "Touch",
       "resist": "Yes",
-      "tags": [
-        "TRANSFORM",
-        "REPAIR",
-        "PRESSURE"
-      ],
+      "tags": ["TRANSFORM", "REPAIR", "PRESSURE"],
       "materials": "A consecrated compass and straightedge, inked to tolerance.",
       "effect": "Impose right form on a chaotic or damaged structure (scaffold, plan, treaty, formation). Treat one structural obstacle as one step easier; gain +1 die to build/repair/spatial-reason rolls.",
       "push_it": "Perfection hardens: for the scene the structure gains unnatural resilience, but order draws opposition; mark 1 SB (Clubs). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -91,16 +84,12 @@
     },
     {
       "name": "Rite of the Resonant Field",
-      "tier": "Advanced",
+      "tier": "Standard",
       "xp": 8,
       "action": "Scene",
       "range": "Zone",
       "resist": "Yes",
-      "tags": [
-        "AREA",
-        "TEAMWORK",
-        "HARMONY"
-      ],
+      "tags": ["AREA", "TEAMWORK", "HARMONY"],
       "materials": "A floor or air traced with precise tessellations and nodes (or a Kon'reh board laid out as a focus).",
       "effect": "Establish a harmonic field. Allies gain +1 die to precise, coordinated, or team actions; disruptive acts suffer –1 die.",
       "push_it": "The field self-sustains and begins to spread beyond intent; mark +1 Obligation. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -111,15 +100,12 @@
     },
     {
       "name": "Rite of the Pattern's Heart",
-      "tier": "Advanced",
+      "tier": "Standard",
       "xp": 7,
       "action": "Scene",
       "range": "Self",
       "resist": "Yes",
-      "tags": [
-        "TRUTH",
-        "OMEN"
-      ],
+      "tags": ["TRUTH", "OMEN"],
       "materials": "A solved proof, a perfectly symmetrical token, or a completed Kon'reh puzzle.",
       "effect": "Perceive the governing pattern of a complex situation (supply chain, intrigue, weather, battle). Gain +2 dice to prediction/strategy/systemic-understanding and ask two questions about how the pattern drives the present.",
       "push_it": "Clarity cuts: gain the insight, but for this scene suffer –1 die to intuitive or purely emotional responses; mark 1 SB (Diamonds). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -130,17 +116,12 @@
     },
     {
       "name": "Rite of the Immutable Design",
-      "tier": "Master",
+      "tier": "High",
       "xp": 13,
       "action": "Extended",
       "range": "Zone",
       "resist": "Yes",
-      "tags": [
-        "TERRAIN",
-        "PRESSURE",
-        "FATE",
-        "AREA"
-      ],
+      "tags": ["TERRAIN", "PRESSURE", "FATE", "AREA"],
       "materials": "A space gridded for measure and set with true ratios (like a Kon'reh court).",
       "effect": "For the scene, rewrite local behavior by perfect principle. Choose one: gravity follows geometric progression; time flows by harmonic ratios; space conforms to exact symmetry.",
       "push_it": "Make the design persist, but elsewhere thins and wobbles: mark +2 Obligation and begin Harmonic Dissonance [4]. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
@@ -151,17 +132,12 @@
     },
     {
       "name": "Rite of the Architect's Vision",
-      "tier": "Master",
+      "tier": "High",
       "xp": 14,
       "action": "Extended",
       "range": "Self",
       "resist": "Yes",
-      "tags": [
-        "OMEN",
-        "BOOST",
-        "BURDEN",
-        "TRUTH"
-      ],
+      "tags": ["OMEN", "BOOST", "BURDEN", "TRUTH"],
       "materials": "A ledger of forms and their tuned relations (or a record of Kon'reh victories).",
       "effect": "For one session, treat all rolls of pattern recognition, structural analysis, or harmonic application as one step better (Position or Effect, GM's choice).",
       "push_it": "Sight devours softness: gain the power, but lose ease with imperfection's beauty; mark Harm 1 (Stress). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
@@ -182,7 +158,12 @@
     }
   },
   "witchcraft": {
-    "description": "A witch who walks with the Sacred Geometry is a compass-scribe or grid-weaver — one who crafts the tools of perfect form: a square that never warps, a level that finds true horizontal even on a ship at sea, or a set of Kon'reh pieces carved from the same block of stone so that they resonate together. Their magic works through the materials of measurement: a protractor that reveals hidden angles, a string that stretches to an exact ratio, or a lens that shows the underlying grid of a forest floor. They do not use hammers; they use scribes, rules, and the patient turning of a brass dial.",
+    "name": "The Art of the True Measure",
+    "description": "A witch who walks with the Sacred Geometry is a compass-scribe or grid-weaver — one who crafts the tools of perfect form: a square that never warps, a level that finds true horizontal even on a ship at sea, or a set of Kon'reh pieces carved from the same block of stone so that they resonate together. Their magic works through the materials of measurement: a protractor that reveals hidden angles, a string that stretches to an exact ratio, or a lens that shows the underlying grid of a forest floor. They do not use hammers; they use scribes, rules, and the patient turning of a brass dial. Witches of the Geometry are often quiet, contemplative souls who find peace in the precision of a well-drawn circle and frustration in the chaos of an unmeasured world.",
+    "color": "#a9b8c9",
+    "lore": "The compass-scribe's path is the art of the true measure. They learn that the world is not chaotic — it is merely unread. Every surface hides a pattern, every structure conceals a ratio, and every problem contains a solution waiting to be drawn. The Geometry teaches that the act of measurement is an act of understanding, and that to measure something is to begin to love it. These witches are often found in libraries, observatories, and the quiet rooms where Kon'reh is played, their fingers stained with ink and their eyes always tracing the hidden lines of the world.",
+    "signature_rite": "Rite of the Harmonic Alignment",
+    "quote": "Form follows number. Number follows truth. Truth follows no one.",
     "tools": {
       "protractor": {
         "name": "The Protractor of Unseen Measures",
@@ -194,6 +175,84 @@
         "name": "Compass of True Bearing",
         "xp": 4,
         "description": "Once per scene, the witch may draw a circle with a compass (a real one, or just their finger) around a small area (a room, a crossroads). Those within the circle gain a perfect sense of direction and distance for the next hour; they are immune to mundane spatial confusion (mazes, fog, unfamiliar streets). However, the compass point leaves a faint, glowing mark on the ground that can be seen by anyone with supernatural senses."
+      },
+      {
+        "name": "The Golden Eye",
+        "xp": 3,
+        "description": "You can instantly perceive the golden ratio (1:1.618) in any object, structure, or composition you examine. This allows you to spot flaws in design, identify the most structurally sound point in a wall, or find the most aesthetically pleasing angle for a performance. Once per scene, you may ask the GM one question about a structure's weakness, a design's intent, or a composition's hidden meaning."
+      },
+      {
+        "name": "Tessellation's Grace",
+        "xp": 2,
+        "description": "You can mentally overlay a geometric grid onto any space you can see. This grants you perfect spatial awareness: you can calculate distances, angles, and trajectories with near-perfect accuracy. You gain +1 die to any roll involving ranged attacks, thrown objects, or navigation in unfamiliar spaces. Passive."
+      },
+      {
+        "name": "The Unbroken Line",
+        "xp": 3,
+        "description": "When you draw a line — with chalk, ink, or even your finger — it becomes physically manifest for one scene. It can be used to mark a boundary, create a tripwire, or trace a path. The line is fragile (can be broken by a strong wind or a deliberate step), but while it exists, it is a true line, perfectly straight and geometrically sound. Once per session."
+      }
+    ]
+  },
+  "monastic_tradition": {
+    "name": "The Way of the Measure-Fist",
+    "description": "Monks of the Measure-Fist embody the Geometry's cold, beautiful truth. They move with the precision of a compass, strike with the inevitability of a proof, and think with the clarity of a solved equation. Their philosophy is Zen-like in its simplicity: form follows number, number follows truth, and truth follows no one. They train their bodies to be instruments of measure — every step is a calculation, every breath is a ratio, every strike is a demonstration of perfect form. In the quiet of the monastery, they trace geometric figures in the dust and find peace in the certainty of a well-drawn circle.",
+    "color": "#a9b8c9",
+    "prerequisites": "Wits 3+, Spirit 2+, Rite of Harmonic Alignment or Cantor of Sacred Geometry.",
+    "quote": "Form follows number. Number follows truth. Truth follows no one.",
+    "debt_resistant_frame": "Perfect ratios cannot be bound by imperfect contracts. Monks of the Measure-Fist gain +1 die to resist any magical debt or obligation that relies on asymmetry or flawed logic — they find the imbalance and step through it. The creditor's arithmetic briefly stutters, and the obligation loses its hold.",
+    "techniques": {
+      "basic": {
+        "name": "Golden Ratio Strike",
+        "xp": 5,
+        "description": "Your first unarmed strike each scene gains +1 Effect. Your second gains +1 die. Your third triggers Perfect Alignment (+2 dice, ignore 1 Armor). Sequence resets on a miss. The numbers guide your hand.",
+        "cost": "Free",
+        "prereq": "Wits 3+"
+      },
+      "advanced": {
+        "name": "Pattern's Heart",
+        "xp": 8,
+        "description": "Perceive the governing pattern of a complex situation. Gain +2 dice to prediction/strategy and ask two questions about how the pattern drives the present. The Geometry reveals itself to those who know how to look.",
+        "cost": "1 Fatigue",
+        "prereq": "Wits 3+, Tier II"
+      },
+      "master": {
+        "name": "Architect of Reality",
+        "xp": 12,
+        "description": "Once per session, briefly refit local reality by perfect principle. You may ignore one environmental penalty entirely, or reroute a debt obligation as if the numbers had always been different (the creditor's ledger shows a different debtor). After the scene, you gain a permanent Debt Scar (your eyes are mildly faceted, like cut gems). Thereafter, once per arc, you may treat a failure on a skill roll involving measurement, prediction, or analysis as a success — but you must correct the balance by performing a pure, selfless act of symmetry (e.g., returning a stolen item, repairing a broken wall).",
+        "cost": "2 Fatigue and +1 Obligation to the Geometry",
+        "prereq": "Tier III, Wits 4+"
+      }
+    },
+    "corruption": [
+      {
+        "tier": 1,
+        "benefit": "Harmonic Sense: +1 die to Notice when patterns, ratios, or symmetries matter.",
+        "cost": "Pattern Obsession: Must measure or set-right pleasing patterns you spot; resisting costs time or 1 SB (Diamonds)."
+      },
+      {
+        "tier": 2,
+        "benefit": "Perfect Precision: Once/scene, achieve faultless calculation or measure.",
+        "cost": "Social Dissonance: –1 die to emotive social rolls; harmony feels truer than feeling."
+      },
+      {
+        "tier": 3,
+        "benefit": "Structural Insight: +2 dice to architecture/engineering or imposing order on chaos.",
+        "cost": "Order Compulsion: Must correct deliberate disorder; suffer Fatigue 1 when forced to abide it."
+      },
+      {
+        "tier": 4,
+        "benefit": "Universal Harmony: Once/session, apply a harmonic rule that makes a chaotic situation predictable.",
+        "cost": "Perfectionist Limitation: –1 die to improvisation; the 'correct' solution calls."
+      },
+      {
+        "tier": 5,
+        "benefit": "Divine Proportion: Once/session, see perfect ratios in any phenomenon and work with them.",
+        "cost": "Mathematical Focus: –1 die to acts not readily quantified; the abstract blurs unless counted."
+      },
+      {
+        "tier": "6+",
+        "benefit": "Architect of Reality: Once/session, briefly refit local reality by perfect principle.",
+        "cost": "Form Prison: Mark +3 Obligation; risk failing in rough, noisy worlds, taking Harm 1 in chaotic zones. You cannot willingly enter a space that is not geometrically 'pure' (e.g., a cave, a tent, a ruin) without first performing a measuring rite (1 minute, no roll)."
       }
     ]
   },
@@ -240,57 +299,11 @@
       "Kon'reh Discipline: the game as living geometry, teaching patience, sacrifice, and the dance of Apex and Sanctum"
     ]
   },
-  "monastic_tradition": {
-    "name": "Measure-Fist (Sacred Geometry)",
-    "quote": "Form follows number. Number follows truth.",
-    "prerequisites": "Wits 3+, Spirit 2+, Rite of Harmonic Alignment or Cantor of Sacred Geometry.",
-    "debt_resistant_frame": "Perfect ratios cannot be bound by imperfect contracts. Monks of the Measure-Fist gain +1 die to resist any magical debt or obligation that relies on asymmetry or flawed logic — they find the imbalance and step through it. The creditor's arithmetic briefly stutters.",
-    "techniques": [
-      {
-        "name": "Golden Ratio Strike",
-        "tier": "Basic",
-        "xp": 5,
-        "effect": "Your first unarmed strike each scene gains +1 Effect. Your second gains +1 die. Your third triggers Perfect Alignment (+2 dice, ignore 1 Armor). Sequence resets on a miss.",
-        "cost": "Free",
-        "requirement": "Wits 3"
-      },
-      {
-        "name": "Harmonic Alignment",
-        "tier": "Basic",
-        "xp": 4,
-        "effect": "+1 die to actions involving balance, proportion, cadence, or keeping true time.",
-        "cost": "1 Fatigue",
-        "requirement": "Spirit 2"
-      },
-      {
-        "name": "Perfect Structure",
-        "tier": "Advanced",
-        "xp": 7,
-        "effect": "Impose right form on a chaotic or damaged structure. Treat one structural obstacle as one step easier; gain +1 die to build/repair/spatial-reason rolls.",
-        "cost": "1 Boon",
-        "requirement": "Craft 2"
-      },
-      {
-        "name": "Pattern's Heart",
-        "tier": "Advanced",
-        "xp": 8,
-        "effect": "Perceive the governing pattern of a complex situation. Gain +2 dice to prediction/strategy and ask two questions about how the pattern drives the present.",
-        "cost": "1 Fatigue",
-        "requirement": "Wits 3"
-      },
-      {
-        "name": "Resonant Field",
-        "tier": "Advanced",
-        "xp": 8,
-        "effect": "Establish a harmonic field in a zone. Allies gain +1 die to precise, coordinated, or team actions; disruptive acts suffer –1 die.",
-        "cost": "1 Boon",
-        "requirement": "Tier II"
-      }
-    ],
-    "master_technique": {
-      "name": "Architect of Reality",
-      "xp": 12,
-      "description": "Once per session, briefly refit local reality by perfect principle. You may ignore one environmental penalty entirely, or reroute a debt obligation as if the numbers had always been different (the creditor's ledger shows a different debtor). After the scene, you gain a permanent Debt Scar (your eyes are mildly faceted, like cut gems). Thereafter, once per arc, you may treat a failure on a skill roll involving measurement, prediction, or analysis as a success — but you must correct the balance by performing a pure, selfless act of symmetry (e.g., returning a stolen item, repairing a broken wall)."
+  "konreh_as_avatar": {
+    "note": "The Sacred Geometry is, in part, Kon'reh — or perhaps Kon'reh is an avatar of the Geometry. No one quite knows. The game's eight-pointed diamond, its Apexes and Sanctums, its dance of form and consequence — all are expressions of the same underlying truth. To master Kon'reh is to glimpse the Geometry in motion. To serve the Geometry is to play the game with the world itself.",
+    "cultural_manifestations": {
+      "ykrul": "Kon'reh as a tool for oath-geometry and battle-field prediction; reading the angles of feuds and the arcs of raids.",
+      "aelinnel": "Kon'reh as a tool for navigating thresholds, courtesy, and the hidden patterns of fae bargains — counting steps to avoid stepping where the Green Gate listens."
     }
   },
   "sample_adventure": {

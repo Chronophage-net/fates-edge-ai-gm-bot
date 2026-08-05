@@ -11,7 +11,22 @@ class OpenAIDriver extends AIDriver {
         this.model = model || process.env.OPENAI_MODEL || 'gpt-4o-mini';
         this.maxTokens = parseInt(process.env.OPENAI_MAX_TOKENS || '400', 10);
         this.temperature = parseFloat(process.env.OPENAI_TEMPERATURE || '0.8');
-        this.client = new OpenAI({ apiKey: this.apiKey });
+        // gpt-4o-mini's real context window; overridable for other models.
+        this.contextWindow = parseInt(process.env.OPENAI_CONTEXT_WINDOW || '128000', 10);
+        this.timeoutMs = parseInt(process.env.OPENAI_TIMEOUT_MS || '30000', 10);
+        this.maxRetries = parseInt(process.env.OPENAI_MAX_RETRIES || '2', 10);
+
+        // CHANGED: previously had no retries and no timeout at all --
+        // the SDK's own `timeout`/`maxRetries` client options handle both
+        // uniformly (it already retries 429/5xx with backoff internally
+        // when maxRetries > 0), matching what deepseek-driver.js hand-rolls.
+        // No custom retry loop needed here; the official SDK already does
+        // the right thing once you actually tell it to.
+        this.client = new OpenAI({
+            apiKey: this.apiKey,
+            timeout: this.timeoutMs,
+            maxRetries: this.maxRetries
+        });
     }
 
     async initialize() {
@@ -33,16 +48,28 @@ class OpenAIDriver extends AIDriver {
             } else {
                 console.error('   Could not reach OpenAI API.');
             }
+            // CHANGED: this used to swallow the error entirely, so a bad
+            // key or unreachable API left the bot silently "initialized"
+            // and connected to chat, failing every real message instead
+            // of failing fast at startup. Let it propagate like
+            // deepseek-driver.js already does -- main.js treats an
+            // initialize() failure as a hard startup failure now.
+            throw e;
         }
     }
 
-    async generateResponse(context) {
-        const messages = [
-            { role: 'system', content: context.systemPrompt },
-            ...context.messages
-        ];
+    async generateResponse(context, onToken) {
+        // Trim to fit this model's real context window before sending --
+        // see ai-driver.js's trimToFit(). Last-resort safety net; the
+        // orchestrator should already be sending a pruned prompt.
+        const { systemPrompt, messages: history } = this.trimToFit(context);
+        const messages = [{ role: 'system', content: systemPrompt }, ...history];
 
         try {
+            if (onToken && typeof onToken === 'function') {
+                return await this._generateStreaming(messages, onToken);
+            }
+
             const completion = await this.client.chat.completions.create({
                 model: this.model,
                 messages,
@@ -62,6 +89,31 @@ class OpenAIDriver extends AIDriver {
             if (e.status === 500) errMsg = 'OpenAI server error (500). Try again later.';
             throw new Error(errMsg);
         }
+    }
+
+    /**
+     * Streaming path via the SDK's own async-iterator support
+     * (`stream: true`). Always resolves with the full assembled text so
+     * callers that don't pass onToken see identical behavior to before.
+     */
+    async _generateStreaming(messages, onToken) {
+        const stream = await this.client.chat.completions.create({
+            model: this.model,
+            messages,
+            max_tokens: this.maxTokens,
+            temperature: this.temperature,
+            stream: true
+        });
+
+        let full = '';
+        for await (const part of stream) {
+            const delta = part.choices?.[0]?.delta?.content;
+            if (delta) {
+                full += delta;
+                onToken(delta);
+            }
+        }
+        return full.trim();
     }
 }
 

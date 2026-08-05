@@ -19,6 +19,24 @@ class OllamaDriver extends AIDriver {
         this.baseUrl = process.env.OLLAMA_BASE_URL || 'http://localhost:11434';
         this.model = process.env.OLLAMA_MODEL || 'mistral';
         this.apiKey = process.env.OLLAMA_API_KEY || null;
+        this.timeoutMs = parseInt(process.env.OLLAMA_TIMEOUT_MS || '60000', 10); // local models are slow
+        this.maxRetries = parseInt(process.env.OLLAMA_MAX_RETRIES || '1', 10);
+        // Highly model-dependent (a 7B local model might be 4k-8k, others
+        // much larger) -- operators running Ollama should set this to
+        // match whatever OLLAMA_MODEL actually is. Defaults conservative.
+        this.contextWindow = parseInt(process.env.OLLAMA_CONTEXT_WINDOW || '8192', 10);
+
+        // CHANGED: the interactive recovery flow below (readline prompts
+        // for "pull this model?" / "choose a model") is genuinely good UX
+        // for a developer running this at a terminal, but it is a
+        // deployment hazard for a headless process (systemd service,
+        // Docker without -it, nohup, ...): process.stdin is closed or
+        // never produces input in those contexts, so `rl.question()`
+        // never resolves and the bot hangs forever instead of failing
+        // fast where a process supervisor could restart it. Set
+        // HEADLESS=true (or the more specific OLLAMA_NONINTERACTIVE=true)
+        // in production to skip the prompts and throw immediately instead.
+        this.headless = process.env.HEADLESS === 'true' || process.env.OLLAMA_NONINTERACTIVE === 'true';
     }
 
     async initialize() {
@@ -31,12 +49,24 @@ class OllamaDriver extends AIDriver {
         }
     }
 
-    async generateResponse(context) {
-        const prompt = context.systemPrompt + '\n\n' +
-            context.messages.map(m => `${m.role}: ${m.content}`).join('\n') +
+    async generateResponse(context, onToken) {
+        // Trim to fit this model's real context window before sending --
+        // see ai-driver.js's trimToFit(). This matters MORE for Ollama
+        // than the hosted APIs: a local model's context window is often
+        // small (4k-8k), and the Ollama API will otherwise silently
+        // truncate the oldest part of the prompt itself -- which, given
+        // how ai-gm-bot.js orders the system prompt, tends to mean the
+        // rules/character data goes first, leaving the model to narrate
+        // with no mechanical grounding at all.
+        const { systemPrompt, messages } = this.trimToFit(context);
+        const prompt = systemPrompt + '\n\n' +
+            messages.map(m => `${m.role}: ${m.content}`).join('\n') +
             '\nassistant:';
 
         try {
+            if (onToken && typeof onToken === 'function') {
+                return await this._makeStreamingRequest(prompt, 400, 0.8, onToken);
+            }
             const data = await this._makeRequest(prompt, 400, 0.8);
             return (data.response || '').trim();
         } catch (e) {
@@ -52,21 +82,29 @@ class OllamaDriver extends AIDriver {
         const headers = { 'Content-Type': 'application/json' };
         if (this.apiKey) headers['Authorization'] = `Bearer ${this.apiKey}`;
 
-        const response = await fetch(`${this.baseUrl}/api/generate`, {
-            method: 'POST',
-            headers,
-            body: JSON.stringify({
-                model: this.model,
-                prompt,
-                stream: false,
-                options: { temperature, num_predict: numPredict }
-            })
-        });
-
-        if (!response.ok) {
-            const errBody = await response.text();
-            throw new Error(`HTTP ${response.status}: ${errBody}`);
-        }
+        // CHANGED: previously a bare fetch() with no timeout and no
+        // retry -- a hung or transiently-erroring local Ollama server
+        // (model still loading, brief resource contention, etc.) would
+        // just throw once and give up, unlike deepseek-driver.js's
+        // retry/backoff. Now uses the same shared helper.
+        const response = await this._fetchWithRetries(
+            `${this.baseUrl}/api/generate`,
+            {
+                method: 'POST',
+                headers,
+                body: JSON.stringify({
+                    model: this.model,
+                    prompt,
+                    stream: false,
+                    options: { temperature, num_predict: numPredict }
+                })
+            },
+            {
+                retries: this.maxRetries,
+                timeoutMs: this.timeoutMs,
+                describeError: (status, text) => `HTTP ${status}: ${text}`
+            }
+        );
 
         const data = await response.json();
         if (data.error) {
@@ -75,7 +113,92 @@ class OllamaDriver extends AIDriver {
         return data;
     }
 
+    /**
+     * Streaming path -- Ollama's /api/generate with stream:true returns
+     * newline-delimited JSON objects (one per token), not SSE. No retry
+     * here for the same reason as deepseek-driver.js's streaming path: a
+     * partially-consumed stream can't be transparently resumed. Always
+     * resolves with the full assembled text.
+     */
+    async _makeStreamingRequest(prompt, numPredict, temperature, onToken) {
+        const headers = { 'Content-Type': 'application/json' };
+        if (this.apiKey) headers['Authorization'] = `Bearer ${this.apiKey}`;
+
+        const controller = new AbortController();
+        const timer = setTimeout(() => controller.abort(), this.timeoutMs);
+        let full = '';
+        try {
+            const response = await fetch(`${this.baseUrl}/api/generate`, {
+                method: 'POST',
+                headers,
+                body: JSON.stringify({
+                    model: this.model,
+                    prompt,
+                    stream: true,
+                    options: { temperature, num_predict: numPredict }
+                }),
+                signal: controller.signal
+            });
+
+            if (!response.ok) {
+                const errBody = await response.text().catch(() => '');
+                throw new Error(`HTTP ${response.status}: ${errBody}`);
+            }
+            if (!response.body) {
+                throw new Error('Ollama streaming response had no body.');
+            }
+
+            const decoder = new TextDecoder();
+            let buffer = '';
+            for await (const bytes of response.body) {
+                buffer += decoder.decode(bytes, { stream: true });
+                let idx;
+                while ((idx = buffer.indexOf('\n')) !== -1) {
+                    const line = buffer.slice(0, idx).trim();
+                    buffer = buffer.slice(idx + 1);
+                    if (!line) continue;
+                    try {
+                        const parsed = JSON.parse(line);
+                        if (parsed.error) throw new Error(parsed.error);
+                        if (parsed.response) {
+                            full += parsed.response;
+                            onToken(parsed.response);
+                        }
+                        if (parsed.done) return full.trim();
+                    } catch (e) {
+                        if (e.message && !e.message.startsWith('Unexpected')) throw e; // real API error, not a JSON parse hiccup
+                    }
+                }
+            }
+            return full.trim();
+        } finally {
+            clearTimeout(timer);
+        }
+    }
+
     async _recoverModel(errorMessage, isStartup) {
+        // CHANGED: fail fast in headless deployments instead of hanging
+        // on a readline prompt that will never receive input. Still logs
+        // the available models first, since that's useful in server logs
+        // even when nobody's there to answer interactively.
+        if (this.headless) {
+            console.error('🚫 Ollama model unavailable and HEADLESS=true — skipping interactive recovery.');
+            try {
+                const response = await fetch(`${this.baseUrl}/api/tags`, {
+                    headers: this.apiKey ? { 'Authorization': `Bearer ${this.apiKey}` } : {}
+                });
+                if (response.ok) {
+                    const data = await response.json();
+                    const names = (data.models || []).map(m => m.name);
+                    console.error(`   Available models on ${this.baseUrl}: ${names.length ? names.join(', ') : '(none)'}`);
+                }
+            } catch (e) {
+                console.error(`   (Could not fetch model list: ${e.message})`);
+            }
+            console.error(`   Fix: pull the model manually (ollama pull ${this.model}) or set OLLAMA_MODEL to one of the models listed above, then restart.`);
+            throw new Error(`Ollama model "${this.model}" is unavailable (HEADLESS mode, no interactive recovery): ${errorMessage}`);
+        }
+
         console.log('\n🔧 Model recovery starting...\n');
 
         try {

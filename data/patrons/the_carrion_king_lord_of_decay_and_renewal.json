@@ -57,11 +57,7 @@
       "action": "Instant",
       "range": "Touch",
       "resist": "No",
-      "tags": [
-        "CONSUME",
-        "DECAY",
-        "DEBUFF"
-      ],
+      "tags": ["CONSUME", "DECAY", "DEBUFF"],
       "materials": "A handful of soil from a grave, or a scrap of dead matter.",
       "effect": "Touch a small object (size of a lock or smaller) and cause it to decay. A rope snaps, a lock rusts, a leather strap weakens. The target must be mundane (not enchanted). The decay is immediate and permanent. On a miss, the object resists—the GM gains 1 SB as the decay spreads to your own gear.",
       "push_it": "The decay also weakens a metal weapon, imposing –1 die on its next attack. Mark +1 Fatigue.",
@@ -77,11 +73,7 @@
       "action": "Scene",
       "range": "Touch",
       "resist": "No",
-      "tags": [
-        "HEAL",
-        "REST",
-        "BOOST"
-      ],
+      "tags": ["HEAL", "REST", "BOOST"],
       "materials": "A handful of soil or moss, placed on the skin.",
       "effect": "You or a touched ally may rest for an hour as if they had rested a full day. They clear 2 Fatigue and remove one minor Condition (Fatigue, Shaken, or a minor poison). The rest is deep and dreamless; the sleeper wakes with dirt under their nails and a faint taste of earth.",
       "push_it": "The rest also removes one level of Harm (minimum 0). Mark +1 Obligation.",
@@ -97,11 +89,7 @@
       "action": "Scene",
       "range": "Near",
       "resist": "No",
-      "tags": [
-        "SUMMON",
-        "FEAR",
-        "DEBUFF"
-      ],
+      "tags": ["SUMMON", "FEAR", "DEBUFF"],
       "materials": "A piece of raw meat or a bone.",
       "effect": "You summon a swarm of carrion insects (flies, beetles, maggots) that cluster around one target within Near. The target suffers –1 die to all physical actions for the scene as the swarm distracts and disgusts. The swarm can be dispersed by fire, smoke, or a strong wind. On a miss, the swarm turns on you briefly—you suffer –1 die to your next action.",
       "push_it": "The swarm is aggressive and also imposes –1 die to the target's social rolls (others find them repulsive). Mark +1 Obligation.",
@@ -117,11 +105,7 @@
       "action": "Scene",
       "range": "Touch",
       "resist": "Yes",
-      "tags": [
-        "READ",
-        "DEATH",
-        "TRUTH"
-      ],
+      "tags": ["READ", "DEATH", "TRUTH"],
       "materials": "A bone or tooth from a corpse less than a year dead.",
       "effect": "You touch the bone and see the last moments of the person it belonged to. The GM must describe one significant event from the deceased's final day—a face, a word, a choice. If the bone belongs to a creature that died violently, you also learn the manner of their death. On a miss, the vision is garbled or false; the GM gains 1 SB.",
       "push_it": "You also learn the name of the person who killed them (if applicable). Mark +1 Fatigue.",
@@ -137,11 +121,7 @@
       "action": "Scene",
       "range": "Zone",
       "resist": "No",
-      "tags": [
-        "VEIL",
-        "AREA",
-        "PROTECT"
-      ],
+      "tags": ["VEIL", "AREA", "PROTECT"],
       "materials": "A handful of mushroom spores, blown into the air.",
       "effect": "You create a zone of thick, spore-laden air. The zone lasts for the scene. Any creature entering the zone must test Endurance (DV 3) or suffer –1 die to physical actions from coughing and irritation. The spores also mask scents; tracking through the zone suffers –1 die. On a miss, the spores settle on you instead—you suffer –1 die to your next action.",
       "push_it": "The spores also cause mild hallucinations; creatures in the zone suffer –1 die to Perception rolls. Mark +1 Obligation.",
@@ -158,12 +138,7 @@
       "action": "Extended",
       "range": "Zone",
       "resist": "No",
-      "tags": [
-        "CONSUME",
-        "HEAL",
-        "AREA",
-        "SACRIFICE"
-      ],
+      "tags": ["CONSUME", "HEAL", "AREA", "SACRIFICE"],
       "materials": "A body (freshly dead or long buried), a knife, and a clay vessel.",
       "effect": "You harvest the body's remaining vitality. All allies within Near gain +2 dice to their next action and clear 1 Fatigue as the energy of the dead flows through them. The body crumbles to dust afterward, its usefulness spent. On a miss, the ritual fails—the body remains, but the GM gains 2 SB as the dead are not yet willing to give.",
       "push_it": "The harvest also heals 1 Harm to all allies in the zone. Mark +1 Obligation.",
@@ -180,12 +155,7 @@
       "action": "Extended",
       "range": "Self",
       "resist": "No",
-      "tags": [
-        "TRANSFORM",
-        "BOOST",
-        "DEBT",
-        "SACRIFICE"
-      ],
+      "tags": ["TRANSFORM", "BOOST", "DEBT", "SACRIFICE"],
       "materials": "A circlet woven from the bones of a creature you killed yourself, worn for nine days.",
       "effect": "You become an avatar of the cycle of decay and renewal for one scene. You gain: +2 dice to all Medicine and Survival rolls involving death or decay; Immunity to poison and disease; The Carrion's Gaze: Once during the scene, you may force one target to test Spirit+Resolve (DV 4) or be paralysed by the vision of their own death. When the scene ends, you suffer Fatigue 2 as the transformation taxes your body. On a miss, the ritual fails, and you gain a permanent Condition (Rot-Touched: animals shy from you, and you cannot use healing magic on yourself).",
       "push_it": "The transformation lasts for the entire session instead of one scene. Mark +2 Obligation.",
@@ -206,7 +176,12 @@
     }
   },
   "witchcraft": {
-    "description": "A witch who walks with the Carrion King is a grave-wright or rot-smith—one who crafts the tools of the undertaker and the composter: a shovel that turns soil into a blessing, a needle that sews a shroud that becomes a winding-sheet for a new life, or a mortar that grinds bone into fertilizer. Their magic works through the materials of decay: a spore-dusted cloth that preserves a body for a season, a bone needle that stitches a wound without infection, or a clay pot that ferments a medicine from grave-soil. In Aeler, a True-Mason might carve a 'death keystone' into a crypt, but a witch of the Carrion King would instead plant a mushroom cap in the mortar, so the stone remembers the weight of the dead it holds.",
+    "name": "The Art of the Compost",
+    "description": "A witch who walks with the Carrion King is a grave-wright or rot-smith—one who crafts the tools of the undertaker and the composter: a shovel that turns soil into a blessing, a needle that sews a shroud that becomes a winding-sheet for a new life, or a mortar that grinds bone into fertilizer. Their magic works through the materials of decay: a spore-dusted cloth that preserves a body for a season, a bone needle that stitches a wound without infection, or a clay pot that ferments a medicine from grave-soil. In Aeler, a True-Mason might carve a 'death keystone' into a crypt, but a witch of the Carrion King would instead plant a mushroom cap in the mortar, so the stone remembers the weight of the dead it holds. These witches are the gardeners of the cycle—they tend the dead so that the living may thrive, and they understand that the compost heap is the most sacred garden of all.",
+    "color": "#6b4c3a",
+    "lore": "The compost-witch's path is the art of transformation through decay. They learn that death is not an ending but a turning—a moment when one form becomes another, when the body feeds the root and the root feeds the leaf. The Carrion King teaches that nothing is wasted, that every ending is a beginning, and that the patient work of decay is the most sacred duty of all. These witches are gardeners of the cycle, and their garden is the world itself.",
+    "signature_rite": "Rite of the Earthen Bed",
+    "quote": "The body that does not rot is a debt unpaid. The soil that does not feed is a wound unhealed.",
     "tools": {
       "grave_wrights_shovel": {
         "name": "The Grave-Wright's Shovel",
@@ -218,6 +193,79 @@
         "name": "The Compost's Grace",
         "xp": 4,
         "description": "Once per scene, the witch may touch a dead or dying creature and speak a word of the Carrion King's name. The creature's body will not decay for one day, and its soul will not linger. The witch may also use this gift to preserve a corpse for transport, allowing it to be moved without rotting for the duration."
+      },
+      {
+        "name": "Spore-Tender",
+        "xp": 3,
+        "description": "You may cultivate a small patch of medicinal or culinary mushrooms in any damp, dark place. Once per session, you may harvest a dose of a fungal remedy: a healing poultice (removes 1 Fatigue), a mild poison (imposes –1 die on a target's next physical action), or a spore cloud that acts as a minor distraction. The GM adjudicates the specific effect."
+      },
+      {
+        "name": "Rot-Knowing",
+        "xp": 2,
+        "description": "You can sense the presence of decay, rot, or hidden death within Near range. This includes spoiled food, hidden corpses, and areas of blight. You can also tell whether a corpse has been dead for less than a day, more than a week, or more than a season. Passive."
+      }
+    ]
+  },
+  "monastic_tradition": {
+    "name": "The Way of the Rot-Fist",
+    "description": "Monks of the Rot-Fist tradition embody the patient hunger of the Carrion King. They move with the inevitability of decay, strike with the certainty of rot, and teach that strength comes not from resisting the cycle but from flowing with it. They are undertakers and gardeners, warriors and philosophers, who understand that the fist that strikes is also the hand that plants. In monasteries of the Carrion King, they tend the dead and the dying with the same reverence they bring to the living, knowing that all things return to the earth and that from the earth all things grow.",
+    "color": "#6b4c3a",
+    "prerequisites": "Body 3+, Spirit 2+, Rite of the Earthen Bed or Cantor of the Carrion King.",
+    "quote": "You fear the rot. I have made peace with it. The body feeds the root; the root feeds the leaf; the leaf feeds the deer; the deer feeds the wolf; the wolf feeds the earth. You are not an ending. You are a beginning.",
+    "debt_resistant_frame": "The Carrion King does not collect debts—he composts them. Rot-Fist monks gain +1 die to resist any magical debt or obligation that would compel them to preserve what should decay (a life past its time, a secret that should be buried, a relationship that has soured). If they succeed, the debt transforms—it is not forgotten, merely recycled into something new.",
+    "techniques": {
+      "basic": {
+        "name": "Rot's Touch",
+        "xp": 4,
+        "description": "When you touch a creature or object, you may cause it to decay slightly. A rope snaps, a lock rusts, a creature suffers –1 die to its next action.",
+        "cost": "1 Boon",
+        "prereq": "Spirit 2+"
+      },
+      "advanced": {
+        "name": "The Rot's Harvest",
+        "xp": 8,
+        "description": "When a creature dies within Near range, you may harvest 1 Boon from its passing. Once per scene. The dead give freely to those who honour the cycle.",
+        "cost": "Free",
+        "prereq": "Tier II"
+      },
+      "master": {
+        "name": "Avatar of the Cycle",
+        "xp": 12,
+        "description": "Once per session, become the living embodiment of decay and renewal for one scene. You ignore all poison and disease, and any creature you touch (including a successful unarmed strike) must test Endurance (DV 4) or suffer 1 Fatigue as the energy of the grave flows through them. After the scene, you gain a permanent Debt Scar—a patch of skin that is always slightly cool to the touch, like grave-soil. You may ignore one obligation that would compel you to preserve what should decay—the Carrion King has already claimed it.",
+        "cost": "2 Fatigue and +1 Obligation to the Carrion King",
+        "prereq": "Tier III, Spirit 4+"
+      }
+    },
+    "corruption": [
+      {
+        "tier": 1,
+        "benefit": "Rot-Sense: +1 die to notice decay, poison, or hidden death.",
+        "cost": "Compost-Stained: You smell faintly of turned earth and mushrooms. –1 die to social rolls with the fastidious or those who fear death."
+      },
+      {
+        "tier": 2,
+        "benefit": "The Root's Patience: Once/scene, treat a failed Medicine or Survival roll as a success, but mark 1 SB (Clubs).",
+        "cost": "Grave-Touched: –1 die to resist despair or fear in places of life and vitality; the quiet of the grave calls to you."
+      },
+      {
+        "tier": 3,
+        "benefit": "Fungal Resilience: +2 dice to resist poison, disease, and environmental hazards related to decay.",
+        "cost": "Earth-Stained: You cannot grow plants or make things grow; your touch causes small things to wither (flowers wilt, food spoils slightly faster)."
+      },
+      {
+        "tier": 4,
+        "benefit": "The Harvest's Gift: Once/session, automatically succeed on a Medicine roll to stabilise a dying creature.",
+        "cost": "The Hunger of the Root: You must be near death or decay each day, or suffer 1 Fatigue."
+      },
+      {
+        "tier": 5,
+        "benefit": "Carrion's Boon: Once/session, consume a corpse to heal 1 Harm or clear 1 Fatigue.",
+        "cost": "Rot-Touched: –1 die to social rolls with those who fear death or decay; you are unsettling to the healthy."
+      },
+      {
+        "tier": "6+",
+        "benefit": "Avatar of the Cycle: Once/session, become the living embodiment of decay and renewal for one scene. You ignore all poison and disease, and any creature you touch must test Endurance (DV 4) or suffer 1 Fatigue.",
+        "cost": "The Root's Claim: Mark +3 Obligation. You can no longer enter a place that has not known death without suffering 1 Fatigue. Your eyes are the colour of turned soil, and mushrooms grow in your footsteps."
       }
     ]
   },
@@ -262,67 +310,6 @@
       "Ecological Balance: understanding that preservation without decay is stagnation",
       "The Quiet Dignity of Death: tending the dying and the dead with respect"
     ]
-  },
-  "monastic_tradition": {
-    "name": "Rot-Fist (The Carrion King)",
-    "quote": "You fear the rot. I have made peace with it. The body feeds the root; the root feeds the leaf; the leaf feeds the deer; the deer feeds the wolf; the wolf feeds the earth. You are not an ending. You are a beginning.",
-    "prerequisites": "Body 3+, Spirit 2+, Rite of the Earthen Bed or Cantor of the Carrion King.",
-    "debt_resistant_frame": "The Carrion King does not collect debts—he composts them. Rot-Fist monks gain +1 die to resist any magical debt or obligation that would compel them to preserve what should decay (a life past its time, a secret that should be buried, a relationship that has soured). If they succeed, the debt transforms—it is not forgotten, merely recycled into something new.",
-    "techniques": [
-      {
-        "name": "Rot's Touch",
-        "tier": "Basic",
-        "xp": 4,
-        "effect": "When you touch a creature or object, you may cause it to decay slightly. A rope snaps, a lock rusts, a creature suffers –1 die to its next action.",
-        "cost": "1 Boon",
-        "requirement": "Spirit 2"
-      },
-      {
-        "name": "Earthen Resilience",
-        "tier": "Basic",
-        "xp": 4,
-        "effect": "You ignore the first point of Fatigue from poison or disease each scene.",
-        "cost": "Passive",
-        "requirement": "Body 3"
-      },
-      {
-        "name": "The Grave's Memory",
-        "tier": "Basic",
-        "xp": 5,
-        "effect": "When you touch a bone or corpse, you may ask the GM one question about the creature's death. The GM must answer truthfully.",
-        "cost": "1 Fatigue",
-        "requirement": "Spirit 3"
-      },
-      {
-        "name": "The Rot's Harvest",
-        "tier": "Standard",
-        "xp": 8,
-        "effect": "When a creature dies within Near range, you may harvest 1 Boon from its passing. Once per scene.",
-        "cost": "Free",
-        "requirement": "Tier II"
-      },
-      {
-        "name": "Carrion's Resilience",
-        "tier": "Standard",
-        "xp": 8,
-        "effect": "You gain +2 dice to resist poison, disease, and necromantic magic.",
-        "cost": "Passive",
-        "requirement": "Tier II"
-      },
-      {
-        "name": "The Fungal Veil",
-        "tier": "Standard",
-        "xp": 9,
-        "effect": "As an action, you may create a cloud of spores that lasts for the scene. Creatures in the cloud suffer –1 die to physical actions.",
-        "cost": "1 Fatigue",
-        "requirement": "Tier III, Rite of the Fungal Veil"
-      }
-    ],
-    "master_technique": {
-      "name": "Avatar of the Cycle",
-      "xp": 12,
-      "description": "Once per session, become the living embodiment of decay and renewal for one scene. You ignore all poison and disease, and any creature you touch (including a successful unarmed strike) must test Endurance (DV 4) or suffer 1 Fatigue as the energy of the grave flows through them. After the scene, you gain a permanent Debt Scar—a patch of skin that is always slightly cool to the touch, like grave-soil. You may ignore one obligation that would compel you to preserve what should decay—the Carrion King has already claimed it."
-    }
   },
   "lore_echoes": [
     {

@@ -45,17 +45,12 @@
   "rites": [
     {
       "name": "Rite of the Thunderous Presence",
-      "tier": "Basic",
+      "tier": "Low",
       "xp": 4,
       "action": "Scene",
       "range": "Near",
       "resist": "No",
-      "tags": [
-        "FEAR",
-        "COMMAND",
-        "AREA",
-        "PRESSURE"
-      ],
+      "tags": ["FEAR", "COMMAND", "AREA", "PRESSURE"],
       "materials": "A drum made from storm-felled wood or any suitable improvised percussion.",
       "effect": "Your presence becomes overwhelming. All NPCs within Near range must test Resolve (DV 2) or suffer –1 die to social actions due to awe or terror for the scene. Allies gain +1 die to Intimidation or Command actions.",
       "push_it": "Extend the effect to Far range, but you mark 1 Fatigue and mark 1 SB (Hearts) as your presence becomes difficult to control. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -66,16 +61,12 @@
     },
     {
       "name": "Rite of the Storm's Step",
-      "tier": "Basic",
+      "tier": "Low",
       "xp": 5,
       "action": "Scene",
       "range": "Self",
       "resist": "No",
-      "tags": [
-        "SPEED",
-        "FEAR",
-        "BOOST"
-      ],
+      "tags": ["SPEED", "FEAR", "BOOST"],
       "materials": "Earth from a lightning strike site, worn boot leather.",
       "effect": "You move with the storm's speed. Gain +2 dice to Athletics or Stealth rolls. The first attack you make this scene gains +1 Effect.",
       "push_it": "Gain +3 dice and move as a blur, becoming difficult to track or clearly remember; mark 1 SB (Diamonds). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -86,17 +77,12 @@
     },
     {
       "name": "Rite of the Shattered Sky",
-      "tier": "Advanced",
+      "tier": "Standard",
       "xp": 8,
       "action": "Scene",
       "range": "Zone",
       "resist": "No",
-      "tags": [
-        "AREA",
-        "FORCE",
-        "FEAR",
-        "WEATHER"
-      ],
+      "tags": ["AREA", "FORCE", "FEAR", "WEATHER"],
       "materials": "A shard of meteoric iron or metal touched by a severe storm.",
       "effect": "You call a localized, supernatural storm in a Zone. Choose one effect: Lightning Strike: Single target, Harm 2. Wind Blast: Knockback, dispersing arrows or scattering foes. Hail Barrage: Harm 1 (AREA). All enemies in the Zone suffer –1 die to actions from chaos and distraction.",
       "push_it": "Double the chosen effect's scale or potency (e.g., Harm 3, large knockback), but the effect also applies to allies in the Zone; mark 2 SB (Clubs). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
@@ -107,17 +93,12 @@
     },
     {
       "name": "Rite of the Fear-Eater",
-      "tier": "Advanced",
+      "tier": "Standard",
       "xp": 9,
       "action": "Scene",
       "range": "Self",
       "resist": "No",
-      "tags": [
-        "FEAR",
-        "HEAL",
-        "COMMAND",
-        "BOOST"
-      ],
+      "tags": ["FEAR", "HEAL", "COMMAND", "BOOST"],
       "materials": "Soil or dust from a place of great terror (battlefield, prison, ruins).",
       "effect": "You feed on the fear around you. For each Frightened target in the scene, gain +1 die on your next action (max +3). If you successfully Intimidate a target during this scene, you heal 1 Fatigue.",
       "push_it": "Absorb all palpable fear in the scene, gaining a flat +3 dice bonus to your next action, but mark 1 permanent Scar related to fear. Mark 1 SB (Hearts). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -128,18 +109,12 @@
     },
     {
       "name": "Rite of the World's Drum",
-      "tier": "Master",
+      "tier": "High",
       "xp": 14,
       "action": "Extended",
       "range": "Zone",
       "resist": "No",
-      "tags": [
-        "AREA",
-        "FEAR",
-        "COMMAND",
-        "TRANSFORM",
-        "WEATHER"
-      ],
+      "tags": ["AREA", "FEAR", "COMMAND", "TRANSFORM", "WEATHER"],
       "materials": "A drum fashioned from lightning-struck wood, with a hide from a beast killed by natural force.",
       "effect": "You become an incarnation of the storm for one scene: Gain +2 dice to rolls based on strength, speed, and intimidation. Your anger echoes as thunder; attacks against you may be answered by lightning (GM decides, usually 1 SB and Harm 1 to the attacker). Enemies must test Resolve at –2 dice to resist Fear effects you create. Start a 6-segment Natural Disasters timer; when it fills, the storm's wrath manifests as a random environmental hazard (landslide, lightning strike, flash flood).",
       "push_it": "The transformation lingers after the scene, and your emotional state causes minor environmental effects (windows rattle, small fires flicker). Mark 2 SB (Diamonds) and advance the timer by 2 segments. Cost: Mark +1 Obligation (total +4) or Mark +1 Fatigue.",
@@ -160,7 +135,12 @@
     }
   },
   "witchcraft": {
-    "description": "A witch who walks with Xhak'Thul is a storm-caller or drum-maker — a shaman who crafts the tools of primal power: a drum that can be heard for a mile, a spear of lightning-struck wood that never misses its target, or a charm of meteoric iron that calls a storm when struck. Their magic is immediate, visceral, and never subtle. In Ykrul, a bone-carver might shape a whistle that mimics the sound of a thunderclap, terrifying horses. In the deep Vhasian highlands, a shaman might paint their drum with the blood of a goat struck by lightning, binding the storm's spirit to the skin.",
+    "name": "The Art of the Thunder",
+    "description": "A witch who walks with Xhak'Thul is a storm-caller or drum-maker — a shaman who crafts the tools of primal power: a drum that can be heard for a mile, a spear of lightning-struck wood that never misses its target, or a charm of meteoric iron that calls a storm when struck. Their magic is immediate, visceral, and never subtle. In Ykrul, a bone-carver might shape a whistle that mimics the sound of a thunderclap, terrifying horses. In the deep Vhasian highlands, a shaman might paint their drum with the blood of a goat struck by lightning, binding the storm's spirit to the skin. These witches are the voice of the storm, the ones who speak the thunder's language and dance to its rhythm.",
+    "color": "#6b4a2a",
+    "lore": "The storm-caller's path is the art of the primal. They learn that the world is not a machine to be understood but a force to be ridden — that the thunder is not a sound but a presence, and the lightning is not a light but a message. Xhak'Thul teaches that the oldest magic is the simplest: the drumbeat, the war cry, the dance that summons the sky. These witches are found on hilltops, in caves, and in the places where the storm first touches the earth, their hands stained with ash and their eyes always watching the horizon for the next crack of lightning.",
+    "signature_rite": "Rite of the Thunderous Presence",
+    "quote": "The sky does not ask permission. Neither do we.",
     "tools": {
       "storm_drum": {
         "name": "The Storm-Drum",
@@ -172,6 +152,84 @@
         "name": "Drum of the First Beat",
         "xp": 4,
         "description": "Once per scene, the witch may tap a rhythm on any surface (a table, a shield, a tree trunk). For the next minute, all allies within Near range who hear the rhythm gain +1 die to Athletics and combat rolls, as their heartbeat synchronizes with the storm. The rhythm cannot be sustained if the witch is silenced or takes a wound."
+      },
+      {
+        "name": "The Crack of Thunder",
+        "xp": 2,
+        "description": "When you speak or shout, your voice carries unnaturally far, mimicking the rumble of distant thunder. You can be heard by any willing listener within Far range without rolling. Additionally, you gain +1 die to Intimidation rolls when using your voice as a weapon. Passive."
+      },
+      {
+        "name": "Storm-Reader",
+        "xp": 3,
+        "description": "You can sense the mood of the sky — the pressure, the charge, the coming storm. You can predict the weather for the next hour with near-perfect accuracy, and you can sense if a storm is being magically called or manipulated. Once per scene, you may ask the GM one question about upcoming weather or storm activity."
+      },
+      {
+        "name": "Ground the Lightning",
+        "xp": 3,
+        "description": "Once per session, you may touch a metal object and ground a lightning strike, absorbing its energy into yourself. You gain +2 dice to your next physical action (the storm's power flows through you), but you also mark 1 Fatigue from the shock. If there is no lightning in the sky, you may instead draw static electricity from the air, gaining +1 die instead."
+      }
+    ]
+  },
+  "monastic_tradition": {
+    "name": "The Way of the Storm Fist",
+    "description": "Monks of the Storm Fist embody the thunder's rage and the lightning's speed. They move with the fury of the storm, strike with the crack of lightning, and stand unshaken in the face of chaos. Their philosophy is simple: the storm does not ask permission — it speaks, and the only answer is to act. They train their bodies to be vessels of the sky's power, learning to channel the thunder into their fists and the lightning into their steps. In the quiet of the monastery, they practice the art of controlled chaos — learning to be unpredictable, to strike without warning, and to never hesitate.",
+    "color": "#6b4a2a",
+    "prerequisites": "Body 3+, Spirit 2+, Rite of the Thunderous Presence or Cantor of Xhak'Thul.",
+    "quote": "The storm does not ask. It speaks. You are its echo.",
+    "debt_resistant_frame": "Lightning leaves no ledger. Monks of the Storm Fist gain +1 die to resist any effect that would bind, contract, or obligate them (geas, oath, debt-enforcement). If they succeed, the air around them crackles audibly — pursuers gain +1 die to track them for the next hour.",
+    "techniques": {
+      "basic": {
+        "name": "Thunder Palm",
+        "xp": 5,
+        "description": "Unarmed strike deals +1 Harm and forces a Resolve test (DV 3) or the target loses their next minor action. The thunder's echo lingers in their bones.",
+        "cost": "1 Fatigue",
+        "prereq": "Body 3+"
+      },
+      "advanced": {
+        "name": "Storm Step",
+        "xp": 8,
+        "description": "Move as a blur; you are difficult to track or remember. For one exchange, stealth rolls are at +2 dice, and you may move through enemies without provoking opportunity attacks. The storm hides you.",
+        "cost": "1 Boon",
+        "prereq": "Spirit 3+, Tier II"
+      },
+      "master": {
+        "name": "Eye of the Storm",
+        "xp": 12,
+        "description": "Once per session, become the calm center of a supernatural storm for one scene. Allies within Near ignore fear and weather penalties. You gain +2 dice to physical and intimidation rolls, and any enemy that attacks you suffers a lightning counter (Harm 1, ignores armor). After the scene, you collapse with Fatigue 3. Gain a permanent Debt Scar — a lightning-bolt pattern on your chest — but you may ignore one forced Obligation or debt call (the creditor sees only static).",
+        "cost": "2 Fatigue and +1 Obligation to Xhak'Thul",
+        "prereq": "Tier III, Body 4+"
+      }
+    },
+    "corruption": [
+      {
+        "tier": 1,
+        "benefit": "Static Cling: Your touch carries a static shock. Metal objects faintly hum in your presence.",
+        "cost": "You feel restless energy before a storm. Minor lies itch like a rash."
+      },
+      {
+        "tier": 2,
+        "benefit": "Storm-Touched: Your hair stirs without wind. Your voice occasionally cracks like thunder. Small flames flicker near you.",
+        "cost": "You become irritable in calm, silent places. You crave loud arguments and violent weather."
+      },
+      {
+        "tier": 3,
+        "benefit": "Lightning Rod: You are dangerously magnetic. Unshielded metal flies to your hands. Your eyes crackle with faint light.",
+        "cost": "You feel a compulsion to disrupt order and create chaos. Peace feels like a cage."
+      },
+      {
+        "tier": 4,
+        "benefit": "Walking Storm: A localized wind stirs around you. You smell of ozone and wet stone. You cannot whisper; your voice is a low rumble.",
+        "cost": "You lose patience with lengthy plans. You prefer direct, explosive action, regardless of the cost."
+      },
+      {
+        "tier": 5,
+        "benefit": "Heart of the Tempest: You are the eye of a personal storm. Rain sheets indoors; lightning threatens those who anger you.",
+        "cost": "You see the world only as a force to be broken or commanded. Gentler emotions are foreign memories."
+      },
+      {
+        "tier": "6+",
+        "benefit": "Living Thunder: Once/session, you may become a bolt of lightning, teleporting to any point you can see within Far range and unleashing an automatic Harm 2 blast upon arrival.",
+        "cost": "Storm's Prison: Mark +3 Obligation. You can no longer remain indoors for more than an hour without suffering 1 Fatigue; the sky demands your presence."
       }
     ]
   },
@@ -207,6 +265,16 @@
       "cost": "Storm's Prison: Mark +3 Obligation. You can no longer remain indoors for more than an hour without suffering 1 Fatigue; the sky demands your presence."
     }
   ],
+  "rivalries": [
+    {
+      "patron": "The Sealed Gate",
+      "description": "Xhak'Thul breaks boundaries; the Sealed Gate enforces them. The storm does not ask permission to cross a threshold; it simply breaks through. Their followers are natural opposites, and their conflicts are often explosive and destructive."
+    },
+    {
+      "patron": "The Silent Choir",
+      "description": "Xhak'Thul demands expression; the Silent Choir teaches restraint. The storm shouts; the choir whispers. Their followers rarely understand each other — and when they meet, it is often with thunder and silence."
+    }
+  ],
   "playstyle_notes": {
     "description": "Xhak'Thul is the patron of shamans, berserkers, and anyone who acts first and thinks never. His magic is immediate, loud, and unsubtle — the thunderclap, the lightning strike, the roar that silences a crowd. He rewards boldness, spontaneity, and the willingness to break things. His followers are not subtle, but they are terrifying. Ideal for players who enjoy direct solutions, primal power, and characters who would rather break a door than pick a lock.",
     "emphasizes": [
@@ -216,67 +284,6 @@
       "Immediate Magic: no rituals, no books — only emotion, movement, and the moment",
       "Pre-Literate Wisdom: the oldest magic, written in bone and drum"
     ]
-  },
-  "monastic_tradition": {
-    "name": "Storm Fist (Xhak'Thul)",
-    "quote": "The storm does not ask. It speaks. You are its echo.",
-    "prerequisites": "Body 3+, Spirit 2+, Rite of the Thunderous Presence or Cantor of Xhak'Thul.",
-    "debt_resistant_frame": "Lightning leaves no ledger. Monks of the Storm Fist gain +1 die to resist any effect that would bind, contract, or obligate them (geas, oath, debt-enforcement). If they succeed, the air around them crackles audibly — pursuers gain +1 die to track them for the next hour.",
-    "techniques": [
-      {
-        "name": "Thunder Palm",
-        "tier": "Basic",
-        "xp": 5,
-        "effect": "Unarmed strike deals +1 Harm and forces a Resolve test (DV 3) or the target loses their next minor action.",
-        "cost": "1 Fatigue",
-        "requirement": "Body 3"
-      },
-      {
-        "name": "Lightning Reflexes",
-        "tier": "Basic",
-        "xp": 4,
-        "effect": "+1 to defense DV against ranged attacks.",
-        "cost": "Passive",
-        "requirement": "Body 3, Athletics 2"
-      },
-      {
-        "name": "Fear Eater",
-        "tier": "Basic",
-        "xp": 5,
-        "effect": "When you successfully Intimidate a target, gain 1 Boon (once per scene).",
-        "cost": "Passive",
-        "requirement": "Spirit 3, Command 2"
-      },
-      {
-        "name": "Storm Step",
-        "tier": "Advanced",
-        "xp": 8,
-        "effect": "Move as a blur; you are difficult to track or remember. For one exchange, stealth rolls are at +2 dice.",
-        "cost": "1 Boon",
-        "requirement": "Spirit 3, Tier II"
-      },
-      {
-        "name": "Storm's Pace",
-        "tier": "Basic",
-        "xp": 4,
-        "effect": "While moving (not standing still), gain +1 die to all physical actions.",
-        "cost": "Passive",
-        "requirement": "Body 3, Performance 1"
-      },
-      {
-        "name": "Thunder's Grasp",
-        "tier": "Advanced",
-        "xp": 9,
-        "effect": "When reduced to 0 Harm, instead unleash a concussive blast: all enemies in Close are knocked back one band and must test Body+Resolve (DV 3) or fall prone. You survive with Fatigue 2.",
-        "cost": "Once per session",
-        "requirement": "Tier III, Fear Eater"
-      }
-    ],
-    "master_technique": {
-      "name": "Eye of the Storm",
-      "xp": 12,
-      "description": "Once per session, become the calm center of a supernatural storm for one scene. Allies within Near ignore fear and weather penalties. You gain +2 dice to physical and intimidation rolls, and any enemy that attacks you suffers a lightning counter (Harm 1, ignores armor). After the scene, you collapse with Fatigue 3. Gain a permanent Debt Scar — a lightning-bolt pattern on your chest — but you may ignore one forced Obligation or debt call (the creditor sees only static)."
-    }
   },
   "sample_adventure": {
     "title": "The Drum That Would Not Stop",

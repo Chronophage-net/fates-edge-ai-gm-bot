@@ -1,0 +1,297 @@
+{
+  "id": "grimmir-old-man-forest",
+  "type": "patron",
+  "title": "Grimmir, the Old Man of the Forest",
+  "subtitle": "Primal Mystery & Seasonal Sacrifice",
+  "version": "1.0.0",
+  "tags": [
+    "nature",
+    "sacrifice",
+    "seasonal",
+    "folk-horror",
+    "primal",
+    "boundary",
+    "cycle",
+    "wild"
+  ],
+  "lore": {
+    "description": "Grimmir is the Old Man of the Forest, the Alder King, the presence that watches from the shadow of the oldest oak, the cold breath on the back of the neck when the path grows dark. He is not kind, nor is he cruel—he is wild, and the wild does not negotiate. It demands, and it takes. His followers learn to read the language of blood on snow, the geometry of root and stone, and the weight of a heart offered at the turning of the year. Grimmir does not teach harmony; he teaches respect through fear, and fear through sacrifice.",
+    "followers": "Those who walk his path become keepers of the old ways: druids who know when a grove must be fed, rangers who leave the first kill for the soil, and hedge-folk who whisper the names of spirits not to be spoken aloud. Their magic is not the gentle coaxing of garden plants but the raw, patient hunger of the forest floor—a hunger that swallows bones and grows mushrooms in the shape of the dead.",
+    "names_across_regions": {
+      "aeler": "The Root-Father, a patron of deep fungus and stone-lichen whose shrines are carved into living rock",
+      "ykrul": "The Sky-Wolf, a spirit of the steppe who herds the seasons and grants omens",
+      "aelaerem": "The Thorn-Father, keeper of hedgerow magic, honored with red thread tied around roadside stones"
+    },
+    "quote": "The forest does not ask. It takes. The deer does not weep for the wolf, and the wolf does not beg the earth. Give what the season demands, or the season will take it anyway."
+  },
+  "domain_focus": [
+    "Seasonal Sacrifice: the old ways of blood and offering, the turning wheel that demands payment",
+    "Folk Horror: the terror of the unseen, the ritual that must be performed, the boundary that must not be crossed",
+    "Primal Mystery: knowledge hidden in root and stone, the language of omens and portents",
+    "Growth from Death: the forest floor as a stomach; decay as the engine of new life"
+  ],
+  "runekeeper_options": {
+    "thiasos": {
+      "description": "A Runekeeper sworn to Grimmir does not bind a tame creature of hearth and home—they partner with a wild spirit of the forest. Their Thiasos is a small beast or mythological creature of the wild wood: a pine marten with eyes like amber, a raven that knows the migration routes of every bird, a fox with a single white paw that leaves no prints in snow, a toad that hibernates in rotten logs and sings at the first thaw, or a stag-calf with antlers budding like spring shoots.",
+      "care": "This creature requires no food in the usual sense, but it must be allowed to roam freely in unspoiled nature each day. If confined for more than a day, it becomes Compromised (it scratches at doors, refuses to eat, and its coat grows dull; its bearer loses the benefit of Seasonal Sense until it is released)."
+    },
+    "codex": {
+      "description": "The Codex of Grimmir is never a book of paper and ink. It may be a slab of slate carved with seasonal runes that frost over in winter, a bundle of bark scrolls sealed with pine resin, a set of knotted cords woven from the hair of a wild boar, or the hollowed horn of a stag filled with charcoal and ash.",
+      "upkeep": "Because the wild resists being fixed in writing, the Codex requires upkeep: the Runekeeper must spend an hour each week in a natural place, re-carving or re-knotting the Rites by memory, or the symbols fade (treat as Compromised until restored under open sky)."
+    }
+  },
+  "patrons_gift": {
+    "name": "Grimmir's Blessing",
+    "description": "Once per scene as an action, a Runekeeper of Grimmir may touch a held item (weapon, tool, or garment) and whisper a word of the season.",
+    "effect": "For the rest of the scene, the item grants +1 die to Lore or Stealth rolls in natural terrain, and the first time each scene the bearer would be tracked by mundane means, the tracker suffers –1 die (the forest hides their trail).",
+    "cost": "After the scene, the user marks +1 Obligation to Grimmir."
+  },
+  "rites": [
+    {
+      "name": "Rite of the Blood Offering",
+      "tier": "Low",
+      "xp": 4,
+      "action": "Scene",
+      "range": "Touch",
+      "resist": "Yes",
+      "tags": ["SACRIFICE", "NATURE", "STEALTH"],
+      "materials": "A drop of your own blood (1 Fatigue) or the blood of a freshly killed animal.",
+      "effect": "The forest accepts your offering. For the remainder of the scene, you gain +1 die to all Survival and Stealth rolls in natural terrain. Additionally, you may ask the GM one yes/no question about a threat hidden in the wilderness (e.g., 'Is there a predator watching us?').",
+      "push_it": "The offering is accepted with hunger—you gain +2 dice instead, but you must leave a visible token (a hair, a scrap of clothing) on the ground. That token can be used by the GM later as a sympathetic link (spend 1 SB to have an animal or spirit track you). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Speaking Roots",
+      "tier": "Low",
+      "xp": 5,
+      "action": "Scene",
+      "range": "Zone",
+      "resist": "No",
+      "tags": ["TRUTH", "NATURE"],
+      "materials": "Soil from a grave or a crossroads, held in the mouth.",
+      "effect": "You listen to the memory of the land. Gain +2 dice to Investigation or Lore when seeking to understand what happened in a natural place—a death, a ritual, a violation of the wild. The GM must give you a truthful but cryptic answer.",
+      "push_it": "The roots speak too clearly. You see a vision of the event, but it leaves you shaken: mark Fatigue 1 and the GM gains 1 SB. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Twisted Path",
+      "tier": "Standard",
+      "xp": 7,
+      "action": "Scene",
+      "range": "Near",
+      "resist": "Yes",
+      "tags": ["CURSE", "TERRAIN", "FEAR"],
+      "materials": "A knotted cord woven from thorns and hair.",
+      "effect": "The forest bends against your enemies. Choose a single target within Near. For the remainder of the scene, all their navigation, tracking, and movement rolls suffer –1 die as roots trip them, branches block their way, and the path turns subtly wrong.",
+      "push_it": "The curse also causes the target to suffer 1 Fatigue as they struggle against the hostile woods. Mark 1 SB (Diamonds) as the forest's malice becomes visible. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Heart's Meal",
+      "tier": "Standard",
+      "xp": 9,
+      "action": "Instant",
+      "range": "Touch",
+      "resist": "No",
+      "tags": ["CONSUME", "HEAL", "BOOST", "FEAR"],
+      "materials": "The fresh heart of an animal (or a sentient creature, if you dare), still warm.",
+      "effect": "You consume the heart raw. Gain one of the following: Heal 1 Harm (the heart's vitality transfers to you); Gain a +2 die bonus on your next physical action (the heart's strength); Learn a secret the creature knew in life (GM discretion; the heart whispers as you eat). After the rite, you are marked—animals within Near range are nervous around you (disadvantage on animal handling) for one scene.",
+      "push_it": "Eat the heart of a thinking creature. The benefit is doubled, but you gain a Hunger Condition (must eat another heart within a month or suffer 1 Fatigue per week). The GM gains 2 SB. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Instant."
+    },
+    {
+      "name": "Rite of the World's Wound",
+      "tier": "High",
+      "xp": 13,
+      "action": "Extended",
+      "range": "Zone",
+      "resist": "Yes",
+      "tags": ["HEAL", "AREA", "NATURE", "TERRAIN"],
+      "materials": "A sacred grove-site, a circle of stones, an offering of blood or seed.",
+      "effect": "Heal a blighted place or quicken a damaged ecosystem. Clear taint, restore fertility, awaken dormant forces. Gain +2 dice to related Lore/Nature actions in the region. Start an Ecosystem Restoration [8] timer.",
+      "push_it": "The cure spreads to adjacent areas but unbalances another; mark 2 SB (Diamonds). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "Extended action.",
+      "duration": "Timer: 8 segments."
+    },
+    {
+      "name": "Rite of the Cycle's Crown",
+      "tier": "High",
+      "xp": 14,
+      "action": "Scene",
+      "range": "Self/Zone",
+      "resist": "Yes",
+      "tags": ["TRANSFORM", "NATURE", "BOOST", "PROTECT"],
+      "materials": "A circlet of woven branches, antlers, and seasonal tokens.",
+      "effect": "Become an avatar of the cycle. Choose two: Seasonal Mastery (+2 dice to all actions keyed to the current season: spring—healing and growth; summer—strength and harvest; autumn—preservation and preparation; winter—endurance and hiding); Verdant Command (command plant life in Near automatically); Cycle's Healing (remove one Condition or downgrade Harm by one level); Growth's Protection (allies gain +1 Armor from natural cover). Begin a Seasonal Avatar [6] timer.",
+      "push_it": "Extend the blessings to all present; mark +2 Obligation and gain Seasonal Attunement (see Corruption). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "1 action.",
+      "duration": "Timer: 6 segments."
+    }
+  ],
+  "cantors_and_cults": {
+    "cantors": {
+      "name": "The Cantor's Song",
+      "description": "A Cantor of Grimmir sings the drone of green things—a low, humming chant that mimics the vibration of leaves in wind or the deep thrum of growing roots. Their voice is used to coax reluctant seeds, to calm wounded animals, and to mark the turning of the seasons in rituals that entire villages attend. A Grimmir Cantor does not seek an audience; they sing to the land itself, and the land answers in fruit, rain, or silence."
+    },
+    "cult": {
+      "name": "The Cult of the Root-Moot",
+      "description": "Grimmir's cults are neither secret nor organized—a 'moot' may be a single hermit or a scattered network of rangers who meet only at the solstices. The most ancient of these, the Root-Moot, carves masks from living moss and wears them during the rite of the Turning Wheel. Each member plants a tooth (their own or a beast's) into the root-ball of a sacred oak; if the tooth sprouts a sapling by spring, the planter is considered 'heard' by the Old Man. Their creed is carved into the oldest oak in each grove: 'Take only what the season gives. Give back what the season will need.' Outsiders are welcome at the solstice fires, but they must work—splitting wood, digging a drainage trench, or feeding the fire with a personal memory (which the flames accept with a green flash)."
+    }
+  },
+  "witchcraft": {
+    "name": "The Root and the Thorn",
+    "description": "A witch who walks with Grimmir is a hedgewright or path-keeper—a crafter of living boundaries. Their work may be invisible: weaving a branch to guide deer away from a village, carving a marker that tells the frost when to end, or building a root bridge that only becomes passable at low tide. This craft can look like 'infrastructure'—an Aeler True-Mason might carve a stone that remembers the boundary between a mine and a sacred spring, or a Linn shipwright might season a keel with a prayer for the right wind. But the witch's tools are never hammers; they are twine, moss, and the quiet patience of waiting for the land to answer.",
+    "color": "#2d7d46",
+    "lore": "The hedgewright's path is the oldest magic—older than temples, older than covenants. It is the memory of the land itself, shaped by patient hands and whispered prayers. To walk with Grimmir is to learn that the boundary is sacred, and that the wild must be respected, not tamed.",
+    "signature_rite": "Rite of the Twisted Path",
+    "quote": "The root does not bargain. It grows, or it rots.",
+    "hedge_gifts": [
+      {
+        "name": "Knot of the Turning Year",
+        "xp": 4,
+        "description": "Once per scene, you may tie a simple knot (in a cord, a strand of hair, or a blade of grass) and speak a phrase appropriate to the current season. The knot subtly influences the weather or local plant growth for the next hour—a gust of wind, a sudden rain, or a patch of ivy that grows just enough to provide cover. The GM adjudicates effect."
+      },
+      {
+        "name": "Root-Reader",
+        "xp": 3,
+        "description": "You may touch the exposed root of a tree and ask one yes/no question about the health of the land within a mile. The root pulses once for 'yes,' twice for 'no.' Once per scene."
+      },
+      {
+        "name": "Seasonal Barometer",
+        "xp": 2,
+        "description": "You can predict the weather for the next 12 hours with 90% accuracy when in a natural setting. No roll required."
+      }
+    ],
+    "tools": {
+      "knotted_staff": {
+        "name": "The Knotted Staff",
+        "description": "A staff of petrified wood, cold to the touch but warm when it touches living matter. Once per session, when used to bless a boundary marker (a post, a stone, a tree), it inscribes a minor [SEASONAL] tag into the threshold. The marker will 'remember' the season of its carving for one year, granting +1 die to rolls that honor that season's work."
+      }
+    }
+  },
+  "monastic_tradition": {
+    "name": "The Way of the Root and Stone",
+    "description": "Monks of the Root and Stone tradition learn to move with the seasons and stand as immovable as the ancient oaks. They are guardians of the boundary between the civilized and the wild, and they know that the strongest defense is to be where the blow is not.",
+    "color": "#2d7d46",
+    "quote": "The root does not break. It bends, and it waits. So too must you.",
+    "techniques": {
+      "basic": {
+        "name": "Rooted Stance",
+        "xp": 6,
+        "description": "When you do not move during your turn, you gain +1 Armor until your next turn. The earth holds you steady.",
+        "cost": "Passive",
+        "prereq": "Body 3+"
+      },
+      "advanced": {
+        "name": "Season's Turning",
+        "xp": 8,
+        "description": "Once per scene, you may shift your fighting style to match the current season. Spring: +1 die to healing and recovery actions; Summer: +1 die to strength and endurance; Autumn: +1 die to perception and stealth; Winter: +1 die to defense and resistance. This benefit lasts for the scene.",
+        "cost": "1 Fatigue",
+        "prereq": "Tier II, Spirit 3+"
+      },
+      "master": {
+        "name": "The Unmoving Oak",
+        "xp": 12,
+        "description": "Once per session, you may become immovable for one exchange. You cannot be knocked prone, pushed, or moved against your will. Additionally, you gain +2 Armor and may make a free counter-attack against any creature that attacks you in melee.",
+        "cost": "2 Fatigue",
+        "prereq": "Tier III, Body 4+"
+      }
+    },
+    "corruption": [
+      {
+        "tier": 1,
+        "benefit": "+1 die to Survival and Nature rolls in forested terrain.",
+        "cost": "You feel uncomfortable in open spaces without trees; -1 die to rolls in plains or deserts."
+      },
+      {
+        "tier": 2,
+        "benefit": "Once per scene, you may speak with plants and trees as if they were people.",
+        "cost": "You begin to prefer the company of trees to people; -1 die to social rolls in cities."
+      },
+      {
+        "tier": 3,
+        "benefit": "+2 dice to resist fear or intimidation when in natural terrain.",
+        "cost": "You cannot sleep indoors without suffering 1 Fatigue the next day."
+      },
+      {
+        "tier": 4,
+        "benefit": "Once per session, you may command a single plant or tree to move or attack as if it were an ally (Cap 3).",
+        "cost": "You are compelled to defend any wild place you encounter; hesitation costs 1 SB."
+      },
+      {
+        "tier": 5,
+        "benefit": "You can sense the health and mood of any forest or grove within a mile.",
+        "cost": "You feel pain when the forest is wounded; when a tree is cut within a mile, mark 1 Fatigue."
+      },
+      {
+        "tier": "6+",
+        "benefit": "Once per session, you may become the forest itself—your body dissolves into leaves and roots, gaining immunity to physical damage for one scene.",
+        "cost": "Mark +3 Obligation. You can no longer eat cultivated food—only what you hunt or gather yourself. Your skin takes on a bark-like texture."
+      }
+    ]
+  },
+  "corruption": [
+    {
+      "tier": 1,
+      "benefit": "Seasonal Sense: +1 die to predict weather, seasonal shifts, or natural events.",
+      "cost": "Cyclical Mood: –1 die to actions that defy the season (haste in winter, patience in spring)."
+    },
+    {
+      "tier": 2,
+      "benefit": "Verdant Whisper: Once/scene, gain +2 dice when communing with nature.",
+      "cost": "Plant Speech: Under stress, you address plants before people; –1 die to civilized social rolls."
+    },
+    {
+      "tier": 3,
+      "benefit": "Growth's Touch: Once/session, accelerate natural healing or growth.",
+      "cost": "Seasonal Shift: Demeanor changes with the season; allies note unsettling variance."
+    },
+    {
+      "tier": 4,
+      "benefit": "Boundary Keeper: Once/scene, sense violations of wild places at Far.",
+      "cost": "Wild Intolerance: –1 die in dense urban/cultivated zones; physical discomfort in worked stone."
+    },
+    {
+      "tier": 5,
+      "benefit": "Cycle's Memory: Once/session, perfectly recall a natural event witnessed here.",
+      "cost": "Ecosystem Dependency: Without daily time in nature, suffer Fatigue 1."
+    },
+    {
+      "tier": "6+",
+      "benefit": "Avatar of Seasons: Once/session, embody a season fully (+3 dice to seasonal actions).",
+      "cost": "Nature's Claim: Mark +2 Obligation; risk becoming bound to a specific biome. You may no longer eat cultivated food—only what you hunt, gather, or grow yourself."
+    }
+  ],
+  "playstyle_notes": {
+    "description": "Grimmir rewards those who approach the wild with fear and respect, not dominion. His followers are not masters of nature but participants in its rituals—they know when to give blood, when to leave an offering, and when to simply bow and walk away. Intrusions often take the form of seasonal demands: a grove that must be fed before the first frost, a creature that must be hunted before it hunts you, or a vision of a ritual that must be performed at the next solstice. Refusal does not invite wrath—merely the withdrawal of the wild's protection, leaving the follower exposed to the very fears they once understood. Ideal for druids, rangers, and characters who understand that the forest is not a resource but a creditor.",
+    "emphasizes": [
+      "Seasonal Sacrifice: the old ways of blood and offering",
+      "Folk Horror: the terror of the unseen and the ritual that must be performed",
+      "Primal Mystery: knowledge hidden in root and stone, omens and portents",
+      "Growth from Death: decay as the engine of new life",
+      "Boundary Keeping: guarding the threshold between the civilized and the wild"
+    ]
+  },
+  "sample_adventure": {
+    "title": "The Root-Moot's Reckoning",
+    "description": "A village's harvest fails for the third year in a row. The elders whisper of a broken boundary—a stone marker was moved to expand a field, and the forest has turned hostile. The Root-Moot sends a messenger to the party: 'The Old Man is hungry. The field must be returned to the wild, or the wild will take the village instead.'",
+    "quote": "The root does not bargain. It grows, or it rots. The choice is yours, but the season does not wait."
+  },
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

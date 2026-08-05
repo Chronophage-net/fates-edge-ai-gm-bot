@@ -1,28 +1,19 @@
 {
-  "id": "ikasha-she-who-sleeps",
+  "id": "ikasha_she_who_sleeps",
   "type": "patron",
   "title": "Ikasha, She Who Sleeps",
   "subtitle": "Latent Potential & Shadow",
   "version": "1.0.0",
-  "tags": [
-    "shadow",
-    "secrets",
-    "thresholds",
-    "stealth",
-    "dreams",
-    "omens",
-    "latent-potential",
-    "raven"
-  ],
+  "tags": ["shadow", "secrets", "thresholds", "ravens", "sleep", "latent", "potential", "darkness"],
   "lore": {
     "description": "Ikasha is the hush between footfalls, the patience of dark water, the black-feathered watcher at every threshold. In stillness she gathers what might be, at crossroads she whispers of what may yet come. Ravens circle her, bearing secrets between worlds. Her followers learn to move unseen and speak unremembered, becoming shadows that slip between what is and what could be.",
-    "followers": "Ikasha does not act; she waits. She does not command; she suggests. Her power is not in force but in possibility—the hidden door, the forgotten name, the secret that, if spoken, would change everything. Those who serve her become keepers of thresholds, listeners at the edge of sleep, and witnesses to the shape of things not yet born. She is the patron of spies, dreamers, outcasts, and those who know that the darkest shadow is also the safest cloak.",
+    "followers": "Ikasha does not act; she waits. She does not command; she suggests. Her power is not in force but in possibility – the hidden door, the forgotten name, the secret that, if spoken, would change everything. Those who serve her become keepers of thresholds, listeners at the edge of sleep, and witnesses to the shape of things not yet born. She is the patron of spies, dreamers, outcasts, and those who know that the darkest shadow is also the safest cloak.",
     "names_across_regions": {
       "mistlands": "The Bell-Shrouded, whose unknotted rope holds the fog at bay",
       "aeler": "The Deep Listener, to whom miners whisper before descending into new shafts",
       "zakov": "The Tide Watcher, a smuggler's patron who hides cargo from the Salt Prince's collectors"
     },
-    "quote": "Blow out the candle. If the room listens back, ask softly. At the next crossroads, the raven waits—and the shadow remembers your passing."
+    "quote": "Blow out the candle. If the room listens back, ask softly. At the next crossroads, the raven waits – and the shadow remembers your passing."
   },
   "domain_focus": [
     "Latent Potential: the power of what is not yet, the seed of action, the whisper before the scream",
@@ -41,7 +32,7 @@
     }
   },
   "patrons_gift": {
-    "name": "Ikasha's Blessing",
+    "name": "Ikasha's Whisper",
     "description": "Once per scene as an action, a Runekeeper of Ikasha may touch a held item (weapon, tool, or garment) and whisper a word of unlight.",
     "effect": "For the rest of the scene, the item grants +1 die to Stealth or Deception rolls, and the first time each scene the bearer would be spotted by a mundane observer, they may reroll the opposed check (the shadow bends around them).",
     "cost": "After the scene, the user marks +1 Obligation to Ikasha."
@@ -49,19 +40,15 @@
   "rites": [
     {
       "name": "Rite of the Unlit Candle",
-      "tier": "Basic",
+      "tier": "Low",
       "xp": 6,
       "action": "Action",
       "range": "Self",
       "resist": "Yes (Stealth)",
-      "tags": [
-        "STEALTH",
-        "DECEPTION",
-        "SHADOW"
-      ],
+      "tags": ["STEALTH", "DECEPTION", "SHADOW"],
       "materials": "A candle snuffed with a whisper.",
       "effect": "You step into the space between notices. Gain +1 die to a single Stealth or Subterfuge roll, and if you succeed, you may also declare one minor detail 'forgotten' by any observer (e.g., 'they don't remember my face,' 'they left the key in the lock').",
-      "push_it": "Extend the effect to one ally within Near, but your shadow lingers independently for a moment—the GM gains 1 SB (Diamonds) as evidence remains. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "push_it": "Extend the effect to one ally within Near, but your shadow lingers independently for a moment – the GM gains 1 SB (Diamonds) as evidence remains. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
       "requires": "Familiar (Invoke: 1 Boon).",
       "invoke": "1 action.",
@@ -69,19 +56,15 @@
     },
     {
       "name": "Rite of the Crossroads Raven",
-      "tier": "Basic",
+      "tier": "Low",
       "xp": 5,
       "action": "Scene",
       "range": "Near",
       "resist": "No",
-      "tags": [
-        "OMEN",
-        "NAVIGATION",
-        "SECRET"
-      ],
+      "tags": ["OMEN", "NAVIGATION", "SECRET"],
       "materials": "Three black feathers scattered at a crossing.",
       "effect": "A raven appears, visible only to you and your allies. It offers an omen: you may reroll one failed navigation, pursuit, or escape roll this scene, or force one enemy to hesitate (lose their next minor action).",
-      "push_it": "The raven whispers a true secret about the current situation (the GM must answer one yes/no question truthfully). In return, it demands a secret from you—the GM gains 1 SB (Hearts) to spend later as a complication involving that secret. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "push_it": "The raven whispers a true secret about the current situation (the GM must answer one yes/no question truthfully). In return, it demands a secret from you – the GM gains 1 SB (Hearts) to spend later as a complication involving that secret. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
       "requires": "Familiar (Invoke: 1 Boon).",
       "invoke": "1 action.",
@@ -89,16 +72,12 @@
     },
     {
       "name": "Rite of the Umbral Reservoir",
-      "tier": "Advanced",
+      "tier": "Standard",
       "xp": 8,
       "action": "Action",
       "range": "Self or Ally",
       "resist": "No",
-      "tags": [
-        "SHADOW",
-        "RESTORATION",
-        "BOOST"
-      ],
+      "tags": ["SHADOW", "RESTORATION", "BOOST"],
       "materials": "Water gathered on a moonless night, held in a black vessel.",
       "effect": "Draw on deep reserves of patience and shadow. Choose one: Gain +2 dice on your next Stealth, Deception, or Resolve roll; Clear 1 Fatigue from yourself or a touched ally; Gain one free success on an attempt to escape restraint or pursuit (no roll needed).",
       "push_it": "Apply two benefits instead of one, but you mark +1 Obligation and the GM gains 1 SB (Clubs) as the shadow's debt comes due. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -109,20 +88,15 @@
     },
     {
       "name": "Rite of the Unlatched Secret",
-      "tier": "Advanced",
+      "tier": "Standard",
       "xp": 9,
       "action": "Instant",
       "range": "Near",
       "resist": "Yes",
-      "tags": [
-        "SECRET",
-        "TRUTH",
-        "UNSEAL",
-        "READ"
-      ],
+      "tags": ["SECRET", "TRUTH", "UNSEAL", "READ"],
       "materials": "A key that has never been used, bent in a circle, or a lock of hair / personal token / name written on black paper.",
-      "effect": "Choose one of the following: Unlatched Door: Persuade a mundane threshold to open. One lock, seal, or barrier (door, chain, shutter, even a pursuer's grip) opens or loosens as if never secured. Does not work on magical wards. Secret Keeper: Compel a truthful answer to one direct question about a secret the target knows. They resist with Resolve (DV 4). On failure, they answer truthfully (cryptically permitted). On success, they suffer 1 Fatigue from concealment.",
-      "push_it": "If you chose Unlatched Door, you may also silence any noise the opening makes, but the threshold 'remembers' you—the GM gains 1 SB (Spades) for a later complication. If you chose Secret Keeper, you also learn a hidden emotion or related secret (GM's choice), but the target learns one of your secrets—the GM gains 1 SB (Hearts) to reveal it later. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "effect": "Choose one: Unlatched Door: Persuade a mundane threshold to open. One lock, seal, or barrier (door, chain, shutter, even a pursuer's grip) opens or loosens as if never secured. Does not work on magical wards. Secret Keeper: Compel a truthful answer to one direct question about a secret the target knows. They resist with Resolve (DV 4). On failure, they answer truthfully (cryptically permitted). On success, they suffer 1 Fatigue from concealment.",
+      "push_it": "If you chose Unlatched Door, you may also silence any noise the opening makes, but the threshold 'remembers' you – the GM gains 1 SB (Spades) for a later complication. If you chose Secret Keeper, you also learn a hidden emotion or related secret (GM's choice), but the target learns one of your secrets – the GM gains 1 SB (Hearts) to reveal it later. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
       "requires": "Familiar + Codex (Invoke: 1 Boon).",
       "invoke": "1 action.",
@@ -130,20 +104,14 @@
     },
     {
       "name": "Rite of the Umbral Dream",
-      "tier": "Master",
+      "tier": "High",
       "xp": 14,
       "action": "Extended",
       "range": "Self",
       "resist": "No",
-      "tags": [
-        "SHADOW",
-        "DREAM",
-        "FATE",
-        "TRANSPORT",
-        "INVISIBLE"
-      ],
+      "tags": ["SHADOW", "DREAM", "FATE", "TRANSPORT", "INVISIBLE"],
       "materials": "Stand in absolute darkness or at a deserted crossroads at midnight; or burn a vivid dream written down.",
-      "effect": "You become a living shadow or reach into latent potential. Choose one of the following: Shadow Form: For the scene, you are intangible to mundane harm, can pass through small gaps and thresholds, gain +2 dice to all Stealth rolls, and automatically succeed on one escape attempt. You cannot manipulate objects normally, and you cannot carry items through shadows or bring objects with you when you become intangible. Any items you are carrying fall to the ground (or to the surface you were on) when you assume this form; you may retrieve them after the effect ends. Whisper of Possibility: Once before the next dawn, reroll any single roll after seeing the result (before outcome is declared). The GM gains 1 SB as fate wavers. Hidden Path: You and allies bypass one major obstacle (guarded gate, collapsed bridge, social dead end) as if a secret way had always been there—the GM gains 1 SB as the world adjusts. Unspoken Name: Learn the true name of one creature or place (GM discretion). That name can be used for future rites or bargains.",
+      "effect": "You become a living shadow or reach into latent potential. Choose one: Shadow Form: For the scene, you are intangible to mundane harm, can pass through small gaps and thresholds, gain +2 dice to all Stealth rolls, and automatically succeed on one escape attempt. You cannot manipulate objects normally, and you cannot carry items through shadows or bring objects with you when you become intangible. Any items you are carrying fall to the ground (or to the surface you were on) when you assume this form; you may retrieve them after the effect ends. Whisper of Possibility: Once before the next dawn, reroll any single roll after seeing the result (before outcome is declared). The GM gains 1 SB as fate wavers. Hidden Path: You and allies bypass one major obstacle (guarded gate, collapsed bridge, social dead end) as if a secret way had always been there – the GM gains 1 SB as the world adjusts. Unspoken Name: Learn the true name of one creature or place (GM discretion). That name can be used for future rites or bargains.",
       "push_it": "Apply two benefits instead of one. If you chose Shadow Form, you may also interact once with a locked or warded object while intangible, but your next defense roll is Desperate. In all cases, the GM gains 2 SB (the dream's echoes attract attention). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
       "cost": "Mark +2 Obligation.",
       "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
@@ -154,15 +122,20 @@
   "cantors_and_cults": {
     "cantors": {
       "name": "The Cantor's Song",
-      "description": "A Cantor of Ikasha sings in whispers—melodies that are felt rather than heard, harmonies that slip beneath the threshold of attention. Their voice is used to hide a crowd's escape, to make a guard forget why they entered a room, or to pass a message through enemy lines without a single word being spoken aloud. Ikasha's Cantors are rarely recognized; they are the ones who hum absently while others plan rebellion."
+      "description": "A Cantor of Ikasha sings in whispers – melodies that are felt rather than heard, harmonies that slip beneath the threshold of attention. Their voice is used to hide a crowd's escape, to make a guard forget why they entered a room, or to pass a message through enemy lines without a single word being spoken aloud. Ikasha's Cantors are rarely recognized; they are the ones who hum absently while others plan rebellion."
     },
     "cult": {
       "name": "The Cult of the Unlit Candle",
-      "description": "Ikasha's cults are shadowy by necessity, meeting in basements, abandoned bell-towers, and fog-bound crossroads. They whisper freedom to the oppressed—escaped slaves, hunted heretics, debtors fleeing their creditors. A ritual of the Unlit Candle involves each member extinguishing a flame and speaking a secret wish for escape. The candles are never relit; the wish is carried away on ravens' wings. Their creed is never written, only passed from shadow to shadow: 'The dark does not confine—it conceals the road that the light would forbid.' Outsiders who stumble into a meeting are offered a black feather and a choice: forget, or follow."
+      "description": "Ikasha's cults are shadowy by necessity, meeting in basements, abandoned bell-towers, and fog-bound crossroads. They whisper freedom to the oppressed – escaped slaves, hunted heretics, debtors fleeing their creditors. A ritual of the Unlit Candle involves each member extinguishing a flame and speaking a secret wish for escape. The candles are never relit; the wish is carried away on ravens' wings. Their creed is never written, only passed from shadow to shadow: 'The dark does not confine – it conceals the road that the light would forbid.' Outsiders who stumble into a meeting are offered a black feather and a choice: forget, or follow."
     }
   },
   "witchcraft": {
-    "description": "A witch who walks with Ikasha is a threshold-keeper or shadow-weaver—one who knows that a door left unlatched is not an invitation to theft, but to liberation. Their magic works in the gaps: the crack under a door, the moment between heartbeats, the pause between a guard's patrol. This craft can be invisible—a bent lock, a misplaced key, a shadow that moves of its own accord—or as grand as erasing a name from a pursuer's memory.",
+    "name": "The Way of Shadow",
+    "description": "A witch who walks with Ikasha is a threshold-keeper or shadow-weaver – one who knows that a door left unlatched is not an invitation to theft, but to liberation. Their magic works in the gaps: the crack under a door, the moment between heartbeats, the pause between a guard's patrol. This craft can be invisible – a bent lock, a misplaced key, a shadow that moves of its own accord – or as grand as erasing a name from a pursuer's memory.",
+    "color": "#2c3e50",
+    "lore": "The shadow-weaver's path is the art of the unseen. They learn that the most powerful spell is the one that leaves no trace – a door that opens silently, a guard that forgets, a secret that was never spoken. Ikasha teaches that power is not in the act, but in the space between acts.",
+    "signature_rite": "Rite of the Unlit Candle",
+    "quote": "The dark does not confine – it conceals the road that the light would forbid.",
     "tools": {
       "ravens_quill": {
         "name": "The Raven's Quill",
@@ -173,7 +146,78 @@
       {
         "name": "Unlatched",
         "xp": 2,
-        "description": "Once per scene, you may declare a mundane lock, latch, or binding to be 'unlatched'—it opens freely (or fails to close) as if it had never been secured. This works on doors, chains, shutters, and even a pursuer's grip, but not on magical wards."
+        "description": "Once per scene, you may declare a mundane lock, latch, or binding to be 'unlatched' – it opens freely (or fails to close) as if it had never been secured. This works on doors, chains, shutters, and even a pursuer's grip, but not on magical wards."
+      },
+      {
+        "name": "Shadow Meld",
+        "xp": 4,
+        "description": "Once per session, step into any shadow larger than yourself and emerge from another shadow within Near range. You cannot be targeted while moving between shadows."
+      },
+      {
+        "name": "Whisper in the Dark",
+        "xp": 2,
+        "description": "When in darkness or dim light, you may send a sentence of up to eight words to a willing target within Near range. The target hears it as if whispered beside them. No one else hears it."
+      }
+    ]
+  },
+  "monastic_tradition": {
+    "name": "The Way of the Unstruck Bell",
+    "description": "The Unstruck Bell tradition teaches that the greatest defense is to not be where the strike lands. Followers of this path learn to read the gaps in perception, to become forgettable, and to move through shadows as if the shadows themselves had parted for them.",
+    "color": "#6b4c9a",
+    "quote": "The shadow remembers your passing.",
+    "techniques": {
+      "basic": {
+        "name": "Shadow Meld",
+        "xp": 6,
+        "description": "Once per session as an action, step into any shadow larger than yourself and emerge from another shadow within Near range. You cannot be targeted while moving between shadows.",
+        "cost": "1 Fatigue",
+        "prereq": "Stealth 2+"
+      },
+      "advanced": {
+        "name": "The Unobserved",
+        "xp": 8,
+        "description": "When you are Hidden, social Story Beats cannot be used to frame you for a crime you did not commit (unless you act first). Additionally, witnesses suffer -2 dice to recall your face or describe you to authorities.",
+        "cost": "Passive",
+        "prereq": "Tier II, Stealth 3+"
+      },
+      "master": {
+        "name": "Threshold of Sleep",
+        "xp": 12,
+        "description": "Once per session, walk through a locked door, a guarded threshold, or a magical ward as if it were mist. This does not work on barriers specifically enchanted against shadow-walking (GM discretion).",
+        "cost": "2 Fatigue and +1 Obligation to Ikasha",
+        "prereq": "Tier III, Spirit 3+"
+      }
+    },
+    "corruption": [
+      {
+        "tier": 1,
+        "benefit": "+1 die to Stealth in dim light or darkness.",
+        "cost": "Light Sensitivity: -1 die to Stealth in direct sunlight."
+      },
+      {
+        "tier": 2,
+        "benefit": "Once per scene, treat a failed Stealth roll as a success.",
+        "cost": "The Witness Debt: A raven appears to watch your next crime. If you fail that roll, the raven reports to a rival."
+      },
+      {
+        "tier": 3,
+        "benefit": "+2 dice to resist being tracked or identified.",
+        "cost": "Shadow Lag: Your shadow moves half a second behind you. Those who notice suffer -1 die to social rolls with you."
+      },
+      {
+        "tier": 4,
+        "benefit": "Once per session, become Hidden in plain sight (no roll required) in a crowd.",
+        "cost": "Hollow Attention: The Hollow begins to notice your erasures. GM gains 1 SB to spend on a pursuit complication."
+      },
+      {
+        "tier": 5,
+        "benefit": "Immune to mundane forms of surveillance (scrying, tracking dogs, witnesses).",
+        "cost": "Forgetful: You occasionally forget minor details of your own past. Mark 1 Fatigue when this happens."
+      },
+      {
+        "tier": "6+",
+        "benefit": "Once per session, become intangible to mundane harm for one scene.",
+        "cost": "Shadow's Price: Mark +2 Obligation to Ikasha. Your reflection no longer appears in mirrors."
       }
     ]
   },
@@ -200,17 +244,17 @@
     },
     {
       "tier": 5,
-      "benefit": "Shadow Debt: Once per session, call in a favor from someone who owes you a secret—no questions asked.",
+      "benefit": "Shadow Debt: Once per session, call in a favor from someone who owes you a secret – no questions asked.",
       "cost": "Obligation Web: Every secret you learn creates a subtle tie to its keeper; mark 1 SB (Diamonds) when ignoring these connections."
     },
     {
       "tier": "6+",
       "benefit": "Umbral Ascendancy: Once per session, become completely undetectable to all non-magical senses for one scene.",
-      "cost": "Reality Thinning: The boundary between what is and what could be grows thin—the GM may introduce subtle reality alterations around you."
+      "cost": "Reality Thinning: The boundary between what is and what could be grows thin – the GM may introduce subtle reality alterations around you."
     }
   ],
   "playstyle_notes": {
-    "description": "Ikasha rewards patience, subtlety, and the willingness to let things unfold. Her followers are not agents of action but of possibility—they open doors, plant secrets, and wait for the harvest. Intrusions often take the form of dreams showing a hidden danger, a raven appearing with a cryptic message, or a secret you thought buried resurfacing at the worst moment. Refusing an intrusion does not bring wrath—merely the withdrawal of Ikasha's favor: doors stay locked, shadows become just shadows, and the road ahead grows a little darker. Ideal for rogues, spies, and characters who understand that the greatest power is often the one that remains unseen.",
+    "description": "Ikasha rewards patience, subtlety, and the willingness to let things unfold. Her followers are not agents of action but of possibility – they open doors, plant secrets, and wait for the harvest. Intrusions often take the form of dreams showing a hidden danger, a raven appearing with a cryptic message, or a secret you thought buried resurfacing at the worst moment. Refusing an intrusion does not bring wrath – merely the withdrawal of Ikasha's favor: doors stay locked, shadows become just shadows, and the road ahead grows a little darker. Ideal for rogues, spies, and characters who understand that the greatest power is often the one that remains unseen.",
     "emphasizes": [
       "Latent Potential: power as possibility, not force",
       "Shadow as Shelter: concealment, secrets, and the spaces between notice",
@@ -218,71 +262,10 @@
       "Raven's Witness: omens, messages, and the weight of secrets shared"
     ]
   },
-  "monastic_tradition": {
-    "name": "Shadow Monk (Ikasha)",
-    "quote": "Blow out the candle. If the room listens back, ask softly.",
-    "prerequisites": "Wits 3+, Spirit 2+, Rite of the Unlit Candle or Cantor of Ikasha.",
-    "debt_resistant_frame": "Shadows leave no mark on ledgers. Monks of the Shadow Monk gain +1 die to resist any magical debt, geas, or contract that would compel them to be seen, remembered, or witnessed. If they succeed, the creditor's records show only a blank space where their name should be—a gap the Hollow may one day fill.",
-    "techniques": [
-      {
-        "name": "Shadow Step",
-        "tier": "Basic",
-        "xp": 6,
-        "effect": "Move from one patch of shadow to another within Near range without crossing the space between. You must be able to see both shadows.",
-        "cost": "1 Fatigue",
-        "requirement": "Wits 3"
-      },
-      {
-        "name": "Unlit Candle",
-        "tier": "Basic",
-        "xp": 6,
-        "effect": "Step into the space between notices. Gain +1 die to a single Stealth or Subterfuge roll, and if you succeed, declare one minor detail 'forgotten' by any observer.",
-        "cost": "1 Boon",
-        "requirement": "Spirit 2"
-      },
-      {
-        "name": "Crossroads Raven",
-        "tier": "Basic",
-        "xp": 5,
-        "effect": "A raven appears, visible only to you and your allies. Reroll one failed navigation, pursuit, or escape roll this scene, or force one enemy to lose their next minor action.",
-        "cost": "1 Fatigue",
-        "requirement": "Wits 2"
-      },
-      {
-        "name": "Unlatched Secret",
-        "tier": "Advanced",
-        "xp": 9,
-        "effect": "Persuade a mundane threshold to open (door, lock, even a pursuer's grip). Does not work on magical wards.",
-        "cost": "1 Boon",
-        "requirement": "Spirit 3"
-      },
-      {
-        "name": "Umbral Reservoir",
-        "tier": "Advanced",
-        "xp": 8,
-        "effect": "Draw on deep reserves of patience and shadow. Clear 1 Fatigue from yourself or a touched ally, or gain +2 dice on your next Stealth, Deception, or Resolve roll.",
-        "cost": "1 Fatigue",
-        "requirement": "Tier II"
-      },
-      {
-        "name": "Hidden Path",
-        "tier": "Advanced",
-        "xp": 10,
-        "effect": "You and allies bypass one major obstacle (guarded gate, collapsed bridge, social dead end) as if a secret way had always been there—the GM gains 1 SB as the world adjusts.",
-        "cost": "1 Boon",
-        "requirement": "Tier III"
-      }
-    ],
-    "master_technique": {
-      "name": "Shadow Form",
-      "xp": 14,
-      "description": "Once per session, become intangible to mundane harm for one scene: pass through small gaps, gain +2 dice to all Stealth rolls, and automatically succeed on one escape attempt. You cannot manipulate objects normally. After the scene, you collapse with Fatigue 2 and gain a permanent Debt Scar (your shadow is faint, as if you borrowed it from someone else). You may ignore one forced Obligation or debt call—the creditor sees only a silhouette that dissolves when touched."
-    }
-  },
   "sample_adventure": {
-    "title": "The Unlatched Door",
-    "description": "A locked archive in the Law Quarter holds documents that could overturn a wrongful conviction. The convicted woman's daughter has come to the party, desperate: 'My mother is innocent, but the seal is unbroken. If you can open the door without triggering the wards, I will tell you a secret that the city's spymaster has been hunting for years.' The door is old, the wards are subtle, and the city's night watch is paid to be suspicious. Ikasha's favor may be the only way through.",
-    "quote": "The key is not always metal. Sometimes it is a shadow, a whisper, or the absence of a guard's memory. Open the door, and the secret will follow."
+    "title": "The Raven's Bargain",
+    "description": "A courier arrives with a black feather and a sealed letter. The letter contains a single name – a person who has been marked for erasure by a rival faction. The party must decide: protect the marked person, or let them vanish. But the raven that delivered the letter is watching, and Ikasha's patience is not infinite.",
+    "quote": "The dark does not confine – it conceals the road that the light would forbid. Choose carefully, for the road you take will remember you."
   },
   "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
 }

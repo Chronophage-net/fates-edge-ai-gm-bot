@@ -1,0 +1,289 @@
+{
+  "id": "vorthak_the_hunger_unbound",
+  "type": "patron",
+  "title": "Vorthak — The Hunger Unbound",
+  "subtitle": "Consumption & Metamorphic Hunger",
+  "version": "1.0.0",
+  "tags": [
+    "consumption",
+    "hunger",
+    "metamorphosis",
+    "transformation",
+    "essence",
+    "absorption",
+    "identity",
+    "appetite",
+    "metabolic",
+    "devouring"
+  ],
+  "lore": {
+    "description": "Vorthak is the principle of absolute consumption: an appetite that devours not only what is, but the very potential of what might be. Each feeding transforms both eater and eaten. His servants become conduits of metamorphosis through ingestion, learning to consume not only matter but also properties, identities, and even strands of fate. Power comes by taking in—and the cost is becoming more like the hunger you channel. To consume is to become. To devour is to transform. In Vorthak's embrace, the boundary between eater and eaten dissolves into something new—and something hungry.",
+    "followers": "Among the peoples of Fate's Edge, Vorthak is known by many fearful names. In Aeler, he is the Deep Forge, the hunger of the mountain that consumes ore and returns steel. In Zakov, he is the Salt_Hunger, the appetite that preserves by consuming the moisture from flesh. In Linn, he is the Tide_That_Eats_The_Shore, a slow, patient consumption that reshapes coastlines. His followers are rarely beloved, but they are essential—for without consumption, there is no transformation, and without transformation, there is only stagnation.",
+    "signs": [
+      "A meal that never leaves you full, no matter how much you eat",
+      "Objects that seem to shrink or grow faint when in your presence",
+      "A craving that whispers the name of something you have never tasted"
+    ],
+    "quotes": [
+      "\"To consume is to become. To devour is to transform. In Vorthak's embrace, the boundary between eater and eaten dissolves into something new—and something hungry.\"",
+      "\"What is not consumed is wasted. What is wasted is an insult to hunger.\"",
+      "\"The stomach does not judge. It only transforms.\""
+    ]
+  },
+  "domain_focus": [
+    "Metamorphic Consumption: transformation through ingestion of matter, energy, or concepts",
+    "Essence Absorption: gaining properties by consuming them utterly",
+    "Hunger Propagation: spreading consumption as a force of change",
+    "Identity Metabolism: consuming and adopting aspects of others' natures"
+  ],
+  "runekeeper_options": {
+    "thiasos": {
+      "description": "A Runekeeper sworn to Vorthak does not bind a familiar of mere companionship—their Thiasos is a small creature of endless appetite: a glossy black beetle that devours rot and grows more lustrous with each meal, a pale grub that pupates into a moth only after consuming something precious, a leech that clings to the shadow of the wounded, a small eel that lives in the bilge and grows an eye each time its master consumes an essence, or a rat with a second mouth that whispers the names of things recently devoured.",
+      "care": "This creature requires no food in the ordinary sense, but it must be allowed to consume something significant (a memory, a secret, a physical token) each week. If neglected, it becomes Compromised (it gnaws at its bearer's belongings, consumes a stray thought, and imposes –1 die on Concentration or memory rolls)."
+    },
+    "codex": {
+      "description": "The Codex of Vorthak is never a static record. It may be a stomach_bound journal written on cured hide, its pages growing thicker each time a Rite is performed; a set of teeth strung on a leather cord, each tooth etched with a consumed spell; or a wooden bowl stained with the residue of a thousand meals, the grain of the wood shifting as new essences are added.",
+      "upkeep": "Because hunger is never satisfied, the Codex requires upkeep: the Runekeeper must spend an hour each week feeding it—a drop of blood, a burnt letter, a morsel of rare meat—or the Rites stored there become faint (treat as Compromised until re_fed)."
+    }
+  },
+  "patrons_gift": {
+    "name": "Word of Consumption",
+    "description": "Once per scene as an action, a Runekeeper of Vorthak may touch a held item (weapon, tool, or piece of armor) and whisper a word of consumption.",
+    "effect": "For the rest of the scene, the item grants +1 die to Survival or Craft rolls involving organic or consumable materials, and the first time each scene the bearer would take a Condition from poison, disease, or starvation, they may ignore it (the hunger consumes the affliction).",
+    "cost": "After the scene, the user marks +1 Obligation to Vorthak."
+  },
+  "rites": [
+    {
+      "name": "Rite of the Hungry Touch",
+      "tier": "Low",
+      "xp": 5,
+      "action": "Scene",
+      "range": "Touch/Self",
+      "resist": "Yes",
+      "tags": ["CONSUME", "BOOST", "SENSE", "RISK"],
+      "materials": "A fragment of the thing to be consumed (food, substance, symbol); or an empty vessel or a place where something was devoured.",
+      "effect": "Choose one: (a) Metabolic Touch: Absorb an essential trait of the target. Gain +1 die to actions aligned with the absorbed property for one scene. (b) Hunger's Whisper: Sense what in the area may be consumed and the benefit it offers. Gain +1 die to Investigation when seeking consumable resources.",
+      "push_it": "(Whisper only) The hunger turns contagious: nearby feel your appetite; mark 1 SB (Clubs). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Essence Feast",
+      "tier": "Standard",
+      "xp": 8,
+      "action": "Scene",
+      "range": "Touch",
+      "resist": "Yes",
+      "tags": ["CONSUME", "TRANSFORM", "BOOST", "DEBT"],
+      "materials": "The complete consumption of a significant item (weapon, book, relic).",
+      "effect": "Gain one minor property or +1 die to a closely related skill from the consumed item's nature. This benefit lasts for the remainder of the session. If the consumed item is truly legendary (a dragon's heart, a god's tooth, etc.), the GM may allow the absorption to be permanent at their discretion. The item is utterly destroyed.",
+      "push_it": "Take a major property instead of a minor one, but gain a permanent Hunger Mark (a visible scar or discoloration that imposes –1 die on social rolls with those who notice it). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Session."
+    },
+    {
+      "name": "Rite of the Identity Meal",
+      "tier": "Standard",
+      "xp": 7,
+      "action": "Scene",
+      "range": "Near",
+      "resist": "Yes",
+      "tags": ["CONSUME", "TRANSFORM", "BOOST", "RISK"],
+      "materials": "A personal token or a clear memory of the target.",
+      "effect": "Temporarily adopt one aspect of a specific person's nature (a skill, a talent, or a defining trait). Gain +2 dice to actions matching that aspect for the remainder of the scene. The aspect cannot be a Patron_granted Rite or other supernatural ability without the GM's explicit permission.",
+      "push_it": "The adoption deepens and clings, lasting for the rest of the session; mark 1 SB (Hearts). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Metamorphic Gluttony",
+      "tier": "High",
+      "xp": 13,
+      "action": "Scene",
+      "range": "Zone",
+      "resist": "Yes",
+      "tags": ["CONSUME", "AREA", "TRANSFORM", "PRESSURE", "FATE"],
+      "materials": "A site scarred by great consumption.",
+      "effect": "Become a locus of transformative hunger. All present may consume aspects (skills, memories, properties), but each must pass Spirit+Resolve (DV 4) or suffer uncontrolled transformation effects.",
+      "push_it": "Some changes become permanent; mark +1 Obligation (total +3). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Hunger's Ascension",
+      "tier": "High",
+      "xp": 14,
+      "action": "Extended",
+      "range": "Self",
+      "resist": "Yes",
+      "tags": ["TRANSFORM", "BOOST", "SACRIFICE", "FATE", "DEBT"],
+      "materials": "The deliberate offering_up of your current limits to Vorthak.",
+      "effect": "Consume your own constraints and transform. Choose two of the following benefits, which last for the remainder of the current scene: +1 to any Attribute (temporarily), +2 dice to one skill (temporarily), Immunity to one Condition type (temporarily), One major supernatural capability (temporarily, GM discretion). If you wish to make the benefits permanent, you must accept a permanent cost: lose a Bond, take a permanent Condition, or sacrifice a core identity trait (GM discretion).",
+      "push_it": "Take all four benefits (instead of two) for the scene, but lose one core aspect of your original identity permanently; mark Harm 2. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "Extended action.",
+      "duration": "Scene."
+    }
+  ],
+  "cantors_and_cults": {
+    "cantors": {
+      "name": "The Cantor's Song",
+      "description": "A Cantor of Vorthak sings in hungry harmonies—melodies that start with a single, clear note and then devour themselves, ending in a hungry silence. Their voice is used to urge a crowd to feast, to sing a blade sharper by absorbing the steel's flaws, or to make a meal last for hours by consuming the very passage of time. Vorthak's Cantors are often found in feasting halls, in butcheries, and around campfires where stories are consumed and retold."
+    },
+    "cult": {
+      "name": "The Cult of the Ravenous Circle",
+      "description": "Vorthak's cults meet in places that embody consumption: abattoirs, forges, bakeries, and the kitchens of great manors. The Ravenous Circle is a fellowship of chefs, alchemists, tanners, and smelters—those who understand that to create something new, something old must be utterly consumed. A ritual of the Circle involves each member bringing a raw material (a cut of meat, a lump of ore, a written secret) and placing it in a central hearth. The hearth consumes it, and the circle speaks aloud what they hope to become by that consumption. Their creed is carved above the hearth: 'What is not consumed is wasted. What is wasted is an insult to hunger.' Outsiders are welcome to bring an offering and a wish, but they must eat a portion of the ash."
+    }
+  },
+  "witchcraft": {
+    "name": "The Art of Consumption",
+    "description": "A witch who walks with Vorthak is a hunger_smith or ash_weaver—one who crafts through the act of consumption: a knife that sharpens itself by eating the metal of its victims, a forge that devours impurities and returns only the strongest steel, or a culinary knife that seasons meat by absorbing the memory of the animal's life. Their magic works through the materials of consumption: a quill that writes in ink made from burnt secrets, a needle that sews a garment by consuming thread and producing new cloth, or a smooth stone that absorbs properties by touch.",
+    "color": "#2d1b0e",
+    "lore": "The hunger_smith's path is the art of taking in. They learn that every meal is a transformation, and every consumption is a choice to become something new. Vorthak teaches that to devour is to honor—to consume is to remember.",
+    "signature_rite": "Rite of the Hungry Touch",
+    "quote": "To consume is to become. To devour is to transform.",
+    "tools": {
+      "maw_stone": {
+        "name": "The Maw_Stone",
+        "description": "A smooth, porous stone, warm to the touch, the size of a fist. Once per session, the witch may press the stone against a material (stone, wood, metal, flesh) and speak a word of consumption. The stone 'eats' a small portion of the material (a handful of stone dust, a sliver of wood, a thin curl of metal) and absorbs its essential property. For the next scene, the stone can be used to grant +1 die to any roll that benefits from that property (e.g., 'sharpness' for a cutting tool, 'hardness' for a shield). The stone can also be used to 'consume' a single, small physical detail (a button, a lock, a hinge) as if it had never been there, but doing so empties the stone of its stored property."
+      }
+    },
+    "hedge_gifts": [
+      {
+        "name": "Ash of Old Forms",
+        "xp": 4,
+        "description": "Once per scene, the witch may take a handful of ash from a fire that consumed something significant (a letter, a garment, a meal) and blow it into the air. For the next minute, the ash reveals the shape of what was consumed—a phantom image of the letter, the garment, or the meal. The image is ghostly and cannot be touched, but it can be read, examined, or used to identify an object that no longer exists."
+      },
+      {
+        "name": "Hunger's Scent",
+        "xp": 3,
+        "description": "You can smell the 'ripeness' of any object or creature—how much they have to offer to a hungry consumer. This grants +1 die to Appraise or Survival rolls when determining what is valuable to consume."
+      },
+      {
+        "name": "Metabolic Overdrive",
+        "xp": 4,
+        "description": "Once per scene, you may consume a significant amount of food in a single action (a full meal, a handful of raw meat, etc.) to clear 1 Fatigue. The food is utterly consumed; it leaves no trace and provides no nourishment beyond the immediate energy."
+      }
+    ]
+  },
+  "monastic_tradition": {
+    "name": "The Way of the Hunger Ascetic",
+    "description": "To consume is to become. To devour is to transform. Hunger Ascetics understand that the world is a feast and every bite is a choice to become something new. They are alchemists of the self, devouring not only food but also properties, identities, and even strands of fate. To walk this path is to accept that power comes by taking in—and that the cost is becoming more like the hunger you channel.",
+    "color": "#2d1b0e",
+    "prerequisites": "Body 3+, Spirit 2+, Rite of the Hungry Touch or Cantor of Vorthak.",
+    "quote": "To consume is to become. To devour is to transform. I am the stomach of the world.",
+    "debt_resistant_frame": "Hunger does not recognize debt. Monks of the Hunger Ascetic tradition gain +1 die to resist any magical obligation or debt that would restrict their freedom to consume or force them to reject a meal. If they succeed, the obligation is consumed by their inner hunger, leaving no trace.",
+    "techniques": {
+      "basic": {
+        "name": "Gut of Iron",
+        "xp": 4,
+        "effect": "You may consume anything organic (rotten food, raw meat, bitter herbs) without ill effect. +1 die to resist poison or disease from ingestion.",
+        "cost": "Passive",
+        "prereq": "Body 3+"
+      },
+      "advanced": {
+        "name": "Identity Digestion",
+        "xp": 9,
+        "effect": "When you use Rite of the Identity Meal, the adopted aspect lasts for the entire session instead of one scene.",
+        "cost": "+1 Obligation",
+        "prereq": "Tier III"
+      },
+      "master": {
+        "name": "Apotheosis of Hunger",
+        "xp": 12,
+        "effect": "Once per session, you may enter a state of perfect consumption for one scene. You ignore all penalties from Fatigue, and any time you would take Harm from a physical attack, you may instead consume the attack's energy, converting the Harm into 1 Fatigue and gaining +1 die on your next action.",
+        "cost": "After the scene, you gain a permanent Maw_Scar (a faint, tooth_ringed mark on your stomach that never fully fades). You may ignore one Obligation to Vorthak, but the next time you refuse to consume something offered, the scar aches with hunger and you mark 1 Fatigue.",
+        "prereq": "Tier III"
+      }
+    },
+    "corruption": [
+      {
+        "tier": 1,
+        "benefit": "Hunger's Sight: +1 die to Notice consumable properties in objects, beings, or ideas.",
+        "cost": "Metabolic Craving: Must consume something significant daily or suffer Fatigue 1."
+      },
+      {
+        "tier": 2,
+        "benefit": "Essence Thief: Once/scene, temporarily gain a minor property by consuming it.",
+        "cost": "Identity Bleed: Absorbed aspects surface unbidden; –1 die to maintain your original persona."
+      },
+      {
+        "tier": 3,
+        "benefit": "Metamorphic Resilience: Once/session, consume a Condition or Harm to negate it.",
+        "cost": "Hunger Aura: Those Near feel urges to consume or hoard; they suffer –1 die to self_control rolls."
+      },
+      {
+        "tier": 4,
+        "benefit": "Transformation Feast: Once/scene, consume and permanently absorb one minor supernatural ability.",
+        "cost": "Essence Instability: Conflicting properties clash; –1 die when relying on multiple absorbed aspects."
+      },
+      {
+        "tier": 5,
+        "benefit": "Identity Cannibal: Once/session, consume a significant aspect of another (major skill or core trait).",
+        "cost": "Self_Consumption: Risk eating your own memories or abilities; mark 1 SB (Spades) when stressed."
+      },
+      {
+        "tier": "6+",
+        "benefit": "Hunger Incarnate: Once/session, become living consumption; absorb nearby properties, abilities, or aspects for one scene. You may consume one physical object as a free action.",
+        "cost": "Void Hunger: Mark +3 Obligation; risk dissolving into pure appetite that must feed every hour to keep form. Your eyes reflect no light."
+      }
+    ]
+  },
+  "corruption": [
+    {
+      "tier": 1,
+      "benefit": "Hunger's Sight: +1 die to Notice consumable properties in objects, beings, or ideas.",
+      "cost": "Metabolic Craving: Must consume something significant daily or suffer Fatigue 1."
+    },
+    {
+      "tier": 2,
+      "benefit": "Essence Thief: Once/scene, temporarily gain a minor property by consuming it.",
+      "cost": "Identity Bleed: Absorbed aspects surface unbidden; –1 die to maintain your original persona."
+    },
+    {
+      "tier": 3,
+      "benefit": "Metamorphic Resilience: Once/session, consume a Condition or Harm to negate it.",
+      "cost": "Hunger Aura: Those Near feel urges to consume or hoard; they suffer –1 die to self_control rolls."
+    },
+    {
+      "tier": 4,
+      "benefit": "Transformation Feast: Once/scene, consume and permanently absorb one minor supernatural ability.",
+      "cost": "Essence Instability: Conflicting properties clash; –1 die when relying on multiple absorbed aspects."
+    },
+    {
+      "tier": 5,
+      "benefit": "Identity Cannibal: Once/session, consume a significant aspect of another (major skill or core trait).",
+      "cost": "Self_Consumption: Risk eating your own memories or abilities; mark 1 SB (Spades) when stressed."
+    },
+    {
+      "tier": "6+",
+      "benefit": "Hunger Incarnate: Once/session, become living consumption; absorb nearby properties, abilities, or aspects for one scene. You may consume one physical object as a free action.",
+      "cost": "Void Hunger: Mark +3 Obligation; risk dissolving into pure appetite that must feed every hour to keep form. Your eyes reflect no light."
+    }
+  ],
+  "playstyle_notes": {
+    "description": "Vorthak favors those who hunt for change through taking in what the world offers: relish clever uses of absorbed traits, judge the price of every bite, and beware the slow surrender of the self. Expect scenes of metamorphosis, bargaining for what can be eaten, and hard choices where power tastes like you. Ideal for characters who embrace transformation at the cost of identity—alchemists, cannibal cultists, and those who believe that to improve, one must first consume.",
+    "emphasizes": [
+      "Transformation through Consumption: becoming what you devour",
+      "Metamorphic Power: fundamental, identity_shaping change",
+      "Essence Absorption: discerning and using a thing's core nature",
+      "Identity Metabolism: integrating (or failing to integrate) stolen aspects",
+      "Hunger Propagation: letting appetite reshape people and places"
+    ]
+  },
+  "sample_adventure": {
+    "title": "The Feast That Never Ends",
+    "description": "A village has been cursed to experience endless hunger. The crops grow, the livestock thrive, but no one can eat—every meal turns to ash in their mouths. A local alchemist has traced the curse to a nearby cave where a creature of endless appetite slumbers. The party must find the creature and decide: consume it, be consumed by it, or find a way to satisfy a hunger that can never be sated.",
+    "quote": "To consume is to become. To devour is to transform."
+  },
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

@@ -2,6 +2,9 @@
 const diceModule = require('./dice');
 const timersModule = require('./timers');
 const adventureDirector = require('./adventure-director');
+const travelModule = require('./travel');
+const rulesModule = require('./rules-index');
+const { formatColumns, shortTitle } = require('./format-utils');
 // CHANGED: WebSocket.OPEN is referenced below (region set, deck commands)
 // but this module never imported it -- every one of those branches threw
 // "ReferenceError: WebSocket is not defined" the moment it ran.
@@ -377,7 +380,16 @@ async function handleBotCommand(sender, text, context) {
 !gm dv set <number> - set default DV
 !gm etiquette - show game etiquette reminder
 !gm region - show current region info
+!gm region list - list all available regions (multi-column)
 !gm region set <name> - set the campaign region (syncs to VTT)
+!gm travel - travel status + settings
+!gm travel to <region> [legs] - journey to a region via the Core Travel Procedure (draws Place/Actor/Pressure/Leverage per leg, then arrives)
+!gm travel policed on|off - toggle strongly-policed route (Pressure from destination instead of the Wilds)
+!gm travel gateway <region>|clear - set/clear the gateway authority region for Leverage draws
+!gm travel itineraries - list named Worked Itineraries (scripted journeys from the sourcebook)
+!gm travel itinerary <n|name> - run a Worked Itinerary end to end
+!gm travel spread [region] - draw the Traveler's Spread (3-card quick journey reading)
+!gm travel history - recent journeys this campaign
 !gm adventure - show adventure status or selection menu
 !gm adventure choose <n> - pick an adventure from the menu (GM only)
 !gm adventure preview [n] - preview the active adventure, or a pending menu option (any player)
@@ -1031,13 +1043,42 @@ async function handleBotCommand(sender, text, context) {
                 return '❌ WebSocket not available.';
             }
         }
+
+        // NEW: `!gm region list` — every loaded region, `ls`-style multi-
+        // column layout since there are 20+ of them and a one-per-line
+        // list runs off the screen. Reads straight from WorldManager's
+        // in-memory region set (see world-manager.js loadAll()), which is
+        // the same 23-region data/regions/*.json set the deck/Crown
+        // Spread system actually uses -- not a separately-maintained list
+        // that can drift out of sync.
+        if (args.length > 0 && (args[0] === 'list' || args[0] === 'ls')) {
+            const regions = context.orchestrator?.world?.listRegions() || [];
+            if (regions.length === 0) return '📍 No regions loaded.';
+            const lines = formatColumns(regions.map(r => shortTitle(r.title)), { width: 60, maxCols: 4 });
+            return `📍 **Regions (${regions.length}):**\n\`\`\`\n${lines}\n\`\`\`\nUse \`!gm region set <name>\` to switch, or \`!gm adventure crown\` to draw a Crown Spread from one.`;
+        }
+
+        // BUGFIX: this used to read regionData.name/.description/.genre,
+        // but region JSON files store the display name under `title`
+        // (e.g. "Acasia — Broken Marches") and the blurb/genre under
+        // `overview.tagline`/`overview.genre` — .name/.description/.genre
+        // don't exist at the top level, so this always silently rendered
+        // just the raw slug with two blank lines beneath it.
         const region = campaignState.scene?.region || context.orchestrator?.options?.defaultRegion || 'unknown';
         const regionData = context.orchestrator?.world?.getRegion(region);
         if (regionData) {
-            return `📍 **Region:** ${regionData.name || region}\n${regionData.description || ''}\n${regionData.genre ? `Genre: ${regionData.genre}` : ''}`;
+            const title = regionData.title || regionData.label || region;
+            const tagline = regionData.overview?.tagline || '';
+            const genre = regionData.overview?.genre || '';
+            return `📍 **Region:** ${title}\n${tagline}${genre ? `\nGenre: ${genre}` : ''}`;
         } else {
-            return `📍 Current region: ${region} (no detailed data available)`;
+            return `📍 Current region: ${region} (no detailed data available — try \`!gm region list\`)`;
         }
+    }
+
+    // ─── Travel ────────────────────────────────────────────────────
+    if (cmd === 'travel') {
+        return await travelModule.handleTravelCommand(sender, args, context);
     }
 
     // ─── Seed ──────────────────────────────────────────────────────
@@ -1420,6 +1461,26 @@ async function processSpecialTags(text, context, senderName = null) {
                 startIdx = rollEnd + 1;
             }
         }
+    }
+
+    // ─── [LOOKUP RULE "..."] ────────────────────────────────────────
+    // Companion to the compact rules index ai-gm-bot.js now sends
+    // instead of the full rules.txt on every turn (see
+    // rules-index.js / buildIndex()) -- the model asks for a specific
+    // section by name when it actually needs the full text, and this
+    // resolves it inline the same way [ROLL ...] resolves to a real
+    // result. Plain keyword lookup against an in-memory list, not RAG:
+    // rules.txt is small enough to hold in full, this just avoids
+    // re-sending all of it every turn.
+    const lookupRegex = /\[LOOKUP RULE\s*"([^"]+)"\s*\]/gi;
+    while ((match = lookupRegex.exec(output)) !== null) {
+        const query = match[1];
+        const rulesText = context.orchestrator?.world?.getRules?.() || context.orchestrator?.world?.rules;
+        const section = rulesModule.findSection(rulesText, query);
+        const replacement = section
+            ? `\n---\n**${section.title}**\n${section.body}\n---\n`
+            : `*(No rule section found matching "${query}".)*`;
+        output = output.replace(match[0], replacement);
     }
 
     // ─── [SET POSITION ...] ────────────────────────────────────────

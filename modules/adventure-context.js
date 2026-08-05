@@ -115,12 +115,72 @@ async function hasActiveAdventure(context) {
  * timers, and a short NPC/location/faction roster. Returns '' if nothing
  * usable is loaded, so callers can just always append it with no
  * special-casing.
+ *
+ * CHANGED: _gmhints from the adventure state are injected FIRST, at the
+ * very top of the context block, so they act as immutable constraints
+ * that override any generic narrative instincts the LLM might have.
  */
 async function getSceneContextForPrompt(context) {
     const state = await getState(context);
     if (!isAdventureActive(state)) return '';
 
-    const lines = [`**Current Adventure: "${state.title}"** (${state.status})`];
+    const lines = [];
+
+    // ================================================================
+    // 1. GM HINTS (IMMUTABLE CONSTRAINTS) — read these FIRST
+    // ================================================================
+    if (state._gmhints) {
+        const hints = state._gmhints;
+        lines.push('═══════════════════════════════════════════════════════════════');
+        lines.push('GM HINTS (IMMUTABLE CONSTRAINTS — obey these before narrating)');
+        lines.push('═══════════════════════════════════════════════════════════════');
+
+        // Pacing rules (object or string)
+        if (hints.pacing) {
+            if (typeof hints.pacing === 'string') {
+                lines.push(`PACING: ${hints.pacing}`);
+            } else if (typeof hints.pacing === 'object') {
+                for (const [act, rule] of Object.entries(hints.pacing)) {
+                    lines.push(`PACING (${act}): ${rule}`);
+                }
+            }
+        }
+
+        // NPC secrets
+        if (hints.npcSecrets) {
+            if (typeof hints.npcSecrets === 'object') {
+                for (const [npc, secret] of Object.entries(hints.npcSecrets)) {
+                    lines.push(`NPC SECRET (${npc}): ${secret}`);
+                }
+            } else {
+                lines.push(`NPC SECRETS: ${hints.npcSecrets}`);
+            }
+        }
+
+        // Forbidden early revelations (array or string)
+        if (hints.forbiddenEarlyRevelations) {
+            const list = Array.isArray(hints.forbiddenEarlyRevelations)
+                ? hints.forbiddenEarlyRevelations.join(', ')
+                : String(hints.forbiddenEarlyRevelations);
+            lines.push(`FORBIDDEN EARLY REVELATIONS: ${list}`);
+        }
+
+        // Catch-all for any other root-level hint fields
+        for (const [key, value] of Object.entries(hints)) {
+            if (!['pacing', 'npcSecrets', 'forbiddenEarlyRevelations'].includes(key)) {
+                const val = typeof value === 'object' ? JSON.stringify(value) : String(value);
+                lines.push(`${key.toUpperCase()}: ${val}`);
+            }
+        }
+
+        lines.push('═══════════════════════════════════════════════════════════════');
+        lines.push(''); // blank line before the rest of the context
+    }
+
+    // ================================================================
+    // 2. Current adventure / act / scene state
+    // ================================================================
+    lines.push(`**Current Adventure: "${state.title}"** (${state.status})`);
     if (state.currentAct) lines.push(`Act: ${state.currentAct.title}`);
     if (state.currentScene) {
         lines.push(`Scene: ${state.currentScene.title}`);
@@ -144,6 +204,9 @@ async function getSceneContextForPrompt(context) {
         lines.push('Scene Timers: ' + state.currentScene.timers.map(t => `${t.name} ${t.current}/${t.segments}`).join(', '));
     }
 
+    // ================================================================
+    // 3. Reference data (NPCs, locations, factions, notes)
+    // ================================================================
     const ref = await getReference(context);
     if (ref) {
         if (ref.npcs?.length) {
@@ -169,11 +232,16 @@ async function getSceneContextForPrompt(context) {
         }
     }
 
-    return (
-        '\n\n' + lines.join('\n') +
-        '\n\nStay consistent with the NPCs/locations/factions listed above when they\'re relevant. ' +
-        'You may still improvise minor, unnamed background characters as needed.'
+    // ================================================================
+    // 4. Final instruction
+    // ================================================================
+    lines.push(
+        '\nStay consistent with the NPCs/locations/factions listed above when they\'re relevant. ' +
+        'You may still improvise minor, unnamed background characters as needed. ' +
+        'The GM Hints at the top of this block are IMMUTABLE — they override all other narrative instincts.'
     );
+
+    return '\n\n' + lines.join('\n');
 }
 
 /**

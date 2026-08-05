@@ -1,0 +1,258 @@
+{
+  "id": "mykkiel-arbiter",
+  "type": "patron",
+  "title": "Mykkiel — Arbiter of the Covenant",
+  "subtitle": "Law & Zeal",
+  "version": "1.0.0",
+  "tags": [
+    "law",
+    "zeal",
+    "covenant",
+    "justice",
+    "oath",
+    "order",
+    "righteousness",
+    "templar",
+    "chivalry"
+  ],
+  "lore": {
+    "description": "Mykkiel is the unwavering judge of covenants, the divine lawgiver whose scales and sword uphold sacred order. He is not good, nor evil – he is the law. Mercy without justice is weakness; justice without law is chaos. His followers are judges, templars, and scribes who enforce divine law with zealous devotion, seeing the world in absolutes of sanctity and transgression.",
+    "followers": "The Covenant, the great faith that bears his name, was revealed not through a prophet of soft words, but through a commander of hosts – a figure of burning authority who carved the first covenant into stone with a sword. Mykkiel does not negotiate. He commands. The faithful do not interpret; they obey.",
+    "names_across_regions": {
+      "western_chivalry": "Seint Michel, the patron of knights who swear to protect the innocent and uphold the code",
+      "eastern_deserts": "The Judge of the Seal, whose name is invoked before every contract"
+    },
+    "quote": "The Law is not written in sand, but in stone. The Covenant is not suggestion, but command. Transgressors shall be purged, the faithful exalted."
+  },
+  "domain_focus": [
+    "Divine Law: sacred commandments, contractual obligations, ritual purity",
+    "Zealous Justice: righteous judgment, purge of impurity, holy retribution",
+    "Covenant Bonds: sacred oaths, tribal loyalty, the chosen community",
+    "Absolute Order: hierarchy, tradition, unchanging truth",
+    "Lawful Neutral: justice without mercy, order without compassion"
+  ],
+  "runekeeper_options": {
+    "thiasos": {
+      "description": "A Runekeeper sworn to Mykkiel does not bind a creature of shadow or wild. Their Thiasos is a small beast or being of zealous loyalty and keen perception: a white hound with brass eyes that can smell lies and taint, a ferret that hunts rodents of corruption with relentless efficiency, a bronze-feathered hawk that circles above suspected heretics, or a small mechanical bird that sings hymns of purity at dawn.",
+      "care": "This creature requires no food, but it must be present at a daily prayer or rite of purification. If neglected for a week, it becomes Compromised (it growls at strangers or sings discordantly, imposing –1 die on all social rolls with those suspected of impurity for its bearer)."
+    },
+    "codex": {
+      "description": "The Codex of Mykkiel is never a book of common knowledge. It may be an iron-bound ledger with pages of sanctified vellum, each Rite sealed with a drop of wax; a slate tablet that records only the names of the damned; or a scroll of censure that burns heretical text upon reading.",
+      "upkeep": "Because Mykkiel's laws are absolute, the Codex requires upkeep: the Runekeeper must spend an hour each week reciting each Rite aloud in a purified space, or the seals weaken (treat as Compromised until reconsecrated)."
+    }
+  },
+  "patrons_gift": {
+    "name": "The Covenant's Edge",
+    "description": "Once per scene as an action, a Runekeeper of Mykkiel may touch a held item (weapon, shield, or badge of office) and speak a word of judgment.",
+    "effect": "For the rest of the scene, the item grants +1 die to Investigation or Command rolls when confronting supernatural creatures, and the first time each scene the bearer would be affected by a magical illusion or fear effect, they may reroll the resistance check (Mykkiel's light burns through deception).",
+    "cost": "After the scene, the user marks +1 Obligation to Mykkiel."
+  },
+  "rites": [
+    {
+      "name": "Rite of the Consecrated Mandate",
+      "tier": "Low",
+      "xp": 5,
+      "action": "Scene",
+      "range": "Zone",
+      "resist": "No",
+      "tags": ["WARD", "COMMAND", "FEAR", "AREA"],
+      "materials": "A war-banner sanctified with sacred oils, or sanctified salt and ritual boundaries.",
+      "effect": "Choose one: Burning Banner: Consecrate an area for a righteous cause. Followers gain +1 die to resist fear; enemies suffer –1 die to oppose your proclamation. Create a 4-segment Divine Mandate timer. Hallowed Ground: Create sacred space where divine law prevails. All oath-breaking, theft, or violence suffers –1 die. Creates a 6-segment Sacred Space timer.",
+      "push_it": "(Banner) The banner emits visible radiance; unbelievers must test Resolve (DV 3) or falter, taking –1 die to attacks for the scene. (Hallowed) The space becomes consecrated ground that repels supernatural desecration; any creature with the [UNDEAD] or [DEMON] tag must test Spirit (DV 4) to enter. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Blazing Decree",
+      "tier": "Standard",
+      "xp": 8,
+      "action": "Instant",
+      "range": "Near",
+      "resist": "Yes",
+      "tags": ["COMMAND", "FEAR", "TRUTH", "FORCE"],
+      "materials": "A stone tablet or scroll with divine commandments.",
+      "effect": "Issue a divine commandment ('Cease,' 'Repent,' 'Submit'). The target tests Spirit+Resolve (DV 3) or complies. Higher DV for more demanding commands.",
+      "push_it": "The command carries divine authority; resistance causes 1 SB (Hearts) of spiritual distress, and the target suffers –1 die to all actions for the remainder of the scene. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Instant."
+    },
+    {
+      "name": "Rite of the Covenant Seal",
+      "tier": "Standard",
+      "xp": 9,
+      "action": "Extended",
+      "range": "Zone",
+      "resist": "No",
+      "tags": ["VOW", "BOND", "DEBT", "FEAR", "TRUTH"],
+      "materials": "Wax, sacred seals, the names of sworn parties.",
+      "effect": "Formalize a binding covenant. All participants suffer concrete penalties for breach (–1 die to relevant actions). Creates an 8-segment Covenant Bond timer; each major breach advances the timer by 2. When full, the covenant shatters and all parties mark +1 Obligation.",
+      "push_it": "A breach triggers a visible divine mark (a brand, a stutter, a scar); the marked suffer –2 dice in pious company until they atone. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "Extended action.",
+      "duration": "Permanent (until covenant ends or timer fills)."
+    },
+    {
+      "name": "Rite of Divine Judgment",
+      "tier": "High",
+      "xp": 13,
+      "action": "Extended",
+      "range": "Near",
+      "resist": "Yes",
+      "tags": ["COMMAND", "FEAR", "FATE", "DEBT", "TRUTH"],
+      "materials": "Scales of justice, testimony (written or spoken), ritual condemnation.",
+      "effect": "Pronounce divine judgment. The target suffers escalating penalties (–1 die, then –2 dice) on all social and contested rolls until they atone. Serious crimes may warrant greater effects (e.g., Harm 2, exile, or the attention of Covenant inquisitors). Start a 10-segment Judgment timer; each sunrise advances it by 1. When full, the judgment becomes permanent until a greater authority lifts it.",
+      "push_it": "The judgment becomes public knowledge; the community shuns an unrepentant target (all social rolls against them gain +1 die for the community, and the target suffers –1 die to all social rolls). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "Extended action.",
+      "duration": "Until atonement or timer fills."
+    }
+  ],
+  "cantors_and_cults": {
+    "cantors": {
+      "name": "The Cantor's Song",
+      "description": "A Cantor of Mykkiel sings in recitations of the law – flat, rhythmic chants that sound like the turning of pages in a judge's ledger or the hammering of a gavel. Their voice is used to swear in witnesses, to pronounce sentence, or to consecrate a battlefield before a holy war. Mykkiel's Cantors are often found in courts and armies, their songs making the law audible – and inescapable."
+    },
+    "cult": {
+      "name": "The Cult of the Gilded Scale",
+      "description": "Mykkiel's cults gather in chapterhouses, courthouses, and fortified temples. The Order of the Gilded Scale is a militant fraternity of templars, notaries, and inquisitors who believe that the law is the highest form of worship. A ritual of the Order involves each member renewing an oath of fidelity while a blacksmith strikes a blade – the ring of steel reminds them that broken faith is punished by the sword. Their creed is carved over every altar: 'Justice is not a gift. It is a debt owed by every soul to every other.' Outsiders are welcome as petitioners, but they must speak only truth."
+    }
+  },
+  "witchcraft": {
+    "name": "The Seal of Covenant",
+    "description": "A witch who walks with Mykkiel is a seal-scribe or testimony-keeper – one who crafts the physical instruments of covenant: a wax seal that cannot be forged, a ledger that records every oath sworn in its presence, or a gavel that makes every word spoken under it true. Their tools are never hammers; they use seals, stamps, and the careful pressure of a signed name. In Aeler, a True-Mason might carve a 'law stone' at a bridge's center, but a witch of Mykkiel would instead press a brass seal into the stone at dusk, so that every bargain struck there is binding for a year and a day.",
+    "color": "#c9a84c",
+    "lore": "The covenant-witch learns that words have weight. Every promise spoken under the covenant is a nail driven into the world; breaking it leaves a hole that cannot be filled. They are not judges—they are the clerks of fate, recording what must be kept and what must be paid.",
+    "signature_rite": "Rite of the Covenant Seal",
+    "quote": "The Law is not written in sand, but in stone.",
+    "tools": {
+      "seal": {
+        "name": "The Seal of Unbroken Testimony",
+        "description": "A brass signet ring, its face carved with a pair of balanced scales. Once per session, the witch may press the seal into warm wax (or directly onto a stone threshold) while speaking the terms of a single oath. For the next day, anyone who breaks that oath and then crosses the marked threshold (or touches the sealed document) suffers –1 die to all rolls until they atone. The seal can also be used to 'witness' a testimony: pressing it onto a written statement makes the statement glow faintly if it is true, and grow cold if it is a lie."
+      }
+    },
+    "hedge_gifts": [
+      {
+        "name": "Seal of Compliance",
+        "xp": 2,
+        "description": "Once per scene, the witch may press a thumb or the seal ring onto a piece of wax, a wet stone, or a bare forehead. The mark is invisible to all but the witch. For the next hour, any promise or command the witch gives to that person carries the weight of divine law; the target suffers –1 die if they knowingly disobey or lie. The effect ends if the mark is washed or defaced."
+      }
+    ]
+  },
+  "monastic_tradition": {
+    "name": "Covenant Justiciar",
+    "description": "The law is a sword. The justiciar is its edge. Not for glory, not for mercy – for the covenant alone. These monks are trained to enforce divine law, uphold oaths, and deliver judgment without wavering. They are the iron will of Mykkiel made flesh.",
+    "color": "#c9a84c",
+    "prerequisites": "Spirit 3+, Presence 2+, Rite of the Consecrated Mandate or Cantor of Mykkiel.",
+    "quote": "The Law is not written in sand, but in stone.",
+    "debt_resistant_frame": "The covenant's weight hardens the soul against false obligations. Justiciars of the Covenant gain +1 die to resist any magical effect that would compel them to break a sworn oath or violate divine law. If they succeed, the compulsion's source feels the weight of judgment: a brief vision of the Gilded Scale tips, and the caster marks 1 Fatigue from spiritual backlash.",
+    "techniques": {
+      "basic": {
+        "name": "Sworn Defender",
+        "xp": 4,
+        "effect": "When you take the Defend action, you may also grant an adjacent ally +1 Armor until your next turn.",
+        "cost": "Passive",
+        "prereq": "Body 3, Melee 2"
+      },
+      "advanced": {
+        "name": "Righteous Rebuke",
+        "xp": 9,
+        "effect": "When an enemy attacks an ally you have sworn to protect, you may make a free melee attack against that enemy (once per round).",
+        "cost": "1 Fatigue",
+        "prereq": "Melee 3, Sworn Defender"
+      },
+      "master": {
+        "name": "Judgment Strike",
+        "xp": 10,
+        "effect": "Once per session, after successfully hitting a target you have formally judged (via Rite of Divine Judgment or a similar legal ruling), you may declare the strike a Judgment. The target suffers +2 Harm and must test Spirit+Resolve (DV 4) or be Stunned for one round.",
+        "cost": "Free (once)",
+        "prereq": "Tier III, Rite of Divine Judgment"
+      }
+    },
+    "corruption": [
+      {
+        "tier": 1,
+        "benefit": "Righteous Insight: +1 die to detect falsehood or covenant-breaking.",
+        "cost": "Uncompromising: Must uphold law absolutely; –1 die to merciful actions."
+      },
+      {
+        "tier": 2,
+        "benefit": "Zealous Conviction: Once per scene, +1 die when enforcing divine law.",
+        "cost": "Judge's Severity: Cannot easily overlook infractions; suffer 1 Fatigue if forced to."
+      },
+      {
+        "tier": 3,
+        "benefit": "Divine Authority: +2 dice when commanding in matters of faith or law.",
+        "cost": "Implacable: –1 die to diplomacy or negotiation with transgressors."
+      },
+      {
+        "tier": 4,
+        "benefit": "Sanctified Presence: Once per session, project an aura that makes resistance difficult (enemies test Spirit DV 3 or suffer –1 die to attack you).",
+        "cost": "Intolerant: –1 die when dealing with other faiths or traditions."
+      },
+      {
+        "tier": 5,
+        "benefit": "Prophetic Decree: Once per session, speak judgment that carries supernatural weight (target must obey a single command or mark 2 Corruption).",
+        "cost": "Blind to Nuance: –1 die to perceive gray areas or partial truths."
+      },
+      {
+        "tier": "6+",
+        "benefit": "Divine Proxy: Once per session, channel absolute judgment; bypass a target's resistance to a Rite of Mykkiel (they cannot roll to resist).",
+        "cost": "Instrument of Wrath: Mark +2 Obligation whenever you use this power; risk harming innocents alongside the guilty (GM may introduce collateral on a mixed success)."
+      }
+    ]
+  },
+  "corruption": [
+    {
+      "tier": 1,
+      "benefit": "Righteous Insight: +1 die to detect falsehood or covenant-breaking.",
+      "cost": "Uncompromising: Must uphold law absolutely; –1 die to merciful actions."
+    },
+    {
+      "tier": 2,
+      "benefit": "Zealous Conviction: Once per scene, +1 die when enforcing divine law.",
+      "cost": "Judge's Severity: Cannot easily overlook infractions; suffer 1 Fatigue if forced to."
+    },
+    {
+      "tier": 3,
+      "benefit": "Divine Authority: +2 dice when commanding in matters of faith or law.",
+      "cost": "Implacable: –1 die to diplomacy or negotiation with transgressors."
+    },
+    {
+      "tier": 4,
+      "benefit": "Sanctified Presence: Once per session, project an aura that makes resistance difficult (enemies test Spirit DV 3 or suffer –1 die to attack you).",
+      "cost": "Intolerant: –1 die when dealing with other faiths or traditions."
+    },
+    {
+      "tier": 5,
+      "benefit": "Prophetic Decree: Once per session, speak judgment that carries supernatural weight (target must obey a single command or mark 2 Corruption).",
+      "cost": "Blind to Nuance: –1 die to perceive gray areas or partial truths."
+    },
+    {
+      "tier": "6+",
+      "benefit": "Divine Proxy: Once per session, channel absolute judgment; bypass a target's resistance to a Rite of Mykkiel (they cannot roll to resist).",
+      "cost": "Instrument of Wrath: Mark +2 Obligation whenever you use this power; risk harming innocents alongside the guilty (GM may introduce collateral on a mixed success)."
+    }
+  ],
+  "playstyle_notes": {
+    "description": "Mykkiel embodies the 'jealous god' archetype – righteous, demanding, and uncompromising. Followers excel as templars, judges, and religious authorities who enforce divine law. The corruption progression leads toward absolute certainty and power, but at the cost of mercy and flexibility. Ideal for players who enjoy playing righteous enforcers, legalistic characters, or those exploring themes of faith and absolutism. Remember: Mykkiel is not good or evil – he is law. His followers may be paladins or inquisitors, but they serve the covenant, not any mortal notion of justice.",
+    "emphasizes": [
+      "Divine Law: the covenant is absolute, unchanging, and unforgiving",
+      "Zealous Justice: righteousness without mercy",
+      "Chivalric Code: protection of the weak, punishment of the wicked",
+      "Absolute Order: hierarchy, tradition, and the weight of oath",
+      "Lawful Neutral: the scales do not tilt; they only weigh"
+    ]
+  },
+  "sample_adventure": {
+    "title": "The Broken Covenant",
+    "description": "A small barony has been struck by a series of misfortunes—blighted crops, stillborn calves, and a mysterious fever. The baron believes he is being punished by Mykkiel for a broken oath his grandfather made. The party must investigate the old covenant, uncover the truth, and decide whether to uphold the law or offer mercy—and face the consequences of either choice.",
+    "quote": "The law is a debt that must be paid, whether you remember it or not."
+  },
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

@@ -59,16 +59,12 @@
   "rites": [
     {
       "name": "Rite of the Overflowing Cup",
-      "tier": "Basic",
+      "tier": "Low",
       "xp": 4,
       "action": "Scene",
       "range": "Near",
       "resist": "No",
-      "tags": [
-        "SOCIAL",
-        "FEAR",
-        "AREA"
-      ],
+      "tags": ["SOCIAL", "FEAR", "AREA"],
       "materials": "A brimming vessel of wine (or a more intimate offering).",
       "effect": "Allies who drink gain +1 die to social rolls this scene; enemies who drink suffer –1 die. Those who drink deeply may find their inhibitions loosened in other ways (GM's discretion for romantic or scandalous complications).",
       "push_it": "All in Near must test Resolve (DV 3) or be swept into revelry, possibly leading to unplanned liaisons or public confessions; mark 1 SB (Hearts). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -79,16 +75,12 @@
     },
     {
       "name": "Rite of the Horned Dance",
-      "tier": "Basic",
+      "tier": "Low",
       "xp": 5,
       "action": "Scene",
       "range": "Self",
       "resist": "No",
-      "tags": [
-        "BOOST",
-        "FOCUS",
-        "TRANSFORM"
-      ],
+      "tags": ["BOOST", "FOCUS", "TRANSFORM"],
       "materials": "A mask or antlers (carved from a stag that died in rut).",
       "effect": "Enter an ecstatic frenzy: +2 dice to melee or performance; ignore 1 Fatigue per round. Your movements become both seductive and threatening; those watching may be captivated or disturbed.",
       "push_it": "The frenzy spreads: one ally joins you in the dance, but both mark 1 SB (Spades) as the lines between combat and carnality blur. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -99,16 +91,12 @@
     },
     {
       "name": "Rite of the Breaking Mask",
-      "tier": "Advanced",
+      "tier": "Standard",
       "xp": 7,
       "action": "Instant",
       "range": "Near",
       "resist": "No",
-      "tags": [
-        "TRUTH",
-        "DEBUFF",
-        "FEAR"
-      ],
+      "tags": ["TRUTH", "DEBUFF", "FEAR"],
       "materials": "A mask smashed in hand (or a lover's token torn in two).",
       "effect": "Reveal the true face beneath the social mask: the target suffers –2 dice to disguise, deceit, or composure until scene end. They may also be compelled to admit a hidden desire (GM's discretion).",
       "push_it": "Truth is forced: the target must declare one hidden desire aloud, possibly to the wrong person; mark 1 SB (Diamonds). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -119,16 +107,12 @@
     },
     {
       "name": "Rite of the Wild Procession",
-      "tier": "Advanced",
+      "tier": "Standard",
       "xp": 9,
       "action": "Scene",
       "range": "Zone",
       "resist": "No",
-      "tags": [
-        "SUMMON",
-        "WARD",
-        "AREA"
-      ],
+      "tags": ["SUMMON", "WARD", "AREA"],
       "materials": "A horn sounded thrice (or a kiss passed around a circle).",
       "effect": "Summon spectral revelers — satyrs, dancers, horned riders, and a few figures whose embraces are more than friendly. For the scene, the zone is [WARD]ed: hostile entry forces 1 SB (Spades); allies gain +1 die to resist compulsion or fear. The revelers may also grant a boon of Vigor to one couple (restore 1 Fatigue to two allies who share a bond of intimacy).",
       "push_it": "The procession spills beyond the zone; outsiders in Near must test Resolve (DV 4) or join the dance — and perhaps the revel's other activities. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -139,17 +123,12 @@
     },
     {
       "name": "Rite of the Endless Feast",
-      "tier": "Master",
+      "tier": "High",
       "xp": 14,
       "action": "Scene",
       "range": "Zone",
       "resist": "No",
-      "tags": [
-        "HEAL",
-        "BOOST",
-        "AREA",
-        "BURDEN"
-      ],
+      "tags": ["HEAL", "BOOST", "AREA", "BURDEN"],
       "materials": "A feast laid for twelve, with wine, music, and comfortable cushions.",
       "effect": "For one scene, the zone floods with plenty: allies restore Fatigue; all rolls tied to appetite or indulgence gain +2 dice. Leaving requires Resolve (DV 3) — the comforts are hard to abandon. The feast also grants a temporary Heightened Desire condition: the first seduction or intimidation roll each ally makes gains +1 die.",
       "push_it": "The feast persists as a hunger-haunt; start Hedonist's Curse [6]. Participants may find themselves unable to derive pleasure from mundane means, always craving the excess of that night. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
@@ -160,17 +139,12 @@
     },
     {
       "name": "Rite of the Reveler's Apotheosis",
-      "tier": "Master",
+      "tier": "High",
       "xp": 15,
       "action": "Extended",
       "range": "Touch",
       "resist": "No",
-      "tags": [
-        "TRANSFORM",
-        "BOOST",
-        "FATE",
-        "SACRIFICE"
-      ],
+      "tags": ["TRANSFORM", "BOOST", "FATE", "SACRIFICE"],
       "materials": "A crown of twisted vines that bleed when touched, the first laugh of a newborn, a promise broken at a crossroads, and the willing touch of a lover.",
       "effect": "Grant the ultimate reveler's gift — transformation into pure ecstatic essence. The target becomes immune to fear and despair, gains +3 dice to performance or frenzy, and can inspire allies within Near (+1 die to all rolls). Their aura also carries a scent of desire; anyone within Near who sees them must test Resolve (DV 3) or be mildly infatuated (disadvantage on hostile actions).",
       "push_it": "The transformation becomes contagious — nearby allies may also transform but risk losing their humanity (their sense of self blurs into the ecstatic mob); mark +2 Obligation. Cost: Mark +1 Obligation (total +4) or Mark +1 Fatigue.",
@@ -191,7 +165,12 @@
     }
   },
   "witchcraft": {
-    "description": "A witch who walks with Thrysos is a mask-carver or wine-smith — one who crafts the tools of ecstatic release: a mask that lets the wearer dance without tiring, a drum that beats in time with the drinker's pulse, a cup that never runs dry (but leaves a headache at dawn), or a perfume that makes the wearer irresistible for a single night. Their magic works through the materials of celebration: a thyrsus that marks the boundary of a sacred dance, a press that squeezes wine that ferments in hours instead of weeks, a needle that sews a costume that makes the wearer faster, louder, bolder, or a small clay lamp that burns with a flame that kindles desire. In Aeler, a True-Mason might carve a 'revel keystone' into a feast hall, but a hedge-witch of Thrysos might instead drive a thyrsus into the floorboards to consecrate the space for an orgy.",
+    "name": "The Art of the Ecstatic Revel",
+    "description": "A witch who walks with Thrysos is a mask-carver or wine-smith — one who crafts the tools of ecstatic release: a mask that lets the wearer dance without tiring, a drum that beats in time with the drinker's pulse, a cup that never runs dry (but leaves a headache at dawn), or a perfume that makes the wearer irresistible for a single night. Their magic works through the materials of celebration: a thyrsus that marks the boundary of a sacred dance, a press that squeezes wine that ferments in hours instead of weeks, a needle that sews a costume that makes the wearer faster, louder, bolder, or a small clay lamp that burns with a flame that kindles desire. In Aeler, a True-Mason might carve a 'revel keystone' into a feast hall, but a hedge-witch of Thrysos might instead drive a thyrsus into the floorboards to consecrate the space for an orgy. These witches are the keepers of ecstasy, the ones who understand that the most sacred act is the one that frees the soul from its cage — and that the price of freedom is always a piece of oneself, willingly given.",
+    "color": "#8b3a3a",
+    "lore": "The revel-witch's path is the art of liberation through excess. They learn that the mask is not a lie but a truth waiting to be worn, that the wine is not a poison but a key, and that the dance is not a distraction but a prayer. Thrysos teaches that the soul cannot be freed by restraint — only by surrender. These witches are found in taverns, festivals, and the quiet rooms where masks are carved and wine is fermented, their hands stained with grape juice and their eyes always seeking the next revel.",
+    "signature_rite": "Rite of the Overflowing Cup",
+    "quote": "The cup that never empties is the cup you share.",
     "tools": {
       "thyrsus": {
         "name": "The Thyrsus of the Unbound",
@@ -203,6 +182,84 @@
         "name": "Dancer's Cramp",
         "xp": 4,
         "description": "Once per scene, the witch may snap their fingers and whisper a dancer's rhythm. One target within Near range feels an irresistible urge to move — they must tap a foot, sway, or take a step. This cannot force them into danger, but it can ruin stealth, break a staredown, or distract a guard for one exchange. The target may resist with Resolve (DV 3) to ignore the urge. A more salacious version (Lover's Cramp) might be used in seduction scenes, forcing an unintended compliment or touch."
+      },
+      {
+        "name": "Mask of the Moment",
+        "xp": 2,
+        "description": "The witch may place a hand over their own face and draw it away, revealing a different expression (or a different face entirely, briefly). This grants +1 die to a single Deception or Performance roll, as the target's expectations are momentarily overturned. The illusion lasts only for that exchange. Once per scene."
+      },
+      {
+        "name": "Wine-Reader",
+        "xp": 3,
+        "description": "When you drink wine (or any alcoholic beverage), you may gain a brief vision of the drinker's hidden desires or fears. The GM must answer one question about the emotional state of the person who last drank from the same vessel. Once per scene."
+      },
+      {
+        "name": "The Unquenchable Cup",
+        "xp": 3,
+        "description": "Once per session, the witch may declare a single cup of wine to be 'unquenchable' — it will never run dry for the duration of the scene. Those who drink from it gain +1 die to social rolls for the scene, but they also suffer –1 die to resist impulsive actions or confessions. The cup refills itself, but each sip deepens the revel's hold."
+      }
+    ]
+  },
+  "monastic_tradition": {
+    "name": "The Way of the Drunken Master",
+    "description": "Monks of the Drunken Master tradition embody Thrysos's wild, unpredictable spirit. They move like men who have had one drink too many — staggering, spinning, falling — but every stumble is a feint, every spill a trip, every belch a battle cry. They are the laughing philosophers of the monastery, the ones who have learned that the greatest freedom is the freedom to be foolish, and that the most effective fighter is the one who cannot be predicted. In the quiet of the monastery, they practice the art of controlled chaos — learning to fight drunk, to think drunk, and to live drunk, while never truly losing control.",
+    "color": "#8b3a3a",
+    "prerequisites": "Body 3+, Spirit 3+, Rite of the Horned Dance or Cantor of Thrysos.",
+    "quote": "The true disciple does not fight the wine — they let the wine fight for them. Every stagger is a feint, every spill a trip, every belch a battle cry.",
+    "debt_resistant_frame": "Thrysos's monks owe nothing but the next glass. Monks of the Drunken Master tradition gain +1 die to ignore or resist any magical debt, geas, or contract that would compel them to act against their revelry. This boon can be used once per scene, but each use leaves a faint scent of wine on the monk — the Hollow may find them easier to track (GM gains 1 SB). If they succeed, the creditor's demand slides off like water off a drunkard's back.",
+    "techniques": {
+      "basic": {
+        "name": "Stagger Step",
+        "xp": 4,
+        "description": "When an enemy misses you with a melee attack, move one band (Close↔Near) without provoking opportunity attacks. The wine guides your feet.",
+        "cost": "1 Fatigue",
+        "prereq": "Body 3+"
+      },
+      "advanced": {
+        "name": "Drunken Fist",
+        "xp": 6,
+        "description": "Your unarmed strikes gain +1 die and ignore the first point of Armour when you are at Fatigue 2 or more (the wine guides you). Your movements are unpredictable, and your opponents cannot read your intent.",
+        "cost": "Passive",
+        "prereq": "Body 3+, Spirit 2+, Tier II"
+      },
+      "master": {
+        "name": "The Unbroken Bottle",
+        "xp": 12,
+        "description": "Once per session, ignore all penalties from Fatigue for one scene. While this is active, each time you would be hit by a melee attack, you may instead stagger out of the way and force the attacker to hit another adjacent creature of your choice (narrate the stumble). After the scene ends, you collapse with Harm 2 (Exhaustion) and cannot use this talent again until you have rested for a full night. You gain a permanent Debt Scar — a purple bruise shaped like a grape cluster — but may ignore one forced Obligation or debt repayment that targets you (the patron's mark confuses the creditor).",
+        "cost": "2 Fatigue and +1 Obligation to Thrysos",
+        "prereq": "Tier III, Body 4+"
+      }
+    },
+    "corruption": [
+      {
+        "tier": 1,
+        "benefit": "Reveler's Grace: +1 die to social rolls in feasts or crowds.",
+        "cost": "Compulsive Toast: Must drink or mark 1 Fatigue when drink is offered."
+      },
+      {
+        "tier": 2,
+        "benefit": "Horned Vitality: Ignore the first 1 Fatigue each scene.",
+        "cost": "Restless Appetite: –1 die when abstaining from indulgence (food, drink, or touch)."
+      },
+      {
+        "tier": 3,
+        "benefit": "Revel-Kin: Once/scene, summon a minor revel-spirit (advantage die) — a satyr, a maenad, or a muse of seduction.",
+        "cost": "Masked Self: Cannot act without a role or guise; –1 die to plain sincerity."
+      },
+      {
+        "tier": 4,
+        "benefit": "Bacchic Fury: Once/session, frenzy grants +2 dice to melee for one exchange. Also, once per scene, ignore the effects of a single social faux pas (the revel covers it).",
+        "cost": "Ecstatic Blindness: –1 die to perception outside the revel; you may not notice threats that require sobriety."
+      },
+      {
+        "tier": 5,
+        "benefit": "Feast Without End: Once/session, allies in Near clear all Fatigue.",
+        "cost": "Hungering Host: You consume twice as much; denial causes Harm 1 (Stress). You may also develop a reputation: every feast you attend ends in scandal."
+      },
+      {
+        "tier": "6+",
+        "benefit": "Satyr King's Mantle: For one scene, become an avatar of revels; all allies gain +2 dice, enemies suffer –2 dice. Your presence also inspires desire: once during the scene, compel one target to act on a hidden passion (Resolve DV 4).",
+        "cost": "Tyrant of Pleasure: Mark +3 Obligation; the revel grows monstrous, demanding a sacrifice (an oath, a relationship, or a life). Beast of Endless Revel: Permanent transformation — your mortal form becomes optional; must make Presence+Performance (DV 4) to appear civilized or risk terrifying (or entrancing) all who see you into joining your eternal celebration. You are always at least mildly intoxicated, and sobriety causes you physical pain (1 Fatigue per hour)."
       }
     ]
   },
@@ -238,6 +295,16 @@
       "cost": "Tyrant of Pleasure: Mark +3 Obligation; the revel grows monstrous, demanding a sacrifice (an oath, a relationship, or a life). Beast of Endless Revel: Permanent transformation — your mortal form becomes optional; must make Presence+Performance (DV 4) to appear civilized or risk terrifying (or entrancing) all who see you into joining your eternal celebration. You are always at least mildly intoxicated, and sobriety causes you physical pain (1 Fatigue per hour)."
     }
   ],
+  "rivalries": [
+    {
+      "patron": "The Sealed Gate",
+      "description": "Thrysos opens doors; the Sealed Gate closes them. The reveler seeks to break boundaries and cross thresholds; the gatekeeper seeks to contain and control. Their followers are natural opposites, and their conflicts are often explosive."
+    },
+    {
+      "patron": "The Silent Choir",
+      "description": "Thrysos demands expression; the Silent Choir teaches restraint. The reveler sings; the choir keeps secrets. Their followers rarely see eye to eye — and when they do, it is often at the end of a long night."
+    }
+  ],
   "playstyle_notes": {
     "description": "Thrysos rewards those who embrace risk, abandon convention, and find power in letting go — both the laughter of the drunkard and the ecstasy of the maenad. His followers become masters of ecstatic ritual, social manipulation through celebration and seduction, and the dangerous art of losing control. The corruption progression leads toward a beast of endless revel — powerful, charismatic, but never truly sober, never truly at rest, and always hungry. Ideal for players who enjoy wild scenes, social chaos, characters who dance on the edge of self-destruction, and those who wish to explore the full spectrum of hedonism from playful flirtation to violent frenzy.",
     "emphasizes": [
@@ -248,67 +315,6 @@
       "The Bacchic Dark: the point where pleasure tips into violence, where the revel demands blood",
       "Seduction as Weapon: using desire to manipulate, distract, or destroy"
     ]
-  },
-  "monastic_tradition": {
-    "name": "Drunken Master (Thrysos)",
-    "quote": "The true disciple does not fight the wine — they let the wine fight for them. Every stagger is a feint, every spill a trip, every belch a battle cry.",
-    "prerequisites": "Body 3+, Spirit 3+, Rite of the Horned Dance or Cantor of Thrysos.",
-    "debt_resistant_frame": "Thrysos's monks owe nothing but the next glass. Monks of the Drunken Master tradition gain +1 die to ignore or resist any magical debt, geas, or contract that would compel them to act against their revelry. This boon can be used once per scene, but each use leaves a faint scent of wine on the monk — the Hollow may find them easier to track (GM gains 1 SB). If they succeed, the creditor's demand slides off like water off a drunkard's back.",
-    "techniques": [
-      {
-        "name": "Stagger Step",
-        "tier": "Basic",
-        "xp": 4,
-        "effect": "When an enemy misses you with a melee attack, move one band (Close↔Near) without provoking opportunity attacks.",
-        "cost": "1 Fatigue",
-        "requirement": "Body 3"
-      },
-      {
-        "name": "Spill the Cup",
-        "tier": "Basic",
-        "xp": 5,
-        "effect": "As a reaction to being grappled, slip free and impose –1 die on the attacker's next roll.",
-        "cost": "1 Boon",
-        "requirement": "Dex 2"
-      },
-      {
-        "name": "Drunken Fist",
-        "tier": "Basic",
-        "xp": 5,
-        "effect": "Unarmed strikes gain +1 die and ignore 1 Armor when you are at Fatigue 2+.",
-        "cost": "Passive",
-        "requirement": "Body 3, Spirit 2"
-      },
-      {
-        "name": "Hangover Resilience",
-        "tier": "Basic",
-        "xp": 4,
-        "effect": "Once per scene, after a complication from intoxication, clear 1 Fatigue.",
-        "cost": "Free",
-        "requirement": "Spirit 3"
-      },
-      {
-        "name": "Satyr's Sprawl",
-        "tier": "Advanced",
-        "xp": 8,
-        "effect": "Immune to being knocked prone while moving; standing from prone is a free action.",
-        "cost": "Passive",
-        "requirement": "Body 4, Athletics 2"
-      },
-      {
-        "name": "Bacchic Counter",
-        "tier": "Advanced",
-        "xp": 9,
-        "effect": "When you succeed on a Desperate defense roll, make a free unarmed attack against the attacker.",
-        "cost": "Once per scene",
-        "requirement": "Tier III, Drunken Fist"
-      }
-    ],
-    "master_technique": {
-      "name": "The Unbroken Bottle",
-      "xp": 12,
-      "description": "Once per session, ignore all Fatigue penalties for one scene. When you would be hit by a melee attack, you may force the attacker to hit another adjacent creature of your choice. After the scene, you suffer Harm 2 (Exhaustion). You gain a permanent Debt Scar — a purple bruise shaped like a grape cluster — but may ignore one forced Obligation or debt repayment that targets you (the patron's mark confuses the creditor)."
-    }
   },
   "sample_adventure": {
     "title": "The Revel That Never Ends",
