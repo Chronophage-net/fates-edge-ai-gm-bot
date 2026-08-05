@@ -1456,7 +1456,16 @@ async function processSpecialTags(text, context, senderName = null) {
                 const replacement = await processRollTag(name, poolExpr, dv, position, fullTag);
                 output = output.replace(fullTag, replacement);
                 console.log('🔍 [processSpecialTags] Replaced with:', replacement);
-                startIdx = rollEnd + 1;
+                // FIXED: same family of bug as the regex loops below --
+                // `rollEnd + 1` was an offset into the PRE-replacement
+                // string. Once `replacement` differs in length from
+                // `fullTag` (always true in practice), that offset points
+                // to the wrong place in the mutated `output`, and a
+                // second [ROLL ...] tag later in the same message could
+                // be skipped or mis-sliced. Advance from `rollStart` by
+                // the actual replacement length instead, which is always
+                // correct in the new string.
+                startIdx = rollStart + replacement.length;
             } else {
                 startIdx = rollEnd + 1;
             }
@@ -1481,6 +1490,16 @@ async function processSpecialTags(text, context, senderName = null) {
             ? `\n---\n**${section.title}**\n${section.body}\n---\n`
             : `*(No rule section found matching "${query}".)*`;
         output = output.replace(match[0], replacement);
+        // FIXED: `output` is being mutated inside this loop while the
+        // *global* regex's `lastIndex` keeps advancing as if the string
+        // never changed. Once a replacement text differs in length from
+        // the tag it replaced, `lastIndex` points at the wrong offset in
+        // the new string and subsequent tags of this type in the same
+        // message get silently skipped (left as literal unresolved text).
+        // Resetting to 0 re-scans the already-mutated string from the
+        // start; already-replaced spans are gone so they can't re-match,
+        // this just guarantees every remaining real tag is still found.
+        lookupRegex.lastIndex = 0;
     }
 
     // ─── [SET POSITION ...] ────────────────────────────────────────
@@ -1490,6 +1509,7 @@ async function processSpecialTags(text, context, senderName = null) {
         campaignState.scene.position = pos;
         saveCampaign();
         output = output.replace(match[0], `*(Position set to ${pos})*`);
+        posRegex.lastIndex = 0; // see FIXED note above (lookupRegex)
     }
 
     // ─── [SET DV ...] ──────────────────────────────────────────────
@@ -1499,6 +1519,7 @@ async function processSpecialTags(text, context, senderName = null) {
         campaignState.scene.defaultDV = dv;
         saveCampaign();
         output = output.replace(match[0], `*(Default DV set to ${dv})*`);
+        dvRegex.lastIndex = 0; // see FIXED note above (lookupRegex)
     }
 
     // ─── [APPLY ...] – supports "me" placeholder ───────────────────
@@ -1524,6 +1545,12 @@ async function processSpecialTags(text, context, senderName = null) {
             charactersModule.applyDelta(name, type, amount, saveCampaign);
             output = output.replace(match[0], `*(${name} ${type} ${amount >= 0 ? '+' : ''}${amount})*`);
         }
+        // FIXED (was the reported bug): see lookupRegex note above -- with
+        // multiple [APPLY]/[ADD] tags of differing replacement length in
+        // one message, `applyRegex.lastIndex` used to desync from the
+        // mutated `output` string and later tags were silently left
+        // unresolved. Confirmed by test: 2 of 4 tags previously skipped.
+        applyRegex.lastIndex = 0;
     }
 
     // ─── [TICK TIMER ...] ──────────────────────────────────────────
@@ -1555,6 +1582,7 @@ async function processSpecialTags(text, context, senderName = null) {
             }
         }
         saveCampaign();
+        tickRegex.lastIndex = 0; // see FIXED note above (lookupRegex)
     }
 
     // ─── [TIMER ...] – create timer ───────────────────────────────
@@ -1566,6 +1594,7 @@ async function processSpecialTags(text, context, senderName = null) {
         timersModule.addTimer(campaignState, name, max, onFill);
         saveCampaign();
         output = output.replace(match[0], `*(Timer "${name}" created with ${max} segments)*`);
+        createRegex.lastIndex = 0; // see FIXED note above (lookupRegex)
     }
 
     // ─── [DRAW ...] – WebSocket deck-draw ──────────────────────────
@@ -1582,6 +1611,7 @@ async function processSpecialTags(text, context, senderName = null) {
         } else {
             output = output.replace(match[0], `*(Deck draw not available – WebSocket closed)*`);
         }
+        drawRegex.lastIndex = 0; // see FIXED note above (lookupRegex)
     }
 
     // ─── [CROWN ...] – WebSocket crown-spread ──────────────────────
@@ -1595,6 +1625,7 @@ async function processSpecialTags(text, context, senderName = null) {
         } else {
             output = output.replace(match[0], `*(Crown Spread not available – WebSocket closed)*`);
         }
+        crownRegex.lastIndex = 0; // see FIXED note above (lookupRegex)
     }
 
     // ─── [SPEND SB ...] ────────────────────────────────────────────
@@ -1608,6 +1639,7 @@ async function processSpecialTags(text, context, senderName = null) {
         } else {
             output = output.replace(match[0], '*(Not enough SB)*');
         }
+        sbRegex.lastIndex = 0; // see FIXED note above (lookupRegex)
     }
 
     // ─── [FACT ...] ────────────────────────────────────────────────
@@ -1618,6 +1650,7 @@ async function processSpecialTags(text, context, senderName = null) {
         campaignState.facts[key] = value;
         saveCampaign();
         output = output.replace(match[0], '');
+        factRegex.lastIndex = 0; // see FIXED note above (lookupRegex)
     }
 
     // ─── [NPC CAST ...] – supports "me" placeholder ───────────────
@@ -1629,6 +1662,7 @@ async function processSpecialTags(text, context, senderName = null) {
         const spell = context.orchestrator?.world?.getSpell(spellName);
         if (!spell) {
             output = output.replace(match[0], `*(NPC spell "${spellName}" not found)*`);
+            npcCastRegex.lastIndex = 0; // see FIXED note above (lookupRegex)
             continue;
         }
         const tagCount = spell.tags ? spell.tags.length : 1;
@@ -1639,6 +1673,7 @@ async function processSpecialTags(text, context, senderName = null) {
         }
         if ((campaignState.sb || 0) < sbCost) {
             output = output.replace(match[0], `*(Not enough SB (need ${sbCost}, have ${campaignState.sb || 0}) for NPC spell "${spellName}")*`);
+            npcCastRegex.lastIndex = 0; // see FIXED note above (lookupRegex)
             continue;
         }
         campaignState.sb -= sbCost;
@@ -1660,6 +1695,7 @@ async function processSpecialTags(text, context, senderName = null) {
         }
         saveCampaign();
         output = output.replace(match[0], resultMsg);
+        npcCastRegex.lastIndex = 0; // see FIXED note above (lookupRegex)
     }
 
     // ─── [SCENE COMPLETE "notes"] ──────────────────────────────────
@@ -1682,6 +1718,7 @@ async function processSpecialTags(text, context, senderName = null) {
             resultMsg = `*(Scene completion error: ${e.message})*`;
         }
         output = output.replace(match[0], resultMsg || '');
+        sceneCompleteRegex.lastIndex = 0; // see FIXED note above (lookupRegex)
     }
 
     // ─── [NPC CREATE "Name" "Role" "Motivation"] ───────────────────
@@ -1710,6 +1747,7 @@ async function processSpecialTags(text, context, senderName = null) {
         // failures here shouldn't affect the narration itself.
         placeOrUpdateToken(context, { name, faction: inferFaction(role, motivation) }).catch(() => {});
         output = output.replace(match[0], '');
+        npcCreateRegex.lastIndex = 0; // see FIXED note above (lookupRegex)
     }
 
     // ─── [TOKEN MOVE "Name" col row] ────────────────────────────────
@@ -1724,6 +1762,7 @@ async function processSpecialTags(text, context, senderName = null) {
         const row = parseInt(match[3], 10);
         moveToken(context, name, col, row).catch(() => {});
         output = output.replace(match[0], '');
+        tokenMoveRegex.lastIndex = 0; // see FIXED note above (lookupRegex)
     }
 
     // ─── [TOKEN REMOVE "Name"] ───────────────────────────────────────
@@ -1735,6 +1774,7 @@ async function processSpecialTags(text, context, senderName = null) {
         const name = match[1];
         removeToken(context, name).catch(() => {});
         output = output.replace(match[0], '');
+        tokenRemoveRegex.lastIndex = 0; // see FIXED note above (lookupRegex)
     }
 
     // ─── [ENCOUNTER RESOLVE outcome "notes"] ──────────────────────
@@ -1762,6 +1802,7 @@ async function processSpecialTags(text, context, senderName = null) {
         } catch (e) {
             output = output.replace(match[0], `⚠️ Encounter resolution error: ${e.message}`);
         }
+        encResolveRegex.lastIndex = 0; // see FIXED note above (lookupRegex)
     }
 
     return output;

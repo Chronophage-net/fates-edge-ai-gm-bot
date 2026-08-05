@@ -39,6 +39,7 @@ players in VTT / terminal
 │    ├── openai-driver.js     │
 │    ├── ollama-driver.js     │
 │    └── deepseek-driver.js   │
+│  - modules/                 │  ← game logic, see "Modules" below
 └─────────────────────────────┘
         │
         ▼
@@ -48,6 +49,10 @@ players in VTT / terminal
 ```
 
 The core bot is completely decoupled from the AI backend. It communicates with the server via WebSocket and delegates all narrative generation to a **driver**. Drivers implement a simple interface and can be swapped in seconds.
+
+Game logic itself (dice, world data, tag parsing, adventures, etc.) lives in `/modules` and is
+driver-agnostic — every driver produces plain text, and `modules/commands.js` parses that text
+for `[TAG ...]` markers regardless of which backend generated it. See "Modules" below.
 
 ---
 
@@ -185,6 +190,30 @@ It will automatically appear in the configuration wizard.
 
 ---
 
+## 🧩 Modules
+
+All game logic lives in `/modules`, separate from the driver layer above. Each module is a
+plain CommonJS file (`require`/`module.exports`), most are stateless or take an explicit state
+object rather than reaching for globals, and each has a matching test file under
+`tests/modules/` (see "Testing" below).
+
+| Module | Responsibility |
+|--------|-----------------|
+| **`gm-orchestrator.js`** | The brain of the bot — integrates every other module, owns campaign state defaults, and drives the scene lifecycle each turn. |
+| **`commands.js`** | Parses `[TAG ...]` markers out of the AI's raw text output (`[ROLL ...]`, `[APPLY ...]`, `[LOOKUP RULE ...]`, `[SET POSITION/DV ...]`, `[TIMER ...]`, `[DRAW ...]`, `[CROWN ...]`, `[NPC CAST/CREATE ...]`, `[SCENE COMPLETE ...]`, `[TOKEN MOVE/REMOVE ...]`, `[ENCOUNTER RESOLVE ...]`, and more) and dispatches each to the module that actually performs it. Also handles `!gm` terminal/chat command dispatch. The single highest-blast-radius file in the bot — regex-based tag parsing silently breaks if the model's output drifts even slightly, so every tag handler here is covered by `tests/modules/commands.test.js`. |
+| **`dice.js`** | Fate's Edge dice-pool mechanics: rolling, Position modifiers, the Outcome Matrix (Clean Success / Success with Story Beat / Partial / Miss), Story Beat generation on 1s, Harm/Fatigue application with armor conversion. |
+| **`characters.js`** | In-memory character store for the session — attribute/skill resolution (case-insensitive), delta application (Harm/Fatigue/Boons/Obligation/Corruption/Leash) with clamping at their max values. |
+| **`world-manager.js`** | Loads and indexes world data (regions, factions, patrons, NPCs, spells, wiki entries) from `data/`. `getRegion()` normalizes a display name to its `data/regions/*.json` filename stem (spaces→underscores, lowercased) — this exact lookup has independently broken and been re-fixed several times across this ecosystem (see "Cross-Repo Region Slug Bug" below), so treat any change here with extra care. |
+| **`rules-index.js`** | Splits `data/rules.txt` into named sections and builds a compact section-title index for the system prompt, plus `findSection()` keyword lookup (title match, falling back to body-text match) for `[LOOKUP RULE "..."]`. Lets the bot avoid re-sending the full rulebook every turn — see "Context Management" above. |
+| **`travel.js`** | Core Travel Procedure and Worked Itineraries: `generateJourney()` (suit-locked card draws, timer-segment table, policed-region club-source toggling), `generateItineraryJourney()`, `generateTravelersSpread()`, and `handleTravelCommand()` dispatch for the bot's travel subcommands. |
+| **`deck.js`** | Deck of Consequences: card draws, Crown Spreads, `transformRegionData()` (converts a region's authored content into the flat suit/rank meaning table), ace effects (region-specific, generic fallback, or partial-key match). |
+| **`timers.js`** | Scene- and campaign-level timer create/tick/fill, with boundary clamping so a timer's `current` segment count never exceeds its `max`. |
+| **`adventure-director.js`** | Adventure selection and lifecycle — the module selection menu, Crown Spread-driven adventure picks, and handing off into `adventure-context.js`'s scene tracking once one is active. |
+| **`adventure-context.js`** | Bridges the bot to the server's Adventure Engine (`server/adventure.js`): `isAdventureActive()` status-machine checks (`planned`/`active`/`completed` × `moduleId` presence) and scene context building for the current turn. Must stay in sync with the server-side contract — see that file's own header comment. |
+| **`format-utils.js`** | Small shared text-formatting helpers for chat output: `formatColumns()` (multi-column `ls`-style layout), `shortTitle()` (truncates a long title at its first em-dash/colon). |
+
+---
+
 ## ▶️ Running the Bot
 
 ```bash
@@ -270,6 +299,56 @@ throws immediately instead. Combined with the bot's own startup behavior — `dr
 failing now exits the process with a non-zero code — a broken AI backend gets you a clean,
 supervisor-restartable failure instead of a silently-broken bot that "connects" but can't
 actually respond to anyone.
+
+---
+
+## ✅ Testing
+
+```bash
+npm test
+```
+
+Runs Node's built-in test runner (`node --test`, Node ≥18 — no extra test dependency) over
+everything in `tests/`. Layout mirrors the source tree:
+
+```
+tests/
+├── drivers/
+│   ├── ai-driver.test.js       — trimToFit(), estimateTokens()
+│   ├── deepseek-driver.test.js — fetch mocked: happy path, retry/backoff, SSE streaming, error formatting
+│   ├── openai-driver.test.js   — SDK client mocked: timeout/maxRetries wiring, streaming, initialize() error rethrow
+│   └── ollama-driver.test.js   — fetch mocked: HEADLESS fail-fast, retry/backoff, NDJSON streaming, model recovery
+└── modules/
+    ├── commands.test.js        — [ROLL]/[APPLY]/[LOOKUP RULE]/[SET ...] tag parsing (see below)
+    ├── format-utils.test.js
+    ├── rules-index.test.js
+    ├── travel.test.js
+    ├── deck.test.js
+    ├── dice.test.js
+    ├── characters.test.js
+    ├── world-manager.test.js
+    ├── timers.test.js
+    └── adventure-context.test.js
+```
+
+A few things worth knowing before adding to this suite:
+
+- **Known gaps, not bugs**: `commands.test.js` documents two `[ROLL ...]` parsing cases that
+  currently do *not* resolve — a space around the `+` in `Attribute + Skill`, and `DV` given as
+  a word (`DV three`) instead of a digit. These are marked with `// KNOWN GAP:` comments rather
+  than silently treated as passing; if you fix the parser to handle either, update the test and
+  drop the marker.
+- **Regex-desync fix (all `[TAG ...]` handlers in `commands.js`)**: every tag handler used to
+  scan `output` with a stateful global regex (`while ((match = someRegex.exec(output)) !== null)`)
+  while also reassigning `output` inside the loop body. Once a replacement's length differs from
+  the tag it replaced — normal for every tag here — the regex's internal `lastIndex` pointed at
+  the wrong offset in the mutated string, and later tags of the same type in one message could be
+  silently left unresolved (found via a test with four `[APPLY ...]` tags in one message; two
+  were skipped). Fixed by resetting `lastIndex = 0` after each mutation (and, for the manual
+  `[ROLL ...]` fallback parser, by tracking the scan offset from the actual replacement length
+  instead of the pre-replacement tag length). `commands.test.js` has a regression test for this.
+- Driver tests mock `fetch` or the SDK client directly rather than hitting real APIs — no network
+  access or API keys are needed to run the suite.
 
 ---
 
