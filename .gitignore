@@ -1,3 +1,7 @@
 *.env
 *output.txt
 *.DS_*
+
+# Node
+node_modules/
+npm-debug.log*
