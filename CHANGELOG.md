@@ -3,6 +3,10 @@ All notable changes to this project will be documented here.
 
 Format loosely follows [Keep a Changelog](https://keepachangelog.com/), versions follow [Semantic Versioning](https://semver.org/).
 
+## [4.4.2] - 2026-08-06
+
+_No commits since the last tag — manual version bump._
+
 ## [4.4.1] - 2026-08-06
 
 _No commits since the last tag — manual version bump._
