@@ -157,7 +157,7 @@ function detectLevel(commits) {
 // package.json discovery / VERSION-file fallback
 // ────────────────────────────────────────────────────────────────────
 
-function findPackageJsons(dir, out = []) {
+function findFilesByName(dir, names, out = []) {
     let entries;
     try {
         entries = readdirSync(dir, { withFileTypes: true });
@@ -167,12 +167,99 @@ function findPackageJsons(dir, out = []) {
     for (const entry of entries) {
         if (entry.isDirectory()) {
             if (EXCLUDE_DIR_NAMES.has(entry.name)) continue;
-            findPackageJsons(path.join(dir, entry.name), out);
-        } else if (entry.isFile() && entry.name === 'package.json') {
+            findFilesByName(path.join(dir, entry.name), names, out);
+        } else if (entry.isFile() && names.includes(entry.name)) {
             out.push(path.join(dir, entry.name));
         }
     }
     return out;
+}
+
+function findPackageJsons(dir) {
+    return findFilesByName(dir, ['package.json']);
+}
+
+// ────────────────────────────────────────────────────────────────────
+// Auxiliary hardcoded-version display files.
+//
+// WHY: v4.4.0 shipped with every package.json correctly bumped but
+// js/features/.../app.js's console-log banner still hardcoded at the
+// PREVIOUS version, because that string existed nowhere this script
+// looked. Rather than trust every future contributor to remember every
+// spot a version is echoed for humans, this scans for the two known
+// patterns across the whole repo and fixes them automatically:
+//   - any file literally named `version.js` containing an
+//     `APP_VERSION = '...'` (or "...") assignment — see
+//     fates-edge-web-client/js/core/version.js, which is the intended
+//     single source of truth other code should import from instead of
+//     hardcoding a version string of its own.
+//   - any file literally named `index.html` containing `vX.Y.Z`-shaped
+//     text anywhere (title, meta description, a `.brand-version` badge,
+//     etc.) — replaced indiscriminately since these files are small and
+//     "vX.Y.Z" is a distinctive-enough pattern not to false-positive.
+// If a repo has neither file (e.g. fates-edge-ai-gm-bot, fates-edge-docs)
+// this is just a no-op.
+//
+// README.md/DESIGN.md get a SEPARATE, much more conservative pass (see
+// updateReadmeStyleFiles() below): those files mix "current version"
+// mentions (safe to auto-bump) with historical version-history entries
+// like "### v4.3a" or "### v4.1.2b" changelog sections that must NEVER
+// be rewritten to the new version — a blind find/replace would corrupt
+// release history. Only two narrow, unambiguous patterns are touched
+// automatically; everything else in those files (What's New prose,
+// version-history bullet lists, inline notes) is left for a human to
+// update deliberately, the way this session did by hand.
+// ────────────────────────────────────────────────────────────────────
+
+const VERSION_STRING_PATTERN = /v\d+\.\d+\.\d+[a-zA-Z0-9-]*/g;
+
+function updateAuxiliaryVersionFiles(newVersionStr) {
+    const touched = [];
+    const files = findFilesByName(repoRoot, ['index.html', 'version.js']);
+    for (const f of files) {
+        const content = readFileSync(f, 'utf8');
+        let next = content;
+
+        if (f.endsWith('index.html') && VERSION_STRING_PATTERN.test(content)) {
+            next = content.replace(VERSION_STRING_PATTERN, `v${newVersionStr}`);
+        } else if (f.endsWith('version.js')) {
+            const versionJsRe = /(APP_VERSION\s*=\s*)(['"])[^'"]*\2/;
+            if (versionJsRe.test(content)) {
+                next = content.replace(versionJsRe, `$1$2${newVersionStr}$2`);
+            }
+        }
+
+        if (next !== content) {
+            writeFileSync(f, next, 'utf8');
+            touched.push(f);
+        }
+    }
+    return touched;
+}
+
+// Only two patterns, both unambiguous "this IS the current version, not
+// a history entry": the H1 title line ("# ... vX.Y.Z ...") and a
+// shields.io version badge ("version-X.Y.Z-blue"). Deliberately does
+// NOT touch "### vX.Y.Z" section headers or any other version mention —
+// those need a human deciding whether they're history (leave alone) or
+// a genuinely stale "current status" note (update by hand, and consider
+// adding a matching README/DESIGN update to your release checklist).
+function updateReadmeStyleFiles(newVersionStr) {
+    const touched = [];
+    const files = findFilesByName(repoRoot, ['README.md', 'DESIGN.md']);
+    const titleRe = /^(#\s+.*?)v\d+\.\d+\.\d+[a-zA-Z0-9-]*/m;
+    const badgeRe = /version-\d+\.\d+\.\d+[a-zA-Z0-9-]*-blue/g;
+    for (const f of files) {
+        const content = readFileSync(f, 'utf8');
+        let next = content;
+        if (titleRe.test(next)) next = next.replace(titleRe, `$1v${newVersionStr}`);
+        if (badgeRe.test(next)) next = next.replace(badgeRe, `version-${newVersionStr}-blue`);
+        if (next !== content) {
+            writeFileSync(f, next, 'utf8');
+            touched.push(f);
+        }
+    }
+    return touched;
 }
 
 function readJson(p) {
@@ -290,6 +377,14 @@ function main() {
     console.log(`Commits since ${tag || '(no previous tag)'}: ${commits.length}`);
 
     if (dryRun) {
+        const wouldTouchAux = findFilesByName(repoRoot, ['index.html', 'version.js']);
+        if (wouldTouchAux.length) {
+            console.log(`Would also check for stale version strings in: ${wouldTouchAux.map(f => path.relative(repoRoot, f)).join(', ')}`);
+        }
+        const wouldTouchReadme = findFilesByName(repoRoot, ['README.md', 'DESIGN.md']);
+        if (wouldTouchReadme.length) {
+            console.log(`Would also check title lines/badges (only) in: ${wouldTouchReadme.map(f => path.relative(repoRoot, f)).join(', ')}`);
+        }
         console.log('\n--dry-run: no files written, no git commands run.');
         console.log('\n--- CHANGELOG entry preview ---\n');
         console.log(buildChangelogEntry(newVersion, commits, summary));
@@ -312,14 +407,31 @@ function main() {
         console.log(`Updated ${path.relative(repoRoot, versionFilePath)}`);
     }
 
-    // 2. CHANGELOG.md
+    // 2. Auxiliary hardcoded-version display files (index.html, version.js)
+    const auxTouched = updateAuxiliaryVersionFiles(newVersionStr);
+    for (const f of auxTouched) console.log(`Updated ${path.relative(repoRoot, f)}`);
+    touchedFiles.push(...auxTouched);
+
+    // 2b. README.md/DESIGN.md title lines + version badges (conservative —
+    // see updateReadmeStyleFiles()'s comment for what it deliberately
+    // does NOT touch).
+    const readmeTouched = updateReadmeStyleFiles(newVersionStr);
+    for (const f of readmeTouched) console.log(`Updated ${path.relative(repoRoot, f)} (title/badge only)`);
+    touchedFiles.push(...readmeTouched);
+    const readmeFilesFound = findFilesByName(repoRoot, ['README.md', 'DESIGN.md']);
+    if (readmeFilesFound.length) {
+        console.log(`\nReminder: check README.md/DESIGN.md "What's New"/Version History sections by hand —`);
+        console.log(`only title lines and version badges were auto-updated in: ${readmeFilesFound.map(f => path.relative(repoRoot, f)).join(', ')}`);
+    }
+
+    // 3. CHANGELOG.md
     const entry = buildChangelogEntry(newVersion, commits, summary);
     const { changelogPath, newContent } = prependChangelog(entry);
     writeFileSync(changelogPath, newContent, 'utf8');
     touchedFiles.push(changelogPath);
     console.log(`Updated ${path.relative(repoRoot, changelogPath)}`);
 
-    // 3. git commit + tag
+    // 4. git commit + tag
     if (noCommit) {
         console.log('\n--no-commit: files updated, but no git commit/tag was created.');
         return;

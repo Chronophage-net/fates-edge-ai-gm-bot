@@ -3,6 +3,10 @@ All notable changes to this project will be documented here.
 
 Format loosely follows [Keep a Changelog](https://keepachangelog.com/), versions follow [Semantic Versioning](https://semver.org/).
 
+## [4.4.1] - 2026-08-06
+
+_No commits since the last tag — manual version bump._
+
 ## [4.4.0] - 2026-08-05
 
 Driver/module test suite (120 tests), commands.js tag-parser regex-desync fix across every [TAG ...] handler, README modules/testing docs.
