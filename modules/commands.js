@@ -5,6 +5,24 @@ const adventureDirector = require('./adventure-director');
 const travelModule = require('./travel');
 const rulesModule = require('./rules-index');
 const { formatColumns, shortTitle } = require('./format-utils');
+const { getVocab, encounterType, DEFAULT_TYPE } = require('./objective-types');
+
+// Icon per encounter type, used in [ENCOUNTER START]/[ENCOUNTER RESOLVE]
+// chat replies so player-facing text doesn't always show a crossed-swords
+// icon for encounters that aren't fights. Falls back to the combat icon
+// for any unrecognized/missing type (DEFAULT_TYPE === 'combat').
+const ENCOUNTER_ICON = {
+    combat: '⚔️',
+    obstruction: '🚧',
+    skill_challenge: '🎯',
+    trap_ward: '🪤',
+    lockpick: '🔓',
+    heist: '🕵️',
+    social: '🤝',
+};
+function encounterIcon(type) {
+    return ENCOUNTER_ICON[type] || ENCOUNTER_ICON[DEFAULT_TYPE];
+}
 // CHANGED: WebSocket.OPEN is referenced below (region set, deck commands)
 // but this module never imported it -- every one of those branches threw
 // "ReferenceError: WebSocket is not defined" the moment it ran.
@@ -403,6 +421,8 @@ async function handleBotCommand(sender, text, context) {
 !gm seed - seed campaign with Crown Spread (GM only)
 !gm spell <name> - show details of a spell
 !gm spells - list all available spells
+!gm encounter start "<name>" [type] - start an encounter (type: combat/obstruction/skill_challenge/trap_ward/lockpick/heist/social, default combat)
+!gm encounter status - show the currently active encounter
 !gm npc attack <npc> <target> [harm] - NPC attacks (costs 2 SB)
 !gm npc social <npc> <target> <tactic> - NPC social maneuver (costs 2 SB)
 !gm npc spell <npc> <target> <spell> - NPC casts spell (costs 2-6 SB)
@@ -1124,6 +1144,58 @@ async function handleBotCommand(sender, text, context) {
         return result;
     }
 
+    // ─── Encounter start/status ──────────────────────────────────
+    // NEW: minimal manual counterpart to the AI's [ENCOUNTER START ...]
+    // tag (see processSpecialTags below) -- lets a human GM kick off an
+    // ad-hoc encounter and (optionally) tag its type, same
+    // POST /api/rooms/:code/adventure/encounter/start route the tag uses.
+    // `type` defaults to 'combat' when omitted -- exactly current
+    // behavior for any pre-existing data/callers with no type field.
+    if (cmd === 'encounter') {
+        if (context.myRole !== 'gm') return 'Only the GM can manage encounters.';
+        const sub = (args[0] || '').toLowerCase();
+
+        if (sub === 'start') {
+            const rest = text.slice(text.toLowerCase().indexOf('start') + 'start'.length).trim();
+            const quotedMatch = rest.match(/"([^"]+)"\s*(\S+)?/);
+            let name, type;
+            if (quotedMatch) {
+                name = quotedMatch[1];
+                type = quotedMatch[2];
+            } else {
+                const parts = rest.split(/\s+/).filter(Boolean);
+                type = parts.length > 1 ? parts[parts.length - 1] : undefined;
+                name = (type ? parts.slice(0, -1) : parts).join(' ');
+            }
+            if (!name) return 'Usage: !gm encounter start "<name>" [type]';
+            const encType = encounterType({ type });
+            try {
+                const result = await context.apiRequest('POST', ['adventure', 'encounter', 'start'], {
+                    encounter: { name, type: encType },
+                });
+                const vocab = getVocab(encType);
+                return `${encounterIcon(encType)} Encounter "${name}" (${vocab.label}) begins.${result?.activeEncounter?.dv ? ` DV ${result.activeEncounter.dv}.` : ''}`;
+            } catch (e) {
+                return `Failed to start encounter: ${e.message}`;
+            }
+        }
+
+        if (sub === 'status') {
+            try {
+                const state = await context.apiRequest('GET', ['adventure']);
+                if (!state?.activeEncounter) return 'No active encounter.';
+                const enc = state.activeEncounter;
+                const encType = encounterType(enc);
+                const vocab = getVocab(encType, enc);
+                return `${encounterIcon(encType)} **${enc.name || enc.creatureId}** (${vocab.label}) -- DV ${enc.dv ?? '?'}, ${enc.position || 'Controlled'}.`;
+            } catch (e) {
+                return `Encounter status failed: ${e.message}`;
+            }
+        }
+
+        return 'Usage: !gm encounter start "<name>" [type]\n       !gm encounter status';
+    }
+
     // ─── NPC actions ──────────────────────────────────────────────
     if (cmd === 'npc') {
         if (context.myRole !== 'gm') return 'Only the GM can command NPCs.';
@@ -1777,6 +1849,35 @@ async function processSpecialTags(text, context, senderName = null) {
         tokenRemoveRegex.lastIndex = 0; // see FIXED note above (lookupRegex)
     }
 
+    // ─── [ENCOUNTER START "Name" type] ─────────────────────────────
+    // NEW: lets the AI kick off an ad-hoc encounter and tag its type in
+    // the same breath as narrating it, mirroring !gm encounter start
+    // above. `type` is optional and defaults to 'combat' -- exactly
+    // current behavior when the AI (or an older prompt) omits it
+    // entirely, so this is fully back-compatible with narration that
+    // never mentions a type at all.
+    const encStartRegex = /\[ENCOUNTER START\s+"([^"]+)"(?:\s+(\w+))?\]/gi;
+    while ((match = encStartRegex.exec(output)) !== null) {
+        const name = match[1];
+        const encType = encounterType({ type: match[2] });
+        try {
+            const apiRequest = context.apiRequest;
+            if (apiRequest) {
+                const result = await apiRequest('POST', ['adventure', 'encounter', 'start'], {
+                    encounter: { name, type: encType },
+                });
+                const vocab = getVocab(encType);
+                const dv = result?.activeEncounter?.dv;
+                output = output.replace(match[0], `${encounterIcon(encType)} Encounter "${name}" (${vocab.label}) begins.${dv !== undefined ? ` DV ${dv}.` : ''}`);
+            } else {
+                output = output.replace(match[0], '⚠️ Encounter start failed (API not available).');
+            }
+        } catch (e) {
+            output = output.replace(match[0], `⚠️ Encounter start error: ${e.message}`);
+        }
+        encStartRegex.lastIndex = 0; // see FIXED note above (lookupRegex)
+    }
+
     // ─── [ENCOUNTER RESOLVE outcome "notes"] ──────────────────────
     const encResolveRegex = /\[ENCOUNTER RESOLVE\s+(clean|partial|miss)(?:\s+"([^"]*)")?\]/gi;
     while ((match = encResolveRegex.exec(output)) !== null) {
@@ -1791,7 +1892,16 @@ async function processSpecialTags(text, context, senderName = null) {
                 clearEnemyTokens(context).catch(() => {});
                 if (result && result.lastResolution) {
                     const r = result.lastResolution;
-                    const msg = `⚔️ Encounter "${r.encounter || 'Unknown'}" resolved as ${r.outcome}.${r.result ? ' ' + r.result : ''}`;
+                    // CHANGED: was hardcoded to the ⚔️ crossed-swords icon and
+                    // the bare word "Encounter" regardless of what kind of
+                    // encounter it actually was -- a resolved lockpick or
+                    // negotiation read exactly like a finished fight. Now
+                    // picks the icon (and could pick different phrasing) from
+                    // the resolved encounter's own `type`, defaulting to
+                    // 'combat' when the server doesn't send one back (older
+                    // server versions / back-compat).
+                    const encType = encounterType(r);
+                    const msg = `${encounterIcon(encType)} Encounter "${r.encounter || 'Unknown'}" resolved as ${r.outcome}.${r.result ? ' ' + r.result : ''}`;
                     output = output.replace(match[0], msg);
                 } else {
                     output = output.replace(match[0], '⚔️ Encounter resolved.');

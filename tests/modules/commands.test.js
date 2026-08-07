@@ -255,3 +255,74 @@ test('processSpecialTags - SET DV updates campaign scene state', async () => {
   assert.match(result, /Default DV set to 4/);
   assert.strictEqual(context.orchestrator.campaign.state.scene.defaultDV, 4);
 });
+
+// ------------------------------------------------------------------
+// Part D: [ENCOUNTER START ...] / [ENCOUNTER RESOLVE ...] tags --
+// type-aware vocabulary (combat vs. non-combat encounter types).
+// ------------------------------------------------------------------
+
+function buildMockContextWithApi(apiRequestImpl) {
+  const context = buildMockContext();
+  context.apiRequest = apiRequestImpl;
+  return context;
+}
+
+test('processSpecialTags - ENCOUNTER START with no type defaults to combat (back-compat)', async () => {
+  let sentBody;
+  const context = buildMockContextWithApi(async (method, path, body) => {
+    sentBody = body;
+    return { activeEncounter: { dv: 3 } };
+  });
+  const input = '[ENCOUNTER START "Bandit Ambush"]';
+  const result = await processSpecialTags(input, context, 'Tester');
+  assert.doesNotMatch(result, /\[ENCOUNTER START/);
+  assert.strictEqual(sentBody.encounter.type, 'combat');
+  assert.match(result, /⚔️/);
+  assert.match(result, /Bandit Ambush/);
+});
+
+test('processSpecialTags - ENCOUNTER START with an explicit non-combat type threads it through', async () => {
+  let sentBody;
+  const context = buildMockContextWithApi(async (method, path, body) => {
+    sentBody = body;
+    return { activeEncounter: { dv: 2 } };
+  });
+  const input = '[ENCOUNTER START "The Vault Door" lockpick]';
+  const result = await processSpecialTags(input, context, 'Tester');
+  assert.doesNotMatch(result, /\[ENCOUNTER START/);
+  assert.strictEqual(sentBody.encounter.type, 'lockpick');
+  assert.match(result, /🔓/);
+  assert.match(result, /Lockpick/);
+});
+
+test('processSpecialTags - ENCOUNTER START with an unrecognized type falls back to combat', async () => {
+  let sentBody;
+  const context = buildMockContextWithApi(async (method, path, body) => {
+    sentBody = body;
+    return {};
+  });
+  const input = '[ENCOUNTER START "Weird One" not_a_real_type]';
+  await processSpecialTags(input, context, 'Tester');
+  assert.strictEqual(sentBody.encounter.type, 'combat');
+});
+
+test('processSpecialTags - ENCOUNTER RESOLVE with no type on the returned resolution defaults to combat icon (back-compat)', async () => {
+  const context = buildMockContextWithApi(async () => ({
+    lastResolution: { encounter: 'Bandit Ambush', outcome: 'clean', result: 'The bandits flee.' },
+  }));
+  const input = '[ENCOUNTER RESOLVE clean "cleared the road"]';
+  const result = await processSpecialTags(input, context, 'Tester');
+  assert.doesNotMatch(result, /\[ENCOUNTER RESOLVE/);
+  assert.match(result, /⚔️/);
+  assert.match(result, /resolved as clean/);
+});
+
+test('processSpecialTags - ENCOUNTER RESOLVE with a non-combat type on the returned resolution uses that type\'s icon', async () => {
+  const context = buildMockContextWithApi(async () => ({
+    lastResolution: { encounter: 'The Vault Door', outcome: 'clean', result: 'The lock clicks open.', type: 'lockpick' },
+  }));
+  const input = '[ENCOUNTER RESOLVE clean "picked it"]';
+  const result = await processSpecialTags(input, context, 'Tester');
+  assert.match(result, /🔓/);
+  assert.match(result, /The Vault Door/);
+});

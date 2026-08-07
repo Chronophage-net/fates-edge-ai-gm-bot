@@ -30,6 +30,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { getVocab, encounterType } = require('./objective-types');
 
 const CACHE_TTL_MS = 15000;
 const DOC_CACHE_TTL_MS = 60000; // doc changes rarely, cache longer
@@ -188,7 +189,30 @@ async function getSceneContextForPrompt(context) {
     }
     if (state.activeEncounter) {
         const enc = state.activeEncounter;
+        // NEW: encounters may carry an optional `type` -- one of
+        // 'combat' | 'obstruction' | 'skill_challenge' | 'trap_ward' |
+        // 'lockpick' | 'heist' | 'social' -- defaulting to 'combat' when
+        // absent, exactly current behavior for back-compat. Surface the
+        // type and its own progress/setback vocabulary here so the LLM's
+        // narration naturally reaches for "Tumblers"/"Jam" on a lockpick,
+        // "Heat"/"Cover" on a heist, etc. instead of always assuming a
+        // fight and defaulting to Harm/Heal language.
+        const type = encounterType(enc);
+        // Pass the encounter object itself as `source` so a `custom` type's
+        // GM-supplied customLabel/customTickLabel (if set) overlay the
+        // generic "Timer"/"tick" defaults -- mirrors resolveObjectiveType()
+        // on the web client.
+        const vocab = getVocab(type, enc);
         lines.push(`Active Encounter: ${enc.name || enc.creatureId} (DV ${enc.dv ?? '?'}, ${enc.position || 'Controlled'})`);
+        lines.push(`  Type: ${type} -- ${vocab.description}`);
+        lines.push(`  Vocabulary: progress = "${vocab.progress}" (${vocab.progressVerb}), setback = "${vocab.setback}" (${vocab.setbackVerb})`);
+        if (type === 'combat') {
+            lines.push('  This is a fight -- narrate attacks/damage and use [APPLY HARM ...] as normal.');
+        } else if (type === 'custom') {
+            lines.push(`  This is a custom encounter: ${vocab.progress} (advances by: ${vocab.progressVerb}). Do not narrate attacks or apply Harm for this encounter -- use the "${vocab.progress}"/"${vocab.setback}" language above instead.`);
+        } else {
+            lines.push(`  This is NOT a fight -- do not narrate attacks or apply Harm for this encounter. Use "${vocab.progress}"/"${vocab.setback}" language instead (e.g. "${vocab.description}").`);
+        }
         if (enc.creature) {
             lines.push(`  Creature: ${enc.creature.name} (TL${enc.creature.tl}, ${enc.creature.class || ''})`);
         }

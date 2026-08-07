@@ -200,7 +200,10 @@ const BASE_SYSTEM_PROMPT = (process.env.SYSTEM_PROMPT ||
   'Downtime procedures) rather than the core loop you already know, request it with ' +
   '[LOOKUP RULE "Section Title or keyword"] and its full text will be inserted in place of the tag.\n\n' +
 
+  'Start an encounter: [ENCOUNTER START "Name" type] — type is optional, one of combat|obstruction|skill_challenge|trap_ward|lockpick|heist|social (defaults to combat if omitted).\n' +
   'Encounter resolution: [ENCOUNTER RESOLVE clean|partial|miss "notes"]\n\n' +
+
+  'Encounters are not always fights. Check the "Active Encounter" block in your scene context for its type and vocabulary before narrating: combat uses Harm/Heal and attacks; obstruction and skill_challenge use Progress/Setback; trap_ward uses Disarm Progress/Trigger; lockpick uses Tumblers/Jam; heist uses Heat/Cover; social uses Leverage/Resistance. Only narrate attacks, weapons, or [APPLY HARM ...] when the active encounter is type combat (or has no type at all, which also means combat). For every other type, narrate in that type\'s own vocabulary instead — e.g. a lockpick encounter is about tumblers catching or a pick slipping, not blows landing.\n\n' +
 
   'Scene advancement: [SCENE COMPLETE "brief note on how it ended"] — use only at genuine dramatic scene breaks, not after every exchange.\n\n' +
 
