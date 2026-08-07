@@ -154,6 +154,33 @@ async function writeEnvFile(driver, envVars) {
     const room = await question('ROOM (Room code, default ABC123): ');
     lines.push(`ROOM=${room || 'ABC123'}`);
 
+    // The socket server's campaign save/load endpoints (auto-save included)
+    // always require a non-empty x-api-key header -- without this, the bot
+    // can chat fine but every "Failed to auto-save campaign: HTTP 401: API
+    // key required" on save/load. Ask for it here so the wizard actually
+    // produces a working config instead of silently leaving it out.
+    console.log(`\n🔑 The socket server requires an API key to save/load campaigns.`);
+    console.log(`   This must match the API_KEY the socket server itself is running with.`);
+    const hasApiKey = await question('  Does your socket server require an API key? (y/n, default: y): ');
+    if (hasApiKey.trim().toLowerCase() !== 'n') {
+        const useFile = await question('  Use a file for API_KEY? (y/n, default: n): ');
+        if (useFile.trim().toLowerCase() === 'y') {
+            const filePath = await question('  Path to file containing API_KEY: ');
+            try {
+                const content = fs.readFileSync(path.resolve(expandHome(filePath.trim())), 'utf8').trim();
+                lines.push(`API_KEY=${content}`);
+            } catch (e) {
+                console.error(`  Could not read file: ${e.message}`);
+                process.exit(1);
+            }
+        } else {
+            const apiKey = await question('  API_KEY (must match the socket server\'s own API_KEY): ');
+            lines.push(`API_KEY=${apiKey.trim()}`);
+        }
+    } else {
+        console.log('  Skipping API_KEY -- campaign auto-save/load will fail with 401 until one is set in .env.');
+    }
+
     lines.push(''); // trailing newline
 
     fs.writeFileSync(envPath, existing + lines.join('\n') + '\n');
