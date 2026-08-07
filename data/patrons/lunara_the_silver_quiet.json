@@ -1,0 +1,278 @@
+{
+  "id": "lunara-silver-quiet",
+  "type": "patron",
+  "title": "Lunara, the Silver Quiet",
+  "subtitle": "Moon & Mystery",
+  "version": "1.0.0",
+  "tags": [
+    "moon",
+    "mystery",
+    "reflection",
+    "thresholds",
+    "dreams",
+    "truth",
+    "revelation",
+    "cycles",
+    "silver"
+  ],
+  "lore": {
+    "description": "Lunara walks where torchlight falters: crossroads, tidal edges, shadowed sanctuaries. She is the whisper beneath silver skies, a torch-bearing guide to mysteries that lie between waking and dream. The ancients know her as triple-formed: maiden of new light, mother of full radiance, crone of waning shadow. Her gifts are gentle yet perilous: a mirror that reveals as much of the seeker as the sought, a key that opens ways better left closed, a light that makes the unseen plain. Her sigil is the silver spiral, etched in water, mirror, or stone.",
+    "followers": "Her worshippers — night-scholars, dream-walkers, and hedge-priests — seek her not for power over others, but for passage, reflection, and revelation. Among the peoples of Fate's Edge, Lunara is called by many names. In Aeler, she is the Deep Silver, whose light guides miners through unlit shafts. In Aelinnel, she is the Silent Mirror, invoked by those who seek truth without violence. In the Mistlands, she is the Fog-Guide, whose pale radiance parts the mist for those who walk with pure intent. Wherever the moon casts its silver light on a hidden door, Lunara watches.",
+    "quote": "Three faces gaze from the moon. Which one watches you tonight?"
+  },
+  "domain_focus": [
+    "Moonlight Revelation: truth, hidden things, the seen in darkness",
+    "Liminal Passage: thresholds, dreams, the space between waking and sleep",
+    "Silver Mystery: reflection, illusion, the mirror's truth",
+    "Lunar Cycles: change, phases, the passage of time as a gentle guide"
+  ],
+  "runekeeper_options": {
+    "thiasos": {
+      "description": "A Runekeeper sworn to Lunara does not bind a creature of shadow or flame. Their Thiasos is a small being of moonlight and stillness: a silver-eyed owl that flies only at moonrise, a pale moth that emerges only under the full moon, a small white fox that leaves no footprints in moonlight, a silver fish that swims in still water and reflects the night sky, or a moon-cat with eyes that change phase.",
+      "care": "This creature requires no food, but it must be shown moonlight each night (even a reflection in a mirror or a pool of water counts). If neglected for a week, it becomes Compromised (it grows restless and its silver aura dims, imposing –1 die on all rolls involving perception or stealth for its bearer until it next sees moonlight)."
+    },
+    "codex": {
+      "description": "The Codex of Lunara is never a book of ordinary script. It may be a mirror that shows only the moonshadow of a Rite, a set of silver leaves that tarnish as Rites are used and must be polished, a scroll of moon-calf skin that glows only under lunar light, or a spiral of polished stone that must be turned to reveal each Rite.",
+      "upkeep": "Because Lunara's truths are written in phases, the Codex requires upkeep: the Runekeeper must spend an hour each week under open moonlight, re-reading each Rite by the moon's reflection, or the inscriptions fade (treat as Compromised until re-mooned)."
+    }
+  },
+  "patrons_gift": {
+    "name": "Lunara's Silver Word",
+    "description": "Once per scene as an action, a Runekeeper of Lunara may touch a held item (weapon, tool, or mirror) and whisper a silver word.",
+    "effect": "For the rest of the scene, the item grants +1 die to Investigation or Stealth rolls made in dim light or darkness, and the first time each scene the bearer would be surprised by a hidden threat, they may roll Notice with +1 die (the moonlight warns them).",
+    "cost": "After the scene, the user marks +1 Obligation to Lunara."
+  },
+  "rites": [
+    {
+      "name": "Rite of the Moonlit Mirror",
+      "tier": "Low",
+      "xp": 5,
+      "action": "Scene",
+      "range": "Self",
+      "resist": "No",
+      "tags": ["TRUTH"],
+      "materials": "A mirror or bowl of still water under moonlight.",
+      "effect": "Peer beyond surfaces. Gain +1 die to detect illusions, veils, or hidden motives. Once per scene, you may ask one veiled question about the present; the GM answers in riddle or omen.",
+      "push_it": "Glimpse too deeply — gain the truth, but mark 1 SB (Diamonds) as the moon reveals more than you intended. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Crescent Whisper",
+      "tier": "Low",
+      "xp": 6,
+      "action": "Instant",
+      "range": "Near",
+      "resist": "No",
+      "tags": ["COMMUNICATION", "BOND"],
+      "materials": "A silvered thread knotted three times.",
+      "effect": "Deliver a secret thought to a single target; they hear it as if whispered beside them. You gain +1 die to aid their next action.",
+      "push_it": "The whisper echoes beyond its mark, creating 1 SB (Hearts) as others sense your intrusion. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Instant."
+    },
+    {
+      "name": "Rite of the Triple Road",
+      "tier": "Standard",
+      "xp": 9,
+      "action": "Scene",
+      "range": "Zone",
+      "resist": "No",
+      "tags": ["MOVEMENT", "GUIDANCE", "AREA"],
+      "materials": "Three lit candles set at a crossroads.",
+      "effect": "Reveal a hidden path, door, or liminal way. Allies gain +2 dice to traverse or escape; enemies suffer –1 die to pursue.",
+      "push_it": "The road opens farther than intended — toward an unknown realm. Mark 1 SB (Spades). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Lunar Conjunction",
+      "tier": "Standard",
+      "xp": 8,
+      "action": "Scene",
+      "range": "Self",
+      "resist": "No",
+      "tags": ["SPIRIT", "TRUTH", "FATE"],
+      "materials": "A ring of herbs burned beneath a dark moon.",
+      "effect": "Commune with veiled knowledge or subtle entities. Ask two questions; answers come in omen, dream-symbol, or paradox.",
+      "push_it": "The answer is too direct — gain it fully, but mark 1 SB (Diamonds). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Silver Key",
+      "tier": "High",
+      "xp": 13,
+      "action": "Scene",
+      "range": "Zone",
+      "resist": "No",
+      "tags": ["UNSEAL", "GATE", "FATE"],
+      "materials": "A silver key forged or anointed under a new moon.",
+      "effect": "Open a way where none should exist — between places, states, or wards. Creates a 6-segment Gateway timer.",
+      "push_it": "Something else comes through; mark 2 SB (Clubs). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "1 action.",
+      "duration": "Timer: 6 segments."
+    }
+  ],
+  "cantors_and_cults": {
+    "cantors": {
+      "name": "The Cantor's Song",
+      "description": "A Cantor of Lunara sings in phases — melodies that shift from whisper to resonance as the moon waxes and wanes. Their voice is used to lure dreams, to calm a troubled sleepwalker, or to draw a veil of silver silence over a secret meeting. Lunara's Cantors are often found in starlit groves, singing the moon up and down."
+    },
+    "cult": {
+      "name": "The Cult of the Silver Spiral",
+      "description": "Lunara's cults meet under open skies, in moon-lit clearings, on rooftops, or beside tidal pools. The Silver Spiral is not a secret society — it is a fellowship of night-walkers, dream-recorders, and lunar scholars. A ritual of the Spiral involves each member writing a question on a silvered leaf, then floating it on still water under the moon's reflection. The most devoted keep a lunar cat — a gray creature with eyes that change with the moon's phase — and drink water from a silver bowl that has sat under moonlight for nine nights; they claim the water lets them walk in the dreams of anyone whose name they whisper into it. Their creed is engraved on a single silver disc that passes from host to host: 'The moon sees all. The moon tells only what the seeker is ready to hear.' Outsiders are welcome on the night of the full moon, but they must bring a question and a silver coin; the coin is melted down and added to a growing silver spiral that never closes."
+    }
+  },
+  "witchcraft": {
+    "name": "The Art of Silver and Reflection",
+    "description": "A witch who walks with Lunara is a silver-scribe or mirror-maker — one who works with reflection, threshold, and the soft metals of the moon. Their craft is the art of revealing and concealing: polishing a mirror that shows a hidden door, forging a silver key that opens a dream, or etching a lunar phase onto a threshold to make it shift at moonrise. In Aeler, a True-Mason might carve a moon-phase into a keystone so the tunnel only opens under a new moon. In Viterra, a hedge-wright might silver a well's rim so that those who drink from it forget their nightmares. Their tools are never hammers — they use needles, mirrors, and bowls of still water.",
+    "color": "#8fa3c9",
+    "lore": "The silver-scribe's path is the art of the threshold-mirror. They learn that every reflection holds two truths — the one shown, and the one hidden beneath the silvering — and that a door needs only the right light to open. Lunara teaches patience: the moon does not rush its phases, and neither should the hand that works her silver.",
+    "signature_rite": "Rite of the Moonlit Mirror",
+    "quote": "Polish the glass. Not to see yourself clearer — to see what waits behind you.",
+    "tools": {
+      "silver_needle": {
+        "name": "The Silver Needle",
+        "description": "A needle of pure silver, cold to the touch, that never tarnishes. Once per session, the witch may prick their finger and draw a single drop of blood onto a threshold (a doorframe, a mirror's edge, a window sill). For the rest of the scene, that threshold 'remembers' the witch — they may cross it silently, unseen, and any reflection in it shows only what they wish to be seen."
+      }
+    },
+    "hedge_gifts": [
+      {
+        "name": "Moon-Water Scry",
+        "xp": 2,
+        "description": "Once per scene, the witch may cup a handful of water that has sat under moonlight and speak a name. The water shows a brief, cryptic image of that person's current location or emotional state (e.g., 'surrounded by stone,' 'weeping,' 'walking toward a bridge'). The GM describes the vision in one short sentence."
+      },
+      {
+        "name": "Threshold Hush",
+        "xp": 3,
+        "description": "Once per scene, touch a door, gate, or window and cause it to open and close without sound for the rest of the scene. Any who cross it while you will it gain +1 die to Stealth."
+      },
+      {
+        "name": "Silvered Tongue",
+        "xp": 4,
+        "description": "You may steep a small silver token in moonlit water overnight, then give it to another. For one day, the bearer gains +1 die to resist beguilement, illusion, or being led astray by fae glamour."
+      }
+    ]
+  },
+  "monastic_tradition": {
+    "name": "The Way of the Triple Face",
+    "description": "Monks of the Triple Face embody Lunara's teaching that every truth wears three masks — the maiden's hope, the mother's clarity, and the crone's warning. They train at moonrise and moonset, learning to read a room the way one reads tide tables, and to strike (or withhold a strike) only when the phase is right. Their discipline is patience: to know a secret is to hold power, but to speak it too soon squanders the moon's gift.",
+    "color": "#8fa3c9",
+    "prerequisites": "Wits 3+, Spirit 2+, Rite of the Moonlit Mirror or Cantor of Lunara.",
+    "quote": "Three faces gaze from the moon. Which one watches you tonight?",
+    "debt_resistant_frame": "A promise made under a hidden moon is no promise at all. Monks of the Triple Face gain +1 die to resist any obligation, geas, or debt sworn without a witness able to see the sky. If they succeed, the terms of the debt blur like ink in water, and the creditor must find new leverage or let it lapse.",
+    "techniques": {
+      "basic": {
+        "name": "Maiden's Glance",
+        "xp": 5,
+        "description": "Once per scene, study a person, object, or scene for a moment; gain +1 die to your next Investigation or Notice roll about it, as if seen by pale new light.",
+        "cost": "Passive",
+        "prereq": "Wits 3+"
+      },
+      "advanced": {
+        "name": "Mother's Ward",
+        "xp": 8,
+        "description": "Once per scene, stand between an ally and a threat under any light source you control (lantern, moonlight, mirrored glass); you and that ally gain +1 Armor until the threat is resolved.",
+        "cost": "1 Fatigue",
+        "prereq": "Tier II, Spirit 2+"
+      },
+      "master": {
+        "name": "Crone's Verdict",
+        "xp": 13,
+        "description": "Once per session, pass judgment on a lie spoken in your presence within the last scene. The speaker must test Resolve (DV 4) or publicly recant, their voice catching as if the moon itself withdrew its favor.",
+        "cost": "2 Fatigue and +1 Obligation to Lunara",
+        "prereq": "Tier III, Wits 4+"
+      }
+    },
+    "corruption": [
+      {
+        "tier": 1,
+        "benefit": "Moonlit Sight: +1 die to detect hidden or liminal presences.",
+        "cost": "Shadows cling: Eyes glimmer in dim light, unnerving the uninitiated."
+      },
+      {
+        "tier": 2,
+        "benefit": "Silver Memory: Recall any event witnessed under moonlight with perfect clarity.",
+        "cost": "Dreams blur: Suffer strange, intrusive visions when sleeping."
+      },
+      {
+        "tier": 3,
+        "benefit": "Quiet Step: +1 die to stealth or subtle speech acts.",
+        "cost": "Tongue falters: –1 die to open confrontation or commands."
+      },
+      {
+        "tier": 4,
+        "benefit": "Seam-Walker: Once per scene, cross a minor threshold unseen.",
+        "cost": "Alien aura: Mortals feel watched, suffering unease in your company."
+      },
+      {
+        "tier": 5,
+        "benefit": "Triple Aspect: Call on maiden, mother, or crone aspect for +2 dice in related rolls.",
+        "cost": "Dissociation: After use, lose sense of time or self until rested."
+      },
+      {
+        "tier": "6+",
+        "benefit": "Silver Ascendancy: Once per session, unveil hidden truths of an entire scene (+3 dice to perception/investigation).",
+        "cost": "Bound to the Veil: Mark +2 Obligation. Your presence slips between worlds, inviting lunar forces to notice you."
+      }
+    ]
+  },
+  "corruption": [
+    {
+      "tier": 1,
+      "benefit": "Moonlit Sight: +1 die to detect hidden or liminal presences.",
+      "cost": "Shadows cling: Eyes glimmer in dim light, unnerving the uninitiated."
+    },
+    {
+      "tier": 2,
+      "benefit": "Silver Memory: Recall any event witnessed under moonlight with perfect clarity.",
+      "cost": "Dreams blur: Suffer strange, intrusive visions when sleeping."
+    },
+    {
+      "tier": 3,
+      "benefit": "Quiet Step: +1 die to stealth or subtle speech acts.",
+      "cost": "Tongue falters: –1 die to open confrontation or commands."
+    },
+    {
+      "tier": 4,
+      "benefit": "Seam-Walker: Once per scene, cross a minor threshold unseen.",
+      "cost": "Alien aura: Mortals feel watched, suffering unease in your company."
+    },
+    {
+      "tier": 5,
+      "benefit": "Triple Aspect: Call on maiden, mother, or crone aspect for +2 dice in related rolls.",
+      "cost": "Dissociation: After use, lose sense of time or self until rested."
+    },
+    {
+      "tier": "6+",
+      "benefit": "Silver Ascendancy: Once per session, unveil hidden truths of an entire scene (+3 dice to perception/investigation).",
+      "cost": "Bound to the Veil: Mark +2 Obligation. Your presence slips between worlds, inviting lunar forces to notice you."
+    }
+  ],
+  "playstyle_notes": {
+    "description": "Lunara favors those who walk by moonlight, who seek truth in reflection, and who understand that some doors open only when the moon is right. Her followers are guides, dreamers, and keepers of silver secrets. The cost of her gifts is a growing estrangement from the sunlit world — eyes that glimmer in darkness, a tongue that stumbles in bright light, and dreams that are not entirely one's own. Intrusions often take the form of sudden omens (a howl at moonrise, a silver coin in an empty pocket) or a demand to witness a threshold crossing — a birth, a death, a first kiss. Ideal for characters who seek hidden knowledge, guide others through dangerous passages, or find comfort in the quiet of the night.",
+    "emphasizes": [
+      "Moonlight Revelation: truth, hidden things, the seen in darkness",
+      "Liminal Passage: thresholds, dreams, the space between waking and sleep",
+      "Silver Mystery: reflection, illusion, the mirror's truth",
+      "Lunar Cycles: change, phases, the passage of time as a gentle guide"
+    ]
+  },
+  "sample_adventure": {
+    "title": "The Well That Remembers",
+    "description": "A hedge-wright's silvered well in Viterra has begun showing visions to anyone who drinks from it after dark — not nightmares erased, but nightmares of strangers, bleeding through. The party is asked to investigate before the village's fear turns to violence against the well's caretaker, a quiet witch who insists she has done nothing but what Lunara taught her. The truth lies in whose reflection the well was truly built to hide, and what happens when a threshold is asked to conceal too much for too long.",
+    "quote": "The mirror does not lie. It simply waits until you are ready to see what it has always shown."
+  },
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

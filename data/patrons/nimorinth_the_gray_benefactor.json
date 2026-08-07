@@ -1,0 +1,277 @@
+{
+  "id": "nimorinth-gray-benefactor",
+  "type": "patron",
+  "title": "Nimorinth, the Gray Benefactor",
+  "subtitle": "Absence & Threshold",
+  "version": "1.0.0",
+  "tags": [
+    "absence",
+    "threshold",
+    "memory",
+    "silence",
+    "liminal",
+    "omission",
+    "trow",
+    "gaps"
+  ],
+  "lore": {
+    "description": "Nimorinth is a Trow patron, also answered by threshold-keepers, archivists of omissions, and oathwrights who work in the space between Said and Meant. He dwells in places that almost were — thresholds that shift when unobserved, rooms that measure longer than memory, shadows that fall where no lamp was lit. He does not arrive; he is simply the pause you finally notice.",
+    "followers": "Those who bargain with him learn that presence is a luxury, absence a currency, and the space between doors a kingdom unto itself. To serve him is to walk at the corner of sight, to speak in the breath held before truth is told. His followers are spies, treaty-witnesses, archivists, and anyone who has learned that the most valuable thing in a negotiation is what was never written down.",
+    "quote": "Take what is not there, and you shall have what never was. The gap is the gift; the missing, the mercy."
+  },
+  "domain_focus": [
+    "Thresholds & Liminality: doors, gates, moments of transition, the unseen",
+    "Absence & Omission: erasure, forgetting, silence, what is not said",
+    "Memory & Witness: testimony, collateral, the price of truth",
+    "Subtlety & Misdirection: stealth, deception by omission, unseen paths"
+  ],
+  "runekeeper_options": {
+    "thiasos": {
+      "description": "A Runekeeper sworn to Nimorinth does not bind a familiar of flesh and blood. Their Thiasos is a creature of silence and gaps: a moth that flies only in the blind spot of the eye, a spider that weaves webs only in unlit corners, a mouse that is only ever heard, never seen, or a patch of shadow that moves against the light.",
+      "care": "This creature requires no food, but it must be offered a silence daily — a minute of absolute stillness and quiet contemplation from its bearer. If neglected for a week, it becomes Compromised (it fades, imposing –1 die on all Stealth or Subterfuge rolls for its bearer until a significant silence is given)."
+    },
+    "codex": {
+      "description": "The Codex of Nimorinth is never a whole book. It may be a collection of blank vellum pages that reveal writing only when held in a specific type of shadow, a slate that must be dusted with ash from an extinguished lamp, or a key that unlocks a non-existent drawer.",
+      "upkeep": "Because Nimorinth's truths are written in omissions, the Codex requires upkeep: the Runekeeper must spend an hour each week in a truly liminal space (a doorway at twilight, a forgotten attic, a crossroads) and erase one of their own memories onto its pages, or the symbols fade (treat as Compromised until a suitable omission is made)."
+    }
+  },
+  "patrons_gift": {
+    "name": "Nimorinth's Absence",
+    "description": "Once per scene as an action, a Runekeeper of Nimorinth may focus on a specific absence — a missing object, a silent moment, an unlit lamp.",
+    "effect": "For the rest of the scene, they gain +1 die to Stealth or Subterfuge rolls that exploit that absence, and the first time each scene they would fail to move unseen through a threshold, they may reroll the check (the shadows part for them).",
+    "cost": "After the scene, the user marks +1 Obligation to Nimorinth."
+  },
+  "rites": [
+    {
+      "name": "The Unmeasured Room",
+      "tier": "Low",
+      "xp": 4,
+      "action": "Scene",
+      "range": "Self",
+      "resist": "No",
+      "tags": ["GAP", "STEALTH"],
+      "materials": "An inward-opening door; a held breath to the count of three.",
+      "effect": "Create one Gap token — a specific absence that others ignore (a watcher forgets a latch, a ledger skips a line, a patrol overlooks a side door). You gain +1 die when exploiting this gap. An ally may spend 1 Boon to treat one failed roll as 'never happened' (retcon of that action only).",
+      "push_it": "The gap becomes contagious: nearby like-absences echo. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Borrowed Memory",
+      "tier": "Low",
+      "xp": 5,
+      "action": "Scene",
+      "range": "Touch",
+      "resist": "No",
+      "tags": ["MEMORY", "TRUTH"],
+      "materials": "A silver thread tied fingertip-to-fingertip; a whispered 'I was there.'",
+      "effect": "Hold another's specific memory as collateral. Gain +1 die on actions grounded in that memory's context. Memory returns slightly out of order unless 'paid in full' with a truthful account before witnesses.",
+      "push_it": "Hold two memories simultaneously; mark +1 Obligation as temporal dissonance builds. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "The Missing Line",
+      "tier": "Standard",
+      "xp": 8,
+      "action": "Scene",
+      "range": "Near",
+      "resist": "No",
+      "tags": ["OMISSION", "TRUTH"],
+      "materials": "A document with space for amendment; a shadowless gray feather.",
+      "effect": "Cause one clause, name, or line to vanish from a witnessed text. DV = complexity/scope. On success, the erasure is seamless and socially 'always so.'",
+      "push_it": "The omission propagates to directly-referenced copies; mark +1 SB (Diamonds) as reality adjusts. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Instant."
+    },
+    {
+      "name": "Duskmark's Passage",
+      "tier": "Standard",
+      "xp": 7,
+      "action": "Scene",
+      "range": "Zone",
+      "resist": "No",
+      "tags": ["PASSAGE", "TRAVEL"],
+      "materials": "Two duskmarks set at twilight; an unlit pipe that smokes by itself.",
+      "effect": "Declare safe-conduct between the paired thresholds. Allies gain +2 dice to Traverse; enemies suffer -1 die to intercept within the lane. A counter-witness at either end can block.",
+      "push_it": "Passage becomes bidirectional for the scene; mark +1 Obligation — the path remembers you. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Veil-Bending",
+      "tier": "High",
+      "xp": 12,
+      "action": "Scene",
+      "range": "Zone",
+      "resist": "No",
+      "tags": ["VEIL", "ILLUSION"],
+      "materials": "A room with four doors; a mirror that reflects only doorways.",
+      "effect": "Reverse directions within the space; quiet a name until dawn; align exits with intent rather than map. Zone gains the [VEIL] tag: +2 dice to misdirection; -2 dice to direct confrontation.",
+      "push_it": "Make it permanent for this site; start Threshold Drift [6] as the place migrates from the world. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "Extended action.",
+      "duration": "Scene."
+    }
+  ],
+  "cantors_and_cults": {
+    "cantors": {
+      "name": "The Cantor's Song",
+      "description": "A Cantor of Nimorinth does not sing notes, but the spaces between notes. Their music is one of rests, pauses, and breaths held too long. Their voice is used to erase sound, to make a crowded room feel empty, or to make a promise forgotten before it is fully heard. Nimorinth's Cantors are often found in places of negotiation or treaty-signing, ensuring the final agreement contains the necessary, profitable omissions."
+    },
+    "cult": {
+      "name": "The Cult of the Absent Host",
+      "description": "Nimorinth's cults gather in non-places: abandoned train stations at midnight, the attics of forgotten houses, the space under a bridge that no one claims. The Absent Host is a fellowship of those who profit from what is not said and what is not seen. A ritual of the Cult involves a shared meal where one seat is always left empty for Nimorinth, and the most valuable dish is the one that is never served. Their creed is written in smoke and fading light: 'The greatest gift is an exit no one remembers. The greatest truth is the one left unspoken.' Outsiders are welcome if they bring a secret to erase."
+    }
+  },
+  "witchcraft": {
+    "name": "The Art of the Threshold-Weaver",
+    "description": "A witch who walks with Nimorinth is a threshold-weaver or gap-monger — one who crafts with absence and silence. Their magic works through the materials of negation: a candle that burns darkness instead of light, a key that opens locks by making them forget they are locked, or a scissor that cuts the threads of memory. Their tools are never whole; they use broken mirrors, half-spoken words, and borrowed shadows.",
+    "color": "#5a5a5a",
+    "lore": "The gap-monger's path is patience with the unwritten. They learn that the most complete document is the one with a single line missing, that the safest room is the one no one remembers entering, and that a debt owed for a secret erased is a debt that can never quite be collected — because no one can prove it was ever there.",
+    "signature_rite": "The Unmeasured Room",
+    "quote": "The greatest gift is an exit no one remembers.",
+    "tools": {
+      "duskmark_lantern": {
+        "name": "The Duskmark Lantern",
+        "description": "A lantern with panes of smoked glass that seems to absorb light rather than cast it. Once per session, the witch may light this lantern (though it produces no visible flame) in a doorway or threshold. For the next scene, the threshold becomes veiled; those who pass through it are not immediately noticed, and sounds are dampened. The lantern grows cold when it is ready to be used again."
+      }
+    },
+    "hedge_gifts": [
+      {
+        "name": "Whisper of Omission",
+        "xp": 2,
+        "description": "Once per scene, the witch may whisper a single word into someone's ear. That word is temporarily erased from the target's vocabulary; they cannot speak it or understand it for the next hour. This can be used to disable a command word, prevent a warning, or simply cause profound confusion."
+      },
+      {
+        "name": "Gap in the Ledger",
+        "xp": 3,
+        "description": "Once per scene, touch a written record (a logbook, a guest list, a manifest) and cause a single entry to be skipped when next read aloud or copied. The original entry is not destroyed, merely overlooked, until someone specifically searches for it."
+      },
+      {
+        "name": "Held Breath",
+        "xp": 3,
+        "description": "Once per scene, for one exchange, you and everyone within Near of you become momentarily unremarkable — witnesses who glance your way retain no specific detail of what they saw, though they know something happened."
+      }
+    ]
+  },
+  "monastic_tradition": {
+    "name": "Threshold Warden",
+    "description": "You do not guard the door; you guard the idea of the door. You watch the unwatched space.",
+    "color": "#5a5a5a",
+    "prerequisites": "Wits 3+, Stealth 2+, Rite of the Unmeasured Room or Cantor of Nimorinth.",
+    "quote": "The gap is the gift; the missing, the mercy.",
+    "debt_resistant_frame": "Monks of the Threshold Warden understand that a promise is just another threshold. They gain +1 die to resist any debt or obligation that would bind them to a specific location or compel them to speak plain truth. If they succeed, the obligation's wording temporarily blurs, as if the ink had run.",
+    "techniques": {
+      "basic": {
+        "name": "Unseen Path",
+        "xp": 6,
+        "description": "Once per scene, you may step from one shadow to another within Near, provided neither is under direct observation.",
+        "cost": "1 Boon",
+        "prereq": "Wits 3+"
+      },
+      "advanced": {
+        "name": "Erase the Moment",
+        "xp": 8,
+        "description": "When you would be noticed, you may spend a Boon to have the observer simply overlook you, as if your presence was a trick of the light.",
+        "cost": "1 Boon",
+        "prereq": "Wits 3+, Subterfuge 2+"
+      },
+      "master": {
+        "name": "Keeper of the Unlit Pipe",
+        "xp": 12,
+        "description": "Once per session, you can enforce a profound silence upon a Zone. For one scene, all sound ceases, all lights gutter out, and all witnesses find their attention sliding away from the area. Those within gain +2 dice to Stealth and Subterfuge. After using this talent, you mark +1 permanent Corruption (your own outline becomes faint) and +1 Obligation to Nimorinth — a silence this deep always demands a reciprocal noise eventually.",
+        "cost": "1 permanent Corruption and +1 Obligation to Nimorinth",
+        "prereq": "Tier III, Wits 4+"
+      }
+    },
+    "corruption": [
+      {
+        "tier": 1,
+        "benefit": "Shadow-Step: Once/scene, move between witnessed thresholds in Near.",
+        "cost": "Almost-Presence: In crowds you slip notice; begin Position –1 when trying to stand out."
+      },
+      {
+        "tier": 2,
+        "benefit": "Gap-Sense: +1 die to Notice when something vital is missing or altered.",
+        "cost": "Blind Spot: You may miss the obvious present while hunting absences."
+      },
+      {
+        "tier": 3,
+        "benefit": "Echo-Accounting: Once/session, ensure a vow 'takes' by finding its last true witness.",
+        "cost": "Witness Weight: Maintain three active witness tokens or suffer –1 die to social rolls."
+      },
+      {
+        "tier": 4,
+        "benefit": "Flow-Nudge: Once/scene, open the exit you meant; close the boastful boast.",
+        "cost": "Direction Drift: Maps resist you; –1 die to Navigation without a living guide."
+      },
+      {
+        "tier": 5,
+        "benefit": "Absence Artisan: Once/session, create a beneficial absence (forgotten debt, skipped patrol, missing line).",
+        "cost": "Obligation Void: Others forget promises owed to you; –1 die to enforce agreements."
+      },
+      {
+        "tier": "6+",
+        "benefit": "Gray Dominion: Once/session, declare an area 'properly absent': allies +2 dice to stealth/deception; foes –2 dice to detection/truth.",
+        "cost": "Reality Thinning: Mark +2 Obligation; risk permanent Harm from existing half-out-of-world."
+      }
+    ]
+  },
+  "corruption": [
+    {
+      "tier": 1,
+      "benefit": "Shadow-Step: Once/scene, move between witnessed thresholds in Near.",
+      "cost": "Almost-Presence: In crowds you slip notice; begin Position –1 when trying to stand out."
+    },
+    {
+      "tier": 2,
+      "benefit": "Gap-Sense: +1 die to Notice when something vital is missing or altered.",
+      "cost": "Blind Spot: You may miss the obvious present while hunting absences."
+    },
+    {
+      "tier": 3,
+      "benefit": "Echo-Accounting: Once/session, ensure a vow 'takes' by finding its last true witness.",
+      "cost": "Witness Weight: Maintain three active witness tokens or suffer –1 die to social rolls."
+    },
+    {
+      "tier": 4,
+      "benefit": "Flow-Nudge: Once/scene, open the exit you meant; close the boastful boast.",
+      "cost": "Direction Drift: Maps resist you; –1 die to Navigation without a living guide."
+    },
+    {
+      "tier": 5,
+      "benefit": "Absence Artisan: Once/session, create a beneficial absence (forgotten debt, skipped patrol, missing line).",
+      "cost": "Obligation Void: Others forget promises owed to you; –1 die to enforce agreements."
+    },
+    {
+      "tier": "6+",
+      "benefit": "Gray Dominion: Once/session, declare an area 'properly absent': allies +2 dice to stealth/deception; foes –2 dice to detection/truth.",
+      "cost": "Reality Thinning: Mark +2 Obligation; risk permanent Harm from existing half-out-of-world."
+    }
+  ],
+  "playstyle_notes": {
+    "description": "Nimorinth rewards subtlety, precision, and an appreciation for what is not there. Followers excel as spies, saboteurs, diplomats, and archivists who understand that power often lies in the carefully managed gap. The corruption progression leads characters toward becoming creatures of silence and shadow, but at the cost of their presence in the world and their ability to hold onto social bonds. Intrusions often take the form of doors leading to the wrong place, witnesses appearing where none should be, or a vital piece of information being suddenly and inexplicably forgotten by everyone. Ideal for players who love intrigue, misdirection, and operating from the shadows.",
+    "emphasizes": [
+      "Subtlety Over Force: The unseen cut is the deepest.",
+      "Liminal Spaces: Power resides in transitions, not destinations.",
+      "The Unspoken Agreement: The most binding contracts are those never written down.",
+      "Memory as Currency: What you choose to forget can be more valuable than what you remember."
+    ]
+  },
+  "sample_adventure": {
+    "title": "The Peace That Was Never Signed",
+    "description": "Two rival houses believe a treaty was signed at their last parley, ending a blood feud. Neither house's copy of the document exists — nor does anyone quite remember the signing, only the relief that followed. Someone is unmaking the peace one omission at a time, and unless the party can find the last true witness to that room, the feud will resume as if the years of quiet had never happened. Nimorinth is watching to see if they value the peace enough to pay its price twice.",
+    "quote": "You do not need to remember the treaty to keep it. You only need to stop noticing that you have forgotten it was ever broken."
+  },
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

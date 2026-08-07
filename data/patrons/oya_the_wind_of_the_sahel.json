@@ -1,0 +1,277 @@
+{
+  "id": "oya-wind-of-the-sahel",
+  "type": "patron",
+  "title": "Oya, the Wind of the Sahel",
+  "subtitle": "Liberation & Dust",
+  "version": "1.0.0",
+  "tags": [
+    "wind",
+    "dust",
+    "liberation",
+    "change",
+    "cleansing",
+    "harmattan",
+    "erasure",
+    "sahel"
+  ],
+  "lore": {
+    "description": "Oya is the harmattan — the dry wind that sweeps the grasslands, carrying red dust from the Ashaani desert. She is neither cruel nor kind. She is the breath that clears the old, the storm that scatters what has grown stagnant, the wind that opens a locked door by rattling it until the latch gives way.",
+    "followers": "Her followers are iconoclasts, slave-liberators, and those who believe that the only way to defeat a corrupt system is to let it collapse under its own weight — and then scatter the ashes. In Ashaan, Oya is whispered as the Dust-Rider, a faceless figure who appears during sandstorms to cut the chains of the bound. In the Sahel, she is the Cleansing Wind, invoked before burning a corrupt contract. In Ngomebe, her name is carved on keystones that have cracked — because Oya taught the stone to break. She does not build. She makes room for those who will.",
+    "quote": "Oya does not ask permission. She does not wait for the right season. She blows, and the dead leaves fall, and the dust settles on new ground. That is not destruction. That is preparation."
+  },
+  "domain_focus": [
+    "Dust and Wind: the harmattan, sandstorms, the dry breath of the Sahel",
+    "Change: destroying the old to make way for the new",
+    "Liberation: breaking chains, opening locked doors, scattering what binds",
+    "Cleansing: burning corrupt contracts, erasing false ledgers, the red dust that covers old tracks"
+  ],
+  "runekeeper_options": {
+    "thiasos": {
+      "description": "A Runekeeper sworn to Oya does not bind a creature of settled earth or still water — they bind a creature of dust and dry wind. Their Thiasos is a small beast or mythological being that embodies the harmattan: a sand-colored gecko that sheds its skin twice as fast as any other, a small horned viper that leaves no tracks in loose sand, a dust-bathed finch that appears only after a windstorm, a scarab beetle that rolls dry dung across the hottest plains, or a pale mouse that nests in abandoned grain silos and vanishes when the wind shifts.",
+      "care": "This creature requires no food, but it must be allowed to feel the dry wind each day — a sealed room suffocates it. If neglected for a week, it becomes Compromised (its color fades, and its bearer suffers –1 die on all rolls involving escape or evasion until it next tastes a dust storm)."
+    },
+    "codex": {
+      "description": "The Codex of Oya is never a book kept indoors. It may be a collection of cracked clay tablets that must be read in the wind, a scroll of desert leather that crumbles if not exposed to dry air, a bundle of dried reeds tied with red thread, or a single shard of green glass that holds the memory of a storm.",
+      "upkeep": "Because the harmattan erases what is written, the Codex requires upkeep: the Runekeeper must spend an hour each week in a dry, windy place, allowing the dust to resettle on the pages, or the Rites stored there become faint (treat as Compromised until re-swept)."
+    }
+  },
+  "patrons_gift": {
+    "name": "Oya's Breath",
+    "description": "Once per scene as an action, a Runekeeper of Oya may touch a held item (weapon, tool, or garment) and whisper a word of the harmattan.",
+    "effect": "For the rest of the scene, the item grants +1 die to Stealth or Escape rolls in dry or dusty environments, and the first time each scene the bearer would be restrained (by chains, ropes, or a grapple), they may reroll the escape check (the wind loosens what binds).",
+    "cost": "After the scene, the user marks +1 Obligation to Oya."
+  },
+  "rites": [
+    {
+      "name": "Rite of Oya's Breath",
+      "tier": "Low",
+      "xp": 4,
+      "action": "Scene",
+      "range": "Zone",
+      "resist": "No",
+      "tags": ["WIND", "STEALTH", "DECEPTION"],
+      "materials": "A pinch of red dust blown from the palm, or a dry leaf that has never been wet.",
+      "effect": "For one scene, you may extinguish any non-magical fire in a zone. The extinguishing is silent and leaves no smoke. Additionally, any open flame within Near range gutters and may be snuffed with a gesture.",
+      "push_it": "The wind carries the extinguishing effect to all fires in Near range. Magical fires are suppressed for one exchange (they flicker but do not go out). Mark 1 SB (Spades) as the unnatural stillness draws attention. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Dust Mask",
+      "tier": "Low",
+      "xp": 8,
+      "action": "Scene",
+      "range": "Self or Ally",
+      "resist": "No",
+      "tags": ["PROTECT", "WEATHER", "SURVIVAL"],
+      "materials": "A strip of cloth that has been dried in the harmattan for nine days.",
+      "effect": "You or an ally within Near becomes immune to the effects of sandstorms, dust clouds, and airborne irritants for one scene. Visibility is unaffected for you; you can see through blowing dust as if it were clear air. The cloth wraps itself around your face, cool and dry.",
+      "push_it": "Extend the effect to all allies within Near. The cloth becomes permanently stained red; it may be recognized by those who know Oya's sign. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of Scattered Chains",
+      "tier": "Standard",
+      "xp": 9,
+      "action": "Scene",
+      "range": "Touch",
+      "resist": "Yes",
+      "tags": ["LIBERATE", "WIND", "BOOST"],
+      "materials": "A length of chain, rope, or a physical restraint no longer in use.",
+      "effect": "Touch a restrained creature (mundane bonds, a locked cage, a shackle) and unmake the binding as if the wind had loosened every knot and hinge at once. The target is freed and gains +1 die on their next action taken to flee or resist recapture.",
+      "push_it": "Free all restrained creatures within Near, and mark the area with a haze of drifting red dust that lingers for an hour, marking it visibly as Oya's work. Mark 1 SB (Clubs). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Instant."
+    },
+    {
+      "name": "Rite of the Cleansing Wind",
+      "tier": "High",
+      "xp": 14,
+      "action": "Extended",
+      "range": "Zone",
+      "resist": "No",
+      "tags": ["WIND", "ERASURE", "DEBT", "FEAR"],
+      "materials": "A corrupt contract, a slave collar, or a false ledger; and a handful of red dust from the Ashaani desert.",
+      "effect": "Summon a dust storm that lasts one hour within a zone (approximately a city block). All actions within are Desperate due to poor visibility. The storm scatters one specific piece of evidence — a single document, a set of tracks, or a witness's memory of a specific event — as chosen by the caster. The evidence is carried away by the wind and cannot be recovered by mundane means.",
+      "push_it": "The dust storm also reveals one hidden truth — a secret door, a buried body, a false wall — as the wind strips away what was hidden. The caster gains the Dust-Marked condition (a red stain on their hands that cannot be washed off for one month; imposes –1 die on social rolls with those who recognize the mark). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "Extended action.",
+      "duration": "1 hour."
+    },
+    {
+      "name": "Rite of the Harmattan's Judgment",
+      "tier": "High",
+      "xp": 13,
+      "action": "Extended",
+      "range": "Zone",
+      "resist": "Yes",
+      "tags": ["WIND", "LIBERATE", "FEAR", "AREA"],
+      "materials": "The broken links of a chain that once bound many, scattered to the four directions.",
+      "effect": "Call the full weight of the harmattan down upon a single site of oppression. For one hour, all locks, chains, cages, and mundane restraints within the zone spring open of their own accord, and every corrupt document within it is scoured of ink. Those who would re-bind the freed suffer –2 dice to any roll to restrain, imprison, or coerce for the duration.",
+      "push_it": "The wind marks every oppressor present with the Dust-Marked condition, and the site itself becomes known as a place Oya has claimed — locals will whisper of it for a generation. Mark 2 SB (Spades) as the Hollow takes note of so much erased at once. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "Extended action.",
+      "duration": "1 hour."
+    }
+  ],
+  "cantors_and_cults": {
+    "cantors": {
+      "name": "The Cantor's Song",
+      "description": "A Cantor of Oya sings in dry tones — melodies that crackle like dust on the tongue, harmonies that feel like a parched throat. Their voice is used to call the harmattan, to make a guard's eyes sting so they cannot see, or to sing a locked door open by vibrating the latch. Oya's Cantors are often found in deserts, on the edge of mines, or in the company of those who are about to burn a bridge."
+    },
+    "cult": {
+      "name": "The Cult of the Red Dust",
+      "description": "Oya's cults meet in places where the wind never stops: dry riverbeds, abandoned quarries, the lee side of tall buildings during a sandstorm. The Red Dust is a fellowship of iconoclasts, ex-slaves, and those who have destroyed a contract that bound them. A ritual involves each member writing a binding obligation on a piece of parchment, then throwing it into the wind. If the parchment is carried away, the obligation is considered voided — by Oya, not by law. If it falls back to the ground, the debtor must perform a service before the next storm. Their creed is written in dust on a single stone: 'What the wind scatters, no chain can gather.' Outsiders are welcome if they bring something they wish to see destroyed — a letter, a collar, a memory."
+    }
+  },
+  "witchcraft": {
+    "name": "The Art of the Dust-Weaver",
+    "description": "A witch who walks with Oya is a dust-weaver or wind-caller — one who crafts erasure. Their magic works through the tools of dispersal: a small leather pouch of red dust from a slave market, a fan made of dried palm fronds, a whistle that mimics the sound of the harmattan. Their tools are never permanent; a fan is burned after its seventh use, a whistle cracks after the ninth. In the Brass Coast, a Sidhi witch might scatter red dust at a customs post to make the officers forget a smuggler's face; in Ashaan, a Breath-less agent uses Oya's rites to erase a name from the Black Hand's ledger.",
+    "color": "#c1793a",
+    "lore": "The dust-weaver's path is impermanence made useful. They learn that nothing built to last forever deserves to, that a chain rusts faster than the wind forgets, and that the surest way to end an injustice is to make it impossible to prove it ever happened. Oya's witches are patient in a way fire is not — they wait for the season, then scatter everything at once.",
+    "signature_rite": "Rite of Oya's Breath",
+    "quote": "What the wind scatters, no chain can gather.",
+    "tools": {
+      "dust_pouch": {
+        "name": "The Dust Pouch",
+        "description": "A small leather pouch filled with red dust collected from a place of oppression — a slave market, a debtors' prison, a burnt courthouse. Once per session, the witch may scatter the dust in a line across a threshold. For the next hour, any who cross that threshold forget why they entered (Resolve DV 4 to resist). The pouch can also be used to 'clean' a document: sprinkling dust on a contract erases one clause permanently. The dust is consumed on use."
+      }
+    },
+    "hedge_gifts": [
+      {
+        "name": "Scatter the Tracks",
+        "xp": 4,
+        "description": "Once per scene, the witch may touch a set of tracks (footprints, wheel ruts, blood trails) and whisper a word of the harmattan. The tracks are erased as if a wind had passed — no mundane tracker can follow them. The Hollow, however, notices the absence; the GM gains 1 SB to spend on a pursuit complication later in the session."
+      },
+      {
+        "name": "Breath of Release",
+        "xp": 3,
+        "description": "Once per scene, blow gently across a knot, lock, or simple binding; it loosens as if worn by years of dry wind. Works only on mundane fastenings and takes one full action to complete."
+      },
+      {
+        "name": "Dry Season Ward",
+        "xp": 3,
+        "description": "Once per day, mark a small object (a bead, a coin, a knot of cord) with dust and give it to another. For the day, the bearer gains +1 die to resist heat, thirst, and exhaustion in arid conditions."
+      }
+    ]
+  },
+  "monastic_tradition": {
+    "name": "The Way of the Harmattan",
+    "description": "Monks of the Harmattan train in open, wind-scoured places, learning to move as the dry wind moves — never resting in one spot long enough to be pinned down, never striking with more force than is needed to loosen what should already be broken. They are teachers to the enslaved and thorns in the side of anyone who mistakes stillness for permanence.",
+    "color": "#c1793a",
+    "prerequisites": "Body 2+, Spirit 3+, Rite of Oya's Breath or Cantor of Oya.",
+    "quote": "The dust settles on new ground. That is not destruction. That is preparation.",
+    "debt_resistant_frame": "Monks of the Harmattan treat every chain, contract, and coerced promise as something the wind is already unmaking. They gain +1 die to resist any Obligation or geas rooted in captivity, coercion, or unjust hierarchy. If they succeed, the binding's physical token (a document, a collar, a seal) visibly frays at the edges, as if aged a decade in a moment.",
+    "techniques": {
+      "basic": {
+        "name": "Dust Step",
+        "xp": 5,
+        "description": "Once per scene, move through a crowd, a narrow gap, or difficult terrain as if it offered no resistance, leaving no dust or footprint behind.",
+        "cost": "1 Boon",
+        "prereq": "Body 2+"
+      },
+      "advanced": {
+        "name": "Loosen the Latch",
+        "xp": 8,
+        "description": "Once per scene, touch a lock, chain, or restraint and cause it to fail at the worst possible moment for its owner — not immediately, but within the scene, at the GM's discretion.",
+        "cost": "1 Fatigue",
+        "prereq": "Tier II, Spirit 3+"
+      },
+      "master": {
+        "name": "Herald of the Storm",
+        "xp": 13,
+        "description": "Once per session, call a localized dust storm into being over a zone for one exchange, granting all allies within +2 dice to Stealth and Escape while foes suffer -2 dice to Notice and pursuit. Afterward, you mark +1 permanent Corruption (a faint red tint settles permanently into your skin and hair) and +1 Obligation to Oya.",
+        "cost": "1 permanent Corruption and +1 Obligation to Oya",
+        "prereq": "Tier III, Spirit 4+"
+      }
+    },
+    "corruption": [
+      {
+        "tier": 1,
+        "benefit": "Dust-Sense: +1 die to detect secret doors, hidden compartments, or buried objects.",
+        "cost": "Dry Throat: –1 die to social rolls requiring a smooth voice; you cough when you lie."
+      },
+      {
+        "tier": 2,
+        "benefit": "Scatter the Wind: Once per scene, treat a failed Stealth or Escape roll as a success (you vanish in a puff of dust).",
+        "cost": "Dust-Marked: Red dust clings to your clothes no matter how you brush it; –1 die to social rolls with authorities who notice."
+      },
+      {
+        "tier": 3,
+        "benefit": "Eraser's Hand: +2 dice to Forgery or Deception when destroying evidence.",
+        "cost": "Compulsive Erasure: You must erase one written lie you see; if you cannot, mark 1 Fatigue."
+      },
+      {
+        "tier": 4,
+        "benefit": "Dust Storm's Eye: Once per session, see through any dust, fog, or smoke as if it were clear air.",
+        "cost": "Wind-Blown: –1 die to resist being moved or knocked prone; you are lighter than you seem."
+      },
+      {
+        "tier": 5,
+        "benefit": "Cleansing Wind: Once per session, destroy one non-magical document, lock, or chain by touch.",
+        "cost": "Oblivion's Scent: Every object you destroy adds 1 tick to a Hollow Attention timer. The Hollow wants to know why you are erasing."
+      },
+      {
+        "tier": "6+",
+        "benefit": "Avatar of the Harmattan: Once per session, become immaterial for one exchange — you are a cloud of red dust. You cannot be harmed, but you cannot attack.",
+        "cost": "Dust to Dust: Mark +3 Obligation. You begin to forget your own past — memories crumble like dry parchment. Your eyes are the color of dried blood, and your voice sounds like wind over sand. Once per week, you must destroy something of personal value or suffer 2 Fatigue. Lost memories may be recovered through quests or significant roleplay, but the process is never complete."
+      }
+    ]
+  },
+  "corruption": [
+    {
+      "tier": 1,
+      "benefit": "Dust-Sense: +1 die to detect secret doors, hidden compartments, or buried objects.",
+      "cost": "Dry Throat: –1 die to social rolls requiring a smooth voice; you cough when you lie."
+    },
+    {
+      "tier": 2,
+      "benefit": "Scatter the Wind: Once per scene, treat a failed Stealth or Escape roll as a success (you vanish in a puff of dust).",
+      "cost": "Dust-Marked: Red dust clings to your clothes no matter how you brush it; –1 die to social rolls with authorities who notice."
+    },
+    {
+      "tier": 3,
+      "benefit": "Eraser's Hand: +2 dice to Forgery or Deception when destroying evidence.",
+      "cost": "Compulsive Erasure: You must erase one written lie you see; if you cannot, mark 1 Fatigue."
+    },
+    {
+      "tier": 4,
+      "benefit": "Dust Storm's Eye: Once per session, see through any dust, fog, or smoke as if it were clear air.",
+      "cost": "Wind-Blown: –1 die to resist being moved or knocked prone; you are lighter than you seem."
+    },
+    {
+      "tier": 5,
+      "benefit": "Cleansing Wind: Once per session, destroy one non-magical document, lock, or chain by touch.",
+      "cost": "Oblivion's Scent: Every object you destroy adds 1 tick to a Hollow Attention timer. The Hollow wants to know why you are erasing."
+    },
+    {
+      "tier": "6+",
+      "benefit": "Avatar of the Harmattan: Once per session, become immaterial for one exchange — you are a cloud of red dust. You cannot be harmed, but you cannot attack.",
+      "cost": "Dust to Dust: Mark +3 Obligation. You begin to forget your own past — memories crumble like dry parchment. Your eyes are the color of dried blood, and your voice sounds like wind over sand. Once per week, you must destroy something of personal value or suffer 2 Fatigue. Lost memories may be recovered through quests or significant roleplay, but the process is never complete."
+    }
+  ],
+  "playstyle_notes": {
+    "description": "Oya rewards those who act decisively, who destroy what is corrupt, and who trust that the wind will scatter the evidence. Followers become masters of erasure, escape, and the art of making things vanish. The corruption progression leads toward a being that is itself becoming dust — forgetful, light, and difficult to hold — but one that can pass through any locked door. Ideal for iconoclasts, ex-slaves, thieves, and anyone who has ever wanted to burn a contract and walk away whistling.",
+    "emphasizes": [
+      "Dust and Wind: the harmattan, sandstorms, the dry breath of the Sahel",
+      "Liberation: breaking chains, opening locked doors, scattering what binds",
+      "Cleansing: burning corrupt contracts, erasing false ledgers",
+      "The Hollow's Interest: erasure attracts the Hollow, which collects forgotten debts"
+    ]
+  },
+  "sample_adventure": {
+    "title": "The Ledger That Would Not Burn",
+    "description": "A debt-broker in a border town keeps a ledger of every soul sold into indenture along the caravan road — and the ledger is warded against fire, water, and theft. The party is approached by a Red Dust cell to help destroy it before the broker can use it to reclaim three children sold years ago. But the ledger's wards were bought with real debts, real names, real Obligations — and unmaking it may mean someone else's carefully built freedom unravels too.",
+    "quote": "You want to know what the wind spares? Nothing. That is the mercy of it. Nothing gets to keep what it took unfairly — not even us."
+  },
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

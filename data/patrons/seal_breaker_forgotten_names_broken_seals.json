@@ -1,0 +1,277 @@
+{
+  "id": "seal-breaker-forgotten-names",
+  "type": "patron",
+  "title": "The Seal-Breaker",
+  "subtitle": "Forgotten Names & Broken Seals",
+  "version": "1.0.0",
+  "tags": [
+    "erasure",
+    "anonymity",
+    "broken-seals",
+    "forgery",
+    "false-contracts",
+    "debt",
+    "freedom",
+    "interregnum"
+  ],
+  "lore": {
+    "description": "When a dynasty falls, the first thing the conquerors burn is the seal of the old emperor. The Seal-Breaker is the spirit of that ash — the one who whispers 'you are not your father's debt.' She was not born; she was left behind. She has no name because names are chains, and she has cut every chain she ever wore.",
+    "followers": "Followers are ronin who have cut their own names, escaped slaves, and those who have been erased from clan ledgers. Her shrines are abandoned gatehouses and broken milestone markers. She does not ask for worship; she asks only that you remember what you were before someone else named you.",
+    "quote": "The Seal-Breaker does not ask for your name. She asks what you are willing to forget. I met her in a collapsed archive, wearing the face of a drowned scholar. She offered to erase my debt to the baronet if I would burn my own journal. I did not. She laughed. 'Then pay in stories,' she said. 'The ink remembers.'"
+  },
+  "domain_focus": [
+    "Forgotten Names: erasure, anonymity, the power of being unwitnessed",
+    "Broken Seals: freeing what was bound, opening what was locked",
+    "False Contracts: destroying oaths that were never just",
+    "The Space Between Dynasties: interregnums, ruins, and the silence after a seal cracks"
+  ],
+  "runekeeper_options": {
+    "thiasos": {
+      "description": "A Runekeeper sworn to the Seal-Breaker does not bind a creature of bright light or easy memory. Their Thiasos is a small creature that embodies forgotten things: a ghost moth that appears only when a sealed door is opened, a clay scarab that crumbles to dust when a false oath is sworn, a gray mouse that nests in the voids of broken seals, a blind cave fish that has never seen a name carved in stone, or a pale spider that weaves webs in the shape of missing letters.",
+      "care": "This creature requires no food, but it must be shown a new broken seal — a cracked wax stamp, a snapped lock, a torn ribbon — each day. If neglected for a week, it becomes Compromised (it hides, and its bearer suffers –1 die on all Deception and Forgery rolls until a forgotten name is whispered to it)."
+    },
+    "codex": {
+      "description": "The Codex of the Seal-Breaker is never a book of finished contracts. It may be a ledger with every name struck through, a box of shattered seals, a scroll of water-stained parchment that can never be dried, or a single sheet of vellum that was signed and then burned.",
+      "upkeep": "Because the Seal-Breaker's truths are written in erasure, the Codex requires upkeep: the Runekeeper must spend an hour each week cutting a new line through a name in the ledger or adding a fresh crack to a seal, or the Rites stored there become uncertain (treat as Compromised until a new false contract is witnessed)."
+    }
+  },
+  "patrons_gift": {
+    "name": "The Erasing Word",
+    "description": "Once per scene as an action, a Runekeeper of the Seal-Breaker may touch a held item (weapon, tool, or document) and whisper a word of erasure.",
+    "effect": "For the rest of the scene, the item grants +1 die to Deception or Subterfuge rolls when attempting to pass as someone else, and the first time each scene the bearer would be identified by a witness (magically or mundanely), the witness must test Resolve (DV 4) to remember the bearer's face.",
+    "cost": "After the scene, the user marks +1 Obligation to the Seal-Breaker."
+  },
+  "rites": [
+    {
+      "name": "Rite of the Unwritten Petition",
+      "tier": "Low",
+      "xp": 4,
+      "action": "Scene",
+      "range": "Self",
+      "resist": "No",
+      "tags": ["ERASURE", "DECEPTION", "DEBT"],
+      "materials": "A document that is clearly a forgery, or a blank piece of vellum.",
+      "effect": "You may present a document to an official without speaking your name. For one scene, they cannot use your lineage, prior debts, or past crimes against you — they treat you as a stranger. The document smokes slightly as you hand it over.",
+      "push_it": "The official also forgets your face immediately after the interaction. Mark 1 SB (Diamonds) as the memory gap causes suspicion later. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Cracked Lock",
+      "tier": "Low",
+      "xp": 5,
+      "action": "Instant",
+      "range": "Touch",
+      "resist": "No",
+      "tags": ["ERASURE", "UNSEAL", "LIBERATE"],
+      "materials": "A shard of broken wax seal, or a key filed down to nothing.",
+      "effect": "Touch a lock, chain, or mundane binding and speak the name it was sealed under. The binding opens as if it had never held — no lockpicking roll required. This does not work on wards specifically enchanted against tampering.",
+      "push_it": "The opening is silent and leaves no trace of forced entry, but the Seal-Breaker takes an interest in what you freed. Mark 1 SB (Clubs) as a complication tied to the freed thing surfaces later. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Instant."
+    },
+    {
+      "name": "Rite of the Name Unspoken",
+      "tier": "Standard",
+      "xp": 8,
+      "action": "Scene",
+      "range": "Near",
+      "resist": "Yes",
+      "tags": ["ERASURE", "DECEPTION", "SECRET"],
+      "materials": "A name written on paper and torn in half.",
+      "effect": "Choose a target within Near. For the scene, any attempt by others to identify, describe, or recall that target's name or face suffers –2 dice. The target themself feels a faint unease, as though a piece of them has gone missing.",
+      "push_it": "Extend the effect to include written records of the target's name — ledgers, wanted posters, letters — which blur and smudge for the scene. Mark 1 SB (Hearts) as the erasure leaves a debt owed to someone whose paperwork now makes no sense. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Anonymous Blade",
+      "tier": "Standard",
+      "xp": 9,
+      "action": "Instant",
+      "range": "Touch",
+      "resist": "No",
+      "tags": ["ERASURE", "DEATH", "DEBT"],
+      "materials": "A weapon that has never been named, or a weapon that has been filed smooth of all markings.",
+      "effect": "Your next attack with this weapon leaves no trace — no wound pattern, no blood type, no memory. If you kill, the victim's name is struck from all public ledgers for a generation. No divination or spirit questioning can identify you as the killer.",
+      "push_it": "The victim's name is also erased from the memory of their closest kin. Mark 2 SB (Hearts); the Seal-Breaker may ask you to forget a friend's face in return. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Instant."
+    },
+    {
+      "name": "Rite of the Broken Seal",
+      "tier": "High",
+      "xp": 14,
+      "action": "Extended",
+      "range": "Touch",
+      "resist": "No",
+      "tags": ["ERASURE", "FATE", "DEBT", "CORRUPTION"],
+      "materials": "The original wax seal of a contract, a marriage certificate, or an oath of fealty.",
+      "effect": "Permanently void one formal contract, marriage, or oath of fealty. The two parties no longer owe each other anything. However, you become the witness — any future betrayal between them adds 1 Story Beat to the GM's pool, and dangerous things sealed elsewhere may take an interest in the broken bond. The seal itself melts and reforms into a coin that cannot be spent; it will reappear in your pocket at the worst possible moment.",
+      "push_it": "Void a contract without the consent of one party. They will know something has changed, but not what. Mark +3 Corruption and the hollow coin has a pulse. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "Extended action.",
+      "duration": "Permanent."
+    }
+  ],
+  "cantors_and_cults": {
+    "cantors": {
+      "name": "The Cantor's Song",
+      "description": "A Cantor of the Seal-Breaker sings in erased verses — melodies that start strong and fade to silence before the final note. Their voice is used to make guards forget a password, to hide a fugitive's trail, or to lull an inquisitor into forgetting why they came. The Seal-Breaker's Cantors are rarely remembered; that is how they prefer it."
+    },
+    "cult": {
+      "name": "The Cult of the Unbound Name",
+      "description": "The Seal-Breaker's cults meet in places where names are already forgotten: abandoned notary offices, collapsed archives, the ruins of courthouses. The Unbound Name is a fellowship of forgers, ex-slaves, and those who have cut themselves from their bloodlines. A ritual involves each member writing their birth name on a slip of paper, then burning it. The ashes are mixed with water and drunk. Those who drink forget one debt they owe; those who refuse remember it forever. Their creed is carved on a single broken seal: 'You are not your father's debt. You are not your mother's shame. You are the space where the seal cracked.' Outsiders are welcome to watch, but they must speak their true name aloud before leaving — or lose it."
+    }
+  },
+  "witchcraft": {
+    "name": "The Art of the Name-Cutter",
+    "description": "A witch who walks with the Seal-Breaker is a name-cutter or seal-breaker — one who crafts empty spaces. Their magic works through the tools of erasure: a needle that unpicks a monogram, a quill that writes in ink that fades after reading, a small iron stamp that leaves a mark that cannot be seen but can be felt. In the Brass Coast, a Sidhi lighthouse keeper might refuse to record a name; a witch of the Seal-Breaker would simply erase it from the ledger and watch the ripple effects.",
+    "color": "#4a4038",
+    "lore": "The name-cutter's path is the art of the deliberate gap. They learn that a name is only as strong as the ledger that holds it, and that every ledger can be unwritten. The Seal-Breaker teaches that freedom is not given — it is cut free with a needle of black iron, one stitch of memory at a time.",
+    "signature_rite": "Rite of the Unwritten Petition",
+    "quote": "You are not your father's debt. You are not your mother's shame.",
+    "tools": {
+      "unpicking_needle": {
+        "name": "The Unpicking Needle",
+        "description": "A needle of black iron, cold to the touch, that has never been used to sew anything whole. Once per session, the witch may unpick a single stitch in a document, a garment, or a threshold. The stitch was a name. Now it is a gap. For the rest of the scene, any attempt to identify the person whose name was unpicked suffers –2 dice. The needle can also be used to cut a witness cord; the broken oath is not forgiven, merely unwitnessed."
+      }
+    },
+    "hedge_gifts": [
+      {
+        "name": "Erased Footsteps",
+        "xp": 4,
+        "description": "Once per scene, the witch may touch a set of tracks (footprints, hoofprints, wheel ruts) and whisper a name that is not theirs. The tracks vanish as if never made. But absence is noticed by things that keep count — the GM gains 1 SB to spend on a pursuit complication later in the session."
+      },
+      {
+        "name": "Blank Ledger",
+        "xp": 3,
+        "description": "Once per scene, touch a written record — a page, a sign, a single word — and it goes blank for one hour, as though the ink simply gave up. It returns unharmed afterward, remembering nothing of what happened while it was gone."
+      },
+      {
+        "name": "Stranger's Face",
+        "xp": 5,
+        "description": "Once per session, for the length of a single conversation, you may cause everyone present to see you as a vaguely familiar stranger rather than yourself — not a disguise, but a small unwriting of their certainty. Ends immediately if you do violence."
+      }
+    ]
+  },
+  "monastic_tradition": {
+    "name": "The Way of the Struck Name",
+    "description": "Monks of the Struck Name embody the Seal-Breaker's teaching that identity is a debt owed to no one. They train the body to move as though unwitnessed, and the mind to release the names that were given rather than chosen. Their forms are quiet, evasive, built on the principle that the strongest defense is never having been seen to stand there at all.",
+    "color": "#4a4038",
+    "prerequisites": "Spirit 3+, Presence 2+, Rite of the Unwritten Petition or Cantor of the Seal-Breaker.",
+    "quote": "You are the space where the seal cracked.",
+    "debt_resistant_frame": "A name that has been struck cannot sign for anything. Monks of the Struck Name gain +1 die to resist any magical debt, geas, or contract tied to their birth name, lineage, or former station. If they succeed, the obligation finds no signature to attach to — it simply lapses, unwitnessed.",
+    "techniques": {
+      "basic": {
+        "name": "Unwritten Step",
+        "xp": 5,
+        "description": "Once per scene, take a single action (move, open a door, pass a checkpoint) as though you had never been there — no footprint, no memory left in a witness's mind, no mark in a ledger. Does not work against active pursuit.",
+        "cost": "1 Fatigue",
+        "prereq": "Presence 2+"
+      },
+      "advanced": {
+        "name": "The Forger's Hand",
+        "xp": 8,
+        "description": "You may forge a document, seal, or signature as an action rather than an extended task, and it holds against casual inspection automatically. Close scrutiny still requires a roll.",
+        "cost": "1 Boon",
+        "prereq": "Tier II"
+      },
+      "master": {
+        "name": "The Unwitnessed",
+        "xp": 13,
+        "description": "Once per session, become completely anonymous for one scene — no one can recognize you, describe you, or later recall meeting you, even under magical compulsion. When the scene ends, you gain a permanent Debt Scar (a faint white line across your palm, as if a seal once rested there) — the Hollow no longer pursues one specific debt tied to your old name, but that name may resurface someday, wearing someone else's claim to it.",
+        "cost": "2 Fatigue and +1 Obligation to the Seal-Breaker",
+        "prereq": "Tier III, Spirit 4+"
+      }
+    },
+    "corruption": [
+      {
+        "tier": 1,
+        "benefit": "Forgotten Face: +1 die to Deception when claiming a false identity.",
+        "cost": "Name-Slippery: –1 die when signing legal documents; your signature looks different each time."
+      },
+      {
+        "tier": 2,
+        "benefit": "Unwitnessed Step: Once per scene, treat a failed Stealth roll as a success.",
+        "cost": "Compulsive Erasure: You must correct a false name when you hear one; doing so marks 1 Fatigue."
+      },
+      {
+        "tier": 3,
+        "benefit": "Seal-Sight: +2 dice to detect forged seals or broken contracts.",
+        "cost": "Debt-Blind: –1 die to recall any debt owed to you; someone else keeps that ledger now."
+      },
+      {
+        "tier": 4,
+        "benefit": "Empty Ledger: Once per session, demand a single page from any ledger be left blank. The page will not be noticed missing.",
+        "cost": "Echo of the Missing: You occasionally forget your own name for a moment; –1 die to social rolls when it happens."
+      },
+      {
+        "tier": 5,
+        "benefit": "Name-Eater: Once per session, speak a person's true name and erase it from their own memory for one hour.",
+        "cost": "Watched List: Every name you erase adds 1 tick to a rival's attention timer. Someone out there wants those names back."
+      },
+      {
+        "tier": "6+",
+        "benefit": "The Unsealed: Once per session, become completely anonymous — no one can recognize you, describe you, or remember meeting you. This lasts for one scene.",
+        "cost": "Unnamed: Mark +3 Obligation. You have forgotten your own name. Until you recover it, you cannot be the subject of any oath, blessing, or curse — but neither can you swear one. Your reflection shows a blank space where your face should be."
+      }
+    ]
+  },
+  "corruption": [
+    {
+      "tier": 1,
+      "benefit": "Forgotten Face: +1 die to Deception when claiming a false identity.",
+      "cost": "Name-Slippery: –1 die when signing legal documents; your signature looks different each time."
+    },
+    {
+      "tier": 2,
+      "benefit": "Unwitnessed Step: Once per scene, treat a failed Stealth roll as a success.",
+      "cost": "Compulsive Erasure: You must correct a false name when you hear one; doing so marks 1 Fatigue."
+    },
+    {
+      "tier": 3,
+      "benefit": "Seal-Sight: +2 dice to detect forged seals or broken contracts.",
+      "cost": "Debt-Blind: –1 die to recall any debt owed to you; someone else keeps that ledger now."
+    },
+    {
+      "tier": 4,
+      "benefit": "Empty Ledger: Once per session, demand a single page from any ledger be left blank. The page will not be noticed missing.",
+      "cost": "Echo of the Missing: You occasionally forget your own name for a moment; –1 die to social rolls when it happens."
+    },
+    {
+      "tier": 5,
+      "benefit": "Name-Eater: Once per session, speak a person's true name and erase it from their own memory for one hour.",
+      "cost": "Watched List: Every name you erase adds 1 tick to a rival's attention timer. Someone out there wants those names back."
+    },
+    {
+      "tier": "6+",
+      "benefit": "The Unsealed: Once per session, become completely anonymous — no one can recognize you, describe you, or remember meeting you. This lasts for one scene.",
+      "cost": "Unnamed: Mark +3 Obligation. You have forgotten your own name. Until you recover it, you cannot be the subject of any oath, blessing, or curse — but neither can you swear one. Your reflection shows a blank space where your face should be."
+    }
+  ],
+  "playstyle_notes": {
+    "description": "The Seal-Breaker rewards those who value freedom over obligation, who see names as chains, and who understand that sometimes the kindest act is to forget. Followers become masters of erasure, forgery, and anonymity. The corruption progression leads toward a being who no longer has a name — but who can never be bound by any contract again. Ideal for spies, fugitives, former slaves, and anyone who has ever wanted to start over with a clean slate.",
+    "emphasizes": [
+      "Forgotten Names: power in anonymity",
+      "Broken Seals: freeing what was bound",
+      "False Contracts: destroying unjust oaths",
+      "The Cost of Erasure: forgetting attracts unwanted attention"
+    ]
+  },
+  "sample_adventure": {
+    "title": "The Coin That Returns",
+    "description": "A Runekeeper who used the Rite of the Broken Seal to void a cruel marriage contract finds the melted seal-coin back in their pocket three days later, warm as though freshly forged. The freed spouse has vanished, and the family they escaped is offering a reward for anyone who can prove the marriage was ever broken at all. The party must decide whether to protect the erasure, or let the seal reform and the old name return.",
+    "quote": "Every broken seal leaves a witness. The Seal-Breaker only promised to erase the debt — not to forget that you asked."
+  },
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

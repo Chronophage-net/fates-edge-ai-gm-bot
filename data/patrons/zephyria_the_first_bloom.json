@@ -1,0 +1,278 @@
+{
+  "id": "zephyria-first-bloom",
+  "type": "patron",
+  "title": "Zephyria, the First Bloom",
+  "subtitle": "Romance & Courtship",
+  "version": "1.0.0",
+  "tags": [
+    "romance",
+    "courtship",
+    "anticipation",
+    "flirtation",
+    "desire",
+    "transience",
+    "discovery",
+    "threshold"
+  ],
+  "lore": {
+    "description": "In gardens where petals fall like whispered promises and every glance holds the weight of a thousand unsaid words, the First Bloom reigns. She is the flush of anticipation before a touch, the breath held as fingers nearly meet, the poetry written in the space between heartbeats. Where Livaea binds through hunger and Venara through steadfastness, Zephyria binds through the almost — teaching that romance's truest magic lives not in possession or permanence, but in the shimmering threshold of mutual discovery.",
+    "followers": "Zephyria teaches that to be desired is to be seen as possibility, not property. Her servants cultivate the art of the near-miss: a touch withdrawn at the last second, a confession left hanging in the air, a gift given with no expectation of return. In the masked balls of Velantis, in the moonlit terraces of poets' quarters, in the secret notes passed between lovers' hands, Zephyria's influence is felt. Her cults are the Blush Circle, whose members exchange not vows, but single petals from flowers blooming only at twilight. Her witches are matchmakers who brew teas from night-blooming jasmine, tailors who stitch hidden messages into linings, and minstrels who compose songs that end on an unresolved chord.",
+    "quote": "The most sacred vow is not spoken — it is breathed in the space between 'may I?' and 'yes.' When you honor the almost, you honor the soul's right to choose its own becoming."
+  },
+  "domain_focus": [
+    "Courtship Rituals: the language of glances, exchanged tokens, the art of near-miss",
+    "Anticipation as Power: building tension through withdrawal, the potency of unfulfilled promise",
+    "Beauty in Transience: celebrating fleeting moments, the poignancy of impermanence",
+    "Mutual Discovery: learning another through shared vulnerability, not declaration"
+  ],
+  "runekeeper_options": {
+    "thiasos": {
+      "description": "A Runekeeper sworn to Zephyria does not bind a creature of claw or fang — they bind a companion of fleeting connection. Their Thiasos is a small being of anticipation: a hummingbird that hovers just beyond reach, a night-blooming flower that closes at dawn, a pair of shoes left pointing toward each other by the door, or a moth whose wings shimmer only when two people stand near but do not touch.",
+      "care": "This creature requires no food, but it must be given a token of almost-touch each day (a feather brushed against skin but not grasped, a shadow that nearly overlaps, a silence stretched just past comfort). If neglected for a week, it becomes Compromised (its aura of longing turns frantic, imposing –1 die on all Sway rolls involving genuine attraction for its bearer until offered a fresh token of near-contact)."
+    },
+    "codex": {
+      "description": "The Codex of Zephyria is never a book of dry ink. It may be a fan of silk whose folds reveal different poems with each opening, a vial of perfume that changes scent when held between two palms, a sketchbook where each page shows a half-finished portrait of the Runekeeper's current fascination, or a music box that plays a different melody when wound by different hands.",
+      "upkeep": "Because Zephyria's truths are written in the space between, the Codex requires upkeep: the Runekeeper must spend an hour each week engaging in a ritual of near-intimacy with another (holding hands without speaking, gazing into eyes for three minutes straight, sharing a breath without kissing), or the Rites stored there fade (treat as Compromised until re-suspended)."
+    }
+  },
+  "patrons_gift": {
+    "name": "The Word of Almost",
+    "description": "Once per scene as an action, a Runekeeper of Zephyria may touch a held item (weapon, tool, or garment) and breathe a single word of 'almost'.",
+    "effect": "For the rest of the scene, the item grants +1 die to Sway or Performance rolls, and the first time each scene the bearer engages in a ritual of near-intimacy with a target they wish to charm (prolonged eye contact, hands near but not touching, sharing breath), the target must test Resolve (DV 3) or feel a wave of poignant longing (suffer –1 die to resist the bearer's next social action).",
+    "cost": "After the scene, the user marks +1 Obligation to Zephyria."
+  },
+  "rites": [
+    {
+      "name": "Rite of the Shared Glance",
+      "tier": "Low",
+      "xp": 4,
+      "action": "Scene",
+      "range": "Near",
+      "resist": "Yes",
+      "tags": ["READ", "BOOST", "SECRET"],
+      "materials": "Two mirrors positioned to catch each other's reflection, or a moment of sustained eye-contact (3+ seconds).",
+      "effect": "Your gaze becomes a promise. Gain +1 die to Sway one target in a moment of mutual regard. The target feels a subtle thrill of being truly seen; they are more likely to remember your presence fondly.",
+      "push_it": "The target feels safe enough to name a hope they've hidden (a secret desire, a fear of vulnerability). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Withdrawn Touch",
+      "tier": "Low",
+      "xp": 5,
+      "action": "Scene",
+      "range": "Touch",
+      "resist": "No",
+      "tags": ["BOND", "BOOST", "READ"],
+      "materials": "A flower petal, a silk ribbon, or a token meant to be given but retained.",
+      "effect": "Create a temporary bond of mutual anticipation. Both parties gain +1 die when aiding each other in acts of playful teasing or flirtatious banter. The bond manifests as a shared warmth, like sunlight on skin just before contact.",
+      "push_it": "The bond deepens to shared vulnerability; both sense when the other is hiding longing but suffer –1 die to conceal their own desire. The bond may persist as a gentle ache until the next dawn. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Almost-Vow",
+      "tier": "Standard",
+      "xp": 8,
+      "action": "Scene",
+      "range": "Near",
+      "resist": "Yes",
+      "tags": ["VOW", "BOND", "BOOST", "FEAR"],
+      "materials": "Token exchanged but not kept — a ring held briefly then returned, a lock of hair given then taken back, or a promise spoken into wind.",
+      "effect": "Forge a promise of mutual discovery. Both gain +1 Effect when cooperating in acts of shared vulnerability or mutual exploration; breach inflicts 1 SB (Hearts) and a hollowness where anticipation once was. Create a 6-segment Almost Strength timer.",
+      "push_it": "Breach also causes a visible retreat (a tendency to look away too quickly, a habit of ending conversations prematurely, or an inability to linger in shared space). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Timer: 6 segments."
+    },
+    {
+      "name": "Rite of the Bloom's Veil",
+      "tier": "Standard",
+      "xp": 7,
+      "action": "Scene",
+      "range": "Self",
+      "resist": "No",
+      "tags": ["GLAMOUR", "BOOST", "SOCIAL"],
+      "materials": "Perfume applied while imagining a future touch, or a garment worn that hints at what lies beneath.",
+      "effect": "Assume an aura of magnetic potential and poised allure. Gain +2 dice to Sway or Performance in settings of flirtation or courtship. Your presence lingers in the memory like a half-remembered dream of what could be.",
+      "push_it": "Become the embodiment of possibility; all who interact with you feel a shiver of 'what if' (Resolve DV 2 to resist imagining deeper connection). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Twisting Path",
+      "tier": "High",
+      "xp": 14,
+      "action": "Extended",
+      "range": "Zone",
+      "resist": "No",
+      "tags": ["AREA", "COMMAND", "BOOST", "GLAMOUR", "DEBT"],
+      "materials": "A path lined with flowers that bloom only at twilight; two cups filled from different sources but meant to be shared; a length of ribbon wound around both participants' wrists then loosened.",
+      "effect": "You become the sovereign of romantic potential. For the scene: you gain +1 Effect on all social rolls focused on flirtation or mutual discovery, and opponents suffer –1 die when attempting to rush or demand commitment. Anyone who attempts to deceive you about their intentions must test Resolve (DV 4) or reveal a hidden hope. Allies who share a ritual of near-intimacy regain 1 Fatigue. Start a 10-segment Garden of Almost timer; when it fills, you may declare one irrevocable social judgment that the zone's inhabitants will uphold for one month.",
+      "push_it": "Newcomers must test Resolve (DV 4) or become briefly inclined toward courtship. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "Extended action.",
+      "duration": "Timer: 10 segments (Garden of Almost)."
+    }
+  ],
+  "cantors_and_cults": {
+    "cantors": {
+      "name": "The Cantor's Song",
+      "description": "A Cantor of Zephyria sings in harmonies of anticipation — melodies that linger like the hush before a first kiss, the breath held as hands near. Their voice is used to spark a flirtation that lingers for weeks, to seal a pact of mutual exploration with a hum, or to draw out the unspoken longing in a guarded heart. Zephyria's Cantors are sought in teahouses and gardens, and valued by those who know that true romance needs no grand gesture — only the courage to linger in the threshold."
+    },
+    "cult": {
+      "name": "The Cult of the Blush Circle",
+      "description": "Zephyria's cults are not hidden; they meet in moonlit gardens, teahouses at twilight, and balcony swings at dawn. The Blush Circle appears to be a society of romantic idealists — but its members trade in time, attention, and the gift of being seen as possibility. A ritual involves each member placing a single twilight-blooming petal into a central bowl while naming a hope they wish to nurture. The bowl is filled with water from a common source; those who draw a petal become bound to the Circle — they cannot rush a member toward commitment without suffering a visible flush (1 Fatigue, no roll). The most devoted wear a single petal pressed into their lapel — a symbol that no bond is ever truly possessed. Their creed is embroidered on its seal: 'Every almost shared is a thread kindled. Every thread kindled makes the dance unbreakable.' Outsiders are welcome as guests, but they will leave with a lighter heart, a new understanding of patience, or a new appreciation for the beauty of waiting. Rarely all three."
+    }
+  },
+  "witchcraft": {
+    "name": "The Art of the Tease-Weaver",
+    "description": "A witch who walks with Zephyria is a tease-weaver or anticipation-smith — one who crafts social reality from threads of near-contact, unspoken promises, and the courage to wait. Their magic works with the tools of courtship: a note that ends mid-sentence, a perfume that fades just as it's noticed, or a garment that reveals only when the light hits just so. Their tools are never declarations; they use fans, veils, and the subtle art of the well-timed 'not yet.' In Ecktoria, a Zephyrian witch might be a letter-writer for the lovelorn, sealing each envelope with a petal that blooms only at night. In Aeler, a True-Mason might carve a bench that makes every shared silence upon it carry the echo of mutual breath.",
+    "color": "#d46a9a",
+    "lore": "The tease-weaver's path is the craft of the threshold. They learn that desire, held just short of fulfillment, teaches more about the self than consummation ever could. Zephyria's followers do not chase endings — they cultivate the moment before, and trust that the bloom is more honest than the harvest.",
+    "signature_rite": "Rite of the Shared Glance",
+    "quote": "Honor the almost, and you honor the soul's right to choose its own becoming.",
+    "tools": {
+      "almost_ribbon": {
+        "name": "The Almost-Ribbon",
+        "description": "A silk ribbon that grows warm when two people stand near but do not touch. Once per session, the witch may tie a single knot in a length of cord while focusing on a person they have met. That cord becomes a token of almost-contact — when held near that person, it grants +1 die to resist despair or hopelessness (GM determines effect: +1 die to Sway when flirting, –1 die to succumb to cynicism, etc.). The witch cannot control how the token is used, only that it exists — and that a token born of near-intimacy is the hardest to ignore."
+      }
+    },
+    "hedge_gifts": [
+      {
+        "name": "Flirt's Touch",
+        "xp": 2,
+        "description": "Once per scene, the witch may touch a person's hand (or a letter they have written) and speak a single word of intent ('wait,' 'almost,' 'see'). For the next hour, the target feels a mild but genuine inclination toward that emotion or action — not enough to override self-preservation, but enough to grant the wielder +1 die on social rolls against them when engaging in playful teasing. The touch leaves no mark, but the memory of it may haunt the target's dreams as a feeling of being truly seen as possibility."
+      },
+      {
+        "name": "The Unfinished Letter",
+        "xp": 3,
+        "description": "You may write a letter that stops mid-sentence, leaving the reader to imagine the rest. Once per session, a target who reads such a letter gains a lingering fascination with you — +1 SB in your favor if the GM chooses to have them seek you out later."
+      },
+      {
+        "name": "Fading Perfume",
+        "xp": 3,
+        "description": "You can craft a simple scent that lingers exactly long enough to be noticed and then vanishes. Once applied, anyone who catches the scent within the scene remembers it — and you — fondly, even if the encounter was brief."
+      }
+    ]
+  },
+  "monastic_tradition": {
+    "name": "The Way of the Withheld Bloom",
+    "description": "Monks of the Withheld Bloom train in restraint as a martial art — the pulled punch, the feint that never lands, the strike held a hair's breadth from its target. They believe that true mastery is proven not in the blow delivered but in the blow perfectly, deliberately withheld, and that the same discipline applies equally to the heart.",
+    "color": "#d46a9a",
+    "prerequisites": "Spirit 2+, Presence 3+, Rite of the Shared Glance or Cantor of Zephyria.",
+    "quote": "The most sacred vow is breathed in the space between 'may I?' and 'yes.'",
+    "debt_resistant_frame": "A promise never fully made cannot be fully collected. Monks of the Withheld Bloom gain +1 die to resist any magical debt or obligation rooted in a declaration of love, loyalty, or desire that was never completed. If they succeed, the obligation dissolves like a confession left unspoken — present in memory, absent in law.",
+    "techniques": {
+      "basic": {
+        "name": "The Pulled Strike",
+        "xp": 5,
+        "description": "Once per scene, you may declare an attack 'withheld' after it hits — deal no Harm, but the target must test Resolve (DV 3) or be Rattled (–1 die on their next action), unnerved by how close they came.",
+        "cost": "1 Fatigue",
+        "prereq": "Presence 3+"
+      },
+      "advanced": {
+        "name": "Bloom's Veil",
+        "xp": 7,
+        "description": "Assume an aura of magnetic potential and poised allure. Gain +2 dice to Sway or Performance in settings of flirtation or courtship for the scene.",
+        "cost": "1 Boon",
+        "prereq": "Tier II"
+      },
+      "master": {
+        "name": "The Eternal Threshold",
+        "xp": 12,
+        "description": "Once per session, hold an opponent, seducer, or interrogator at the exact edge of success or failure for an entire scene — they can neither harm you nor be dismissed, locked in mutual tension until you choose to release it. You gain a permanent Debt Scar (a faint petal-shaped mark that never quite fades from your palm) — the Hollow no longer pursues one debt built on an unfulfilled promise, but you find it harder, ever after, to let anything resolve cleanly.",
+        "cost": "2 Fatigue and +1 Obligation to Zephyria",
+        "prereq": "Tier III, Spirit 4+"
+      }
+    },
+    "corruption": [
+      {
+        "tier": 1,
+        "benefit": "Tease's Touch: +1 die to Sway or Performance when flirting or teasing.",
+        "cost": "Need for the Chase: –1 die when acting without playful tension or anticipation."
+      },
+      {
+        "tier": 2,
+        "benefit": "Heart's Flutter: Once/scene, +2 dice to sense hidden hopes or unspoken longings.",
+        "cost": "Emotional Whiplash: Mark 1 Fatigue if unable to sustain anticipation or mutual discovery."
+      },
+      {
+        "tier": 3,
+        "benefit": "Aura of Possibility: Allies in Near gain +1 die to resist cynicism or hopelessness.",
+        "cost": "Expectation Magnet: Others sense your allure and lean into fantasy, whether or not you invited it."
+      },
+      {
+        "tier": 4,
+        "benefit": "Veil of Longing: Once/session, issue a compelling invitation to 'what if' that feels like a shared dream (Resist DV 4).",
+        "cost": "Fear of Fulfillment: –1 die to pursue actual commitment, especially when anticipation is sweet."
+      },
+      {
+        "tier": 5,
+        "benefit": "Garden Keeper: Once/session, call on contacts for aid — they remember the thrill of your near-touch.",
+        "cost": "Hollow Hope: –1 die when isolated from those you flirt with; you hunger for the thrill of the almost."
+      },
+      {
+        "tier": "6+",
+        "benefit": "Sovereign Anticipation: Once/session, dominate a gathering in courtship; all who meet your eyes must test Resolve (DV 5) or feel compelled to seek your nearness.",
+        "cost": "The Eternal Almost: Mark +2 Obligation; suffer if denied the chance to linger in threshold. Your presence becomes a tease when you cannot promise — and you cannot stop chasing the shimmer just out of reach."
+      }
+    ]
+  },
+  "corruption": [
+    {
+      "tier": 1,
+      "benefit": "Tease's Touch: +1 die to Sway or Performance when flirting or teasing.",
+      "cost": "Need for the Chase: –1 die when acting without playful tension or anticipation."
+    },
+    {
+      "tier": 2,
+      "benefit": "Heart's Flutter: Once/scene, +2 dice to sense hidden hopes or unspoken longings.",
+      "cost": "Emotional Whiplash: Mark 1 Fatigue if unable to sustain anticipation or mutual discovery."
+    },
+    {
+      "tier": 3,
+      "benefit": "Aura of Possibility: Allies in Near gain +1 die to resist cynicism or hopelessness.",
+      "cost": "Expectation Magnet: Others sense your allure and lean into fantasy, whether or not you invited it."
+    },
+    {
+      "tier": 4,
+      "benefit": "Veil of Longing: Once/session, issue a compelling invitation to 'what if' that feels like a shared dream (Resist DV 4).",
+      "cost": "Fear of Fulfillment: –1 die to pursue actual commitment, especially when anticipation is sweet."
+    },
+    {
+      "tier": 5,
+      "benefit": "Garden Keeper: Once/session, call on contacts for aid — they remember the thrill of your near-touch.",
+      "cost": "Hollow Hope: –1 die when isolated from those you flirt with; you hunger for the thrill of the almost."
+    },
+    {
+      "tier": "6+",
+      "benefit": "Sovereign Anticipation: Once/session, dominate a gathering in courtship; all who meet your eyes must test Resolve (DV 5) or feel compelled to seek your nearness.",
+      "cost": "The Eternal Almost: Mark +2 Obligation; suffer if denied the chance to linger in threshold. Your presence becomes a tease when you cannot promise — and you cannot stop chasing the shimmer just out of reach."
+    }
+  ],
+  "playstyle_notes": {
+    "description": "Zephyria excels in flirtation, mutual discovery, and building connections that thrive on anticipation. Followers become masters of the art of the near-miss, reading subtle cues, and the quiet power of almost. The corruption progression leads toward a romantic idealist who cannot function without the thrill of pursuit — a heart that risks growing cold when the chase ends. Ideal for players who enjoy playing the dance rather than the destination, characters who wield tension and possibility as their primary weapons, and narratives where romance is won through shared vulnerability rather than grand declarations. As with all themes involving vulnerability, use Lines & Veils to ensure the table's comfort.",
+    "emphasizes": [
+      "Romance as Anticipation: glances, near-touch, the art of waiting",
+      "Courtship Rituals: exchanged tokens, playful teasing, mutual exploration",
+      "Beauty in Transience: celebrating fleeting moments, the poignancy of impermanence",
+      "Mutual Discovery: learning another through shared vulnerability, not declaration",
+      "Anticipation as Power: building tension through withdrawal, the potency of unfulfilled promise"
+    ]
+  },
+  "sample_adventure": {
+    "title": "The Petal That Never Falls",
+    "description": "A member of the Blush Circle has broken tradition — pressing a promise into words and demanding an answer from a courtship partner who isn't ready to give one. The Circle is scandalized; Zephyria's threshold has been trespassed. The party is asked to mediate before the dispute turns into something uglier, and must decide whether love that refuses to resolve is a gift worth protecting, or a cage dressed in flowers.",
+    "quote": "Not every bloom is meant to become fruit. Some flowers are only ever meant to be beautiful, and then to fall."
+  },
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

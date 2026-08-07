@@ -1,0 +1,283 @@
+{
+  "id": "ibeji-twin-stones",
+  "type": "patron",
+  "title": "Ibeji, the Twin Stones",
+  "subtitle": "Partnership & Balance",
+  "version": "1.0.0",
+  "tags": [
+    "partnership",
+    "balance",
+    "duality",
+    "craft",
+    "cooperation",
+    "bonding",
+    "masonry",
+    "twins",
+    "trust"
+  ],
+  "lore": {
+    "description": "Ibeji are twin spirits — one of stone, one of gear — who dance together to keep the walking cities of Ngomebe alive. They were not born; they were carved. The first stone city needed a keystone and a bearing, and the first Mason-Kin and the first Aeler vent-prior worked together for nine years to make them fit. When the city walked, the two spirits emerged from the joint — one from the stone, one from the gear — still holding hands. They teach that no craft is complete without another, that a bridge needs two shores, and that the strongest keystone is the one that bears the weight of a partner's trust.",
+    "followers": "Among the peoples of Fate's Edge, Ibeji are invoked by masons, engineers, and any two people who must work in perfect trust. In the Mountain Satrapies, they are carved on the lintels of Aeler-Dhaharan counting-houses. In Ngomebe, they are painted on the rollers of every new city. Wherever a stone is set by one hand and sealed by another, Ibeji dance.",
+    "quote": "Ibeji taught us that a single stone is just a rock. Two stones, set together, can hold back a river. One gear is a toy. Two gears can move a city. Find your twin. Work. Do not let go."
+  },
+  "domain_focus": [
+    "Partnership: two hands, two crafts, two wills working as one",
+    "Balance: equal weight, equal credit, equal sacrifice",
+    "The Union of Aeler and Ngomebe: stone and gear, mountain and plateau",
+    "The Twin Keystone: the joint that bears the load; break one, and both fall"
+  ],
+  "runekeeper_options": {
+    "thiasos": {
+      "description": "A Runekeeper sworn to Ibeji does not bind a single familiar — they bind two, for Ibeji are never one. Their Thiasos is a pair of small creatures that embody partnership: two twin mice that sleep curled together, two small lizards that change color in synchrony, two beetles that roll the same ball of dung, two gray doves that nest in the same bell tower, or two small brass gears that click in perfect rhythm (these are not alive, but they hum when the partner is near).",
+      "care": "Each creature requires no food in the usual sense, but they must be kept together; separating them for more than a day makes them Compromised (they grow listless, and the bearer suffers –1 die to all rolls involving coordination or assistance until reunited)."
+    },
+    "codex": {
+      "description": "The Codex of Ibeji is never a book written by one hand. It may be a pair of matched slate tablets, each inscribed with half of every Rite; a single scroll that must be held by two people to be read; a set of twin bells that ring only when struck together; or a keystone with two faces, each carved by a different mason.",
+      "upkeep": "Because Ibeji's truths are written in duality, the Codex requires upkeep: the Runekeeper must spend an hour each week with a partner (any willing person), reading each Rite aloud together, or the words become mismatched (treat as Compromised until re-paired)."
+    }
+  },
+  "patrons_gift": {
+    "name": "Ibeji's Union",
+    "description": "Once per scene as an action, a Runekeeper of Ibeji may touch two held items (weapons, tools, or pieces of armor) and whisper a word of union.",
+    "effect": "For the rest of the scene, each item grants +1 die to rolls made to assist the other bearer, and the first time each scene the two bearers would be separated by force (a closing door, a collapsing floor, a spell of banishment), they may reroll the resistance check (the twin stones hold).",
+    "cost": "After the scene, each user marks +1 Obligation to Ibeji."
+  },
+  "rites": [
+    {
+      "name": "Rite of the Balanced Weight",
+      "tier": "Low",
+      "xp": 5,
+      "action": "Scene",
+      "range": "Self and One Ally",
+      "resist": "No",
+      "tags": ["ASSIST", "BOOST", "BOND"],
+      "materials": "Two stones of equal weight, or a single gear that has been split and re-joined.",
+      "effect": "You and an ally within Near gain +1 die to any roll made to assist each other for the scene. When one of you takes the Assist action, the other gains an additional +1 die (stacking with the normal assist bonus).",
+      "push_it": "The bond is visible — a faint line of golden light connects you. Any enemy who sees it must test Resolve (DV 3) or be unable to target only one of you; they must attack both or neither. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Twin Bearing",
+      "tier": "Low",
+      "xp": 6,
+      "action": "Instant",
+      "range": "Touch",
+      "resist": "No",
+      "tags": ["CRAFT", "ASSIST", "BOND"],
+      "materials": "A pair of matched tools, or a shared handhold on a single object.",
+      "effect": "You and an ally lifting, carrying, or crafting the same object together treat it as if it weighed half as much, and gain +1 die to any Craft or Body roll made jointly on it for the scene.",
+      "push_it": "Extend the effect to a third and fourth pair of hands working the same task, so long as all are within Near range. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of Ibeji's Seal",
+      "tier": "Standard",
+      "xp": 9,
+      "action": "Instant",
+      "range": "Touch",
+      "resist": "No",
+      "tags": ["BOND", "FATE", "PROTECT"],
+      "materials": "Two objects that belong to two different people (a ring, a lock of hair, a personal seal).",
+      "effect": "Touch two objects; for one day, they cannot be separated by less than magical force. If one is moved, the other moves with it. This can be used to lock a door (the door and its frame), to bind a prisoner's hands (left and right manacle), or to keep two allies from being pulled apart by a trap.",
+      "push_it": "The seal is permanent until broken by a ritual of separation (requiring the consent of both parties). Mark +2 Obligation. If one party breaks the seal by force, they suffer 2 Harm (spiritual backlash). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "1 day."
+    },
+    {
+      "name": "Rite of the Shared Cornerstone",
+      "tier": "Standard",
+      "xp": 8,
+      "action": "Scene",
+      "range": "Near",
+      "resist": "No",
+      "tags": ["PROTECT", "BOND", "BOOST"],
+      "materials": "A keystone or capstone fragment, split evenly between two partners.",
+      "effect": "You and a bonded partner each gain +1 Effect on rolls to defend the other from harm, and once per scene, one of you may intercept an attack meant for the other, treating the Harm as if it were one level lower.",
+      "push_it": "Fully absorb one instance of Harm meant for your partner, taking it as your own at full severity. Mark 1 SB (Spades). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Dance of Stone",
+      "tier": "High",
+      "xp": 14,
+      "action": "Extended",
+      "range": "Zone",
+      "resist": "No",
+      "tags": ["MOVEMENT", "CRAFT", "SACRIFICE", "DEBT"],
+      "materials": "A keystone chip from a walking city, and a gear from an Aeler bearing.",
+      "effect": "You and an ally may move a stone city's roller 1 mile without oxen — but you both mark 2 Fatigue. The city will remember your aid; the Mason-Kin will grant you a Keystone Charter (right to dwell in any Ngomebe city for a season) if you succeed. If you fail, the roller cracks, and the city stops until a Mason-Kin can repair it.",
+      "push_it": "Move the roller 2 miles instead of 1. Mark +3 Obligation and both you and your ally gain a permanent scar — a crack on your palm that never heals, matching the crack in the roller. Cost: Mark +1 Obligation (total +4) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "Extended action.",
+      "duration": "Instant."
+    }
+  ],
+  "cantors_and_cults": {
+    "cantors": {
+      "name": "The Cantor's Song",
+      "description": "A Cantor of Ibeji sings in duets — melodies that require two voices to complete. One voice begins a phrase; the other finishes it. A Cantor alone can only hum half a tune. Their voice is used to synchronize work crews, to heal the rift between feuding partners, or to remind two people that they were once one team. Ibeji's Cantors are often found on construction sites, in counting-houses where two clerks share a ledger, or at weddings where they sing the vows as a round."
+    },
+    "cult": {
+      "name": "The Cult of the Twin Keystone",
+      "description": "Ibeji's cults meet in pairs — literally. Each member must bring a partner. The Twin Keystone is a fellowship of masons, engineers, and Aeler-Dhaharan families who have intermarried. A ritual involves each pair carving a single rune on a shared stone — one carves the left half, the other the right. If the rune is complete, the stone is added to a growing cairn. If it is mismatched, the pair must spend a day working together before they may try again. Their creed is carved on a single stone that is never split: \"One stone is a rock. Two stones are a foundation. A foundation holds the world.\" Outsiders are welcome if they bring a partner. If they come alone, they will be given a partner — and the partner may not be human."
+    }
+  },
+  "witchcraft": {
+    "name": "The Art of the Joint-Smith",
+    "description": "A witch who walks with Ibeji is a joint-smith or bond-weaver — one who crafts the places where two things meet. Their magic works through the tools of union: a double-headed hammer that strikes two nails at once, a pair of tongs that cannot be separated by less than a forge's heat, or a spirit level that has two bubbles — one for each partner. Their tools are never single; a hammer without a matching pair is just a club.",
+    "color": "#8a6b3c",
+    "lore": "Joint-smiths often work in pairs themselves, apprenticed to Ibeji in twos so they might understand from the outset that their craft cannot be practiced alone. They are called to mend broken marriages of stone as often as broken marriages of people, and many carry both a mason's hammer and a peacemaker's patience in the same satchel.",
+    "signature_rite": "Rite of the Twin Bearing",
+    "quote": "A hammer without a matching pair is just a club.",
+    "tools": {
+      "twin_needles": {
+        "name": "The Twin Needles",
+        "description": "Two needles of cold iron, bound by a single thread that never tangles. Once per session, the witch may sew two objects together (two pages of a contract, two door handles, two sleeves of a shirt). For the next day, they cannot be separated without the witch's consent. Cutting the thread causes both objects to rust instantly. The needles can also be used to stitch a wound closed; the patient and the healer share the pain (each takes 1 Fatigue, but the wound heals 1 Harm)."
+      }
+    },
+    "hedge_gifts": [
+      {
+        "name": "Shared Breath",
+        "xp": 2,
+        "description": "Once per scene, you and an ally within Near may each spend 1 Boon to share a single breath. For the rest of the scene, whenever one of you rolls a 1, the other may take that Story Beat instead of the GM (the GM does not gain it). The beat must be spent on a complication that affects the character who took it."
+      },
+      {
+        "name": "Matched Grip",
+        "xp": 3,
+        "description": "Once per scene, you and a partner working the same tool or weapon together gain +1 die to any roll made using it, as long as you remain in Touch range of each other."
+      },
+      {
+        "name": "The Level's Bubble",
+        "xp": 2,
+        "description": "Passive. You can always tell, by touch alone, whether a structure, joint, or agreement is truly balanced or secretly favors one side."
+      },
+      {
+        "name": "Cornerstone's Patience",
+        "xp": 3,
+        "description": "Once per session, you may spend an extended scene helping to mend a rift between two feuding parties (people or peoples). If both parties genuinely participate, they gain +1 die to their next cooperative roll together."
+      }
+    ]
+  },
+  "monastic_tradition": {
+    "name": "The Way of the Twin Keystone",
+    "description": "Monks of the Twin Keystone are never ordained alone; the order requires each initiate to be paired with a partner before their first vow is spoken, and the two train, fight, and advance together for the rest of their lives. Their forms are built around two bodies moving as one — strikes that only land because a partner has drawn the enemy's guard, blocks that only hold because a partner braces the other side. A monk of the Twin Keystone who loses their partner does not simply grieve; they must undergo a rite of re-pairing before they can advance further, for the tradition holds that mastery achieved alone is only half a craft.",
+    "color": "#8a6b3c",
+    "quote": "One stone is a rock. Two stones are a foundation.",
+    "prerequisites": "Body 3+, Spirit 2+, Rite of the Balanced Weight or Cantor of Ibeji, and a bonded partner (PC or significant NPC).",
+    "debt_resistant_frame": "A debt owed by one is shared by two, and a burden shared is a burden halved. Monks of the Twin Keystone gain +1 die to resist any magical debt, geas, or contract when acting alongside their bonded partner (once per scene). If they succeed, the debt's weight visibly splits and settles evenly across both — easier for either to bear, harder for any creditor to collect in full.",
+    "techniques": {
+      "basic": {
+        "name": "Twinned Strike",
+        "xp": 6,
+        "description": "When you and your bonded partner both attack the same target in the same exchange, both gain +1 die to the attack roll, and if both hit, the target's defenses falter, granting +1 Effect to the second attack to land.",
+        "cost": "1 Boon",
+        "prereq": "Body 3+"
+      },
+      "advanced": {
+        "name": "Shared Stance",
+        "xp": 9,
+        "description": "Once per scene, you and your bonded partner may switch positions instantly (swap places anywhere within Near range) as a free action, useful for protecting each other or repositioning mid-combat.",
+        "cost": "1 Fatigue",
+        "prereq": "Tier II, Spirit 2+"
+      },
+      "master": {
+        "name": "Avatar of the Twin Stones",
+        "xp": 14,
+        "description": "Once per session, you and your bonded partner may act on the same turn, sharing a single pool of actions (one Action each, but you may move as one). After the scene, you both gain a permanent Debt Scar (a faint crack, like dried clay, that appears on the same spot on each of your bodies) but gain +1 die on all future rolls made to assist one another.",
+        "cost": "2 Fatigue (shared, 1 each) and +1 Obligation to Ibeji (shared, 1 each)",
+        "prereq": "Tier III, Body 4+"
+      }
+    },
+    "corruption": [
+      {
+        "tier": 1,
+        "benefit": "Steady Hand: +1 die to Craft rolls when working with a partner.",
+        "cost": "Partner-Dependent: –1 die to any Craft roll made alone."
+      },
+      {
+        "tier": 2,
+        "benefit": "Twin's Instinct: Once per scene, you may know the emotional state of your bonded partner without speaking.",
+        "cost": "Shared Pain: When your partner takes Harm, you must test Resolve (DV 3) or mark 1 Fatigue."
+      },
+      {
+        "tier": 3,
+        "benefit": "Two as One: +2 dice to assists, and the first assist each scene does not cost a Boon.",
+        "cost": "Jealous Joint: –1 die to social rolls with anyone your partner distrusts."
+      },
+      {
+        "tier": 4,
+        "benefit": "Unbreakable Seal: Once per session, declare a bond between two objects or people; it cannot be broken by non-magical means for one week.",
+        "cost": "Compulsive Union: You must try to reconcile any two arguing parties you witness; ignoring a quarrel costs 1 Fatigue."
+      },
+      {
+        "tier": 5,
+        "benefit": "Dance of Stone: Once per session, you and a partner may move a massive object as if it weighed nothing — but you both mark 1 Fatigue.",
+        "cost": "Cracked Keystone: Each use causes a visible crack to appear on your skin. After nine cracks, you cannot be separated from your partner by any means, but you also cannot leave their side."
+      },
+      {
+        "tier": "6+",
+        "benefit": "Avatar of the Twin Stones: Once per session, you and a bonded partner may act on the same turn, sharing a single pool of actions.",
+        "cost": "Twin's Doom: Mark +3 Obligation. If one of you dies, the other must test Resolve (DV 6) or fall catatonic for 1d4 days. Your reflections now always appear in pairs, even when you are alone."
+      }
+    ]
+  },
+  "corruption": [
+    {
+      "tier": 1,
+      "benefit": "Steady Hand: +1 die to Craft rolls when working with a partner.",
+      "cost": "Partner-Dependent: –1 die to any Craft roll made alone."
+    },
+    {
+      "tier": 2,
+      "benefit": "Twin's Instinct: Once per scene, you may know the emotional state of your bonded partner without speaking.",
+      "cost": "Shared Pain: When your partner takes Harm, you must test Resolve (DV 3) or mark 1 Fatigue."
+    },
+    {
+      "tier": 3,
+      "benefit": "Two as One: +2 dice to assists, and the first assist each scene does not cost a Boon.",
+      "cost": "Jealous Joint: –1 die to social rolls with anyone your partner distrusts."
+    },
+    {
+      "tier": 4,
+      "benefit": "Unbreakable Seal: Once per session, declare a bond between two objects or people; it cannot be broken by non-magical means for one week.",
+      "cost": "Compulsive Union: You must try to reconcile any two arguing parties you witness; ignoring a quarrel costs 1 Fatigue."
+    },
+    {
+      "tier": 5,
+      "benefit": "Dance of Stone: Once per session, you and a partner may move a massive object as if it weighed nothing — but you both mark 1 Fatigue.",
+      "cost": "Cracked Keystone: Each use causes a visible crack to appear on your skin. After nine cracks, you cannot be separated from your partner by any means, but you also cannot leave their side."
+    },
+    {
+      "tier": "6+",
+      "benefit": "Avatar of the Twin Stones: Once per session, you and a bonded partner may act on the same turn, sharing a single pool of actions.",
+      "cost": "Twin's Doom: Mark +3 Obligation. If one of you dies, the other must test Resolve (DV 6) or fall catatonic for 1d4 days. Your reflections now always appear in pairs, even when you are alone."
+    }
+  ],
+  "playstyle_notes": {
+    "description": "Ibeji rewards those who work with a partner, who share credit, and who understand that the strongest structure is the one that distributes the load. Followers become masters of cooperation, binding, and the art of making two things work as one. The corruption progression leads toward a being who can no longer function alone — but who, with the right partner, can move mountains. Ideal for married couples in character, for engineers and masons, and for any two players who want their characters to be more effective together than apart.",
+    "emphasizes": [
+      "Partnership: two hands, two crafts, two wills as one",
+      "Balance: equal weight, equal credit, equal sacrifice",
+      "Union of Aeler and Ngomebe: stone and gear, mountain and plateau",
+      "The Twin Keystone: the joint that bears the load; break one, and both fall"
+    ]
+  },
+  "sample_adventure": {
+    "title": "The Cracked Roller",
+    "description": "A walking city's central roller has cracked mid-stride, stranding thousands and threatening to collapse the district it carries. The Mason-Kin who first built the roller has died, leaving no partner to complete the repair rite — Ibeji's craft requires two hands from two different traditions working as one. The party must find (or become) an unlikely pair capable of finishing what was left half-done, before the city's slow grinding halt turns into a catastrophic fall.",
+    "quote": "The roller does not care who fixes it, mason or stranger, kin or foreigner. It asks only that two hands work as one. Find your twin. Do not let go."
+  },
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

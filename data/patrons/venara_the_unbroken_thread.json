@@ -1,0 +1,278 @@
+{
+  "id": "venara-unbroken-thread",
+  "type": "patron",
+  "title": "Venara, the Unbroken Thread",
+  "subtitle": "Love & Steadfast Bonding",
+  "version": "1.0.0",
+  "tags": [
+    "love",
+    "loyalty",
+    "steadfastness",
+    "care",
+    "healing",
+    "presence",
+    "bonding",
+    "mending"
+  ],
+  "lore": {
+    "description": "In hearths where silence speaks louder than words and hands clasped in storm weather the fiercest gales, the Unbroken Thread reigns. She is the quiet strength in a lover's grip, the vow renewed at dawn, the wound soothed by a presence that asks nothing in return. Where Livaea binds through hunger, Venara binds through being — teaching that true love is not a leash worn willingly, but a shelter built stone by stone, breath by breath. Her followers learn that the deepest intimacy lives not in fevered whispers, but in the shared breath after tears, the mended tear in a shared cloak, the choice to stay when leaving would be easier.",
+    "followers": "Venara is a patron of love as sanctuary — not the ecstasy of union, but the quiet courage of remaining. She rejects possession; her greatest teaching is that to love is to hold space for another's wholeness, even when it costs you. In the infirmaries of battle-scarred cities, in the kitchens of refugee caravans, in the night vigils beside dying friends, Venara's influence is felt. Her cults are the Mended Circle, whose members exchange not blood, but strips of cloth from garments worn through shared hardship. Her witches are midwives who calm laboring mothers with hummed lullabies, neighbors who leave bread on doorsteps without expectation, and elders who recall forgotten names to soothe the lonely.",
+    "quote": "A bond forged in presence needs no seal. When you stay because you choose to — not because you must — you become the anchor that lets another soul find its tide."
+  },
+  "domain_focus": [
+    "Steadfast Bonding: oaths of loyalty, healing through presence, enduring commitments",
+    "Nurturing Presence: active listening, emotional holding space, comfort through proximity",
+    "Rituals of Care: shared meals, mending crafts, vigils, the sacred ordinary",
+    "Healing Through Connection: soothing distress, restoring trust after fracture, communal resilience"
+  ],
+  "runekeeper_options": {
+    "thiasos": {
+      "description": "A Runekeeper sworn to Venara does not bind a creature of claw or fang — they bind a companion of quiet devotion. Their Thiasos is a small being of constancy: a pair of lovebirds that preen each other's feathers in silence, a stone that stays warm when held between two palms, a moth whose wings bear the imprint of two touching fingers, or a sprout that grows only when watered by shared tears.",
+      "care": "This creature requires no food, but it must be given a token of shared presence each day (a pressed flower from a joint walk, a sip from the same cup, a moment of silent eye-contact). If neglected for a week, it becomes Compromised (its aura of calm turns heavy, imposing –1 die on all Sway rolls involving genuine empathy for its bearer until offered a fresh token of mutual presence)."
+    },
+    "codex": {
+      "description": "The Codex of Venara is never a book of dry ink. It may be a braided cord whose knots tighten with each shared hardship, a collection of mended garments whose patches tell stories of repair, a hollow stone filled with rainwater that reflects both holders' faces, or a journal where each page bears the fingerprints of two hands writing in turn.",
+      "upkeep": "Because Venara's truths are written in shared silence, the Codex requires upkeep: the Runekeeper must spend an hour each week sitting in quiet companionship with another (speaking no more than three sentences total), or the Rites stored there fade (treat as Compromised until re-silenced)."
+    }
+  },
+  "patrons_gift": {
+    "name": "The Word of Remaining",
+    "description": "Once per scene as an action, a Runekeeper of Venara may touch a held item (weapon, tool, or garment) and breathe a single word of 'remain'.",
+    "effect": "For the rest of the scene, the item grants +1 die to Sway or Medicine rolls, and the first time each scene the bearer makes eye contact with a target they wish to comfort, the target must test Resolve (DV 3) or feel a wave of profound ease (suffer –1 die to resist the bearer's next supportive action).",
+    "cost": "After the scene, the user marks +1 Obligation to Venara."
+  },
+  "rites": [
+    {
+      "name": "Rite of the Shared Breath",
+      "tier": "Low",
+      "xp": 4,
+      "action": "Scene",
+      "range": "Near",
+      "resist": "Yes",
+      "tags": ["BOND", "HEAL", "SECRET"],
+      "materials": "Two cups filled from the same source, or a strip of cloth worn against both heartbeats.",
+      "effect": "Your quiet presence becomes a balm. Gain +1 die to Sway one target in a supportive conversation. The target feels a subtle lifting of burden; they are more likely to confide a worry.",
+      "push_it": "The target feels safe enough to name a fear they've hidden (a secret weakness, a past failure). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Mended Cloth",
+      "tier": "Low",
+      "xp": 5,
+      "action": "Scene",
+      "range": "Touch",
+      "resist": "No",
+      "tags": ["MEND", "BOND", "READ"],
+      "materials": "A torn garment or cloth, needle and thread touched to both participants' lips.",
+      "effect": "Create a temporary bond of mutual care. Both parties gain +1 die when aiding each other in acts of nurturing (Medicine, Craft, Sway). The bond manifests as a shared warmth, like sunlight on wool.",
+      "push_it": "The bond deepens to shared vulnerability; both sense when the other is hiding pain but suffer –1 die to conceal their own distress. The bond may persist as a gentle ache until the next dusk. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Unbroken Vow",
+      "tier": "Standard",
+      "xp": 8,
+      "action": "Scene",
+      "range": "Near",
+      "resist": "Yes",
+      "tags": ["VOW", "BOND", "HEAL", "FEAR"],
+      "materials": "Token exchanged between parties — a knot tied from both hairs, a cup shared at dawn and dusk, or a stone warmed by mutual grip.",
+      "effect": "Forge a promise of enduring presence. Both gain +1 Effect when cooperating in acts of care or healing; breach inflicts 1 SB (Hearts) and a hollow ache where warmth once was. Create a 6-segment Vow Strength timer.",
+      "push_it": "Breach also causes a visible withdrawal (a reluctance to meet eyes, a tendency to fade from gatherings, or an inability to accept comfort). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Timer: 6 segments."
+    },
+    {
+      "name": "Rite of the Hearth's Embrace",
+      "tier": "Standard",
+      "xp": 7,
+      "action": "Scene",
+      "range": "Self",
+      "resist": "No",
+      "tags": ["GLAMOUR", "BOOST", "SOCIAL"],
+      "materials": "A blanket shared during storytelling, or a meal prepared while humming a tune of quiet joy.",
+      "effect": "Assume an aura of profound calm and magnetic steadiness. Gain +2 dice to Sway or Medicine in settings of distress or vulnerability. Your presence lingers in the memory like a safe harbor remembered in storm.",
+      "push_it": "Become the emotional anchor; all who seek comfort gravitate toward you with +1 Effect. Those who confide in you may feel a shiver of relief (Resolve DV 2 to resist sharing deeper burdens). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Mended Circle",
+      "tier": "High",
+      "xp": 14,
+      "action": "Extended",
+      "range": "Zone",
+      "resist": "No",
+      "tags": ["AREA", "COMMAND", "HEAL", "GLAMOUR", "DEBT"],
+      "materials": "A circle of stones, each touched by a participant's tear; a shared loaf broken and passed hand to hand; a vial of water mixed from each person's source.",
+      "effect": "You become the heart of a healing zone. For the scene: you gain +1 Effect on all social rolls focused on care or healing, and opponents suffer –1 die when attempting to sow discord. Anyone who attempts to deceive you about their emotional state must test Resolve (DV 4) or reveal a hidden pain. Allies who share food or drink from the communal offerings regain 1 Fatigue. Start a 10-segment Circle of Care timer; when it fills, you may declare one irrevocable communal judgment that the zone's inhabitants will uphold for one month.",
+      "push_it": "Newcomers must test Resolve (DV 4) or become briefly inclined toward peace. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "Extended action.",
+      "duration": "Timer: 10 segments (Circle of Care)."
+    }
+  ],
+  "cantors_and_cults": {
+    "cantors": {
+      "name": "The Cantor's Song",
+      "description": "A Cantor of Venara sings in harmonies of stillness — melodies that linger like the hush between heartbeats, the breath before a vow. Their voice is used to calm a rioted crowd, to seal a pact of mutual aid with a hum, or to draw out the unspoken sorrow in a guarded heart. Venara's Cantors are sought in hospitals and hospices, and valued by those who know that true comfort needs no grand gesture — only the courage to be truly present."
+    },
+    "cult": {
+      "name": "The Cult of the Mended Circle",
+      "description": "Venara's cults are not hidden; they meet in community kitchens, infirmary gardens, and porch swings at twilight. The Mended Circle appears to be a mutual aid society — but its members trade in time, labor, and the quiet gift of being seen. A ritual involves each member placing a strip of cloth (from a garment worn through hardship) into a central bowl while naming a burden they wish to share. The bowl is filled with water from a common source; those who draw a strip become bound to the Circle — they cannot ignore a member's plea for aid without suffering a visible heaviness (1 Fatigue, no roll). The most devoted wear a simple braid of three threads (one their own, one from a loved one, one from a stranger helped) woven into their clothing — a symbol that no bond is ever truly solitary. Their creed is embroidered on its seal: 'Every tear shared is a thread strengthened. Every thread strengthened makes the web unbreakable.' Outsiders are welcome as guests, but they will leave with a lighter heart, a new responsibility, or a new understanding of quiet strength. Rarely all three."
+    }
+  },
+  "witchcraft": {
+    "name": "The Art of the Hearth-Keeper",
+    "description": "A witch who walks with Venara is a hearth-keeper or tear-weaver — one who crafts social reality from threads of shared silence, mended things, and the courage to stay. Their magic works with the tools of care: a letter that bears the scent of shared tea, a blanket that holds the warmth of two bodies, or a needle that sews a promise into a hem's frayed edge. Their tools are never weapons; they use looms, ladles, and the subtle art of the well-timed 'I am here.' In Ecktoria, a Venaran witch might be a letter-writer for the grieving, sealing each envelope with a pressed flower from a shared walk. In Aeler, a True-Mason might carve a hearthstone that makes every handshake struck upon it carry the echo of mutual grip.",
+    "color": "#8a4c3a",
+    "lore": "The hearth-keeper's path is the craft of remaining. They learn that love is not proven in grand declarations but in the thousand small returns — the bread left, the wound tended, the chair pulled up beside the sickbed one more night. Venara teaches that steadfastness is its own quiet magic, and that a mended thing is often stronger at the seam.",
+    "signature_rite": "Rite of the Shared Breath",
+    "quote": "A bond forged in presence needs no seal.",
+    "tools": {
+      "mending_needle": {
+        "name": "The Mending Needle",
+        "description": "A bone-tipped needle that glows faintly when two truths are spoken in shared silence. Once per session, the witch may mend a single torn object (cloth, leather, wood) while focusing on a person they have met. That object becomes a token of shared presence — when held by that person, it grants +1 die to resist despair or isolation (GM determines effect: +1 die to Sway when comforting, –1 die to succumb to hopelessness, etc.). The witch cannot control how the token is used, only that it exists — and that a token born of shared silence is the hardest to discard."
+      }
+    },
+    "hedge_gifts": [
+      {
+        "name": "Steady Hand",
+        "xp": 2,
+        "description": "Once per scene, the witch may touch a wounded person (including themselves) and speak a single word of intent ('hold,' 'mend,' 'stay'). For the next hour, the target feels a mild but genuine inclination toward that emotion or action — not enough to override self-preservation, but enough to grant the wielder +1 die on social rolls against them when offering care. The touch leaves no mark, but the memory of it may haunt the target's dreams as a feeling of being truly seen."
+      },
+      {
+        "name": "Bread Left on the Doorstep",
+        "xp": 3,
+        "description": "Once per session, leave a simple prepared gift (bread, a mended garment, a small remedy) for someone without being asked. If they accept it, they clear 1 Fatigue and gain +1 die to their next Resolve test against despair. The gift must be genuine — this does not work as a manipulative gesture."
+      },
+      {
+        "name": "The Vigil Kept",
+        "xp": 4,
+        "description": "Once per session, sit with a dying, wounded, or grieving person for an uninterrupted scene, offering nothing but presence. At the end, they may ask you one question and trust your answer completely — you cannot lie to them for the rest of the scene without the bond fraying visibly."
+      }
+    ]
+  },
+  "monastic_tradition": {
+    "name": "The Way of the Unbroken Thread",
+    "description": "Monks of the Unbroken Thread train the body to endure by staying rather than striking — to absorb, to root, to remain standing between danger and those who cannot yet stand for themselves. Their forms are built on stillness and steadfast footing, on the discipline of choosing to stay when every instinct screams to flee.",
+    "color": "#8a4c3a",
+    "prerequisites": "Spirit 3+, Body 2+, Rite of the Shared Breath or Cantor of Venara.",
+    "quote": "When you stay because you choose to — not because you must — you become the anchor.",
+    "debt_resistant_frame": "A bond freely kept cannot be repossessed. Monks of the Unbroken Thread gain +1 die to resist any magical debt or obligation that would force them to abandon someone in their care or break a vow of presence. If they succeed, the obligation finds no purchase — steadfastness has no price tag.",
+    "techniques": {
+      "basic": {
+        "name": "The Rooted Stance",
+        "xp": 5,
+        "description": "Once per scene, plant yourself between an ally and a threat. You cannot be moved, knocked down, or forced to retreat this exchange, and the ally behind you gains +1 die to resist fear.",
+        "cost": "1 Fatigue",
+        "prereq": "Body 2+"
+      },
+      "advanced": {
+        "name": "Hearth's Embrace",
+        "xp": 7,
+        "description": "Assume an aura of profound calm and magnetic steadiness. Gain +2 dice to Sway or Medicine in settings of distress or vulnerability for the scene.",
+        "cost": "1 Boon",
+        "prereq": "Tier II"
+      },
+      "master": {
+        "name": "The Vow That Does Not Break",
+        "xp": 12,
+        "description": "Once per session, declare yourself bonded to a willing ally for the scene: any Harm or Condition that would fell them may instead be split between you both, or you may take it entirely upon yourself. You gain a permanent Debt Scar (a faded braid-mark around your wrist) — the Hollow no longer pursues one debt tied to a promise you kept at great cost, but you feel the absence of anyone you have failed to stay for, always.",
+        "cost": "2 Fatigue and +1 Obligation to Venara",
+        "prereq": "Tier III, Spirit 4+"
+      }
+    },
+    "corruption": [
+      {
+        "tier": 1,
+        "benefit": "Healer's Touch: +1 die to Medicine or Sway when comforting or aiding.",
+        "cost": "Need to Be Needed: –1 die when acting alone or unacknowledged."
+      },
+      {
+        "tier": 2,
+        "benefit": "Heart's Refuge: Once/scene, +2 dice to sense hidden pain or unspoken burdens.",
+        "cost": "Emotional Echo: Mark 1 Fatigue if unable to provide comfort or presence when sought."
+      },
+      {
+        "tier": 3,
+        "benefit": "Steady Presence: Allies in Near gain +1 die to resist despair or isolation.",
+        "cost": "Absorption Tendency: Often take on others' burdens to your own detriment — others sense your willingness and lean too hard."
+      },
+      {
+        "tier": 4,
+        "benefit": "Veil of Sanctuary: Once/session, issue a compelling invitation to rest that feels like a safe harbor (Resist DV 4).",
+        "cost": "Self-Erasure: –1 die to prioritize own needs, especially when others are in distress."
+      },
+      {
+        "tier": 5,
+        "benefit": "Circle Keeper: Once/session, call on contacts for aid — they remember the weight of your hand on their shoulder.",
+        "cost": "Hollow Hearth: –1 die when isolated from those you care for; you hunger for the weight of another's lean."
+      },
+      {
+        "tier": "6+",
+        "benefit": "Sovereign Stillness: Once/session, dominate a gathering in crisis; all who meet your eyes must test Resolve (DV 5) or feel compelled to seek your calm.",
+        "cost": "The Empty Harbor: Mark +2 Obligation; suffer if denied the chance to hold space for others. Your presence becomes a void when you cannot give — and you cannot stop trying to fill it."
+      }
+    ]
+  },
+  "corruption": [
+    {
+      "tier": 1,
+      "benefit": "Healer's Touch: +1 die to Medicine or Sway when comforting or aiding.",
+      "cost": "Need to Be Needed: –1 die when acting alone or unacknowledged."
+    },
+    {
+      "tier": 2,
+      "benefit": "Heart's Refuge: Once/scene, +2 dice to sense hidden pain or unspoken burdens.",
+      "cost": "Emotional Echo: Mark 1 Fatigue if unable to provide comfort or presence when sought."
+    },
+    {
+      "tier": 3,
+      "benefit": "Steady Presence: Allies in Near gain +1 die to resist despair or isolation.",
+      "cost": "Absorption Tendency: Often take on others' burdens to your own detriment — others sense your willingness and lean too hard."
+    },
+    {
+      "tier": 4,
+      "benefit": "Veil of Sanctuary: Once/session, issue a compelling invitation to rest that feels like a safe harbor (Resist DV 4).",
+      "cost": "Self-Erasure: –1 die to prioritize own needs, especially when others are in distress."
+    },
+    {
+      "tier": 5,
+      "benefit": "Circle Keeper: Once/session, call on contacts for aid — they remember the weight of your hand on their shoulder.",
+      "cost": "Hollow Hearth: –1 die when isolated from those you care for; you hunger for the weight of another's lean."
+    },
+    {
+      "tier": "6+",
+      "benefit": "Sovereign Stillness: Once/session, dominate a gathering in crisis; all who meet your eyes must test Resolve (DV 5) or feel compelled to seek your calm.",
+      "cost": "The Empty Harbor: Mark +2 Obligation; suffer if denied the chance to hold space for others. Your presence becomes a void when you cannot give — and you cannot stop trying to fill it."
+    }
+  ],
+  "playstyle_notes": {
+    "description": "Venara excels in supportive roles, healing through presence, and building communities that withstand strain. Followers become masters of steadfast loyalty, active listening, and the quiet power of being there. The corruption progression leads toward a caregiver who cannot function without being needed — a harbor that risks drying up when the tide recedes. Ideal for players who enjoy playing the rock in others' storms, characters who wield patience and presence as their primary weapons, and narratives where healing is won through shared silence rather than grand gestures. As with all themes involving vulnerability, use Lines & Veils to ensure the table's comfort.",
+    "emphasizes": [
+      "Love as Sanctuary: presence, active listening, emotional holding space",
+      "Steadfast Bonding: oaths of loyalty, healing through presence, enduring commitments",
+      "Rituals of Care: shared meals, mending crafts, vigils, the sacred ordinary",
+      "Healing Through Connection: soothing distress, restoring trust, communal resilience",
+      "Nurturing Presence: calm as authority, comfort as power, the strength of remaining"
+    ]
+  },
+  "sample_adventure": {
+    "title": "The Mended Circle's Debt",
+    "description": "A member of the Mended Circle has called in every favor the party owes at once — a bedside vigil for a dying stranger, three days straight, no explanation given. Refusing means an unpaid debt of care that the Circle will remember. Attending means missing a job that pays their own bills. Venara offers no easy answer, only the question of what staying is worth when it costs something real.",
+    "quote": "Anyone can love when it's easy. Venara only cares what you do when it isn't."
+  },
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

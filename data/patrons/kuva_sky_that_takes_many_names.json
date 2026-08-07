@@ -1,0 +1,283 @@
+{
+  "id": "kuva-sky-many-names",
+  "type": "patron",
+  "title": "Kuva, the Sky That Takes Many Names",
+  "subtitle": "Witness & Storms",
+  "version": "1.0.0",
+  "tags": [
+    "sky",
+    "storms",
+    "weather",
+    "oaths",
+    "witness",
+    "wind",
+    "navigation",
+    "monsoon",
+    "hollow-boundary"
+  ],
+  "lore": {
+    "description": "Kuva is the dome above all roads — the endless blue, the monsoon wrath, the night's silent gaze. To the Kuvani of the eastern steppe, Kuva is a stern witness who hears every promise made under open heaven. To the Dhaharan of the fertile lowlands, Kuva is a storm-mother, destroyer and renewer, whose rains demand sacrifice and give life. To the Tulkani wanderers, Kuva is a shape-changing presence — neither kind nor cruel, only watchful, and a slighted sky brings ill fortune. To the Aelinnel, Kuva is the first counter, the one who taught the counting song. To the Aelaerem, Kuva is the Hollow's boundary — the sky is where the Hollow's gaze stops.",
+    "followers": "Kuva has no single shrine because Kuva is the roof of every shrine. When a Kuvani pours milk upward, when a Dhaharan offers blood at a monsoon bell, when a Tulkani ties a knot and throws ash, Kuva watches. It does not correct. It remembers. Its followers are sailors, guides, rangers, and oath-sworn travelers who trust the sky's judgment more than any court's.",
+    "quote": "Kuva does not answer in words. It answers in weather. A clear day means 'go.' A storm means 'wait.' Lightning means 'run.' Learn to read the sky, and you will never need a priest."
+  },
+  "domain_focus": [
+    "Witness of Oaths: promises made under open sky are binding",
+    "Storm & Weather: rain, lightning, wind, and the monsoon's rhythm",
+    "Sky as Ledger: the dome records every deed, every lie, every breath",
+    "Threshold of the Hollow: where the sky's gaze ends, the Hollow begins"
+  ],
+  "runekeeper_options": {
+    "thiasos": {
+      "description": "A Runekeeper sworn to Kuva does not bind a creature of the shelter — they bind a companion of the open air. Their Thiasos is a small beast or being that embodies wind and witness: a storm petrel that nests only on the highest peaks, a wind-chaser beetle that clicks its shell when a gale is coming, a gray-feathered kestrel that never lands on a roof, a silver moth that appears only during lightning storms, or a field mouse that sits perfectly still when the sky is about to break.",
+      "care": "This creature requires no food, but it must be shown the open sky each day — a glimpse through a window is not enough. If confined for a week, it becomes Compromised (its feathers or scales grow dull, and its bearer suffers –1 die on all navigation and weather-sense rolls until it is released)."
+    },
+    "codex": {
+      "description": "The Codex of Kuva is never a book kept under a roof. It may be a bundle of wind-knotted cords that must be untied and retied each dawn, a slate tablet that must be read in the rain, a scroll of vellum that shrivels if not exposed to the elements, or a leather pouch of stones collected from nine different hilltops.",
+      "upkeep": "Because the sky resists being fixed in ink, the Codex requires upkeep: the Runekeeper must spend an hour each week under open sky, reciting each Rite aloud to the wind, or the words fade (treat as Compromised until re-consecrated in a storm)."
+    }
+  },
+  "patrons_gift": {
+    "name": "Kuva's Watching Sky",
+    "description": "Once per scene as an action, a Runekeeper of Kuva may touch a held item (weapon, tool, or garment) and whisper a single word of the sky.",
+    "effect": "For the rest of the scene, the item grants +1 die to Lore rolls made outdoors, and the first time each scene the bearer would be surprised by a weather-related hazard (lightning, flash flood, sudden fog), they may reroll the resistance check (the sky warns its own).",
+    "cost": "After the scene, the user marks +1 Obligation to Kuva."
+  },
+  "rites": [
+    {
+      "name": "Rite of the Sky's Witness",
+      "tier": "Low",
+      "xp": 6,
+      "action": "Scene",
+      "range": "Near",
+      "resist": "No",
+      "tags": ["OATH", "TRUTH", "FEAR"],
+      "materials": "A pinch of ash thrown upward, or a single breath spoken into a knot.",
+      "effect": "For one scene, when you speak a promise outdoors, any listener who hears it must test Resolve (DV 3) to lie about that promise. If you break your own promise, the GM gains 2 Story Beats to spend on a sky-related complication (lightning, sudden fog, a hawk stealing your food).",
+      "push_it": "The oath is witnessed by a passing storm — the liar suffers –2 dice to all rolls until they make amends under open sky. Mark 1 SB (Diamonds). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Reading Wind",
+      "tier": "Low",
+      "xp": 5,
+      "action": "Instant",
+      "range": "Self",
+      "resist": "No",
+      "tags": ["SENSE", "TRUTH"],
+      "materials": "A handful of dust or leaves cast to the wind.",
+      "effect": "Ask the sky a single question about the weather to come, a direction to travel, or whether a promise made nearby was sincere. The GM must answer truthfully, though the answer comes as an omen (a bird's flight, a change in wind) rather than plain words. Gain +1 die on your next Lore or Navigation roll this scene.",
+      "push_it": "Ask a second question in the same casting, but mark 1 SB (Diamonds) as the sky grows less patient with your curiosity. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Instant."
+    },
+    {
+      "name": "Rite of Kuva's Gaze",
+      "tier": "Standard",
+      "xp": 9,
+      "action": "Scene",
+      "range": "Zone",
+      "resist": "Yes",
+      "tags": ["STORM", "FEAR", "FORCE"],
+      "materials": "A mirror polished under a new moon, or a piece of sky-stone (meteorite fragment).",
+      "effect": "Call down a brief flash of lightning or a clap of thunder. All who see or hear it within the zone must test Spirit (DV 4) or be Stunned for one exchange. Cannot be used indoors or underground. The lightning always strikes the highest point in the zone, which may be inconvenient.",
+      "push_it": "The storm lingers for the scene. All ranged attacks suffer –1 die, and any fire in the zone is extinguished. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Wind's Passage",
+      "tier": "Standard",
+      "xp": 8,
+      "action": "Scene",
+      "range": "Zone",
+      "resist": "No",
+      "tags": ["MOVEMENT", "STORM", "BOOST"],
+      "materials": "A sail, banner, or cloak spread wide to catch the wind.",
+      "effect": "Summon a favoring wind across the zone for the scene. All allies gain +1 Speed and +1 die to sailing, flying, or gliding rolls. This cannot be used indoors, underground, or in still air unnaturally maintained.",
+      "push_it": "The wind becomes a squall, adding +1 die to allied ranged attacks made downwind but –1 die to those made upwind. Mark 1 SB (Clubs). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Monsoon's Due",
+      "tier": "High",
+      "xp": 14,
+      "action": "Extended",
+      "range": "Zone",
+      "resist": "No",
+      "tags": ["WEATHER", "SACRIFICE", "FATE", "DEBT"],
+      "materials": "A visible scar on your own flesh (cut during the rite) and a handful of earth from the place you wish to affect.",
+      "effect": "Once per season, you may pray for rain (or clear skies) over a one-mile area. The weather shifts within an hour and lasts for a full day. If you pray while standing under open sky, you may also ask for a specific omen — a double rainbow, a lightning strike on a named target, or a wind that carries a message to a distant friend. The cost is a permanent scar; Kuva will remember your debt.",
+      "push_it": "The weather shift is immediate and dramatic (a cloudburst or a sudden clearing), and the scar never fully heals. Mark 3 SB (Spades) as the sky's disruption draws attention. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "Extended action.",
+      "duration": "1 day."
+    }
+  ],
+  "cantors_and_cults": {
+    "cantors": {
+      "name": "The Cantor's Song",
+      "description": "A Cantor of Kuva sings in weather-tides — melodies that rise with the wind and fall with the rain. Their voice is used to call a breeze for becalmed ships, to quiet a storm for a frightened village, or to sing a warning of an approaching typhoon. Kuva's Cantors are often found on hilltops, in lighthouse towers, or lashed to the masts of dhows, their songs torn from their throats by the very wind they command."
+    },
+    "cult": {
+      "name": "The Cult of the Unclouded Eye",
+      "description": "Kuva's cults meet on high places: mountain peaks, clifftops, the roofs of the tallest buildings. The Unclouded Eye is a fellowship of sky-watchers, weather-readers, and oath-sworn travelers. A ritual involves each member naming a promise they have kept and a promise they have broken, then throwing ash into the wind. If the wind carries the ash away, the broken promise is forgiven; if it falls back, the debtor must pay before the next new moon. Their creed is carved on a single stone that is never moved: \"The sky does not forgive. It only reschedules.\" Outsiders are welcome to watch, but they must stand with their faces to the wind and speak no word for the duration of the rite."
+    }
+  },
+  "witchcraft": {
+    "name": "The Art of the Wind-Reader",
+    "description": "A witch who walks with Kuva is a wind-reader or storm-caller — one who listens to the dome. Their magic works through the instruments of weather: a net of knotted cords that catches wind omens, a bowl of water that reflects the next day's sky, or a brass whistle that mimics the cry of a storm-bird. In the Mountain Satrapies, an Aeler vent-prior might calibrate a breath-book, but a witch of Kuva would climb to a peak and taste the wind to know whether the pass will be safe.",
+    "color": "#3c6b8a",
+    "lore": "Wind-readers rarely settle in one place; their craft demands proximity to open sky, and their reputations travel faster than they do. Sailors pay well for an honest forecast, and caravan masters pay better for a warning that arrives a day early. The best of them can taste the difference between an ordinary storm and one that carries the Hollow's attention.",
+    "signature_rite": "Rite of the Reading Wind",
+    "quote": "The wind does not lie. It simply changes its mind more often than we would like.",
+    "tools": {
+      "wind_knot_whistle": {
+        "name": "The Wind-Knot Whistle",
+        "description": "A whistle carved from a bone of a bird that died flying into a storm. Once per session, the witch may blow the whistle in any of the eight directions. For the next hour, the wind in that direction favors the party: +1 Speed on travel, +1 die on any roll involving sails, and the first weather-based hazard is ignored. However, the wind remembers — the next time the party travels the same route, the GM gains 2 SB to spend on a storm complication."
+      }
+    },
+    "hedge_gifts": [
+      {
+        "name": "Kuva's Eavesdrop",
+        "xp": 2,
+        "description": "Once per night, if you sleep under open sky, you may ask one yes/no question about the next day's weather. The GM answers truthfully, but the question must be whispered to the wind. On a roll of a 1, the wind answers but the Hollow also hears. The Hollow will remember the question and may send an Oath-Keeper to ask it back."
+      },
+      {
+        "name": "Storm-Sense",
+        "xp": 3,
+        "description": "Passive. You always know, within an hour's accuracy, when the next significant weather change will occur, as long as you have seen the open sky within the last day."
+      },
+      {
+        "name": "Wind-Knot Charm",
+        "xp": 3,
+        "description": "Once per session, you may tie a knot in a cord while naming a specific outcome you wish the wind to favor (a safe crossing, a fair wind, a dry camp). For the rest of the session, gain +1 die on rolls directly related to that outcome. Untying the knot early ends the effect."
+      },
+      {
+        "name": "Open Sky Oath",
+        "xp": 2,
+        "description": "Once per session, when you swear a promise under open sky, you and the person you swore to both gain +1 die to any roll made to uphold or verify that promise for the rest of the session."
+      }
+    ]
+  },
+  "monastic_tradition": {
+    "name": "The Order of the Unclouded Dome",
+    "description": "Monks of the Unclouded Dome keep no roof over their heads by choice — their order trains entirely in the open, on mountain passes, exposed plateaus, and the decks of ships. They believe that a mind sheltered from weather grows sheltered from truth, and that the discipline of enduring storm without flinching is the discipline of speaking truth without flinching. Novices spend their first year sleeping under open sky in all seasons before they are permitted to learn a single technique.",
+    "color": "#3c6b8a",
+    "quote": "Kuva does not answer in words. It answers in weather.",
+    "prerequisites": "Wits 3+, Spirit 2+, Rite of the Sky's Witness or Cantor of Kuva.",
+    "debt_resistant_frame": "An oath sworn under a roof was never truly witnessed. Monks of the Unclouded Dome gain +1 die to resist any magical debt, geas, or contract that was sworn indoors or in secret, away from open sky (once per scene). If they succeed, the binding is treated as incomplete — Kuva never witnessed it, and so it holds no true weight.",
+    "techniques": {
+      "basic": {
+        "name": "Storm-Reader's Stance",
+        "xp": 5,
+        "description": "Once per scene while outdoors, gain +2 dice to Notice or Lore rolls related to weather, terrain, or approaching danger, as the sky itself seems to lean toward you with warning.",
+        "cost": "Passive",
+        "prereq": "Wits 3+"
+      },
+      "advanced": {
+        "name": "Thunder's Voice",
+        "xp": 9,
+        "description": "Once per scene outdoors, your voice carries with the authority of rolling thunder. Gain +2 dice to Command or Intimidation, and the first target to defy you this scene must test Resolve (DV 3) or hesitate a beat before acting.",
+        "cost": "1 Fatigue",
+        "prereq": "Tier II, Spirit 3+"
+      },
+      "master": {
+        "name": "Unclouded Eye",
+        "xp": 14,
+        "description": "Once per session, see the weather of any place you have visited within the last nine days as if you were there, and simultaneously sense whether any promise sworn there under open sky has since been broken. After the scene, you gain a permanent Debt Scar (your eyes take on the faint grey of a storm cloud) but +1 die on all future rolls involving weather-reading and oath-sensing.",
+        "cost": "2 Fatigue and +1 Obligation to Kuva",
+        "prereq": "Tier III, Spirit 4+"
+      }
+    },
+    "corruption": [
+      {
+        "tier": 1,
+        "benefit": "Weather-Sense: +1 die to predict rain, wind, or fog.",
+        "cost": "Thin-Blooded: –1 die to resist cold; you shiver when the sky is clear."
+      },
+      {
+        "tier": 2,
+        "benefit": "Wind's Favor: Once per scene, reroll a failed navigation or sailing roll.",
+        "cost": "Compulsive Gaze: You must look up before speaking a promise; if you forget, the GM gains 1 SB."
+      },
+      {
+        "tier": 3,
+        "benefit": "Storm Heart: +2 dice to resist fear from storms; your voice carries over wind.",
+        "cost": "Restless: –1 die to social rolls in buildings without windows."
+      },
+      {
+        "tier": 4,
+        "benefit": "Lightning's Child: Once per session, redirect a lightning strike to a target of your choice (must be outdoors).",
+        "cost": "Static Brand: Your hair stands slightly on end when you are angry; –1 die to Deception."
+      },
+      {
+        "tier": 5,
+        "benefit": "Monsoon's Voice: Once per session, call a brief rain that extinguishes non-magical fires and gives +1 Position to Stealth.",
+        "cost": "Sky-Debt: Every use of this power adds 1 tick to a Hollow Attention timer — the Hollow is watching."
+      },
+      {
+        "tier": "6+",
+        "benefit": "Unclouded Eye: Once per session, see the weather of any place you have visited within the last nine days as if you were there.",
+        "cost": "Dome-Bound: You cannot enter a cave or cellar without suffering 2 Fatigue; the sky is your only roof. Your eyes are the color of a storm cloud, and you are always aware of the exact time until the next sunrise."
+      }
+    ]
+  },
+  "corruption": [
+    {
+      "tier": 1,
+      "benefit": "Weather-Sense: +1 die to predict rain, wind, or fog.",
+      "cost": "Thin-Blooded: –1 die to resist cold; you shiver when the sky is clear."
+    },
+    {
+      "tier": 2,
+      "benefit": "Wind's Favor: Once per scene, reroll a failed navigation or sailing roll.",
+      "cost": "Compulsive Gaze: You must look up before speaking a promise; if you forget, the GM gains 1 SB."
+    },
+    {
+      "tier": 3,
+      "benefit": "Storm Heart: +2 dice to resist fear from storms; your voice carries over wind.",
+      "cost": "Restless: –1 die to social rolls in buildings without windows."
+    },
+    {
+      "tier": 4,
+      "benefit": "Lightning's Child: Once per session, redirect a lightning strike to a target of your choice (must be outdoors).",
+      "cost": "Static Brand: Your hair stands slightly on end when you are angry; –1 die to Deception."
+    },
+    {
+      "tier": 5,
+      "benefit": "Monsoon's Voice: Once per session, call a brief rain that extinguishes non-magical fires and gives +1 Position to Stealth.",
+      "cost": "Sky-Debt: Every use of this power adds 1 tick to a Hollow Attention timer — the Hollow is watching."
+    },
+    {
+      "tier": "6+",
+      "benefit": "Unclouded Eye: Once per session, see the weather of any place you have visited within the last nine days as if you were there.",
+      "cost": "Dome-Bound: You cannot enter a cave or cellar without suffering 2 Fatigue; the sky is your only roof. Your eyes are the color of a storm cloud, and you are always aware of the exact time until the next sunrise."
+    }
+  ],
+  "playstyle_notes": {
+    "description": "Kuva rewards those who speak truth under open sky, who respect the weather, and who remember that every promise is a debt owed to the dome. Followers become masters of navigation, weather-reading, and sky-witnessed oaths. The corruption progression leads toward a being that can no longer bear a roof over its head — but one that can read the sky's mood from a hundred miles away. Ideal for guides, sailors, rangers, and anyone who has ever watched a storm roll in and felt a thrill of awe.",
+    "emphasizes": [
+      "Witness of Oaths: the sky records every promise; break one, and the wind will carry the news",
+      "Weather as Narrative: storms are not obstacles but characters with moods",
+      "Open Sky as Sanctuary: roofs are prisons, not shelter",
+      "The Hollow's Boundary: where the sky ends, the Hollow begins"
+    ]
+  },
+  "sample_adventure": {
+    "title": "The Reschedule",
+    "description": "A merchant guild has been dodging a sworn promise for years, and the sky has apparently had enough — an unnatural, unmoving storm has parked itself over their warehouse district, refusing to break until the debt is settled. The Cult of the Unclouded Eye insists this is Kuva's judgment; local authorities insist it's sabotage by a rival guild. The party must climb into the storm itself to learn the truth, and decide who — if anyone — deserves to be forgiven.",
+    "quote": "The sky does not forgive. It only reschedules. And ours has been waiting a very long time."
+  },
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

@@ -1,0 +1,284 @@
+{
+  "id": "gaila-laughing-light",
+  "type": "patron",
+  "title": "Gaila, the Laughing Light",
+  "subtitle": "Joy & Playful Bonding",
+  "version": "1.0.0",
+  "tags": [
+    "joy",
+    "playfulness",
+    "bonding",
+    "laughter",
+    "mirth",
+    "delight",
+    "intimacy",
+    "healing",
+    "community"
+  ],
+  "lore": {
+    "description": "In sun-dappled meadows where laughter rings like wind bells and shared silliness feels like a secret language, the Laughing Light reigns. She is the snort of mirth that escapes when eyes meet across a crowded room, the way a simple joke can dissolve tension like sugar in tea, the quiet thrill of finding someone whose presence makes your heart feel light. Where other patrons bind through hunger, steadfastness, anticipation, or witnessing, Gaila binds through the effortless — teaching that love's purest magic lives not in grand vows or deep wounds, but in the shared breath of joy, the inside joke only two understand, the pleasure of being utterly, simply happy together.",
+    "followers": "Her followers learn that the strongest bond is forged not in sorrow, but in laughter; not in sacrifice, but in shared delight. To serve her is to become a spark: someone who turns ordinary moments into games, who sees the humor in stumbles, and who understands that a smile given freely is a gift that asks for nothing in return. In the taverns where strangers become friends over foolish songs, in palace gardens where princes and paupers trade riddles, in quiet kitchens where couples dance while burning dinner, Gaila's influence is felt. Her cults are the Gigglemoon, whose members seal joy with shared bubbles and silly vows. Her witches are jesters who brew teas that induce giggles, toymakers who craft puzzles requiring two hands to solve, and bakers who hide fortunes in cookies.",
+    "quote": "The truest vow is not spoken — it is laughed. When joy flows between you like water, you need no chains; your bond is the laughter that keeps you afloat."
+  },
+  "domain_focus": [
+    "Playful Intimacy: shared laughter, inside jokes, the joy of simple companionship",
+    "Lighthearted Bonding: oaths of mirth, playful teasing as affection, the magic of mundane happiness",
+    "Rituals of Delight: games, shared silliness, spontaneous merriment, the sacred ordinary",
+    "Healing Through Joy: dissolving tension with humor, restoring lightness after sorrow, communal buoyancy"
+  ],
+  "runekeeper_options": {
+    "thiasos": {
+      "description": "A Runekeeper sworn to Gaila does not bind a creature of claw or fang — they bind a companion of shared delight. Their Thiasos is a small being of joy: a pair of butterflies that dance in sync only when two people laugh together, a songbird that trills a silly tune when tickled near a smiling face, a fox kit that playfully steals small tokens from friends' pockets, or a dandelion clock whose seeds float only when blown by two laughing breaths.",
+      "care": "This creature requires no food, but it must be given a token of shared joy each day (a recalled laugh shared aloud, a doodle exchanged that makes both grin, a pebble from a place where joy was felt). If neglected for a week, it becomes Compromised (its aura of lightness turns brittle, imposing –1 die on all Sway rolls involving genuine mirth for its bearer until offered a fresh token of mutual delight)."
+    },
+    "codex": {
+      "description": "The Codex of Gaila is never a book of dry ink. It may be a journal whose pages fill with doodles and jokes when laughter touches it, a set of three bells that chime in harmony only when two people smile at once, a deck of cards where each pair bears a private joke only the holders understand, or a hollow gourd that rattles with joyous noise when shaken by happy hands.",
+      "upkeep": "Because Gaila's truths are written in shared merriment, the Codex requires upkeep: the Runekeeper must spend an hour each week engaged in a ritual of pure joy with another (playing a childish game until both laugh until tears, sharing three silly memories that spark giggles, or simply sitting in silence while exchanging smiles that reach the eyes), or the Rites stored there fade (treat as Compromised until re-joyed)."
+    }
+  },
+  "patrons_gift": {
+    "name": "Gaila's Spark",
+    "description": "Once per scene as an action, a Runekeeper of Gaila may touch a held item (weapon, tool, or garment) and breathe a single word of \"laugh.\"",
+    "effect": "For the rest of the scene, the item grants +1 die to Sway or Performance rolls, and the first time each scene the bearer shares a moment of genuine joy with a target they wish to charm (a shared laugh, a silly exchange, mutual delight in simplicity), the target must test Resolve (DV 3) or feel a wave of lighthearted warmth (suffer –1 die to resist the bearer's next social action).",
+    "cost": "After the scene, the user marks +1 Obligation to Gaila."
+  },
+  "rites": [
+    {
+      "name": "Rite of the Shared Chuckle",
+      "tier": "Low",
+      "xp": 4,
+      "action": "Scene",
+      "range": "Near",
+      "resist": "Yes",
+      "tags": ["BOOST", "READ", "SECRET"],
+      "materials": "A silly joke told in confidence, or a token meant to provoke a smile (a funny pebble, a joke-novelty).",
+      "effect": "Your mirth becomes contagious. Gain +1 die to Sway one target in a joyful exchange. The target feels a subtle lift of spirit; they are more likely to remember your presence fondly.",
+      "push_it": "The target feels safe enough to name a hidden delight (a secret pleasure, a guilty joy). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Inside Joke",
+      "tier": "Low",
+      "xp": 5,
+      "action": "Scene",
+      "range": "Touch",
+      "resist": "No",
+      "tags": ["BOND", "BOOST", "READ"],
+      "materials": "Two matching silly trinkets (e.g., mismatched socks, novelty buttons), or a shared doodle only the pair understands.",
+      "effect": "Create a temporary bond of playful kinship. Both parties gain +1 die when aiding each other in acts of lighthearted teasing or shared amusement. The bond manifests as a shared warmth, like sunlight on skin after laughter.",
+      "push_it": "The bond deepens to shared vulnerability; both sense when the other is hiding joy but suffer –1 die to conceal their own delight. The bond may persist as a gentle ache until the next dusk. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of Endless Mirth",
+      "tier": "Standard",
+      "xp": 7,
+      "action": "Scene",
+      "range": "Self",
+      "resist": "No",
+      "tags": ["GLAMOUR", "BOOST", "SOCIAL"],
+      "materials": "Perfume applied while recalling a joyful memory, or a garment worn that feels like a second skin of happiness.",
+      "effect": "Assume an aura of effortless charm and magnetic lightness. Gain +2 dice to Sway or Performance in settings of playfulness or shared delight. Your presence lingers in the memory like a half-remembered giggle.",
+      "push_it": "Become the embodiment of joy; all who interact with you feel a shiver of \"more, please\" (Resolve DV 2 to resist seeking deeper connection). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Joy's Embrace",
+      "tier": "Standard",
+      "xp": 8,
+      "action": "Scene",
+      "range": "Near",
+      "resist": "Yes",
+      "tags": ["VOW", "BOND", "BOOST", "FEAR"],
+      "materials": "Token exchanged as a promise of joy — a shared silly vow spoken into wind, a length of ribbon tied in a bow then loosened, or a stone warmed by mutual grip during laughter.",
+      "effect": "Forge a promise of mutual delight. Both gain +1 Effect when cooperating in acts of shared playfulness or lighthearted bonding; breach inflicts 1 SB (Hearts) and a hollowness where laughter once was. Create a 6-segment Joy Strength timer.",
+      "push_it": "Breach also causes a visible withdrawal (a tendency to deflect humor, a habit of taking things too seriously, or an inability to linger in lighthearted space). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Timer: 6 segments."
+    },
+    {
+      "name": "Rite of the Gigglemoon Circle",
+      "tier": "High",
+      "xp": 14,
+      "action": "Extended",
+      "range": "Zone",
+      "resist": "Yes",
+      "tags": ["AREA", "COMMAND", "BOOST", "GLAMOUR", "DEBT"],
+      "materials": "A circle of stones, each touched by a participant's tear of laughter; a chalice filled with sparkling cider shared sip by sip; a length of silk woven from threads spun in mutual silliness.",
+      "effect": "You become the heart of a joyful zone. For the scene: you gain +1 Effect on all social rolls focused on playfulness or mutual delight, and opponents suffer –1 die when attempting to impose seriousness or demand solemnity. Anyone who attempts to deceive you about their emotional state must test Resolve (DV 4) or reveal a hidden sorrow. Allies who share a ritual of pure joy regain 1 Fatigue. Start a 10-segment Circle of Giggles timer; when it fills, you may declare one irrevocable social judgment that the zone's inhabitants will uphold for one month.",
+      "push_it": "Newcomers must test Resolve (DV 4) or become briefly inclined toward joy — they will accept one simple act of mutual delight. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "Extended action.",
+      "duration": "Timer: 10 segments (Circle of Giggles)."
+    }
+  ],
+  "cantors_and_cults": {
+    "cantors": {
+      "name": "The Cantor's Song",
+      "description": "A Cantor of Gaila sings in harmonies of mirth — melodies that linger like the echo of a shared laugh, the hum of a tune only two know. Their voice is used to spark a friendship that lasts a lifetime, to seal a pact of mutual playfulness with a hum, or to draw out the unspoken joy in a guarded heart. Gaila's Cantors are sought in festivals and taverns, and valued by those who know that true joy needs no grand gesture — only the courage to be delightfully present."
+    },
+    "cult": {
+      "name": "The Cult of the Gigglemoon",
+      "description": "Gaila's cults are not hidden; they meet in sunlit meadows, taverns at dusk, and porch swings where the talk turns silly. The Gigglemoon appears to be a society of joy-seekers — but its members trade in time, attention, and the gift of being seen as delightful. A ritual involves each member blowing a bubble shared with another while naming a joy they wish to nurture. The bubble solution is mixed from a common source; those who share a bubble become bound to the Circle — they cannot dismiss a member's bid for play without suffering a visible flush (1 Fatigue, no roll). Their creed is embroidered on its seal: \"Every laugh shared is a thread lightened. Every thread lightened makes the joy unbreakable.\""
+    }
+  },
+  "witchcraft": {
+    "name": "The Art of the Glee-Weaver",
+    "description": "A witch who walks with Gaila is a glee-weaver or joy-smith — one who crafts social reality from threads of shared silliness, spontaneous merriment, and the courage to play. Their magic works with the tools of delight: a powder that induces gentle giggles, a toy that requires two hands to operate (forcing cooperation), or a charm that makes mundane tasks feel like games. Their tools are never solemn; they use fans, noisemakers, and the subtle art of the well-timed \"let's pretend.\"",
+    "color": "#e8a13c",
+    "lore": "In Ecktoria, a Gaila witch might be a letter-writer for the lonely, sealing each envelope with a pressed flower from a shared walk of laughter. In Aeler, a True-Mason might carve a bench that makes every shared silence upon it carry the echo of mutual chuckling. Glee-weavers rarely see their craft as magic at all — they call it kindness with better tools.",
+    "signature_rite": "Rite of the Shared Chuckle",
+    "quote": "Every laugh shared is a thread lightened.",
+    "tools": {
+      "giggle_dust": {
+        "name": "Giggle Dust",
+        "description": "A pinch of shimmering powder that grows warm when two people share a genuine laugh. Once per session, the witch may blow a single pinch while focusing on a person they have met. That dust becomes a token of shared joy — when present between that person and another, it grants +1 die to resist despair or hopelessness (GM determines effect). The witch cannot control how the token is used, only that it exists — and that a token born of shared mirth is the hardest to ignore."
+      }
+    },
+    "hedge_gifts": [
+      {
+        "name": "Joy's Touch",
+        "xp": 2,
+        "description": "Once per scene, the witch may touch a person's hand (or a letter they have written) and speak a single word of intent (\"play,\" \"laugh,\" \"delight\"). For the next hour, the target feels a mild but genuine inclination toward that emotion or action, granting the wielder +1 die on social rolls against them when engaging in playful teasing."
+      },
+      {
+        "name": "Pocket Fool",
+        "xp": 3,
+        "description": "Once per scene, you may craft an instant improvised toy or trick from mundane materials at hand (a coin, a napkin, a stick). Anyone who plays with it for a moment gains a temporary +1 die to their next social roll made in good humor."
+      },
+      {
+        "name": "Sugar in the Tea",
+        "xp": 3,
+        "description": "Once per scene, when tension threatens to boil over into violence or despair, you may spend an action to defuse it with a well-timed jest. All parties gain +1 die to any roll made to de-escalate the situation this scene."
+      },
+      {
+        "name": "The Well-Timed Wink",
+        "xp": 2,
+        "description": "Passive. Once per scene, you may reroll a failed Sway or Performance roll if the attempt involved humor, teasing, or playful charm."
+      }
+    ]
+  },
+  "monastic_tradition": {
+    "name": "The Way of the Open Hand",
+    "description": "Monks of the Open Hand train not in stillness but in play — sparring matches that dissolve into laughter, forms practiced as games, meditation broken deliberately by a well-timed joke. They believe that the body carries its burdens in tension, and that tension yields fastest to delight. Their monasteries ring with sound most orders would call undisciplined: children's games repurposed as combat drills, festival songs sung during work, mock trials held for the crime of frowning too long.",
+    "color": "#e8a13c",
+    "quote": "The truest vow is not spoken — it is laughed.",
+    "prerequisites": "Presence 3+, Spirit 2+, Rite of the Shared Chuckle or Cantor of Gaila.",
+    "debt_resistant_frame": "A debt held lightly is easier to set down. Monks of the Open Hand gain +1 die to resist any magical debt, geas, or contract sealed under duress, sorrow, or coercion (once per scene). If they succeed, they answer the compulsion with laughter, and the binding finds no purchase in a heart too light to hold it.",
+    "techniques": {
+      "basic": {
+        "name": "Disarming Grin",
+        "xp": 5,
+        "description": "Once per scene, in place of an attack, you may offer a target a genuine moment of levity. They must test Resolve (DV 3) or lose their next action to a startled laugh (they are not harmed, merely delighted).",
+        "cost": "1 Boon",
+        "prereq": "Presence 3+"
+      },
+      "advanced": {
+        "name": "Contagious Delight",
+        "xp": 8,
+        "description": "Once per scene, all allies within Near who share a moment of genuine laughter with you clear 1 Fatigue and gain +1 die to their next social roll.",
+        "cost": "1 Fatigue",
+        "prereq": "Tier II, Presence 3+"
+      },
+      "master": {
+        "name": "The Unbreakable Smile",
+        "xp": 13,
+        "description": "Once per session, you may declare that no harm within Near range this scene may break the joy of a gathering — Fear and Despair effects are resisted at +2 dice by all present. After the scene, you gain a permanent Debt Scar (a laugh line that never fades, visible even in grief) but +1 die to resist your own despair for the rest of the session.",
+        "cost": "2 Fatigue and +1 Obligation to Gaila",
+        "prereq": "Tier III, Presence 4+"
+      }
+    },
+    "corruption": [
+      {
+        "tier": 1,
+        "benefit": "Glee's Touch: +1 die to Sway or Performance when playful or joyful.",
+        "cost": "Need for Mirth: –1 die when acting without lightheartedness or delight."
+      },
+      {
+        "tier": 2,
+        "benefit": "Heart's Lightness: Once/scene, +2 dice to sense hidden joys or unspoken pleasures.",
+        "cost": "Emotional Whiplash: Mark 1 Fatigue if unable to sustain joy or mutual delight."
+      },
+      {
+        "tier": 3,
+        "benefit": "Aura of Buoyancy: Allies in Near gain +1 die to resist despair or hopelessness.",
+        "cost": "Pleasure Magnet: Others sense your allure and lean into fantasy, often seeking escape through you."
+      },
+      {
+        "tier": 4,
+        "benefit": "Veil of Delight: Once/session, issue a compelling invitation to \"play\" that feels like a shared dream (Resist DV 4).",
+        "cost": "Fear of Seriousness: –1 die to engage in solemn matters, especially when joy is sweet."
+      },
+      {
+        "tier": 5,
+        "benefit": "Joy Keeper: Once/session, call on contacts for aid — they remember the thrill of your shared laugh.",
+        "cost": "Hollow Delight: –1 die when isolated from those you play with; you hunger for the thrill of the lighthearted."
+      },
+      {
+        "tier": "6+",
+        "benefit": "Sovereign Merriment: Once/session, dominate a gathering in joy; all who meet your eyes must test Resolve (DV 5) or feel compelled to seek your lightness.",
+        "cost": "The Eternal Giggle: Mark +2 Obligation; your presence becomes a tease when you cannot delight, and you cannot stop chasing the shimmer just out of reach."
+      }
+    ]
+  },
+  "corruption": [
+    {
+      "tier": 1,
+      "benefit": "Glee's Touch: +1 die to Sway or Performance when playful or joyful.",
+      "cost": "Need for Mirth: –1 die when acting without lightheartedness or delight."
+    },
+    {
+      "tier": 2,
+      "benefit": "Heart's Lightness: Once/scene, +2 dice to sense hidden joys or unspoken pleasures.",
+      "cost": "Emotional Whiplash: Mark 1 Fatigue if unable to sustain joy or mutual delight."
+    },
+    {
+      "tier": 3,
+      "benefit": "Aura of Buoyancy: Allies in Near gain +1 die to resist despair or hopelessness.",
+      "cost": "Pleasure Magnet: Others sense your allure and lean into fantasy, often seeking escape through you."
+    },
+    {
+      "tier": 4,
+      "benefit": "Veil of Delight: Once/session, issue a compelling invitation to \"play\" that feels like a shared dream (Resist DV 4).",
+      "cost": "Fear of Seriousness: –1 die to engage in solemn matters, especially when joy is sweet."
+    },
+    {
+      "tier": 5,
+      "benefit": "Joy Keeper: Once/session, call on contacts for aid — they remember the thrill of your shared laugh.",
+      "cost": "Hollow Delight: –1 die when isolated from those you play with; you hunger for the thrill of the lighthearted."
+    },
+    {
+      "tier": "6+",
+      "benefit": "Sovereign Merriment: Once/session, dominate a gathering in joy; all who meet your eyes must test Resolve (DV 5) or feel compelled to seek your lightness.",
+      "cost": "The Eternal Giggle: Mark +2 Obligation; your presence becomes a tease when you cannot delight, and you cannot stop chasing the shimmer just out of reach."
+    }
+  ],
+  "playstyle_notes": {
+    "description": "Gaila excels in spreading joy, fostering lighthearted bonds, and building connections that thrive on playfulness. Followers become masters of the art of delight, using humor as social lubricant, and the quiet power of simple happiness. The corruption progression leads toward a joy-seeker who cannot function without constant stimulation — a heart that risks growing flat when the laughter fades. Ideal for players who enjoy playing the fool rather than the sage, characters who wield lightness and mirth as their primary weapons, and narratives where love is celebrated in the everyday rather than the epic. As with all themes involving vulnerability, use Lines & Veils to ensure the table's comfort.",
+    "emphasizes": [
+      "Joy as Play: laughter, silliness, the pleasure of simple being",
+      "Lighthearted Bonding: oaths of mirth, playful teasing as affection, the magic of mundane happiness",
+      "The Pleasure of Simple Being: finding joy in ordinary moments, shared delight in simplicity",
+      "Healing Through Joy: dissolving tension with humor, restoring lightness after sorrow",
+      "Rituals of Delight: games, shared silliness, spontaneous merriment, the sacred ordinary"
+    ]
+  },
+  "sample_adventure": {
+    "title": "The Gigglemoon's Debt",
+    "description": "A beloved local jester — a devotee of the Gigglemoon — has stopped laughing, and the whole town has noticed the difference in ways they cannot quite name: shorter tempers, colder greetings, a market square gone quiet. The party learns the jester owes the Circle a joy they can no longer supply, and must find a way to restore what was lost before the Gigglemoon calls the debt due in a far crueler currency than laughter.",
+    "quote": "We do not ask for gold. We ask only that you remember how to laugh — and that, sometimes, is the harder debt to pay."
+  },
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

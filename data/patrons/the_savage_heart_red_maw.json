@@ -1,0 +1,278 @@
+{
+  "id": "savage-heart-red-maw",
+  "type": "patron",
+  "title": "The Savage Heart",
+  "subtitle": "Red Maw",
+  "version": "1.0.0",
+  "tags": [
+    "predator",
+    "hunt",
+    "beast",
+    "transformation",
+    "pack",
+    "territory",
+    "nature",
+    "primal"
+  ],
+  "lore": {
+    "description": "The Savage Heart is the truth behind the green veil: nature not as garden, but as gullet. It is the claw that tears, the fang that crushes, the hunger that stalks without malice and kills without mercy. Its followers are the druids you do not meet by firelight — those who have learned that the forest feeds on its own, that the strong devour the weak, and that the only law is the one written in blood on snow.",
+    "followers": "Its followers are hunters, pack-leaders, and those who have made peace with their own predatory nature. Across the known world, the Savage Heart wears the face of the apex predator. In the Amaranthine core, it is the Great Bear, patient and unstoppable, a wall of fur and fury. Among the Ykrul and Kuvani, it is the Wolf of the Steppe, a pack hunter with tireless stamina. In Oshiira, it is the Golden Lion, whose roar shatters the hunt's silence. In Sekogo, it is the Leopard of the Tall Grass, a shadow that strikes once and is gone. In Dhahara, it is the Tiger of the Mangroves, whose amber gaze promises a death that runs faster than you can flee. Wherever prey fears the dark, the Savage Heart is already there, waiting.",
+    "quote": "The deer does not weep for the wolf. The sapling does not beg the axe. In the red maw, there is no cruelty — only truth. The truth that all flesh feeds the earth, and the earth feeds the strong."
+  },
+  "domain_focus": [
+    "Apex Predation: hunting, stalking, dominating the food chain",
+    "Red Tooth: killing as nature's sacrament, strength proven through violence",
+    "Scavenger's Wisdom: using death for growth, nothing wasted",
+    "Territory and Pack: dominance over a domain, leadership of the hunt"
+  ],
+  "runekeeper_options": {
+    "thiasos": {
+      "description": "A Runekeeper sworn to the Savage Heart does not bind a familiar of hearth and home. Their Thiasos is a small predator or hunting companion: a wolf pup with eyes the color of amber, a lynx kitten whose fur prickles at danger, a hawk with one white feather that never misses its mark, a viper that coils around the wrist and tastes the air for fear, or a shadow-fox that follows silently and leaves no tracks.",
+      "care": "This creature requires no food in the usual sense, but it must hunt and kill its own prey each week (a rat, a rabbit, or larger, depending on the keeper's means). If neglected, it becomes Compromised (it grows listless, and its keeper loses the benefit of Stalker's Instinct until the creature is fed with a fresh kill)."
+    },
+    "codex": {
+      "description": "The Codex of the Savage Heart is never a book of paper and ink. It may be a belt of predator teeth, each tooth carved with a hunting verse; a bundle of cured hides painted with the kill-records of the keeper's lineage; a set of bone tally sticks, notched for every successful hunt; or the skull of a great beast, its jaw etched with runes that can only be read by the light of a fresh kill.",
+      "upkeep": "Because the hunt resists being fixed in writing, the Codex requires upkeep: the Runekeeper must spend an hour each week oiling the leather, sharpening the teeth, or adding a new notch for a recent kill; otherwise the Rites stored there fade (treat as Compromised until the keeper makes an offering of fresh blood)."
+    }
+  },
+  "patrons_gift": {
+    "name": "The Hunter's Promise",
+    "description": "Once per scene as an action, a Runekeeper of the Savage Heart may touch a held item (weapon, tool, or piece of armor) and whisper a hunter's promise.",
+    "effect": "For the rest of the scene, the item grants +1 die to Athletics or Stealth rolls when in natural terrain, and the first time each scene the bearer would be knocked prone, they may ignore it (the hunter's stance is sure).",
+    "cost": "After the scene, the user marks +1 Obligation to the Savage Heart."
+  },
+  "rites": [
+    {
+      "name": "Rite of the Predator's Gaze",
+      "tier": "Low",
+      "xp": 4,
+      "action": "Scene",
+      "range": "Near",
+      "resist": "No",
+      "tags": ["MARK", "FEAR", "TRACK"],
+      "materials": "A tooth from a predator that killed its own prey.",
+      "effect": "Mark a single target as your prey. Gain +1 die on all rolls to track, pursue, or intimidate that target. The effect lasts until the target escapes or is killed.",
+      "push_it": "The prey feels your gaze; they suffer –1 die to resist social pressure from you. Mark 1 SB (Spades). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Blood Scent",
+      "tier": "Low",
+      "xp": 5,
+      "action": "Scene",
+      "range": "Self",
+      "resist": "Yes",
+      "tags": ["SENSE", "FEAR", "TRACK"],
+      "materials": "A fresh kill's blood smeared on your face.",
+      "effect": "You scent the air like a beast. Gain +2 dice to Investigation or Survival when tracking by smell. You may also detect fear — you sense if a creature within Near is Frightened.",
+      "push_it": "Your sense expands to Far, but you are overwhelmed by the smell of blood; mark 1 SB (Hearts) and suffer –1 die to social rolls until the end of the scene. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Pack Hunt",
+      "tier": "Standard",
+      "xp": 7,
+      "action": "Scene",
+      "range": "Near",
+      "resist": "Yes",
+      "tags": ["TEAMWORK", "TRANSFORM", "BOOST"],
+      "materials": "A token from each member of your pack (a claw, a feather, a scrap of hide).",
+      "effect": "You and up to three allies form a hunting pack. While within Near of each other, all gain +1 die to attacks against a single designated prey, and the first ally to attack each round gains +1 Effect.",
+      "push_it": "Coordination extends to Far, but hunters become territorial; mark 1 SB (Spades) as rivalries flare. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Carrion Feast",
+      "tier": "Standard",
+      "xp": 9,
+      "action": "Scene",
+      "range": "Touch",
+      "resist": "Yes",
+      "tags": ["CONSUME", "HEAL", "BOOST"],
+      "materials": "The flesh of a fallen enemy, consumed raw.",
+      "effect": "Devour the strength of the fallen. Heal 1 Fatigue immediately, and gain +1 die to your next physical action. If the enemy was supernatural (spirit, demon, fey), you also gain a minor property of theirs for one scene.",
+      "push_it": "Heal 1 Harm instead of Fatigue, but mark 1 SB (Hearts) as the feast attracts scavengers. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Instant."
+    },
+    {
+      "name": "Rite of the Final Hunt",
+      "tier": "High",
+      "xp": 14,
+      "action": "Extended",
+      "range": "Near",
+      "resist": "No",
+      "tags": ["TRANSFORM", "FEAR", "SPEED", "DEATH"],
+      "materials": "The heart of a predator you have killed in single combat, still warm.",
+      "effect": "You become the ultimate hunter for one scene: ignore all difficult terrain; gain +3 dice to tracking and combat rolls against your designated prey; if you reduce a prey to 0 Harm, make a free attack against another target within Near.",
+      "push_it": "The hunt consumes you — you cannot end the rite until all designated prey are dead or fled, and you suffer Harm 1 (Weariness) when the scene ends. Mark +2 Obligation. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "Extended action.",
+      "duration": "Scene."
+    }
+  ],
+  "cantors_and_cults": {
+    "cantors": {
+      "name": "The Cantor's Song",
+      "description": "A Cantor of the Savage Heart sings in hunting calls — short, sharp cries that mimic the bark of a bear or the cough of a leopard. Their voice is used to coordinate a pack, to scare prey from hiding, or to summon a predator from the deep woods. They are rarely heard near villages; their songs echo in the places between game trails."
+    },
+    "cult": {
+      "name": "The Cult of the Painted Maw",
+      "description": "The Savage Heart's cults do not meet in groves — they gather at kills, wearing masks of bone and hide that show the animal they have sworn to become. The most ancient sect, the Painted Maw, ritually scarifies each member's chest with the claw marks of their totem beast; the scars are filled with ash and charcoal, and the wounds are licked clean by the pack's eldest hunter. A ritual involves each member speaking the name of a kill they made alone, then adding a tooth from that kill to a communal jawbone that hangs from a tree. Their creed is spoken with full mouths: 'The forest is a stomach. We are its teeth.' Outsiders are not welcome; they are either prey or future members. Those who join must prove themselves by returning with the heart of a predator they have killed with no weapon but their own hands."
+    }
+  },
+  "witchcraft": {
+    "name": "The Art of the Skin-Stitcher",
+    "description": "A witch who walks with the Savage Heart is a skin-stitcher or tooth-carver — but their tools are never forge-hammers. They work with bone, claw, fur, and sinew, crafting masks that hold the spirit of a hunted beast, or drums of leopard skin that call the hunt. Their magic is the patience of the stalker and the savagery of the kill. In Dhahara, a tiger-witch might sew a cloak from the hide of a man-eater, wearing it to walk unseen through the mangroves. In the Ykrul steppe, a wolf-witch might carve a whistle from a wolf's femur that, when blown, answers only with the howl of the pack.",
+    "color": "#8b3a2f",
+    "lore": "The skin-stitcher's path is respect paid in blood. They learn that a hide taken carelessly holds no power, but a hide taken with proper rite becomes a second skin — a mask, a cloak, a drum that remembers the beast's cunning. The Savage Heart's witches are not gentle healers; they are the ones villages call when something in the woods has stopped fearing torches.",
+    "signature_rite": "Rite of the Predator's Gaze",
+    "quote": "The forest is a stomach. We are its teeth.",
+    "tools": {
+      "hunters_mask": {
+        "name": "The Hunter's Mask",
+        "description": "A mask carved from the skull of a predator, lined with fur and painted with the blood of the wearer's first kill. Once per session, when you don the mask, you gain the senses of that predator for the scene: +2 dice to tracking by scent or sound, and you may ask the GM one yes/no question about a creature's fear or weakness. The mask also allows you to speak with animals of that species (they will answer simple questions, but they are never safe to trust)."
+      }
+    },
+    "hedge_gifts": [
+      {
+        "name": "Hunter's Snuff",
+        "xp": 4,
+        "description": "Once per scene, the witch may blow a pinch of powdered bone into the air. For the next minute, the witch can smell the fear of any creature within Near range — they know if a target is Frightened, and gain +1 die to track it."
+      },
+      {
+        "name": "Claw Ward",
+        "xp": 3,
+        "description": "Once per session, draw a line of ash and blood before a threshold. For the rest of the scene, any predator (mundane or supernatural) attempting to cross it must test Resolve (DV 3) or turn away, unnerved by an unseen larger presence."
+      },
+      {
+        "name": "Sinew Binding",
+        "xp": 3,
+        "description": "Craft a simple charm of sinew and bone during downtime. Once, the wearer may add +1 die to a single roll made to overpower, wrestle, or physically dominate an opponent smaller or weaker than themselves."
+      }
+    ]
+  },
+  "monastic_tradition": {
+    "name": "Beast-Form",
+    "description": "The forest is a stomach. We are its teeth.",
+    "color": "#8b3a2f",
+    "prerequisites": "Body 3+, Spirit 2+, Rite of the Predator's Gaze or Cantor of the Savage Heart.",
+    "quote": "The forest is a stomach. We are its teeth.",
+    "debt_resistant_frame": "The Maw does not lend — it devours. Monks of the Beast-Form tradition gain +1 die to resist any magical debt or obligation that would compel them to act against their predatory nature. If they succeed, the creditor's paperwork briefly smells of fresh blood.",
+    "techniques": {
+      "basic": {
+        "name": "Predator's Stance",
+        "xp": 5,
+        "description": "Choose Bear (Tank: +1 Armor, +2 dice Body) or Feline (Striker: +2 dice Agility/Stealth, +1 band movement). Lasts one scene.",
+        "cost": "1 Fatigue",
+        "prereq": "Body 3+"
+      },
+      "advanced": {
+        "name": "Pack Hunter",
+        "xp": 7,
+        "description": "You and up to three allies form a hunting pack. While within Near of each other, all gain +1 die to attacks against a single designated prey, and the first ally to attack each round gains +1 Effect.",
+        "cost": "1 Fatigue",
+        "prereq": "Tier II"
+      },
+      "master": {
+        "name": "Maw Incarnate",
+        "xp": 12,
+        "description": "Once per session, become a true predator for one scene: all attacks ignore 1 Armor and you heal 1 Fatigue on each kill. After the scene, you gain a permanent Fang-Mark Scar (a scar in the shape of a fang mark). You may ignore one debt or obligation that would force you to act against your pack (the creditor hears only growling).",
+        "cost": "Permanent scar and +1 Obligation to the Savage Heart",
+        "prereq": "Tier III"
+      }
+    },
+    "corruption": [
+      {
+        "tier": 1,
+        "benefit": "Stalker's Instinct: +1 die to tracking and stealth in wilderness.",
+        "cost": "Blood Hunger: Must kill or consume fresh meat each day or suffer 1 Fatigue."
+      },
+      {
+        "tier": 2,
+        "benefit": "Apex Demeanor: +1 die to Intimidation against those weaker than you.",
+        "cost": "Pack Guilt: –1 die to social rolls in civilized company; you smell faintly of carrion."
+      },
+      {
+        "tier": 3,
+        "benefit": "Scavenger's Resilience: +2 dice to resist disease and poison from raw meat.",
+        "cost": "Compulsive Dominance: Must assert physical dominance when challenged; –1 die to de-escalation."
+      },
+      {
+        "tier": 4,
+        "benefit": "Wound Licker: Once/session, heal 1 Fatigue by licking a fresh wound (your own or ally's).",
+        "cost": "Beastly Tells: Your teeth sharpen, your eyes reflect light; –1 die to disguise."
+      },
+      {
+        "tier": 5,
+        "benefit": "Alpha's Roar: Once/session, make a terrifying sound that forces all nearby prey to test Resolve (DV 4) or flee.",
+        "cost": "Lone Wolf: –2 dice to cooperate with those who have not proven themselves in battle."
+      },
+      {
+        "tier": "6+",
+        "benefit": "Maw Incarnate: Once/session, become a true predator. For one scene, all attacks ignore 1 Armor and you heal 1 Fatigue on each kill.",
+        "cost": "The Red Eats All: Mark +3 Obligation; risk becoming feral, unable to speak or reason until you have fed again."
+      }
+    ]
+  },
+  "corruption": [
+    {
+      "tier": 1,
+      "benefit": "Stalker's Instinct: +1 die to tracking and stealth in wilderness.",
+      "cost": "Blood Hunger: Must kill or consume fresh meat each day or suffer 1 Fatigue."
+    },
+    {
+      "tier": 2,
+      "benefit": "Apex Demeanor: +1 die to Intimidation against those weaker than you.",
+      "cost": "Pack Guilt: –1 die to social rolls in civilized company; you smell faintly of carrion."
+    },
+    {
+      "tier": 3,
+      "benefit": "Scavenger's Resilience: +2 dice to resist disease and poison from raw meat.",
+      "cost": "Compulsive Dominance: Must assert physical dominance when challenged; –1 die to de-escalation."
+    },
+    {
+      "tier": 4,
+      "benefit": "Wound Licker: Once/session, heal 1 Fatigue by licking a fresh wound (your own or ally's).",
+      "cost": "Beastly Tells: Your teeth sharpen, your eyes reflect light; –1 die to disguise."
+    },
+    {
+      "tier": 5,
+      "benefit": "Alpha's Roar: Once/session, make a terrifying sound that forces all nearby prey to test Resolve (DV 4) or flee.",
+      "cost": "Lone Wolf: –2 dice to cooperate with those who have not proven themselves in battle."
+    },
+    {
+      "tier": "6+",
+      "benefit": "Maw Incarnate: Once/session, become a true predator. For one scene, all attacks ignore 1 Armor and you heal 1 Fatigue on each kill.",
+      "cost": "The Red Eats All: Mark +3 Obligation; risk becoming feral, unable to speak or reason until you have fed again."
+    }
+  ],
+  "playstyle_notes": {
+    "description": "The Savage Heart rewards those who hunt, kill, and dominate. Its followers are not gentle guardians of nature — they are its teeth and claws. Power comes from taking, from proving strength, from the raw act of predation. The cost is the slow loss of the civilized self, the creeping realization that you are becoming the thing you stalk. The Bear form excels at absorbing damage and protecting allies; the Feline or Canine form excels at striking from stealth and mobility. Neither is strictly better than a dedicated specialist — a true tank has more armor, a true striker deals more burst damage — but the Savage Heart's gift is versatility within the hunt.",
+    "emphasizes": [
+      "Predation as Sacrament: killing is holy when done with purpose",
+      "Territory and Dominance: claim, defend, expand",
+      "Pack Tactics: hunting is a team sport",
+      "Red Tooth Wisdom: death feeds life, cruelty is not malice but nature",
+      "Transformation: becoming the beast to master the beast"
+    ]
+  },
+  "sample_adventure": {
+    "title": "The Jawbone Tally",
+    "description": "A Painted Maw hunter has begun killing outside the old boundaries, claiming territory that borders a farming settlement. The pack sees this as natural expansion; the settlers see it as an invasion. The party is called to mediate, hunt, or negotiate — but the Savage Heart does not recognize property lines, and any solution that ignores the hunter's claim to dominance will simply invite a stronger predator to test the same ground next season.",
+    "quote": "You want peace with the wolf? Then be the bigger wolf, or feed it something else."
+  },
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

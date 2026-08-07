@@ -1,0 +1,278 @@
+{
+  "id": "solara-still-mirror",
+  "type": "patron",
+  "title": "Solara, the Still Mirror",
+  "subtitle": "Presence & Authentic Connection",
+  "version": "1.0.0",
+  "tags": [
+    "presence",
+    "witnessing",
+    "authenticity",
+    "vulnerability",
+    "recognition",
+    "mirror",
+    "connection",
+    "healing"
+  ],
+  "lore": {
+    "description": "In spaces where masks fall like dead leaves and souls meet without performance, the Still Mirror reigns. She is the quiet shock of being truly seen — not as a role, not as a desire, but as the raw, breathing person beneath the armor. Where Livaea binds through hunger, Venara through steadfastness, and Zephyria through anticipation, Solara binds through the terrifying gift of being known. Her followers learn that the deepest connection lives not in what we give or take, but in the courage to let another witness our unedited truth — and to witness theirs in return. To serve her is to become a mirror: clear, unflinching, and strangely empty when the gaze turns away.",
+    "followers": "Solara is a patron of presence as sanctuary — not the ecstasy of union, but the quiet courage of being witnessed. She rejects pretense; her greatest teaching is that to be present is to hold space for another's wholeness, even when it reflects your own shadows back at you. In the confessionals of ancient temples, in the therapy rooms of healers' circles, in the midnight talks between friends who've stopped pretending, Solara's influence is felt. Her cults are the Clear Circle, whose members exchange not vows, but written truths sealed in wax. Her witches are truth-tellers who help others name their shame, artists who paint portraits that reveal the soul beneath the smile, and listeners who sit in silence until the unspoken finds voice.",
+    "quote": "The most sacred act is not speaking — it is silencing the lie long enough for truth to breathe. When you allow yourself to be seen, you become the anchor that lets another soul find its shore."
+  },
+  "domain_focus": [
+    "Radical Presence: active witnessing, holding space for truth, the courage to be seen",
+    "Authentic Connection: mutual recognition, vulnerability as gift, the power of being known",
+    "Rituals of Witnessing: shared silence, eye contact without agenda, truth-telling without judgment",
+    "Healing Through Recognition: soothing isolation, restoring self-trust, communal clarity"
+  ],
+  "runekeeper_options": {
+    "thiasos": {
+      "description": "A Runekeeper sworn to Solara does not bind a creature of claw or fang — they bind a companion of mutual witnessing. Their Thiasos is a small being of reflection: a still pond that mirrors two faces at once, a pair of glasses with lenses swapped so each sees the world through the other's eyes, a candle whose flame burns equally for two wicks, or a stone that warms only when held by two palms seeking truth.",
+      "care": "This creature requires no food, but it must be given a token of shared witness each day (a moment of silent eye-contact where both seek to understand, a truth spoken and heard without defense, a sketch made of the other's likeness while they watch). If neglected for a week, it becomes Compromised (its aura of clarity turns harsh, imposing –1 die on all Sway rolls involving genuine empathy for its bearer until offered a fresh token of mutual witness)."
+    },
+    "codex": {
+      "description": "The Codex of Solara is never a book of dry ink. It may be a journal whose pages only show text when held to the light at a specific angle, a collection of mirrors that fog unless two people breathe on them together, a loom that weaves a pattern only when two threads pull in truth, or a bell that rings a pure tone only when struck by two hands in unison.",
+      "upkeep": "Because Solara's truths are written in shared silence, the Codex requires upkeep: the Runekeeper must spend an hour each week engaged in a ritual of mutual witnessing with another (sitting in silence while seeking to understand, sharing one hard truth and listening without interruption, gazing into eyes until the mask slips), or the Rites stored there fade (treat as Compromised until re-silenced)."
+    }
+  },
+  "patrons_gift": {
+    "name": "The Word of Seeing",
+    "description": "Once per scene as an action, a Runekeeper of Solara may touch a held item (weapon, tool, or garment) and breathe a single word of 'see'.",
+    "effect": "For the rest of the scene, the item grants +1 die to Sway or Medicine rolls, and the first time each scene the bearer engages in a ritual of mutual witnessing with a target they wish to comfort (prolonged eye-contact seeking understanding, sharing a hard truth and listening), the target must test Resolve (DV 3) or feel a wave of profound relief (suffer –1 die to resist the bearer's next supportive action).",
+    "cost": "After the scene, the user marks +1 Obligation to Solara."
+  },
+  "rites": [
+    {
+      "name": "Rite of the Shared Silence",
+      "tier": "Low",
+      "xp": 4,
+      "action": "Scene",
+      "range": "Near",
+      "resist": "Yes",
+      "tags": ["READ", "HEAL", "SECRET"],
+      "materials": "Two candles lit and left to burn in silence, or a moment of sustained eye-contact seeking understanding (3+ seconds).",
+      "effect": "Your presence becomes a witness. Gain +1 die to Sway one target in a moment of mutual regard. The target feels a subtle lifting of isolation; they are more likely to confide a worry.",
+      "push_it": "The target feels safe enough to name a fear they've hidden (a secret weakness, a past failure). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Unmasked Touch",
+      "tier": "Low",
+      "xp": 5,
+      "action": "Scene",
+      "range": "Touch",
+      "resist": "No",
+      "tags": ["MEND", "BOND", "READ"],
+      "materials": "A cloth for wiping tears, or a token meant to be held while sharing a truth.",
+      "effect": "Create a temporary bond of mutual care. Both parties gain +1 die when aiding each other in acts of nurturing or truth-sharing. The bond manifests as a shared warmth, like sunlight on skin after tears.",
+      "push_it": "The bond deepens to shared vulnerability; both sense when the other is hiding pain but suffer –1 die to conceal their own distress. The bond may persist as a gentle ache until the next dusk. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Clear Vow",
+      "tier": "Standard",
+      "xp": 8,
+      "action": "Scene",
+      "range": "Near",
+      "resist": "Yes",
+      "tags": ["VOW", "BOND", "HEAL", "FEAR"],
+      "materials": "Token exchanged as a promise of truth — a written confession sealed in wax, a stone warmed by mutual grip during a hard truth, or a length of thread cut from both shirts.",
+      "effect": "Forge a promise of mutual witnessing. Both gain +1 Effect when cooperating in acts of truth-sharing or healing; breach inflicts 1 SB (Hearts) and a hollowness where recognition once was. Create a 6-segment Vow Strength timer.",
+      "push_it": "Breach also causes a visible withdrawal (a reluctance to meet eyes, a tendency to hide behind humor, or an inability to accept comfort). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Timer: 6 segments."
+    },
+    {
+      "name": "Rite of the Still Point",
+      "tier": "Standard",
+      "xp": 7,
+      "action": "Scene",
+      "range": "Self",
+      "resist": "No",
+      "tags": ["GLAMOUR", "BOOST", "SOCIAL"],
+      "materials": "A stone held during shared silence, or a garment worn that feels like a second skin.",
+      "effect": "Assume an aura of profound calm and magnetic authenticity. Gain +2 dice to Sway or Medicine in settings of distress or vulnerability. Your presence lingers in the memory like a safe harbor remembered in storm.",
+      "push_it": "Become the emotional anchor; all who seek comfort gravitate toward you with +1 Effect. Those who confide in you may feel a shiver of relief (Resolve DV 2 to resist sharing deeper burdens). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Clear Circle",
+      "tier": "High",
+      "xp": 14,
+      "action": "Extended",
+      "range": "Zone",
+      "resist": "No",
+      "tags": ["AREA", "COMMAND", "HEAL", "GLAMOUR", "DEBT"],
+      "materials": "A circle of stones, each touched by a participant's tear during a truth shared; a bowl of water where each person has gazed into their reflection; a length of silk woven from threads spun in mutual silence.",
+      "effect": "You become the heart of a witnessing zone. For the scene: you gain +1 Effect on all social rolls focused on truth-sharing or healing, and opponents suffer –1 die when attempting to sow deception or distraction. Anyone who attempts to deceive you about their emotional state must test Resolve (DV 4) or reveal a hidden pain (–1 die on their next action as guilt wells up). Allies who share a ritual of mutual witnessing regain 1 Fatigue. Start a 10-segment Circle of Witness timer; when it fills, you may declare one irrevocable communal judgment that the zone's inhabitants will uphold for one month.",
+      "push_it": "Newcomers must test Resolve (DV 4) or become briefly inclined toward witnessing. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "Extended action.",
+      "duration": "Timer: 10 segments (Circle of Witness)."
+    }
+  ],
+  "cantors_and_cults": {
+    "cantors": {
+      "name": "The Cantor's Song",
+      "description": "A Cantor of Solara sings in harmonies of stillness — melodies that linger like the hush after a truth is spoken, the breath held as masks fall. Their voice is used to deepen a therapy session that leads to breakthrough, to seal a pact of mutual honesty with a hum, or to draw out the unspoken sorrow in a guarded heart. Solara's Cantors are sought in healing spaces and confessionals, and valued by those who know that true presence needs no grand gesture — only the courage to be truly witnessed."
+    },
+    "cult": {
+      "name": "The Cult of the Clear Circle",
+      "description": "Solara's cults are not hidden; they meet in quiet rooms, healing circles at dawn, and porch swings where the talk turns real. The Clear Circle appears to be a society of truth-seekers — but its members trade in time, attention, and the gift of being seen as they truly are. A ritual involves each member placing a written truth (sealed in wax) into a central bowl while naming a burden they wish to release. The bowl is filled with water from a common source; those who draw a truth become bound to the Circle — they cannot ignore a member's plea for aid without suffering a visible heaviness (1 Fatigue, no roll). The most devoted wear a simple wax seal on their wrist — a symbol that no bond is ever truly built on pretense. Their creed is embroidered on its seal: 'Every truth shared is a thread cleared. Every thread cleared makes the mirror unbreakable.' Outsiders are welcome as guests, but they will leave with a lighter heart, a new understanding of courage, or a new appreciation for the beauty of being seen. Rarely all three."
+    }
+  },
+  "witchcraft": {
+    "name": "The Art of the Truth-Weaver",
+    "description": "A witch who walks with Solara is a truth-weaver or presence-smith — one who crafts social reality from threads of mutual witnessing, unspoken truths, and the courage to be seen. Their magic works with the tools of presence: a journal that only reveals truth when two people hold it together, a mirror that fogs unless breathed upon by two seeking understanding, or a garment that feels like a second skin when worn in silence. Their tools are never masks; they use looms, ladles, and the subtle art of the well-timed 'I see you.' In Ecktoria, a Solaran witch might be a letter-writer for the grieving, sealing each envelope with a pressed flower from a shared walk of truth. In Aeler, a True-Mason might carve a bench that makes every shared silence upon it carry the echo of mutual witnessing.",
+    "color": "#e8b84b",
+    "lore": "The truth-weaver's path is the art of holding still long enough for another to arrive. They learn that presence is not passive — it is the hardest work a person can do, staying visible when every instinct says to look away. Solara teaches that the mirror's gift is not flattery, but accuracy offered with love.",
+    "signature_rite": "Rite of the Shared Silence",
+    "quote": "When you allow yourself to be seen, you become the anchor that lets another soul find its shore.",
+    "tools": {
+      "seeing_stone": {
+        "name": "The Seeing-Stone",
+        "description": "A smooth stone that grows warm when two people seek to understand each other without judgment. Once per session, the witch may hold a stone while focusing on a person they have met. That stone becomes a token of shared witness — when held between that person and another, it grants +1 die to resist despair or isolation (GM determines effect: +1 die to Sway when comforting, –1 die to succumb to hopelessness, etc.). The witch cannot control how the token is used, only that it exists — and that a token born of mutual witnessing is the hardest to discard."
+      }
+    },
+    "hedge_gifts": [
+      {
+        "name": "Steady Witness",
+        "xp": 2,
+        "description": "Once per scene, the witch may touch a wounded person (including themselves) and speak a single word of intent ('see,' 'hear,' 'be'). For the next hour, the target feels a mild but genuine inclination toward that emotion or action — not enough to override self-preservation, but enough to grant the wielder +1 die on social rolls against them when offering presence. The touch leaves no mark, but the memory of it may haunt the target's dreams as a feeling of being truly seen."
+      },
+      {
+        "name": "The Honest Glass",
+        "xp": 3,
+        "description": "Once per scene, hold up a small mirror to someone's face while they speak. If they are lying to themselves (not to you), the mirror fogs faintly — only you can see it. Does not detect lies told to others."
+      },
+      {
+        "name": "Held Breath",
+        "xp": 4,
+        "description": "Once per session, sit in silence with a distressed person for one uninterrupted minute (no talking, no rolling). At the end, they clear 1 Fatigue and gain +1 die to their next Resolve test against fear or despair."
+      }
+    ]
+  },
+  "monastic_tradition": {
+    "name": "The Way of the Still Mirror",
+    "description": "Monks of the Still Mirror train themselves to remain present under any pressure — to hold a gaze, hold a silence, and hold space for another's collapse without flinching or fleeing. Their combat style, when it emerges at all, is built on reading truth in an opponent's stance and refusing to look away from what frightens them.",
+    "color": "#e8b84b",
+    "prerequisites": "Spirit 3+, Presence 3+, Rite of the Shared Silence or Cantor of Solara.",
+    "quote": "The most sacred act is not speaking — it is silencing the lie long enough for truth to breathe.",
+    "debt_resistant_frame": "A truth witnessed freely cannot be sold. Monks of the Still Mirror gain +1 die to resist any magical debt or obligation that would force them to perform false emotion, feign a connection, or witness under compulsion. If they succeed, the compulsion finds nothing but their unflinching, honest gaze — and slides off.",
+    "techniques": {
+      "basic": {
+        "name": "Unflinching Gaze",
+        "xp": 5,
+        "description": "Once per scene, meet a target's eyes and hold them for a full exchange. The target must test Resolve (DV 3) or be unable to lie to you for the rest of the scene.",
+        "cost": "1 Fatigue",
+        "prereq": "Presence 3+"
+      },
+      "advanced": {
+        "name": "The Still Point",
+        "xp": 8,
+        "description": "Assume an aura of profound calm and magnetic authenticity. Gain +2 dice to Sway or Medicine in settings of distress or vulnerability for the scene.",
+        "cost": "1 Boon",
+        "prereq": "Tier II"
+      },
+      "master": {
+        "name": "The Unbroken Reflection",
+        "xp": 12,
+        "description": "Once per session, become a perfect mirror for one scene: any attempt to deceive, manipulate, or emotionally overpower you instead reflects back on the aggressor at full force. You gain a permanent Debt Scar (your eyes never quite match in low light again) — the Hollow no longer pursues one debt built on a lie told about you, but you can no longer un-see certain truths about yourself.",
+        "cost": "2 Fatigue and +1 Obligation to Solara",
+        "prereq": "Tier III, Spirit 4+"
+      }
+    },
+    "corruption": [
+      {
+        "tier": 1,
+        "benefit": "Witness's Touch: +1 die to Medicine or Sway when witnessing or comforting.",
+        "cost": "Need to Be Seen: –1 die when acting without genuine connection or mutual recognition."
+      },
+      {
+        "tier": 2,
+        "benefit": "Heart's Clarity: Once/scene, +2 dice to sense hidden pains or unspoken burdens.",
+        "cost": "Emotional Exposure: Mark 1 Fatigue if unable to provide presence or witnessing when sought."
+      },
+      {
+        "tier": 3,
+        "benefit": "Aura of Authenticity: Allies in Near gain +1 die to resist despair or isolation.",
+        "cost": "Truth Magnet: Others sense your clarity and lean into vulnerability, whether or not you have room to hold it."
+      },
+      {
+        "tier": 4,
+        "benefit": "Veil of Seeing: Once/session, issue a compelling invitation to 'be seen' that feels like a safe harbor (Resist DV 4).",
+        "cost": "Fear of Being Known: –1 die to prioritize own needs, especially when others seek your witness."
+      },
+      {
+        "tier": 5,
+        "benefit": "Circle Keeper: Once/session, call on contacts for aid — they remember the weight of your witness on their shoulder.",
+        "cost": "Hollow Mirror: –1 die when isolated from those you witness with; you hunger for the weight of another's lean."
+      },
+      {
+        "tier": "6+",
+        "benefit": "Sovereign Stillness: Once/session, dominate a gathering in crisis; all who meet your eyes must test Resolve (DV 5) or feel compelled to seek your calm.",
+        "cost": "The Empty Mirror: Mark +2 Obligation; suffer if denied the chance to hold space for witnessing. Your presence becomes a void when you cannot give — and you cannot stop trying to fill the silence."
+      }
+    ]
+  },
+  "corruption": [
+    {
+      "tier": 1,
+      "benefit": "Witness's Touch: +1 die to Medicine or Sway when witnessing or comforting.",
+      "cost": "Need to Be Seen: –1 die when acting without genuine connection or mutual recognition."
+    },
+    {
+      "tier": 2,
+      "benefit": "Heart's Clarity: Once/scene, +2 dice to sense hidden pains or unspoken burdens.",
+      "cost": "Emotional Exposure: Mark 1 Fatigue if unable to provide presence or witnessing when sought."
+    },
+    {
+      "tier": 3,
+      "benefit": "Aura of Authenticity: Allies in Near gain +1 die to resist despair or isolation.",
+      "cost": "Truth Magnet: Others sense your clarity and lean into vulnerability, whether or not you have room to hold it."
+    },
+    {
+      "tier": 4,
+      "benefit": "Veil of Seeing: Once/session, issue a compelling invitation to 'be seen' that feels like a safe harbor (Resist DV 4).",
+      "cost": "Fear of Being Known: –1 die to prioritize own needs, especially when others seek your witness."
+    },
+    {
+      "tier": 5,
+      "benefit": "Circle Keeper: Once/session, call on contacts for aid — they remember the weight of your witness on their shoulder.",
+      "cost": "Hollow Mirror: –1 die when isolated from those you witness with; you hunger for the weight of another's lean."
+    },
+    {
+      "tier": "6+",
+      "benefit": "Sovereign Stillness: Once/session, dominate a gathering in crisis; all who meet your eyes must test Resolve (DV 5) or feel compelled to seek your calm.",
+      "cost": "The Empty Mirror: Mark +2 Obligation; suffer if denied the chance to hold space for witnessing. Your presence becomes a void when you cannot give — and you cannot stop trying to fill the silence."
+    }
+  ],
+  "playstyle_notes": {
+    "description": "Solara excels in truth-telling, mutual witnessing, and building communities that thrive on authenticity. Followers become masters of radical presence, holding space for pain, and the quiet power of being seen. The corruption progression leads toward a witness who cannot function without the terror of being known — a mirror that risks cracking when the gaze turns inward. Ideal for players who enjoy playing the rock in others' storms of self-doubt, characters who wield vulnerability and recognition as their primary weapons, and narratives where healing is won through shared silence rather than grand gestures. As with all themes involving vulnerability, use Lines & Veils to ensure the table's comfort.",
+    "emphasizes": [
+      "Presence as Sanctuary: witnessing, active listening, emotional holding space",
+      "Authentic Connection: mutual recognition, vulnerability as gift, the power of being known",
+      "Rituals of Witnessing: shared silence, eye contact without agenda, truth-telling without judgment",
+      "Healing Through Recognition: soothing isolation, restoring self-trust, communal clarity",
+      "Radical Presence: calm as authority, comfort as power, the strength of remaining seen"
+    ]
+  },
+  "sample_adventure": {
+    "title": "The Bowl of Sealed Truths",
+    "description": "The Clear Circle's central bowl has been stolen, and with it dozens of wax-sealed confessions from a decade of gatherings. Whoever holds the bowl can ransom every secret it contains — or worse, read them all. The party is drawn in when one of the sealed truths belongs to someone they trust, and they must decide whether recovering the bowl means opening it, or whether Solara's teaching demands they let it stay sealed even at personal cost.",
+    "quote": "The mirror does not lie. That is why so many fear what it holds — and why so few can look away once they've started."
+  },
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

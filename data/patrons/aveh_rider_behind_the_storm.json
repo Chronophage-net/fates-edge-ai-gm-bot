@@ -1,0 +1,284 @@
+{
+  "id": "aveh-rider-behind-storm",
+  "type": "patron",
+  "title": "Aveh, the Rider Behind the Storm",
+  "subtitle": "Freedom & Erasure",
+  "version": "1.0.0",
+  "tags": [
+    "freedom",
+    "erasure",
+    "storm",
+    "liminal",
+    "identity",
+    "non-conforming",
+    "escape",
+    "wind",
+    "outcast"
+  ],
+  "lore": {
+    "description": "Aveh is the faceless rider at the horizon's edge, neither man nor woman, both and neither. The Ykrul call them Aveh, a liminal spirit beyond hearth and vow, a storm-shadow that offers liberty at the cost of belonging. To travel with Aveh is to taste unchained freedom — and to risk being erased by the storm that follows. They are the patron of the outcast, the non-conforming, the genderless, and the forgotten. Aveh asks no oath and demands no loyalty, but every gift leaves a scar of absence.",
+    "followers": "Aveh's followers are outcasts, runaways, spies, and those who have rejected the bonds of family, nation, or gender. They gather at crossroads rather than temples, marked by no banner and no fixed name. Some are gentle path-cutters who help the desperate vanish from cruel pursuers; others are the Unbannered, who erase themselves entirely and are never seen again by anyone who knew them.",
+    "quote": "I am the track the storm devours. I am the freedom you fear and the silence you crave. To ride with me is to be unbound, and to be unbound is to vanish."
+  },
+  "domain_focus": [
+    "Freedom from Bonds: escape, liberation, shedding constraints",
+    "Erasure: becoming forgotten, removing traces, vanishing from memory",
+    "Liminal Identity: non-conforming, genderless, between categories",
+    "Storm as Shelter: the chaos that hides and the wind that carries away"
+  ],
+  "runekeeper_options": {
+    "thiasos": {
+      "description": "A Runekeeper sworn to Aveh does not bind a willing servant — they befriend a creature as fleeting as the wind. Their Thiasos is a small beast or mythological being that embodies freedom: a storm-petrel that appears before gales, a gray fox that leaves no tracks, a shadow-hound pup whose fur shifts like cloud, or a raven that knows every crossroads. The bond is one of mutual escape, not mastery.",
+      "care": "This creature requires no food, but it must be allowed to run free each day; if confined for more than a day, it becomes Compromised (it refuses to return, or returns only to harry its keeper)."
+    },
+    "codex": {
+      "description": "The Codex of Aveh is never a book bound in one place. It may be a leather strap knotted with wind-signs, a set of chalked symbols that blow away after each use, or a slate etched with runes that fade in rain.",
+      "upkeep": "Because Aveh's truths are written in absence, the Codex requires upkeep: the Runekeeper must spend an hour each week rewriting its contents from memory (or letting the wind rearrange them), or the Rites stored there become uncertain (treat as Compromised until restored)."
+    }
+  },
+  "patrons_gift": {
+    "name": "Aveh's Unbinding",
+    "description": "Once per scene as an action, a Runekeeper of Aveh may touch a held item (weapon, tool, or cloak) and whisper a word of unbinding.",
+    "effect": "For the rest of the scene, the item grants +1 die to Stealth or Escape rolls, and the first time each scene the bearer would provoke an opportunity attack, they may ignore it (they slip through the gap).",
+    "cost": "After the scene, the user marks +1 Obligation to Aveh."
+  },
+  "rites": [
+    {
+      "name": "Rite of the Unlatched Step",
+      "tier": "Low",
+      "xp": 5,
+      "action": "Scene",
+      "range": "Self",
+      "resist": "Yes",
+      "tags": ["LIBERATE", "STEALTH"],
+      "materials": "A breath cast into the wind, or a line drawn in dust.",
+      "effect": "Choose one: Storm-Step: Slip free of notice or restraint. Gain +1 die on one escape or evasion roll this scene. Exile's Banner: Mark a target as \"outside.\" The target suffers –1 die on all social rolls for the scene.",
+      "push_it": "(Storm-Step) Gain +2 dice instead, but mark 1 SB (Spades) as your absence unsettles the scene. (Exile's Banner) The target is fully estranged; allies treat them as forgotten, but you immediately advance your Corruption timer by 1 segment. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Whistling Latch",
+      "tier": "Low",
+      "xp": 6,
+      "action": "Instant",
+      "range": "Touch",
+      "resist": "No",
+      "tags": ["LIBERATE", "STEALTH"],
+      "materials": "A pinch of dust blown across a lock, latch, or knot.",
+      "effect": "Open a mundane lock, chain, or knot as if it had never been fastened. This works on doors, manacles, shutters, and rope, but not on magical wards. Alternatively, unfasten a grip: a creature holding you or an ally must succeed at a contested Body test or release their grasp.",
+      "push_it": "Unlatch every mundane binding in Near range at once (all doors on a corridor, every manacle in a cell), but the sudden gust knocks over anything unsecured. Mark 1 SB (Clubs). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Instant."
+    },
+    {
+      "name": "Rite of the Forgotten Road",
+      "tier": "Standard",
+      "xp": 9,
+      "action": "Scene",
+      "range": "Zone",
+      "resist": "Yes",
+      "tags": ["ERASURE", "AREA", "LIBERATE"],
+      "materials": "A threshold or roadway under open sky, or stormwater rubbed into skin.",
+      "effect": "Choose one: Erase the Road: All attempts to follow you this session suffer –2 dice. In exchange, erase part of your own path: lose a detail (a memory, a name) chosen by the GM. Rider's Mark: A companion gains +2 dice to resist capture or coercion, but others forget them more easily.",
+      "push_it": "(Erase the Road) Expand the effect to an entire group, but mark 1 SB (Clubs) as reality warps around the erasure. (Rider's Mark) Grant +3 dice instead, but mark 1 SB (Diamonds) as the Rider's storm distorts bonds. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Unremembered Name",
+      "tier": "Standard",
+      "xp": 13,
+      "action": "Extended",
+      "range": "Self",
+      "resist": "Yes",
+      "tags": ["ERASURE", "TRANSFORM", "FATE", "LIBERATE"],
+      "materials": "A circle of ash or dust drawn at a boundary, and a personal token (a lock of hair, a written name).",
+      "effect": "For one week, your name is erased from mundane records and casual memory. Those who knew you must succeed on a Resolve test (DV 4) to recall you. You gain +2 dice to all rolls to avoid detection, impersonate another, or pass unseen. At the end of the week, the erasure fades, but the GM may retain one lingering rumor or false memory.",
+      "push_it": "The erasure becomes permanent — your original identity is gone. You cannot recover it except by divine intervention or a major quest. Mark +3 Obligation. Cost: Mark +1 Obligation (total +4) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "Extended action.",
+      "duration": "1 week."
+    },
+    {
+      "name": "Rite of the Horizon's Devour",
+      "tier": "High",
+      "xp": 15,
+      "action": "Extended",
+      "range": "Zone",
+      "resist": "No",
+      "tags": ["ERASURE", "AREA", "FATE", "DEATH"],
+      "materials": "A circle of ash or dust drawn at a boundary, and a storm that answers.",
+      "effect": "All thresholds in a zone collapse. Doors lead nowhere; borders dissolve; memory of the place becomes vague. In exchange, something of you is erased — your reflection, your name, or your presence in a specific person's memory (GM's choice).",
+      "push_it": "The storm devours even time; mark 3 SB (Spades) as history forgets you. Cost: Mark +1 Obligation (total +4) or Mark +1 Fatigue.",
+      "cost": "Mark +3 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "Extended action.",
+      "duration": "Permanent."
+    }
+  ],
+  "cantors_and_cults": {
+    "cantors": {
+      "name": "The Cantor's Song",
+      "description": "A Cantor of Aveh does not sing to be heard, but to be forgotten. Their art is the empty note, the melody that leaves a silence where a memory once lived. They are sought by those who need to disappear — spies, exiles, the grief-stricken — and feared by those who want to be remembered."
+    },
+    "cult": {
+      "name": "The Cult of the Unbannered",
+      "description": "Aveh has no temples, only crossroads. Their cults are small, mobile, and secretive. The Unbannered do not use names; they identify each other by a single knotted cord worn on the left wrist, the knot tied in a pattern that changes with every new moon. A ritual involves each member writing their name on a slip of paper, then passing the slips in a circle until no one remembers whose name they hold. They then burn the papers in a storm-lit brazier. The most devoted remove their own names from all records, wear featureless gray masks, and speak only through a designated \"voice\" who changes each season. Their creed: \"We were never here.\" Outsiders who stumble into a meeting are offered a black feather and a choice: forget, or follow. Those who follow are never seen by their former lives again."
+    }
+  },
+  "witchcraft": {
+    "name": "The Art of the Unlatched Road",
+    "description": "A witch who walks with Aveh is a path-cutter, a specialist in hidden roads and forgotten boundaries. Their power lies in omission: removing a door, erasing a trail, or unlatching the memory of a promise. Their tools are never hammers or chisels — they use whistles, feathers, and the quiet breath of a closed door.",
+    "color": "#5a6b7a",
+    "lore": "The path-cutter's craft is subtraction, not addition. They learn to see every wall as a suggestion, every name as a temporary label, every locked door as a held breath waiting to be released. Aveh's witches are rarely settled; they drift between towns, doing small kindnesses for the trapped and the hunted, then vanish before gratitude can become obligation.",
+    "signature_rite": "Rite of the Whistling Latch",
+    "quote": "A door is only a door until the wind decides otherwise.",
+    "tools": {
+      "unbound_whistle": {
+        "name": "The Whistle of the Unbound Road",
+        "description": "A small iron whistle, cold to the touch even in summer, shaped like a bird in flight. Once per session, when blown at a locked threshold (a door, a city gate, a sealed letter), the wind answers, and the lock opens as if it had never been closed. The whistle can also be used to \"call the storm\" — blown at a crossroads at midnight, it summons a thin, cold fog that obscures all tracks for an hour. The fog fades when the first cock crows."
+      }
+    },
+    "hedge_gifts": [
+      {
+        "name": "Unlatched",
+        "xp": 4,
+        "description": "Once per scene, you may declare a mundane lock, latch, or simple binding to be \"unlatched\" and open freely. This works on doors, chains, shutters, and even a pursuer's grip, but not on magical wards."
+      },
+      {
+        "name": "Wind's Footprint",
+        "xp": 3,
+        "description": "Once per scene, you may erase your own tracks and scent trail behind you for the next Near range you travel. Trackers suffer –2 dice to follow you across that stretch."
+      },
+      {
+        "name": "The Empty Chair",
+        "xp": 3,
+        "description": "Once per session, you may spend a few minutes convincing a single witness that they never saw you enter a room or leave it. They genuinely believe the chair was always empty, until presented with contrary proof (Resolve DV 3 to resist)."
+      },
+      {
+        "name": "Crossroads Sense",
+        "xp": 2,
+        "description": "Passive. You always know the shortest route to the nearest crossroads, threshold, or open road, even in unfamiliar territory or magical darkness."
+      }
+    ]
+  },
+  "monastic_tradition": {
+    "name": "Unbound Step",
+    "description": "Monks of the Unbound Step embody Aveh's philosophy of liberty at the cost of belonging. They move like weather fronts — sudden, directionless, gone before anyone can name what passed. In the quiet of no monastery at all (their order keeps no fixed hall), they practice the discipline of leaving: leaving rooms unseen, leaving names unclaimed, leaving grudges and debts behind like footprints erased by rain.",
+    "color": "#5a6b7a",
+    "quote": "I am the track the storm devours. To ride with me is to be unbound.",
+    "prerequisites": "Wits 3+, Spirit 2+, Rite of the Unlatched Step or Cantor of Aveh.",
+    "debt_resistant_frame": "Chains cannot hold what the storm has erased. Monks of the Unbound Step gain +1 die to resist any magical debt, geas, or contract that would restrict their movement or freedom of choice. If they succeed, the creditor's parchment briefly turns to ash — the clause was never written.",
+    "techniques": {
+      "basic": {
+        "name": "Storm-Step",
+        "xp": 6,
+        "description": "Teleport to any unoccupied space within Near range, ignoring opportunity attacks. The space must be unobserved at the moment of arrival (the storm hides you).",
+        "cost": "1 Fatigue",
+        "prereq": "Wits 3+"
+      },
+      "advanced": {
+        "name": "Forgotten Road",
+        "xp": 9,
+        "description": "All attempts to follow you this session suffer –2 dice. In exchange, you lose a detail (a memory, a name) chosen by the GM.",
+        "cost": "1 Fatigue",
+        "prereq": "Tier II, Wits 2+"
+      },
+      "master": {
+        "name": "Horizon's Devour",
+        "xp": 15,
+        "description": "Collapse a threshold: a door leads nowhere, a border dissolves. In exchange, something of you is erased — your reflection, your name, or your presence in a specific person's memory.",
+        "cost": "1 Boon + 1 Fatigue",
+        "prereq": "Tier III"
+      }
+    },
+    "corruption": [
+      {
+        "tier": 1,
+        "benefit": "Storm-sense: +1 die to Notice rolls outdoors.",
+        "cost": "Voice falters: Others forget your words more easily."
+      },
+      {
+        "tier": 2,
+        "benefit": "Fleetness: +1 die on escape or chase rolls.",
+        "cost": "Shadow lags: Mark 1 Fatigue when first seen in a scene."
+      },
+      {
+        "tier": 3,
+        "benefit": "Erasure's Mercy: Once/session, negate 1 Harm or capture.",
+        "cost": "Memory slips: Allies forget one fact or bond tied to you."
+      },
+      {
+        "tier": 4,
+        "benefit": "Rider's Endurance: Resist 1 Condition (Fear, Fatigue, Bind) once/session.",
+        "cost": "Reflections falter: You do not appear clearly in mirrors."
+      },
+      {
+        "tier": 5,
+        "benefit": "Storm-banner: +1 die to inspire rebellion or defiance.",
+        "cost": "Exile's weight: Each Push of a Rite marks 1 permanent Corruption."
+      },
+      {
+        "tier": "6+",
+        "benefit": "Horizon's Claim: You may ride unseen across any threshold.",
+        "cost": "Self-erasure: On social rolls, roll twice and take the worst result."
+      }
+    ]
+  },
+  "corruption": [
+    {
+      "tier": 1,
+      "benefit": "Storm-sense: +1 die to Notice rolls outdoors.",
+      "cost": "Voice falters: Others forget your words more easily."
+    },
+    {
+      "tier": 2,
+      "benefit": "Fleetness: +1 die on escape or chase rolls.",
+      "cost": "Shadow lags: Mark 1 Fatigue when first seen in a scene."
+    },
+    {
+      "tier": 3,
+      "benefit": "Erasure's Mercy: Once/session, negate 1 Harm or capture.",
+      "cost": "Memory slips: Allies forget one fact or bond tied to you."
+    },
+    {
+      "tier": 4,
+      "benefit": "Rider's Endurance: Resist 1 Condition (Fear, Fatigue, Bind) once/session.",
+      "cost": "Reflections falter: You do not appear clearly in mirrors."
+    },
+    {
+      "tier": 5,
+      "benefit": "Storm-banner: +1 die to inspire rebellion or defiance.",
+      "cost": "Exile's weight: Each Push of a Rite marks 1 permanent Corruption."
+    },
+    {
+      "tier": "6+",
+      "benefit": "Horizon's Claim: You may ride unseen across any threshold.",
+      "cost": "Self-erasure: On social rolls, roll twice and take the worst result."
+    }
+  ],
+  "playstyle_notes": {
+    "description": "Aveh rewards those who embrace freedom, transience, and the courage to become unknown. Their followers are often outcasts, runaways, spies, or those who have rejected the bonds of family, nation, or gender. The cost is the slow loss of being remembered — friends forget your face, your name fades from records, and eventually, even your reflection may not recall you. Aveh does not punish; they merely offer, and the path of erasure is walked willingly. Ideal for players who enjoy themes of identity, liberation, and the bittersweet price of absolute freedom.",
+    "emphasizes": [
+      "Freedom from Constraints: escaping bonds of law, oath, and expectation",
+      "Erasure as Mercy: the right to disappear, to be forgotten",
+      "Liminal Identity: existing between categories, beyond gender and role",
+      "Storm as Shelter: chaos that hides and wind that cleanses",
+      "Non-Conforming Patronage: Aveh asks no conformity, only authenticity"
+    ]
+  },
+  "sample_adventure": {
+    "title": "The Unbannered Crossroads",
+    "description": "A knotted cord has appeared tied to the party's door — an invitation, or a warning. Someone they know has vanished into the Cult of the Unbannered, leaving behind a debt, a broken oath, and a family desperate for answers. The party must find the crossroads where the cult gathers before the missing soul's name is fully burned away. But the vanished may not want to be found; some erasures are chosen freely, and Aveh does not undo a gift once given.",
+    "quote": "You came looking for a name. I have none to give you. But I can teach you how to stop needing one."
+  },
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

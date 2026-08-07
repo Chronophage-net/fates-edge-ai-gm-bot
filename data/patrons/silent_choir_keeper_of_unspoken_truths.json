@@ -1,0 +1,283 @@
+{
+  "id": "silent-choir-unspoken-truths",
+  "type": "patron",
+  "title": "The Silent Choir",
+  "subtitle": "Keeper of Unspoken Truths — Restraint & Protective Omission",
+  "version": "1.0.0",
+  "tags": [
+    "silence",
+    "restraint",
+    "confidentiality",
+    "protection",
+    "omission",
+    "secrets",
+    "mercy",
+    "guardianship"
+  ],
+  "lore": {
+    "description": "The Silent Choir is the gathered voice of truths wisely left unsaid, confessions granted mercy, and secrets kept to spare a life from breaking. It is not absence but presence: the practiced wisdom that some knowledge wounds more than it heals. Its keepers are wardens of confidence and shelterers of the vulnerable. They learn to carry burdens alone, to let volatile truths sleep, and to shield others from fires that revelation would feed. Unlike the Witness, who reveals truth at any cost, or Ikasha, who hides secrets for power, the Silent Choir teaches restraint as protection. A secret is not a weapon; it is a weight. To speak it may free the speaker but shatter the listener. The Choir's followers judge not what is true, but what is kind. They are therapists, not inquisitors; confessors, not spies.",
+    "followers": "In the world of Fate's Edge, the Silent Choir is invoked by bell-wardens who keep a certain pattern unsung to avoid calling the fog, archivists who seal dangerous texts behind a second lock and whisper the combination to no one, and death-doulas who carry a dying oath to the grave. The Choir has no temples, only quiet rooms, sealed letter-boxes, and the spaces between heartbeats where a truth could be told — but is not.",
+    "names_across_regions": {
+      "thepyrgos": "The Gray Watchers, bell-wardens who maintain the silence furlongs",
+      "aeler": "Breath-Stillness, a meditative art used by vent-priors to keep dangerous pressures from being spoken aloud",
+      "vhasia": "The Silent Notaries, who witness death-bed testaments and bury the name of the inheritor in a lead box never opened"
+    },
+    "quote": "In a world that shouts, the Choir teaches the weight of quiet. Not every wound needs salt, not every blaze needs breath, not every heart can bear the full truth."
+  },
+  "domain_focus": [
+    "Protective Silence: when and how to keep counsel for others' good",
+    "Merciful Omission: judging truths that harm when spoken",
+    "Confidential Guardianship: safeguarding people and perilous knowledge",
+    "Restraint Wisdom: the power of what is not said or done"
+  ],
+  "runekeeper_options": {
+    "thiasos": {
+      "description": "A Runekeeper sworn to the Silent Choir does not bind a familiar of sound and fury. Their Thiasos is a small creature that embodies quiet discretion: a gray mouse that nests in letter-boxes and never cheeps, a moth whose wings are dusted with the powder of forgetfulness, a small owl that flies without stirring air, a whippoorwill whose call is a barely audible sigh, or a tiny toad that hibernates in sealed jars and wakes only when a secret is told.",
+      "care": "This creature requires no food, but it must be present when a confidence is kept — when someone refrains from speaking a harmful truth. If neglected for a week (no witnessed restraint), it becomes Compromised (it emits a faint, anxious buzzing; its bearer gains –1 die to all rolls involving discretion or secrecy until it is soothed with a whispered promise)."
+    },
+    "codex": {
+      "description": "The Codex of the Silent Choir is never a book meant to be read aloud. It may be a locked journal whose pages are blank until breathed upon, a set of sealed wax tablets that crumble if opened by the wrong hands, a collection of memory-knots tied in gray silk, or the inside of a bell that has been silenced with felt.",
+      "upkeep": "Because the Choir's truths are kept in omission, the Codex requires upkeep: the Runekeeper must spend an hour each week reviewing the secrets they have carried (without speaking them aloud) or the Rites stored there become faint (treat as Compromised until re-sealed)."
+    }
+  },
+  "patrons_gift": {
+    "name": "The Word of Stillness",
+    "description": "Once per scene as an action, a Runekeeper of the Silent Choir may touch a held item (weapon, shield, or tool) and whisper a word of stillness.",
+    "effect": "For the rest of the scene, the item grants +1 die to Stealth or Insight rolls involving discretion or secrecy, and the first time each scene the bearer would be forced to reveal a secret by magical compulsion, they may ignore it (the Choir's silence protects them).",
+    "cost": "After the scene, the user marks +1 Obligation to the Silent Choir."
+  },
+  "rites": [
+    {
+      "name": "Rite of the Gentle Seal",
+      "tier": "Low",
+      "xp": 5,
+      "action": "Scene",
+      "range": "Near/Touch",
+      "resist": "Yes",
+      "tags": ["SILENCE", "PROTECT", "BOOST", "DEBT"],
+      "materials": "A white feather or cloth that has drunk whispered confidences; or a sealed envelope or locked reliquary holding a sensitive fact.",
+      "effect": "Choose one: Gentle Silence — hush a space with respectful quiet; all present gain +1 die to actions of discretion, confidentiality, or de-escalation this scene. Shielded Truth — ward one piece of information from discovery; gain +2 dice to resist extraction or revelation of the protected truth.",
+      "push_it": "(Shielded Truth) Protection becomes absolute but dependent: removing the ward triggers 1 SB (Hearts) as bottled truths surge. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Held Tongue",
+      "tier": "Low",
+      "xp": 4,
+      "action": "Instant",
+      "range": "Self",
+      "resist": "No",
+      "tags": ["SILENCE", "PROTECT", "RESIST"],
+      "materials": "A stone held in a closed fist until it warms.",
+      "effect": "When you would be compelled to blurt a harmful truth (by shock, torture, or social pressure), you may instead say nothing at all, without penalty for refusing to answer. This does not stop magical compulsion outright — it simply lets silence count as a valid response.",
+      "push_it": "Extend the protection to one ally within Touch range for the same instant. Mark 1 SB (Clubs) as the questioner grows suspicious of the shared silence. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Instant."
+    },
+    {
+      "name": "Rite of the Unspoken Accord",
+      "tier": "Standard",
+      "xp": 8,
+      "action": "Scene",
+      "range": "Near",
+      "resist": "Yes",
+      "tags": ["VOW", "BOND", "SILENCE", "TRUTH"],
+      "materials": "A pact signed in fading ink or a vow witnessed in silence.",
+      "effect": "Bind an understanding without paper teeth. All parties gain +1 die when honoring the accord; breach draws social costs even without proof.",
+      "push_it": "The accord is supernaturally enforced: a breaker suffers swift ostracism; mark +1 Obligation. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Burden Bearer",
+      "tier": "Standard",
+      "xp": 7,
+      "action": "Scene",
+      "range": "Touch",
+      "resist": "Yes",
+      "tags": ["TRANSFER", "HEAL", "DEBT", "FEAR"],
+      "materials": "An object heavy with someone's shame or grief.",
+      "effect": "Take another's social or emotional weight for a time. The target gains relief (+2 dice to social rolls) while you suffer the drag (–1 die to social rolls) this scene.",
+      "push_it": "A shard remains: gain insight, keep a sliver of pain; mark 1 SB (Diamonds). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Sanctuary of Secrets",
+      "tier": "High",
+      "xp": 13,
+      "action": "Extended",
+      "range": "Zone",
+      "resist": "Yes",
+      "tags": ["WARD", "AREA", "SILENCE", "PROTECT", "DEBT"],
+      "materials": "A room seasoned by trusted confidences and sealed with hush-signs.",
+      "effect": "Consecrate a sanctuary where secrets hold fast. Truths cannot be compelled; all within gain immunity to forced revelation and +2 dice to maintain discretion.",
+      "push_it": "The sanctuary becomes a keep: none may leave until each offers one guarded truth; mark +2 Obligation. Cost: Mark +1 Obligation (total +4) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "Extended action.",
+      "duration": "Permanent."
+    }
+  ],
+  "cantors_and_cults": {
+    "cantors": {
+      "name": "The Cantor's Song",
+      "description": "A Cantor of the Silent Choir sings in breaths of omission — melodies that are felt rather than heard, harmonies that resolve into silence. Their voice is used to quiet a room of gossip, to seal a confession with a hum that makes it sacred, or to place a gentle pressure on a tongue that would speak a harmful truth. The Choir's Cantors are often found in confessionals, in the rooms of the dying, and in the alcoves of great libraries, humming the songs that keep secrets safe."
+    },
+    "cult": {
+      "name": "The Cult of the Sealed Lip",
+      "description": "The Silent Choir's cults meet in places where secrets are naturally kept: locked scriptoria, the back rooms of notaries, and the quiet corners of courthouses. The Sealed Lip is a fellowship of confessors, archivists, therapists, and spies who have learned that the most powerful word is the one left unspoken. A ritual of the Cult involves each member writing down a truth they wish they could tell, then sealing it in an envelope that is never opened. The envelopes are stored in a single locked chest — the Coffer of Unspoken Things. Once per season, they pour the ashes of a burned confession into a small copper bell; the bell never rings, but they claim it 'remembers' every secret fed to it. Their creed is written on the inside of the lid: 'The word not spoken is a shield. The secret kept is a kindness.' Outsiders are welcome to bring a sealed envelope of their own, but they must never ask what is inside another's."
+    }
+  },
+  "witchcraft": {
+    "name": "The Art of the Seal-Scribe",
+    "description": "A witch who walks with the Silent Choir is a seal-scribe or lock-keeper — one who crafts the physical vessels of silence: a book whose pages refuse to reveal their contents to the wrong reader, a chest that cannot be opened without the keeper's whisper, or a letter that dissolves if read aloud. Their magic works through the materials of discretion: a quill that writes in ink that fades after one reading, a wax seal that screams if broken by an unauthorized hand, or a lock that only clicks shut when a secret is placed inside.",
+    "color": "#5a5a6a",
+    "lore": "The seal-scribe's path is the craft of the vessel, not the message. They believe a secret is not owned by the one who holds it but held in trust — and that trust deserves a lock worthy of it. The Silent Choir teaches that mercy sometimes looks like a door that will not open, no matter who asks.",
+    "signature_rite": "Rite of the Gentle Seal",
+    "quote": "The word not spoken is a shield. The secret kept is a kindness.",
+    "tools": {
+      "candle_of_unspoken_trust": {
+        "name": "The Candle of Unspoken Trust",
+        "description": "A thick, beeswax candle, gray as ash, that burns with a silent, smokeless flame. Once per session, the witch may light the candle and hold a sealed envelope, a door, or a person's hand over the flame (not touching it). For the next hour, any secret placed in the envelope, spoken behind the door, or entrusted to the person cannot be revealed by magical means (compulsion, truth spells, divination). The candle gutters if the secret is about to be forced out, giving the keeper one minute to intervene. The candle melts entirely after nine uses."
+      }
+    },
+    "hedge_gifts": [
+      {
+        "name": "Weight of the Unsaid",
+        "xp": 4,
+        "description": "Once per scene, the witch may touch a person's lips and speak a single word ('hush'). For the next minute, that person cannot speak any word that would reveal a secret they have sworn to keep (including secrets they have overheard). If they try, they feel a mild pressure on their throat — enough to pause them, but not enough to cause harm. The effect ends if the witch speaks again."
+      },
+      {
+        "name": "Locked Room",
+        "xp": 3,
+        "description": "Once per scene, the witch may designate a room or enclosed space they occupy as 'sealed' for one hour. Sound does not carry beyond its walls, and any attempt to eavesdrop from outside (mundane or magical) suffers –2 dice."
+      },
+      {
+        "name": "The Fading Letter",
+        "xp": 3,
+        "description": "You may write a letter that fades to blankness within an hour of being read, leaving no trace of its contents unless the reader commits it to memory before it fades. Useful for sending information that must never be found."
+      }
+    ]
+  },
+  "monastic_tradition": {
+    "name": "Whisper Monk",
+    "description": "Monks of the Whisper Monk tradition train the body and voice toward restraint — every strike is measured, every word is weighed, and every silence is chosen rather than merely endured. They believe that the greatest strength a confessor can offer is the strength to carry weight without setting it down on someone unprepared to bear it.",
+    "color": "#5a5a6a",
+    "prerequisites": "Spirit 3+, Presence 2+, Rite of the Gentle Seal or Cantor of Silent Choir.",
+    "quote": "The word not spoken is a shield. The secret kept is a kindness.",
+    "debt_resistant_frame": "What is not said cannot be owed. Monks of the Whisper Monk tradition gain +1 die to resist any magical debt or obligation that would force them to speak a secret, reveal a truth, or betray a confidence. If they succeed, the creditor hears only silence — and silence has no signature.",
+    "techniques": {
+      "basic": {
+        "name": "Silencing Palm",
+        "xp": 5,
+        "description": "On an unarmed hit, the target cannot speak any word that would reveal a secret they have sworn to keep for one scene (Resolve DV 3 to resist).",
+        "cost": "1 Fatigue",
+        "prereq": "Spirit 3+"
+      },
+      "advanced": {
+        "name": "Burden Bearer",
+        "xp": 7,
+        "description": "Take another's social or emotional weight for a time. Target gains +2 dice to social rolls while you suffer –1 die.",
+        "cost": "1 Boon",
+        "prereq": "Spirit 2+"
+      },
+      "master": {
+        "name": "The Unburdened Confessor",
+        "xp": 12,
+        "description": "Once per session, absorb a single traumatic memory or secret from a willing creature, erasing it from their mind permanently. You gain the memory as your own (with all emotional weight), and the creature is freed from its effects. You may also ignore one debt or obligation that was based on that erased memory. After the scene, you gain a permanent Debt Scar (a gray thread tied around your wrist that never loosens) — the Hollow will no longer pursue that debt, but the memory may one day haunt you.",
+        "cost": "2 Fatigue and +1 Obligation to the Silent Choir",
+        "prereq": "Tier III"
+      }
+    },
+    "corruption": [
+      {
+        "tier": 1,
+        "benefit": "Discretion's Gift: +1 die to Notice when someone is about to speak what should be kept.",
+        "cost": "Silent Compulsion: Urge to still tongues; –1 die to ordinary conversation."
+      },
+      {
+        "tier": 2,
+        "benefit": "Confidence Keeper: Once/scene, shelter a secret from accidental spill.",
+        "cost": "Secret Burden: In places thick with confidences, suffer Fatigue 1."
+      },
+      {
+        "tier": 3,
+        "benefit": "Merciful Blindness: Once/session, prevent discovery of a truth that would harm if revealed.",
+        "cost": "Truth Sensitivity: Lies grate; –1 die while surrounded by deception."
+      },
+      {
+        "tier": 4,
+        "benefit": "Sanctuary Sense: Once/scene, veil a brief zone from eavesdropping.",
+        "cost": "Communication Strain: Others balk at full candor; –1 die to personal disclosure."
+      },
+      {
+        "tier": 5,
+        "benefit": "Wisdom of Restraint: Once/session, see the full cost of airing any one truth.",
+        "cost": "Silent Isolation: –2 dice to form close bonds; you hold too much back."
+      },
+      {
+        "tier": "6+",
+        "benefit": "Choir's Voice: Once/session, speak with the gathered prudence of unspoken truths.",
+        "cost": "Truth Prison: Mark +3 Obligation; risk becoming a living vault unable to share without harm. You cannot speak any secret you have carried unless you first mark 1 Fatigue to 'loosen' it."
+      }
+    ]
+  },
+  "corruption": [
+    {
+      "tier": 1,
+      "benefit": "Discretion's Gift: +1 die to Notice when someone is about to speak what should be kept.",
+      "cost": "Silent Compulsion: Urge to still tongues; –1 die to ordinary conversation."
+    },
+    {
+      "tier": 2,
+      "benefit": "Confidence Keeper: Once/scene, shelter a secret from accidental spill.",
+      "cost": "Secret Burden: In places thick with confidences, suffer Fatigue 1."
+    },
+    {
+      "tier": 3,
+      "benefit": "Merciful Blindness: Once/session, prevent discovery of a truth that would harm if revealed.",
+      "cost": "Truth Sensitivity: Lies grate; –1 die while surrounded by deception."
+    },
+    {
+      "tier": 4,
+      "benefit": "Sanctuary Sense: Once/scene, veil a brief zone from eavesdropping.",
+      "cost": "Communication Strain: Others balk at full candor; –1 die to personal disclosure."
+    },
+    {
+      "tier": 5,
+      "benefit": "Wisdom of Restraint: Once/session, see the full cost of airing any one truth.",
+      "cost": "Silent Isolation: –2 dice to form close bonds; you hold too much back."
+    },
+    {
+      "tier": "6+",
+      "benefit": "Choir's Voice: Once/session, speak with the gathered prudence of unspoken truths.",
+      "cost": "Truth Prison: Mark +3 Obligation; risk becoming a living vault unable to share without harm. You cannot speak any secret you have carried unless you first mark 1 Fatigue to 'loosen' it."
+    }
+  ],
+  "playstyle_notes": {
+    "description": "The Silent Choir favors guardians and confidants: those who stand between fragile lives and ruinous truth. Its rites fortify discretion, temper tempers, and build rooms where trust can breathe. The cost is weight: secrets you keep will keep you. Unlike the Witness (who would speak truth at any cost) or Ikasha (who hides for advantage), the Choir teaches that mercy is sometimes silence. Ideal for therapists, confessors, archivists, and anyone who has ever chosen to carry a burden so that another might walk free.",
+    "emphasizes": [
+      "Protective Restraint: silence used as shield",
+      "Confidential Guardianship: duty to those who trust you",
+      "Merciful Omission: letting some truths sleep",
+      "Discretion Wisdom: judging what, when, and how to speak",
+      "Burden Bearing: carrying heat so others do not burn"
+    ]
+  },
+  "sample_adventure": {
+    "title": "The Coffer of Unspoken Things",
+    "description": "A Sealed Lip archivist has died, and the locked chest of unopened confessions they guarded has gone missing from the notary's back room. Rumor says one envelope inside names a killer still walking free — but opening any of them, even to find the right one, means breaking a hundred years of kept confidences. The party is hired to recover the chest, but must decide whether the Choir's mercy is worth more than the truth that could exonerate the wrongly accused.",
+    "quote": "Every secret in that chest was a kindness to someone. Open it, and you decide whose kindness mattered less."
+  },
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

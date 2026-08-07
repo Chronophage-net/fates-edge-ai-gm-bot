@@ -1,0 +1,284 @@
+{
+  "id": "gallows-bell-justice-judgment",
+  "type": "patron",
+  "title": "The Gallow's Bell",
+  "subtitle": "Justice & Judgment",
+  "version": "1.0.0",
+  "tags": [
+    "justice",
+    "judgment",
+    "oaths",
+    "truth",
+    "debt",
+    "bells",
+    "law",
+    "verdict",
+    "reckoning"
+  ],
+  "lore": {
+    "description": "The Bell does not rage; it tolls. Cold and impartial, it measures all accounts in time. Its keepers are silent arbiters who weigh deeds against consequence, not out of anger but out of inevitability. To call upon the Bell is to bind oneself to the gravity of truth, where even silence is judged, and every oath leaves a resonance in iron.",
+    "followers": "The Gallow's Bell is the patron of judges, notaries, and those who speak final words. In Ecktoria, the Bell is invoked by Censor's clerks who stamp death warrants. In Viterra, hedge-courts ring a small iron bell to seal a verdict. In Linn, a broken bell at a Thing-holm is a sign that a judgment was unjust and the spirits are still listening. Wherever a reckoning must be witnessed, the Gallow's Bell tolls.",
+    "quote": "What is broken must be mended, what is owed must be paid. The Bell remembers all reckonings."
+  },
+  "domain_focus": [
+    "Weighing of Deeds: measuring action against consequence, debt against payment",
+    "Solemn Judgment: verdicts that cannot be appealed, sentences that must be carried out",
+    "Compelled Truth: forcing honesty under threat of the Bell's toll",
+    "Iron Witness: the Bell as an impartial recorder of oaths, lies, and reckonings"
+  ],
+  "runekeeper_options": {
+    "thiasos": {
+      "description": "A Runekeeper sworn to the Gallow's Bell does not bind a creature of force or threat. They bind a creature of quiet judgment. Their Thiasos is a small beast or mythological being that embodies impartial witness: a gray mouse that lives in courthouses and never cheeps false testimony, a small brass-bell frog whose croak sounds like a distant chime, a black-and-white cat that sits on the judge's bench and stares at those who lie, or a mechanical songbird that rings a tiny bell each time a promise is broken.",
+      "care": "This creature requires no food, but it must witness a formal promise or a judgment each day. If neglected for a week, it becomes Compromised (it rings at the wrong moment or remains silent when truth is spoken, imposing –1 die on all social rolls involving oaths or honesty for its bearer)."
+    },
+    "codex": {
+      "description": "The Codex of the Gallow's Bell is never a book of spells alone. It may be a court ledger bound in iron, each page sealed with a drop of wax for every case heard; a set of bronze bells, each inscribed with a precedent; or a slate tablet that records the last verdict as a faint, glowing chime.",
+      "upkeep": "Because the Bell's judgments are final, the Codex requires upkeep: the Runekeeper must spend an hour each week ringing each bell or re-reading each precedent, or the Rites stored there become uncertain (treat as Compromised until re-rung)."
+    }
+  },
+  "patrons_gift": {
+    "name": "The Bell's Verdict",
+    "description": "Once per scene as an action, a Runekeeper of the Gallow's Bell may touch a held item (weapon, shield, or tool) and speak a single word of judgment.",
+    "effect": "For the rest of the scene, the item grants +1 die to Command or Insight rolls when delivering a verdict, enforcing an oath, or uncovering a lie. Additionally, the first time each scene the bearer would be deceived by a lie, they may reroll the opposed check (the Bell's resonance warns them).",
+    "cost": "After the scene, the user marks +1 Obligation to the Gallow's Bell."
+  },
+  "rites": [
+    {
+      "name": "Rite of the Measured Debt",
+      "tier": "Low",
+      "xp": 5,
+      "action": "Scene",
+      "range": "Near",
+      "resist": "No",
+      "tags": ["VOW", "COMMAND"],
+      "materials": "A pair of scales balanced with tokens from both sides.",
+      "effect": "Establish a temporary accord. Both parties suffer –1 die if they break it first. You gain +1 die to enforce compliance.",
+      "push_it": "The accord is mystically weighted; breach inflicts 1 SB (Hearts). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Weighed Heart",
+      "tier": "Low",
+      "xp": 5,
+      "action": "Scene",
+      "range": "Near",
+      "resist": "No",
+      "tags": ["TRUTH", "SENSE"],
+      "materials": "A small brass scale touched briefly to the chest.",
+      "effect": "Sense if the target acts against their nature or oath. Gain +1 die when pressing them.",
+      "push_it": "Target must test Resolve (DV 3) or disclose a hidden conflict. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Instant."
+    },
+    {
+      "name": "Rite of the Balanced Scales",
+      "tier": "Standard",
+      "xp": 9,
+      "action": "Scene",
+      "range": "Near",
+      "resist": "No",
+      "tags": ["DEBT", "BOND", "TRANSFER"],
+      "materials": "A set of scales inscribed with runes of parity.",
+      "effect": "Exchange a burden between two willing parties (Harm for Fatigue, Debt for Favor, etc.). Both gain +1 die to cooperate.",
+      "push_it": "May compel an unwilling exchange with contested Command + Wits. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Judge's Eye",
+      "tier": "Standard",
+      "xp": 8,
+      "action": "Scene",
+      "range": "Self",
+      "resist": "No",
+      "tags": ["TRUTH", "FEAR"],
+      "materials": "A black hood worn in silence for one minute.",
+      "effect": "Detect lies within Near range; +2 dice to Insight. Liars suffer –1 die to maintain their falsehood.",
+      "push_it": "All deception is laid bare for the scene, but mark Exposure +1. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Final Reckoning",
+      "tier": "High",
+      "xp": 13,
+      "action": "Scene",
+      "range": "Zone",
+      "resist": "No",
+      "tags": ["AREA", "COMMAND", "TRUTH", "FEAR"],
+      "materials": "A circle of iron bells, each etched with nameless runes.",
+      "effect": "The Bell tolls through you. All present feel compelled to name a debt or wrongdoing. Those who lie suffer Harm 2; those who speak true gain +2 dice to persuasion for the scene.",
+      "push_it": "The Reckoning manifests as spectral echoes of past wrongs — liars automatically suffer narrative punishment (GM decides). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    }
+  ],
+  "cantors_and_cults": {
+    "cantors": {
+      "name": "The Cantor's Song",
+      "description": "A Cantor of the Bell sings not with melody, but with rhythm of measure — a slow, tolling chant that mimics the swinging of a clapper. Their voice carries the weight of finality; one note can seal a verdict, another can suspend a sentence. They are employed by courts to \"sing the sentence\" into being, and feared by those who know that a Cantor's silence after a verdict is the most damning judgment of all."
+    },
+    "cult": {
+      "name": "The Cult of the Unstruck Bell",
+      "description": "The Bell's cults are austere, gathered in bare stone chambers where a single great bell hangs unstruck. Before any ritual, the cultists argue the case — who owes what, who has paid, who must be reminded. Only when consensus is reached does someone strike the bell, and its tolling makes the judgment real. Their creed is carved into the bell's lip: \"We do not create debts. We reveal them. The Bell remembers what the living choose to forget.\""
+    }
+  },
+  "witchcraft": {
+    "name": "The Art of the Notarial Seal",
+    "description": "A witch who walks with the Bell is often a notary of the silent court, a bell-tolling clerk, or a judge's scribe — a nun, monk, or lay scholar who tends the records of obligation, copies the judgments of the Bell, and keeps the weights of the scales true. Their magic is the art of measurement and witness: sealing verdicts with leaden seals that glow when a debt is called, scribing judgment scrolls that burn with the truth of a confession, or maintaining the bell-roster that notes every name that owes an accounting. Their tools are not hammers but seals, quills, and the small brass bells that ring in the ears of the perjured.",
+    "color": "#4a4a55",
+    "lore": "Notaries of the Bell are found at every crossroads where a dispute must be settled without bloodshed. They carry no weapons, only ink, wax, and the certainty that a debt spoken aloud under the Bell's witness cannot be quietly forgotten. Many were once litigants themselves, drawn to the craft after watching a false verdict nearly ruin their lives.",
+    "signature_rite": "Rite of the Weighed Heart",
+    "quote": "Ink dries. Wax seals. The Bell remembers longer than either.",
+    "tools": {
+      "seal_of_unspoken_weights": {
+        "name": "The Seal of Unspoken Weights",
+        "description": "A small iron seal, cool to the touch, stamped with a bell that has no clapper. Once per session, the witch may press the seal onto a document, a threshold, or a debtor's palm. For the next day, any creature that knowingly breaks a promise recorded in that document (or sworn on that threshold) suffers a sharp sting (1 Fatigue) as the seal \"remembers\" the weight of their word. The seal can also be used to \"strike\" a bell: tapping it against any iron bell forces the bell to ring once, even if broken or without a clapper, and the ring can be heard only by those who owe a debt in the current scene."
+      }
+    },
+    "hedge_gifts": [
+      {
+        "name": "Bell-Toll of the Hidden Debt",
+        "xp": 4,
+        "description": "Once per scene, the witch may whisper the name of a creature within Near range while tapping any ringing surface. For the next minute, that creature hears a faint, distant bell toll each time they attempt to lie or conceal an obligation. The GM gains 1 SB, and the creature suffers –1 die on Deception rolls during that time."
+      },
+      {
+        "name": "Wax and Word",
+        "xp": 3,
+        "description": "Once per scene, you may seal a spoken promise with a drop of wax pressed by both parties' thumbs. For the remainder of the session, either party suffers –1 die on any roll that would violate the promise's spirit, not just its letter."
+      },
+      {
+        "name": "The Ledger's Whisper",
+        "xp": 3,
+        "description": "Once per session, you may consult a court ledger, tax roll, or similar formal record and ask it one yes/no question about a debt or obligation recorded within. The record answers truthfully, though it may only know what was formally written."
+      },
+      {
+        "name": "Steady Scale",
+        "xp": 2,
+        "description": "Passive. You always know, to a rough degree, whether an exchange (a trade, a bargain, a favor) is unbalanced in someone's favor, even without being told the details."
+      }
+    ]
+  },
+  "monastic_tradition": {
+    "name": "The Order of the Iron Clapper",
+    "description": "Monks of the Iron Clapper serve as the Bell's hands where its voice cannot reach — traveling arbiters who walk into feuds, blood-debts, and broken contracts and render judgment where no court exists. They train in stillness first, learning to hold silence the way a bell holds its shape until struck, and in speech second, learning that a verdict spoken once, calmly, carries more weight than a threat repeated. Their order maintains way-stations at crossroads throughout the land, each marked by a single unstruck bell.",
+    "color": "#4a4a55",
+    "quote": "What is broken must be mended, what is owed must be paid.",
+    "prerequisites": "Presence 3+, Resolve 2+, Rite of the Measured Debt or Cantor of the Gallow's Bell.",
+    "debt_resistant_frame": "A debt weighed honestly cannot be doubled by trickery. Monks of the Iron Clapper gain +1 die to resist any magical debt, geas, or contract whose terms were misrepresented or concealed at the time of swearing. If they succeed, the deceptive clause is struck as though it were never spoken — the Bell does not honor a lie.",
+    "techniques": {
+      "basic": {
+        "name": "Clapper's Warning",
+        "xp": 5,
+        "description": "Once per scene, when a target within Near range attempts to lie to you or an ally, you may ring an unseen bell only they can hear. They suffer –1 die to maintain the deception for the rest of the exchange.",
+        "cost": "1 Boon",
+        "prereq": "Presence 3+"
+      },
+      "advanced": {
+        "name": "Weighing Stance",
+        "xp": 9,
+        "description": "Once per scene, when adjudicating a dispute or delivering a verdict, gain +2 dice to Command or Insight, and the first attempt to intimidate or bribe you away from a fair ruling automatically fails.",
+        "cost": "1 Fatigue",
+        "prereq": "Tier II, Resolve 3+"
+      },
+      "master": {
+        "name": "The Final Toll",
+        "xp": 14,
+        "description": "Once per session, render an unappealable verdict on a single dispute you have fully witnessed. All parties present must abide by its terms for the remainder of the session or suffer Harm 2 as the Bell's judgment falls upon them. After the scene, you gain a permanent Debt Scar (a faint bell-shaped mark that appears whenever you speak a lie) but you may ignore one Obligation owed for a judgment you rendered fairly.",
+        "cost": "2 Fatigue and +1 Obligation to the Gallow's Bell",
+        "prereq": "Tier III, Presence 4+"
+      }
+    },
+    "corruption": [
+      {
+        "tier": 1,
+        "benefit": "Judge's Intuition: +1 die to Insight when weighing truth.",
+        "cost": "Must point out falsehoods when noticed, regardless of tact."
+      },
+      {
+        "tier": 2,
+        "benefit": "Quiet Authority: Once/scene, treat a failed Command as success; mark 1 SB (Hearts).",
+        "cost": "Cannot remain neutral in disputes; indecision costs 1 Fatigue."
+      },
+      {
+        "tier": 3,
+        "benefit": "Scales of Balance: Once/session, enforce an exchange of burdens.",
+        "cost": "Compelled toward fairness even when it hinders you."
+      },
+      {
+        "tier": 4,
+        "benefit": "Bell's Resonance: +2 dice when calling for judgment or demanding restitution.",
+        "cost": "Suffer 1 Fatigue if wrongdoing is ignored."
+      },
+      {
+        "tier": 5,
+        "benefit": "Reckoner's Call: Once/session, declare a \"reckoning moment\" — truth must surface or consequence falls.",
+        "cost": "Cannot ignore pleas for justice without marking 1 SB (Spades)."
+      },
+      {
+        "tier": "6+",
+        "benefit": "Final Arbiter: Once/session, render an absolute decree; all within the scene must obey or suffer consequence (Harm 1, +1 Obligation).",
+        "cost": "Mark +2 Obligation; the Bell demands you bear the weight of enforcement. Your voice tolls like a bell when you speak judgment — those who hear you cannot interrupt until your sentence is complete."
+      }
+    ]
+  },
+  "corruption": [
+    {
+      "tier": 1,
+      "benefit": "Judge's Intuition: +1 die to Insight when weighing truth.",
+      "cost": "Must point out falsehoods when noticed, regardless of tact."
+    },
+    {
+      "tier": 2,
+      "benefit": "Quiet Authority: Once/scene, treat a failed Command as success; mark 1 SB (Hearts).",
+      "cost": "Cannot remain neutral in disputes; indecision costs 1 Fatigue."
+    },
+    {
+      "tier": 3,
+      "benefit": "Scales of Balance: Once/session, enforce an exchange of burdens.",
+      "cost": "Compelled toward fairness even when it hinders you."
+    },
+    {
+      "tier": 4,
+      "benefit": "Bell's Resonance: +2 dice when calling for judgment or demanding restitution.",
+      "cost": "Suffer 1 Fatigue if wrongdoing is ignored."
+    },
+    {
+      "tier": 5,
+      "benefit": "Reckoner's Call: Once/session, declare a \"reckoning moment\" — truth must surface or consequence falls.",
+      "cost": "Cannot ignore pleas for justice without marking 1 SB (Spades)."
+    },
+    {
+      "tier": "6+",
+      "benefit": "Final Arbiter: Once/session, render an absolute decree; all within the scene must obey or suffer consequence (Harm 1, +1 Obligation).",
+      "cost": "Mark +2 Obligation; the Bell demands you bear the weight of enforcement. Your voice tolls like a bell when you speak judgment — those who hear you cannot interrupt until your sentence is complete."
+    }
+  ],
+  "playstyle_notes": {
+    "description": "The Gallow's Bell rewards those who speak truth, enforce oaths, and deliver justice without cruelty. Its followers are not executioners — they are arbiters who ensure that every debt is weighed and every consequence is fair. The Bell does not punish the desperate; it punishes the deceiver. Intrusions often take the form of an unexpected witness (a bell that rings at the wrong moment, a forgotten promise resurfacing) or a demand to judge a dispute that cannot be settled by silence. Ideal for characters who serve as magistrates, justiciars, or honest mediators in a world of broken oaths.",
+    "emphasizes": [
+      "Solemn Judgment: verdicts that cannot be appealed",
+      "Compelled Truth: forcing honesty under the threat of the Bell",
+      "Weighing of Deeds: measuring action against consequence",
+      "Iron Witness: the Bell as impartial recorder",
+      "The Toll of Silence: what is not said is also judged"
+    ]
+  },
+  "sample_adventure": {
+    "title": "The Broken Bell of Thing-Holm",
+    "description": "A village's judgment-bell has cracked in half following a controversial verdict, and the local spirits are unsettled — crops wither, livestock startle at nothing, and old grudges resurface with unnatural speed. The party must investigate whether the verdict was truly unjust or whether someone has sabotaged the Bell to escape a debt they cannot pay. Reforging the bell will require both parties to the original dispute to speak the truth aloud, together, for the first time.",
+    "quote": "A cracked bell does not lie quietly. It simply waits for someone to listen to the silence between its tolls."
+  },
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

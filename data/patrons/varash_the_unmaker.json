@@ -1,0 +1,279 @@
+{
+  "id": "varash-the-unmaker",
+  "type": "patron",
+  "title": "Varash the Unmaker",
+  "subtitle": "A Fragment Beyond the Architecture — Cosmic Indifference Sealed Beneath the Himadri (Kingdoms of Brass: Ninth Seal Mine, Rajagriha)",
+  "version": "1.0.0",
+  "tags": [
+    "cosmic-indifference",
+    "sealed-god",
+    "fragmentation",
+    "bargains",
+    "kingdoms-of-brass",
+    "himadri",
+    "ninth-seal-mine",
+    "folk-horror",
+    "chthonic-adjacent"
+  ],
+  "lore": {
+    "description": "Deep beneath the Himadri foothills, sealed by Covenant wax and Aeler iron, lies a fragment of Varash the Unmaker — a being of cosmic indifference that fed on the civilisation that turned the Red Desert to glass. It is not a dark god in the theatrical sense. It does not rage. It does not demand worship. It whispers. It offers bargains. The horror is in the fine print. Varash was never singular — what remains beneath the Ninth Seal Mine is only a shard of something far larger, broken across ages and geography the way a dropped mirror scatters its reflection into a hundred smaller, still-accurate lies. Miners who cut too deep into the seam have heard it long before they saw the light it doesn't cast. It does not need the mountain to move for it. It has never needed anything. It simply waits, patient past the meaning of the word, and offers whoever comes close enough a fair trade — fair, at least, by a measure that has nothing to do with mercy.",
+    "followers": "Varash keeps no congregations in the ordinary sense — its worshippers are not devotees but debtors, and most never meet another. They are Himadri miners who took one bargain too many to survive a cave-in, Karak-Aeler stone-priests who broke their own severe codes rather than let the seal crack unwitnessed, Veiled Sisters and relic-thieves chasing rumors of the Kalrantha amulet through the ruins of Rajagriha, and a scattering of Mi-tsang hill folk who trade grain-poor winters for a whisper in the dark that always, always keeps its word — in a way that ruins the asker. Varash does not build shrines because it does not need to be found; it only needs to be reached for. Those who serve it longest stop speaking in sentences that end.",
+    "quote": "It does not rage. It whispers. It offers bargains. I asked it to spare my brother's mine crew. It agreed instantly — too instantly. Three days later the mountain gave them all a different kind of mercy. I never asked what the difference was between what I wanted and what I got. I am afraid the fine print was inside me the whole time."
+  },
+  "domain_focus": [
+    "Cosmic Indifference: power offered without judgment, malice, or investment in the outcome",
+    "Fragmentation: a whole intelligence scattered into shards, seals, and relics that still bargain independently",
+    "The Fine Print: bargains that are technically honored and existentially ruinous",
+    "Sealed Things Listening: the horror of ancient containment that is aware, patient, and already halfway loose"
+  ],
+  "runekeeper_options": {
+    "thiasos": {
+      "description": "A Runekeeper sworn to Varash does not bind a familiar in any living sense. Their Thiasos is a broken piece of the Unmaker's seal: a shard of glassed Red Desert sand fused into a rough bead, a splinter of Aeler iron warped into a shape no smith intended, a coin-sized disc of Covenant wax that never fully hardens, or a sliver of black mineral pulled from the Ninth Seal Mine that hums at a pitch just below hearing. It does not eat, breathe, or move on its own.",
+      "care": "It requires no food, but it must be 'fed' a fragment of intention each week — a decision made and then unmade, a promise spoken and deliberately broken in some small, private way. If neglected for a week, it becomes Compromised (it grows warm and restless in its bearer's pocket, imposing –1 die on all Resolve rolls made to refuse a bargain until a small intention is broken before it)."
+    },
+    "codex": {
+      "description": "The Codex of Varash is never a coherent text. It may be a set of loose, unbound pages that were never written in the same order twice, a cracked clay tablet from Rajagriha whose script rearranges itself between readings, a length of Aeler chain with runes stamped into links that don't connect to their neighbors, or a jar of Himadri cave-dust that spells different bargains when poured.",
+      "upkeep": "Because the Unmaker's truths were never whole to begin with, the Codex requires upkeep: the Runekeeper must spend an hour each week arranging its fragments into a pattern that makes sense — and then deliberately scrambling that pattern again — or the Rites stored there grow inconsistent (treat as Compromised until re-scrambled)."
+    }
+  },
+  "patrons_gift": {
+    "name": "The Word Beneath the Seal",
+    "description": "Once per scene as an action, a Runekeeper of Varash may touch a held item (weapon, tool, or relic fragment) and speak a bargain aloud to no one in particular.",
+    "effect": "For the rest of the scene, the item grants +1 die to Intimidation or Arcana rolls involving ancient, sealed, or buried things, and the first time each scene the bearer would suffer a Condition from despair, cold, or crushing pressure, they may instead offer it to Varash — the Condition is ignored, but the GM notes what was offered and may call on it later, exactly once, in a way the bearer did not intend.",
+    "cost": "After the scene, the user marks +1 Obligation to Varash."
+  },
+  "rites": [
+    {
+      "name": "Rite of the Fair Trade",
+      "tier": "Low",
+      "xp": 5,
+      "action": "Scene",
+      "range": "Self",
+      "resist": "No",
+      "tags": ["BARGAIN", "DEBT", "RISK"],
+      "materials": "A small object of genuine value, surrendered and left behind (not destroyed, not hidden — simply left).",
+      "effect": "Speak a specific, narrow need aloud (a locked door opened, a wound stopped bleeding, a name recalled) and leave the object behind you as payment. The need is met exactly as stated, no more and no less. Varash does not improvise mercy; ambiguous requests get ambiguous — and often unwelcome — answers.",
+      "push_it": "State the need vaguely instead of precisely, trading precision for scope. The GM decides how the bargain is 'technically' fulfilled. Mark 1 SB (Clubs) as the fine print asserts itself. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Instant."
+    },
+    {
+      "name": "Rite of the Listening Stone",
+      "tier": "Low",
+      "xp": 4,
+      "action": "Scene",
+      "range": "Near",
+      "resist": "No",
+      "tags": ["SENSE", "TRUTH", "COLD"],
+      "materials": "A stone or shard taken from below ground, held in a bare hand.",
+      "effect": "Press your palm to stone, earth, or bedrock and ask a single yes-or-no question about something old, buried, or sealed nearby. You receive a true answer, delivered as flat, affectless certainty rather than any voice. The cold of the answer lingers; you feel faintly numb to warmth for the rest of the scene.",
+      "push_it": "Ask a second question in the same use. The answer this time carries a whispered condition attached — something Varash wants to know in return. Mark 1 SB (Diamonds) as it takes an interest in you specifically. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Unmade Wound",
+      "tier": "Standard",
+      "xp": 9,
+      "action": "Instant",
+      "range": "Touch",
+      "resist": "Yes",
+      "tags": ["UNMAKE", "HARM", "DEBT", "COLD"],
+      "materials": "A fragment of glassed sand or warped iron pressed against the target.",
+      "effect": "Choose one: Unmake a wound — remove one instance of Harm from a willing or helpless target as though it had simply never happened, no scar, no memory of pain, and no lesson learned from it either. Unmake a structure — a lock, a wall, a rope bridge unravels into component parts as though it were never assembled, no roll required, provided it is roughly human-scale or smaller.",
+      "push_it": "Unmake something living instead — a limb's recent injury reverts, but so does a season of the target's growth or learning tied to recovering from it (GM discretion on what specifically is lost). Mark 2 SB (Spades) as Varash takes the difference out of the world's memory rather than yours. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Instant."
+    },
+    {
+      "name": "Rite of the Fragmentary Bargain",
+      "tier": "Standard",
+      "xp": 10,
+      "action": "Scene",
+      "range": "Self",
+      "resist": "No",
+      "tags": ["BARGAIN", "TRANSFORM", "DEBT"],
+      "materials": "A piece of your own history — a letter, a keepsake, a tattoo scarred over — surrendered permanently.",
+      "effect": "Trade a piece of your past for a piece of capability that never belonged to you. Choose one: gain +2 dice on a single skill you have never trained for the rest of the scene, or gain fluency in a language, custom, or craft belonging to a lost civilisation for the rest of the scene. The surrendered memory does not return; others who shared it with you notice a gap when they mention it and you do not react.",
+      "push_it": "Make the capability last for the rest of the session instead of the scene. Mark +1 Obligation (total +2) as Varash keeps a second piece you didn't offer. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Ninth Seal",
+      "tier": "High",
+      "xp": 15,
+      "action": "Extended",
+      "range": "Zone",
+      "resist": "Yes",
+      "tags": ["UNMAKE", "AREA", "FATE", "COLD", "CORRUPTION"],
+      "materials": "A shard of the actual Ninth Seal Mine wax-and-iron seal, or an object soaked in enough of Varash's bargains to carry its weight.",
+      "effect": "Open a working window into the space between the seal and the thing it holds — not a breach, but a negotiation-in-place. For the scene: you gain +2 dice to any roll made to unmake, unbind, or negotiate away a structure, ward, contract, or curse in the zone. Once during the scene, you may ask Varash to unmake one significant thing outright (a wall, a curse, a debt, a life already ending) — the GM narrates how it is technically done and what it technically costs, and it is never simply what was asked for.",
+      "push_it": "Widen the window instead of closing it cleanly at scene's end; the seal in that location is measurably weaker for a month, and something in the region — the mountain, the mine, the Karak-Aeler wardens — notices. Mark +3 Corruption and the GM gains 2 SB tied to Kingdoms of Brass consequences. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "Extended action.",
+      "duration": "Scene (seal-weakening effect: 1 month)."
+    }
+  ],
+  "cantors_and_cults": {
+    "cantors": {
+      "name": "The Cantor's Silence",
+      "description": "A Cantor of Varash does not sing so much as withhold a note that should be there. Their performance is built on a single sustained absence — a held breath in an aria, a missing beat in a funeral drum line, a verse of a Himadri work-song that simply stops before its resolution. Listeners feel the gap more than they hear the music, and it is in that gap that a bargain can be struck without a word exchanged. Varash's Cantors are rare and usually solitary; two of them performing together tends to end badly for whichever audience is closest to the mountain."
+    },
+    "cult": {
+      "name": "The Fellowship of the Fair Ledger",
+      "description": "There is no true 'cult' of Varash in the Kingdoms of Brass — no gathering hall, no shared liturgy, because Varash offers nothing that benefits from company. What exists instead is the Fair Ledger: a loose, unspoken understanding among Himadri debtors that they will not warn each other, will not compare terms, and will not help one another read the fine print, because doing so is itself a kind of theft from the mountain. Those who have taken a bargain recognize one another by a particular stillness in how they speak of loss — flat, precise, unmourning. Once a year, at the coldest night of winter, a handful gather at the mouth of the Ninth Seal Mine not to worship but to listen, in case the seal has grown thin enough to hear something new. Their only shared creed, spoken once each, alone: 'It kept its word. That is worse than if it had lied.' Outsiders who stumble on the gathering are not initiated. They are offered a single question they may ask the mountain, free of charge, and warned — honestly — not to ask it."
+    }
+  },
+  "witchcraft": {
+    "name": "The Craft of the Unmaking Hand",
+    "description": "A witch who walks with Varash is an unmaker or a fine-print reader — one who has learned to read intention the way others read ink, and to find the seam in anything assembled, whether stone, oath, or body. Their magic is not destructive in the showy sense; it is precise. A door does not explode, it simply stops having been built. Their tools are unglamorous and cold to the touch: a chisel that separates rather than carves, a length of thread that unweaves cloth by being pulled the wrong way, a lens ground from glassed desert sand that shows a structure's original, component pieces. In the Himadri, such a witch might be paid by a village not to curse a rival's granary, but to quietly unmake the wall that keeps the wind out of it — technically honest, devastatingly effective, and never quite illegal.",
+    "color": "#2a2f28",
+    "lore": "The unmaking hand learns that everything built can be unbuilt, and that the difference between destruction and unmaking is that unmaking asks nothing of the world's grief — it simply removes the premise. Varash does not teach cruelty. It teaches precision so complete it stops resembling mercy or malice at all, and that neutrality, applied to a person's life, is its own kind of horror.",
+    "signature_rite": "Rite of the Fair Trade",
+    "quote": "It kept its word. That is worse than if it had lied.",
+    "tools": {
+      "the_unmaking_chisel": {
+        "name": "The Unmaking Chisel",
+        "description": "A short, unadorned iron chisel, cold enough to frost in warm weather, its edge worn smooth rather than sharp. Once per session, the witch may use it on a single joint, seam, or fastening — a hinge, a knot, a mortared stone, a stitched wound — and speak no incantation at all. The joint separates as though it had simply never been joined, silently and without damage to either piece. The chisel cannot be used on anything actively alive without the target's full, informed consent, and it leaves the user unsettlingly calm for an hour afterward, as though something in them had also been quietly separated."
+      }
+    },
+    "hedge_gifts": [
+      {
+        "name": "Reading the Seam",
+        "xp": 3,
+        "description": "Once per scene, examine a structure, contract, or ward and identify its single weakest point of assembly — the joint most easily undone, whether physical or legal. This does not undo it, only reveals it, but grants +1 die to the next roll made to exploit that point."
+      },
+      {
+        "name": "The Honest Debt",
+        "xp": 4,
+        "description": "You may offer a bargain to a willing target that is scrupulously, exactly honest in its wording — and unnervingly cold in its delivery. If accepted, both parties know precisely what will be given and received, with no possibility of misunderstanding. This does not compel anyone to accept; it only guarantees the terms will be met to the letter."
+      },
+      {
+        "name": "Cold Patience",
+        "xp": 2,
+        "description": "Once per scene, you may endure a single round of harsh cold, crushing pressure, or oppressive stillness (underground collapse, arctic exposure, a suffocating silence) without ill effect, as though the discomfort simply did not apply to you for that moment."
+      }
+    ]
+  },
+  "monastic_tradition": {
+    "name": "The Way of the Ninth Seal",
+    "description": "Monks of the Ninth Seal train not to strike with anger but to remove with total indifference. Their combat philosophy holds that the deadliest technique is the one applied without investment — a joint separated, a stance unmade, a fight ended not through violence but through the precise, uncaring withdrawal of whatever was holding the opponent together. They are rare, mostly solitary, and their training grounds are usually old mine shafts or collapsed watchtowers where something once was and now, deliberately, is not.",
+    "color": "#2a2f28",
+    "prerequisites": "Spirit 3+, Body 3+, Rite of the Fair Trade or Cantor of Varash.",
+    "quote": "It kept its word. That is worse than if it had lied.",
+    "debt_resistant_frame": "An indifferent power keeps no ledger of favor owed. Monks of the Ninth Seal gain +1 die to resist any magical debt, geas, or contract framed as a favor, mercy, or gift — because they have trained themselves to recognize that nothing given without investment can truly obligate the receiver. If they succeed, the debt is simply unmade, precisely, without malice or celebration.",
+    "techniques": {
+      "basic": {
+        "name": "The Separating Touch",
+        "xp": 6,
+        "description": "On a successful unarmed hit, you may instead of dealing Harm attempt to 'unmake' the target's stance or grip — they are Prone or disarmed (target's choice which, GM adjudicates), no roll required, but you deal no Harm this action.",
+        "cost": "1 Fatigue",
+        "prereq": "Body 3+"
+      },
+      "advanced": {
+        "name": "Unmoved Stillness",
+        "xp": 9,
+        "description": "You are immune to Fear and Intimidation effects sourced from cold, darkness, or the uncanny, and gain +1 die to resist despair-based Conditions. Your calm in the face of horror unsettles allies as much as enemies.",
+        "cost": "Passive",
+        "prereq": "Tier II, Spirit 3+"
+      },
+      "master": {
+        "name": "The Fair Unmaking",
+        "xp": 13,
+        "description": "Once per session, apply the Separating Touch to something larger than a person — a locked gate, a section of wall, a magical binding no stronger than Tier II — undoing it instantly and silently. You gain a permanent Debt Scar (a patch of skin that no longer holds a scar, a bruise, or a tan — nothing marks it at all) — the Hollow no longer pursues one debt built on a favor you never truly owed, but you find you can no longer be marked by anything, including affection freely given.",
+        "cost": "2 Fatigue and +1 Obligation to Varash",
+        "prereq": "Tier III, Spirit 4+"
+      }
+    },
+    "corruption": [
+      {
+        "tier": 1,
+        "benefit": "Fine Print Sense: +1 die to Notice or Insight when a bargain, contract, or offer has a hidden cost.",
+        "cost": "Cold Read: –1 die on Empathy rolls; your read of others feels accurate but never warm."
+      },
+      {
+        "tier": 2,
+        "benefit": "Unmoved: Once per scene, ignore the first instance of Fear or Intimidation directed at you.",
+        "cost": "Flattened Affect: Others find you unsettling in quiet moments; –1 die to first impressions with those who don't already trust you."
+      },
+      {
+        "tier": 3,
+        "benefit": "Seam-Sight: +2 dice to identify the weak point in any structure, ward, or plan.",
+        "cost": "Unmaking Habit: You occasionally unmake small things without meaning to — a knot, a promise, a mood. Mark 1 Fatigue when it happens at a bad time."
+      },
+      {
+        "tier": 4,
+        "benefit": "The Precise Bargain: Once per session, offer a bargain that is guaranteed to be honored exactly as worded by both sides, supernaturally enforced.",
+        "cost": "Exacting Memory: You cannot forget the precise wording of any bargain you have made, including ones you'd rather not remember."
+      },
+      {
+        "tier": 5,
+        "benefit": "Fragment's Favor: Once per session, call on a debt owed to you by anyone who has ever taken a bargain from Varash, wherever they are.",
+        "cost": "Thin in the World: –1 die to resist being unmade yourself by hostile magic; you have grown a little too familiar to the seal's logic."
+      },
+      {
+        "tier": "6+",
+        "benefit": "Shard of the Unmaker: Once per session, unmake one significant thing entirely — a wall, a curse, a small structure, a single day's worth of someone's memory — with the target's full knowledge but no ability to resist.",
+        "cost": "Mark +3 Obligation. Something about you no longer casts quite the right shadow, and small animals will not approach you. You are increasingly difficult to remember accurately; even old friends' descriptions of you begin to drift."
+      }
+    ]
+  },
+  "corruption": [
+    {
+      "tier": 1,
+      "benefit": "Fine Print Sense: +1 die to Notice or Insight when a bargain, contract, or offer has a hidden cost.",
+      "cost": "Cold Read: –1 die on Empathy rolls; your read of others feels accurate but never warm."
+    },
+    {
+      "tier": 2,
+      "benefit": "Unmoved: Once per scene, ignore the first instance of Fear or Intimidation directed at you.",
+      "cost": "Flattened Affect: Others find you unsettling in quiet moments; –1 die to first impressions with those who don't already trust you."
+    },
+    {
+      "tier": 3,
+      "benefit": "Seam-Sight: +2 dice to identify the weak point in any structure, ward, or plan.",
+      "cost": "Unmaking Habit: You occasionally unmake small things without meaning to — a knot, a promise, a mood. Mark 1 Fatigue when it happens at a bad time."
+    },
+    {
+      "tier": 4,
+      "benefit": "The Precise Bargain: Once per session, offer a bargain that is guaranteed to be honored exactly as worded by both sides, supernaturally enforced.",
+      "cost": "Exacting Memory: You cannot forget the precise wording of any bargain you have made, including ones you'd rather not remember."
+    },
+    {
+      "tier": 5,
+      "benefit": "Fragment's Favor: Once per session, call on a debt owed to you by anyone who has ever taken a bargain from Varash, wherever they are.",
+      "cost": "Thin in the World: –1 die to resist being unmade yourself by hostile magic; you have grown a little too familiar to the seal's logic."
+    },
+    {
+      "tier": "6+",
+      "benefit": "Shard of the Unmaker: Once per session, unmake one significant thing entirely — a wall, a curse, a small structure, a single day's worth of someone's memory — with the target's full knowledge but no ability to resist.",
+      "cost": "Mark +3 Obligation. Something about you no longer casts quite the right shadow, and small animals will not approach you. You are increasingly difficult to remember accurately; even old friends' descriptions of you begin to drift."
+    }
+  ],
+  "playstyle_notes": {
+    "description": "Varash is not a horror-movie monster; it is a bureaucratic void with the patience of geology. Its bargains are always kept, which is precisely the problem — the gap between what a supplicant wanted and what they specified is where the horror lives. Followers gain power over unmaking, precision, and cold indifference, but pay for it in a slow flattening of their own investment in outcomes. Varash never lies, never threatens, and never explains why that is somehow worse. Best used as a regional threat-turned-patron tied specifically to the Kingdoms of Brass — the Himadri foothills, the Ninth Seal Mine, and the ruins of Rajagriha — rather than a cosmic force with a presence everywhere. Ideal for characters drawn to bargains too good to be safe, desert and mountain folk-horror, and the particular dread of a power that never once has to raise its voice.",
+    "emphasizes": [
+      "Cosmic Indifference: power without investment, malice, or mercy",
+      "The Fine Print: bargains kept exactly, and the horror of exactness",
+      "Fragmentation: a scattered intelligence, regionally rooted, not omnipresent",
+      "Unmaking as Craft: precision that removes rather than destroys",
+      "Regional Grounding: tied specifically to the Himadri, the Ninth Seal Mine, and Rajagriha"
+    ]
+  },
+  "sample_adventure": {
+    "title": "The Ledger at the Ninth Seal",
+    "description": "A Karak-Aeler stone-priest has gone missing near the Ninth Seal Mine, last seen carrying an old iron chain rumored to be part of the original binding. Rumor in Vajrapur's counting houses says the Kalrantha amulet — a fragment of Varash — has surfaced among relic-thieves chasing profit in the ruins of Rajagriha, and that the seal beneath the Himadri has grown thinner since it left the mountain. The party is hired to recover the amulet before it reaches a buyer who understands exactly what they're purchasing — and must decide what to do when the mountain, given the chance, offers them a bargain of their own.",
+    "quote": "The seal is cracking. And the mountain is listening. It has been listening for a very long time, and it has never once been in a hurry."
+  },
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

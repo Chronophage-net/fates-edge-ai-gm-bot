@@ -1,0 +1,284 @@
+{
+  "id": "confessor-beneath-the-bell",
+  "type": "patron",
+  "title": "The Confessor Beneath the Bell",
+  "subtitle": "Burden & Exchange",
+  "version": "1.0.0",
+  "tags": [
+    "guilt",
+    "sin-eating",
+    "confession",
+    "burden",
+    "debt",
+    "bells",
+    "secrets",
+    "redemption",
+    "silence"
+  ],
+  "lore": {
+    "description": "The Confessor waits in places where guilt gathers — under church spires, in confessionals long abandoned, in the echo of unspoken sins. He does not judge, nor absolve. He takes. Each confession is a transaction: your burden for his silence, your pain for his weight. Those who serve him walk with bowed heads, their mouths stitched by invisible threads, ringing faintly when they speak. To follow the Confessor is to understand that sin does not vanish — it migrates, carried from one soul to another until the bell tolls and the weight becomes unbearable.",
+    "followers": "The Confessor is the sin-eater, the one who consumes guilt so that others may be light. But every meal leaves a stain. Those who take on the burdens of the guilty find that the guilt does not disappear — it waits, grows, and eventually demands to be passed on. His followers are torturers who wish to be merciful, priests who cannot bear the weight of what they hear, and quiet penitents who volunteer to carry what no one else will.",
+    "quote": "Speak, and be freed. But understand — what you cast off, I will bear. And what I bear, you will one day inherit."
+  },
+  "domain_focus": [
+    "Sin Eating: absorbing guilt, shame, and spiritual debt",
+    "Burden Transfer: moving conditions, curses, and story beats from one creature to another",
+    "Confessional Exchange: hearing secrets, trading silence for obligation",
+    "Weight of Ages: the slow accumulation of sin that must eventually be released"
+  ],
+  "runekeeper_options": {
+    "thiasos": {
+      "description": "A Runekeeper sworn to the Confessor does not bind a familiar of flash and fury. Their Thiasos is a small creature that thrives in silence and shadow: a gray mouse that nests in church walls and listens to whispered secrets, a bell-voiced cricket that chirps only when a confession is true, a tiny owl whose wide eyes see through deception, or a pale bell-frog whose croak sounds like a distant chime.",
+      "care": "This creature requires no food, but it must hear a secret or a confession each day. If neglected for a week, it becomes Compromised (it remains silent when it should ring, or chimes at the wrong moment, imposing –1 die on all social rolls involving trust or secrecy for its bearer)."
+    },
+    "codex": {
+      "description": "The Codex of the Confessor is never a book of spells. It may be a bell-ringer's log, each entry a sin recorded as a single bell-stroke; a leather strap knotted for each burden absorbed, the knots tightening as guilt accumulates; or a book of blank pages that fill with the handwriting of those who have confessed to the bearer.",
+      "upkeep": "Because the Confessor's truths are written in silence, the Codex requires upkeep: the Runekeeper must spend an hour each week re-ringing the recorded sins (tapping a small bell once per knot) or the burdens stored there begin to fade (treat as Compromised until re-confessed)."
+    }
+  },
+  "patrons_gift": {
+    "name": "The Confessor's Silence",
+    "description": "Once per scene as an action, a Runekeeper of the Confessor may touch a held item (weapon, shield, or tool) and whisper a single confessed sin.",
+    "effect": "For the rest of the scene, the item grants +1 die to Insight or Command rolls when dealing with guilt, secrets, or coercion, and the first time each scene the bearer would be forced to tell a lie by magical compulsion, they may ignore it (the Confessor's silence protects them).",
+    "cost": "After the scene, the user marks +1 Obligation to the Confessor."
+  },
+  "rites": [
+    {
+      "name": "Rite of the Absorbed Sin",
+      "tier": "Low",
+      "xp": 6,
+      "action": "Scene",
+      "range": "Near/Touch",
+      "resist": "Yes",
+      "tags": ["DEBT", "TRANSFER", "HEAL", "FEAR"],
+      "materials": "A hollow vessel or the ringing of a bell, or a red cord/shared drink.",
+      "effect": "Choose one: Echo of Sin: Absorb 1 Story Beat (Hearts or Diamonds) from an ally or NPC within Near range. Convert it into +1 Obligation. You know the emotional nature of the sin but not its source. Burden Transference: Transfer one Condition, Fatigue, or 1 SB from another target to yourself. You may attempt to reduce their Harm by 1 level; if successful, mark 1 Fatigue.",
+      "push_it": "(Echo) Absorb 2 SB at once; mark +1 Fatigue. (Transfer) Split the burden among two allies; mark 1 SB (Hearts). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Instant."
+    },
+    {
+      "name": "Rite of Absolution by Ash",
+      "tier": "Low",
+      "xp": 5,
+      "action": "Scene",
+      "range": "Touch",
+      "resist": "Yes",
+      "tags": ["PURIFY", "DEBT", "TRANSFER", "FEAR"],
+      "materials": "A pinch of consecrated ash or soot from a burned confession.",
+      "effect": "Lay hands upon a penitent and whisper a truth they cannot bear. Reduce their Corruption by 1. The sin transfers to you as Burdened Heart: mark 1 SB (Hearts) or +1 Obligation.",
+      "push_it": "Cleanse multiple targets within Close range (e.g., after a battle); each additional soul adds +1 Obligation. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Instant."
+    },
+    {
+      "name": "Rite of the Sin-Eater's Pact",
+      "tier": "Standard",
+      "xp": 8,
+      "action": "Scene",
+      "range": "Touch",
+      "resist": "No",
+      "tags": ["BOND", "DEBT", "TRANSFER", "COMMAND"],
+      "materials": "Shared confession whispered into an object or tattooed sigil.",
+      "effect": "Create a bond between you and the confessor; you may suffer 1 Fatigue to grant +2 dice to their Resolve test. If they fail, you suffer 1 Harm instead of them.",
+      "push_it": "You may take both Harm and a Condition; mark 1 SB (Clubs). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Echoed Confession",
+      "tier": "Standard",
+      "xp": 7,
+      "action": "Scene",
+      "range": "Self",
+      "resist": "No",
+      "tags": ["COMMAND", "FEAR", "TRUTH", "DEBT"],
+      "materials": "A small handbell or resonant surface.",
+      "effect": "Once/scene, replay the echo of a confession you have absorbed. Compel a target who shares its nature (Guilt, Regret, Betrayal) to act or reveal truth; DV = your Presence.",
+      "push_it": "The echo manifests physically; mark +1 Obligation and 1 SB (Diamonds). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Instant."
+    },
+    {
+      "name": "Rite of the Weight of Ages",
+      "tier": "High",
+      "xp": 14,
+      "action": "Extended",
+      "range": "Touch/Zone",
+      "resist": "No",
+      "tags": ["DEBT", "TRANSFER", "FATE", "AREA", "FEAR"],
+      "materials": "An ancient bell that has tolled for every execution in a kingdom, a chain forged from confession nails, the ashes of a martyr who died for silence.",
+      "effect": "Transfer accumulated guilt of generations to a single target. Target must make Spirit+Resolve (DV 5) or become overwhelmed by ancestral shame, suffering automatic Harm 2. Alternatively, release all burdens at once: clear all absorbed SB and Obligation. Every affected ally rolls Resolve (DV 4) or relives their confessed sin as hallucination.",
+      "push_it": "(Transfer) The target's guilt infects their bloodline; mark 3 SB (Spades). (Release) Bind a spirit or soul within the toll; mark 1 SB (Spades) and +1 Obligation permanently. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "Extended action.",
+      "duration": "Instant."
+    }
+  ],
+  "cantors_and_cults": {
+    "cantors": {
+      "name": "The Cantor's Song",
+      "description": "A Cantor of the Confessor sings in bells, not words — their voice strikes the air like a clapper on bronze. They perform intonations of release, melodies that invite confession from unwilling throats and then swallow it whole. Their songs are used by torturers who wish to be merciful, and by priests who cannot bear the weight of what they hear."
+    },
+    "cult": {
+      "name": "The Cult of the Silent Bell",
+      "description": "The Confessor's cults gather in places where guilt is already thick: courthouses after sentencing, battlefields the morning after, deathbeds where the dying strain to speak. They wear gray hoods and carry small handbells that they ring exactly once at the start of a confession, and once when the burden has been transferred. Their creed is simple: \"We do not forgive. We carry. When we can no longer carry, we pass the load to the one beneath the bell.\""
+    }
+  },
+  "witchcraft": {
+    "name": "The Art of the Bell-Wright",
+    "description": "A witch who walks with the Confessor is a bell-wright or burden-stitcher — a crafter of thresholds that listen and containers that hold. Their work is often indistinguishable from craft: forging a bell that echoes only the unspoken, carving a confessional that remembers every whisper, stitching a cord that ties sin to stone. Their tools are not hammers; they use bells, cords, and the patient resonance of a struck bronze note.",
+    "color": "#6b5a4a",
+    "lore": "Bell-wrights understand that guilt is not an abstraction but a substance — heavy, transferable, and capable of being shaped like clay or cast like metal. They spend long hours alone with hammer and mold, learning to hear the difference between a bell that merely rings and a bell that truly listens. Many take up the craft after confessing something themselves; the work becomes penance made permanent in bronze.",
+    "signature_rite": "Rite of Absolution by Ash",
+    "quote": "A bell that has never carried a confession is only noise.",
+    "tools": {
+      "bell_of_unspoken_burdens": {
+        "name": "The Bell of Unspoken Burdens",
+        "description": "A small handbell of tarnished bronze, its clapper carved from a knucklebone. Once per session, the witch may ring the bell once. For the next scene, they can hear any whispered confession made within Near range, even if the speaker intended it to be silent. The bell also allows them to \"absorb\" a single SB from an ally as a free action (once per scene), but doing so marks 1 Fatigue. The bell's tone is mournful and lingers longer than it should."
+      }
+    },
+    "hedge_gifts": [
+      {
+        "name": "Bell of Borrowed Silence",
+        "xp": 4,
+        "description": "Once per scene, you may tap a small handbell and absorb one mundane sound (a scream, a lie, a name spoken in anger) into the bell's resonance. For the remainder of the scene, you may release that sound as a distraction or a weapon (+1 die to Intimidation or Deception)."
+      },
+      {
+        "name": "Stitched Ear",
+        "xp": 3,
+        "description": "Once per session, you may listen at a door, wall, or confessional screen and hear the last confession spoken there, even if it was whispered days ago. The words come to you faint and warped, like a memory that is not your own."
+      },
+      {
+        "name": "The Penitent's Coin",
+        "xp": 3,
+        "description": "Once per scene, offer a small coin in exchange for a truth. The target may refuse, but if they accept the coin, they must answer one question honestly (Resolve DV 3 to resist). The coin then feels unnaturally heavy to them until they spend it."
+      },
+      {
+        "name": "Weighed Breath",
+        "xp": 2,
+        "description": "Passive. You can always tell, by the sound of a person's breathing, whether they are carrying an unconfessed guilt — though not what it is."
+      }
+    ]
+  },
+  "monastic_tradition": {
+    "name": "Sin-Eater (The Order of the Unburdened Bell)",
+    "description": "The bell tolls for thee — and I answer. Your sin becomes my silence. Your shame becomes my scar. Monks of the Unburdened Bell take vows of carrying: they walk into disasters, deathbeds, and prison cells not to heal wounds of the body but to take on the weight no one else can bear. Their order maintains no grand cathedral, only a single tolling bell hung above a bare stone floor where the newly ordained lie for a night listening to it ring for sins not yet their own.",
+    "color": "#6b5a4a",
+    "quote": "The bell tolls for thee — and I answer. Your sin becomes my silence. Your shame becomes my scar.",
+    "prerequisites": "Spirit 3+, Resolve 2+, Rite of the Absorbed Sin or Rite of Absolution by Ash.",
+    "debt_resistant_frame": "The unburdened carry only what they choose. Monks of the Order of the Unburdened Bell gain +1 die to resist magical compulsion that would force them to reveal a secret or break a confession's sanctity. If they succeed, the compulsion fades into a soft bell-tone — the secret remains theirs.",
+    "techniques": {
+      "basic": {
+        "name": "Stitched Silence",
+        "xp": 6,
+        "description": "You may speak a lie without being detected by magical truth-telling (e.g., Zone of Truth, Oath of Flame's Sunlit Parley). The lie must be about a sin you have absorbed.",
+        "cost": "1 Fatigue",
+        "prereq": "Spirit 3+"
+      },
+      "advanced": {
+        "name": "Sin-Eater's Resilience",
+        "xp": 8,
+        "description": "When you take a Condition onto yourself from an ally, you may reduce the Fatigue cost by 1 (minimum 0).",
+        "cost": "Passive",
+        "prereq": "Tier II"
+      },
+      "master": {
+        "name": "The Unburdened Bell",
+        "xp": 14,
+        "description": "Once per session, ring a great bell (real or imagined) and declare a single sin you have absorbed to be forgiven. Remove that sin's associated Story Beat or Obligation from yourself completely (it does not transfer). For the remainder of the session, gain +2 dice to all rolls made to protect or absolve others. After the scene, you gain a permanent Debt Scar (the Confessor's memory of your cheat; your name rings faintly when spoken).",
+        "cost": "2 Fatigue and +1 Obligation to the Confessor",
+        "prereq": "Tier III, Spirit 4+"
+      }
+    },
+    "corruption": [
+      {
+        "tier": 1,
+        "benefit": "Confessor's Ear: +1 die to Insight when someone speaks a hidden fear or guilt.",
+        "cost": "Ringing Silence: You hear phantom bells; checks that require perfect silence suffer –1 die."
+      },
+      {
+        "tier": 2,
+        "benefit": "Burden Bearer: Once/scene, convert 1 SB from an ally into 1 Fatigue for yourself.",
+        "cost": "Stitched Mouth: You cannot speak a lie about a sin you have absorbed; if you try, mark 1 Fatigue."
+      },
+      {
+        "tier": 3,
+        "benefit": "Weight of Shadows: Once/session, cause a target who has confessed to you to hesitate (lose Initiative or act at Desperate Position).",
+        "cost": "Shared Agony: When you transfer a Condition to yourself, you also transfer its outward sign (a scar, a tremor)."
+      },
+      {
+        "tier": 4,
+        "benefit": "The Bell Answers: Once/session, ring a bell and name a sin; all who share that sin within Near must test Resolve (DV 3) or admit it aloud.",
+        "cost": "Echoing Skin: Your body remembers every burden carried; touching you inflicts 1 Fatigue on the other party."
+      },
+      {
+        "tier": 5,
+        "benefit": "Absolution by Proxy: Once/session, fully clear a Minor Condition from an ally by taking it onto yourself.",
+        "cost": "Permanent Toll: Each time you use this benefit, mark +1 permanent Obligation to the Confessor."
+      },
+      {
+        "tier": "6+",
+        "benefit": "The Weight of Ages: You may transfer a Major Condition (or Harm 2) from an ally to yourself without a roll.",
+        "cost": "Bell's Heir: The Confessor whispers that you will one day take his place — or break. Mark +3 Obligation."
+      }
+    ]
+  },
+  "corruption": [
+    {
+      "tier": 1,
+      "benefit": "Confessor's Ear: +1 die to Insight when someone speaks a hidden fear or guilt.",
+      "cost": "Ringing Silence: You hear phantom bells; checks that require perfect silence suffer –1 die."
+    },
+    {
+      "tier": 2,
+      "benefit": "Burden Bearer: Once/scene, convert 1 SB from an ally into 1 Fatigue for yourself.",
+      "cost": "Stitched Mouth: You cannot speak a lie about a sin you have absorbed; if you try, mark 1 Fatigue."
+    },
+    {
+      "tier": 3,
+      "benefit": "Weight of Shadows: Once/session, cause a target who has confessed to you to hesitate (lose Initiative or act at Desperate Position).",
+      "cost": "Shared Agony: When you transfer a Condition to yourself, you also transfer its outward sign (a scar, a tremor)."
+    },
+    {
+      "tier": 4,
+      "benefit": "The Bell Answers: Once/session, ring a bell and name a sin; all who share that sin within Near must test Resolve (DV 3) or admit it aloud.",
+      "cost": "Echoing Skin: Your body remembers every burden carried; touching you inflicts 1 Fatigue on the other party."
+    },
+    {
+      "tier": 5,
+      "benefit": "Absolution by Proxy: Once/session, fully clear a Minor Condition from an ally by taking it onto yourself.",
+      "cost": "Permanent Toll: Each time you use this benefit, mark +1 permanent Obligation to the Confessor."
+    },
+    {
+      "tier": "6+",
+      "benefit": "The Weight of Ages: You may transfer a Major Condition (or Harm 2) from an ally to yourself without a roll.",
+      "cost": "Bell's Heir: The Confessor whispers that you will one day take his place — or break. Mark +3 Obligation."
+    }
+  ],
+  "playstyle_notes": {
+    "description": "The Confessor is the patron of sin-eaters — those who take on the guilt of others so that the guilty may walk free. His followers gain power over burden transfer, confession, and the slow accumulation of spiritual debt. The cost is that every sin absorbed leaves a mark, and the weight of ages grows heavier with each secret carried. Ideal for players who enjoy redemption arcs, martyrdom, and the moral complexity of carrying others' sins.",
+    "emphasizes": [
+      "Sin Eating: consuming guilt, shame, and spiritual debt",
+      "Burden Transfer: moving conditions, curses, and story beats",
+      "Confessional Exchange: secrets as currency, silence as payment",
+      "Weight of Ages: the slow accumulation of sin that must eventually be released",
+      "The Bell as Witness: the sound that marks the beginning and end of every transaction"
+    ]
+  },
+  "sample_adventure": {
+    "title": "The Bell That Would Not Stop",
+    "description": "A parish bell has begun tolling on its own, once for every unconfessed sin within the town's walls, and the townsfolk are beginning to unravel under the weight of being counted. A local sin-eater has vanished, leaving behind a debt too heavy to carry alone. The party must find who — or what — is ringing the bell, and decide whether to silence it, feed it, or become its next keeper. Some in town would rather the bell ring forever than face what it counts.",
+    "quote": "Every town has a bell it does not ring. Ours has started ringing itself."
+  },
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}

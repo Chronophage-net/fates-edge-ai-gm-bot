@@ -1,0 +1,278 @@
+{
+  "id": "malachai-cruel-messenger",
+  "type": "patron",
+  "title": "Malachai, the Cruel Messenger",
+  "subtitle": "Curses & Corruption",
+  "version": "1.0.0",
+  "tags": [
+    "curse",
+    "corruption",
+    "faustian",
+    "vampirism",
+    "lycanthropy",
+    "affliction",
+    "false-hope",
+    "content-warning"
+  ],
+  "lore": {
+    "description": "Malachai was once a divine messenger — a herald of painful truths, sent to deliver news that could not be softened. She was not cruel; she was necessary. But necessity wears. In time, she began to soften the truth, offering false hope alongside real curses. For this, the gods bound her in chains of black iron beneath the cursed city of Zahk'Kozahn. Now she waits. Chained but not contained. Imprisoned but not silent. Her voice reaches across the world, offering power to the weak, hope to the hopeless, and sweet oblivion to those who cannot bear to face the dawn. Vampirism, lycanthropy, and other cursed conditions flow from her influence.",
+    "followers": "Her followers learn that power demands suffering, mastering gifts that devour from within. Among the peoples of Fate's Edge, Malachai is the patron of the desperate and the damned. In Zakov, she is the Salt-Fang, whose silver coin appears in the mouth of drowned sailors. In the Valewood, she is the Thorn-Giver, invoked by hunters who curse a rival's bow. In Linn, she is the Wave-Mother's Shadow, whose gifts turn the tide of battle — at a price. Wherever hope curdles into despair, Malachai whispers.",
+    "quote": "I offer you everything you desire, and everything you fear. The payment comes later."
+  },
+  "domain_focus": [
+    "Cursed Gifts: Faustian bargains, power with hidden costs",
+    "Corruptive Power: tainted blessings, addictive magic",
+    "False Salvation: hope that destroys, beautiful lies",
+    "Supernatural Afflictions: vampirism, lycanthropy, and other curses"
+  ],
+  "runekeeper_options": {
+    "thiasos": {
+      "description": "A Runekeeper sworn to Malachai does not bind a familiar of purity or light. Their Thiasos is a small creature touched by her corruption: a black rat with one red eye that gnaws at the bars of its cage, a crow with a broken feather that always points toward the nearest corpse, a toad that secretes a toxin causing fever dreams, a small bat that drinks blood from a silver dish, or a moth whose wing dust leaves a rash that itches for a week.",
+      "care": "This creature requires no food, but it must be given a small sacrifice of pain (a pinprick, a pinch of salt in a wound) each day. If neglected for a week, it becomes Compromised (it grows sullen and its aura of despair thickens, imposing –1 die on all Resolve rolls for its bearer until a proper curse is laid)."
+    },
+    "codex": {
+      "description": "The Codex of Malachai is never a book of hope. It may be a chain of iron links, each etched with a curse; a box of cracked bells that toll when a Rite is spoken; a scroll of skin from a sinner who died unshriven; or a set of silver nails driven into a board, each nail a promise broken.",
+      "upkeep": "Because Malachai's truths are written in pain, the Codex requires upkeep: the Runekeeper must spend an hour each week pricking their finger and letting a drop of blood fall onto each nail (or each bell), or the curses stored there become faint (treat as Compromised until re-blooded)."
+    }
+  },
+  "patrons_gift": {
+    "name": "Malachai's Honeyed Word",
+    "description": "Once per scene as an action, a Runekeeper of Malachai may touch a held item (weapon, tool, or garment) and whisper a false promise.",
+    "effect": "For the rest of the scene, the item grants +1 die to Intimidation or Deception rolls, and the first time each scene the bearer would suffer a supernatural curse, they may ignore it (the curse slides off, seeking another target).",
+    "cost": "After the scene, the user marks +1 Obligation to Malachai."
+  },
+  "rites": [
+    {
+      "name": "Rite of the Honeyed Binding",
+      "tier": "Low",
+      "xp": 5,
+      "action": "Scene",
+      "range": "Self or Near/Touch",
+      "resist": "Yes",
+      "tags": ["CURSE", "BOOST", "DEBT", "FEAR"],
+      "materials": "Blood mixed with sweet wine, or a broken chain link.",
+      "effect": "Choose one: Honeyed Curse — target gains +2 dice to their next roll (counts as Triumph); they take 1 Corruption (unresistable). Binding Curse — target gains +1 die to physical actions but suffers Fatigue 1 unless they perform a dominance act (beat a weaker creature, drink blood, break something precious).",
+      "push_it": "(Honeyed) Grant +3 dice and auto-Triumph; inflict 2 Corruption instead. (Binding) Grant +2 dice but Fatigue 2; mark 1 SB (Spades) as the curse's hunger grows. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the False Dawn",
+      "tier": "Standard",
+      "xp": 8,
+      "action": "Scene",
+      "range": "Near",
+      "resist": "Yes",
+      "tags": ["CURSE", "DEBT", "FATE"],
+      "materials": "Meteoric iron shard blessed by false light.",
+      "effect": "Bestow a gift with a hidden curse. Target gains a significant advantage (e.g., +1 die to all rolls for one scene) but accrues a 4-segment Corruption timer. Each time they use the gift, tick the timer. When full, they suffer a related curse (GM chooses: festering wounds, beastly urges, or the attention of a Collector).",
+      "push_it": "The gift is more powerful (+2 dice, or extended duration). The timer advances 2 segments immediately; mark 1 SB (Diamonds). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Cruel Transformation",
+      "tier": "Standard",
+      "xp": 9,
+      "action": "Scene",
+      "range": "Touch",
+      "resist": "Yes",
+      "tags": ["CURSE", "TRANSFORM", "DEBT", "FEAR"],
+      "materials": "Holy water mixed with graveyard dust.",
+      "effect": "Infect a target with a supernatural condition (vampiric hunger, bestial rage, shadow-bind). Lasts one scene. Start a 6-segment Transformation timer. Each time the target resists feeding or transformation, tick the timer. When full, the condition becomes permanent.",
+      "push_it": "The condition becomes permanent immediately; target gains +1 die to relevant actions but is marked by Malachai (a Collector will visit within a week). Mark 1 SB (Hearts). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Messenger's Burden",
+      "tier": "High",
+      "xp": 13,
+      "action": "Extended",
+      "range": "Self",
+      "resist": "Yes",
+      "tags": ["CURSE", "BOOST", "PRESSURE", "DEBT"],
+      "materials": "Manacles worn while speaking her name.",
+      "effect": "Channel Malachai directly. Gain +2 dice to one action per beat this scene, but each use marks 1 SB as her influence spreads. Start an 8-segment Corruption's Grip timer. When it fills, a Collector arrives to demand a memory, a name, or a year of your life.",
+      "push_it": "+3 dice but mark 2 SB, suffer Fatigue 1, and her voice becomes permanent — you hear whispers of cruel bargains in quiet moments. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "Extended action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Chained Angel's Tribute",
+      "tier": "High",
+      "xp": 14,
+      "action": "Extended",
+      "range": "Zone",
+      "resist": "No",
+      "tags": ["CURSE", "AREA", "SACRIFICE", "FATE"],
+      "materials": "A chapel bell cracked by divine lightning, or a silver coin that cannot be spent.",
+      "effect": "Corrupt a sacred space or consecrate a site to Malachai. Within the zone: supernatural effects gain +1 Effect; blessings and healing spells generate +1 SB on a failure; any creature that accepts a gift from Malachai within the zone immediately ticks a Corruption timer twice. Start a 10-segment Divine Perversion timer. When it fills, the site becomes a permanent beacon for the Worn — the ghouls of Zahk'Kozahn.",
+      "push_it": "The corruption spreads to adjacent areas; mark 3 SB (Diamonds). Cost: Mark +1 Obligation (total +4) or Mark +1 Fatigue.",
+      "cost": "Mark +3 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "Extended action.",
+      "duration": "Permanent."
+    }
+  ],
+  "cantors_and_cults": {
+    "cantors": {
+      "name": "The Cantor's Song",
+      "description": "A Cantor of Malachai sings in harmonies of sweet despair — melodies that begin like a lullaby and end like a scream. Their voice is used to lure the desperate into bargains, to make a village accept a curse as a blessing, or to sing a monster to sleep so that it may be bound. Malachai's Cantors are terrifying not because they are evil, but because they are willing to do evil — they will poison the well to teach the town to dig deeper, or curse a child to save a hundred adults. They are hated and needed in equal measure."
+    },
+    "cult": {
+      "name": "The Cult of the Leashed Hunger",
+      "description": "Malachai's cults gather in places where suffering is already present: plague hospitals, slums, refugee camps, and the cells of the condemned. The most fanatical cell, the Leashed Hunger, meets in catacombs beneath Zahk'Kozahn's ruins, where they drink water from the Well of Ichor and carve the names of their victims into their own flesh with silver needles. A ritual involves each member naming a curse they have inflicted (or allowed) and a mercy they have buried because of it. Then they prick their finger and let a drop of blood fall into a cracked bell; the bell tolls once, and a Collector appears to witness. Their creed is whispered, not spoken: 'We are the knife that cuts the rot. The wound heals, but the scar remembers us.' Outsiders are not welcome; they are patients, or potential tools, or future victims. Those who die serving Malachai become the Worn — shambling ghouls that guard the cursed city."
+    }
+  },
+  "witchcraft": {
+    "name": "The Art of the Curse-Smith",
+    "description": "A witch who walks with Malachai is a curse-smith or affliction-weaver — one who crafts pain into purpose. Their magic works through the materials of suffering: a needle that sews a nightmare into a pillow, a forge that tempers a blade to always strike the wielder's loved ones, or a garden where belladonna and hemlock grow in geometric patterns. In Aeler, a True-Mason might carve a keystone that makes every tenth step collapse, but a witch of Malachai would instead sew a curse-seam into the mortar, so that the tunnel itself remembers every injury it has caused.",
+    "color": "#7a1f1f",
+    "lore": "The curse-smith's path is precision, not cruelty for its own sake. They learn that a curse well-aimed is a scalpel, not a cudgel — that the worst afflictions are small, specific, and patient. Malachai's witches are called on by desperate people for desperate reasons: a landlord who deserves ruin, a soldier who cannot stop killing, a debt that must be paid by someone. They rarely ask whether the reasons are good enough.",
+    "signature_rite": "Rite of the Honeyed Binding",
+    "quote": "The wound heals. The scar remembers us.",
+    "tools": {
+      "splintered_needle": {
+        "name": "The Splintered Needle",
+        "description": "A needle of black iron, snapped in half and re-joined with a drop of the witch's blood. Once per session, the witch may sew a 'curse seam' into a garment, a threshold, or a skin. The curse is small but specific: a button that falls off at the worst moment, a door that sticks when someone is pursued, a hand that trembles when holding a weapon. The target suffers –1 die on a single type of roll for the scene. The witch may unstitch the curse as a free action, but doing so marks 1 Fatigue."
+      }
+    },
+    "hedge_gifts": [
+      {
+        "name": "Borrowed Scars",
+        "xp": 2,
+        "description": "Once per scene, the witch may touch a fresh wound (inflicted within the last hour) and speak a single word of Malachai's name. For the remainder of the scene, the witch may transfer the pain of that wound (as 1 Fatigue) to another creature within Near range. The target resists with Spirit+Resolve (DV 3); on a failure, they suffer the Fatigue and the witch's original wound heals slightly (clear 1 Fatigue from themselves). On a success, the witch takes the Fatigue anyway — the curse rebounds."
+      },
+      {
+        "name": "Small Malediction",
+        "xp": 3,
+        "description": "Once per scene, name a minor, specific inconvenience to befall a target you can see within Near (a stumble, a dropped item, a coughing fit). It happens at the next dramatically appropriate moment, at the GM's discretion, imposing –1 die on their next roll."
+      },
+      {
+        "name": "Well of Ichor Draught",
+        "xp": 4,
+        "description": "You may brew a bitter tonic during downtime that, when drunk, grants +1 die to resist fear or despair for the rest of the day — at the cost of one vivid, unpleasant dream that night. Requires a private working space and a personal sacrifice of pain."
+      }
+    ]
+  },
+  "monastic_tradition": {
+    "name": "The Order of the Unshriven",
+    "description": "Monks of the Unshriven Order train in places others abandon — plague wards, execution grounds, the cells beneath courthouses. They believe that suffering, faced honestly and without flinching, is the only true purification, and that Malachai's curses are simply the world's ledger made visible. Their discipline is grim and exact: they learn to carry pain without breaking, to inflict it without cruelty, and to recognize when a curse has become a mercy in disguise.",
+    "color": "#7a1f1f",
+    "prerequisites": "Spirit 3+, Resolve 2+, Rite of the Honeyed Binding or Cantor of Malachai.",
+    "quote": "We are the knife that cuts the rot.",
+    "debt_resistant_frame": "The Unshriven have already paid their worst debts in advance, in pain freely offered. Monks gain +1 die to resist any curse, geas, or Obligation that would be inflicted upon them involuntarily. If they succeed, the curse instead marks a small, visible toll on the one who tried to inflict it — a bruise, a cough, a moment of their own despair made plain.",
+    "techniques": {
+      "basic": {
+        "name": "Scar Ledger",
+        "xp": 5,
+        "description": "Once per scene, mark 1 Fatigue to gain +2 dice on a single roll to endure, resist, or push through pain, fear, or a supernatural affliction.",
+        "cost": "1 Fatigue",
+        "prereq": "Resolve 2+"
+      },
+      "advanced": {
+        "name": "Reader of Debts",
+        "xp": 8,
+        "description": "Once per scene, look upon a person or place and sense the shape of the curse or affliction that clings to them (GM answers one question about its nature, source, or trigger).",
+        "cost": "Passive",
+        "prereq": "Tier II, Spirit 3+"
+      },
+      "master": {
+        "name": "The Mercy Cut",
+        "xp": 13,
+        "description": "Once per session, take a target's active curse or supernatural affliction onto yourself for the remainder of the scene, sparing them its effects entirely. You suffer the affliction's mechanical effects for that time; afterward, the affliction returns to its original bearer unless you have found another way to end it.",
+        "cost": "2 Fatigue and +1 Obligation to Malachai",
+        "prereq": "Tier III, Spirit 4+"
+      }
+    },
+    "corruption": [
+      {
+        "tier": 1,
+        "benefit": "Sharpened Senses: +1 die to Notice in dim light.",
+        "cost": "Unsettling Presence: –1 die to social warmth checks."
+      },
+      {
+        "tier": 2,
+        "benefit": "Primal Vigor: +1 die to Athletics and physical actions.",
+        "cost": "Dark Hunger: 1 Fatigue if a day passes without feeding (blood or rare herbs)."
+      },
+      {
+        "tier": 3,
+        "benefit": "Unnatural Resilience: Once per session, resist one Condition.",
+        "cost": "Beastly Tells: Failures cause visible physical changes (slitted eyes, fur patches)."
+      },
+      {
+        "tier": 4,
+        "benefit": "Cursed Vigour: Natural weapons count as magical; +1 Effect.",
+        "cost": "Transformed Body: Permanent physical change (eye color, skin texture, etc.)."
+      },
+      {
+        "tier": 5,
+        "benefit": "Regenerative Curse: Heal 1 Fatigue or Condition per rest.",
+        "cost": "Corruption's Price: Pushing rites adds permanent Corruption (cannot be cleared)."
+      },
+      {
+        "tier": "6+",
+        "benefit": "Monstrous Ascendant: +2 dice to Body-based actions; your unarmed strikes deal +1 Harm and count as magical.",
+        "cost": "Loss of Self: The GM may compel curse-driven behavior (feed, rage, corrupt) once per session. You can resist with Spirit+Resolve (DV 4). On failure, you act according to the curse for one exchange. Your eyes now glow faintly red in darkness — a visible sign of Malachai's claim."
+      }
+    ]
+  },
+  "corruption": [
+    {
+      "tier": 1,
+      "benefit": "Sharpened Senses: +1 die to Notice in dim light.",
+      "cost": "Unsettling Presence: –1 die to social warmth checks."
+    },
+    {
+      "tier": 2,
+      "benefit": "Primal Vigor: +1 die to Athletics and physical actions.",
+      "cost": "Dark Hunger: 1 Fatigue if a day passes without feeding (blood or rare herbs)."
+    },
+    {
+      "tier": 3,
+      "benefit": "Unnatural Resilience: Once per session, resist one Condition.",
+      "cost": "Beastly Tells: Failures cause visible physical changes (slitted eyes, fur patches)."
+    },
+    {
+      "tier": 4,
+      "benefit": "Cursed Vigour: Natural weapons count as magical; +1 Effect.",
+      "cost": "Transformed Body: Permanent physical change (eye color, skin texture, etc.)."
+    },
+    {
+      "tier": 5,
+      "benefit": "Regenerative Curse: Heal 1 Fatigue or Condition per rest.",
+      "cost": "Corruption's Price: Pushing rites adds permanent Corruption (cannot be cleared)."
+    },
+    {
+      "tier": "6+",
+      "benefit": "Monstrous Ascendant: +2 dice to Body-based actions; your unarmed strikes deal +1 Harm and count as magical.",
+      "cost": "Loss of Self: The GM may compel curse-driven behavior (feed, rage, corrupt) once per session. You can resist with Spirit+Resolve (DV 4). On failure, you act according to the curse for one exchange. Your eyes now glow faintly red in darkness — a visible sign of Malachai's claim."
+    }
+  ],
+  "playstyle_notes": {
+    "description": "Malachai offers power that corrupts from within. Followers gain immediate benefits but accumulate permanent drawbacks. The corruption progression leads toward becoming a supernatural creature with great power but diminishing humanity. Ideal for players who enjoy tragic characters, Faustian bargains, and exploring the price of power. Content note: themes include addiction, loss of self, and the consequences of desperate choices — use Lines & Veils to keep the table comfortable.",
+    "emphasizes": [
+      "Cursed Gifts: power that always costs more than expected",
+      "Addiction as Magic: once you start, stopping is harder than any curse",
+      "False Salvation: every cure is a waiting room",
+      "Supernatural Afflictions: becoming the monster to fight monsters",
+      "The Chained Angel: patient, hungry, and never truly contained"
+    ]
+  },
+  "sample_adventure": {
+    "title": "The Well of Ichor",
+    "description": "A plague has broken out in a refugee camp on the road to Zahk'Kozahn, and a Leashed Hunger cell has begun offering a cure — for a price paid in memory and flesh. The cure works. The party must decide whether to expose the cult, negotiate with it, or accept that in a camp with no other physician, Malachai's mercy may be the only mercy available. Whatever they choose, someone in the camp will not survive the choosing, and Malachai will remember who made it.",
+    "quote": "You wanted the fever to break. It has. Ask yourself what else broke with it."
+  },
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+}
