@@ -1,0 +1,403 @@
+{
+  "id": "dwarven-debt",
+  "title": "The Dwarven Debt",
+  "description": "Decades ago, one of the party owes House Khaz-Vurim an oath sworn in good faith and never properly honored — a promise entangled with a ceremonial hammer, the Forgefather's Voice, pledged as surety and left unclaimed when the original bargain went unfinished. Now the house is faltering, its name losing weight among the other holds, and Vault-Queen Thora Stonebeard has decided the old promise must finally be kept. To honor it, the party must descend into the Spine Underway, where something ancient has been waiting far longer than any dwarf for that promise to be settled — and where 'debt,' the party will learn, was never really about the hammer at all.",
+  "tier": "II-III",
+  "author": "Nicholas A. Gasper",
+  "sessions": "4-5",
+  "themes": ["Honor and Oath", "Underground Exploration", "Ancient Bargains", "Kinship and Reputation"],
+  "bestiary": [
+    {
+      "id": "ward-construct",
+      "name": "Vault Ward-Construct",
+      "tl": 3,
+      "class": "III",
+      "category": "construct",
+      "description": "A squat, iron-plated guardian keyed to the old dwarven wards protecting the deeper Underway. It does not attack unprovoked — it enforces protocol, blocking passage until the correct rite or credential is offered, and only turns violent if that protocol is broken outright.",
+      "stats": { "Body": 3, "Spirit": 1, "Presence": 1, "armor": 3, "hp": 22 },
+      "sb_spends": [
+        { "cost": 1, "name": "Seal the Passage", "effect": "The Ward-Construct closes a nearby door or corridor, forcing the party to find another route or breach it by force." },
+        { "cost": 2, "name": "Sound the Deep Alarm", "effect": "A resonant tone echoes through the tunnels, drawing 1d4 additional Ward-Constructs to the party's position within a few minutes." }
+      ],
+      "lore": "These constructs are less guardians than clerks in stone — built not to punish trespass but to make certain every debt owed to the deep places is settled the correct way, by the correct hands, in the correct order."
+    },
+    {
+      "id": "stone-singer",
+      "name": "The Stone-Singer",
+      "tl": 5,
+      "class": "V",
+      "category": "outsider",
+      "description": "An ancient presence bound into the living rock of the deepest Underway, older than any dwarven hold. It does not have a body to fight so much as a will to be reckoned with — it speaks through resonance in the stone itself, through dreams, and through the subtle bending of memory. It prefers patient manipulation to confrontation, and has waited decades, without apparent hurry, for this exact reckoning.",
+      "stats": { "Spirit": 5, "Presence": 4, "arcane_resistance": 3 },
+      "sb_spends": [
+        { "cost": 1, "name": "Stone-Song Whisper", "effect": "The Stone-Singer plants an old memory or omen in a PC's mind; they must test Spirit+Resolve (DV 3) or be Shaken for the scene." },
+        { "cost": 2, "name": "Resonant Pressure", "effect": "The stone itself groans and shifts around the party; all in the chamber test Body+Athletics (DV 4) or gain 1 Fatigue as footing becomes treacherous." },
+        { "cost": 3, "name": "The Old Bargain Remembered", "effect": "The Stone-Singer reveals a piece of the true history of the Forgefather's Voice directly into a PC's mind — useful, but unsettling; the PC marks 1 Fatigue from the intensity of the vision." }
+      ],
+      "lore": "The Stone-Singer is not evil, and it is not owed anything in the way House Khaz-Vurim understands owing. It simply remembers every promise ever made near its resting place, and it has been waiting to see whether the dwarves who made this one still remember how to keep their word without being forced to."
+    }
+  ],
+  "acts": [
+    {
+      "id": "act-1-the-debt-called",
+      "title": "Act I — The Debt Called",
+      "description": "House Khaz-Vurim calls in an old promise, and the party learns just how seriously dwarven kinship treats a word given and not yet kept. This act is about understanding what's really owed, and to whom, before anyone descends into the dark to pay it.",
+      "scenes": [
+        {
+          "id": "scene-1-1-the-delegation-arrives",
+          "title": "The Delegation Arrives",
+          "description": "Clan-Speaker Thrain Ironhold arrives with a formal delegation, laying out the old bargain in careful, respectful terms: decades ago, a promise was made — the Forgefather's Voice pledged as surety for a favor never fully repaid — and House Khaz-Vurim, now weakening, needs that old word honored to hold its standing among the other holds.",
+          "timers": [
+            { "name": "House Standing", "segments": 8, "current": 2, "description": "Tracks House Khaz-Vurim's reputation and stability among the dwarven holds — a measure of trust, not coin. Advances (worsens) as the house's difficulties become public and its allies start hedging their bets. Recedes when the party makes visible progress toward honoring the old promise or when Thora secures support through honest means. When full, the house's word stops being trusted by the other clans — a wound no later payment fully heals." }
+          ],
+          "encounters": [
+            {
+              "name": "Hear the Delegation Out",
+              "dv": 4,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "You listen without defensiveness and Thrain respects it — he lays out the history plainly, including the parts that don't flatter his own house. You gain a clear, honest account of the original bargain.",
+                "partial": "You get the broad strokes, but Thrain, sensing skepticism, keeps some of the house's own missteps close to the chest.",
+                "miss": "The conversation turns defensive on both sides; Thrain leaves believing you intend to dodge the obligation, and House Standing worsens by 1."
+              }
+            },
+            {
+              "name": "Investigate the Original Bargain",
+              "dv": 3,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "You confirm the promise is real and was made in good faith — but also that it was never formally closed out under dwarven custom, which is why it still carries weight decades later.",
+                "partial": "You confirm the promise's existence but can't yet establish exactly what closing it out will require.",
+                "miss": "You draw a false conclusion about the bargain's terms that could cause real friction with House Khaz-Vurim if acted on."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-1-2-the-house-in-decline",
+          "title": "The House in Decline",
+          "description": "A visit to Khaz-Vurim Halls reveals a proud house under real strain — master craftsmen leaving for steadier work, allies quietly distancing themselves, Vault-Queen Thora Stonebeard holding the line through sheer force of will. The old promise isn't about the hammer's value; it's about whether Khaz-Vurim's word still means anything when it's tested.",
+          "encounters": [
+            {
+              "name": "Audience with Vault-Queen Thora",
+              "dv": 4,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "Thora speaks plainly about her house's situation and what honoring this old promise would mean for her standing — not the hammer's worth, but proof her house still keeps its word when it's hard to. You gain her genuine trust.",
+                "partial": "She's guarded but not hostile; she'll work with you, but hasn't decided yet whether to fully trust you with the harder truths.",
+                "miss": "She reads your questions as an attempt to wriggle out of the obligation, and treats you with cold formality from here forward."
+              }
+            },
+            {
+              "name": "Read the House's Decline",
+              "dv": 4,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "You see clearly how much is riding on this: allied houses are watching to see if Khaz-Vurim can still make good on old bargains, and this one specifically has become a quiet test of the house's honor.",
+                "partial": "You sense the stakes are high without grasping the full picture of who's watching and why.",
+                "miss": "You misjudge the severity, treating this as a routine request rather than the reputational crisis it actually represents for the house."
+              }
+            }
+          ],
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "act-2-into-the-deep",
+      "title": "Act II — Into the Deep",
+      "description": "The party descends into the Spine Underway, the vast tunnel network beneath the holds, following the trail toward the Forgefather's Crypt where the hammer has rested. The deeper they go, the clearer it becomes that something older than dwarven custom has its own stake in how this promise gets settled.",
+      "scenes": [
+        {
+          "id": "scene-2-1-the-spine-underway",
+          "title": "The Spine Underway",
+          "description": "Ancient tunnels connecting the holds, part maintained thoroughfare and part crumbling remnant of a civilization older than the dwarves themselves. The party must navigate both the physical dangers and the first faint signs that they are not the only ones interested in the Forgefather's Voice.",
+          "timers": [
+            { "name": "Stone-Song Resonance", "segments": 6, "current": 0, "description": "Tracks how strongly the Deep Stirrings — ancient presences bound in the living rock — are attending to the party's approach. Advances as the party nears the Crypt, performs proper dwarven rites, or shows respect for the old customs; also advances if they're careless or disrespectful of what they're walking into. When full, the Stone-Singer makes direct contact." }
+          ],
+          "encounters": [
+            {
+              "name": "Navigate the Underway",
+              "dv": 4,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "You make steady progress through the tunnels, reading the old dwarven waymarks correctly and avoiding the worst of the unstable sections.",
+                "partial": "You make progress but lose time working around a collapsed passage.",
+                "miss": "You trigger a minor cave-in; no one is badly hurt, but you lose significant time and the noise draws attention. Stone-Song Resonance +1."
+              }
+            },
+            {
+              "name": "Encounter a Ward-Construct",
+              "creatureId": "ward-construct",
+              "quantity": 1,
+              "dv": 4,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "You present proper credentials or perform the correct protocol; the construct steps aside without incident.",
+                "partial": "The construct is satisfied enough to let you pass, but marks your passage — House Khaz-Vurim will know exactly when you came through.",
+                "miss": "You fail to satisfy the protocol and the construct turns hostile, forcing a fight before you can proceed."
+              }
+            },
+            {
+              "name": "The Edgewalker's Rival Claim",
+              "dv": 4,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "You cross paths with a Guild-Master Thorek Deepdelver prospector seeking the same artifact and either strike a working arrangement or convince them off the trail without conflict.",
+                "partial": "You reach an uneasy truce — they'll stay out of your way, but they're not leaving empty-handed if they can help it.",
+                "miss": "The encounter turns adversarial; the Edgewalkers Guild becomes an active complication for the rest of the descent."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-2-2-stone-whispering",
+          "title": "Stone Whispering",
+          "description": "The first direct contact with the Deep Stirrings arrives as dreams and half-heard resonance in the stone itself — unsettling, but not hostile. It is the ancient presences taking measure of who has come to finally close out the old promise.",
+          "encounters": [
+            {
+              "name": "Interpret the Stone-Song",
+              "dv": 4,
+              "position": "Desperate",
+              "outcomes": {
+                "clean": "You correctly read the presence's intent — curiosity and old patience, not malice — and gain insight that will make the eventual meeting with the Stone-Singer far less dangerous.",
+                "partial": "You sense you're being watched and measured, but can't yet tell for what purpose.",
+                "miss": "You misread the contact as an attack and respond defensively, unsettling the presence and complicating the eventual meeting. Stone-Song Resonance +1."
+              }
+            }
+          ],
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "act-3-the-deep-stirrings",
+      "title": "Act III — The Deep Stirrings",
+      "description": "The party reaches the Forgefather's Crypt and the true history of the Forgefather's Voice comes into focus. This isn't a story about a missing object — it's about a promise made between the dwarves and something ancient long before House Khaz-Vurim's bargain ever existed, and the party must reckon honestly with all sides of it.",
+      "scenes": [
+        {
+          "id": "scene-3-1-the-forgefathers-crypt",
+          "title": "The Forgefather's Crypt",
+          "description": "A sacred resting place, warded and locked by ceremony rather than mechanism. Forge-Master Durin Emberheart's records, if the party has found them, hint that the hammer's true nature is bound up with an older kinship — one between the first dwarven smiths and the very stone they worked, not merely a house's collateral.",
+          "timers": [
+            { "name": "Ward Standing", "segments": 6, "current": 0, "description": "Tracks the stability of the Crypt's ceremonial protections — a measure of respect owed and honored, not a lock to be picked. Advances (worsens) on unauthorized entry, force used instead of proper rite, or violation of dwarven custom. When full, the wards fail entirely and the Crypt's deeper dangers stir." }
+          ],
+          "encounters": [
+            {
+              "name": "Approach with Proper Rite",
+              "dv": 5,
+              "position": "Desperate",
+              "outcomes": {
+                "clean": "The party performs the correct dwarven ceremony to enter respectfully; the Crypt opens to them without incident, and the Stone-Singer takes note of the courtesy.",
+                "partial": "The rite is imperfect but earnest; the Crypt admits the party, but Ward Standing advances +1 from the friction.",
+                "miss": "The attempt fails and the party either forces entry or is turned away; Ward Standing advances +2."
+              }
+            },
+            {
+              "name": "Consult Forge-Master Durin's Secret",
+              "dv": 4,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "Durin, torn between house loyalty and his own conscience, finally shares what he knows: the Forgefather's Voice was never truly House Khaz-Vurim's to pledge — it belongs, in the oldest sense, to a kinship between dwarves and the Deep Stirrings that predates any single house's ledger of favors.",
+                "partial": "Durin hints at a larger truth without fully committing to sharing it — the party will need to earn more of his trust or find independent confirmation.",
+                "miss": "Durin, fearful of betraying his house, denies knowing anything useful, closing off this avenue for now."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-3-2-the-stone-singer-speaks",
+          "title": "The Stone-Singer Speaks",
+          "description": "Direct contact with the Stone-Singer at last. It does not want the hammer back out of hostility toward the dwarves — it wants to know whether the kinship the old bargain represented is still honored, or whether it has become just another transaction to be settled and forgotten.",
+          "creatureId": "stone-singer",
+          "encounters": [
+            {
+              "name": "Speak with the Stone-Singer",
+              "creatureId": "stone-singer",
+              "quantity": 1,
+              "dv": 5,
+              "position": "Desperate",
+              "outcomes": {
+                "clean": "The party demonstrates genuine respect for what the old bargain actually meant, and the Stone-Singer offers its blessing on whatever resolution the party helps broker — a rare gift, freely given rather than extracted.",
+                "partial": "The Stone-Singer remains wary but is willing to let the party proceed to a resolution without direct interference, reserving judgment.",
+                "miss": "The party's approach reads as disrespectful or purely transactional; the Stone-Singer withdraws its goodwill, making any resolution involving the hammer considerably harder to secure cleanly."
+              }
+            }
+          ],
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "act-4-resolution",
+      "title": "Act IV — Resolution",
+      "description": "The party returns to Khaz-Vurim Halls carrying the full truth — not just a hammer, but the real shape of what's owed, to whom, and why. This act is about brokering a resolution that honors every party's dignity, not just settling an account.",
+      "scenes": [
+        {
+          "id": "scene-4-1-the-reckoning",
+          "title": "The Reckoning",
+          "description": "Vault-Queen Thora, Clan-Speaker Thrain, and — if the party has earned it — a presence of the Stone-Singer's making, all gather to hear how the old promise will finally be settled. The party's choices across the adventure determine whether this is a moment of restored honor or a fresh wound dressed up as a solution.",
+          "encounters": [
+            {
+              "name": "Present the Findings",
+              "dv": 5,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "The party lays out the full history clearly and with evident respect for all sides — House Khaz-Vurim's need, the Stone-Singer's claim, and the hammer's true origins. House Standing improves by 2.",
+                "partial": "The findings land, but imperfectly — some in the hall remain unconvinced, and the resolution will carry lingering doubts.",
+                "miss": "The presentation is muddled or mistrusted, and House Standing worsens by 1 as the hall grows skeptical of the party's account."
+              }
+            },
+            {
+              "name": "Broker the Final Resolution",
+              "dv": 5,
+              "position": "Desperate",
+              "outcomes": {
+                "clean": "The party negotiates a resolution that satisfies House Khaz-Vurim's need to keep its word, honors the Stone-Singer's older kinship claim, and leaves no one feeling cheated. This is the strongest possible ending — see 'Kinship Restored' below.",
+                "partial": "A workable but imperfect resolution is reached — one party is satisfied more than the other, and the balance will need tending in future dealings.",
+                "miss": "No resolution is reached cleanly; the party must choose a side outright or walk away, and the consequences of that choice follow them into future dealings with the dwarven holds."
+              }
+            }
+          ],
+          "completed": false
+        }
+      ]
+    }
+  ],
+  "npcs": [
+    {
+      "id": "npc-thora-stonebeard",
+      "name": "Vault-Queen Thora Stonebeard",
+      "role": "Leader of House Khaz-Vurim",
+      "motivation": "Honor her house's obligations while preserving what dignity and tradition she can, even as the house's fortunes decline around her.",
+      "stats": "Command 4, Lore 3, Craft 3",
+      "secret": "She privately suspects the Forgefather's Voice was never fully her house's to pledge in the first place, but has kept quiet about it — admitting the original bargain was flawed feels, to her, like one more crack in a house that can't afford any more."
+    },
+    {
+      "id": "npc-thrain-ironhold",
+      "name": "Clan-Speaker Thrain Ironhold",
+      "role": "Diplomatic representative of House Khaz-Vurim",
+      "motivation": "Resolve the situation without conflict, for the sake of both his house's honor and the party's standing among the dwarven holds.",
+      "stats": "Sway 3, Lore 3, Command 2",
+      "secret": "He genuinely likes the party (or their patron) and would rather find a resolution that costs them little — but he is bound by his role to enforce the house's rights if it comes to that, and he knows it."
+    },
+    {
+      "id": "npc-durin-emberheart",
+      "name": "Forge-Master Durin Emberheart",
+      "role": "Elder master smith, keeper of the hammer's true history",
+      "motivation": "See a proper balance restored between the dwarves and the old kinship the Forgefather's Voice represents.",
+      "stats": "Craft 5, Arcana 2, Lore 4",
+      "secret": "He has always known the hammer's true nature — a bond-object of an ancient kinship, not mere collateral — but has held his tongue out of loyalty to his house. His conscience is finally winning out, but he needs to trust the party before he'll say so plainly."
+    },
+    {
+      "id": "npc-thorek-deepdelver",
+      "name": "Guild-Master Thorek Deepdelver",
+      "role": "Leader of the Edgewalkers Guild, rival prospector",
+      "motivation": "Profit and reputation for his guild, tempered by a genuine (if flexible) sense of dwarven solidarity.",
+      "stats": "Survival 4, Sway 3, Wits 3",
+      "secret": "He isn't after the hammer for its power — he wants the credit and standing that comes with being the guild that solved a problem House Khaz-Vurim couldn't solve alone. He can be turned into an ally if the party offers him a share of that credit honestly."
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc-khaz-vurim-halls",
+      "name": "Khaz-Vurim Halls",
+      "description": "The ancestral home of House Khaz-Vurim, carved from a massive stone formation, its perfect stonework and distant forge-sounds carrying an air of solemn dignity fraying at the edges.",
+      "tags": ["hold", "social", "faction"]
+    },
+    {
+      "id": "loc-spine-underway",
+      "name": "The Spine Underway",
+      "description": "A vast network of ancient tunnels connecting the dwarven holds, part maintained thoroughfare, part crumbling remnant of a civilization older than the dwarves themselves.",
+      "tags": ["underground", "exploration", "danger"]
+    },
+    {
+      "id": "loc-forgefathers-crypt",
+      "name": "The Forgefather's Crypt",
+      "description": "The sacred resting place of the Forgefather's Voice, protected by ceremony and ancient ward rather than mere locks. Deep power resonates here, patient and old.",
+      "tags": ["sacred", "ward", "climax"]
+    },
+    {
+      "id": "loc-living-stone-gallery",
+      "name": "The Living Stone Gallery",
+      "description": "A tunnel section where the stone itself responds to sound and movement, serving as a threshold to the Deep Stirrings' domain.",
+      "tags": ["threshold", "supernatural", "stealth"]
+    }
+  ],
+  "factions": [
+    {
+      "id": "faction-house-khaz-vurim",
+      "name": "House Khaz-Vurim",
+      "goals": "Honor the old promise to preserve the house's standing among the dwarven holds; maintain traditional dwarven justice and craft.",
+      "relationship": "Controlled under normal circumstances, sliding toward Desperate as their difficulties become public. DV for negotiation: 4 (standard), 5 (under pressure)."
+    },
+    {
+      "id": "faction-deep-stirrings",
+      "name": "The Deep Stirrings",
+      "goals": "See the old kinship between the dwarves and the deep stone honored, not merely settled as a transaction.",
+      "relationship": "Dominant in the deep places, patient and communicative only through proper approach. DV for communication: 5 (proper ritual), 6+ (without preparation)."
+    },
+    {
+      "id": "faction-edgewalkers-guild",
+      "name": "Edgewalkers Guild",
+      "goals": "Profit, knowledge, and standing among the dwarven holds through exploration and discovery.",
+      "relationship": "Controlled and generally cooperative if approached honestly, but flexible in ethics when its interests are threatened. DV for cooperation: 3 (mutual benefit), 4 (neutral), 5+ (opposed interests)."
+    }
+  ],
+  "campaignTimers": [
+    {
+      "name": "House Standing",
+      "segments": 8,
+      "current": 2,
+      "description": "House Khaz-Vurim's reputation and trust among the dwarven holds. When full, the house's word stops being trusted by the other clans regardless of whether this particular promise is kept."
+    },
+    {
+      "name": "Stone-Song Resonance",
+      "segments": 6,
+      "current": 0,
+      "description": "How closely the Deep Stirrings are attending to the party's approach. When full, the Stone-Singer makes direct contact."
+    },
+    {
+      "name": "Ward Standing",
+      "segments": 6,
+      "current": 0,
+      "description": "The stability of the Forgefather's Crypt's ceremonial protections. When full, the wards fail and the Crypt's deeper dangers stir."
+    }
+  ],
+  "notes": "The word 'debt' in this adventure must always read as social and relational — an oath, a kinship, a piece of reputation owed — never as a ledger entry or a sum to be paid off. House Standing tracks trust, not treasury; the toll of failure is always a strained relationship, not a fine. The central twist — that the Forgefather's Voice was never fully House Khaz-Vurim's to pledge — should land as a shared, sympathetic complication rather than a shocking betrayal: everyone involved (Thora, Durin, even the Stone-Singer) has been quietly aware something was off for years, and simply hoped it would never come up. Designed for 4-5 sessions; can run at Tier II by reducing DVs by 1 and simplifying the Stone-Singer's abilities, or Tier III by adding political complications from rival houses.",
+
+  "_gmhints": {
+    "pacing": {
+      "act1": "Establish dwarven honor culture as something the party should respect, not merely navigate around — proper titles, patience, and genuine listening should be visibly rewarded. Thora's house is proud but not petty; let her dignity come through even in decline. House Standing starts at 2 to signal the house is already under real strain before the party gets involved.",
+      "act2": "This act is about texture and danger, not just travel — vary the tunnels' feel between maintained thoroughfare and ancient, half-remembered ruin. The Stone-Song Resonance timer should build a sense of being watched rather than hunted; the Deep Stirrings are patient, not predatory. The Edgewalkers Guild encounter is a great pressure valve for players who want a lighter, more mercantile complication amid the weightier honor themes.",
+      "act3": "This is the thematic heart of the adventure — the reveal that the hammer represents an older kinship than any single house's bargain should land with weight but without melodrama. Durin's internal conflict (house loyalty vs. conscience) should be played sincerely; he is not hiding the truth out of malice, but out of fear of what it costs his house to say aloud. The Stone-Singer should never feel villainous — it is patient and fundamentally reasonable, testing whether the old kinship is still honored in spirit, not just in letter.",
+      "act4": "The Reckoning should reward players who have built genuine relationships and understanding across the previous acts — mechanically, this is where all three timers (House Standing, Stone-Song Resonance, Ward Standing) should visibly matter to the final DVs and outcomes. The best ending is one where all three parties (Khaz-Vurim, the Stone-Singer, and the party themselves) leave with their dignity intact, even if imperfectly."
+    },
+    "npcSecrets": {
+      "thora-stonebeard": "Privately suspects the original bargain was flawed but has avoided examining it too closely — not out of dishonesty, but because her house genuinely cannot afford another crack in its foundation right now. She is sympathetic, not duplicitous.",
+      "thrain-ironhold": "Genuinely likes the party and would rather find a generous resolution, but his role requires him to enforce the house's rights if pushed to it. His conflict is professional duty vs. personal warmth, not hidden villainy.",
+      "durin-emberheart": "Has always known the hammer's true nature but withheld it out of loyalty. His arc across the adventure is about his conscience winning out — reward players who earn his trust rather than pressure him into revealing his secret."
+    },
+    "forbiddenEarlyRevelations": [
+      "That the Forgefather's Voice was never fully House Khaz-Vurim's to pledge — this is the Act III revelation via Durin or the Crypt itself; don't foreshadow it as a mystery to be 'solved,' let it emerge as a shared, sympathetic complication",
+      "Durin's full knowledge of the hammer's true history — he should only share this once real trust is established, not on the first ask",
+      "That the Stone-Singer is fundamentally reasonable and not hostile — let the party's early encounters (Stone Whispering) feel uncertain and slightly unsettling before this becomes clear through respectful contact"
+    ],
+    "tacticalHints": {
+      "debt_language_guardrail": "This is the single most important tonal note for this adventure: never describe House Standing, the original bargain, or any resolution in ledger, accounting, or transactional terms. Always frame it as trust, kinship, reputation, and honor. If a mechanical effect needs a name, prefer 'strained standing' or 'a favor owed' over anything resembling 'debt paid' or 'balance settled.'",
+      "honor_as_mechanic": "Reward players who respect dwarven protocol with tangible mechanical benefits (improved Position, reduced DV) and let violations cost them similarly — this reinforces the theme that honor here is not just flavor, it's how the world responds to you.",
+      "stone_singer_tone": "Play the Stone-Singer as ancient and patient, never as a monster to be defeated. Its 'threat' is entirely about whether trust is honored, not about physical harm — this should be clear in how it communicates, even when its power is intimidating."
+    }
+  },
+
+  "currentAct": 0,
+  "currentScene": 0,
+  "startedAt": null,
+  "completedAt": null,
+  "status": "planned",
+  "createdAt": "2026-08-07T00:00:00.000Z",
+  "updatedAt": "2026-08-07T00:00:00.000Z"
+}

@@ -1,0 +1,276 @@
+{
+  "id": "silent-court",
+  "title": "The Court of the Silent Shepherds",
+  "description": "The Court of the Silent Shepherds — the gathering place where Aelinnel elders have settled disputes and guided their people for a thousand years — has fallen into an unnatural silence. Every elder stands frozen mid-gesture, mid-argument, mid-alliance, unable or unwilling to speak. One elder manages to scrawl a warning before going still herself: the first to speak will break the silence, but at a price. The party is summoned as mediators to find the source of the silence, break it without breaking the court, and discover why the Aelinnel's most sacred tradition chose this moment to stop.",
+  "tier": "III",
+  "author": "Nicholas A. Gasper",
+  "sessions": "2-3",
+  "themes": ["Political Intrigue", "Social Combat", "Legitimacy and Loyalty", "Ritual Silence", "Moral Cost"],
+  "bestiary": [],
+  "acts": [
+    {
+      "id": "act-1-the-frozen-court",
+      "title": "Act I — The Frozen Court",
+      "description": "The party enters a chamber where time has curdled around the elders of the Aelinnel. Every alliance and rivalry in the court is frozen at its most vulnerable moment, and the party must learn to read a room that cannot speak before they can hope to fix it.",
+      "scenes": [
+        {
+          "id": "scene-1-1-the-silent-chamber",
+          "title": "The Silent Chamber",
+          "description": "Elders stand locked in place — some mid-agreement, others caught in the heat of argument, hands raised, mouths open on words that never came. No one moves. No one speaks. The single scrawled warning left behind reads: 'The first to speak will break the silence but pay a price. Find the source before we are all lost.'",
+          "timers": [
+            { "name": "Court Tension", "segments": 10, "current": 3, "description": "Tracks the court's stability. 0-2 Calm (-1 DV on social checks), 3-5 Tense (normal DV), 6-8 Strained (+1 DV), 9-10 Fracturing (+2 DV, violence becomes possible). Worsens on a miss when negotiating, when the party disrupts the court, or when an alliance goes unmaintained. Improves on a clean success strengthening an alliance, uncovering truth about the silence, or performing a stabilizing rite." }
+          ],
+          "encounters": [
+            {
+              "name": "Read the Frozen Court",
+              "dv": 3,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "You piece together the court's general structure and the rough shape of who stood with whom before the silence fell. No Court Tension change.",
+                "partial": "You get a fragmentary read — enough to act, not enough to be certain. Court Tension unaffected.",
+                "miss": "You misread a frozen tableau as agreement when it was actually the start of a rupture. Court Tension +1; the GM banks 1 SB."
+              }
+            },
+            {
+              "name": "Map the Web of Alliances",
+              "dv": 3,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "You identify Elder Lysara as a sympathetic contact, subtly signaling through gesture and gaze — she reveals the silence began the moment the High Shepherd entered the chamber.",
+                "partial": "You confirm the alliances are real but frozen at their most fragile point; no single contact stands out yet.",
+                "miss": "You approach an elder still mid-rivalry and inadvertently associate yourselves with their faction in front of witnesses who cannot yet speak, but will remember. Court Tension +1."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-1-2-frozen-moments",
+          "title": "Frozen Moments",
+          "description": "Scattered through the chamber are moments locked mid-motion — an accusation half-spoken, a hand withdrawn from a handshake, an elder turning away from another mid-sentence. Interacting with these moments risks briefly unfreezing them, with all the consequences that implies.",
+          "encounters": [
+            {
+              "name": "Interact with a Frozen Moment",
+              "dv": 3,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "The moment yields real insight into the court's politics or the silence's origin without incident.",
+                "partial": "You learn something useful, but the moment stutters — the elder's frozen expression shifts almost imperceptibly, as if they know you were there.",
+                "miss": "The moment briefly plays forward — a flash of an old argument or accusation — before freezing again. Court Tension +1; GM banks 1 SB for a complication (a frozen conflict now visibly 'restarts' each time someone passes near it)."
+              }
+            }
+          ],
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "act-2-the-unspoken-price",
+      "title": "Act II — The Unspoken Price",
+      "description": "Aelinnel lore holds that the first to speak will break the silence, but every word carries a cost that falls on the speaker, not the court. The party must decide who speaks, when, and what they're willing to owe for it — because in Aelinnel custom, an unpaid word is worse than an unspoken one.",
+      "scenes": [
+        {
+          "id": "scene-2-1-breaking-the-silence",
+          "title": "Breaking the Silence",
+          "description": "The silence is not merely quiet — it is a binding, ancient and deliberate. Any attempt to speak against it exacts a toll from the speaker: a kept promise called due, a reputation reshaped, a relationship renegotiated on terms not of their choosing.",
+          "timers": [
+            { "name": "Unspoken Price", "segments": 8, "current": 0, "description": "Tracks the party's attempts to break the silence. -1 on a successful attempt, +1 on a failed attempt, +2 if a character chooses to risk a steeper toll for greater effect, -2 if a Songweaver sings the court open instead of forcing it. At 0, the silence breaks at minimal cost. At 8, the silence calcifies into something closer to permanent — the court itself begins to forget how to speak." }
+          ],
+          "encounters": [
+            {
+              "name": "Speak Against the Silence",
+              "dv": 4,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "The silence yields around the speaker. Court Tension improves by 1. The toll owed is real but proportionate — see the Unspoken Toll table below.",
+                "partial": "The silence resists but cracks; the speaker pays a toll, and the court remains volatile.",
+                "miss": "The silence rebuffs the attempt entirely. Unspoken Price +1, and the speaker still owes a minor toll for having tried."
+              }
+            },
+            {
+              "name": "Determine the Unspoken Toll",
+              "dv": null,
+              "position": "Narrative",
+              "outcomes": {
+                "clean": "Minor Toll: a debt of favor comes due sooner than expected, a small kept confidence must now be shared, or an old promise is called in publicly — inconvenient, not damaging.",
+                "partial": "Moderate Toll: a relationship the speaker relied on is visibly strained by what the silence forced them to reveal; a standing the speaker held among their own people is quietly reduced until they can mend it.",
+                "miss": "Severe Toll: the speaker is bound by a new, unwanted obligation to someone in the court — a favor owed, a debt of loyalty incurred — that will follow them well past this adventure."
+              }
+            }
+          ],
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "act-3-the-shepherds-return",
+      "title": "Act III — The Shepherd's Return",
+      "description": "The silence traces back to the High Shepherd's absence. Only by finding them, understanding why they left, and bringing them back — willingly, not by force — can the court be restored. This act asks what the party is willing to risk to save a tradition that nearly consumed its own leader.",
+      "scenes": [
+        {
+          "id": "scene-3-1-finding-the-shepherd",
+          "title": "Finding the Shepherd",
+          "description": "The High Shepherd has been missing since the silence began — not kidnapped, not struck down, but withdrawn into a hidden chamber where they willingly entered a vision of the court's past, seeking answers to a crisis they saw coming and could not yet name.",
+          "timers": [
+            { "name": "Shepherd's Will", "segments": 10, "current": 0, "description": "Tracks the restoration of the court once the Shepherd is found. -1 per successful restoration attempt, +1 per failed attempt, -2 if the Shepherd personally leads a restoration. At 0, the court and the Aelinnel are saved. At 10, the court collapses and the Aelinnel lose their guiding tradition." }
+          ],
+          "encounters": [
+            {
+              "name": "Locate the Hidden Chamber",
+              "dv": 4,
+              "position": "Desperate",
+              "outcomes": {
+                "clean": "You find the Shepherd, alone in a chamber that hums with old memory, trapped in a vision of the court's founding.",
+                "partial": "You find the chamber, but the Shepherd is beyond easy reach — the vision holds them tightly. Court Tension worsens by 1.",
+                "miss": "You find only echoes; the chamber itself resists you, and you must search again, losing precious time as Court Tension climbs."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-3-2-the-shepherds-vision",
+          "title": "The Shepherd's Vision",
+          "description": "The High Shepherd relives a founding moment of Aelinnel history — the first time the court chose silence over a truth too dangerous to speak aloud. To free them, the party must navigate the vision honestly, not fight their way through it, and convince the Shepherd that this crisis deserves a different answer than the first one did.",
+          "timers": [
+            { "name": "Vision Stability", "segments": 6, "current": 0, "description": "-1 per successful, honest interaction with the vision; +1 per failed interaction; +2 if the party damages or forces the vision rather than engaging it. At 0, the vision stabilizes and the Shepherd is freed. At 6, the vision collapses and the Shepherd is lost to it." }
+          ],
+          "encounters": [
+            {
+              "name": "Convince the Shepherd to Return",
+              "dv": 5,
+              "position": "Desperate",
+              "outcomes": {
+                "clean": "The Shepherd recognizes the party's honesty and chooses to return, carrying the vision's lesson rather than repeating its mistake.",
+                "partial": "The Shepherd wavers, torn between the vision's old certainty and the party's argument — one more successful exchange will settle it.",
+                "miss": "The Shepherd retreats further into the vision, mistaking the party's urgency for the same pressure that caused the original silence. Vision Stability +1."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-3-3-restoring-the-court",
+          "title": "Restoring the Court",
+          "description": "With the Shepherd returned, the court must be walked back to functioning — not by force of will alone, but by the party helping elders speak again, one frozen relationship at a time.",
+          "encounters": [
+            {
+              "name": "Lead the Court to Speech",
+              "dv": 4,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "Each restored exchange loosens the next; the court begins to speak again in full. Court Tension improves by 1 and Shepherd's Will -1.",
+                "partial": "Progress is real but uneven — some elders speak, others remain locked in old grievances. Shepherd's Will unaffected this round.",
+                "miss": "An old rivalry reignites the instant it's freed. Court Tension worsens by 1, Shepherd's Will +1, and the GM banks 2 SB for a complication — an alliance shatters publicly, or a rival faction seizes the opening."
+              }
+            }
+          ],
+          "completed": false
+        }
+      ]
+    }
+  ],
+  "npcs": [
+    {
+      "id": "npc-high-shepherd",
+      "name": "The High Shepherd",
+      "role": "Leader of the Aelinnel, missing since the silence began",
+      "motivation": "Find an answer to a crisis they can see coming but cannot yet name — a threat to Aelinnel unity they fear will fracture the court permanently if handled wrong.",
+      "stats": "Presence 4, Lore 4, Spirit 3",
+      "secret": "They entered the vision willingly, not by accident or attack. They believed the court's founding moment held an answer to the coming crisis — and became trapped not by malice, but by their own reluctance to leave before they were certain they'd found it."
+    },
+    {
+      "id": "npc-elder-lysara",
+      "name": "Elder Lysara",
+      "role": "Songweaver elder, the party's most likely ally within the court",
+      "motivation": "Protect the court's stability without letting fear of the silence make the Aelinnel more rigid than they already are.",
+      "stats": "Presence 3, Insight 3, Lore 2",
+      "secret": "She knows a Songweaver can sing the silence open without the usual toll — but she has kept this quiet because she fears what it would cost the court's authority if speech were ever seen as free rather than sacred. She will share this only if she trusts the party's intentions."
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc-silent-chamber",
+      "name": "The Court of the Silent Shepherds",
+      "description": "A vast, ancient chamber where Aelinnel elders stand frozen in the moments the silence caught them — some mid-agreement, others locked in argument. The air itself feels like it is holding its breath.",
+      "tags": ["ritual", "social", "frozen"]
+    },
+    {
+      "id": "loc-hidden-chamber",
+      "name": "The Hidden Chamber",
+      "description": "A concealed room beneath the court where the High Shepherd sits motionless, caught in a vision of the court's founding. Old memory hums in the stone here like a held note.",
+      "tags": ["vision", "sacred", "hidden"]
+    }
+  ],
+  "factions": [
+    {
+      "id": "faction-pale-shepherds",
+      "name": "The Pale Shepherds",
+      "goals": "Preserve the court exactly as it has always been; view any change, even necessary restoration, with deep suspicion.",
+      "relationship": "Wary of the party's involvement; will cooperate only if convinced the party respects tradition rather than merely wanting the silence gone."
+    },
+    {
+      "id": "faction-songweavers",
+      "name": "The Songweavers",
+      "goals": "Adapt Aelinnel tradition to survive a changing world, including finding new ways to break bindings like the silence.",
+      "relationship": "Natural allies to a party willing to consider unconventional solutions; Elder Lysara is their voice in the frozen court."
+    },
+    {
+      "id": "faction-silent-watch",
+      "name": "The Silent Watch",
+      "goals": "A quiet faction that has been shaping the court's decisions from the margins for years, and sees the silence as both a threat to their influence and, potentially, an opportunity to consolidate it.",
+      "relationship": "Hidden and unconfirmed for most of the adventure; their involvement, if any, should surface through investigation rather than exposition — they are not saboteurs so much as opportunists who let the silence do work they'd never have dared attempt themselves."
+    }
+  ],
+  "campaignTimers": [
+    {
+      "name": "Court Tension",
+      "segments": 10,
+      "current": 3,
+      "description": "Tracks the court's overall stability across all three acts. Calm (0-2), Tense (3-5), Strained (6-8), Fracturing (9-10). At Fracturing, alliances shatter openly and violence becomes a real possibility."
+    },
+    {
+      "name": "Unspoken Price",
+      "segments": 8,
+      "current": 0,
+      "description": "Tracks the cost of breaking the silence across attempts. At 0, the silence breaks at minimal cost. At 8, it calcifies toward permanence."
+    },
+    {
+      "name": "Shepherd's Will",
+      "segments": 10,
+      "current": 0,
+      "description": "Tracks the restoration of the court once the Shepherd is found and returned. At 0, the Aelinnel are saved. At 10, the court collapses."
+    }
+  ],
+  "notes": "This adventure trades combat for social stakes almost entirely — treat every DV and Position exactly as seriously as a combat encounter, because for this table, it is the combat. The core reframe from the source material: the 'price' of speech is never accounting-style debt or ledger language — it is always social and narrative (a favor called in, a standing strained, a promise that follows the speaker home). Avoid framing any twist as a shocking betrayal; the Silent Watch's opportunism and the High Shepherd's self-imposed trap are both consequences of legitimate, sympathetic motives taken too far, not villainy for its own sake. Designed for 2-3 sessions; scales cleanly to Tier II by reducing all DVs by 1 and timer sizes by 2.",
+
+  "_gmhints": {
+    "pacing": {
+      "act1": "Let the frozen court feel eerie rather than puzzle-boxy — this is a place, not a mechanism. Elder Lysara should be discoverable but not obvious; reward players who take time to actually look at individual elders rather than treating the room as a single obstacle. Court Tension starts at 3 (Tense) to establish immediate but not desperate stakes.",
+      "act2": "The Unspoken Price is the emotional core of this act — make sure players understand the toll is proportionate to how they broke the silence, not an arbitrary punishment. Never phrase a toll in ledger or accounting terms; it should always read as a relationship, an obligation, or a reputation shifting, never a number owed. If a Songweaver PC exists, flag that singing bypasses the toll entirely — this is a meaningful build reward, not a loophole to close.",
+      "act3": "The High Shepherd's secret should land as tragic and understandable, not as a gotcha — they are a leader who cared enough to search for answers alone rather than risk the court's unity on an uncertain crisis. The vision sequence should be played with real dialogue where possible; convincing the Shepherd to return should feel like an actual conversation about what leadership costs, not a skill-check formality."
+    },
+    "npcSecrets": {
+      "high-shepherd": "Entered the vision willingly and became trapped by their own reluctance to leave without an answer. This should read as a leader's very human fear of failing their people, not a mystery to be 'solved' with suspicion.",
+      "elder-lysara": "Knows the Songweaver bypass exists but withholds it out of genuine concern for the court's authority, not personal gain. She will share it once she trusts the party isn't looking for the cheapest way out, but the deepest way through."
+    },
+    "forbiddenEarlyRevelations": [
+      "That the High Shepherd entered the vision willingly — this should surface only once the party actually finds them in Act III, not be hinted at as a 'mystery' earlier",
+      "The Songweaver bypass for breaking the silence — Lysara should only reveal this once real trust is established; it is not a freebie to be handed out in Act I",
+      "The Silent Watch's exact role, if any — keep their involvement ambiguous and optional; they should never be revealed as a mustache-twirling saboteur, only ever as opportunists reacting to a crisis they didn't cause"
+    ],
+    "tacticalHints": {
+      "toll_language": "Always describe the Unspoken Price toll in social terms — a favor called in, a strained bond, an obligation incurred — never in numeric or transactional language. This is the single most important tonal guardrail for this adventure.",
+      "position_as_social_stakes": "Use Position (Dominant/Controlled/Desperate) to represent the court's emotional temperature moment to moment, not just combat advantage — a Desperate social encounter here should feel as tense as a combat one.",
+      "songweaver_spotlight": "If a Songweaver PC is at the table, look for chances to let their song visibly ease Court Tension in ways other approaches can't — this adventure is built to make that path feel special without making other approaches feel weak."
+    }
+  },
+
+  "currentAct": 0,
+  "currentScene": 0,
+  "startedAt": null,
+  "completedAt": null,
+  "status": "planned",
+  "createdAt": "2026-08-07T00:00:00.000Z",
+  "updatedAt": "2026-08-07T00:00:00.000Z"
+}

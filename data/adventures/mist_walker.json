@@ -1,0 +1,417 @@
+{
+  "id": "mist-walker",
+  "title": "The Mist Walker",
+  "description": "Something is teaching the bells of the Mistlands to lie. Along the levees, towers ring warnings that lead travelers into the fen instead of away from it. At Ghost-Ferry Slip, boats arrive before they leave and passengers remember crossings that never happened. At the Weeping Gate, the iron bells have begun to weep real tears. An entity from the Ways Between has found a seam in the old wards and is working it wider, bell-pull by bell-pull, breath by breath. The party must trace the corruption from its first false toll to its anchor at the Gate — and decide whether the Mist Walker should be banished, bargained with, or bound.",
+  "tier": "II",
+  "author": "Nicholas A. Gasper",
+  "sessions": "3-4",
+  "themes": ["Folk Horror", "Liminal Thresholds", "Corrupted Wards", "Tidal Horror", "Bells and Salt"],
+  "bestiary": [
+    {
+      "id": "mist-walker",
+      "name": "The Mist Walker",
+      "tl": 4,
+      "class": "IV",
+      "category": "outsider",
+      "description": "A shape that is almost a person, seen best from the corner of the eye and worst face-on. It does not walk so much as arrive — one step in the mist behind you, the next in front. It speaks with borrowed voices: the ferryman who drowned in '02, the child who never came home from the levee. It wants a door, not a kill.",
+      "stats": { "Spirit": 5, "Presence": 4, "Wits": 4, "hp": 40 },
+      "sb_spends": [
+        { "cost": 1, "name": "Borrowed Voice", "effect": "The Walker speaks with the voice of someone the target trusts or grieves; target is Distracted (-1 die) until they act on or refuse what was said." },
+        { "cost": 2, "name": "Phase Step", "effect": "The Walker passes through a wall, door, or line of salt that isn't sealed with intent; it appears in a new position of the GM's choosing within Near range." },
+        { "cost": 3, "name": "Tempting Toll", "effect": "The Walker offers forbidden knowledge (a true name, a lost memory, a way home) in exchange for a small yes. If accepted, mark 1 segment on the Mist Corruption Timer and the target gains a fragment of dangerous lore." },
+        { "cost": 4, "name": "The Gate Remembers", "effect": "The Walker forces open a temporary seam; a possessed proxy (Bell-Warden, ferry passenger, or similar) acts immediately with a full turn, even out of sequence." }
+      ],
+      "lore": "The Mist Walker is not evil in the way a wolf is not evil — it is hungry for a threshold, and thresholds are its whole vocabulary. Two hundred years ago something tore a hole in the barrier near the Weeping Gate; the Walker has been leaning against that old wound ever since, waiting for the wards to grow tired enough to let it lean all the way through. It cannot lie about what it wants, only about how much it will cost.",
+      "weakness": "Sanctified iron and salt disrupt its coherence; it cannot hold physical form inside a properly warded circle or cross a line of salt laid with genuine intent (not mere superstition — the layer must mean it)."
+    },
+    {
+      "id": "possessed-bell-warden",
+      "name": "Possessed Bell-Warden",
+      "tl": 2,
+      "class": "II",
+      "category": "possessed",
+      "description": "A tower-keeper or levee guard whose eyes have gone the color of standing water. They speak normally, act normally, and are wrong in every particular a stranger wouldn't notice. Under stress, the mask slips.",
+      "stats": { "Body": 2, "Wits": 2, "Presence": 2, "hp": 12 },
+      "sb_spends": [
+        { "cost": 1, "name": "False Warning", "effect": "The Warden gives confident, specific, wrong directions; a PC who acts on them faces the next navigation DV at +1." },
+        { "cost": 2, "name": "Mask Slips", "effect": "The Warden's borrowed voice bleeds through for one line of dialogue — unsettling, but a free clue if the party is listening." }
+      ],
+      "weakness": "Cleansing (Lore + Arcana vs DV 5, requires sanctified iron and salt) restores the Warden and ends the possession without harming them."
+    },
+    {
+      "id": "temporal-echo",
+      "name": "Temporal Echo",
+      "tl": 1,
+      "class": "I",
+      "category": "phenomenon",
+      "description": "Not a creature so much as a wound in sequence — a repeated moment that thinks it's the present. Echoes look and sound exactly like the people or objects they duplicate, right up until they contradict themselves.",
+      "stats": { "Wits": 1, "hp": 1 },
+      "sb_spends": [
+        { "cost": 1, "name": "False Memory", "effect": "A PC who interacts with the Echo gains a vivid false memory of an event that didn't happen; they must act as though it's true until they succeed on an Insight test (DV 3) to notice the seam." }
+      ],
+      "weakness": "Echoes cannot be harmed and cannot harm directly — they can only mislead. Identifying one (Wits + Notice vs DV 3) causes it to unravel harmlessly."
+    }
+  ],
+  "acts": [
+    {
+      "id": "act-1-signs-of-disturbance",
+      "title": "Signs of Disturbance",
+      "description": "The bells have started lying. Small wrongnesses accumulate — a ferry that shouldn't have crossed yet, a tower-keeper who answers before you finish the question. The party's first job is simply believing what they're seeing.",
+      "scenes": [
+        {
+          "id": "scene-1-1-the-hook",
+          "title": "The Ferryman's Refusal",
+          "description": "Eddis Crow won't cross tonight. He says the mist walks where it shouldn't and that he's heard bells tolling from underwater — notes that don't belong to any scale he knows. If the party pushes, he'll go, but he'll watch the fog the whole way like it's watching back.",
+          "timers": [
+            { "name": "Mist Corruption", "segments": 8, "current": 0, "description": "How far the Mist Walker has worked its way into the Mistlands. Advances through the adventure; see campaign timer entry for full triggers." }
+          ],
+          "encounters": [
+            {
+              "name": "Talk Eddis Into the Crossing",
+              "dv": 3,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "Eddis agrees and shares everything: the underwater tolling, a bell-note that isn't in the register, a passenger last week who didn't have a shadow. He becomes a reliable early source.",
+                "partial": "Eddis agrees, reluctantly, but says less than he knows. He'll cross, but he won't talk about what he's seen until the party earns more trust.",
+                "miss": "Eddis refuses outright. The party must find another way across — a longer, more exposed route past the Bell-Line Levee at night."
+              }
+            },
+            {
+              "name": "The Crossing Itself",
+              "dv": 3,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "An uneventful crossing — but the mist thickens unnaturally near mid-channel, and everyone hears, faintly, a bell tone with no source.",
+                "partial": "The boat drifts off-course in a mist bank; Eddis corrects it, badly shaken. Mark 1 segment on Mist Corruption.",
+                "miss": "A temporal-echo passenger — someone who won't disembark until next week — briefly shares the boat with the party. Eddis sees it too. Mark 1 segment on Mist Corruption."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-1-2-bell-line-levee",
+          "title": "The Bell-Line Levee",
+          "description": "The raised path along the fen is strung with watch-towers whose bells are supposed to warn travelers off the soft ground. Lately the bells warn travelers onto it. Bell-Warden Maren Thorne meets the party here, exhausted and increasingly convinced she's losing her mind.",
+          "timers": [
+            { "name": "Mist Corruption", "segments": 8, "current": 0 }
+          ],
+          "encounters": [
+            {
+              "name": "Navigate the Levee (bells ringing false warnings)",
+              "dv": 4,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "The party reads the bell patterns correctly and crosses without incident, gaining a clear sense of which towers are affected.",
+                "partial": "The party crosses, but one member steps wrong and sinks to the knee in fen-mud — no lasting harm, just a cold, unsettling reminder that the bells wanted that.",
+                "miss": "The party follows a false warning onto soft ground; mark 1 Fatigue for the misled PC and 1 segment on Mist Corruption."
+              }
+            },
+            {
+              "name": "Question the Tower Keeper",
+              "dv": 4,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "The party notices the keeper answers questions before they're finished asking — a tell. Insight + Notice reveals mild possession; the keeper can be gently disengaged without violence.",
+                "partial": "Something's off, but the party can't pin it down yet. The keeper gives directions that sound right but aren't — filed away as a loose thread.",
+                "miss": "The keeper's wrongness goes unnoticed. The party acts on bad information later in the session — GM's choice of complication."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-1-3-ghost-ferry-slip",
+          "title": "Ghost-Ferry Slip",
+          "description": "A dock where boats have started arriving before they leave. Passengers disembark with memories of crossings that haven't happened yet. The party's first unambiguous proof that this isn't superstition.",
+          "timers": [
+            { "name": "Mist Corruption", "segments": 8, "current": 0 }
+          ],
+          "encounters": [
+            {
+              "creatureId": "temporal-echo",
+              "quantity": 1,
+              "position": "Desperate",
+              "dv": 3,
+              "outcomes": {
+                "clean": "The party identifies the echo — themselves, performing actions they haven't taken yet — and it unravels harmlessly, leaving behind a genuinely useful fragment: the echo was searching for something at the Weeping Gate.",
+                "partial": "The party interacts with the echo before realizing what it is; one PC gains a vivid false memory that colors their judgment for the rest of the session.",
+                "miss": "The echo convinces a PC of something false and consequential (GM's choice — e.g., that a party member betrayed them, or that a task is already done). Mark 1 segment on Mist Corruption."
+              }
+            }
+          ],
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "act-2-into-the-mist",
+      "title": "Into the Mist",
+      "description": "The party goes looking for the source instead of waiting for it to find them. The phenomena stop being ambient and start being aimed. Somewhere in this act, the party should learn that the Weeping Gate is the anchor.",
+      "scenes": [
+        {
+          "id": "scene-2-1-pall-watch-tower",
+          "title": "Pall Watch-Tower",
+          "description": "An observation post above the mist-line, from which watchers are meant to see everything coming. Lately the reflections in its windows move a half-second out of step with the people casting them, and the watch-log describes events that haven't happened yet — or happened differently.",
+          "timers": [
+            { "name": "Mist Corruption", "segments": 8, "current": 0 }
+          ],
+          "encounters": [
+            {
+              "name": "Climb the Tower While Disoriented",
+              "dv": 4,
+              "position": "Desperate",
+              "outcomes": {
+                "clean": "The party reaches the top without incident and gets a clear view: mist is pooling unnaturally around the Weeping Gate to the west, far heavier than anywhere else on the levee.",
+                "partial": "The climb costs a PC their footing for a moment — no fall, but 1 Fatigue and a scare.",
+                "miss": "A temporal displacement strands one PC a half-second out of sync with the party for the rest of the scene — treat their actions as happening one exchange late."
+              }
+            },
+            {
+              "name": "Distinguish Real Observations From Echoes",
+              "dv": 5,
+              "position": "Desperate",
+              "outcomes": {
+                "clean": "The party correctly reconstructs the watch-log's true entries and confirms: the mist thickening began roughly at the same hour, four nights running, always centered on the Weeping Gate.",
+                "partial": "The party gets the pattern half-right — enough to know the Gate matters, not enough to know the timing.",
+                "miss": "The party chases a false lead from a corrupted log entry, costing time. Mark 1 segment on Mist Corruption."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-2-2-the-crossing-again",
+          "title": "The Possessed Passenger",
+          "description": "Eddis Crow's ferry runs one more time, this trip with a passenger who insists — reasonably, calmly, with the Walker's borrowed patience — that the safest course is straight into the thickest mist bank on the water.",
+          "timers": [
+            { "name": "Mist Corruption", "segments": 8, "current": 0 }
+          ],
+          "encounters": [
+            {
+              "creatureId": "possessed-bell-warden",
+              "quantity": 1,
+              "position": "Controlled",
+              "dv": 4,
+              "outcomes": {
+                "clean": "The party recognizes the possession before the boat commits to the mist bank and either restrains or talks down the passenger. Eddis holds course; no harm done.",
+                "partial": "The party acts late; the boat clips the mist bank before correcting. Everyone aboard hears the underwater bell again, closer this time. Mark 1 segment on Mist Corruption.",
+                "miss": "The passenger nearly steers the boat under. A short, frightening scramble to correct course; mark 1 Fatigue for one PC and 1 segment on Mist Corruption."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-2-3-bell-correlation",
+          "title": "The Bell Correlation Puzzle",
+          "description": "Back at the Levee with better information, the party can now cross-reference which towers ring true and which lie, and use that pattern to find a safe route deep into corrupted territory — straight to the Weeping Gate.",
+          "timers": [
+            { "name": "Mist Corruption", "segments": 8, "current": 0 }
+          ],
+          "encounters": [
+            {
+              "name": "Decode the Corrupted Pattern",
+              "dv": 5,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "The party maps the safe route and identifies the Weeping Gate as the primary anchor point beyond doubt. Maren, hearing this, is visibly relieved to have a direction to point her fear.",
+                "partial": "The party finds a route, but it's slower and passes near a fully corrupted tower — an optional dangerous shortcut is available if they want to risk it.",
+                "miss": "The pattern resists decoding. The party proceeds on guesswork; mark 1 segment on Mist Corruption from the delay and the toll it takes on Maren's nerves."
+              }
+            }
+          ],
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "act-3-the-weeping-gate",
+      "title": "The Weeping Gate",
+      "description": "The western palisade, where the iron bells have begun to weep actual tears and the barrier between here and the Ways Between has gone thin as wet paper. Full manifestation. The party chooses how this ends.",
+      "scenes": [
+        {
+          "id": "scene-3-1-approach-and-possession-wave",
+          "title": "The Gate Wakes Up",
+          "description": "As the party approaches, every Bell-Warden posted at the Gate turns at once — not aggressively, just attentively, all facing the party with the same too-patient stillness. The mask doesn't so much slip as it stops bothering to hold.",
+          "timers": [
+            { "name": "Mist Corruption", "segments": 8, "current": 0 },
+            { "name": "Sanctification Progress", "segments": 6, "current": 0, "description": "Tracks the party's work toward purifying the Gate. Advances via the Sanctification Ritual scene; if it fills before the party commits to a resolution, the ritual anchor point is ready to use." }
+          ],
+          "encounters": [
+            {
+              "creatureId": "possessed-bell-warden",
+              "quantity": "1d3+1",
+              "position": "Desperate",
+              "dv": 4,
+              "outcomes": {
+                "clean": "The party subdues or disperses the possessed Wardens without lasting harm to them — the possession breaks the moment the Walker's attention moves elsewhere. No one need die here.",
+                "partial": "The party gets through, but a Warden is hurt in the process — mark Harm 1 on a named NPC the party has come to know, and mark 1 segment on Mist Corruption for the violence done at the threshold.",
+                "miss": "The Wardens overwhelm the approach; the party is forced back from the Gate and must find another way in, burning time. Mark 2 segments on Mist Corruption."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-3-2-sanctification-ritual",
+          "title": "The Sanctification Ritual",
+          "description": "Purifying the anchor point is not a fight, it's a working — sanctified iron and true salt laid in old patterns while the mist actively resists you. This is the party's best tool no matter which resolution they choose.",
+          "timers": [
+            { "name": "Mist Corruption", "segments": 8, "current": 0 },
+            { "name": "Sanctification Progress", "segments": 6, "current": 0 }
+          ],
+          "encounters": [
+            {
+              "name": "Extended Ritual: Craft + Arcana",
+              "dv": 6,
+              "position": "Desperate",
+              "outcomes": {
+                "clean": "The ritual takes hold cleanly. Mark Sanctification Progress +3 and Mist Corruption -1 — the bells nearby ring one true, clear note.",
+                "partial": "The ritual works, but it costs something — the officiant marks 1 segment on their personal Corruption Timer. Mark Sanctification Progress +2.",
+                "miss": "The mist actively resists; the working collapses. Mark Mist Corruption +2 and Sanctification Progress +0."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-3-3-the-mist-walker",
+          "title": "The Mist Walker",
+          "description": "It arrives the way it always has — a step behind, then a step ahead — and it does not want a fight. It wants a door. What the party offers it, or denies it, or destroys to keep it from having, decides how this region looks a generation from now.",
+          "timers": [
+            { "name": "Mist Corruption", "segments": 8, "current": 0 },
+            { "name": "Sanctification Progress", "segments": 6, "current": 0 }
+          ],
+          "encounters": [
+            {
+              "creatureId": "mist-walker",
+              "quantity": 1,
+              "position": "Desperate",
+              "dv": 6,
+              "outcomes": {
+                "clean": "The party achieves their chosen resolution (Banishment, Negotiation, or Containment — see notes) on favorable terms. The Mist Corruption Timer stops advancing and begins to recede.",
+                "partial": "The party achieves their resolution, but at real cost — mark 1 segment on each participating PC's personal Corruption Timer, per the chosen resolution's price.",
+                "miss": "The confrontation goes badly; the party is forced to retreat from the Gate. Mark Mist Corruption +2. The Walker remains, and the party will need to try again."
+              }
+            }
+          ],
+          "completed": false
+        }
+      ]
+    }
+  ],
+  "npcs": [
+    {
+      "id": "npc-maren-thorne",
+      "name": "Bell-Warden Maren Thorne",
+      "role": "Dedicated keeper of the bell-lines",
+      "motivation": "Protect the wards she's spent her life tending, and prove to herself she isn't losing her mind.",
+      "stats": "Lore 3, Notice 2, Command 2",
+      "secret": "She's been hearing the Walker's borrowed voice for three weeks and hasn't told anyone — it sounds like her sister, who drowned in the fen as a girl. She's terrified that wanting to listen means she's already halfway possessed."
+    },
+    {
+      "id": "npc-eddis-crow",
+      "name": "Ferryman Eddis Crow",
+      "role": "River guide with supernatural awareness",
+      "motivation": "Keep his passengers alive and keep working the water he's worked for thirty years, even as it stops making sense.",
+      "stats": "Lore 3, Notice 3, Skirmish 1",
+      "secret": "He's started seeing a version of the ferry slip that doesn't exist yet — a burned dock, a broken bell. He hasn't decided if it's a warning or an invitation, and he won't say which he's leaning toward."
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc-bell-line-levee",
+      "name": "Bell-Line Levee",
+      "description": "A raised causeway across the fen, its safety maintained entirely by a chain of watch-towers whose bells are supposed to warn travelers off soft ground. Corruption here manifests as misleading tolls, thickening mist, and the occasional possessed keeper who answers questions before you've finished asking them.",
+      "tags": ["levee", "bells", "wards", "investigation"]
+    },
+    {
+      "id": "loc-pall-watch-tower",
+      "name": "Pall Watch-Tower",
+      "description": "An elevated post above the mist-line meant to give warning of trouble on the water. Its reflections have started moving a half-second out of step with reality, and its watch-log records events slightly wrong — a temporal echo bleeding into an otherwise mundane duty station.",
+      "tags": ["tower", "observation", "temporal", "investigation"]
+    },
+    {
+      "id": "loc-ghost-ferry-slip",
+      "name": "Ghost-Ferry Slip",
+      "description": "The dock where Eddis Crow runs his crossings. Boats have started arriving before they depart, and passengers disembark carrying memories of trips that haven't happened. The clearest, least deniable proof that something is wrong with time itself here.",
+      "tags": ["dock", "temporal", "ferry", "proof"]
+    },
+    {
+      "id": "loc-weeping-gate",
+      "name": "The Weeping Gate",
+      "description": "The western palisade, ringed with iron-tear bells that have begun to weep actual tears of rust and brine. The primary anchor point of the Mist Walker's influence — physical barriers here are going permeable, and this is where the adventure's climax takes place.",
+      "tags": ["gate", "anchor", "climax", "ritual"]
+    }
+  ],
+  "factions": [
+    {
+      "id": "faction-bell-wardens",
+      "name": "The Bell-Wardens Guild",
+      "goals": "Maintain the bell-line wards that keep the Mistlands' worst hazards at bay; protect their own from possession and burnout alike.",
+      "relationship": "Allies, though frightened and increasingly unreliable ones. Maren Thorne is the party's primary contact; other Wardens may already be compromised."
+    },
+    {
+      "id": "faction-ferry-guild",
+      "name": "The Ferry Guild",
+      "goals": "Keep the water crossings running and keep quiet about anything that would make passengers refuse to pay for passage.",
+      "relationship": "Cautiously helpful. Eddis Crow is sympathetic, but the Guild leadership would rather this be handled quietly, off the record, and fast."
+    },
+    {
+      "id": "faction-mist-walker",
+      "name": "The Mist Walker",
+      "goals": "Widen the seam at the Weeping Gate into a door it can use freely, by whatever combination of temptation, possession, and patience the wards allow.",
+      "relationship": "The adventure's central antagonist — though not incapable of negotiation. It wants a door, not necessarily a slaughter, and will deal if dealing gets it closer to what it wants."
+    }
+  ],
+  "campaignTimers": [
+    {
+      "name": "Mist Corruption",
+      "segments": 8,
+      "current": 0,
+      "description": "How far the Mist Walker has worked its way into the Mistlands. Advance +1 when bell-lines fail to function properly or an NPC becomes possessed or influenced; advance +2 when the party fails to sanctify a corrupted area, retreats from a direct confrontation with the entity, or a PC accepts a Tempting Toll; advance +1 when the Walker successfully tempts a PC with forbidden knowledge. When full, the barrier at the Weeping Gate fails and the region takes on permanent, visible supernatural scarring — thin patches in reality that never quite close."
+    },
+    {
+      "name": "Sanctification Progress",
+      "segments": 6,
+      "current": 0,
+      "description": "The party's cumulative progress purifying the Weeping Gate, tracked across Act III. Advances through the Sanctification Ritual scene. A full track makes the Banishment and Containment resolutions available on favorable terms without needing further extended rituals."
+    }
+  ],
+  "notes": "The Mist Walker is a three-to-four session investigation that escalates from ambient wrongness (Session 1) through direct supernatural confrontation (Session 2) to full manifestation and resolution (Session 3, with a fourth session available for denouement and long-term consequences). The central mechanical throughline is the Mist Corruption Timer, which should be made visible and visceral at the table — describe it, don't just track it. Three resolutions are available at the Weeping Gate: Banishment (sanctify all corrupted anchor points, gather three true-ringing bells, and complete a willing sacrifice — costly but clean), Negotiation (discover and address the 200-year-old original barrier damage that drew the Walker here in the first place — morally gray, leaves an ongoing obligation), and Containment (strengthen the wards rather than remove the entity — the party becomes wardens with an ongoing responsibility, but gains a follower and access to real supernatural knowledge). None of these should read as strictly correct; each is a genuine trade-off in cost versus what the region and the party keep.",
+
+  "_gmhints": {
+    "tone": "This is a slow-building folk-horror investigation, not a monster-of-the-week. The Mist Walker never simply attacks — it offers, it borrows, it waits. Every supernatural beat should feel like an invitation rather than an assault: a bell that rings a note that doesn't exist, a voice that sounds like someone missed, a passenger who was never on the manifest. Keep violence rare and consequential; the horror is in doubting your own memory and eyes, not in body count. The obligations the entity extracts (a Tempting Toll accepted, a bargain struck at Negotiation) are social and narrative debts — favors owed, names given away, promises that will be called in later — never ledgers or accounting language.",
+    "pacing": {
+      "act1": "Session 1 is about establishing that something is wrong without letting the party feel like they're in immediate danger. Keep phenomena unsettling but survivable: false bell warnings, a possessed keeper who's subtly off, a temporal echo at the Slip. End the session with the party believing the corruption is real and supernatural, but not yet knowing its source or scale. This is also where Maren and Eddis are introduced as sympathetic, frightened allies rather than exposition dispensers — let their fear be the tone-setter.",
+      "act2": "Session 2 escalates from ambient to directed. The phenomena start to feel aimed at the party specifically — a possessed passenger nearly steering the ferry into danger, a watch-tower where reflections move independently. This is where the party should piece together, through investigation rather than exposition, that the Weeping Gate is the anchor point. Give them the Bell Correlation Puzzle as a satisfying 'aha' rather than a lecture.",
+      "act3": "Session 3 (and optionally 4) is full manifestation and resolution. The possession wave at the Gate should feel like the mask finally coming off entirely, not a straightforward combat encounter — most Wardens can be saved. The Sanctification Ritual and the Mist Walker confrontation should be run so that the party's approach across the whole adventure (combat, investigation, social, ritual) all pay off here; no single approach should be required. Let the resolution choice be the emotional climax, not the fight."
+    },
+    "npcSecrets": {
+      "maren-thorne": "She's been hearing her drowned sister's voice in the bells for three weeks and has told no one, terrified that her willingness to listen means she's already compromised. If the party earns real trust, this is a powerful, vulnerable reveal — not a twist, just an honest confession from someone who has been alone with this too long.",
+      "eddis-crow": "He's been seeing a future version of the ferry slip — burned, broken — and hasn't decided if it's a warning or an invitation. This should never resolve into 'Eddis is secretly evil'; he's a tired, scared man who has started to wonder if giving in would at least be quiet."
+    },
+    "forbiddenEarlyRevelations": [
+      "That the Weeping Gate is the anchor point — this must be earned through the Pall Watch-Tower and Bell Correlation scenes in Act II, not stated outright in Act I",
+      "That the original barrier damage is 200 years old — this is the Negotiation resolution's key discovery; reveal it only if the party pursues that path",
+      "That Maren has been hearing her sister's voice — this is her personal secret; it should surface through trust-building roleplay, not GM narration up front",
+      "That most possessed Bell-Wardens can be saved without violence — let the party discover this through the Cleansing mechanic rather than announcing it; the dread of 'do we have to hurt them' is part of the horror",
+      "That the Mist Walker is capable of negotiation at all — early scenes should play it as purely predatory; the possibility of a bargain should emerge organically once the party reaches the Gate"
+    ],
+    "tacticalHints": {
+      "mist_corruption_pacing": "Make every tick of the Mist Corruption Timer sensory: mist thickens, a bell rings a note with no name, a shadow keeps a half-second behind its owner. Never just say 'the timer advances' at the table — describe what changes in the world.",
+      "possession_combat": "Possessed Bell-Wardens are not meant to be killed. Frame combat with them as restraint, disruption, or forcing the possession to break under pressure — cleansing (Lore + Arcana vs DV 5 with sanctified iron and salt) is always the better outcome and should be signposted as available, even mid-fight.",
+      "resolution_flexibility": "Don't railroad toward one ending. Track how the party has engaged across all three acts — combat-heavy parties gravitate toward Banishment, investigation-heavy parties toward Negotiation, socially cautious parties toward Containment — and let their playstyle make one resolution feel most natural without closing off the others.",
+      "walker_dialogue": "The Mist Walker never lies about what it wants (a door) but will misdirect about cost. Let it be genuinely reasonable-sounding in negotiation — the horror is that its offers make sense, not that they're obviously traps."
+    }
+  },
+
+  "currentAct": 0,
+  "currentScene": 0,
+  "startedAt": null,
+  "completedAt": null,
+  "status": "planned",
+  "createdAt": "2026-08-07T00:00:00.000Z",
+  "updatedAt": "2026-08-07T00:00:00.000Z"
+}

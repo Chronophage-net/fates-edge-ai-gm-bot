@@ -1,0 +1,543 @@
+{
+  "id": "the-hollowed-hunger",
+  "title": "The Hollowed Hunger",
+  "description": "Months after the Hollowed Plague, the region is scarred and the debt is unpaid. Depending on how the party ended the plague, one of two crises now consumes the frontier: a tide of organized, hungering ghouls (the Worn Tide) spilling out of the desert under banners bearing Malachai's ship-sigil, or silver-eyed children who do not age and ask only one question — 'What do you owe?' — dispensing clemency or blood-payment as they see fit (the Hollowed Hunger). The party is the only group who knows both factions by name. They must return to the threshold where it all went wrong and choose, again, what kind of mercy the world deserves.",
+  "tier": "IV-V",
+  "author": "Nicholas A. Gasper",
+  "sessions": "3-4",
+  "saga": true,
+  "sagaParts": [
+    "the-hollowed-plague",
+    "the-hollowed-hunger"
+  ],
+  "themes": ["Sequel", "Branching Hook", "Body Horror", "Moral Reckoning", "Undeath", "No Clean Ending"],
+  "bestiary": [
+    {
+      "id": "worn-ghoul",
+      "name": "Worn",
+      "tl": 2,
+      "class": "III",
+      "category": "undead",
+      "description": "A ghoul risen from the desert's dead, no longer mindless — organized into warbands under officers who wear the stripped robes of Daughters as trophies. They shuffle in ranks, jaws working, waiting for an order.",
+      "stats": { "Body": 3, "Endurance": 3, "Melee": 2, "armor": 1, "hp": 18 },
+      "sb_spends": [
+        { "cost": 1, "name": "Ichor Hunger", "effect": "The Worn feeds on a nearby corpse (or downed PC) and heals 2 Harm." },
+        { "cost": 2, "name": "Desperate Lunge", "effect": "Once bloodied, the Worn gains an extra action this exchange." }
+      ],
+      "lore": "The Worn remember just enough of who they were to resent it. They do not speak, but they follow orders with an unsettling discipline that was never theirs in life. Fire unravels the ichor that holds them together; put them to the torch and they do not rise again.",
+      "weakness": "Fire. A Worn that takes any fire damage cannot use Ichor Hunger for the rest of the scene."
+    },
+    {
+      "id": "worn-captain",
+      "name": "Worn Captain",
+      "tl": 4,
+      "class": "IV",
+      "category": "undead",
+      "description": "A Worn who has kept enough of their old rank to command. It wears a Daughter's gray robe, stained and stitched shut over the wounds that killed it, and carries whatever weapon it died holding.",
+      "stats": { "Body": 4, "Endurance": 4, "Melee": 4, "armor": 2, "hp": 32 },
+      "sb_spends": [
+        { "cost": 2, "name": "Ichor Burst", "effect": "A wave of caustic ichor bursts from the Captain; all in Near range take Harm 2 (Body+Endurance DV 4 halves)." },
+        { "cost": 3, "name": "Command Worn", "effect": "Summon 2 Worn (Cap 2) from the surrounding lines." },
+        { "cost": 1, "name": "Unnatural Vitality", "effect": "The Captain regenerates 1 Harm at the start of its turn." }
+      ],
+      "lore": "Some of the Captains were officers who died defending the very garrisons they now lead against. They remember command. They do not remember why they wanted to keep it.",
+      "weakness": "Decapitation. A called shot that removes the Captain's head (DV 6) ends its regeneration permanently and it collapses at end of scene."
+    },
+    {
+      "id": "hungry-hollowed",
+      "name": "Hungry Hollowed",
+      "tl": 3,
+      "class": "III",
+      "category": "fae-touched",
+      "description": "A freed Hollowed whose sight has curdled into appetite. Silver wire still traces their eye sockets, but where the First Free merely witness, the Hungry judge — and collect. They move in small packs, circling a settlement like an unpaid bill come due.",
+      "stats": { "Wits": 3, "Presence": 3, "Sway": 3, "hp": 16 },
+      "sb_spends": [
+        { "cost": 1, "name": "Silver Gaze", "effect": "Target must answer the Hollowed's next question truthfully or take Harm 1 (Mental)." },
+        { "cost": 2, "name": "Witness Recall", "effect": "The Hollowed reveals a secret it witnessed about the target, aloud, to everyone present." }
+      ],
+      "lore": "They do not lie, and they cannot be talked out of what they have already seen. This is what makes them dangerous — not malice, but perfect, merciless memory.",
+      "weakness": "Cannot cross a threshold of running water. A Hungry Hollowed will not follow the party across a stream, moat, or flooded doorway."
+    },
+    {
+      "id": "hungry-hollowed-judge",
+      "name": "Hungry Hollowed Judge",
+      "tl": 4,
+      "class": "III-IV",
+      "category": "fae-touched",
+      "description": "The pack-leader among the Hungry — the one whose hunger has gone furthest toward becoming law. It speaks for the others, and the others obey it the way debts obey a collector.",
+      "stats": { "Wits": 4, "Presence": 4, "Sway": 4, "hp": 24 },
+      "sb_spends": [
+        { "cost": 1, "name": "Silver Gaze", "effect": "Compel a target to answer truthfully or take Harm 1 (Mental)." },
+        { "cost": 2, "name": "Debt Collection", "effect": "Target loses 1 Boon, or takes Harm 2, at the Judge's choosing." },
+        { "cost": 2, "name": "Witness Summon", "effect": "Call a nearby Hungry Hollowed to the scene within one exchange." }
+      ],
+      "lore": "It genuinely believes it is being fair. That belief is the most dangerous thing about it.",
+      "weakness": "Cannot harm anyone who has publicly confessed a debt to it. A PC who names a true debt aloud, in the Judge's presence, is protected from its attacks for the rest of the scene."
+    },
+    {
+      "id": "collector-prime",
+      "name": "Collector Prime",
+      "tl": 5,
+      "class": "V",
+      "category": "undead",
+      "description": "Once a Silent One — a Hollowed who never turned — Collector Prime chose Malachai's curse rather than remain a witness. It now serves as liaison between the Worn and Malachai, speaking in flat, echoing tones that carry no breath behind them.",
+      "stats": { "Body": 4, "Wits": 4, "Presence": 5, "armor": 2, "hp": 40 },
+      "sb_spends": [
+        { "cost": 2, "name": "The Well Is Dry", "effect": "Collector Prime nullifies one Asset or String the target would otherwise call on this scene." },
+        { "cost": 3, "name": "Command the Line", "effect": "Rally 1d3 Worn to the Collector's position immediately." },
+        { "cost": 2, "name": "Echo of the Thread", "effect": "Target must test Resolve (DV 4) or be shaken (-1 die to their next roll)." }
+      ],
+      "lore": "It was the first Silent One to speak in a decade, and what it chose to say was 'yes' to Malachai. It does not regret this. It does not feel much of anything anymore, which it describes, when pressed, as a kindness.",
+      "weakness": "A Thread of the Cord, held and named aloud, forces Collector Prime to answer one direct question truthfully before it can act again."
+    }
+  ],
+  "acts": [
+    {
+      "id": "act-1-the-scarred-land",
+      "title": "Act I — The Scarred Land",
+      "description": "Months have passed since the plague. The region is scarred, the Daughters fractured, and Malachai more active than ever. The party receives word — a summons or a threat, depending on how their last adventure ended — and are the only ones equipped to understand what's coming. This act branches at the Hook: the party's history determines whether they face the Worn Tide or the Hollowed Hunger, and that choice shapes every scene that follows.",
+      "scenes": [
+        {
+          "id": "scene-1-0-the-hook",
+          "title": "The Hook — Two Roads From One Ending",
+          "description": "BRANCH POINT. Determine which path the table plays based on how The Hollowed Plague resolved. If the party retrieved the First Needle (Cord Path), the Worn Tide has begun — Malachai used their intrusion into Zahk'Kozahn as a catalyst to tear open a rift, and organized ghouls now spill from the desert under Worn Captains. If the party stole the Ichor (Malachai Path), the Hollowed Hunger has begun — freed Hollowed wander the caravan routes, silver-eyed and ageless, demanding an accounting of every debt they witness. If the party did nothing and the Cord broke (Catastrophe), skip to the Appendix C branch instead — it plays as a shorter, tragic epilogue rather than a full three-act structure. Present both live branches as parallel opening scenes below; only one will be run per table, chosen by table history, not by GM fiat.",
+          "timers": [
+            { "name": "Worn Tide", "segments": 10, "current": 0, "description": "How widespread the ghoul invasion has become (Worn Tide branch only). Advances when the party delays intervening. At 8, major cities begin to fall." },
+            { "name": "Hollowed Hunger", "segments": 10, "current": 0, "description": "How desperate the freed Hollowed have become (Hollowed Hunger branch only). Advances when they are hunted or denied restitution. At 8, they begin judging indiscriminately, sparing no one." }
+          ],
+          "encounters": [
+            {
+              "name": "The Messenger (Worn Tide branch)",
+              "dv": 3,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "A desperate Aeler rider reaches the party with word intact: a warband is besieging a frontier garrison, and its Captain wears a Daughter's robe. The party gets a full day's head start.",
+                "partial": "The rider arrives wounded and rambling; the party gets partial information and must piece the rest together en route. Tick Worn Tide +1.",
+                "miss": "The rider dies before reaching them. The party learns of the crisis secondhand and arrives a step behind. Tick Worn Tide +2."
+              }
+            },
+            {
+              "name": "The Silver-Eyed Child (Hollowed Hunger branch)",
+              "dv": 3,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "A Hollowed child approaches the party openly in a caravan town, asks its question, and — recognizing them — offers information freely: villages along the old routes are being 'judged,' some spared, some not.",
+                "partial": "The child answers evasively and vanishes after extracting a promise from one PC (mark 1 Obligation, social — a favor owed, not a debt in coin). Tick Hollowed Hunger +1.",
+                "miss": "The child refuses to speak to those it does not trust yet. The party must earn an introduction elsewhere. Tick Hollowed Hunger +2."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-1-1-the-rift-or-the-hunger",
+          "title": "Investigation — The Rift or the Hunger",
+          "description": "The party travels the region gathering scene seeds appropriate to their branch: a village where every inhabitant has been judged (some spared, some executed); a fortress overrun by Worn flying Malachai's ship-sigil; a Daughters' hospice quietly converted into a shrine to the Corded Angel. Whatever the specific scenes, the throughline is the same — the source of the crisis traces back to a single place.",
+          "timers": [
+            { "name": "Worn Tide", "segments": 10, "current": 0 },
+            { "name": "Hollowed Hunger", "segments": 10, "current": 0 }
+          ],
+          "encounters": [
+            {
+              "name": "Trace the Source",
+              "dv": 4,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "A successful Wits + Lore roll reveals that both branches trace to the same threshold: the House Without Doors (Hollowed Hunger) or the rift torn during the party's exit from Zahk'Kozahn (Worn Tide). The party knows exactly where they must go and why.",
+                "partial": "The party learns the general region but not the precise site; one more scene of investigation is needed. Tick the branch's timer +1.",
+                "miss": "A wrong lead costs the party a day and puts them behind. Tick the branch's timer +2."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-1-2-the-factions-plea",
+          "title": "Social — The Faction's Plea",
+          "description": "Sister Vorna, who survived the plague but lost her coven, offers a fragile alliance: healing, shelter, and a handful of loyal (untouched) Hollowed, but no help in a fight — the Cord is unstable and the High Mother is silent. If the party instead (or additionally) seeks aid from the Hollowed side, they must negotiate with Ellia, the First Free, or with Collector Prime — and the price is always a social debt, never coin: a promise to witness a future oath, a spared enemy, a surrendered memory.",
+          "timers": [],
+          "encounters": [
+            {
+              "name": "Negotiate with Sister Vorna",
+              "dv": 4,
+              "position": "Dominant",
+              "outcomes": {
+                "clean": "Vorna commits fully: healing, shelter, and two loyal Hollowed scouts (Cap 2) join the party for Act II. The party owes her nothing but honesty.",
+                "partial": "Vorna commits, but asks the party to carry a message to the High Mother in return — mark 1 Obligation, social (a promise to deliver word, not a debt).",
+                "miss": "Vorna refuses; her grief has curdled into distrust of anyone who touched the Ichor or the Needle. The party must find aid elsewhere."
+              }
+            },
+            {
+              "name": "Negotiate with Ellia or Collector Prime",
+              "dv": 5,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "The Hollowed side offers guidance and safe passage through Hungry Hollowed territory. Price: a witnessed promise, spoken aloud and binding for the rest of the adventure.",
+                "partial": "Aid is offered but grudging; the price is steeper — a surrendered memory (GM chooses something minor but real).",
+                "miss": "Negotiation fails; Collector Prime marks the party as unaligned, which will complicate Act II encounters with the Worn."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-1-3-the-first-incursion",
+          "title": "Combat — The First Incursion",
+          "description": "A tutorial encounter establishing the new threat's texture. A band of Worn (Worn Tide branch) or a pack of Hungry Hollowed (Hollowed Hunger branch) attacks a settlement the party is sheltering in. This is the players' first real look at what they're up against, and it should land as unsettling rather than merely dangerous — the Worn are organized where they should be mindless; the Hungry Hollowed ask questions instead of attacking outright.",
+          "timers": [
+            { "name": "Worn Tide", "segments": 10, "current": 0 },
+            { "name": "Hollowed Hunger", "segments": 10, "current": 0 }
+          ],
+          "encounters": [
+            {
+              "creatureId": "worn-ghoul",
+              "quantity": "1d4+2",
+              "position": "Controlled",
+              "dv": 4,
+              "outcomes": {
+                "clean": "The settlement is held. The Worn withdraw in good order — disturbingly, on command. Tick Worn Tide -1.",
+                "partial": "The settlement holds, but at cost — one building burns, and a Worn Captain is glimpsed directing the retreat from a distance.",
+                "miss": "The Worn overrun a portion of the settlement before withdrawing. Tick Worn Tide +2."
+              }
+            },
+            {
+              "creatureId": "hungry-hollowed",
+              "quantity": "1d3+1",
+              "position": "Controlled",
+              "dv": 4,
+              "outcomes": {
+                "clean": "The party intervenes before the Hungry Hollowed pass judgment on anyone; the pack withdraws, watching. Tick Hollowed Hunger -1.",
+                "partial": "The Hungry Hollowed judge one villager before withdrawing — sparing them, but publicly naming a debt that villager now owes the party's allies.",
+                "miss": "The pack extracts payment from a bystander (2 Harm, or the loss of a prized possession) before the party can stop them. Tick Hollowed Hunger +2."
+              }
+            }
+          ],
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "act-2-the-fork-inverted",
+      "title": "Act II — The Fork Inverted",
+      "description": "The party learns the crisis traces to a single broken threshold and must travel there to seal it. This act mirrors the original adventure's fork, but inverted: Path A (Worn Tide) returns the party to Zahk'Kozahn to reseal the rift Malachai tore open. Path B (Hollowed Hunger) returns them to the House Without Doors to decide the Cord's fate. Only one path is run per table, matching the branch established in Act I.",
+      "scenes": [
+        {
+          "id": "scene-2a-1-the-worn-siege-line",
+          "title": "Path A, Step 1 — The Worn Siege Line",
+          "description": "The approach to Zahk'Kozahn is blocked by a warband encampment. The party must infiltrate using captured Worn robes (requiring a prior kill to obtain) or fight through directly.",
+          "timers": [
+            { "name": "Worn Morale", "segments": 8, "current": 0, "description": "Ticks down as the party kills or routes warband leaders. At 0, the warbands break and scatter." }
+          ],
+          "encounters": [
+            {
+              "name": "Infiltrate the Siege Line",
+              "dv": 5,
+              "position": "Desperate",
+              "outcomes": {
+                "clean": "Wearing captured robes, the party passes unnoticed to the cathedral gates.",
+                "partial": "The party gets through, but a Worn Captain marks their faces for later. Tick Worn Morale +1 (suspicion raised).",
+                "miss": "The disguise fails. A chase begins; the party must fight or flee through the encampment."
+              }
+            },
+            {
+              "creatureId": "worn-captain",
+              "quantity": "1d3",
+              "position": "Controlled",
+              "dv": 5,
+              "outcomes": {
+                "clean": "Each Captain defeated ticks Worn Morale -2. At 0, the warbands break and the siege line collapses.",
+                "partial": "Captains defeated, but the party takes Harm 1 each from a Desperate Lunge. Tick Worn Morale -1 per Captain.",
+                "miss": "The party is driven back; Worn Morale does not advance and reinforcements arrive."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-2a-2-the-cathedral-under-siege",
+          "title": "Path A, Step 2 — The Cathedral Under Siege",
+          "description": "The rift lies in the cathedral where Malachai is chained. She has broken one arm free of the Aetherium chain — she cannot leave, but she can direct the Worn and a handful of Turned Hollowed who still serve her. The party must fight through her defenders to reach the rift.",
+          "timers": [
+            { "name": "Worn Morale", "segments": 8, "current": 0 }
+          ],
+          "encounters": [
+            {
+              "creatureId": "worn-ghoul",
+              "quantity": "1d6+2",
+              "position": "Desperate",
+              "dv": 5,
+              "outcomes": {
+                "clean": "The cathedral's outer defenders fall. The path to the rift is clear.",
+                "partial": "The defenders fall, but Malachai's free arm lashes out at the nearest PC — Resolve DV 5 or take Harm 2 (Mental) and gain a minor curse.",
+                "miss": "The party is pinned down; Collector Prime arrives to reinforce the defenders."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-2a-3-sealing-the-rift",
+          "title": "Path A, Step 3 — Sealing the Rift",
+          "description": "The rift bleeds ichor and Worn continuously. Sealing it requires the Thread of the Cord (provided by Sister Vorna in Act I, if secured) woven into the tear through a Ritual Sealing: three successes on Arcana, Lore, or Presence rolls before two failures.",
+          "timers": [
+            { "name": "Ritual Sealing", "segments": 3, "current": 0, "description": "Successes needed to close the rift. Two failures instead trigger a Wave of Worn." }
+          ],
+          "encounters": [
+            {
+              "name": "Ritual Sealing",
+              "dv": 5,
+              "position": "Desperate",
+              "outcomes": {
+                "clean": "A success. Tick Ritual Sealing +1. At 3, the rift closes, Malachai screams, and her free arm is forced back against the chain (though not fully re-bound).",
+                "partial": "A costly success — the rift ticks toward closing, but a PC takes Harm 1 from backlash ichor.",
+                "miss": "A failure. A Wave of Worn (Cap 3, 1d4 ghouls) attacks immediately. Two failures total force the party to retreat and try again later."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-2b-1-the-liminal-descent",
+          "title": "Path B, Step 1 — The Liminal Descent",
+          "description": "The House Without Doors has changed since the party last saw it — guarded now by Hollowed who never turned, and by those who have. The threshold trials are inverted: instead of proving loyalty to the Cord, the party must prove they respect the Hollowed's new freedom.",
+          "timers": [
+            { "name": "House Trust", "segments": 6, "current": 0, "description": "How much the House's guardians trust the party's intentions. Advances on honest, costly answers; falls on evasion." }
+          ],
+          "encounters": [
+            {
+              "name": "Trial of the Witness",
+              "dv": 4,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "Each PC answers honestly (roleplayed at the table): 'What debt have you paid that you did not owe?' Passage is granted. Tick House Trust +2.",
+                "partial": "Some answers ring true, others evasive. Passage granted, but grudgingly. Tick House Trust +1.",
+                "miss": "A lie or evasion summons a Hungry Hollowed to test the party directly."
+              }
+            },
+            {
+              "name": "Trial of the Unbroken Cord",
+              "dv": 5,
+              "position": "Dominant",
+              "outcomes": {
+                "clean": "The party states its intention clearly — cut the frayed cord for autonomy, or mend it for order — and the House recognizes the choice as sincere, granting passage to the High Mother's chamber.",
+                "partial": "The House recognizes hesitation; passage is granted, but the choice must still be made before the High Mother.",
+                "miss": "The House reads the party as undecided and untrustworthy; a Hungry Hollowed Judge blocks the way until convinced otherwise."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-2b-2-the-high-mothers-judgment",
+          "title": "Path B, Step 2 — The High Mother's Judgment",
+          "description": "The High Mother is in agony, pulled between the Cord's needs and the freed Hollowed's demands. She lays out the choice with no room for compromise: mend the Cord and the Hollowed return to silence, or cut it and she dies while they go free — hungering forever.",
+          "timers": [],
+          "encounters": [
+            {
+              "name": "The High Mother's Offer (No Roll)",
+              "dv": 0,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "This is a roleplayed decision scene, not a contested roll. The party deliberates and states their intent; the encounter resolves narratively into Step 3.",
+                "partial": "N/A — decision scene.",
+                "miss": "N/A — decision scene."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-2b-3-the-final-choice",
+          "title": "Path B, Step 3 — The Final Choice",
+          "description": "No roll. If the party mends the Cord, the Hollowed lose their sentience and return to silent witnessing; the High Mother survives, weakened, and the party gains the String Chain's Gratitude (once per session, call on a Daughter for aid) — but some Hollowed who tasted freedom will, in time, turn again. If the party cuts the Cord, the High Mother dies, the House Without Doors collapses, and the Hollowed become a new, lawless people, hungry for truth; the party gains the String Hollowed Covenant (once per session, ask a Hollowed for a witnessed secret) — but the Daughters scatter, their order broken for good.",
+          "timers": [],
+          "encounters": [],
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "act-3-the-debt-that-remains",
+      "title": "Act III — The Debt That Remains",
+      "description": "An epilogue act, not a combat act. The GM narrates a montage of consequences shaped by which branch was run and what was chosen at the threshold. Nothing here is fully resolved — the region's relationship to the Worn or the Hollowed is now a permanent, unstable fact of the setting, and this act's job is to make that lived-in rather than tidy.",
+      "scenes": [
+        {
+          "id": "scene-3-1-worn-tide-aftermath",
+          "title": "Epilogue — Worn Tide Aftermath",
+          "description": "The Worn are pushed back to the desert, cut off from reinforcement, and can be hunted down over time. Malachai remains chained, but her one free arm lets her influence reach further than before. The Aeler holds honor the party as saviours and offer a permanent hold in the mountains. Sister Vorna, reluctant and grieving, becomes the new High Mother.",
+          "timers": [],
+          "encounters": [],
+          "completed": false
+        },
+        {
+          "id": "scene-3-2-hollowed-hunger-aftermath",
+          "title": "Epilogue — Hollowed Hunger Aftermath",
+          "description": "The Hollowed establish their own settlements — silent villages where no one ages and no one forgets. Some people seek them out, hoping to have a debt judged and cleared. Others hunt them, afraid of what they represent. The party is caught between the two, remembered either as the ones who gave freedom or the ones who tried to take it back.",
+          "timers": [],
+          "encounters": [],
+          "completed": false
+        },
+        {
+          "id": "scene-3-3-catastrophe-branch-note",
+          "title": "Reference — Catastrophe Branch (Appendix C)",
+          "description": "If the party did nothing in The Hollowed Plague and the Cord broke outright, do not run Acts I-III as written. Instead run the shorter Appendix C branch: the Hollowed are everywhere, watching births, deaths, weddings, and treaties without attacking. The party must gather the scattered fragments of the Cord and choose to re-weave it (ending the haunting by committing a quiet atrocity), destroy it forever (leaving the Hollowed as harmless, ever-present ghosts), or broker a Covenant giving the Hollowed a formal place in society (very high DV, requires exceptional roleplay). This branch is intentionally short, bittersweet, and tragic — do not pad it with combat.",
+          "timers": [],
+          "encounters": [],
+          "completed": false
+        }
+      ]
+    }
+  ],
+  "npcs": [
+    {
+      "id": "npc-sister-vorna",
+      "name": "Sister Vorna",
+      "role": "Winter of the Cord, Wounded Survivor",
+      "motivation": "Rebuild something from the wreckage of her coven; keep faith with the party even as her faith in the Cord curdles",
+      "stats": "Presence 3, Lore 4, Resolve 4",
+      "secret": "She no longer believes the Needle was mercy. She has not said this aloud to another Daughter, and saying it to the party first is a genuine risk for her."
+    },
+    {
+      "id": "npc-ellia",
+      "name": "Ellia, the First Free",
+      "role": "First Hollowed to receive the Ichor; reluctant leader of the freed Hollowed",
+      "motivation": "Protect the Hollowed's freedom without becoming the tyrant she was made to see",
+      "stats": "Wits 4, Presence 4, Sway 3",
+      "secret": "She is terrified she will eventually become a Judge like the others — that freedom and hunger are the same shape wearing different names."
+    },
+    {
+      "id": "npc-collector-prime",
+      "name": "Collector Prime",
+      "role": "Former Silent One, now Malachai's liaison",
+      "motivation": "Serve Malachai without complaint, having chosen the curse deliberately",
+      "stats": "Body 4, Wits 4, Presence 5",
+      "secret": "It remembers being a Silent One and remembers choosing this. It does not regret the choice, which unsettles even Malachai."
+    },
+    {
+      "id": "npc-malachai",
+      "name": "Malachai",
+      "role": "The Corded Angel, chained but no longer wholly contained",
+      "motivation": "Break fully free of the Aetherium chain and finish what the rift started",
+      "stats": "Spirit 6, Presence 5, Resolve 6",
+      "secret": "One arm free is enough for her to reach the Worn's minds directly. She is patient; she has already won more than the party realizes."
+    },
+    {
+      "id": "npc-high-mother",
+      "name": "The High Mother",
+      "role": "Leader of the Daughters of the Unbroken Cord, dying",
+      "motivation": "Preserve the Cord's order, or failing that, ensure the choice to end it is made with full understanding of the cost",
+      "stats": "Spirit 5, Presence 5, Lore 5",
+      "secret": "She has known for years that the Cord could not hold forever. She is not angry at the party for ending it — only tired."
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc-aeler-frontier-garrison",
+      "name": "The Aeler Frontier Garrison",
+      "description": "A stone hold on the desert's edge, its walls scorched and its gates barred against the Worn Tide. The banners flying over the besieging warband bear Malachai's ship-sigil, stitched crudely into stolen cloth.",
+      "tags": ["frontier", "siege", "worn-tide"]
+    },
+    {
+      "id": "loc-daughters-hospice-shrine",
+      "name": "The Converted Hospice",
+      "description": "A Daughters' hospice, once a place of healing, now quietly rearranged into a shrine to the Corded Angel by hands that used to tend the sick. Candles burn around an empty chain-shaped altar.",
+      "tags": ["hospice", "shrine", "corruption"]
+    },
+    {
+      "id": "loc-zahk-kozahn-cathedral",
+      "name": "The Cathedral at Zahk'Kozahn",
+      "description": "The cursed city's heart, where Malachai remains chained — one arm now free of the Aetherium bindings. The rift she tore open bleeds ichor and Worn continuously into the nave.",
+      "tags": ["cathedral", "rift", "malachai", "worn-tide"]
+    },
+    {
+      "id": "loc-house-without-doors",
+      "name": "The House Without Doors",
+      "description": "The threshold where the Hollowed were first unmade, changed since the party last stood in it. It is now guarded by Hollowed who never turned, and by those who have — a house arguing with itself about what it should become.",
+      "tags": ["threshold", "hollowed", "hollowed-hunger"]
+    },
+    {
+      "id": "loc-caravan-route-villages",
+      "name": "The Old Caravan Route Villages",
+      "description": "A string of small settlements along roads that predate the Cord itself, now visited by silver-eyed children who ask one question and wait, patiently, for an honest answer.",
+      "tags": ["frontier", "hollowed-hunger", "investigation"]
+    }
+  ],
+  "factions": [
+    {
+      "id": "faction-daughters-of-the-unbroken-cord",
+      "name": "The Daughters of the Unbroken Cord",
+      "goals": "Survive the fracture of their order; decide, individually and collectively, whether the Cord is worth preserving",
+      "relationship": "Fractured allies. Sister Vorna's faction will help the party, but cannot fight for them — the Cord itself is unstable."
+    },
+    {
+      "id": "faction-the-worn",
+      "name": "The Worn",
+      "goals": "Expand the tide under Malachai's indirect direction; overwhelm frontier garrisons",
+      "relationship": "Hostile. Organized in a way that should not be possible for mindless ghouls, which is itself the horror."
+    },
+    {
+      "id": "faction-freed-hollowed",
+      "name": "The Freed Hollowed",
+      "goals": "Exercise their new sentience; extract restitution for debts they witnessed as silent watchers",
+      "relationship": "Ambiguous. Some, led by Ellia, want restraint. Others, the Hungry, have let judgment curdle into appetite."
+    },
+    {
+      "id": "faction-malachai-and-collector-prime",
+      "name": "Malachai's Faction",
+      "goals": "Break Malachai fully free; consolidate the Worn and any Turned Hollowed still loyal to her",
+      "relationship": "Enemy. Collector Prime serves as its patient, unsettling voice."
+    }
+  ],
+  "campaignTimers": [
+    {
+      "name": "Worn Tide",
+      "segments": 10,
+      "current": 0,
+      "description": "How widespread the ghoul invasion has become. Fills as the party delays intervening. At 8, major cities begin to fall."
+    },
+    {
+      "name": "Hollowed Hunger",
+      "segments": 10,
+      "current": 0,
+      "description": "How desperate the freed Hollowed have become. Fills as they are hunted or denied restitution. At 8, they begin judging indiscriminately, sparing no one."
+    }
+  ],
+  "notes": "A direct sequel to The Hollowed Plague with a branching hook determined by that adventure's ending: the Cord Path leads to the Worn Tide (Path A, a siege-and-rescue structure returning to Zahk'Kozahn), the Malachai Path leads to the Hollowed Hunger (Path B, a threshold-trial-and-judgment structure returning to the House Without Doors), and the Catastrophe branch (doing nothing) redirects to a shorter, tragic Appendix C epilogue rather than the full three-act structure. Only one branch is run per table. Debts throughout are social and narrative — promises, witnessed oaths, surrendered memories, spared enemies — never coin or ledger language. The central twist across both branches is the same one the prior adventure set up: freedom and judgment are not opposites, and neither the Cord nor its absence produces a clean outcome. Designed for 3-4 sessions; can be trimmed to a single dense session by running only the branch-appropriate Act I hook scene, one Act II step, and the Act III epilogue.",
+
+  "_gmhints": {
+    "pacing": {
+      "act1": "Establish the branch immediately and commit to it — do not let the table hedge between Worn Tide and Hollowed Hunger once their prior campaign's ending is known. The Hook scene exists to make the branch concrete and personal fast: a dying messenger or a Hollowed child who already knows the party's names. Keep the investigation (scene-1-1) brisk; its job is to point the party at the return-to-threshold location, not to be a mystery in its own right. Sister Vorna's plea scene is the emotional anchor of the act — she should read as grieving and bitter, not as a quest-dispensing NPC. The First Incursion combat is a tutorial: let the players feel the wrongness of organized ghouls or judging children before the numbers matter.",
+      "act2": "This act is the structural inversion of the original adventure's fork, and that inversion should be felt mechanically, not just narrated. Path A is a siege-and-ritual structure with hard timers (Worn Morale, Ritual Sealing) — play it as escalating pressure toward a clean, violent climax. Path B is a trial-and-judgment structure with almost no combat — play it as a slow tightening of an impossible choice, culminating in a no-roll decision scene that the table must actually debate. Do not let Path B's lack of dice feel like a lesser scene; it is the heavier of the two emotionally and should take at least as long at the table.",
+      "act3": "This act has no combat and should not gain any. Its entire function is to let consequences land and to seed future adventures — the Rift Shard asset, Chain's Gratitude or Hollowed Covenant strings, and the region's permanently altered relationship with the Worn or the Hollowed. Narrate it as a montage; ask each player what their PC does in the weeks after, and let that shape the epilogue rather than reading it to them wholesale.",
+      "act3_catastrophe": "If running Appendix C instead of the main three acts, keep total playtime to roughly one session. This branch trades scope for weight — do not let it sprawl into a full investigation. The three resolution options (re-weave, destroy, or broker a Covenant) should each be reachable within a session if the table commits early."
+    },
+    "npcSecrets": {
+      "sister-vorna": "She has quietly stopped believing the Needle was ever mercy — she thinks now it may have simply been a different, more comfortable form of control. She has not said this to another Daughter. Saying it to the party is a real vulnerability and should land as such, not as exposition.",
+      "ellia": "She is afraid she is becoming exactly what she was made to prevent — a Judge rather than a witness. This fear should surface obliquely (hesitation before passing judgment, self-directed bitterness) rather than as a stated monologue unless a PC earns it through genuine rapport.",
+      "collector-prime": "It chose this. It is not a victim of Malachai's curse — it volunteered, and it does not regret the choice. This should be unsettling specifically because it denies the party an easy 'save the corrupted NPC' arc; Collector Prime does not want saving.",
+      "malachai": "One free arm is already enough for indirect victory — she can now reach into the minds of the Worn directly, meaning the Worn Tide will continue in some form regardless of how Act II Path A resolves. Do not reveal this as a twist ending; let observant players infer it from the Worn's continued organization even after the rift is sealed.",
+      "high-mother": "She has known for years the Cord could not hold forever and has already made peace with that. She is not angry at the party for whatever ending they choose — she is simply tired, and this should read as dignity, not defeat."
+    },
+    "forbiddenEarlyRevelations": [
+      "That Malachai's free arm lets her reach the Worn's minds directly, meaning Path A's resolution is only a partial victory — this should surface through play (continued Worn coordination) after the fact, not be announced",
+      "That Collector Prime chose its curse willingly and does not regret it — reveal this only if a PC directly and respectfully asks; do not volunteer it as flavor text",
+      "That the High Mother has already accepted the Cord's eventual end — this should emerge through her demeanor across scene-2b-2, not be stated outright before the party reaches her",
+      "That some Hollowed who tasted freedom under the Mend outcome will eventually turn again — this is a seed for future adventures, not a warning to give the party in the moment",
+      "The exact wording of the High Mother's ultimatum before the party reaches scene-2b-2 — let Sister Vorna and Ellia gesture at the stakes without pre-scripting the choice"
+    ],
+    "tacticalHints": {
+      "worn_organization": "Play the Worn's discipline as the horror, not their numbers. A single Worn standing at attention, waiting for an order that never comes because its Captain just died, is more unsettling than a horde. Let silence do work.",
+      "hungry_hollowed_question": "Never let 'What do you owe?' be rhetorical. If a Hungry Hollowed asks a PC this, make them actually answer at the table, even briefly. The tension of the encounter lives in that answer being real.",
+      "ritual_sealing_tempo": "Ritual Sealing (scene-2a-3) should feel like it's racing the Wave of Worn timer even though there's no explicit timer beyond the 2-failure cap — describe the ichor rising, the ground shaking, to keep urgency high between rolls.",
+      "no_roll_decision": "scene-2b-2 and scene-2b-3 have deliberately no dice. Resist the urge to add a roll for tension; the tension should come entirely from the table's deliberation. If players stall, have the High Mother gently note that delay is itself a choice — but do not force a timer on this scene."
+    }
+  },
+
+  "currentAct": 0,
+  "currentScene": 0,
+  "startedAt": null,
+  "completedAt": null,
+  "status": "planned",
+  "createdAt": "2026-08-07T00:00:00.000Z",
+  "updatedAt": "2026-08-07T00:00:00.000Z"
+}

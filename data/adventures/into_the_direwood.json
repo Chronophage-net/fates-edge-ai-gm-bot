@@ -1,0 +1,599 @@
+{
+  "id": "into-the-direwood",
+  "title": "Into the Direwood",
+  "description": "Beyond the last bell-line, where the mist never lifts and the roots drink only memory, an ancient spear pins a dead druid to a fortress of bone. Payden's Port is drowning in fog because the Chord of the First Curse — the relic that once harmonized the warding bells with a hero's name — was lost in the Direwood centuries ago. The crew must cross a forest that remembers instead of forgives, find the Chord, and reckon with the Nameless Heroine: a shade bound not by the druid she slew, but by the erasure of her own saga. The curse does not end when the monster dies. It ends when someone says her name and means it.",
+  "tier": "III-IV",
+  "author": "Nicholas A. Gasper",
+  "sessions": "8-12",
+  "themes": ["Lost Names", "Corrupted Guardianship", "Identity Erased by History", "Truth vs. Myth", "Survival Horror"],
+  "bestiary": [
+    {
+      "id": "mistwraith",
+      "name": "Mistwraith",
+      "tl": 3,
+      "class": "III",
+      "category": "undead",
+      "description": "A ragged human silhouette woven from fog and hunger. It does not eat flesh — it eats the certainty that you are who you think you are. Mistwraiths hunt in packs of 3-5, drawn to exhaustion and fear like sharks to blood in water.",
+      "stats": { "Body": 2, "Spirit": 4, "Presence": 1, "armor": 0, "hp": 12 },
+      "sb_spends": [
+        { "cost": 1, "name": "Erasing Touch", "effect": "A PC forgets a minor fact (a name, a direction, a promise) for the rest of the scene." },
+        { "cost": 2, "name": "Feeding Frenzy", "effect": "The pack converges on the most fatigued PC; that PC suffers 1 Fatigue and the pack gains +1 die against them until the scene ends." }
+      ],
+      "lore": "Mistwraiths do not remember being people. They remember only the shape of being forgotten — and they want company in that condition."
+    },
+    {
+      "id": "shadewalker",
+      "name": "Shadewalker",
+      "tl": 2,
+      "class": "II-III",
+      "category": "undead",
+      "description": "A revenant infantryman still marching a patrol that ended centuries ago. Root and bone hold its armor together. It will not break formation, will not retreat, and will not stop until physically destroyed or ordered to stand down by a voice it recognizes as command.",
+      "stats": { "Body": 3, "Spirit": 1, "Presence": 1, "armor": 2, "hp": 14 },
+      "sb_spends": [
+        { "cost": 1, "name": "Shield the Line", "effect": "A Shadewalker steps in front of a wounded ally-corpse, granting it +1 Position for one exchange." },
+        { "cost": 2, "name": "Signal the Patrol", "effect": "Bone horns sound; one additional Shadewalker squad arrives within two exchanges." }
+      ],
+      "lore": "Shadewalkers reenact the last order they ever received. Speak that order back to them — if you can learn what it was — and some will simply stop."
+    },
+    {
+      "id": "hunger-wolf",
+      "name": "Hunger Wolf",
+      "tl": 3,
+      "class": "III",
+      "category": "beast-spirit",
+      "description": "Sinew stretched taut over a wrong number of bones, jaws that unhinge wider than the skull should allow. Hunger Wolves swallow light itself in small mouthfuls, leaving patches of true darkness in their wake.",
+      "stats": { "Body": 4, "Spirit": 2, "Presence": 1, "armor": 1, "hp": 18 },
+      "sb_spends": [
+        { "cost": 1, "name": "Swallow the Torch", "effect": "A light source within Near guts out; darkness-based penalties apply until relit." },
+        { "cost": 2, "name": "Pack Howl", "effect": "All PCs in Near test Resolve or gain 1 Fatigue from primal dread." }
+      ],
+      "lore": "Direwood beasts twisted by necromantic saturation. They were ordinary wolves once. The forest remembers what hunger feels like, and it made them into an argument about it."
+    },
+    {
+      "id": "forgotten-chorus",
+      "name": "The Forgotten Chorus",
+      "tl": 4,
+      "class": "IV",
+      "category": "psychic hazard",
+      "description": "Not a creature so much as a grief given harmony — dozens of mourning voices that rise from hollow trees and sing in the exact key of a listener's worst memory. It cannot be fought with weapons, only endured, silenced, or answered in kind.",
+      "stats": { "Spirit": 5, "Presence": 4 },
+      "sb_spends": [
+        { "cost": 2, "name": "Harmonize Grief", "effect": "One PC must test Resolve DV 4 or become fixated, repeating a line of dialogue from a dead loved one until snapped out of it." },
+        { "cost": 3, "name": "Psychic Drowning", "effect": "A fixated PC begins to suffer Fatigue each exchange until the Chorus is silenced or the PC is physically pulled away." }
+      ],
+      "lore": "The Chorus is what became of every soldier, refugee, and companion the heroine failed to save. It sings because no one else will."
+    },
+    {
+      "id": "nameless-heroine",
+      "name": "The Nameless Heroine (Shade)",
+      "tl": 4,
+      "class": "IV",
+      "category": "nemesis",
+      "description": "A spectral shieldmaiden formed of mist and radiant sorrow — tragedy weaponized. She tests before she strikes, and strikes only those who prove themselves unworthy of the memory she is fighting to keep.",
+      "stats": { "Spirit": 6, "Resolve": 5, "Body": 4, "Speed": 3, "Presence": 6, "armor": 2, "hp": 24 },
+      "sb_spends": [
+        { "cost": 1, "name": "Mark of Unworthy", "effect": "A PC who broke an oath or desecrated the dead is branded [UNWORTHY]; other undead treat them as a priority target for the scene." },
+        { "cost": 2, "name": "Spear-Light", "effect": "Her spectral spear manifests fully: Harm 2, ignores Armor, for one exchange." },
+        { "cost": 3, "name": "Reverence Withdrawn", "effect": "She vanishes for one full scene, leaving the party to face lesser threats alone — a warning, not a mercy." }
+      ],
+      "lore": "She cannot be killed until her Name is restored. Full stat block and phase structure in the GM Notes section — she is the adventure's central nemesis and, potentially, its patron ally."
+    }
+  ],
+  "acts": [
+    {
+      "id": "act-1-paydens-port",
+      "title": "Act I: Payden's Port and the Forgotten Chord",
+      "description": "The warding bell-line falters. Bells toll out of sequence, Mist incursions grow bolder, and refugees whisper of shapes in the fog. Payden's Port — a sea-garrison city of cracked statues, storm-beaten docks, and chanting wardens — pulls the crew into its crisis, and only the long-lost Chord of the First Curse can set the bells right.",
+      "scenes": [
+        {
+          "id": "scene-1-1-the-city-in-crisis",
+          "title": "The City in Crisis",
+          "description": "Three factions want the crew's loyalty before the crew has even chosen a side: the Aeler garrison (order and control), the Mistlander priests (appeasement and ritual), and the Guild factors (profit and salvage rights). Dead gulls arrange themselves in votive circles on the docks. Fog-children whisper names that no living person spoke to them.",
+          "timers": [
+            { "name": "Dread Timer", "segments": 6, "current": 0, "description": "Rises when the party ignores omens, mishandles the dead, or bargains carelessly with the Mist. If filled before Act II begins, the Heroine first appears as a hostile nemesis rather than a wary guide." }
+          ],
+          "encounters": [
+            {
+              "name": "Faction Courtship",
+              "dv": 3,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "The party secures a clear ally without over-promising; that faction provides one Standard Asset (supplies, a guide, or a letter of passage) for the crossing.",
+                "partial": "An ally is secured, but a rival faction takes offense. Tick Dread Timer +1 and mark a minor Obligation to whichever faction feels used.",
+                "miss": "The party is played by all three at once. No faction commits, and word spreads that they can't be trusted with a crisis."
+              }
+            },
+            {
+              "name": "Reading the Omens",
+              "dv": 4,
+              "position": "Dominant",
+              "outcomes": {
+                "clean": "The party correctly interprets the votive gull-circles and fog-children's whispers, learning that the Chord lies near the fortress heart and gaining one early Name Fragment (see Name Quest, Act II).",
+                "partial": "They get the general direction right but misread the warning in it — the Dread Timer ticks +1 as they underestimate what waits in the wood.",
+                "miss": "They dismiss the signs as coincidence or superstition. Tick Dread Timer +1."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-1-2-the-first-breach",
+          "title": "The First Breach",
+          "description": "The outer bell-line sputters and fails at dusk. Mistwraiths claw up from the tideline onto the storm-beaten docks. The wardens are outnumbered. This is the party's first taste of the Mist, and how they fight — or don't — sets their reputation for the rest of Act I.",
+          "timers": [
+            { "name": "Dread Timer", "segments": 6, "current": 0, "description": "Shared with Scene 1-1." }
+          ],
+          "encounters": [
+            {
+              "creatureId": "mistwraith",
+              "quantity": 4,
+              "position": "Controlled",
+              "dv": 4,
+              "outcomes": {
+                "clean": "The party drives the pack back into the sea-fog and helps the wardens re-anchor the bell-line. They are hailed as capable outsiders; gain a Contact among the garrison.",
+                "partial": "The breach is sealed, but at a cost — a warden or bystander is Fatigued or maimed by the wraiths' erasing touch, and the party is remembered as reckless.",
+                "miss": "The bell-line fails entirely for the night. Tick Dread Timer +2. A district of the port suffers a memory-blight; residents forget minor things (names of neighbors, the shape of their own street) until the curse is broken."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-1-3-the-charge",
+          "title": "The Charge",
+          "description": "Divination, confession, or coercion converges on one truth: the Chord of the First Curse lies deep in the Direwood, near the fortress where the nameless heroine fell. The party is sent through the breached ward with blessings, suspicions, or threats at their back — depending on how Act I went.",
+          "timers": [
+            { "name": "Dread Timer", "segments": 6, "current": 0, "description": "Carries forward into Act II as the party's starting Dread." }
+          ],
+          "encounters": [
+            {
+              "name": "The Send-Off",
+              "dv": 3,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "The party departs with genuine support — a blessing, supplies, and a promise that someone will remember them if they don't return.",
+                "partial": "The party departs under a cloud of doubt; support is grudging and conditional.",
+                "miss": "The party leaves under threat — fail to return with the Chord, or with proof of the Mist's containment, and they'll be branded deserters or worse."
+              }
+            }
+          ],
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "act-2-through-the-direwood",
+      "title": "Act II: Through the Direwood",
+      "description": "Crossing the tree-line is not entering a forest — it is passing into a place shaped by memory, undeath, and betrayal. The Direwood resists mapping; it reacts to intrusion. Each night, one PC dreams fragments of the nameless heroine's life, out of order and half-corrupted, until her true name is pieced together.",
+      "scenes": [
+        {
+          "id": "scene-2-1-twisting-trails",
+          "title": "Twisting Trails",
+          "description": "Paths repeat. A day's march loops back to a familiar tree, now hung with new corpses. Hollow oaks bleed pale sap. Stone cairns whisper warnings. The party must learn to navigate by intention and reverence rather than by map.",
+          "timers": [
+            { "name": "Memory Track", "segments": 6, "current": 0, "description": "Shared party track. Mark when the party uncovers a name fragment, fulfills an oath tied to the heroine's story, suffers hardship defending the innocent, or is recognized by shades as her lost companions. At 2: shades hesitate, mist retreats briefly. At 4: the Heroine shifts from Nemesis to Trial. At 6: the party may speak her Name." },
+            { "name": "Dread Timer", "segments": 6, "current": 0, "description": "Carried from Act I. Rises further on desecration, mockery of legend, or ignored visions. High Dread means the Heroine manifests as a lethal hunter rather than a testing guide." }
+          ],
+          "encounters": [
+            {
+              "name": "Direwood Encounter Generator (Roll)",
+              "dv": 4,
+              "position": "Risky",
+              "outcomes": {
+                "clean": "The party reads the terrain correctly — rolling Terrain Distortion, Threat Manifestation, and Psychological Pressure from the GM's tables (see notes) — and turns a bad omen into useful information, gaining a Name Fragment.",
+                "partial": "They push through, but the wood takes something: a piece of equipment tarnishes, a memory blurs, or a day is lost to a false sunrise.",
+                "miss": "The forest closes a loop around them. Tick Dread Timer +1 and roll an additional Threat Manifestation immediately."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-2-2-the-hunting-pack",
+          "title": "The Hunting Pack",
+          "description": "Fatigue and fear draw a Mistwraith pack in from the fog. They do not attack outright — they circle, testing which PC is most worn thin, most ready to forget who they are.",
+          "timers": [
+            { "name": "Memory Track", "segments": 6, "current": 0, "description": "Shared with Scene 2-1." }
+          ],
+          "encounters": [
+            {
+              "creatureId": "mistwraith",
+              "quantity": 5,
+              "position": "Risky",
+              "dv": 4,
+              "outcomes": {
+                "clean": "The pack is driven off or destroyed before anyone is marked. No Fatigue lost.",
+                "partial": "The pack is broken, but the most exhausted PC takes 1 Fatigue and briefly forgets a companion's name — a chilling preview of the curse's nature.",
+                "miss": "The pack fixes on one PC. That PC gains 2 Fatigue and a temporary [FORGETTING] condition until they rest safely."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-2-3-the-shadewalker-patrol",
+          "title": "The Shadewalker Patrol",
+          "description": "A column of revenant infantry marches through a birch grove in perfect silent formation, reenacting a war that ended centuries ago. They will not break ranks unless interrupted — or unless a PC learns and speaks the order that once dismissed them.",
+          "timers": [
+            { "name": "Memory Track", "segments": 6, "current": 0, "description": "Shared with Scene 2-1." }
+          ],
+          "encounters": [
+            {
+              "creatureId": "shadewalker",
+              "quantity": 4,
+              "position": "Controlled",
+              "dv": 5,
+              "outcomes": {
+                "clean": "The party learns the captain's old battle-cry fragment (a Name Fragment) and either slips past the patrol or persuades it to stand down — no violence needed.",
+                "partial": "The party fights through; the patrol is destroyed, but the Fragment it carried is lost in the wreckage of bone and root.",
+                "miss": "The patrol fixes on the party as enemy combatants from their unfinished war. Tick Dread Timer +1; the fight continues until the party flees or breaks the formation by force."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-2-4-the-forgotten-chorus",
+          "title": "The Forgotten Chorus",
+          "description": "In a silent clearing where sound itself dies, the mourning voices of the Chorus rise from hollow birches. They sing in the shape of each PC's worst memory, trying to drown them in grief rather than water.",
+          "timers": [
+            { "name": "Memory Track", "segments": 6, "current": 0, "description": "Shared with Scene 2-1." }
+          ],
+          "encounters": [
+            {
+              "creatureId": "forgotten-chorus",
+              "quantity": 1,
+              "position": "Desperate",
+              "dv": 5,
+              "outcomes": {
+                "clean": "The party answers the Chorus's grief with a memory of their own — spoken aloud, honestly — and the voices quiet, granting a Name Fragment as thanks for being heard.",
+                "partial": "The party endures the Chorus and escapes the clearing, but one PC carries a lingering [SORROW] condition until they can grieve it properly at camp.",
+                "miss": "A PC is fixated and begins suffering Fatigue each exchange until physically pulled from the clearing by an ally."
+              }
+            }
+          ],
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "act-3-the-fortress-heart",
+      "title": "Act III: The Fortress Heart",
+      "description": "The fortress is not built — it is grown. Petrified roots coil into walls, bone-columns hold up roofs of fungus-stone, and halls pulse faintly as if remembering breath. Here the druid's corpse still hangs impaled on the Golden Thorn, and the Nameless Heroine prowls the halls — testing, haunting, or confronting, depending on what the party has earned.",
+      "scenes": [
+        {
+          "id": "scene-3-1-the-oath-archive",
+          "title": "The Oath Archive",
+          "description": "A chamber of bone tablets, each scored through with a name that no longer belongs to anyone. Somewhere among them are fragments of the heroine's own name, deliberately obscured.",
+          "timers": [
+            { "name": "Memory Track", "segments": 6, "current": 0, "description": "Carried from Act II." }
+          ],
+          "encounters": [
+            {
+              "name": "Reading the Scored Tablets",
+              "dv": 5,
+              "position": "Risky",
+              "outcomes": {
+                "clean": "The party correctly identifies which erasure is hers among dozens of forgotten dead, gaining a Name Fragment and understanding the scale of what was done to her.",
+                "partial": "They find the right tablet, but disturb the Bloodless Barracks next door in doing so — a Shadewalker squad wakes.",
+                "miss": "They read the wrong name aloud. A minor spectral backlash strikes; tick Dread Timer +1."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-3-2-hall-of-the-betrayed",
+          "title": "Hall of the Betrayed",
+          "description": "Mirrors line a long hall, each showing the PCs as future undead — corrupted avatars of what the Mist will make of them if they fail here. It is a trap of despair, not claws.",
+          "timers": [
+            { "name": "Memory Track", "segments": 6, "current": 0 }
+          ],
+          "encounters": [
+            {
+              "name": "The Reflected Self",
+              "dv": 4,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "The party recognizes the mirrors for what they are and passes through unshaken; one PC gains insight into the heroine's own despair, adding a Name Fragment.",
+                "partial": "One PC is rattled and marks Mental Strain, but the party moves on.",
+                "miss": "A PC fails their Resolve test and briefly believes the reflection is real — tick Dread Timer +1 and that PC acts erratically for one exchange."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-3-3-the-spear-hall",
+          "title": "The Spear Hall",
+          "description": "The druid's husk hangs nailed to reality by the Golden Thorn, wreathed in eternal fog. The Nameless Heroine watches from the shadows of the root-columns — not attacking yet, but weighing what the party has proven itself to be.",
+          "timers": [
+            { "name": "Memory Track", "segments": 6, "current": 0 },
+            { "name": "Dread Timer", "segments": 6, "current": 0 }
+          ],
+          "encounters": [
+            {
+              "creatureId": "nameless-heroine",
+              "quantity": 1,
+              "position": "Risky",
+              "dv": 5,
+              "outcomes": {
+                "clean": "If Memory Track is at 4+, she speaks to the party directly — offering the location of the last fragments and a warning about the Root-Vault below. If Memory Track is below 4, she withdraws to test them further, leaving a cryptic riddle instead.",
+                "partial": "She tests one PC directly — a trial of oath-keeping or reverence. Success grants a Name Fragment; failure marks that PC [UNWORTHY] for the remainder of the adventure.",
+                "miss": "High Dread makes her hostile. She strikes to wound, not kill, driving the party back — this is a warning, not the final confrontation. Tick Dread Timer +1."
+              }
+            }
+          ],
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "act-4-the-root-vault",
+      "title": "Act IV: Descent into the Root-Vault",
+      "description": "The Root-Vault is an inverted underworld where roots are ossified memory, words become walls, and oaths have gravity. Here, sealed at the breach-point of the First Curse, rests the Resonant Keystone — a crystalline bell-core wrapped in the heroine's erasure. Without it, the bell-line can never be repaired.",
+      "scenes": [
+        {
+          "id": "scene-4-1-the-name-eaters",
+          "title": "The Name-Eaters",
+          "description": "Spectral archivists drift through the root-corridors, ripping identity pages from memory. They are drawn to anyone carrying unspoken Name Fragments, trying to steal them before they can be assembled.",
+          "timers": [
+            { "name": "Memory Track", "segments": 6, "current": 0, "description": "Carried from Act III. The party needs 6 marks to speak the full Name." }
+          ],
+          "encounters": [
+            {
+              "name": "Name-Eater Swarm",
+              "dv": 5,
+              "position": "Desperate",
+              "outcomes": {
+                "clean": "The party protects their gathered fragments and drives the archivists off, gaining the final Name Fragment they need.",
+                "partial": "The party survives, but one uncommitted Fragment is stolen and must be recovered or reasoned out again from context.",
+                "miss": "A PC loses a personal memory permanently (GM's choice, minor but real) as the archivists feed."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-4-2-the-root-engine",
+          "title": "The Root-Engine",
+          "description": "A biomechanical heart-node reorganizes the vault's corridors in real time, threatening to seal the path behind the party as they push toward the Keystone chamber.",
+          "timers": [
+            { "name": "Vault Collapse", "segments": 5, "current": 0, "description": "Ticks each time the party takes a wrong turn, fights loudly, or lingers. At 5, the escape route seals and the party must find an alternate way out." }
+          ],
+          "encounters": [
+            {
+              "name": "Racing the Root-Engine",
+              "dv": 5,
+              "position": "Risky",
+              "outcomes": {
+                "clean": "The party reaches the Keystone chamber before the corridors fully reorganize. No tick to Vault Collapse.",
+                "partial": "The party makes it through, but the return path is compromised. Tick Vault Collapse +2.",
+                "miss": "A corridor seals behind a party member, splitting the group. Tick Vault Collapse +2 and require a separate scene to reunite."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-4-3-the-trial-of-worth",
+          "title": "The Trial of Worth",
+          "description": "To claim the Resonant Keystone, the party must speak or fully assemble the heroine's name, acknowledge her sacrifice and its injustice, and swear an oath — publicly, meaningfully — to restore her saga. This is a scene of testimony and reckoning, not combat.",
+          "timers": [
+            { "name": "Memory Track", "segments": 6, "current": 0, "description": "If at 6, the party may attempt the full Name Rite here." }
+          ],
+          "encounters": [
+            {
+              "name": "The Name Rite",
+              "dv": 6,
+              "position": "Desperate",
+              "outcomes": {
+                "clean": "The full name is spoken correctly. The Keystone resonates and settles into the party's hands; the heroine's shade kneels in the distance, ceasing hostility. Proceed to Act V with her as ally.",
+                "partial": "The name is spoken with one fragment misplaced or unclear. The Keystone is claimed, but inert — it must be re-tuned later, and the heroine remains wary rather than allied.",
+                "miss": "The party attempts to take the Keystone without completing the oath. It fractures, marked with their names, and the heroine becomes an eternal Nemesis. Act V begins with Payden's Port already collapsing."
+              }
+            }
+          ],
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "act-5-the-last-saga",
+      "title": "Act V: The Last Saga — The Seal and the Spear",
+      "description": "The Heart-Fortress shudders as roots split and mist curls in reverse. The pinned druid's body flexes against the Golden Thorn. The party stands where the curse began and will end — or repeat.",
+      "scenes": [
+        {
+          "id": "scene-5-1-the-husk-wakes",
+          "title": "The Husk Wakes",
+          "description": "If the Thorn was disturbed or the Name remains incomplete, the Druid of the Mist reanimates. Root-bone walls shatter into a spiral arena. This is a multi-phase confrontation — the husk cannot be killed, only forced back beneath the Thorn.",
+          "timers": [
+            { "name": "Husk Stabilization", "segments": 6, "current": 0, "description": "Ticks down as the party damages or out-maneuvers the husk across its three phases (Wakes, Unbound Druid, Heart Rift). At 0, the spike can be driven home again." }
+          ],
+          "encounters": [
+            {
+              "name": "Phase I: The Husk Wakes",
+              "dv": 5,
+              "position": "Desperate",
+              "outcomes": {
+                "clean": "The party disrupts the husk's stabilization cleanly, forcing an early transition to Phase II without loss.",
+                "partial": "Progress is made, but root-shade guardians summoned by the husk cost the party Fatigue or Harm.",
+                "miss": "The husk's attacks ignore armor this exchange unless a PC invokes a sacred name or oath. Tick Dread Timer +1."
+              }
+            },
+            {
+              "name": "Phase II: The Unbound Druid",
+              "dv": 6,
+              "position": "Desperate",
+              "outcomes": {
+                "clean": "The party forces the druid's true form — bone, antler, and liquid mist — back toward the sanctum-heart without losing ground.",
+                "partial": "The druid's Corrupted Command rerolls one PC's success into a failure; the party pushes on regardless.",
+                "miss": "Mist Rebirth reforms a dismissed root-shade guardian. The party loses an exchange regaining ground."
+              }
+            },
+            {
+              "name": "Phase III: The Heart Rift",
+              "dv": 6,
+              "position": "Desperate",
+              "outcomes": {
+                "clean": "The party drives the druid back to the spike altar and re-impales it — through sacrifice, bargain, or declared deed. If the Heroine's Name was restored, she intervenes here (see below) for the mythic ending.",
+                "partial": "The druid is re-pinned, but the victory is pyrrhic: the Mist threshold expands, warping the wider region even as the immediate threat ends.",
+                "miss": "The druid attempts to rewrite one PC into its replacement host. That PC must be freed by the party or the fortress claims a new warden."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-5-2-the-heroines-intervention",
+          "title": "Intervention of the Heroine Shade",
+          "description": "If the party completed the Name Quest, the Heroine Shade manifests in full Valkyric radiance, spear alight, weakening the husk's regeneration. A PC must proclaim her Name aloud as she strikes — only then does the cycle finally break, and she impales the druid again with golden light, cascading roots, and the sighs of a thousand dead.",
+          "timers": [],
+          "encounters": [
+            {
+              "name": "Proclaiming the Name",
+              "dv": 4,
+              "position": "Dominant",
+              "outcomes": {
+                "clean": "The Name is spoken true at the critical moment. The arena collapses inward, the mist recoils violently, and the curse breaks. The Heroine becomes a lasting Patron — see Rewards.",
+                "partial": "The Name is spoken, but hesitantly or incompletely. The curse breaks, but the Heroine's parting is more sorrowful than triumphant; she may return as a more distant, conditional ally.",
+                "miss": "The moment is lost — a PC hesitates, or the Name is drowned out by combat. The husk is re-pinned without her help; the Golden Thorn remains inert until her Name is remembered in future play."
+              }
+            }
+          ],
+          "completed": false
+        }
+      ]
+    }
+  ],
+  "npcs": [
+    {
+      "id": "npc-warden-captain-hale",
+      "name": "Warden-Captain Adra Hale",
+      "role": "Commander of Payden's Port's Aeler garrison",
+      "motivation": "Hold the bell-line by any means necessary; she has buried too many wardens to care whose methods work, only that they do.",
+      "stats": "Body 3, Wits 3, Spirit 2, Presence 3",
+      "secret": "Her own grandmother was one of the shield-sisters who died with the nameless heroine — a bloodline connection Hale doesn't know, but the Mist does."
+    },
+    {
+      "id": "npc-mistlander-prior-oswin",
+      "name": "Prior Oswin Greywick",
+      "role": "Senior Mistlander priest, keeper of the port's fog-rituals",
+      "motivation": "Believes the Mist can be appeased rather than fought, and fears that breaking the curse outright will unleash something worse.",
+      "stats": "Wits 4, Spirit 4, Presence 3",
+      "secret": "He has a fragment of the Chord already — inherited, unrecognized — and has been unconsciously using it as a paperweight for a decade."
+    },
+    {
+      "id": "npc-guild-factor-lenna",
+      "name": "Factor Lenna Voss",
+      "role": "Senior Guild trade factor",
+      "motivation": "Wants the Direwood's dangers cataloged and monetized — safe passage rights, salvage claims, first refusal on any artifact recovered.",
+      "stats": "Wits 3, Presence 4",
+      "secret": "She has already lost two salvage crews to the Direwood and told no one; she needs this crew to succeed where her hired hands failed, or the Guild will pull her charter."
+    },
+    {
+      "id": "npc-nameless-heroine",
+      "name": "The Nameless Heroine",
+      "role": "Bound shade, tragic antagonist and potential patron",
+      "motivation": "To be remembered as she was — not the villain's foil, not a ghost story, but a person with a name and a saga worth singing.",
+      "stats": "See bestiary entry: nameless-heroine",
+      "secret": "She does not remember her own name either. The curse erased it from her as thoroughly as from the world; she is not withholding it, she is grieving its absence alongside the party."
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc-paydens-port",
+      "name": "Payden's Port",
+      "description": "A sea-garrison city of cracked statues, storm-beaten docks, and chanting wardens, holding the frontier against the Direwood's encroaching fog. The bell-line that protects it is failing, tolling out of sequence as if the bells themselves have forgotten their pattern.",
+      "tags": ["city", "garrison", "starting-location", "faction-hub"]
+    },
+    {
+      "id": "loc-the-direwood",
+      "name": "The Direwood",
+      "description": "A blighted frontier forest that resists mapping and reacts to intrusion. Paths repeat, distances elongate, and the dead are more numerous than the living. It is less a place than a memory that refuses to stay in the past.",
+      "tags": ["wilderness", "cursed", "mist-choked", "haunted"]
+    },
+    {
+      "id": "loc-fortress-heart",
+      "name": "The Fortress Heart",
+      "description": "A fortress grown rather than built — petrified roots coiled into walls, bone-columns holding up roofs of fungus-stone. Halls pulse faintly as if remembering breath. The druid's corpse hangs impaled here on the Golden Thorn, a font of eternal fog.",
+      "tags": ["dungeon", "boss-location", "grown-architecture", "haunted"]
+    },
+    {
+      "id": "loc-root-vault",
+      "name": "The Root-Vault",
+      "description": "An inverted underworld beneath the fortress where roots are ossified memory, words become walls, and oaths have gravity. The Resonant Keystone rests here, sealed at the exact breach-point where the First Curse began.",
+      "tags": ["dungeon", "vault", "climax-location", "starved-world"]
+    }
+  ],
+  "factions": [
+    {
+      "id": "faction-aeler-garrison",
+      "name": "The Aeler Garrison of Payden's Port",
+      "goals": "Restore the bell-line and hold the frontier, by force if necessary. Values results over methods.",
+      "relationship": "Pragmatic potential allies. They will owe the party a genuine favor if the bell-line is restored — a favor worth more than coin, redeemable as reputation, protection, or a blind eye when needed later."
+    },
+    {
+      "id": "faction-mistlander-priesthood",
+      "name": "The Mistlander Priesthood",
+      "goals": "Appease the Mist rather than destroy it; fear that breaking the curse outright invites something worse than what already exists.",
+      "relationship": "Wary and theologically cautious. They can be won over as allies who provide ritual knowledge, but only if the party treats the Mist's victims — human and heroine alike — with genuine reverence rather than as obstacles."
+    },
+    {
+      "id": "faction-guild-factors",
+      "name": "The Guild Trade Factors",
+      "goals": "Monetize the Direwood's dangers — salvage rights, safe-passage tolls, first claim on recovered artifacts.",
+      "relationship": "Transactional. They offer real resources up front but expect a cut of whatever the party recovers; overpromising to them creates an owed favor that can be called in awkwardly later, at the worst possible moment."
+    }
+  ],
+  "campaignTimers": [
+    {
+      "name": "Dread Timer",
+      "segments": 6,
+      "current": 0,
+      "description": "Rises when the party ignores omens, mishandles the dead, desecrates wards, or bargains carelessly with the Mist. High Dread makes the Nameless Heroine appear as a hostile nemesis rather than a testing guide."
+    },
+    {
+      "name": "Memory Track",
+      "segments": 6,
+      "current": 0,
+      "description": "Shared party track. Marked by uncovering name fragments, fulfilling oaths tied to the heroine's story, suffering hardship in defense of the innocent, or being recognized by shades as her lost companions. At 6, the party may attempt to speak her Name in full."
+    }
+  ],
+  "notes": "Into the Direwood is a 3-5 act wilderness horror saga built around a single mechanical and emotional throughline: the curse is not the druid, it is the erasure. Every set piece should reinforce that violence alone cannot resolve this adventure — only remembrance, spoken with intention, actually ends it. The GM should feel free to compress or expand Acts II-III depending on table appetite for survival-horror pacing; the Name Fragment economy (gather via Memory Track, spend at the Trial of Worth) is the adventure's real spine and should not be rushed. Debt and favor language throughout uses social/narrative currency — reputations, oaths, and stories owed — never ledgers or accounting terms.",
+  "_gmhints": {
+    "pacing": {
+      "act1": "Payden's Port should feel politically alive before it feels haunted. Let the three factions genuinely compete for the party's attention — none of them are wrong to want what they want, and none of them fully understand what's actually in the Direwood. The First Breach (Scene 1-2) is the pivot: it's the party's first taste of the Mist and should be frightening but survivable, a promise of worse to come rather than the worst thing they'll face. Don't let the Charge feel like a foregone conclusion — the party should feel like they chose to go, even if the plot required it.",
+      "act2": "This act is the adventure's engine. Use the Direwood Encounter Generator (Terrain Distortion, Threat Manifestation, Psychological Pressure — three d6 tables, roll 1-2 results per travel segment) to keep every crossing feeling different even when the underlying threats repeat. Nightly Visitations (a PC dreams a fragment of the heroine's life) should arrive out of order and slightly wrong — names inserted that aren't hers, details that don't quite fit — so that players start to feel the shape of the truth before they can name it. Escalate encounters when the party desecrates corpses, mocks the legend, or laughs off a vision; de-escalate and reward when they show reverence.",
+      "act3": "The fortress should feel alive and predatory, not like a static dungeon crawl. Use the Room Generator (d10 chamber table in the source material) to build out extra chambers if the table wants more exploration. The Heroine here is a mirror, not a boss: her behavior should visibly track the party's Memory Track and Dread Timer. If she attacks, it should read as testing or warning, not as a fight to the death — that fight is reserved for Act V if the party fails to name her.",
+      "act4": "The Root-Vault should feel claustrophobic and time-pressured after the wide, wandering dread of Act II — a tonal tightening before the climax. The Trial of Worth (Scene 4-3) is the adventure's emotional crux and should be run as a roleplay-heavy testimony scene, not a skill-challenge grind. Let players actually say the name, out loud, assembled from the fragments they've gathered — the mechanical resolution should follow from what they say, not the other way around.",
+      "act5": "This is a set-piece boss sequence, but the real climax is the naming, not the damage numbers. If the party restored the Name, let the Heroine's intervention feel triumphant and a little unbearably sad — she is winning back what was stolen from her, and it costs her everything she has left to give. If the Name was not restored, the ending should still feel like survival is a real victory, just an incomplete one — leave the door open for the Heroine to return as a recurring figure in later play."
+    },
+    "npcSecrets": {
+      "nameless-heroine": "She genuinely does not remember her own name. This is not a puzzle she's gatekeeping — it's the wound itself. Don't let her ever seem coy or withholding about it; her tragedy only lands if the players understand she wants this as badly as they need it, and cannot simply tell them.",
+      "npc-mistlander-prior-oswin": "Oswin's paperweight is a Chord fragment. If the party investigates Mistlander holdings in Act I with any care (Investigation, Lore, or simply asking good questions), this can be found early — it should feel like a delightful, slightly unsettling discovery, not a gotcha withheld from the players.",
+      "npc-warden-captain-hale": "Hale's bloodline tie to the heroine's shield-sisters should surface only if the party actively researches Payden's Port's founding history or the heroine's companions specifically. When it does surface, it should deepen Hale as a person, not become a twist that recontextualizes her motives — she's been sincere about wanting to hold the line the whole time."
+    },
+    "forbiddenEarlyRevelations": [
+      "That the heroine doesn't remember her own name either — this should land only when the party has earned enough trust (Memory Track 4+) for her to be vulnerable enough to admit it",
+      "That killing the druid's husk again solves nothing permanent without the Name — let the party discover this through the Act V pyrrhic-victory outcome, not through exposition up front",
+      "That Prior Oswin already possesses a Chord fragment — this is a discoverable secret, not a plot dump; it should only surface through active investigation",
+      "That the Trial of Worth requires an oath, not just correct pronunciation — telegraph through the Name Fragment guidance ('must be correctly placed... requiring Roleplay + Lore + Presence') but let the party learn the oath requirement is real when they attempt the Rite, not before",
+      "The full extent of Warden-Captain Hale's bloodline connection — reveal only through deliberate research, never as an unprompted aside"
+    ],
+    "tacticalHints": {
+      "dread_timer": "Make the Dread Timer visible and visceral at the table — describe it as a taste in the air, a wrongness in how far sound carries, a persistent low hum under the mist. Every tick should have an immediate sensory consequence, not just a mechanical one.",
+      "memory_track": "Track this openly with the players; it's meant to feel like a shared quest resource they're building together, not a hidden GM number. Celebrate each mark with a moment of genuine narrative weight — a vision resolving, a shade's posture softening, a piece of the puzzle clicking into place.",
+      "name_fragments": "Fragments are deliberately ambiguous (a syllable, a rune, a phonetic gesture) — resist the urge to make final assembly purely mechanical. Let the players actually propose what they think the name sounds like and adjudicate generously; the goal is the catharsis of speaking it, not a trivia check.",
+      "heroine_as_mirror": "Her hostility or helpfulness should always trace directly back to specific party behavior the table can point to. Never have her turn hostile 'because the plot needs tension here' — if she's dangerous, it's because the party did something in the fiction that earned it.",
+      "escalation_economy": "Use the Story Beat guidance from the source material as a rough SB spend guide: 1 SB for minor environmental shifts (fog thickens, paths loop), 2 SB for moderate complications (wraith attraction, memory loss), 3 SB for serious threats (patrol activation, trap triggers), 4+ SB for major escalations (the Heroine's wrath, the fortress restructuring itself)."
+    }
+  },
+  "currentAct": 0,
+  "currentScene": 0,
+  "startedAt": null,
+  "completedAt": null,
+  "status": "planned",
+  "createdAt": "2026-08-07T00:00:00.000Z",
+  "updatedAt": "2026-08-07T00:00:00.000Z"
+}

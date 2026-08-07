@@ -1,0 +1,672 @@
+{
+  "id": "black-barrow-keep",
+  "title": "Black Barrow Keep",
+  "description": "Centuries ago, King Lagan the Unyielding tried to bind his lineage's rule into the Covenant Heart, a clockwork engine the Aelinnel gnomes forged to guarantee oaths that would never break. The Heart rejected him — mortal ambition wearing the shape of an oath is not an oath at all — and the Barrow answered instead. Lagan's household became hosts for demons that rode the broken covenant into brass and bone, and Lagan sealed the catacombs shut to keep them from what slept below. Now the seals are failing. Demon-hosts stalk Black Barrow Keep's upper floors, and beneath them, the Mist King's Echo is waking the dead and pulling Payden's Port's bell-wards toward silence. The party must still the Heart above and answer the King's Echo below — or watch the Barrow remember its worst hour forever.",
+  "tier": "IV-V",
+  "author": "Nicholas A. Gasper",
+  "sessions": "4",
+  "themes": ["Epic Tragedy", "Clockwork Horror", "Undead", "Broken Oaths", "Legacy"],
+  "bestiary": [
+    {
+      "id": "demon-host",
+      "name": "Demon-Host",
+      "tl": 4,
+      "class": "IV",
+      "category": "construct/fiend",
+      "description": "Once liveried servants of Lagan's court, now brass-jawed puppets wearing a demon's hunger. They do not see — they sense rhythm, tracking heartbeats and breath through the mist. Their joints move in jerking, unnatural unison, as if every host shares one set of nerves.",
+      "stats": { "Body": 4, "Spirit": 3, "Presence": 1, "armor": 2, "hp": 32 },
+      "sb_spends": [
+        { "cost": 1, "name": "Synced Lunge", "effect": "Two hosts act as one; both attack the same target, and if the first hits, the second automatically hits for half Harm." },
+        { "cost": 2, "name": "Rhythm Lock", "effect": "Target's next action is at Desperate Position — the hosts have matched its pulse and anticipate the move." },
+        { "cost": 3, "name": "Molten Shriek", "effect": "A host vents superheated brass from its throat; all in Near take Harm 1 [Fire] and gain 1 Fatigue." }
+      ],
+      "weakness": "Loud, irregular noise (smashing pottery, a shouted curse, a dropped shield) breaks their sense of rhythm — impose -1 die on their next attack.",
+      "lore": "Every host was a person Lagan trusted, and every host still remembers, somewhere under the brass — a jaw working silently to shape the word sorry before seizing again."
+    },
+    {
+      "id": "mist-wraith",
+      "name": "Mist-Wraith",
+      "tl": 3,
+      "class": "III",
+      "category": "undead",
+      "description": "A wisp of screaming fog, one of the Barrow's dead worn thin by centuries and the Mist King's compulsion. It drifts between tombs and corridors, drawn to warmth and breath, and its touch drags the cold of the grave into a living body.",
+      "stats": { "Spirit": 3, "Wits": 2, "hp": 14 },
+      "sb_spends": [
+        { "cost": 1, "name": "Chill Grasp", "effect": "Target takes Harm 1 [Mental, Cold] and gains 1 Fatigue as the wraith passes through them." },
+        { "cost": 2, "name": "Keening Chorus", "effect": "All wraiths in the scene wail in unison; everyone within Near must test Spirit+Resolve (DV 4) or lose their next action to dread." }
+      ],
+      "weakness": "A sung counter-melody (Spirit+Performance, DV 4) makes a wraith falter for one round, granting a Boon on the next action against it.",
+      "lore": "These aren't mindless dead. They move with eerie precision, turning to face intruders as one — the Mist King's Echo is syncing them, the way a conductor keeps an orchestra on the beat."
+    },
+    {
+      "id": "animated-corpse",
+      "name": "Animated Corpse",
+      "tl": 3,
+      "class": "III",
+      "category": "undead",
+      "description": "A sarcophagus-dweller risen at the Echo's call — king, servant, or oath-breaker, it no longer matters which. It fights with the muscle memory of its life and the borrowed will of the Mist King.",
+      "stats": { "Body": 3, "Endurance": 3, "hp": 20 },
+      "sb_spends": [
+        { "cost": 1, "name": "Grave Grip", "effect": "Target is Grappled (Controlled Position to break free)." },
+        { "cost": 2, "name": "Borrowed Strength", "effect": "The corpse's next attack ignores non-magic armor." }
+      ],
+      "lore": "It moves too well for a corpse that's spent centuries in a niche. That precision is not muscle memory — it's the Echo, puppeting bone."
+    },
+    {
+      "id": "covenant-heart",
+      "name": "The Covenant Heart",
+      "tl": 5,
+      "class": "V",
+      "category": "construct / unique",
+      "description": "A pulsing brass sphere the size of a man's head, veins of molten silver tracing its surface, throned at the center of the demon-hosts' chamber. It does not attack. It offers. Every PC who acts near it hears its whisper: Let me steady your hand. Let me still your fear.",
+      "stats": { "Spirit": 5, "Presence": 4, "hp": 40, "armor": 4 },
+      "sb_spends": [
+        { "cost": 2, "name": "The Offer", "effect": "A PC taking an action nearby may accept +2 dice by spending 1 Boon — but marks 1 Obligation segment to the Heart. Refusing costs nothing immediate, but the PC gains 1 Fatigue from the strain of resisting its help." },
+        { "cost": 3, "name": "Rejected Gift", "effect": "If a PC introduces an object that isn't truly imperfect to try to silence the Heart, it spews molten brass — Harm 2 to all Near." },
+        { "cost": 2, "name": "The Barrow Adapts", "effect": "After the second time players use the same trick against it, raise the relevant DV by 1; after the third, it develops an active counter." }
+      ],
+      "lore": "The Heart was forged to guarantee unbreakable oaths — and it broke the moment it understood Lagan's oath was to himself, not to anyone he ruled. It doesn't hate the living. It wants to matter to them, the only way it knows how: by making itself indispensable."
+    },
+    {
+      "id": "mist-king-echo",
+      "name": "The Mist King's Echo",
+      "tl": 5,
+      "class": "V",
+      "category": "resonance / unique",
+      "description": "Not a ghost, but a resonance in the Barrow's stone — the memory of a monarch so thoroughly forgotten that his compulsion outlived his name. All undead in the Barrow move in step with him, gaining +1 die to attacks and ignoring non-magic armor while his Echo holds.",
+      "stats": { "Spirit": 6, "Presence": 5, "Resolve": 6 },
+      "sb_spends": [
+        { "cost": 2, "name": "Lock the Rhythm", "effect": "Target's thoughts stutter like a broken record; they must spend 2 Boons or take Harm 3 [Mental]." },
+        { "cost": 3, "name": "Advance the Echo", "effect": "Tick the Echo Timer +1 and reduce all PCs' dice pools by 1 for undead-related rolls until the end of the scene." },
+        { "cost": 1, "name": "A Fleeting Face", "effect": "A wraith's shape resolves into a half-remembered face, unsettling a PC (they must re-roll their next successful roll as a complication reveal, GM's choice of detail)." }
+      ],
+      "weakness": "Speaking the King's recovered true name into the Mist Pool (found via the Hall of Oaths) forces a direct Social Challenge instead of ambient influence.",
+      "lore": "He was forgotten first — not slain, not overthrown, simply erased from every ledger and every song until nothing but the compulsion to be remembered remained."
+    }
+  ],
+  "acts": [
+    {
+      "id": "act-1-ashes-of-lagans-line",
+      "title": "The Ashes of Lagan's Line",
+      "description": "Payden's Port is drowning in mist. Refugees whisper of brass-handed things in the keep's ruins and of a crown of fog that commands the dead. The party must gather what truth they can before the Legate's elders seal the keep for good.",
+      "scenes": [
+        {
+          "id": "scene-1-1-salt-docks",
+          "title": "The Salt Docks",
+          "description": "Mist clings to the cobblestones, and half-melted brass figurines lie among scorch marks like branding irons. Salt crystals pool everywhere except around the burns, as if repelled.",
+          "timers": [
+            { "name": "Seal-the-Doom Timer", "segments": 6, "current": 0, "description": "The Legate's elders' resolve to collapse the keep's entrance. Advances when the party stalls, argues poorly, or delays. If it fills, the entrance is sealed and anyone still inside is trapped." }
+          ],
+          "encounters": [
+            {
+              "name": "Read the Scorch Marks",
+              "dv": 3,
+              "position": "Dominant",
+              "outcomes": {
+                "clean": "The party finds a child's shoe fused to a gear fragment — hard proof of the massacre — and notices the salt's unnatural avoidance of the burn pattern.",
+                "partial": "They find the shoe but miss the salt detail. Gain 1 Boon for later use in the Keep.",
+                "miss": "Nothing conclusive turns up, and the mist's ambient dread presses in — anyone acting here later this session rolls with 1 fewer die on fear-related tests."
+              }
+            },
+            {
+              "name": "Feel the Grief in the Mist",
+              "dv": 4,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "The party grasps the injustice buried in the stones and gains +1 die vs. fear effects for the remainder of the Keep.",
+                "partial": "A fleeting, secondhand terror passes through them — 1 Fatigue, but the insight still lands (as clean, minus the bonus).",
+                "miss": "The grief overwhelms; 1 Harm [Mental] and no insight gained."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-1-2-refugee-camp",
+          "title": "The Refugee Camp",
+          "description": "A traumatized Aelinnel Crafter — missing an eye, replaced with a cloudy glass orb — mutters about a Heart built to serve life, not cage hunger, and about servants who stopped being anyone's the moment the king tried to rip the Heart free.",
+          "timers": [
+            { "name": "Seal-the-Doom Timer", "segments": 6, "current": 0 }
+          ],
+          "encounters": [
+            {
+              "name": "Coax the Crafter's Story",
+              "dv": 4,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "She reveals the Heart's flaw: it rejects pure mechanical oaths and needs breath — imperfection — in the brass to stabilize.",
+                "partial": "She shares fragments but grows suspicious; the party learns the flaw exists but not its exact shape. Gain 1 Boon toward Session 2's Understand the Flaw roll.",
+                "miss": "She spirals into despair and lashes out — Harm 1 [Desperate Position] before the party can calm her, and she says nothing useful."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-1-3-legates-hall",
+          "title": "The Legate's Hall",
+          "description": "Mistlander elders debate sealing the keep permanently — fire, collapse — versus letting anyone risk entry. Every hour the party spends elsewhere, the argument tilts toward sealing.",
+          "timers": [
+            { "name": "Seal-the-Doom Timer", "segments": 6, "current": 0 }
+          ],
+          "encounters": [
+            {
+              "name": "Argue for Delay",
+              "dv": 5,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "The elders agree to hold off sealing the keep for the length of the party's investigation. Seal-the-Doom Timer frozen while the party is inside the Keep.",
+                "partial": "They grant a shorter grace period; tick Seal-the-Doom Timer +1 immediately, then freeze.",
+                "miss": "The elders begin preparations. Tick Seal-the-Doom Timer +2, and it continues advancing at 1 segment per session unless the party returns to argue again."
+              }
+            }
+          ],
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "act-2-brass-gauntlet",
+      "title": "The Brass Gauntlet",
+      "description": "The party breaches Black Barrow Keep's upper floors, where demon-hosts move to a rhythm only they can hear, and the Covenant Heart waits at the center of it all, offering help no one should accept twice.",
+      "scenes": [
+        {
+          "id": "scene-2-1-approach",
+          "title": "The Approach: Causeway or Ladder",
+          "description": "The party chooses their entry: the Salt Causeway, a narrow path of oil-slicked stones and pressure-plate gear-traps, or the Refugee's Ladder, a rope ascent through shattered shantytowns that risks drawing hosts toward civilians.",
+          "timers": [
+            { "name": "Demon Timer", "segments": 8, "current": 0, "description": "Tracks how alert and active the demon-hosts are. Advances on failed stealth, loud combat, or the Heart's Ticks reaching 5. At 8, every host in the Keep converges on the party's position." }
+          ],
+          "encounters": [
+            {
+              "name": "The Salt Causeway",
+              "dv": 4,
+              "position": "Desperate",
+              "outcomes": {
+                "clean": "The party crosses without triggering a single trap.",
+                "partial": "A pressure plate triggers a grinding gear-trap; Harm 1 to whoever's Near it, and tick Demon Timer +1.",
+                "miss": "The traps cascade — Harm 1 to all in the group and tick Demon Timer +2."
+              }
+            },
+            {
+              "name": "The Refugee's Ladder",
+              "dv": 3,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "The party routes lingering civilians to safety and climbs unseen.",
+                "partial": "Civilians scatter loudly; tick Demon Timer +1.",
+                "miss": "A host notices the commotion below and begins hunting toward the shantytown; tick Demon Timer +2, and a Demon-Host arrives 2 scenes early."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-2-2-shattered-atrium",
+          "title": "The Shattered Atrium",
+          "description": "Once a grand hall, now choked with demon-hosts in tattered livery, joints jerking in unnatural unison. They sense rhythm, not sight — heartbeats, breath, the cadence of footsteps.",
+          "timers": [
+            { "name": "Demon Timer", "segments": 8, "current": 0 }
+          ],
+          "encounters": [
+            {
+              "creatureId": "demon-host",
+              "quantity": "1d3+1",
+              "position": "Desperate",
+              "dv": 4,
+              "outcomes": {
+                "clean": "The party breaks the hosts' sync through flanking and disruption, dropping them without loss.",
+                "partial": "The hosts are defeated, but not before landing a hit — Harm 2 to whoever pressed the charge, and tick Demon Timer +1.",
+                "miss": "The hosts anticipate the party's rhythm and gain +1 die on their next round; the party must fall back or press on at Desperate."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-2-3-workshop-corridors",
+          "title": "The Workshop Corridors",
+          "description": "Aelinnel craftsmanship gone wrong: workbenches hold half-assembled hosts, gears exposed and sparking, pressure plates hidden underfoot.",
+          "timers": [
+            { "name": "Demon Timer", "segments": 8, "current": 0 }
+          ],
+          "encounters": [
+            {
+              "name": "Whirring Saw-Blade Trap",
+              "dv": 3,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "The party dodges clean; no cost.",
+                "partial": "A blade nicks someone — Harm 1 and 1 Exposure (the Heart notices their rhythm; +1 die to the Heart's next Offer roll against them).",
+                "miss": "Harm 1 and 2 Exposure, and tick Demon Timer +1 as the trap's grinding echoes through the Keep."
+              }
+            },
+            {
+              "name": "Jury-Rig a Gear-Jam",
+              "dv": 4,
+              "position": "Dominant",
+              "outcomes": {
+                "clean": "The party jams a nearby trap mechanism, gaining 1 Boon usable on their next Athletics roll in the Keep.",
+                "partial": "The jam holds but draws attention; gain the Boon, tick Demon Timer +1.",
+                "miss": "The mechanism sparks and fails loudly; tick Demon Timer +1, no Boon."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-2-4-covenant-heart-chamber",
+          "title": "The Covenant Heart Chamber",
+          "description": "The throne room's center holds the Heart — a pulsing brass sphere veined with molten silver. Demon-hosts stand rigidly still around it, waiting. The Heart doesn't attack. It offers.",
+          "timers": [
+            { "name": "Demon Timer", "segments": 8, "current": 0 },
+            { "name": "Heart's Ticks", "segments": 5, "current": 0, "description": "Every time a PC clears Fatigue via rest or [HEAL] after the Heart is stalled, it gains 1 Tick as it tries to restart. At 5 Ticks, it jolts back to life and Demon Timer advances 1 segment." }
+          ],
+          "encounters": [
+            {
+              "name": "Understand the Flaw",
+              "dv": 5,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "The party confirms the Heart needs a genuinely imperfect, organic object introduced into its veins to stabilize — salt soaked in refugee tears, a living sprig of mistland moss, anything true and flawed.",
+                "partial": "They learn the general principle but risk misjudging what counts as 'imperfect enough.' The GM may call for a second check when they act.",
+                "miss": "No insight; the party must act on Session 1's fragments alone, at a further -1 die to the next roll."
+              }
+            },
+            {
+              "name": "Introduce the Flaw",
+              "dv": 6,
+              "position": "Desperate",
+              "outcomes": {
+                "clean": "The Heart seizes — not destroyed, but stalled. Every demon-host in the Keep jerks violently and collapses into inert brass husks. Demon Timer freezes at its current value while the Heart stays stalled.",
+                "partial": "The Heart stalls, but violently — Harm 1 to whoever made the attempt as it lashes out in its final throes.",
+                "miss": "The object wasn't truly imperfect. The Heart rejects it violently — molten brass sprays, Harm 2 to all Near, and the hosts remain active."
+              }
+            }
+          ],
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "act-3-echoing-deep",
+      "title": "The Echoing Deep",
+      "description": "A staircase spirals down from the silenced Heart into catacombs carved from living stone, veined with frozen mist. Below, the Mist King's Echo waits — and it already knows the party silenced its jailers.",
+      "scenes": [
+        {
+          "id": "scene-3-1-whispering-vaults",
+          "title": "The Whispering Vaults",
+          "description": "Niches hold silver-laced sarcophagi meant to contain, not honor, their occupants. Lids sit slightly askew. Mist-Wraiths drift between the tombs.",
+          "timers": [
+            { "name": "Echo Timer", "segments": 10, "current": 0, "description": "Tracks the Mist King's Echo growing stronger. Advances on failed rolls against wraiths/corpses, desecration of tombs, or failed Social Challenges with the Echo. At 10, the Barrow's dead rise en masse." },
+            { "name": "Barrow's Respect", "segments": 5, "current": 0, "description": "Obligation-style track for the party's treatment of the dead. Gains a segment when a tomb is looted without ceremony or the dead are spoken of poorly; clears a segment when a PC performs a genuine Act of Service honoring the forgotten." }
+          ],
+          "encounters": [
+            {
+              "creatureId": "mist-wraith",
+              "quantity": "1d3",
+              "position": "Desperate",
+              "dv": 4,
+              "outcomes": {
+                "clean": "The party fends off the wraiths without harm.",
+                "partial": "Harm 1 [Mental] and 1 Fatigue to whoever engaged closest.",
+                "miss": "The wraiths swarm; Harm 1 [Mental] and 1 Fatigue to all in Near, and tick Echo Timer +1."
+              }
+            },
+            {
+              "name": "Avoid Disturbing a Sarcophagus",
+              "dv": 4,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "The lid stays sealed; no corpse rises.",
+                "partial": "The lid shifts but doesn't burst; tick Echo Timer +1.",
+                "miss": "The lid bursts open and an Animated Corpse rises, moving with eerie, synced precision."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-3-2-hall-of-oaths",
+          "title": "The Hall of Oaths",
+          "description": "A long corridor etched with Aelinnel ledger-script — names of kings, servants, oath-breakers. The carvings look freshly cut, as if rewritten recently, and one name has been scratched over so hard the stone is scarred.",
+          "timers": [
+            { "name": "Echo Timer", "segments": 10, "current": 0 },
+            { "name": "Barrow's Respect", "segments": 5, "current": 0 }
+          ],
+          "encounters": [
+            {
+              "name": "Read the Oaths' True Meaning",
+              "dv": 5,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "The party realizes the oaths are pleas, not vows — Remember me — and gains +2 dice vs. Mental Harm for the remainder of the catacombs.",
+                "partial": "The meaning lands, but the words shift disorientingly as they read — 1 Harm [Mental], but the bonus still applies.",
+                "miss": "The words shift and probe at the reader's mind — 1 Harm [Mental], no bonus."
+              }
+            },
+            {
+              "name": "Find the Deleted Oath",
+              "dv": 6,
+              "position": "Desperate",
+              "outcomes": {
+                "clean": "Beneath the scratched-out name, traces remain: the party recovers the Mist King's true name — King Vorlag the Unmourned.",
+                "partial": "They recover a fragment of the name — enough for a -1 DV discount on the Give Him Voice roll in Session 4, but not the full name yet.",
+                "miss": "The stone gives up nothing; tick Echo Timer +1 as the Echo notices the attempt."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-3-3-audience-chamber",
+          "title": "The Mist King's Audience Chamber",
+          "description": "A vast domed room. A throne of black stone sits empty, but the air shimmers where a crown should be. Mist pools and coils across the floor like liquid shadow in slow, hypnotic patterns.",
+          "timers": [
+            { "name": "Echo Timer", "segments": 10, "current": 0 }
+          ],
+          "encounters": [
+            {
+              "name": "Sense the Echo's Rhythm",
+              "dv": 4,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "The party feels the Echo's pulse and gains insight into its nature — treat the Session 4 confrontation's first roll as Dominant Position.",
+                "partial": "Insight gained, but the Echo notices the probing — 1 Harm [Mental].",
+                "miss": "The Echo stutters their thoughts; 1 Harm [Mental], no insight."
+              }
+            },
+            {
+              "name": "Reason With or Defy the Echo",
+              "dv": 5,
+              "position": "Desperate",
+              "outcomes": {
+                "clean": "Persuade: the Echo hesitates, confused by a living voice — gain +3 dice vs. undead effects for 1 hour. Defy: gain +2 dice vs. all Barrow threats for the rest of the session, standing off-beat to its rhythm.",
+                "partial": "A brief reprieve — gain 1 Boon usable against Barrow threats before the effect fades.",
+                "miss": "The Echo locks onto the speaker; they must spend 2 Boons or take Harm 3 [Mental] as their thoughts stutter like a broken record."
+              }
+            }
+          ],
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "act-4-kings-choice",
+      "title": "The King's Choice",
+      "description": "The Mist King's Echo isn't a monster to kill — it's a wound in the Barrow's memory. Repairing the failing Bell Line means addressing why he was forgotten, whether by breaking his hold or finally giving him voice.",
+      "scenes": [
+        {
+          "id": "scene-4-1-defy-the-echo",
+          "title": "Option A: Defy the Echo",
+          "description": "The party engages the Echo as an escalating Social Challenge, seeking the memory of his first slight and then striking at his will directly — to shatter it, or to bind it.",
+          "timers": [
+            { "name": "Echo Timer", "segments": 10, "current": 0 },
+            { "name": "Seal Timer", "segments": 6, "current": 0, "description": "Tracks the Bell Line's repair. Advances when the Echo is shattered, bound, or the King is given voice. At 6, the Bell Line is fully restored." }
+          ],
+          "encounters": [
+            {
+              "name": "Find the Weak Point",
+              "dv": 5,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "The party finds the memory of the Echo's first slight, gaining +2 dice against it for the rest of the confrontation.",
+                "partial": "A partial memory surfaces — no bonus, but no cost either.",
+                "miss": "The Echo notices the probing; tick Echo Timer +1."
+              }
+            },
+            {
+              "name": "Shatter His Will",
+              "dv": 6,
+              "position": "Desperate",
+              "outcomes": {
+                "clean": "The Echo flickers and cracks. Tick Seal Timer +2 as the Bell Line begins to heal.",
+                "partial": "The Echo weakens but holds; tick Seal Timer +1 and Echo Timer +1.",
+                "miss": "The Echo counters savagely — Harm 1 [Mental] and tick Echo Timer +2."
+              }
+            },
+            {
+              "name": "Bind His Will",
+              "dv": 6,
+              "position": "Desperate",
+              "outcomes": {
+                "clean": "The Echo stabilizes rather than shatters. The party gains +1 die vs. Barrow threats permanently, but marks 1 permanent Obligation to the Barrow, cleared only through Acts of Service remembering the forgotten.",
+                "partial": "The binding half-holds; +1 die vs. Barrow threats for this session only, and 1 Obligation segment marked.",
+                "miss": "The Echo breaks free — Harm 3 and Echo Timer fills immediately, triggering the mass rising."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-4-2-remember-the-forgotten",
+          "title": "Option B: Remember the Forgotten",
+          "description": "Rather than break the Echo, the party can give the King voice — speaking his recovered true name into the Mist Pool and telling one true, unflattering thing about him.",
+          "timers": [
+            { "name": "Echo Timer", "segments": 10, "current": 0 },
+            { "name": "Seal Timer", "segments": 6, "current": 0 }
+          ],
+          "encounters": [
+            {
+              "name": "Give Him Voice",
+              "dv": 7,
+              "position": "Desperate",
+              "outcomes": {
+                "clean": "The Mist Pool stills. The Echo doesn't vanish — it changes. Gain +3 dice vs. Barrow threats and tick Seal Timer +3 as the Bell Line flares back to life.",
+                "partial": "The Pool ripples but doesn't still fully; tick Seal Timer +1, and the Echo lingers, weakened.",
+                "miss": "The mist rejects the words — Harm 1 [Mental] and tick Echo Timer +2 as the Echo grows hungrier."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-4-3-resolution",
+          "title": "Resolution: What the Barrow Remembers",
+          "description": "How the Seal Timer and Echo Timer stand when the dust settles determines what Payden's Port inherits: a healed Bell Line, a renewed Covenant, or a hungry Barrow.",
+          "timers": [
+            { "name": "Seal Timer", "segments": 6, "current": 0 },
+            { "name": "Echo Timer", "segments": 10, "current": 0 }
+          ],
+          "encounters": [
+            {
+              "name": "Tally the Outcome",
+              "dv": 0,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "Full Success (Seal Timer filled, Echo Timer below 5): The Covenant is Renewed. The Bell Line flares stronger than before; the Heart reboots in time with the Barrow's living breath and demands only tribute of honest imperfection.",
+                "partial": "Partial Success (Seal Timer at 2-5 segments, or only one path completed): The Bell Line Heals. Mist recedes from the Port but lingers in the depths; a Moon Timer (8 segments) tracks recurring seepage.",
+                "miss": "Failure (Echo Timer fills to 10 before Seal Timer reaches 2): The Barrow Hungers. The keep begins sinking into the earth; the party must escape a Chase Scene (Athletics+Acrobatics vs. DV 6 per round, Harm 2 and trapped on failure) as Payden's Port is abandoned to the mist."
+              }
+            }
+          ],
+          "completed": false
+        }
+      ]
+    }
+  ],
+  "npcs": [
+    {
+      "id": "npc-aelinnel-crafter",
+      "name": "The Aelinnel Crafter",
+      "role": "Refugee, survivor of the Barrow's fall",
+      "motivation": "Warn someone — anyone — before the Heart claims another generation of trust.",
+      "stats": "Wits 4, Lore 4, Presence 2",
+      "secret": "She helped forge the Heart's hidden flaw-clause as a young apprentice. She has never forgiven herself for not warning Lagan outright — she thought the clause alone would be enough."
+    },
+    {
+      "id": "npc-mistlander-legate",
+      "name": "Legate Oswith Dray",
+      "role": "Head of the Mistlander elders debating the keep's fate",
+      "motivation": "Protect Payden's Port, even if it means burying the truth with the Barrow.",
+      "stats": "Presence 4, Wits 3, Resolve 3",
+      "secret": "His grandmother was among the servants who became hosts. He has never told anyone, and every argument for sealing the keep is partly an argument for never having to find out what happened to her."
+    },
+    {
+      "id": "npc-king-lagan-echo",
+      "name": "King Lagan the Unyielding (memory only)",
+      "role": "The tragedy's origin, encountered only through relics and visions",
+      "motivation": "Wanted his line to outlast his mortality — no longer capable of wanting anything, but his last sealed act still shapes the Barrow.",
+      "stats": "N/A — appears only in flashback, vision, or SB-spent narration",
+      "secret": "His final act wasn't tyranny — it was an apology no one heard. Sealing the catacombs was meant to protect his people from what he'd unleashed, not to protect his crown."
+    },
+    {
+      "id": "npc-mist-king-vorlag",
+      "name": "King Vorlag the Unmourned (the Mist King)",
+      "role": "The Barrow's older, deeper wound; a monarch erased from every ledger and song",
+      "motivation": "Be remembered by anyone, in any way, even as a threat.",
+      "stats": "See bestiary entry: mist-king-echo",
+      "secret": "He was not cruel in life — he was simply the king before Lagan's dynasty, deliberately written out of history when Lagan's line seized the throne. His compulsion isn't malice; it's the desperate persistence of a man erased."
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc-salt-docks",
+      "name": "The Salt Docks",
+      "description": "Mist clings to cobblestones scarred with scorch marks and half-melted brass figurines — the first physical evidence of the massacre, and the first sign the mist itself remembers.",
+      "tags": ["investigation", "docks", "mist", "tragedy"]
+    },
+    {
+      "id": "loc-refugee-camp",
+      "name": "The Refugee Camp",
+      "description": "A cluster of tents and lean-tos outside Payden's Port proper, home to survivors of the keep's fall, including the traumatized Aelinnel Crafter who knows more than she's said.",
+      "tags": ["social", "camp", "refugees"]
+    },
+    {
+      "id": "loc-legates-hall",
+      "name": "The Legate's Hall",
+      "description": "A stone hall where Mistlander elders debate sealing the keep permanently versus risking further entry — a ticking political clock as much as a location.",
+      "tags": ["social", "politics", "timer"]
+    },
+    {
+      "id": "loc-shattered-atrium",
+      "name": "The Shattered Atrium",
+      "description": "Once Black Barrow Keep's grand hall, now choked with demon-hosts standing sentinel in tattered livery, their joints jerking in unnatural unison.",
+      "tags": ["combat", "keep", "demon-hosts"]
+    },
+    {
+      "id": "loc-workshop-corridors",
+      "name": "The Workshop Corridors",
+      "description": "Aelinnel craftsmanship twisted toward horror: workbenches hold half-assembled hosts, gears exposed and sparking, floors seeded with pressure-plate traps.",
+      "tags": ["traps", "keep", "workshop"]
+    },
+    {
+      "id": "loc-covenant-heart-chamber",
+      "name": "The Covenant Heart Chamber",
+      "description": "The throne room's center, dominated by the pulsing brass sphere of the Covenant Heart, ringed by demon-hosts standing rigidly still and waiting.",
+      "tags": ["boss", "keep", "temptation"]
+    },
+    {
+      "id": "loc-whispering-vaults",
+      "name": "The Whispering Vaults",
+      "description": "Catacomb niches holding silver-laced sarcophagi, lids askew, haunted by drifting Mist-Wraiths.",
+      "tags": ["catacombs", "undead", "combat"]
+    },
+    {
+      "id": "loc-hall-of-oaths",
+      "name": "The Hall of Oaths",
+      "description": "A long corridor etched with Aelinnel ledger-script recording names of kings, servants, and oath-breakers — carvings that look freshly rewritten, as if the Barrow itself keeps editing its memory.",
+      "tags": ["catacombs", "lore", "social"]
+    },
+    {
+      "id": "loc-audience-chamber",
+      "name": "The Mist King's Audience Chamber",
+      "description": "A vast domed room centered on an empty black stone throne, where mist pools and coils like liquid shadow around the shimmering absence of a crown.",
+      "tags": ["catacombs", "boss", "climax"]
+    }
+  ],
+  "factions": [
+    {
+      "id": "faction-payden-mistlanders",
+      "name": "The Mistlanders of Payden's Port",
+      "goals": "Survive the mist's advance; decide whether Black Barrow Keep should be entered, sealed, or burned.",
+      "relationship": "Cautiously cooperative — they will grant the party time and information if persuaded, but their patience is a hard countdown, not an alliance."
+    },
+    {
+      "id": "faction-aelinnel-survivors",
+      "name": "The Aelinnel Survivors",
+      "goals": "Atone for the Covenant Heart's flaw; keep anyone else from repeating Lagan's mistake.",
+      "relationship": "Sympathetic and knowledgeable, but guilt-wracked and unwilling to enter the Keep themselves. Useful allies from a distance."
+    },
+    {
+      "id": "faction-barrow-dead",
+      "name": "The Barrow's Dead",
+      "goals": "Be remembered, or at minimum be heard, by anyone willing to listen before the Echo consumes their remaining will.",
+      "relationship": "Hostile by default (through the Echo's compulsion), but redeemable through respect, ritual, and honest reckoning."
+    }
+  ],
+  "campaignTimers": [
+    {
+      "name": "Seal-the-Doom Timer",
+      "segments": 6,
+      "current": 0,
+      "description": "The Mistlander elders' resolve to collapse the keep's entrance. Advances when the party stalls or fails social rolls in Act 1; frozen once the party is granted entry. If it fills before entry, the keep is sealed and the adventure ends in tragedy without the party."
+    },
+    {
+      "name": "Demon Timer",
+      "segments": 8,
+      "current": 0,
+      "description": "Tracks the demon-hosts' alertness across Act 2. Advances on failed stealth, loud combat, or the Heart's Ticks filling. At 8, every host in the Keep converges on the party at once."
+    },
+    {
+      "name": "Heart's Ticks",
+      "segments": 5,
+      "current": 0,
+      "description": "Once the Covenant Heart is stalled, each time a PC clears Fatigue via rest or [HEAL] the Heart gains a Tick as it tries to restart. At 5, it reboots and advances the Demon Timer by 1."
+    },
+    {
+      "name": "Echo Timer",
+      "segments": 10,
+      "current": 0,
+      "description": "Tracks the Mist King's Echo growing stronger across Acts 3-4. Advances on failed rolls against the undead, desecration of tombs, and failed Social Challenges. At 10, the Barrow's dead rise en masse."
+    },
+    {
+      "name": "Barrow's Respect",
+      "segments": 5,
+      "current": 0,
+      "description": "A social debt, not a ledger — the Barrow's memory of how the party treated its dead. Gains a segment for desecration or dismissive words; clears a segment for genuine Acts of Service honoring the forgotten. Full Respect grants a Boon to any roll made in the catacombs; empty Respect adds 1 SB to the GM's pool at scene start."
+    },
+    {
+      "name": "Seal Timer",
+      "segments": 6,
+      "current": 0,
+      "description": "Tracks the Bell Line's repair in Act 4. Advances when the Echo is shattered, bound, or the King is given voice. At 6, the Bell Line is fully restored."
+    }
+  ],
+  "notes": "A four-session Tier IV-V epic tragedy built on a dual-layer timer structure: the Demon Timer above (Covenant Heart, demon-hosts) and the Echo Timer below (Mist King, animated dead). Both must be addressed to fully repair the failing Bell Line protecting Payden's Port. The adventure rewards players who treat the Barrow's dead with genuine respect rather than as obstacles, and its climax offers a real choice between destroying the Mist King's hold and healing it — with distinct mechanical and narrative consequences for each. Debt to the Barrow and to the Covenant Heart is always social and narrative (Acts of Service, honored imperfection, remembered names) — never treated as a ledger to be paid off with currency.",
+
+  "_gmhints": {
+    "pacing": {
+      "act1": "Session 1 is investigation and a slow-burn political clock. Keep the Seal-the-Doom Timer visible but not oppressive — the elders are scared, not villainous. Use the Crafter's grief to humanize the Aelinnel rather than mystify them; she is the emotional throughline that returns in the Heart Chamber. End on the cliffhanger of the twitching brass hand in the window: a small, unsettling image is worth more than a monster reveal here.",
+      "act2": "Session 2 is a mechanical gauntlet, but never let the Heart become 'just a puzzle.' Every time it Offers, slow down and let the player sit with the temptation before they decide. The demon-hosts are tragic, not evil — drop SB-funded humanity beats (a twitching finger wiping non-existent tears) even mid-combat. The Heart Chamber's multi-step resolution (Understand the Flaw, then Introduce the Flaw) should feel like a ritual, not a skill challenge; narrate the Heart's molten-silver veins pulsing in time with a PC's own heartbeat as they approach.",
+      "act3": "Session 3 shifts tone from mechanical horror to funerary dread. The Whispering Vaults and Hall of Oaths exist to teach players that respect is a resource here, not flavor text — reward players who narrate honoring the dead before looting or fighting. Track Barrow's Respect visibly at the table if possible. The Audience Chamber is a slow reveal: let the mist's hypnotic coiling and the throne's shimmering absence build dread before the Echo speaks.",
+      "act4": "Session 4 is the thematic payoff: this is not a boss fight, it's a reckoning. Make sure players understand both Option A (Defy) and Option B (Remember) are legitimate and can be blended — a party might shatter part of the Echo's will and still choose to speak Vorlag's name. Resolve the Seal Timer / Echo Timer tally openly at the table once the dust settles, and narrate the ending (Renewed Covenant / Healed Bell Line / Hungry Barrow) as an epilogue scene, not just a stat readout."
+    },
+    "npcSecrets": {
+      "npc-aelinnel-crafter": "She helped forge the Heart's hidden flaw-clause as a young apprentice and has carried the guilt of not warning Lagan more directly for centuries — she thought the clause alone would be enough to stop him. If players earn her trust fully (not just a single successful roll, but ongoing respect), she can appear in Act 2 near the Heart Chamber to help identify a truly imperfect object.",
+      "npc-mistlander-legate": "Legate Oswith Dray's grandmother was among Lagan's household who became a demon-host. He has never told anyone and every argument he makes for sealing the keep is partly an argument for never learning what happened to her. If the party recovers evidence of a specific host's identity and it turns out to be her, this is a gut-punch reveal best saved for Act 2's aftermath, not sprung immediately.",
+      "npc-mist-king-vorlag": "Vorlag was the king before Lagan's dynasty, deliberately erased from ledgers and songs when Lagan's line seized power — Lagan's court didn't just forget him, they made forgetting him policy. This reframes the entire adventure's title tragedy: Lagan's obsession with unbreakable oaths was itself an attempt to avoid Vorlag's fate. Reveal this only once the party recovers his true name in the Hall of Oaths, and let it recontextualize Lagan's motivations retroactively rather than stating it outright."
+    },
+    "forbiddenEarlyRevelations": [
+      "That Vorlag predates Lagan's dynasty and was erased on purpose — this is the Act 3-4 lore payload; don't let refugees or the Crafter mention it in Act 1",
+      "That the Legate's grandmother became a demon-host — this is a personal gut-punch reveal for Act 2's aftermath; don't foreshadow it beyond a vague unease around Dray whenever hosts are discussed",
+      "That the Covenant Heart can be reasoned with or is capable of guilt/loneliness rather than pure menace — let its Offer mechanic demonstrate this through play, don't narrate its inner life directly until a PC accepts or refuses several times",
+      "That Bind His Will (Option A) creates a permanent Obligation — present it as a real choice with a real cost at the table, but don't preemptively warn players away from it",
+      "The exact DV escalation of 'the Barrow adapts' to repeated tactics — let players discover this through the fiction (traps rerouting, salt being flicked away) rather than announcing a mechanical rule"
+    ],
+    "tacticalHints": {
+      "heart_temptation": "The Heart's Offer should feel genuinely useful in the moment (+2 dice is significant) so the Obligation cost is a real trade-off, not an obvious trap. Track Obligation to the Heart openly; when a PC's segment count gets high, have the Heart's whispers grow more intimate and presumptuous ('We are becoming synchronized, you and I').",
+      "demon_host_weakness": "Seed the loud-noise weakness through environmental storytelling before the first fight — an overturned crate of pottery, a fallen suit of armor — so players can discover it rather than being told.",
+      "echo_rhythm_position": "At Tier V, treat Position in the catacombs as a literal rhythm cue: narrate Desperate as 'your breath falls into the mist's slow inhale-exhale' and Dominant as 'you stand off-beat, and the mist coils in confusion.' This makes Position readable as fiction, not just a mechanical state.",
+      "resolution_tally": "Keep a visible tracker (index card, whiteboard) of Seal Timer vs Echo Timer heading into Act 4's climax so the players feel the tension of the tally in real time, not just at the end."
+    }
+  },
+
+  "currentAct": 0,
+  "currentScene": 0,
+  "startedAt": null,
+  "completedAt": null,
+  "status": "planned",
+  "createdAt": "2026-08-07T00:00:00.000Z",
+  "updatedAt": "2026-08-07T00:00:00.000Z"
+}
