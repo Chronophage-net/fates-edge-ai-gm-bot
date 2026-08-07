@@ -16,6 +16,17 @@ const os = require('os');
 
 const DRIVERS_DIR = path.join(__dirname, 'drivers');
 
+// Expand a leading "~" (or "~/...") to the user's home directory before
+// resolving, since the shell isn't the one expanding it for us here.
+function expandHome(filePath) {
+    if (!filePath) return filePath;
+    if (filePath === '~') return os.homedir();
+    if (filePath.startsWith('~/') || filePath.startsWith('~\\')) {
+        return path.join(os.homedir(), filePath.slice(2));
+    }
+    return filePath;
+}
+
 // ================================
 // Utility: prompt for user input
 // ================================
@@ -37,18 +48,18 @@ async function scanDrivers() {
 
     for (const file of files) {
         if (!file.endsWith('.js')) continue;
+        if (file === 'ai-driver.js') continue; // abstract base class, not a selectable backend
         const filePath = path.join(DRIVERS_DIR, file);
         try {
             const driver = require(filePath);
-            // If the driver has a meta property, use it; otherwise derive from file name.
-            const meta = driver.meta || {
-                name: path.basename(file, '.js'),
-                description: 'No description provided.',
-                requiredEnv: []
-            };
-            drivers.push({ file, meta, filePath });
+            // Only list drivers that actually declare their own meta —
+            // a driver with no meta.name has nothing configurable to prompt
+            // for and is almost certainly not meant to be user-selectable
+            // (e.g. a shared base class picked up by the directory scan).
+            if (!driver.meta || !driver.meta.name) continue;
+            drivers.push({ file, meta: driver.meta, filePath });
         } catch (e) {
-            // Skip files that can't be loaded (e.g., the abstract driver)
+            // Skip files that can't be loaded
             continue;
         }
     }
@@ -93,7 +104,7 @@ async function promptForEnv(driver) {
         if (askFile.toLowerCase() === 'y') {
             const filePath = await question(`  Path to file containing ${varName}: `);
             try {
-                const content = fs.readFileSync(path.resolve(filePath), 'utf8').trim();
+                const content = fs.readFileSync(path.resolve(expandHome(filePath.trim())), 'utf8').trim();
                 envVars[varName] = content;
             } catch (e) {
                 console.error(`  Could not read file: ${e.message}`);
@@ -123,9 +134,15 @@ async function writeEnvFile(driver, envVars) {
         }
     } catch (e) { /* no .env yet */ }
 
+    // ai-gm-bot.js picks its driver by AI_PROVIDER (ollama/openai/deepseek),
+    // not by driver filename -- derive it from the driver file so the two
+    // stay in sync (e.g. "deepseek-driver.js" -> "deepseek").
+    const provider = driver.file.replace(/-driver\.js$/, '').toLowerCase();
+
     const lines = [];
     lines.push(`# Fate's Edge AI GM Bot configuration`);
     lines.push(`# Driver: ${driver.meta.name} (${driver.file})`);
+    lines.push(`AI_PROVIDER=${provider}`);
     lines.push(`AI_DRIVER=./drivers/${driver.file}`);
     for (const [key, value] of Object.entries(envVars)) {
         lines.push(`${key}=${value}`);
