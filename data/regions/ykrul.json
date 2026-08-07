@@ -13,9 +13,9 @@
     "mood": "The Pragmatism of the Steppe",
     "starting_location": "A winter camp on the steppe edge, banners snapping in frost-bright wind as the Khagan's fires burn low in the east. A Khatun of the Ring offers a clay cup of salted tea. 'The Khagan's kin ride from the salt pan. The old sayings say the straight road is a lie. You came by the bent path—the wolf knows you. Speak your errand before the wind changes. Trade is welcome; lies are tallied.'",
     "lore": {
-      "history": "The Ykrul ride the endless Violet Steppe, where the horizon drinks the sky and survival is a game played without mercy. They are a pragmatic people—harder and more practical than the settled folk of the south. Sentiment is a waste of breath; beauty is a fool's consolation. Their philosophy is not written in books but scratched in the dirt boards of Kon'reh, a game of encirclement, escape, and blockade played with pebbles and sheep-bones. Every child learns before they can hunt: count your exits before you enter, never commit to a single path, and an ally untested is a blade without a sheath. This is not mysticism. It is arithmetic. The steppe is a hard teacher, and the Ykrul are its starkest students. What outsiders call 'geometry' the Ykrul call the Count—the simple, bone-deep understanding that every route has a price, every camp has a weakness, and every alliance is only as strong as the remounts that sustain it. Their law lives in saddlebags. Every crossing has its toll, every ford its depth, every feud a reckoning measured in horse-lengths and heartbeats. Hosts gather by the thousand, then scatter at a word; one night you share their fires, the next they test your bonds. Their banners are wolves' teeth, their treaties braided cords, their memory longer than the rivers that cut the grass. The old folk still recite the Thirty-Six Sayings of the Road, but the wisest know the thirty-seventh is the one you learn alone, on a night when the stars blink out and the wolf does not howl.",
+      "history": "The Ykrul ride the endless Violet Steppe, where the horizon drinks the sky and survival is a game played without mercy. They are a pragmatic people—harder and more practical than the settled folk of the south. Sentiment is a waste of breath; beauty is a fool's consolation. Their philosophy is not written in books but scratched in the dirt boards of Kon'reh, a game of encirclement, escape, and blockade played with pebbles and sheep-bones. Every child learns before they can hunt: count your exits before you enter, never commit to a single path, and an ally untested is a blade without a sheath. This is not mysticism. It is arithmetic. The steppe is a hard teacher, and the Ykrul are its starkest students. What outsiders call 'geometry' the Ykrul call the Count—the simple, bone-deep understanding that every route has a price, every camp has a weakness, and every alliance is only as strong as the remounts that sustain it. Their law lives in saddlebags. Every crossing has its toll, every ford its depth, every feud a reckoning measured in horse-lengths and heartbeats. Hosts gather by the thousand, then scatter at a word; one night you share their fires, the next they test your bonds. Their banners are wolves' teeth, their treaties braided cords, their memory longer than the rivers that cut the grass. The old folk still recite the Thirty-Six Sayings of the Road, but the wisest know the thirty-seventh is the one you learn alone, on a night when the stars blink out and the wolf does not howl. Yet for all their pragmatism, the Ykrul are not without poetry—it is simply a poetry of bone and wind, of the weight of a remount and the taste of salt. Their skalds do not sing of love; they sing of the horse that carried a child through a white squall, the salt that preserved a clan through a hard winter, the hostage who was returned whole and the debt that was paid in full. They do not value beauty for its own sake, but they know the beauty of a well-made knife, a steady horse, a true word spoken in a council hollow. These are not luxuries; they are survival made visible.",
       "first_notice": "The smell of horse sweat and woodsmoke. The way every rider counts hoofbeats under their breath. The silence when a stranger approaches the fire. The cold assessment in every eye—not hostile, merely reckoning value.",
-      "rule_that_kills": "Never ride between two wolves at dusk. The space between them is a snare with no exit. In Kon'reh it is called the Closed Circle; in life it is called death."
+      "rule_that_kills": "Never ride between two wolves at dusk. The space between them is a snare with no exit. In Kon'reh it is called the Closed Circle; in life it is called death. Also, never accept a gift without naming its price aloud. A gift unspoken is a hostage string you did not agree to carry."
     },
     "entanglements": {
       "southeast": "Aeler — The mountain passes are sealed by dwarvish tariffs and breath-counters; the Khagan's word is the only passport. Iron flows south; grain flows north when the snows permit.",
@@ -23,6 +23,33 @@
       "south": "Ecktoria — Legates tally supplies as Ykrul riders stand, silhouettes across the sea of grass.",
       "north": "The Iron Grass (Kuvani) — Remount clans and rival khagans watch the horizon; alliances shift with the seasons. The wind carries the names of the dead; the dead carry the grudges."
     }
+  },
+  "regional_diagnostic": {
+    "current_hook": "The steppe owes nothing. The wolf pays no debts. Only the fool plays for beauty; the wise play for the exit.",
+    "core_conflict": "Players are caught between the **Khagan's** authority, the **Khatun's** hostage-law, the **Salt-Brokers'** economic leverage, and the **Eastern Ykrul's** harsher customs—all while the **Hollow** watches from the kurgan fields and the **Kon'reh board** measures every move.",
+    "unique_feature": "**Kon'reh Pragmatism:** Every decision is a move on a board. Count your exits before you enter. A hostage is a piece; a treaty is a position; a raid is an encirclement. The wise play for the exit, not the victory.",
+    "ninth_taboo": "In any Ykrul camp, the ninth cup poured at a feast is for the ancestors. The wise pour eight and leave the ninth as a pause. Those who pour the ninth cup find that the ancestors drink—and the ancestors are always thirsty. The next morning, the pourer's shadow is one inch shorter. If the same person pours the ninth cup nine times, their shadow vanishes entirely, and they become a ghost rider, forever counting cups at the edge of the firelight.",
+    "price": "Players sacrifice **reputation, memory, or a hostage** to gain power. Every reward requires a gamble: a hostage string, a broken oath, a gift accepted without naming its price, or a secret given to the wind.",
+    "faction_triad": [
+      {
+        "faction": "The Khagan's Household",
+        "goal": "Maintain the unity of the clans and the Khagan's authority",
+        "method": "Writs, paizas, and the weight of tradition",
+        "why_players_care": "They hold the power of the steppe"
+      },
+      {
+        "faction": "The Khatun of the Ring",
+        "goal": "Preserve hostage-law and the old customs",
+        "method": "Strings, councils, and the counting of debts",
+        "why_players_care": "They hold the law of the camp"
+      },
+      {
+        "faction": "The Eastern Ykrul (Iron Grass Clans)",
+        "goal": "Survive in the harshest lands and maintain their own customs",
+        "method": "Isolation, pragmatism, and the worship of frost",
+        "why_players_care": "They hold the passes to the east"
+      }
+    ]
   },
   "quotes": [
     {
@@ -34,9 +61,19 @@
       "text": "Kon'reh teaches that the straight road is a lie. The wise shepherd knows the river bends not from weakness, but from wisdom. We are practical folk. A horse that cannot carry you is meat. An oath that cannot be kept is smoke. Speak true, ride steady, and always count your exits before you enter. The steppe does not forgive the beautiful mistake—only the useful truth."
     }
   ],
-  "ninth_taboo": {
-    "title": "The Ninth Taboo Manifestation",
-    "description": "In any Ykrul camp, the ninth cup poured at a feast is for the ancestors. The wise pour eight and leave the ninth as a pause. Those who pour the ninth cup find that the ancestors drink—and the ancestors are always thirsty. The next morning, the pourer's shadow is one inch shorter. If the same person pours the ninth cup nine times, their shadow vanishes entirely, and they become a ghost rider, forever counting cups at the edge of the firelight."
+  "hostage_string_timer": {
+    "name": "Hostage Strings",
+    "max_segments": 6,
+    "advance_on": [
+      "A major treaty is sworn with a hostage (+2)",
+      "A hostage string is cut or broken (+1)",
+      "The party refuses to give a hostage when asked (+1)",
+      "A feud is settled with a hostage exchange (+1)"
+    ],
+    "thresholds": {
+      "3": "The steppe is watching. Any broken oath now triggers a feud immediately.",
+      "6": "The hostage is claimed. The party must choose: fulfill the oath, or face the vengeance of the clans. The Hollow is counting."
+    }
   },
   "npcs": [
     {
@@ -74,6 +111,12 @@
       "role": "Sky-Speaker",
       "motivation": "Sell weather on credit because even the sky is a resource",
       "quirk": "His bills come due during the Wolf Moon."
+    },
+    {
+      "name": "The Frost-Khagan",
+      "role": "Eastern Ykrul undying legend",
+      "motivation": "Claim the ninth breath and ride the white squall forever",
+      "quirk": "He appears in winter storms, riding a horse of frost and memory. His true name is carved on his saddle, but no one has ever read it and lived."
     }
   ],
   "names": {
@@ -488,7 +531,7 @@
       "subtitle": "[SOCIAL]",
       "description": "One night's lawful fire and fodder; hospitality as a right.",
       "flavor": "The token is a horsehair braid. Burn it to claim your fire.",
-      "cost": "The token is consumed on use; the host will expect a story in return."
+      "curse_cost": "The token is consumed on use; the host will expect a story in return."
     },
     {
       "rank": 3,
@@ -497,7 +540,7 @@
       "subtitle": "[TRADE]",
       "description": "Draw from a named store without quarrel.",
       "flavor": "The allotment is a salt-cake. Break it in half to share.",
-      "cost": "Using it may anger other claimants; a Hostage Call may follow."
+      "curse_cost": "Using it may anger other claimants; a Hostage Call may follow."
     },
     {
       "rank": 4,
@@ -506,7 +549,7 @@
       "subtitle": "[TRAVEL]",
       "description": "Cross a named braid at lawful depth.",
       "flavor": "The right is a pole. Plant it in the river, and the ford will hold—once.",
-      "cost": "The pole is single-use; the ford's depth may change seasonally."
+      "curse_cost": "The pole is single-use; the ford's depth may change seasonally."
     },
     {
       "rank": 5,
@@ -515,7 +558,7 @@
       "subtitle": "[TRAVEL]",
       "description": "Swap two tired mounts for fresh.",
       "flavor": "The chit is a horse's tooth. The remount keeper will not smile when you present it.",
-      "cost": "The chit is for a specific remount station; it may not be honored elsewhere."
+      "curse_cost": "The chit is for a specific remount station; it may not be honored elsewhere."
     },
     {
       "rank": 6,
@@ -524,7 +567,7 @@
       "subtitle": "[TRAVEL]",
       "description": "Two riders see you through a bad stretch.",
       "flavor": "The braid is woven from the riders' own hair. They will die before they cut it.",
-      "cost": "The escort lasts one leg of travel; they may have other obligations."
+      "curse_cost": "The escort lasts one leg of travel; they may have other obligations."
     },
     {
       "rank": 7,
@@ -533,7 +576,7 @@
       "subtitle": "[SOCIAL]",
       "description": "Place or take token-kin for a truce.",
       "flavor": "The hostage is a child. The child is patient.",
-      "cost": "The hostage must be returned; failure to do so starts a Hostage Call."
+      "curse_cost": "The hostage must be returned; failure to do so starts a Hostage Call."
     },
     {
       "rank": 8,
@@ -542,7 +585,7 @@
       "subtitle": "[AUTHORITY]",
       "description": "Priority on the Wolf Road and at posts.",
       "flavor": "The tablet is bronze. It is warm when your reputation is good.",
-      "cost": "If the tablet is challenged and found invalid, it may be confiscated."
+      "curse_cost": "If the tablet is challenged and found invalid, it may be confiscated."
     },
     {
       "rank": 9,
@@ -551,7 +594,7 @@
       "subtitle": "[LAW]",
       "description": "A treaty clause that trumps petty order.",
       "flavor": "The seal is a wolf's head. Press it into wax, and the steppe listens.",
-      "cost": "The seal is single-use; using it may attract the Khagan's attention."
+      "curse_cost": "The seal is single-use; using it may attract the Khagan's attention."
     },
     {
       "rank": 10,
@@ -560,7 +603,7 @@
       "subtitle": "[TRADE]",
       "description": "Trade under a banner; weapons sheathed.",
       "flavor": "The banner is a green field. No blood may be spilled beneath it.",
-      "cost": "The banner protects you only at the market; raiders may wait outside."
+      "curse_cost": "The banner protects you only at the market; raiders may wait outside."
     },
     {
       "rank": 11,
@@ -569,7 +612,7 @@
       "subtitle": "[COMBAT]",
       "description": "Travel under wolf-tooth; raiders defer.",
       "flavor": "The standard is a wolf's tooth on a pole. Raiders will bow—or die.",
-      "cost": "The standard identifies you as a friend of a specific clan; its enemies may become your enemies."
+      "curse_cost": "The standard identifies you as a friend of a specific clan; its enemies may become your enemies."
     },
     {
       "rank": 12,
@@ -578,7 +621,7 @@
       "subtitle": "[SOCIAL]",
       "description": "The Khatun hears you alone; precedent sticks.",
       "flavor": "The audience is held at midnight. The fire is the only witness.",
-      "cost": "The Khatun will expect a service in return; refusing may be dangerous."
+      "curse_cost": "The Khatun will expect a service in return; refusing may be dangerous."
     },
     {
       "rank": 13,
@@ -587,7 +630,7 @@
       "subtitle": "[AUTHORITY]",
       "description": "Doors open, mouths close across the steppe.",
       "flavor": "The writ is a sheet of hammered silver. It bends, but it does not break.",
-      "cost": "Using the writ may anger rivals of the Khagan; a Feud Spark may follow."
+      "curse_cost": "Using the writ may anger rivals of the Khagan; a Feud Spark may follow."
     },
     {
       "rank": 14,
@@ -596,7 +639,7 @@
       "subtitle": "[WEATHER]",
       "description": "Once, the weather ignores you (storm, whiteout, dust).",
       "flavor": "The exception is a single breath. Use it well.",
-      "cost": "The exception is single-use; the sky will remember your face."
+      "curse_cost": "The exception is single-use; the sky will remember your face."
     }
   ],
   "quick_use_notes": {
@@ -610,8 +653,8 @@
       "description": "The Ykrul do not speak of 'geometry.' They speak of Kon'reh, a dirt-board game of encirclement, escape, and blockade played with pebbles and bone. Every Ykrul child learns its lessons: count your exits before you enter; never commit to a single path; a screen of light pieces can trap a heavy king; the best move is the one your opponent thinks you have forgotten. In Ykrul culture, Kon'reh is not recreation—it is education. A war-council may be fought out on a Kon'reh board before a single arrow is nocked. A treaty may be argued as a series of moves and counter-moves. When a Ykrul says 'the Count,' they mean the cold reckoning of advantage: remounts, routes, grain-days, and the price of a blade in winter. In play: When a Ykrul NPC evaluates an offer or a threat, they are playing Kon'reh in their head. Social rolls against Ykrul suffer +1 DV unless the player can demonstrate a 'route of escape' (an exit, a concession, or a hostage) that makes the deal survivable for both sides."
     },
     {
-      "name": "Hostage Strings [4]",
-      "description": "Every oath is secured with a hostage string—a token kin, retainer, or sworn ally left in the other camp. If the deal is broken, the hostage's fate becomes the story's next beat. Mechanically: create a 4-segment Hostage timer for any major treaty. On breach, the timer becomes a countdown to vengeance. Ykrul take hostages as a matter of course; refusing to give one is treated as a declaration of bad faith."
+      "name": "Hostage Strings [6]",
+      "description": "Every oath is secured with a hostage string—a token kin, retainer, or sworn ally left in the other camp. If the deal is broken, the hostage's fate becomes the story's next beat. Mechanically: create a 6-segment Hostage timer for any major treaty. On breach, the timer becomes a countdown to vengeance. Ykrul take hostages as a matter of course; refusing to give one is treated as a declaration of bad faith."
     },
     {
       "name": "Steppe Law",
@@ -627,7 +670,7 @@
     },
     {
       "name": "Local Patrons",
-      "description": "The Hoof — The Traveler. The path that never ends, the remount that never tires. The Wolf's Tooth — The Witness. Every oath is counted. Every broken promise is a scar. The Salt Throat — Maelstraeus. The weight that salts your tongue; the interest that blinds your horses. The Sky Father — Kuva. The wind that carries names; the storm that erases them."
+      "description": "The Hoof — The Traveler. The path that never ends, the remount that never tires. The Wolf's Tooth — The Witness. Every oath is counted. Every broken promise is a scar. The Salt Throat — Maelstraeus. The weight that salts your tongue; the interest that blinds your horses. The Sky Father — Kuva. The wind that carries names; the storm that erases them. The Frost-Khagan — The Ninth. The forgotten oath, the winter that never ends, the rider who counts to nine."
     },
     {
       "name": "The Thirty-Seven Sayings of the Road (Excerpts)",
@@ -659,291 +702,289 @@
     },
     {
       "name": "Boss Seeds (Three-Phase Foes)",
-      "description": "The String-Mother (Nine Hostages) — Phases: Knot → Tighten → Sever. Cracks: return a hostage string, win a Bowl and Board arbitration, cut the right knot. The Dust Prince (Rider of the Red Wind) — Phases: Raid Shadow → Salt Tithe → Kurultai Coup. Cracks: spill a salt allotment in his path, unmask his face before the council, outride him through a white squall."
+      "description": "The String-Mother (Nine Hostages) — Phases: Knot → Tighten → Sever. Cracks: return a hostage string, win a Bowl and Board arbitration, cut the right knot. The Dust Prince (Rider of the Red Wind) — Phases: Raid Shadow → Salt Tithe → Kurultai Coup. Cracks: spill a salt allotment in his path, unmask his face before the council, outride him through a white squall. The Frost-Khagan — Phases: Blizzard's Call → Frozen Host → The Long Night. Cracks: burn a horse tooth in a fire, speak his true name (carved on his saddle), offer a living rider to take his place."
     }
   ],
   "eastern_steppe": {
     "title": "Ykrul of the Eastern Steppe — The Iron Grass Clans",
     "description": "The wind is colder here, and so are the hearts. We do not forget an insult because we cannot afford to. The grass is thinner, the wolves are bolder, and the sky speaks only in threats. The western Ykrul trade in stories. We trade in teeth.",
     "quote": "The westerners count their weights in silk and verses. We count ours in frost and iron. A broken oath here is not a story for the skald—it is a hole in the winter larder. We do not forgive because we cannot. The Hollow rides with us every night. We have no room for mercy, and even less for poetry. Kon'reh is still our teacher, but the board is frozen, and the pieces are bones.",
-    "variations": {
-      "clan_trait": [
-        {
-          "roll": 1,
-          "name": "Frost-Bitten",
-          "description": "The clan survives on the edge of the permafrost. +1 die to Survival in cold weather, but –1 die to all social rolls with lowlanders (they stink of frozen horse)."
-        },
-        {
-          "roll": 2,
-          "name": "Kuvani-Kin",
-          "description": "This clan has traded with the Kuvani for generations. They speak the Kuvani tongue and may call on one Kuvani remount station per journey. Rivals whisper they have forgotten the old ways."
-        },
-        {
-          "roll": 3,
-          "name": "Wolf-Pacted",
-          "description": "The clan has a standing truce with a local wolf pack. Wolves do not attack their herds. In exchange, the clan leaves every ninth calf unbranded—for the wolves. The pack sometimes fights beside them in battle (Cap 2, appears once per arc)."
-        },
-        {
-          "roll": 4,
-          "name": "Salt-Misers",
-          "description": "This clan controls a small, bitter salt pan. They trade salt for iron with the Kuvani. They are wealthy but paranoid; any visitor is assumed to be a spy. +1 die to detect deception, but starting Position in parley is Desperate."
-        },
-        {
-          "roll": 5,
-          "name": "Curse-Bearers",
-          "description": "A broken oath from three generations ago still hangs over the clan. Their horses are prone to sickness, and their children are born with gray eyes. They seek a way to lift the curse—and will do almost anything to find it."
-        },
-        {
-          "roll": 6,
-          "name": "Road-Breakers",
-          "description": "This clan claims the right to open or close the high passes east. They carry a brass key (actually a bronze paiza) that Kuvani caravans recognize. They are isolationist, proud, and quick to draw steel over matters of passage."
-        }
-      ],
-      "hazards": [
-        {
-          "roll": 1,
-          "name": "Frost-Rime Grass",
-          "description": "The grass is coated in a crystalline frost that cuts horse legs. Travel speed halved for one leg. On a failed Survival roll, one mount goes lame (mark 1 Fatigue or lose 1 Supply)."
-        },
-        {
-          "roll": 2,
-          "name": "Wolf Howl at Dusk",
-          "description": "A pack shadows the party for a day and a night. They will not attack unless the party is weak or separated. If a character sleeps alone, roll Spirit+Resolve (DV 3) or be found by wolves at midnight."
-        },
-        {
-          "roll": 3,
-          "name": "Ice Lens Mirage",
-          "description": "The flat steppe plays tricks. Navigation rolls suffer –1 die for the leg. On a miss, the party wanders into a kurgan field—the dead are restless. Start a Spirit Attention [4] timer."
-        },
-        {
-          "roll": 4,
-          "name": "Salt Pan Crack",
-          "description": "A dried salt pan has a hidden fissure. A horse or wagon breaks through. Lose 1 Supply (salt pork ruined) and mark 1 Fatigue for the party as they pull the animal free."
-        },
-        {
-          "roll": 5,
-          "name": "Kuvani Border Markers",
-          "description": "The party has crossed into a Kuvani grazing ground without permission. Kuvani riders appear (Cap 2, non-hostile unless provoked). They demand a story or a small offering of salt. Refusal starts a Border Dispute [4] timer."
-        },
-        {
-          "roll": 6,
-          "name": "Silent Sky",
-          "description": "No birds, no wind, no insect sounds. The Hollow is near. For the next scene, any roll that shows a 1 also summons a Oath-Keeper—it will appear at the end of the scene to ask one question. Answer poorly, and it takes a memory."
-        }
-      ],
-      "encounter": [
-        {
-          "roll": 1,
-          "name": "Hungry Hosts",
-          "description": "The camp is low on supplies. They will trade—at ruinous prices. But they will also remember a fair deal. If you overpay (give 1 extra Supply), gain a String (Eastern Ykrul favor)."
-        },
-        {
-          "roll": 2,
-          "name": "Grieving Clan",
-          "description": "A child died last night. The camp is in mourning. They will not trade or talk. If you offer a true story about a lost loved one, they will share a meal."
-        },
-        {
-          "roll": 3,
-          "name": "Feud-Watch",
-          "description": "The clan is on alert for raiders from a rival banner. They mistake the party for scouts. The first social roll is at Desperate Position. A successful Deception or Bribe (cost 1 Boon or 1 Supply) clears the misunderstanding."
-        },
-        {
-          "roll": 4,
-          "name": "Salt-Broker's Caravan",
-          "description": "A small caravan of salt traders, heavily armed. They are willing to trade salt for news of the west. They ask pointed questions about the Violet Steppe—they are planning a raid."
-        },
-        {
-          "roll": 5,
-          "name": "Kurgan Pilgrims",
-          "description": "A group of bone-singers and their guards are traveling to a sacred kurgan. They will allow the party to accompany them if the party helps perform a ritual: each member must whisper a forgotten name into a horse skull. Afterwards, the party gains +1 die to resist fear for one day, but the Hollow knows one of your names."
-        },
-        {
-          "roll": 6,
-          "name": "Storm-Singer's Challenge",
-          "description": "A sky-speaker challenges the party to a weather-calling contest. Roll Spirit+Lore vs. DV 4. On a success, the storm-singer is impressed and grants a Sky's Exception (ignore one weather hazard). On a failure, the party is drenched and loses 1 Fatigue."
-        },
-        {
-          "roll": 7,
-          "name": "Hollow-Touched Camp",
-          "description": "The camp is silent. Everyone is sitting still, staring at a single point. A Oath-Keeper has passed through. If the party can speak the name of the broken oath, the camp will wake. Otherwise, they must leave an offering of salt and retreat."
-        },
-        {
-          "roll": 8,
-          "name": "Iron Grass Market",
-          "description": "A rare gathering of three clans at a neutral ford. The market lasts only one day. Goods for sale: remounts (cost 1 Supply each), salt (1 Supply per 2 portions), iron arrowheads (1 Boon for 1 die bonus on next ranged attack), and one cursed paiza (half price, but the previous owner's ghost follows)."
-        }
-      ],
-      "customs": [
-        {
-          "roll": 1,
-          "name": "No Left Hand",
-          "description": "Offering anything with the left hand is an insult. All social rolls using Presence+Sway suffer –1 die unless you explicitly use your right hand."
-        },
-        {
-          "roll": 2,
-          "name": "Fire First, Talk Later",
-          "description": "Guests must warm their hands at the central fire before speaking. If you refuse, the host will be offended—the first request you make is automatically refused."
-        },
-        {
-          "roll": 3,
-          "name": "The Empty Saddle",
-          "description": "One saddle in the camp is always empty. It belongs to a rider who died last winter. If you sit in it, you must tell a story about a death you witnessed. If the story is true, the ghost may give you a warning (GM reveals one future hazard). If false, the ghost haunts you for a day (you gain the Haunted condition)."
-        },
-        {
-          "roll": 4,
-          "name": "No Naming the Dead",
-          "description": "Eastern Ykrul do not speak the names of the deceased for one year after death. If you accidentally name a dead person, the clan demands a blood-price: 1 Supply or a lock of your hair."
-        },
-        {
-          "roll": 5,
-          "name": "Salt Before Meat",
-          "description": "A meal is not blessed until the host throws a pinch of salt into the fire. If you eat before the salt, you are considered an oath-breaker. The meal will not nourish you (you do not recover Fatigue from that rest)."
-        },
-        {
-          "roll": 6,
-          "name": "The Ninth Breath",
-          "description": "When drinking fermented mare's milk, you must pause after the eighth sip. If you take a ninth, you must immediately name an enemy. The clan will consider that enemy as their own for one season. The enemy may not appreciate this."
-        }
-      ],
-      "superstitions": [
-        {
-          "name": "Iron to the Frost",
-          "effect": "Press a cold iron nail into the ground before a white squall. Ignore the first Frost-Rime Grass penalty."
-        },
-        {
-          "name": "Braid the Tail",
-          "effect": "Tie a single knot in a horse's tail hair. Cancel Wolf Howl at Dusk or take –1 die on your next survival roll (your choice)."
-        },
-        {
-          "name": "Name to the Hollow",
-          "effect": "Whisper a dead enemy's name into a salt pan at midnight. Gain +1 Effect when evading Oath-Keepers this scene, but mark Obligation to the Eastern Khatun."
-        }
-      ],
-      "boss_seeds": [
-        {
-          "roll": 1,
-          "name": "The Frost-Khagan (Undying)",
-          "phases": [
-            "Blizzard's Call",
-            "Frozen Host",
-            "The Long Night"
-          ],
-          "cracks": [
-            "burn a horse tooth in a fire",
-            "speak his true name (carved on his saddle)",
-            "offer a living rider to take his place"
-          ]
-        },
-        {
-          "roll": 2,
-          "name": "The Salt-Throat (Cursed Broker)",
-          "phases": [
-            "Weigh the Debt",
-            "Salt Tithe",
-            "The Scales Close"
-          ],
-          "cracks": [
-            "pay a wergild in untainted salt",
-            "expose his false paiza",
-            "cut his hostage string with a silver knife"
-          ]
-        },
-        {
-          "roll": 3,
-          "name": "The Hollow's Rider (Oath-Keeper in Flesh)",
-          "phases": [
-            "Count the Breath",
-            "Ride the White",
-            "Claim the Ninth"
-          ],
-          "cracks": [
-            "feed him a memory of warmth",
-            "show him a red thread tied in eight knots",
-            "outride him to the horizon—the Hollow cannot cross moving water"
-          ]
-        },
-        {
-          "roll": 4,
-          "name": "The Iron Grandmother (Bone-Singer Revenant)",
-          "phases": [
-            "Song of Names",
-            "Kurgan Rising",
-            "The Dead Vote"
-          ],
-          "cracks": [
-            "sing a true name she does not know",
-            "return a stolen kurgan stone",
-            "answer her riddle: 'What weight is never paid?'"
-          ]
-        },
-        {
-          "roll": 5,
-          "name": "The Wolf-Banner (Pack-Leader)",
-          "phases": [
-            "Stalk",
-            "Circle",
-            "Feast"
-          ],
-          "cracks": [
-            "break his banner",
-            "offer a raw heart to his pack",
-            "survive a night without fire"
-          ]
-        },
-        {
-          "roll": 6,
-          "name": "The Sky-Weeping Child (Curse Bearer)",
-          "phases": [
-            "Winter Dreams",
-            "Frost-Fever",
-            "The Ninth Day"
-          ],
-          "cracks": [
-            "warm her hands with your own breath",
-            "speak her true name (her mother is still alive—she will tell you)",
-            "find the horse that was born at the same moment—it carries the other half of the curse"
-          ]
-        }
-      ],
-      "names": {
-        "male": [
-          "Bortei",
-          "Temurjin",
-          "Khorchi",
-          "Edil",
-          "Sogata",
-          "Toghrul",
-          "Ogedei",
-          "Chagatai"
+    "clan_traits": [
+      {
+        "roll": 1,
+        "name": "Frost-Bitten",
+        "description": "The clan survives on the edge of the permafrost. +1 die to Survival in cold weather, but –1 die to all social rolls with lowlanders (they stink of frozen horse)."
+      },
+      {
+        "roll": 2,
+        "name": "Kuvani-Kin",
+        "description": "This clan has traded with the Kuvani for generations. They speak the Kuvani tongue and may call on one Kuvani remount station per journey. Rivals whisper they have forgotten the old ways."
+      },
+      {
+        "roll": 3,
+        "name": "Wolf-Pacted",
+        "description": "The clan has a standing truce with a local wolf pack. Wolves do not attack their herds. In exchange, the clan leaves every ninth calf unbranded—for the wolves. The pack sometimes fights beside them in battle (Cap 2, appears once per arc)."
+      },
+      {
+        "roll": 4,
+        "name": "Salt-Misers",
+        "description": "This clan controls a small, bitter salt pan. They trade salt for iron with the Kuvani. They are wealthy but paranoid; any visitor is assumed to be a spy. +1 die to detect deception, but starting Position in parley is Desperate."
+      },
+      {
+        "roll": 5,
+        "name": "Curse-Bearers",
+        "description": "A broken oath from three generations ago still hangs over the clan. Their horses are prone to sickness, and their children are born with gray eyes. They seek a way to lift the curse—and will do almost anything to find it."
+      },
+      {
+        "roll": 6,
+        "name": "Road-Breakers",
+        "description": "This clan claims the right to open or close the high passes east. They carry a brass key (actually a bronze paiza) that Kuvani caravans recognize. They are isolationist, proud, and quick to draw steel over matters of passage."
+      }
+    ],
+    "hazards": [
+      {
+        "roll": 1,
+        "name": "Frost-Rime Grass",
+        "description": "The grass is coated in a crystalline frost that cuts horse legs. Travel speed halved for one leg. On a failed Survival roll, one mount goes lame (mark 1 Fatigue or lose 1 Supply)."
+      },
+      {
+        "roll": 2,
+        "name": "Wolf Howl at Dusk",
+        "description": "A pack shadows the party for a day and a night. They will not attack unless the party is weak or separated. If a character sleeps alone, roll Spirit+Resolve (DV 3) or be found by wolves at midnight."
+      },
+      {
+        "roll": 3,
+        "name": "Ice Lens Mirage",
+        "description": "The flat steppe plays tricks. Navigation rolls suffer –1 die for the leg. On a miss, the party wanders into a kurgan field—the dead are restless. Start a Spirit Attention [4] timer."
+      },
+      {
+        "roll": 4,
+        "name": "Salt Pan Crack",
+        "description": "A dried salt pan has a hidden fissure. A horse or wagon breaks through. Lose 1 Supply (salt pork ruined) and mark 1 Fatigue for the party as they pull the animal free."
+      },
+      {
+        "roll": 5,
+        "name": "Kuvani Border Markers",
+        "description": "The party has crossed into a Kuvani grazing ground without permission. Kuvani riders appear (Cap 2, non-hostile unless provoked). They demand a story or a small offering of salt. Refusal starts a Border Dispute [4] timer."
+      },
+      {
+        "roll": 6,
+        "name": "Silent Sky",
+        "description": "No birds, no wind, no insect sounds. The Hollow is near. For the next scene, any roll that shows a 1 also summons a Oath-Keeper—it will appear at the end of the scene to ask one question. Answer poorly, and it takes a memory."
+      }
+    ],
+    "encounters": [
+      {
+        "roll": 1,
+        "name": "Hungry Hosts",
+        "description": "The camp is low on supplies. They will trade—at ruinous prices. But they will also remember a fair deal. If you overpay (give 1 extra Supply), gain a String (Eastern Ykrul favor)."
+      },
+      {
+        "roll": 2,
+        "name": "Grieving Clan",
+        "description": "A child died last night. The camp is in mourning. They will not trade or talk. If you offer a true story about a lost loved one, they will share a meal."
+      },
+      {
+        "roll": 3,
+        "name": "Feud-Watch",
+        "description": "The clan is on alert for raiders from a rival banner. They mistake the party for scouts. The first social roll is at Desperate Position. A successful Deception or Bribe (cost 1 Boon or 1 Supply) clears the misunderstanding."
+      },
+      {
+        "roll": 4,
+        "name": "Salt-Broker's Caravan",
+        "description": "A small caravan of salt traders, heavily armed. They are willing to trade salt for news of the west. They ask pointed questions about the Violet Steppe—they are planning a raid."
+      },
+      {
+        "roll": 5,
+        "name": "Kurgan Pilgrims",
+        "description": "A group of bone-singers and their guards are traveling to a sacred kurgan. They will allow the party to accompany them if the party helps perform a ritual: each member must whisper a forgotten name into a horse skull. Afterwards, the party gains +1 die to resist fear for one day, but the Hollow knows one of your names."
+      },
+      {
+        "roll": 6,
+        "name": "Storm-Singer's Challenge",
+        "description": "A sky-speaker challenges the party to a weather-calling contest. Roll Spirit+Lore vs. DV 4. On a success, the storm-singer is impressed and grants a Sky's Exception (ignore one weather hazard). On a failure, the party is drenched and loses 1 Fatigue."
+      },
+      {
+        "roll": 7,
+        "name": "Hollow-Touched Camp",
+        "description": "The camp is silent. Everyone is sitting still, staring at a single point. A Oath-Keeper has passed through. If the party can speak the name of the broken oath, the camp will wake. Otherwise, they must leave an offering of salt and retreat."
+      },
+      {
+        "roll": 8,
+        "name": "Iron Grass Market",
+        "description": "A rare gathering of three clans at a neutral ford. The market lasts only one day. Goods for sale: remounts (cost 1 Supply each), salt (1 Supply per 2 portions), iron arrowheads (1 Boon for 1 die bonus on next ranged attack), and one cursed paiza (half price, but the previous owner's ghost follows)."
+      }
+    ],
+    "customs": [
+      {
+        "roll": 1,
+        "name": "No Left Hand",
+        "description": "Offering anything with the left hand is an insult. All social rolls using Presence+Sway suffer –1 die unless you explicitly use your right hand."
+      },
+      {
+        "roll": 2,
+        "name": "Fire First, Talk Later",
+        "description": "Guests must warm their hands at the central fire before speaking. If you refuse, the host will be offended—the first request you make is automatically refused."
+      },
+      {
+        "roll": 3,
+        "name": "The Empty Saddle",
+        "description": "One saddle in the camp is always empty. It belongs to a rider who died last winter. If you sit in it, you must tell a story about a death you witnessed. If the story is true, the ghost may give you a warning (GM reveals one future hazard). If false, the ghost haunts you for a day (you gain the Haunted condition)."
+      },
+      {
+        "roll": 4,
+        "name": "No Naming the Dead",
+        "description": "Eastern Ykrul do not speak the names of the deceased for one year after death. If you accidentally name a dead person, the clan demands a blood-price: 1 Supply or a lock of your hair."
+      },
+      {
+        "roll": 5,
+        "name": "Salt Before Meat",
+        "description": "A meal is not blessed until the host throws a pinch of salt into the fire. If you eat before the salt, you are considered an oath-breaker. The meal will not nourish you (you do not recover Fatigue from that rest)."
+      },
+      {
+        "roll": 6,
+        "name": "The Ninth Breath",
+        "description": "When drinking fermented mare's milk, you must pause after the eighth sip. If you take a ninth, you must immediately name an enemy. The clan will consider that enemy as their own for one season. The enemy may not appreciate this."
+      }
+    ],
+    "superstitions": [
+      {
+        "name": "Iron to the Frost",
+        "effect": "Press a cold iron nail into the ground before a white squall. Ignore the first Frost-Rime Grass penalty."
+      },
+      {
+        "name": "Braid the Tail",
+        "effect": "Tie a single knot in a horse's tail hair. Cancel Wolf Howl at Dusk or take –1 die on your next survival roll (your choice)."
+      },
+      {
+        "name": "Name to the Hollow",
+        "effect": "Whisper a dead enemy's name into a salt pan at midnight. Gain +1 Effect when evading Oath-Keepers this scene, but mark Obligation to the Eastern Khatun."
+      }
+    ],
+    "boss_seeds": [
+      {
+        "roll": 1,
+        "name": "The Frost-Khagan (Undying)",
+        "phases": [
+          "Blizzard's Call",
+          "Frozen Host",
+          "The Long Night"
         ],
-        "female": [
-          "Orghana",
-          "Borte",
-          "Altan",
-          "Saruul",
-          "Checheg",
-          "Nergui",
-          "Tolui",
-          "Hulan"
-        ],
-        "clan_epithets": [
-          "Iron-Heart",
-          "Frost-Mane",
-          "Salt-Tongue",
-          "Wolf-Brood",
-          "Hollow-Sight",
-          "Curse-Bearer",
-          "Red-Hoof",
-          "Silent-Banner"
+        "cracks": [
+          "burn a horse tooth in a fire",
+          "speak his true name (carved on his saddle)",
+          "offer a living rider to take his place"
         ]
       },
-      "at_a_glance": {
-        "core_traits": "Isolationist, pragmatic, harsher honor code, live among Kuvani but do not intermarry.",
-        "key_resources": "Salt, iron, remounts, wolf truces, kurgan spirits.",
-        "common_conflicts": "Feuds over salt pans, disputes with Kuvani over grazing, Hollow incursions in winter, curse-lifting quests.",
-        "tone": "Bleaker than western Ykrul. Fewer stories, more teeth. Hospitality is still sacred—but the guest is expected to earn it.",
-        "ritual_objects": "Frost-bitten stirrups, bronze paizas, horse-tooth chits, salt-cakes, wolf skull standards."
+      {
+        "roll": 2,
+        "name": "The Salt-Throat (Cursed Broker)",
+        "phases": [
+          "Weigh the Debt",
+          "Salt Tithe",
+          "The Scales Close"
+        ],
+        "cracks": [
+          "pay a wergild in untainted salt",
+          "expose his false paiza",
+          "cut his hostage string with a silver knife"
+        ]
+      },
+      {
+        "roll": 3,
+        "name": "The Hollow's Rider (Oath-Keeper in Flesh)",
+        "phases": [
+          "Count the Breath",
+          "Ride the White",
+          "Claim the Ninth"
+        ],
+        "cracks": [
+          "feed him a memory of warmth",
+          "show him a red thread tied in eight knots",
+          "outride him to the horizon—the Hollow cannot cross moving water"
+        ]
+      },
+      {
+        "roll": 4,
+        "name": "The Iron Grandmother (Bone-Singer Revenant)",
+        "phases": [
+          "Song of Names",
+          "Kurgan Rising",
+          "The Dead Vote"
+        ],
+        "cracks": [
+          "sing a true name she does not know",
+          "return a stolen kurgan stone",
+          "answer her riddle: 'What weight is never paid?'"
+        ]
+      },
+      {
+        "roll": 5,
+        "name": "The Wolf-Banner (Pack-Leader)",
+        "phases": [
+          "Stalk",
+          "Circle",
+          "Feast"
+        ],
+        "cracks": [
+          "break his banner",
+          "offer a raw heart to his pack",
+          "survive a night without fire"
+        ]
+      },
+      {
+        "roll": 6,
+        "name": "The Sky-Weeping Child (Curse Bearer)",
+        "phases": [
+          "Winter Dreams",
+          "Frost-Fever",
+          "The Ninth Day"
+        ],
+        "cracks": [
+          "warm her hands with your own breath",
+          "speak her true name (her mother is still alive—she will tell you)",
+          "find the horse that was born at the same moment—it carries the other half of the curse"
+        ]
       }
+    ],
+    "eastern_names": {
+      "male": [
+        "Bortei",
+        "Temurjin",
+        "Khorchi",
+        "Edil",
+        "Sogata",
+        "Toghrul",
+        "Ogedei",
+        "Chagatai"
+      ],
+      "female": [
+        "Orghana",
+        "Borte",
+        "Altan",
+        "Saruul",
+        "Checheg",
+        "Nergui",
+        "Tolui",
+        "Hulan"
+      ],
+      "clan_epithets": [
+        "Iron-Heart",
+        "Frost-Mane",
+        "Salt-Tongue",
+        "Wolf-Brood",
+        "Hollow-Sight",
+        "Curse-Bearer",
+        "Red-Hoof",
+        "Silent-Banner"
+      ]
+    },
+    "at_a_glance": {
+      "core_traits": "Isolationist, pragmatic, harsher honor code, live among Kuvani but do not intermarry.",
+      "key_resources": "Salt, iron, remounts, wolf truces, kurgan spirits.",
+      "common_conflicts": "Feuds over salt pans, disputes with Kuvani over grazing, Hollow incursions in winter, curse-lifting quests.",
+      "tone": "Bleaker than western Ykrul. Fewer stories, more teeth. Hospitality is still sacred—but the guest is expected to earn it.",
+      "ritual_objects": "Frost-bitten stirrups, bronze paizas, horse-tooth chits, salt-cakes, wolf skull standards."
     }
   },
   "lore_echoes": [
@@ -962,6 +1003,10 @@
     {
       "title": "The Gray Wanderer's Grimoire",
       "description": "Ykrul psions are called 'Weather-Readers.' They taste the future in the wind. Road-judges employ two—and have never trusted a verdict they didn't hear from the sky."
+    },
+    {
+      "title": "The Ninth",
+      "description": "In any Ykrul camp, the ninth cup poured at a feast is for the ancestors. The wise pour eight and leave the ninth as a pause. Those who pour the ninth cup find that the ancestors drink—and the ancestors are always thirsty. The next morning, the pourer's shadow is one inch shorter. If the same person pours the ninth cup nine times, their shadow vanishes entirely, and they become a ghost rider, forever counting cups at the edge of the firelight."
     }
   ],
   "superstitions": [
@@ -981,6 +1026,7 @@
       "cost": "Burn for +1 die once"
     }
   ],
+  "decline_and_patronage": "In Ykrul society, power flows through the careful management of hospitality, the binding of oaths with hostages, and the ability to navigate the complex web of tribal relationships. The Khagan maintains authority through the loyalty of noyans and the respect of khatuns, while local leaders wield influence through their control of resources like salt, remounts, and safe passage. The true power lies with those who understand the old calculations—the pragmatic reckonings of Kon'reh—and can maintain the delicate balance between hospitality and honor. **For the GM:** Tie rewards to visible symbols (tokens, braids, standards) that can be challenged, stolen, or voided. Use the Bowl and Board procedure for disputes—first fairness (Bowl), then routes and concessions (Board), then a seasonal right. Let rival hosts issue conflicting protections, forcing players to choose whose favor matters more. Remember that Ykrul pragmatism is colder than southern sentiment. An ally is an asset; a debtor is a liability. Mercy is a luxury, not a virtue. The game of Kon'reh teaches that a trapped piece is dead weight—free it or sacrifice it, but never weep for it.",
   "sb_spend_table": {
     "minor_complications": [
       "**Exposure:** Road-judges or border riders take notice.",
@@ -1014,15 +1060,6 @@
       "**Steppe Law:** Hospitality fails, insults echo, treaties shift mid-parley.",
       "**Horse Culture:** Mounts refuse to move, remount posts are empty, riding rolls suffer –1 die.",
       "**Sky Omens:** Weather changes instantly, stars point the wrong way, a raven shadows the party."
-    ]
-  },
-  "patronage_and_power": {
-    "description": "In Ykrul society, power flows through the careful management of hospitality, the binding of oaths with hostages, and the ability to navigate the complex web of tribal relationships. The Khagan maintains authority through the loyalty of noyans and the respect of khatuns, while local leaders wield influence through their control of resources like salt, remounts, and safe passage. The true power lies with those who understand the old calculations—the pragmatic reckonings of Kon'reh—and can maintain the delicate balance between hospitality and honor.",
-    "for_the_gm": [
-      "Tie rewards to visible symbols (tokens, braids, standards) that can be challenged, stolen, or voided.",
-      "Use the Bowl and Board procedure for disputes—first fairness (Bowl), then routes and concessions (Board), then a seasonal right.",
-      "Let rival hosts issue conflicting protections, forcing players to choose whose favor matters more.",
-      "Remember that Ykrul pragmatism is colder than southern sentiment. An ally is an asset; a debtor is a liability. Mercy is a luxury, not a virtue. The game of Kon'reh teaches that a trapped piece is dead weight—free it or sacrifice it, but never weep for it."
     ]
   },
   "faction_entanglements": [

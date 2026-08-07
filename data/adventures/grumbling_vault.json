@@ -197,6 +197,31 @@
     }
   ],
   "notes": "This is a classic dungeon crawl with a twist: magic is actively punished. The Ward Resonance Timer forces players to think about whether to use spells or rely on muscle and wits. Durin is a comic relief NPC whose advice is half-true – players who fact-check him gain an edge. The final boss (Ward-Primus) is immune to magic, so melee characters get a chance to shine. Designed for a single session of 3–4 hours.",
+
+  "_gmhints": {
+    "pacing": {
+      "act1": "This is a lean, single-session dungeon crawl. Keep the pace brisk—every scene is a set piece. The Ward Resonance timer is the central tension: make its ticking visible and visceral (the runes on the walls pulse brighter; the door groans; the keystone's glow intensifies). Durin is comic relief, not a lore-dispenser—his advice is unreliable, and his true nature (a cook, not an Iron Avenger) is a punchline for observant players or a fun reveal at the end. The Hall of Sundered Oaths is a combat puzzle: the Wraiths don't move until magic is used, rewarding clever players who sneak past or sunder them with physical force. The Heart of Silence is a stealth-or-fight climax; the Ward-Primus is a boss that requires either brute force or clever negotiation. Emphasize the visual of the timer ring around the keystone—it's the players' 'health bar' for the entire delve. The Iron Wraiths' weakness (sundering) should be discoverable through environmental clues (cracked armor, a sledgehammer left by a previous delver) rather than explained outright.",
+      "notes_phase": "This is a one-shot; don't overcomplicate. If the party is stuck, Durin can grumble a half-truth that points them in the right direction (at the cost of ticking his Debt timer). The Ward-Primus is immune to magic, but it can be reasoned with—offer it something it values more than the keystone (a memory, a promise, a rival's ward). This is a fun 'aha' moment for players who think outside the combat box. The ending is simple: the party gets the keystone, Durin pays them (or tries to skip out on payment), and the vault collapses behind them—or doesn't, if they want to return for more loot."
+    },
+    "npcSecrets": {
+      "durin-stoneshield": "He is a fraud—a cook who tells tall tales. This is a comedic reveal, not a tragic one. He genuinely believes he was an Iron Avenger, but his stories are full of holes. Players who roll Lore or Investigation might notice the inconsistencies. His 'debt' is to a tavern owner who he owes for three years of ale. The keystone is his ticket to paying that debt—or at least to getting another round. Don't reveal this too early; let him be the grumpy, authoritative quest-giver until the party either fact-checks him or reaches the end."
+    },
+    "forbiddenEarlyRevelations": [
+      "That Durin was never an Iron Avenger — this is the capstone joke; let it land at the end",
+      "That the Ward-Primus is immune to magic — this is a tactical discovery; players should learn it through trial, error, or observation (e.g., seeing a spell absorb into its form)",
+      "That magic ticks the Ward Resonance timer — the timer itself is visible (the ring around the keystone), but the cause-and-effect (spells = ticks) should be discovered, not announced",
+      "That the Iron Wraiths only activate when magic is used — this is a puzzle to solve; describe them as 'motionless, waiting,' and let players deduce the trigger",
+      "That the Ward-Primus can be reasoned with — this is a high-level solution for clever players; hint at it through the Primus's lore (it 'enforces laws,' not 'kills intruders') but don't hand it out",
+      "That the keystone can destabilize wards within a mile — the description says it; the AI should not repeat this in dialogue as a casual fact; it's the party's mission objective, not a piece of exposition to be recited"
+    ],
+    "tacticalHints": {
+      "magic_penalty": "The Ward Resonance timer is the dungeon's health bar. Every time a player casts a spell, describe the runes pulsing brighter, the keystone's glow intensifying, or a low rumble from deeper in the vault. Make the cost of magic feel real and immediate.",
+      "durin_advice": "Durin's advice is half-true—he remembers the broad strokes but gets details wrong. Players who fact-check him (roll Lore, Investigation, or use a compass) gain an edge. His advice should never be a free pass; it should always cost something (time, a tick of Durin's Debt, or a misdirection).",
+      "wraith_weakness": "The Iron Wraiths can be sundered—but not with magic. Drop hints: a rusty sledgehammer propped against the wall, a cracked suit of armor, a note from a previous delver reading 'hit them hard, not smart.'",
+      "primus_negotiation": "The Ward-Primus is a construct of law, not malice. If the party offers it something it values more than the keystone—a fresh memory, a promise to destroy a rival's ward, a confession of a crime they committed elsewhere—it may let them pass. This should feel like a earned discovery, not a handout."
+    }
+  },
+
   "currentAct": 0,
   "currentScene": 0,
   "startedAt": null,

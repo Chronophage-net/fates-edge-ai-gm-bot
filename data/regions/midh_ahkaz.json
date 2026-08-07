@@ -1,20 +1,20 @@
 {
   "id": "midh-ahkaz-violet-gate",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "type": "generator",
   "title": "Midh Ahkaz — The Violet Gate",
   "label": "chap:midh-ahkaz",
   "key_demographic": "Ykrul and Humans",
   "manifest_path": "/data/docs/manifest.json",
   "overview": {
-    "tagline": "Coin talks. Grass walks. Blood settles the rest.",
-    "genre": "Frontier grit, steppe noir, law of the rope and the blade, creeping cult horror.",
-    "mood": "Grass & Trade, Oath & Sky, Horse & Bow, Serpent Cult",
-    "starting_location": "The Violet Bazaar at dusk—torches gutter, braids slap against leather vests, and a one-eyed horse trader spits into the dust at your feet. 'You're new. The Oasis Well runs low, the Khatun's coughing blood, and someone's been passing hollow silver. Pick a problem — or I'll pick one for you. And keep your hand off your steel near the Serpent Pit. The Shedder's children have eyes everywhere.'",
+    "tagline": "Coin talks. Grass walks. Blood settles the rest. Welcome to the last place before the world ends—or the first place it begins again.",
+    "genre": "Sword and Sorcery, frontier grit, steppe noir, law of the rope and the blade, creeping cult horror, den of scum and villainy.",
+    "mood": "Grass & Trade, Oath & Sky, Horse & Bow, Serpent Cult, Blood & Dust",
+    "starting_location": "The Violet Bazaar at dusk—torches gutter, braids slap against leather vests, and a one-eyed horse trader spits into the dust at your feet. 'You're new. The Oasis Well runs low, the Khatun's coughing blood, and someone's been passing hollow silver. Pick a problem—or I'll pick one for you. And keep your hand off your steel near the Serpent Pit. The Shedder's children have eyes everywhere. She's been waiting for someone like you.'",
     "lore": {
-      "history": "Midh Ahkaz is a crossroads of steppe and empire, where Ykrul riders and human traders meet under the shadow of the Violet Gate. The Oasis Compact, a loose council of clan elders, Vilikari factors, and Steppe Rangers, enforces the Wind Law—a blend of custom, horse-trading, and the geometry of oaths. Grass rights, water shares, and blood prices are settled in the Bronze Court or the Grass Ring. But beneath this ancient order, the Serpent Cult of Isoka offers a darker path: transformation through poison, renewal through death. The Shedder, the cult's high priestess, has not aged in twenty years, and her followers gather in the Serpent Pit behind the Dust Market.",
-      "first_notice": "The smell of horse, dust, and the faint tang of snake venom. The way the grass rustles even when there is no wind. The silence that falls when the Violet Gate's shadow lengthens.",
-      "rule_that_kills": "Never let a debt go unpaid in Midh Ahkaz. The grass remembers. The Oasis Compact keeps a tally—and the dead do not rest."
+      "history": "Midh Ahkaz is a crossroads of steppe and empire, where Ykrul riders and human traders meet under the shadow of the Violet Gate. The Oasis Compact, a loose council of clan elders, Vilikari factors, and Steppe Rangers, enforces the Wind Law—a blend of custom, horse-trading, and the geometry of oaths. Grass rights, water shares, and blood prices are settled in the Bronze Court or the Grass Ring. But beneath this ancient order, the Serpent Cult of Isoka offers a darker path: transformation through poison, renewal through death. The Shedder, the cult's high priestess, has not aged in twenty years, and her followers gather in the Serpent Pit behind the Dust Market. The real power in Midh Ahkaz is not the Khatun, not the Compact, not even the Cult—it is the Violet Gate itself, a monolithic arch of dark stone that predates all memory. When the sun sets, its shadow stretches across the bazaar, and the desperate and the damned gather beneath it to make deals that no other law would permit.",
+      "first_notice": "The smell of horse, dust, and the faint tang of snake venom. The way the grass rustles even when there is no wind. The silence that falls when the Violet Gate's shadow lengthens. The way the locals never look directly at the Gate at dusk.",
+      "rule_that_kills": "Never let a debt go unpaid in Midh Ahkaz. The grass remembers. The Oasis Compact keeps a tally—and the dead do not rest. Also, never make a deal in the shadow of the Violet Gate without a witness. The Gate has a memory of its own."
     },
     "entanglements": {
       "west": "Vilikari — The Foedus Stone's jurisdiction ends at the Violet Gate; the two-law dialectic is a brisk trade. The gate is the edge of the Federate King's memory.",
@@ -22,48 +22,79 @@
       "southeast": "Acasia — The Broken Marches' mercenaries and refugees seek shelter at the caravanserai; the Curse does not cross the gate's shadow. The Violet Gate is a sieve, not a wall."
     }
   },
+  "regional_diagnostic": {
+    "current_hook": "Coin talks. Grass walks. Blood settles the rest.",
+    "core_conflict": "Players are caught between the **Khatun's fading authority**, the **Oasis Compact's** brittle law, and the **Serpent Cult's** seductive promise of transformation—each offering power at a price. Beneath it all, the Violet Gate watches and waits.",
+    "unique_feature": "**The Violet Gate:** A monolithic arch of dark stone that predates all memory. Its shadow warps time and memory. Those who make deals in its shadow find their words binding in ways they did not intend.",
+    "ninth_taboo": "In any Midh Ahkaz scene, the ninth horse table in the Violet Bazaar sells nothing but bad advice. Spend a Boon to reroll a failed negotiation—but the advice may haunt you. The table is always empty except at midnight. At midnight, a hooded figure sits there. No one knows who.",
+    "price": "Every gift carries a **Grass Mark** (social debt); every oath sworn in the Gate's shadow is binding. Power requires gambling reputation (the Khatun's judgment), accepting serpent venom (the Shedder's cup), or trading secrets to the Bronze Court clerks.",
+    "faction_triad": [
+      {
+        "faction": "The Khatun's Riders",
+        "goal": "Maintain the old oaths and resist Ecktorian encroachment",
+        "method": "Horseback patrols, clan fealty, grass-right enforcement",
+        "why_players_care": "They control the steppe and the water rights"
+      },
+      {
+        "faction": "The Oasis Compact",
+        "goal": "Keep trade flowing and disputes settled",
+        "method": "Bronze Court rulings, standardized weights, water shares",
+        "why_players_care": "They are the only law between the clans"
+      },
+      {
+        "faction": "The Serpent Cult of Isoka",
+        "goal": "Offer transformation to those who seek it and gather the worthy",
+        "method": "Poison, ritual, and the promise of shedding weakness",
+        "why_players_care": "They offer power that no other faction can—at a cost"
+      }
+    ]
+  },
   "quotes": [
     {
       "speaker": "Khatun of the Ring (Elite)",
-      "text": "The wind carries names, not tallies. But here, in the shadow of the Oasis Compact, both trade and oaths change hands. Do not mistake our patience for weakness. The grass remembers every hoof that crossed it. And now the serpents coil beneath the dust—the Shedder offers renewal, but her cup is poison."
+      "text": "The wind carries names, not tallies. But here, in the shadow of the Oasis Compact, both trade and oaths change hands. Do not mistake our patience for weakness. The grass remembers every hoof that crossed it. And now the serpents coil beneath the dust—the Shedder offers renewal, but her cup is poison. She has been waiting for the Gate to choose a new fool."
     },
     {
       "speaker": "Vilikari Factor (Commoner)",
-      "text": "Ecktoria calls it uncivilized. We call it unbeatable. No writs, no seals, no questions. Coin talks. The rest walks. And if a snake offers you a sip from its cup, walk faster. The Shedder's smile has too many teeth."
+      "text": "Ecktoria calls it uncivilized. We call it unbeatable. No writs, no seals, no questions. Coin talks. The rest walks. And if a snake offers you a sip from its cup, walk faster. The Shedder's smile has too many teeth. I've seen what happens to those who drink. They shed their skin, sure. They also shed their minds."
+    },
+    {
+      "speaker": "Ostrikari Arms-Master (Commoner)",
+      "text": "I name each bow after a dead rival. The bows never miss. My left ear is missing—a score I settled in flesh. You want a weapon? I sell bows. You want a story? That costs extra. You want to know what's under the Violet Gate? That costs your soul. And I don't have change."
     }
   ],
   "almanac": [
     {
       "question": "What do people eat for breakfast?",
-      "answer": "Curd cheese and flatbread — the cheese is from the Ykrul herds, the bread is baked in dung-fire embers. It tastes of smoke and the open sky. The poor dip it in salt; the rich dip it in honey stolen from a border hive."
+      "answer": "Curd cheese and flatbread—the cheese is from the Ykrul herds, the bread is baked in dung-fire embers. It tastes of smoke and the open sky. The poor dip it in salt; the rich dip it in honey stolen from a border hive. The desperate eat nothing and watch the Gate."
     },
     {
       "question": "What does a child learn before they can walk?",
-      "answer": "To count horses. Midh Ahkaz children learn the eight gaits of a healthy mount: walk, trot, canter, gallop, pace, amble, rack, and the ninth — the death-sprint that only a stolen horse knows. The ninth gait is never taught; it is discovered when the rider's life depends on it."
+      "answer": "To count horses. Midh Ahkaz children learn the eight gaits of a healthy mount: walk, trot, canter, gallop, pace, amble, rack, and the ninth—the death-sprint that only a stolen horse knows. The ninth gait is never taught; it is discovered when the rider's life depends on it."
     },
     {
       "question": "What is the first thing you notice about a stranger?",
-      "answer": "Their braids. Ykrul warriors braid their hair with clan colors; Vilikari traders wear oiled braids with silver beads. A stranger whose braids are loose has just fought. A stranger whose braids are cut has lost a blood-price. A stranger with no braids is either a slave or a ghost. Neither stays long."
+      "answer": "Their braids. Ykrul warriors braid their hair with clan colors; Vilikari traders wear oiled braids with silver beads. A stranger whose braids are loose has just fought. A stranger whose braids are cut has lost a blood-price. A stranger with no braids is either a slave or a ghost. Neither stays long. And if they have scales on their skin, you do not meet their eyes."
     },
     {
       "question": "What is the most common crime?",
-      "answer": "Grass-right forgery — but forgery is not a crime, it is a negotiation. The Oasis Compact issues branded sticks for grazing rights. A clever carver can duplicate the brand. The penalty is exile into the tall grass at dusk. The grass does not have a court of appeals."
+      "answer": "Grass-right forgery—but forgery is not a crime, it is a negotiation. The Oasis Compact issues branded sticks for grazing rights. A clever carver can duplicate the brand. The penalty is exile into the tall grass at dusk. The grass does not have a court of appeals."
     },
     {
       "question": "What does no one talk about but everyone knows?",
-      "answer": "The Khatun is not the only ruler. The Serpent Cult's high priestess, the Shedder, knows the price of every sin. Her followers gather in the sunken pit behind the Dust Market, and the venom they drink either kills or transforms. The three powers — the Khatun, the Dust Market auctioneer, and the Iron Well keeper — meet once a season. No one records what they say. The grass records it."
+      "answer": "The Khatun is not the only ruler. The Serpent Cult's high priestess, the Shedder, knows the price of every sin. Her followers gather in the sunken pit behind the Dust Market, and the venom they drink either kills or transforms. The three powers—the Khatun, the Dust Market auctioneer, and the Iron Well keeper—meet once a season beneath the Violet Gate. No one records what they say. The Gate records it."
     },
     {
       "question": "Where do people go when they die?",
-      "answer": "To the grass. Bodies are carried beyond the caravan rings and left for the wolves and the wind. The grass grows tall and green where a body falls. A patch of deep violet is a sign that the dead were not properly mourned. The locals avoid those patches."
+      "answer": "To the grass. Bodies are carried beyond the caravan rings and left for the wolves and the wind. The grass grows tall and green where a body falls. A patch of deep violet is a sign that the dead were not properly mourned. The locals avoid those patches. The cult visits them at night."
     },
     {
       "question": "How do you apologize for a serious wrong?",
-      "answer": "You offer a blood-price in silver, weighed on the Bronze Court's scales. If the scale tips in your favor, you are forgiven. If it tips against you, you owe a horse. If the scale balances, you owe a story — and the story must be true, and the true story must make the wronged party weep. If it does not, you owe a finger."
+      "answer": "You offer a blood-price in silver, weighed on the Bronze Court's scales. If the scale tips in your favor, you are forgiven. If it tips against you, you owe a horse. If the scale balances, you owe a story—and the story must be true, and the true story must make the wronged party weep. If it does not, you owe a finger."
     },
     {
       "question": "What is the most important festival?",
-      "answer": "The Grass Moon (autumn equinox). Violet seed-heads glow under moonlight. The tribes ride in a great circle, singing the names of the dead. At midnight, the Khatun pours a cup of water onto the earth. If the water sinks, the winter will be mild. If it pools, the winter will be hungry. If it steams, the Hollow is walking. The festival ends at dawn. No one sleeps."
+      "answer": "The Grass Moon (autumn equinox). Violet seed-heads glow under moonlight. The tribes ride in a great circle, singing the names of the dead. At midnight, the Khatun pours a cup of water onto the earth beneath the Violet Gate. If the water sinks, the winter will be mild. If it pools, the winter will be hungry. If it steams, the Hollow is walking. The festival ends at dawn. No one sleeps."
     },
     {
       "question": "What is the secret that could destroy a powerful person?",
@@ -75,19 +106,19 @@
       "name": "Khatun of the Ring",
       "role": "Clan-chief of seven clans",
       "motivation": "Keep the old oaths and resist Ecktorian encroachment",
-      "quirk": "Lost an eye to a Linn raider; killed him with his own hook. Her iron hook has a bell that never rings false."
+      "quirk": "Lost an eye to a Linn raider; killed him with his own hook. Her iron hook has a bell that never rings false. She has been coughing blood for a year. She tells no one."
     },
     {
       "name": "The Shedder",
       "role": "High Priestess of the Serpent Cult",
       "motivation": "Offer the Cup of Renewal and gather the worthy",
-      "quirk": "Has not aged in twenty years. Her snake-scale tattoos move when she is angry."
+      "quirk": "Has not aged in twenty years. Her snake-scale tattoos move when she is angry. She is waiting for the Gate to open."
     },
     {
       "name": "Bronze Court Clerk",
       "role": "Magistrate of the Oasis Compact",
       "motivation": "Weigh every claim without favor",
-      "quirk": "Records weights in blood. Her ledger has nine columns; the ninth is blank."
+      "quirk": "Records weights in blood. Her ledger has nine columns; the ninth is blank. She has not smiled in a decade."
     },
     {
       "name": "Steppe Ranger",
@@ -99,7 +130,13 @@
       "name": "Iron Well Keeper",
       "role": "Vengeance broker",
       "motivation": "Accept names written in ash",
-      "quirk": "Mute, scarred. A drink from the well costs a memory; a death costs a fortune."
+      "quirk": "Mute, scarred. A drink from the well costs a memory; a death costs a fortune. His mark is carved on his own arm—the names move."
+    },
+    {
+      "name": "Orun the Disgraced",
+      "role": "Exiled Ykrul scout turned gutter-thief",
+      "motivation": "Survive long enough to earn back his braids",
+      "quirk": "His tongue is forked—not by birth, but by the Shedder's mercy. He can taste lies."
     }
   ],
   "names": {
@@ -142,126 +179,126 @@
       "suit": "spade",
       "title": "Violet Bazaar",
       "subtitle": "[TRADE]",
-      "description": "Felt stalls, chalk circles, horse traders and rumor merchants.",
-      "flavor": "The chalk circles are for disputes. Step inside and speak truth — or settle in grass. Blood washes off the chalk, but the stain stays.",
-      "mechanical_hook": "Gossip and trade flow freely; a successful Wits+Sway (DV 4) reveals a local rumor or a hidden market deal."
+      "description": "Felt stalls, chalk circles, horse traders and rumor merchants. The Gate's shadow falls here at dusk.",
+      "flavor": "The chalk circles are for disputes. Step inside and speak truth—or settle in grass. Blood washes off the chalk, but the stain stays. The Gate watches. It always watches.",
+      "mechanical_hook": "Gossip and trade flow freely; a successful Wits+Sway (DV 4) reveals a local rumor or a hidden market deal. At dusk, the Gate's shadow makes all deals binding—breaking one ticks a Grass Mark."
     },
     {
       "rank": 3,
       "suit": "spade",
       "title": "Bronze Court",
       "subtitle": "[JUSTICE]",
-      "description": "Tariff court under a canvas dome; scales of bronze and iron.",
-      "flavor": "The scales were blessed by a dying Sky-Speaker. They tip even when the wind is still. The clerk has never smiled.",
-      "mechanical_hook": "To settle a dispute, you must present evidence (a token or witness). Roll Presence+Sway (DV 4); on success, the scale tips in your favor."
+      "description": "Tariff court under a canvas dome; scales of bronze and iron. The Gate's shadow does not reach here—the clerks built the tent to keep it out.",
+      "flavor": "The scales were blessed by a dying Sky-Speaker. They tip even when the wind is still. The clerk has never smiled. She has seen what happens when the Gate takes an interest.",
+      "mechanical_hook": "To settle a dispute, you must present evidence (a token or witness). Roll Presence+Sway (DV 4); on success, the scale tips in your favor. On a miss, you owe a Grass Mark."
     },
     {
       "rank": 4,
       "suit": "spade",
       "title": "Oasis Well",
       "subtitle": "[SURVIVAL]",
-      "description": "Stone-rimmed pool, token-keeper with a leather bag of water rights.",
-      "flavor": "Each token is a carved pebble. Lose it, and your herd drinks dust. The keeper's knife is sharper than his tongue.",
-      "mechanical_hook": "To draw water, present a token. Without one, you must bargain or steal. A successful Wits+Stealth test (DV 4) can acquire a token."
+      "description": "Stone-rimmed pool, token-keeper with a leather bag of water rights. The water is said to come from the Gate's shadow.",
+      "flavor": "Each token is a carved pebble. Lose it, and your herd drinks dust. The keeper's knife is sharper than his tongue. He has three fingers on his left hand—he lost the others defending the well from a demon.",
+      "mechanical_hook": "To draw water, present a token. Without one, you must bargain or steal. A successful Wits+Stealth test (DV 4) can acquire a token. Drinking water without a token ticks the Violet Gate's attention."
     },
     {
       "rank": 5,
       "suit": "spade",
       "title": "Steppe Ranger Camp",
       "subtitle": "[WILD]",
-      "description": "Tent line on the eastern edge; trackers, scouts, feud mediators.",
-      "flavor": "The rangers wear wolf tails. They do not smile — they wait. Their campfire is never allowed to go out.",
-      "mechanical_hook": "Rangers can provide a guide or tracking service. Offering 1 Supply or a favor secures their help."
+      "description": "Tent line on the eastern edge; trackers, scouts, feud mediators. The Gate's shadow does not reach here at dawn.",
+      "flavor": "The rangers wear wolf tails. They do not smile—they wait. Their campfire is never allowed to go out. They are the only ones who hunt the things that come from the Gate at night.",
+      "mechanical_hook": "Rangers can provide a guide or tracking service. Offering 1 Supply or a favor secures their help. They will not enter the Gate's shadow after dusk."
     },
     {
       "rank": 6,
       "suit": "spade",
       "title": "Caravan Rings",
       "subtitle": "[TRAVEL]",
-      "description": "Concentric circles of wagon shelters; fires lit inward, watch posts on ox carts.",
-      "flavor": "The inner ring is for sworn allies. Outsiders sleep in the second ring, uneasy — and a knife in the boot.",
-      "mechanical_hook": "Rest in the outer ring; a successful Resolve test (DV 4) avoids a night ambush. Inner ring grants safe rest."
+      "description": "Concentric circles of wagon shelters; fires lit inward, watch posts on ox carts. The outer ring is where the desperate sleep.",
+      "flavor": "The inner ring is for sworn allies. Outsiders sleep in the second ring, uneasy—and a knife in the boot. The outermost ring is for those who have nowhere else to go. They are the Gate's preferred prey.",
+      "mechanical_hook": "Rest in the outer ring; a successful Resolve test (DV 4) avoids a night ambush. Inner ring grants safe rest. The outermost ring is Desperate; on a miss, something visits your camp."
     },
     {
       "rank": 7,
       "suit": "spade",
       "title": "Sky-Speaker's Cairn",
       "subtitle": "[RITUAL]",
-      "description": "Stone heap atop a low hill; wind-knot ropes and bones.",
-      "flavor": "The shaman leaves offerings of horsehair. The wind carries his prayers to Kuva — and sometimes his curses.",
-      "mechanical_hook": "Offer a Boon to gain a weather omen (automatic success on next navigation check in steppe)."
+      "description": "Stone heap atop a low hill; wind-knot ropes and bones. The Gate's shadow does not reach this hill.",
+      "flavor": "The shaman leaves offerings of horsehair. The wind carries his prayers to Kuva—and sometimes his curses. He is the only one who claims to know what the Gate wants.",
+      "mechanical_hook": "Offer a Boon to gain a weather omen (automatic success on next navigation check in steppe). Also, the Sky-Speaker may warn you of the Gate's attention."
     },
     {
       "rank": 8,
       "suit": "spade",
       "title": "Dust Market",
       "subtitle": "[UNDERWORLD]",
-      "description": "No-questions auction at the city's edge; stolen goods, cursed relics, bad memories.",
-      "flavor": "The auctioneer wears a hooded mask. No one knows his face. No one has asked twice.",
-      "mechanical_hook": "You can buy any item (GM's discretion) for 1-3 Boon, but every purchase may come with a complication (roll on a minor complication table)."
+      "description": "No-questions auction at the city's edge; stolen goods, cursed relics, bad memories. The Gate's shadow is longest here.",
+      "flavor": "The auctioneer wears a hooded mask. No one knows his face. No one has asked twice. He is said to be the Gate's favorite child.",
+      "mechanical_hook": "You can buy any item (GM's discretion) for 1-3 Boon, but every purchase may come with a complication (roll on a minor complication table). Items bought here may be cursed—roll a die; on a 1, the item is tainted by the Gate."
     },
     {
       "rank": 9,
       "suit": "spade",
       "title": "Silver Stall Stable",
       "subtitle": "[TRAVEL]",
-      "description": "Remount station; horses for hire, gossip for free, blood for more.",
-      "flavor": "The stable master has three fingers on his left hand. He lost the others in a bet over a mare. He won the bet.",
-      "mechanical_hook": "Hire a horse for 1 Supply. Stable master offers a rumor for free."
+      "description": "Remount station; horses for hire, gossip for free, blood for more. The stable was built with stone from the Gate's foundation.",
+      "flavor": "The stable master has three fingers on his left hand. He lost the others in a bet over a mare. He won the bet. The horses here are the only ones that will enter the Gate's shadow willingly.",
+      "mechanical_hook": "Hire a horse for 1 Supply. Stable master offers a rumor for free. Horses from the Silver Stall are immune to the Gate's fear effect."
     },
     {
       "rank": 10,
       "suit": "spade",
       "title": "Grass Ring",
       "subtitle": "[COMBAT]",
-      "description": "Ritual dueling ground; mourners and bookies share benches.",
-      "flavor": "The grass grows back faster after a duel. The dead fertilize the peace.",
-      "mechanical_hook": "Settle disputes here via duel (see Quick Duels). Winners gain social standing."
+      "description": "Ritual dueling ground; mourners and bookies share benches. The grass here grows violet at the root.",
+      "flavor": "The grass grows back faster after a duel. The dead fertilize the peace. The Gate's shadow falls here at twilight—duels fought in the shadow are to the death.",
+      "mechanical_hook": "Settle disputes here via duel (see Quick Duels). Winners gain social standing. Duels at dusk in the Gate's shadow are Desperate—losers die."
     },
     {
       "rank": 11,
       "suit": "spade",
       "title": "Foreign Quarter",
       "subtitle": "[POLITICS]",
-      "description": "Ecktorian, Vhasian, and Viterran merchants in permanent felt mansions.",
-      "flavor": "The Ecktorian envoy winters here. He has not left in five years. He has a name on a list in three countries — but Midh Ahkaz does not extradite.",
-      "mechanical_hook": "Access to foreign goods and intelligence. Approach requires a letter of introduction or a bribe of 2 Supply."
+      "description": "Ecktorian, Vhasian, and Viterran merchants in permanent felt mansions. They built their walls facing away from the Gate.",
+      "flavor": "The Ecktorian envoy winters here. He has not left in five years. He has a name on a list in three countries—but Midh Ahkaz does not extradite. He is afraid of the Gate. He does not say why.",
+      "mechanical_hook": "Access to foreign goods and intelligence. Approach requires a letter of introduction or a bribe of 2 Supply. The envoy will trade secrets about the Gate—for a price."
     },
     {
       "rank": 12,
       "suit": "spade",
       "title": "Khatun's Ring",
       "subtitle": "[AUTHORITY]",
-      "description": "Largest tent, carpeted with woven battle scenes; the old chieftain's seat.",
-      "flavor": "The carpet is made of enemy cloaks. Each sash is a surrendered banner. The air smells of smoke, old blood, and the fear of petitioners.",
-      "mechanical_hook": "To gain an audience, you must offer a gift or a petition. Presence+Sway (DV 5) to sway the Khatun."
+      "description": "Largest tent, carpeted with woven battle scenes; the old chieftain's seat. The tent's entrance faces away from the Gate.",
+      "flavor": "The carpet is made of enemy cloaks. Each sash is a surrendered banner. The air smells of smoke, old blood, and the fear of petitioners. The Khatun has not left her tent in a month.",
+      "mechanical_hook": "To gain an audience, you must offer a gift or a petition. Presence+Sway (DV 5) to sway the Khatun. She will not discuss the Gate—she will only warn you away from it."
     },
     {
       "rank": 13,
       "suit": "spade",
       "title": "Under-Arcades",
       "subtitle": "[STEALTH]",
-      "description": "Earthen tunnels below the bazaar; root-walled, bone-dusted.",
-      "flavor": "The walls are packed with bone dust and old burrows. The dead whisper route tips — for a price. The trade is never silver.",
-      "mechanical_hook": "Gain a stealthy route through the bazaar, but test Resolve (DV 4) to avoid becoming lost or haunted."
+      "description": "Earthen tunnels below the bazaar; root-walled, bone-dusted. The tunnels are said to lead to the Gate's foundation.",
+      "flavor": "The walls are packed with bone dust and old burrows. The dead whisper route tips—for a price. The trade is never silver. The tunnels are the Cult's territory; the Shedder's children guard them.",
+      "mechanical_hook": "Gain a stealthy route through the bazaar, but test Resolve (DV 4) to avoid becoming lost or haunted. On a miss, gain a Contamination Token from the Cult."
     },
     {
       "rank": 14,
       "suit": "spade",
       "title": "Iron Well",
       "subtitle": "[DEATH]",
-      "description": "Ancient Aeler shaft, now used for vengeance contracts and whispered names.",
-      "flavor": "The water tastes of rust and memory. Those who drink never lie again — or never speak. The keeper writes the names of the condemned in ash. The ash floats.",
-      "mechanical_hook": "You may offer a name in ash to the Iron Well Keeper; he will take vengeance for you (cost: 3 Supply or a memory)."
+      "description": "Ancient Aeler shaft, now used for vengeance contracts and whispered names. The well is said to connect to the Gate's foundation.",
+      "flavor": "The water tastes of rust and memory. Those who drink never lie again—or never speak. The keeper writes the names of the condemned in ash. The ash floats. The Gate drinks the ash.",
+      "mechanical_hook": "You may offer a name in ash to the Iron Well Keeper; he will take vengeance for you (cost: 3 Supply or a memory). The Gate will remember your name."
     },
     {
       "rank": "S",
       "suit": "spade",
       "title": "Serpent Pit (Cult Temple)",
       "subtitle": "[MYSTERY] [DANGER]",
-      "description": "A sunken amphitheater behind the Dust Market, reeking of incense and old venom.",
-      "flavor": "The walls are lined with shed skins — some as long as a horse. At midnight, the faithful drink from a bronze cup. Some rise renewed. Some do not rise at all. The Shedder has not aged in twenty years.",
-      "mechanical_hook": "Entering the pit invites a Serpent's Favor test (Spirit+Resolve DV 5). On failure, gain 1 Corruption; on success, you may partake of the Cup (see Serpent's Favor)."
+      "description": "A sunken amphitheater behind the Dust Market, reeking of incense and old venom. The Pit is built around a fissure that leads to the Gate.",
+      "flavor": "The walls are lined with shed skins—some as long as a horse. At midnight, the faithful drink from a bronze cup. Some rise renewed. Some do not rise at all. The Shedder has not aged in twenty years. She is waiting for the Gate to speak.",
+      "mechanical_hook": "Entering the pit invites a Serpent's Favor test (Spirit+Resolve DV 5). On failure, gain 1 Corruption; on success, you may partake of the Cup (see Serpent's Favor). The Pit is the only place in Midh Ahkaz where the Gate speaks aloud."
     }
   ],
   "people_and_factions": [
@@ -270,8 +307,8 @@
       "suit": "heart",
       "title": "Horse-Braid Apprentice",
       "subtitle": "[TRADE]",
-      "description": "Young Ykrul with a head full of trade routes and a knot diary.",
-      "flavor": "She ties a new braid for every paying passenger. Her hair is a map of promises — and grudges.",
+      "description": "Young Ykrul with a head full of trade routes and a knot diary. She was born under the Gate's shadow.",
+      "flavor": "She ties a new braid for every paying passenger. Her hair is a map of promises—and grudges. She has a scar on her palm from touching the Gate's foundation.",
       "what_they_carry": "Knows the best caravans and safest routes; will share for 1 Supply.",
       "what_they_ask": "A story from a far-off land; she weaves it into her braids."
     },
@@ -280,8 +317,8 @@
       "suit": "heart",
       "title": "Ostrikari Arms-Master",
       "subtitle": "[COMBAT]",
-      "description": "Selling short bows and longer grudges; fights for coin.",
-      "flavor": "He names each bow after a dead rival. The bows never miss. His left ear is missing — a score he settled in flesh.",
+      "description": "Selling short bows and longer grudges; fights for coin. His shop is built with stone from the Gate.",
+      "flavor": "He names each bow after a dead rival. The bows never miss. His left ear is missing—a score he settled in flesh. He has a bow named 'Gate-Killer.' It has never been fired.",
       "what_they_carry": "Sells quality bows (DV +1 on ranged rolls) for 2 Supply.",
       "what_they_ask": "A duel in the Grass Ring; if you win, he gives a bow for free."
     },
@@ -290,8 +327,8 @@
       "suit": "heart",
       "title": "Bronze Court Clerk",
       "subtitle": "[JUSTICE]",
-      "description": "Ink-stained, patient, scales in her eyes; never lies, never forgives.",
-      "flavor": "She records weights in blood. A single drop seals a verdict. She has never been wrong — or so she says.",
+      "description": "Ink-stained, patient, scales in her eyes; never lies, never forgives. She knows the Gate's true name.",
+      "flavor": "She records weights in blood. A single drop seals a verdict. She has never been wrong—or so she says. Her ledger's ninth column is blank. She knows what will fill it.",
       "what_they_carry": "She can expedite a court ruling for a bribe of 1 Boon.",
       "what_they_ask": "A truth she does not know; she will pay for it."
     },
@@ -300,8 +337,8 @@
       "suit": "heart",
       "title": "Vilikari Factor",
       "subtitle": "[TRADE]",
-      "description": "Braided, oiled, quick with a smile and a second set of weights.",
-      "flavor": "His caravan has three names. Only the real one buys safe passage. The other two are for the tax man and the grave.",
+      "description": "Braided, oiled, quick with a smile and a second set of weights. He has never seen the Gate. He refuses to.",
+      "flavor": "His caravan has three names. Only the real one buys safe passage. The other two are for the tax man and the grave. He pays the cult to keep the Gate away from him.",
       "what_they_carry": "Offers a discount on goods if you help smuggle a package (no questions).",
       "what_they_ask": "A blind eye to his cargo; he'll owe you a favor."
     },
@@ -310,8 +347,8 @@
       "suit": "heart",
       "title": "Steppe Ranger",
       "subtitle": "[WILD]",
-      "description": "Tracker with a wolf-tail cloak and a blood-oath to the Sky-Speaker.",
-      "flavor": "He never draws his bow unless watched. Hunger is his real weapon. His arrows are fletched with crow feathers.",
+      "description": "Tracker with a wolf-tail cloak and a blood-oath to the Sky-Speaker. He has hunted things that came from the Gate.",
+      "flavor": "He never draws his bow unless watched. Hunger is his real weapon. His arrows are fletched with crow feathers. He has seen the Gate move.",
       "what_they_carry": "Can track anyone across the steppe for 1 Supply.",
       "what_they_ask": "A favor to be named later; his word is iron."
     },
@@ -320,8 +357,8 @@
       "suit": "heart",
       "title": "Tokan (Ykrul Scout)",
       "subtitle": "[STEALTH]",
-      "description": "Mute, sharp-eyed, always smelling the wind; her ears miss nothing.",
-      "flavor": "She signs with her knuckles. Three taps is 'danger.' One tap is 'run.' No taps means you are already dead.",
+      "description": "Mute, sharp-eyed, always smelling the wind; her ears miss nothing. She was found as a child near the Gate.",
+      "flavor": "She signs with her knuckles. Three taps is 'danger.' One tap is 'run.' No taps means you are already dead. She has no memory of before the Gate.",
       "what_they_carry": "She will warn you of hidden threats for 1 Supply.",
       "what_they_ask": "A story told in silence; she reads lips."
     },
@@ -330,8 +367,8 @@
       "suit": "heart",
       "title": "Ecktoria Emissary",
       "subtitle": "[POLITICS]",
-      "description": "Proud, wax-sealed, fuming at the 'primitive' customs.",
-      "flavor": "He carries a copy of Imperial Code that he has never opened. The flies love his ink. The locals love his purse.",
+      "description": "Proud, wax-sealed, fuming at the 'primitive' customs. He has never seen the Gate. He has nightmares about it.",
+      "flavor": "He carries a copy of Imperial Code that he has never opened. The flies love his ink. The locals love his purse. He has been trying to leave for three years. The Gate will not let him.",
       "what_they_carry": "Offers a Census Waiver (Diamond) for 2 Supply.",
       "what_they_ask": "Information on local power struggles; he pays in coin."
     },
@@ -340,8 +377,8 @@
       "suit": "heart",
       "title": "Sky-Speaker's Shadow",
       "subtitle": "[RITUAL]",
-      "description": "Elder's quiet apprentice; listens more than the wind.",
-      "flavor": "She can name every clan's sky-omen. She cannot name her own origin. Her eyes are the color of ash.",
+      "description": "Elder's quiet apprentice; listens more than the wind. She was raised in the Gate's shadow.",
+      "flavor": "She can name every clan's sky-omen. She cannot name her own origin. Her eyes are the color of ash. She knows what the Gate wants.",
       "what_they_carry": "She offers a free omen reading if you share a secret.",
       "what_they_ask": "A name you have never spoken; she will keep it."
     },
@@ -350,8 +387,8 @@
       "suit": "heart",
       "title": "Knot-Keeper (Tulkani)",
       "subtitle": "[SOCIAL]",
-      "description": "Counts caravan promises with a rope of nine strands.",
-      "flavor": "Each knot is a promise. Untie one and the bond dissolves. Cut one and the one who swore dies in his sleep. No one knows how.",
+      "description": "Counts caravan promises with a rope of nine strands. She came to Midh Ahkaz to escape the Curse.",
+      "flavor": "Each knot is a promise. Untie one and the bond dissolves. Cut one and the one who swore dies in his sleep. No one knows how. She does not speak of the Gate.",
       "what_they_carry": "Can bind a promise between two parties for 1 Supply.",
       "what_they_ask": "A witness to a contract; they will pay 1 Supply."
     },
@@ -360,8 +397,8 @@
       "suit": "heart",
       "title": "Dust Market Auctioneer",
       "subtitle": "[UNDERWORLD]",
-      "description": "Hooded, genderless voice; knows the weight of every sin.",
-      "flavor": "The hammer is a thigh bone. The block is a skull altar from the Direwood. The skull's jaw moves when the price is right.",
+      "description": "Hooded, genderless voice; knows the weight of every sin. They are the Gate's voice in the market.",
+      "flavor": "The hammer is a thigh bone. The block is a skull altar from the Direwood. The skull's jaw moves when the price is right. The auctioneer has not left the Dust Market in a decade.",
       "what_they_carry": "Can procure any item for a price (3 Boon).",
       "what_they_ask": "A secret that will sell well; they share profits."
     },
@@ -370,8 +407,8 @@
       "suit": "heart",
       "title": "Khatun of the Ring",
       "subtitle": "[AUTHORITY]",
-      "description": "Gray-haired, one-eyed, still deadly at sixty; speaks for seven clans.",
-      "flavor": "She lost her eye to a Linn raider. She killed him with his own hook. She keeps the hook on her belt.",
+      "description": "Gray-haired, one-eyed, still deadly at sixty; speaks for seven clans. She is dying. The Gate is waiting.",
+      "flavor": "She lost her eye to a Linn raider. She killed him with his own hook. She keeps the hook on her belt. She has been coughing blood for a year. She will not see the next Grass Moon.",
       "what_they_carry": "Can grant a Grass Right (Diamond) for a significant service.",
       "what_they_ask": "A show of loyalty; she tests your mettle."
     },
@@ -380,8 +417,8 @@
       "suit": "heart",
       "title": "Kuva's Voice (Wandering Priest)",
       "subtitle": "[RITUAL]",
-      "description": "Weathered, ash-marked, offers omen readings for grass.",
-      "flavor": "He prays to the sky by throwing bones. The bones never lie — they just mislead. The ash on his forehead is from a fire that hasn't been lit yet.",
+      "description": "Weathered, ash-marked, offers omen readings for grass. He is the only one who claims to have survived the Gate.",
+      "flavor": "He prays to the sky by throwing bones. The bones never lie—they just mislead. The ash on his forehead is from a fire that hasn't been lit yet. He wears a scar on his chest—the Gate's mark.",
       "what_they_carry": "Reads omens for 1 Supply; grants a +1 die to next navigation roll.",
       "what_they_ask": "A story of a sin; he will pray for its forgiveness."
     },
@@ -390,8 +427,8 @@
       "suit": "heart",
       "title": "Iron Well Keeper",
       "subtitle": "[DEATH]",
-      "description": "Mute, scarred, accepts names written in ash.",
-      "flavor": "A drink from the well costs a memory. A death costs a fortune. His mark is carved on his own arm — the names move.",
+      "description": "Mute, scarred, accepts names written in ash. He is the Gate's jailer.",
+      "flavor": "A drink from the well costs a memory. A death costs a fortune. His mark is carved on his own arm—the names move. He has not spoken in twenty years. The Gate speaks for him.",
       "what_they_carry": "He will take a name in ash and exact vengeance (cost: 3 Supply or a memory).",
       "what_they_ask": "A name you are willing to trade; he does not bargain."
     },
@@ -400,10 +437,10 @@
       "suit": "heart",
       "title": "The Shedder (Serpent Cult High Priestess)",
       "subtitle": "[MYSTIC] [DANGER]",
-      "description": "A woman with snake-scale tattoos covering her arms, her voice a dry rustle.",
-      "flavor": "She offers the Cup of Renewal. Drink, and she promises you will shed your weakness. Some wake stronger. Some wake as snakes. She never drinks herself.",
+      "description": "A woman with snake-scale tattoos covering her arms, her voice a dry rustle. She is the Gate's bride.",
+      "flavor": "She offers the Cup of Renewal. Drink, and she promises you will shed your weakness. Some wake stronger. Some wake as snakes. She never drinks herself. She is waiting for the Gate to choose her successor.",
       "what_they_carry": "Offers the Cup (a boon) but demands a name, a secret, or a hair from a purebred horse.",
-      "what_they_ask": "Your allegiance; refusal marks you as an enemy."
+      "what_they_ask": "Your allegiance; refusal marks you as an enemy of the Gate."
     }
   ],
   "complications": [
@@ -413,7 +450,7 @@
       "title": "Dry Well Ration",
       "subtitle": "[SURVIVAL] [SOCIAL]",
       "description": "Water shares halved; prices spike, tempers fray.",
-      "flavor": "The token-keeper has a list. The list has a knife mark beside your name. He didn't put it there.",
+      "flavor": "The token-keeper has a list. The list has a knife mark beside your name. He didn't put it there. The Gate did.",
       "mechanical_hook": "Water costs double (2 Supply per ration). Social rolls to negotiate water are Desperate."
     },
     {
@@ -422,7 +459,7 @@
       "title": "Blood-Claim Feud",
       "subtitle": "[WEIGHT] [COMBAT]",
       "description": "A killing in the Horse Ring; kinsmen demand redress in silver or flesh.",
-      "flavor": "The victim's tribe drums the death rhythm. Every beat is a warning. The crowd is already wagering on the retaliation.",
+      "flavor": "The victim's tribe drums the death rhythm. Every beat is a warning. The crowd is already wagering on the retaliation. The Gate is watching.",
       "mechanical_hook": "You are caught in the middle; choose a side or flee. A duel in the Grass Ring may settle it."
     },
     {
@@ -431,7 +468,7 @@
       "title": "Locust Swarm",
       "subtitle": "[WEATHER] [TRAVEL]",
       "description": "Grass blackens; caravans stranded, fodder worthless.",
-      "flavor": "The swarm leaves a sticky residue. It smells of burnt honey and dread. The locusts spell words as they fly — sometimes a name, sometimes a warning.",
+      "flavor": "The swarm leaves a sticky residue. It smells of burnt honey and dread. The locusts spell words as they fly—sometimes a name, sometimes a warning. The Gate's name.",
       "mechanical_hook": "Travel is slowed; lose 1 Supply to forage. Navigation rolls are at +1 DV."
     },
     {
@@ -440,7 +477,7 @@
       "title": "Hollow Silver",
       "subtitle": "[WEIGHT] [JUSTICE]",
       "description": "Light silver floods the Dust Market; Oasis Compact inquiry.",
-      "flavor": "The hollow coins are warm. The real ones are cold. Touch quickly. The maker has a scar on his left thumb.",
+      "flavor": "The hollow coins are warm. The real ones are cold. Touch quickly. The maker has a scar on his left thumb. The coins are made from the Gate's shadow.",
       "mechanical_hook": "If you are caught with counterfeit silver, you face a Bronze Court trial. You may dispose of it (lose 1 Boon) or risk a Sway test to bluff."
     },
     {
@@ -449,7 +486,7 @@
       "title": "Grass Fire",
       "subtitle": "[WEATHER] [DISASTER]",
       "description": "Wind-whipped flame from the east; evacuations, scorched trade paths.",
-      "flavor": "The smoke spells a name. Yours. Or your enemy's. Hard to tell. The fire moves against the wind.",
+      "flavor": "The smoke spells a name. Yours. Or your enemy's. Hard to tell. The fire moves against the wind. The Gate is laughing.",
       "mechanical_hook": "You must flee; test Ride or Athletics (DV 5). On failure, lose 1 Supply and gain 1 Fatigue."
     },
     {
@@ -458,7 +495,7 @@
       "title": "Horse Sickness",
       "subtitle": "[DEATH] [TRAVEL]",
       "description": "Contagion at the Silver Stall Stable; quarantines, lost mounts.",
-      "flavor": "The sick horses dream. Their screams sound like your last argument. The stable master is weeping. He never weeps.",
+      "flavor": "The sick horses dream. Their screams sound like your last argument. The stable master is weeping. He never weeps. The Gate is in the water.",
       "mechanical_hook": "Your horse may become sick; test Endurance (DV 4) or lose the mount. Quarantine may delay you by a day."
     },
     {
@@ -467,7 +504,7 @@
       "title": "Khatun's Illness",
       "subtitle": "[POLITICS] [WEIGHT]",
       "description": "Old chieftain fading; succession knives out.",
-      "flavor": "Her death will split seven clans. The Sword Oath lasts one year. The poisoner is already savoring his reward.",
+      "flavor": "Her death will split seven clans. The Sword Oath lasts one year. The poisoner is already savoring his reward. The Gate is choosing its next vessel.",
       "mechanical_hook": "Power struggles erupt; you may be drawn into a succession plot. Choose a side or remain neutral at risk."
     },
     {
@@ -476,7 +513,7 @@
       "title": "Census Raid",
       "subtitle": "[AUTHORITY] [SOCIAL]",
       "description": "Ecktorian legion patrol 'just visiting'; tensions high, bribes higher.",
-      "flavor": "The patrol leader wears a mask of imperial wax. Pull it off and see a dead man's face. The face is yours — from a life you haven't lived yet.",
+      "flavor": "The patrol leader wears a mask of imperial wax. Pull it off and see a dead man's face. The face is yours—from a life you haven't lived yet. The Gate showed him.",
       "mechanical_hook": "You are questioned; pay 2 Supply to be left alone, or risk a Sway test to bluff."
     },
     {
@@ -485,7 +522,7 @@
       "title": "Sky-Omen (Red Wind)",
       "subtitle": "[WEATHER] [FEAR]",
       "description": "Dust storm from the Ashaani desert; all navigation Desperate.",
-      "flavor": "The dust tastes of iron and old blood. Breathe it and dream of falling. The wind whispers a name. Listen and you'll answer.",
+      "flavor": "The dust tastes of iron and old blood. Breathe it and dream of falling. The wind whispers a name. Listen and you'll answer. The Gate is calling.",
       "mechanical_hook": "Navigation tests are Desperate; on a miss, you lose your way and gain 1 Fatigue."
     },
     {
@@ -494,7 +531,7 @@
       "title": "Oath Challenge",
       "subtitle": "[WEIGHT] [SOCIAL]",
       "description": "A Kon'reh master demands geometry arbitration; your bond is the stake.",
-      "flavor": "The board is a painted skull. The pieces are horse teeth. The master hasn't lost in forty years. He's due.",
+      "flavor": "The board is a painted skull. The pieces are horse teeth. The master hasn't lost in forty years. He's due. He is the Gate's champion.",
       "mechanical_hook": "You must play the game; test Wits+Lore (DV 5) to win. Lose and you owe a Grass Right."
     },
     {
@@ -503,7 +540,7 @@
       "title": "Court Strike",
       "subtitle": "[JUSTICE] [TRADE]",
       "description": "Bronze Court clerks refuse to speak the measures; trade freezes, tempers explode.",
-      "flavor": "The clerks chant a measuring song. Stop them before they reach nine. The ninth note is not a sound. It is a name.",
+      "flavor": "The clerks chant a measuring song. Stop them before they reach nine. The ninth note is not a sound. It is a name. The Gate's name.",
       "mechanical_hook": "Trade halts; you must negotiate with the clerks (Sway test DV 5) or find alternative markets."
     },
     {
@@ -512,7 +549,7 @@
       "title": "Duel for Rights",
       "subtitle": "[COMBAT] [JUSTICE]",
       "description": "Two clans claim the same well; witnesses needed to prove water share.",
-      "flavor": "The duel is fought with blunt spears. First blood wins the well. Both bleed. The well doesn't care.",
+      "flavor": "The duel is fought with blunt spears. First blood wins the well. Both bleed. The well doesn't care. The Gate is the referee.",
       "mechanical_hook": "You are called to witness; you may intervene or bet on the outcome. A duel may erupt near you."
     },
     {
@@ -521,7 +558,7 @@
       "title": "Kuva's Vengeance",
       "subtitle": "[DEATH] [PATRON]",
       "description": "The sky itself turns; hail, lightning, and a voice from the clouds.",
-      "flavor": "The voice names a sinner. Your name. The hail has teeth. The lightning writes your confession in the grass.",
+      "flavor": "The voice names a sinner. Your name. The hail has teeth. The lightning writes your confession in the grass. The Gate is pleased.",
       "mechanical_hook": "You are marked by the sky; all rolls are at -1 die for the scene. You must make a sacrifice (1 Supply or a memory) to appease Kuva."
     },
     {
@@ -529,8 +566,8 @@
       "suit": "club",
       "title": "Serpent's Due",
       "subtitle": "[DANGER] [MYSTERY]",
-      "description": "Cult enforcers demand a 'gift' for the Shedder. Refuse, and you may wake with a viper in your saddlebag — or in your bed.",
-      "flavor": "They do not ask for coin. They ask for a name, a secret, or a hair from a purebred horse. The Shedder weaves these into her nest.",
+      "description": "Cult enforcers demand a 'gift' for the Shedder. Refuse, and you may wake with a viper in your saddlebag—or in your bed.",
+      "flavor": "They do not ask for coin. They ask for a name, a secret, or a hair from a purebred horse. The Shedder weaves these into her nest. The nest is the Gate.",
       "mechanical_hook": "You must offer something (a memory, a Boon, or a secret) or face a viper attack (Harm 1). Refusal ticks Serpent's Favor."
     }
   ],
@@ -541,7 +578,7 @@
       "title": "Grass Right",
       "subtitle": "[TRAVEL] [SOCIAL]",
       "description": "One season of grazing on a named meadow; herders pay you tribute.",
-      "flavor": "The right is a branded stick. Burn it to end the lease — or renew. The brand is a wolf's head. It howls when the meadow is overgrazed.",
+      "flavor": "The right is a branded stick. Burn it to end the lease—or renew. The brand is a wolf's head. It howls when the meadow is overgrazed. The brand came from the Gate.",
       "cost": "If you abuse the right, you lose standing with the Oasis Compact (-1 Position on all trade rolls)."
     },
     {
@@ -550,7 +587,7 @@
       "title": "Oath-Bead",
       "subtitle": "[JUSTICE]",
       "description": "A single knot of horsehair; compels a Kon'reh master to arbitrate your dispute.",
-      "flavor": "The bead grows warm when the master speaks truth. Cold when he lies. He has never felt it grow cold.",
+      "flavor": "The bead grows warm when the master speaks truth. Cold when he lies. He has never felt it grow cold. The bead was blessed by the Gate.",
       "cost": "Using it binds you to accept the master's ruling. Breaking it incurs a Blood-Claim Feud."
     },
     {
@@ -559,7 +596,7 @@
       "title": "Water Share",
       "subtitle": "[SURVIVAL]",
       "description": "Priority access to a well during drought; token from the Oasis Compact.",
-      "flavor": "The token is a polished pebble. Drop it in the well to claim your draw. The well will remember your face.",
+      "flavor": "The token is a polished pebble. Drop it in the well to claim your draw. The well will remember your face. The Gate will remember your thirst.",
       "cost": "If you lose the token, you must pay 2 Supply to replace it."
     },
     {
@@ -568,7 +605,7 @@
       "title": "Steppe Ranger Favor",
       "subtitle": "[WILD]",
       "description": "One dangerous tracking job resolved off-screen.",
-      "flavor": "The ranger marks your name on his tent pole. He never forgets a favor. He also never forgets a slight.",
+      "flavor": "The ranger marks your name on his tent pole. He never forgets a favor. He also never forgets a slight. He has seen the Gate.",
       "cost": "If you refuse a future request, the favor becomes a Blood-Claim."
     },
     {
@@ -577,7 +614,7 @@
       "title": "Vilikari Voucher",
       "subtitle": "[TRADE] [STEALTH]",
       "description": "No-questions cargo space on three caravans; smuggle as you will.",
-      "flavor": "The voucher is a strip of oiled leather. The factor's scent guides the mules. The mules are smarter than the factor.",
+      "flavor": "The voucher is a strip of oiled leather. The factor's scent guides the mules. The mules are smarter than the factor. The factor has never seen the Gate.",
       "cost": "Each use may attract attention from the Bronze Court (risk of inspection)."
     },
     {
@@ -586,7 +623,7 @@
       "title": "Census Waiver",
       "subtitle": "[AUTHORITY]",
       "description": "Ecktorian patrol leaves you alone for one crossing; paper shield.",
-      "flavor": "The waiver is stamped with a bear. The bear's eyes follow you. The stamp is a lie. The waiver still works.",
+      "flavor": "The waiver is stamped with a bear. The bear's eyes follow you. The stamp is a lie. The waiver still works. The bear is the Gate's symbol.",
       "cost": "Using it may draw suspicion from the actual Ecktorian authorities; a Sway test may be needed to maintain the ruse."
     },
     {
@@ -595,7 +632,7 @@
       "title": "Khatun's Whistle",
       "subtitle": "[COMBAT]",
       "description": "Summon a small warband once (Cap 3) for a single scene.",
-      "flavor": "The whistle is a hollow horse tooth. Blow it and the grass shivers. The riders come. They expect to be repaid in stories.",
+      "flavor": "The whistle is a hollow horse tooth. Blow it and the grass shivers. The riders come. They expect to be repaid in stories. The stories are the Gate's due.",
       "cost": "After use, you owe the Khatun a tale of valor; if it's not impressive, you lose standing."
     },
     {
@@ -604,7 +641,7 @@
       "title": "Sky-Speaker's Omen",
       "subtitle": "[WEATHER]",
       "description": "One weather forecast that cannot fail; plan your escape.",
-      "flavor": "The omen is a bone thrown into fire. Read the cracks — carefully. The fire will answer. It will also ask.",
+      "flavor": "The omen is a bone thrown into fire. Read the cracks—carefully. The fire will answer. It will also ask. The fire is the Gate's breath.",
       "cost": "The fire demands a small offering (1 Supply) each time you consult it."
     },
     {
@@ -613,7 +650,7 @@
       "title": "Silver Stall Chit",
       "subtitle": "[TRAVEL]",
       "description": "One free remount exchange; never be horseless.",
-      "flavor": "The chit is a brass hoof. Present it and the stable master nods once. The horse will be fast. The horse may also be cursed.",
+      "flavor": "The chit is a brass hoof. Present it and the stable master nods once. The horse will be fast. The horse may also be cursed. The stable master has seen the Gate.",
       "cost": "If the horse is cursed, you may suffer a minor hex (GM's choice)."
     },
     {
@@ -622,7 +659,7 @@
       "title": "Burned Mark",
       "subtitle": "[WEIGHT] [SOCIAL]",
       "description": "A written promise from a rival, witnessed by three camp elders.",
-      "flavor": "The mark is burned into a leather strip. Wash it and the vow dissolves. Burn it and the rival dies in his sleep. No one knows why.",
+      "flavor": "The mark is burned into a leather strip. Wash it and the vow dissolves. Burn it and the rival dies in his sleep. No one knows why. The Gate knows.",
       "cost": "Using it for blackmail may start a Blood-Claim Feud."
     },
     {
@@ -631,7 +668,7 @@
       "title": "Dust Market Share",
       "subtitle": "[TRADE]",
       "description": "A portion of the auctioneer's commission for a season; wealth in sin.",
-      "flavor": "The share is paid in mismatched coins. Spend them fast before they curse you. The auctioneer's mask has a new scratch every week.",
+      "flavor": "The share is paid in mismatched coins. Spend them fast before they curse you. The auctioneer's mask has a new scratch every week. The mask is the Gate.",
       "cost": "The coins are cursed; any major purchase with them may attract the auctioneer's attention."
     },
     {
@@ -639,8 +676,8 @@
       "suit": "diamond",
       "title": "Kin-Bound Bond",
       "subtitle": "[DEATH] [WEIGHT]",
-      "description": "A criminal clan owes you a life; they will kill once for you — or die trying.",
-      "flavor": "The bond is a braid of enemy hair. Cut it to call the blood. The clan's matriarch will come. She will ask whose.",
+      "description": "A criminal clan owes you a life; they will kill once for you—or die trying.",
+      "flavor": "The bond is a braid of enemy hair. Cut it to call the blood. The clan's matriarch will come. She will ask whose. She has seen the Gate.",
       "cost": "If you call it, you owe the clan a life in return; they will remember."
     },
     {
@@ -649,7 +686,7 @@
       "title": "Seal of the Oasis Compact",
       "subtitle": "[JUSTICE] [AUTHORITY]",
       "description": "Casting vote on any water right dispute. Once.",
-      "flavor": "The seal is a bronze well with a snake curled at the bottom. Turn it and the water booms. The snake will bite if you turn it back.",
+      "flavor": "The seal is a bronze well with a snake curled at the bottom. Turn it and the water booms. The snake will bite if you turn it back. The snake is the Gate.",
       "cost": "After use, the seal is void and the snake may seek revenge."
     },
     {
@@ -664,13 +701,13 @@
   "quick_use_notes": {
     "draw_rules": "Draw until you have all four suits. Highest rank sets main Timer (2–5 → 4, 6–10 → 6, J/Q/K → 8, A → 10).",
     "diamonds": "Diamonds are narrative permits (grazing rights, oaths, witnesses) that shift Position.",
-    "ace_rule": "If any A appears, echo grass and wind motifs — shifting alliances, old claims that ride with the seasons, the sky as witness, a body that vanishes into the tall grass by morning. The violet seed-heads of the steppe are a recurring omen: when they glow under moonlight, a spirit walks; when they shed, a caravan will be late — or never arrive.",
+    "ace_rule": "If any A appears, echo grass and wind motifs—shifting alliances, old claims that ride with the seasons, the sky as witness, a body that vanishes into the tall grass by morning. The violet seed-heads of the steppe are a recurring omen: when they glow under moonlight, a spirit walks; when they shed, a caravan will be late—or never arrive.",
     "serpent_rule": "If a Serpent (S) entry appears, introduce a cult encounter, an omen of shedding, or a venomous complication."
   },
   "additional_features": [
     {
       "name": "Kon'reh Arbitration",
-      "description": "Disputes are settled on a board painted on hide. Winners gain seasonal rights. Losers yield grass or labor — or blood if they have neither left to give. The board is set up in the Grass Ring. The spectators bet on the outcome."
+      "description": "Disputes are settled on a board painted on hide. Winners gain seasonal rights. Losers yield grass or labor—or blood if they have neither left to give. The board is set up in the Grass Ring. The spectators bet on the outcome. The Gate is the final judge."
     },
     {
       "name": "Grass Omens",
@@ -678,19 +715,19 @@
     },
     {
       "name": "Khatun's Braid",
-      "description": "The chieftain's hair holds the memory of every oath she swore. Cutting a braid voids a promise — but the severed braid becomes a curse token. The current Khatun has nine braids. She is saving the tenth for something important."
+      "description": "The chieftain's hair holds the memory of every oath she swore. Cutting a braid voids a promise—but the severed braid becomes a curse token. The current Khatun has nine braids. She is saving the tenth for something important. She will not see the tenth winter."
     },
     {
       "name": "The Law of the Rope",
-      "description": "Midh Ahkaz has no jail. Serious offenders are tied to a post in the Grass Ring and left for the steppe. If they survive the night, they are free — and must answer to the family of their victim. No one has survived the night in seven years."
+      "description": "Midh Ahkaz has no jail. Serious offenders are tied to a post in the Grass Ring and left for the steppe. If they survive the night, they are free—and must answer to the family of their victim. No one has survived the night in seven years. The Gate takes them."
     },
     {
       "name": "The Shedding (Cult Rite)",
-      "description": "Once per month, the Serpent Cult holds the Rite of the Cup. Participants who survive the venom gain +1 die to resist poison and disease for one month, but also gain a random quirk (nightmares, a phobia of open flames, an insatiable hunger for raw meat). The GM may offer this as a bargain — but the cult always asks for something in return later."
+      "description": "Once per month, the Serpent Cult holds the Rite of the Cup. Participants who survive the venom gain +1 die to resist poison and disease for one month, but also gain a random quirk (nightmares, a phobia of open flames, an insatiable hunger for raw meat). The GM may offer this as a bargain—but the cult always asks for something in return later."
     },
     {
       "name": "Local Patrons (Syncretic Names)",
-      "description": "The Wind Father — The Traveler. He who reads the grass and knows the safe routes — for a share of the cargo. The Scale Mother — Mykkiel. She who weighs the oath and the old score; her clerks carry knives. The Grass King — Grimmir. The wild that pushes back against the ring of tents; he demands a sacrifice of horseflesh each spring. The Toothless One — Malachai. A silver coin in the dust market that guarantees a fair deal — until the grass remembers. The Shedder (Cult) — Isoka. She who teaches that weakness can be burned away. Her cup is poison. Her mercy is a fang. Crom (Vilikari Barbarian Cult) — Unknown. A few Vilikari outcasts worship a god of uncivilized strength, called Crom. They say he sits on a mountain and does nothing, but that he laughs when you kill your enemy with your bare hands. His shrine is a pile of skulls behind a ruined bathhouse. No one knows if he exists. No one argues with his worshippers."
+      "description": "The Wind Father — The Traveler. He who reads the grass and knows the safe routes—for a share of the cargo. The Scale Mother — Mykkiel. She who weighs the oath and the old score; her clerks carry knives. The Grass King — Grimmir. The wild that pushes back against the ring of tents; he demands a sacrifice of horseflesh each spring. The Toothless One — Malachai. A silver coin in the dust market that guarantees a fair deal—until the grass remembers. The Shedder (Cult) — Isoka. She who teaches that weakness can be burned away. Her cup is poison. Her mercy is a fang. The Gate — Unknown. The dark arch that watches and waits. It does not answer prayers. It answers bargains."
     },
     {
       "name": "Serpent's Favor (GM Secret Tracker)",
@@ -698,11 +735,11 @@
     },
     {
       "name": "The Steppe's Code (Visible Timer)",
-      "description": "Track the Code [0–6]. Advances when you keep a blood-oath, pay a wergild, show hospitality, or defy the cult openly. At 3, gain +1 Position on all parley with Ykrul and Vilikari. At 6, the sky itself will bear witness to one oath you swear — breaking it invokes Kuva's Vengeance. Erodes when you break an oath, refuse a blood-price, or accept a gift from the Shedder. At 0, you are 'grassless' — no clan will shelter you."
+      "description": "Track the Code [0–6]. Advances when you keep a blood-oath, pay a wergild, show hospitality, or defy the cult openly. At 3, gain +1 Position on all parley with Ykrul and Vilikari. At 6, the sky itself will bear witness to one oath you swear—breaking it invokes Kuva's Vengeance. Erodes when you break an oath, refuse a blood-price, or accept a gift from the Shedder. At 0, you are 'grassless'—no clan will shelter you."
     },
     {
       "name": "Blood and Steel — Quick Duels",
-      "description": "Settle disputes in the Grass Ring: each duelist chooses stance (Guard, Lunge, Feint), then roll Body+Melee. Three rounds, best of three wins. Crowd bets, grass drinks blood, dead remember who fought true."
+      "description": "Settle disputes in the Grass Ring: each duelist chooses stance (Guard, Lunge, Feint), then roll Body+Melee. Three rounds, best of three wins. Crowd bets, grass drinks blood, dead remember who fought true. Duels at dusk in the Gate's shadow are Desperate."
     },
     {
       "name": "Serpent's Coil Set-Piece Generator",
@@ -712,27 +749,27 @@
   "lore_echoes": [
     {
       "title": "The Bitter Root",
-      "description": "Daughters of the Cord run a 'free soup' wagon near the Dust Market. They ask no coin — but they measure your shadow. A renegade Sister hides among the horse-braid apprentices, trying to untie her cord from a blood feud."
+      "description": "Daughters of the Cord run a 'free soup' wagon near the Dust Market. They ask no coin—but they measure your shadow. A renegade Sister hides among the horse-braid apprentices, trying to untie her cord from a blood feud. She knows what the Gate wants."
     },
     {
       "title": "The Threshold Compendium",
-      "description": "Saikou Ira once tracked a ghoul to the Under-Arcades. He left a silver mirror in the wall. It still shows the ghoul's face. The ghoul is still watching."
+      "description": "Saikou Ira once tracked a ghoul to the Under-Arcades. He left a silver mirror in the wall. It still shows the ghoul's face. The ghoul is still watching. The Gate is the wall."
     },
     {
       "title": "Malachai, the Chained Angel",
-      "description": "A broken Kon'reh board at the Iron Well is said to compel truth. Players who touch it gain +1 die to resist lies — but mark 1 Obligation to Malachai. The board was broken by a merchant who lied about a horse. The horse was a demon."
+      "description": "A broken Kon'reh board at the Iron Well is said to compel truth. Players who touch it gain +1 die to resist lies—but mark 1 Obligation to Malachai. The board was broken by a merchant who lied about a horse. The horse was a demon. The demon was the Gate."
     },
     {
       "title": "The Gray Wanderer's Grimoire",
-      "description": "Midh Ahkaz psions are called 'Wind-Readers.' They sense lies by the tremor in grass. The Khatun employs two; they never speak to each other. They communicate by writing in the dust. The dust blows away after each message."
+      "description": "Midh Ahkaz psions are called 'Wind-Readers.' They sense lies by the tremor in grass. The Khatun employs two; they never speak to each other. They communicate by writing in the dust. The dust blows away after each message. They will not speak of the Gate."
     },
     {
       "title": "Isoka's Serpent Cult",
-      "description": "The cult's venom is said to be harvested from a great snake that lives in a sealed cave beneath the Iron Well. The snake is called the First Shedder. It has not eaten in three hundred years. It does not need to. It waits."
+      "description": "The cult's venom is said to be harvested from a great snake that lives in a sealed cave beneath the Iron Well. The snake is called the First Shedder. It has not eaten in three hundred years. It does not need to. It waits. It is the Gate's tongue."
     },
     {
       "title": "The Ninth",
-      "description": "In any Midh Ahkaz scene, the ninth horse table in the Violet Bazaar sells nothing but bad advice. Spend a Boon to reroll a failed negotiation — but the advice may haunt you. The table is always empty except at midnight. At midnight, a hooded figure sits there. No one knows who."
+      "description": "In any Midh Ahkaz scene, the ninth horse table in the Violet Bazaar sells nothing but bad advice. Spend a Boon to reroll a failed negotiation—but the advice may haunt you. The table is always empty except at midnight. At midnight, a hooded figure sits there. No one knows who. The Gate knows."
     }
   ],
   "superstitions": [
@@ -753,10 +790,16 @@
     },
     {
       "name": "Scale on the Tongue (Cult superstition)",
-      "effect": "If a serpent crosses your path, spit three times. The next venomous bite against you automatically misses — but the Shedder will know your name.",
+      "effect": "If a serpent crosses your path, spit three times. The next venomous bite against you automatically misses—but the Shedder will know your name.",
+      "cost": "Burn for +1 die once"
+    },
+    {
+      "name": "Coin to the Gate",
+      "effect": "Toss a silver coin toward the Violet Gate at dusk. The next time you make a bargain, you may reroll one failed Sway die. The Gate will remember the coin—and the favor owed.",
       "cost": "Burn for +1 die once"
     }
   ],
+  "decline_and_patronage": "Patronage in Midh Ahkaz is bought with blood, silver, and secrets. The Khatun offers protection and grass rights to those who prove their loyalty. The Oasis Compact offers the protection of law—slow, deliberate, and weighted. The Serpent Cult offers power beyond the law, but requires a piece of your soul in return. And beneath them all, the Violet Gate offers something else: a bargain that no other power can match, at a price that no one else can name. To seek a patron in Midh Ahkaz is to choose which hunger you will feed—the Khatun's fading authority, the Compact's brittle law, the Shedder's poison, or the Gate's endless appetite. The wise choose carefully. The dead do not choose at all.",
   "sb_spend_table": {
     "minor_complications": [
       "**Exposure:** Your actions draw attention from Steppe Rangers or Bronze Court clerks.",
@@ -775,22 +818,23 @@
     "serious_trouble": [
       "**Reinforcements:** Additional horsemen, kin-claim hunters, or Dust Market thugs arrive.",
       "**Key Gear Breaks:** A horse goes lame, seal ring cracks, bound-mark burns.",
-      "**Major Twist:** The situation changes — Khatun dies, well runs dry, duel interrupted by grass fire.",
+      "**Major Twist:** The situation changes—Khatun dies, well runs dry, duel interrupted by grass fire.",
       "**Rail Tick:** Advance a relevant campaign/front timer by 1 segment.",
       "**Condition Applied:** Mark Fatigue 1/Harm 1/Condition (e.g., Blinded by dust, Parched)."
     ],
     "major_turns": [
       "**Trap Springs:** A hidden pit, poisoned water share, or false oath activates.",
       "**Authority Arrival:** Khatun's warband, Ecktorian patrol, Sky-Speaker, or the Shedder intervenes.",
-      "**Scene Shift:** The environment changes — grass fire sweeps through, dust storm blinds, night falls without warning.",
+      "**Scene Shift:** The environment changes—grass fire sweeps through, dust storm blinds, night falls without warning.",
       "**Patron Omen:** A bolide, strange animal, or wind that speaks your name appears.",
-      "**Narrative Pivot:** The story takes an unexpected turn — the real falsifier was your ally; the water right was a trap."
+      "**Narrative Pivot:** The story takes an unexpected turn—the real falsifier was your ally; the water right was a trap."
     ],
     "region_specific": [
       "**Midh Ahkaz (Grass & Trade):** Grass catches fire, horses spook at shadows, bargains settled with a knife on the table, violet seed-heads floating in the wind.",
       "**Midh Ahkaz (Oath & Sky):** Clouds spell forgotten names, wind carries false testimony, a duel's outcome shifts with the sun, a violet dusk signals a spirit.",
       "**Midh Ahkaz (Horse & Bow):** An arrow splits in flight, a horse refuses a rider, a bowstring sings a dying clansman's tune, a braid comes undone at the wrong moment.",
-      "**Midh Ahkaz (Serpent Cult):** A shed snakeskin is found in your tent; a cup of warm milk appears on your saddle; a whisper from the dark says, 'The Shedder invites you to dine.'"
+      "**Midh Ahkaz (Serpent Cult):** A shed snakeskin is found in your tent; a cup of warm milk appears on your saddle; a whisper from the dark says, 'The Shedder invites you to dine.'",
+      "**Midh Ahkaz (The Gate):** The Violet Gate's shadow falls across your path; the grass grows violet where you walk; a voice from the arch speaks your name. You did not give it."
     ]
   },
   "pursuit_ladder": [
@@ -804,7 +848,7 @@
       "tags": [
         "cursed scale bound to the Oasis"
       ],
-      "description": "A corrupted entity that twists water rights and oaths.",
+      "description": "A corrupted entity that twists water rights and oaths. It is the Gate's shadow given form.",
       "phases": [
         "Fair Measure",
         "Thirst Unearned",
@@ -822,7 +866,7 @@
         "vengeful horse-lord",
         "half-legend"
       ],
-      "description": "A ghostly rider who hunts oath-breakers across the steppe.",
+      "description": "A ghostly rider who hunts oath-breakers across the steppe. He was the Gate's first champion.",
       "phases": [
         "Hoof Drum",
         "Ghost Herd",
@@ -839,7 +883,7 @@
       "tags": [
         "greedy soul who sold his reflection"
       ],
-      "description": "A trader who deals in cursed coin and forgotten debts.",
+      "description": "A trader who deals in cursed coin and forgotten debts. He made a deal with the Gate and lost.",
       "phases": [
         "Roll of the Lost",
         "Chain of Measures",
@@ -856,7 +900,7 @@
       "tags": [
         "Serpent Cult Ascendant"
       ],
-      "description": "Isoka's high priestess, offering transformation through poison.",
+      "description": "Isoka's high priestess, offering transformation through poison. She is the Gate's bride.",
       "phases": [
         "Invitation",
         "The Cup",
@@ -865,22 +909,44 @@
       "cracks": [
         "refuse the cup three times",
         "show her a scale from the First Shedder",
-        "cut her braid — she will shed her skin and flee, but she will remember your face"
+        "cut her braid—she will shed her skin and flee, but she will remember your face"
+      ]
+    },
+    {
+      "name": "The Violet Gate",
+      "tags": [
+        "Eldritch",
+        "Location"
+      ],
+      "description": "The Gate itself—an ancient arch of dark stone that predates all memory. It is not a boss to be fought, but a presence to be bargained with or escaped.",
+      "phases": [
+        "The Shadow Lengthens",
+        "The Bargain",
+        "The Gate Opens"
+      ],
+      "cracks": [
+        "offer a memory the Gate has not yet collected",
+        "speak the Gate's true name (the Shedder knows it)",
+        "seal the Gate with a sacrifice of willing blood"
       ]
     }
   ],
   "encounter_seeds": [
     {
       "title": "The Hollow Bride's Invitation",
-      "description": "A wedding invitation arrives at the inn. The bride is not from any village on the map. The groom has not been seen in a week. The ninth chair at the feast is already occupied."
+      "description": "A wedding invitation arrives at the inn. The bride is not from any village on the map. The groom has not been seen in a week. The ninth chair at the feast is already occupied. The bride is the Shedder's daughter."
     },
     {
       "title": "The Scarecrow's Harvest",
-      "description": "Crows are building a nest on the scarecrow's shoulder. Inside the nest is a key. The key opens a door that should not exist."
+      "description": "Crows are building a nest on the scarecrow's shoulder. Inside the nest is a key. The key opens a door that should not exist. The door is in the Violet Gate."
     },
     {
       "title": "The Beekeeper's Tithe",
-      "description": "The winter church's bees have stopped producing honey. They are producing wax effigies of the PCs. The beekeeper wants to know why."
+      "description": "The winter church's bees have stopped producing honey. They are producing wax effigies of the PCs. The beekeeper wants to know why. The Gate is the answer."
+    },
+    {
+      "title": "The Grass That Remembers",
+      "description": "A patch of grass near the Violet Gate grows in the shape of a name. The name is one of the PCs. The grass is warm to the touch. The Gate has chosen."
     }
   ],
   "faction_entanglements": [
@@ -922,7 +988,8 @@
     "Grass Fire",
     "Census Raid",
     "Cup of Renewal",
-    "Serpent's Favor"
+    "Serpent's Favor",
+    "The Violet Gate"
   ],
   "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
 }

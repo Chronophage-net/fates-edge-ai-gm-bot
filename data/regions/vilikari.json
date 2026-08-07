@@ -8,115 +8,698 @@
   "capital": "Logeton",
   "manifest_path": "/data/docs/manifest.json",
   "overview": {
-    "tagline": "Two laws, one people. The oak remembers; the marble writes. The stone is cracking.",
-    "genre": "Early imperial-frontier legal dualism — hybrid identity, frontier pragmatism, forgotten treaties.",
-    "mood": "Laurels & Longhouses",
-    "starting_location": "A longhouse quarter tucked into an old forum. Laurel garlands hang from broken columns. Smoke from a dozen hearths curls under cracked marble arches. A Hearth-Mother offers a cup of small beer and a piece of oatcake. \"The Foedus Stone cracks,\" she says. \"The steppe listens. Which law will you speak when the Ykrul envoy arrives — oak or marble? The stone has a new crack. No one knows which promise it represents. Speak carefully. The stone is listening too.\"",
+    "tagline": "Two laws, one people. The oak remembers; the marble writes. The stone is cracking — and the dead are the only witnesses left.",
+    "genre": "Legal dualism, frontier identity crisis, forgotten treaties, hybrid survival.",
+    "mood": "Laurels, Longhouses, and the Weight of Witnesses",
+    "starting_location": "A longhouse quarter tucked into an old forum. Laurel garlands hang from broken columns. Smoke from a dozen hearths curls under cracked marble arches. A Hearth-Mother offers a cup of small beer and a piece of oatcake. 'The Foedus Stone cracks,' she says. 'The steppe listens. Which law will you speak when the Ykrul envoy arrives — oak or marble? The stone has a new crack. No one knows which promise it represents. Speak carefully. The stone is listening too. So is the Hollow. It always listens when a witness forgets.'",
     "lore": {
-      "history": "The Vilikari are forgotten. They do not choose between empire and steppe; they marry them, awkwardly, imperfectly, and with frequent arguments. Their halls are longhouses raised over ruined forums; their laws carved on both oak and marble; their loyalties braided like the war-maidens' hair. They are the bulk of the non-elite population in Ecktoria — the legionaries' descendants who never went home. A Vilikari blacksmith in Ecktoria might swear by the marble bench; his cousin two valleys over in Acasia still ties knots for the oak. This is not contradiction. It is survival. But survival requires witnesses, and the witnesses are dying. The Foedus Stone, ancient guarantor of their autonomy, is cracking. Every season, another shard falls. The Ecktorian clerks have stopped renewing the oath; the Ykrul no longer send hostages. The Vilikari are becoming invisible to both sides. Their law still holds, but the witnesses are fading. The Elder of Elders speaks once a year, but fewer and fewer listen. The newest crack appeared last winter. It has no date. No one knows which promise it represents. Some Vilikari elders still whisper the name Crom (or Krom) when they speak of the power that breaks chains. On the coast, fishing villages double as smugglers' coves, running fugitives, forbidden goods, and whispered messages. They are the last people in the Amaranthine who still remember the old treaty's third clause. They are not sure why it matters. They keep it anyway.",
-      "first_notice": "Woodsmoke and old parchment. The way everyone speaks two languages at once — switching mid-sentence. Longhouse roofs that use broken imperial tiles as shingles. The silence where there used to be oaths.",
-      "rule_that_kills": "Never invoke only one law. The mallus (oak-ring) and the basilica (marble bench) must both be honored. Choose one, and the other will find you. But now, neither may answer. The stone has forgotten which law applies — so it applies neither."
+      "history": "The Vilikari are a people who refuse to choose. They do not pick between empire and steppe; they marry them, awkwardly, imperfectly, and with frequent arguments. Their halls are longhouses raised over ruined forums; their laws carved on both oak and marble; their loyalties braided like the war-maidens' hair. They are the bulk of the non-elite population in Ecktoria — the legionaries' descendants who never went home. A Vilikari blacksmith in Ecktoria might swear by the marble bench; his cousin two valleys over in Acasia still ties knots for the oak. This is not contradiction. It is survival. But survival requires witnesses, and the witnesses are dying. The Foedus Stone, ancient guarantor of their autonomy, is cracking. Every season, another shard falls. The Ecktorian clerks have stopped renewing the oath; the Ykrul no longer send hostages. The Vilikari are becoming invisible to both sides. Their law still holds, but the witnesses are fading. The Elder of Elders speaks once a year, but fewer and fewer listen. The newest crack appeared last winter. It has no date. No one knows which promise it represents. Some Vilikari elders still whisper the name Crom (or Krom) when they speak of the power that breaks chains. On the coast, fishing villages double as smugglers' coves, running fugitives, forbidden goods, and whispered messages. They are the last people in the Amaranthine who still remember the old treaty's third clause. They are not sure why it matters. They keep it anyway.",
+      "first_notice": "Woodsmoke and old parchment. The way everyone speaks two languages at once — switching mid-sentence. Longhouse roofs that use broken imperial tiles as shingles. The silence where there used to be oaths. The way old men press their ears to stone, listening for a promise that has not yet been spoken.",
+      "rule_that_kills": "Never invoke only one law. The mallus (oak-ring) and the basilica (marble bench) must both be honored. Choose one, and the other will find you. But now, neither may answer. The stone has forgotten which law applies — so it applies neither. The Hollow has begun to remember the forgotten clauses instead."
     },
     "entanglements": {
-      "south": "Ecktoria — Imperial clerks still claim suzerainty over the Foedus Stone; the two-laws dialectic is a full-time occupation. The Archivolt has a sealed file on every Vilikari family.",
-      "north": "Ykrul — Hostage strings and grazing rights are the currency of the border; the Khagan's envoys speak in proverbs. The Foedus Stone cracks a little more each season.",
-      "southeast": "Acasia — Broken Marches mercenaries often find work in the longhouses; the Curse of Acasia is a rumor here, but the smoke from the south smells of burning promises.",
-      "coast": "The Amaranthine Coast — Vilikari smugglers and fishermen are indistinguishable, running today's catch and contraband past the lantern-law."
+      "south": "Ecktoria — Imperial clerks still claim suzerainty over the Foedus Stone; the two-laws dialectic is a full-time occupation. The Archivolt has a sealed file on every Vilikari family. The clerks are starting to misplace those files. The stone is not.",
+      "north": "Ykrul — Hostage strings and grazing rights are the currency of the border; the Khagan's envoys speak in proverbs. The Foedus Stone cracks a little more each season. The envoys have stopped sending hostages. They are waiting for the stone to forget.",
+      "southeast": "Acasia — Broken Marches mercenaries often find work in the longhouses; the Curse of Acasia is a rumor here, but the smoke from the south smells of burning promises. The Curse does not cross the border. The stone is not so sure.",
+      "coast": "The Amaranthine Coast — Vilikari smugglers and fishermen are indistinguishable, running today's catch and contraband past the lantern-law. They are the only ones who still profit from the cracks. They do not ask where the cargo comes from. They do not ask where it goes."
     },
-    "regional_mood": "Here, the past is a weapon and the future is a weight — the weight of a stone that remembers every oath and every betrayal. The Vilikari live in the shadow of two legal systems that no longer trust each other, and in the growing silence of a witness that is slowly forgetting. Every negotiation is a tightrope between oak and marble; every handshake is a gamble that the other party will remember which law they swore by. The Foedus Stone is not a monument; it is a timer, and its cracks mark the hours until the Vilikari cease to exist as a recognized people. On the coast, the smugglers laugh at treaties and live by the tide; in the hill forts, the old legionaries drill with ghosts; in the longhouses, hearth-mothers pour beer for guests who no longer know why they came. The stone listens. The stone waits."
-  },
-  "regional_diagnostic": {
-    "current_hook": "The stone is cracking. Find a witness older than the stone itself to renew the treaty.",
-    "core_conflict": "The Vilikari are the bridge between empire and wilderness — the marriage of oak-law and marble-law — but the witnesses who validate that bridge are dying, and neither Ecktoria nor Ykrul sends hostages anymore.",
-    "unique_feature": "**The Weight of the Crack:** the Foedus Stone is a living, cracking legal artifact; every jurisdictional conflict, every broken oath, and every forgotten promise widens a crack that, when complete, erases the Vilikari as a recognized people.",
-    "ninth_taboo": "In Vilikari courts, the ninth witness called to a mallus (oak-ring) is always a ghost. The wise stop at eight and settle out of court. Those who call a ninth witness find that the ghost speaks the truth — but the truth is always the worst possible version, and the living witnesses remember it as their own. The stone's cracks are full of these truths.",
-    "faction_triad": [
-      { "faction": "The Federate King's Court (Marble)", "goal": "Preserve imperial forms, patents, and the marble bench's authority", "method": "Charters, patents, Utaran precedent, the Queen's audience", "why_players_care": "Marble-High status grants +1 Effect citing charters and patents" },
-      { "faction": "The Mallus & the Moots (Oak)", "goal": "Preserve tribal custom, blood-price, and the oak-ring's authority", "method": "Wergild tables, oath-braids, the Elder of Elders' nod", "why_players_care": "Oak-High status grants +1 Position invoking mallus or blood-price" },
-      { "faction": "The Coast (Smugglers & Pilots)", "goal": "Keep the old treaty's forgotten third clause alive through trade, not law", "method": "Lantern-law evasion, contraband routes, cargo loyalty", "why_players_care": "The only faction that still profits while the stone cracks" }
-    ]
+    "regional_diagnostic": {
+      "current_hook": "The stone is cracking. Find a witness older than the stone itself to renew the treaty.",
+      "core_conflict": "The Vilikari are the bridge between empire and wilderness — the marriage of oak-law and marble-law — but the witnesses who validate that bridge are dying, and neither Ecktoria nor Ykrul sends hostages anymore. The Ninth is the forgotten witness; the Hollow is the silence of the stone.",
+      "unique_feature": "**The Weight of the Crack:** the Foedus Stone is a living, cracking legal artifact; every jurisdictional conflict, every broken oath, and every forgotten promise widens a crack that, when complete, erases the Vilikari as a recognized people. The cracks are full of truths the stone could not hold.",
+      "ninth_taboo": "In Vilikari courts, the ninth witness called to a mallus (oak-ring) is always a ghost. The wise stop at eight and settle out of court. Those who call a ninth witness find that the ghost speaks the truth — but the truth is always the worst possible version, and the living witnesses remember it as their own. The stone's cracks are full of these truths. The Hollow drinks them.",
+      "price": "Players sacrifice **memory, legal standing, or reputation** to gain power. Every reward requires a gamble: a forgotten clause, a cracked seal, a promise to a dying witness, or a name given to the Hollow.",
+      "faction_triad": [
+        {
+          "faction": "The Federate King's Court (Marble)",
+          "goal": "Preserve imperial forms, patents, and the marble bench's authority",
+          "method": "Charters, patents, Utaran precedent, the Queen's audience",
+          "why_players_care": "Marble-High status grants +1 Effect citing charters and patents"
+        },
+        {
+          "faction": "The Mallus & the Moots (Oak)",
+          "goal": "Preserve tribal custom, blood-price, and the oak-ring's authority",
+          "method": "Wergild tables, oath-braids, the Elder of Elders' nod",
+          "why_players_care": "Oak-High status grants +1 Position invoking mallus or blood-price"
+        },
+        {
+          "faction": "The Coast (Smugglers & Pilots)",
+          "goal": "Keep the old treaty's forgotten third clause alive through trade, not law",
+          "method": "Lantern-law evasion, contraband routes, cargo loyalty",
+          "why_players_care": "The only faction that still profits while the stone cracks"
+        }
+      ]
+    }
   },
   "quotes": [
-    { "speaker": "Federate King Aldric (Elite)", "text": "We are the bridge between empire and wilderness, the marriage of law and custom. Our strength lies not in choosing one path but in walking both with equal surety. But the bridge is rotting, and no one sends hostages anymore. The stone cracks, and the cracks have no witnesses." },
-    { "speaker": "Hearth-Mother Vesna (Commoner)", "text": "The old ways and new laws both have their place at our table. Serve the right mead to the right guest, honor the proper customs, and you'll find we're better hosts than most kings. The trouble is, the guests are forgetting why they came. The stone is forgetting their names." }
+    {
+      "speaker": "Federate King Aldric (Elite)",
+      "text": "We are the bridge between empire and wilderness, the marriage of law and custom. Our strength lies not in choosing one path but in walking both with equal surety. But the bridge is rotting, and no one sends hostages anymore. The stone cracks, and the cracks have no witnesses. I hear the Hollow in the cracks. It is learning our laws faster than we remember them."
+    },
+    {
+      "speaker": "Hearth-Mother Vesna (Commoner)",
+      "text": "The old ways and new laws both have their place at our table. Serve the right mead to the right guest, honor the proper customs, and you'll find we're better hosts than most kings. The trouble is, the guests are forgetting why they came. The stone is forgetting their names. I set a plate for the Hollow every night. It hasn't come yet — but it is learning how to knock."
+    }
   ],
+  "witness_fading_timer": {
+    "name": "Witness Fading",
+    "max_segments": 8,
+    "advance_on": [
+      "The party defies a Vilikari judgment or brings a dispute to an outside court (+1)",
+      "A foreign envoy publicly ignores a Vilikari ruling (+1)",
+      "The GM spends 2 SB to represent a forgotten oath (+1)"
+    ],
+    "thresholds": {
+      "4": "The stone's cracks are visible to all. Vilikari NPCs suffer -1 die on social rolls (they are losing faith in their own law).",
+      "8": "The Foedus Stone cracks completely. The Vilikari are no longer recognized as neutral. Ykrul and Ecktorians begin fighting over their land. Reset only by renewing the treaty: finding a witness older than the stone itself and having them speak the oath aloud."
+    },
+    "stirrs_table": [
+      {
+        "roll": 1,
+        "complication": "A forgotten clause surfaces — a promise owed to a dead man. Fulfill it or the crack widens (tick Witness Fading +1)."
+      },
+      {
+        "roll": 2,
+        "complication": "A ghost witness appears in a mallus. It demands the ninth witness be called. The Hollow is listening."
+      },
+      {
+        "roll": 3,
+        "complication": "A Foedus Seal you carry cracks. It can still be used once more — but it will crumble afterward."
+      },
+      {
+        "roll": 4,
+        "complication": "The Elder of Elders forgets a name. He asks you to remind him. If you cannot, the stone takes the memory instead."
+      },
+      {
+        "roll": 5,
+        "complication": "A Ykrul envoy offers a hostage — but the hostage is a ghost. The Hollow has already claimed them."
+      },
+      {
+        "roll": 6,
+        "complication": "The stone weeps water that tastes of salt and iron. The water is the memory of a treaty broken by both sides."
+      },
+      {
+        "roll": 7,
+        "complication": "A Vilikari war-maiden cuts her braid. The dead she carried are now unclaimed. The Hollow will find them within a week."
+      },
+      {
+        "roll": 8,
+        "complication": "The marble bench and the oak-ring are the same temperature. The stone has stopped distinguishing between them."
+      }
+    ]
+  },
+  "two_law_tension": {
+    "name": "Two-Law Tension",
+    "max_segments": 4,
+    "advance_on": "Whenever a jurisdictional conflict arises (mallus vs. basilica), players may step Position up by citing the Foedus Stone or an older precedent — but every use adds a tick.",
+    "thresholds": {
+      "4": "One side demands exclusive authority. If Witness Fading is at 4+, this timer ticks twice as fast."
+    }
+  },
   "npcs": [
-    { "name": "Hearth-Mother Vesna", "role": "Keeper of guest-right", "motivation": "Preserve hospitality and memory as the stone forgets", "quirk": "She has never lost a quarrel; her voice is soft, her memory longer than the Foedus Stone. She remembers obligations that are not yet owed — and the stone is forgetting, shrinking." },
-    { "name": "Shield-Brother Rurik", "role": "Comitatus oath-bearer", "motivation": "Keep every oath he has ever sworn", "quirk": "His braids are his record; each knot is an oath kept — or broken. He has started tying knots in his sleep, hoping the stone will remember." },
-    { "name": "March Notary Theodora", "role": "Utaran-trained legalist", "motivation": "Keep both laws simultaneously binding", "quirk": "Her left hand writes Utaran, her right writes runes. She signs with her foot. A 'third hand' writes in ink that no one can read — not even her. The document is always binding — until the stone forgets." },
-    { "name": "Ykrul Envoy", "role": "Riding under safe-conduct", "motivation": "Speak obligations in proverbs and keep the border quiet", "quirk": "He never carries a weapon. His tongue is sharp enough. His hostage string has nine knots. He is running out of space — and the stone is running out of memory." },
-    { "name": "Old Legionary", "role": "Drill-master for Vilikari levies", "motivation": "Keep the old imperial discipline alive in muscle memory", "quirk": "He still marks time in paces. The recruits call him 'Grandfather Eagle.' He says the stone's cracks are just more places to put his thumb." },
-    { "name": "Marcher-Lord", "role": "Frontier king", "motivation": "Hold the border without losing either law", "quirk": "His crown was a plowshare. His hands are still calloused. He does not sit on his throne. He spends his days pressing his ear to the stone." },
-    { "name": "War-Maiden", "role": "Oath-braid warrior", "motivation": "Remember the dead and the owed", "quirk": "Her braid is longer than her sword. Both have drawn blood. She never cuts the braid. The dead would forget her. The stone is forgetting everyone else." },
-    { "name": "Federate King Aldric", "role": "Rex-Dux", "motivation": "Hold three thrones — oak, marble, and saddle — without losing any", "quirk": "He has three thrones — oak, marble, and saddle. He uses whichever is not being argued over. Lately, all three are dusty. He has stopped arguing. He just listens to the stone." },
-    { "name": "Elder of Elders", "role": "Thing-council speaker", "motivation": "Preserve the original treaty before he forgets it entirely", "quirk": "He speaks once a year. The rest of the time he listens — and remembers. But his memory is cracking like the stone. He has started writing things on his own skin." },
-    { "name": "Smuggler Captain Drago", "role": "Vilikari fisherman and trafficker", "motivation": "Profit from the cracks no one else is watching", "quirk": "He runs contraband and refugees past the Kahfagian patrols, knows every reef and lantern shift, and claims the stone's cracks are good for business — no one checks the old treaties anymore." }
+    {
+      "name": "Hearth-Mother Vesna",
+      "role": "Keeper of guest-right",
+      "motivation": "Preserve hospitality and memory as the stone forgets",
+      "quirk": "She has never lost a quarrel; her voice is soft, her memory longer than the Foedus Stone. She remembers obligations that are not yet owed — and the stone is forgetting, shrinking."
+    },
+    {
+      "name": "Shield-Brother Rurik",
+      "role": "Comitatus oath-bearer",
+      "motivation": "Keep every oath he has ever sworn",
+      "quirk": "His braids are his record; each knot is an oath kept — or broken. He has started tying knots in his sleep, hoping the stone will remember. The Hollow knows every knot he has tied."
+    },
+    {
+      "name": "March Notary Theodora",
+      "role": "Utaran-trained legalist",
+      "motivation": "Keep both laws simultaneously binding",
+      "quirk": "Her left hand writes Utaran, her right writes runes. She signs with her foot. A 'third hand' writes in ink that no one can read — not even her. The ink is from the stone's cracks."
+    },
+    {
+      "name": "Ykrul Envoy",
+      "role": "Riding under safe-conduct",
+      "motivation": "Speak obligations in proverbs and keep the border quiet",
+      "quirk": "He never carries a weapon. His tongue is sharp enough. His hostage string has nine knots. He is running out of space — and the stone is running out of memory. The Hollow has already forgotten his name."
+    },
+    {
+      "name": "Old Legionary",
+      "role": "Drill-master for Vilikari levies",
+      "motivation": "Keep the old imperial discipline alive in muscle memory",
+      "quirk": "He still marks time in paces. The recruits call him 'Grandfather Eagle.' The eagle on his shield is chipped. He presses his ear to the stone at night. He has heard it whisper his own death."
+    },
+    {
+      "name": "Marcher-Lord",
+      "role": "Frontier king",
+      "motivation": "Hold the border without losing either law",
+      "quirk": "His crown was a plowshare. His hands are still calloused. He does not sit on his throne. He spends his days pressing his ear to the stone. It is warm."
+    },
+    {
+      "name": "War-Maiden",
+      "role": "Oath-braid warrior",
+      "motivation": "Remember the dead and the owed",
+      "quirk": "Her braid is longer than her sword. Both have drawn blood. She never cuts the braid. The dead would forget her. The stone is forgetting everyone else. She has started braiding in her own hair."
+    },
+    {
+      "name": "Federate King Aldric",
+      "role": "Rex-Dux",
+      "motivation": "Hold three thrones — oak, marble, and saddle — without losing any",
+      "quirk": "He has three thrones — oak, marble, and saddle. He uses whichever is not being argued over. Lately, all three are dusty. He has stopped arguing. He just listens to the stone. It is whispering the names of the dead."
+    },
+    {
+      "name": "Elder of Elders",
+      "role": "Thing-council speaker",
+      "motivation": "Preserve the original treaty before he forgets it entirely",
+      "quirk": "He speaks once a year. The rest of the time he listens — and remembers. But his memory is cracking like the stone. He has started writing things on his own skin. The Hollow reads his skin at night."
+    },
+    {
+      "name": "Smuggler Captain Drago",
+      "role": "Vilikari fisherman and trafficker",
+      "motivation": "Profit from the cracks no one else is watching",
+      "quirk": "He runs contraband and refugees past the Kahfagian patrols, knows every reef and lantern shift, and claims the stone's cracks are good for business — no one checks the old treaties anymore. The Hollow pays in silver."
+    }
   ],
   "names": {
-    "first_male": ["Aldric", "Rurik", "Drago", "Oswin", "Vidar", "Elijah"],
-    "first_female": ["Vesna", "Theodora", "Gisela", "Mira", "Svanhild", "Ragna"],
-    "surnames": ["de la Marche", "Longwood", "Kalderash", "Oakenshield", "Tregard", "Foedus"],
-    "epithets": ["the Two-Law", "the Fox", "Bridge-Born", "the Unbuckled", "Ash-Prow", "the Gray"]
+    "first_male": [
+      "Aldric",
+      "Rurik",
+      "Drago",
+      "Oswin",
+      "Vidar",
+      "Elijah"
+    ],
+    "first_female": [
+      "Vesna",
+      "Theodora",
+      "Gisela",
+      "Mira",
+      "Svanhild",
+      "Ragna"
+    ],
+    "surnames": [
+      "de la Marche",
+      "Longwood",
+      "Kalderash",
+      "Oakenshield",
+      "Tregard",
+      "Foedus"
+    ],
+    "epithets": [
+      "the Two-Law",
+      "the Fox",
+      "Bridge-Born",
+      "the Unbuckled",
+      "Ash-Prow",
+      "the Gray"
+    ]
   },
   "places": [
-    { "rank": 2, "suit": "spade", "title": "Longhouse Quarter", "subtitle": "[COMMUNITY]", "description": "The forum's marble floor is worn smooth by dancing feet, not sandals.", "flavor": "The ghosts of tax collectors weep in the corners.", "mechanical_hook": "Resting here clears 1 Fatigue and grants +1 die to the next social roll invoking hospitality, if the Hearth-Mother is honored properly." },
-    { "rank": 3, "suit": "spade", "title": "Milefort XVII", "subtitle": "[MILITARY]", "description": "Earth bank, stone gate; faded eagle over fresh knotwork.", "flavor": "The eagle's stone wings were reglued after a lightning strike. It still leans left — toward the steppe.", "mechanical_hook": "Garrison here grants a Cap 2 defensive advantage in any skirmish, but housing here for more than a night starts a minor Border Tension tick." },
-    { "rank": 4, "suit": "spade", "title": "Stone Ford", "subtitle": "[TRADE]", "description": "Plank-palings and a customs table at knee-height; border as bureaucracy.", "flavor": "The ford changes hands every season. The customs table never moves. The wood is stained with ink and blood.", "mechanical_hook": "A held Diamond may be cashed as currency here one-for-one, creating a Stone Weight the GM may call in later." },
-    { "rank": 5, "suit": "spade", "title": "Villa Granary", "subtitle": "[MILITARY]", "description": "Barracks with a tile roof; spear racks where olives once slept.", "flavor": "The olive press still works. The pressers are now armorers. The oil is for lamps, not cooking.", "mechanical_hook": "Requisitioning supplies here requires a Sway or Command roll (DV 4); success grants 1 Supply, failure ticks Annona Late." },
-    { "rank": 6, "suit": "spade", "title": "Twin Court", "subtitle": "[LAW]", "description": "Mallus ring beneath an oak, basilica bench across the lane.", "flavor": "The oak and the bench are the same distance from the well. The well is neutral ground. The well has a chain.", "mechanical_hook": "A judgment rendered here under both laws simultaneously reduces the Two-Law Tension timer by 1 instead of ticking it." },
-    { "rank": 7, "suit": "spade", "title": "Blackwood Road", "subtitle": "[TRAVEL]", "description": "Milestones re-carved in runes and Utaran both.", "flavor": "The runes say 'safe passage.' The Utaran says 'toll payable twice.' The third line is scratched out.", "mechanical_hook": "Travel along this road is faster (−1 segment on travel timers) but tolls are demanded twice — once per law." },
-    { "rank": 8, "suit": "spade", "title": "Staple Market", "subtitle": "[TRADE] [SOCIAL]", "description": "Frontier where Ykrul horses meet Vilikari iron.", "flavor": "The horse-traders and smiths speak a pidgin of gestures and grudges. The scales are honest — mostly.", "mechanical_hook": "Converting a held Diamond into a Market Edge (+1 die to buy/sell rolls for the scene) ticks Market Knives [4]." },
-    { "rank": 9, "suit": "spade", "title": "Burial Field", "subtitle": "[DEATH]", "description": "Ship-ridge mounds beside tiled mausolea, both garlanded.", "flavor": "The mausolea have fresh offerings. The ancestors are not picky. The ship-mounds whisper at dawn.", "mechanical_hook": "Disturbing the field risks the Grave Offense complication; honoring it grants a Boon on the next Lore roll about Vilikari history." },
-    { "rank": 10, "suit": "spade", "title": "Repaired Bridge", "subtitle": "[TRAVEL] [LAW]", "description": "An arch of stone, a Vilikari trestle stitched on; past and present joined.", "flavor": "The trestle creaks in Vilikari, the stone groans in Utaran. They argue at midnight. The toll-keeper listens.", "mechanical_hook": "Diamonds tied to rights or escorts may be cashed as currency here one-for-one, same as Stone Ford." },
-    { "rank": 11, "suit": "spade", "title": "Hill Amphitheater", "subtitle": "[AUTHORITY]", "description": "A lord's hall raised in an old arena's curve; power in architecture.", "flavor": "The lord's throne is a gladiator's chair. He does not know who last sat in it. The sand beneath is still dark.", "mechanical_hook": "Holding court here grants +1 Position to whoever sits the throne, but any challenge to their authority happens publicly, before witnesses." },
-    { "rank": 12, "suit": "spade", "title": "New Raivon", "subtitle": "[URBAN]", "description": "March capital; grid-streets colliding with wandering lanes.", "flavor": "The grid was laid by a surveyor who never came back. The lanes are older. They move at night.", "mechanical_hook": "Navigating the city at night requires a Wits+Lore roll (DV 4) or the party arrives somewhere other than intended, though rarely somewhere unhelpful." },
-    { "rank": 13, "suit": "spade", "title": "Dux's Palace", "subtitle": "[AUTHORITY]", "description": "Purple awnings, wolf-hides, law tablets on the wall.", "flavor": "The tablets list every treaty broken. The wolf-hides are from the treaty-breakers. They still growl.", "mechanical_hook": "Reading the tablets grants a genuine piece of GM-provided history about a broken treaty relevant to the current plot." },
-    { "rank": 14, "suit": "spade", "title": "Foedus Stone", "subtitle": "[LAW] [LEGEND]", "description": "At a crossroads; every treaty carved, every hand weighed.", "flavor": "The stone has grown. Each new treaty adds a finger of granite. The oldest fingers are worn smooth. The newest crack has no date.", "mechanical_hook": "An oath sworn here is doubly binding; if the Witness Fading Timer is at 4+, the stone glows, and the next legal argument made here is automatically binding for both sides (Crack Light)." }
+    {
+      "rank": 2,
+      "suit": "spade",
+      "title": "Longhouse Quarter",
+      "subtitle": "[COMMUNITY]",
+      "description": "The forum's marble floor is worn smooth by dancing feet, not sandals.",
+      "flavor": "The ghosts of tax collectors weep in the corners. The ghosts of Ykrul hostages sing in the rafters. The stone is forgetting which is which.",
+      "mechanical_hook": "Resting here clears 1 Fatigue and grants +1 die to the next social roll invoking hospitality, if the Hearth-Mother is honored properly."
+    },
+    {
+      "rank": 3,
+      "suit": "spade",
+      "title": "Milefort XVII",
+      "subtitle": "[MILITARY]",
+      "description": "Earth bank, stone gate; faded eagle over fresh knotwork.",
+      "flavor": "The eagle's stone wings were reglued after a lightning strike. It still leans left — toward the steppe. The stone's crack points the same way.",
+      "mechanical_hook": "Garrison here grants a Cap 2 defensive advantage in any skirmish, but housing here for more than a night starts a minor Border Tension tick."
+    },
+    {
+      "rank": 4,
+      "suit": "spade",
+      "title": "Stone Ford",
+      "subtitle": "[TRADE]",
+      "description": "Plank-palings and a customs table at knee-height; border as bureaucracy.",
+      "flavor": "The ford changes hands every season. The customs table never moves. The wood is stained with ink and blood. The stone's crack drinks both.",
+      "mechanical_hook": "A held Diamond may be cashed as currency here one-for-one, creating a Stone Weight the GM may call in later."
+    },
+    {
+      "rank": 5,
+      "suit": "spade",
+      "title": "Villa Granary",
+      "subtitle": "[MILITARY]",
+      "description": "Barracks with a tile roof; spear racks where olives once slept.",
+      "flavor": "The olive press still works. The pressers are now armorers. The oil is for lamps, not cooking. The oil is also for anointing the stone.",
+      "mechanical_hook": "Requisitioning supplies here requires a Sway or Command roll (DV 4); success grants 1 Supply, failure ticks Annona Late."
+    },
+    {
+      "rank": 6,
+      "suit": "spade",
+      "title": "Twin Court",
+      "subtitle": "[LAW]",
+      "description": "Mallus ring beneath an oak, basilica bench across the lane.",
+      "flavor": "The oak and the bench are the same distance from the well. The well is neutral ground. The well has a chain. The chain is warm.",
+      "mechanical_hook": "A judgment rendered here under both laws simultaneously reduces the Two-Law Tension timer by 1 instead of ticking it. The well's chain will hold the oath."
+    },
+    {
+      "rank": 7,
+      "suit": "spade",
+      "title": "Blackwood Road",
+      "subtitle": "[TRAVEL]",
+      "description": "Milestones re-carved in runes and Utaran both.",
+      "flavor": "The runes say 'safe passage.' The Utaran says 'toll payable twice.' The third line is scratched out. The scratching is the Hollow's signature.",
+      "mechanical_hook": "Travel along this road is faster (−1 segment on travel timers) but tolls are demanded twice — once per law."
+    },
+    {
+      "rank": 8,
+      "suit": "spade",
+      "title": "Staple Market",
+      "subtitle": "[TRADE] [SOCIAL]",
+      "description": "Frontier where Ykrul horses meet Vilikari iron.",
+      "flavor": "The horse-traders and smiths speak a pidgin of gestures and grudges. The scales are honest — mostly. The stone's crack is the third scale.",
+      "mechanical_hook": "Converting a held Diamond into a Market Edge (+1 die to buy/sell rolls for the scene) ticks Market Knives [4]."
+    },
+    {
+      "rank": 9,
+      "suit": "spade",
+      "title": "Burial Field",
+      "subtitle": "[DEATH]",
+      "description": "Ship-ridge mounds beside tiled mausolea, both garlanded.",
+      "flavor": "The mausolea have fresh offerings. The ancestors are not picky. The ship-mounds whisper at dawn. The whispers are in a language the stone has forgotten.",
+      "mechanical_hook": "Disturbing the field risks the Grave Offense complication; honoring it grants a Boon on the next Lore roll about Vilikari history."
+    },
+    {
+      "rank": 10,
+      "suit": "spade",
+      "title": "Repaired Bridge",
+      "subtitle": "[TRAVEL] [LAW]",
+      "description": "An arch of stone, a Vilikari trestle stitched on; past and present joined.",
+      "flavor": "The trestle creaks in Vilikari, the stone groans in Utaran. They argue at midnight. The toll-keeper listens. The Hollow listens too.",
+      "mechanical_hook": "Diamonds tied to rights or escorts may be cashed as currency here one-for-one, same as Stone Ford."
+    },
+    {
+      "rank": 11,
+      "suit": "spade",
+      "title": "Hill Amphitheater",
+      "subtitle": "[AUTHORITY]",
+      "description": "A lord's hall raised in an old arena's curve; power in architecture.",
+      "flavor": "The lord's throne is a gladiator's chair. He does not know who last sat in it. The sand beneath is still dark. The stone's crack runs through the center.",
+      "mechanical_hook": "Holding court here grants +1 Position to whoever sits the throne, but any challenge to their authority happens publicly, before witnesses."
+    },
+    {
+      "rank": 12,
+      "suit": "spade",
+      "title": "New Raivon",
+      "subtitle": "[URBAN]",
+      "description": "March capital; grid-streets colliding with wandering lanes.",
+      "flavor": "The grid was laid by a surveyor who never came back. The lanes are older. They move at night. The stone's cracks are the surveyor's map.",
+      "mechanical_hook": "Navigating the city at night requires a Wits+Lore roll (DV 4) or the party arrives somewhere other than intended, though rarely somewhere unhelpful."
+    },
+    {
+      "rank": 13,
+      "suit": "spade",
+      "title": "Dux's Palace",
+      "subtitle": "[AUTHORITY]",
+      "description": "Purple awnings, wolf-hides, law tablets on the wall.",
+      "flavor": "The tablets list every treaty broken. The wolf-hides are from the treaty-breakers. They still growl. The stone's cracks match their teeth marks.",
+      "mechanical_hook": "Reading the tablets grants a genuine piece of GM-provided history about a broken treaty relevant to the current plot."
+    },
+    {
+      "rank": 14,
+      "suit": "spade",
+      "title": "Foedus Stone",
+      "subtitle": "[LAW] [LEGEND]",
+      "description": "At a crossroads; every treaty carved, every hand weighed.",
+      "flavor": "The stone has grown. Each new treaty adds a finger of granite. The oldest fingers are worn smooth. The newest crack has no date. The stone is warm. The Hollow is close.",
+      "mechanical_hook": "An oath sworn here is doubly binding; if the Witness Fading Timer is at 4+, the stone glows, and the next legal argument made here is automatically binding for both sides (Crack Light)."
+    }
   ],
   "people_and_factions": [
-    { "rank": 2, "suit": "heart", "title": "Hearth-Mother Vesna", "subtitle": "[SOCIAL]", "description": "Keeper of guest-right.", "flavor": "She has never lost a quarrel; her voice is soft, her memory longer than the Foedus Stone. She remembers obligations that are not yet owed — and the stone is forgetting, shrinking.", "debt": "She'll grant guest-right (safe hospitality) to anyone who serves the correct mead to the correct guest, once.", "price": "Proper observance of custom, and news of the wider marches." },
-    { "rank": 3, "suit": "heart", "title": "Shield-Brother Rurik", "subtitle": "[MILITARY] [OATH]", "description": "Comitatus oath-bearer.", "flavor": "His braids are his record; each knot is an oath kept — or broken. He has started tying knots in his sleep, hoping the stone will remember.", "debt": "He'll fight alongside the party in one engagement, if their cause is oath-bound and genuine.", "price": "A knot tied in his braid — a public record of the debt owed to him." },
-    { "rank": 4, "suit": "heart", "title": "March Notary Theodora", "subtitle": "[LAW]", "description": "Utaran-trained legalist.", "flavor": "Her left hand writes Utaran, her right writes runes. She signs with her foot. A 'third hand' writes in ink that no one can read — not even her.", "debt": "She'll draft a document binding under both laws simultaneously, once, for a case she believes is just.", "price": "A fee paid in salt or coin, and total honesty about the case's true stakes." },
-    { "rank": 5, "suit": "heart", "title": "Horse-Reeve", "subtitle": "[TRADE]", "description": "Rations pasture between plows and warbands.", "flavor": "He measures grass in fistfuls. The Ykrul respect his arithmetic. The Ecktorians pretend not to notice. He is saving fistfuls to patch the stone.", "debt": "He'll allocate grazing rights or fodder to the party's mounts, once, if they respect his measurements.", "price": "A fistful of grain, symbolically given toward patching the stone." },
-    { "rank": 6, "suit": "heart", "title": "Ykrul Envoy", "subtitle": "[SOCIAL]", "description": "Riding under safe-conduct; speaks obligations in proverbs.", "flavor": "He never carries a weapon. His tongue is sharp enough. His hostage string has nine knots. He is running out of space — and the stone is running out of memory.", "debt": "He'll broker a minor understanding between the party and the Ykrul, once, if approached with correct proverb-etiquette.", "price": "A proverb answered honestly, and patience with the ritual of negotiation." },
-    { "rank": 7, "suit": "heart", "title": "Old Legionary", "subtitle": "[MILITARY]", "description": "Drill-master for Vilikari levies; Utar in muscle memory.", "flavor": "He still marks time in paces. The recruits call him 'Grandfather Eagle.' The eagle on his shield is chipped.", "debt": "He'll train the party in formation discipline, once, granting a Cap bonus in their next organized engagement.", "price": "Genuine effort and respect for the old drills — he has no patience for shortcuts." },
-    { "rank": 8, "suit": "heart", "title": "Ecktorial Factor", "subtitle": "[TRADE]", "description": "Vilikari blood, Ecktorial coin; flows where the market points.", "flavor": "His coat has two collars — one for each loyalty. He wears whichever is warmer. His tally has three columns. The third column is labeled 'crack width.'", "debt": "He'll broker a trade deal across the Ecktorian border, once, for a cut of the profit.", "price": "A percentage of the deal, and discretion about which collar he wore that day." },
-    { "rank": 9, "suit": "heart", "title": "Kahfagian Pilot", "subtitle": "[TRAVEL]", "description": "Lantern-law chit and clan tattoo; sea-law on land.", "flavor": "He navigates by stars and tariffs. Both change with the season. He has never been lost — only delayed. The stone's cracks are good for smuggling.", "debt": "He'll pilot the party past the lantern-law patrols, once, no questions asked about cargo.", "price": "A cut of whatever's being moved, and discretion in return." },
-    { "rank": 10, "suit": "heart", "title": "Marcher-Lord", "subtitle": "[AUTHORITY]", "description": "Iron-nail crown, Vilikari law in pocket; a frontier king.", "flavor": "His crown was a plowshare. He reversed the curse. His hands are still calloused. He does not sit on his throne. He spends his days pressing his ear to the stone.", "debt": "He'll grant a minor writ or land-right, once, to anyone who helps him understand what the stone is telling him.", "price": "Genuine effort toward understanding the stone's cracks, not empty flattery." },
-    { "rank": 11, "suit": "heart", "title": "War-Maiden", "subtitle": "[COMBAT] [OATH]", "description": "Oath-braid names the dead and the owed; vengeance as memory.", "flavor": "Her braid is longer than her sword. Both have drawn blood. She never cuts the braid. The dead would forget her. The stone is forgetting everyone else.", "debt": "She'll pursue a vengeance-oath alongside the party, once, if the wrong is genuine and the target named.", "price": "A place in her braid — the party's names become part of her record, for better or worse." },
-    { "rank": 12, "suit": "heart", "title": "Queen of Marches", "subtitle": "[POLITICS]", "description": "Consort-regent; smiles like precedent.", "flavor": "She married the Federate King for peace. She kept the kingdom for herself. Her seal is a broken arrow. She keeps a piece of the stone in her pocket — it gets smaller every year.", "debt": "A private audience with her can turn a whisper into policy — rare, and never without a price.", "price": "A secret, or a service that only a trusted outsider could perform." },
-    { "rank": 13, "suit": "heart", "title": "Federate King Aldric", "subtitle": "[AUTHORITY]", "description": "Rex-Dux sworn to forms, sung by his own.", "flavor": "He has three thrones — oak, marble, and saddle. He uses whichever is not being argued over. Lately, all three are dusty. He has stopped arguing. He just listens to the stone.", "debt": "His formal favor is rare and binding under all three of his thrones' authority at once.", "price": "Public loyalty, demonstrated in a manner of his choosing." },
-    { "rank": 14, "suit": "heart", "title": "Elder of Elders", "subtitle": "[LAW]", "description": "Thing-council speaker; a nod can unmake a clan.", "flavor": "He speaks once a year. The rest of the time he listens — and remembers. But his memory is cracking like the stone. He has started writing things on his own skin.", "debt": "His yearly words carry the weight of ancient precedent — genuine, cryptic, and binding on those who hear them.", "price": "A memory, freely given, to help him remember what the stone is forgetting." }
+    {
+      "rank": 2,
+      "suit": "heart",
+      "title": "Hearth-Mother Vesna",
+      "subtitle": "[SOCIAL]",
+      "description": "Keeper of guest-right.",
+      "flavor": "She has never lost a quarrel; her voice is soft, her memory longer than the Foedus Stone. She remembers obligations that are not yet owed — and the stone is forgetting, shrinking.",
+      "what_they_carry": "She'll grant guest-right (safe hospitality) to anyone who serves the correct mead to the correct guest, once.",
+      "what_they_ask": "Proper observance of custom, and news of the wider marches."
+    },
+    {
+      "rank": 3,
+      "suit": "heart",
+      "title": "Shield-Brother Rurik",
+      "subtitle": "[MILITARY] [OATH]",
+      "description": "Comitatus oath-bearer.",
+      "flavor": "His braids are his record; each knot is an oath kept — or broken. He has started tying knots in his sleep, hoping the stone will remember. The Hollow knows every knot he has tied.",
+      "what_they_carry": "He'll fight alongside the party in one engagement, if their cause is oath-bound and genuine.",
+      "what_they_ask": "A knot tied in his braid — a public record of the debt owed to him."
+    },
+    {
+      "rank": 4,
+      "suit": "heart",
+      "title": "March Notary Theodora",
+      "subtitle": "[LAW]",
+      "description": "Utaran-trained legalist.",
+      "flavor": "Her left hand writes Utaran, her right writes runes. She signs with her foot. A 'third hand' writes in ink that no one can read — not even her. The ink is from the stone's cracks.",
+      "what_they_carry": "She'll draft a document binding under both laws simultaneously, once, for a case she believes is just.",
+      "what_they_ask": "A fee paid in salt or coin, and total honesty about the case's true stakes."
+    },
+    {
+      "rank": 5,
+      "suit": "heart",
+      "title": "Horse-Reeve",
+      "subtitle": "[TRADE]",
+      "description": "Rations pasture between plows and warbands.",
+      "flavor": "He measures grass in fistfuls. The Ykrul respect his arithmetic. The Ecktorians pretend not to notice. He is saving fistfuls to patch the stone.",
+      "what_they_carry": "He'll allocate grazing rights or fodder to the party's mounts, once, if they respect his measurements.",
+      "what_they_ask": "A fistful of grain, symbolically given toward patching the stone."
+    },
+    {
+      "rank": 6,
+      "suit": "heart",
+      "title": "Ykrul Envoy",
+      "subtitle": "[SOCIAL]",
+      "description": "Riding under safe-conduct; speaks obligations in proverbs.",
+      "flavor": "He never carries a weapon. His tongue is sharp enough. His hostage string has nine knots. He is running out of space — and the stone is running out of memory. The Hollow has already forgotten his name.",
+      "what_they_carry": "He'll broker a minor understanding between the party and the Ykrul, once, if approached with correct proverb-etiquette.",
+      "what_they_ask": "A proverb answered honestly, and patience with the ritual of negotiation."
+    },
+    {
+      "rank": 7,
+      "suit": "heart",
+      "title": "Old Legionary",
+      "subtitle": "[MILITARY]",
+      "description": "Drill-master for Vilikari levies; Utar in muscle memory.",
+      "flavor": "He still marks time in paces. The recruits call him 'Grandfather Eagle.' The eagle on his shield is chipped. He presses his ear to the stone at night. He has heard it whisper his own death.",
+      "what_they_carry": "He'll train the party in formation discipline, once, granting a Cap bonus in their next organized engagement.",
+      "what_they_ask": "Genuine effort and respect for the old drills — he has no patience for shortcuts."
+    },
+    {
+      "rank": 8,
+      "suit": "heart",
+      "title": "Ecktorial Factor",
+      "subtitle": "[TRADE]",
+      "description": "Vilikari blood, Ecktorial coin; flows where the market points.",
+      "flavor": "His coat has two collars — one for each loyalty. He wears whichever is warmer. His tally has three columns. The third column is labeled 'crack width.'",
+      "what_they_carry": "He'll broker a trade deal across the Ecktorian border, once, for a cut of the profit.",
+      "what_they_ask": "A percentage of the deal, and discretion about which collar he wore that day."
+    },
+    {
+      "rank": 9,
+      "suit": "heart",
+      "title": "Kahfagian Pilot",
+      "subtitle": "[TRAVEL]",
+      "description": "Lantern-law chit and clan tattoo; sea-law on land.",
+      "flavor": "He navigates by stars and tariffs. Both change with the season. He has never been lost — only delayed. The stone's cracks are good for smuggling.",
+      "what_they_carry": "He'll pilot the party past the lantern-law patrols, once, no questions asked about cargo.",
+      "what_they_ask": "A cut of whatever's being moved, and discretion in return."
+    },
+    {
+      "rank": 10,
+      "suit": "heart",
+      "title": "Marcher-Lord",
+      "subtitle": "[AUTHORITY]",
+      "description": "Iron-nail crown, Vilikari law in pocket; a frontier king.",
+      "flavor": "His crown was a plowshare. He reversed the curse. His hands are still calloused. He does not sit on his throne. He spends his days pressing his ear to the stone. It is warm.",
+      "what_they_carry": "He'll grant a minor writ or land-right, once, to anyone who helps him understand what the stone is telling him.",
+      "what_they_ask": "Genuine effort toward understanding the stone's cracks, not empty flattery."
+    },
+    {
+      "rank": 11,
+      "suit": "heart",
+      "title": "War-Maiden",
+      "subtitle": "[COMBAT] [OATH]",
+      "description": "Oath-braid names the dead and the owed; vengeance as memory.",
+      "flavor": "Her braid is longer than her sword. Both have drawn blood. She never cuts the braid. The dead would forget her. The stone is forgetting everyone else. She has started braiding in her own hair.",
+      "what_they_carry": "She'll pursue a vengeance-oath alongside the party, once, if the wrong is genuine and the target named.",
+      "what_they_ask": "A place in her braid — the party's names become part of her record, for better or worse."
+    },
+    {
+      "rank": 12,
+      "suit": "heart",
+      "title": "Queen of Marches",
+      "subtitle": "[POLITICS]",
+      "description": "Consort-regent; smiles like precedent.",
+      "flavor": "She married the Federate King for peace. She kept the kingdom for herself. Her seal is a broken arrow. She keeps a piece of the stone in her pocket — it gets smaller every year.",
+      "what_they_carry": "A private audience with her can turn a whisper into policy — rare, and never without a price.",
+      "what_they_ask": "A secret, or a service that only a trusted outsider could perform."
+    },
+    {
+      "rank": 13,
+      "suit": "heart",
+      "title": "Federate King Aldric",
+      "subtitle": "[AUTHORITY]",
+      "description": "Rex-Dux sworn to forms, sung by his own.",
+      "flavor": "He has three thrones — oak, marble, and saddle. He uses whichever is not being argued over. Lately, all three are dusty. He has stopped arguing. He just listens to the stone. It is whispering the names of the dead.",
+      "what_they_carry": "His formal favor is rare and binding under all three of his thrones' authority at once.",
+      "what_they_ask": "Public loyalty, demonstrated in a manner of his choosing."
+    },
+    {
+      "rank": 14,
+      "suit": "heart",
+      "title": "Elder of Elders",
+      "subtitle": "[LAW]",
+      "description": "Thing-council speaker; a nod can unmake a clan.",
+      "flavor": "He speaks once a year. The rest of the time he listens — and remembers. But his memory is cracking like the stone. He has started writing things on his own skin. The Hollow reads his skin at night.",
+      "what_they_carry": "His yearly words carry the weight of ancient precedent — genuine, cryptic, and binding on those who hear them.",
+      "what_they_ask": "A memory, freely given, to help him remember what the stone is forgetting."
+    }
   ],
   "complications": [
-    { "rank": 2, "suit": "club", "title": "Annona Late", "subtitle": "[SUPPLY] [SOCIAL]", "description": "Grain stipend misses the comitatus; tempers quicken like flint.", "flavor": "The granary is full. The keys are in the wrong vault. Someone is waiting for the price to rise. The soldiers are not. The stone does not care.", "mechanical_hook": "Resolving the shortage requires a Sway or Investigation roll (DV 4); failure ticks a relevant Supply timer by 1." },
-    { "rank": 3, "suit": "club", "title": "Law Tangle", "subtitle": "[LAW]", "description": "Mallus verdict vs. basilica writ — whose seal bites?", "flavor": "The oak judge and the marble judge are cousins. They send each other holiday cards. The case has been open for three generations. The stone has forgotten who started it.", "mechanical_hook": "Citing the Foedus Stone or older precedent steps Position up but adds a tick to the Two-Law Tension [4] timer." },
-    { "rank": 4, "suit": "club", "title": "Raid Rumor", "subtitle": "[COMBAT] [FEAR]", "description": "A Ykrul boyar; levies panic the plowlands.", "flavor": "The boyar is a ghost — or a tax collector. The farmers don't wait to find out. They burn the fields themselves. The stone's cracks are good cover for ghosts.", "mechanical_hook": "Investigating before the farmers panic (Wits+Lore, DV 4) prevents the fields from burning; failure costs the region 1 Supply." },
-    { "rank": 5, "suit": "club", "title": "Bridge Levy", "subtitle": "[TRADE] [COMBAT]", "description": "Doubled for road-works; caravans balk, fists rise.", "flavor": "The road-works are a ditch. The ditch fills every spring. The bridge keeper has a new sword. He sharpens it on the stone.", "mechanical_hook": "Paying the levy costs 1 Supply; refusing risks a Cap 2 confrontation with the bridge keeper's hired men." },
-    { "rank": 6, "suit": "club", "title": "Succession Feud", "subtitle": "[POLITICS] [DEATH]", "description": "Wolf-brother claim vs. purple-charter heir.", "flavor": "The wolf-brother has a better sword. The purple-charter has a better notary. The notary's ink is mixed with blood. The stone's crack drinks it.", "mechanical_hook": "The party must choose a side or broker peace via a Wergild Table (Sway DV 5); refusal starts a Feud Spiral timer." },
-    { "rank": 7, "suit": "club", "title": "Foedus Recall", "subtitle": "[LAW] [SOCIAL]", "description": "A prefecture resettlement is 'requested'; homes bristle.", "flavor": "The prefecture's map is forty years old. It shows a village that drowned. The villagers are still there. The stone remembers their names — barely.", "mechanical_hook": "Resolving the dispute peacefully requires producing a valid counter-charter (Wits+Lore, DV 5) or accepting the Witness Fading Timer ticking by 1." },
-    { "rank": 8, "suit": "club", "title": "Coin Talk", "subtitle": "[TRADE] [WEIGHT]", "description": "Debasement; pay demanded in salt, hides, or hostages.", "flavor": "The salt is from a disputed pan. The hides are from cattle that were never born. The hostages are children. The stone's cracks are full of their names.", "mechanical_hook": "Negotiating fair payment requires a Sway roll (DV 5); failure risks a hostage being taken as collateral." },
-    { "rank": 9, "suit": "club", "title": "Grave Offense", "subtitle": "[DEATH] [OMEN]", "description": "A burial field disturbed; omens ride with the news.", "flavor": "The ancestors are angry. They have a list. Your name may be on it. The list is carved on a ship's prow. The stone's new crack is shaped like a finger pointing.", "mechanical_hook": "Making amends (an offering, a proper reburial) clears the omen; ignoring it imposes a Condition (Ill-Omened) on the offending party." },
-    { "rank": 10, "suit": "club", "title": "Port Clash", "subtitle": "[LAW] [TRADE]", "description": "Lantern-law vs. street-law; confiscations bloom.", "flavor": "The lanterns were moved last night. The old safe channel is now a reef. The harbor master is not answering questions. He is listening to the stone.", "mechanical_hook": "Navigating the port without a Foedus Seal or lantern-law chit forces a Desperate Boating or Subterfuge roll (DV 5)." },
-    { "rank": 11, "suit": "club", "title": "Warband Flip", "subtitle": "[MILITARY] [BETRAYAL]", "description": "Colors change mid-pay; hostage protocol snaps shut.", "flavor": "The hostages are eating well. Their captors are not. The captain's new banner is stitched with his old captain's hair. The stone's crack has grown wider.", "mechanical_hook": "The party's allied warband may defect unless a Loyalty-testing scene (Sway DV 5) succeeds before the pay comes due." },
-    { "rank": 12, "suit": "club", "title": "Restoration Preacher", "subtitle": "[SOCIAL] [FEAR]", "description": "Stirs crowds against the 'barbarian king in purple.'", "flavor": "The preacher's license was signed by a dead abbot. The seal is still warm. The crowd does not know. The stone does not care.", "mechanical_hook": "Exposing the preacher's forged license (Investigation DV 5) disperses the crowd; failure risks a riot (Cap 2)." },
-    { "rank": 13, "suit": "club", "title": "General Levy", "subtitle": "[MILITARY] [SUPPLY]", "description": "The march is closed; markets freeze into spears.", "flavor": "The levy notice is posted in three languages. None of them are local. The tax collector has a bow. The stone has stopped listening.", "mechanical_hook": "The party is conscripted into the levy unless they can produce a valid exemption (a writ, a Purple Warrant, or a lord's favor)." },
-    { "rank": 14, "suit": "club", "title": "Spring Melt", "subtitle": "[WEATHER] [TRAVEL]", "description": "Eats the Wolf Road; proofs, plans, and armies bog.", "flavor": "The road is a memory. The ruts fill with water — and older things. The bridge keeper is fishing for boots. The stone's crack is now a chasm.", "mechanical_hook": "Travel along affected roads is Desperate until the melt subsides; a Miss risks losing cargo or a mount to the mud." }
+    {
+      "rank": 2,
+      "suit": "club",
+      "title": "Annona Late",
+      "subtitle": "[SUPPLY] [SOCIAL]",
+      "description": "Grain stipend misses the comitatus; tempers quicken like flint.",
+      "flavor": "The granary is full. The keys are in the wrong vault. Someone is waiting for the price to rise. The soldiers are not. The stone does not care.",
+      "mechanical_hook": "Resolving the shortage requires a Sway or Investigation roll (DV 4); failure ticks a relevant Supply timer by 1."
+    },
+    {
+      "rank": 3,
+      "suit": "club",
+      "title": "Law Tangle",
+      "subtitle": "[LAW]",
+      "description": "Mallus verdict vs. basilica writ — whose seal bites?",
+      "flavor": "The oak judge and the marble judge are cousins. They send each other holiday cards. The case has been open for three generations. The stone has forgotten who started it.",
+      "mechanical_hook": "Citing the Foedus Stone or older precedent steps Position up but adds a tick to the Two-Law Tension [4] timer."
+    },
+    {
+      "rank": 4,
+      "suit": "club",
+      "title": "Raid Rumor",
+      "subtitle": "[COMBAT] [FEAR]",
+      "description": "A Ykrul boyar; levies panic the plowlands.",
+      "flavor": "The boyar is a ghost — or a tax collector. The farmers don't wait to find out. They burn the fields themselves. The stone's cracks are good cover for ghosts.",
+      "mechanical_hook": "Investigating before the farmers panic (Wits+Lore, DV 4) prevents the fields from burning; failure costs the region 1 Supply."
+    },
+    {
+      "rank": 5,
+      "suit": "club",
+      "title": "Bridge Levy",
+      "subtitle": "[TRADE] [COMBAT]",
+      "description": "Doubled for road-works; caravans balk, fists rise.",
+      "flavor": "The road-works are a ditch. The ditch fills every spring. The bridge keeper has a new sword. He sharpens it on the stone.",
+      "mechanical_hook": "Paying the levy costs 1 Supply; refusing risks a Cap 2 confrontation with the bridge keeper's hired men."
+    },
+    {
+      "rank": 6,
+      "suit": "club",
+      "title": "Succession Feud",
+      "subtitle": "[POLITICS] [DEATH]",
+      "description": "Wolf-brother claim vs. purple-charter heir.",
+      "flavor": "The wolf-brother has a better sword. The purple-charter has a better notary. The notary's ink is mixed with blood. The stone's crack drinks it.",
+      "mechanical_hook": "The party must choose a side or broker peace via a Wergild Table (Sway DV 5); refusal starts a Feud Spiral timer."
+    },
+    {
+      "rank": 7,
+      "suit": "club",
+      "title": "Foedus Recall",
+      "subtitle": "[LAW] [SOCIAL]",
+      "description": "A prefecture resettlement is 'requested'; homes bristle.",
+      "flavor": "The prefecture's map is forty years old. It shows a village that drowned. The villagers are still there. The stone remembers their names — barely.",
+      "mechanical_hook": "Resolving the dispute peacefully requires producing a valid counter-charter (Wits+Lore, DV 5) or accepting the Witness Fading Timer ticking by 1."
+    },
+    {
+      "rank": 8,
+      "suit": "club",
+      "title": "Coin Talk",
+      "subtitle": "[TRADE] [WEIGHT]",
+      "description": "Debasement; pay demanded in salt, hides, or hostages.",
+      "flavor": "The salt is from a disputed pan. The hides are from cattle that were never born. The hostages are children. The stone's cracks are full of their names.",
+      "mechanical_hook": "Negotiating fair payment requires a Sway roll (DV 5); failure risks a hostage being taken as collateral."
+    },
+    {
+      "rank": 9,
+      "suit": "club",
+      "title": "Grave Offense",
+      "subtitle": "[DEATH] [OMEN]",
+      "description": "A burial field disturbed; omens ride with the news.",
+      "flavor": "The ancestors are angry. They have a list. Your name may be on it. The list is carved on a ship's prow. The stone's new crack is shaped like a finger pointing.",
+      "mechanical_hook": "Making amends (an offering, a proper reburial) clears the omen; ignoring it imposes a Condition (Ill-Omened) on the offending party."
+    },
+    {
+      "rank": 10,
+      "suit": "club",
+      "title": "Port Clash",
+      "subtitle": "[LAW] [TRADE]",
+      "description": "Lantern-law vs. street-law; confiscations bloom.",
+      "flavor": "The lanterns were moved last night. The old safe channel is now a reef. The harbor master is not answering questions. He is listening to the stone.",
+      "mechanical_hook": "Navigating the port without a Foedus Seal or lantern-law chit forces a Desperate Boating or Subterfuge roll (DV 5)."
+    },
+    {
+      "rank": 11,
+      "suit": "club",
+      "title": "Warband Flip",
+      "subtitle": "[MILITARY] [BETRAYAL]",
+      "description": "Colors change mid-pay; hostage protocol snaps shut.",
+      "flavor": "The hostages are eating well. Their captors are not. The captain's new banner is stitched with his old captain's hair. The stone's crack has grown wider.",
+      "mechanical_hook": "The party's allied warband may defect unless a Loyalty-testing scene (Sway DV 5) succeeds before the pay comes due."
+    },
+    {
+      "rank": 12,
+      "suit": "club",
+      "title": "Restoration Preacher",
+      "subtitle": "[SOCIAL] [FEAR]",
+      "description": "Stirs crowds against the 'barbarian king in purple.'",
+      "flavor": "The preacher's license was signed by a dead abbot. The seal is still warm. The crowd does not know. The stone does not care.",
+      "mechanical_hook": "Exposing the preacher's forged license (Investigation DV 5) disperses the crowd; failure risks a riot (Cap 2)."
+    },
+    {
+      "rank": 13,
+      "suit": "club",
+      "title": "General Levy",
+      "subtitle": "[MILITARY] [SUPPLY]",
+      "description": "The march is closed; markets freeze into spears.",
+      "flavor": "The levy notice is posted in three languages. None of them are local. The tax collector has a bow. The stone has stopped listening.",
+      "mechanical_hook": "The party is conscripted into the levy unless they can produce a valid exemption (a writ, a Purple Warrant, or a lord's favor)."
+    },
+    {
+      "rank": 14,
+      "suit": "club",
+      "title": "Spring Melt",
+      "subtitle": "[WEATHER] [TRAVEL]",
+      "description": "Eats the Wolf Road; proofs, plans, and armies bog.",
+      "flavor": "The road is a memory. The ruts fill with water — and older things. The bridge keeper is fishing for boots. The stone's crack is now a chasm.",
+      "mechanical_hook": "Travel along affected roads is Desperate until the melt subsides; a Miss risks losing cargo or a mount to the mud."
+    }
   ],
   "rewards": [
-    { "rank": 2, "suit": "diamond", "title": "Foedus Seal", "subtitle": "[LAW]", "description": "Settlement and stipends confirmed for a season.", "flavor": "The seal is a bronze wolf's head. It warms when the treaty holds — and cools when it doesn't. The wolf's eyes are garnets. One eye is cracked.", "curse_cost": "The seal's warmth is a visible, public indicator of the treaty's health — everyone can see when it's cooling." },
-    { "rank": 3, "suit": "diamond", "title": "Mallus Right", "subtitle": "[LAW]", "description": "Hold court under the oak and be obeyed.", "flavor": "The oak is older than the kingdom. Its roots have seen more verdicts than the throne. The acorns are bitter. The oak's leaves are falling early.", "curse_cost": "Rulings made under Mallus Right are not recognized by marble-law courts, and vice versa." },
-    { "rank": 4, "suit": "diamond", "title": "Stipend Arrears", "subtitle": "[SUPPLY]", "description": "Paid in salt and grain; portable, persuasive.", "flavor": "The salt is gray. The grain is from last harvest. Both are worth more than coin. The soldiers will accept. The stone will not.", "curse_cost": "The stipend is a one-time payment; asking for a second draws suspicion of overreach." },
-    { "rank": 5, "suit": "diamond", "title": "Utaran Patent", "subtitle": "[SOCIAL]", "description": "Citizenship-style privilege; doors open, bows deepen.", "flavor": "The patent is a worn scrap of vellum. It has been folded and refolded for a century. The seal is a sunburst. The sunburst is fading.", "curse_cost": "The patent's authority is fading along with the seal — its protections weaken as the Witness Fading Timer rises." },
-    { "rank": 6, "suit": "diamond", "title": "Stall-Right", "subtitle": "[TRADE]", "description": "Customs favor on a frontier market line.", "flavor": "The stall is a painted plank. Plant it, and the tax man will pretend not to see you. He will remember the favor. The stone will not.", "curse_cost": "The favor is personal, not transferable, and expires if the tax man is replaced." },
-    { "rank": 7, "suit": "diamond", "title": "Hostage Treaty", "subtitle": "[SOCIAL] [OATH]", "description": "Exchange fosters; grudges trade for leverage.", "flavor": "The hostages are children. Their parents are patient. The treaty has nine clauses. The ninth is unspoken. The stone has forgotten the first eight.", "curse_cost": "The unspoken ninth clause will eventually be invoked by the other side, on their terms, not yours." },
-    { "rank": 8, "suit": "diamond", "title": "Remount Allotment", "subtitle": "[TRAVEL]", "description": "Fresh horses from royal paddocks, no questions.", "flavor": "The horses are from the king's own herd. They know the roads better than you. They also know the king's secrets. They refuse to cross the stone's shadow.", "curse_cost": "The horses will not approach the Foedus Stone or any place its shadow reaches — a real, mechanical limitation on their use." },
-    { "rank": 9, "suit": "diamond", "title": "Wergild Table", "subtitle": "[LAW] [WEIGHT]", "description": "Recognized by both codes; vengeance priced and paid.", "flavor": "The table is a slate slab. The prices are carved deep — and often recarved. The newest price is a year of rain. The rain is washing away the carvings.", "curse_cost": "Prices on the table shift over time as the carvings wash away — what was owed may change by the time it's collected." },
-    { "rank": 10, "suit": "diamond", "title": "Bridge Farm", "subtitle": "[TRADE]", "description": "Imperial for a season; funds and friends accrue.", "flavor": "The bridge toll is a copper a head. The bridge keeper is your new best friend. He also keeps a list of your enemies. He scratches the list on the stone.", "curse_cost": "The bridge keeper's friendship comes with his enmities attached — your enemies become his business too." },
-    { "rank": 11, "suit": "diamond", "title": "Purple Warrant", "subtitle": "[AUTHORITY]", "description": "Wear the stripe; officials defer on sight.", "flavor": "The stripe is a sash. It was a curtain in a past life. The present life is yours. Do not lose it. The stone's crack has swallowed one like it.", "curse_cost": "Losing the warrant is a serious loss of face and legal standing — it cannot easily be replaced." },
-    { "rank": 12, "suit": "diamond", "title": "Queen's Audience", "subtitle": "[SOCIAL]", "description": "Private; a whisper becomes policy.", "flavor": "The audience is held in a garden. The flowers are listening. The gardener is a spy. The gardener is also the queen. She keeps a piece of the stone under her tongue.", "curse_cost": "What is whispered becomes policy for everyone, not just the asker, and can be reversed by rivals with better arguments." },
-    { "rank": 13, "suit": "diamond", "title": "Dux Commission", "subtitle": "[MILITARY]", "description": "Command a mixed unit with pay authority.", "flavor": "The commission is a baton. It doubles as a mace in a pinch. It also doubles as a receipt. The receipt is overdue. The stone has a receipt for the stone.", "curse_cost": "The pay authority comes with an overdue debt attached — someone, somewhere, expects repayment for the commission." },
-    { "rank": 14, "suit": "diamond", "title": "Great Law Day", "subtitle": "[LAW] [LEGEND]", "description": "Proclaim a new concord; one temporary exception to old law.", "flavor": "The proclamation is made at noon. By sunset, everyone will have an opinion. By dawn, the Foedus Stone will have a new finger — or a new crack.", "curse_cost": "The outcome (a new finger of granite, or a new crack) is decided by the GM based on how the exception was used — not guaranteed to favor the party." }
+    {
+      "rank": 2,
+      "suit": "diamond",
+      "title": "Foedus Seal",
+      "subtitle": "[LAW]",
+      "description": "Settlement and stipends confirmed for a season.",
+      "flavor": "The seal is a bronze wolf's head. It warms when the treaty holds — and cools when it doesn't. The wolf's eyes are garnets. One eye is cracked.",
+      "curse_cost": "The seal's warmth is a visible, public indicator of the treaty's health — everyone can see when it's cooling."
+    },
+    {
+      "rank": 3,
+      "suit": "diamond",
+      "title": "Mallus Right",
+      "subtitle": "[LAW]",
+      "description": "Hold court under the oak and be obeyed.",
+      "flavor": "The oak is older than the kingdom. Its roots have seen more verdicts than the throne. The acorns are bitter. The oak's leaves are falling early.",
+      "curse_cost": "Rulings made under Mallus Right are not recognized by marble-law courts, and vice versa."
+    },
+    {
+      "rank": 4,
+      "suit": "diamond",
+      "title": "Stipend Arrears",
+      "subtitle": "[SUPPLY]",
+      "description": "Paid in salt and grain; portable, persuasive.",
+      "flavor": "The salt is gray. The grain is from last harvest. Both are worth more than coin. The soldiers will accept. The stone will not.",
+      "curse_cost": "The stipend is a one-time payment; asking for a second draws suspicion of overreach."
+    },
+    {
+      "rank": 5,
+      "suit": "diamond",
+      "title": "Utaran Patent",
+      "subtitle": "[SOCIAL]",
+      "description": "Citizenship-style privilege; doors open, bows deepen.",
+      "flavor": "The patent is a worn scrap of vellum. It has been folded and refolded for a century. The seal is a sunburst. The sunburst is fading.",
+      "curse_cost": "The patent's authority is fading along with the seal — its protections weaken as the Witness Fading Timer rises."
+    },
+    {
+      "rank": 6,
+      "suit": "diamond",
+      "title": "Stall-Right",
+      "subtitle": "[TRADE]",
+      "description": "Customs favor on a frontier market line.",
+      "flavor": "The stall is a painted plank. Plant it, and the tax man will pretend not to see you. He will remember the favor. The stone will not.",
+      "curse_cost": "The favor is personal, not transferable, and expires if the tax man is replaced."
+    },
+    {
+      "rank": 7,
+      "suit": "diamond",
+      "title": "Hostage Treaty",
+      "subtitle": "[SOCIAL] [OATH]",
+      "description": "Exchange fosters; grudges trade for leverage.",
+      "flavor": "The hostages are children. Their parents are patient. The treaty has nine clauses. The ninth is unspoken. The stone has forgotten the first eight.",
+      "curse_cost": "The unspoken ninth clause will eventually be invoked by the other side, on their terms, not yours."
+    },
+    {
+      "rank": 8,
+      "suit": "diamond",
+      "title": "Remount Allotment",
+      "subtitle": "[TRAVEL]",
+      "description": "Fresh horses from royal paddocks, no questions.",
+      "flavor": "The horses are from the king's own herd. They know the roads better than you. They also know the king's secrets. They refuse to cross the stone's shadow.",
+      "curse_cost": "The horses will not approach the Foedus Stone or any place its shadow reaches — a real, mechanical limitation on their use."
+    },
+    {
+      "rank": 9,
+      "suit": "diamond",
+      "title": "Wergild Table",
+      "subtitle": "[LAW] [WEIGHT]",
+      "description": "Recognized by both codes; vengeance priced and paid.",
+      "flavor": "The table is a slate slab. The prices are carved deep — and often recarved. The newest price is a year of rain. The rain is washing away the carvings.",
+      "curse_cost": "Prices on the table shift over time as the carvings wash away — what was owed may change by the time it's collected."
+    },
+    {
+      "rank": 10,
+      "suit": "diamond",
+      "title": "Bridge Farm",
+      "subtitle": "[TRADE]",
+      "description": "Imperial for a season; funds and friends accrue.",
+      "flavor": "The bridge toll is a copper a head. The bridge keeper is your new best friend. He also keeps a list of your enemies. He scratches the list on the stone.",
+      "curse_cost": "The bridge keeper's friendship comes with his enmities attached — your enemies become his business too."
+    },
+    {
+      "rank": 11,
+      "suit": "diamond",
+      "title": "Purple Warrant",
+      "subtitle": "[AUTHORITY]",
+      "description": "Wear the stripe; officials defer on sight.",
+      "flavor": "The stripe is a sash. It was a curtain in a past life. The present life is yours. Do not lose it. The stone's crack has swallowed one like it.",
+      "curse_cost": "Losing the warrant is a serious loss of face and legal standing — it cannot easily be replaced."
+    },
+    {
+      "rank": 12,
+      "suit": "diamond",
+      "title": "Queen's Audience",
+      "subtitle": "[SOCIAL]",
+      "description": "Private; a whisper becomes policy.",
+      "flavor": "The audience is held in a garden. The flowers are listening. The gardener is a spy. The gardener is also the queen. She keeps a piece of the stone under her tongue.",
+      "curse_cost": "What is whispered becomes policy for everyone, not just the asker, and can be reversed by rivals with better arguments."
+    },
+    {
+      "rank": 13,
+      "suit": "diamond",
+      "title": "Dux Commission",
+      "subtitle": "[MILITARY]",
+      "description": "Command a mixed unit with pay authority.",
+      "flavor": "The commission is a baton. It doubles as a mace in a pinch. It also doubles as a receipt. The receipt is overdue. The stone has a receipt for the stone.",
+      "curse_cost": "The pay authority comes with an overdue debt attached — someone, somewhere, expects repayment for the commission."
+    },
+    {
+      "rank": 14,
+      "suit": "diamond",
+      "title": "Great Law Day",
+      "subtitle": "[LAW] [LEGEND]",
+      "description": "Proclaim a new concord; one temporary exception to old law.",
+      "flavor": "The proclamation is made at noon. By sunset, everyone will have an opinion. By dawn, the Foedus Stone will have a new finger — or a new crack.",
+      "curse_cost": "The outcome (a new finger of granite, or a new crack) is decided by the GM based on how the exception was used — not guaranteed to favor the party."
+    }
   ],
   "quick_use_notes": {
     "draw_rules": "Draw until you have all four suits: Spade = place, Heart = actor, Club = pressure, Diamond = leverage. Highest rank sets the main Timer (2–5 → 4 segments, 6–10 → 6 segments, J/Q/K → 8 segments, A → 10 segments).",
@@ -131,7 +714,7 @@
       "Investigate the Foedus Stone — its cracks, its history, and the forgotten clauses that could reshape the region."
     ],
     "core_timers": {
-      "witness_fading_timer": "**[8]** Tracks the erosion of Vilikari legal authority. Ticks when: the party defies a Vilikari judgment or brings a dispute to an outside court (+1); the GM spends 2 SB to represent a forgotten oath (+1); a foreign envoy publicly ignores a Vilikari ruling (+1). At 4 segments: any Vilikari NPC the party interacts with suffers −1 die to social rolls. At 8 segments: the Foedus Stone cracks completely — the Vilikari are no longer recognized as neutral, and the Ykrul and Ecktorians begin fighting over their land. Reset only by renewing the treaty: finding a witness older than the stone itself and having them speak the oath aloud.",
+      "witness_fading": "**[8]** Tracks the erosion of Vilikari legal authority. Ticks when: the party defies a Vilikari judgment or brings a dispute to an outside court (+1); the GM spends 2 SB to represent a forgotten oath (+1); a foreign envoy publicly ignores a Vilikari ruling (+1). At 4 segments: any Vilikari NPC the party interacts with suffers −1 die to social rolls. At 8 segments: the Foedus Stone cracks completely — the Vilikari are no longer recognized as neutral, and the Ykrul and Ecktorians begin fighting over their land. Reset only by renewing the treaty: finding a witness older than the stone itself and having them speak the oath aloud.",
       "two_law_tension": "**[4]** Whenever a jurisdictional conflict arises (mallus vs. basilica), players may step Position up by citing the Foedus Stone or an older precedent — but every use adds a tick. When it fills, one side demands exclusive authority. If Witness Fading is at 4+, this timer ticks twice as fast.",
       "border_tension_front": "Once per session, if a deal is struck with a foreign envoy or mixed-blood courtier, advance or start this front.",
       "market_knives": "**[4]** At any Staple Market or Stone Ford, converting a held Diamond into a Market Edge (+1 die to buy/sell rolls) ticks this timer. When full, a rival factor challenges your right to trade — a duel, a bribe demand, or a confiscation.",
@@ -149,13 +732,37 @@
       "Knot the Braid: on success, create a Feast-Bond [3] timer. On breach, the breaker takes 1–2 SB and it flips to Blood-Owed [3].",
       "Stone Witness: if the Feast-Bond is sworn at the Foedus Stone, reduce the Witness Fading Timer by 1."
     ],
-    "start_of_scene_omens_d6": [
-      "Laurel Wilt — first legal action gains +1d; first boast draws Law Tangle.",
-      "Smoke on the Steppe — Raid Rumor advances once; shortcuts open.",
-      "Twin Bells — both courts are in session; pick a side or start Law Tangle.",
-      "Queen's Dove — a message arrives; +1d on the next Queen's Audience.",
-      "Gray Salt — Stipend Arrears counts double value today; smugglers' ears open.",
-      "Old Eagle — an Utaran relic surfaces; Utaran Patent use is free this scene."
+    "start_of_scene_omens": [
+      {
+        "roll": 1,
+        "omen": "Laurel Wilt",
+        "effect": "first legal action gains +1d; first boast draws Law Tangle."
+      },
+      {
+        "roll": 2,
+        "omen": "Smoke on the Steppe",
+        "effect": "Raid Rumor advances once; shortcuts open."
+      },
+      {
+        "roll": 3,
+        "omen": "Twin Bells",
+        "effect": "both courts are in session; pick a side or start Law Tangle."
+      },
+      {
+        "roll": 4,
+        "omen": "Queen's Dove",
+        "effect": "a message arrives; +1d on the next Queen's Audience."
+      },
+      {
+        "roll": 5,
+        "omen": "Gray Salt",
+        "effect": "Stipend Arrears counts double value today; smugglers' ears open."
+      },
+      {
+        "roll": 6,
+        "omen": "Old Eagle",
+        "effect": "an Utaran relic surfaces; Utaran Patent use is free this scene."
+      }
     ],
     "crack_light": "If the Witness Fading Timer is ≥ 4, the stone also glows. The next legal argument made at the stone is automatically binding — for both sides.",
     "reputation_echoes": [
@@ -166,23 +773,129 @@
     ]
   },
   "local_patrons": [
-    { "name": "The Two-Faced King", "syncretism": "Mykkiel", "description": "Justice that wears a laurel and a wolf's tail." },
-    { "name": "The Hearth Judge", "syncretism": "The Witness", "description": "The flame that watches both sides of the bargain." },
-    { "name": "The Oak Father", "syncretism": "Grimmir", "description": "The root that holds the law; the branch that signs the treaty." },
-    { "name": "The Coin Saint", "syncretism": "Maelstraeus", "description": "Interest on a handshake; the stone that never sleeps." }
+    {
+      "name": "The Two-Faced King",
+      "syncretism": "Mykkiel",
+      "description": "Justice that wears a laurel and a wolf's tail. He is the stone's first witness."
+    },
+    {
+      "name": "The Hearth Judge",
+      "syncretism": "The Witness",
+      "description": "The flame that watches both sides of the bargain. She remembers what the stone forgets."
+    },
+    {
+      "name": "The Oak Father",
+      "syncretism": "Grimmir",
+      "description": "The root that holds the law; the branch that signs the treaty. He is older than the stone."
+    },
+    {
+      "name": "The Coin Saint",
+      "syncretism": "Maelstraeus",
+      "description": "Interest on a handshake; the stone that never sleeps. He profits from the cracks."
+    },
+    {
+      "name": "The Stone's Ghost",
+      "syncretism": "The Ninth",
+      "description": "The Foedus Avatar — what the stone becomes when it forgets too much. It speaks in forgotten clauses and crack-whispers. It is the Hollow's voice in the stone."
+    }
   ],
   "boss_archetypes": [
-    { "name": "The March Notary", "tags": ["Law", "Bureaucracy"], "description": "Quills like daggers — a legalist who buries enemies in citations.", "phases": ["Citation Tangle", "Seal Swap", "Precedent Trap"], "cracks": ["produce a Foedus Seal to quiet him", "a Queen's Audience overrules his filing", "if the Witness Fading Timer is at 6+, he gains +1 die in all phases (the stone supports him)"] },
-    { "name": "Ykrul Storm-Rider", "tags": ["Raider", "Steppe"], "description": "Wolf-cloak, bone whistle — a raid leader who smells weakness in a cracked stone.", "phases": ["Raid Cry", "Herd Stampede", "Blood Price"], "cracks": ["a Wergild Table settles the feud without combat", "a Hostage Treaty buys a season's peace", "he fights harder if the stone is cracked"] },
-    { "name": "The Prefect's Auditor", "tags": ["Empire", "Tax"], "description": "Ecktorial ink on his fingers — a tax officer who closes forts with a tally sheet.", "phases": ["Tally Seizure", "Tax Levy", "Fort Closure"], "cracks": ["an Utaran Patent grants immunity", "a Mallus Right transfers jurisdiction to the oak", "he carries a piece of the stone in his pocket — if taken, the Witness Fading Timer resets by 2"] },
-    { "name": "The Stone's Ghost", "tags": ["Fae", "Legend"], "description": "The Foedus Avatar — what the stone becomes when it forgets too much.", "phases": ["Whisper of Forgotten Clauses", "Crack Widens", "The Hollow Steps Through"], "cracks": ["speak the original treaty aloud (requires a Lethai-al witness)", "repair the stone with a memory of a kept promise", "sacrifice a personal oath to feed the stone instead of the Hollow"] }
+    {
+      "name": "The March Notary",
+      "tags": [
+        "Law",
+        "Bureaucracy"
+      ],
+      "description": "Quills like daggers — a legalist who buries enemies in citations.",
+      "phases": [
+        "Citation Tangle",
+        "Seal Swap",
+        "Precedent Trap"
+      ],
+      "cracks": [
+        "produce a Foedus Seal to quiet him",
+        "a Queen's Audience overrules his filing",
+        "if the Witness Fading Timer is at 6+, he gains +1 die in all phases (the stone supports him)"
+      ]
+    },
+    {
+      "name": "Ykrul Storm-Rider",
+      "tags": [
+        "Raider",
+        "Steppe"
+      ],
+      "description": "Wolf-cloak, bone whistle — a raid leader who smells weakness in a cracked stone.",
+      "phases": [
+        "Raid Cry",
+        "Herd Stampede",
+        "Blood Price"
+      ],
+      "cracks": [
+        "a Wergild Table settles the feud without combat",
+        "a Hostage Treaty buys a season's peace",
+        "he fights harder if the stone is cracked"
+      ]
+    },
+    {
+      "name": "The Prefect's Auditor",
+      "tags": [
+        "Empire",
+        "Tax"
+      ],
+      "description": "Ecktorial ink on his fingers — a tax officer who closes forts with a tally sheet.",
+      "phases": [
+        "Tally Seizure",
+        "Tax Levy",
+        "Fort Closure"
+      ],
+      "cracks": [
+        "an Utaran Patent grants immunity",
+        "a Mallus Right transfers jurisdiction to the oak",
+        "he carries a piece of the stone in his pocket — if taken, the Witness Fading Timer resets by 2"
+      ]
+    },
+    {
+      "name": "The Stone's Ghost",
+      "tags": [
+        "Fae",
+        "Legend"
+      ],
+      "description": "The Foedus Avatar — what the stone becomes when it forgets too much.",
+      "phases": [
+        "Whisper of Forgotten Clauses",
+        "Crack Widens",
+        "The Hollow Steps Through"
+      ],
+      "cracks": [
+        "speak the original treaty aloud (requires a Lethai-al witness)",
+        "repair the stone with a memory of a kept promise",
+        "sacrifice a personal oath to feed the stone instead of the Hollow"
+      ]
+    }
   ],
   "superstitions": [
-    { "name": "Bread to the Stone", "effect": "Crumble a crust at the base of the Foedus Stone. Ignore the first Law Tangle penalty.", "cost": "Burn for +1 die once" },
-    { "name": "Knot the Braid", "effect": "Tie a single knot in a horse's tail. Cancel Annona Late or take −1 die on your next supply roll (your choice).", "cost": "Burn for +1 die once" },
-    { "name": "Name to the Oak", "effect": "Whisper a dead enemy's name into the hollow of the mallus oak. Gain +1 Effect when collecting wergild from their kin this scene, but mark Obligation to the Elder of Elders.", "cost": "Burn for +1 die once" },
-    { "name": "Press the Crack", "effect": "Touch the newest crack in the Foedus Stone and speak a promise you intend to break. Gain +1 die on your next deception roll, but the stone will remember your name. The Hollow will too.", "cost": "Burn for +1 die once" }
+    {
+      "name": "Bread to the Stone",
+      "effect": "Crumble a crust at the base of the Foedus Stone. Ignore the first Law Tangle penalty.",
+      "cost": "Burn for +1 die once"
+    },
+    {
+      "name": "Knot the Braid",
+      "effect": "Tie a single knot in a horse's tail. Cancel Annona Late or take −1 die on your next supply roll (your choice).",
+      "cost": "Burn for +1 die once"
+    },
+    {
+      "name": "Name to the Oak",
+      "effect": "Whisper a dead enemy's name into the hollow of the mallus oak. Gain +1 Effect when collecting wergild from their kin this scene, but mark Obligation to the Elder of Elders.",
+      "cost": "Burn for +1 die once"
+    },
+    {
+      "name": "Press the Crack",
+      "effect": "Touch the newest crack in the Foedus Stone and speak a promise you intend to break. Gain +1 die on your next deception roll, but the stone will remember your name. The Hollow will too.",
+      "cost": "Burn for +1 die once"
+    }
   ],
+  "decline_and_patronage": "In Vilikari society, power flows through the careful balance of multiple legal traditions, the management of frontier diplomacy, and the maintenance of complex oaths and treaties. The Federate King maintains authority through a combination of imperial forms and traditional customs, while local leaders wield influence through their knowledge of both Utaran law and tribal custom. The true power lies with those who can navigate this complex landscape while maintaining the loyalty of their people and the respect of their neighbors. But the stone is cracking. The witnesses are dying. The Vilikari are becoming invisible. The Hollow is learning their laws faster than they remember them. **For the GM:** Patronage in Vilikari society revolves around legal documents, diplomatic relationships, and the ability to command respect from institutions that operate under multiple legal systems. Tie rewards to visible symbols (seals, writs, treaties) that can be challenged, stolen, or voided — and that may crumble if the stone forgets. Let rival legal systems issue conflicting authorities, forcing players to choose whose favor matters more. Use the courts, markets, and frontier posts as arenas for social contests. Remember that Vilikari characters are at home in Ecktoria's counting-houses and Acasia's hedgerow courts alike — but they are never fully trusted in either. That suspicion is their best tool. When the stone cracks fully, that suspicion becomes exile. In Vilikari society, your word is your bond, and your bond determines whether you rule or are ruled. But a bond is only as strong as the stone that witnesses it. And the stone is forgetting.",
   "sb_spend_table": {
     "minor_complications": [
       "**Exposure:** March officials or tribal elders take notice.",
@@ -224,10 +937,26 @@
     ]
   },
   "lore_echoes": [
-    { "title": "The Smugglers' Covenant (The Sealed Gate)", "description": "Vilikari pilots who run the Kahfagian coast swear by a secret oath to the Unlatched Lock — a threshold that never fully closes. They leave a copper nail at every hidden cove. A captain who breaks the covenant finds that their boat will not cross the tide line; the sea simply refuses to carry them. The Kahfagian Admiralty has tried to bribe the covenant's keeper; he accepted the coin and sank the next morning in calm water. The stone's newest crack appeared that same night." },
-    { "title": "Saint Theodora of the Dual Writ (The Witness)", "description": "A march notary who uncovered a Fenwood spy in the Federate King's court. She forced the spy to sign a confession under both oak and marble, then burned the oak copy and kept the marble one. The spy vanished, but his signature appears on every broken treaty in Vilikari history. Her quill is kept in the Dux's Palace; it writes in lemon juice, and the truth it records cannot be erased by fire or water. The stone's cracks drink the juice." },
-    { "title": "The Host of the Two Ledgers (The Longhouse Healers)", "description": "A hospice near the Foedus Stone is run by gray-robed healers who ask no payment. They treat wounded raiders from both sides of the steppe, and the Ykrul and Ecktorian captains have agreed to a truce around its doors. The Federate King tolerates them because they also hold the rite of the Unbuckled Oath — a ceremony where a knight may renounce a blood-debt without losing honor, by placing their sword on the stone and speaking a single true regret. The stone remembers these regrets. It has many." },
-    { "title": "The Ostrikari Cousins (The Savage Heart)", "description": "The eastern Vilikari, called Ostrikari by lowlanders, are no more savage than any frontier people. Their reputation comes from the bear cults of the upper Wolf Road, where initiates wear cured skins and speak in growls. The Ostrikari do not raid Vilikari villages; they trade furs for iron and send their young to serve as mercenaries in the Black Banners. A Vilikari proverb says: 'The Ostrikari sharpen their teeth on stone, not on kin.' The stone does not mind. It has no teeth left." }
+    {
+      "title": "The Smugglers' Covenant (The Sealed Gate)",
+      "description": "Vilikari pilots who run the Kahfagian coast swear by a secret oath to the Unlatched Lock — a threshold that never fully closes. They leave a copper nail at every hidden cove. A captain who breaks the covenant finds that their boat will not cross the tide line; the sea simply refuses to carry them. The Kahfagian Admiralty has tried to bribe the covenant's keeper; he accepted the coin and sank the next morning in calm water. The stone's newest crack appeared that same night."
+    },
+    {
+      "title": "Saint Theodora of the Dual Writ (The Witness)",
+      "description": "A march notary who uncovered a Fenwood spy in the Federate King's court. She forced the spy to sign a confession under both oak and marble, then burned the oak copy and kept the marble one. The spy vanished, but his signature appears on every broken treaty in Vilikari history. Her quill is kept in the Dux's Palace; it writes in lemon juice, and the truth it records cannot be erased by fire or water. The stone's cracks drink the juice."
+    },
+    {
+      "title": "The Host of the Two Ledgers (The Longhouse Healers)",
+      "description": "A hospice near the Foedus Stone is run by gray-robed healers who ask no payment. They treat wounded raiders from both sides of the steppe, and the Ykrul and Ecktorian captains have agreed to a truce around its doors. The Federate King tolerates them because they also hold the rite of the Unbuckled Oath — a ceremony where a knight may renounce a blood-debt without losing honor, by placing their sword on the stone and speaking a single true regret. The stone remembers these regrets. It has many."
+    },
+    {
+      "title": "The Ostrikari Cousins (The Savage Heart)",
+      "description": "The eastern Vilikari, called Ostrikari by lowlanders, are no more savage than any frontier people. Their reputation comes from the bear cults of the upper Wolf Road, where initiates wear cured skins and speak in growls. The Ostrikari do not raid Vilikari villages; they trade furs for iron and send their young to serve as mercenaries in the Black Banners. A Vilikari proverb says: 'The Ostrikari sharpen their teeth on stone, not on kin.' The stone does not mind. It has no teeth left."
+    },
+    {
+      "title": "The Ninth",
+      "description": "In Vilikari courts, the ninth witness called to a mallus (oak-ring) is always a ghost. The wise stop at eight and settle out of court. Those who call a ninth witness find that the ghost speaks the truth — but the truth is always the worst possible version, and the living witnesses remember it as their own. The stone's cracks are full of these truths. The Hollow drinks them."
+    }
   ],
   "cross_region_hooks": [
     "**Kahfagia (Lantern-Law):** A Foedus Seal may stand in for a Safe-Conduct along a beaconed lane once. Doing so starts Port Clash [2] in the next harbor touched.",
@@ -238,19 +967,65 @@
     "**Lethai-al Silk Bridges:** A Hostage Treaty can be witnessed by a Lethai-al silk-warden, making it binding across the Crimson Valley. The price is a strand of the treaty-bearer's hair."
   ],
   "regional_campaign_starters": [
-    "**The Stone That Remembers:** The Foedus Stone's newest crack has grown. The Elder of Elders is dying. He knows the original treaty by heart — but he is forgetting. The party must find a witness older than the stone itself before the Elder's last breath. The witness is a Lethai-al elder who lives in the Valewood, and she has not spoken in a century.",
-    "**The Hostage's Return:** A Ykrul hostage string has been returned — cut. The hostage was the Federate King's nephew. The Ykrul claim he escaped. The Vilikari claim he was murdered. The party must find the truth before the passes close for winter. The stone's newest crack has the shape of a footprint.",
-    "**The Archivolt Fire:** Someone has set fire to the Archivolt's oldest wing. The seal-keeper is dead. The only surviving document is a charter granting rights to a canal that no longer exists — but the canal's ghost is now flooding the lower cantons. The party must find the canal's ghost and settle its claim before the flood drowns the capital."
+    {
+      "title": "The Stone That Remembers",
+      "description": "The Foedus Stone's newest crack has grown. The Elder of Elders is dying. He knows the original treaty by heart — but he is forgetting. The party must find a witness older than the stone itself before the Elder's last breath. The witness is a Lethai-al elder who lives in the Valewood, and she has not spoken in a century."
+    },
+    {
+      "title": "The Hostage's Return",
+      "description": "A Ykrul hostage string has been returned — cut. The hostage was the Federate King's nephew. The Ykrul claim he escaped. The Vilikari claim he was murdered. The party must find the truth before the passes close for winter. The stone's newest crack has the shape of a footprint."
+    },
+    {
+      "title": "The Archivolt Fire",
+      "description": "Someone has set fire to the Archivolt's oldest wing. The seal-keeper is dead. The only surviving document is a charter granting rights to a canal that no longer exists — but the canal's ghost is now flooding the lower cantons. The party must find the canal's ghost and settle its claim before the flood drowns the capital."
+    }
   ],
-  "patronage_and_power": "In Vilikari society, power flows through the careful balance of multiple legal traditions, the management of frontier diplomacy, and the maintenance of complex oaths and treaties. The Federate King maintains authority through a combination of imperial forms and traditional customs, while local leaders wield influence through their knowledge of both Utaran law and tribal custom. The true power lies with those who can navigate this complex landscape while maintaining the loyalty of their people and the respect of their neighbors. But the stone is cracking. The witnesses are dying. The Vilikari are becoming invisible. **For the GM:** Patronage in Vilikari society revolves around legal documents, diplomatic relationships, and the ability to command respect from institutions that operate under multiple legal systems. Tie rewards to visible symbols (seals, writs, treaties) that can be challenged, stolen, or voided — and that may crumble if the stone forgets. Let rival legal systems issue conflicting authorities, forcing players to choose whose favor matters more. Use the courts, markets, and frontier posts as arenas for social contests. Remember that Vilikari characters are at home in Ecktoria's counting-houses and Acasia's hedgerow courts alike — but they are never fully trusted in either. That suspicion is their best tool. When the stone cracks fully, that suspicion becomes exile. In Vilikari society, your word is your bond, and your bond determines whether you rule or are ruled. But a bond is only as strong as the stone that witnesses it. And the stone is forgetting.",
   "index": [
-    "Vilikari", "Laurels and Longhouses generator", "Theme generator", "Places!Vilikari", "People!Vilikari", "Complications!Vilikari", "Rewards!Vilikari",
-    "Federate King (Rex-Dux)", "Queen of the Marches", "Elder of Elders", "Dux's Palace", "New Raivon", "Foedus Stone", "Hill Amphitheater",
-    "Milefort XVII", "Twin Court", "Burial Field", "Staple Market", "Repaired Bridge", "Longhouse Quarter", "Blackwood Road",
-    "Ykrul Envoy", "Shield-Brother", "Hearth-Mother", "March Notary", "War-Maiden", "Horse-Reeve", "Ecktorial Factor", "Old Legionary",
-    "Marcher-Lord", "Foedus Renewal Seal", "Mallus Bench-Right", "Wergild Table", "Purple Warrant", "Great Law Day", "Dux Commission",
-    "Hostage Treaty", "Smugglers' Covenant", "Saint Theodora", "Host of the Two Ledgers", "Ostrikari", "The Savage Heart",
-    "Local Patrons!Vilikari", "Witness Fading Timer", "Foedus Stone cracks"
+    "Vilikari",
+    "Laurels and Longhouses generator",
+    "Theme generator",
+    "Places!Vilikari",
+    "People!Vilikari",
+    "Complications!Vilikari",
+    "Rewards!Vilikari",
+    "Federate King (Rex-Dux)",
+    "Queen of the Marches",
+    "Elder of Elders",
+    "Dux's Palace",
+    "New Raivon",
+    "Foedus Stone",
+    "Hill Amphitheater",
+    "Milefort XVII",
+    "Twin Court",
+    "Burial Field",
+    "Staple Market",
+    "Repaired Bridge",
+    "Longhouse Quarter",
+    "Blackwood Road",
+    "Ykrul Envoy",
+    "Shield-Brother",
+    "Hearth-Mother",
+    "March Notary",
+    "War-Maiden",
+    "Horse-Reeve",
+    "Ecktorial Factor",
+    "Old Legionary",
+    "Marcher-Lord",
+    "Foedus Renewal Seal",
+    "Mallus Bench-Right",
+    "Wergild Table",
+    "Purple Warrant",
+    "Great Law Day",
+    "Dux Commission",
+    "Hostage Treaty",
+    "Smugglers' Covenant",
+    "Saint Theodora",
+    "Host of the Two Ledgers",
+    "Ostrikari",
+    "The Savage Heart",
+    "Local Patrons!Vilikari",
+    "Witness Fading Timer",
+    "Foedus Stone cracks"
   ],
   "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
 }

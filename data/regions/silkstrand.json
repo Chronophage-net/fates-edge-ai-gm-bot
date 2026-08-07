@@ -9,11 +9,11 @@
   "manifest_path": "/data/docs/manifest.json",
   "overview": {
     "tagline": "Every bridge is a promise. Every canal carries a secret. But the true pacts are sealed in whispers, not wax.",
-    "genre": "Mercantile intrigue, Renaissance urban drama",
+    "genre": "Mercantile intrigue, Renaissance urban drama, noir, organized crime, banking and silk.",
     "mood": "Silk, Steel, and Shadow",
     "starting_location": "Three-Queens Bridge, crowded with market stalls, its stones worn smooth by centuries of footsteps. A Guildmistress with a silver whistle offers a stamped chit. 'The Exchange boils today,' she says. 'And something in the canals remembers your face. Bring me three bolts of untaxed crimson before the closing bell, or the Archivolt will have your name on a dead seal-keeper's scroll. And watch your back on the Ropewalk — the Ragman's bravos are hungry. If you need a patron, ask for the Contarini factor. If you need a knife, ask for the Tide Father's man. Just know which one you'll answer to afterwards.'",
     "lore": {
-      "history": "Silkstrand is a city strung across canals and arched bridges — a place where every crossing is a test of trust and every current carries secrets. The silk looms never sleep, the Exchange never closes, and the Archivolt's clerks bind fates with a drop of wax. Merchants rise and fall with the turn of the market, bravos carve reputations on the planks of Three-Queens Bridge, and the city's underworld runs on whispers and borrowed keys. But trade is the veneer. The real power moves through older channels: the client–patron relationships that stitch the city together from the waterline up. The old patrician families — Contarini, Morosini, Dandolo — hold charters signed by emperors who are now dust. The crime lords — the Ragman, the Tide Father, the Silk Mother — hold the alleys, the night-boat landings, and the bonds that leave no mark. The Matron rules from her palazzo stairs with velvet and iron, but she rules because she balances these threads, not because she cuts them.",
+      "history": "Silkstrand is a city strung across canals and arched bridges — a place where every crossing is a test of trust and every current carries secrets. The silk looms never sleep, the Exchange never closes, and the Archivolt's clerks bind fates with a drop of wax. Merchants rise and fall with the turn of the market, bravos carve reputations on the planks of Three-Queens Bridge, and the city's underworld runs on whispers and borrowed keys. But trade is the veneer. The real power moves through older channels: the client–patron relationships that stitch the city together from the waterline up. The old patrician families — Contarini, Morosini, Dandolo — hold charters signed by emperors who are now dust. The crime lords — the Ragman, the Tide Father, the Silk Mother — hold the alleys, the night-boat landings, and the bonds that leave no mark. The Matron rules from her palazzo stairs with velvet and iron, but she rules because she balances these threads, not because she cuts them. For every noble who signs a charter in the Archivolt, a smuggler moves cargo through the Unwritten Canal. For every merchant who counts coin on the Exchange, a bravo counts the cost of a broken promise. The city remembers every debt, every favor, every whispered name — and the ninth is always the one that comes due.",
       "first_notice": "The clash of water against ancient stone. The constant rumble of cart wheels on bridge planks. The way every handshake lingers a heartbeat too long — as if both parties are checking for hidden blades — and the way every favor is named aloud, so witnesses will know who stands in whose shadow.",
       "rule_that_kills": "Never name a rival while crossing a bridge at night. The water remembers, and the curse you send may come back wrapped around your own throat. But the deeper rule: never accept a favor without speaking its terms. An unspoken kindness is a thread that can be pulled from either end — and the other end is always held by someone who has been playing longer than you."
     },
@@ -24,6 +24,33 @@
       "south": "The Amaranthine Sea — The canals meet the salt water; the Zakov pirates and Kahfagian privateers are both customers and rivals. The tide brings cargo; the tide takes evidence."
     }
   },
+  "regional_diagnostic": {
+    "current_hook": "Every bridge is a promise. Every canal carries a secret. But the true pacts are sealed in whispers, not wax.",
+    "core_conflict": "Players are caught between the **Guilds'** competing monopolies, the **Patrician families'** ancient charters, the **Exchange's** volatile markets, and the **Underworld's** shadow economy. The Ninth is the unspoken promise; the Hollow is the debt that can never be paid.",
+    "unique_feature": "**Geometric Patronage:** Every favor is a thread. Every thread is a bond. The city runs on a web of patron–client relationships that are more binding than any law. The ninth thread is the Ragman's — it is never cut.",
+    "ninth_taboo": "In any Silkstrand scene, the ninth bridge crossed in a day leads somewhere unexpected. The wise stop at eight and take a boat. Those who cross the ninth are said to hear a faint laugh from the water — and their pacts are never quite fulfilled. The ninth bridge is the Ragman's. He built it. He did not pay.",
+    "price": "Players sacrifice **reputation, freedom, or memory** to gain power. Every reward requires a gamble: a favor thread, a sealed bond, a promise to the Matron, a debt to the Ragman, or a charter with an invisible clause.",
+    "faction_triad": [
+      {
+        "faction": "The Guilds (Silk Merchants)",
+        "goal": "Secure monopolies and control the Exchange",
+        "method": "Charterships, market corners, bribes and bailiffs",
+        "why_players_care": "They control the city's trade and its wealth"
+      },
+      {
+        "faction": "The Patrician Families (Contarini, Morosini, Dandolo)",
+        "goal": "Maintain ancient charters and political influence",
+        "method": "Marriage, seals, and the Archivolt's records",
+        "why_players_care": "They hold the city's memory and its oldest debts"
+      },
+      {
+        "faction": "The Underworld (Ragman, Tide Father, Silk Mother)",
+        "goal": "Control the shadows and the unspoken economy",
+        "method": "Night-boats, favor threads, and forgotten bonds",
+        "why_players_care": "They are the city's real law — the one that is never written"
+      }
+    ]
+  },
   "quotes": [
     {
       "speaker": "The Matron (Elite)",
@@ -32,8 +59,62 @@
     {
       "speaker": "Bobbin-Runner (Commoner)",
       "text": "I can cross this city faster than any grown-up, and I know which planks creak and which merchants lie. The bridges remember every step, and the canals carry more secrets than fish. The nobles think they rule, but the Ragman owns the stairs they climb. Stay off the water after midnight — the night-boats don't carry cargo, they carry whispers between patrons."
+    },
+    {
+      "speaker": "Guildmistress Xara (Elite)",
+      "text": "The Exchange is a mirror. It shows you what you are worth — and what you owe. I have seen fortunes made and unmade in the time it takes to cross a bridge. The secret is not to hold the most silver. The secret is to hold the most threads. And never let the ninth thread tie itself around your wrist."
     }
   ],
+  "favor_threads_timer": {
+    "name": "The Ragman's Tally",
+    "max_segments": 9,
+    "advance_on": [
+      "A character accepts a favor without naming its terms (+1)",
+      "A character breaks a promise made on a bridge (+2)",
+      "A character holds more than three unspent favor threads at once (+1 per thread above 3)",
+      "A character crosses a bridge at night without a token (+1)",
+      "A character refuses a duel challenge (+1)"
+    ],
+    "thresholds": {
+      "4": "The Ragman's name appears in a conversation you did not start. You owe a small favor — a message delivered, a blind eye turned.",
+      "7": "The Ragman's bravos are watching you. You are offered a 'gift' — a token that cannot be refused. Accepting it advances the timer to 9.",
+      "9": "The Ragman appears in person. He offers you a choice: settle your tally in silver, or settle it in service. Refusal means the ninth thread is tied around your wrist — and the Ragman never cuts his threads."
+    },
+    "stirrs_table": [
+      {
+        "roll": 1,
+        "complication": "A bravo approaches you on a bridge. 'The Ragman sends his regards. You have a thread loose.' You must offer a favor or a coin (1 Supply)."
+      },
+      {
+        "roll": 2,
+        "complication": "A night-boat captain offers you a ride — for free. 'The Ragman says your passage is paid.' You owe a favor."
+      },
+      {
+        "roll": 3,
+        "complication": "A charter you hold is voided. The seal has been scratched — the Ragman's mark."
+      },
+      {
+        "roll": 4,
+        "complication": "A child hands you a knot of red thread. 'For when you need it,' she says. The thread is warm. You are now marked."
+      },
+      {
+        "roll": 5,
+        "complication": "A bridge you crossed earlier now has a new name — carved in fresh stone. The name is yours."
+      },
+      {
+        "roll": 6,
+        "complication": "A merchant offers you a deal too good to refuse. The terms are unwritten. Accepting it advances the tally by 2."
+      },
+      {
+        "roll": 7,
+        "complication": "A duel is challenged in your name. You must find a champion or fight yourself. Refusing costs 2 favor threads."
+      },
+      {
+        "roll": 8,
+        "complication": "The Archivolt seals a record that does not exist. Your name is on it. The Ragman holds the key."
+      }
+    ]
+  },
   "npcs": [
     {
       "name": "Matrona Lucia",
@@ -70,6 +151,12 @@
       "role": "Condottieri watch captain",
       "motivation": "Keep the peace between guilds",
       "quirk": "He wears a mask on feast days; no one has seen his face in seven years. The mask was a gift from the Contarini. He does not know what bond it placed upon him."
+    },
+    {
+      "name": "The Ragman",
+      "role": "Lord of unspoken pacts and broken promises",
+      "motivation": "Collect the threads that are never cut",
+      "quirk": "He appears as a beggar, a merchant, or a child, but always with a knotted cord around his wrist. The cord has nine knots. He has never untied one."
     }
   ],
   "names": {
@@ -484,7 +571,7 @@
       "subtitle": "[TRAVEL]",
       "description": "One peak-hour cart crossing free; traffic as currency.",
       "flavor": "The token is a bronze coin with a hole in the center. The hole is the toll. The ninth token minted each year is the Ragman's. He does not use it.",
-      "cost": "Using it marks you as a trader; you may be questioned by the Ragman's men."
+      "curse_cost": "Using it marks you as a trader; you may be questioned by the Ragman's men."
     },
     {
       "rank": 3,
@@ -493,7 +580,7 @@
       "subtitle": "[TRADE]",
       "description": "Day pass to trade without sponsor; freedom in paper.",
       "flavor": "The pass is stamped with a spider. The spider's legs are the signatures of three guilds. The ninth leg is missing — it belongs to the Ragman.",
-      "cost": "The pass expires at dusk; if you stay, you must pay a fine (1 Supply)."
+      "curse_cost": "The pass expires at dusk; if you stay, you must pay a fine (1 Supply)."
     },
     {
       "rank": 4,
@@ -502,7 +589,7 @@
       "subtitle": "[TRAVEL]",
       "description": "Skip one flood closure when it matters; tide waits for none.",
       "flavor": "The priority token is a dried eel skin. Show it, and the gate-keeper spits but stands aside. The ninth token is the Tide Father's. He never waits.",
-      "cost": "Using it may attract the Tide Father's attention; he may call in a favor."
+      "curse_cost": "Using it may attract the Tide Father's attention; he may call in a favor."
     },
     {
       "rank": 5,
@@ -511,7 +598,7 @@
       "subtitle": "[LAW]",
       "description": "Retrofit a missing entry; past deals stand.",
       "flavor": "The indulgence is written in lemon juice. Heat it to see the terms. The ninth indulgence is blank — it awaits a name and a reckoning.",
-      "cost": "Using it requires a witness; the witness may hold the true terms."
+      "curse_cost": "Using it requires a witness; the witness may hold the true terms."
     },
     {
       "rank": 6,
@@ -520,7 +607,7 @@
       "subtitle": "[AUTHORITY]",
       "description": "From Matron's office; rivals legally shut out.",
       "flavor": "The seal is a brass bell. Ring it once to claim the space. The ninth seal is the Ragman's. He does not ring it. He knocks.",
-      "cost": "The seal is valid for one year; after that, it must be renewed."
+      "curse_cost": "The seal is valid for one year; after that, it must be renewed."
     },
     {
       "rank": 7,
@@ -529,7 +616,7 @@
       "subtitle": "[LABOR]",
       "description": "Hire crews before you have silver; muscle on promise.",
       "flavor": "The trust is a knotted rope. Cut a knot for each promise claimed. The ninth knot is the Ragman's. Cutting it costs more than silver.",
-      "cost": "Each use adds a favor thread to the Ragman (GM gains 1 SB)."
+      "curse_cost": "Each use adds a favor thread to the Ragman (GM gains 1 SB)."
     },
     {
       "rank": 8,
@@ -538,7 +625,7 @@
       "subtitle": "[MILITARY]",
       "description": "One night's issue for retinue; arms in trusted hands.",
       "flavor": "The key is a finger bone. The lock is a gauntleted fist. The ninth key is the Ragman's. He has the fist.",
-      "cost": "The key is single-use; it must be returned by dawn or you are marked as a thief."
+      "curse_cost": "The key is single-use; it must be returned by dawn or you are marked as a thief."
     },
     {
       "rank": 9,
@@ -547,7 +634,7 @@
       "subtitle": "[FINANCE]",
       "description": "Insure one cargo against any loss; the pledge pays in silver.",
       "flavor": "The pledge is a prayer. The prayer is a pact. The pact is a wager. The ninth pledge is the Bookman's. He always wins.",
-      "cost": "If you claim the insurance, you owe the Bookman a favor (a thread)."
+      "curse_cost": "If you claim the insurance, you owe the Bookman a favor (a thread)."
     },
     {
       "rank": 10,
@@ -556,7 +643,7 @@
       "subtitle": "[MILITARY]",
       "description": "City watch escorts through any ward, once.",
       "flavor": "The rider's horse has iron shoes. The sparks tell him who to watch. The ninth rider is the Ragman's. He rides alone.",
-      "cost": "The escort will protect you, but they report any suspicious activity to the captain."
+      "curse_cost": "The escort will protect you, but they report any suspicious activity to the captain."
     },
     {
       "rank": 11,
@@ -565,7 +652,7 @@
       "subtitle": "[AUTHORITY]",
       "description": "Private whisper becomes policy; velvet commands.",
       "flavor": "The Matron's ear is a bell. Speak into it, and the city listens — once. The ninth audience is never granted. The Matron does not explain why.",
-      "cost": "After use, you are marked; the Matron may call upon you for a service."
+      "curse_cost": "After use, you are marked; the Matron may call upon you for a service."
     },
     {
       "rank": 12,
@@ -574,7 +661,7 @@
       "subtitle": "[FINANCE]",
       "description": "On Three-Queens stalls for a season; profit in vendors.",
       "flavor": "The share is a tally stick. Break it in half to claim your portion. The ninth share is the Ragman's. He does not break it. He collects.",
-      "cost": "You must pay the Ragman his due (1 Supply per season) or face his enforcers."
+      "curse_cost": "You must pay the Ragman his due (1 Supply per season) or face his enforcers."
     },
     {
       "rank": 13,
@@ -583,7 +670,7 @@
       "subtitle": "[AUTHORITY]",
       "description": "Temporary charter to set tolls on a named canal.",
       "flavor": "The thread is real gold. It will not break — but it will stretch. The ninth thread is the Tide Father's. He sets tolls in silence.",
-      "cost": "The charter lasts one year; after that, the canal reverts to the Tide Father's control."
+      "curse_cost": "The charter lasts one year; after that, the canal reverts to the Tide Father's control."
     },
     {
       "rank": 14,
@@ -592,7 +679,7 @@
       "subtitle": "[MAGIC]",
       "description": "A blank parchment signed by a dead seal-keeper. Fill it in.",
       "flavor": "The seal-keeper's ghost will enforce it. The ghost has a sense of humor. The ninth bond is blank — it awaits a name that has never been written. The Ragman keeps it.",
-      "cost": "Using it binds you to the ghost's terms; if you break it, the ghost will haunt you (Harm 1 per violation)."
+      "curse_cost": "Using it binds you to the ghost's terms; if you break it, the ghost will haunt you (Harm 1 per violation)."
     }
   ],
   "quick_use_notes": {
@@ -600,36 +687,21 @@
     "diamonds": "Diamonds are codified outcomes (permits, passes, seals) that change position rather than call for a roll.",
     "ace_rule": "If any A appears, echo silk and water motifs — threads that bind, currents that remember, bargains that stain the hand. Also echo the ninth: a missing step, an unwritten charter, a silence where a name should be."
   },
-  "additional_features": [
-    {
-      "name": "The Measure of a Favor (Patron–Client Bond)",
-      "description": "In Silkstrand, favors are the true measure of standing. Each favor has a measure — a sense of what it cost to grant and what it will cost to call in. Favors are remembered not in scrolls but in threads — a red thread tied around the wrist of the client, a black thread around the wrist of the patron. When the favor is answered, the threads are cut. A character may start with 1d3 favor threads (minor promises owed or owed to them). The GM may award threads for significant aid. A thread can be spent to gain +1 Position on a social roll with the patron's faction, or to demand a minor service (safe passage, a night's shelter, a warning). Holding more than nine threads is dangerous — the ninth thread is always the Hollow's.\n- **Minor Favor (1 thread):** A night's shelter, a message delivered, a blind eye turned.\n- **Significant Favor (3 threads):** An introduction to a patron, an altered record, a small stake.\n- **Major Favor (6 threads):** A change in policy, a life spared, a charter voided.\n- **Unpayable Measure (9 threads):** The Ragman's favor. You do not want to carry this. The ninth thread is never cut."
-    },
-    {
-      "name": "Patron–Client Mini-Generator",
-      "description": "When the party seeks a patron or encounters a client relationship, roll 1d6 to determine the nature of the bond.\n1. **Blood Bond:** The patron and client share a family tie — or a family feud. The promise is old, deep, and bitter.\n2. **Silk Bond:** The patron holds the client's bond in the form of a silk charter. The terms are written, but the reckoning is not.\n3. **Shadow Bond:** The patron is a crime lord (the Ragman, the Tide Father, the Silk Mother). The client owes a service that cannot be named aloud.\n4. **Stone Bond:** The patron is a patrician (Contarini, Morosini, Dandolo). The client holds a charter or a seal. The promise is public but the measure is private.\n5. **Bridge Bond:** The patron and client met on a bridge at night. The favor was sworn without witnesses. Only the water remembers.\n6. **Ninth Bond:** The patron is the Hollow. The client does not know they are bound. The ninth thread is already tied."
-    },
-    {
-      "name": "Duel Etiquette",
-      "description": "Duels fought on bridges draw crowds eager to wager on blood. Refusing stains a name worse than losing. The winner may claim the loser's bridge token (if any) as a trophy. A duel may also be fought to settle a favor's measure — the loser's bond is transferred to the winner's patron."
-    },
-    {
-      "name": "Canal Omens",
-      "description": "Canals run strange colors at dawn; red foretells riots, blue brings calm, black means a curse has awakened. A successful Wits + Lore test (DV 3) allows a character to interpret the omen and gain +1 die on the next roll to avoid or exploit the coming event. Green water means the Hollow is near."
-    },
-    {
-      "name": "Matron's Seal",
-      "description": "Any charter bearing her seal is law — but the Matron is known to rescind seals without warning, leaving promises tangled. A seal may be challenged by producing an older Matron's seal; the older one always holds. The ninth seal is the Matron's own — she has never used it."
-    },
-    {
-      "name": "Exchange Volatility Timer",
-      "description": "Track market instability with a timer [6]. Each time a major cargo is seized, a trade route is cut, or a merchant falters, tick the timer. At 3: prices of all goods increase by 1 Supply. At 6: a panic hits — the Exchange closes for 1d3 days, and all standing agreements are voided unless witnessed by the Matron. The ninth time this timer fills in a decade, the Ragman collects."
-    },
-    {
-      "name": "Local Patrons (Syncretic Names)",
-      "description": "The Saint of Accounts — The Witness. Every transaction is a prayer. Every signature is a confession.\nThe Unbroken Seal — Mykkiel. Charters are sacred. To break one is to break the city.\nThe Tide Father — Khemesh. The canal's hunger; the pull of a promise never kept.\nThe Lantern Bearer — The Traveler. The light that guides lost ships — and the lost.\nThe Ragman — The Ninth. The unspoken promise. The thread that is never cut."
+  "additional_features": {
+    "measure_of_a_favor": "In Silkstrand, favors are the true measure of standing. Each favor has a measure — a sense of what it cost to grant and what it will cost to call in. Favors are remembered not in scrolls but in threads — a red thread tied around the wrist of the client, a black thread around the wrist of the patron. When the favor is answered, the threads are cut. A character may start with 1d3 favor threads (minor promises owed or owed to them). The GM may award threads for significant aid. A thread can be spent to gain +1 Position on a social roll with the patron's faction, or to demand a minor service (safe passage, a night's shelter, a warning). Holding more than nine threads is dangerous — the ninth thread is always the Hollow's.",
+    "patron_client_generator": "When the party seeks a patron or encounters a client relationship, roll 1d6 to determine the nature of the bond. 1: **Blood Bond** — The patron and client share a family tie or a family feud. The promise is old, deep, and bitter. 2: **Silk Bond** — The patron holds the client's bond in the form of a silk charter. The terms are written, but the reckoning is not. 3: **Shadow Bond** — The patron is a crime lord (the Ragman, the Tide Father, the Silk Mother). The client owes a service that cannot be named aloud. 4: **Stone Bond** — The patron is a patrician (Contarini, Morosini, Dandolo). The client holds a charter or a seal. The promise is public but the measure is private. 5: **Bridge Bond** — The patron and client met on a bridge at night. The favor was sworn without witnesses. Only the water remembers. 6: **Ninth Bond** — The patron is the Hollow. The client does not know they are bound. The ninth thread is already tied.",
+    "duel_etiquette": "Duels fought on bridges draw crowds eager to wager on blood. Refusing stains a name worse than losing. The winner may claim the loser's bridge token (if any) as a trophy. A duel may also be fought to settle a favor's measure — the loser's bond is transferred to the winner's patron.",
+    "canal_omens": "Canals run strange colors at dawn; red foretells riots, blue brings calm, black means a curse has awakened. A successful Wits + Lore test (DV 3) allows a character to interpret the omen and gain +1 die on the next roll to avoid or exploit the coming event. Green water means the Hollow is near.",
+    "matrons_seal": "Any charter bearing her seal is law — but the Matron is known to rescind seals without warning, leaving promises tangled. A seal may be challenged by producing an older Matron's seal; the older one always holds. The ninth seal is the Matron's own — she has never used it.",
+    "exchange_volatility": "Track market instability with a timer [6]. Each time a major cargo is seized, a trade route is cut, or a merchant falters, tick the timer. At 3: prices of all goods increase by 1 Supply. At 6: a panic hits — the Exchange closes for 1d3 days, and all standing agreements are voided unless witnessed by the Matron. The ninth time this timer fills in a decade, the Ragman collects.",
+    "local_patrons": {
+      "saint_of_accounts": "The Witness. Every transaction is a prayer. Every signature is a confession.",
+      "unbroken_seal": "Mykkiel. Charters are sacred. To break one is to break the city.",
+      "tide_father": "Khemesh. The canal's hunger; the pull of a promise never kept.",
+      "lantern_bearer": "The Traveler. The light that guides lost ships — and the lost.",
+      "ragman": "The Ninth. The unspoken promise. The thread that is never cut."
     }
-  ],
+  },
   "lore_echoes": [
     {
       "title": "Saint Lazarus of the Unwritten Accord (The Witness)",
@@ -674,6 +746,7 @@
       "cost": "Burn for +1 die once"
     }
   ],
+  "decline_and_patronage": "Patronage in Silkstrand is a thread that binds both parties — but it can be pulled from either end. The Guilds offer access to the Exchange and the city's wealth, but they demand a share of every profit. The Patricians offer ancient charters and political protection, but they expect loyalty to their houses above all. The Underworld offers the freedom of the shadows, but the Ragman's threads are never cut — they are only passed on. To seek a patron in Silkstrand is to choose which measure you will carry: the weight of a charter, the debt of a favor, or the silence of a promise never spoken. The wise choose carefully. The dead do not choose at all.",
   "sb_spend_table": {
     "minor_complications": [
       "**Exposure:** Your actions draw unwanted attention from **city watch or rival merchants**.",

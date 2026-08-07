@@ -25,6 +25,33 @@
       "south": "The Amaranthine Sea — The old imperial navy rots in harbor; Zakov pirates and Thepyrgos chain-towers contest the straits. The flame of the Everflame does not burn on salt water."
     }
   },
+  "regional_diagnostic": {
+    "current_hook": "The flame remembers. The marble cracks. The law forgets — but the statues watch.",
+    "core_conflict": "Players are caught between the **Everflame's** corrupt orthodoxy, the **Patricians'** decadent isolation, and the **Vigil's** fractured attempts to control the city's memory. Meanwhile, **Maelstraeus** and **Livaea** compete to claim the city's soul through commerce and desire.",
+    "unique_feature": "**Geometric Decay:** Marble cracks in patterns that map forgotten debts. Statues weep tears that are recorded in ledgers. The law is written in precedent, but precedent is erased when the Vigil redacts it.",
+    "ninth_taboo": "In any Ecktorian court, the ninth citation of precedent voids all previous. The wise stop at eight and settle. Those who cite the ninth hear a faint laughter from the marble walls — and their cases are never heard again. The Vigil cites the ninth often. The laughter does not bother them.",
+    "price": "Players sacrifice **memory, reputation, or soul** to gain power. Every reward requires a gamble: a forgotten name, a scandalous secret, a debt to a demon, or a favor owed to the Vigil.",
+    "faction_triad": [
+      {
+        "faction": "Old Blood (Patricians)",
+        "goal": "Preserve the forms of empire while the city decays",
+        "method": "Marble precedent, lineage, and the Amber Palace's isolation",
+        "why_players_care": "They hold the keys to the city's legal and social power"
+      },
+      {
+        "faction": "Black Purse (Mercantile Leagues)",
+        "goal": "Profit from the chaos and maintain supply lines",
+        "method": "Coin-houses, condotta contracts, and the tally's truth",
+        "why_players_care": "They control the grain and the swords"
+      },
+      {
+        "faction": "The Everflame (Church)",
+        "goal": "Maintain the flame's authority and the Vigil's fidelity",
+        "method": "Processions, indulgences, and the threat of heresy",
+        "why_players_care": "They offer legitimacy and divine favor — or divine condemnation"
+      }
+    ]
+  },
   "quotes": [
     {
       "speaker": "Grand Magistrate (Elite)",
@@ -33,6 +60,10 @@
     {
       "speaker": "Ferrymaster (Commoner)",
       "text": "I've seen the city burn three times. The marble remembers the heat. The flame remembers the lies. The rich have stopped looking at the flames. They only look at each other — and at the cracks in their own mirrors. The fire isn't burning anymore, friend. It's **smiling**."
+    },
+    {
+      "speaker": "Baker's Wife (Commoner)",
+      "text": "The patricians haven't walked these streets in a decade. They send their servants for bread. The servants wear masks. The masks are more honest than the faces underneath. I don't care who rules the city — as long as the flour isn't ash. But lately, the flour tastes of ash. The Vigil says it's a drought. I say it's something else."
     }
   ],
   "everflame_faith": {
@@ -60,7 +91,7 @@
     {
       "name": "Old Blood",
       "type": "Patrician Traditionalists",
-      "description": "The ancient senatorial families who remember when Ecktoria ruled the world. They worship precedent, hoard marble, and see mercenaries as necessary filth. Their power is in law, lineage, and the silent networks of the Censor's Hall.",
+      "description": "The ancient senatorial families who remember when Ecktoria ruled the world. They worship precedent, hoard marble, and see mercenaries as necessary filth. Their power is in law, lineage, and the silent networks of the Censor's Hall. They are the Unburdened — they have forgotten what weight feels like. Livaea's influence is strongest here; they love only the reflection of themselves, and their mirrors no longer blink.",
       "timers": [
         "Patrician Patience [4]",
         "Blood Price [6]"
@@ -70,7 +101,7 @@
     {
       "name": "Black Purse",
       "type": "Mercenary & Trade Leagues",
-      "description": "The new power: condotta brokers, coin-house factors, and mercenary captains who have bought what birth could not give. They care about supply lines, not bloodlines. Their loyalty is to the next contract, and their god is the tally — but the tally has no god.",
+      "description": "The new power: condotta brokers, coin-house factors, and mercenary captains who have bought what birth could not give. They care about supply lines, not bloodlines. Their loyalty is to the next contract, and their god is the tally — but the tally has no god. Maelstraeus whispers in their ears; they measure profit in margins, margins in suffering, and suffering in silver. They do not measure the weight of marble.",
       "timers": [
         "Contract Spiral [4]",
         "Payday Fever [6]"
@@ -80,7 +111,7 @@
     {
       "name": "The Everflame",
       "type": "Church & Inquisition",
-      "description": "The priests, inquisitors, and relic-keepers who claim that the Eternal Flame is the only true sovereign. They offer legitimacy to whoever pays the tithe — and withdraw it from whoever forgets. Their power is in pulpits, processions, and the fear of excommunication.",
+      "description": "The priests, inquisitors, and relic-keepers who claim that the Eternal Flame is the only true sovereign. They offer legitimacy to whoever pays the tithe — and withdraw it from whoever forgets. Their power is in pulpits, processions, and the fear of excommunication. They are fat and complacent, sitting on their laurels, but the Vigil within them remembers the old fires. Neither demon holds full sway here; the flame is too bright for either to claim alone.",
       "timers": [
         "Heresy Index [4]",
         "Sanctuary Violation [6]"
@@ -89,7 +120,7 @@
     }
   ],
   "the_vigil": {
-    "description": "The Vigil is not one order but three, each claiming the mantle of the old imperial secret police. They do not cooperate. They do not war. They **audit** each other. They also audit the dead.",
+    "description": "The Vigil is not one order but three, each claiming the mantle of the old imperial secret police. They do not cooperate. They do not war. They **audit** each other. They also audit the dead. The Vigil's influence is everywhere — but they do not govern; they remember, and they collect debts.",
     "factions": [
       {
         "name": "The Censer-Knights",
@@ -213,7 +244,7 @@
       "subtitle": "[LAW] [MEMORY]",
       "description": "Milk-stone worn smooth by a thousand hopeful knees. The petitions are written in ink and wax.",
       "flavor": "The steps answer in silence, and the silence is a verdict: 'Your claim is under review.' A clerk sweeps the steps at dawn. He never reads the petitions. He weighs them. The heaviest goes to the bottom of the pile. The pile is the city's memory.",
-      "mechanical_hook": ""
+      "mechanical_hook": "To have a petition heard, you must pay 1 Boon to the clerk (or bribe him with a story). On a failure, the petition is lost in the pile — start a **Lost Petition [4]** timer."
     },
     {
       "rank": 3,
@@ -222,7 +253,7 @@
       "subtitle": "[COMMERCE] [SECRET]",
       "description": "Rope-drums thrum all day; the ferrymaster watches coin and banners.",
       "flavor": "The rope-drums have a pattern. It spells the names of those who paid late — and the names of those who forgot they owed. The ferrymaster has a brother in the Red Vigil. They do not speak.",
-      "mechanical_hook": ""
+      "mechanical_hook": "Crossing costs 1 Supply or 1 Boon. If you pay with coin, the ferrymaster will also whisper a piece of gossip (a Clue) — but the Vigil will know you crossed."
     },
     {
       "rank": 4,
@@ -231,7 +262,7 @@
       "subtitle": "[RELIGION] [WHISPER]",
       "description": "Candle markets and side-chapels. The flame has a voice.",
       "flavor": "It is the voice of the last liar who tested it. Lately, it speaks in a whisper. The whisper is always the same: 'I remember. I remember. I remember.' Those who listen too long forget their own names and start reciting the names of the city's forgotten dead.",
-      "mechanical_hook": ""
+      "mechanical_hook": "A character who prays here (Spirit+Lore DV 3) may ask one question of the flame. The answer is always a memory. On failure, the flame takes a memory instead (lose 1 XP, refundable by a quest)."
     },
     {
       "rank": 5,
@@ -240,7 +271,7 @@
       "subtitle": "[POWER] [MEMORY]",
       "description": "Marble worn smooth by ambition. The stairs have a name: 'The Rise of the Forgotten.'",
       "flavor": "No one remembers why. The patricians still climb them at noon, their retainers counting the steps aloud. They never count to nine. The ninth step is a gap. The gap is where a senator fell — or was pushed — or simply forgot to step. His ghost is still climbing. He has been climbing for a century.",
-      "mechanical_hook": ""
+      "mechanical_hook": "Climbing the stairs at noon grants +1 die to social rolls with patricians, but if you step on the ninth step, you are cursed — the GM gains a String on you."
     },
     {
       "rank": 6,
@@ -249,7 +280,7 @@
       "subtitle": "[LAW] [SECRET]",
       "description": "Red-lacquered tablets record every name, every shame. The tablets are redacted in invisible ink.",
       "flavor": "The truth is underneath. The Vigil has the reagent. The reagent is made from the tears of the last censor who told the truth. He is still crying.",
-      "mechanical_hook": ""
+      "mechanical_hook": "Searching the hall requires Wits+Lore DV 5. On success, you find a name that can be used as leverage. On failure, the Vigil notes your interest — start a **Vigil Interest [4]** timer."
     }
   ],
   "people_and_factions": [
@@ -260,8 +291,8 @@
       "subtitle": "[SURVIVAL] [KNOWLEDGE]",
       "description": "Ash-smudged hands, knowing every shortcut through the ruins.",
       "flavor": "The ruins are not old. They are last year's fashionable quarter, abandoned when the mortgage was 'reclassified.' She has never been lost. The ruins speak to her in the language of eviction notices. She reads them aloud to the rats. The rats pay her in stolen bread.",
-      "what_they_carry": "",
-      "what_they_ask": ""
+      "what_they_carry": "She carries a stub of wax that has been melted into the shape of a key. It opens one lock — any lock — once.",
+      "what_they_ask": "A loaf of bread (1 Supply). She will lead you through the ruins safely."
     },
     {
       "rank": 3,
@@ -270,8 +301,8 @@
       "subtitle": "[SURVEY] [SECRET]",
       "description": "Surveyor who 'moves' stones. His rod is a finger bone.",
       "flavor": "The bone belonged to the last surveyor who argued. He does not rewrite the map. He rewrites the **memory** of the map. 'This street was always a cul-de-sac. You simply forgot.' The Vigil pays him in forgotten names.",
-      "what_they_carry": "",
-      "what_they_ask": ""
+      "what_they_carry": "He carries a rod that can shift a boundary line by up to three feet (once per arc). The shift is permanent unless challenged.",
+      "what_they_ask": "A name from the Censor's Hall. He will not say which one."
     },
     {
       "rank": 4,
@@ -280,8 +311,8 @@
       "subtitle": "[AUTHORITY] [TRAITOR]",
       "description": "His lantern burns green. He says it shows the truth.",
       "flavor": "His shadow has two heads — one for each faction he has betrayed. He does not see the third head. The third head is his own, from a timeline where he kept his oath. It is weeping.",
-      "what_they_carry": "",
-      "what_they_ask": ""
+      "what_they_carry": "He carries a green lantern that can reveal the truth of a single statement (once per scene). The truth always costs a memory.",
+      "what_they_ask": "A secret about the Amber Palace. He will trade his lantern's light for it."
     }
   ],
   "complications": [
@@ -292,7 +323,7 @@
       "subtitle": "[DEATH] [TOLL]",
       "description": "A funeral procession for a pauper who died in debt.",
       "flavor": "The law says the corpse cannot cross until the toll is paid. The family has no coin. The law does not accept stories. The corpse is beginning to smell, and the Hollow is beginning to notice a weight that cannot be buried. The Vigil is taking notes on who stops to help.",
-      "mechanical_hook": ""
+      "mechanical_hook": "You may pay the toll (1 Supply) or find another route (add 2 segments to travel). Refusing to pay ticks a **Vigil Interest** timer."
     },
     {
       "rank": 3,
@@ -301,7 +332,7 @@
       "subtitle": "[LAW] [MEMORY]",
       "description": "A surveyor has moved a boundary stone three feet east.",
       "flavor": "The new map shows your warehouse now stands on a public thoroughfare. The old map is in the archive. The archive wing collapsed last spring. The memory of the boundary now exists only in the cracked floor of the basilica, and the basilica is accepting sealed bids for 'reparative memory.' The Vigil has already bid.",
-      "mechanical_hook": ""
+      "mechanical_hook": "You must either bribe the surveyor (1 Boon), challenge the map (Wits+Lore DV 5), or accept the loss (lose 1 Supply or 1 Boon). The Vigil will remember your choice."
     }
   ],
   "rewards": [
@@ -312,7 +343,7 @@
       "subtitle": "[AUTHORITY] [RELIGION]",
       "description": "Move sacred flame through a crowded quarter; law walks with you.",
       "flavor": "The permit is a torch. Carry it, and the city will part — or burn. The Vigil will follow. The flame will flicker when you lie. The permit is signed by a clerk who died three years ago. His ghost still signs.",
-      "curse_cost": ""
+      "curse_cost": "Using the permit forces you to participate in a procession (social engagement). If you break the procession's rules, the Vigil will audit you."
     },
     {
       "rank": 3,
@@ -321,7 +352,7 @@
       "subtitle": "[LAW] [PRECEDENT]",
       "description": "An exception carved in marble; precedent travels like law.",
       "flavor": "The edict is a crack. The crack in the law is now an opening. The Vigil is already inside. They will leave a note. The note will say: 'We remember. Do you?'",
-      "curse_cost": ""
+      "curse_cost": "Using the edict grants you immunity from one law — but the Vigil will remember your name and may call in a favor."
     }
   ],
   "quick_use_notes": {
@@ -664,7 +695,7 @@
       "title": "Shadow Index Leaf",
       "subtitle": "[SECRET] [VIGIL]",
       "description": "Remove one name from the Red List for a week; add **Countercoup** +1.",
-      "curse_cost": ""
+      "curse_cost": "The Vigil will notice the removal and may audit you."
     },
     {
       "rank": 15,
@@ -672,7 +703,7 @@
       "title": "Ember Writ",
       "subtitle": "[RELIGION] [AUTHORITY]",
       "description": "Sanction one cult rite as 'orthodox' for a scene.",
-      "curse_cost": ""
+      "curse_cost": "The Everflame will demand a tithe of 1 Boon or a confession."
     },
     {
       "rank": 16,
@@ -680,7 +711,7 @@
       "title": "Surveyor's Ninth Rod",
       "subtitle": "[SURVEY] [SECRET]",
       "description": "Redraw one ward line unnoticed (until dawn).",
-      "curse_cost": ""
+      "curse_cost": "The Decumanus-Master will demand a favor in return."
     },
     {
       "rank": 17,
@@ -688,7 +719,7 @@
       "title": "Vigil Seal (Red)",
       "subtitle": "[AUTHORITY] [DEBT]",
       "description": "For one scene, the Red Vigil treats you as a contractor. The price will be collected later.",
-      "curse_cost": ""
+      "curse_cost": "You owe the Vigil a name — any name. They will collect."
     }
   ],
   "cross_contamination": [

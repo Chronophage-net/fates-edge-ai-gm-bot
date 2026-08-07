@@ -819,6 +819,40 @@
     }
   ],
   "notes": "The Blood and Silk saga is a complete campaign arc following exiles from Silkstrand as they defend Millhaven, mediate at the Valvano Ford, and heist the Iron Seal of Varus at the Bronze Gate. The Curse of Acasia is a persistent threat throughout. Key themes: redemption, community, second chances, the weight of exile, and the power of belonging.",
+
+  "_gmhints": {
+    "pacing": {
+      "prequel": "This is a flashback prologue. The Velvet Court is a looming threat, but its deeper structure (the Silken Blade, the Court's long-term plans) is not revealed yet. Old Kes dies—his sacrifice should feel personal and immediate, not mythologized. The players' choices here create their Legacy Tokens; emphasize consequence over exposition. The ninth bridge (and its curse) can be hinted at but not explained.",
+      "act1": "This act is about earning a home through sweat and blood. Focus on the human stakes of Millhaven: the villagers' faces, the weight of their fear, the hope in their eyes. The Curse of Acasia should be a background hum—a strange omen, a whispered story—not a mechanical threat. Elder Thorne's knowledge of the old bridge is a clue, not a solution. Garrick Ursillo is a desperate man, not a monster. His backstory (the Vhasian brand) is a secret to be discovered, not volunteered.",
+      "act2": "This act is about mediation and seeing beyond first impressions. Each faction has hidden needs; the party must peel back layers. Sarnai's grief, Voss's desperation, Rusk's debt—these are threads to be pulled, not handed over. The ninth arch of the Valvano Ford can be referenced as a local superstition. The Curse of Acasia becomes more tangible—the standoff itself is a kind of oath-breaking, and the party may feel the weight of their words. Do not reveal Rusk's connection to Varus's badge of rank yet.",
+      "act3": "This act is where all the secrets converge. The Iron Seal, the ghost of Varus, Marcellus's cult, Cassia's illness, Rusk's promise, Sarnai's daughter's parentage—all are now available for revelation. The Curse of Acasia is a ticking clock. The three endings (return, destroy, bind) should feel earned based on what the party discovered in Acts I and II. The ghost's Ninth Clause is the ultimate lore reward—do not foreshadow it heavily; let it be a stunning discovery."
+    },
+    "npcSecrets": {
+      "elder-thorne": "His secret about the old Imperial bridge is a hook, not a reveal. He may share his ritual (leaving milk on the bridge) as a strange local custom, but the full story of the broken promise should only emerge if players investigate the bridge directly or earn his complete trust.",
+      "mira-baker": "Her grandmother's knowledge of the vanished tax collector is a clue that leads to the bridge's curse. This should surface in Act I if players ask about the village's history, but the connection to the Curse of Acasia is an Act II/III realization.",
+      "tema": "Her desperation is visible from Act II onward, but her ruin-level investment should be revealed gradually. In Act II, she is a hopeful merchant. In Act III, her urgency reveals the full stakes—if the seal is not recovered, she loses everything.",
+      "captain-rusk": "His debt to the smuggler Peyton is a pragmatic detail, not a plot centerpiece. It can surface in Act II during negotiation. His carrying of Varus's badge of rank is a major Act III reveal—do not mention it before the heist. It connects him to the Ninth Legion's fall.",
+      "khatun-sarnai": "Her daughter Yelü's parentage is a delicate secret. Sarnai will not volunteer it. If the party earns her trust (e.g., through the Act II mediation or an Act III horse race), she may reveal it privately. This is a moment of vulnerability, not a casual conversation.",
+      "quick-lena": "Her past as a Silk Coin apprentice is a sympathetic detail that can surface during the heist, especially if the party recognizes her skills or shares their own exile stories. It creates a potential alliance—or a tragic parallel if they become rivals.",
+      "prefect-marcellus": "His cult of oathbreakers is a hard Act III reveal. In Act II, he is a distant rumor. In Act III Scene 2, he appears as a commanding, pragmatic officer—perhaps even likeable. Only during the heist or the curse-ending should his corruption become undeniable. His brother's death in a Ykrul raid explains his hatred, but that is a sympathetic detail, not a justification.",
+      "censor-cassia": "Her fatal illness is an Act III revelation that justifies her dangerous counter-offer. She is dying and has nothing to lose. Do not hint at this in Acts I-II—she is merely a diligent archivist until the party earns her trust or breaks into the Archive.",
+      "mareth": "Their past as a Runekeeper of the Traveler is a private burden. They may reveal it slowly over the campaign, especially if the party encounters way-routes or gets lost. It is not a secret to guard tightly, but it should be earned through trust and shared hardship.",
+      "old-kes": "He is already deceased by the start of the campaign. His legacy is carried by the players. His secret (the principles of the Silk Coin) is the party's inheritance—it defines their moral compass, not a plot twist."
+    },
+    "forbiddenEarlyRevelations": [
+      "The Iron Seal of Varus and its curse mechanics (Act III only)",
+      "The Ninth Clause (the ghost's true name ending the curse) — this is a late Act III discovery",
+      "Prefect Marcellus's cult of oathbreakers",
+      "Censor Cassia's terminal illness",
+      "Captain Rusk's possession of Varus's badge of rank",
+      "Khatun Sarnai's daughter Yelü is a legionary's child",
+      "The full mechanics of the Curse of Acasia and The Hollow's Attention timers — hint at the curse as a folk belief, not a mechanical system",
+      "The ninth arch of any bridge is the site of a broken promise — this is a recurring motif; mention it as superstition early, but do not explain its deeper magical significance until Act II or III",
+      "Garrick Ursillo's Vhasian army brand — it's a visible scar if players look closely, but its meaning is a discovery, not a first-meeting detail",
+      "Quick Lena's Silk Coin past — she may recognize the players' style, but she will not volunteer her history"
+    ]
+  },
+
   "currentAct": 0,
   "currentScene": 0,
   "startedAt": null,

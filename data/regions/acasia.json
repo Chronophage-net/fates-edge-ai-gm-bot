@@ -29,18 +29,18 @@
     "core_conflict": "Players are caught between the **Margravine's** iron law, the **Lame King's** desperate legitimacy, and the **Curse** that devours broken promises.",
     "unique_feature": "**Geometric Haunting:** Roads loop, bridges demand tolls in memory, and contracts signed on bridges become physically binding curses.",
     "ninth_taboo": "In any Acasian scene, the ninth toll paid at a bridge is never the last. The wise pay eight and barter for the ninth. The ninth toll is collected by a child with no name. The child is the Curse's enforcer.",
-    "price": "Players sacrifice **memory, identity, or future labor** to gain power. Every reward requires a gamble: memory loss, Hollow attention, Obligation, or Corruption.",
+    "price": "Players sacrifice **memory, identity, or future loyalty** to gain power. Every reward requires a gamble: memory loss, Hollow attention, a favor owed, or erosion of self.",
     "faction_triad": [
       {
         "faction": "Margravine of the Broken March",
         "goal": "Keep the province from fracturing completely",
-        "method": "Iron law, feud tallies, blood-oaths",
+        "method": "Iron law, blood-oaths, ancient seals",
         "why_players_care": "She holds the only valid Imperial seals"
       },
       {
         "faction": "The Lame King",
         "goal": "Be recognized as a true sovereign",
-        "method": "Traveling throne, debtor armies, decrees",
+        "method": "Traveling throne, hired swords, bold decrees",
         "why_players_care": "He controls the roads the Margravine cannot"
       },
       {
@@ -54,7 +54,7 @@
   "quotes": [
     {
       "speaker": "Margravine of the Broken March (Elite)",
-      "text": "The tithe must be paid, not merely offered. A promise written in ash and sealed with iron will is worth more than a thousand gold coins scattered on the wind. The Empire is dead. Its weight is not."
+      "text": "The empire's weight is not in its coin—it is in its word. A title given by the emperor is a title that still holds, even if the emperor's bones have turned to ash. I hold the seal. I hold the claim. That is why they kneel."
     },
     {
       "speaker": "Hedge-Witch (Commoner)",
@@ -86,7 +86,7 @@
       },
       {
         "roll": 3,
-        "complication": "A toll collector's ghost demands payment in a currency that no longer exists. Pay 1 Boon or mark 1 Fatigue."
+        "complication": "A toll collector's ghost demands a story. If you can't tell one, mark 1 Fatigue."
       },
       {
         "roll": 4,
@@ -110,7 +110,7 @@
       },
       {
         "roll": 9,
-        "complication": "A tax collector's ghost appears with a ledger. It demands payment on a debt that is older than your grandfather. Pay 1 Boon or lose a memory."
+        "complication": "A tax collector's ghost appears with a list of names. It demands a name you have never spoken. Pay 1 Boon or lose a memory."
       },
       {
         "roll": 10,
@@ -120,16 +120,16 @@
   },
   "npcs": [
     {
-      "name": "Zara 'the Ledger'",
+      "name": "Zara 'the Iron Seal'",
       "role": "Margravine of the Broken March",
       "motivation": "Keep the province from fracturing completely",
-      "quirk": "She has never lost a feud; her sword is also a counting rod. She claims descent from the last Utaran governor."
+      "quirk": "She has never lost a feud; her sword is a symbol of her authority. She claims descent from the last Utaran governor."
     },
     {
       "name": "Oren 'Tin Crown'",
       "role": "The Lame King",
       "motivation": "Be recognized as a true sovereign",
-      "quirk": "His traveling throne is carried by debtors; he pays them in promises. His grandfather was a free company captain who declared himself king."
+      "quirk": "His traveling throne is carried by men he's promised land to; he pays them in titles. His grandfather was a free company captain who declared himself king."
     },
     {
       "name": "Ysabeau",
@@ -317,7 +317,7 @@
       "subtitle": "[AUTHORITY] [HUNGER]",
       "description": "Tally-rod, empty stomach, and a list of names.",
       "flavor": "His tally-rod has notches from a dozen villages. The villages are now empty. He collects for the Margravine. She does not ask where the grain goes.",
-      "debt": "He owes his soul to the Margravine's ledger. If you give him a name from the list, he will mark it paid — but the ghost of that name will haunt you.",
+      "debt": "He serves the Margravine because she is the only authority left. If you give him a name from the list, he will mark it paid — but the ghost of that name will haunt you.",
       "price": "1 Supply or a story about a tax collector who died hungry."
     },
     {
@@ -347,7 +347,7 @@
       "subtitle": "[MERCENARY] [FATIGUE]",
       "description": "Pike and shot between contracts.",
       "flavor": "He has served three kings this year. He does not remember their names. His first contract was with a man who called himself emperor. The man is dead. The contract is not.",
-      "debt": "He owes back pay to his company. If you pay 1 Supply, he will fight for you for one scene.",
+      "debt": "He owes his men a place to winter. If you offer 1 Supply or a promise of shelter, he will fight for you for one scene.",
       "price": "A contract signed in blood. If you break it, the Curse Awakening ticks +2."
     },
     {

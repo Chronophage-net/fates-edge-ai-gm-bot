@@ -10,7 +10,7 @@
   "overview": {
     "tagline": "Count the steps, weigh the words, and never trust a single telling.",
     "genre": "Dark faerie tale, moonlit groves, polite iron, and the uncanny weight of a promise unsaid.",
-    "mood": "Stone, Bough, and Bright Things",
+    "mood": "Stone, Bough, and Bright Things — The Weight of Every Word, The Terror of the Exception",
     "starting_location": "A tide-shed at dawn, fog curling over anchored barges, gulls crying omens over the river's black glass. A gnomish reeve offers passage on a sealed barge: 'The Green Gate opens at neap tide. What we trade there, the Dolmis will not name. And if you hear someone counting your footsteps, do not turn around — they are only making sure you still have them.'",
     "lore": {
       "history": "The Aelinnel do not build cities. They **grow** them — from granite and hawthorn, from tide-polished bone and the shadow of a laugh. Their halls thread through sea-cliffs and root-galleries, their roads are counted by antler-posts that move at night, and their doors open only when you have forgotten why you came. Here, promises have **weight** — not the weight of ink on parchment, but the weight of a stone dropped into a still pool. The ripples go on forever. To the north, the Valewood breathes; to the south, the downs of Amedell where the Aelaerem tie red threads to keep the Hollow at bay. The Green Gate sometimes opens onto halfling barrows — a fact neither people speaks of aloud, because speaking aloud gives the gate permission to move. No single crown rules the gnomish lands. Dozens of courts, seasonal pacts, and garden societies weave a shifting lattice of loyalty. Some Aelinnel keep the old fae treaties, speaking in two voices and never carrying naked iron; others barter in the Green Market with memories instead of coin, treating courtesy as a kind of lockpicking. Still others vanish into the deep woods, listening to stag-roads where the trees whisper gossip about the living. The gnomish heart is divided — and that division is the only reason the fae haven't eaten them whole. Craft and courtesy govern every traffic between mortal keeps and the courts under the hill. Gnomish stone-singers hum bridges into alignment, their melodies keeping the Green Gate at bay. Forester-wardens hammer copper nails into thresholds because iron, they say, **startles the truth**. In markets under living roofs, a sentence can be folded like a napkin, and a memory can be wrapped for travel — but never opened before the second sunrise. Paths sometimes shorten for those who keep good count, and lengthen for those who sneer at patterns. The fae are never rude — but they are never, ever **safe**.",
@@ -24,6 +24,33 @@
       "north": "The Valewood (deep) -- The empire's fallen towers are a source of treasure and terror; the star-roads are a shortcut that demands a toll in courtesy."
     }
   },
+  "regional_diagnostic": {
+    "current_hook": "Count the steps, weigh the words, and never trust a single telling.",
+    "core_conflict": "Players are caught between the **fae's** unpredictable courtesy, the **Hollow's** patient attention, and the **Aelinnel's** desperate need to map the unmappable through pattern, protocol, and precise counting. The Ninth is the unspoken clause. The Hollow is the pattern that does not repeat.",
+    "unique_feature": "**Geometric Courtesy:** Every interaction with fae or fae-touched things is governed by unspoken rules. The Aelinnel navigate this through obsessive pattern-recognition, counting, and a deep love for the beauty of a correct protocol.",
+    "ninth_taboo": "In any Aelinnel scene, the ninth word is never the last. The wise speak in eights and leave the ninth unspoken. The ninth word belongs to the Hollow — it is the space where promises bind. The Aelinnel do not speak of it. They simply never say the ninth word.",
+    "price": "Players sacrifice **patterns, memories, or courtesy** to gain power. Every reward requires a gamble: a broken pattern, a forgotten protocol, a favor owed to the fae, or the slow erosion of certainty.",
+    "faction_triad": [
+      {
+        "faction": "Thorn Court (Fae Sovereign)",
+        "goal": "Remind mortals that courtesy is a leash, not a gift",
+        "method": "Riddles, thorns, exacting protocol",
+        "why_players_care": "They hold the old treaties and the Green Gate's keys"
+      },
+      {
+        "faction": "Hall of Aelinnel (Mortal Crown)",
+        "goal": "Keep the old pacts indexed and the fae at arm's length",
+        "method": "Conditional speech, quartz-oaths, indexed treaties",
+        "why_players_care": "They are the only mortal authority the fae respect"
+      },
+      {
+        "faction": "Green Market (Trade & Truth)",
+        "goal": "Trade truths for trinkets and never lose the margin",
+        "method": "Leaf-vein receipts, memory as currency, conditional bargains",
+        "why_players_care": "They are the only place where the fae and mortals trade"
+      }
+    ]
+  },
   "quotes": [
     {
       "speaker": "Lady of Thorns (Fae Sovereign)",
@@ -34,24 +61,65 @@
       "text": "Our kilns tell us more than your books ever could. When the smoke curls left, the tide's with you. When it splits in three, best stay by your own hearth till it burns straight again. And never trust a court that speaks in only one voice — the silence is always the second witness."
     }
   ],
+  "hollow_timer": {
+    "name": "Obligation to the Green Gate",
+    "max_segments": 8,
+    "advance_on": [
+      "A character accepts a gift without naming its price (+1)",
+      "A promise is broken on a threshold (+1)",
+      "The ninth word is spoken in a negotiation (+2)",
+      "Iron is drawn in a fae-touched place (GM spends 1 SB to tick +1)",
+      "A child counts to nine aloud (the Hollow is already listening; +0, but the GM gains 1 SB)"
+    ],
+    "thresholds": {
+      "4": "The Green Gate's price changes. All thresholds in the region require a truth or a memory to cross.",
+      "8": "The Huntsman sounds the horn. The party must offer a story, a memory, or a name to the Hollow — or be hunted until dawn."
+    },
+    "stirrs_table": [
+      {
+        "roll": 1,
+        "complication": "A gray figure appears at the edge of the grove. It asks for a name. Give a name (living or dead) and it leaves. Refuse, and it takes your shadow (—1 die on stealth for a week)."
+      },
+      {
+        "roll": 2,
+        "complication": "The ninth word is spoken by someone who did not intend it. Whoever spoke it forgets their greatest joy (lose 1 XP, refundable by a quest)."
+      },
+      {
+        "roll": 3,
+        "complication": "A copper nail appears tied to every PC's wrist. It tightens when you lie. Cutting it costs 1 Corruption."
+      },
+      {
+        "roll": 4,
+        "complication": "The geese fall silent. The Hollow is inside the circle. It demands a story that ends with a death. If the story is true, it leaves. If false, it takes a memory."
+      },
+      {
+        "roll": 5,
+        "complication": "The Moot Oak bleeds sap. The Hollow speaks through it: 'One of you carries a promise unpaid. Settle it now.' The one named must offer 1 Boon or 1 Supply. Refusal ticks the timer again immediately."
+      },
+      {
+        "roll": 6,
+        "complication": "The empty chair is occupied by a figure in gray. It does not speak. It eats. If you serve it food, it leaves. If you ignore it, it eats your luck (all rolls are Desperate for the next scene)."
+      }
+    ]
+  },
   "npcs": [
     {
       "name": "Thorn",
       "role": "Lady of Thorns, Sovereign of the Hawthorn Court",
       "motivation": "Remind mortals that courtesy is a leash, not a gift",
-      "quirk": "She never repeats herself. Her silences are verdicts — and her verdicts are always polite."
+      "quirk": "She never repeats herself. Her silences are verdicts — and her verdicts are always polite. She counts the beats of silence in threes. She never reaches nine."
     },
     {
       "name": "Caelum Viridant",
       "role": "Green Knight, Warden of the Stag-Roads",
       "motivation": "Test the worthy and trap the careless",
-      "quirk": "His armour is woven from living boughs that bleed when he lies. He has never bled."
+      "quirk": "His armour is woven from living boughs that bleed when he lies. He has never bled. He has also never spoken a declarative sentence in the presence of mortals — only questions and conditional clauses."
     },
     {
       "name": "Eilidh Stone-Prince",
       "role": "Mortal ruler of the Hall of Aelinnel",
       "motivation": "Keep the old pacts indexed and the fae at arm's length",
-      "quirk": "She speaks only in conditional tense. No one has heard a declarative sentence from her lips in seven years — not even her cat."
+      "quirk": "She speaks only in conditional tense. No one has heard a declarative sentence from her lips in seven years — not even her cat. Her cat, incidentally, only responds to questions phrased in the subjunctive."
     },
     {
       "name": "Riven",
@@ -63,13 +131,13 @@
       "name": "Tallow",
       "role": "Charcoal-burner (commoner exemplar)",
       "motivation": "Read the smoke and warn the village before the fae come",
-      "quirk": "He has never lost a sheep to the Hollow. He has lost three helpers who did not listen. Their shadows still work his kilns."
+      "quirk": "He has never lost a sheep to the Hollow. He has lost three helpers who did not listen. Their shadows still work his kilns — they count the wood in eights, and they never speak."
     },
     {
       "name": "Sable",
       "role": "Green-Market Broker",
       "motivation": "Trade truths for trinkets, and never lose the margin",
-      "quirk": "Her receipts are written on leaf-vein paper. They curl when the bargain is unbalanced — and also when it rains, which is often, which is why she keeps a stone in her pocket."
+      "quirk": "Her receipts are written on leaf-vein paper. They curl when the bargain is unbalanced — and also when it rains, which is often, which is why she keeps a stone in her pocket. The stone is a counting-stone. It has nine sides. She never looks at the ninth side."
     }
   ],
   "names": {
@@ -113,8 +181,8 @@
       "title": "Tide-rift steps",
       "subtitle": "[THRESHOLD]",
       "description": "Cut into black rock; limpets and old votive nails keep count for those who forget.",
-      "flavor": "The ninth step is underwater — and it still counts.",
-      "mechanical_hook": ""
+      "flavor": "The ninth step is underwater — and it still counts. The tide remembers every footfall that has ever touched it. It will tell the Hollow if you miscount.",
+      "mechanical_hook": "To cross safely, you must count the steps aloud in primes (2, 3, 5, 7). On a correct count, gain +1 die to navigation for the scene. On failure, the tide rises — lose 1 Supply (drowned) and tick **Obligation to the Gate +1**."
     },
     {
       "rank": 3,
@@ -122,8 +190,8 @@
       "title": "Moonwell basin",
       "subtitle": "[MAGIC]",
       "description": "A granite bowl; coins turn green in a week, names in a season, and memories in a year.",
-      "flavor": "The water never reflects the same face twice.",
-      "mechanical_hook": ""
+      "flavor": "The water never reflects the same face twice. The ninth reflection is always someone who has not been born yet — or someone who has not yet died.",
+      "mechanical_hook": "A character who looks into the well (Spirit+Lore DV 3) may ask one question. The answer is always a riddle. On failure, the well takes a memory (lose 1 XP, refundable by a quest). The well will remember your face."
     },
     {
       "rank": 4,
@@ -131,8 +199,8 @@
       "title": "Dolmen stair",
       "subtitle": "[MUSIC]",
       "description": "Up a ridge; each capstone rings a different interval if you tap it true.",
-      "flavor": "The ninth stone is silent — it only rings when someone lies.",
-      "mechanical_hook": ""
+      "flavor": "The ninth stone is silent — it only rings when someone lies. The tone is always a perfect fifth, but slightly sharp — the Hollow's signature.",
+      "mechanical_hook": "Tapping the stones in the correct sequence (the intervals of a major scale) opens a hidden door. On failure, the stones ring a discord — start a **Stone-Wight Wakes [4]** timer."
     },
     {
       "rank": 5,
@@ -140,8 +208,8 @@
       "title": "Charcoal coppice",
       "subtitle": "[SECRET]",
       "description": "Under witch-hazel; a neat ash-heap hides a door that opens on even knocks only.",
-      "flavor": "Knock an odd number, and the door will open — but not where you left it.",
-      "mechanical_hook": ""
+      "flavor": "Knock an odd number, and the door will open — but not where you left it. The ninth knock is always answered by the Hollow.",
+      "mechanical_hook": "To enter, knock in an even number (2, 4, 6, 8). On success, the door opens to the charcoalers' hideout. On failure, the door opens to a place you have already been — lose 1 segment of progress."
     },
     {
       "rank": 6,
@@ -149,8 +217,8 @@
       "title": "Basalt organ cliffs",
       "subtitle": "[NATURE]",
       "description": "Sea-caves breathe like slow bellows; the wind prefers prime numbers.",
-      "flavor": "When it plays a ninth, the cliffs hum back.",
-      "mechanical_hook": ""
+      "flavor": "When it plays a ninth, the cliffs hum back. The hum is a question. The question is always about a door you have not yet opened.",
+      "mechanical_hook": "A character who listens to the cliffs (Wits+Lore DV 3) may learn the tide schedule. On failure, the cliffs play a discord — mark 1 Fatigue (deafening) and tick **Obligation to the Gate +1**."
     },
     {
       "rank": 7,
@@ -158,8 +226,8 @@
       "title": "Stag Road",
       "subtitle": "[TRAVEL]",
       "description": "Game-trail marked by antler-posts; hooves know it best, maps accept it grudgingly.",
-      "flavor": "The posts move at night — not to confuse, but to keep the road honest.",
-      "mechanical_hook": ""
+      "flavor": "The posts move at night — not to confuse, but to keep the road honest. The ninth post is always a door. The door is always open.",
+      "mechanical_hook": "Traveling the road costs 1 Supply or 1 Boon. If you have neither, the road will take a memory (lose 1 XP). The road remembers every traveler who has walked it."
     },
     {
       "rank": 8,
@@ -167,8 +235,8 @@
       "title": "Quartz spring",
       "subtitle": "[HEALING]",
       "description": "Sand shines like ground stars; drinkers tell the same story with better structure.",
-      "flavor": "The ninth sip tastes of copper — and a promise you haven't made yet.",
-      "mechanical_hook": ""
+      "flavor": "The ninth sip tastes of copper — and a promise you haven't made yet. The spring remembers all the promises it has witnessed. It will share them with the Hollow at the right moment.",
+      "mechanical_hook": "Drinking from the spring restores 1 Fatigue but gives you a vision of a forgotten oath. The GM gains 1 SB (the oath will surface later). Refusing to drink ticks **Obligation to the Gate +1**."
     },
     {
       "rank": 9,
@@ -176,8 +244,8 @@
       "title": "Elf-causey",
       "subtitle": "[FAE]",
       "description": "Pale flags through a marsh; visible at dawn and dusk and whenever someone is counting aloud.",
-      "flavor": "Count to nine, and the flags turn to water.",
-      "mechanical_hook": ""
+      "flavor": "Count to nine, and the flags turn to water. The water is always the same temperature as a promise that has been broken.",
+      "mechanical_hook": "Crossing the causey requires counting to eight and stopping. If you reach nine, the causey sinks — lose 1 Supply (drowned) and tick **Obligation to the Gate +2**."
     },
     {
       "rank": 10,
@@ -185,8 +253,8 @@
       "title": "Root gallery",
       "subtitle": "[UNDERGROUND]",
       "description": "Under an oak hill; lanterns hang from living bark — two lit, one listening.",
-      "flavor": "The listening lantern is for the Hollow. It never lights.",
-      "mechanical_hook": ""
+      "flavor": "The listening lantern is for the Hollow. It never lights. It is always watching.",
+      "mechanical_hook": "The gallery is a shortcut. To use it, a character must whisper a secret to the listening lantern (Spirit+Stealth DV 4). On success, the gallery opens. On failure, the secret is taken by the Hollow — tick **Obligation to the Gate +2**."
     },
     {
       "rank": 11,
@@ -194,8 +262,8 @@
       "title": "Barrow gallery",
       "subtitle": "[DEATH]",
       "description": "Stone chimes; a cold draft from below plays scales no throat can sing.",
-      "flavor": "The ninth note is always a sigh.",
-      "mechanical_hook": ""
+      "flavor": "The ninth note is always a sigh. The sigh is the Hollow's answer to a question that was never asked.",
+      "mechanical_hook": "A character who listens to the chimes (Wits+Lore DV 4) may learn a secret of the dead. On failure, the chimes play a dirge — mark 1 Fatigue and gain the Condition **Barrow-Dreamt** (all Resolve tests suffer –1 die)."
     },
     {
       "rank": 12,
@@ -203,8 +271,8 @@
       "title": "Thorn Court ring",
       "subtitle": "[FAE] [DANGER]",
       "description": "Hawthorns trained into arches; petals fall like knife-points and settle into proofs.",
-      "flavor": "Step into the center, and the thorns will ask you a riddle. Answer wrong, and you become a hedge.",
-      "mechanical_hook": ""
+      "flavor": "Step into the center, and the thorns will ask you a riddle. Answer wrong, and you become a hedge. The hedge will remember your name and speak it to the Hollow at dawn.",
+      "mechanical_hook": "To enter, answer a riddle (Wits+Lore DV 5). On success, you gain audience with the Lady of Thorns. On failure, you are trapped — start a **Hedge-Bound [4]** timer."
     },
     {
       "rank": 13,
@@ -212,8 +280,8 @@
       "title": "Hall of Aelinnel",
       "subtitle": "[CIVILISATION]",
       "description": "A timber keep threaded between standing stones; floors level themselves for guests.",
-      "flavor": "The ninth stone in the floor is always warm — it remembers the last person who lied.",
-      "mechanical_hook": ""
+      "flavor": "The ninth stone in the floor is always warm — it remembers the last person who lied. The warmth is the Hollow's approval.",
+      "mechanical_hook": "Speaking in the Hall requires two-voice courtesy. On a correct two-voice statement, gain +1 die to all social rolls. On failure, the Hall's stones remember you — the GM gains a String."
     },
     {
       "rank": 14,
@@ -221,8 +289,8 @@
       "title": "The Green Gate",
       "subtitle": "[GATE]",
       "description": "In a sea-arch; at certain tides it opens to a forest not on any map, and expects exact change.",
-      "flavor": "It does not accept coin. It accepts **explanations**.",
-      "mechanical_hook": ""
+      "flavor": "It does not accept coin. It accepts **explanations**. The ninth explanation is always the one that opens the gate — and closes it behind you.",
+      "mechanical_hook": "To pass, you must offer a truth (Spirit+Presence DV 5). On success, the gate opens. On failure, it demands a memory (lose 1 XP). Passing without paying ticks **Obligation to the Gate +2**."
     }
   ],
   "people_and_factions": [
@@ -232,9 +300,9 @@
       "title": "Goat-herd of the stone edges",
       "subtitle": "[SURVIVAL]",
       "description": "Measures danger in hoof-widths; never wrong twice.",
-      "flavor": "The third time, she doesn't measure — she runs.",
-      "what_they_carry": "",
-      "what_they_ask": ""
+      "flavor": "The third time, she doesn't measure — she runs. She has run eight times. She has never run a ninth. The Hollow respects that.",
+      "what_they_carry": "She carries a bell that rings only when the Hollow is near. It has never rung. She is not sure if that is good or bad.",
+      "what_they_ask": "A counting-stone. She will tell you which paths are safe."
     },
     {
       "rank": 3,
@@ -242,9 +310,9 @@
       "title": "Charcoal-burner clan",
       "subtitle": "[DIVINATION]",
       "description": "Read draught and omen by smoke; their kilns hum in thirds.",
-      "flavor": "When the hum stops, someone has asked a question they shouldn't have.",
-      "what_they_carry": "",
-      "what_they_ask": ""
+      "flavor": "When the hum stops, someone has asked a question they shouldn't have. The Hollow always knows when the questions stop.",
+      "what_they_carry": "They carry an ash that has never been used. It can seal any promise — once.",
+      "what_they_ask": "A story about a fire that went out. They will add it to the kiln."
     },
     {
       "rank": 4,
@@ -252,9 +320,9 @@
       "title": "Hedge-witch",
       "subtitle": "[MAGIC] [SOCIAL]",
       "description": "A pocket of thorns and prices stated in **unlesses**.",
-      "flavor": "Her fees are always conditional: 'I will heal your child, **unless** the moon is full, in which case I will only listen.'",
-      "what_they_carry": "",
-      "what_they_ask": ""
+      "flavor": "Her fees are always conditional: 'I will heal your child, **unless** the moon is full, in which case I will only listen.' The Hollow loves conditional clauses.",
+      "what_they_carry": "She carries a thorn that has never been drawn. It can open any door — once.",
+      "what_they_ask": "A promise. She will hold you to it in the conditional."
     },
     {
       "rank": 5,
@@ -262,9 +330,9 @@
       "title": "Stone-singer (quarryman)",
       "subtitle": "[CRAFT]",
       "description": "Hum finds a seam and a secret; walls relax when they pass.",
-      "flavor": "The ninth hum is for doors that do not exist — yet.",
-      "what_they_carry": "",
-      "what_they_ask": ""
+      "flavor": "The ninth hum is for doors that do not exist — yet. The hollow waits for them to be sung into being.",
+      "what_they_carry": "He carries a hammer that has never struck stone. It can sing any wall open — once.",
+      "what_they_ask": "A song. He will teach you the melody if it is true."
     },
     {
       "rank": 6,
@@ -272,9 +340,9 @@
       "title": "Forester-warden",
       "subtitle": "[NATURE]",
       "description": "Copper nails and a polite dislike of iron; paths obey their hammer.",
-      "flavor": "They never cut a branch — they ask permission, and sometimes the branch says no.",
-      "what_they_carry": "",
-      "what_they_ask": ""
+      "flavor": "They never cut a branch — they ask permission, and sometimes the branch says no. The no is always polite and always final.",
+      "what_they_carry": "She carries a copper nail that has never been driven. It can mark any threshold — once.",
+      "what_they_ask": "A silence. She will hold it with you for one minute."
     },
     {
       "rank": 7,
@@ -282,9 +350,9 @@
       "title": "Reed-net fisher",
       "subtitle": "[TRADE]",
       "description": "Knows when the selkies listen; mends nets to lullabies in 5s and 8s.",
-      "flavor": "The ninth verse is always for the drowned.",
-      "what_they_carry": "",
-      "what_they_ask": ""
+      "flavor": "The ninth verse is always for the drowned. The Hollow collects them at the end of each song.",
+      "what_they_carry": "He carries a net that has never been wet. It can catch any secret — once.",
+      "what_they_ask": "A verse. He will add it to the lullaby."
     },
     {
       "rank": 8,
@@ -292,9 +360,9 @@
       "title": "Oath-carver",
       "subtitle": "[LAW] [OATH]",
       "description": "Sets promises in quartz so they can be seen; breaks none, bends many.",
-      "flavor": "A broken quartz-oath turns to sand — and the sand remembers.",
-      "what_they_carry": "",
-      "what_they_ask": ""
+      "flavor": "A broken quartz-oath turns to sand — and the sand remembers. The Hollow uses the sand to count the days until the oath is repaid.",
+      "what_they_carry": "He carries a chisel that has never been sharpened. It can carve any promise — once.",
+      "what_they_ask": "A truth. He will set it in quartz for you."
     },
     {
       "rank": 9,
@@ -302,9 +370,9 @@
       "title": "Way-keeper of the Stag Road",
       "subtitle": "[GUIDE]",
       "description": "Never lost, often followed, sometimes found ahead.",
-      "flavor": "When she stops at a crossroads, she always turns her back to the ninth path.",
-      "what_they_carry": "",
-      "what_they_ask": ""
+      "flavor": "When she stops at a crossroads, she always turns her back to the ninth path. The ninth path is the Hollow's highway.",
+      "what_they_carry": "She carries a staff that has never been planted. It can mark any path — once.",
+      "what_they_ask": "A direction. She will walk it with you."
     },
     {
       "rank": 10,
@@ -312,9 +380,9 @@
       "title": "Green-market broker",
       "subtitle": "[COMMERCE]",
       "description": "Trading truths for trinkets and back again; receipts in leaf-vein script.",
-      "flavor": "The truth she sells is always true — but never the truth you asked for.",
-      "what_they_carry": "",
-      "what_they_ask": ""
+      "flavor": "The truth she sells is always true — but never the truth you asked for. The Hollow approves of her exactness.",
+      "what_they_carry": "She carries a ledger that has never been balanced. It can hold any debt — once.",
+      "what_they_ask": "A name. She will write it in the margin."
     },
     {
       "rank": 11,
@@ -322,9 +390,9 @@
       "title": "Green Knight",
       "subtitle": "[FAE] [DUEL]",
       "description": "Antler helm, mirror-bright blade, courtesy old as frost; keeps a tally of saved insults.",
-      "flavor": "He never unsheathes his sword — he only shows it, and that is usually enough.",
-      "what_they_carry": "",
-      "what_they_ask": ""
+      "flavor": "He never unsheathes his sword — he only shows it, and that is usually enough. The Hollow has never seen his blade. He does not know if that is a mercy.",
+      "what_they_carry": "He carries a branch that has never been cut. It can challenge any foe — once.",
+      "what_they_ask": "An insult. He will forgive it — or he will not."
     },
     {
       "rank": 12,
@@ -332,9 +400,9 @@
       "title": "Lady of Thorns",
       "subtitle": "[FAE] [LAW]",
       "description": "Sovereign of a hawthorn court; smiles like a snare and forgives in exact measures.",
-      "flavor": "Her forgiveness is always exactly one thorn's weight — no more, no less.",
-      "what_they_carry": "",
-      "what_they_ask": ""
+      "flavor": "Her forgiveness is always exactly one thorn's weight — no more, no less. The Hollow respects her precision.",
+      "what_they_carry": "She carries a crown that has never been worn. It can command any court — once.",
+      "what_they_ask": "A courtesy. She will measure it in thorns."
     },
     {
       "rank": 13,
@@ -342,9 +410,9 @@
       "title": "Stone Prince of Aelinnel",
       "subtitle": "[AUTHORITY]",
       "description": "Mortal crown with fae obligations properly indexed and current.",
-      "flavor": "He is the only gnome who has never lied — because he never speaks in declaratives.",
-      "what_they_carry": "",
-      "what_they_ask": ""
+      "flavor": "He is the only gnome who has never lied — because he never speaks in declaratives. The Hollow has never heard him say anything that could be used against him.",
+      "what_they_carry": "He carries a seal that has never been broken. It can bind any agreement — once.",
+      "what_they_ask": "A conditional promise. He will hold it with you until the conditions are met."
     },
     {
       "rank": 14,
@@ -352,9 +420,9 @@
       "title": "Huntsman of the Moonlit Ride",
       "subtitle": "[HUNT]",
       "description": "His horn turns shortcuts into roads, and obligations into destinations.",
-      "flavor": "When he blows the ninth note, the hunt ends — but the hunted never comes back.",
-      "what_they_carry": "",
-      "what_they_ask": ""
+      "flavor": "When he blows the ninth note, the hunt ends — but the hunted never comes back. The Hollow rides with him on the ninth note.",
+      "what_they_carry": "He carries a horn that has never been silent. It can call any hunter — once.",
+      "what_they_ask": "A debt. He will collect it with the hunt."
     }
   ],
   "complications": [
@@ -364,8 +432,8 @@
       "title": "Glamour fog",
       "subtitle": "[ILLUSION]",
       "description": "Time drifts, footfalls don't match, conversations arrive neatly folded.",
-      "flavor": "Open a sentence, and you may find last Tuesday inside.",
-      "mechanical_hook": ""
+      "flavor": "Open a sentence, and you may find last Tuesday inside. The Hollow loves folded time.",
+      "mechanical_hook": "Navigation rolls are Desperate. On a Miss, a character's shadow walks separately from them for the scene (—1 die to all stealth rolls). The fog can be dispelled by counting to eight aloud."
     },
     {
       "rank": 3,
@@ -373,8 +441,8 @@
       "title": "Iron offense",
       "subtitle": "[SOCIAL] [WEIGHT]",
       "description": "Someone brought the wrong nails to the right grove; paths take it personally.",
-      "flavor": "The trees do not speak — they **remember**.",
-      "mechanical_hook": ""
+      "flavor": "The trees do not speak — they **remember**. The Hollow knows what they remember.",
+      "mechanical_hook": "All social rolls in the scene suffer –1 Position. To apologize, offer a non-iron gift (1 Boon). Refusal ticks **Obligation to the Gate +1**."
     },
     {
       "rank": 4,
@@ -382,8 +450,8 @@
       "title": "Root-slide",
       "subtitle": "[TRAVEL]",
       "description": "Pulls a trail two ridges away while you blink; your footprints stay where they were.",
-      "flavor": "The footprints will wait for you — for nine days. After that, they walk home without you.",
-      "mechanical_hook": ""
+      "flavor": "The footprints will wait for you — for nine days. After that, they walk home without you. The Hollow follows them.",
+      "mechanical_hook": "You lose 1 segment of progress. To recover, find a way-keeper (Spirit+Lore DV 4) or pay 1 Supply to hire a guide."
     },
     {
       "rank": 5,
@@ -391,8 +459,8 @@
       "title": "Wrong tide at the sea-arch",
       "subtitle": "[WEATHER]",
       "description": "Boats rise where arithmetic says no and physics excuses itself.",
-      "flavor": "The ninth wave is always the wrong one — it goes sideways.",
-      "mechanical_hook": ""
+      "flavor": "The ninth wave is always the wrong one — it goes sideways. The Hollow rides the ninth wave.",
+      "mechanical_hook": "Crossing requires a Body+Survival test (DV 4). On failure, lose 1 Supply (drowned). On a critical failure, you are washed into a different tide-path — start a **Lost on the Tide [4]** timer."
     },
     {
       "rank": 6,
@@ -400,8 +468,8 @@
       "title": "Spoken geas",
       "subtitle": "[MAGIC] [OATH]",
       "description": "Catches on an unlucky word; the task names itself and refuses synonyms.",
-      "flavor": "You cannot say 'fetch' when you meant 'steal' — the geas knows the difference.",
-      "mechanical_hook": ""
+      "flavor": "You cannot say 'fetch' when you meant 'steal' — the geas knows the difference. The Hollow is the geas's witness.",
+      "mechanical_hook": "A character is bound to a task. They must complete it or tick **Obligation to the Gate +2**. The task is always one they would not have chosen."
     },
     {
       "rank": 7,
@@ -409,8 +477,8 @@
       "title": "Green Market price",
       "subtitle": "[COMMERCE] [WEIGHT]",
       "description": "Payment demanded in names and memories; change returned in riddles.",
-      "flavor": "The riddles are always about thresholds. The answers are always doors.",
-      "mechanical_hook": ""
+      "flavor": "The riddles are always about thresholds. The answers are always doors. The Hollow is behind one of them.",
+      "mechanical_hook": "To trade, offer 1 Boon or 1 Supply. If you have neither, offer a memory (lose 1 XP). The broker will accept — but the memory becomes the Hollow's."
     },
     {
       "rank": 8,
@@ -418,8 +486,8 @@
       "title": "Stone-wight stirs",
       "subtitle": "[DEATH]",
       "description": "In a barrow; echoes hate company and file complaints as drafts.",
-      "flavor": "The complaints are written in a language that only the dead speak — and they are **very** articulate.",
-      "mechanical_hook": ""
+      "flavor": "The complaints are written in a language that only the dead speak — and they are **very** articulate. The Hollow is their legal counsel.",
+      "mechanical_hook": "A character who disturbs a barrow must test Resolve (DV 4) or be haunted by a stone-wight. The wight demands a memory (lose 1 XP) or a story. Refusal ticks **Obligation to the Gate +2**."
     },
     {
       "rank": 9,
@@ -427,8 +495,8 @@
       "title": "Lost day",
       "subtitle": "[TIME]",
       "description": "The sun miscounts; your dawn arrives at supper and demands bread.",
-      "flavor": "The bread must be from a loaf you have not yet baked.",
-      "mechanical_hook": ""
+      "flavor": "The bread must be from a loaf you have not yet baked. The Hollow will wait for you to bake it.",
+      "mechanical_hook": "You lose 1 Supply (bread) or 1 Boon. If you have neither, you lose a day of progress (advance a relevant timer by 2 segments)."
     },
     {
       "rank": 10,
@@ -436,8 +504,8 @@
       "title": "Thorn blight",
       "subtitle": "[CURSE]",
       "description": "Crawls across orchards; pruners bleed stories that grow where they drip.",
-      "flavor": "The stories are always about a door you left open.",
-      "mechanical_hook": ""
+      "flavor": "The stories are always about a door you left open. The Hollow entered through that door.",
+      "mechanical_hook": "All social rolls in the affected area suffer –1 die. To lift the blight, offer a story (Spirit+Performance DV 4). On failure, the blight spreads — tick **Obligation to the Gate +1**."
     },
     {
       "rank": 11,
@@ -445,8 +513,8 @@
       "title": "Stag horn sounds",
       "subtitle": "[HUNT] [WEIGHT]",
       "description": "Everyone owes the chase — especially you, especially now.",
-      "flavor": "The horn does not say who is hunting. It only says that the hunt has begun.",
-      "mechanical_hook": ""
+      "flavor": "The horn does not say who is hunting. It only says that the hunt has begun. The Hollow is the hunter. You are the prey.",
+      "mechanical_hook": "A character is hunted. They must flee (Body+Athletics DV 5) or be caught. If caught, they lose 1 Boon and gain the Condition **Hunted** (the Hollow will pursue them until a debt is paid)."
     },
     {
       "rank": 12,
@@ -454,8 +522,8 @@
       "title": "Thorn Court tithe",
       "subtitle": "[LAW] [SOCIAL]",
       "description": "Levied on the Hall; arrests wear flowers and quote etiquette.",
-      "flavor": "The charge is always **insufficient courtesy**. The penalty is always **a lesson**.",
-      "mechanical_hook": ""
+      "flavor": "The charge is always **insufficient courtesy**. The penalty is always **a lesson**. The Hollow is the instructor.",
+      "mechanical_hook": "A character is arrested. To be released, they must pass a courtesy test (Presence+Sway DV 5). On failure, they are bound to the Thorn Court's service — start a **Thorn Obligation [4]** timer."
     },
     {
       "rank": 13,
@@ -463,8 +531,8 @@
       "title": "Muster of the Bough",
       "subtitle": "[CONFLICT]",
       "description": "Forest banners rise; travel becomes trespass by default.",
-      "flavor": "The banners were trees yesterday. They are still adjusting.",
-      "mechanical_hook": ""
+      "flavor": "The banners were trees yesterday. They are still adjusting. The Hollow is their standard-bearer.",
+      "mechanical_hook": "You must pay a toll (1 Supply) or find an alternate route. Searching for an alternate route requires Wits+Survival (DV 5). On failure, you are caught — start a **Trespasser Hunt [4]** timer."
     },
     {
       "rank": 14,
@@ -472,8 +540,8 @@
       "title": "Green Gate yawns",
       "subtitle": "[GATE] [MYSTERY]",
       "description": "At the wrong hour; roads rewire across your path with excellent logic.",
-      "flavor": "The logic is always sound. The destination is always somewhere else.",
-      "mechanical_hook": ""
+      "flavor": "The logic is always sound. The destination is always somewhere else. The Hollow is the gatekeeper.",
+      "mechanical_hook": "You are transported to a different location. Roll 1d6: 1–2: a barrow, 3–4: the Thorn Court, 5–6: the Green Market. The GM gains 1 SB per transport."
     }
   ],
   "rewards": [
@@ -483,8 +551,8 @@
       "title": "Hazel token",
       "subtitle": "[PROTECTION]",
       "description": "Step through a hedge uncut, once; the scratch you did not get will **remember** you kindly.",
-      "flavor": "The token is a nut. Crack it open, and the hedge will part — but it will also ask a question.",
-      "curse_cost": ""
+      "flavor": "The token is a nut. Crack it open, and the hedge will part — but it will also ask a question. The question is always about a door.",
+      "curse_cost": "Using the token ticks **Obligation to the Gate +1**. The hedge will remember your face."
     },
     {
       "rank": 3,
@@ -492,8 +560,8 @@
       "title": "Salt license",
       "subtitle": "[UTILITY]",
       "description": "Carry and use ward-salt where it's discouraged; doors frown and open anyway.",
-      "flavor": "The license is a pinch of salt in a silk pouch. The silk was a promise.",
-      "curse_cost": ""
+      "flavor": "The license is a pinch of salt in a silk pouch. The silk was a promise. The promise was to a shadow.",
+      "curse_cost": "Using the salt ticks **Obligation to the Gate +1**. The shadow will know you used it."
     },
     {
       "rank": 4,
@@ -501,8 +569,8 @@
       "title": "Dolmen carving-right",
       "subtitle": "[AUTHORITY]",
       "description": "Inscribe a name or claim on a speaking stone; arguments quiet while you carve.",
-      "flavor": "The stone will remember your chisel's touch. It will also remember what you were thinking.",
-      "curse_cost": ""
+      "flavor": "The stone will remember your chisel's touch. It will also remember what you were thinking. The Hollow will ask the stone what you were thinking.",
+      "curse_cost": "Carving a false claim ticks **Obligation to the Gate +2** and the stone will speak your name to the Hollow."
     },
     {
       "rank": 5,
@@ -510,8 +578,8 @@
       "title": "Guest-bough",
       "subtitle": "[HOSPITALITY]",
       "description": "From the Thorn Court; one night's safe table among thorns; knives behave.",
-      "flavor": "The bough is a twig with three thorns. Break one thorn for each courtesy you ask. When all three are broken, the table becomes a door.",
-      "curse_cost": ""
+      "flavor": "The bough is a twig with three thorns. Break one thorn for each courtesy you ask. When all three are broken, the table becomes a door. The door is the Hollow.",
+      "curse_cost": "Breaking the last thorn invites the Hollow to the table. Tick **Obligation to the Gate +3**."
     },
     {
       "rank": 6,
@@ -519,8 +587,8 @@
       "title": "Quarry allotment",
       "subtitle": "[ACCESS]",
       "description": "Of clear quartz; subtle doors open to its bearer if asked in the right tense.",
-      "flavor": "The right tense is not past or future — it is **conditional**.",
-      "curse_cost": ""
+      "flavor": "The right tense is not past or future — it is **conditional**. The Hollow respects the conditional.",
+      "curse_cost": "Using the quartz ticks **Obligation to the Gate +1**. The conditional tense is always the Hollow's favorite."
     },
     {
       "rank": 7,
@@ -528,8 +596,8 @@
       "title": "Green Market voucher",
       "subtitle": "[COMMERCE]",
       "description": "Buy a truth at face value (today only); tomorrow costs interest.",
-      "flavor": "The interest is always a memory — and the voucher chooses which one.",
-      "curse_cost": ""
+      "flavor": "The interest is always a memory — and the voucher chooses which one. The Hollow will collect the interest.",
+      "curse_cost": "Using the voucher ticks **Obligation to the Gate +1**. The memory becomes the Hollow's property."
     },
     {
       "rank": 8,
@@ -537,8 +605,8 @@
       "title": "Oath-bead",
       "subtitle": "[OATH]",
       "description": "A spoken promise warms the bead when kept, chills when not, glows if misunderstood.",
-      "flavor": "A glowing bead is not a broken promise — it is a promise that has learned to speak for itself.",
-      "curse_cost": ""
+      "flavor": "A glowing bead is not a broken promise — it is a promise that has learned to speak for itself. The Hollow is the bead's attorney.",
+      "curse_cost": "If the bead glows, the Hollow gains a String on you. The bead will share your promise with the Hollow at the right moment."
     },
     {
       "rank": 9,
@@ -546,8 +614,8 @@
       "title": "Tide-path key",
       "subtitle": "[TRAVEL]",
       "description": "Lawful crossing of a named sea-cave at neap; the cave will wait.",
-      "flavor": "The key is a piece of dried seaweed. It will dissolve after one use — but the cave will remember your face.",
-      "curse_cost": ""
+      "flavor": "The key is a piece of dried seaweed. It will dissolve after one use — but the cave will remember your face. The Hollow will ask the cave about you.",
+      "curse_cost": "Using the key ticks **Obligation to the Gate +1**. The cave will tell the Hollow your name."
     },
     {
       "rank": 10,
@@ -555,8 +623,8 @@
       "title": "Forest truce",
       "subtitle": "[PERMISSION]",
       "description": "Hunt, cut, or travel through a warded copse without offense; the birds file no reports.",
-      "flavor": "The truce is a single leaf. Carry it in your mouth, and the forest will not see you — but the Hollow will.",
-      "curse_cost": ""
+      "flavor": "The truce is a single leaf. Carry it in your mouth, and the forest will not see you — but the Hollow will. The Hollow is not bound by truces.",
+      "curse_cost": "Carrying the leaf ticks **Obligation to the Gate +1** for each scene you use it. The Hollow can always see through leaves."
     },
     {
       "rank": 11,
@@ -564,8 +632,8 @@
       "title": "Green Knight escort",
       "subtitle": "[PROTECTION]",
       "description": "From ridge to gate; watchers bow, paths part, insults lodge elsewhere.",
-      "flavor": "The Knight does not speak during the escort. The silence is the escort.",
-      "curse_cost": ""
+      "flavor": "The Knight does not speak during the escort. The silence is the escort. The Hollow respects the silence.",
+      "curse_cost": "During the escort, you must not speak. If you do, the Knight will abandon you and the Hollow will notice you. Tick **Obligation to the Gate +2**."
     },
     {
       "rank": 12,
@@ -573,8 +641,8 @@
       "title": "Private audience",
       "subtitle": "[AUTHORITY]",
       "description": "With the Lady of Thorns; a whisper exits as policy with petals attached.",
-      "flavor": "The petals are sharp. Do not handle them carelessly — they cut what they agree with.",
-      "curse_cost": ""
+      "flavor": "The petals are sharp. Do not handle them carelessly — they cut what they agree with. The Hollow reads the petals before anyone else.",
+      "curse_cost": "The audience must be in the conditional tense. If you speak a declarative, the Lady will not hear you — but the Hollow will. Tick **Obligation to the Gate +1**."
     },
     {
       "rank": 13,
@@ -582,8 +650,8 @@
       "title": "Stone Prince's seal",
       "subtitle": "[AUTHORITY]",
       "description": "Levies defer, foresters guide, scribes stop arguing and fetch tea.",
-      "flavor": "The seal is a pebble. It only works when you are not looking at it.",
-      "curse_cost": ""
+      "flavor": "The seal is a pebble. It only works when you are not looking at it. The Hollow is always looking at it.",
+      "curse_cost": "Using the seal ticks **Obligation to the Gate +1**. The Hollow will know you used it."
     },
     {
       "rank": 14,
@@ -591,8 +659,8 @@
       "title": "Wild Hunt clemency",
       "subtitle": "[PROTECTION]",
       "description": "Ride under the horn for one night; no hound will take you, no obligation will sleep.",
-      "flavor": "The clemency is a silver bell. Ring it, and the Hunt will pass you by — but the Hollow will ride behind you until dawn.",
-      "curse_cost": ""
+      "flavor": "The clemency is a silver bell. Ring it, and the Hunt will pass you by — but the Hollow will ride behind you until dawn. The Hollow is the Horn's echo.",
+      "curse_cost": "Using the bell ticks **Obligation to the Gate +3**. The Hollow will follow you for the next scene."
     }
   ],
   "quick_use_notes": {
@@ -618,11 +686,11 @@
   "lore_echoes": [
     {
       "title": "The Ninth Step",
-      "description": "In Aelinnel, the ninth step is not a step. The ninth step is a door. The door is always open. You just have to remember how to knock — and the knock must be in prime numbers."
+      "description": "In Aelinnel, the ninth step is not a step. The ninth step is a door. The door is always open. You just have to remember how to knock — and the knock must be in prime numbers. The Hollow counts primes."
     },
     {
       "title": "The Unsaid Clause",
-      "description": "The fae love what is not said. They will fill the silence with their own words — and their words have weight. A contract with a fae court always has an unsaid clause. The clause is always the one you left out because you thought it was obvious. It was not obvious to the fae. It was a gift."
+      "description": "The fae love what is not said. They will fill the silence with their own words — and their words have weight. A contract with a fae court always has an unsaid clause. The clause is always the one you left out because you thought it was obvious. It was not obvious to the fae. It was a gift. The Hollow is the clause's enforcer."
     },
     {
       "title": "The Hollow's Reflection",
@@ -630,7 +698,7 @@
     },
     {
       "title": "The Traveler",
-      "description": "A gray pilgrim sometimes appears on the Stag Road at dusk. He asks for a story about a door you have not yet opened. If you tell him one, the next door you open will lead to a place you have never been. If you refuse, he will give you a key that unlocks nothing — and that key is the most dangerous gift you can receive."
+      "description": "A gray pilgrim sometimes appears on the Stag Road at dusk. He asks for a story about a door you have not yet opened. If you tell him one, the next door you open will lead to a place you have never been. If you refuse, he will give you a key that unlocks nothing — and that key is the most dangerous gift you can receive. The Hollow gave him the key."
     },
     {
       "title": "The Ninth Word",
@@ -657,9 +725,9 @@
   "patronage_and_power": {
     "description": "Among the Aelinnel, power flows through courtesy, oath, and the hidden geometry of the land. A Stone Prince's authority rests on indexed fae treaties; a Green Knight's on the trials he has witnessed. There is no single crown, only the shared understanding that a broken promise cuts deeper than a sword — and that a promise kept is a door that opens both ways.",
     "gm_advice": {
-      "two_voice_courtesy": "Use **Two-Voice Courtesy** to reward players who pay attention to the unspoken. The unspoken is where the fae live.",
-      "copper_over_iron": "Enforce **Copper over Iron** — carrying iron is not forbidden, but it is a statement. The statement is always heard. The hearing is always remembered.",
-      "unsaid_clause": "Let **The Unsaid Clause** be a source of future complications; the fae love what is not said. They will fill the silence with their own words — and their words have weight.",
+      "two_voice_courtesy": "Use **Two-Voice Courtesy** to reward players who pay attention to the unspoken. The unspoken is where the fae live. The Hollow lives in the gaps between words.",
+      "copper_over_iron": "Enforce **Copper over Iron** — carrying iron is not forbidden, but it is a statement. The statement is always heard. The hearing is always remembered. The Hollow knows the sound of iron.",
+      "unsaid_clause": "Let **The Unsaid Clause** be a source of future complications; the fae love what is not said. They will fill the silence with their own words — and their words have weight. The Hollow is the weight.",
       "obligation_tracking": "Track **Obligation to the Green Gate** as a persistent timer. Each crossing without proper payment ticks it toward a visit from the Huntsman. The Huntsman is always polite. The Huntsman is always hungry."
     }
   },

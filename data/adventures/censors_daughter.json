@@ -524,6 +524,31 @@
     "obligation_clear": "The party may clear 2 Obligation to The Sentinel if they successfully complete the exorcism."
   },
   "notes": "This adventure is adapted from Saikou Ira's case files. The exorcism mini-game is the mechanical centerpiece—players must conduct research, gather witnesses, and perform the Three Calls while managing the Possession Depth timer. The adventure supports multiple resolution paths: expose the Censor, perform a secret exorcism, or break the girl out. Each path has its own costs and consequences. The themes of debt, obligation, and witness are central—the party must decide what they are willing to pay to save a child. Designed for a single session of 4–6 hours, but can be extended into a mini-campaign by expanding the investigation phase.",
+
+  "_gmhints": {
+    "pacing": {
+      "act1": "This is the investigation phase. The party has three days (or fewer, if they burn daylight). Emphasize the ticking clock—the Inquisition's Schedule is the primary pressure. Fabius is a broken man, not a villain; his guilt is palpable. The Weeping Shade is a puzzle, not a combat—it requires empathy and truth-telling. The demon's nature (debt-as-entity) should be revealed gradually through ledgers and whispers, not exposited upfront. The Witness is a presence, not a character—its revelations feel earned, not handed out. Do not name Harperar until the party discovers the true name; refer to it as 'the debt,' 'the collector,' or 'the thing in the mirror.' The mirrors are already cracking—emphasize their fragility as a visual cue for the demon's growing power.",
+      "act2": "This is the exorcism. The Possession Depth timer is the primary mechanical pressure; every failed call or averted gaze brings the demon closer to breakthrough. The Three Calls require the party to have done their homework—if they lack traits, the ritual is harder. The mirrors are not props; they are the battlefield. The demon will try to break eye contact, crack mirrors, and force witnesses to look away. The cost of the exorcism (the exorcist loses a memory) should be foreshadowed subtly in Act I—maybe a whisper in the archive, or a line from Fabius about 'the price of knowing.' The Inquisition's Schedule may still tick during the ritual if the party chose to perform it in the cell under watch. If they moved Livia to a safer location, reward that choice with a slower timer.",
+      "act3": "The aftermath is about consequence. The girl is saved, but silence is her reward—she never speaks again. Fabius confesses or is arrested. The Chain-Lanterns offer a path forward (expose the Inquisition) or a way out (disappear). The demon's shards are scattered; if the party failed to seal them properly, this is a lingering threat. The price of witness (a memory lost, a debt unpaid) is the thematic capstone—let it land emotionally, not mechanically. The party should feel they paid a real cost for a real victory."
+    },
+    "npcSecrets": {
+      "livia-valerius": "She has known the demon's name for three years but cannot speak it. This is her tragedy, not a plot convenience. If the party tries to pressure her for information, the demon speaks instead. Her moments of clarity are rare and precious—treat them as gifts, not guarantees. She is not the demon; she is its cage.",
+      "fabius-valerius": "His secret (the loan, the hidden interest rate) is the heart of the mystery. He will not confess it easily—shame and denial have calcified over three years. He needs to be confronted with evidence, not persuasion. When he breaks, it should feel like a dam bursting, not a casual admission. He is not evil; he is a man who made one terrible mistake and has been paying for it ever since.",
+      "saikou-ira": "His cameo is optional—he is the Invoker of The Witness, and his presence implies the party has earned the attention of something older than the Inquisition. His secret (he has forgotten his daughter's face) is a mirror to Fabius's story: both men have paid a price for their debts. If he appears, he should feel like a figure from a fable, not an ordinary NPC.",
+      "flame-warden-ervin": "He is a zealot, but he is not a monster. His secret (he knows the Ninth Citation and has used it twice) suggests a man who has seen too much and sleeps poorly. He can be bargained with if the party has leverage—but he will never betray his faith directly. He is a wall, not a door.",
+      "chain-lantern-silva": "She is an ally with an agenda. Her secret (she was conscripted at seven, she does not remember her name before the Temple) makes her sympathetic but also dangerous—she will sacrifice the party if it serves her goal of exposing the Inquisition. She is not trustworthy, but she is reliable in her own way."
+    },
+    "forbiddenEarlyRevelations": [
+      "Harperar's true name (the interest rate) — this is the climax of the investigation, not a first-scene reveal",
+      "That the demon is literally the debt, given will — hint at it through Fabius's guilt and the ledgers, but do not state it plainly until the party connects the dots",
+      "The Ninth Citation (the Inquisition's forbidden passage) — this is a late Act II or Act III revelation, used as leverage or as a reveal of the Inquisition's corruption",
+      "The Weeping Shade's secret (the maid witnessed a murder) — this is a puzzle to solve, not a handout; the party must earn it through investigation or empathy",
+      "The cost of the exorcism (the exorcist loses a memory) — foreshadow it, but do not state it mechanically until the ritual is complete; the party should feel the weight of the price after they have already committed",
+      "That Saikou Ira is the Invoker of The Witness — if he appears, he is simply 'a scholar of the old ways' or 'a man who knows the value of a promise'; his true role is a discovery, not an introduction",
+      "The Chain-Lanterns' true agenda (exposing the Inquisition) — they are 'allies who help save the girl' in Act I; their larger goal emerges in Act III"
+    ]
+  },
+
   "currentAct": 0,
   "currentScene": 0,
   "startedAt": null,

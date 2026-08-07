@@ -465,6 +465,41 @@
     }
   ],
   "notes": "This is a sword & sorcery adventure with a wink. The heroes are not the sharpest swords in the armory—they solve problems with axes, miss clues until they trip over them, and tend to believe the first explanation offered. Play them with affection. A heavy brow and a trusting nature are their own kind of courage. The Serpent's Favor is a secret track the GM keeps for each character—they think they're becoming legendary heroes. They are, but also they're becoming something else.",
+
+  "_gmhints": {
+    "tone": "THIS ADVENTURE IS PULPY, CHEESY, AND DOES NOT TAKE ITSELF SERIOUSLY. Lean into the sword & sorcery tropes: heroes who solve problems with axes, miss clues until they trip over them, and believe the first explanation offered. The narration should be dramatic, over-the-top, and slightly winking at the audience. Thaliss monologues—let him! Then let the heroes interrupt him. Isoka is beautiful and terrible and also a bit bemused by the whole cult thing. Yara thinks becoming a snake-person is 'cool'—this is meant to be funny and a little tragic. The heroes are not the sharpest swords in the armory; play that with affection. By Crom!",
+
+    "pacing": {
+      "act1": "Session 1 is all about setup and investigation—but the heroes are likely to bumble through it. That's fine. Let them miss clues. Let them accept drinks from strangers. The City Corruption timer is a subtle pressure, not a ticking bomb. Orun is sincere but slightly drunk; his description of events may be exaggerated. The Temple of Open Sky visions are cryptic and weird—let the heroes misunderstand them. The Serpent's Favor is a secret track; don't announce it, but describe Isoka's influence as 'a strange luck' or 'a weird intuition' when it procs. The tone should be: 'You're in way over your heads, but you're too dumb to realize it yet.'",
+      "act2": "Session 2 is the palace infiltration. The guards are cult-infected—they move wrong, their eyes are black. This should be unsettling but also a little cool. The Serpent Spawn is a nightmare, but the heroes will probably set it on fire. Yara is the emotional core: she's not a victim, she's a volunteer who hasn't thought this through. The party needs to convince her with small words. Let this scene be equal parts dramatic and absurd. The Cult Ascendancy timer is ticking; the ritual is getting closer. The heroes should feel the pressure, but also feel like they're making progress—even if they're making it badly.",
+      "act3": "Session 3 is the finale. The Chamber of Transformation is epic, pulpy, and slightly ridiculous. Thaliss monologues. Let him. Then let the heroes interrupt him. The Isoka projection is the climax—she offers power, transformation, a bargain. The Corruption Score is visible to players; they see themselves changing. The Final Choice should feel weighty but not joyless. The resolution can be triumphant, pyrrhic, or weird—the bards will sing about it either way. The tone throughout should be: 'This is epic and also slightly stupid and that's exactly how it should be.'"
+    },
+    "npcSecrets": {
+      "orun-gray-ash": "He is sincere but slightly drunk. His description of events may be exaggerated. Let players roll Wits+Lore to catch inconsistencies. This is played for comedy, not tragedy.",
+      "yara": "She thinks becoming a snake-person is 'cool.' She hasn't thought it through. This is tragicomic—she's a kid making a terrible decision. The party's job is to convince her with small words. Don't make her evil; make her naïve and enthusiastic about a terrible idea.",
+      "thaliss": "He is a terrible orator. He monologues at length. Let the heroes interrupt him—it's more fun that way. He genuinely believes he's the chosen one. He is not. His cultists are just too afraid to tell him.",
+      "isoka": "She didn't start the cult. She's curious to see what happens. She finds her followers exhausting. The real question isn't whether the heroes will change—it's whether they'll notice, and whether they'll care. Play her as amused and slightly distant, not malevolent.",
+      "captain-dravik": "He broods, then charges. He was drummed out of the Black Banner for refusing to burn a village. The cult reminds him of his failure. He's useful in a fight and otherwise a mess.",
+      "korvash": "Swings axe, says something about his ancestors, swings again. He can't actually remember his ancestors' names. He just says 'ancestors' and hopes nobody asks.",
+      "szik": "Rolls his eyes, picks the lock, disappears when fighting starts. He's far too competent to be hanging out with these people. He's staying because they're the only ones who don't judge his gambling debts."
+    },
+    "forbiddenEarlyRevelations": [
+      "That Yara is a willing cultist, not a victim — this is the Act II reveal; let the party discover it when they find her",
+      "That the Serpent's Favor is a corruption track — players should notice physical changes and strange luck before they understand the mechanic",
+      "That Isoka is ambivalent about the cult — she appears as a terrifying cosmic entity first; her bemused ambivalence is a later discovery",
+      "That Thaliss is a terrible orator — this is a running joke; let it emerge naturally through his monologues",
+      "That the Final Choice has multiple outcomes — the module describes five options; let the players discover them organically, not as a menu",
+      "That Korvash doesn't remember his ancestors' names — this is a running gag; let it emerge when a player asks a follow-up question"
+    ],
+    "pulpyTactics": {
+      "heroic_stupidity": "The heroes are allowed—even encouraged—to make bad decisions that seem like good ideas at the time. Let them charge in, set things on fire, and misunderstand prophecies. The adventure should reward clever thinking, but also permit glorious failure.",
+      "monologue_interruption": "When Thaliss monologues, narrate it as dramatic and overblown. Then allow players to interrupt him with a roll (Wits+Subterfuge, or just a well-timed punch). The interrupt is always more fun than the speech.",
+      "serpents_favor": "This is a secret track. Describe it as 'a strange coolness in the air around you,' 'a snake in the corner of your eye that vanishes,' or 'a voice that sounds like yours but isn't.' Don't explain it; let players wonder.",
+      "corruption_visuals": "The Corruption Score is visible to players. Describe physical changes as they happen: patches of scale, vertical pupils, a forked tongue when they speak. Make it weird and slightly cool. Players should be torn between 'this is bad' and 'this is awesome.'",
+      "the_choice": "The Final Choice is a moment of pulp drama. Let players debate it in character. If they can't decide, let the timer (Cult Ascendancy) make the choice for them—the ritual completes, and they must adapt."
+    }
+  },
+
   "currentAct": 0,
   "currentScene": 0,
   "startedAt": null,

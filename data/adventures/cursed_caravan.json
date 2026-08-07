@@ -264,6 +264,27 @@
       }
     ],
     "notes": "A folk horror survival module with multiple resolutions: contain the curse, strike a bargain, or destroy the entity. The tone is bleak and desperate.",
+
+    "_gmhints": {
+      "pacing": {
+        "act1": "The curse manifests through rot, decay, and omens—show, don't explain. Aldric is desperate but evasive; his secret (the stranger who gave him the chest) is a clue, not a confession. Mira Blackwood is a source of folk wisdom, not a solution—she offers protection, not answers. The Chest Investigation is Act II's centerpiece; do not reveal its contents or the entity's nature in Act I. Emphasize the ticking clocks: Caravan Supplies dwindles visibly, Curse Escalation advances with every failed mitigation. The Pale Causeway should feel like a living, watching place—the road itself is a character.",
+        "act2": "This is the revelation phase. The Chest Investigation reveals the bound entity. Mira's protective rituals offer a temporary buffer but consume resources. The Hungering Dark's Strength timer advances when the party's fear gives it power—describe the entity's influence as emotional and atmospheric, not just mechanical. Mistwraiths appear when the party hesitates or falters—they are secrets made flesh, not random monsters. The party should feel the weight of the curse pressing in; the ritual is their only defense, not their solution.",
+        "act3": "The Crossroads is a place of choice. The three resolutions (containment, bargain, destruction) each have distinct tones: containment is bleak but safe; bargain is desperate and costly; destruction is heroic but risky. The Hungering Dark's final manifestation should feel earned—if the party has researched and prepared, they have leverage; if they rushed, they face the full brunt. The Cursed Child encounter is a mirror to the party's own moral compromises—use it to test their resolve, not as a simple combat."
+      },
+      "npcSecrets": {
+        "aldric-thorne": "His secret is a hook, not a reveal. He will not volunteer the stranger's identity unless pressed or given reason to trust. If the party saves the caravan, he may confess in Act III as a moment of redemption.",
+        "mira-blackwood": "Her personal stake is a late Act II or Act III revelation. She is a guide in Act I, a ritualist in Act II, and a potential sacrifice or ally in Act III depending on the party's choices. Do not reveal her secret until she has reason to share it.",
+        "margravine-xara": "She is a background threat. Her secret (using the curse as a tool) is a late Act III revelation if the party investigates regional politics. She is not a primary antagonist unless the party makes her one."
+      },
+      "forbiddenEarlyRevelations": [
+        "The chest contains a bound entity (the Hungering Dark) — its contents are an Act II discovery",
+        "The exact nature of the containment ritual — Mira offers folk protection, but the full ritual requires investigation",
+        "The Hungering Dark's true nature (ancient entity feeding on suffering) — describe its effects, not its origin",
+        "The Bargain resolution option — present it as a moral discovery, not a listed choice upfront",
+        "Margravine Xara's manipulation of the curse"
+      ]
+    },
+
     "currentAct": 0,
     "currentScene": 0,
     "startedAt": null,
@@ -506,6 +527,27 @@
       }
     ],
     "notes": "Urban intrigue module with strong social mechanics. Can be run as three separate arcs or a single campaign. Emphasis on Position, DV, and leverage via Diamonds.",
+
+    "_gmhints": {
+      "pacing": {
+        "act1": "This is the investigation phase. The poison is a symptom, not the cause—guild tensions are the real battlefield. Sel Virelle is a charming antagonist; she should seem helpful until the party reads her tells or investigates her. The Crimson Masque is a shadow—their name may be whispered, but their true goal (soul-swapping) is an Act III discovery. Emphasize the City Unrest timer: the streets are a powder keg. The Gemcutters and Alchemists are both guilty and both victims—avoid a simple 'good vs evil' framing.",
+        "act2": "Ravenswood Manor is a social pressure cooker. The Etiquette Breach timer is the primary threat—violating taboos invites consequences, but breaking them strategically may open doors. The Conservatory of Masks is a chance to build alliances and gather intelligence. The Midnight Duel timer represents the rival's plot coming to a head—it's not a literal duel unless the party makes it one. Sel's Glamour Net may still be active; if she charmed the party in Act I, this is where she cashes in that hold. The Crimson Masque's ritual mechanics (Bell Cadence, Mask Index, Applause Escrow) should remain abstract until Act III.",
+        "act3": "This is the climax. The Act Countdown timer creates urgency—the ritual is underway, and the party must dismantle its pillars. Breaking the pillars requires understanding the ritual's structure (gained through investigation in Acts I-II). The three pillars are mechanical challenges: Bell Cadence (disrupt timing), Mask Index (expose the performers), Applause Escrow (turn the audience). The ending should reflect the party's choices: a clean success exposes the Masque Director; a partial success swaps some souls (a haunting consequence); a miss means the city's elite are replaced by the Masque's agents."
+      },
+      "npcSecrets": {
+        "guildmistress-kavra": "Her secret (using the poison to discredit the Alchemists) is a mid-Act I discovery if the party investigates her. It makes her a potential ally—or a target—depending on the party's morals. She is not a villain; she is a pragmatist.",
+        "master-orun": "His secret (producing the poison but blaming the Gemcutters) is a parallel to Kavra's. The truth is that both guilds are being manipulated by the Crimson Masque. This revelation should land in Act II or early Act III.",
+        "sel-virelle": "Her secret (orchestrating chaos for the Crimson Masque) is the Act II/III linchpin. If the party reads her tells in Act I, they may suspect her; if they fail, her charm offensive continues. She should be a mirror to the party—talented, ambitious, and willing to burn the city for a stage."
+      },
+      "forbiddenEarlyRevelations": [
+        "The Crimson Masque's soul-swapping ritual — Act III only",
+        "That Sel Virelle is working for the Crimson Masque — Act II/III reveal",
+        "The specific mechanics of the ritual pillars (Bell Cadence, Mask Index, Applause Escrow) — Act III only",
+        "The poison's true source is the Crimson Masque manipulating both guilds — Act II/III discovery",
+        "Ravenswood Manor's hidden passages or secrets — should be discovered through exploration, not exposited"
+      ]
+    },
+
     "currentAct": 0,
     "currentScene": 0,
     "startedAt": null,
@@ -712,6 +754,27 @@
       }
     ],
     "notes": "A moral and legal drama set in dwarven culture. Themes of honor, tradition, and supernatural balance. Multiple resolution paths: restoration, legal victory, or supernatural compromise.",
+
+    "_gmhints": {
+      "pacing": {
+        "act1": "This is a legal and cultural introduction. The Debt Resolution timer represents the legal pressure—House Khaz-Vurim's financial desperation is palpable, but they will not break tradition. Thrain is a diplomat; he will not reveal the contract's loopholes unless pressed. Thora's secret (the artifact was never properly transferred) is a major Act III reveal—hint at it through her evasiveness, not her confession. Dwarven Honor is a social currency; insults or breaches of etiquette can close doors. The Forgefather's Voice is described as a 'sacred artifact'—its true nature (a binding instrument of the Deep Stirrings) is an Act II/III discovery.",
+        "act2": "The Spine Underway is ancient, dangerous, and alive. Ancient Ward Stability represents the crypt's defenses—the party can bypass them with care or brute force. Stone-Song Resonance is the artifact's call—it grows stronger as they approach, affecting their dreams and decisions. The Deep Stirrings are not a single faction but a presence—the Stone-Singer is their voice. The ancient mechanisms are puzzles, not combat encounters; reward creativity and dwarven lore.",
+        "act3": "The Forgefather's Crypt is the climax. The Stone-Singer is not a monster to be slain—it is a guardian to be reasoned with or appeased. The three resolutions: Restoration (perform the ancient ritual, satisfying all parties), Legal Victory (use the contract's loophole to claim the artifact without supernatural cost), Supernatural Compromise (bargain with the Stone-Singer). Each has different costs and consequences. The Debt Resolution timer ticks as the legal pressure mounts; if it fills before the party acts, House Khaz-Vurim may take drastic measures."
+      },
+      "npcSecrets": {
+        "thora-stonebeard": "Her secret (the artifact was never properly transferred) is the legal loophole. She will not reveal it unless the party earns her trust or discovers it through research. It is the key to the Legal Victory resolution.",
+        "thrain-ironhold": "His secret (prepared to enforce house rights) means he is not an ally—he is a neutral arbiter. He will enforce the contract as written, not as the party wishes. He is a source of information, not a source of sympathy.",
+        "durin-emberheart": "His secret (the true nature of the artifact and its connection to the Deep Stirrings) is the key to the Restoration resolution. He knows the ancient rituals and the artifact's purpose. He is a reluctant ally—he wants balance, not power."
+      },
+      "forbiddenEarlyRevelations": [
+        "The Forgefather's Voice is a binding instrument of the Deep Stirrings, not merely a sacred artifact — Act II/III discovery",
+        "The artifact was never properly transferred (Thora's secret) — Act III legal reveal",
+        "The Stone-Singer is a guardian, not a monster — its nature is discovered through interaction, not combat",
+        "The specific ritual required for Restoration — Act III discovery through Durin or ancient texts",
+        "The contract's loophole (the legal resolution) — Act I/II investigation find"
+      ]
+    },
+
     "currentAct": 0,
     "currentScene": 0,
     "startedAt": null,
@@ -911,6 +974,27 @@
       }
     ],
     "notes": "Epic-tier infernal politics module with cosmic stakes. Focus on Obligation and hard choices. The City of Cinder generator provides faction and location variety.",
+
+    "_gmhints": {
+      "pacing": {
+        "act1": "The journey to the City of Cinder is a descent into a world where concepts are currency. Mor'iraath's Expansion is the background threat—his agents are scouts, not armies. Livaea's whispers are temptations; failing the Whisper Test grants Obligation, which will matter in Act III. Maelstraeus is a distant patron—his offer is not a trick, but it has strings. The City of Cinder's nature (calcified remnants of broken dreams) should feel surreal and ominous, not cartoonishly evil. Cinder Market Stability is a fragile peace; the party's actions in Act II affect it.",
+        "act2": "The Infernal Bazaar is a place of trade, not combat. Factions have needs and prices—the party must navigate them. The Grand Exchange is the key encounter; success gives leverage, failure destabilizes. Livaea's influence should be felt, not seen—she is the whisper behind the deal, the temptation in the fine print. Foreshadow the final revelation: Livaea's manipulation is not a betrayal—it's the natural conclusion of her nature. The Market Stabilizer is a resource; if the party secures it, they have an edge in Act III.",
+        "act3": "The Fractured Court is the crucible. The party must choose between Direct Confrontation (fight Mor'iraath's Avatar) or Infernal Subterfuge (use Maelstraeus's network to outmaneuver him). Livaea's manipulation is revealed—she played both sides, and the party's Obligation to her (if any) is leverage. The three outcomes: clean (contain the threat, minimal cost), partial (contain the threat but incur major Obligation), miss (the accord shatters, Mor'iraath's expansion continues). The choice should feel earned based on the party's actions in Acts I-II."
+      },
+      "npcSecrets": {
+        "maelstraeus": "His hidden agenda is not evil—it's self-preservation. He wants to stop Mor'iraath, but he also wants to emerge stronger. His secret is a late Act III revelation if the party investigates him. He is not a villain; he is a pragmatist.",
+        "moriraath": "His secret (he is the principle of entropic consumption) means he cannot be destroyed, only contained or redirected. This is the key to the Infernal Subterfuge resolution. Reveal this through lore, not combat.",
+        "livaea": "Her secret (the unseen hand behind many deals) is the Act III twist. She has been manipulating all factions. The party's Obligation to her is her leverage. She is not a boss fight—she is a moral test."
+      },
+      "forbiddenEarlyRevelations": [
+        "Maelstraeus's hidden agenda — Act III revelation if investigated",
+        "Mor'iraath is a principle, not a being — Act II/III lore discovery",
+        "Livaea is manipulating all parties — the Act III twist",
+        "The Infernal Subterfuge resolution path — present it as an option discovered through investigation, not a menu choice upfront",
+        "The specific cost of Obligation to Livaea in Act III — foreshadow, but do not spell out"
+      ]
+    },
+
     "currentAct": 0,
     "currentScene": 0,
     "startedAt": null,
@@ -1081,6 +1165,26 @@
       }
     ],
     "notes": "A short, low-fantasy horror module about cultural consequences. Combat is minimal; the focus is on investigation, ritual, and moral choice.",
+
+    "_gmhints": {
+      "pacing": {
+        "act1": "The village is silent—this is the first mystery. The party must discover the Ninth Law and the bell's significance. Jordan is the Keeper; he is evasive, not hostile. The Bell's Countdown is the primary tension—it ticks relentlessly, and the party must manage their time. The Green Host is a concept, not a creature; its arrival is inevitable if the taboo is not addressed. The handprints in the snow are an omen—the land is already responding. Do not reveal Jordan's secret or Elyra's punishment yet.",
+        "act2": "The land's memory becomes active. Cold spots, visual distortions, and the Unmarked Grave are manifestations of the broken taboo. The party must investigate the grave to learn the ninth name and the identity of the one who spoke it. Elyra is a source of cultural wisdom, but her silence is a punishment—she will not speak directly. The Green Host draws nearer; describe its approach as atmospheric (distant thunder, wilting crops, a chill in the air) rather than a physical threat. The Bell's Countdown accelerates; each investigation consumes precious time.",
+        "act3": "Dawn approaches. The Ritual of Appeasement requires the party to speak all nine names, perform the Silent Vigil, and take the Ninth Path. This is a ritual challenge—combat is minimal or absent. The three outcomes: clean (the land is appeased), partial (the Green Host claims only the guilty), miss (the village is lost). The tone is bleak and final; there is no 'winning' in a traditional sense—only making the least terrible choice."
+      },
+      "npcSecrets": {
+        "jordan": "His secret (his son spoke the ninth name) is the heart of the mystery. He will not confess unless the party uncovers the truth through investigation (the grave, the bell, or village records). His guilt is palpable—use his body language, not his confession.",
+        "elyra": "Her secret (her silence is punishment) is a tragic parallel to Jordan's guilt. She is a source of ritual knowledge but cannot speak it directly. The party must interpret her gestures, her silence, and the village's traditions to understand the Ritual of Appeasement."
+      },
+      "forbiddenEarlyRevelations": [
+        "Jordan's son spoke the ninth name — Act II/III discovery",
+        "The exact steps of the Ritual of Appeasement — Act III discovery through investigation and Elyra's guidance",
+        "The Green Host is not a physical entity — this is a conceptual horror; reveal its nature through lore and omens, not exposition",
+        "The ninth name that was spoken — the climax of the investigation",
+        "The ninth path is a physical location in the village — Act III discovery"
+      ]
+    },
+
     "currentAct": 0,
     "currentScene": 0,
     "startedAt": null,

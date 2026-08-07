@@ -24,6 +24,33 @@
       "west": "The Western Reach — Rumors of islands that do not appear on charts, and of a fleet that sailed west and never returned."
     }
   },
+  "regional_diagnostic": {
+    "current_hook": "Every mirror is a blade, every beacon a promise. The sea obeys when we move the lights — but the spiders weave in the mirror-towers.",
+    "core_conflict": "Players are caught between the **Admiralty's** beacon monopoly, the **Oligarchs'** competing interests, and the **Lethai-ar's** patient infiltration. The Ninth is the light that is never lit. The Hollow is the pressure beneath the keel.",
+    "unique_feature": "**Geometric Navigation:** Beacons move with the tides, channels are redrawn by writ, and mirrors show not what is, but what the Mirror-Keeper wishes to be seen.",
+    "ninth_taboo": "In any Kahfagian harbor, the ninth lantern lit in a tower is never the last. The wise stop at eight and leave the ninth unlit. The ninth light belongs to the Spider's children — it is the signal that the Web is watching.",
+    "price": "Players sacrifice **reputation, loyalty, or freedom** to gain power. Every reward requires a gamble: a favor owed to an oligarch, a secret shared with the Admiralty, a thread of silk tied around a promise, or a debt to the Spider.",
+    "faction_triad": [
+      {
+        "faction": "The Admiralty of Lantern-Law",
+        "goal": "Protect the beacon monopoly and keep the sea lanes open",
+        "method": "Naval power, signal codes, and legal writs",
+        "why_players_care": "They control the beacons and the safe passages"
+      },
+      {
+        "faction": "The Oligarchic Houses (Shadow Council)",
+        "goal": "Maximize profit and influence through trade monopolies",
+        "method": "Private navies, spies, and the power of the purse",
+        "why_players_care": "They hold the cargo and the contracts"
+      },
+      {
+        "faction": "The Lethai-ar (The Spider's Children)",
+        "goal": "Guide the thalassocracy toward the Web's design",
+        "method": "Infiltration, patience, and the slow weaving of loyalty",
+        "why_players_care": "They are the hidden hand behind the mirror"
+      }
+    ]
+  },
   "quotes": [
     {
       "speaker": "Admiral of Lantern-Law (Elite)",
@@ -32,51 +59,55 @@
     {
       "speaker": "Dockside Factor (Commoner)",
       "text": "The pilots see farther than kings. A gesture in lantern-code can open ports, or close them. Keep your lamps trimmed and your signals clear. And if a gray-robed stranger offers to adjust your mirror for free — say no. The Lethai-ar have long memories, and longer webs."
+    },
+    {
+      "speaker": "Mirror-Keeper (Elite)",
+      "text": "The light is a lie, but it is a lie we all agree upon. That is what makes it true. The channel is where we say it is. The cargo is worth what we stamp it. The oligarch is powerful because we reflect his power back at him. But the mirror has a memory of its own — and it remembers every face that has ever stood before it. Some faces do not blink."
     }
   ],
   "regional_mood": "Power is visible here — literally. Every night, a thousand lamps burn along the channels, each a statement of control. To dim a light is to cede ground. To move a beacon is to declare war. Commodores sit in their mirror-towers, watching reflections, while tide-timers tick down to the next auction, the next inspection, the next quiet burial of a reputation. But beneath the visible power, another war is fought in whispers. The Lethai-ar agents of Inaea have spent a generation infiltrating the oligarchic families. A young heir who suddenly displays uncanny negotiating skill may not be talented — they may be **woven**. A Mirror-Keeper whose beacons never fail may be receiving guidance from a source that does not appear on any chart. The Spider's web is patient. It does not break the thalassocracy; it **guides** it.",
   "oligarchic_houses": {
-    "description": "The true rulers of Kahfagia are not the Admiralty alone, but the **Shadow Council** of seven oligarchic families. Each controls a monopoly (spice, salt, silk, timber, pitch, shipbuilding, or intelligence). Each maintains its own private navy and network of spies. Each vies for the empty seat left by the family that the Lethai-ar have already **woven** into silence.",
+    "description": "The true rulers of Kahfagia are not the Admiralty alone, but the **Shadow Council** of seven oligarchic families. Each controls a monopoly (spice, salt, silk, timber, pitch, shipbuilding, or intelligence). Each maintains its own private navy and network of spies. Each vies for the empty seat left by the family that the Lethai-ar have already **woven** into silence. The Admiralty operates independently of the Council, answering only to the Lantern-Law — but even Admirals have their price, and the Spider knows every account.",
     "houses": [
       {
         "name": "House al-Kassam",
         "monopoly": "Spice",
-        "description": "Oldest, proudest, most vulnerable. The Lethai-ar have already replaced the family steward."
+        "description": "Oldest, proudest, most vulnerable. The Lethai-ar have already replaced the family steward. The current heir does not know that the advice they trust comes from a gray-robed woman who drinks tea in a room with no windows."
       },
       {
         "name": "House Carrasco",
         "monopoly": "Salt",
-        "description": "Ruthless pragmatists; they suspect infiltration but cannot prove it."
+        "description": "Ruthless pragmatists; they suspect infiltration but cannot prove it. Their patriarch has begun sleeping with a silver knife under his pillow — but the knife was a gift from a Lethai-ar agent, and it has a thread of silk woven into the handle."
       },
       {
         "name": "House Mirat",
         "monopoly": "Silk",
-        "description": "Secret allies of the Lethai-ar — they trade webs for influence."
+        "description": "Secret allies of the Lethai-ar — they trade webs for influence. The Matriarch of House Mirat was the first oligarch to accept a Lethai-ar advisor. She has not been seen in public for three years. Her advisors speak for her. They speak with her voice."
       },
       {
         "name": "House del Puerto",
         "monopoly": "Shipbuilding",
-        "description": "Neutral; they build for anyone who pays."
+        "description": "Neutral; they build for anyone who pays. Their dry-docks are a place of strict neutrality — but the Lethai-ar have placed a shipwright in every yard, and every ship they build has a hidden compartment that only a Lethai-ar agent can open."
       },
       {
         "name": "House Henares",
         "monopoly": "Timber",
-        "description": "Deeply weighed down by Admiralty claims; the Lethai-ar are slowly gathering leverage."
+        "description": "Deeply weighed down by Admiralty claims; the Lethai-ar are slowly gathering leverage. They are also the house most likely to lose a forest to a 'mysterious fire' — a fire that is always blamed on the Vilikari, but is always set by a Lethai-ar agent with a tinderbox and a cold smile."
       },
       {
         "name": "House Ira",
         "monopoly": "\"Miscellaneous\"",
-        "description": "Neutral; Sells arcane goods, artifacts, weapons, and contraband to the highest bidder."
+        "description": "Neutral; Sells arcane goods, artifacts, weapons, and contraband to the highest bidder. The current head is **Saikou Ira's mother** — the trenchcoat warlock's most frustrating patron. Their relationship is frosty; she disapproves of his 'meddling in affairs of the soul' while he disapproves of her 'selling desperation by the ounce.' They have not spoken in three years, but she still sends him a gift on his birthday — a single silver coin, always the same coin, always warm to the touch. The Lethai-ar have not infiltrated House Ira; they have tried, but Saikou's mother is too sharp, too paranoid, and too well-connected to be woven. The Spider's children have marked her as a future obstacle — and she knows it."
       },
       {
         "name": "Naval Intelligence",
         "monopoly": "Intelligence",
-        "description": "The Admiralty's own spy network — and already compromised."
+        "description": "The Admiralty's own spy network — and already compromised. The Lethai-ar have a mole in the Admiralty's archive, a quiet clerk named Sefu who adds clauses to treaties that favor House Mirat. He has not spoken above a whisper in seven years. He does not need to. The Web speaks for him."
       },
       {
         "name": "The Empty Chair",
         "monopoly": "Formerly House Morat",
-        "description": "The other houses whisper that the Morats were not destroyed — they were **rewoven**."
+        "description": "The other houses whisper that the Morats were not destroyed — they were **rewoven**. House Morat's monopoly was **memory** — they held the records of every contract, every favor, every betrayal. When the Lethai-ar took them, they did not kill them. They simply made them forget they existed. Now the Morat line serves the Spider, their memories replaced with threads of silk and the faint smell of spiced tea."
       }
     ]
   },
@@ -88,23 +119,24 @@
       "A ship that should have foundered instead limps to port, its crew speaking of a gray-robed passenger who vanished before docking.",
       "Silk threads appear on the rigging of a warship; the threads are too strong to break with bare hands.",
       "A merchant's ledger contains entries in disappearing ink; heat reveals names of Lethai-ar contacts.",
-      "The Veiled Harpist's music is heard from a room that has no windows."
+      "The Veiled Harpist's music is heard from a room that has no windows.",
+      "A patch of shadow in a room moves against the light, as if it has a mind of its own."
     ],
     "named_agents": [
       {
         "name": "The Veiled Harpist",
         "role": "Leader",
-        "description": "No one knows her face. She plays only in mirror-lit rooms. Her music leaves threads of silk in the listeners' hair. She has woven three oligarchs into silence."
+        "description": "No one knows her face. She plays only in mirror-lit rooms. Her music leaves threads of silk in the listeners' hair. She has woven three oligarchs into silence. She is the Spider's voice."
       },
       {
         "name": "Sefu the Clerk",
         "role": "Admiralty Archivist",
-        "description": "A quiet man in the Admiralty's archive. He adds clauses to treaties that favor House Mirat. He has not spoken above a whisper in seven years."
+        "description": "A quiet man in the Admiralty's archive. He adds clauses to treaties that favor House Mirat. He has not spoken above a whisper in seven years. He does not need to — his pen speaks for him."
       },
       {
         "name": "Liana of the Gray Shawl",
         "role": "Pilot's Apprentice",
-        "description": "A pilot's apprentice with too-still eyes. She knows every reef and every patrol route. She has never been lost — only redirected."
+        "description": "A pilot's apprentice with too-still eyes. She knows every reef and every patrol route. She has never been lost — only redirected. Her shawl was a gift from a woman she met in a mirror."
       }
     ],
     "mechanical_hook": "Once per session, a PC may roll Wits + Lore (DV 4) to notice a silken thread in an official's collar or a spider's brand on a dockhand's wrist. On success, they identify a Lethai-ar agent. On failure, the agent becomes aware of their scrutiny — and the Web tightens."
@@ -114,43 +146,49 @@
       "name": "Admiral Zafira",
       "role": "Commander of Lantern-Law",
       "motivation": "Keep the beacon monopoly intact",
-      "quirk": "She has never lost a ship to the reefs. Her charts are said to be drawn in water."
+      "quirk": "She has never lost a ship to the reefs. Her charts are said to be drawn in water. She suspects the Lethai-ar but cannot prove their reach — and the Admiralty's budget depends on House Mirat's tariffs."
     },
     {
       "name": "Mirza al-Qasr",
       "role": "Mirror-Keeper of the Pointe",
       "motivation": "Control the tides through light",
-      "quirk": "Her face is never seen — only reflected. Some say she has no shadow."
+      "quirk": "Her face is never seen — only reflected. Some say she has no shadow. She is the Lethai-ar's most successful sleeper agent. She does not know she is woven."
     },
     {
       "name": "Ximena",
       "role": "Dockside Factor",
       "motivation": "Profit from every cargo, legal or not",
-      "quirk": "She keeps a hidden record in lemon juice; heat reveals the truth."
+      "quirk": "She keeps a hidden record in lemon juice; heat reveals the truth. She has accepted three gifts from gray-robed strangers. She does not know they were laced with thread."
     },
     {
       "name": "Captain Rodrigo",
       "role": "Privateer with a crooked letter of marque",
       "motivation": "Raid the corsair fleet and keep his crew loyal",
-      "quirk": "His ship flies three flags; the one he lowers last is the one that matters."
+      "quirk": "His ship flies three flags; the one he lowers last is the one that matters. He owes a debt to House Carrasco — and the Lethai-ar now own that debt."
     },
     {
       "name": "Sister Anabel",
       "role": "Healer of the Hospitallers of the Salted Veil",
       "motivation": "Tend the sick without asking for coin",
-      "quirk": "Her gray robes are said to be woven from old promises. They never stain."
+      "quirk": "Her gray robes are said to be woven from old promises. They never stain. She does not know that the dye comes from a Lethai-ar loom."
     },
     {
       "name": "Notary Farid",
       "role": "Admiralty magistrate",
       "motivation": "Resolve disputes before they reach the harbor master",
-      "quirk": "He carries a water-timer in his sleeve to measure the shifting of legal moods."
+      "quirk": "He carries a water-timer in his sleeve to measure the shifting of legal moods. He has noticed that the timings are always off — but he cannot find the leak."
     },
     {
       "name": "The Veiled Harpist",
       "role": "Lethai-ar infiltrator (secret)",
       "motivation": "Weaving through the oligarchs, strand by strand",
-      "quirk": "No one knows her face. She plays only in mirror-lit rooms, and her music leaves threads of silk in the listeners' hair."
+      "quirk": "No one knows her face. She plays only in mirror-lit rooms, and her music leaves threads of silk in the listeners' hair. She is the Spider's voice. She is also the only Lethai-ar agent who knows the Web's true purpose — and she is not sure she agrees with it."
+    },
+    {
+      "name": "Saikou Ira's Mother (unnamed)",
+      "role": "Head of House Ira (informal)",
+      "motivation": "Keep House Ira independent and profitable",
+      "quirk": "She sends her son a single silver coin every year on his birthday — the same coin, always warm to the touch. She has not seen him in three years, but she knows he is alive because the coin has not yet cooled."
     }
   ],
   "names": {
@@ -176,7 +214,8 @@
       "de la Vela",
       "Carrasco",
       "Mirat",
-      "Henares"
+      "Henares",
+      "Ira"
     ],
     "epithets": [
       "the Lantern",
@@ -194,8 +233,8 @@
       "title": "Tidal Mudflat",
       "subtitle": "[STEALTH]",
       "description": "Hidden plank-way at low water; smugglers' shortcut.",
-      "flavor": "At ebb, the planks rise like the ribs of a drowned whale.",
-      "mechanical_hook": ""
+      "flavor": "At ebb, the planks rise like the ribs of a drowned whale. The mud is thick with salt and the memory of old cargoes.",
+      "mechanical_hook": "To use the mudflat, roll Stealth DV 3. On success, you avoid customs. On failure, you are mired — lose 1 Supply and gain the Condition **Salt-Crusted** (all social rolls with officials suffer –1 die until you wash)."
     },
     {
       "rank": 3,
@@ -203,8 +242,8 @@
       "title": "Salt-Scar Pier",
       "subtitle": "[TRADE]",
       "description": "Behind dawn spice auctions; where fortunes wash ashore.",
-      "flavor": "Inspectors check the salt-scars — white crust that proves cargo was cleaned, not stolen.",
-      "mechanical_hook": ""
+      "flavor": "Inspectors check the salt-scars — white crust that proves cargo was cleaned, not stolen. The scars are a lie; the cargo was stolen, cleaned, and scarred by a factor who owns the inspector.",
+      "mechanical_hook": "A character with a legitimate stamp may trade here without scrutiny. Without one, you must bribe the factor (1 Boon) or risk confiscation."
     },
     {
       "rank": 4,
@@ -212,8 +251,8 @@
       "title": "Reedbelt Creeks",
       "subtitle": "[STEALTH]",
       "description": "Smuggler paths where tax boats won't follow.",
-      "flavor": "A hanged man's boots hang from a piling; those who pass tug their collars.",
-      "mechanical_hook": ""
+      "flavor": "A hanged man's boots hang from a piling; those who pass tug their collars. The boots belong to the last smuggler who sold his route to the Admiralty.",
+      "mechanical_hook": "Navigation here requires Wits+Survival DV 4. On success, you find a safe passage. On failure, you emerge in the middle of a customs patrol — start a **Customs Hunt [4]** timer."
     },
     {
       "rank": 5,
@@ -221,8 +260,8 @@
       "title": "Breakwater Gap",
       "subtitle": "[TRAVEL]",
       "description": "Under repair; cutters slip at dusk through the works.",
-      "flavor": "The stone is still loose. A wrong step, and the sea claims another toll.",
-      "mechanical_hook": ""
+      "flavor": "The stone is still loose. A wrong step, and the sea claims another toll. The gap is a secret known only to the pilots — and the Lethai-ar, who have already marked it on their charts.",
+      "mechanical_hook": "Crossing the gap at dusk grants +1 Position on stealth, but if you are spotted, the Admiralty will seize your vessel."
     },
     {
       "rank": 6,
@@ -230,8 +269,8 @@
       "title": "Dredged Channel",
       "subtitle": "[TRAVEL]",
       "description": "Fresh with temporary beacons; tomorrow's safe water.",
-      "flavor": "The buoys are painted yellow — the color of 'maybe.'",
-      "mechanical_hook": ""
+      "flavor": "The buoys are painted yellow — the color of 'maybe.' They have been 'maybe' for a month. The Lethai-ar have been redirecting the dredging for weeks.",
+      "mechanical_hook": "Navigating the channel is Desperate. On a Miss, you run aground — lose 1 Supply and start a **Stranded [4]** timer."
     },
     {
       "rank": 7,
@@ -239,8 +278,8 @@
       "title": "River Sluice",
       "subtitle": "[AUTHORITY]",
       "description": "Tide-gate and boom-chain; access controlled by rope and writ.",
-      "flavor": "The chain has a notch where a slaver's ship tried to flee. It still drips oil.",
-      "mechanical_hook": ""
+      "flavor": "The chain has a notch where a slaver's ship tried to flee. It still drips oil. The gatekeeper has a silver tooth and a brother in the Red Vigil.",
+      "mechanical_hook": "To pass, you need a writ from the harbor master (1 Boon) or a bribe (1 Supply). A failed bribe ticks **Web's Patience +1**."
     },
     {
       "rank": 8,
@@ -248,8 +287,8 @@
       "title": "Cutter Yard",
       "subtitle": "[LABOR]",
       "description": "Narrow-keel vessels; apprentices work night shifts.",
-      "flavor": "They sing old work songs — the kind that skip the ninth beat.",
-      "mechanical_hook": ""
+      "flavor": "They sing old work songs — the kind that skip the ninth beat. The ninth beat is the beat where the shipwright's apprentice fell into the dry-dock. She is still singing.",
+      "mechanical_hook": "A character who works a shift (Labor DV 3) earns 1 Boon, but gains the Condition **Night-Shift** (all social rolls suffer –1 die until they rest)."
     },
     {
       "rank": 9,
@@ -257,8 +296,8 @@
       "title": "Lantern Alley",
       "subtitle": "[WEATHER]",
       "description": "Fog-lane where beacons migrate with the tide.",
-      "flavor": "Follow the lights. Two blinks means you're expected. Three? You're prey.",
-      "mechanical_hook": ""
+      "flavor": "Follow the lights. Two blinks means you're expected. Three? You're prey. The Lethai-ar have been leaving false lights for a decade.",
+      "mechanical_hook": "Navigating the alley requires a Sail+Wits DV 5. On a strong success, you find a safe channel. On a miss, you are led into a trap — start a **Pursuit Ladder**."
     },
     {
       "rank": 10,
@@ -266,8 +305,8 @@
       "title": "Admiralty Quay",
       "subtitle": "[AUTHORITY]",
       "description": "Bonded warehouses under seal; law walks the decks.",
-      "flavor": "The seal on the door changes with the tide. Today it's a serpent eating its tail.",
-      "mechanical_hook": ""
+      "flavor": "The seal on the door changes with the tide. Today it's a serpent eating its tail. The Lethai-ar have a copy of every seal.",
+      "mechanical_hook": "Access to the quay requires a Seal-Rod (Diamond). Without one, you are challenged — roll Presence+Sway DV 4 or be arrested."
     },
     {
       "rank": 11,
@@ -275,8 +314,8 @@
       "title": "Red Shoal",
       "subtitle": "[SOCIAL]",
       "description": "Quiet water, loud reputations; where deals are made.",
-      "flavor": "Old barges moored together; a floating court with no bailiff.",
-      "mechanical_hook": ""
+      "flavor": "Old barges moored together; a floating court with no bailiff. The water is red with rust and rumor.",
+      "mechanical_hook": "A character who negotiates here (Sway+Lore DV 4) can secure a deal worth 1 Boon. On failure, they lose 1 Boon to a rival."
     },
     {
       "rank": 12,
@@ -284,8 +323,8 @@
       "title": "Mirror Tower",
       "subtitle": "[JUSTICE]",
       "description": "Pilot station that certifies safe water — today.",
-      "flavor": "The mirror at the top shows not the sea, but the face of the last captain who argued.",
-      "mechanical_hook": ""
+      "flavor": "The mirror at the top shows not the sea, but the face of the last captain who argued. The Lethai-ar have a wire running from the mirror to a room with no windows.",
+      "mechanical_hook": "A character who consults the Mirror-Keeper (Spirit+Lore DV 3) gains +1 die on navigation for the next leg. On failure, the Mirror-Keeper reports them to the Admiralty."
     },
     {
       "rank": 13,
@@ -293,8 +332,8 @@
       "title": "Kassamira Port",
       "subtitle": "[TRADE]",
       "description": "Presidial; auctions at dawn, courts by noon.",
-      "flavor": "The auctioneer's gavel is wrapped in a page torn from a voided manifest.",
-      "mechanical_hook": ""
+      "flavor": "The auctioneer's gavel is wrapped in a page torn from a voided manifest. The Lethai-ar own three of the auction houses.",
+      "mechanical_hook": "To bid at auction, you need 2 Supply or 1 Boon. A successful bid grants a cargo of 2 Supply or a Diamond. A failed bid marks **Oligarchic Standing –1**."
     },
     {
       "rank": 14,
@@ -302,8 +341,8 @@
       "title": "The Pointe",
       "subtitle": "[DEATH]",
       "description": "Strait of storm-lights and wreckers' tales.",
-      "flavor": "On still nights, you can hear the drowned singing the names of those who bear heavy burdens.",
-      "mechanical_hook": ""
+      "flavor": "On still nights, you can hear the drowned singing the names of those who bear heavy burdens. The Lethai-ar have left a rowboat at the Pointe — it is always there, always empty.",
+      "mechanical_hook": "Crossing the Pointe at night requires Resolve DV 4. On failure, you are haunted by the drowned — all rolls in the next scene are Desperate."
     }
   ],
   "people_and_factions": [
@@ -314,8 +353,8 @@
       "subtitle": "[TRAVEL]",
       "description": "Bell and rope; knows every tide-table by heart.",
       "flavor": "'The table says high water at noon. The moon lies. Trust my rope.'",
-      "what_they_carry": "",
-      "what_they_ask": ""
+      "what_they_carry": "A rope that has never failed. It can hold a ship — or a promise.",
+      "what_they_ask": "A true tide-reading. He will compare it to his own."
     },
     {
       "rank": 3,
@@ -324,8 +363,8 @@
       "subtitle": "[TRAVEL]",
       "description": "Perfect memory for shoals; tomorrow's navigator.",
       "flavor": "Touches a brass talisman before every sounding. No one knows why.",
-      "what_they_carry": "",
-      "what_they_ask": ""
+      "what_they_carry": "A brass talisman that hums when a shoal is false. It has never hummed.",
+      "what_they_ask": "A true depth. She will compare it to her sounding."
     },
     {
       "rank": 4,
@@ -334,8 +373,8 @@
       "subtitle": "[AUTHORITY]",
       "description": "Knows which lights moved, and why; keeper of the shifts.",
       "flavor": "Docks with a manifest that smells of smoke. Adds a surcharge for 'recent adjustments.'",
-      "what_they_carry": "",
-      "what_they_ask": ""
+      "what_they_carry": "A manifest that has never been audited. It can prove any cargo legal — once.",
+      "what_they_ask": "A bribe of 1 Boon. He will adjust the manifest."
     },
     {
       "rank": 5,
@@ -344,8 +383,8 @@
       "subtitle": "[TRADE]",
       "description": "Two sets of books; one for Kahfagia, one for truth.",
       "flavor": "The left column records bribes as 'conciliation fees.' The right one is never shown.",
-      "what_they_carry": "",
-      "what_they_ask": ""
+      "what_they_carry": "A book that records every bribe paid in Kassamira. It is worth more than gold.",
+      "what_they_ask": "A bribe that is not recorded. He will give you a copy of your own entry."
     },
     {
       "rank": 6,
@@ -354,8 +393,8 @@
       "subtitle": "[SOCIAL]",
       "description": "Makes queues vanish; power in the pause.",
       "flavor": "He never raises his voice. The harbor master listens anyway.",
-      "what_they_carry": "",
-      "what_they_ask": ""
+      "what_they_carry": "A whistle that can call a squad of Thalassoi — once per day.",
+      "what_they_ask": "A favor. He will collect later."
     },
     {
       "rank": 7,
@@ -364,8 +403,8 @@
       "subtitle": "[JUSTICE]",
       "description": "'Jurisdiction moves like tide'; law in flux.",
       "flavor": "She carries a water-timer in her sleeve to measure the shifting of legal moods.",
-      "what_they_carry": "",
-      "what_they_ask": ""
+      "what_they_carry": "A precedent that has never been overturned. It can win any case — once.",
+      "what_they_ask": "A service to the court. She will remember."
     },
     {
       "rank": 8,
@@ -374,8 +413,8 @@
       "subtitle": "[COMBAT]",
       "description": "'Crooked' letter of convoy; profit in the margins.",
       "flavor": "Her ship flies three flags; the one she lowers last is the one that matters.",
-      "what_they_carry": "",
-      "what_they_ask": ""
+      "what_they_carry": "A letter of marque that is valid in every port — if you know the signal.",
+      "what_they_ask": "A share of the cargo. She will not ask twice."
     },
     {
       "rank": 9,
@@ -384,8 +423,8 @@
       "subtitle": "[COMBAT]",
       "description": "Shore leave but still on duty; marine precision.",
       "flavor": "A tattoo of a lighthouse on his forearm; the light is his wife's name.",
-      "what_they_carry": "",
-      "what_they_ask": ""
+      "what_they_carry": "A lamp that burns even in a storm. It can guide a boat to safety — once.",
+      "what_they_ask": "A story about a ship that never returned. He will remember it."
     },
     {
       "rank": 10,
@@ -394,8 +433,8 @@
       "subtitle": "[JUSTICE]",
       "description": "Rules fast, travels faster; justice in a hurry.",
       "flavor": "She once sentenced a man to the galleys and boarded the ship before he did.",
-      "what_they_carry": "",
-      "what_they_ask": ""
+      "what_they_carry": "A gavel that can open any lock — once per day.",
+      "what_they_ask": "A confession. She will accept it in writing."
     },
     {
       "rank": 11,
@@ -404,8 +443,8 @@
       "subtitle": "[LABOR]",
       "description": "Channel follows their purse; water reshaped.",
       "flavor": "His crew are ex-criminals; he pays them in salt pork and absolution.",
-      "what_they_carry": "",
-      "what_they_ask": ""
+      "what_they_carry": "A dredge that can carve a new channel — but the crew will demand a bonus.",
+      "what_they_ask": "A name to be forgiven. He will carve it into the channel bed."
     },
     {
       "rank": 12,
@@ -414,8 +453,8 @@
       "subtitle": "[AUTHORITY]",
       "description": "Commodore's confidante; places beacons that bind.",
       "flavor": "Their faces are never seen — only reflected. Some say they have none.",
-      "what_they_carry": "",
-      "what_they_ask": ""
+      "what_they_carry": "A beacon that can be moved — once per season. The lane will follow.",
+      "what_they_ask": "A true name. They will mirror it in the tower."
     },
     {
       "rank": 13,
@@ -424,8 +463,8 @@
       "subtitle": "[AUTHORITY]",
       "description": "Off the books but on the water; shadow admiral.",
       "flavor": "His flagship is a fishing smack. Its nets drag up letters of marque.",
-      "what_they_carry": "",
-      "what_they_ask": ""
+      "what_they_carry": "A fleet that does not exist. He can conjure three ships — once.",
+      "what_they_ask": "A signal. He will answer if it is the right one."
     },
     {
       "rank": 14,
@@ -434,8 +473,8 @@
       "subtitle": "[LEGEND]",
       "description": "Offers wine, figs — once. Price in stories.",
       "flavor": "She pours the first cup herself. If she pours a second, you've already agreed.",
-      "what_they_carry": "",
-      "what_they_ask": ""
+      "what_they_carry": "A cup that never empties. It can seal a promise — once.",
+      "what_they_ask": "A story she has not heard. She has heard them all."
     }
   ],
   "complications": [
@@ -446,7 +485,7 @@
       "subtitle": "[WEATHER]",
       "description": "Turns two bells early; grounding risk rises like the sea.",
       "flavor": "Someone bribed the tide-clerk — or the moon is angry.",
-      "mechanical_hook": ""
+      "mechanical_hook": "Navigation rolls are Desperate. On a Miss, you run aground — lose 1 Supply."
     },
     {
       "rank": 3,
@@ -455,7 +494,7 @@
       "subtitle": "[WEATHER]",
       "description": "Sound travels, sight does not; navigation by ear alone.",
       "flavor": "You hear oars. Then you don't. Then they're behind you.",
-      "mechanical_hook": ""
+      "mechanical_hook": "All rolls in the fog suffer –1 die. The GM gains 1 SB per scene."
     },
     {
       "rank": 4,
@@ -464,7 +503,7 @@
       "subtitle": "[AUTHORITY]",
       "description": "Harbor chain slams shut; wrong side means delay or danger.",
       "flavor": "The chain's links are inscribed with names of those who defied the Admiralty. Each one rattles differently.",
-      "mechanical_hook": ""
+      "mechanical_hook": "You are locked out. Pay 1 Boon to reopen the chain, or find another way."
     },
     {
       "rank": 5,
@@ -473,7 +512,7 @@
       "subtitle": "[TRAVEL]",
       "description": "Beacons change mid-approach; your lane just moved.",
       "flavor": "Someone paid the Lantern Clerk. Find out who — or drift into the reefs.",
-      "mechanical_hook": ""
+      "mechanical_hook": "Navigation DV +2. On failure, you are lost — start a **Lost in the Channels [4]** timer."
     },
     {
       "rank": 6,
@@ -482,7 +521,7 @@
       "subtitle": "[LABOR]",
       "description": "No escorts available; wages unpaid, risk assumed.",
       "flavor": "The pilots sit in their guildhall, drinking tea, watching ships founder.",
-      "mechanical_hook": ""
+      "mechanical_hook": "You must navigate alone. All navigation rolls are Desperate until the strike ends."
     },
     {
       "rank": 7,
@@ -491,7 +530,7 @@
       "subtitle": "[AUTHORITY]",
       "description": "Ladder audits cargo and crew; delays bite deep.",
       "flavor": "The inspector has a silver tooth. He smiles when he sees a manifest.",
-      "mechanical_hook": ""
+      "mechanical_hook": "Pay 1 Supply or 1 Boon to pass. Refusing starts a **Customs Hunt [4]** timer."
     },
     {
       "rank": 8,
@@ -500,7 +539,7 @@
       "subtitle": "[COMBAT]",
       "description": "Corsair skiffs circle with boarding hooks; steel in the spray.",
       "flavor": "Their leader wears a Mirror-Keeper's badge — stolen or earned, you cannot tell.",
-      "mechanical_hook": ""
+      "mechanical_hook": "Combat scene. Cap 2. If you lose, you are boarded and lose 1 Supply."
     },
     {
       "rank": 9,
@@ -509,7 +548,7 @@
       "subtitle": "[JUSTICE]",
       "description": "Lantern-law shifts; your writ no longer bites.",
       "flavor": "The tide turned. So did the magistrate. Your safe-conduct is now kindling.",
-      "mechanical_hook": ""
+      "mechanical_hook": "Your documents are void. You must find a new patron (1 Boon) or be arrested."
     },
     {
       "rank": 10,
@@ -518,7 +557,7 @@
       "subtitle": "[DISASTER]",
       "description": "Alchemical cargo aboard; quarantine if anything spills.",
       "flavor": "A single spark and the whole quay becomes a crater. The factor wants you to know this.",
-      "mechanical_hook": ""
+      "mechanical_hook": "All rolls in the vicinity are Desperate. On a Miss, the cargo ignites — lose 2 Supply and take 1 Harm."
     },
     {
       "rank": 11,
@@ -527,7 +566,7 @@
       "subtitle": "[SOCIAL]",
       "description": "Tide-tables sold to rival; route compromised.",
       "flavor": "The betrayal is written in lemon juice; heat reveals the name.",
-      "mechanical_hook": ""
+      "mechanical_hook": "You are led into a trap. Start a **Pursuit Ladder**."
     },
     {
       "rank": 12,
@@ -536,7 +575,7 @@
       "subtitle": "[DEATH]",
       "description": "Port quarantine; deadlines rot on the hook.",
       "flavor": "The flag is dyed with turmeric and something else — something that smells sweet.",
-      "mechanical_hook": ""
+      "mechanical_hook": "You cannot enter the port. Find another way, or wait 1 scene (and lose 1 Supply)."
     },
     {
       "rank": 13,
@@ -545,7 +584,7 @@
       "subtitle": "[AUTHORITY]",
       "description": "'Safe' corridor becomes parade ground; chaos in formation.",
       "flavor": "Admirals play chess with real ships, and you are a pawn.",
-      "mechanical_hook": ""
+      "mechanical_hook": "Navigation DV +3. On failure, you are boarded by a naval patrol."
     },
     {
       "rank": 14,
@@ -554,7 +593,7 @@
       "subtitle": "[WEATHER] [DEATH]",
       "description": "Scatters ships and stories alike.",
       "flavor": "This is no natural storm. The water hisses. Something below is waking.",
-      "mechanical_hook": ""
+      "mechanical_hook": "All rolls are Desperate. On a Miss, your ship is damaged — lose 2 Supply and take 1 Harm."
     },
     {
       "rank": 15,
@@ -563,7 +602,7 @@
       "subtitle": "[POLITICS] [FEAR]",
       "description": "A Lethai-ar agent is exposed. The oligarchs turn on each other, accusing every rival of being a spider.",
       "flavor": "Silk threads appear on every doorknob. No one trusts their shadow.",
-      "mechanical_hook": ""
+      "mechanical_hook": "Tick **Web's Patience +2**. All social rolls suffer –1 die until the crisis passes."
     }
   ],
   "rewards": [
@@ -574,7 +613,7 @@
       "subtitle": "[TRAVEL]",
       "description": "Skip the Mooring Roll once; harbor favors you.",
       "flavor": "The chit is a dried seahorse shell. Keep it away from salt.",
-      "curse_cost": ""
+      "curse_cost": "Using the chit ticks **Web's Patience +1** (the Lethai-ar note your privilege)."
     },
     {
       "rank": 3,
@@ -583,7 +622,7 @@
       "subtitle": "[TRAVEL]",
       "description": "One certified escort through a bad channel.",
       "flavor": "The pilot who accepts it must touch your shoulder before speaking.",
-      "curse_cost": ""
+      "curse_cost": "The pilot will remember your face. The Lethai-ar will ask them about it."
     },
     {
       "rank": 4,
@@ -592,7 +631,7 @@
       "subtitle": "[TRADE]",
       "description": "Cargo cleared today; no questions asked.",
       "flavor": "The clerk stamps it twice — once for the crown, once for the Hollow.",
-      "curse_cost": ""
+      "curse_cost": "The stamp leaves a faint mark that only Mirror-Keepers can see. They will ask questions later."
     },
     {
       "rank": 5,
@@ -601,7 +640,7 @@
       "subtitle": "[TRAVEL]",
       "description": "Along specific beaconed lane; law walks with you.",
       "flavor": "The commodore's seal is warm. It cools as the exit nears.",
-      "curse_cost": ""
+      "curse_cost": "The seal must be renewed every moon. If you miss the renewal, you are flagged as a smuggler."
     },
     {
       "rank": 6,
@@ -610,7 +649,7 @@
       "subtitle": "[TRADE]",
       "description": "On named quay or reach; flotsam becomes fortune.",
       "flavor": "You must name each piece before touching it. The wrong word forfeits the claim.",
-      "curse_cost": ""
+      "curse_cost": "The Admiralty may audit your salvage. If you cannot prove provenance, you lose it all."
     },
     {
       "rank": 7,
@@ -619,7 +658,7 @@
       "subtitle": "[TRADE]",
       "description": "Bonded storage; seal prize before rivals sniff.",
       "flavor": "The key is a bronze finger. It fits only one lock — and breaks after use.",
-      "curse_cost": ""
+      "curse_cost": "The lock has a second key, held by a Lethai-ar agent. They will visit your cargo."
     },
     {
       "rank": 8,
@@ -628,7 +667,7 @@
       "subtitle": "[TRAVEL]",
       "description": "Tonight's signals revealed; navigation advantage.",
       "flavor": "Three quick flashes: safe passage. One long, two short: the Admiralty is watching.",
-      "curse_cost": ""
+      "curse_cost": "Using the code marks you as a 'person of interest' to the Mirror-Keepers."
     },
     {
       "rank": 9,
@@ -637,7 +676,7 @@
       "subtitle": "[AUTHORITY]",
       "description": "You decide where next channel runs; reshape the sea.",
       "flavor": "The dredgers are convicts. They work faster if you promise a name in their favor.",
-      "curse_cost": ""
+      "curse_cost": "A rival oligarch will challenge your grant. You must defend it in court (Sway+Lore DV 4)."
     },
     {
       "rank": 10,
@@ -646,7 +685,7 @@
       "subtitle": "[COMBAT]",
       "description": "Convoy protection for one season; legal blades.",
       "flavor": "The ink is mixed with gunpowder. It smokes slightly when read.",
-      "curse_cost": ""
+      "curse_cost": "The Lethai-ar have a copy. They will use it to blackmail you."
     },
     {
       "rank": 11,
@@ -655,7 +694,7 @@
       "subtitle": "[JUSTICE]",
       "description": "Precedent travels with you; law bends.",
       "flavor": "The case number is burned into a leather tag. Tie it to a belt loop.",
-      "curse_cost": ""
+      "curse_cost": "The precedent can be overturned by a higher court. The Lethai-ar control the higher court."
     },
     {
       "rank": 12,
@@ -664,7 +703,7 @@
       "subtitle": "[AUTHORITY]",
       "description": "Legal right to post a beacon; redraw the map.",
       "flavor": "The Mirror-Keeper's seal, still warm. The channel you mark becomes law — until challenged.",
-      "curse_cost": ""
+      "curse_cost": "The Mirror-Keeper who sealed it is a Lethai-ar agent. The channel will serve the Web."
     },
     {
       "rank": 13,
@@ -673,7 +712,7 @@
       "subtitle": "[TRADE]",
       "description": "Stake in Kassamira auction floor; profit in pepper.",
       "flavor": "The share is a peppercorn sealed in wax. Bite it to test authenticity.",
-      "curse_cost": ""
+      "curse_cost": "House al-Kassam will demand a cut of your profits (1 Supply per season). Refusal starts a **Trade War [6]**."
     },
     {
       "rank": 14,
@@ -682,7 +721,7 @@
       "subtitle": "[AUTHORITY]",
       "description": "Temporary authority to redefine the lane.",
       "flavor": "The harbor master spits when he hands it over. Use it wisely — or not at all.",
-      "curse_cost": ""
+      "curse_cost": "The license is valid for one use. The Lethai-ar will attempt to steal it before you can use it."
     }
   ],
   "quick_use_notes": {

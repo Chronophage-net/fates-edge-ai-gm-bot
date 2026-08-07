@@ -11,7 +11,7 @@
     "tagline": "The sea keeps better counsel than any scribe, and the frost remembers every oath sworn upon its winds — but the Temple of Light arrives with ink and fire to rewrite what the ice has carved.",
     "genre": "Norse coastal saga, oath-driven honor, horror of the unwitnessed death, the tyranny of seasons, the weight of wyrd.",
     "mood": "Skerries & Storm-Oaths",
-    "starting_location": "A longship house lined with storm-charms and whale-bone runes, salt wind clawing at the doors. A Net-Wife binds a storm-token into a PC's palm. \"The Whale-Road sings,\" she says. \"But the Mistlands whistle back. Bring us three keel-lengths of ironwood from the Valewood edge, or the tide will take our boats in the spring. The frost remembers the shelter you took last winter. Pay, or the ice will hold it against you.\"",
+    "starting_location": "A longship house lined with storm-charms and whale-bone runes, salt wind clawing at the doors. A Net-Wife binds a storm-token into a PC's palm. 'The Whale-Road sings,' she says. 'But the Mistlands whistle back. Bring us three keel-lengths of ironwood from the Valewood edge, or the tide will take our boats in the spring. The frost remembers the shelter you took last winter. Pay, or the ice will hold it against you.'",
     "lore": {
       "history": "North of the Aberderrin Sea, where fjords split the coast and skerries break the tide, dwell the Linn. They are traders and raiders in equal breath, their longships crowding the whale-road and river mouths. They descend the Ylolka like an axe-blade and cut into southern shores, or slip through the Thin Strip where the Valewood dares not touch salt. Yet even these storm-oath people dread the Mistlands and the Valewood, whose fog and trees have no need of ships or harbors to claim their due. The Linn measure their lives in seasons, not years: a season for raiding (summer), a season for planting (spring), a season for governance (autumn, when the Thing meets), and a season for survival (winter, when the frost sets its mark). The winter debt is not a book — it is a set of carved oath-sticks, each notch a promise kept or broken. When a Linn says a debt is 'written in frost,' they mean it is unchangeable until the ice melts. And the ice, in the high north, never truly melts. The gods of the Linn are not distant. Adar, the All-Father, walks the ridges in a gray cloak, his one eye watching for those who break oaths — god of wisdom, death, and binding promises. Rorg, the Storm Father, rides the clouds, his hammer cracking the sky, patron of raiders and sailors. His cult is loud, proud, and dangerous. The Temple of Light calls him a demon. The Linn call him captain.",
       "first_notice": "The smell of tar and salt fish. The creak of oars from unseen boats. The way everyone — jarl to thrall — touches a knotted cord before speaking of the sea. The oath-sticks hanging from every belt, each mark a weight carried.",
@@ -26,100 +26,667 @@
   },
   "regional_diagnostic": {
     "current_hook": "The sea keeps better counsel than any scribe, and the frost remembers every oath sworn upon its winds — but the Temple of Light arrives with ink and fire to rewrite what the ice has carved.",
-    "core_conflict": "Players are caught between the **Jarls' raiding economy**, the **Sea-Queen's coastal law**, and the **Temple of Light's crusade** of re-education and assimilation — each demanding oaths that contradict the others.",
+    "core_conflict": "Players are caught between the **Jarls' raiding economy**, the **Sea-Queen's coastal law**, and the **Temple of Light's crusade** of re-education and assimilation — each demanding oaths that contradict the others. The Linn fear the Mistlands and the Direwood across the Aberderrin sea, but they also fear the Valewood to their south. The Ninth is the unwitnessed death; the Hollow is the silence of the forgotten.",
     "unique_feature": "**Frost-Bound Memory:** Oaths are carved in ice that never fully melts; breaking a storm-oath inflicts mechanical penalties (Fatigue/Harm) and gives the GM free Story Beats representing the sea's attention.",
     "ninth_taboo": "In any longhouse, the ninth horn blown at a feast summons the Hollow. The wise stop at eight. Those who blow the ninth see a pale figure (Adar) standing at the high table — waiting to collect a weight. Bell-towers ring eight notes; the ninth is discovered, and discovery is fatal.",
-    "price": "Every gift carries a Frost Mark (weight timer); every oath sworn is carved in ice that never fully melts. Power requires gambling memory (Adar's ravens), accepting storm-marks (Rorg's attention), or submitting to Temple re-education (losing shrine-devotion).",
-    "geography_as_constraint": "Fjords freeze in winter (longships beached, travel impossible); skerries break the tide (navigation requires local pilots); Mistlands and Valewood edges have no need of ships or harbors to claim their due. The Aberderrin Current splits flotillas; contrary swells make steering lie.",
+    "price": "Every gift carries a Frost Mark (weight timer); every oath sworn is carved in ice that never fully melts. Power requires gambling memory (Adar's ravens), accepting storm-marks (Rorg's attention), or submitting to Temple re-education (losing shrine-devotion). The Linn want to be remembered—they fear being forgotten more than they fear death. This is their psychic wound: without a saga, a life has no weight.",
     "faction_triad": [
-      { "faction": "High Jarls", "goal": "Unite scattered strands under one raiding oath", "method": "Successful raids, wise judgments at Thing-Holm, frost-mark enforcement", "why_players_care": "Control harbor access, levy ships, offer raid-truces and oar-shares" },
-      { "faction": "Sea-Queen", "goal": "Maintain coastal law without drawing blade", "method": "Envoy network, seal-bags, oath-sticks branded with the queen's mark", "why_players_care": "Grants harbor-marks, escort writs, audience that bends sea-law" },
-      { "faction": "Temple of Light Crusade", "goal": "Convert Linn to the Lens of the White Flame (re-education & assimilation)", "method": "Grain fleets, synod courts, bell-tower consecrations, schoolmasters", "why_players_care": "Cheap grain, legal alternatives to blood-feuds, protection from 'pagan' hazards" }
+      {
+        "faction": "High Jarls",
+        "goal": "Unite scattered strands under one raiding oath",
+        "method": "Successful raids, wise judgments at Thing-Holm, frost-mark enforcement",
+        "why_players_care": "Control harbor access, levy ships, offer raid-truces and oar-shares"
+      },
+      {
+        "faction": "Sea-Queen",
+        "goal": "Maintain coastal law without drawing blade",
+        "method": "Envoy network, seal-bags, oath-sticks branded with the queen's mark",
+        "why_players_care": "Grants harbor-marks, escort writs, audience that bends sea-law"
+      },
+      {
+        "faction": "Temple of Light Crusade",
+        "goal": "Convert Linn to the Lens of the White Flame (re-education & assimilation)",
+        "method": "Grain fleets, synod courts, bell-tower consecrations, schoolmasters",
+        "why_players_care": "Cheap grain, legal alternatives to blood-feuds, protection from 'pagan' hazards"
+      }
     ]
   },
-  "interactive_mechanics": [
-    { "suit": "spade", "name": "Tvíhögg (Double-Cut Fate)", "description": "Once per session, cut one thread of fate to redirect another — succeed but mark Frost Mark, or reroll sea/oath rolls but your name is added to hidden ice." },
-    { "suit": "heart", "name": "Storm-Oaths", "description": "Swear by touching salt water; keeping grants +1 die on sea rolls, breaking inflicts 1 Fatigue (or 1 Harm if sworn during storm)." },
-    { "suit": "club", "name": "Frost Mark (Weight Timer)", "description": "Every favor/gift from Linn creates a 4-segment timer; when full, the community demands service (raid, story, labor). Refusal = −1 die on social rolls." },
-    { "suit": "diamond", "name": "Season's Turn", "description": "GM spends 3 SB to change season; Spring (foraging/healing +1), Summer (combat/sailing +1), Autumn (social/legal +1), Winter (survival Desperate, Frost Mark easier to clear)." }
-  ],
-  "campaign_timers": [
-    { "name": "Temple Pressure", "segments": 6, "advances_when": "players accept Temple aid, ignore shrine offerings, or fail faith tests", "at_full": "Bishop demands public oath of loyalty; shrine-devout suffer −1 Position in settlements." },
-    { "name": "Thing Schism", "segments": 6, "advances_when": "jarls convert, feuds go unresolved, or oath-rings are broken", "at_full": "The Thing splits; half the clans follow Temple law, half follow frost-law. Civil conflict begins." },
-    { "name": "Winter Debts", "segments": 8, "advances_when": "players accept Frost Marks, take shelter, or break small taboos", "at_full": "The Thing convenes; the party must defend oaths or be forced into a quest to pay debts." }
-  ],
   "quotes": [
-    { "speaker": "High Jarl (Elite)", "text": "The sea keeps better counsel than any scribe, and the storm remembers every oath sworn upon its winds. But the frost — the frost is the witness. It preserves what the tide would wash away. A promise sworn in winter is owed until the ice melts. And the ice never truly melts." },
-    { "speaker": "Net-Wife (Commoner)", "text": "The water speaks to those who know how to listen — the way it moves tells you if the fish are running, if the weather's turning, or if something's coming that wasn't invited to the feast. My grandmother taught me to read the frost on the oar-blades. That's how I know who will live through the winter and who will feed the seals." }
+    {
+      "speaker": "High Jarl (Elite)",
+      "text": "The sea keeps better counsel than any scribe, and the storm remembers every oath sworn upon its winds. But the frost — the frost is the witness. It preserves what the tide would wash away. A promise sworn in winter is owed until the ice melts. And the ice never truly melts."
+    },
+    {
+      "speaker": "Net-Wife (Commoner)",
+      "text": "The water speaks to those who know how to listen — the way it moves tells you if the fish are running, if the weather's turning, or if something's coming that wasn't invited to the feast. My grandmother taught me to read the frost on the oar-blades. That's how I know who will live through the winter and who will feed the seals."
+    }
   ],
+  "winter_debts_timer": {
+    "name": "Winter Debts",
+    "max_segments": 8,
+    "advance_on": [
+      "A character accepts a Frost Mark (gift or shelter) (+1)",
+      "A storm-oath is broken on the water (+2)",
+      "A character publicly refuses a cup of mead in winter (+1)",
+      "The party ignores a shrine offering or breaks a local taboo (GM spends 1 SB to tick +1)",
+      "A jarl's claim is challenged at the Thing (+1)"
+    ],
+    "thresholds": {
+      "4": "The frost-bound memories stir; all oaths made in winter are now binding at +1 DV.",
+      "8": "The Thing convenes to settle the winter debts. The party must defend all oaths they have sworn or be forced into a quest to pay the accumulated weight."
+    },
+    "stirrs_table": [
+      {
+        "roll": 1,
+        "complication": "A draugr rises from the ice, demanding a blood-price. Fulfill an old oath or fight (Cap 2)."
+      },
+      {
+        "roll": 2,
+        "complication": "A white bear appears at the longhouse door; hospitality is tested. Offer food or be marked as unwelcoming (−1 Position on social rolls for a week)."
+      },
+      {
+        "roll": 3,
+        "complication": "A skald composes a verse that twists your past deeds; your reputation suffers. Lose 1 Repute or pay 1 Boon to silence the song."
+      },
+      {
+        "roll": 4,
+        "complication": "The Sea-Queen's Hand arrives with a writ; you are summoned to her court to answer a complaint. Travel immediately or face a feud."
+      },
+      {
+        "roll": 5,
+        "complication": "A fogfall descends; you are lost in the Mistlands. Navigate Desperately; on a Miss, you gain the Condition Fog-Called."
+      },
+      {
+        "roll": 6,
+        "complication": "A rival jarl claims your winter shelter was stolen; start a Feud Timer [4] with his clan."
+      },
+      {
+        "roll": 7,
+        "complication": "The ninth horn is blown at a feast; the Hollow manifests. Offer a story or lose a memory."
+      },
+      {
+        "roll": 8,
+        "complication": "A Temple bell tower is consecrated nearby; all shrine-devout lose 1 die on faith actions until the tower is silenced."
+      }
+    ]
+  },
   "npcs": [
-    { "name": "Jarl Skjold", "role": "High Jarl of the Southern Fjords", "motivation": "Unite the scattered strands under one oath", "quirk": "His beard is braided with silver from every ship he has taken. His oath-stick bears notches from three wars." },
-    { "name": "Volva Hervor", "role": "Mist-seer and oath-reader", "motivation": "Read the tides of fate before they turn", "quirk": "She speaks once a year; the rest of the time she listens to the fog. She reads the frost-bound oaths by touch — her fingers are scarred from counting." },
-    { "name": "Astrid", "role": "Net-Wife (commoner exemplar)", "motivation": "Keep her village safe from the Hollow and the deep", "quirk": "She ties a knot for every storm she's survived. Her belt has thirty. She is the keeper of the village oath-sticks." },
-    { "name": "Brother Halvard", "role": "Missionary of the Temple of Light", "motivation": "Convert the Linn to the Lens of the White Flame", "quirk": "He carries a water-timer to measure the hours of prayer, but the skerries have no hours. His oath-stick is blank — the Linn do not trust him." },
-    { "name": "Gunnhild", "role": "Sea-Queen's Hand", "motivation": "Enforce the queen's will without drawing a blade", "quirk": "She never draws her sword. The threat is enough. She carries an oath-stick notched with the names of every jarl who tried to cheat the queen." },
-    { "name": "The Draugr Jarl", "role": "Unfinished business (rumored)", "motivation": "A dead jarl whose oath was never fulfilled", "quirk": "Said to rise from the Thing-Holm when the ninth bell tolls. His oath-stick is frozen — the marks are filled with ice." },
-    { "name": "Einar Frost-Tongue", "role": "Skald of the Frost Memory", "motivation": "Keep the memory of weights alive through verse", "quirk": "He has never lost a verse duel. His tongue is forked — he can praise and curse in the same breath. His oath-stick is longer than his arm." }
+    {
+      "name": "Jarl Skjold",
+      "role": "High Jarl of the Southern Fjords",
+      "motivation": "Unite the scattered strands under one oath",
+      "quirk": "His beard is braided with silver from every ship he has taken. His oath-stick bears notches from three wars."
+    },
+    {
+      "name": "Volva Hervor",
+      "role": "Mist-seer and oath-reader",
+      "motivation": "Read the tides of fate before they turn",
+      "quirk": "She speaks once a year; the rest of the time she listens to the fog. She reads the frost-bound oaths by touch — her fingers are scarred from counting."
+    },
+    {
+      "name": "Astrid",
+      "role": "Net-Wife (commoner exemplar)",
+      "motivation": "Keep her village safe from the Hollow and the deep",
+      "quirk": "She ties a knot for every storm she's survived. Her belt has thirty. She is the keeper of the village oath-sticks."
+    },
+    {
+      "name": "Brother Halvard",
+      "role": "Missionary of the Temple of Light",
+      "motivation": "Convert the Linn to the Lens of the White Flame",
+      "quirk": "He carries a water-timer to measure the hours of prayer, but the skerries have no hours. His oath-stick is blank — the Linn do not trust him."
+    },
+    {
+      "name": "Gunnhild",
+      "role": "Sea-Queen's Hand",
+      "motivation": "Enforce the queen's will without drawing a blade",
+      "quirk": "She never draws her sword. The threat is enough. She carries an oath-stick notched with the names of every jarl who tried to cheat the queen."
+    },
+    {
+      "name": "The Draugr Jarl",
+      "role": "Unfinished business (rumored)",
+      "motivation": "A dead jarl whose oath was never fulfilled",
+      "quirk": "Said to rise from the Thing-Holm when the ninth bell tolls. His oath-stick is frozen — the marks are filled with ice."
+    },
+    {
+      "name": "Einar Frost-Tongue",
+      "role": "Skald of the Frost Memory",
+      "motivation": "Keep the memory of weights alive through verse",
+      "quirk": "He has never lost a verse duel. His tongue is forked — he can praise and curse in the same breath. His oath-stick is longer than his arm."
+    }
   ],
+  "names": {
+    "first_male": [
+      "Skjold",
+      "Einar",
+      "Ragnar",
+      "Bjorn",
+      "Harald",
+      "Gunnar",
+      "Hakon",
+      "Orm",
+      "Thrain",
+      "Rurik",
+      "Bromm",
+      "Zelgur"
+    ],
+    "first_female": [
+      "Hervor",
+      "Astrid",
+      "Gunnhild",
+      "Signy",
+      "Solveig",
+      "Hella",
+      "Dusana",
+      "Thora",
+      "Aeldis",
+      "Helka",
+      "Thorunn"
+    ],
+    "surnames": [
+      "Frost-Tongue",
+      "Iron-Hand",
+      "Wave-Rider",
+      "Skald-Loud",
+      "Oath-Keeper",
+      "Storm-Born"
+    ],
+    "epithets": [
+      "the One-Eyed",
+      "the Iron",
+      "the Unburnt",
+      "the Ash-Sail",
+      "the Mist-Walker",
+      "the Bone-Singer"
+    ]
+  },
   "places": [
-    { "rank": 2, "suit": "spade", "title": "Kelp-Skerry Gut", "subtitle": "[TRAVEL] [STEALTH]", "description": "Narrow channel where oars scrape weed and rock.", "flavor": "Kelp strands like dead men's hair; row silently or the reef listens.", "mechanical_hook": "Passage requires a Stealth or Boating roll (DV 4); a Miss draws the attention of whatever nests among the weed." },
-    { "rank": 3, "suit": "spade", "title": "Tide-Shed", "subtitle": "[REPUTATION]", "description": "Longship houses; tar smoke and gulls for sentries.", "flavor": "Each shed holds a keel's ghost; old crews sleep under the floor planks.", "mechanical_hook": "Sheltering here for the night grants +1 die on the next Reputation-related roll with the ship's former crew's kin, if honored properly." },
-    { "rank": 4, "suit": "spade", "title": "Wave-Gate Reef", "subtitle": "[TRAVEL] [DEATH]", "description": "Just off a raiding beach; only locals know the cut.", "flavor": "One wrong turn and the wave breaks over you — twice.", "mechanical_hook": "Crossing without a local pilot forces a Desperate Boating roll (DV 5); failure costs 1 Harm and damages the vessel." },
-    { "rank": 5, "suit": "spade", "title": "Runestone Causey", "subtitle": "[LEGEND]", "description": "Across tidal flat; names half lost to barnacle.", "flavor": "Touch the stone with your left hand. If it's warm, the ancestors approve.", "mechanical_hook": "A warm stone grants a Boon on the next Lore or social roll invoking ancestry; a cold stone imposes a Condition (Ill-Omened) until cleared by a proper offering." },
-    { "rank": 6, "suit": "spade", "title": "Herring-Stairs", "subtitle": "[LABOR]", "description": "Drying racks above cliff path; knives flicker like fish.", "flavor": "Workers sing a counting song — eight verses, never nine.", "mechanical_hook": "Singing the ninth verse ticks the Winter Debts timer by 1; refusing to sing at all marks the singer as an outsider (−1 die on social rolls here)." },
-    { "rank": 7, "suit": "spade", "title": "Winter Hall", "subtitle": "[COMMUNITY]", "description": "Turf walls, smoke-eye roof, benches crowded with shields.", "flavor": "The fire never goes out. Feed it a story each night or it goes hungry.", "mechanical_hook": "Telling a genuine story clears 1 Fatigue for the teller and grants +1 die to the next social roll in the hall; refusing three nights running ticks Winter Debts by 1." },
-    { "rank": 8, "suit": "spade", "title": "Mistlands Maze", "subtitle": "[DEATH] [FEAR]", "description": "Reed-channels braid and vanish; navigation by instinct.", "flavor": "The reeds whisper names you've forgotten. Do not answer.", "mechanical_hook": "Answering a whispered name forces a Resolve roll (DV 5) or the character gains the Condition Fog-Called (compelled to wander toward the sound)." },
-    { "rank": 9, "suit": "spade", "title": "Boomed Harbor", "subtitle": "[AUTHORITY]", "description": "Iron rings in whale-bone posts; controlled access.", "flavor": "The chain was forged from a broken oath. It rattles when liars approach.", "mechanical_hook": "Any character attempting to bluff or deceive while crossing the boom suffers −1 die; the chain's rattle alerts harbor guards." },
-    { "rank": 10, "suit": "spade", "title": "Aberderrin Headland", "subtitle": "[DEATH]", "description": "Current rips past wreck timbers in the kelp.", "flavor": "On foggy nights, the drowned signal with lanterns. Never follow.", "mechanical_hook": "Following a drowned-lantern signal leads to a genuine wreck (salvage opportunity) but ticks a relevant danger timer by 1." },
-    { "rank": 11, "suit": "spade", "title": "Dolmis Waystation", "subtitle": "[TRAVEL]", "description": "Low isle with fresh water and old weights.", "flavor": "The well is lined with copper. A single dropped coin returns as a blessing.", "mechanical_hook": "Dropping a coin grants a one-time Boon usable at this waystation only, redeemable within one season." },
-    { "rank": 12, "suit": "spade", "title": "Thing-Holm", "subtitle": "[JUSTICE]", "description": "Flat islet ringed with stones for speaking and swearing.", "flavor": "The stones have ears; oaths spoken here echo for three tides. The winter oaths are kept here, frozen in a block of ice that never melts.", "mechanical_hook": "An oath sworn here is binding under frost-law; breaking it later automatically advances the Winter Debts timer by 2 instead of the usual 1." },
-    { "rank": 13, "suit": "spade", "title": "High Jarl's Seat", "subtitle": "[WEATHER]", "description": "Above fjord, beacon tower glaring out to sea.", "flavor": "The beacon oil is mixed with whale fat. It burns green when a storm is close, blue when the winter debts are called.", "mechanical_hook": "Reading the beacon's color grants the party one free piece of GM-provided foreshadowing about weather or debts due." },
-    { "rank": 14, "suit": "spade", "title": "Whale-Road Horizon", "subtitle": "[LEGEND]", "description": "Open water where storms are born and names are made.", "flavor": "Here, the sky meets the sea. Here, the dead meet the living.", "mechanical_hook": "A character who swears a Storm-Oath here gains +1 die on all sea rolls for the remainder of the voyage — but breaking it here inflicts 1 Harm instead of Fatigue." }
+    {
+      "rank": 2,
+      "suit": "spade",
+      "title": "Kelp-Skerry Gut",
+      "subtitle": "[TRAVEL] [STEALTH]",
+      "description": "Narrow channel where oars scrape weed and rock.",
+      "flavor": "Kelp strands like dead men's hair; row silently or the reef listens.",
+      "mechanical_hook": "Passage requires a Stealth or Boating roll (DV 4); a Miss draws the attention of whatever nests among the weed."
+    },
+    {
+      "rank": 3,
+      "suit": "spade",
+      "title": "Tide-Shed",
+      "subtitle": "[REPUTATION]",
+      "description": "Longship houses; tar smoke and gulls for sentries.",
+      "flavor": "Each shed holds a keel's ghost; old crews sleep under the floor planks.",
+      "mechanical_hook": "Sheltering here for the night grants +1 die on the next Reputation-related roll with the ship's former crew's kin, if honored properly."
+    },
+    {
+      "rank": 4,
+      "suit": "spade",
+      "title": "Wave-Gate Reef",
+      "subtitle": "[TRAVEL] [DEATH]",
+      "description": "Just off a raiding beach; only locals know the cut.",
+      "flavor": "One wrong turn and the wave breaks over you — twice.",
+      "mechanical_hook": "Crossing without a local pilot forces a Desperate Boating roll (DV 5); failure costs 1 Harm and damages the vessel."
+    },
+    {
+      "rank": 5,
+      "suit": "spade",
+      "title": "Runestone Causey",
+      "subtitle": "[LEGEND]",
+      "description": "Across tidal flat; names half lost to barnacle.",
+      "flavor": "Touch the stone with your left hand. If it's warm, the ancestors approve.",
+      "mechanical_hook": "A warm stone grants a Boon on the next Lore or social roll invoking ancestry; a cold stone imposes a Condition (Ill-Omened) until cleared by a proper offering."
+    },
+    {
+      "rank": 6,
+      "suit": "spade",
+      "title": "Herring-Stairs",
+      "subtitle": "[LABOR]",
+      "description": "Drying racks above cliff path; knives flicker like fish.",
+      "flavor": "Workers sing a counting song — eight verses, never nine.",
+      "mechanical_hook": "Singing the ninth verse ticks the Winter Debts timer by 1; refusing to sing at all marks the singer as an outsider (−1 die on social rolls here)."
+    },
+    {
+      "rank": 7,
+      "suit": "spade",
+      "title": "Winter Hall",
+      "subtitle": "[COMMUNITY]",
+      "description": "Turf walls, smoke-eye roof, benches crowded with shields.",
+      "flavor": "The fire never goes out. Feed it a story each night or it goes hungry.",
+      "mechanical_hook": "Telling a genuine story clears 1 Fatigue for the teller and grants +1 die to the next social roll in the hall; refusing three nights running ticks Winter Debts by 1."
+    },
+    {
+      "rank": 8,
+      "suit": "spade",
+      "title": "Mistlands Maze",
+      "subtitle": "[DEATH] [FEAR]",
+      "description": "Reed-channels braid and vanish; navigation by instinct.",
+      "flavor": "The reeds whisper names you've forgotten. Do not answer.",
+      "mechanical_hook": "Answering a whispered name forces a Resolve roll (DV 5) or the character gains the Condition Fog-Called (compelled to wander toward the sound)."
+    },
+    {
+      "rank": 9,
+      "suit": "spade",
+      "title": "Boomed Harbor",
+      "subtitle": "[AUTHORITY]",
+      "description": "Iron rings in whale-bone posts; controlled access.",
+      "flavor": "The chain was forged from a broken oath. It rattles when liars approach.",
+      "mechanical_hook": "Any character attempting to bluff or deceive while crossing the boom suffers −1 die; the chain's rattle alerts harbor guards."
+    },
+    {
+      "rank": 10,
+      "suit": "spade",
+      "title": "Aberderrin Headland",
+      "subtitle": "[DEATH]",
+      "description": "Current rips past wreck timbers in the kelp.",
+      "flavor": "On foggy nights, the drowned signal with lanterns. Never follow.",
+      "mechanical_hook": "Following a drowned-lantern signal leads to a genuine wreck (salvage opportunity) but ticks a relevant danger timer by 1."
+    },
+    {
+      "rank": 11,
+      "suit": "spade",
+      "title": "Dolmis Waystation",
+      "subtitle": "[TRAVEL]",
+      "description": "Low isle with fresh water and old weights.",
+      "flavor": "The well is lined with copper. A single dropped coin returns as a blessing.",
+      "mechanical_hook": "Dropping a coin grants a one-time Boon usable at this waystation only, redeemable within one season."
+    },
+    {
+      "rank": 12,
+      "suit": "spade",
+      "title": "Thing-Holm",
+      "subtitle": "[JUSTICE]",
+      "description": "Flat islet ringed with stones for speaking and swearing.",
+      "flavor": "The stones have ears; oaths spoken here echo for three tides. The winter oaths are kept here, frozen in a block of ice that never melts.",
+      "mechanical_hook": "An oath sworn here is binding under frost-law; breaking it later automatically advances the Winter Debts timer by 2 instead of the usual 1."
+    },
+    {
+      "rank": 13,
+      "suit": "spade",
+      "title": "High Jarl's Seat",
+      "subtitle": "[WEATHER]",
+      "description": "Above fjord, beacon tower glaring out to sea.",
+      "flavor": "The beacon oil is mixed with whale fat. It burns green when a storm is close, blue when the winter debts are called.",
+      "mechanical_hook": "Reading the beacon's color grants the party one free piece of GM-provided foreshadowing about weather or debts due."
+    },
+    {
+      "rank": 14,
+      "suit": "spade",
+      "title": "Whale-Road Horizon",
+      "subtitle": "[LEGEND]",
+      "description": "Open water where storms are born and names are made.",
+      "flavor": "Here, the sky meets the sea. Here, the dead meet the living.",
+      "mechanical_hook": "A character who swears a Storm-Oath here gains +1 die on all sea rolls for the remainder of the voyage — but breaking it here inflicts 1 Harm instead of Fatigue."
+    }
   ],
   "people_and_factions": [
-    { "rank": 2, "suit": "heart", "title": "Net-Wife", "subtitle": "[COMMUNITY]", "description": "Reads sea like memory, sky like mood; weather-witch in all but name.", "flavor": "She ties a knot for every storm she's survived. Her belt has thirty. She is the keeper of the village oath-sticks.", "debt": "She'll read the coming weather accurately for the party once, in exchange for help mending nets.", "price": "A day's honest labor, or news of the wider coast." },
-    { "rank": 3, "suit": "heart", "title": "Steersman", "subtitle": "[REPUTATION]", "description": "Tiller-hand never shakes, even when keel does.", "flavor": "His left ear is scarred — he listened too long to a siren's promise. His oath-stick is notched for every life he's lost.", "debt": "He'll pilot the party through dangerous waters once, if they don't ask about the scar.", "price": "Silence about what he lost, and passage-fare." },
-    { "rank": 4, "suit": "heart", "title": "Shipwright", "subtitle": "[CRAFT]", "description": "Pitch on palms, schedule in teeth; knows every plank's story.", "flavor": "He names each timber after a dead relative. The keel is his grandmother. The ship's burden is carved into the mast.", "debt": "He'll repair a damaged vessel at cost, if the party can name what wood it needs and where it's from.", "price": "Materials, and a story about the ship's most recent voyage." },
-    { "rank": 5, "suit": "heart", "title": "Oar-Master", "subtitle": "[SOCIAL]", "description": "Sets beat that decides if home is today or never.", "flavor": "He drums on a hollowed skull. The rhythm is a prayer to Rorg. The oar-crew's debt is marked on his own arm — notches in the bone.", "debt": "He'll grant the party a bench on a fast longship for a voyage, if they row well and ask properly.", "price": "A season's labor at the oar, or a favor owed to Rorg." },
-    { "rank": 6, "suit": "heart", "title": "Mist-Pilot", "subtitle": "[STEALTH]", "description": "Ghosts boats through marsh lanes; reed-runner with secret paths.", "flavor": "He never blinks in fog. Some say he traded his blink for safe passage. His memory-cord is knotted, not notched — the knots are spells.", "debt": "He'll guide the party through the Mistlands Maze safely, once, if they don't ask what he traded.", "price": "A dried eel skin token, or a secret kept from the sea." },
-    { "rank": 7, "suit": "heart", "title": "Skald", "subtitle": "[JUSTICE] [SOCIAL]", "description": "Verses buy silence, start fights, end them; law in rhyme.", "flavor": "Her tongue is forked — she can praise and curse in the same breath. She is the only one who can reshape a frost-bound oath — by composing a new verse that changes the meaning of a mark.", "debt": "She'll compose a verse to reshape a named oath's meaning, once, if the request is honest.", "price": "A true story worthy of verse, told without embellishment." },
-    { "rank": 8, "suit": "heart", "title": "Shield-Band", "subtitle": "[COMBAT]", "description": "Cousins fine with coin, better with cattle.", "flavor": "They sharpen their swords on runestones. The sparks tell fortunes. Their oath-stick is shared — each mark is a blood debt owed to the band.", "debt": "They'll fight alongside the party for one engagement, if the cause aligns with a family grudge.", "price": "A cut of any plunder, and future favor owed to the band." },
-    { "rank": 9, "suit": "heart", "title": "Foster-Son", "subtitle": "[POLITICS]", "description": "Southern coast birth; speaks both laws and subtext.", "flavor": "He wears two brooches — one iron, one bone. Neither is his true allegiance. He carries two oath-sticks — one for the Linn, one for the lowlands.", "debt": "He'll translate or broker between Linn and southern factions, once, if treated as an equal by both.", "price": "Information split evenly between both sides he serves." },
-    { "rank": 10, "suit": "heart", "title": "Thing-Speaker", "subtitle": "[JUSTICE]", "description": "Makes war into lawsuit, lawsuit into lunch.", "flavor": "He carries a water-timer that runs on meltwater. When it runs out, so does your patience. He interprets the winter debts for those who cannot read ice.", "debt": "He'll interpret a frost-bound oath's true terms, once, for anyone willing to sit through the full proceeding.", "price": "Patience, and a fee paid to the Thing." },
-    { "rank": 11, "suit": "heart", "title": "Sea-Queen's Hand", "subtitle": "[AUTHORITY]", "description": "Envoy with seal-bag and sword-belt; queen's will made manifest.", "flavor": "He never draws his blade. The threat is enough. His oath-stick is branded with the queen's mark — a seal that cannot be forged.", "debt": "He'll grant a harbor-mark or writ on the Queen's authority, once, for genuine service rendered.", "price": "Loyalty demonstrated publicly, and future obligation to the crown." },
-    { "rank": 12, "suit": "heart", "title": "Sea-Queen", "subtitle": "[AUTHORITY]", "description": "Crown of hammered silver, eyes for weather and law.", "flavor": "She lost an eye to a storm — or to a spy. She won't say which. She is the only one who can order the winter debts spoken.", "debt": "She grants audience rarely, but her word bends sea-law when she chooses to speak it.", "price": "A service that only a trusted outsider could perform." },
-    { "rank": 13, "suit": "heart", "title": "High Jarl", "subtitle": "[REPUTATION]", "description": "First among raids, last to boast; paramount over strands.", "flavor": "His beard is braided with silver from every ship he's taken. His oath-stick is a whale's rib — too long for anyone else to carry.", "debt": "He owes the moot-holders a decision on a season's raid; helping him decide grants standing.", "price": "Public backing for whichever course you help him choose." },
-    { "rank": 14, "suit": "heart", "title": "Volva of Mist", "subtitle": "[LEGEND]", "description": "Oath-reader whose nod stills surf; seer of tides and truth.", "flavor": "She speaks once a year. The rest of the time, she listens to the fog. She reads the frost-bound oaths by touch — her fingers are scarred from counting.", "debt": "Her yearly words are prophecy — genuine, cryptic, and binding on those who hear them.", "price": "A memory, freely given, in trade for a glimpse of fate." }
+    {
+      "rank": 2,
+      "suit": "heart",
+      "title": "Net-Wife",
+      "subtitle": "[COMMUNITY]",
+      "description": "Reads sea like memory, sky like mood; weather-witch in all but name.",
+      "flavor": "She ties a knot for every storm she's survived. Her belt has thirty. She is the keeper of the village oath-sticks.",
+      "debt": "She'll read the coming weather accurately for the party once, in exchange for help mending nets.",
+      "price": "A day's honest labor, or news of the wider coast."
+    },
+    {
+      "rank": 3,
+      "suit": "heart",
+      "title": "Steersman",
+      "subtitle": "[REPUTATION]",
+      "description": "Tiller-hand never shakes, even when keel does.",
+      "flavor": "His left ear is scarred — he listened too long to a siren's promise. His oath-stick is notched for every life he's lost.",
+      "debt": "He'll pilot the party through dangerous waters once, if they don't ask about the scar.",
+      "price": "Silence about what he lost, and passage-fare."
+    },
+    {
+      "rank": 4,
+      "suit": "heart",
+      "title": "Shipwright",
+      "subtitle": "[CRAFT]",
+      "description": "Pitch on palms, schedule in teeth; knows every plank's story.",
+      "flavor": "He names each timber after a dead relative. The keel is his grandmother. The ship's burden is carved into the mast.",
+      "debt": "He'll repair a damaged vessel at cost, if the party can name what wood it needs and where it's from.",
+      "price": "Materials, and a story about the ship's most recent voyage."
+    },
+    {
+      "rank": 5,
+      "suit": "heart",
+      "title": "Oar-Master",
+      "subtitle": "[SOCIAL]",
+      "description": "Sets beat that decides if home is today or never.",
+      "flavor": "He drums on a hollowed skull. The rhythm is a prayer to Rorg. The oar-crew's debt is marked on his own arm — notches in the bone.",
+      "debt": "He'll grant the party a bench on a fast longship for a voyage, if they row well and ask properly.",
+      "price": "A season's labor at the oar, or a favor owed to Rorg."
+    },
+    {
+      "rank": 6,
+      "suit": "heart",
+      "title": "Mist-Pilot",
+      "subtitle": "[STEALTH]",
+      "description": "Ghosts boats through marsh lanes; reed-runner with secret paths.",
+      "flavor": "He never blinks in fog. Some say he traded his blink for safe passage. His memory-cord is knotted, not notched — the knots are spells.",
+      "debt": "He'll guide the party through the Mistlands Maze safely, once, if they don't ask what he traded.",
+      "price": "A dried eel skin token, or a secret kept from the sea."
+    },
+    {
+      "rank": 7,
+      "suit": "heart",
+      "title": "Skald",
+      "subtitle": "[JUSTICE] [SOCIAL]",
+      "description": "Verses buy silence, start fights, end them; law in rhyme.",
+      "flavor": "Her tongue is forked — she can praise and curse in the same breath. She is the only one who can reshape a frost-bound oath — by composing a new verse that changes the meaning of a mark.",
+      "debt": "She'll compose a verse to reshape a named oath's meaning, once, if the request is honest.",
+      "price": "A true story worthy of verse, told without embellishment."
+    },
+    {
+      "rank": 8,
+      "suit": "heart",
+      "title": "Shield-Band",
+      "subtitle": "[COMBAT]",
+      "description": "Cousins fine with coin, better with cattle.",
+      "flavor": "They sharpen their swords on runestones. The sparks tell fortunes. Their oath-stick is shared — each mark is a blood debt owed to the band.",
+      "debt": "They'll fight alongside the party for one engagement, if the cause aligns with a family grudge.",
+      "price": "A cut of any plunder, and future favor owed to the band."
+    },
+    {
+      "rank": 9,
+      "suit": "heart",
+      "title": "Foster-Son",
+      "subtitle": "[POLITICS]",
+      "description": "Southern coast birth; speaks both laws and subtext.",
+      "flavor": "He wears two brooches — one iron, one bone. Neither is his true allegiance. He carries two oath-sticks — one for the Linn, one for the lowlands.",
+      "debt": "He'll translate or broker between Linn and southern factions, once, if treated as an equal by both.",
+      "price": "Information split evenly between both sides he serves."
+    },
+    {
+      "rank": 10,
+      "suit": "heart",
+      "title": "Thing-Speaker",
+      "subtitle": "[JUSTICE]",
+      "description": "Makes war into lawsuit, lawsuit into lunch.",
+      "flavor": "He carries a water-timer that runs on meltwater. When it runs out, so does your patience. He interprets the winter debts for those who cannot read ice.",
+      "debt": "He'll interpret a frost-bound oath's true terms, once, for anyone willing to sit through the full proceeding.",
+      "price": "Patience, and a fee paid to the Thing."
+    },
+    {
+      "rank": 11,
+      "suit": "heart",
+      "title": "Sea-Queen's Hand",
+      "subtitle": "[AUTHORITY]",
+      "description": "Envoy with seal-bag and sword-belt; queen's will made manifest.",
+      "flavor": "He never draws his blade. The threat is enough. His oath-stick is branded with the queen's mark — a seal that cannot be forged.",
+      "debt": "He'll grant a harbor-mark or writ on the Queen's authority, once, for genuine service rendered.",
+      "price": "Loyalty demonstrated publicly, and future obligation to the crown."
+    },
+    {
+      "rank": 12,
+      "suit": "heart",
+      "title": "Sea-Queen",
+      "subtitle": "[AUTHORITY]",
+      "description": "Crown of hammered silver, eyes for weather and law.",
+      "flavor": "She lost an eye to a storm — or to a spy. She won't say which. She is the only one who can order the winter debts spoken.",
+      "debt": "She grants audience rarely, but her word bends sea-law when she chooses to speak it.",
+      "price": "A service that only a trusted outsider could perform."
+    },
+    {
+      "rank": 13,
+      "suit": "heart",
+      "title": "High Jarl",
+      "subtitle": "[REPUTATION]",
+      "description": "First among raids, last to boast; paramount over strands.",
+      "flavor": "His beard is braided with silver from every ship he's taken. His oath-stick is a whale's rib — too long for anyone else to carry.",
+      "debt": "He owes the moot-holders a decision on a season's raid; helping him decide grants standing.",
+      "price": "Public backing for whichever course you help him choose."
+    },
+    {
+      "rank": 14,
+      "suit": "heart",
+      "title": "Volva of Mist",
+      "subtitle": "[LEGEND]",
+      "description": "Oath-reader whose nod stills surf; seer of tides and truth.",
+      "flavor": "She speaks once a year. The rest of the time, she listens to the fog. She reads the frost-bound oaths by touch — her fingers are scarred from counting.",
+      "debt": "Her yearly words are prophecy — genuine, cryptic, and binding on those who hear them.",
+      "price": "A memory, freely given, in trade for a glimpse of fate."
+    }
   ],
   "complications": [
-    { "rank": 2, "suit": "club", "title": "Black Squall", "subtitle": "[WEATHER]", "description": "Drops from clear band; oars or prayers — pick one.", "flavor": "The wind screams a name. Listen carefully — it might be yours. Rorg is testing your courage.", "mechanical_hook": "Weather the squall with an Endurance or Boating roll (DV 4); a Miss inflicts 1 Fatigue on the crew and ticks Frost Mark by 1 if a Storm-Oath was recently broken nearby." },
-    { "rank": 3, "suit": "club", "title": "Fogfall", "subtitle": "[WEATHER] [FEAR]", "description": "Sound travels, sight does not; friend and reef trade places.", "flavor": "You hear oars. Then you don't. Then they're behind you. The drowned are rowing.", "mechanical_hook": "Navigation becomes Desperate until the fog clears; a character who calls out for reassurance risks the Mistlands Maze's whispering effect." },
-    { "rank": 4, "suit": "club", "title": "Boom Lift", "subtitle": "[AUTHORITY]", "description": "Harbor chain rises; schedules drown in harbor mouth.", "flavor": "The chain's links are inscribed with names of those who carry weight. Each one rattles differently. Your name is on one.", "mechanical_hook": "The party is delayed one segment on any relevant timer, and the harbor guard now knows their names and business." },
-    { "rank": 5, "suit": "club", "title": "Levy Clash", "subtitle": "[POLITICS] [COMBAT]", "description": "Viterra's wardens arrive with polite spears.", "flavor": "They carry a writ stamped with the queen's seal. The seal is still wet. The winter ice says the queen is owed three ships.", "mechanical_hook": "Resolving the levy peacefully requires a Sway roll (DV 5); failure escalates to a Cap 2 armed confrontation." },
-    { "rank": 6, "suit": "club", "title": "Keel-Rot Rumor", "subtitle": "[DISASTER]", "description": "Crews beach mid-voyage; trust in timber fails.", "flavor": "The rot smells sweet — too sweet. Someone poisoned the tar. The ship's mark is missing.", "mechanical_hook": "Investigating the sabotage grants a genuine lead on the saboteur (GM's choice); ignoring it risks the vessel becoming unseaworthy mid-journey." },
-    { "rank": 7, "suit": "club", "title": "Feud Token", "subtitle": "[SOCIAL] [DEBT]", "description": "Raid becomes wedding… or funeral; oath-debt called due.", "flavor": "A bronze ring arrives on an arrow. The meaning is clear. The ice shows the mark.", "mechanical_hook": "The party must choose a side or broker peace via a Skald or Thing-Speaker (Sway DV 5); refusal starts a Feud Spiral timer against a random ally." },
-    { "rank": 8, "suit": "club", "title": "Oath Matured", "subtitle": "[SOCIAL] [DEBT]", "description": "Verse sworn last winter comes due today.", "flavor": "The skald clears her throat. The room goes cold. The ice in the Thing-Holm cracks.", "mechanical_hook": "A character who swore an oath earlier in the campaign must now fulfill it or take the mechanical Frost Mark penalty in full." },
-    { "rank": 9, "suit": "club", "title": "Mistlands Miscount", "subtitle": "[DEATH]", "description": "Channels 'move,' cargo vanishes without witnesses.", "flavor": "The fog lifts to reveal a different shore. Your charts are now lies. The cargo's mark is blank — someone erased it.", "mechanical_hook": "The party loses 1 Supply of cargo and must re-navigate from an unknown position (Wits+Lore, DV 5, to reorient)." },
-    { "rank": 10, "suit": "club", "title": "Aberderrin Race", "subtitle": "[WEATHER]", "description": "Contrary currents split flotilla; half late, half lost.", "flavor": "The water churns like a dying man. Something beneath is feeding. The sea remembers a new debt.", "mechanical_hook": "The party's vessel is separated from any escort or allied ship for the remainder of the voyage unless a Boating roll (DV 5) succeeds." },
-    { "rank": 11, "suit": "club", "title": "Southron Fire-Pots", "subtitle": "[COMBAT]", "description": "Night-run turns to daylight; surprise ashore.", "flavor": "Pots shatter on the deck. The fire burns blue — alchemical. Rorg laughs. The raid's memory is now fire-scarred.", "mechanical_hook": "Any stealth approach is immediately voided; combat begins at a disadvantageous range band." },
-    { "rank": 12, "suit": "club", "title": "Thing Injunction", "subtitle": "[JUSTICE]", "description": "No sailing till grievance heard (hours? days?).", "flavor": "The Thing-Speaker smiles. He has all the time in the world. The winter oath is frozen — no one can leave until it thaws.", "mechanical_hook": "The party cannot depart the settlement until the grievance is resolved, one way or another — treat as a forced scene." },
-    { "rank": 13, "suit": "club", "title": "General Muster", "subtitle": "[AUTHORITY] [COMBAT]", "description": "Horns on every headland; all bays become spears.", "flavor": "The war fleet assembles. Your ship is the smallest. Adar is watching. He counts the oaths.", "mechanical_hook": "The party is conscripted into the muster unless they can produce a valid exemption (a writ, a Frost Mark cleared, or a jarl's favor)." },
-    { "rank": 14, "suit": "club", "title": "Ground-Sea", "subtitle": "[WEATHER] [DEATH]", "description": "Long, blind swell rolls under; steering lies.", "flavor": "The swell has a rhythm — two short, one long. A signal from below. The drowned are voting.", "mechanical_hook": "A character who recognizes the rhythm (Wits+Lore, DV 5) can avoid the worst of the swell; failure inflicts 1 Harm and ticks a relevant danger timer." }
+    {
+      "rank": 2,
+      "suit": "club",
+      "title": "Black Squall",
+      "subtitle": "[WEATHER]",
+      "description": "Drops from clear band; oars or prayers — pick one.",
+      "flavor": "The wind screams a name. Listen carefully — it might be yours. Rorg is testing your courage.",
+      "mechanical_hook": "Weather the squall with an Endurance or Boating roll (DV 4); a Miss inflicts 1 Fatigue on the crew and ticks Winter Debts by 1 if a Storm-Oath was recently broken nearby."
+    },
+    {
+      "rank": 3,
+      "suit": "club",
+      "title": "Fogfall",
+      "subtitle": "[WEATHER] [FEAR]",
+      "description": "Sound travels, sight does not; friend and reef trade places.",
+      "flavor": "You hear oars. Then you don't. Then they're behind you. The drowned are rowing.",
+      "mechanical_hook": "Navigation becomes Desperate until the fog clears; a character who calls out for reassurance risks the Mistlands Maze's whispering effect."
+    },
+    {
+      "rank": 4,
+      "suit": "club",
+      "title": "Boom Lift",
+      "subtitle": "[AUTHORITY]",
+      "description": "Harbor chain rises; schedules drown in harbor mouth.",
+      "flavor": "The chain's links are inscribed with names of those who carry weight. Each one rattles differently. Your name is on one.",
+      "mechanical_hook": "The party is delayed one segment on any relevant timer, and the harbor guard now knows their names and business."
+    },
+    {
+      "rank": 5,
+      "suit": "club",
+      "title": "Levy Clash",
+      "subtitle": "[POLITICS] [COMBAT]",
+      "description": "Viterra's wardens arrive with polite spears.",
+      "flavor": "They carry a writ stamped with the queen's seal. The seal is still wet. The winter ice says the queen is owed three ships.",
+      "mechanical_hook": "Resolving the levy peacefully requires a Sway roll (DV 5); failure escalates to a Cap 2 armed confrontation."
+    },
+    {
+      "rank": 6,
+      "suit": "club",
+      "title": "Keel-Rot Rumor",
+      "subtitle": "[DISASTER]",
+      "description": "Crews beach mid-voyage; trust in timber fails.",
+      "flavor": "The rot smells sweet — too sweet. Someone poisoned the tar. The ship's mark is missing.",
+      "mechanical_hook": "Investigating the sabotage grants a genuine lead on the saboteur (GM's choice); ignoring it risks the vessel becoming unseaworthy mid-journey."
+    },
+    {
+      "rank": 7,
+      "suit": "club",
+      "title": "Feud Token",
+      "subtitle": "[SOCIAL] [DEBT]",
+      "description": "Raid becomes wedding… or funeral; oath-debt called due.",
+      "flavor": "A bronze ring arrives on an arrow. The meaning is clear. The ice shows the mark.",
+      "mechanical_hook": "The party must choose a side or broker peace via a Skald or Thing-Speaker (Sway DV 5); refusal starts a Feud Spiral timer against a random ally."
+    },
+    {
+      "rank": 8,
+      "suit": "club",
+      "title": "Oath Matured",
+      "subtitle": "[SOCIAL] [DEBT]",
+      "description": "Verse sworn last winter comes due today.",
+      "flavor": "The skald clears her throat. The room goes cold. The ice in the Thing-Holm cracks.",
+      "mechanical_hook": "A character who swore an oath earlier in the campaign must now fulfill it or take the mechanical Winter Debts penalty in full."
+    },
+    {
+      "rank": 9,
+      "suit": "club",
+      "title": "Mistlands Miscount",
+      "subtitle": "[DEATH]",
+      "description": "Channels 'move,' cargo vanishes without witnesses.",
+      "flavor": "The fog lifts to reveal a different shore. Your charts are now lies. The cargo's mark is blank — someone erased it.",
+      "mechanical_hook": "The party loses 1 Supply of cargo and must re-navigate from an unknown position (Wits+Lore, DV 5, to reorient)."
+    },
+    {
+      "rank": 10,
+      "suit": "club",
+      "title": "Aberderrin Race",
+      "subtitle": "[WEATHER]",
+      "description": "Contrary currents split flotilla; half late, half lost.",
+      "flavor": "The water churns like a dying man. Something beneath is feeding. The sea remembers a new debt.",
+      "mechanical_hook": "The party's vessel is separated from any escort or allied ship for the remainder of the voyage unless a Boating roll (DV 5) succeeds."
+    },
+    {
+      "rank": 11,
+      "suit": "club",
+      "title": "Southron Fire-Pots",
+      "subtitle": "[COMBAT]",
+      "description": "Night-run turns to daylight; surprise ashore.",
+      "flavor": "Pots shatter on the deck. The fire burns blue — alchemical. Rorg laughs. The raid's memory is now fire-scarred.",
+      "mechanical_hook": "Any stealth approach is immediately voided; combat begins at a disadvantageous range band."
+    },
+    {
+      "rank": 12,
+      "suit": "club",
+      "title": "Thing Injunction",
+      "subtitle": "[JUSTICE]",
+      "description": "No sailing till grievance heard (hours? days?).",
+      "flavor": "The Thing-Speaker smiles. He has all the time in the world. The winter oath is frozen — no one can leave until it thaws.",
+      "mechanical_hook": "The party cannot depart the settlement until the grievance is resolved, one way or another — treat as a forced scene."
+    },
+    {
+      "rank": 13,
+      "suit": "club",
+      "title": "General Muster",
+      "subtitle": "[AUTHORITY] [COMBAT]",
+      "description": "Horns on every headland; all bays become spears.",
+      "flavor": "The war fleet assembles. Your ship is the smallest. Adar is watching. He counts the oaths.",
+      "mechanical_hook": "The party is conscripted into the muster unless they can produce a valid exemption (a writ, a Frost Mark cleared, or a jarl's favor)."
+    },
+    {
+      "rank": 14,
+      "suit": "club",
+      "title": "Ground-Sea",
+      "subtitle": "[WEATHER] [DEATH]",
+      "description": "Long, blind swell rolls under; steering lies.",
+      "flavor": "The swell has a rhythm — two short, one long. A signal from below. The drowned are voting.",
+      "mechanical_hook": "A character who recognizes the rhythm (Wits+Lore, DV 5) can avoid the worst of the swell; failure inflicts 1 Harm and ticks a relevant danger timer."
+    }
   ],
   "rewards": [
-    { "rank": 2, "suit": "diamond", "title": "Harbor-Mark", "subtitle": "[TRAVEL]", "description": "Dock without levy in named strand (once).", "flavor": "The mark is a notch cut in a bone. Match it to the harbor post. The notch must be cut by the harbor master's own knife.", "curse_cost": "The mark works only in the one strand it was cut for, and only once." },
-    { "rank": 3, "suit": "diamond", "title": "Oar-Share", "subtitle": "[TRAVEL]", "description": "Claim two benches on a fast longship for a season.", "flavor": "The oars are carved with your name. Row well, or they'll be recarved. The oar itself is the promise.", "curse_cost": "Failing to row when called upon voids the share and marks the holder as an oath-breaker." },
-    { "rank": 4, "suit": "diamond", "title": "Pilot's Token", "subtitle": "[TRAVEL]", "description": "Mist-runner guides through reed-maze safely.", "flavor": "The token is a dried eel skin. Keep it dry. The pilot's memory-cord is knotted in the same pattern.", "curse_cost": "If the token gets wet, the pilot's guidance is voided mid-journey." },
-    { "rank": 5, "suit": "diamond", "title": "Wharf-Right", "subtitle": "[TRAVEL]", "description": "Dolmis waystation loading priority; first ashore.", "flavor": "The harbormaster frowns but steps aside. Your name is now on a list.", "curse_cost": "Being 'on the list' means the harbormaster's rivals now also know who you are." },
-    { "rank": 6, "suit": "diamond", "title": "Salvage Claim", "subtitle": "[TRADE]", "description": "Flotsam on reef stretch becomes 'inventory.'", "flavor": "You must name each piece before touching it. The wrong word forfeits the claim. Say it wrong twice, and the tide takes the whole pile back.", "curse_cost": "Misnaming a piece forfeits that piece's claim permanently, and may draw the attention of whoever it truly belonged to." },
-    { "rank": 7, "suit": "diamond", "title": "Thing Ruling", "subtitle": "[JUSTICE]", "description": "Verdict in your favor that travels with you.", "flavor": "The verdict is carved on a whale-rib. Carry it as a shield. The winter ice will not speak for the same dispute twice.", "curse_cost": "The ruling cannot be invoked twice for the same dispute — once spent, it is spent." },
-    { "rank": 8, "suit": "diamond", "title": "Raid-Truce", "subtitle": "[TRAVEL] [SOCIAL]", "description": "Immunity in named bay for one market day.", "flavor": "A white banner on your mast. No one will attack — openly. Cut the banner rope, and every eye on the water knows it before you've coiled it.", "curse_cost": "The truce only protects against open attack; it does nothing against subtler harm." },
-    { "rank": 9, "suit": "diamond", "title": "Foster-Bond", "subtitle": "[SOCIAL]", "description": "Guest-kin by jarl's house; hospitality guaranteed.", "flavor": "You share a cup with the jarl. The cup is silver. The promise is iron. The winter ice bears a new mark — for both of you.", "curse_cost": "The bond obligates the party to the jarl's household in turn, someday, in a manner of the jarl's choosing." },
-    { "rank": 10, "suit": "diamond", "title": "Herring Allotment", "subtitle": "[TRADE]", "description": "Priority barrels when the run hits; silver in season.", "flavor": "The barrels are sealed with your mark. Break one to test quality; the hoop remembers whose knife did it.", "curse_cost": "The allotment lasts only one season and must be renewed through continued good standing." },
-    { "rank": 11, "suit": "diamond", "title": "Escort Writ", "subtitle": "[TRAVEL] [COMBAT]", "description": "Eight shields and wolf-banner from cape to cape.", "flavor": "The shields are painted with a wolf's head. They die before you do. Their oath is their swords — notched for every oath kept.", "curse_cost": "The escort's loyalty is to the writ, not to you personally — if the writ is revoked, so is their protection, mid-journey if need be." },
-    { "rank": 12, "suit": "diamond", "title": "Queen's Audience", "subtitle": "[AUTHORITY]", "description": "Whisper exits as policy; sea-law bends.", "flavor": "The Queen's hand writes your words on vellum. The ink is her blood. The winter ice will record the audience — but not the words.", "curse_cost": "What you ask for becomes policy — for everyone, not just you, and policy can be reversed by rivals with better arguments." },
-    { "rank": 13, "suit": "diamond", "title": "High Jarl's Pennon", "subtitle": "[AUTHORITY]", "description": "Levies open booms and mouths when it flies.", "flavor": "The pennon is torn from a captured ship. Fly it proudly — or else. Whoever lost the mast it came from is still counting who owns the wind now.", "curse_cost": "Flying the pennon falsely, or losing it, brings the High Jarl's wrath down on the bearer directly." },
-    { "rank": 14, "suit": "diamond", "title": "Storm-Oath Clause", "subtitle": "[AUTHORITY] [MAGIC]", "description": "Temporary exception to any sea-law, sealed.", "flavor": "The clause is whispered, never written. The sea hears and obeys — once. The winter ice cannot record a whisper, but Rorg has no trouble keeping count.", "curse_cost": "Rorg's memory of the favor owed is long, and his idea of an appropriate repayment rarely matches the asker's." }
+    {
+      "rank": 2,
+      "suit": "diamond",
+      "title": "Harbor-Mark",
+      "subtitle": "[TRAVEL]",
+      "description": "Dock without levy in named strand (once).",
+      "flavor": "The mark is a notch cut in a bone. Match it to the harbor post. The notch must be cut by the harbor master's own knife.",
+      "curse_cost": "The mark works only in the one strand it was cut for, and only once."
+    },
+    {
+      "rank": 3,
+      "suit": "diamond",
+      "title": "Oar-Share",
+      "subtitle": "[TRAVEL]",
+      "description": "Claim two benches on a fast longship for a season.",
+      "flavor": "The oars are carved with your name. Row well, or they'll be recarved. The oar itself is the promise.",
+      "curse_cost": "Failing to row when called upon voids the share and marks the holder as an oath-breaker."
+    },
+    {
+      "rank": 4,
+      "suit": "diamond",
+      "title": "Pilot's Token",
+      "subtitle": "[TRAVEL]",
+      "description": "Mist-runner guides through reed-maze safely.",
+      "flavor": "The token is a dried eel skin. Keep it dry. The pilot's memory-cord is knotted in the same pattern.",
+      "curse_cost": "If the token gets wet, the pilot's guidance is voided mid-journey."
+    },
+    {
+      "rank": 5,
+      "suit": "diamond",
+      "title": "Wharf-Right",
+      "subtitle": "[TRAVEL]",
+      "description": "Dolmis waystation loading priority; first ashore.",
+      "flavor": "The harbormaster frowns but steps aside. Your name is now on a list.",
+      "curse_cost": "Being 'on the list' means the harbormaster's rivals now also know who you are."
+    },
+    {
+      "rank": 6,
+      "suit": "diamond",
+      "title": "Salvage Claim",
+      "subtitle": "[TRADE]",
+      "description": "Flotsam on reef stretch becomes 'inventory.'",
+      "flavor": "You must name each piece before touching it. The wrong word forfeits the claim. Say it wrong twice, and the tide takes the whole pile back.",
+      "curse_cost": "Misnaming a piece forfeits that piece's claim permanently, and may draw the attention of whoever it truly belonged to."
+    },
+    {
+      "rank": 7,
+      "suit": "diamond",
+      "title": "Thing Ruling",
+      "subtitle": "[JUSTICE]",
+      "description": "Verdict in your favor that travels with you.",
+      "flavor": "The verdict is carved on a whale-rib. Carry it as a shield. The winter ice will not speak for the same dispute twice.",
+      "curse_cost": "The ruling cannot be invoked twice for the same dispute — once spent, it is spent."
+    },
+    {
+      "rank": 8,
+      "suit": "diamond",
+      "title": "Raid-Truce",
+      "subtitle": "[TRAVEL] [SOCIAL]",
+      "description": "Immunity in named bay for one market day.",
+      "flavor": "A white banner on your mast. No one will attack — openly. Cut the banner rope, and every eye on the water knows it before you've coiled it.",
+      "curse_cost": "The truce only protects against open attack; it does nothing against subtler harm."
+    },
+    {
+      "rank": 9,
+      "suit": "diamond",
+      "title": "Foster-Bond",
+      "subtitle": "[SOCIAL]",
+      "description": "Guest-kin by jarl's house; hospitality guaranteed.",
+      "flavor": "You share a cup with the jarl. The cup is silver. The promise is iron. The winter ice bears a new mark — for both of you.",
+      "curse_cost": "The bond obligates the party to the jarl's household in turn, someday, in a manner of the jarl's choosing."
+    },
+    {
+      "rank": 10,
+      "suit": "diamond",
+      "title": "Herring Allotment",
+      "subtitle": "[TRADE]",
+      "description": "Priority barrels when the run hits; silver in season.",
+      "flavor": "The barrels are sealed with your mark. Break one to test quality; the hoop remembers whose knife did it.",
+      "curse_cost": "The allotment lasts only one season and must be renewed through continued good standing."
+    },
+    {
+      "rank": 11,
+      "suit": "diamond",
+      "title": "Escort Writ",
+      "subtitle": "[TRAVEL] [COMBAT]",
+      "description": "Eight shields and wolf-banner from cape to cape.",
+      "flavor": "The shields are painted with a wolf's head. They die before you do. Their oath is their swords — notched for every oath kept.",
+      "curse_cost": "The escort's loyalty is to the writ, not to you personally — if the writ is revoked, so is their protection, mid-journey if need be."
+    },
+    {
+      "rank": 12,
+      "suit": "diamond",
+      "title": "Queen's Audience",
+      "subtitle": "[AUTHORITY]",
+      "description": "Whisper exits as policy; sea-law bends.",
+      "flavor": "The Queen's hand writes your words on vellum. The ink is her blood. The winter ice will record the audience — but not the words.",
+      "curse_cost": "What you ask for becomes policy — for everyone, not just you, and policy can be reversed by rivals with better arguments."
+    },
+    {
+      "rank": 13,
+      "suit": "diamond",
+      "title": "High Jarl's Pennon",
+      "subtitle": "[AUTHORITY]",
+      "description": "Levies open booms and mouths when it flies.",
+      "flavor": "The pennon is torn from a captured ship. Fly it proudly — or else. Whoever lost the mast it came from is still counting who owns the wind now.",
+      "curse_cost": "Flying the pennon falsely, or losing it, brings the High Jarl's wrath down on the bearer directly."
+    },
+    {
+      "rank": 14,
+      "suit": "diamond",
+      "title": "Storm-Oath Clause",
+      "subtitle": "[AUTHORITY] [MAGIC]",
+      "description": "Temporary exception to any sea-law, sealed.",
+      "flavor": "The clause is whispered, never written. The sea hears and obeys — once. The winter ice cannot record a whisper, but Rorg has no trouble keeping count.",
+      "curse_cost": "Rorg's memory of the favor owed is long, and his idea of an appropriate repayment rarely matches the asker's."
+    }
   ],
   "quick_use_notes": {
     "draw_rules": "Draw until you have all four suits: Spade = place, Heart = actor, Club = pressure, Diamond = leverage. Highest rank sets the main Timer (2–5 → 4, 6–10 → 6, J/Q/K → 8, A → 10).",
@@ -127,83 +694,243 @@
     "ace_rule": "If any Ace appears, echo sea-omens — horns on wind, white horses on swell, verse unfinished until landfall, the ice cracking with memory."
   },
   "additional_features": {
-    "temple_pressure_events_d6": [
-      "**Grain Fleet Arrives.** Temple ships unload cheap southern grain. Prices drop, but old shrine offerings are forgotten. Effect: +1 tick on Temple Pressure; +1d on social rolls with hungry villagers for one scene.",
-      "**Synod Court Opens.** A judge hears the first case; feuds may be settled with penance instead of blood-silver. Effect: shrine-devout characters suffer −1 Position in this settlement until they prove loyalty.",
-      "**Bell Tower Consecrated.** A bronze bell rings nine times at dawn; old shrine bells fall silent. Effect: Temple-leaning characters gain +1d on faith actions; at midnight, GM may spend 1 SB to have the ninth bell attract a hungry ghost.",
-      "**Schoolmaster Arrives.** Children learn Temple script; oral traditions are called superstition. Effect: the next generation gains +1 Temple Devotion; players may attempt a Synthesis Scene to save one shrine teaching.",
-      "**Bishop's Progress.** A high cleric tours the coast, consecrating altars. Effect: begin a Bishop's Favor [4] timer; if it fills, the bishop demands a public oath of loyalty.",
-      "**Iconoclasm.** Zealots burn a seastack shrine or break a Thing's oath-ring. Effect: shrine-devout characters gain a free Vengeance Oath String; weather and tide hazards worsen one step for 1d4 days."
+    "frost_mark_mechanics": "Every favor or gift from a Linn creates a Frost Mark — a 4-segment timer. When full, the community demands service (raid, story, labor). Refusal imposes −1 die on social rolls until resolved.",
+    "season_turn": "The GM may spend 3 Story Beats to change the season. Spring: foraging/healing +1; Summer: combat/sailing +1; Autumn: social/legal +1; Winter: survival Desperate, Frost Marks clear more easily.",
+    "temple_pressure_events": [
+      "**Grain Fleet Arrives.** Temple ships bring cheap grain; prices drop, but old shrine offerings are neglected. Tick Temple Pressure +1.",
+      "**Synod Court Opens.** A judge hears disputes; feuds may be settled with penance instead of blood-silver. Shrine-devout suffer −1 Position here.",
+      "**Bell Tower Consecrated.** A bronze bell rings nine times at dawn; old shrine bells fall silent. Temple-leaning gain +1 die on faith actions.",
+      "**Schoolmaster Arrives.** Children learn Temple script; oral traditions called superstition. Next generation gains +1 Temple Devotion.",
+      "**Bishop's Progress.** A high cleric tours the coast. Begin a Bishop's Favor [4] timer; if it fills, he demands a public oath.",
+      "**Iconoclasm.** Zealots burn a seastack shrine. Shrine-devout gain a Vengeance Oath String; weather hazards worsen for 1d4 days."
     ],
-    "linn_reactions_to_temple_d12": [
-      "Desperate Acceptance — 'We ate their grain. We owe them.' Tag: Grateful–Sullen.",
-      "Silent Resistance — shrine offerings left in secret; Temple priests given cold hearths. Tag: Ice–Hospitality.",
-      "Open Feud — a clan declares the Temple an enemy; raids on granaries begin. Clock: Feud with Temple [6].",
-      "Syncretic Curiosity — elders ask the priest to bless a shrine. 'Both fires warm the hall.' Opportunity: earn a Synthesis Token.",
-      "Pragmatic Split — the jarl converts; half the thing follows, half walks out. Clock: Thing Schism [6].",
-      "Conversion as Revenge — a spurned family embraces the Temple to spite the old patrons. Tag: Bitter–Righteous.",
-      "Bread & Bells — the village accepts the Temple but keeps a hidden shrine to Hvítabjörn. Tag: Double–Altar.",
-      "Heretic Burnings — Temple zealots execute a shrine-keeper; the hall is now Contested Ground.",
-      "The Bishop's Bastard — a priest's secret child is now a Linn raider. String: Blood–Secret.",
-      "Wave-Father's Answer — a storm wrecks a Temple grain ship; shrine-devout see a sign. Effect: +2 on a shrine-related roll this session.",
-      "Oath-Ring Saved — a Temple judge rules the old oath-ring still lawful. Reward: Ambassador Status (one scene of neutral faith ground).",
-      "The Silent Bell — the new tower's bell cracks on the ninth toll; no one can explain it. Omen: GM gains 2 SB for fog- or ghost-related twists."
-    ],
-    "temple_missions_d6": [
-      "Recover a Stolen Relic — a shrine-devout crew has taken a fragment of the True Candle. Find it, by negotiation or force.",
-      "Escort the Bishop — take a southern prelate through a contested fjord, protecting him from 'pagan' ambushes (or arranging one).",
-      "Convert a Hall — persuade a fence-sitting jarl (or his skald) that the Light is good for trade. Clock: Conversion [6].",
-      "Burn the Shrine — a remote seastack shrine is a navigation hazard and gathering point for resisters; the Temple offers silver for its destruction.",
-      "Rescue a Synod Judge — taken hostage after a biased ruling; infiltrate the clan's winter hall and bring him out alive.",
-      "Forgive a Blood-Debt — the Temple wants to end a feud by paying blood-silver from its own coffers; convince both sides to accept."
-    ],
-    "faith_tension_scenes_d6": [
-      "The Thinglet at the Hearth — shrine-devout and Temple-leaning families argue over a broken betrothal. Position: Controlled → Desperate if you take sides openly.",
-      "Midnight at the Bell Tower — someone has silenced the ninth bell with wool from a white bear's pelt. Complication: Spiritual Conflict Condition begins.",
-      "The Convert's Shame — a Temple-leaning Linn begs you to smuggle her family's shrine totem out before the bishop's agents find it.",
-      "Storm over the Synod Court — a shrine-devout's prayer is answered with lightning on the Temple granary. GM: spend 2 SB to have a priest accuse the party of witchcraft.",
-      "The Wandering Skald — a singer arrives with a false verse claiming the crew has a secret shrine oath; now everyone believes it.",
-      "Dual Oath at Dusk — a dying warrior asks to swear by both the old patrons and the Light; honor both to earn a Synthesis Token."
-    ],
-    "syncretic_outcomes_d6": [
-      "The Shared Cairn — a Temple candle lights an old oath-ring; site becomes Mixed Quarter permanently (reroll a failed faith roll here once per session).",
-      "Witness of Both — the crew is known as bridge-builders; gain Ambassador Status (convert a faith-based Position penalty into a bonus once per session).",
-      "The Ninth Bell Silent — the village rings only eight bells, leaving the ninth for the old patrons; shrine-devout no longer suffer −1 Position here.",
-      "The Skald's Compromise — a Temple hymn set to an old shrine tune; any 'Suspicious' Audience tag downgrades to 'Curious' in this region.",
-      "Blood-Silver to the Poor — a feud settled by paying wergild to the Temple's poor fund, witnessed by the shrine; counts as both a Thing Verdict and Synod Absolution.",
-      "The Unbroken Spiral — a white candle and a raven's feather offered together; the crew gains a permanent Synthesis Token that refreshes each season."
-    ],
-    "local_patrons": [
-      { "name": "Adar the All-Father", "syncretism": "Oath of Flame and Light", "description": "The one-eyed god of wisdom, death, and binding oaths. He watches from the ridges. His oath-stick is the frost-bound memory itself." },
-      { "name": "Rorg the Storm Father", "syncretism": "Xhak'thul (thunder-patron)", "description": "The god of thunder, raiding, and the wild sea. His devotees swear storm-oaths by drinking seawater. He laughs at lightning. The Temple calls him a demon; the Linn call him captain." },
-      { "name": "The Salted Anchor", "syncretism": "The Sealed Gate", "description": "The harbor that never closes, the oath that never rusts." },
-      { "name": "The Wave Mother", "syncretism": "Raéyn", "description": "The tide that carries and the storm that answers." },
-      { "name": "The Drowned Chorus", "syncretism": "Khemesh", "description": "The pressure beneath the keel, the weight the sea collects." },
-      { "name": "The Unwritten Verse", "syncretism": "The Witness", "description": "The memory that survives the drowning." }
-    ]
+    "faith_devotion_spectrum": {
+      "description": "Linn faith ranges from shrine-devout (−3) to Temple-favored (+3). Most are mixed. Use the following overlays:",
+      "bands": {
+        "-3_to_-2": "Shrine-Favored: +1 die on patron rites or shrine diplomacy; −1 Position in Temple-dominated venues.",
+        "-1_to_+1": "Bridge-Walker: No innate bonus; can qualify for Ambassador Status.",
+        "+2_to_+3": "Temple-Favored: +1 die on Temple rites or court scenes; −1 Position in shrine strongholds."
+      },
+      "synthesis_tokens": "When players successfully blend shrine and Temple practices, gain a Synthesis Token (max 2). Spend to: improve Position on a faith action by one step, gain +1 die on diplomacy between factions, or declare safe passage.",
+      "dual_oaths": "A character swearing both to shrine and Temple must choose which faith is offended on a roll with 1s. Refusing to choose marks Spiritual Conflict (−1 die to faith actions until resolved).",
+      "contamination": "Performing rites in the 'wrong' space may apply a Contamination Token. Clear with downtime or convert to XP (1 Token = 1 XP toward a faith-aligned talent)."
+    },
+    "saga_system": {
+      "description": "The Saga system tracks legendary deeds. Each crew has a Saga Reputation track (1–6).",
+      "earning": "Award Saga Points for epic victories, impossible feats, honor-keeping, legendary sacrifices, or story-shaping decisions. 1–2 points per deed.",
+      "benefits": {
+        "1-2": "Local Heroes: once per scene, improve Position by one step when defending home or kin.",
+        "3-4": "Regional Champions: once per session, invoke a past deed for +1 die on a relevant roll.",
+        "5-6": "Living Legends: once per session, treat any Controlled Position as Dominant for a single action."
+      },
+      "complications": "Fame brings rivals, expectations, and Saga Debts. The GM may introduce rival challenges, expectation burdens, or target status."
+    }
   },
   "lore_echoes": [
-    { "title": "The Draugr Jarl (Unfinished Business)", "description": "The Thing-Holm is haunted by a jarl who died before his oath was fulfilled. He rises when a storm-oath is broken, demanding a blood-price paid in stories. The Temple of Light has sent three missionaries to lay him to rest; all three drowned in calm water. His oath-stick is frozen into the ice of the Thing-Holm. If it ever thaws, he will walk again." },
-    { "title": "Adar's Ravens (The Witness)", "description": "Adar is said to have two ravens, Memory and Thought, who fly across the world each day and return to whisper in his ear. A Linn skald who prays to Adar may ask one question about a forgotten weight; the GM must answer truthfully, though cryptically. The price is a memory — the skald forgets something unimportant, but it may become important later." },
-    { "title": "Rorg's Hammer (The Xhak'thul)", "description": "The Storm Father's hammer is said to be lodged in a cliff on the highest skerry. A character who touches the hammer and survives the lightning may invoke Rorg's wrath once per session: all enemies within Near must test Resolve (DV 4) or be Stunned for one exchange. The cost is that the character is marked by the storm — they will be struck by lightning at the worst possible moment (GM's discretion)." },
-    { "title": "The Tide-Washed Covenant (The Hospice of the Salted Anchor)", "description": "A gray-robed healer runs a hospice on the edge of the Mistlands, treating wounded raiders and fog-mad sailors alike. She asks no payment, but she writes every name in a book that never dries. Linn captains leave offerings of fresh water before a voyage; those who refuse find their ship plagued by the drowned. The book is said to be a copy of the frost-bound oaths — but written in salt water, not ice." },
-    { "title": "The Ninth", "description": "In any longhouse, the ninth horn blown at a feast summons the Hollow. The wise stop at eight. Those who blow the ninth are said to see a pale figure standing at the high table — waiting to collect a weight. The figure is Adar, checking his oath-stick." }
+    {
+      "title": "The Draugr's Silver",
+      "description": "A jarl died with an unpaid oath and rose as a draugr. He demanded his wife settle the tally with blood or battle. She armed his corpse and sent him to fight a draugr-lord in the Direwood. He lost, but the tally was paid. The story teaches that the dead do not wait for payment—they collect."
+    },
+    {
+      "title": "The Shield That Forgot",
+      "description": "A warrior named Astrid lost her shield, which held her life's memories. Without it, she forgot her name. She found a black river stone carved with the rune Uruz, which restored a fragment of her memory—enough to remember her name, but not all of her past. The story reminds that names are oaths owed to the people who speak them."
+    },
+    {
+      "title": "The Ninth Rune",
+      "description": "A skald sought the ninth rune—the rune of grief for the dead. He found a standing stone in the Mistland that showed the name of his drowned son. He learned that the ninth rune is not carved; it is witnessed. Speaking the name of the dead is enough to honor them, but only once a year."
+    },
+    {
+      "title": "The Mist-Walker's Gift",
+      "description": "A young woman entered the Mistland to find her father, who had become part of the fog. The fog takes memories; to recover them, one must tell a story the fog has never heard. Nine stories bought her father's return. The Mistland is a tally—every breath is an entry."
+    },
+    {
+      "title": "The Valewood Hunt",
+      "description": "A warrior boasted he would spend a night in the Valewood and bring back a relic. He took a crown from a phasing city and was hunted by its queen. He escaped by leaving the crown behind. The Valewood shows you what you fear—and then what you forgot."
+    },
+    {
+      "title": "The Ship That Sailed Over Land",
+      "description": "An old longship, the Fjord-Wyrm, could no longer float. Rather than burn it, a shipwright returned it to the forest, where it became soil and grew new trees. The story teaches that a ship is a promise; to destroy it is to break an oath. It must be transformed."
+    },
+    {
+      "title": "The Skald Who Lost Her Tongue",
+      "description": "A rival cut out the tongue of a skald named Signy. She traded her blood to a selkie for a new tongue, which could speak a person's true name—and cause them to forget their own story. A tongue is a weapon; a whisper is sharper."
+    },
+    {
+      "title": "The Hearth That Would Not Die",
+      "description": "A longhouse burned, but the hearth stone remained. The family swore new oaths before it to keep the fire alive. A hearth is a witness; forget the oaths, and the hearth goes cold."
+    },
+    {
+      "title": "The Oath of the Unsung Dead",
+      "description": "A jarl cut a tree from the Direwood without offering a story. His descendants owed three hundred stories to the forest. The Direwood remembers; the price is paid in stories, never coin."
+    },
+    {
+      "title": "The Ninth",
+      "description": "In any longhouse, the ninth horn blown at a feast summons the Hollow. The wise stop at eight. Those who blow the ninth see a pale figure at the high table—Adar, checking his oath-stick. The ninth is the unwitnessed death, the debt that can never be paid."
+    }
   ],
   "superstitions": [
-    { "name": "Bread to the Wake", "effect": "Toss a crust over the gunwale before a voyage. Ignore the first Black Squall penalty.", "cost": "Burn for +1 die once" },
-    { "name": "Knot the Oar", "effect": "Tie a single knot in your oar's leather grip. Cancel Keel-Rot Rumor or take −1 die on your next rowing check (your choice).", "cost": "Burn for +1 die once" },
-    { "name": "Name to the Deep", "effect": "Whisper a dead enemy's name into the tide. Gain +1 Effect against his kin for the scene, but mark Obligation to the Sea-Queen.", "cost": "Burn for +1 die once" },
-    { "name": "Drink to the Storm", "effect": "Pour a cup of mead into the sea before a raid. Rorg will grant favorable winds — but he will also expect a share of the plunder.", "cost": "Burn for +1 die once" }
+    {
+      "name": "Bread to the Wake",
+      "effect": "Toss a crust over the gunwale before a voyage. Ignore the first Black Squall penalty.",
+      "cost": "Burn for +1 die once"
+    },
+    {
+      "name": "Knot the Oar",
+      "effect": "Tie a single knot in your oar's leather grip. Cancel Keel-Rot Rumor or take −1 die on your next rowing check (your choice).",
+      "cost": "Burn for +1 die once"
+    },
+    {
+      "name": "Name to the Deep",
+      "effect": "Whisper a dead enemy's name into the tide. Gain +1 Effect against his kin for the scene, but mark Obligation to the Sea-Queen.",
+      "cost": "Burn for +1 die once"
+    },
+    {
+      "name": "Drink to the Storm",
+      "effect": "Pour a cup of mead into the sea before a raid. Rorg will grant favorable winds — but he will also expect a share of the plunder.",
+      "cost": "Burn for +1 die once"
+    }
   ],
-  "patronage_and_power": "Among the Linn, power flows through oaths, kinship, and the spoken word — and through the marks carved in ice. Jarls maintain authority through successful raids and wise judgments, while skalds wield influence through their ability to immortalize deeds in verse — or damn names through satire. The Sea-Queen holds sway over the coastlands, but her rule depends on the respect of the High Jarl and the Thing-speakers who interpret ancient laws. And beneath all of them lies the frost-bound memory — the carved word, not the written one. **For the GM:** Power in Linn society is fluid and performance-based. Patronage often takes the form of foster-bonds, oar-shares, or raid-truces — each binding the recipient to service and reputation. Tie rewards to visible symbols (tokens, banners, verses) that can be challenged, stolen, or voided; let rival jarls issue conflicting claims; use the Thing-Holm and harbor gatherings as arenas for social contests; introduce the Frost Mark as a recurring pressure; let the seasons change, using the Season's Turn to reinforce the cyclical nature of Linn life. In Linn society, your word is your bond, and your reputation is your greatest treasure. But the frost-bound memory is patient. It waits for spring.",
+  "decline_and_patronage": "Among the Linn, power flows through oaths, kinship, and the spoken word — and through the marks carved in ice. Jarls maintain authority through successful raids and wise judgments, while skalds wield influence through their ability to immortalize deeds in verse — or damn names through satire. The Sea-Queen holds sway over the coastlands, but her rule depends on the respect of the High Jarl and the Thing-speakers who interpret ancient laws. And beneath all of them lies the frost-bound memory — the carved word, not the written one. Patronage here is as brittle as winter ice: a jarl's favor can melt with a broken oath, a skald's blessing can turn to curse with a single false verse. To seek a patron among the Linn is to accept that your name will be carved — and that carving can never be fully erased. The Temple of Light offers a different kind of weight: absolution, not memory; forgiveness, not obligation. But the Linn know that a debt forgiven is still a debt owed. The frost remembers. The sea remembers. And the Hollow is patient.",
+  "sb_spend_table": {
+    "minor_complications": [
+      "**Exposure:** Your actions draw unwanted attention from **jarls or Thing-speakers**.",
+      "**Noise:** Sounds of your actions alert nearby **watchmen or shield-bands**.",
+      "**Trace:** Evidence of your passage marks your route for **trackers or rival clans**.",
+      "**Delay:** A brief but meaningful setback costs you **time or favorable weather**.",
+      "**Supply Strain:** Mark +1 segment on a relevant **resource timer**."
+    ],
+    "moderate_setbacks": [
+      "**Alarm Raised:** **Sea-Queen's Hand or High Jarl's retinue** becomes aware and begins responding.",
+      "**Position Lost:** You lose advantageous ground/cover/stealth due to **fog or tide shift**.",
+      "**Foe Appears:** A **rival clan's raiders or Temple zealots** arrives on scene.",
+      "**Gear Trouble:** A piece of equipment becomes **Compromised/Neglected**.",
+      "**Lock/Barrier:** A simple obstacle now requires a test to overcome."
+    ],
+    "serious_trouble": [
+      "**Reinforcements:** Additional **shield-bands, Temple guards, or war-fleet** arrive.",
+      "**Key Gear Breaks:** A crucial tool/weapon becomes temporarily unusable.",
+      "**Major Twist:** The situation fundamentally changes - **oath is called due/raid-truce broken/frost-mark claimed**.",
+      "**Rail Tick:** Advance a relevant campaign/front timer by 1 segment.",
+      "**Condition Applied:** Mark **Fatigue 1/Harm 1/Condition** appropriate to fiction."
+    ],
+    "major_turns": [
+      "**Trap Springs:** A prepared danger activates with full effect.",
+      "**Authority Arrival:** **High Jarl, Sea-Queen, or Volva of Mist** intervenes.",
+      "**Scene Shift:** The environment changes dramatically - **storm breaks/fog descends/ice cracks**.",
+      "**Patron Omen:** Divine/arcane forces take notice - **omen appears/blessing lost/curse manifests**.",
+      "**Narrative Pivot:** The story takes an unexpected turn that reframes objectives."
+    ],
+    "region_specific": [
+      "**Linn (Skerries & Storm-Oaths):** A horn is blown nine times; a ship appears on the horizon that no one recognizes; the ice cracks with a voice.",
+      "**Linn (Oaths & Law):** An oath is called due; a Thing-Speaker challenges your testimony; a Frost Mark is claimed against you.",
+      "**Linn (Sea & Weather):** A squall rises with no warning; the tide turns three bells early; a white bear is seen on the ice.",
+      "**Linn (The Temple Crusade):** A bell tolls from a newly consecrated tower; a bishop demands an oath of loyalty; a shrine is burned in the night."
+    ]
+  },
+  "boss_archetypes": [
+    {
+      "name": "The Draugr Jarl",
+      "tags": ["Undead", "Oath"],
+      "description": "A dead jarl whose oath was never fulfilled. He rises when the ninth bell tolls, demanding a blood-price paid in stories.",
+      "phases": ["Frost Awakens", "The Reckoning", "Bargain or Blood"],
+      "cracks": ["Fulfill the oath he swore in life", "Convince the Thing-Speaker to record a new verdict", "Offer a memory heavy enough to satisfy the frost"]
+    },
+    {
+      "name": "The Temple Bishop",
+      "tags": ["Authority", "Faith"],
+      "description": "A southern prelate determined to convert the Linn, by grain, by law, or by fire.",
+      "phases": ["Grain Fleet Arrives", "Synod Court Opens", "Iconoclasm"],
+      "cracks": ["Expose a corruption in his synod court", "Persuade a converted jarl to switch sides", "Restore a shrine he ordered burned"]
+    },
+    {
+      "name": "The Mist-Walker",
+      "tags": ["Otherworld", "Fear"],
+      "description": "A Linn who entered the Mistlands without an offering and became part of the fog.",
+      "phases": ["Whisper", "Fogfall", "The Ninth Breath"],
+      "cracks": ["Tell the Mist-Walker a story it has never heard", "Offer a memory of sunlight", "Speak its true name"]
+    },
+    {
+      "name": "The Valewood Queen",
+      "tags": ["Fey", "Memory"],
+      "description": "A queen of a phasing city in the Valewood, whose crown was stolen and whose attention is jealous.",
+      "phases": ["Phasing City Appears", "The Hunt", "The Relic Returned"],
+      "cracks": ["Return the stolen relic", "Speak a true regret", "Allow a willing sacrifice to take the queen's place"]
+    },
+    {
+      "name": "The Sea-Queen's Rival",
+      "tags": ["Politics", "Leverage"],
+      "description": "A jarl who has gathered enough ships and oaths to challenge the Sea-Queen's law.",
+      "phases": ["Muster", "Challenge", "Thing-Holm Verdict"],
+      "cracks": ["Broker a truce between the two", "Sway the Thing-Speaker to the queen's side", "Expose the rival's broken oath"]
+    }
+  ],
+  "encounter_seeds": [
+    {
+      "title": "The Draugr's Silver",
+      "description": "A Linn jarl's corpse has risen, demanding payment for an oath unfulfilled. The party must find the weregild and offer it before the draugr kills again."
+    },
+    {
+      "title": "The Shield That Forgot",
+      "description": "A Linn warrior has lost her shield—and her name. She remembers only that she swore an oath to a dead jarl. The party must help her find the shield or a new memory before she is forgotten."
+    },
+    {
+      "title": "The Mist-Walker's Gift",
+      "description": "A Linn chieftain's son walked into the Mistland three days ago. The party must find him, but the fog takes memories every hour. They must tell stories to the fog to keep their own names—and to buy the son's freedom."
+    },
+    {
+      "title": "The Valewood Hunt",
+      "description": "A Linn warrior took a bronze crown from a phasing city. Now the queen walks behind him. The party must find the city and return the crown before the queen takes more than a name."
+    },
+    {
+      "title": "The Ship That Sailed Over Land",
+      "description": "A Linn jarl inherited a longship that has been in his family for six generations. The ship is rotting. If he burns it, the ancestors will curse him. The party must help him return the ship to the forest—or convince the forest to accept it."
+    }
+  ],
   "index": [
-    "Linn", "Skerries and Storm-Oaths generator", "Theme generator", "Places!Linn", "People!Linn", "Complications!Linn", "Rewards!Linn",
-    "Sea-Queen of the Linn", "High Jarl", "Volva of the Mist", "Thing-holm", "Mistlands", "Whale-road", "Dolmis waystation",
-    "Runestone causey", "Kelp-skerry gut", "Aberderrin current", "Thing-speaker", "Skald", "Mist-pilot", "Net-wife",
-    "Oar-master", "Shield-band", "Foster-son", "Storm-oath", "Feud token", "Raid-truce ribbon", "Saint Adar",
-    "Adar the All-Father", "Rorg the Storm Father", "Saint Hervor", "Tide-Washed Covenant", "Draugr Jarl",
-    "Temple of Light!Linn", "Frost Mark", "Season's Turn", "Wyrd", "Tvíhögg", "Volva", "Temple Crusade!Linn",
-    "Thing Schism", "Synthesis Token"
+    "Linn",
+    "Skerries and Storm-Oaths generator",
+    "Theme generator",
+    "Places!Linn",
+    "People!Linn",
+    "Complications!Linn",
+    "Rewards!Linn",
+    "Sea-Queen of the Linn",
+    "High Jarl",
+    "Volva of the Mist",
+    "Thing-holm",
+    "Mistlands",
+    "Whale-road",
+    "Dolmis waystation",
+    "Runestone causey",
+    "Kelp-skerry gut",
+    "Aberderrin current",
+    "Thing-speaker",
+    "Skald",
+    "Mist-pilot",
+    "Net-wife",
+    "Oar-master",
+    "Shield-band",
+    "Foster-son",
+    "Storm-oath",
+    "Feud token",
+    "Raid-truce ribbon",
+    "Saint Adar",
+    "Adar the All-Father",
+    "Rorg the Storm Father",
+    "Saint Hervor",
+    "Tide-Washed Covenant",
+    "Draugr Jarl",
+    "Temple of Light!Linn",
+    "Frost Mark",
+    "Season's Turn",
+    "Wyrd",
+    "Tvíhögg",
+    "Volva",
+    "Temple Crusade!Linn",
+    "Thing Schism",
+    "Synthesis Token",
+    "The Ninth Breath",
+    "The Hollow"
   ],
   "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
 }

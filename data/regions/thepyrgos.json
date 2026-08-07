@@ -24,6 +24,33 @@
       "west": "Kahfagia — Signal-codes and beacon treaties are exchanged; the Lantern-Law and the Synod maintain a watchful peace. Neither trusts the other's mirrors."
     }
   },
+  "regional_diagnostic": {
+    "current_hook": "Every stair is a question. Every answer is a proof. The Ninth and the Witness argue over whose record holds the truth.",
+    "core_conflict": "Players are caught between the **Synod's** legal orthodoxy, the **Chain-Lanterns'** hunt for untutored magic, the **Ninth's Coterie's** quest for forbidden knowledge, and the **Hyro folk's** desperate preservation of the old ways—all while the **Witness** and the **Ninth** argue over the city's soul.",
+    "unique_feature": "**Geometric Ascension:** The city is built on fossilized vertebrae, and every stair is a claim. To climb is to argue; to descend is to concede. The Unfinished Stair appears only to those who have asked a question the Synod cannot answer.",
+    "ninth_taboo": "In any Thepyrgos scene, the ninth bell rung in an hour opens a threshold. The wise stop at eight and cover their ears. Those who ring the ninth are said to see a pale figure standing on the Beacon Crown's mirror tiles—waiting to receive a name.",
+    "price": "Players sacrifice **memory, reputation, or legal standing** to gain power. Every reward requires a gamble: a memory fed to the Ninth, a truth recorded in the Synod's archives, a favor owed to the Chain-Lanterns, or a secret sealed in an Astroegro vault.",
+    "faction_triad": [
+      {
+        "faction": "The Synod & Archon",
+        "goal": "Preserve civil order through law, precedent, and the careful management of knowledge",
+        "method": "Edicts, citations, the Library of Keys, and the Archon's balance",
+        "why_players_care": "They hold the legal and institutional power of the city"
+      },
+      {
+        "faction": "The Chain-Lanterns & Commissariat",
+        "goal": "Purge all untutored magic from the province",
+        "method": "Candle-smoke tests, informants, and the Exarch's writs",
+        "why_players_care": "They are the hunters; the gifted are the hunted"
+      },
+      {
+        "faction": "The Ninth's Coterie & the Hyro Remnant",
+        "goal": "Recover the lost knowledge of the Astroegro Empire",
+        "method": "Vault-hunting, memory-trading, and the Unfinished Stair",
+        "why_players_care": "They offer forbidden knowledge—and the city's deepest secrets"
+      }
+    ]
+  },
   "quotes": [
     {
       "speaker": "The Archon (Elite)",
@@ -32,12 +59,19 @@
     {
       "speaker": "Bell-Runner (Commoner)",
       "text": "I know every step that creaks a warning and every landing that whispers gossip. The bells tell the city's mood better than any lord—three chimes means business, six means trouble, and nine means the hunters are coming. But on the ninth bell, the stairs themselves answer."
+    },
+    {
+      "speaker": "Hyro Stone-Listener (Commoner)",
+      "text": "The stones sing when the hunters come. They sing when the children are taken. They sang when the Astroegro fell, and they will sing when this city falls too. The only difference is whether anyone will be left to hear them."
     }
   ],
-  "geographic_integration": {
-    "viterra": "Thepyrgos is separated from Viterra by the Black River and the Belmont Marshes. The marshy lowlands breed strange fogs and rarer creatures, and the border is porous—Viterran hedge-courts and Thepyrgos synods argue jurisdiction over every flooded farmstead.",
-    "vhasia": "A short boat ride from Fairport (Viterra) across the Belworth estuary brings travelers to Marcott in Vhasia, making Thepyrgos a quiet but crucial link in the riverine trade between the fractured sun-kingdom and the imperial remnant.",
-    "straits": "The city controls the Astroegro Straits—the narrow sea passage between the Dolmis and the Amaranthine—and maintains a few small colonies on the western coast of Hyaar, where olive oil and wine are exchanged for eastern silks and spices. Those colonies are run by exiled scholars and retired Chain-Lanterns, and they are said to be even more paranoid than the mother city."
+  "astroegro_remnant": {
+    "description": "Deep beneath the Beacon Crown, a sealed chamber contains a working Astroegro orrery. Its gears are carved from abyssal glass, and it still ticks. Those who listen too long hear a voice whispering the true names of drowned emperors. The Chain-Lanterns have posted a perpetual guard; they say the orrery is a beacon for something that should not surface.",
+    "geographic_integration": {
+      "viterra": "Thepyrgos is separated from Viterra by the Black River and the Belmont Marshes. The marshy lowlands breed strange fogs and rarer creatures, and the border is porous—Viterran hedge-courts and Thepyrgos synods argue jurisdiction over every flooded farmstead.",
+      "vhasia": "A short boat ride from Fairport (Viterra) across the Belworth estuary brings travelers to Marcott in Vhasia, making Thepyrgos a quiet but crucial link in the riverine trade between the fractured sun-kingdom and the imperial remnant.",
+      "straits": "The city controls the Astroegro Straits—the narrow sea passage between the Dolmis and the Amaranthine—and maintains a few small colonies on the western coast of Hyaar, where olive oil and wine are exchanged for eastern silks and spices. Those colonies are run by exiled scholars and retired Chain-Lanterns, and they are said to be even more paranoid than the mother city."
+    }
   },
   "faction_timers": {
     "archons_balance": {
@@ -600,7 +634,7 @@
       "subtitle": "[TRAVEL]",
       "description": "Pass a barricaded stair without delay (once); height as right.",
       "flavor": "The token is a bronze step. It fits into a missing rung. The missing rung is a secret.",
-      "cost": "Using the token may attract the Ninth's attention (tick Unfinished Stair Timer +1)."
+      "curse_cost": "Using the token may attract the Ninth's attention (tick Unfinished Stair Timer +1)."
     },
     {
       "rank": 3,
@@ -609,7 +643,7 @@
       "subtitle": "[TRAVEL]",
       "description": "Boom lowers for your vessel on command; sea as ally.",
       "flavor": "The pass is a note written on a fish scale. The gate-keeper will not ask why. The fish was a witness.",
-      "cost": "Using it marks you as a trusted trader; the Commissariat may take interest."
+      "curse_cost": "Using it marks you as a trusted trader; the Commissariat may take interest."
     },
     {
       "rank": 4,
@@ -618,7 +652,7 @@
       "subtitle": "[SOCIAL]",
       "description": "A named ward during scarcity; water as favor.",
       "flavor": "The right is a clay cup. Break it to claim your share. The cup was a stair.",
-      "cost": "Using it may offend a rival ward; start a Feud Spark [4]."
+      "curse_cost": "Using it may offend a rival ward; start a Feud Spark [4]."
     },
     {
       "rank": 5,
@@ -627,7 +661,7 @@
       "subtitle": "[LABOR]",
       "description": "One guaranteed lift on the Ropeyard Terrace; height as service.",
       "flavor": "The allotment is a knotted rope. Cut a knot for each use. The ninth knot is a lie.",
-      "cost": "Each use requires a new knot; the ninth knot cannot be cut—it belongs to the Ninth."
+      "curse_cost": "Each use requires a new knot; the ninth knot cannot be cut—it belongs to the Ninth."
     },
     {
       "rank": 6,
@@ -636,7 +670,7 @@
       "subtitle": "[SOCIAL]",
       "description": "Display a disputed image without penalty; faith as leverage.",
       "flavor": "The license is stamped with the Archon's ring. The ring is warm—the Archon is watching. The ring is a stair.",
-      "cost": "The license expires at the end of the season; renewing requires a favor."
+      "curse_cost": "The license expires at the end of the season; renewing requires a favor."
     },
     {
       "rank": 7,
@@ -645,7 +679,7 @@
       "subtitle": "[SECRET]",
       "description": "Library of Keys; one shelf opened to you; knowledge as power.",
       "flavor": "The shelf is sealed with a riddle. Solve it, or the key will break. The riddle is about the ninth step.",
-      "cost": "The riddle may cost a memory to solve; on failure, the shelf remains sealed."
+      "curse_cost": "The riddle may cost a memory to solve; on failure, the shelf remains sealed."
     },
     {
       "rank": 8,
@@ -654,7 +688,7 @@
       "subtitle": "[AUTHORITY]",
       "description": "Lawful ring at a fog-wick summons the watchers; law travels on sound.",
       "flavor": "The bellmark is a brand on your palm. Show it, and the watch bleeds for you—once. The blood is a witness.",
-      "cost": "After use, the brand fades; the watch may remember your face."
+      "curse_cost": "After use, the brand fades; the watch may remember your face."
     },
     {
       "rank": 9,
@@ -663,7 +697,7 @@
       "subtitle": "[TRAVEL]",
       "description": "Today's beacon and mirror signals; navigation as paper.",
       "flavor": "The code is written in lemon juice. Heat it to read, then hide it again. The heat is a confession.",
-      "cost": "If the code is intercepted, the GM gains a String on the party."
+      "curse_cost": "If the code is intercepted, the GM gains a String on the party."
     },
     {
       "rank": 10,
@@ -672,7 +706,7 @@
       "subtitle": "[MAGIC]",
       "description": "One proscribed chant or rite permitted (for you).",
       "flavor": "The indulgence is a bell-note held in a jar. Break the jar to release it. The bell-note is a name.",
-      "cost": "Using it may attract the Synod's attention (tick Archon's Balance +1)."
+      "curse_cost": "Using it may attract the Synod's attention (tick Archon's Balance +1)."
     },
     {
       "rank": 11,
@@ -681,7 +715,7 @@
       "subtitle": "[TRADE]",
       "description": "Temporary stewardship of a terrace hamlet; land as standing.",
       "flavor": "The grant is a wooden token. Present it to the village elder—if she is still alive. The elder is a stair.",
-      "cost": "The grant must be renewed annually; failure may start a feud."
+      "curse_cost": "The grant must be renewed annually; failure may start a feud."
     },
     {
       "rank": 12,
@@ -690,7 +724,7 @@
       "subtitle": "[SOCIAL]",
       "description": "Private with the Matriarch and clerks; whispers become policy.",
       "flavor": "The audience is held in a fog hollow. What is spoken there is never written. The fog is a witness.",
-      "cost": "If you speak a lie, the Synod will know—tick Archon's Balance +1."
+      "curse_cost": "If you speak a lie, the Synod will know—tick Archon's Balance +1."
     },
     {
       "rank": 13,
@@ -699,7 +733,7 @@
       "subtitle": "[AUTHORITY]",
       "description": "Palikars escort you between towers; authority as escort.",
       "flavor": "The writ is a bell-rope. Tie it to your belt, and the guards will know your voice. The rope was a stair.",
-      "cost": "The escort will protect you, but they report to the Archon."
+      "curse_cost": "The escort will protect you, but they report to the Archon."
     },
     {
       "rank": 14,
@@ -708,7 +742,7 @@
       "subtitle": "[MAGIC]",
       "description": "Open or seal any city gate once; access as power.",
       "flavor": "The key is a finger bone. The lock is a gauntleted fist. It will work—once. The fist is the Ninth's.",
-      "cost": "Using it may alert the Ninth's Coterie; they will know who opened the gate."
+      "curse_cost": "Using it may alert the Ninth's Coterie; they will know who opened the gate."
     }
   ],
   "quick_use_notes": {
@@ -905,6 +939,7 @@
       "cost": "Burn for +1 die once"
     }
   ],
+  "decline_and_patronage": "In Thepyrgos, power flows through access to knowledge and control of the city's vertical architecture. The Archon and Synod maintain order through law and precedent, while the Chain-Lanterns enforce orthodoxy through fear and surveillance. The Ninth's Coterie offers forbidden knowledge in exchange for memory, and the Hyro folk preserve the old songs in the hills. And beneath it all, the Unfinished Stair waits. **For the GM:** tie rewards to visible symbols (keys, tokens, seals) that can be challenged, stolen, or voided by the Synod or the Chain-Lanterns; let the Archon, the Matriarch, the Commissary, and the Ninth's Coterie grant conflicting protections; use the Beacon Crown, the Library of Keys, and the Unfinished Stair as arenas for contests where knowledge itself is the weapon; and remember the Unfinished Stair Timer is a visible campaign front—once it fills, the city's deepest secret will be revealed, and the Ninth and the Witness will settle their argument in the open.",
   "sb_spend_table": {
     "minor_complications": [
       "**Exposure:** Your actions draw unwanted attention from **tower guards or guild masters**.",

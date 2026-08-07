@@ -466,6 +466,44 @@
     }
   ],
   "notes": "A cosmic horror investigation set in the University of Thepyrgos. The party must navigate the war between the Witness and the Ninth while a forbidden game threatens to rewrite reality. Themes: the price of knowledge, the Hollow's attention, and the nature of proof. Inspired by Kon'reh: The Ninth Rim.",
+
+  "_gmhints": {
+    "tone": "THIS ADVENTURE IS A SERIOUS, BROODING COSMIC HORROR INVESTIGATION. The tone should be tense, academic, and unsettling—like a slow-burn horror story set in a university archive. The Ninth Proof is not a game to be won; it is a door to be closed. The Hollow Bride is a figure of folklore—when she appears, she should feel wildly out of place, like a fairy tale intruding on a rationalist's nightmare. Markus is cautious, broken, and seeking new purpose in saving his brother—play his desperation with restraint. Lerris is hopelessly naive, adventurous, and wry in Act I—his transformation into a haunted monster hunter is far in the future, so for now he is bright-eyed and dangerously curious. The University of Thepyrgos should feel ancient, labyrinthine, and indifferent to human suffering. The Archivists are not villains—they are custodians of a burden too heavy for most to carry. The Coterie are not heroes—they are dreamers who have forgotten that dreams can be nightmares.",
+
+    "pacing": {
+      "act1": "Act I is about investigation and the slow realization that something is very wrong. Markus is the emotional core—his desperation is quiet, not loud. Lerris's disappearance should feel like a mystery, not a rescue mission. The Kon'reh notebook is a puzzle—let the party decode it piece by piece. The Coterie's offer should feel seductive and dangerous, not obviously evil. The Hollow Attention timer advances when the party speaks names or reads forbidden texts—describe it as 'a cold draft' or 'a whisper from the corner of the room.' The Sunken Archive is a labyrinth of forgotten knowledge—emphasize the weight of the books, the silence of the Archivists, the sense that the University has forgotten its own secrets.",
+      "act2": "Act II is about understanding the stakes. Lerris is free, but he is changed—he has been playing Kon'reh for days, and the game has begun to affect his mind. His explanation of the proof should be fragmented and urgent. The Archivists' demand is a test of loyalty—they offer protection, but their protection is a cage. The Game Board scene is the horror reveal: the board is not a game, it is a prayer. Each piece is a name. Each move is a memory. The Ninth Proof is almost complete. The Hollow Attention timer is now a tangible threat—describe the Hollow as 'something watching from the space between words.'",
+      "act3": "Act III is the climax. The salt-pressed hour approaches. The Hollow Bride appears—she is a figure of folklore, so she should feel like she has stepped out of a different story entirely. She is honey and razors, beautiful and wrong. The Final Choice is not a combat—it is a philosophical reckoning. Let the party debate. Let them feel the weight of their decision. The resolution paths are not 'good' and 'bad'—they are all costs. Lerris's fate is tied to the proof; if it is completed, he is lost to the game. If it is sealed, he survives but is forever haunted. If it is destroyed, he is free but the knowledge is gone forever. The Ninth's Bargain is the tragic path—the proof is not completed, but the party is marked. Play all outcomes with gravity and sorrow."
+    },
+
+    "npcSecrets": {
+      "markus-fenwood": "Markus is cautious, broken, and seeking new purpose. He is not a hero—he is a man who has failed before and fears failing again. His father's Concordance haunts him—he will not speak of it unless pressed. He is loyal to Lerris, but his loyalty is tinged with guilt. Play him as restrained, watchful, and quietly desperate. His arc is about finding purpose in helping his brother—not about saving the world.",
+      "lerris-fenwood": "Lerris is hopelessly naive, adventurous, and wry. He genuinely believes the proof will set him free—he does not understand what he is playing with. In Act I, he is bright-eyed and curious. In Act II, he is changed—haunted by what he has seen. In Act III, he may be lost to the game entirely. His transformation into a haunted monster hunter is far in the future—do not foreshadow it heavily; let it be a tragic possibility, not an inevitability. He is not the hero; he is the victim who might become something else.",
+      "aqyl-son-of-aqyl": "He knows the proof's true nature. He will not speak of it unless asked thrice—this is not a game; it is a test of sincerity. He is the keeper of knowledge that is too dangerous to share freely. He is not withholding to be cruel—he is withholding because the truth is a burden.",
+      "voice-of-the-ninth": "She speaks in paradoxes. She offers bargains that seem fair—but every bargain erases a memory. She is not evil; she is a function of the Ninth. She remembers every name spoken in her presence. She is patient. She is waiting.",
+      "keeper-lian": "She has not spoken aloud in twenty years. She writes on water. Her silence is a judgment. She is not cold—she is burdened by the weight of what she knows. She will help the party if they prove worthy of the truth.",
+      "hollow-bride": "She is a figure of folklore—the Hollow Bride appears in stories told to children, a cautionary tale about bargains and promises. When she appears in this adventure, she should feel wildly out of place—like a fairy tale intruding on a rationalist's nightmare. She is not a monster to be fought; she is a presence to be negotiated with. Her voice is honey and razors. She will offer a bargain—and collect the price."
+    },
+
+    "forbiddenEarlyRevelations": [
+      "That the Ninth Proof is a door to another reality — hint at it, but do not state it plainly until Act II",
+      "That Lerris is a willing participant in the Coterie — this is an Act II reveal; in Act I, he is a victim",
+      "That the Hollow Bride is a folklore figure who should feel out of place — let this realization dawn slowly",
+      "That the Witness's Archivists are willing to sacrifice Lerris — this is the moral gut-punch of Act II; do not foreshadow it heavily",
+      "That Aqyl will only speak when asked thrice — this is a puzzle to solve, not a handout",
+      "That the Ninth's Bargain path results in the party being marked — this is a consequence, not a selling point"
+    ],
+
+    "cosmicHorrorTactics": {
+      "atmosphere": "Describe the University as ancient, labyrinthine, and indifferent. The books whisper. The Archivists move in silence. The air tastes of salt and old promises. The Hollow's presence is felt as a cold draft, a whisper from the corner of the room, a name spoken just out of earshot.",
+      "konreh_revelations": "The Kon'reh board is not a game—it is a prayer. Each piece is a name. Each move is a memory. When the party sees the board, describe it as 'wrong'—like a map of a place that cannot exist. The diagrams should be beautiful and unsettling.",
+      "hollow_bride_entrance": "The Hollow Bride is a figure of folklore—she should feel like she has stepped out of a different story. Her entrance should be jarring: a wedding dress in a dusty archive, a voice that sounds like a lullaby, a smile that does not reach her eyes. She is not evil—she is an intrusion, a reality fracture made manifest.",
+      "markus_tension": "Markus is cautious and broken. He will not charge in—he will plan, hesitate, and second-guess. Let his caution be a source of tension: he wants to save Lerris, but he is terrified of failing. His arc is about finding the courage to act despite his fear.",
+      "lerris_naivety": "Lerris is hopelessly naive in Act I—he believes the proof will set him free. Let him be charming and optimistic, even as the evidence mounts that he is wrong. His transformation is far in the future—for now, he is a victim who does not know he needs saving.",
+      "the_cost": "Every choice has a cost. The party will lose something—a memory, a name, a promise. Emphasize the weight of these losses. The Ninth Proof is not a game to be won; it is a door to be closed. The victory is in the closing, not the opening."
+    }
+  },
+
   "currentAct": 0,
   "currentScene": 0,
   "startedAt": null,

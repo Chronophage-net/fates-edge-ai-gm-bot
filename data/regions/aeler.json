@@ -24,6 +24,33 @@
       "across_aberderrin": "The Valewood / Linns -- Star-roads and fey paths occasionally surface in the deep galleries. The Aeler do not dig toward the forest; the forest does not dig toward them."
     }
   },
+  "regional_diagnostic": {
+    "current_hook": "The mountain remembers every word carved in its stone. The deep remembers every breath we owe.",
+    "core_conflict": "Players are caught between the **holds'** hunger for grain, the **Deep Drake's** patient attention, and the **Aeler's** desperate need to maintain order through collectivist precision and mercantile leverage. The Ninth is the breath you do not count. The Hollow is the pressure that thinks.",
+    "unique_feature": "**Geometric Governance:** Every tunnel, lock, and seal is a contract. Every breath, a measure. The mountain does not forgive miscounts. The deep does not forget invitations.",
+    "ninth_taboo": "In any Aeler scene, the ninth breath is never the last. The wise count in eights and leave the ninth unnumbered. The ninth breath belongs to the pressure that thinks — it is the space where the Hollow listens. The Aeler do not speak of it. They simply never count to nine.",
+    "price": "Players sacrifice **precision, memory, or loyalty** to gain power. Every reward requires a gamble: a mis-counted breath, a forgotten oath, a favor owed to the deep, or the slow erosion of certainty.",
+    "faction_triad": [
+      {
+        "faction": "Traditionalist Holds ('The Old Ways')",
+        "goal": "Preserve the ancient order and seal the gates",
+        "method": "Iron tariffs, closed vaults, ancestral law",
+        "why_players_care": "They hold the oldest seals and the deepest grudges"
+      },
+      {
+        "faction": "Cooperative Holds ('Open Hand')",
+        "goal": "Secure grain through soft power and standardization",
+        "method": "Trade agreements, certified measures, bell-code protocols",
+        "why_players_care": "They control the grain routes and the under-markets"
+      },
+      {
+        "faction": "Isolationist Holds ('Silent Stone')",
+        "goal": "Survive without the surface — or without the living",
+        "method": "Sealed gates, forgotten kings, deep worship",
+        "why_players_care": "They are the ones who heard the pressure and answered"
+      }
+    ]
+  },
   "quotes": [
     {
       "speaker": "Vault-Queen of a Crownland (Elite)",
@@ -159,8 +186,8 @@
       "title": "Vaultmouth Gate",
       "subtitle": "[SECURITY] [GATEKEEPING]",
       "description": "Bronze lungs for breath-tests, tally-niches for lamps.",
-      "flavor": "",
-      "mechanical_hook": ""
+      "flavor": "The gate is a throat. It tests every breath before it lets you pass. The brass bell above it has not been rung in three centuries — it rings itself when the pressure listens.",
+      "mechanical_hook": "To pass, a character must submit to a breath-test (Endurance DV 3). On success, gain +1 die to all actions in the vault for the scene (your breath is 'measured true'). On failure, you are marked as 'thin-breath' — all social rolls in the vault suffer –1 Position."
     },
     {
       "rank": 2,
@@ -168,8 +195,8 @@
       "title": "Crown-Crypt Porch",
       "subtitle": "[TRADITION] [OATHS]",
       "description": "Where oaths are sworn to sleeping kings.",
-      "flavor": "",
-      "mechanical_hook": ""
+      "flavor": "The kings are not dead. They are waiting. They count your breaths as you speak. They will remember every word.",
+      "mechanical_hook": "Swearing an oath here gives +1 die to any roll made in fulfillment of that oath. Breaking it ticks **Pressure Awakening +2** and the crypt will send a dream to remind you."
     },
     {
       "rank": 3,
@@ -177,8 +204,8 @@
       "title": "Under-Market",
       "subtitle": "[COMMERCE] [UNDERGROUND]",
       "description": "Lantern alleys between cistern pillars; damp coin, dry wit.",
-      "flavor": "",
-      "mechanical_hook": ""
+      "flavor": "The market is a lung. It breathes in coin and breathes out rumor. The assessors are the diaphragm.",
+      "mechanical_hook": "Haggling here is a Sway+Lore test (DV 4). On success, prices are fair. On failure, you are overcharged — lose 1 Boon. On a critical, you draw an assessor's suspicion (start a **Market Audit [4]** timer)."
     },
     {
       "rank": 4,
@@ -186,8 +213,8 @@
       "title": "Smoke-Shaft Stair",
       "subtitle": "[LABOR] [DANGER]",
       "description": "Spiraling up to a soot hatch; handprints black as seals.",
-      "flavor": "",
-      "mechanical_hook": ""
+      "flavor": "The handprints are from a hundred generations. Each one is a signature on a contract with the mountain. The mountain has not yet collected.",
+      "mechanical_hook": "Climbing the stair requires Endurance+Body (DV 4). On failure, you inhale soot — mark 1 Fatigue and gain the Condition **Black-Lunged** (all physical actions in confined spaces suffer –1 die until you clear your lungs)."
     },
     {
       "rank": 5,
@@ -195,8 +222,8 @@
       "title": "Gloam Cistern",
       "subtitle": "[MYSTERY] [WHISPERS]",
       "description": "Black water, lead scales, whispers carry too far.",
-      "flavor": "",
-      "mechanical_hook": ""
+      "flavor": "The water is not water. It is the memory of rain. The whispers are the pressure's questions.",
+      "mechanical_hook": "Drinking from the cistern restores 1 Fatigue but gives you a vision of a forgotten oath. The GM gains 1 SB. Refusing to drink ticks **Pressure Awakening +1** (the cistern is offended)."
     },
     {
       "rank": 6,
@@ -204,8 +231,8 @@
       "title": "Lamplighter's Mile",
       "subtitle": "[MAINTENANCE] [TRAVEL]",
       "description": "On the Under-Road; niches sting with spent wicks.",
-      "flavor": "",
-      "mechanical_hook": ""
+      "flavor": "The mile is a prayer. Each lamp is a syllable. The lamplighters are the priests of the flame.",
+      "mechanical_hook": "Traveling the mile requires 1 Supply (oil) or 1 Boon. If you have neither, you walk in darkness — all rolls on the mile are Desperate. The lamplighters will remember your debt."
     },
     {
       "rank": 7,
@@ -213,8 +240,8 @@
       "title": "Measure Vault",
       "subtitle": "[PRECISION] [AUTHORITY]",
       "description": "Standard rods and weights chained under glass and oath.",
-      "flavor": "",
-      "mechanical_hook": ""
+      "flavor": "The rods are the law. The weights are the truth. The chains are the memory of every oath ever broken.",
+      "mechanical_hook": "A character who swears by the measure (Presence+Sway DV 3) gains +1 die to all commercial negotiations in the hold. A character who tampers with the measure is cursed — the mountain will remember their face."
     },
     {
       "rank": 8,
@@ -222,8 +249,8 @@
       "title": "Reliquary Arcade",
       "subtitle": "[SACRED] [KNOWLEDGE]",
       "description": "Bell-chimes answer drafts; saints keep their own tallies.",
-      "flavor": "",
-      "mechanical_hook": ""
+      "flavor": "The saints are not dead. They are retired. They still count the breaths of the living.",
+      "mechanical_hook": "A character who prays here (Spirit+Lore DV 3) may ask one question of a saint. The answer is a riddle. On failure, the saint asks for a memory (lose 1 XP, refundable by a quest)."
     },
     {
       "rank": 9,
@@ -231,8 +258,8 @@
       "title": "Twin-Throne Gate",
       "subtitle": "[MILITARY] [STRATEGIC]",
       "description": "Surface fortress straddling a chasm bridge.",
-      "flavor": "",
-      "mechanical_hook": ""
+      "flavor": "Two thrones, one gate. The kings who sit here are always twins — or enemies. Sometimes both.",
+      "mechanical_hook": "Passing the gate requires swearing a temporary oath to one of the thrones. Breaking it ticks **Pressure Awakening +2**. Refusing entry starts a **Siege of Thrones [6]** timer."
     },
     {
       "rank": 11,
@@ -240,8 +267,8 @@
       "title": "Deep Archive Stacks",
       "subtitle": "[KNOWLEDGE] [SECRECY]",
       "description": "Behind grillwork; scriptoria cells breathe ink and dust.",
-      "flavor": "",
-      "mechanical_hook": ""
+      "flavor": "The archives are a brain. They remember everything. They forget nothing — except the names of those who are not worth remembering.",
+      "mechanical_hook": "Searching the archives requires Wits+Lore (DV 5). On success, find a clue about a lost hold. On failure, the archives remember your name — the GM gains a String on you."
     },
     {
       "rank": 12,
@@ -249,8 +276,8 @@
       "title": "Queen's Descent",
       "subtitle": "[ROYALTY] [PRIVILEGE]",
       "description": "Private stair from palace to royal vault-house.",
-      "flavor": "",
-      "mechanical_hook": ""
+      "flavor": "The descent is a fall. The queen walks it every day. She counts her breaths. She has never miscounted.",
+      "mechanical_hook": "To use the descent, you must have a writ from the Vault-Queen or High King. Without it, the stair is sealed — and the queen's guards are the pressure's cousins."
     },
     {
       "rank": 13,
@@ -258,8 +285,8 @@
       "title": "Kingsmoot Cavern",
       "subtitle": "[POLITICS] [POWER]",
       "description": "Crownstones in a ring around a bottomless dark.",
-      "flavor": "",
-      "mechanical_hook": ""
+      "flavor": "The dark is not empty. It is listening. It is the pressure's ear.",
+      "mechanical_hook": "Debating in the moot requires Presence+Sway (DV 6). Each successful roll earns a crownstone. Each failure ticks **Pressure Awakening +1**. At 4 segments, the pressure speaks through the dark."
     },
     {
       "rank": 14,
@@ -267,8 +294,8 @@
       "title": "The Spine Underway",
       "subtitle": "[INFRASTRUCTURE] [MAJESTY]",
       "description": "A great tunnel linking crownlands beneath the peaks.",
-      "flavor": "",
-      "mechanical_hook": ""
+      "flavor": "The spine is a dragon's backbone. The holds are its ribs. The pressure is its breath.",
+      "mechanical_hook": "Traveling the spine costs 1 Supply or 1 Boon per segment. If you have neither, the spine will take a memory (lose 1 XP). The spine remembers every toll ever paid."
     }
   ],
   "people_and_factions": [
@@ -278,9 +305,9 @@
       "title": "Lamplighter Apprentice",
       "subtitle": "[APPRENTICESHIP] [DEDICATION]",
       "description": "With a jingling key-ring and soot in the lungs.",
-      "flavor": "",
-      "what_they_carry": "",
-      "what_they_ask": ""
+      "flavor": "She is learning the prayer. She will carry the flame until she cannot.",
+      "what_they_carry": "She carries a spare wick that has never been lit. It will work once — for anyone who needs a light in the dark.",
+      "what_they_ask": "A story about a light that went out. She will remember it."
     },
     {
       "rank": 2,
@@ -288,9 +315,9 @@
       "title": "Under-Mason",
       "subtitle": "[CRAFT] [KNOWLEDGE]",
       "description": "Who can hear stone shift a room away.",
-      "flavor": "",
-      "what_they_carry": "",
-      "what_they_ask": ""
+      "flavor": "He has not spoken above a whisper in thirty years. The stone listens. He does not want to wake it.",
+      "what_they_carry": "He carries a hammer that has never struck iron. It can seal a crack — or open one.",
+      "what_they_ask": "A day of silence. If you can keep it, he will teach you how to hear the mountain's warnings."
     },
     {
       "rank": 3,
@@ -298,9 +325,9 @@
       "title": "Vault Warden",
       "subtitle": "[AUTHORITY] [DUTY]",
       "description": "With breath-tally and seal-rods; patient as granite.",
-      "flavor": "",
-      "what_they_carry": "",
-      "what_they_ask": ""
+      "flavor": "His tally is his life. He will not let anyone miscount. The pressure watches him closely.",
+      "what_they_carry": "He carries a seal-rod that has never been broken. It will hold any lock — until the holder breaks an oath.",
+      "what_they_ask": "A true count of your breaths. He will verify it. If you lie, he will know."
     },
     {
       "rank": 4,
@@ -308,9 +335,9 @@
       "title": "Censer-Knight of the Dawn",
       "subtitle": "[PROTECTION] [FAITH]",
       "description": "Fights miasma and men with equal zeal.",
-      "flavor": "",
-      "what_they_carry": "",
-      "what_they_ask": ""
+      "flavor": "Her censer is a prayer. Her sword is a law. She has never lost a battle — or a soul.",
+      "what_they_carry": "She carries a censer that has never gone out. It can clear any miasma — once.",
+      "what_they_ask": "A confession of a broken promise. She will absolve you — but she will remember."
     },
     {
       "rank": 5,
@@ -318,9 +345,9 @@
       "title": "Key-Sister",
       "subtitle": "[SACRED] [CRAFT]",
       "description": "Monastic locksmith who names wards like prayers.",
-      "flavor": "",
-      "what_they_carry": "",
-      "what_they_ask": ""
+      "flavor": "Her keys are her children. She has lost three to the deep. She still hears them knocking.",
+      "what_they_carry": "She carries a key that opens any door — but only if you whisper the right name.",
+      "what_they_ask": "A name she does not know. She will carve it into her key-ring."
     },
     {
       "rank": 6,
@@ -328,9 +355,9 @@
       "title": "Under-Market Assessor",
       "subtitle": "[COMMERCE] [AUTHORITY]",
       "description": "Whose stamp can starve or save a stall.",
-      "flavor": "",
-      "what_they_carry": "",
-      "what_they_ask": ""
+      "flavor": "His stamp is his soul. He has never approved a false measure. The pressure approves of him.",
+      "what_they_carry": "He carries a stamp that has never been questioned. It will pass any good — once.",
+      "what_they_ask": "A true measure of your trust. He will test it. If you fail, he will stamp you 'counterfeit.'"
     },
     {
       "rank": 7,
@@ -338,9 +365,9 @@
       "title": "Engineer of Underways (Geometer)",
       "subtitle": "[ENGINEERING] [EXPERTISE]",
       "description": "With rod, hammer, and the right maps.",
-      "flavor": "",
-      "what_they_carry": "",
-      "what_they_ask": ""
+      "flavor": "He can hear the mountain's heartbeat. He knows when it skips. He is the only one who does.",
+      "what_they_carry": "He carries a rod that has never measured a lie. It will find a crack — or a door.",
+      "what_they_ask": "A true map of your journey. He will compare it to his own. If they do not match, he will ask why."
     },
     {
       "rank": 8,
@@ -348,9 +375,9 @@
       "title": "Oath-Keeper of the Crown Crypt",
       "subtitle": "[TRADITION] [LAW]",
       "description": "Memory like iron, smile like law.",
-      "flavor": "",
-      "what_they_carry": "",
-      "what_they_ask": ""
+      "flavor": "She has never forgotten a word spoken in the crypt. The kings trust her. The pressure is patient.",
+      "what_they_carry": "She carries a scroll that has never been opened. It contains an oath that must never be spoken.",
+      "what_they_ask": "A vow of silence. She will hold you to it. If you break it, she will remember."
     },
     {
       "rank": 9,
@@ -358,9 +385,9 @@
       "title": "Legate of the Under-Seal",
       "subtitle": "[DIPLOMACY] [AUTHORITY]",
       "description": "Royal commissioner between kingdoms.",
-      "flavor": "",
-      "what_they_carry": "",
-      "what_they_ask": ""
+      "flavor": "She has never lost a negotiation. The pressure respects her. It has invited her to the deep. She has not accepted.",
+      "what_they_carry": "She carries a seal that has never been refused. It will open any door — once.",
+      "what_they_ask": "A signature on a contract. She will hold you to it. If you break it, she will collect."
     },
     {
       "rank": 11,
@@ -368,9 +395,9 @@
       "title": "White-Ribbon Tunnel Courier",
       "subtitle": "[COMMUNICATION] [LOYALTY]",
       "description": "Runs blind, rings true.",
-      "flavor": "",
-      "what_they_carry": "",
-      "what_they_ask": ""
+      "flavor": "He runs in darkness. The dark knows his name. It has not called it yet.",
+      "what_they_carry": "He carries a white ribbon that has never been stained. It will mark a safe path — once.",
+      "what_they_ask": "A message to deliver. He will deliver it — or die trying."
     },
     {
       "rank": 12,
@@ -378,9 +405,9 @@
       "title": "Vault-Queen of a Crownland",
       "subtitle": "[ROYALTY] [AUTHORITY]",
       "description": "Sovereign above and below.",
-      "flavor": "",
-      "what_they_carry": "",
-      "what_they_ask": ""
+      "flavor": "She wears a crown of stone and iron. She has never bent. The pressure has watched her for a century.",
+      "what_they_carry": "She carries a crown that has never been stolen. It will command any Aeler — once.",
+      "what_they_ask": "A service to the crown. She will reward you. If you fail, she will remember."
     },
     {
       "rank": 13,
@@ -388,9 +415,9 @@
       "title": "High King Beneath the Peaks",
       "subtitle": "[SUPREME AUTHORITY] [TRADITION]",
       "description": "First among crowns by ancient concord.",
-      "flavor": "",
-      "what_they_carry": "",
-      "what_they_ask": ""
+      "flavor": "He has not spoken above a whisper in seven years. The court reads his will by bell-code. The pressure listens.",
+      "what_they_carry": "He carries a scepter that has never been raised. It will command any hold — once.",
+      "what_they_ask": "An oath of fealty. He will hold you to it. If you break it, the pressure will answer."
     },
     {
       "rank": 14,
@@ -398,9 +425,9 @@
       "title": "Lumenor of the Under-Altars",
       "subtitle": "[SPIRITUAL POWER] [RESOLUTION]",
       "description": "One sentence opens doors and closes debates.",
-      "flavor": "",
-      "what_they_carry": "",
-      "what_they_ask": ""
+      "flavor": "She speaks only in bell tones. Her mundane voice is never heard. The pressure has never invited her.",
+      "what_they_carry": "She carries a bell that has never been rung. It will summon the dead — once.",
+      "what_they_ask": "A true confession. She will absolve you. If you lie, she will know."
     }
   ],
   "complications": [
@@ -410,8 +437,8 @@
       "title": "Bad Air Pocket",
       "subtitle": "[DANGER] [DISORIENTATION]",
       "description": "Candles gutter blue; lungs complain, schedules fail.",
-      "flavor": "",
-      "mechanical_hook": ""
+      "flavor": "The air is a debt. You have borrowed too much. The pressure is collecting.",
+      "mechanical_hook": "All rolls in the affected zone are Desperate. On a Miss, a character loses 1 Supply (coughing) and gains the Condition **Thin-Breath** (all exertion tests suffer –1 die until the air clears)."
     },
     {
       "rank": 2,
@@ -419,8 +446,8 @@
       "title": "Drip-Flood",
       "subtitle": "[DISRUPTION] [FLOOD]",
       "description": "From a burst cistern reroutes corridors without asking.",
-      "flavor": "",
-      "mechanical_hook": ""
+      "flavor": "The water has a memory. It remembers every oath broken near a well. It is coming to collect.",
+      "mechanical_hook": "Lose 1 Supply (drowned) or find high ground (Body+Athletics DV 3). On failure, you are swept to an unknown location — start a **Lost in the Deep [4]** timer."
     },
     {
       "rank": 3,
@@ -428,8 +455,8 @@
       "title": "Gas Flare",
       "subtitle": "[ACCIDENT] [DESTRUCTION]",
       "description": "Kisses a lamp; eyebrows and evidence vanish.",
-      "flavor": "",
-      "mechanical_hook": ""
+      "flavor": "The flame is a liar. It promises light and delivers ash. The pressure is laughing.",
+      "mechanical_hook": "All characters in the scene must test Body (DV 4) or take 1 Harm (burns). Additionally, any writs or papers carried are destroyed — lose 1 Diamond (you may recover it with a quest)."
     },
     {
       "rank": 4,
@@ -437,8 +464,8 @@
       "title": "Seal Misread",
       "subtitle": "[ERROR] [SECURITY]",
       "description": "The wrong door opens, the right one will not.",
-      "flavor": "",
-      "mechanical_hook": ""
+      "flavor": "The seal is a promise. You have read it wrong. The mountain is disappointed.",
+      "mechanical_hook": "The party is barred from their intended destination. They must find another way (increase travel timer by 2 segments) or pay a toll (1 Boon) to correct the seal."
     },
     {
       "rank": 5,
@@ -446,8 +473,8 @@
       "title": "Under-Mold Quarantine",
       "subtitle": "[QUARANTINE] [DELAY]",
       "description": "Shuts the market just as your crate arrives.",
-      "flavor": "",
-      "mechanical_hook": ""
+      "flavor": "The mold is a rumor. The quarantine is a law. The pressure is the reason for both.",
+      "mechanical_hook": "You cannot trade in the market for 1 scene. If you try to smuggle, roll Stealth (DV 4). On failure, you are expelled from the hold — start a **Smuggler's Hunt [4]** timer."
     },
     {
       "rank": 6,
@@ -455,8 +482,8 @@
       "title": "Settling Crack",
       "subtitle": "[DANGER] [WARNING]",
       "description": "Dust snow warns the roof wants down.",
-      "flavor": "",
-      "mechanical_hook": ""
+      "flavor": "The crack is a question. The mountain is asking. You must answer before it asks again.",
+      "mechanical_hook": "Characters must test Resolve (DV 4) or freeze. On a failure, gain the Condition **Crack-Watched** (the mountain has noticed you; the GM may spend 1 SB to trigger a cave-in)."
     },
     {
       "rank": 7,
@@ -464,8 +491,8 @@
       "title": "Stolen Key",
       "subtitle": "[ACCUSATION] [SUSPICION]",
       "description": "Turns up in your kit; accusations ring like bells.",
-      "flavor": "",
-      "mechanical_hook": ""
+      "flavor": "The key is a trap. Someone wants you to be caught. The pressure is watching to see who will betray whom.",
+      "mechanical_hook": "You are accused of theft. Roll Presence+Sway (DV 5) to clear your name. On failure, you are exiled from the hold — or worse, taken to the deep."
     },
     {
       "rank": 8,
@@ -473,8 +500,8 @@
       "title": "Bell-Code Conflict",
       "subtitle": "[CONFLICT] [JURISDICTION]",
       "description": "Two authorities claim the same chime.",
-      "flavor": "",
-      "mechanical_hook": ""
+      "flavor": "The bells are arguing. The pressure is choosing sides. You should choose carefully.",
+      "mechanical_hook": "You must choose a side. The losing side becomes a permanent enemy (start a **Feud of the Bells [6]** timer). Choosing poorly ticks **Pressure Awakening +1**."
     },
     {
       "rank": 9,
@@ -482,8 +509,8 @@
       "title": "Vault-Right Feud",
       "subtitle": "[POLITICAL CONFLICT] [VIOLENCE]",
       "description": "Crown guards face basilica wardens on a stair.",
-      "flavor": "",
-      "mechanical_hook": ""
+      "flavor": "The feud is older than the living. It is a habit. The pressure feeds on it.",
+      "mechanical_hook": "You must fight, flee, or mediate. Mediating requires Presence+Sway (DV 5). On failure, both sides attack you. Fighting is Cap 3. Fleeing costs 1 Fatigue."
     },
     {
       "rank": 11,
@@ -491,8 +518,8 @@
       "title": "Cave-In Behind",
       "subtitle": "[DISASTER] [TRAPPED]",
       "description": "Proof, friends, and retreat on the far side.",
-      "flavor": "",
-      "mechanical_hook": ""
+      "flavor": "The mountain has closed a door. It will not open until someone pays.",
+      "mechanical_hook": "You are trapped. To escape, you must find another way (Wits+Survival DV 5). On failure, start a **Trapped in the Deep [6]** timer. When full, the pressure comes to collect."
     },
     {
       "rank": 12,
@@ -500,8 +527,8 @@
       "title": "Heresy Inquest",
       "subtitle": "[RELIGIOUS CONFLICT] [INQUISITION]",
       "description": "In the under-chapel; arrests in whispers.",
-      "flavor": "",
-      "mechanical_hook": ""
+      "flavor": "The inquisition is a prayer. The pressure is the answer.",
+      "mechanical_hook": "A character is accused of heresy. They must prove their innocence (Presence+Sway DV 5) or be taken to the deep. If found guilty, they lose 1 Boon and gain the Condition **Marked by the Inquisition**."
     },
     {
       "rank": 13,
@@ -509,8 +536,8 @@
       "title": "General Under-Seal",
       "subtitle": "[AUTHORITY] [RESTRICTION]",
       "description": "All vault traffic halted by royal decree.",
-      "flavor": "",
-      "mechanical_hook": ""
+      "flavor": "The seal is the law. The law is the mountain. The mountain is closed.",
+      "mechanical_hook": "You cannot leave the hold until the seal is lifted. To lift it, you must pay a toll (2 Supply or 1 Boon) or perform a service for the king."
     },
     {
       "rank": 14,
@@ -518,8 +545,8 @@
       "title": "White Flood",
       "subtitle": "[NATURAL DISASTER] [DESTRUCTION]",
       "description": "Mountain thaw becomes a river through your route.",
-      "flavor": "",
-      "mechanical_hook": ""
+      "flavor": "The flood is a memory. It remembers every tunnel it has drowned. It will remember you too.",
+      "mechanical_hook": "You lose 2 Supply (washed away) or flee (Body+Athletics DV 4). On failure, a character is swept away — start a **Search for the Drowned [6]** timer."
     }
   ],
   "rewards": [
@@ -529,8 +556,8 @@
       "title": "Lamp-Priority Tally",
       "subtitle": "[UTILITY] [TIME]",
       "description": "Skip one lamplighter queue.",
-      "flavor": "",
-      "curse_cost": ""
+      "flavor": "The tally is a breath. Use it wisely — the lamplighters will remember your face.",
+      "curse_cost": "Using the tally ticks **Pressure Awakening +1** (you have taken a breath that was not yours)."
     },
     {
       "rank": 2,
@@ -538,8 +565,8 @@
       "title": "Breath-Measure Allotment",
       "subtitle": "[SAFETY] [ACCESS]",
       "description": "Lawful time in a sealed chamber (once).",
-      "flavor": "",
-      "curse_cost": ""
+      "flavor": "The allotment is a gift. The mountain is generous — but it never forgets a debt.",
+      "curse_cost": "After use, the mountain will ask for a memory (lose 1 XP). Refusal ticks **Pressure Awakening +2**."
     },
     {
       "rank": 3,
@@ -547,8 +574,8 @@
       "title": "Key-Writ",
       "subtitle": "[SECURITY] [AUTHORITY]",
       "description": "Operate a named lock one time, witnessed.",
-      "flavor": "",
-      "curse_cost": ""
+      "flavor": "The writ is a promise. The lock is a test. The mountain is watching.",
+      "curse_cost": "If you use the writ to open a lock you were not meant to open, the mountain will mark you. The GM gains a String on you."
     },
     {
       "rank": 4,
@@ -556,8 +583,8 @@
       "title": "Underway Pass",
       "subtitle": "[TRAVEL] [SECURITY]",
       "description": "Escorted travel between two vaultmouths.",
-      "flavor": "",
-      "curse_cost": ""
+      "flavor": "The pass is a safe passage — as long as you obey the bells. The escort will not speak. They have counted their breaths.",
+      "curse_cost": "The escort will remember you. If you ever break an oath in their presence, they will tell the mountain. Ticks **Pressure Awakening +2**."
     },
     {
       "rank": 5,
@@ -565,8 +592,8 @@
       "title": "Stall-Right",
       "subtitle": "[COMMERCE] [RIGHTS]",
       "description": "In the under-market for a season.",
-      "flavor": "",
-      "curse_cost": ""
+      "flavor": "The stall is a home. The market is a family. The assessor is the parent.",
+      "curse_cost": "You are now a market-watcher. If you fail to report a violation, you are complicit. The assessor will know. The mountain will remember."
     },
     {
       "rank": 6,
@@ -574,8 +601,8 @@
       "title": "Engineer Shoring",
       "subtitle": "[ENGINEERING] [SAFETY]",
       "description": "A crew stabilizes your chosen corridor on your timetable.",
-      "flavor": "",
-      "curse_cost": ""
+      "flavor": "The shoring is a promise to the mountain. You are saying you will not break this tunnel. The mountain will hold you to it.",
+      "curse_cost": "If a collapse occurs in the shored area, you are responsible. Ticks **Pressure Awakening +3** and you are marked as 'crack-breaker.'"
     },
     {
       "rank": 7,
@@ -583,8 +610,8 @@
       "title": "Assay Mark",
       "subtitle": "[COMMERCE] [TRUST]",
       "description": "Your coin/metal accepted sight unseen below.",
-      "flavor": "",
-      "curse_cost": ""
+      "flavor": "The mark is a reputation. It is worth more than gold. It is worth trust.",
+      "curse_cost": "If you pass counterfeit coin, the mark is revoked. You are banned from the under-market and gain the Condition **Untrusted**."
     },
     {
       "rank": 8,
@@ -592,8 +619,8 @@
       "title": "Crypt Asylum",
       "subtitle": "[PROTECTION] [LAW]",
       "description": "Temporary sanctuary under crown law.",
-      "flavor": "",
-      "curse_cost": ""
+      "flavor": "The crypt is a womb. It protects the unborn — and the guilty.",
+      "curse_cost": "The dead will remember you. After use, you will dream of the crypt for a week. The GM gains 1 SB per dream."
     },
     {
       "rank": 9,
@@ -601,8 +628,8 @@
       "title": "Vault Inventory License",
       "subtitle": "[AUTHORITY] [ACCESS]",
       "description": "Remove a named cache under witness.",
-      "flavor": "",
-      "curse_cost": ""
+      "flavor": "The license is a permission. The witness is a bond. The vault is a test.",
+      "curse_cost": "If you remove anything not on the license, you are guilty of theft. The witness will tell the mountain. Ticks **Pressure Awakening +4**."
     },
     {
       "rank": 11,
@@ -610,8 +637,8 @@
       "title": "Under-Guard Commission",
       "subtitle": "[MILITARY] [AUTHORITY]",
       "description": "Command a vault detachment for a day.",
-      "flavor": "",
-      "curse_cost": ""
+      "flavor": "The commission is a burden. You are responsible for their breaths. If they miscount, you answer.",
+      "curse_cost": "If one of your guards dies, you must pay a wergild (2 Supply). If you cannot, the mountain will take a memory instead."
     },
     {
       "rank": 12,
@@ -619,8 +646,8 @@
       "title": "Private Descent",
       "subtitle": "[ROYALTY] [PRIVILEGE]",
       "description": "With the Vault-Queen or High King's chancellor.",
-      "flavor": "",
-      "curse_cost": ""
+      "flavor": "The descent is a fall. You are falling with royalty. The pressure is curious.",
+      "curse_cost": "You are now a witness to royal secrets. The mountain will test you to see if you can keep them. The GM gains a String on you."
     },
     {
       "rank": 13,
@@ -628,8 +655,8 @@
       "title": "High King's Sealed Writ",
       "subtitle": "[SUPREME AUTHORITY] [ACCESS]",
       "description": "Doors open, mouths close across crownlands.",
-      "flavor": "",
-      "curse_cost": ""
+      "flavor": "The writ is the king's word. It is worth more than iron. It is worth truth.",
+      "curse_cost": "If you use the writ for personal gain, the king will know. The mountain will remember. Tick **Pressure Awakening +2** and gain the Condition **Oath-Breaker**."
     },
     {
       "rank": 14,
@@ -637,8 +664,8 @@
       "title": "The Under-Seal Clause",
       "subtitle": "[EXCEPTION] [POWER]",
       "description": "Temporary exception to any lock, levy, or rite below.",
-      "flavor": "",
-      "curse_cost": ""
+      "flavor": "The clause is a loophole. It is a crack in the mountain. The pressure has been waiting for you to find it.",
+      "curse_cost": "Using the clause invites the pressure's direct attention. Tick **Pressure Awakening +4**. The mountain will remember your face."
     }
   ],
   "quick_use_notes": {
@@ -667,6 +694,14 @@
     {
       "name": "Grain Reserves Timer [8]",
       "description": "Represents the holds' food supply. Ticks when a surface caravan is delayed, a contract is broken, or an Edgewalker's scheme fails. At 4 segments: rationing begins — all physical actions in the holds suffer –1 die. At 8 segments: famine. The Deep Drake's attention sharpens. The party must find new grain — or feed the pressure something else."
+    },
+    {
+      "name": "Collectivist Core",
+      "description": "Aeler society is built on mutual obligation. Individuals are custodians, not owners. Resources, labor, and even breath are measured and allocated by the community. To take more than your share is to invite the pressure. To give less is to break the chain. The holds survive because every Aeler knows their place in the count. The surface-dwellers do not understand this. They think it is collectivism. It is survival."
+    },
+    {
+      "name": "External Mercantilism",
+      "description": "To the outside world, the Aeler are merchants and engineers — cold, precise, and calculating. They offer standard measures, certified weights, and bell-code protocols that make others **want** to trade on Aeler terms. They do not care about the surface-dwellers' wars or politics. They care about grain. Grain keeps the holds alive. Grain keeps the pressure asleep. Without grain, the holds starve — and the deep wakes. The Aeler will not be loved. They will be **needed**."
     }
   ],
   "stone_and_sovereignty": "In the deep places, survival depends on precision and tradition. The Aeler understand that stone does not forgive error — a misread seal can mean death, a miscalculated air measure can doom an expedition, and a broken bell-code can spark jurisdictional war. But beneath the law, beneath the tallies, there is the pressure. It does not hate. It does not judge. It simply **thinks**. And when it thinks of you, you will feel a warmth in the stone, a whisper in the dark, a knock that comes in threes. The wise pretend not to notice. The foolish walk toward it. The holds endure because they are willing to spend lives as carefully as they spend lamp oil. A collapsed gallery is a line item. A village that starves because its grain was diverted to the Deep Vaults is a footnote in an audit that no one reads aloud. The Aeler are not cruel. They are **efficient**. And efficiency, in the dark, is the only mercy.",
@@ -941,6 +976,11 @@
       "on_critical_fail": "Drop a resource (lamp, key, breath)"
     }
   },
+  "collectivist_mercantilism": {
+    "internal": "Aeler society is a series of concentric circles of obligation. The family owes the clan. The clan owes the guild. The guild owes the hold. The hold owes the crown. The crown owes the mountain. And the mountain owes the deep — but the deep does not owe back. This is not socialism; it is a **survival contract**. Every Aeler knows their place in the count. Every breath is measured. Every grain of barley is accounted for. The pressure is the penalty for failure. The Hollow is the final audit.",
+    "external": "To the surface-dwellers, the Aeler are merchants, engineers, and bankers. They offer standard measures, certified weights, and bell-code protocols that make others **want** to trade on Aeler terms. They are cold, precise, and calculating — but they are not cruel. They simply cannot afford to be generous. Grain is life. Without grain, the deep wakes. Without the deep, the mountains fall. The Aeler will not be loved. They will be **needed**. And being needed is the only security they can afford.",
+    "the_anxiety": "The Aeler are anxious. They are terrified of the surface's chaos — of wars, famines, and broken contracts that could cut off the grain supply. They are terrified of the deep — of the pressure that thinks, of the knock in threes, of the names whispered from cracks in the stone. They are terrified of themselves — of the possibility that one day, they will have to choose between starvation and the invitation. This is the subtext: the Aeler are not just merchants. They are a people clinging to a cliff's edge, and every trade agreement is a handhold."
+  },
   "index": [
     "Aeler",
     "Crowns and Under-Vaults",
@@ -967,7 +1007,9 @@
     "Crown-Lich",
     "Echo-King",
     "Seal-Devil",
-    "Local Patrons!Aeler"
+    "Local Patrons!Aeler",
+    "Collectivist mercantilism",
+    "The Ninth Breath"
   ],
   "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
 }

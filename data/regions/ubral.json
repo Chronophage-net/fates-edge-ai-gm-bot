@@ -24,6 +24,33 @@
       "east": "The Dolmis Sea — Fishing villages and hidden coves trade in salt and secrets; the sea is a horizon, not a border. The cairns do not face the water; the dead do not swim."
     }
   },
+  "regional_diagnostic": {
+    "current_hook": "The lowlands write their laws in ink. We carve ours in stone. The ink fades. The stone remembers.",
+    "core_conflict": "Players are caught between the **clans'** ancient feuds and wergild system, the **Viterran crown's** colonial tax demands, the **Aeler outcasts'** toll-road ambitions, and the **Hollow's** patient attention—all while the **dead** watch from every cairn and the **Each Uisge** waits in the dark lochs.",
+    "unique_feature": "**Geometric Grudges:** Every insult has a weight, every injury a price in cattle. Wergild is the law of the hills, and the cairns are its judges. The ninth stone is always warm.",
+    "ninth_taboo": "In Ubral, the ninth stone in any cairn is always warm. Touch it, and you will remember an oath you never swore. Those who touch the ninth stone three times are said to become a cairn themselves—silent, still, and waiting for the next hand. The Aeler outcasts say the ninth stone is a door to the Deep Vaults they fled. They do not touch it. They count to eight and leave.",
+    "price": "Players sacrifice **reputation, cattle, or memory** to gain power. Every reward requires a gamble: a wergild paid in silver, a guest-right violated, a cairn defiled, or a secret shared with the dead.",
+    "faction_triad": [
+      {
+        "faction": "The Highland Clans",
+        "goal": "Preserve honor, cattle, and the old ways",
+        "method": "Wergild, guest-right, cairn votes, and the occasional raid",
+        "why_players_care": "They are the only law that matters in the hills"
+      },
+      {
+        "faction": "The Viterran Crown",
+        "goal": "Extract taxes and impose lowland law",
+        "method": "Justiciars, tax collectors, and the occasional garrison",
+        "why_players_care": "They offer a different kind of law—and a different kind of threat"
+      },
+      {
+        "faction": "The Aeler Outcasts (Khaz-Vurim)",
+        "goal": "Build a new under-way and control the passes",
+        "method": "Toll-roads, iron trade, and the counting of breaths",
+        "why_players_care": "They hold the keys to the mountain passes"
+      }
+    ]
+  },
   "quotes": [
     {
       "speaker": "Lady of Tor (Elite)",
@@ -34,204 +61,54 @@
       "text": "Hospitality's a sacred thing in these hills—break bread at my table and you're family till the sun sets twice. But cross that trust and the very stones will remember your name. The Viterran tax men learned that. Their bones are under the sheepwalk now. We don't forget. We don't forgive. We weigh every slight in cattle and count every insult in winters."
     }
   ],
-  "what_players_do": {
-    "description": "The Ubral highlands are about honor, feud, and survival. A party in Ubral will most often:",
-    "activities": [
-      "**Settle or escalate feuds** between clans, using wergild, guest-right, and cairn votes.",
-      "**Travel through contested passes**, negotiating tolls with Aeler outcasts and avoiding reivers.",
-      "**Deal with the dead**—cairns that speak, ghosts that count, and the Hollow's attention.",
-      "**Choose between honor and pragmatism**, with consequences that echo through generations."
+  "winter_debts_timer": {
+    "name": "Ancestral Grudge",
+    "max_segments": 8,
+    "advance_on": [
+      "A character breaks an oath sworn on a cairn (+2)",
+      "A guest-right is violated or a wergild goes unpaid (+1)",
+      "A cairn is defiled or a clan standard is burned (+1)",
+      "The party ignores a cairn's omen (GM spends 1 SB to tick +1)"
     ],
-    "key_hooks": [
-      "The Wolf Road wakes. Viterran tax men are asking which passes you used. *Which clan will you offend?*",
-      "A Mac Tern groom cannot pay the wergild for an O'Creagh bride. *The bride has fled to the Pass of Ashes.*",
-      "A cairn on Three-Fires Ridge is weeping water that tastes of salt. *The dead are agitated.*"
-    ]
-  },
-  "ninth_taboo": {
-    "description": "In Ubral, the ninth stone in any cairn is always warm. Touch it, and you will remember an oath you never swore. Those who touch the ninth stone three times are said to become a cairn themselves—silent, still, and waiting for the next hand. The Aeler outcasts say the ninth stone is a door to the Deep Vaults they fled. They do not touch it. They count to eight and leave. The ninth step on any path that leads to a loch is said to belong to the each uisge. Those who step on it hear the sound of hooves beneath the water and feel a cold breath on their neck. If they take a ninth step into the water, the water horse will claim them."
-  },
-  "clans": [
-    {
-      "name": "Mac Tern",
-      "homeland": "Gray Tor, upper Glen Tern",
-      "feuds": "O'Creagh (blood feud)",
-      "relationship_with_viterra": "Defiant; has never paid a lowland tax. Their cairn has nine notches—eight for victories, one waiting."
+    "thresholds": {
+      "4": "The dead grow restless—navigation rolls in Ubral gain +1 DV; cairn votes become more frequent.",
+      "8": "A cairn-wight (an undead guardian of the stones) rises and demands blood. The dead do not negotiate. They count."
     },
-    {
-      "name": "O'Creagh",
-      "homeland": "Black Broom Bog, eastern fells",
-      "feuds": "Mac Tern, Mac Gowan",
-      "relationship_with_viterra": "Wary; accepts bribes but no garrisons. Their singers still compose verses about the cattle raid of '03."
-    },
-    {
-      "name": "Mac Gowan",
-      "homeland": "Khaz-Vurim Steps, western passes",
-      "feuds": "O'Creagh",
-      "relationship_with_viterra": "Pragmatic; trades iron for lowland silver. Their smiths learned the counting song from Aeler outcasts."
-    },
-    {
-      "name": "O'Ruarc",
-      "homeland": "Bride's Causey, southern marches",
-      "feuds": "None active",
-      "relationship_with_viterra": "Collaborator; factor in Valora is a cousin. The other clans call them 'the lowland shadow.'"
-    },
-    {
-      "name": "Mac Taggart",
-      "homeland": "Three-Fires Ridge, northern heights",
-      "feuds": "Mac Tern (old)",
-      "relationship_with_viterra": "Neutral; sells beacon service to both sides. Their fires burn in eights—never nine."
-    },
-    {
-      "name": "O'Cahan",
-      "homeland": "Pass of Ashes, far west",
-      "feuds": "None",
-      "relationship_with_viterra": "Isolationist; speaks to lowlanders only through Aeler outcasts. They keep the old cairns that no one else will tend."
-    }
-  ],
-  "faction_timers": {
-    "viterran_yoke": {
-      "name": "The Viterran Yoke",
-      "max_segments": 6,
-      "advance_on": "A chief accepts a Viterran title, the party enforces lowland law, or a garrison is established.",
-      "retreats_on": "A tax collector is sent home empty (or headless) or a claim is exposed as fraud.",
-      "thresholds": {
-        "6": "A Queen's Justiciar arrives with a circuit court; lowland law becomes default. The cairns fall silent—the dead are watching."
-      }
-    },
-    "tors_hold": {
-      "name": "Tor's Hold",
-      "max_segments": 6,
-      "advance_on": "Lady Uria wins a moot, brokers peace, or gains an ally.",
-      "retreats_on": "She loses a feud or a client clan defects.",
-      "thresholds": {
-        "0": "She is deposed; civil war follows. The ninth cairn will have a new stone."
-      }
-    },
-    "ancestral_grudge": {
-      "name": "Ancestral Grudge",
-      "max_segments": 8,
-      "advance_on": "Oaths are broken, wergild unpaid, or cairns defiled.",
-      "thresholds": {
-        "4": "The dead grow restless—navigation rolls in Ubral gain +1 DV.",
-        "8": "A cairn-wight (an undead guardian of the stones) rises and demands blood. The dead do not negotiate. They count."
-      }
-    },
-    "forge_weight": {
-      "name": "The Forge Weight",
-      "max_segments": 6,
-      "advance_on": "Khaz-Vurim secures toll contracts, sells iron, or gains a clan's weight of obligation.",
-      "thresholds": {
-        "6": "They can close a pass to enforce terms. Their iron is cold, but their memory is colder."
-      }
-    },
-    "deep_road": {
-      "name": "The Deep Road",
-      "max_segments": 8,
-      "advance_on": "Aeler outcasts survey, bribe, or blast.",
-      "thresholds": {
-        "4": "They find a promising route.",
-        "8": "Construction begins on a dwarf under-way that would destroy several clan cairns. The mountain will remember."
-      }
-    },
-    "mac_terns_revenge": {
-      "name": "Mac Tern's Revenge",
-      "max_segments": 6,
-      "advance_on": "Mac Tern suffers an insult or loses cattle.",
-      "thresholds": {
-        "4": "They call a moot to plan a raid.",
-        "6": "They launch a devastating raid. The raiders count their steps in eights and leave a single white stone at each burned stead—a promise."
-      }
-    },
-    "ocreaghs_patience": {
-      "name": "O'Creagh's Patience",
-      "max_segments": 6,
-      "advance_on": "Retreats when O'Creagh is wronged.",
-      "thresholds": {
-        "0": "They strike without warning. Their war-cry is a single word: *Remember*."
-      }
-    }
-  },
-  "wergild_table": {
-    "description": "Blood Prices (in cattle, unless noted)",
-    "prices": [
+    "stirrs_table": [
       {
-        "offense": "Insult (spoken)",
-        "price": "1 cow"
+        "roll": 1,
+        "complication": "A cairn on your path weeps water that tastes of salt. The dead are agitated. Roll a cairn vote immediately."
       },
       {
-        "offense": "Stolen sheep",
-        "price": "3 cows"
+        "roll": 2,
+        "complication": "A shade appears on the ridge, watching. It vanishes if you offer a story or a coin. Refusal ticks Ancestral Grudge +1."
       },
       {
-        "offense": "Broken betrothal",
-        "price": "5 cows + a horse"
+        "roll": 3,
+        "complication": "A wergild you thought settled is questioned. The dead demand an accounting. Pay 1 Supply or start a Feud Rekindled."
       },
       {
-        "offense": "Wounding (by severity)",
-        "price": "7–15 cows"
+        "roll": 4,
+        "complication": "The ninth stone in a cairn is warm. Touching it grants a vision of an old oath—but marks you as seen by the Hollow."
       },
       {
-        "offense": "Killing a clansman",
-        "price": "21 cows + a public apology"
+        "roll": 5,
+        "complication": "A bean-nighe appears at a ford. She is washing a shroud. If you ask her name, you see your own death. If you offer a story, she lets you pass."
       },
       {
-        "offense": "Killing a chief",
-        "price": "42 cows + a hostage"
+        "roll": 6,
+        "complication": "The Each Uisge is restless. A child has gone missing near the loch. The water horse is hunting. The dead are watching."
       },
       {
-        "offense": "Breaking an oath sworn on a cairn",
-        "price": "9 cows—one for each face of the stone"
+        "roll": 7,
+        "complication": "A reiver band rides through, demanding tribute. They count their victims in eights. The ninth is a name on a cairn."
       },
       {
-        "offense": "Killing a guest under your roof",
-        "price": "No wergild. Exile or death. The Hollow will collect."
+        "roll": 8,
+        "complication": "The cairn's shadow falls across your path. Count your breaths to eight and stop. If you reach nine, the cairn will count you."
       }
     ]
   },
-  "hollows_cairn": {
-    "description": "Hidden in the high mist, a ninth stone circle with no clan markings. The dead do not vote here; they *listen*. Once per arc, a character may climb the cairn and ask one question of the Hollow. The answer is always a weight.",
-    "mechanics": "Spirit + Resolve (DV 6). Success: the GM answers truthfully (one sentence). Failure: the character gains the Condition *Marked by the Hollow* (the GM may spend 2 SB to have an Oath-Keeper appear). If the character counts to nine while on the cairn, the Hollow answers without being asked—and takes a memory."
-  },
-  "starting_hooks": [
-    "**The Wolf Road wakes:** Viterran tax men are asking which passes you used. The clans are counting your steps. One clan has offered a bounty for the tax men's heads—in cattle, not coin.",
-    "**The Bride-Price Default:** A Mac Tern groom cannot pay the wergild for an O'Creagh bride. The bride has fled to the Pass of Ashes. Retrieve her—or pay her price yourself. The groom has offered his sword. The bride's clan wants his head.",
-    "**The Toll-Master's Burden:** Khaz-Vurim has doubled tolls on the Steps. A clan chief suspects they are skimming to fund the Deep Road. Infiltrate the counting-house and find the hidden reckoning. The toll-master counts in eights. Do not let him reach nine.",
-    "**The Cairn that Weeps:** A shepherd reports that a cairn on Three-Fires Ridge is weeping water that tastes of salt. The dead are agitated. Find out why before the clan blames a rival. The water has a rhythm—eight drips, a pause, eight drips. Something is counting.",
-    "**The Kelpie's Ford:** A child has gone missing near the ford of Loch Dubh. The elders say the *each uisge* has taken her. They offer a fortune in cattle to whoever can retrieve the child—or drive the water horse back to its dark loch."
-  ],
-  "folk_horror_bestiary": [
-    {
-      "creature": "Each Uisge (Water Horse)",
-      "signs": "Wet hoofprints steaming in moonlight; a beautiful horse or shaggy man by the loch.",
-      "hook": "Offer it a bridle of cold iron, and it will serve you once—then try to drown you."
-    },
-    {
-      "creature": "Bean-Nighe (Washer at the Ford)",
-      "signs": "A woman washing shrouds at a ford at midnight. She has no face—only a hood of gray water.",
-      "hook": "If you see her, you have one day to live unless you can answer her riddle. She will trade a death omen for a story about a death you caused."
-    },
-    {
-      "creature": "Baobhan Sith",
-      "signs": "A beautiful woman in a green dress who dances with lone travelers. She has deer hooves instead of feet.",
-      "hook": "She offers a dance that grants +1 die to seduction or deception, but marks you as her prey. Iron burns her."
-    },
-    {
-      "creature": "Sluagh (Host of the Unforgiven)",
-      "signs": "A flock of gray, bird-like spirits flying through the night sky, snatching souls without cairns.",
-      "hook": "They fear the sound of a bell. They may offer to carry a message to the dead for a memory."
-    },
-    {
-      "creature": "Cù Sìth (Fairy Dog)",
-      "signs": "A great green hound with a braided tail, harbinger of death.",
-      "hook": "Three barks mean you will die before sunset; one bark means you will outlive your enemies. It may adopt a character who shows mercy to a wounded animal."
-    },
-    {
-      "creature": "Cairn-Wight",
-      "signs": "An undead guardian of the stones, risen when Ancestral Grudge fills.",
-      "hook": "It does not negotiate. It counts. Offer a wergild in cattle or a true regret to send it back."
-    }
-  ],
   "npcs": [
     {
       "name": "Lady Uria",
@@ -270,7 +147,7 @@
       "quirk": "She asks no payment, but she writes every patient's name on a slate that never fills. The slate has eight columns."
     },
     {
-      "name": "Bean-Nighe",
+      "name": "The Bean-Nighe",
       "role": "The Washer at the Ford (spirit omen)",
       "motivation": "Appear to those about to die, washing their burial shrouds",
       "quirk": "She has no face—only a hood of gray water. If you ask her name, she will show you your own death."
@@ -310,74 +187,6 @@
       "Ash-Finger"
     ]
   },
-  "cairn_vote": [
-    {
-      "roll": 1,
-      "outcome": "Dead vote for war",
-      "effect": "Advance the related Feud or Conflict timer by +2 segments."
-    },
-    {
-      "roll": 2,
-      "outcome": "Dead are divided",
-      "effect": "No change, but the GM gains 1 SB (the cairn is watching)."
-    },
-    {
-      "roll": 3,
-      "outcome": "Dead vote for peace",
-      "effect": "Retreat the related timer by -1 segment."
-    },
-    {
-      "roll": 4,
-      "outcome": "Dead demand tribute",
-      "effect": "The cairn will not judge until an offering is made (1 Supply or a story)."
-    },
-    {
-      "roll": 5,
-      "outcome": "Dead vote for blood-price",
-      "effect": "The losing party must pay a wergild of 3 cows (1 Supply) or the feud continues."
-    },
-    {
-      "roll": 6,
-      "outcome": "Dead vote for war",
-      "effect": "Advance the related Feud or Conflict timer by +2 segments."
-    },
-    {
-      "roll": 7,
-      "outcome": "Dead demand tribute",
-      "effect": "The cairn will not judge until an offering is made (1 Supply or a story)."
-    },
-    {
-      "roll": 8,
-      "outcome": "Dead vote for blood-price",
-      "effect": "The losing party must pay a wergild of 3 cows (1 Supply) or the feud continues."
-    }
-  ],
-  "guest_right_violations": [
-    {
-      "roll": 1,
-      "consequence": "The host demands a wergild of 1 Supply immediately."
-    },
-    {
-      "roll": 2,
-      "consequence": "The cairn nearest the hall votes against you—start a **Grudge [4]** timer."
-    },
-    {
-      "roll": 3,
-      "consequence": "A witness spreads the story. Gain a **Black Mark** (-1 die on all social rolls in Ubral for one session)."
-    },
-    {
-      "roll": 4,
-      "consequence": "The host's kin challenge you to a duel to first blood (Body+Melee, DV 3). The loser owes a story."
-    },
-    {
-      "roll": 5,
-      "consequence": "The hearth-stone cracks. The hall is now **Desperate** for all social rolls until you make an offering (1 Supply or a story)."
-    },
-    {
-      "roll": 6,
-      "consequence": "The Hollow takes notice. GM gains 2 SB to spend on supernatural complications. The host's family will remember—for generations."
-    }
-  ],
   "places": [
     {
       "rank": 2,
@@ -743,7 +552,7 @@
       "subtitle": "[SOCIAL]",
       "description": "One hearth owes food, bed, and steel at dawn.",
       "flavor": "The token is a knucklebone from a feast. The host's name is carved on it. Break it, and the obligation ends. The host will not thank you. There are eight notches on the bone. The ninth is the breaking.",
-      "cost": "Blood-price: 3 cows. If you are wronged by the host, you may demand this value in cattle or public apology."
+      "curse_cost": "Blood-price: 3 cows. If you are wronged by the host, you may demand this value in cattle or public apology."
     },
     {
       "rank": 3,
@@ -752,7 +561,7 @@
       "subtitle": "[TRAVEL]",
       "description": "Lawful passage on named sheepwalks (once).",
       "flavor": "The braid is woven from horsehair and a promise. Unravel it to return. The promise was made to a hill guide who died last winter. His ghost still checks the knots. The braid has eight strands. The ninth is a memory.",
-      "cost": "Using the braid obliges you to leave an offering at the guide's cairn (1 Supply). If you forget, start Ancestral Grudge +1."
+      "curse_cost": "Using the braid obliges you to leave an offering at the guide's cairn (1 Supply). If you forget, start Ancestral Grudge +1."
     },
     {
       "rank": 4,
@@ -761,7 +570,7 @@
       "subtitle": "[TRAVEL] [WEIGHT]",
       "description": "Cross Wergild Ford free for a season; water as ally.",
       "flavor": "The remission is a white stone. Skip it across the ford to pay. The stone was taken from a Viterran courthouse. The law has not found it yet. The stone has eight facets. The ninth is a crack.",
-      "cost": "The stone can be used as payment for any wergild of 5 cows or less. Once used, it crumbles."
+      "curse_cost": "The stone can be used as payment for any wergild of 5 cows or less. Once used, it crumbles."
     },
     {
       "rank": 5,
@@ -770,7 +579,7 @@
       "subtitle": "[SOCIAL] [OATH]",
       "description": "Two clans sheath blades until the next harvest.",
       "flavor": "The charter is a broken spear. Each clan keeps a half. The spear was used to kill a Viterran tax collector. His family still wants it back. The spear had eight notches. The ninth broke it.",
-      "cost": "The charter is witnessed by the cairns. If either clan breaks it, the cairns vote for war automatically."
+      "curse_cost": "The charter is witnessed by the cairns. If either clan breaks it, the cairns vote for war automatically."
     },
     {
       "rank": 6,
@@ -779,7 +588,7 @@
       "subtitle": "[TRADE]",
       "description": "Claim on a week's iron from a hill bloomery.",
       "flavor": "The bloomery is a woman's name. She decides how much you get. She is an Aeler outcast's granddaughter. Her iron is harder than any lowlander's steel. She counts her blooms in eights. The ninth is for the cairn.",
-      "cost": "The iron can be traded for 2 Supply or used to forge a weapon (grant +1 die on one melee attack)."
+      "curse_cost": "The iron can be traded for 2 Supply or used to forge a weapon (grant +1 die on one melee attack)."
     },
     {
       "rank": 7,
@@ -788,7 +597,7 @@
       "subtitle": "[WATCH] [TRAVEL]",
       "description": "Today's beacon order from Three-Fires Ridge.",
       "flavor": "The code is a sequence of smoke puffs. Read it, and the hills will watch for you. The code changes weekly. The fire wardens burn the old codes—the smoke carries the memory. The code has eight signals. The ninth is a warning.",
-      "cost": "To receive the code, you must share a secret with the fire warden. If you lie, the code is false—start False Alarm [4]."
+      "curse_cost": "To receive the code, you must share a secret with the fire warden. If you lie, the code is false—start False Alarm [4]."
     },
     {
       "rank": 8,
@@ -797,7 +606,7 @@
       "subtitle": "[TRAVEL] [AUTHORITY]",
       "description": "Dwarf road priority for one train of carts.",
       "flavor": "The ring is iron. Wear it on your off hand. The Aeler outcasts who made it stamped their names inside. One name is scratched out—the smith was killed in a feud. The ring still works. The ring has eight runes. The ninth is a scar.",
-      "cost": "The ring can be used as a toll waiver for any dwarf road (value 2 Supply). Once used, the ring cracks."
+      "curse_cost": "The ring can be used as a toll waiver for any dwarf road (value 2 Supply). Once used, the ring cracks."
     },
     {
       "rank": 9,
@@ -806,7 +615,7 @@
       "subtitle": "[SOCIAL] [WEIGHT]",
       "description": "Hold the bride-gift; both sides must humour you.",
       "flavor": "The purse is a leather bag. The coins inside are from a dead man's hoard. The dead man was a Viterran lord who tried to tax the clans. His ghost asks for his money back. The purse has eight seams. The ninth is a stitch.",
-      "cost": "The ghost will appear if the purse is opened without a witness. If you fail to provide a witness, start Haunted [4]."
+      "curse_cost": "The ghost will appear if the purse is opened without a witness. If you fail to provide a witness, start Haunted [4]."
     },
     {
       "rank": 10,
@@ -815,7 +624,7 @@
       "subtitle": "[SOCIAL]",
       "description": "Gray Tor opens its gates during storm or pursuit.",
       "flavor": "The writ is a raven feather. Burn it to claim shelter. The raven was a clan spy. His memory still watches the gates. The feather has eight barbs. The ninth is a secret.",
-      "cost": "The writ only works if you swear an oath of non-violence within the fort. Refusal voids the writ."
+      "curse_cost": "The writ only works if you swear an oath of non-violence within the fort. Refusal voids the writ."
     },
     {
       "rank": 11,
@@ -824,7 +633,7 @@
       "subtitle": "[OATH] [MAGIC]",
       "description": "One binding vow ends cleanly, witnessed.",
       "flavor": "The bracelet is silver. The clasp is a wolf's head. Bite it to break the oath. The wolf's head was a seal of a Viterran king. The oath was sworn under duress. The bracelet remembers. The bracelet has eight links. The ninth is the bite.",
-      "cost": "Breaking the oath triggers a cairn vote. The dead always vote for the wronged party—advance the related Feud timer by +1 per broken oath."
+      "curse_cost": "Breaking the oath triggers a cairn vote. The dead always vote for the wronged party—advance the related Feud timer by +1 per broken oath."
     },
     {
       "rank": 12,
@@ -833,7 +642,7 @@
       "subtitle": "[SOCIAL] [LAW]",
       "description": "The Cairns hear you alone; precedent sticks like stone.",
       "flavor": "The audience is held at midnight. The stones glow when they agree. The last audience exiled a clan chief. He is still walking the passes, looking for a cairn that will forgive him. There are eight councilors. The ninth is the stone.",
-      "cost": "You must leave an offering of silence (no speaking for one hour) before the audience. If you break silence, the cairns refuse to judge."
+      "curse_cost": "You must leave an offering of silence (no speaking for one hour) before the audience. If you break silence, the cairns refuse to judge."
     },
     {
       "rank": 13,
@@ -842,7 +651,7 @@
       "subtitle": "[AUTHORITY] [TRADE]",
       "description": "Collect tolls on a stretch of pass (for now).",
       "flavor": "The commission is a wooden staff. Plant it at the toll gate. The staff was carved from a gallows tree. The last toll-keeper was hanged. The staff still creaks. The staff has eight knots. The ninth is a creak.",
-      "cost": "The commission allows you to demand 1 Supply from any traveler. If you abuse it, the cairns vote against you—start Ancestral Grudge +1."
+      "curse_cost": "The commission allows you to demand 1 Supply from any traveler. If you abuse it, the cairns vote against you—start Ancestral Grudge +1."
     },
     {
       "rank": 14,
@@ -851,7 +660,7 @@
       "subtitle": "[AUTHORITY] [OATH]",
       "description": "Temporary exception to dwarf toll or law, sealed.",
       "flavor": "The clause is a single rune. Carve it on the toll post, and the mountain will honor it—once. The rune was taught to the clans by an Aeler outcast who wanted to see a Viterran knight pay double. The rune has eight strokes. The ninth is the mountain's answer.",
-      "cost": "Using the clause obliges you to perform a service for the Aeler outcasts (a quest). Refusal starts Deep Road +1."
+      "curse_cost": "Using the clause obliges you to perform a service for the Aeler outcasts (a quest). Refusal starts Deep Road +1."
     }
   ],
   "quick_use_notes": {
@@ -859,24 +668,155 @@
     "diamonds": "Diamonds are codified outcomes (oaths/rights/tokens) that change position rather than call for a roll.",
     "ace_rule": "If any A appears, echo stone and spear motifs—cairns that watch, voices that echo, oaths that cut deeper than steel. The ninth stone is warm. The dead are counting."
   },
-  "additional_features": [
-    {
-      "name": "Guest-Law",
-      "description": "Breaking hospitality stains a name worse than breaking a sword. Guest-right tokens guarantee shelter, but abuse invites a blood feud. A Viterran lord who broke guest-law at Gray Tor had his name struck from the Council's cairn. His own clan disowned him. The cairn has eight names. His is not among them."
+  "additional_features": {
+    "guest_law": "Breaking hospitality stains a name worse than breaking a sword. Guest-right tokens guarantee shelter, but abuse invites a blood feud. A Viterran lord who broke guest-law at Gray Tor had his name struck from the Council's cairn. His own clan disowned him. The cairn has eight names. His is not among them.",
+    "wergild_system": "Every injury has a price in cattle or coin. Wergild keepers maintain reckonings that outlive the injured; weights pass to kin. The lowland courts have no equivalent; they imprison the poor and hang the desperate. The clans consider that barbaric. The clans count in eights. The ninth is the Hollow's.",
+    "dwarf_toll_roads": "Khaz-Vurim gates charge for passage, but their roads are sure and swift. Pass-rings grant priority, but dwarf law is strict. The Aeler outcasts who run the tolls are exiles—they fled the Deep Vaults because they could not abide the counting. Now they count for the clans, and they are gentle with the weary. They never count to nine.",
+    "local_patrons": {
+      "the_bone_keeper": "Varnek Karn. The chronicler of ancestral wergild; the witness to every blood price. He counts in eights. The ninth is the grave.",
+      "the_iron_crown": "Mykkiel. The law of the lowlands, cold and distant; the clans honor it by breaking it. Its scales have eight weights. The ninth is empty.",
+      "the_gray_mare": "The Traveler. The rider who never tires; the path that leads home through the mist. Her hooves fall in eights. The ninth is a whisper.",
+      "the_forge_father": "The Sealed Gate (Aeler outcast cult). The fire that shapes iron; the exile who builds a new hearth. He counts his breaths. The ninth is the mountain's.",
+      "the_cailleach": "The Pale Shepherd. She who brings the frost and the long dark. Her staff is the ninth branch of the world tree."
     },
-    {
-      "name": "Wergild System",
-      "description": "Every injury has a price in cattle or coin. Wergild keepers maintain reckonings that outlive the injured; weights pass to kin. The lowland courts have no equivalent; they imprison the poor and hang the desperate. The clans consider that barbaric. The clans count in eights. The ninth is the Hollow's."
+    "cairn_vote_table": [
+      {
+        "roll": 1,
+        "outcome": "Dead vote for war",
+        "effect": "Advance the related Feud or Conflict timer by +2 segments."
+      },
+      {
+        "roll": 2,
+        "outcome": "Dead are divided",
+        "effect": "No change, but the GM gains 1 SB (the cairn is watching)."
+      },
+      {
+        "roll": 3,
+        "outcome": "Dead vote for peace",
+        "effect": "Retreat the related timer by -1 segment."
+      },
+      {
+        "roll": 4,
+        "outcome": "Dead demand tribute",
+        "effect": "The cairn will not judge until an offering is made (1 Supply or a story)."
+      },
+      {
+        "roll": 5,
+        "outcome": "Dead vote for blood-price",
+        "effect": "The losing party must pay a wergild of 3 cows (1 Supply) or the feud continues."
+      },
+      {
+        "roll": 6,
+        "outcome": "Dead vote for war",
+        "effect": "Advance the related Feud or Conflict timer by +2 segments."
+      },
+      {
+        "roll": 7,
+        "outcome": "Dead demand tribute",
+        "effect": "The cairn will not judge until an offering is made (1 Supply or a story)."
+      },
+      {
+        "roll": 8,
+        "outcome": "Dead vote for blood-price",
+        "effect": "The losing party must pay a wergild of 3 cows (1 Supply) or the feud continues."
+      }
+    ],
+    "guest_right_violations_table": [
+      {
+        "roll": 1,
+        "consequence": "The host demands a wergild of 1 Supply immediately."
+      },
+      {
+        "roll": 2,
+        "consequence": "The cairn nearest the hall votes against you—start a **Grudge [4]** timer."
+      },
+      {
+        "roll": 3,
+        "consequence": "A witness spreads the story. Gain a **Black Mark** (-1 die on all social rolls in Ubral for one session)."
+      },
+      {
+        "roll": 4,
+        "consequence": "The host's kin challenge you to a duel to first blood (Body+Melee, DV 3). The loser owes a story."
+      },
+      {
+        "roll": 5,
+        "consequence": "The hearth-stone cracks. The hall is now **Desperate** for all social rolls until you make an offering (1 Supply or a story)."
+      },
+      {
+        "roll": 6,
+        "consequence": "The Hollow takes notice. GM gains 2 SB to spend on supernatural complications. The host's family will remember—for generations."
+      }
+    ],
+    "wergild_table": {
+      "description": "Blood Prices (in cattle, unless noted)",
+      "prices": [
+        {
+          "offense": "Insult (spoken)",
+          "price": "1 cow"
+        },
+        {
+          "offense": "Stolen sheep",
+          "price": "3 cows"
+        },
+        {
+          "offense": "Broken betrothal",
+          "price": "5 cows + a horse"
+        },
+        {
+          "offense": "Wounding (by severity)",
+          "price": "7–15 cows"
+        },
+        {
+          "offense": "Killing a clansman",
+          "price": "21 cows + a public apology"
+        },
+        {
+          "offense": "Killing a chief",
+          "price": "42 cows + a hostage"
+        },
+        {
+          "offense": "Breaking an oath sworn on a cairn",
+          "price": "9 cows—one for each face of the stone"
+        },
+        {
+          "offense": "Killing a guest under your roof",
+          "price": "No wergild. Exile or death. The Hollow will collect."
+        }
+      ]
     },
-    {
-      "name": "Dwarf Toll Roads",
-      "description": "Khaz-Vurim gates charge for passage, but their roads are sure and swift. Pass-rings grant priority, but dwarf law is strict. The Aeler outcasts who run the tolls are exiles—they fled the Deep Vaults because they could not abide the counting. Now they count for the clans, and they are gentle with the weary. They never count to nine."
-    },
-    {
-      "name": "Local Patrons (Syncretic Names)",
-      "description": "The Bone Keeper — Varnek Karn. The chronicler of ancestral wergild; the witness to every blood price. He counts in eights. The ninth is the grave.\nThe Iron Crown — Mykkiel. The law of the lowlands, cold and distant; the clans honor it by breaking it. Its scales have eight weights. The ninth is empty.\nThe Gray Mare — The Traveler. The rider who never tires; the path that leads home through the mist. Her hooves fall in eights. The ninth is a whisper.\nThe Forge Father (Aeler outcast cult) — The Sealed Gate. The fire that shapes iron; the exile who builds a new hearth. He counts his breaths. The ninth is the mountain's.\nThe Cailleach (Winter Hag) — The Pale Shepherd. She who brings the frost and the long dark. Her staff is the ninth branch of the world tree."
-    }
-  ],
+    "folk_horror_bestiary": [
+      {
+        "creature": "Each Uisge (Water Horse)",
+        "signs": "Wet hoofprints steaming in moonlight; a beautiful horse or shaggy man by the loch.",
+        "hook": "Offer it a bridle of cold iron, and it will serve you once—then try to drown you."
+      },
+      {
+        "creature": "Bean-Nighe (Washer at the Ford)",
+        "signs": "A woman washing shrouds at a ford at midnight. She has no face—only a hood of gray water.",
+        "hook": "If you see her, you have one day to live unless you can answer her riddle. She will trade a death omen for a story about a death you caused."
+      },
+      {
+        "creature": "Baobhan Sith",
+        "signs": "A beautiful woman in a green dress who dances with lone travelers. She has deer hooves instead of feet.",
+        "hook": "She offers a dance that grants +1 die to seduction or deception, but marks you as her prey. Iron burns her."
+      },
+      {
+        "creature": "Sluagh (Host of the Unforgiven)",
+        "signs": "A flock of gray, bird-like spirits flying through the night sky, snatching souls without cairns.",
+        "hook": "They fear the sound of a bell. They may offer to carry a message to the dead for a memory."
+      },
+      {
+        "creature": "Cù Sìth (Fairy Dog)",
+        "signs": "A great green hound with a braided tail, harbinger of death.",
+        "hook": "Three barks mean you will die before sunset; one bark means you will outlive your enemies. It may adopt a character who shows mercy to a wounded animal."
+      },
+      {
+        "creature": "Cairn-Wight",
+        "signs": "An undead guardian of the stones, risen when Ancestral Grudge fills.",
+        "hook": "It does not negotiate. It counts. Offer a wergild in cattle or a true regret to send it back."
+      }
+    ]
+  },
   "lore_echoes": [
     {
       "title": "The Bitter Root",
@@ -893,6 +833,10 @@
     {
       "title": "The Threshold Compendium",
       "description": "The Pass of Ashes is a Class II Anchor—the spirits of Viterran knights who froze to death in a blizzard still march there, looking for a way home. Saikou Ira left a silver mirror at the summit. The mirror shows the knights their own corpses. They have not advanced since. The mirror has eight sides. The ninth is a crack."
+    },
+    {
+      "title": "The Ninth",
+      "description": "In Ubral, the ninth stone in any cairn is always warm. Touch it, and you will remember an oath you never swore. Those who touch the ninth stone three times are said to become a cairn themselves—silent, still, and waiting for the next hand. The Aeler outcasts say the ninth stone is a door to the Deep Vaults they fled. They do not touch it. They count to eight and leave."
     }
   ],
   "superstitions": [
@@ -922,6 +866,7 @@
       "cost": "Burn for +1 die once"
     }
   ],
+  "decline_and_patronage": "In Ubral, power flows through honor, cattle, and the witness of the dead. The clans maintain their independence through a web of wergild, guest-right, and cairn votes that ensure the old laws are honored. The Lady of Tor rules by consent and the weight of her ancestors' memories, while the Council of Cairns speaks for the dead who still watch the living. Against them stands the Viterran crown—justiciars, factors, and sheriffs who seek to replace cairn-law with lowland statutes and cattle with coin. And in the passes, the Aeler outcasts offer a third way: tolls, iron, and the counting of breaths. **For the GM:** tie rewards to visible symbols (tokens, braids, rings) that can be challenged, stolen, or voided; let the clans, the crown, and the outcasts offer conflicting protections so players must choose whose favor matters more; use cairns, fords, and moots as arenas for social contests weighing wergild against lowland law; and remember the Ancestral Grudge timer is a visible campaign front—once it fills, the dead themselves will rise to settle the score.",
   "sb_spend_table": {
     "minor_complications": [
       "**Exposure:** Your actions draw unwanted attention from **clan guards or reiver scouts**.",
@@ -1066,109 +1011,139 @@
       ]
     }
   ],
-  "legendary_sites": [
+  "encounter_seeds": [
     {
-      "name": "Sheepwalk Ledge Trial",
-      "description": "Speak one honest lie to pass. On success, set Position one step safer for the next border scene; on failure, start Kin Arrive. The ledge has eight steps. The ninth is a story."
+      "title": "The Wolf Road Wakes",
+      "description": "Viterran tax men are asking which passes you used. The clans are counting your steps. One clan has offered a bounty for the tax men's heads—in cattle, not coin. The reivers are already moving. The dead are watching."
     },
     {
-      "name": "Wergild Ford Weighing",
-      "description": "Cast silver on the table-rock. If paid in full, clear 1 Feud-Smoke; if short, Wergild Breach enters play. The rock has eight weights. The ninth is a ghost."
+      "title": "The Bride-Price Default",
+      "description": "A Mac Tern groom cannot pay the wergild for an O'Creagh bride. The bride has fled to the Pass of Ashes. Retrieve her—or pay her price yourself. The groom has offered his sword. The bride's clan wants his head. The bride's ghost walks the pass, waiting."
     },
     {
-      "name": "Pass of Ashes Vigil",
-      "description": "Hold a fire through the night storm. Success grants Shelter Writ; a miss summons the Oath-Eater Wight at weak strength. The fire must be fed eight times. The ninth feeding is your memory."
+      "title": "The Cairn that Weeps",
+      "description": "A shepherd reports that a cairn on Three-Fires Ridge is weeping water that tastes of salt. The dead are agitated. Find out why before the clan blames a rival. The water has a rhythm—eight drips, a pause, eight drips. Something is counting."
+    },
+    {
+      "title": "The Kelpie's Ford",
+      "description": "A child has gone missing near the ford of Loch Dubh. The elders say the each uisge has taken her. They offer a fortune in cattle to whoever can retrieve the child—or drive the water horse back to its dark loch. The loch has eight pools. The ninth is the horse's lair."
+    },
+    {
+      "title": "The Toll-Master's Burden",
+      "description": "Khaz-Vurim has doubled tolls on the Steps. A clan chief suspects they are skimming to fund the Deep Road. Infiltrate the counting-house and find the hidden reckoning. The toll-master counts in eights. Do not let him reach nine."
     }
   ],
-  "extensions": {
-    "oath_dial": {
-      "name": "Oath Dial",
-      "description": "Track the party's footing between honor and pragmatism.",
-      "honor_high": "+1 Position when invoking guest-right, keeping truce, or paying wergild promptly; first ambush/raid action each session starts one step worse.",
-      "cunning_high": "+1 Effect on raids, evasions, and border tricks; first formal parley or oath-bound request each session starts one step worse.",
-      "center": "Restore stolen cattle, host an enemy well, or submit to a cairn ruling. The dial has eight positions. The ninth is a truce."
+  "faction_entanglements": [
+    "**The Highland Clans:** Keep the old oaths and pay wergild; cross them and the cairns will vote against you.",
+    "**The Viterran Crown:** Pay taxes and honor lowland law; refuse and the justiciars will come with chains.",
+    "**The Aeler Outcasts (Khaz-Vurim):** Pay tolls and tell stories; cross them and the passes will close.",
+    "**The Dead (The Cairns):** Honor their memory and settle your debts; ignore them and they will count you."
+  ],
+  "cross_regional_ties": [
+    "**Vhasia (West):** The mountain passes funnel exiles and mercenaries; the Sun Court's Viterran entanglements offers opportunities for the savvy laird.",
+    "**Viterra (South):** The lowland tax collectors and the Queen's justiciars claim suzerainty; the clans call it 'ink on wet stone.'",
+    "**Aeler (North):** The exiled dwarves of Khaz-Vurim maintain the toll-roads; the mountain's breath is counted in iron.",
+    "**The Dolmis Sea (East):** Fishing villages and hidden coves trade in salt and secrets; the sea is a horizon, not a border."
+  ],
+  "clans": [
+    {
+      "name": "Mac Tern",
+      "homeland": "Gray Tor, upper Glen Tern",
+      "feuds": "O'Creagh (blood feud)",
+      "relationship_with_viterra": "Defiant; has never paid a lowland tax. Their cairn has nine notches—eight for victories, one waiting."
     },
-    "feud_math": {
-      "description": "Fast settlement: lay three markers: Blood, Beasts, Blame.",
-      "procedure": [
-        "Make a single Parley/Command/Study roll per side. On a hit, move one marker to your side; great Effect moves two.",
-        "Win any two to settle: Blood = oath/hostage, Beasts = wergild in cattle/coin, Blame = public apology/verse.",
-        "Miss: mark Feud-Smoke [4]. At 4, the losing side names a lawful target (bridge, herd, guide). The target has eight days to pay. The ninth is the Hollow's."
-      ]
+    {
+      "name": "O'Creagh",
+      "homeland": "Black Broom Bog, eastern fells",
+      "feuds": "Mac Tern, Mac Gowan",
+      "relationship_with_viterra": "Wary; accepts bribes but no garrisons. Their singers still compose verses about the cattle raid of '03."
     },
-    "guest_right_procedure": {
-      "description": "Present a Guest-Token (or bread and salt). Host must choose: Shelter, Escort at Dawn, or Neutral Meal.",
-      "breaking": "Creates Blood-Oath [6] against the violator; any Ubral ally may spend 1 Diamond to tick it twice.",
-      "abiding": "Clears 1 tick from Feud-Smoke and grants +1d to the next social action in that steading. The oath is witnessed by the hearth. The hearth counts in eights."
+    {
+      "name": "Mac Gowan",
+      "homeland": "Khaz-Vurim Steps, western passes",
+      "feuds": "O'Creagh",
+      "relationship_with_viterra": "Pragmatic; trades iron for lowland silver. Their smiths learned the counting song from Aeler outcasts."
     },
-    "watchfire_net": {
-      "description": "Two timers: Beat the Beacons vs Ridge Aflame (size by highest rank in your seed).",
-      "lanes": [
-        "Low Fold (slow, stealth)",
-        "Sheepwalk (tricky, quick)",
-        "Road (fast, obvious)"
-      ],
-      "advantage": "Low Fold → Road (conceal), Road → Sheepwalk (speed), Sheepwalk → Low Fold (shortcuts).",
-      "false_alarm": "1 SB: light or douse a misleading brazier; shift one segment between the two timers. The beacons have eight signals. The ninth is war."
+    {
+      "name": "O'Ruarc",
+      "homeland": "Bride's Causey, southern marches",
+      "feuds": "None active",
+      "relationship_with_viterra": "Collaborator; factor in Valora is a cousin. The other clans call them 'the lowland shadow.'"
     },
-    "reiver_ride": {
-      "description": "Mounted chase. Track Remounts (3): each push for speed trades 1 remount for +1d or +1 Effect.",
-      "hag_stone_cut": "Pass a known gap (Sheepwalk Ledge, Droppers' Bridge) to force pursuers to roll or fall behind.",
-      "note": "The reivers ride in eights. The ninth horse is a lie."
+    {
+      "name": "Mac Taggart",
+      "homeland": "Three-Fires Ridge, northern heights",
+      "feuds": "Mac Tern (old)",
+      "relationship_with_viterra": "Neutral; sells beacon service to both sides. Their fires burn in eights—never nine."
     },
-    "khaz_vurim_protocol": {
-      "description": "Present any two: Pass-Ring, Stamped Load-List, Named Sponsor.",
-      "outcomes": "Two = safe passage; one = pay toll + scrutiny; none = delay and search.",
-      "stone_clause": "May override one dwarf law once; afterwards start Marked Notice [3] with the wardens.",
-      "measured_truth": "Substitute exact weights/measures for charm or coin to improve Position by one step with dwarves.",
-      "note": "Aeler outcast smiths accept stories as payment for small repairs—the story must be about a betrayal. They count their breaths. The ninth is the mountain's."
-    },
-    "bride_peace_interlude": {
-      "description": "Play a Bride-Charter to suspend violence at a scene. Everyone sheaths—or earns Song Shame [4].",
-      "consequence": "When Song Shame fills, a skald memorializes the insult (ongoing -1d with that clan).",
-      "note": "The bride has eight ribbons. The ninth is a knife."
-    },
-    "start_of_scene_omens": [
-      {
-        "roll": 1,
-        "omen": "Clear Ridge",
-        "effect": "first signal test gains +1d."
-      },
-      {
-        "roll": 2,
-        "omen": "Lowing Herd",
-        "effect": "+1d to tracking or herding; -1d to stealth near cattle."
-      },
-      {
-        "roll": 3,
-        "omen": "Wet Stone",
-        "effect": "climbs start one step worse; mending gear is easier (free repair tick)."
-      },
-      {
-        "roll": 4,
-        "omen": "Old Verse Remembered",
-        "effect": "first oath/plea gains +1d if spoken in rhyme."
-      },
-      {
-        "roll": 5,
-        "omen": "Border Drums",
-        "effect": "Viterra patrols near; papers safer, raiding harsher."
-      },
-      {
-        "roll": 6,
-        "omen": "Dwarf Toll Day",
-        "effect": "prices firm; any Diamond tied to roads counts double value at the Steps."
+    {
+      "name": "O'Cahan",
+      "homeland": "Pass of Ashes, far west",
+      "feuds": "None",
+      "relationship_with_viterra": "Isolationist; speaks to lowlanders only through Aeler outcasts. They keep the old cairns that no one else will tend."
+    }
+  ],
+  "campaign_timers": {
+    "viterran_yoke": {
+      "name": "The Viterran Yoke",
+      "max_segments": 6,
+      "advance_on": "A chief accepts a Viterran title, the party enforces lowland law, or a garrison is established.",
+      "retreats_on": "A tax collector is sent home empty (or headless) or a claim is exposed as fraud.",
+      "thresholds": {
+        "6": "A Queen's Justiciar arrives with a circuit court; lowland law becomes default. The cairns fall silent—the dead are watching."
       }
-    ],
-    "sb_conversions": {
-      "1_sb": "Mud and Heather: footing worsens; next physical action -1d or mark Winded.",
-      "2_sb": "Kin Arrive: add a rival cousin/ally who changes the ask or splits the pot.",
-      "3_plus_sb": "Cairn Decrees: a standing stone 'speaks' (witnesses recall the law); swap one held Diamond for a lesser right until you make amends. The stone speaks in eights. The ninth word is your name."
     },
-    "reputation_echoes": {
-      "guest_faithful": "once/session downgrade a social backlash inside a steading; next time you refuse hospitality, mark Feud-Smoke +1.",
-      "reiver_favored": "+1 Effect to seize cattle/contraband on the move; city gates start one step worse Position.",
-      "stone_friend": "+1d with dwarf wardens on roads; any false measure triggers Marked Notice +1."
+    "tors_hold": {
+      "name": "Tor's Hold",
+      "max_segments": 6,
+      "advance_on": "Lady Uria wins a moot, brokers peace, or gains an ally.",
+      "retreats_on": "She loses a feud or a client clan defects.",
+      "thresholds": {
+        "0": "She is deposed; civil war follows. The ninth cairn will have a new stone."
+      }
+    },
+    "ancestral_grudge": {
+      "name": "Ancestral Grudge",
+      "max_segments": 8,
+      "advance_on": "Oaths are broken, wergild unpaid, or cairns defiled.",
+      "thresholds": {
+        "4": "The dead grow restless—navigation rolls in Ubral gain +1 DV.",
+        "8": "A cairn-wight (an undead guardian of the stones) rises and demands blood. The dead do not negotiate. They count."
+      }
+    },
+    "forge_weight": {
+      "name": "The Forge Weight",
+      "max_segments": 6,
+      "advance_on": "Khaz-Vurim secures toll contracts, sells iron, or gains a clan's weight of obligation.",
+      "thresholds": {
+        "6": "They can close a pass to enforce terms. Their iron is cold, but their memory is colder."
+      }
+    },
+    "deep_road": {
+      "name": "The Deep Road",
+      "max_segments": 8,
+      "advance_on": "Aeler outcasts survey, bribe, or blast.",
+      "thresholds": {
+        "4": "They find a promising route.",
+        "8": "Construction begins on a dwarf under-way that would destroy several clan cairns. The mountain will remember."
+      }
+    },
+    "mac_terns_revenge": {
+      "name": "Mac Tern's Revenge",
+      "max_segments": 6,
+      "advance_on": "Mac Tern suffers an insult or loses cattle.",
+      "thresholds": {
+        "4": "They call a moot to plan a raid.",
+        "6": "They launch a devastating raid. The raiders count their steps in eights and leave a single white stone at each burned stead—a promise."
+      }
+    },
+    "ocreaghs_patience": {
+      "name": "O'Creagh's Patience",
+      "max_segments": 6,
+      "advance_on": "Retreats when O'Creagh is wronged.",
+      "thresholds": {
+        "0": "They strike without warning. Their war-cry is a single word: *Remember*."
+      }
     }
   },
   "index": [

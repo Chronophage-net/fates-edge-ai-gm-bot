@@ -24,6 +24,33 @@
       "south": "Thepyrgos (via Viterra) — Synod law and the Chain-Lanterns rarely venture this far north, but their scholars collect Vhasian ballads. The ninth verse is always censored."
     }
   },
+  "regional_diagnostic": {
+    "current_hook": "The sun shattered at Lence. The pieces are still falling. Which shadow will catch you?",
+    "core_conflict": "Players are caught between the **Queen-Mother's** web of marriage alliances, **Valdais Longblood's** western claim, the **Two Crowns'** competing legal authority, and the **memory of Lence** that haunts every negotiation—all while the **Dauphin's** legitimacy remains uncertain and the **Fenwood wound** festers. The Ninth is the broken oath; the Hollow is the memory of the sack, waiting to be relived.",
+    "unique_feature": "**Geometric Legitimacy:** Every seal is cracked, every claim is partial, every marriage carries a rumor of false blood. The succession is a puzzle that may have no solution—only a choice of which lie to believe.",
+    "ninth_taboo": "In any Vhasian court, the ninth citation of precedent voids all previous. The wise stop at eight and settle. Those who cite the ninth are said to hear a faint laughter from the marble walls—and their cases are never heard again. The laughter is the dead king's. He was the ninth king of his line. He died at Lence. He is still laughing—because the ninth citation is the only one that names the Fenwoods as the true heirs. No one has ever cited it. No one dares.",
+    "price": "Players sacrifice **reputation, memory, or legitimacy** to gain power. Every reward requires a gamble: a favor to the Queen-Mother, a secret from the succession, a memory of Lence, or an oath to a claimant.",
+    "faction_triad": [
+      {
+        "faction": "Queen-Mother's Ethor",
+        "goal": "Restore the Dauphin (real or false) to the throne",
+        "method": "Marriage alliances, spies, and the careful management of doubt",
+        "why_players_care": "She holds the secret of the succession"
+      },
+      {
+        "faction": "Valdais Longblood",
+        "goal": "Unite Vhasia under a strong western crown",
+        "method": "Feats of arms, legal petitions, and the weight of his mother's legacy",
+        "why_players_care": "He is the most visible claimant"
+      },
+      {
+        "faction": "The Two Crowns",
+        "goal": "Maintain the balance of power and profit from the chaos",
+        "method": "Parlement games, coin debasement, and the careful management of the chivalric myth",
+        "why_players_care": "They hold the keys to the realm's legal machinery"
+      }
+    ]
+  },
   "quotes": [
     {
       "speaker": "Cardinal-Regent of the Broken Sun (Elite)",
@@ -34,9 +61,32 @@
       "text": "I've served under three banners on this same road. The only constant is that someone always wants to collect tolls, oaths, the dead. The Fenwoods burned Lence ten years ago, marching from the Belworth like storm-clouds. Now every duke with a purse thinks he's king. The Queen-Mother weaves in the west, Valdais sharpens his lance in Adria, and the Two Crowns count their silver. Me? I just want to get home before the snows bury the graves. And if you hear a cantor singing the *Planctus Armatus*, stop and listen. That's the only honest history left—especially the verse about the queen who married twice, bore sons to both kings, and left the realm wondering which throne was hers by right, and which by rumor."
     }
   ],
-  "ninth_taboo": {
-    "title": "The Ninth Taboo Manifestation",
-    "description": "In any Vhasian court, the ninth citation of precedent voids all previous. The wise stop at eight and settle. Those who cite the ninth are said to hear a faint laughter from the marble walls—and their cases are never heard again. The laughter is the dead king's. He was the ninth king of his line. He died at Lence. He is still laughing—because the ninth citation is the only one that names the Fenwoods as the true heirs. No one has ever cited it. No one dares. Also, the ninth cup poured at a feast is for the Hollow. The wise pour eight and leave the ninth empty. Those who pour the ninth see a pale figure standing at the high table—waiting to collect a weight. The figure is the dead king, checking his oath-stick."
+  "campaign_timers": {
+    "vacant_throne": {
+      "name": "Vacant Throne",
+      "max_segments": 10,
+      "description": "Advances when a claimant gains a major advantage (battle, noble defection, foreign alliance). Retreats when the party brokers a truce or exposes a weakness. When full, a claimant takes Lence and declares themselves king. The Queen-Mother will not live to see it. She will die the day the sun rises whole again."
+    },
+    "armor_closes": {
+      "name": "Armor Closes",
+      "max_segments": 6,
+      "description": "Advances when knights choose protection over mercy, when gorgets are buckled tight, when chivalry becomes siege mentality. When full, the cantons close their borders and the raids become wars. The Fenwoods taught Vhasia that mercy is a weakness. The knights have not forgotten. They sharpen their gorgets."
+    },
+    "song_escapes": {
+      "name": "Song Escapes",
+      "max_segments": 8,
+      "description": "Advances when a Cantor sings the truth, when mercy is shown, when armour is unbuckled. When full, a moment of genuine connection occurs—though it may be fatal. The Cantor Alain has been trying to fill this timer for ten years. He is still trying. He sings every dusk. The dead listen—and sometimes they answer."
+    },
+    "claimants_coup": {
+      "name": "Claimant's Coup (per claimant)",
+      "max_segments": 6,
+      "description": "Advances when that claimant wins a Parlement vote, a joust, or a skirmish. When full, they march on Lence. The Dauphin—real or false—watches from the Queen-Mother's keep. He does not know if he should cheer or weep."
+    },
+    "lence_reckoning": {
+      "name": "Lence's Reckoning",
+      "max_segments": 8,
+      "description": "Tracks the party's engagement with the memory of the sack. Advances when they aid a survivor, recover a relic, or speak the truth about what happened. When full, a survivor reveals a secret: the old king's last words, the location of a hidden treasure, or the true parentage of the Dauphin. The secret will change the succession. It will also change the party. Some secrets are heavier than crowns."
+    }
   },
   "npcs": [
     {
@@ -247,7 +297,8 @@
       "subtitle": "",
       "description": "Dented badge, honest horn; ignored by both crowns but knows the roads.",
       "flavor": "His horn is cracked. It still sounds—but the note is always half a step flat. He was at Lence. He does not speak of it. The horn does.",
-      "mechanical_hook": "He can guide you safely for 1 Supply, but he may ask uncomfortable questions about your allegiance."
+      "what_they_carry": "He can guide you safely for 1 Supply, but he may ask uncomfortable questions about your allegiance.",
+      "what_they_ask": "A true story of a road you have traveled. He will trade his knowledge for yours."
     },
     {
       "rank": 3,
@@ -256,7 +307,8 @@
       "subtitle": "",
       "description": "Counts saints' days as grace periods, vintages as treaties; wine as diplomacy.",
       "flavor": "He keeps a bottle of Crownbreaker in every cellar. He knows which vintage each duke prefers. He also knows which duke's wine is poisoned. He does not ask. The poison is memory.",
-      "mechanical_hook": "He can arrange a meeting with a claimant's agent in exchange for a rare vintage or a favor."
+      "what_they_carry": "He can arrange a meeting with a claimant's agent in exchange for a rare vintage or a favor.",
+      "what_they_ask": "A preference. Which claimant would you drink to? He will remember."
     },
     {
       "rank": 4,
@@ -265,7 +317,8 @@
       "subtitle": "",
       "description": "Rules a fortress-convent with iron rule and sharper scripture.",
       "flavor": "She has never drawn a blade. The scaffold has, on her orders. She sheltered refugees after the sack. The Queen-Mother owes her a weight. The Queen-Mother does not forget weights—or the smell of burning wool.",
-      "mechanical_hook": "She can offer sanctuary for a night, but may demand a service in return."
+      "what_they_carry": "She can offer sanctuary for a night, but may demand a service in return.",
+      "what_they_ask": "A confession. She will not ask what you confess—only that it is true."
     },
     {
       "rank": 5,
@@ -274,7 +327,8 @@
       "subtitle": "",
       "description": "Scarred and mercenary; prefers ransoms to loyalty; coin as conscience.",
       "flavor": "He switches banners as often as his shirt. His loyalty is to the paychest—and to his mother. He fought for the Fenwoods at Lence. He still has nightmares. He pays for them in silver.",
-      "mechanical_hook": "He can be hired for 2 Supply per scene; he may betray you if offered more."
+      "what_they_carry": "He can be hired for 2 Supply per scene; he may betray you if offered more.",
+      "what_they_ask": "A promise of better pay. He will ask for it in writing, witnessed by a notary."
     },
     {
       "rank": 6,
@@ -283,7 +337,8 @@
       "subtitle": "",
       "description": "Splendid armour, empty coffers, pride swollen as a banner; glory over gold.",
       "flavor": "His armour was his grandfather's. It still has the dent from a Fenwood axe. He serves Valdais because Valdais pays—but he served the old king first. He cannot forgive himself for surviving Lence. The dent weeps rust.",
-      "mechanical_hook": "He will enforce the law with zeal, but can be swayed by a promise of honour or a reminder of Lence."
+      "what_they_carry": "He will enforce the law with zeal, but can be swayed by a promise of honour or a reminder of Lence.",
+      "what_they_ask": "A token of Valdais's favor. He will prove your allegiance."
     },
     {
       "rank": 7,
@@ -292,7 +347,8 @@
       "subtitle": "",
       "description": "The Iron Bard, bearer of the Cracked Ring; his songs are the only honest history.",
       "flavor": "Feathers grow from his temples. His shadow moves a half-step behind him. He sings the names of the dead every dusk. The dead listen. And sometimes, they sing back.",
-      "mechanical_hook": "Hearing his song grants +1 die on a roll involving mercy; reciting a verse may grant insight into the succession."
+      "what_they_carry": "Hearing his song grants +1 die on a roll involving mercy; reciting a verse may grant insight into the succession.",
+      "what_they_ask": "A story that ends with mercy. He will judge if it is true enough to sing."
     },
     {
       "rank": 8,
@@ -301,7 +357,8 @@
       "subtitle": "",
       "description": "Gabelle lessee with cudgels, writs, and a river-chart no crown has; tax as tyranny.",
       "flavor": "His tally is written in salt. One drop of water and the obligations vanish—along with the evidence. He is the Queen-Mother's man. He does not say so aloud. His salt tastes of ash.",
-      "mechanical_hook": "He can provide a Gabelle Lease for a price, but beware the Resentment timer."
+      "what_they_carry": "He can provide a Gabelle Lease for a price, but beware the Resentment timer.",
+      "what_they_ask": "A share of your cargo. He will take it in salt or silver."
     },
     {
       "rank": 9,
@@ -310,7 +367,8 @@
       "subtitle": "",
       "description": "A scandalous lay about the last Sun King brings knives to tavern doors.",
       "flavor": "He sings the truth. That is why he sleeps in a different inn every night. He knows who really ordered the burning of Lence. He will not say. He values his tongue. The truth is a currency he spends in silence.",
-      "mechanical_hook": "He can be hired to spread a rumor for 1 Supply, but his enemies may come looking."
+      "what_they_carry": "He can be hired to spread a rumor for 1 Supply, but his enemies may come looking.",
+      "what_they_ask": "A secret you have never told. He will trade it for a verse."
     },
     {
       "rank": 10,
@@ -319,7 +377,8 @@
       "subtitle": "",
       "description": "The Sun Court's hammer; now wielded by whoever pays in silver.",
       "flavor": "He lost the Battle of Ashes. He still sees it in his dreams and his nightmares. He was the last man to see the old king alive. The king's last words were a curse on the Fenwood name. The curse is still unpaid.",
-      "mechanical_hook": "He can lead a small force for a season in exchange for a writ of pardon or a promise of vengeance."
+      "what_they_carry": "He can lead a small force for a season in exchange for a writ of pardon or a promise of vengeance.",
+      "what_they_ask": "A promise. He will make you swear it on the old king's memory."
     },
     {
       "rank": 11,
@@ -328,7 +387,8 @@
       "subtitle": "",
       "description": "Preaches peace while tucking hidden daggers into parchment margins.",
       "flavor": "His sermon is a code. The psalms tell you which bridge to cross and which to burn. He is the Queen-Mother's spy. He is also Valdais's spy. He is also his own spy. His sermons are the only honest prayers left.",
-      "mechanical_hook": "He can pass secret messages between factions for a fee; double-crossing is almost certain."
+      "what_they_carry": "He can pass secret messages between factions for a fee; double-crossing is almost certain.",
+      "what_they_ask": "A verse you have never heard. He will trade a message for it."
     },
     {
       "rank": 12,
@@ -337,7 +397,8 @@
       "subtitle": "",
       "description": "Riverside keep in the west; weaves alliances as if they were dowries.",
       "flavor": "She has outlived three husbands and two sons. She is not mourning. She is waiting. Her grand-nephew—real or false—will sit on the Sun Court. She will not live to see it. She has made her peace with that. The peace tastes of Lence.",
-      "mechanical_hook": "An audience with her can grant a Queen's Audience (Diamond) but she always expects a favour in return."
+      "what_they_carry": "An audience with her can grant a Queen's Audience (Diamond) but she always expects a favour in return.",
+      "what_they_ask": "A secret. She will know if it is true. She always knows."
     },
     {
       "rank": 13,
@@ -346,7 +407,8 @@
       "subtitle": "",
       "description": "Rival dukes, each 'crowned' in rival cathedrals, neither whole.",
       "flavor": "One wears a crown of iron. The other wears a crown of words. Both rust. Neither was at Lence. Neither speaks of it. They pay others to speak for them. And sometimes, they whisper that if the Viterran line is false, then the Vhasian claim via Elianor's marriages is equally doubtful.",
-      "mechanical_hook": "They can be swayed with a Sunburst Warrant or a promise of support; they are fickle allies."
+      "what_they_carry": "They can be swayed with a Sunburst Warrant or a promise of support; they are fickle allies.",
+      "what_they_ask": "A decision. Which sun do you follow? They will test your answer."
     },
     {
       "rank": 14,
@@ -355,7 +417,8 @@
       "subtitle": "",
       "description": "A rumor with a birthmark; armies march for whispers alone.",
       "flavor": "He may be a baker's son. The armies don't care. They need a sun to follow. He has never seen the sun. He knows three languages, the lineage of every noble house, and the taste of every poison. He does not know if he is a prince or a puppet. He does not ask. He dreams every night of a knight with an unbuckled gorget.",
-      "mechanical_hook": "Meeting him may reveal the truth of his legitimacy; protecting him is a major campaign goal."
+      "what_they_carry": "Meeting him may reveal the truth of his legitimacy; protecting him is a major campaign goal.",
+      "what_they_ask": "A name. He will ask you to tell him who he truly is. He hopes you know."
     }
   ],
   "complications": [
@@ -494,7 +557,7 @@
       "subtitle": "[TRAVEL]",
       "description": "The seal is cracked. The road is watched. Use it before the seal breaks.",
       "flavor": "The seal was cracked at Lence—by a Fenwood axe.",
-      "cost": "If the seal breaks before use, the Safe-Conduct is void; using it may attract attention from the faction that issued it."
+      "curse_cost": "If the seal breaks before use, the Safe-Conduct is void; using it may attract attention from the faction that issued it."
     },
     {
       "rank": 3,
@@ -503,7 +566,7 @@
       "subtitle": "[SOCIAL]",
       "description": "The charter is a bell. Ring it, and the town answers—or it doesn't.",
       "flavor": "The bell was cast from a melted sunburst. It rings true—but only for those who remember. The bell's clapper is a finger bone from a knight who died at Lence.",
-      "cost": "Once rung, the charter is consumed; the town's loyalty may shift if another claimant offers a better deal."
+      "curse_cost": "Once rung, the charter is consumed; the town's loyalty may shift if another claimant offers a better deal."
     },
     {
       "rank": 4,
@@ -512,7 +575,7 @@
       "subtitle": "[TRADE]",
       "description": "Tolls at Pont-du-Tithe for a season, if you can hold it.",
       "flavor": "The toll-keepers are loyal to the last coin. Yours—or theirs. The bridge was rebuilt after Lence. The stone is new. The ghosts are old. The ghosts do not pay tolls.",
-      "cost": "Holding the farm requires constant vigilance; rivals may try to take it by force or law."
+      "curse_cost": "Holding the farm requires constant vigilance; rivals may try to take it by force or law."
     },
     {
       "rank": 5,
@@ -521,7 +584,7 @@
       "subtitle": "[LAW]",
       "description": "Shared rule with a monastery; half justice, half rent, no peace.",
       "flavor": "The monks pray for you. They also pray for your enemies. Balance. The monastery sheltered refugees after the sack. The Queen-Mother has not forgotten.",
-      "cost": "The monks will demand a share of all decisions; conflicts may arise."
+      "curse_cost": "The monks will demand a share of all decisions; conflicts may arise."
     },
     {
       "rank": 6,
@@ -530,7 +593,7 @@
       "subtitle": "[AUTHORITY]",
       "description": "Over a minor heir; lands obey you 'for now.'",
       "flavor": "The heir has a knife. He knows how to use it. He learned from watching you. His father died at Lence. He does not know which side his father fought for. He does not care. The knife was his father's.",
-      "cost": "The heir may rebel or be claimed by another faction; loyalty is fragile."
+      "curse_cost": "The heir may rebel or be claimed by another faction; loyalty is fragile."
     },
     {
       "rank": 7,
@@ -539,7 +602,7 @@
       "subtitle": "[TRADE]",
       "description": "Salt-tax rights; lucrative, hated, and dangerous.",
       "flavor": "The lease is a death warrant written in profit. Cash it wisely. The salt pans are near the Belworth. The Viterran border is close. The Fenwood raids come at dawn from the east. The salt is gray with ash.",
-      "cost": "Resentment builds; the party may face audits or ambushes."
+      "curse_cost": "Resentment builds; the party may face audits or ambushes."
     },
     {
       "rank": 8,
@@ -548,7 +611,7 @@
       "subtitle": "[MERCENARY]",
       "description": "Raise a free company under your banner; an army as a business.",
       "flavor": "The letters are signed in blood—yours or the notary's. Both are valid. The notary lost a hand at Lence. He signs with his left. His right is buried in Lence.",
-      "cost": "The company must be paid; if not, they may mutiny."
+      "curse_cost": "The company must be paid; if not, they may mutiny."
     },
     {
       "rank": 9,
@@ -557,7 +620,7 @@
       "subtitle": "[COMMUNITY]",
       "description": "Of feudal dues for a village; they'll march when called.",
       "flavor": "The village has a long memory. They remember the last lord who promised mercy. He was a Fenwood. They do not forgive. The remission is written on a page torn from the Chivalric Roll.",
-      "cost": "If you break the remission, the village will turn against you."
+      "curse_cost": "If you break the remission, the village will turn against you."
     },
     {
       "rank": 10,
@@ -566,7 +629,7 @@
       "subtitle": "[LAW]",
       "description": "Stocks, fines, gallows in a troublesome hamlet.",
       "flavor": "The gallows rope is new. The notches are from the last hamlet. The hamlet was burned by routiers. The routiers were paid by a claimant. The claimant denies it.",
-      "cost": "Enforcing justice may attract attention from the hamlet's enemies."
+      "curse_cost": "Enforcing justice may attract attention from the hamlet's enemies."
     },
     {
       "rank": 11,
@@ -575,7 +638,7 @@
       "subtitle": "[WEIGHT]",
       "description": "Against a royalist estate—if you can seize it first.",
       "flavor": "The writ is a race. The other claimant rides a faster horse. The estate belonged to a lord who died at Lence. His widow still lives there. She has a knife. The knife is for the horse.",
-      "cost": "The widow may resist; other claimants may contest the seizure."
+      "curse_cost": "The widow may resist; other claimants may contest the seizure."
     },
     {
       "rank": 12,
@@ -584,7 +647,7 @@
       "subtitle": "[AUTHORITY]",
       "description": "Private with the Queen-Mother; a whisper becomes policy.",
       "flavor": "The audience is a chess game. She always wins—but she lets you take a pawn. The pawn is the Dauphin. Do not touch him. His shadow is not his own.",
-      "cost": "The Queen-Mother will expect a favor in return; refusing may be dangerous."
+      "curse_cost": "The Queen-Mother will expect a favor in return; refusing may be dangerous."
     },
     {
       "rank": 13,
@@ -593,7 +656,7 @@
       "subtitle": "[LEGEND]",
       "description": "Of the fallen court; most still bow if shown boldly.",
       "flavor": "The warrant is a ghost. It has no power—only the power of belief. The ghost was signed by a dead king. The dead king's seal was stolen from his tomb. The Queen-Mother has the original. The original weeps wax.",
-      "cost": "If the warrant is challenged and found false, the party loses face and may be accused of treason."
+      "curse_cost": "If the warrant is challenged and found false, the party loses face and may be accused of treason."
     },
     {
       "rank": 14,
@@ -602,7 +665,7 @@
       "subtitle": "[JUSTICE]",
       "description": "Rebels absolved if they bend the knee.",
       "flavor": "The pardon is a spring. It will close when the season turns. The rebels were at Lence. They fought for the old king. They fled when the Fenwoods broke the line. They are still running. The pardon smells of ash.",
-      "cost": "The pardon expires; after that, rebels are outlaws again."
+      "curse_cost": "The pardon expires; after that, rebels are outlaws again."
     }
   ],
   "quick_use_notes": {
@@ -655,7 +718,7 @@
     },
     {
       "title": "The Ninth",
-      "description": "See the Ninth Taboo Manifestation box above."
+      "description": "In any Vhasian court, the ninth citation of precedent voids all previous. The wise stop at eight and settle. Those who cite the ninth are said to hear a faint laughter from the marble walls—and their cases are never heard again. The laughter is the dead king's. He was the ninth king of his line. He died at Lence. He is still laughing—because the ninth citation is the only one that names the Fenwoods as the true heirs. No one has ever cited it. No one dares."
     }
   ],
   "superstitions": [
@@ -684,6 +747,7 @@
       "flavor": "The candle should be made from the fat of a knight who died with his gorget buckled. There are many."
     }
   ],
+  "decline_and_patronage": "In Vhasia, power flows through the remnants of imperial authority, fractured legitimacy, and the careful manipulation of memory and mercy. Former Utaran provincial structures still provide a framework for governance, but competing claimants to the Sun Court have created a complex web of overlapping jurisdictions and conflicting loyalties. The true power lies with those who can navigate this legal maze—and who understand that the only currency that matters is the memory of Lence. But beneath the charters and the writs runs a deeper current: the wound that will not close. The Fenwood sack was not just a military defeat; it was a wound to the soul of Vhasia, proof that chivalry was only ever a thin veneer. Every negotiation, every duel, every sealed document carries the weight of that loss. The Queen-Mother plays a long game, her Dauphin a card she may never play. Valdais wants the throne his father could not hold. The Two Crowns will accept any solution that leaves them richer. And the common folk—the farmers, the salt-panners, the road wardens—just want the raiding to stop. They will wait. They have waited ten years. They can wait longer. **For the GM:** Tie rewards to visible symbols (seals, badges, writs) that can be challenged, stolen, or voided—especially if they bear the old king's seal or the Fenwood mark. Let rival claimants issue conflicting authorities, forcing players to choose whose favor matters more—and whose memory of Lence they are willing to invoke. Use the parlements, cathedrals, and châteaux as arenas for social contests, where knowledge of law and custom determines success—and where the mere mention of the Fenwood name can shift the tide. Introduce the Lence's Shadow mechanic: whenever a scene involves a legal dispute, a military manoeuvre, or a negotiation with a noble who lost family in the sack, the GM may spend 1 SB to invoke the memory of the burning. The Position worsens by one step, and the losing party may gain the Haunted condition. Use the Armor Closes and Song Escapes timers as a visible campaign front. The party's actions—acts of mercy or cruelty—tick one or the other. When the Armor Closes, the cantons become fortresses; when the Song Escapes, a moment of genuine connection may change everything—or kill everyone.",
   "sb_spend_table": {
     "minor_complications": [
       "**Exposure:** Rival officials or court guards take notice.",
@@ -830,155 +894,6 @@
       ]
     }
   ],
-  "campaign": {
-    "vacant_throne_timer": {
-      "name": "Vacant Throne",
-      "max_segments": 10,
-      "description": "Advances when a claimant gains a major advantage (battle, noble defection, foreign alliance). Retreats when the party brokers a truce or exposes a weakness. When full, a claimant takes Lence and declares themselves king. The Queen-Mother will not live to see it. She will die the day the sun rises whole again."
-    },
-    "armor_closes_timer": {
-      "name": "Armor Closes",
-      "max_segments": 6,
-      "description": "Advances when knights choose protection over mercy, when gorgets are buckled tight, when chivalry becomes siege mentality. When full, the cantons close their borders and the raids become wars. The Fenwoods taught Vhasia that mercy is a weakness. The knights have not forgotten. They sharpen their gorgets."
-    },
-    "song_escapes_timer": {
-      "name": "Song Escapes",
-      "max_segments": 8,
-      "description": "Advances when a Cantor sings the truth, when mercy is shown, when armour is unbuckled. When full, a moment of genuine connection occurs—though it may be fatal. The Cantor Alain has been trying to fill this timer for ten years. He is still trying. He sings every dusk. The dead listen—and sometimes they answer."
-    },
-    "claimants_coup": {
-      "name": "Claimant's Coup (per claimant)",
-      "max_segments": 6,
-      "description": "Advances when that claimant wins a Parlement vote, a joust, or a skirmish. When full, they march on Lence. The Dauphin—real or false—watches from the Queen-Mother's keep. He does not know if he should cheer or weep."
-    },
-    "lence_reckoning": {
-      "name": "Lence's Reckoning",
-      "max_segments": 8,
-      "description": "Tracks the party's engagement with the memory of the sack. Advances when they aid a survivor, recover a relic, or speak the truth about what happened. When full, a survivor reveals a secret: the old king's last words, the location of a hidden treasure, or the true parentage of the Dauphin. The secret will change the succession. It will also change the party. Some secrets are heavier than crowns."
-    },
-    "succession_mini_campaign": {
-      "title": "The Succession Mini-Campaign: The Dauphin's Truth",
-      "description": "The central question of any Vhasian campaign is whether the Dauphin is truly of the Blood. This is not predetermined. Each campaign generates its own truth.",
-      "determine_legitimacy": {
-        "method": "At the start of the campaign, roll 1d6 on the table below to determine the Dauphin's true nature and the secret the Queen-Mother has been keeping.",
-        "table": [
-          {
-            "roll": 1,
-            "legitimacy": "True Heir",
-            "truth": "The Dauphin is exactly who the Queen-Mother claims: her grand-nephew, the last of the old Sun King's line. The blood is true. The problem is that Valdais's claim is also true, and the realm must choose."
-          },
-          {
-            "roll": 2,
-            "legitimacy": "False Heir (Known)",
-            "truth": "The Queen-Mother knows the Dauphin is a commoner—a Tulkani orphan with a convincing birthmark. She maintains the fiction because without a claimant, the realm falls to Valdais, whom she does not trust. The child does not know."
-          },
-          {
-            "roll": 3,
-            "legitimacy": "False Heir (Unknown)",
-            "truth": "The Dauphin is a changeling, placed in the cradle by agents of the Ninth to destabilize the succession. The Queen-Mother suspects but cannot prove it. She has dreamed of Sir Corin, who died saving a child at Lence—and the child in the dream has the Dauphin's face."
-          },
-          {
-            "roll": 4,
-            "legitimacy": "Uncertain",
-            "truth": "The Queen-Mother genuinely does not know. The child was brought to her by a dying servant who claimed he was the Dauphin. She has raised him as her own, hoping the doubt will never be tested. She has outlived three husbands and two sons. She cannot bear to lose a fourth."
-          },
-          {
-            "roll": 5,
-            "legitimacy": "Double Claim",
-            "truth": "There are two Dauphins. A second child, hidden in the Mistlands, also bears the birthmark and the blood-right. The Queen-Mother knows of this child but has not acknowledged them. The realm may split again."
-          },
-          {
-            "roll": 6,
-            "legitimacy": "The Blood Remembers",
-            "truth": "The Dauphin carries the blood of the old Sun King—but also the blood of a Fenwood. The sack of Lence was not just a conquest; it was a family feud. The child is the living proof of a union that should never have happened."
-          }
-        ]
-      },
-      "phases": {
-        "phase_1": {
-          "name": "The Investigation (Sessions 1–3)",
-          "description": "The party is hired (by the Queen-Mother, by Valdais, or by a neutral party) to determine the truth of the Dauphin's claim.",
-          "key_scenes": [
-            "The Queen-Mother's Keep: Elianor grants an audience. She speaks of the Dauphin but does not show him. She tests the party's loyalty with small favors. Her spies watch.",
-            "The Cantor's Testimony: Alain sings the *Planctus Armatus*. If the party listens carefully, the fourth verse hints at the Queen-Mother's doubt. If they press him, he may reveal the cracked ring—and the name of the child Sir Corin died to save.",
-            "The Valdais Gambit: Valdais offers the party a counter-offer: find proof that the Dauphin is false, and he will grant lands, titles, and his eternal gratitude. He is desperate. He does not know the truth himself.",
-            "The Two Crowns' Proposal: The rival dukes offer a simpler bargain: support their election, and the Dauphin's legitimacy becomes irrelevant. They will pay in silver and pardons."
-          ]
-        },
-        "phase_2": {
-          "name": "The Confrontation (Sessions 4–6)",
-          "description": "The party has gathered evidence. Now they must decide.",
-          "key_scenes": [
-            "The Dauphin's Reveal: The child is brought before the party. He is nine years old. He knows the taste of every poison. He has never seen the sun. He asks: 'Am I real?'",
-            "The Trial of Blood: A formal inquiry is called at the Cathedral Yard. Claimants present evidence. The party may testify. The dead of Lence are watching.",
-            "The Forged Charter: Someone has produced a document that purports to prove the Dauphin's legitimacy—or his falsehood. The document is a forgery. Who made it? The party must decide whether to expose it or use it.",
-            "The Queen-Mother's Confession: Elianor speaks privately to the party. She reveals the truth (as determined by the d6 roll). She asks them to keep the secret—or to act on it."
-          ]
-        },
-        "phase_3": {
-          "name": "The Resolution (Sessions 7–8)",
-          "description": "The succession is decided. The party's actions determine the outcome.",
-          "key_scenes": [
-            "The Vacant Throne Fills: One claimant takes Lence. The Queen-Mother may live or die. The Dauphin may rule, be exiled, or be killed.",
-            "Armor Closes or Song Escapes: The party's choices have pushed one of the chivalric timers to full. The cantons either seal their borders or open their hearts. The realm changes.",
-            "Lence's Reckoning: The memory of the sack is either honored or buried. A survivor reveals a final secret—the old king's last words, the location of a hidden treasure, or the true name of the child who was never meant to be found."
-          ]
-        }
-      },
-      "dauphin_fate_table": {
-        "description": "When the succession is decided, roll or choose the Dauphin's fate based on the party's choices.",
-        "outcomes": [
-          {
-            "outcome": "Valdais Wins",
-            "fate": "The Dauphin is exiled to the Mistlands (or killed).",
-            "impact": "Vhasia unites under a strong western crown—but the Queen-Mother is dead or imprisoned. The memory of Lence fades, but the suspicion of illegitimacy remains."
-          },
-          {
-            "outcome": "Two Crowns Win",
-            "fate": "The Dauphin becomes a puppet figurehead.",
-            "impact": "Vhasia is ruled by a council of dukes. The realm stabilizes but remains divided. The Dauphin grows up in a gilded cage, learning to wait."
-          },
-          {
-            "outcome": "Queen-Mother Triumphs",
-            "fate": "The Dauphin is crowned, with Elianor as regent.",
-            "impact": "Vhasia returns to the old ways. The Queen-Mother dies within a year. The Dauphin's legitimacy is still questioned, but his reign begins."
-          },
-          {
-            "outcome": "Party Reveals Falsehood",
-            "fate": "The Dauphin is revealed as a fraud.",
-            "impact": "The realm descends into chaos. Valdais and the Two Crowns fight openly. The party may be hailed as heroes—or blamed for the war."
-          },
-          {
-            "outcome": "Party Protects the Secret",
-            "fate": "The Dauphin rules, but the secret remains hidden.",
-            "impact": "Vhasia is stable, but the hollow is watching. The party holds a weight they cannot share. The truth may surface at the worst possible moment."
-          },
-          {
-            "outcome": "The Ninth Intervenes",
-            "fate": "The Dauphin's legitimacy is erased from all records. The Hollow forgets.",
-            "impact": "The succession is voided. A new claimant must be found. The Ninth's Coterie gains influence. The party must decide whether to restore the records or let them lie."
-          }
-        ]
-      },
-      "gm_guidance": [
-        "Let the dice decide: The Dauphin's legitimacy is random each campaign. This prevents players from assuming they know the outcome. The mystery is real.",
-        "The Queen-Mother's knowledge: If the Dauphin is false, Elianor may know or not know. Her behavior shifts accordingly. If she knows, she is a pragmatist; if she does not, she is a desperate grandmother.",
-        "Valdais's desperation: Valdais does not know the truth. He suspects his mother is hiding something, but he cannot prove it. He will believe whatever the party tells him—if they seem convincing.",
-        "The Cantor's role: Alain can reveal the truth, but only if the party earns his trust. He carries the cracked ring, and he knows the name of the child Sir Corin died to save. He may not know the child is the Dauphin. He may know and have chosen silence.",
-        "The Hollow's interest: The Ninth Taboo is a constant presence. If the party cites the ninth citation, the dead king's laughter may reveal a secret they were not meant to hear. The secret is always about the succession."
-      ]
-    }
-  },
-  "patronage_and_power": {
-    "description": "In Vhasia, power flows through the remnants of imperial authority, fractured legitimacy, and the careful manipulation of memory and mercy. Former Utaran provincial structures still provide a framework for governance, but competing claimants to the Sun Court have created a complex web of overlapping jurisdictions and conflicting loyalties. The true power lies with those who can navigate this legal maze—and who understand that the only currency that matters is the memory of Lence. But beneath the charters and the writs runs a deeper current: the wound that will not close. The Fenwood sack was not just a military defeat; it was a wound to the soul of Vhasia, proof that chivalry was only ever a thin veneer. Every negotiation, every duel, every sealed document carries the weight of that loss. The Queen-Mother plays a long game, her Dauphin a card she may never play. Valdais wants the throne his father could not hold. The Two Crowns will accept any solution that leaves them richer. And the common folk—the farmers, the salt-panners, the road wardens—just want the raiding to stop. They will wait. They have waited ten years. They can wait longer.",
-    "for_the_gm": [
-      "Tie rewards to visible symbols (seals, badges, writs) that can be challenged, stolen, or voided—especially if they bear the old king's seal or the Fenwood mark.",
-      "Let rival claimants issue conflicting authorities, forcing players to choose whose favor matters more—and whose memory of Lence they are willing to invoke.",
-      "Use the parlements, cathedrals, and châteaux as arenas for social contests, where knowledge of law and custom determines success—and where the mere mention of the Fenwood name can shift the tide.",
-      "Introduce the Lence's Shadow mechanic: whenever a scene involves a legal dispute, a military manoeuvre, or a negotiation with a noble who lost family in the sack, the GM may spend 1 SB to invoke the memory of the burning. The Position worsens by one step, and the losing party may gain the Haunted condition.",
-      "Use the Armor Closes and Song Escapes timers as a visible campaign front. The party's actions—acts of mercy or cruelty—tick one or the other. When the Armor Closes, the cantons become fortresses; when the Song Escapes, a moment of genuine connection may change everything—or kill everyone."
-    ]
-  },
   "faction_entanglements": [
     "**Queen-Mother's Ethor:** Keep the Dauphin's secret and honor Elianor's web; cross her and her spies will dog you.",
     "**Valdais Longblood:** Support his claim with feats of arms and legal arguments; refuse and he may call his levies against you.",
@@ -992,6 +907,55 @@
     "**Aeler / Ubral (North):** High passes funnel mercenaries and exiles into Vhasia's fractured politics.",
     "**Thepyrgos (South via Viterra):** Synod law and Chain-Lanterns collect Vhasian ballads—the ninth verse is always censored."
   ],
+  "succession_mini_campaign": {
+    "title": "The Succession Mini-Campaign: The Dauphin's Truth",
+    "description": "The central question of any Vhasian campaign is whether the Dauphin is truly of the Blood. This is not predetermined. Each campaign generates its own truth.",
+    "determine_legitimacy": {
+      "method": "At the start of the campaign, roll 1d6 on the table below to determine the Dauphin's true nature and the secret the Queen-Mother has been keeping.",
+      "table": [
+        {
+          "roll": 1,
+          "legitimacy": "True Heir",
+          "truth": "The Dauphin is exactly who the Queen-Mother claims: her grand-nephew, the last of the old Sun King's line. The blood is true. The problem is that Valdais's claim is also true, and the realm must choose."
+        },
+        {
+          "roll": 2,
+          "legitimacy": "False Heir (Known)",
+          "truth": "The Queen-Mother knows the Dauphin is a commoner—an orphan with a convincing birthmark. She maintains the fiction because without a claimant, the realm falls to Valdais, whom she does not trust. The child does not know."
+        },
+        {
+          "roll": 3,
+          "legitimacy": "False Heir (Unknown)",
+          "truth": "The Dauphin is a changeling, placed in the cradle by agents of the Ninth to destabilize the succession. The Queen-Mother suspects but cannot prove it. She has dreamed of Sir Corin, who died saving a child at Lence—and the child in the dream has the Dauphin's face."
+        },
+        {
+          "roll": 4,
+          "legitimacy": "Uncertain",
+          "truth": "The Queen-Mother genuinely does not know. The child was brought to her by a dying servant who claimed he was the Dauphin. She has raised him as her own, hoping the doubt will never be tested. She has outlived three husbands and two sons. She cannot bear to lose a fourth."
+        },
+        {
+          "roll": 5,
+          "legitimacy": "Double Claim",
+          "truth": "There are two Dauphins. A second child, hidden in the Mistlands, also bears the birthmark and the blood-right. The Queen-Mother knows of this child but has not acknowledged them. The realm may split again."
+        },
+        {
+          "roll": 6,
+          "legitimacy": "The Blood Remembers",
+          "truth": "The Dauphin carries the blood of the old Sun King—but also the blood of a Fenwood. The sack of Lence was not just a conquest; it was a family feud. The child is the living proof of a union that should never have happened."
+        }
+      ]
+    }
+  },
+  "patronage_and_power": {
+    "description": "In Vhasia, power flows through the remnants of imperial authority, fractured legitimacy, and the careful manipulation of memory and mercy. Former Utaran provincial structures still provide a framework for governance, but competing claimants to the Sun Court have created a complex web of overlapping jurisdictions and conflicting loyalties. The true power lies with those who can navigate this legal maze—and who understand that the only currency that matters is the memory of Lence. But beneath the charters and the writs runs a deeper current: the wound that will not close. The Fenwood sack was not just a military defeat; it was a wound to the soul of Vhasia, proof that chivalry was only ever a thin veneer. Every negotiation, every duel, every sealed document carries the weight of that loss. The Queen-Mother plays a long game, her Dauphin a card she may never play. Valdais wants the throne his father could not hold. The Two Crowns will accept any solution that leaves them richer. And the common folk—the farmers, the salt-panners, the road wardens—just want the raiding to stop. They will wait. They have waited ten years. They can wait longer.",
+    "for_the_gm": [
+      "Tie rewards to visible symbols (seals, badges, writs) that can be challenged, stolen, or voided—especially if they bear the old king's seal or the Fenwood mark.",
+      "Let rival claimants issue conflicting authorities, forcing players to choose whose favor matters more—and whose memory of Lence they are willing to invoke.",
+      "Use the parlements, cathedrals, and châteaux as arenas for social contests, where knowledge of law and custom determines success—and where the mere mention of the Fenwood name can shift the tide.",
+      "Introduce the Lence's Shadow mechanic: whenever a scene involves a legal dispute, a military manoeuvre, or a negotiation with a noble who lost family in the sack, the GM may spend 1 SB to invoke the memory of the burning. The Position worsens by one step, and the losing party may gain the Haunted condition.",
+      "Use the Armor Closes and Song Escapes timers as a visible campaign front. The party's actions—acts of mercy or cruelty—tick one or the other. When the Armor Closes, the cantons become fortresses; when the Song Escapes, a moment of genuine connection may change everything—or kill everyone."
+    ]
+  },
   "index": [
     "Vhasia",
     "Fractured Sun generator",
