@@ -1032,7 +1032,13 @@ async function handleBotCommand(sender, text, context) {
         if (!code) return 'Usage: !gm load <code>';
         if (context.apiRequest) {
             try {
-                const data = await context.apiRequest('GET', ['campaigns', code]);
+                // SECURITY: encode the user-supplied code before it becomes
+                // a URL path segment, same as every other user-supplied
+                // identifier passed to apiRequest() elsewhere in this file
+                // (e.g. character names). Without this, a code containing
+                // "/" or other path-meaningful characters could alter which
+                // API route the request actually hits.
+                const data = await context.apiRequest('GET', ['campaigns', encodeURIComponent(code)]);
                 Object.assign(campaignState, data);
                 await saveCampaign();
                 return `Campaign ${code} loaded!`;

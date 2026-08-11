@@ -20,12 +20,27 @@
 
 const DIVIDER_RE = /^=+\s*$/;
 
+// PERF: buildIndex() runs on every single chat turn (ai-gm-bot.js calls it
+// while assembling the system prompt for every AI response) and
+// findSection() runs on every [LOOKUP RULE "..."] tag -- both call
+// parseSections() underneath. rules.txt is loaded once at startup and never
+// mutated at runtime, so re-splitting/re-parsing its ~600 lines from
+// scratch on every message was pure wasted work on the hottest path in the
+// bot. Single-slot memo keyed on reference/value equality of the input
+// text: if the same string is passed again (the overwhelmingly common
+// case), skip straight to the cached result instead of reparsing.
+let _cachedRulesText = null;
+let _cachedSections = null;
+
 /**
  * @param {string} rulesText
  * @returns {Array<{title: string, body: string}>}
  */
 function parseSections(rulesText) {
     if (!rulesText) return [];
+    if (rulesText === _cachedRulesText && _cachedSections) {
+        return _cachedSections;
+    }
     const lines = rulesText.split(/\r?\n/);
     const sections = [];
     let i = 0;
@@ -44,6 +59,8 @@ function parseSections(rulesText) {
             i++;
         }
     }
+    _cachedRulesText = rulesText;
+    _cachedSections = sections;
     return sections;
 }
 

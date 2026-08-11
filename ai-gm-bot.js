@@ -775,8 +775,7 @@ async function handleMessage(msg) {
           charObj[c.name.toLowerCase()] = { ...c };
         }
       }
-      const { loadCharacters } = require('./modules/characters');
-      loadCharacters(charObj);
+      characters.loadCharacters(charObj);
       console.log(`📥 Auto‑synced ${charList.length} characters from state-updated.`);
     } else {
       console.log('ℹ️  state-updated received with no character data.');
@@ -784,8 +783,26 @@ async function handleMessage(msg) {
     return;
   }
 
-  // ─── IGNORE PRESENCE AND CHARACTER-SELECT EVENTS ────────────────
-  if (msg.type === 'presence' || msg.type === 'character-select') {
+  // ─── IGNORE CHARACTER-SELECT EVENTS ─────────────────────────────
+  //
+  // FIX ("stuck GM takeover / aggressive sync never toggling"): this used
+  // to also early-return on msg.type === 'presence', which silently made
+  // the ENTIRE real presence handler below (tracks currentGMId, starts/
+  // cancels the GM-takeover timer, corrects myRole and starts/stops
+  // aggressive sync when it changes, and fires the deferred startup
+  // message once a GM is confirmed present) permanently unreachable dead
+  // code -- every 'presence' broadcast returned right here instead. In
+  // practice that meant: currentGMId never updated (so this bot could
+  // never detect and take over for a disconnected GM), myRole never
+  // self-corrected from the server's own view of it, aggressive sync
+  // never started/stopped in response to a role change picked up via
+  // presence (only via the one-time handshake_ack/gm_role_update paths),
+  // and startupMessageSent's presence-triggered fallback never fired --
+  // which is what could leave the "(The GM is composing a reply...)"
+  // message (or the missing startup greeting) looking permanently stuck
+  // with nothing to follow it up. Only character-select is actually
+  // noise this bot has no use for; presence must fall through.
+  if (msg.type === 'character-select') {
       return;
   }
 

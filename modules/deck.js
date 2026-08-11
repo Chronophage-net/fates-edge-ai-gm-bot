@@ -191,7 +191,13 @@ function transformRegionData(raw) {
 // ============================================================
 
 let worldManager = null;
-let regionCache = {};
+// SECURITY: Object.create(null) instead of {} -- regionId is used as a key
+// here and, further down, as a filesystem path component. A plain {}
+// literal has a live `__proto__` setter, so a regionId of exactly
+// "__proto__" would silently repoint this cache's own prototype instead of
+// storing a normal property. Using a null-prototype object removes that
+// footgun entirely regardless of what string ends up here.
+let regionCache = Object.create(null);
 
 /**
  * Set the WorldManager instance for loading region data.
@@ -220,6 +226,18 @@ async function loadRegionData(regionId) {
   }
 
   if (!raw) {
+    // SECURITY: regionId isn't always a trusted, pre-validated value by the
+    // time it gets here -- it can flow in from free-form chat commands
+    // (e.g. `!gm travel spread <text>`) or from LLM-authored [DRAW]/[CROWN]
+    // tags, and some of those call sites don't check it against a known
+    // region list before calling this function. Without a check here, a
+    // value like "../../../../etc/passwd" (or any other traversal payload)
+    // would be handed straight to path.resolve()/fs.readFile() below and
+    // read whatever file it pointed to on disk. Only treat regionId as a
+    // filesystem path component if it looks like a plain slug.
+    if (!/^[a-z0-9_-]+$/i.test(regionId)) {
+      return null;
+    }
     // Fallback: try to load from data/regions directory
     const filePath = path.resolve(process.cwd(), 'data', 'regions', `${regionId}.json`);
     try {
