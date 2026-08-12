@@ -417,6 +417,7 @@ A few things worth knowing before adding to this suite:
 | `LOG_RING_SIZE` | All | `300` | How many recent log entries `modules/logger.js` keeps in memory for the status dashboard's feed. |
 | `STATUS_SERVER` | All | `true` (any value other than `false`) | Set to `false` to disable the status dashboard entirely. |
 | `STATUS_PORT` | All | `4141` | Port for the status dashboard (see "Status Dashboard" below). |
+| `STATUS_HOST` | All | `127.0.0.1` (loopback only) | Interface the dashboard binds to. The dashboard has **no login/auth** — it shows live campaign content, so it deliberately doesn't listen beyond your own machine unless you opt in. Set to `0.0.0.0` to allow LAN access (already set for you inside `docker-compose.yml`, since a container needs to bind all interfaces internally for its published port to work at all — that does not, by itself, expose it beyond what you've mapped in `ports:`). |
 | `ES_URL` | Long-Term Memory | unset (feature disabled) | Elasticsearch endpoint, e.g. `http://localhost:9200`. Setting this is what turns the whole feature on — see "Long-Term Memory" below. |
 | `ES_API_KEY` | Long-Term Memory | unset | Preferred auth method if your cluster supports API keys. |
 | `ES_USERNAME` / `ES_PASSWORD` | Long-Term Memory | unset | Basic-auth fallback if `ES_API_KEY` isn't set. |

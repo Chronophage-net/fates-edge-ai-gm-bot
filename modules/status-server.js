@@ -232,6 +232,17 @@ function start({ getState, port, pushIntervalMs = 4000 } = {}) {
     if (typeof getState === 'function') getStateFn = getState;
     startedAt = Date.now();
     const PORT = port || parseInt(process.env.STATUS_PORT || '4141', 10);
+    // SECURITY FIX: `server.listen(PORT)` with no host binds to ALL
+    // interfaces (0.0.0.0) by default -- this dashboard has zero
+    // authentication and serves live campaign content (recent messages,
+    // adventure state, token usage), so on a bare-metal/pm2 install that
+    // silently exposed it to the whole LAN (and the public internet on a
+    // cloud VPS with an open port), not just the "localhost" the startup
+    // log claimed. Default to loopback-only; STATUS_HOST=0.0.0.0 opts back
+    // in explicitly for anyone who wants LAN access, and the bot's own
+    // docker-compose.yml sets it (containers need to bind all interfaces
+    // internally for Docker's port publishing to work at all).
+    const HOST = process.env.STATUS_HOST || '127.0.0.1';
 
     server = http.createServer((req, res) => {
         if (req.url === '/' || req.url === '/index.html') {
@@ -265,8 +276,8 @@ function start({ getState, port, pushIntervalMs = 4000 } = {}) {
     const pushTimer = setInterval(() => broadcastSSE('state', snapshot()), pushIntervalMs);
     server.on('close', () => clearInterval(pushTimer));
 
-    server.listen(PORT, () => {
-        console.log(`📊 Status dashboard: http://localhost:${PORT}`);
+    server.listen(PORT, HOST, () => {
+        console.log(`📊 Status dashboard: http://${HOST === '0.0.0.0' ? 'localhost' : HOST}:${PORT}${HOST === '0.0.0.0' ? ' (reachable on your LAN — STATUS_HOST=0.0.0.0)' : ''}`);
     });
     server.on('error', (e) => {
         console.warn(`⚠️  Status dashboard failed to start on port ${PORT}: ${e.message}`);

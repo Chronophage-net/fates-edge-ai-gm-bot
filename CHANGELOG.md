@@ -3,6 +3,12 @@ All notable changes to this project will be documented here.
 
 Format loosely follows [Keep a Changelog](https://keepachangelog.com/), versions follow [Semantic Versioning](https://semver.org/).
 
+## [4.6.0] - 2026-08-12
+
+Security hardening: status dashboard no longer binds to all network interfaces by default.
+
+_No commits since the last tag — manual version bump._
+
 ## [4.5.0] - 2026-08-12
 
 Status dashboard, leveled logging, session token tracking, optional Elasticsearch long-term memory (Facts/NPCs/summaries + !gm recall), optional NPC location tracking, INSTALL.md

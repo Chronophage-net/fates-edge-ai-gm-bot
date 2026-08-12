@@ -35,6 +35,14 @@ services:
       # in this .env file yourself -- Compose services can't see each
       # other's names for free-floating var substitution here.
       - .env
+    environment:
+      # The status dashboard now defaults to binding 127.0.0.1 only (see
+      # modules/status-server.js) -- inside a container that would make it
+      # unreachable through the published port below, since Docker's port
+      # mapping needs the process to actually be listening on all
+      # interfaces INSIDE the container. This does not widen anything
+      # beyond what the `ports:` mapping already exposes on your host.
+      - STATUS_HOST=0.0.0.0
     ports:
       - "${STATUS_PORT:-4141}:4141"
     restart: unless-stopped

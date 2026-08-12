@@ -128,6 +128,7 @@ essentials; here's what each one does if you want to hand-edit later
 | `LOG_LEVEL` | `info` (default) or `debug`. Leave at `info` unless you're troubleshooting — `debug` also shows raw background chatter (sync ticks, wire traffic) that's normally hidden. |
 | `STATUS_PORT` | Port for the status dashboard (default `4141`). |
 | `STATUS_SERVER` | Set to `false` to turn the dashboard off entirely. |
+| `STATUS_HOST` | Binds to `127.0.0.1` (this machine only) by default — the dashboard has no login. Set to `0.0.0.0` only if you deliberately want it reachable from other devices on your LAN. Docker's own `docker-compose.yml` already sets this for you (containers need it to make their published port work at all). |
 
 ---
 
