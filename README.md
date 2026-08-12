@@ -510,10 +510,11 @@ The bot's code is licensed under the **GNU Affero General Public License v3.0
 self-hosting GMs and hobbyist forks remain free, exactly as under the
 project's earlier MIT license. AGPL's one real added condition: if you run a
 **modified** version as a network service for others, you must make that
-version's source available to its users. A separate **commercial license** is
-available for anyone who wants to embed or redistribute this bot in a
-closed-source commercial product without that condition — see
-[COMMERCIAL-LICENSE.md](COMMERCIAL-LICENSE.md).
+version's source available to its users.
+
+For commercial embedding, OEM uses, or proprietary forks, a separate
+commercial license is available — contact **support@fates-edge.com**. See
+[COMMERCIAL.md](COMMERCIAL.md) for what that covers and how it works.
 
 The bundled game data (`data/`, `campaigns/` — regions, patrons, talents,
 etc.) is unaffected by the above: Fate's Edge proprietary content, ©
