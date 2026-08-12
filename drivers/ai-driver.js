@@ -22,12 +22,40 @@ class AIDriver {
         // context window depends entirely on which model the operator
         // pointed it at.
         this.contextWindow = 8192;
+
+        // ── Session token usage (for the status dashboard) ──────────
+        // Every driver accumulates here via recordUsage() after each
+        // generateResponse() call. Prefer real usage figures the
+        // provider's API returns; drivers fall back to estimateTokens()
+        // when the API doesn't report it (e.g. Ollama's non-streaming
+        // response does, but the streaming path doesn't always).
+        this.usage = { promptTokens: 0, completionTokens: 0, totalTokens: 0, calls: 0, estimated: false };
     }
 
     /**
      * Optional async setup (load models, etc.)
      */
     async initialize() {}
+
+    /**
+     * Accumulate token usage from one generateResponse() call into this
+     * driver's running session total. `estimated: true` means at least
+     * one call so far had to fall back to estimateTokens() rather than a
+     * real API-reported count, so the dashboard can label the total
+     * "~approx" instead of implying precision it doesn't have.
+     */
+    recordUsage({ promptTokens = 0, completionTokens = 0, estimated = false } = {}) {
+        this.usage.promptTokens += promptTokens;
+        this.usage.completionTokens += completionTokens;
+        this.usage.totalTokens += promptTokens + completionTokens;
+        this.usage.calls += 1;
+        if (estimated) this.usage.estimated = true;
+    }
+
+    /** Current session usage totals, for the status dashboard. */
+    getUsage() {
+        return { ...this.usage };
+    }
 
     /**
      * Generate a narrative response from a conversation history.

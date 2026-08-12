@@ -16,6 +16,18 @@ An extensible, pluggable AI bot that connects to the Fate's Edge WebSocket serve
 - **Conversation memory** – maintains a sliding window of recent messages for coherent stories.
 - **MUD‑style terminal** – all events are logged in color, and you can manually override the AI by typing messages.
 - **One‑click setup wizard** – a configuration script (`configure-bot.js`) that scans available drivers, prompts for API keys, and writes a `.env` file.
+- **Live status dashboard** – a local web page (`http://localhost:4141` by default) showing recent
+  activity, the loaded adventure, session token usage, and connection state at a glance — see
+  "Status Dashboard" below.
+- **Leveled logging** – `LOG_LEVEL` keeps noisy background chatter (aggressive-sync ticks, raw
+  wire traffic) out of the terminal and dashboard by default; flip to `debug` to see it all.
+- **Session token tracking** – real usage counts from OpenAI/DeepSeek/Ollama where the provider
+  reports them, so you always know roughly what a session is costing (for paid backends) or how
+  close to the model's context window you're running.
+- **Optional long-term memory** – Facts, NPCs, and campaign summaries can be indexed into
+  Elasticsearch for relevance-ranked recall across a long-running campaign ("who knows about the
+  cursed well?"), instead of relying only on a fixed recent-history window — see "Long-Term
+  Memory" below. Fully optional; the bot works exactly the same without it.
 
 ---
 
@@ -31,15 +43,16 @@ players in VTT / terminal
 └─────────────────────────────┘
         │
         ▼
-┌─────────────────────────────┐
-│     AI GM Bot               │
-│  - ai-gm-bot.js (core)      │
-│  - drivers/                 │
-│    ├── ai-driver.js         │  ← abstract driver interface
-│    ├── openai-driver.js     │
-│    ├── ollama-driver.js     │
-│    └── deepseek-driver.js   │
-│  - modules/                 │  ← game logic, see "Modules" below
+┌───────────────────────────────────┐        ┌───────────────────────────┐
+│     AI GM Bot                     │──────▶│  Status Dashboard (HTTP)   │
+│  - ai-gm-bot.js (core)            │        │  localhost:4141, optional │
+│  - drivers/                       │        └───────────────────────────┘
+│    ├── ai-driver.js               │  ← abstract driver interface
+│    ├── openai-driver.js           │
+│    ├── ollama-driver.js           │        ┌───────────────────────────┐
+│    └── deepseek-driver.js         │──────▶│  Elasticsearch, optional   │
+│  - modules/                       │        │  long-term memory only    │
+│    (game logic, see "Modules")    │        └───────────────────────────┘
 └─────────────────────────────┘
         │
         ▼
@@ -54,7 +67,15 @@ Game logic itself (dice, world data, tag parsing, adventures, etc.) lives in `/m
 driver-agnostic — every driver produces plain text, and `modules/commands.js` parses that text
 for `[TAG ...]` markers regardless of which backend generated it. See "Modules" below.
 
+The status dashboard and Elasticsearch are both entirely optional side-components — the bot
+works exactly the same with neither running; see "Status Dashboard" and "Long-Term Memory" below.
+
 ---
+
+**→ See [INSTALL.md](INSTALL.md) for the full setup guide** — the setup
+wizard, Docker, keeping it running long-term, updates, and
+troubleshooting, written for anyone who's run a dedicated game server
+before. The short version below still works fine too.
 
 ## 📦 Prerequisites
 
@@ -72,8 +93,9 @@ cd ai-gm-bot
 npm install
 ```
 
-The only required dependency is `ws` (WebSocket).  
-If you use the OpenAI driver, the `openai` package will be installed automatically.
+Core runtime dependencies: `ws` (WebSocket), `dotenv`, and `openai` (used by the OpenAI driver).
+`@elastic/elasticsearch` is also installed but only ever loaded if you set `ES_URL` — see
+"Long-Term Memory" below; leave it unset and it's inert.
 
 ---
 
@@ -82,7 +104,8 @@ If you use the OpenAI driver, the `openai` package will be installed automatical
 Run the built‑in configuration wizard:
 
 ```bash
-node configure-bot.js
+npm run configure
+# equivalent to: node configure-bot.js
 ```
 
 It will:
@@ -211,6 +234,9 @@ object rather than reaching for globals, and each has a matching test file under
 | **`adventure-director.js`** | Adventure selection and lifecycle — the module selection menu, Crown Spread-driven adventure picks, and handing off into `adventure-context.js`'s scene tracking once one is active. |
 | **`adventure-context.js`** | Bridges the bot to the server's Adventure Engine (`server/adventure.js`): `isAdventureActive()` status-machine checks (`planned`/`active`/`completed` × `moduleId` presence) and scene context building for the current turn. Must stay in sync with the server-side contract — see that file's own header comment. |
 | **`format-utils.js`** | Small shared text-formatting helpers for chat output: `formatColumns()` (multi-column `ls`-style layout), `shortTitle()` (truncates a long title at its first em-dash/colon). |
+| **`logger.js`** | Leveled logging (`error`/`warn`/`info`/`debug`, via `LOG_LEVEL`) shared by the whole bot. Monkey-patches `console.log/warn/error` so every existing call site is automatically level-aware and feeds the in-memory ring buffer the status dashboard reads from — no per-call-site changes needed except the handful of intentionally spammy lines, which call `logger.debug()` directly. |
+| **`status-server.js`** | Serves the local status dashboard (see "Status Dashboard" below) — plain `http` + Server-Sent Events, no extra dependency. |
+| **`knowledge-index.js`** | Optional Elasticsearch-backed long-term memory (see "Long-Term Memory" below) — indexes Facts/NPCs/campaign summaries and serves relevance-ranked search. No-ops everywhere when `ES_URL` isn't set. |
 
 ---
 
@@ -261,6 +287,13 @@ Fate's Edge's game data (regions, characters, rules, adventure state) is small a
 structured/indexed in memory — nothing here needs vector search or a retrieval pipeline. The
 fix for token bloat is pruning **what** goes into the prompt, not adding an indirection layer
 on top of an oversized one:
+
+> **Exception:** `campaignState.facts` and NPCs registered via `[NPC CREATE ...]` are the one
+> part of this that genuinely does grow unbounded over a *long-running* campaign — they're
+> dumped in full every turn (facts) or only tracked server-side with no way to search them
+> (NPCs). That's what the optional Elasticsearch-backed "Long-Term Memory" feature below
+> (`modules/knowledge-index.js`) exists for — real retrieval, but scoped specifically to that
+> one growing-without-bound category, not applied to the small, already-pruned state above.
 
 - **Rules text**: the system prompt gets a compact index of `data/rules.txt` section titles, not
   the full ~600-line file. The model requests a specific section in full via
@@ -380,6 +413,92 @@ A few things worth knowing before adding to this suite:
 | `DEEPSEEK_CONTEXT_WINDOW` | DeepSeek | `64000` | Context window for the configured model. |
 | `DEEPSEEK_TIMEOUT_MS` | DeepSeek | `30000` | Per-request timeout. |
 | `DEEPSEEK_MAX_RETRIES` | DeepSeek | `2` | Retries on transient HTTP/network failures. |
+| `LOG_LEVEL` | All | `info` | `error` \| `warn` \| `info` \| `debug`. `debug` also unlocks aggressive-sync ticks and raw inbound WebSocket traffic, both silenced at `info` since they fire constantly. |
+| `LOG_RING_SIZE` | All | `300` | How many recent log entries `modules/logger.js` keeps in memory for the status dashboard's feed. |
+| `STATUS_SERVER` | All | `true` (any value other than `false`) | Set to `false` to disable the status dashboard entirely. |
+| `STATUS_PORT` | All | `4141` | Port for the status dashboard (see "Status Dashboard" below). |
+| `ES_URL` | Long-Term Memory | unset (feature disabled) | Elasticsearch endpoint, e.g. `http://localhost:9200`. Setting this is what turns the whole feature on — see "Long-Term Memory" below. |
+| `ES_API_KEY` | Long-Term Memory | unset | Preferred auth method if your cluster supports API keys. |
+| `ES_USERNAME` / `ES_PASSWORD` | Long-Term Memory | unset | Basic-auth fallback if `ES_API_KEY` isn't set. |
+| `ES_INDEX_PREFIX` | Long-Term Memory | `gm-knowledge` | Index name prefix; one index per campaign (`<prefix>-<campaignCode>`). |
+| `ES_TLS_REJECT_UNAUTHORIZED` | Long-Term Memory | `true` | Set to `false` only for a local/dev cluster with a self-signed cert. |
+
+---
+
+## 📊 Status Dashboard
+
+The bot starts a small local web dashboard at **http://localhost:4141** (configurable via
+`STATUS_PORT`) alongside the terminal. It shows, live:
+
+- **Latest messages** — the same output as the terminal, minus DEBUG-level noise (aggressive
+  sync ticks, raw per-message WebSocket traffic) which is pruned by default. Set `LOG_LEVEL=debug`
+  to see everything, in both the terminal and here.
+- **Connection** — connected/disconnected, GM/player role, driver + model in use.
+- **Adventure Module** — currently loaded adventure title, status, act, and scene.
+- **Session Token Usage** — prompt/completion/total tokens across the session, from the active
+  driver's real API-reported usage where the provider supplies it (OpenAI, DeepSeek, and Ollama's
+  non-streaming path all do), falling back to a `~` estimate otherwise.
+- **Party** — synced characters and a one-line Harm/Fatigue status for each.
+
+No extra dependency: it's a plain `http` server pushing updates over Server-Sent Events. Disable
+it with `STATUS_SERVER=false` if you don't want it running (e.g. a locked-down headless box).
+
+---
+
+## 🧠 Long-Term Memory (optional, Elasticsearch)
+
+Off by default. Set `ES_URL` and the bot indexes three things into Elasticsearch as they happen:
+
+- **Facts** — every `!gm fact <key> <value>` and every `[FACT ...]` tag the model emits.
+- **NPCs** — every `[NPC CREATE "Name" "Role" "Motivation" "Location"]` tag. Location is a fully
+  optional 4th argument — plenty of NPCs wander, travel with the party, or just don't have a
+  fixed address, and the model is instructed not to invent one to fill the slot. It can be
+  set/changed/cleared later, independent of everything else already known about that NPC, via
+  `[NPC LOCATION "Name" "Place"]` (or `[NPC LOCATION "Name" ""]` to clear a stale one).
+- **Campaign summaries** — every periodic auto-summary (see `SUMMARISE_EVERY`), each kept as its
+  own searchable snapshot rather than overwriting the last one.
+
+Why: `campaignState.facts` is dumped into the system prompt **in full, every turn** with no
+pruning (see "Context Management" above) — fine for a short campaign, but it grows unbounded
+over a long one. NPCs registered via `[NPC CREATE ...]` have no search surface at all today.
+Once `ES_URL` is set:
+
+- Every player turn additionally runs a relevance-ranked search (facts + NPCs + summaries) against
+  what the player just said, and injects only the handful of actually-relevant hits into the
+  prompt as a **"Relevant Memory"** block — instead of relying on the model still holding it in
+  raw chat history (which gets pruned) or the ever-growing full facts dump. This is additive: the
+  existing facts dump and everything else in "Context Management" stays exactly as-is.
+- **`!gm recall <query>`** — the same search, run manually by an operator or player, with no LLM
+  involved. `!gm recall the cursed well` or `!gm recall Kestrel` returns the matching facts/NPCs/
+  summaries directly in chat.
+
+**Setup** (running the bot directly with `node`/`npm start`):
+
+```bash
+docker compose up -d elasticsearch   # local dev only, see docker-compose.yml
+```
+
+```
+ES_URL=http://localhost:9200
+```
+
+**Setup** (running the bot itself via `docker compose` too — see [INSTALL.md](INSTALL.md)):
+
+```bash
+docker compose --profile elastic up -d
+```
+and set `ES_URL=http://elasticsearch:9200` (the container's own network
+name, not `localhost`) in your `.env`.
+
+Either way — indices (`gm-knowledge-<campaignCode>` by default) are created automatically on
+first write. For production, point `ES_URL` (plus `ES_API_KEY` or `ES_USERNAME`/`ES_PASSWORD`)
+at a real, secured cluster instead of the docker-compose one, which has security disabled and is
+meant for local development only.
+
+Entirely optional and fails soft: with `ES_URL` unset, or if the cluster is briefly unreachable,
+every part of this silently no-ops and the bot behaves exactly as it did before — Elasticsearch
+is never the only copy of any of this data (facts/NPCs/summaries all still live where they always
+did), so nothing is lost or blocked if it's down.
 
 ---
 

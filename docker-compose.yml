@@ -1,0 +1,61 @@
+# AI GM Bot, optionally with a local Elasticsearch for the long-term
+# memory feature (see modules/knowledge-index.js and README's
+# "Long-Term Memory" section).
+#
+# FIX: previously `bot` unconditionally set ES_URL and had
+# `depends_on: elasticsearch`, so a plain `docker compose up -d` forced
+# Elasticsearch to start even for admins who don't want long-term memory
+# at all — directly contradicting this file's own stated goal ("Not
+# required to run the bot at all"). Elasticsearch is now behind the
+# `elastic` profile, off by default.
+#
+# Usage:
+#   docker compose up -d                        # just the bot (no long-term memory)
+#   docker compose --profile elastic up -d       # bot + local Elasticsearch, with ES_URL wired up
+#
+# This is a single-node, security-disabled ES config meant for local
+# development only — do not run it this way in production. For a real
+# deployment, point ES_URL/ES_API_KEY (in .env) at a properly secured
+# cluster (self-managed or Elastic Cloud) instead of this compose service.
+#
+# WS_URL in your .env needs to point at your Socket Server. If that
+# server is ALSO running in Docker but as a separate `docker compose`
+# project (its own directory), `localhost`/`127.0.0.1` inside this
+# container means "this container", not your host machine — use
+# `host.docker.internal` (Docker Desktop) or your host's real LAN IP
+# instead, e.g. `WS_URL=ws://host.docker.internal:10000`.
+
+services:
+  bot:
+    build: .
+    env_file:
+      # Loads WS_URL, ROOM, your chosen AI_PROVIDER + its API key, and
+      # (if you want long-term memory) ES_URL from here. If you're using
+      # the `elastic` profile below, set ES_URL=http://elasticsearch:9200
+      # in this .env file yourself -- Compose services can't see each
+      # other's names for free-floating var substitution here.
+      - .env
+    ports:
+      - "${STATUS_PORT:-4141}:4141"
+    restart: unless-stopped
+
+  elasticsearch:
+    profiles: ["elastic"]
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.15.0
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ports:
+      - "9200:9200"
+    volumes:
+      - es-data:/usr/share/elasticsearch/data
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:9200/_cluster/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+volumes:
+  es-data:

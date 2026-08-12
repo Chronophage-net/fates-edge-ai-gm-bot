@@ -1,10 +1,11 @@
 # ---------------------------------------------------------------
 # Fate's Edge AI GM Bot — production image
 #
-# This is an outbound WebSocket client (connects to the socket
-# server; it doesn't listen on any port itself), so there's no
-# EXPOSE/HEALTHCHECK against an HTTP endpoint here — just a lean
-# runtime image running the bot process directly.
+# Primarily an outbound WebSocket client (connects to the socket
+# server), but it also serves a small local status dashboard (see
+# modules/status-server.js) on STATUS_PORT — EXPOSE it below so it's
+# reachable from outside the container if you map the port; set
+# STATUS_SERVER=false to disable it and skip the mapping entirely.
 # ---------------------------------------------------------------
 FROM node:20-alpine
 
@@ -16,5 +17,7 @@ RUN npm ci --omit=dev
 COPY . .
 
 ENV NODE_ENV=production
+
+EXPOSE 4141
 
 CMD ["node", "ai-gm-bot.js"]

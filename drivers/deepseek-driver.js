@@ -149,6 +149,19 @@ class DeepSeekDriver extends AIDriver {
             console.warn(`⚠️  DeepSeek finish_reason was "${choice.finish_reason}" (model: ${this.model}) — response may be truncated or filtered.`);
         }
 
+        if (data.usage) {
+            this.recordUsage({
+                promptTokens: data.usage.prompt_tokens || 0,
+                completionTokens: data.usage.completion_tokens || 0
+            });
+        } else {
+            this.recordUsage({
+                promptTokens: this.estimateTokens(systemPrompt) + history.reduce((n, m) => n + this.estimateTokens(m.content), 0),
+                completionTokens: this.estimateTokens(choice.message?.content || ''),
+                estimated: true
+            });
+        }
+
         return (choice.message?.content || '').trim();
     }
 
@@ -176,7 +189,11 @@ class DeepSeekDriver extends AIDriver {
                     messages: [{ role: 'system', content: systemPrompt }, ...history],
                     max_tokens: this.maxTokens,
                     temperature: this.temperature,
-                    stream: true
+                    stream: true,
+                    // OpenAI-compatible option DeepSeek's API also
+                    // supports -- emits a final usage-only chunk so
+                    // streamed replies feed the session token total too.
+                    stream_options: { include_usage: true }
                 }),
                 signal: controller.signal
             });
@@ -189,6 +206,7 @@ class DeepSeekDriver extends AIDriver {
                 throw new Error('DeepSeek streaming response had no body.');
             }
 
+            let usage = null;
             for await (const chunk of parseSSEStream(response.body)) {
                 if (chunk === '[DONE]') break;
                 try {
@@ -198,9 +216,22 @@ class DeepSeekDriver extends AIDriver {
                         full += delta;
                         onToken(delta);
                     }
+                    if (parsed.usage) usage = parsed.usage;
                 } catch (e) {
                     // Malformed/partial SSE frame -- skip it rather than abort the whole stream.
                 }
+            }
+            if (usage) {
+                this.recordUsage({
+                    promptTokens: usage.prompt_tokens || 0,
+                    completionTokens: usage.completion_tokens || 0
+                });
+            } else {
+                this.recordUsage({
+                    promptTokens: this.estimateTokens(systemPrompt) + history.reduce((n, m) => n + this.estimateTokens(m.content), 0),
+                    completionTokens: this.estimateTokens(full),
+                    estimated: true
+                });
             }
             return full.trim();
         } finally {

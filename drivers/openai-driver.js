@@ -67,7 +67,7 @@ class OpenAIDriver extends AIDriver {
 
         try {
             if (onToken && typeof onToken === 'function') {
-                return await this._generateStreaming(messages, onToken);
+                return await this._generateStreaming(messages, onToken, systemPrompt, history);
             }
 
             const completion = await this.client.chat.completions.create({
@@ -79,6 +79,19 @@ class OpenAIDriver extends AIDriver {
 
             if (!completion.choices || completion.choices.length === 0) {
                 throw new Error('OpenAI returned no choices in response');
+            }
+
+            if (completion.usage) {
+                this.recordUsage({
+                    promptTokens: completion.usage.prompt_tokens || 0,
+                    completionTokens: completion.usage.completion_tokens || 0
+                });
+            } else {
+                this.recordUsage({
+                    promptTokens: this.estimateTokens(systemPrompt) + history.reduce((n, m) => n + this.estimateTokens(m.content), 0),
+                    completionTokens: this.estimateTokens(completion.choices[0].message?.content || ''),
+                    estimated: true
+                });
             }
 
             return (completion.choices[0].message?.content || '').trim();
@@ -96,22 +109,41 @@ class OpenAIDriver extends AIDriver {
      * (`stream: true`). Always resolves with the full assembled text so
      * callers that don't pass onToken see identical behavior to before.
      */
-    async _generateStreaming(messages, onToken) {
+    async _generateStreaming(messages, onToken, systemPrompt, history) {
         const stream = await this.client.chat.completions.create({
             model: this.model,
             messages,
             max_tokens: this.maxTokens,
             temperature: this.temperature,
-            stream: true
+            stream: true,
+            // Asks the API to emit one final chunk carrying the same
+            // `usage` object the non-streaming path gets, so streamed
+            // replies feed the session token total too instead of being
+            // invisible to it.
+            stream_options: { include_usage: true }
         });
 
         let full = '';
+        let usage = null;
         for await (const part of stream) {
             const delta = part.choices?.[0]?.delta?.content;
             if (delta) {
                 full += delta;
                 onToken(delta);
             }
+            if (part.usage) usage = part.usage;
+        }
+        if (usage) {
+            this.recordUsage({
+                promptTokens: usage.prompt_tokens || 0,
+                completionTokens: usage.completion_tokens || 0
+            });
+        } else {
+            this.recordUsage({
+                promptTokens: this.estimateTokens(systemPrompt || '') + (history || []).reduce((n, m) => n + this.estimateTokens(m.content), 0),
+                completionTokens: this.estimateTokens(full),
+                estimated: true
+            });
         }
         return full.trim();
     }

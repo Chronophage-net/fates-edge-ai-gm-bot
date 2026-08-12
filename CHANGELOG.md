@@ -3,6 +3,26 @@ All notable changes to this project will be documented here.
 
 Format loosely follows [Keep a Changelog](https://keepachangelog.com/), versions follow [Semantic Versioning](https://semver.org/).
 
+## [4.5.0] - 2026-08-12
+
+Status dashboard, leveled logging, session token tracking, optional Elasticsearch long-term memory (Facts/NPCs/summaries + !gm recall), optional NPC location tracking, INSTALL.md
+
+### Added
+- type-aware encounter narration (objective-types)
+
+### Fixed
+- prompt for API_KEY during setup
+- fix three bugs breaking the setup wizard
+
+### Chore
+- prune 5 not-yet-free adventures per updated allowlist
+- sync 9 new adventures (JSON) from fates-edge-docs
+- sync 18 new patron files from fates-edge-docs
+
+### Other
+- Security (URL parsing and sanitation) and performance improvements.
+- worldbook language pass on region data, tutorial GM hints, new terrestrial factions
+
 ## [4.4.2] - 2026-08-06
 
 _No commits since the last tag — manual version bump._

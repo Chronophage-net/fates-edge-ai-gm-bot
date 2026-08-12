@@ -68,6 +68,21 @@ class OllamaDriver extends AIDriver {
                 return await this._makeStreamingRequest(prompt, 400, 0.8, onToken);
             }
             const data = await this._makeRequest(prompt, 400, 0.8);
+            // Ollama's non-streaming /api/generate reports real counts
+            // (prompt_eval_count / eval_count) once done: true fires --
+            // no need to estimate when they're present.
+            if (typeof data.prompt_eval_count === 'number' || typeof data.eval_count === 'number') {
+                this.recordUsage({
+                    promptTokens: data.prompt_eval_count || 0,
+                    completionTokens: data.eval_count || 0
+                });
+            } else {
+                this.recordUsage({
+                    promptTokens: this.estimateTokens(prompt),
+                    completionTokens: this.estimateTokens(data.response || ''),
+                    estimated: true
+                });
+            }
             return (data.response || '').trim();
         } catch (e) {
             console.error(`❌ Ollama generation error: ${e.message}`);
@@ -164,7 +179,21 @@ class OllamaDriver extends AIDriver {
                             full += parsed.response;
                             onToken(parsed.response);
                         }
-                        if (parsed.done) return full.trim();
+                        if (parsed.done) {
+                            if (typeof parsed.prompt_eval_count === 'number' || typeof parsed.eval_count === 'number') {
+                                this.recordUsage({
+                                    promptTokens: parsed.prompt_eval_count || 0,
+                                    completionTokens: parsed.eval_count || 0
+                                });
+                            } else {
+                                this.recordUsage({
+                                    promptTokens: this.estimateTokens(prompt),
+                                    completionTokens: this.estimateTokens(full),
+                                    estimated: true
+                                });
+                            }
+                            return full.trim();
+                        }
                     } catch (e) {
                         if (e.message && !e.message.startsWith('Unexpected')) throw e; // real API error, not a JSON parse hiccup
                     }

@@ -1,6 +1,6 @@
 {
   "name": "fates-edge-ai-gm-bot",
-  "version": "4.4.2",
+  "version": "4.5.0",
   "description": "AI Game Master bot for Fate’s Edge – connects via WebSocket to the server and uses LLMs (Ollama, OpenAI, DeepSeek)",
   "main": "ai-gm-bot.js",
   "type": "commonjs",
@@ -32,6 +32,7 @@
   },
   "homepage": "https://github.com/Chronophage-net/fates-edge-ai-gm-bot#readme",
   "dependencies": {
+    "@elastic/elasticsearch": "^8.19.2",
     "dotenv": "^16.4.5",
     "openai": "^4.0.0",
     "ws": "^8.17.0"

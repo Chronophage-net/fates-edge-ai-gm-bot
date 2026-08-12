@@ -381,6 +381,18 @@ async function getAdventureDoc(context) {
     }
 }
 
+/**
+ * Non-blocking read of whatever adventure state is currently cached --
+ * never triggers an API call itself, so it's safe for
+ * modules/status-server.js to poll from an HTTP handler on every
+ * dashboard refresh without adding load or latency. May be up to
+ * CACHE_TTL_MS stale, or null if nothing's been fetched yet this
+ * session; both are fine for a "what's loaded right now" display.
+ */
+function getCachedStateSync() {
+    return cachedState;
+}
+
 module.exports = {
     invalidate,
     hasActiveAdventure,
@@ -392,4 +404,5 @@ module.exports = {
     getActiveFaction,
     getActiveCreature,
     getAdventureDoc,
+    getCachedStateSync,      // NEW export -- used by modules/status-server.js
 };

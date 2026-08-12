@@ -5,11 +5,18 @@ const fs = require('fs');
 const path = require('path');
 const { spawnSync } = require('child_process');
 const WebSocket = require('ws');
+// Loaded first (before anything else logs) so the console.log/warn/error
+// monkey-patch is in place from the very first startup line -- see
+// modules/logger.js for why: LOG_LEVEL filtering + the status
+// dashboard's live feed both depend on it.
+const logger = require('./modules/logger');
 const characters = require('./modules/characters');
 const commandHandler = require('./modules/commands');
 const adventureDirector = require('./modules/adventure-director');
 const adventureContext = require('./modules/adventure-context');
 const rulesIndexModule = require('./modules/rules-index');
+const statusServer = require('./modules/status-server');
+const knowledgeIndex = require('./modules/knowledge-index');
 const { generateStartupMessage, generateEtiquetteReminder } = commandHandler;
 
 // -------------------------------------------------------------------
@@ -213,6 +220,8 @@ const BASE_SYSTEM_PROMPT = (process.env.SYSTEM_PROMPT ||
 
   'The instant a new named character completes their FIRST line of dialogue or receives more than one sentence of description, you MUST call [NPC CREATE "Name" "Role" "Motivation"] BEFORE their second sentence of speech. This is not optional. It registers them mechanically and drops their token.\n\n' +
 
+  'Optionally add a 4th quoted argument for their home/current location: [NPC CREATE "Name" "Role" "Motivation" "Location"]. Only include it if the scene actually establishes one -- do NOT invent a location just to fill the slot. Plenty of NPCs wander, travel, or simply have no fixed address; omit the 4th argument entirely for those. If an NPC\'s whereabouts become known or change later (they relocate, you learn where they\'ve been hiding, etc.), update it with [NPC LOCATION "Name" "Place"] -- or [NPC LOCATION "Name" ""] to clear a location that\'s no longer accurate rather than leaving stale info behind.\n\n' +
+
   'During combat or movement, use:\n' +
   '[TOKEN MOVE "Name" col row] — reposition an existing token.\n' +
   '[TOKEN REMOVE "Name"] — remove a specific combatant mid-fight.\n\n' +
@@ -414,7 +423,10 @@ async function performAggressiveSync() {
         if (error) {
             console.warn('⚠️ Aggressive sync:', error);
         } else if (synced > 0) {
-            console.log(`🔄 Aggressive sync: merged ${synced} character(s) from server.`);
+            // DEBUG: fires every SYNC_INTERVAL_MS while this bot is GM --
+            // pure noise for the terminal/dashboard at normal verbosity.
+            // Set LOG_LEVEL=debug to see it.
+            logger.debug(`🔄 Aggressive sync: merged ${synced} character(s) from server.`);
         }
         await adventureContext.invalidate();
         initialSyncDone = true;
@@ -461,7 +473,11 @@ function connect() {
     for (const line of lines) {
       try {
         const msg = JSON.parse(line);
-        console.log(`⬇️  ${msg.type}`, JSON.stringify(msg).slice(0, 120));
+        // DEBUG: every inbound WS frame, including presence pings and
+        // state-updated broadcasts that can fire multiple times a
+        // second -- the single noisiest line in the whole bot. Set
+        // LOG_LEVEL=debug to see the raw wire traffic.
+        logger.debug(`⬇️  ${msg.type}`, JSON.stringify(msg).slice(0, 120));
         await handleMessage(msg);
       } catch (e) {
         console.warn('⚠️  Non‑JSON message:', line);
@@ -661,6 +677,9 @@ function processCrownSpread(data) {
   state.facts['campaign_seed'] = synthesis;
   state.facts['campaign_hook'] = hook;
   state.facts['campaign_region'] = regionName;
+  for (const [key, value] of Object.entries({ campaign_seed: synthesis, campaign_hook: hook, campaign_region: regionName })) {
+    knowledgeIndex.indexFact(orchestrator.campaign.campaignCode, key, value).catch(() => {});
+  }
 
   orchestrator.campaign.save().catch(err => console.error('Error saving seeded campaign:', err));
   campaignSeeded = true;
@@ -776,9 +795,11 @@ async function handleMessage(msg) {
         }
       }
       characters.loadCharacters(charObj);
-      console.log(`📥 Auto‑synced ${charList.length} characters from state-updated.`);
+      // DEBUG: fires on every state-updated broadcast -- see the
+      // inbound-message note above.
+      logger.debug(`📥 Auto‑synced ${charList.length} characters from state-updated.`);
     } else {
-      console.log('ℹ️  state-updated received with no character data.');
+      logger.debug('ℹ️  state-updated received with no character data.');
     }
     return;
   }
@@ -1154,6 +1175,30 @@ async function handleMessage(msg) {
   const factsText = orchestrator.campaign.state.facts ? Object.entries(orchestrator.campaign.state.facts).map(([k,v]) => `- ${k}: ${v}`).join('\n') : '';
   if (factsText) fullSystemPrompt += '\n\nCurrent World Facts:\n' + factsText;
 
+  // NEW: relevance-ranked long-term memory retrieval (Elasticsearch,
+  // optional -- see modules/knowledge-index.js). The block above dumps
+  // ALL of campaignState.facts every turn, which is fine for a short
+  // campaign but grows unbounded over a long one and eventually crowds
+  // out everything else in the prompt. When ES is configured, this
+  // additionally pulls just the handful of facts/NPCs/past-summary
+  // snippets that are actually relevant to what the player just said --
+  // e.g. "who told you about the well?" surfaces the NPC and fact docs
+  // that mention it, however many sessions ago they were created,
+  // without needing them in the always-on facts dump or raw chat
+  // history at all. No-ops (empty array) when ES isn't configured, so
+  // this is purely additive.
+  if (knowledgeIndex.isEnabled()) {
+    try {
+      const memoryHits = await knowledgeIndex.search(orchestrator.campaign.campaignCode, text, { size: 5 });
+      if (memoryHits.length) {
+        fullSystemPrompt += '\n\nRelevant Memory (retrieved -- may include past facts, NPCs, or session summaries; use only what\'s actually relevant to this turn):\n' +
+          memoryHits.map(h => `- [${h.type}] ${h.text}`).join('\n');
+      }
+    } catch (e) {
+      console.warn('⚠️  Knowledge index retrieval failed:', e.message);
+    }
+  }
+
   // Live adventure scene context
   try {
     const sceneContext = await adventureContext.getSceneContextForPrompt({ apiRequest });
@@ -1502,6 +1547,13 @@ async function summariseStory() {
     });
     if (fresh && fresh.trim()) {
       orchestrator.campaign.setSummary(fresh.trim());
+      // Indexed into Elasticsearch too, if configured (see
+      // modules/knowledge-index.js) -- each summary becomes its own
+      // searchable snapshot rather than overwriting the last one, so
+      // "what happened with X a few sessions ago" stays answerable even
+      // after orchestrator.campaign's single current-summary field has
+      // moved on.
+      knowledgeIndex.indexSummary(orchestrator.campaign.campaignCode, fresh.trim()).catch(() => {});
     }
   } catch (e) {
     console.error('Summarisation failed:', e.message);
@@ -1537,11 +1589,52 @@ function scheduleStartupMessage() {
 }
 
 // -------------------------------------------------------------------
+// 11b. Status dashboard snapshot
+// -------------------------------------------------------------------
+// Pure read of live module-scope state -- no side effects -- so
+// status-server.js can call this on every dashboard poll/push tick
+// without worrying about mutating anything.
+function buildStatusSnapshot() {
+  const adv = adventureContext.getCachedStateSync();
+  const allChars = characters.getAll ? characters.getAll() : {};
+  const party = Object.values(allChars || {}).map(c => ({
+    name: c.name,
+    summary: [
+      c.harm ? `harm ${c.harm}` : null,
+      c.fatigue ? `fatigue ${c.fatigue}` : null,
+    ].filter(Boolean).join(', ') || 'unharmed'
+  }));
+
+  return {
+    connected,
+    role: myRole,
+    wsUrl: WS_URL,
+    room: ROOM_CODE,
+    botName: BOT_NAME,
+    driverName: driver ? (driver.constructor?.meta?.name || driver.constructor?.name) : null,
+    driverModel: driver ? driver.model : null,
+    tokenUsage: driver && typeof driver.getUsage === 'function' ? driver.getUsage() : null,
+    adventure: adv ? {
+      title: adv.title,
+      status: adv.status,
+      act: adv.currentAct?.title || null,
+      scene: adv.currentScene?.title || orchestrator?.currentScene?.title || null,
+    } : (orchestrator?.currentScene ? { title: null, status: 'active', act: null, scene: orchestrator.currentScene.title } : null),
+    region: orchestrator?.currentScene?.region || orchestrator?.options?.defaultRegion || null,
+    party,
+  };
+}
+
+// -------------------------------------------------------------------
 // 12. Main
 // -------------------------------------------------------------------
 async function main() {
   console.log('🚀 AI GM Bot starting…');
   console.log(`   WS: ${WS_URL}   Room: ${ROOM_CODE}   Name: ${BOT_NAME}`);
+
+  if (process.env.STATUS_SERVER !== 'false') {
+    statusServer.start({ getState: buildStatusSnapshot });
+  }
 
   await initGame();
 
@@ -1573,6 +1666,7 @@ async function main() {
 process.on('SIGINT', async () => {
   console.log('\n🛑 Shutting down…');
   stopAggressiveSync();
+  statusServer.stop();
   if (orchestrator) {
     await orchestrator.campaign.save();
   }

@@ -6,6 +6,7 @@ const travelModule = require('./travel');
 const rulesModule = require('./rules-index');
 const { formatColumns, shortTitle } = require('./format-utils');
 const { getVocab, encounterType, DEFAULT_TYPE } = require('./objective-types');
+const knowledgeIndex = require('./knowledge-index');
 
 // Icon per encounter type, used in [ENCOUNTER START]/[ENCOUNTER RESOLVE]
 // chat replies so player-facing text doesn't always show a crossed-swords
@@ -386,6 +387,7 @@ async function handleBotCommand(sender, text, context) {
 !gm follower <name> add/remove <follower name> [cap] - manage followers
 !gm timer add/tick/remove <name> [segments] [onFill] - manage local timers
 !gm fact <key> <value> - update a fact
+!gm recall <query> - search facts/NPCs/summaries (requires ES_URL configured)
 !gm sync - sync existing characters from server
 !gm discover - discover and sync all characters from server
 !gm export-characters - show global character roster (all rooms)
@@ -986,7 +988,30 @@ async function handleBotCommand(sender, text, context) {
         if (!key || !value) return 'Usage: !gm fact <key> <value>';
         campaignState.facts[key] = value;
         await saveCampaign();
+        // Fire-and-forget: indexes into Elasticsearch if configured (see
+        // modules/knowledge-index.js), no-ops silently otherwise. Doesn't
+        // block the command response either way.
+        knowledgeIndex.indexFact(context.orchestrator?.campaign?.campaignCode, key, value).catch(() => {});
         return `Fact updated: ${key} = ${value}`;
+    }
+
+    // ─── Recall ────────────────────────────────────────────────────
+    // Operator/player-facing manual search over the long-term knowledge
+    // index (Elasticsearch, optional -- see modules/knowledge-index.js).
+    // "Who knows about the well?" / "where does Kestrel live?" without
+    // needing the model to happen to still hold it in context. The same
+    // search also runs automatically every turn (see ai-gm-bot.js's
+    // handleMessage()) to feed the LLM's own prompt; this is the direct,
+    // no-LLM-involved version for a human to check the same index.
+    if (cmd === 'recall') {
+        const query = args.join(' ').trim();
+        if (!query) return 'Usage: !gm recall <query>';
+        if (!knowledgeIndex.isEnabled()) {
+            return '❌ Recall requires Elasticsearch (set ES_URL) -- see README "Long-Term Memory".';
+        }
+        const hits = await knowledgeIndex.search(context.orchestrator.campaign.campaignCode, query, { size: 5 });
+        if (!hits.length) return `No memory matches for "${query}".`;
+        return `🔎 Memory matches for "${query}":\n` + hits.map(h => `- [${h.type}] ${h.text}`).join('\n');
     }
 
     // ─── SB ────────────────────────────────────────────────────────
@@ -1727,6 +1752,7 @@ async function processSpecialTags(text, context, senderName = null) {
         const value = match[2].trim();
         campaignState.facts[key] = value;
         saveCampaign();
+        knowledgeIndex.indexFact(context.orchestrator?.campaign?.campaignCode, key, value).catch(() => {});
         output = output.replace(match[0], '');
         factRegex.lastIndex = 0; // see FIXED note above (lookupRegex)
     }
@@ -1799,7 +1825,7 @@ async function processSpecialTags(text, context, senderName = null) {
         sceneCompleteRegex.lastIndex = 0; // see FIXED note above (lookupRegex)
     }
 
-    // ─── [NPC CREATE "Name" "Role" "Motivation"] ───────────────────
+    // ─── [NPC CREATE "Name" "Role" "Motivation" "Location"] ────────
     // NEW: registers an ad-hoc NPC the AI just invented (mid-narration)
     // into the currently loaded adventure's own npcs[] array, so it
     // becomes a real, trackable NPC from here on (matched by
@@ -1809,13 +1835,20 @@ async function processSpecialTags(text, context, senderName = null) {
     // AI's own sentence; a visible confirmation would be redundant
     // clutter every time a new character is introduced. Fails silently
     // (logged only) if no adventure is loaded, e.g. during freeform play.
-    const npcCreateRegex = /\[NPC CREATE "([^"]+)"(?:\s+"([^"]*)")?(?:\s+"([^"]*)")?\]/gi;
+    //
+    // The 4th quoted arg (Location) is OPTIONAL -- plenty of NPCs
+    // wander, travel with the party, or just don't have a fixed address
+    // worth recording. Omit it entirely rather than inventing one; it
+    // can always be set/changed later via [NPC LOCATION "Name" "Place"]
+    // as they move around, below.
+    const npcCreateRegex = /\[NPC CREATE "([^"]+)"(?:\s+"([^"]*)")?(?:\s+"([^"]*)")?(?:\s+"([^"]*)")?\]/gi;
     while ((match = npcCreateRegex.exec(output)) !== null) {
         const name = match[1];
         const role = match[2] || 'NPC';
         const motivation = match[3] || '';
+        const location = match[4] || undefined; // optional -- see comment above
         try {
-            await context.apiRequest('POST', ['adventure', 'npc'], { npc: { name, role, motivation } });
+            await context.apiRequest('POST', ['adventure', 'npc'], { npc: { name, role, motivation, location } });
         } catch (e) {
             console.warn(`[NPC CREATE] failed to register "${name}":`, e.message);
         }
@@ -1824,8 +1857,38 @@ async function processSpecialTags(text, context, senderName = null) {
         // named, not just tracked in text. Best-effort/non-blocking --
         // failures here shouldn't affect the narration itself.
         placeOrUpdateToken(context, { name, faction: inferFaction(role, motivation) }).catch(() => {});
+        // Also indexed into Elasticsearch if configured (see
+        // modules/knowledge-index.js) -- this is what lets "who knows
+        // about X?" / "where does Y live?" stay answerable across a long
+        // campaign. `location` is left out of the indexed record
+        // entirely when omitted, rather than defaulting to something
+        // like "unknown" -- an absent field searches differently than
+        // one that says "unknown", and only the former is honest about
+        // "nobody said."
+        knowledgeIndex.indexNpc(context.orchestrator?.campaign?.campaignCode, {
+            name, role, motivation, location, faction: inferFaction(role, motivation), source: 'created'
+        }).catch(() => {});
         output = output.replace(match[0], '');
         npcCreateRegex.lastIndex = 0; // see FIXED note above (lookupRegex)
+    }
+
+    // ─── [NPC LOCATION "Name" "Place"] ──────────────────────────────
+    // Updates just an NPC's location after the fact -- for wandering
+    // NPCs, ones who relocate, or ones whose whereabouts weren't known
+    // at creation time and have since become clear. Pass an empty
+    // string ("") to explicitly CLEAR a previously set location (the
+    // NPC has left / is unaccounted for again) rather than leaving
+    // stale location data searchable. Silent on success, same reasoning
+    // as [NPC CREATE ...] above. Elasticsearch-only -- see "no PATCH
+    // endpoint for the room's own adventure.npcs[]" note in
+    // knowledge-index.js's updateNpcLocation().
+    const npcLocationRegex = /\[NPC LOCATION "([^"]+)" "([^"]*)"\]/gi;
+    while ((match = npcLocationRegex.exec(output)) !== null) {
+        const name = match[1];
+        const place = match[2].trim();
+        knowledgeIndex.updateNpcLocation(context.orchestrator?.campaign?.campaignCode, name, place || null).catch(() => {});
+        output = output.replace(match[0], '');
+        npcLocationRegex.lastIndex = 0; // see FIXED note above (lookupRegex)
     }
 
     // ─── [TOKEN MOVE "Name" col row] ────────────────────────────────
