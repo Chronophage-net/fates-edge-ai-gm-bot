@@ -87,10 +87,10 @@ terminal output.
    - Run the wizard once outside Docker first (`npm install && npm run
      configure`, from the Fast Way above) to generate `.env`, then use
      Docker from here on, **or**
-   - Or write `.env` by hand — `env-deepseek.md` in this folder is a
-     working example for the DeepSeek driver; see the [Configuration
+   - Or write `.env` by hand — see the [Configuration
      Reference](#configuration-reference) below, or README.md's "Manual
-     Configuration" section, for OpenAI/Ollama examples.
+     Configuration" section, for working examples covering OpenAI,
+     Ollama, and DeepSeek.
 
 **3. Start it:**
 ```bash

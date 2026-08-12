@@ -88,8 +88,8 @@ before. The short version below still works fine too.
 ## 🚀 Installation
 
 ```bash
-git clone <your-repo-url>
-cd ai-gm-bot
+git clone https://github.com/Chronophage-net/fates-edge-ai-gm-bot.git
+cd fates-edge-ai-gm-bot
 npm install
 ```
 
@@ -520,6 +520,15 @@ The bundled game data (`data/`, `campaigns/` — regions, patrons, talents,
 etc.) is unaffected by the above: Fate's Edge proprietary content, ©
 Nicholas A. Gasper, used here by the author's own permission; any SRD-marked
 material is CC BY-NC-SA 4.0. See [LICENSE](LICENSE) for the full split.
+
+---
+
+## 🤝 Contributing & Security
+
+Contributions are welcome — see [CONTRIBUTING.md](CONTRIBUTING.md) for how to
+get set up and a note on how licensing works for PRs given the dual-license
+model above. Found a security issue? See [SECURITY.md](SECURITY.md) for how
+to report it privately rather than filing a public issue.
 
 ---
 

@@ -23,6 +23,9 @@ jobs:
       - name: npm ci
         run: npm ci
 
+      - name: Run test suite
+        run: npm test
+
       - name: Syntax-check all JS files
         run: |
           set -e

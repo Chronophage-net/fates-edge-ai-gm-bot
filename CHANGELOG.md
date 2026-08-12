@@ -3,6 +3,13 @@ All notable changes to this project will be documented here.
 
 Format loosely follows [Keep a Changelog](https://keepachangelog.com/), versions follow [Semantic Versioning](https://semver.org/).
 
+## [4.8.0] - 2026-08-12
+
+Prep for going public: add CONTRIBUTING.md (with dual-license contribution note) and SECURITY.md, run tests in CI, fix README clone URL placeholder, clean up stale COMMERCIAL-LICENSE.md stub and env-deepseek.md cross-reference. History also scrubbed of a leaked API key and work-email commit authorship (force-pushed separately, not part of this commit).
+
+### Chore
+- untrack stray test artifact, add to gitignore
+
 ## [4.7.1] - 2026-08-12
 
 Added COMMERCIAL.md (renamed from COMMERCIAL-LICENSE.md, now leads with the standard commercial-licensing notice); COMMERCIAL-LICENSE.md is a redirect stub. Updated README/LICENSE/package.json cross-references. No functional code changes.
