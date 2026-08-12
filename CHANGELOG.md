@@ -3,6 +3,12 @@ All notable changes to this project will be documented here.
 
 Format loosely follows [Keep a Changelog](https://keepachangelog.com/), versions follow [Semantic Versioning](https://semver.org/).
 
+## [4.7.0] - 2026-08-12
+
+Relicensed from MIT to AGPL-3.0-or-later, with a commercial license available for closed-source/redistribution use (see COMMERCIAL-LICENSE.md). No functional code changes.
+
+_No commits since the last tag — manual version bump._
+
 ## [4.6.0] - 2026-08-12
 
 Security hardening: status dashboard no longer binds to all network interfaces by default.

@@ -505,11 +505,20 @@ did), so nothing is lost or blocked if it's down.
 
 ## 📜 License
 
-The bot's code is licensed under the **MIT License**. The bundled game data
-(`data/`, `campaigns/` — regions, patrons, talents, etc.) is Fate's Edge
-proprietary content, © Nicholas A. Gasper, used here by the author's own
-permission; any SRD-marked material is CC BY-NC-SA 4.0. See [LICENSE](LICENSE)
-for the full split.
+The bot's code is licensed under the **GNU Affero General Public License v3.0
+(AGPL-3.0-or-later)**. In practice this changes nothing for the common case —
+self-hosting GMs and hobbyist forks remain free, exactly as under the
+project's earlier MIT license. AGPL's one real added condition: if you run a
+**modified** version as a network service for others, you must make that
+version's source available to its users. A separate **commercial license** is
+available for anyone who wants to embed or redistribute this bot in a
+closed-source commercial product without that condition — see
+[COMMERCIAL-LICENSE.md](COMMERCIAL-LICENSE.md).
+
+The bundled game data (`data/`, `campaigns/` — regions, patrons, talents,
+etc.) is unaffected by the above: Fate's Edge proprietary content, ©
+Nicholas A. Gasper, used here by the author's own permission; any SRD-marked
+material is CC BY-NC-SA 4.0. See [LICENSE](LICENSE) for the full split.
 
 ---
 

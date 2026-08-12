@@ -1,6 +1,6 @@
 {
   "name": "fates-edge-ai-gm-bot",
-  "version": "4.6.0",
+  "version": "4.7.0",
   "description": "AI Game Master bot for Fate’s Edge – connects via WebSocket to the server and uses LLMs (Ollama, OpenAI, DeepSeek)",
   "main": "ai-gm-bot.js",
   "type": "commonjs",
@@ -26,7 +26,7 @@
     "deepseek"
   ],
   "author": "Nicholas A. Gasper",
-  "license": "MIT",
+  "license": "AGPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/Chronophage-net/fates-edge-ai-gm-bot/issues"
   },
@@ -43,5 +43,5 @@
   "engines": {
     "node": ">=18.0.0"
   },
-  "_license": "Code: MIT. Bundled game data (data/regions, data/patrons, campaigns/, etc.): CC BY-NC-SA 4.0 for SRD-marked material, All Rights Reserved otherwise, used by permission of the author. See LICENSE. © 2024 Nicholas A. Gasper."
+  "_license": "Code: AGPL-3.0-or-later, with a commercial license available for closed-source/redistribution use -- see COMMERCIAL-LICENSE.md. Bundled game data (data/regions, data/patrons, campaigns/, etc.): CC BY-NC-SA 4.0 for SRD-marked material, All Rights Reserved otherwise, used by permission of the author. See LICENSE. © 2024-2026 Nicholas A. Gasper."
 }
