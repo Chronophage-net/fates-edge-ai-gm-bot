@@ -3,6 +3,12 @@ All notable changes to this project will be documented here.
 
 Format loosely follows [Keep a Changelog](https://keepachangelog.com/), versions follow [Semantic Versioning](https://semver.org/).
 
+## [4.9.0] - 2026-08-13
+
+First public release.
+
+_No commits since the last tag — manual version bump._
+
 ## [4.8.0] - 2026-08-12
 
 Prep for going public: add CONTRIBUTING.md (with dual-license contribution note) and SECURITY.md, run tests in CI, fix README clone URL placeholder, clean up stale COMMERCIAL-LICENSE.md stub and env-deepseek.md cross-reference. History also scrubbed of a leaked API key and work-email commit authorship (force-pushed separately, not part of this commit).

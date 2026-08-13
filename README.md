@@ -2,6 +2,11 @@
 
 An extensible, pluggable AI bot that connects to the Fate's Edge WebSocket server and acts as a fully automated Game Master. It drives the narrative, interprets player actions, rolls dice, manages the Deck of Consequences, and handles timers – all through a simple terminal or headless operation.
 
+> **v4.9.0 — first public release.** This project has been developed
+> privately up to this point; this is the first version published for
+> outside use. See [CHANGELOG.md](CHANGELOG.md) for the full release
+> history, and [SECURITY.md](SECURITY.md) to report a vulnerability.
+
 ---
 
 ## ✨ Features
