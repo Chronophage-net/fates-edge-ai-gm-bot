@@ -8,6 +8,9 @@
 //   - the currently loaded adventure module / act / scene
 //   - session token usage (from the active AI driver)
 //   - connection/role/uptime and other at-a-glance bot state
+//   - GM Session Panel: Story Beats bank, campaign facts, recent AI
+//     "memory" (conversation window), and Obligation totals per Patron
+//     (see ai-gm-bot.js's buildStatusSnapshot())
 //
 // Live updates are pushed over Server-Sent Events (`/events`), which
 // needs nothing beyond what's already built into the browser and into
@@ -88,6 +91,24 @@ function renderPage() {
   .badge.ok { color: var(--ok); border-color: var(--ok); }
   .badge.bad { color: var(--err); border-color: var(--err); }
   .badge.gm { color: var(--accent); border-color: var(--accent); }
+  .badge.sb { color: var(--warn); border-color: var(--warn); font-size: 14px; padding: 3px 10px; }
+  .fact-list, .obligation-list { display: flex; flex-direction: column; gap: 6px; font-size: 13px; }
+  .fact-list .fact-row { display: grid; grid-template-columns: auto 1fr; gap: 4px 10px; }
+  .fact-list dt { color: var(--dim); }
+  .obligation-row {
+    display: flex; justify-content: space-between; align-items: baseline;
+    border-bottom: 1px solid var(--border); padding-bottom: 4px;
+  }
+  .obligation-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .obligation-row .patron-name { font-weight: 600; }
+  .obligation-row .patron-total { color: var(--warn); font-variant-numeric: tabular-nums; }
+  .obligation-row .patron-chars { color: var(--dim); font-size: 11.5px; }
+  #memory-feed {
+    max-height: 280px; overflow-y: auto; display: flex; flex-direction: column; gap: 8px;
+  }
+  .memory-turn { font-size: 12.5px; padding: 6px 8px; border-radius: 6px; background: #0b0d12; border: 1px solid var(--border); }
+  .memory-turn .role { color: var(--accent); font-weight: 600; text-transform: uppercase; font-size: 10.5px; letter-spacing: .04em; margin-right: 6px; }
+  .memory-summary { font-size: 12px; color: var(--dim); font-style: italic; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
   #feed {
     height: 480px; overflow-y: auto; font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
     font-size: 12.5px; background: #0b0d12; border-radius: 8px; padding: 10px;
@@ -108,10 +129,17 @@ function renderPage() {
   <span class="sub" id="header-sub">connecting…</span>
 </header>
 <div class="grid">
-  <div class="panel">
-    <h2>Latest Messages <span class="footer-note" id="loglevel-note"></span></h2>
-    <div id="feed"><div class="empty">Waiting for log entries…</div></div>
-    <div class="footer-note">Aggressive-sync / raw wire traffic is DEBUG-level and pruned from this feed by default. Set LOG_LEVEL=debug to see everything.</div>
+  <div class="stack">
+    <div class="panel">
+      <h2>Latest Messages <span class="footer-note" id="loglevel-note"></span></h2>
+      <div id="feed"><div class="empty">Waiting for log entries…</div></div>
+      <div class="footer-note">Aggressive-sync / raw wire traffic is DEBUG-level and pruned from this feed by default. Set LOG_LEVEL=debug to see everything.</div>
+    </div>
+    <div class="panel">
+      <h2>Recent AI Memory <span class="footer-note">— the model's actual conversation window</span></h2>
+      <div id="memory-summary-box"></div>
+      <div id="memory-feed"><div class="empty">No conversation yet.</div></div>
+    </div>
   </div>
   <div class="stack">
     <div class="panel">
@@ -129,6 +157,24 @@ function renderPage() {
     <div class="panel">
       <h2>Party</h2>
       <dl class="kv" id="party-kv"></dl>
+    </div>
+    <!-- ═══ AI GM SESSION PANEL ═══════════════════════════════════
+         GM-facing view of bot state that previously had nowhere to
+         be seen: the Story Beats bank, campaign facts the AI has
+         recorded, and Obligation totals grouped by Patron. See
+         ai-gm-bot.js's buildStatusSnapshot() for where this comes
+         from. -->
+    <div class="panel">
+      <h2>Story Beats Bank</h2>
+      <div id="sb-bank"><span class="badge sb">0 SB</span></div>
+    </div>
+    <div class="panel">
+      <h2>Campaign Facts</h2>
+      <dl class="fact-list" id="facts-list"></dl>
+    </div>
+    <div class="panel">
+      <h2>Obligation by Patron</h2>
+      <div class="obligation-list" id="obligation-list"></div>
     </div>
   </div>
 </div>
@@ -178,6 +224,42 @@ function renderState(s) {
   document.getElementById('party-kv').innerHTML = party.length
     ? kv(party.map(p => [p.name, p.summary || '']))
     : '<dd class="empty">No characters synced yet.</dd>';
+
+  // ─── AI GM Session Panel ──────────────────────────────────────
+  document.getElementById('sb-bank').innerHTML =
+    '<span class="badge sb">' + (s.sbBank || 0) + ' SB</span>';
+
+  const facts = s.facts || {};
+  const factKeys = Object.keys(facts);
+  document.getElementById('facts-list').innerHTML = factKeys.length
+    ? factKeys.map(k => '<div class="fact-row"><dt>' + escapeHtml(k) + '</dt><dd>' + escapeHtml(String(facts[k])) + '</dd></div>').join('')
+    : '<div class="empty">No facts recorded yet.</div>';
+
+  const obligations = s.obligations || [];
+  document.getElementById('obligation-list').innerHTML = obligations.length
+    ? obligations.map(o => (
+        '<div class="obligation-row">' +
+          '<div><div class="patron-name">' + escapeHtml(o.patron) + '</div>' +
+          '<div class="patron-chars">' + o.characters.map(c => escapeHtml(c.name) + ' (' + c.obligation + ')').join(', ') + '</div></div>' +
+          '<div class="patron-total">' + o.total + '</div>' +
+        '</div>'
+      )).join('')
+    : '<div class="empty">No Obligation tracked yet.</div>';
+
+  const memoryBox = document.getElementById('memory-summary-box');
+  memoryBox.innerHTML = s.memorySummary
+    ? '<div class="memory-summary">📝 ' + escapeHtml(s.memorySummary) + '</div>'
+    : '';
+
+  const memory = s.recentMemory || [];
+  const memFeed = document.getElementById('memory-feed');
+  memFeed.innerHTML = memory.length
+    ? memory.map(m => '<div class="memory-turn"><span class="role">' + escapeHtml(m.role) + '</span>' + escapeHtml(m.content) + '</div>').join('')
+    : '<div class="empty">No conversation yet.</div>';
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
 function appendLine(entry) {

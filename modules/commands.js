@@ -1458,6 +1458,111 @@ async function handleBotCommand(sender, text, context) {
     return 'Unknown command. Try !gm help';
 }
 
+// ─── Fuzzy tag repair ────────────────────────────────────────────────
+// The tag regexes below (rollRegex, applyRegex, tickRegex, ...) expect
+// the model to emit tags in an exact shape: canonical-case keyword right
+// after "[", no stray whitespace inside a roll pool expression, and a
+// balanced closing quote + "]". Real model output drifts from that
+// constantly, e.g.:
+//   [ROLL "Asadef" Wits + Stealth DV 3 Controlled]   (spaces around +)
+//   [Roll "Asadef" Wits+Stealth DV 3 Controlled]      (wrong case)
+//   [ROLL "Asadef Wits+Stealth DV 3 Controlled       (dropped quote/bracket)
+// A tag that doesn't match its regex exactly doesn't error -- it just
+// silently fails to match, and the raw bracket text leaks into the chat
+// unresolved. repairAITagSyntax() runs once, before any of the specific
+// tag regexes, and normalizes these drift patterns into the exact shape
+// those regexes expect. It's deliberately conservative: it only touches
+// spans that open with "[" followed by one of the known tag keywords
+// (case-insensitively), so ordinary bracketed prose/OOC asides in the
+// model's narration are left untouched.
+
+// Longest-first so a compound keyword ("TICK TIMER", "ENCOUNTER START")
+// is recognized as itself rather than accidentally matched against a
+// shorter keyword that happens to be a prefix-adjacent word (not
+// currently possible given the literal-anchored matching below, but
+// kept in this order for clarity/safety if more keywords are added).
+const AI_TAG_KEYWORDS = [
+    'ENCOUNTER START', 'ENCOUNTER RESOLVE', 'SCENE COMPLETE',
+    'LOOKUP RULE', 'SET POSITION', 'SET DV', 'TICK TIMER',
+    'NPC CAST', 'NPC CREATE', 'NPC LOCATION',
+    'TOKEN MOVE', 'TOKEN REMOVE', 'SPEND SB',
+    'APPLY', 'ADD', 'ROLL', 'TIMER', 'DRAW', 'CROWN', 'FACT',
+].sort((a, b) => b.length - a.length);
+
+// 1) Case repair: force the leading keyword of any recognized tag to
+// its canonical uppercase form, wherever it appears with the wrong
+// case or irregular internal whitespace ("tick   timer" -> "TICK
+// TIMER"). Everything after the keyword (quoted names/args) keeps its
+// original case -- only the command word itself is normalized. Most of
+// the regexes below already carry an 'i' flag so this is partly a
+// defensive no-op against today's code, but it keeps tags working
+// correctly against any tag processor that isn't (or stops being)
+// case-insensitive, and directly covers the "[Roll]" style drift.
+function normalizeAITagCase(text) {
+    let out = text;
+    for (const kw of AI_TAG_KEYWORDS) {
+        const pattern = new RegExp('\\[\\s*' + kw.split(' ').join('\\s+') + '\\b', 'gi');
+        out = out.replace(pattern, '[' + kw);
+    }
+    return out;
+}
+
+// 2) Roll pool spacing repair: the pool expression in [ROLL "Name"
+// <pool> DV <n> <position>] must be contiguous letters/plus signs
+// (`[A-Za-z\+]+`) for rollRegex to match -- "Wits + Stealth" (spaces
+// around the +, which is how a human -- and apparently the model --
+// naturally writes an attribute+skill pool) fails to match at all.
+// Squeeze whitespace out of just the `+` joins in that segment.
+function tightenRollPoolSpacing(text) {
+    return text.replace(
+        /(\[ROLL\s+"[^"]*"\s+)([^\]]*?)(\s+DV\s+\d+)/gi,
+        (full, prefix, pool, suffix) => prefix + pool.replace(/\s*\+\s*/g, '+').trim() + suffix
+    );
+}
+
+// 3) Unterminated tag repair: if a recognized tag never got a closing
+// "]" (cut off, or the model moved on to the next tag/sentence without
+// finishing it), every regex below fails to match it and the tag leaks
+// into chat as literal, unresolved bracket text. For each occurrence of
+// a known "[KEYWORD" that isn't already properly closed before the next
+// "[" or end of string, close it: append a closing '"' first if it has
+// an odd number of quote characters (an unterminated quoted argument),
+// then append "]".
+function closeUnterminatedAITags(text) {
+    let out = text;
+    for (const kw of AI_TAG_KEYWORDS) {
+        const opener = '[' + kw;
+        let searchFrom = 0;
+        while (true) {
+            const start = out.indexOf(opener, searchFrom);
+            if (start === -1) break;
+            const nextClose = out.indexOf(']', start);
+            const nextOpen = out.indexOf('[', start + 1);
+            if (nextClose !== -1 && (nextOpen === -1 || nextClose < nextOpen)) {
+                // Already properly closed before anything else starts --
+                // nothing to repair. Keep scanning after it.
+                searchFrom = nextClose + 1;
+                continue;
+            }
+            const boundary = nextOpen !== -1 ? nextOpen : out.length;
+            const span = out.slice(start, boundary).replace(/\s+$/, '');
+            const quoteCount = (span.match(/"/g) || []).length;
+            const fixedSpan = span + (quoteCount % 2 === 1 ? '"' : '') + ']';
+            out = out.slice(0, start) + fixedSpan + out.slice(boundary);
+            searchFrom = start + fixedSpan.length;
+        }
+    }
+    return out;
+}
+
+function repairAITagSyntax(text) {
+    if (!text || typeof text !== 'string') return text;
+    let repaired = normalizeAITagCase(text);
+    repaired = tightenRollPoolSpacing(repaired);
+    repaired = closeUnterminatedAITags(repaired);
+    return repaired;
+}
+
 // ─── Special tag processing ────────────────────────────────────────
 async function processSpecialTags(text, context, senderName = null) {
     const charactersModule = context.charactersModule;
@@ -1468,6 +1573,11 @@ async function processSpecialTags(text, context, senderName = null) {
     if (!context.orchestrator) {
         return text;
     }
+
+    // Repair drift in the model's own tag syntax before any of the
+    // strict per-tag regexes below get a chance at it. See the block of
+    // functions immediately above for what this fixes and why.
+    text = repairAITagSyntax(text);
     const campaignState = context.orchestrator.campaign.state;
     const saveCampaign = () => context.orchestrator.campaign.save();
     const ws = context.ws;
@@ -2050,4 +2160,5 @@ module.exports = {
     generateEtiquetteReminder,
     globalApiRequest,
     syncCharactersFromServer, // NEW: shared with index.js's performAggressiveSync
+    repairAITagSyntax, // exported for unit testing the fuzzy tag repair in isolation
 };

@@ -1605,6 +1605,45 @@ function buildStatusSnapshot() {
     ].filter(Boolean).join(', ') || 'unharmed'
   }));
 
+  // ─── AI GM Session Panel data ────────────────────────────────────
+  // NEW: the bot has always tracked conversation/facts/sb/obligation
+  // internally (gm-orchestrator.js's campaign state, characters.js) but
+  // never surfaced any of it anywhere a GM could actually look at it —
+  // it lived entirely in this process's memory (and the campaign JSON
+  // file on disk) until now. Piggybacks on the existing status-server.js
+  // dashboard/`/api/state` + SSE plumbing rather than inventing a new
+  // transport: same read-only snapshot pattern as everything above.
+  const campaignState = orchestrator?.state || null;
+  const sbBank = campaignState?.sb || 0;
+  const facts = campaignState?.facts || {};
+  // Last 12 conversation turns (see handleMessage()'s `conv.push(...)`
+  // and generateAndSendResponse()'s assistant-side push) — "what the bot
+  // currently remembers" in the most literal, verifiable sense: this
+  // (plus any earlier summary — see campaign.getSummary()) is the exact
+  // context window the model itself sees.
+  const recentMemory = (campaignState?.conversation || []).slice(-12).map(m => ({
+    role: m.role,
+    content: typeof m.content === 'string' ? m.content.slice(0, 400) : ''
+  }));
+  const memorySummary = orchestrator?.campaign?.getSummary?.() || null;
+
+  // Obligation totals per Patron. Characters didn't carry a `.patron`
+  // field over the wire until now (see vtt-connected.js's
+  // pushCharactersToServer()) — anything synced before that fix, or a
+  // character with no Patron bond set, is grouped under "Unbound"
+  // rather than silently dropped.
+  const obligationByPatron = {};
+  for (const c of Object.values(allChars || {})) {
+    const patronName = c.patron || 'Unbound';
+    if (!obligationByPatron[patronName]) {
+      obligationByPatron[patronName] = { patron: patronName, total: 0, characters: [] };
+    }
+    const obligation = c.obligation || 0;
+    obligationByPatron[patronName].total += obligation;
+    obligationByPatron[patronName].characters.push({ name: c.name, obligation });
+  }
+  const obligations = Object.values(obligationByPatron).sort((a, b) => b.total - a.total);
+
   return {
     connected,
     role: myRole,
@@ -1622,6 +1661,12 @@ function buildStatusSnapshot() {
     } : (orchestrator?.currentScene ? { title: null, status: 'active', act: null, scene: orchestrator.currentScene.title } : null),
     region: orchestrator?.currentScene?.region || orchestrator?.options?.defaultRegion || null,
     party,
+    // GM Session Panel
+    sbBank,
+    facts,
+    recentMemory,
+    memorySummary,
+    obligations,
   };
 }
 
