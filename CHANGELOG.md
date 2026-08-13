@@ -3,6 +3,13 @@ All notable changes to this project will be documented here.
 
 Format loosely follows [Keep a Changelog](https://keepachangelog.com/), versions follow [Semantic Versioning](https://semver.org/).
 
+## [4.9.1] - 2026-08-13
+
+### Other
+- Updated to add more information in the server status panel.
+- Updated the package-lock.json file
+- Public release! Updated funding, README.md, etc
+
 ## [4.9.0] - 2026-08-13
 
 First public release.
