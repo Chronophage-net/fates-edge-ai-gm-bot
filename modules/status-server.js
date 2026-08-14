@@ -11,6 +11,11 @@
 //   - GM Session Panel: Story Beats bank, campaign facts, recent AI
 //     "memory" (conversation window), and Obligation totals per Patron
 //     (see ai-gm-bot.js's buildStatusSnapshot())
+//   - Assistant GM Suggestions: when this bot holds the 'assistant-gm'
+//     role, narrative-authority tags it would otherwise apply immediately
+//     are held in modules/assistant-suggestions.js's queue instead; this
+//     panel lists them with one-click Approve/Reject (POST
+//     /api/suggestions/:id/approve|reject below)
 //
 // Live updates are pushed over Server-Sent Events (`/events`), which
 // needs nothing beyond what's already built into the browser and into
@@ -22,6 +27,7 @@
 
 const http = require('http');
 const logger = require('./logger');
+const assistantSuggestions = require('./assistant-suggestions');
 
 let server = null;
 let sseClients = [];
@@ -120,6 +126,20 @@ function renderPage() {
   .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 6px; }
   .dot.on { background: var(--ok); } .dot.off { background: var(--err); }
   .footer-note { color: var(--dim); font-size: 11px; margin-top: 10px; }
+  .suggestion-row {
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    border-bottom: 1px solid var(--border); padding: 6px 0; font-size: 13px;
+  }
+  .suggestion-row:last-child { border-bottom: none; }
+  .suggestion-row .kind { color: var(--dim); font-size: 10.5px; text-transform: uppercase; letter-spacing: .04em; margin-right: 6px; }
+  .suggestion-row .actions { display: flex; gap: 6px; flex-shrink: 0; }
+  .suggestion-row button {
+    font-size: 12px; padding: 3px 9px; border-radius: 6px; border: 1px solid var(--border);
+    background: var(--bg); color: var(--fg); cursor: pointer;
+  }
+  .suggestion-row button.approve { color: var(--ok); border-color: var(--ok); }
+  .suggestion-row button.reject { color: var(--err); border-color: var(--err); }
+  .suggestion-row button:hover { filter: brightness(1.2); }
 </style>
 </head>
 <body>
@@ -175,6 +195,16 @@ function renderPage() {
     <div class="panel">
       <h2>Obligation by Patron</h2>
       <div class="obligation-list" id="obligation-list"></div>
+    </div>
+    <!-- ═══ ASSISTANT GM SUGGESTIONS ═══════════════════════════════
+         Only populated while this bot holds the 'assistant-gm' role
+         (see ai-gm-bot.js's buildStatusSnapshot() -> pendingSuggestions).
+         Approve/Reject here call the /api/suggestions/:id/(approve|reject)
+         routes below -- the chat-native equivalent is '!gm approve <id>' /
+         '!gm reject <id>' (see commands.js). -->
+    <div class="panel" id="suggestions-panel" style="display:none;">
+      <h2>Assistant GM — Pending Suggestions</h2>
+      <div id="suggestions-list"></div>
     </div>
   </div>
 </div>
@@ -246,6 +276,22 @@ function renderState(s) {
       )).join('')
     : '<div class="empty">No Obligation tracked yet.</div>';
 
+  // ─── Assistant GM Suggestions ───────────────────────────────────
+  const suggestionsPanel = document.getElementById('suggestions-panel');
+  const suggestions = s.pendingSuggestions || [];
+  suggestionsPanel.style.display = s.isAssistantGm ? '' : 'none';
+  document.getElementById('suggestions-list').innerHTML = suggestions.length
+    ? suggestions.map(sug => (
+        '<div class="suggestion-row">' +
+          '<div><span class="kind">' + escapeHtml(sug.kind) + '</span>' + escapeHtml(sug.label) + '</div>' +
+          '<div class="actions">' +
+            '<button class="approve" onclick="actOnSuggestion(\'' + sug.id + '\',\'approve\')">Approve</button>' +
+            '<button class="reject" onclick="actOnSuggestion(\'' + sug.id + '\',\'reject\')">Reject</button>' +
+          '</div>' +
+        '</div>'
+      )).join('')
+    : '<div class="empty">No pending suggestions.</div>';
+
   const memoryBox = document.getElementById('memory-summary-box');
   memoryBox.innerHTML = s.memorySummary
     ? '<div class="memory-summary">📝 ' + escapeHtml(s.memorySummary) + '</div>'
@@ -275,6 +321,17 @@ function appendLine(entry) {
   const atBottom = feed.scrollHeight - feed.scrollTop - feed.clientHeight < 40;
   while (feed.children.length > 300) feed.removeChild(feed.firstChild);
   if (atBottom) feed.scrollTop = feed.scrollHeight;
+}
+
+async function actOnSuggestion(id, action) {
+  try {
+    await fetch('/api/suggestions/' + encodeURIComponent(id) + '/' + action, { method: 'POST' });
+  } catch (e) {
+    console.warn('Failed to ' + action + ' suggestion:', e);
+  }
+  // The next SSE 'state' push (broadcast right after the request completes
+  // server-side) will re-render the list; no need to optimistically patch
+  // the DOM here.
 }
 
 async function bootstrap() {
@@ -335,6 +392,28 @@ function start({ getState, port, pushIntervalMs = 4000 } = {}) {
         if (req.url === '/api/state') {
             res.writeHead(200, { 'Content-Type': 'application/json' });
             res.end(JSON.stringify({ state: snapshot(), log: logger.recent(150) }));
+            return;
+        }
+        // ─── Assistant GM suggestion approve/reject ────────────────
+        // NEW: same read-only-dashboard-plus-one-write-path pattern the
+        // rest of this file avoided until now -- deliberately narrow
+        // (two POST routes, no auth beyond whatever network exposure
+        // STATUS_HOST already implies) rather than a general admin API.
+        // See modules/assistant-suggestions.js for the queue itself.
+        const suggestionMatch = req.method === 'POST' && req.url.match(/^\/api\/suggestions\/([^/]+)\/(approve|reject)$/);
+        if (suggestionMatch) {
+            const [, id, action] = suggestionMatch;
+            (async () => {
+                const result = action === 'approve'
+                    ? await assistantSuggestions.approve(id)
+                    : assistantSuggestions.reject(id);
+                res.writeHead(result.ok ? 200 : 404, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify(result));
+                broadcastSSE('state', snapshot());
+            })().catch(e => {
+                res.writeHead(500, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify({ ok: false, error: e.message }));
+            });
             return;
         }
         if (req.url === '/events') {

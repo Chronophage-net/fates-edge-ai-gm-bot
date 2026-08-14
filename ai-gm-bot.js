@@ -17,6 +17,7 @@ const adventureContext = require('./modules/adventure-context');
 const rulesIndexModule = require('./modules/rules-index');
 const statusServer = require('./modules/status-server');
 const knowledgeIndex = require('./modules/knowledge-index');
+const assistantSuggestions = require('./modules/assistant-suggestions');
 const { generateStartupMessage, generateEtiquetteReminder } = commandHandler;
 
 // -------------------------------------------------------------------
@@ -384,8 +385,25 @@ function startGmTakeoverTimer() {
         gmTakeoverTimer = null;
         gmTakeoverWarningSent = false;
         if (myRole !== 'gm' && !currentGMId) {
-            console.log('👑 No GM present – requesting GM role.');
-            sendWS('request_gm');
+            // NEW: Assistant GM mode deliberately does NOT auto-promote
+            // itself to full GM the way an ordinary player-role bot does.
+            // Assistant GM exists specifically to hold back from narrative
+            // authority; silently flipping to full GM on a timer the
+            // moment the human disappears would undermine the entire
+            // point of the mode. Ask instead, and only act on an explicit
+            // `!gm confirm-takeover` from someone in the room (see the
+            // handler in commands.js's handleBotCommand()).
+            if (myRole === 'assistant-gm') {
+                console.log('👑 No GM present, but I am Assistant GM – asking before taking full control.');
+                sendChat(
+                    `⚠️ No Game Master is present. As Assistant GM I can keep holding pending ` +
+                    `suggestions, but I won't take full narrative control on my own. Reply ` +
+                    `\`!gm confirm-takeover\` if you'd like me to assume full GM duties.`
+                );
+            } else {
+                console.log('👑 No GM present – requesting GM role.');
+                sendWS('request_gm');
+            }
         } else {
             console.log('ℹ️ GM takeover cancelled – GM already exists or I am GM.');
         }
@@ -402,7 +420,11 @@ function cancelGmTakeoverTimer() {
 
 // ---- Aggressive sync functions ----
 async function performAggressiveSync() {
-    if (!orchestrator || myRole !== 'gm') {
+    // Assistant GM mode still needs live character/adventure state to run
+    // its mechanical duties (rolls, resource math, timers) correctly --
+    // only the narrative-authority tags are held back (see commands.js's
+    // isAssistant branches), so this sync loop runs the same as full GM.
+    if (!orchestrator || (myRole !== 'gm' && myRole !== 'assistant-gm')) {
         return;
     }
     try {
@@ -440,7 +462,7 @@ function startAggressiveSync() {
         clearInterval(syncInterval);
         syncInterval = null;
     }
-    if (myRole === 'gm') {
+    if (myRole === 'gm' || myRole === 'assistant-gm') {
         performAggressiveSync().catch(() => {});
         syncInterval = setInterval(performAggressiveSync, SYNC_INTERVAL_MS);
         console.log(`🔄 Aggressive sync started (every ${SYNC_INTERVAL_MS/1000}s)`);
@@ -849,12 +871,22 @@ async function handleMessage(msg) {
 
     const myClient = clients.find(c => c.id === mySocketId);
     if (myClient && myClient.role !== myRole) {
+      const previousRole = myRole;
       myRole = myClient.role;
       console.log(`🔁 Role updated from presence: ${myRole}`);
-      if (myRole === 'gm') {
+      if (myRole === 'gm' || myRole === 'assistant-gm') {
         startAggressiveSync();
       } else {
         stopAggressiveSync();
+      }
+      if (myRole === 'assistant-gm' && previousRole !== 'assistant-gm') {
+        sendChat(`🤝 I'm now Assistant GM. I'll keep the mechanics running and hold narrative suggestions for GM approval — see \`!gm suggestions\`.`);
+      } else if (previousRole === 'assistant-gm' && myRole !== 'assistant-gm') {
+        // Stepping out of the seat entirely (demoted to player/spectator,
+        // or promoted to full GM) -- any suggestions left unreviewed from
+        // before this moment are stale; don't carry them forward.
+        const cleared = assistantSuggestions.clear();
+        if (cleared > 0) console.log(`🗑️ Cleared ${cleared} pending Assistant GM suggestion(s) on role change.`);
       }
     }
 
@@ -885,7 +917,21 @@ async function handleMessage(msg) {
     myRole = msg.clientRole || msg.role || 'player';
     mySocketId = msg.clientId || null;
     console.log(`🤝 Handshake OK. Role: ${myRole}, ClientID: ${mySocketId}`);
-    if (myRole !== 'gm') {
+    if (myRole === 'assistant-gm') {
+      // NEW: Assistant GM connects with a real role already assigned by
+      // the server (the human GM promoted this bot the same way they'd
+      // promote a Co-GM -- see fates-edge-apps' room.js ASSIGNABLE_ROLES).
+      // It never requests the full GM seat on its own.
+      console.log('🤝 I am the Assistant GM.');
+      if (!orchestrator) await initGame();
+      await orchestrator.campaign.save();
+      console.log('📂 Campaign sync complete.');
+      startAggressiveSync();
+      // Deliberately skip the full-GM-only onboarding flows below
+      // (auto-seed, adventure-director's startup prompt, the greeting
+      // message) -- those are narrative-authority decisions that belong
+      // to whichever human holds the actual GM seat, not to this mode.
+    } else if (myRole !== 'gm') {
       console.log('📢 I am not the GM – will request GM role.');
       sendWS('request_gm');
     } else {
@@ -1114,8 +1160,12 @@ async function handleMessage(msg) {
     return;
   }
 
-  // ─── AI RESPONSE (only if GM) ────────────────────────────────────
-  if (myRole !== 'gm') return;
+  // ─── AI RESPONSE (only if GM or Assistant GM) ────────────────────
+  // Assistant GM still narrates and still resolves mechanical tags
+  // immediately -- processSpecialTags() (see commands.js) is what holds
+  // back the narrative-authority ones (FACT/NPC CREATE/SCENE COMPLETE)
+  // into the suggestion queue when context.myRole === 'assistant-gm'.
+  if (myRole !== 'gm' && myRole !== 'assistant-gm') return;
 
   if (!orchestrator) {
     await initGame();
@@ -1667,6 +1717,13 @@ function buildStatusSnapshot() {
     recentMemory,
     memorySummary,
     obligations,
+    // Assistant GM mode: pending narrative suggestions awaiting the human
+    // GM/Co-GM's approve/reject (see modules/assistant-suggestions.js and
+    // commands.js's isAssistant branches in processSpecialTags()). Empty
+    // whenever this bot isn't holding the assistant-gm role, since nothing
+    // gets queued in that case.
+    isAssistantGm: myRole === 'assistant-gm',
+    pendingSuggestions: assistantSuggestions.list(),
   };
 }
 

@@ -3,6 +3,15 @@ All notable changes to this project will be documented here.
 
 Format loosely follows [Keep a Changelog](https://keepachangelog.com/), versions follow [Semantic Versioning](https://semver.org/).
 
+## [4.10.0] - 2026-08-14
+
+### Added
+- **Assistant GM mode**: a new `assistant-gm` room role (alongside GM/Co-GM/Player/Spectator — see `fates-edge-apps`' v4.12 changes) a GM can hand to this bot's own client. In this mode the bot keeps narrating and keeps running mechanics live (rolls, resource deltas, timers, aggressive character/adventure sync), but holds narrative-authority tags — `[FACT ...]`, `[NPC CREATE ...]`, `[SCENE COMPLETE ...]` — as pending suggestions instead of applying them immediately, so a human GM/Co-GM keeps final say. New `modules/assistant-suggestions.js` (the in-memory suggestion queue), new chat commands `!gm suggestions` / `!gm approve <id>` / `!gm reject <id>` / `!gm confirm-takeover`, and a new "Pending Suggestions" panel on the status dashboard with one-click Approve/Reject.
+- GM-disconnect handling now branches on this: an Assistant GM bot no longer silently auto-requests the full GM seat the way an ordinary player-role bot does — it prompts in chat instead, requiring an explicit `!gm confirm-takeover`.
+
+### Docs
+- README: new "Assistant GM Mode" section, updated Features list, module table (`commands.js`, new `assistant-suggestions.js` entry), and Status Dashboard section.
+
 ## [4.9.1] - 2026-08-13
 
 ### Added

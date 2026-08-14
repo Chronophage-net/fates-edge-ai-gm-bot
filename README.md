@@ -30,6 +30,10 @@ An extensible, pluggable AI bot that connects to the Fate's Edge WebSocket serve
 - **Fuzzy AI tag repair** – normalizes common drift in the model's own `[TAG ...]` syntax (wrong
   case, spacing around `+`, a dropped closing quote/bracket) before parsing, so a well-intentioned
   but slightly malformed tag still resolves instead of leaking into chat as literal bracket text.
+- **Assistant GM mode** – a middle tier between full GM and a passive player: the bot keeps
+  narrating and keeps running mechanics (rolls, resource math, timers) live, but holds
+  narrative-authority tags (`[FACT ...]`, `[NPC CREATE ...]`, `[SCENE COMPLETE ...]`) as pending
+  suggestions for the human GM/Co-GM to approve or reject — see "Assistant GM Mode" below.
 - **Leveled logging** – `LOG_LEVEL` keeps noisy background chatter (aggressive-sync ticks, raw
   wire traffic) out of the terminal and dashboard by default; flip to `debug` to see it all.
 - **Session token tracking** – real usage counts from OpenAI/DeepSeek/Ollama where the provider
@@ -234,7 +238,8 @@ object rather than reaching for globals, and each has a matching test file under
 | Module | Responsibility |
 |--------|-----------------|
 | **`gm-orchestrator.js`** | The brain of the bot — integrates every other module, owns campaign state defaults, and drives the scene lifecycle each turn. |
-| **`commands.js`** | Parses `[TAG ...]` markers out of the AI's raw text output (`[ROLL ...]`, `[APPLY ...]`, `[LOOKUP RULE ...]`, `[SET POSITION/DV ...]`, `[TIMER ...]`, `[DRAW ...]`, `[CROWN ...]`, `[NPC CAST/CREATE ...]`, `[SCENE COMPLETE ...]`, `[TOKEN MOVE/REMOVE ...]`, `[ENCOUNTER RESOLVE ...]`, and more) and dispatches each to the module that actually performs it. Also handles `!gm` terminal/chat command dispatch. The single highest-blast-radius file in the bot — regex-based tag parsing silently breaks if the model's output drifts even slightly, so every tag handler here is covered by `tests/modules/commands.test.js`. `repairAITagSyntax()` runs first and repairs common drift (wrong case, spacing around `+`, dropped closing quote/bracket) before any of those regexes see the text. |
+| **`commands.js`** | Parses `[TAG ...]` markers out of the AI's raw text output (`[ROLL ...]`, `[APPLY ...]`, `[LOOKUP RULE ...]`, `[SET POSITION/DV ...]`, `[TIMER ...]`, `[DRAW ...]`, `[CROWN ...]`, `[NPC CAST/CREATE ...]`, `[SCENE COMPLETE ...]`, `[TOKEN MOVE/REMOVE ...]`, `[ENCOUNTER RESOLVE ...]`, and more) and dispatches each to the module that actually performs it. Also handles `!gm` terminal/chat command dispatch. The single highest-blast-radius file in the bot — regex-based tag parsing silently breaks if the model's output drifts even slightly, so every tag handler here is covered by `tests/modules/commands.test.js`. `repairAITagSyntax()` runs first and repairs common drift (wrong case, spacing around `+`, dropped closing quote/bracket) before any of those regexes see the text. When `context.myRole === 'assistant-gm'`, narrative-authority tags (`[FACT ...]`, `[NPC CREATE ...]`, `[SCENE COMPLETE ...]`) are routed to `assistant-suggestions.js`'s queue instead of applied immediately — see "Assistant GM Mode" below. |
+| **`assistant-suggestions.js`** | In-memory pending-suggestion queue for Assistant GM mode — `enqueue()`/`list()`/`approve()`/`reject()`/`clear()`. Not persisted to the campaign JSON (a pending suggestion is a proposal, not committed state); see "Assistant GM Mode" below. |
 | **`dice.js`** | Fate's Edge dice-pool mechanics: rolling, Position modifiers, the Outcome Matrix (Clean Success / Success with Story Beat / Partial / Miss), Story Beat generation on 1s, Harm/Fatigue application with armor conversion. |
 | **`characters.js`** | In-memory character store for the session — attribute/skill resolution (case-insensitive), delta application (Harm/Fatigue/Boons/Obligation/Corruption/Leash) with clamping at their max values. |
 | **`world-manager.js`** | Loads and indexes world data (regions, factions, patrons, NPCs, spells, wiki entries) from `data/`. `getRegion()` normalizes a display name to its `data/regions/*.json` filename stem (spaces→underscores, lowercased) — this exact lookup has independently broken and been re-fixed several times across this ecosystem (see "Cross-Repo Region Slug Bug" below), so treat any change here with extra care. |
@@ -466,9 +471,57 @@ The bot starts a small local web dashboard at **http://localhost:4141** (configu
 
   Fed by `ai-gm-bot.js`'s `buildStatusSnapshot()`, which reads straight from the orchestrator's
   existing campaign state — no separate storage to keep in sync.
+- **Assistant GM — Pending Suggestions** — only visible while this bot holds the `assistant-gm`
+  role: every narrative-authority tag it's holding for approval, with one-click Approve/Reject
+  buttons (POST `/api/suggestions/:id/approve` or `/reject`). See "Assistant GM Mode" below.
 
 No extra dependency: it's a plain `http` server pushing updates over Server-Sent Events. Disable
 it with `STATUS_SERVER=false` if you don't want it running (e.g. a locked-down headless box).
+
+---
+
+## 🤝 Assistant GM Mode
+
+A middle tier between full GM (this bot narrates, and every `[TAG ...]` it emits applies
+immediately) and an ordinary player/spectator (it does nothing at all). A GM hands the bot this
+role the same way they'd hand out Co-GM — via the room's role-management system
+(`role_change_request` with `role: 'assistant-gm'`; see `fates-edge-apps`' `server/room.js` and
+`API.md`) — typically by promoting the bot's own client.
+
+**What still runs immediately**, exactly like full GM mode — this is mechanical bookkeeping, not
+narrative authority:
+- `[ROLL ...]` resolution, Story Beat generation, Harm/Fatigue/Boon/Obligation deltas from
+  `[APPLY ...]`.
+- Timer and travel-clock advancement.
+- `[NPC CAST ...]` (an NPC casting a spell the human GM's own narration already committed to).
+- The aggressive character/adventure sync loop (`performAggressiveSync()`), so mechanics stay
+  accurate even though narrative tags are being held.
+
+**What gets held for approval** instead of applied — anything that changes shared campaign truth:
+- `[FACT ...]` — a new fact becoming canon.
+- `[NPC CREATE ...]` — a brand-new NPC being registered into the adventure.
+- `[SCENE COMPLETE ...]` — advancing/ending the current scene.
+
+Each held tag becomes a **pending suggestion** (`modules/assistant-suggestions.js`), visible on the
+status dashboard's "Assistant GM — Pending Suggestions" panel with Approve/Reject buttons, and
+manageable from chat too:
+
+```
+!gm suggestions          - list pending suggestions
+!gm approve <id>         - approve one (applies it exactly as full-GM mode would)
+!gm reject <id>          - reject one (discarded, never applied)
+```
+
+**GM-disconnect behavior is deliberately different from full-GM mode's auto-takeover.** An
+ordinary player-role bot silently requests the GM seat if no GM is present after
+`GM_TAKEOVER_DELAY`. Assistant GM mode does **not** — auto-promoting itself to full narrative
+authority the moment a human disappears would defeat the entire point of the mode. Instead it
+posts a prompt in chat; anyone in the room can reply `!gm confirm-takeover` to have it request the
+full GM seat through the normal `request_gm`/`approve_gm` flow.
+
+Losing the `assistant-gm` role (demoted back to player/spectator, or promoted to full GM) clears
+any suggestions still awaiting review — they were proposals made under a role the bot no longer
+holds, not committed state worth carrying forward.
 
 ---
 

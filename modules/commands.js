@@ -7,6 +7,7 @@ const rulesModule = require('./rules-index');
 const { formatColumns, shortTitle } = require('./format-utils');
 const { getVocab, encounterType, DEFAULT_TYPE } = require('./objective-types');
 const knowledgeIndex = require('./knowledge-index');
+const assistantSuggestions = require('./assistant-suggestions');
 
 // Icon per encounter type, used in [ENCOUNTER START]/[ENCOUNTER RESOLVE]
 // chat replies so player-facing text doesn't always show a crossed-swords
@@ -387,6 +388,10 @@ async function handleBotCommand(sender, text, context) {
 !gm follower <name> add/remove <follower name> [cap] - manage followers
 !gm timer add/tick/remove <name> [segments] [onFill] - manage local timers
 !gm fact <key> <value> - update a fact
+!gm suggestions - list pending Assistant GM suggestions awaiting approval
+!gm approve <id> - approve a pending Assistant GM suggestion
+!gm reject <id> - reject a pending Assistant GM suggestion
+!gm confirm-takeover - Assistant GM only: assume full GM control when no GM is present
 !gm recall <query> - search facts/NPCs/summaries (requires ES_URL configured)
 !gm sync - sync existing characters from server
 !gm discover - discover and sync all characters from server
@@ -995,6 +1000,52 @@ async function handleBotCommand(sender, text, context) {
         return `Fact updated: ${key} = ${value}`;
     }
 
+    // ─── Assistant GM suggestion queue ───────────────────────────────
+    // Only meaningful while this bot holds the 'assistant-gm' role (see
+    // processSpecialTags()'s isAssistant branches above and the "Assistant
+    // GM Mode" section of the README) -- that's when narrative-authority
+    // tags get held here instead of applied immediately. The same queue is
+    // also visible (with clickable Approve/Reject) on the status dashboard;
+    // these commands are the chat-native equivalent for tables that live in
+    // chat rather than the dashboard.
+    if (cmd === 'suggestions') {
+        if (context.myRole !== 'assistant-gm') return 'I only hold pending suggestions while I\'m the Assistant GM.';
+        const pending = assistantSuggestions.list();
+        if (!pending.length) return 'No pending suggestions.';
+        return '📋 Pending suggestions:\n' + pending.map(s => `- \`${s.id}\` [${s.kind}] ${s.label}`).join('\n') +
+            '\n\nUse `!gm approve <id>` or `!gm reject <id>`.';
+    }
+    if (cmd === 'approve') {
+        if (context.myRole !== 'assistant-gm') return 'I only hold pending suggestions while I\'m the Assistant GM.';
+        const id = args[0];
+        if (!id) return 'Usage: !gm approve <id> — see `!gm suggestions` for pending ids.';
+        const { ok, result, error } = await assistantSuggestions.approve(id);
+        if (!ok) return `❌ ${error}`;
+        await saveCampaign();
+        return (typeof result === 'string' && result) ? `✅ Approved.\n${result}` : '✅ Approved.';
+    }
+    if (cmd === 'reject') {
+        if (context.myRole !== 'assistant-gm') return 'I only hold pending suggestions while I\'m the Assistant GM.';
+        const id = args[0];
+        if (!id) return 'Usage: !gm reject <id> — see `!gm suggestions` for pending ids.';
+        const { ok, error } = assistantSuggestions.reject(id);
+        return ok ? '🗑️ Suggestion rejected.' : `❌ ${error}`;
+    }
+
+    // ─── Confirm takeover (Assistant GM → full GM) ───────────────────
+    // The one path by which Assistant GM mode ever takes the full GM
+    // seat -- see ai-gm-bot.js's startGmTakeoverTimer(), which prompts
+    // for this instead of silently requesting the seat the way an
+    // ordinary player-role bot's takeover timer does. Anyone in the room
+    // can confirm; the actual grant still goes through the server's
+    // normal request_gm/approve_gm flow (nothing here bypasses that).
+    if (cmd === 'confirm-takeover') {
+        if (context.myRole !== 'assistant-gm') return 'I\'m not in Assistant GM mode, so there\'s nothing to confirm.';
+        if (!ws) return '❌ No connection available to request the GM seat.';
+        ws.send(JSON.stringify({ type: 'request_gm' }));
+        return '👑 Requesting the GM seat…';
+    }
+
     // ─── Recall ────────────────────────────────────────────────────
     // Operator/player-facing manual search over the long-term knowledge
     // index (Elasticsearch, optional -- see modules/knowledge-index.js).
@@ -1582,6 +1633,19 @@ async function processSpecialTags(text, context, senderName = null) {
     const saveCampaign = () => context.orchestrator.campaign.save();
     const ws = context.ws;
 
+    // ─── Assistant GM mode ──────────────────────────────────────────
+    // NEW: when this bot holds the 'assistant-gm' role (a human GM/Co-GM
+    // is still present and in charge), tags that carry real narrative
+    // authority -- a new fact becoming campaign truth, a brand-new NPC
+    // appearing, a scene ending -- are held in assistant-suggestions.js's
+    // queue instead of applied immediately, so the human keeps final say.
+    // Everything else (rolls, resource deltas, timers, NPC spellcasting
+    // triggered by an already-approved scene) is mechanical, not
+    // authorial, and still applies immediately in this mode exactly like
+    // full-GM mode -- see the design note in the README's "Assistant GM
+    // Mode" section for the full list and rationale.
+    const isAssistant = context.myRole === 'assistant-gm';
+
     let output = text;
 
     // Helper to resolve character name
@@ -1860,9 +1924,21 @@ async function processSpecialTags(text, context, senderName = null) {
     while ((match = factRegex.exec(output)) !== null) {
         const key = match[1].trim();
         const value = match[2].trim();
-        campaignState.facts[key] = value;
-        saveCampaign();
-        knowledgeIndex.indexFact(context.orchestrator?.campaign?.campaignCode, key, value).catch(() => {});
+        if (isAssistant) {
+            assistantSuggestions.enqueue({
+                kind: 'fact',
+                label: `New fact — ${key}: ${value}`,
+                apply: async () => {
+                    campaignState.facts[key] = value;
+                    saveCampaign();
+                    knowledgeIndex.indexFact(context.orchestrator?.campaign?.campaignCode, key, value).catch(() => {});
+                },
+            });
+        } else {
+            campaignState.facts[key] = value;
+            saveCampaign();
+            knowledgeIndex.indexFact(context.orchestrator?.campaign?.campaignCode, key, value).catch(() => {});
+        }
         output = output.replace(match[0], '');
         factRegex.lastIndex = 0; // see FIXED note above (lookupRegex)
     }
@@ -1925,13 +2001,28 @@ async function processSpecialTags(text, context, senderName = null) {
     const sceneCompleteRegex = /\[SCENE COMPLETE(?:\s+"([^"]*)")?\]/gi;
     while ((match = sceneCompleteRegex.exec(output)) !== null) {
         const notes = match[1] || '';
-        let resultMsg;
-        try {
-            resultMsg = await adventureDirector.handleSceneComplete(context, notes);
-        } catch (e) {
-            resultMsg = `*(Scene completion error: ${e.message})*`;
+        if (isAssistant) {
+            assistantSuggestions.enqueue({
+                kind: 'scene-complete',
+                label: `Advance the scene${notes ? ` — ${notes}` : ''}`,
+                apply: async () => {
+                    try {
+                        return await adventureDirector.handleSceneComplete(context, notes);
+                    } catch (e) {
+                        return `*(Scene completion error: ${e.message})*`;
+                    }
+                },
+            });
+            output = output.replace(match[0], '');
+        } else {
+            let resultMsg;
+            try {
+                resultMsg = await adventureDirector.handleSceneComplete(context, notes);
+            } catch (e) {
+                resultMsg = `*(Scene completion error: ${e.message})*`;
+            }
+            output = output.replace(match[0], resultMsg || '');
         }
-        output = output.replace(match[0], resultMsg || '');
         sceneCompleteRegex.lastIndex = 0; // see FIXED note above (lookupRegex)
     }
 
@@ -1957,27 +2048,38 @@ async function processSpecialTags(text, context, senderName = null) {
         const role = match[2] || 'NPC';
         const motivation = match[3] || '';
         const location = match[4] || undefined; // optional -- see comment above
-        try {
-            await context.apiRequest('POST', ['adventure', 'npc'], { npc: { name, role, motivation, location } });
-        } catch (e) {
-            console.warn(`[NPC CREATE] failed to register "${name}":`, e.message);
+        const registerNpc = async () => {
+            try {
+                await context.apiRequest('POST', ['adventure', 'npc'], { npc: { name, role, motivation, location } });
+            } catch (e) {
+                console.warn(`[NPC CREATE] failed to register "${name}":`, e.message);
+            }
+            // NEW: also drop a token for them on the whiteboard grid, so a
+            // newly-introduced NPC is visible on the map the moment they're
+            // named, not just tracked in text. Best-effort/non-blocking --
+            // failures here shouldn't affect the narration itself.
+            placeOrUpdateToken(context, { name, faction: inferFaction(role, motivation) }).catch(() => {});
+            // Also indexed into Elasticsearch if configured (see
+            // modules/knowledge-index.js) -- this is what lets "who knows
+            // about X?" / "where does Y live?" stay answerable across a long
+            // campaign. `location` is left out of the indexed record
+            // entirely when omitted, rather than defaulting to something
+            // like "unknown" -- an absent field searches differently than
+            // one that says "unknown", and only the former is honest about
+            // "nobody said."
+            knowledgeIndex.indexNpc(context.orchestrator?.campaign?.campaignCode, {
+                name, role, motivation, location, faction: inferFaction(role, motivation), source: 'created'
+            }).catch(() => {});
+        };
+        if (isAssistant) {
+            assistantSuggestions.enqueue({
+                kind: 'npc-create',
+                label: `New NPC — ${name}${role ? ` (${role})` : ''}`,
+                apply: registerNpc,
+            });
+        } else {
+            await registerNpc();
         }
-        // NEW: also drop a token for them on the whiteboard grid, so a
-        // newly-introduced NPC is visible on the map the moment they're
-        // named, not just tracked in text. Best-effort/non-blocking --
-        // failures here shouldn't affect the narration itself.
-        placeOrUpdateToken(context, { name, faction: inferFaction(role, motivation) }).catch(() => {});
-        // Also indexed into Elasticsearch if configured (see
-        // modules/knowledge-index.js) -- this is what lets "who knows
-        // about X?" / "where does Y live?" stay answerable across a long
-        // campaign. `location` is left out of the indexed record
-        // entirely when omitted, rather than defaulting to something
-        // like "unknown" -- an absent field searches differently than
-        // one that says "unknown", and only the former is honest about
-        // "nobody said."
-        knowledgeIndex.indexNpc(context.orchestrator?.campaign?.campaignCode, {
-            name, role, motivation, location, faction: inferFaction(role, motivation), source: 'created'
-        }).catch(() => {});
         output = output.replace(match[0], '');
         npcCreateRegex.lastIndex = 0; // see FIXED note above (lookupRegex)
     }
