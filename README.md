@@ -24,6 +24,12 @@ An extensible, pluggable AI bot that connects to the Fate's Edge WebSocket serve
 - **Live status dashboard** – a local web page (`http://localhost:4141` by default) showing recent
   activity, the loaded adventure, session token usage, and connection state at a glance — see
   "Status Dashboard" below.
+- **AI GM Session Panel** – part of the status dashboard: Story Beats bank, campaign Facts,
+  recent AI "memory" (the model's live conversation window), and Obligation totals per Patron —
+  a GM-facing view of bot state, distinct from the VTT chat itself.
+- **Fuzzy AI tag repair** – normalizes common drift in the model's own `[TAG ...]` syntax (wrong
+  case, spacing around `+`, a dropped closing quote/bracket) before parsing, so a well-intentioned
+  but slightly malformed tag still resolves instead of leaking into chat as literal bracket text.
 - **Leveled logging** – `LOG_LEVEL` keeps noisy background chatter (aggressive-sync ticks, raw
   wire traffic) out of the terminal and dashboard by default; flip to `debug` to see it all.
 - **Session token tracking** – real usage counts from OpenAI/DeepSeek/Ollama where the provider
@@ -228,7 +234,7 @@ object rather than reaching for globals, and each has a matching test file under
 | Module | Responsibility |
 |--------|-----------------|
 | **`gm-orchestrator.js`** | The brain of the bot — integrates every other module, owns campaign state defaults, and drives the scene lifecycle each turn. |
-| **`commands.js`** | Parses `[TAG ...]` markers out of the AI's raw text output (`[ROLL ...]`, `[APPLY ...]`, `[LOOKUP RULE ...]`, `[SET POSITION/DV ...]`, `[TIMER ...]`, `[DRAW ...]`, `[CROWN ...]`, `[NPC CAST/CREATE ...]`, `[SCENE COMPLETE ...]`, `[TOKEN MOVE/REMOVE ...]`, `[ENCOUNTER RESOLVE ...]`, and more) and dispatches each to the module that actually performs it. Also handles `!gm` terminal/chat command dispatch. The single highest-blast-radius file in the bot — regex-based tag parsing silently breaks if the model's output drifts even slightly, so every tag handler here is covered by `tests/modules/commands.test.js`. |
+| **`commands.js`** | Parses `[TAG ...]` markers out of the AI's raw text output (`[ROLL ...]`, `[APPLY ...]`, `[LOOKUP RULE ...]`, `[SET POSITION/DV ...]`, `[TIMER ...]`, `[DRAW ...]`, `[CROWN ...]`, `[NPC CAST/CREATE ...]`, `[SCENE COMPLETE ...]`, `[TOKEN MOVE/REMOVE ...]`, `[ENCOUNTER RESOLVE ...]`, and more) and dispatches each to the module that actually performs it. Also handles `!gm` terminal/chat command dispatch. The single highest-blast-radius file in the bot — regex-based tag parsing silently breaks if the model's output drifts even slightly, so every tag handler here is covered by `tests/modules/commands.test.js`. `repairAITagSyntax()` runs first and repairs common drift (wrong case, spacing around `+`, dropped closing quote/bracket) before any of those regexes see the text. |
 | **`dice.js`** | Fate's Edge dice-pool mechanics: rolling, Position modifiers, the Outcome Matrix (Clean Success / Success with Story Beat / Partial / Miss), Story Beat generation on 1s, Harm/Fatigue application with armor conversion. |
 | **`characters.js`** | In-memory character store for the session — attribute/skill resolution (case-insensitive), delta application (Harm/Fatigue/Boons/Obligation/Corruption/Leash) with clamping at their max values. |
 | **`world-manager.js`** | Loads and indexes world data (regions, factions, patrons, NPCs, spells, wiki entries) from `data/`. `getRegion()` normalizes a display name to its `data/regions/*.json` filename stem (spaces→underscores, lowercased) — this exact lookup has independently broken and been re-fixed several times across this ecosystem (see "Cross-Repo Region Slug Bug" below), so treat any change here with extra care. |
@@ -371,11 +377,15 @@ tests/
 
 A few things worth knowing before adding to this suite:
 
-- **Known gaps, not bugs**: `commands.test.js` documents two `[ROLL ...]` parsing cases that
-  currently do *not* resolve — a space around the `+` in `Attribute + Skill`, and `DV` given as
-  a word (`DV three`) instead of a digit. These are marked with `// KNOWN GAP:` comments rather
-  than silently treated as passing; if you fix the parser to handle either, update the test and
-  drop the marker.
+- **Fuzzy tag repair**: `commands.js`'s `repairAITagSyntax()` runs before every strict tag regex
+  and normalizes the drift patterns real model output actually produces — wrong-case keywords
+  (`[Roll ...]`), stray whitespace around the `+` in a roll pool expression (`Body + Melee`), and
+  a dropped closing quote/`]`. It only touches spans that open with a known tag keyword, so
+  ordinary bracketed prose in the model's narration is left alone.
+- **Known gap, not a bug**: `commands.test.js` still documents one `[ROLL ...]` parsing case that
+  does *not* resolve — `DV` given as a word (`DV three`) instead of a digit. Marked with a
+  `// KNOWN GAP:` comment; if you extend `repairAITagSyntax()` (or the regex) to handle it, update
+  the test and drop the marker.
 - **Regex-desync fix (all `[TAG ...]` handlers in `commands.js`)**: every tag handler used to
   scan `output` with a stateful global regex (`while ((match = someRegex.exec(output)) !== null)`)
   while also reassigning `output` inside the loop body. Once a replacement's length differs from
@@ -445,6 +455,17 @@ The bot starts a small local web dashboard at **http://localhost:4141** (configu
   driver's real API-reported usage where the provider supplies it (OpenAI, DeepSeek, and Ollama's
   non-streaming path all do), falling back to a `~` estimate otherwise.
 - **Party** — synced characters and a one-line Harm/Fatigue status for each.
+- **AI GM Session Panel** — a GM-facing view of bot state, distinct from the VTT chat itself:
+  - **Story Beats Bank** — the current campaign-wide SB total.
+  - **Campaign Facts** — every fact the AI has recorded (`!gm fact <key> <value>` / `[FACT ...]`).
+  - **Recent AI Memory** — the model's actual conversation window (last ~12 turns), plus its
+    running campaign summary once one exists (see "Context Management" below) — literally what
+    the bot currently remembers, not an approximation of it.
+  - **Obligation by Patron** — every synced character's Obligation total, grouped by which Patron
+    it's owed to (characters with no Patron set are grouped under "Unbound").
+
+  Fed by `ai-gm-bot.js`'s `buildStatusSnapshot()`, which reads straight from the orchestrator's
+  existing campaign state — no separate storage to keep in sync.
 
 No extra dependency: it's a plain `http` server pushing updates over Server-Sent Events. Disable
 it with `STATUS_SERVER=false` if you don't want it running (e.g. a locked-down headless box).

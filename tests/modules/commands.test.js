@@ -95,17 +95,15 @@ test('processSpecialTags - ROLL well-formed with +', async () => {
   assert.match(result, /Controlled/); // position modifier
 });
 
-test('processSpecialTags - ROLL with spaces around + (KNOWN GAP)', async () => {
+test('processSpecialTags - ROLL with spaces around + (fixed by fuzzy tag repair)', async () => {
   const context = buildMockContext();
   const input = '[ROLL "Levi" Body + Melee DV 3 Controlled]';
-  // Current implementation fails to parse this (the regex is too strict)
-  // We expect it to NOT resolve – we document this as a known gap.
+  // FIXED (was a KNOWN GAP): repairAITagSyntax() now runs before the strict
+  // rollRegex and squeezes whitespace out of just the '+' joins in a roll
+  // pool expression, so "Body + Melee" resolves exactly like "Body+Melee".
   const result = await processSpecialTags(input, context, 'Tester');
-  // The tag should remain unchanged or be replaced with an error message.
-  // The current code: if parsing fails, it returns the original tag.
-  assert.strictEqual(result, input);
-  // KNOWN GAP: The parser does not handle spaces around the '+'. 
-  // If we later fix the regex, this test should be updated to expect resolution.
+  assert.match(result, /Levi<\/strong> rolls/);
+  assert.doesNotMatch(result, /\[ROLL/);
 });
 
 test('processSpecialTags - ROLL with DV as word "three" (KNOWN GAP)', async () => {

@@ -5,6 +5,13 @@ Format loosely follows [Keep a Changelog](https://keepachangelog.com/), versions
 
 ## [4.9.1] - 2026-08-13
 
+### Added
+- **AI GM Session Panel**: the status dashboard (`STATUS_PORT`, default 4141 — see `modules/status-server.js`) now has a GM-facing panel distinct from the VTT chat, showing the Story Beats bank, campaign Facts the AI has recorded, a live "Recent AI Memory" feed (the model's actual conversation window, plus its running summary once one exists), and Obligation totals grouped by Patron. Fed by `ai-gm-bot.js`'s `buildStatusSnapshot()` from the orchestrator's existing campaign state — no new storage, just a window onto what the bot already tracks.
+- **Fuzzy tag repair** (`modules/commands.js`): `repairAITagSyntax()` runs before the strict per-tag regexes and normalizes common AI drift — wrong-case keywords (`[Roll ...]` → `[ROLL ...]`), stray whitespace around `+` in a roll pool expression (`Wits + Stealth` → `Wits+Stealth`), and a dropped closing quote/`]`. Previously any of these caused a tag to silently fail to match and leak into chat as literal unresolved bracket text.
+
+### Docs
+- README/CHANGELOG pass covering the two additions above and the status dashboard's new panel.
+
 ### Other
 - Updated to add more information in the server status panel.
 - Updated the package-lock.json file
