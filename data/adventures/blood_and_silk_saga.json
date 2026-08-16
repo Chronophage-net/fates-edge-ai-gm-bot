@@ -19,11 +19,29 @@
       "class": "III",
       "category": "humanoid",
       "description": "A cruel bandit leader with a personal code of honour. He is a veteran fighter with scars that tell stories of countless battles. His sword is well-maintained and deadly, and his eyes burn with the fury of a man who has lost everything.",
-      "stats": { "Body": 4, "Melee": 4, "Spirit": 3, "Command": 2, "hp": 40 },
+      "stats": {
+        "Body": 4,
+        "Melee": 4,
+        "Spirit": 3,
+        "Command": 2,
+        "hp": 40
+      },
       "sb_spends": [
-        { "cost": 1, "name": "Intimidating Presence", "effect": "Opponents start Desperate (generates 1 SB)." },
-        { "cost": 2, "name": "Tactical Awareness", "effect": "Redirect an attack to a minion (once per round)." },
-        { "cost": 2, "name": "Berserker Rage", "effect": "When wounded to Harm 2, gains +1 die to all attacks but loses defensive options." }
+        {
+          "cost": 1,
+          "name": "Intimidating Presence",
+          "effect": "Opponents start Desperate (generates 1 SB)."
+        },
+        {
+          "cost": 2,
+          "name": "Tactical Awareness",
+          "effect": "Redirect an attack to a minion (once per round)."
+        },
+        {
+          "cost": 2,
+          "name": "Berserker Rage",
+          "effect": "When wounded to Harm 2, gains +1 die to all attacks but loses defensive options."
+        }
       ],
       "lore": "A faded brand on his forearm marks him as a deserter from the Vhasian army – a secret he kills to protect."
     },
@@ -34,9 +52,18 @@
       "class": "II",
       "category": "humanoid",
       "description": "A common thug in Garrick's gang. They fight with crude weapons and intimidation.",
-      "stats": { "Body": 2, "Melee": 2, "Athletics": 1, "hp": 20 },
+      "stats": {
+        "Body": 2,
+        "Melee": 2,
+        "Athletics": 1,
+        "hp": 20
+      },
       "sb_spends": [
-        { "cost": 1, "name": "Rough Tackle", "effect": "Knock a target Prone." }
+        {
+          "cost": 1,
+          "name": "Rough Tackle",
+          "effect": "Knock a target Prone."
+        }
       ]
     },
     {
@@ -46,7 +73,12 @@
       "class": "II",
       "category": "humanoid",
       "description": "A mid-level Aeler bureaucrat under audit. He is desperate to show revenue and save face.",
-      "stats": { "Wits": 3, "Lore": 2, "Command": 2, "hp": 15 },
+      "stats": {
+        "Wits": 3,
+        "Lore": 2,
+        "Command": 2,
+        "hp": 15
+      },
       "sb_spends": []
     },
     {
@@ -56,10 +88,23 @@
       "class": "III",
       "category": "humanoid",
       "description": "A pragmatic Black Banner mercenary captain who sells steel to whoever can pay. He is haunted by a promise made to a dying legionary.",
-      "stats": { "Body": 3, "Melee": 3, "Command": 2, "hp": 35 },
+      "stats": {
+        "Body": 3,
+        "Melee": 3,
+        "Command": 2,
+        "hp": 35
+      },
       "sb_spends": [
-        { "cost": 1, "name": "Weathered Soldier", "effect": "Ignore one point of Fatigue for the scene." },
-        { "cost": 2, "name": "Call in Favours", "effect": "Summon a squad of mercenaries (Cap 2) to assist." }
+        {
+          "cost": 1,
+          "name": "Weathered Soldier",
+          "effect": "Ignore one point of Fatigue for the scene."
+        },
+        {
+          "cost": 2,
+          "name": "Call in Favours",
+          "effect": "Summon a squad of mercenaries (Cap 2) to assist."
+        }
       ],
       "lore": "He carries Varus's badge of rank and owes a debt to a smuggler named Peyton."
     },
@@ -70,10 +115,23 @@
       "class": "III",
       "category": "humanoid",
       "description": "The proud and grieving chieftain of the Ykrul Gray Ash clan. She respects those who keep their word.",
-      "stats": { "Body": 3, "Melee": 3, "Command": 2, "hp": 30 },
+      "stats": {
+        "Body": 3,
+        "Melee": 3,
+        "Command": 2,
+        "hp": 30
+      },
       "sb_spends": [
-        { "cost": 1, "name": "Hunting Cry", "effect": "Allies gain +1 die on their next attack." },
-        { "cost": 2, "name": "Steppe Tactics", "effect": "The party gains Dominant Position for the next exchange." }
+        {
+          "cost": 1,
+          "name": "Hunting Cry",
+          "effect": "Allies gain +1 die on their next attack."
+        },
+        {
+          "cost": 2,
+          "name": "Steppe Tactics",
+          "effect": "The party gains Dominant Position for the next exchange."
+        }
       ],
       "secret": "Her daughter Yelü is the child of a legionary who defected."
     },
@@ -84,10 +142,23 @@
       "class": "II",
       "category": "humanoid",
       "description": "A Sidhi rogue with mismatched eyes and a nervous laugh. She works for Rusk, not out of loyalty but desperation.",
-      "stats": { "Wits": 3, "Stealth": 3, "Subterfuge": 2, "hp": 18 },
+      "stats": {
+        "Wits": 3,
+        "Stealth": 3,
+        "Subterfuge": 2,
+        "hp": 18
+      },
       "sb_spends": [
-        { "cost": 1, "name": "Light Fingers", "effect": "Steal a weapon mid‑combat (Wits+Subterfuge vs target's Wits+Notice)." },
-        { "cost": 2, "name": "Always Another Exit", "effect": "Escape a scene without a roll (once per session)." }
+        {
+          "cost": 1,
+          "name": "Light Fingers",
+          "effect": "Steal a weapon mid‑combat (Wits+Subterfuge vs target's Wits+Notice)."
+        },
+        {
+          "cost": 2,
+          "name": "Always Another Exit",
+          "effect": "Escape a scene without a roll (once per session)."
+        }
       ],
       "secret": "She was an apprentice of the Silk Coin who ran when the Velvet Court came."
     },
@@ -98,10 +169,23 @@
       "class": "IV",
       "category": "humanoid",
       "description": "Commander of Castra Ferrum, a wiry, scarred veteran with a voice like a parade ground. He genuinely believes the seal will bring peace – and consolidate his power.",
-      "stats": { "Body": 3, "Command": 3, "Spirit": 3, "hp": 45 },
+      "stats": {
+        "Body": 3,
+        "Command": 3,
+        "Spirit": 3,
+        "hp": 45
+      },
       "sb_spends": [
-        { "cost": 1, "name": "Legionary Discipline", "effect": "Allies gain +1 die to resist Fear." },
-        { "cost": 3, "name": "Invoke the Curse", "effect": "Target must test Resolve or gain Varus's Whispers ( –1 die to resist persuasion)." }
+        {
+          "cost": 1,
+          "name": "Legionary Discipline",
+          "effect": "Allies gain +1 die to resist Fear."
+        },
+        {
+          "cost": 3,
+          "name": "Invoke the Curse",
+          "effect": "Target must test Resolve or gain Varus's Whispers ( –1 die to resist persuasion)."
+        }
       ],
       "secret": "He leads a cult of oathbreakers who worship Varus's ghost. His younger brother died in a Ykrul raid."
     },
@@ -112,10 +196,23 @@
       "class": "III",
       "category": "humanoid",
       "description": "A thin, aging woman with ink‑stained fingers. Her left eye is a polished silver disc – a magical lens that reveals lies.",
-      "stats": { "Wits": 4, "Lore": 3, "Arcana": 2, "hp": 20 },
+      "stats": {
+        "Wits": 4,
+        "Lore": 3,
+        "Arcana": 2,
+        "hp": 20
+      },
       "sb_spends": [
-        { "cost": 1, "name": "Silver Eye", "effect": "Automatically detect Deception of DV 4 or less." },
-        { "cost": 2, "name": "Archive Secrets", "effect": "Gain +2 dice on Lore rolls for the rest of the scene." }
+        {
+          "cost": 1,
+          "name": "Silver Eye",
+          "effect": "Automatically detect Deception of DV 4 or less."
+        },
+        {
+          "cost": 2,
+          "name": "Archive Secrets",
+          "effect": "Gain +2 dice on Lore rolls for the rest of the scene."
+        }
       ],
       "secret": "She is dying of a slow fever; destroying the seal is her last act."
     },
@@ -126,10 +223,22 @@
       "class": "V",
       "category": "undead",
       "description": "The betrayed commander of the Ninth Hispania Legion, now a vengeful spirit bound to the Iron Seal.",
-      "stats": { "Spirit": 4, "Resolve": 4, "hp": 50 },
+      "stats": {
+        "Spirit": 4,
+        "Resolve": 4,
+        "hp": 50
+      },
       "sb_spends": [
-        { "cost": 2, "name": "Cry of Betrayal", "effect": "All in Near range must test Spirit or be Shaken ( –1 die)." },
-        { "cost": 3, "name": "The Ninth Clause", "effect": "If the ghost speaks his own name, the curse ends." }
+        {
+          "cost": 2,
+          "name": "Cry of Betrayal",
+          "effect": "All in Near range must test Spirit or be Shaken ( –1 die)."
+        },
+        {
+          "cost": 3,
+          "name": "The Ninth Clause",
+          "effect": "If the ghost speaks his own name, the curse ends."
+        }
       ]
     },
     {
@@ -139,10 +248,23 @@
       "class": "IV",
       "category": "humanoid",
       "description": "A masked enforcer of the Velvet Court, armed with a poisoned stiletto. She is the Court's most deadly assassin.",
-      "stats": { "Body": 3, "Melee": 4, "Stealth": 4, "hp": 30 },
+      "stats": {
+        "Body": 3,
+        "Melee": 4,
+        "Stealth": 4,
+        "hp": 30
+      },
       "sb_spends": [
-        { "cost": 1, "name": "Poisoned Blade", "effect": "Target tests Resolve or gains 1 Fatigue." },
-        { "cost": 2, "name": "Shadow Meld", "effect": "Become invisible until you attack." }
+        {
+          "cost": 1,
+          "name": "Poisoned Blade",
+          "effect": "Target tests Resolve or gains 1 Fatigue."
+        },
+        {
+          "cost": 2,
+          "name": "Shadow Meld",
+          "effect": "Become invisible until you attack."
+        }
       ]
     },
     {
@@ -152,9 +274,18 @@
       "class": "II",
       "category": "humanoid",
       "description": "A squad of professional sellswords. They fight as a unit.",
-      "stats": { "Body": 3, "Melee": 2, "Athletics": 2, "hp": 25 },
+      "stats": {
+        "Body": 3,
+        "Melee": 2,
+        "Athletics": 2,
+        "hp": 25
+      },
       "sb_spends": [
-        { "cost": 1, "name": "Coordinated Strike", "effect": "Gain +1 die on all attacks for the round." }
+        {
+          "cost": 1,
+          "name": "Coordinated Strike",
+          "effect": "Gain +1 die on all attacks for the round."
+        }
       ]
     }
   ],
@@ -169,7 +300,12 @@
           "title": "The Velvet Court's Gambit",
           "description": "Madam Serafine has declared the Silk Coin a threat to her operations. The guildhall is surrounded. Old Kes urges the characters to flee while they still can. The players must decide: stand and fight for a doomed cause, or run and carry the Silk Coin's legacy into exile.",
           "timers": [
-            { "name": "The Court's Net", "segments": 4, "current": 0, "description": "How quickly the Velvet Court closes in" }
+            {
+              "name": "The Court's Net",
+              "segments": 4,
+              "current": 0,
+              "description": "How quickly the Velvet Court closes in"
+            }
           ],
           "encounters": [
             {
@@ -213,8 +349,18 @@
           "title": "Arrival at Millhaven",
           "description": "The party arrives at Millhaven to find a village under siege. Elder Thorne explains the Ursillo Gang's demands and the villagers' dwindling options. The party must decide: help the village or move on?",
           "timers": [
-            { "name": "Village Safety", "segments": 6, "current": 0, "description": "How close the village is to being overrun" },
-            { "name": "Ursillo Threat", "segments": 8, "current": 0, "description": "How much the Ursillo Gang is organizing against the village" }
+            {
+              "name": "Village Safety",
+              "segments": 6,
+              "current": 0,
+              "description": "How close the village is to being overrun"
+            },
+            {
+              "name": "Ursillo Threat",
+              "segments": 8,
+              "current": 0,
+              "description": "How much the Ursillo Gang is organizing against the village"
+            }
           ],
           "encounters": [
             {
@@ -235,7 +381,11 @@
           "title": "The Ursillo Gang's Ultimatum",
           "description": "Garrick Ursillo and his men arrive to collect 'protection money.' The villagers have nothing left to give. The party must choose: pay the gang, fight them, or negotiate.",
           "timers": [
-            { "name": "Ursillo Threat", "segments": 8, "current": 0 }
+            {
+              "name": "Ursillo Threat",
+              "segments": 8,
+              "current": 0
+            }
           ],
           "encounters": [
             {
@@ -276,8 +426,18 @@
           "title": "The Final Stand",
           "description": "Garrick Ursillo has gathered all his forces for one final assault on Millhaven. The battle will decide the village's fate. The Ursillo Morale Timer and Village Defense Timer will determine the outcome.",
           "timers": [
-            { "name": "Village Defense", "segments": 6, "current": 0, "description": "How well the village holds out" },
-            { "name": "Ursillo Morale", "segments": 8, "current": 0, "description": "How close the Ursillo are to breaking and running" }
+            {
+              "name": "Village Defense",
+              "segments": 6,
+              "current": 0,
+              "description": "How well the village holds out"
+            },
+            {
+              "name": "Ursillo Morale",
+              "segments": 8,
+              "current": 0,
+              "description": "How close the Ursillo are to breaking and running"
+            }
           ],
           "encounters": [
             {
@@ -343,7 +503,12 @@
           "title": "Arrival at the Valvano Ford",
           "description": "The ford is closed. A silence furlong seals the east bank. A keystone clause locks the bridge. A Black Banner mercenary counts coin while three factions refuse to move. The party must break the deadlock.",
           "timers": [
-            { "name": "Ford Standoff", "segments": 8, "current": 0, "description": "How long until the standoff collapses" }
+            {
+              "name": "Ford Standoff",
+              "segments": 8,
+              "current": 0,
+              "description": "How long until the standoff collapses"
+            }
           ],
           "encounters": [
             {
@@ -364,7 +529,11 @@
           "title": "The Three Promises",
           "description": "The party must meet each faction and uncover their hidden needs. The Ykrul demand honor restoration. The Aeler need a face-saving audit. The Vilikari need to hide a salt cache. The Black Banner needs payment. Mediation will require leveraging these needs against each other.",
           "timers": [
-            { "name": "Ford Standoff", "segments": 8, "current": 0 }
+            {
+              "name": "Ford Standoff",
+              "segments": 8,
+              "current": 0
+            }
           ],
           "encounters": [
             {
@@ -408,7 +577,11 @@
           "title": "The Mediation",
           "description": "The moot is held. The party must bring the factions to agreement. Every success cools the standoff; every failure advances the timer. If the timer fills, the standoff collapses into violence.",
           "timers": [
-            { "name": "Ford Standoff", "segments": 8, "current": 0 }
+            {
+              "name": "Ford Standoff",
+              "segments": 8,
+              "current": 0
+            }
           ],
           "encounters": [
             {
@@ -444,7 +617,12 @@
           "title": "Tema's Warehouse - The Job",
           "description": "Tema offers a fortune in silver to retrieve the Iron Seal of Varus from the Prefect's tribunal. She wants to give it to Khatun Sarnai as a peace offering, opening the steppe trade route. The party must choose: accept the job, or find another path.",
           "timers": [
-            { "name": "Heist Timer", "segments": 6, "current": 0, "description": "When full, Quick Lena steals the seal first" }
+            {
+              "name": "Heist Timer",
+              "segments": 6,
+              "current": 0,
+              "description": "When full, Quick Lena steals the seal first"
+            }
           ],
           "encounters": [
             {
@@ -465,9 +643,23 @@
           "title": "The Bronze Gate - A Tour of Factions",
           "description": "The party must navigate the politics of Castra Ferrum. Prefect Marcellus commands the tribunal. Censor Cassia watches from the archives. Khatun Sarnai camps outside the walls. Captain Rusk sells steel to whoever can pay. Quick Lena is already casing the tribunal.",
           "timers": [
-            { "name": "Heist Timer", "segments": 6, "current": 0 },
-            { "name": "Watch Patrol", "segments": 4, "current": 0, "description": "Failed Stealth ticks this timer" },
-            { "name": "Cult of Varus", "segments": 8, "current": 0, "description": "Secret cult of oathbreakers" }
+            {
+              "name": "Heist Timer",
+              "segments": 6,
+              "current": 0
+            },
+            {
+              "name": "Watch Patrol",
+              "segments": 4,
+              "current": 0,
+              "description": "Failed Stealth ticks this timer"
+            },
+            {
+              "name": "Cult of Varus",
+              "segments": 8,
+              "current": 0,
+              "description": "Secret cult of oathbreakers"
+            }
           ],
           "encounters": [
             {
@@ -511,8 +703,16 @@
           "title": "The Tribunal Heist",
           "description": "The party must infiltrate the Prefect's tribunal and steal the Iron Seal of Varus. Quick Lena is already inside, working for Captain Rusk. The Watch Patrol timer advances on failed Stealth rolls. The Heist Timer advances each downtime scene.",
           "timers": [
-            { "name": "Heist Timer", "segments": 6, "current": 0 },
-            { "name": "Watch Patrol", "segments": 4, "current": 0 }
+            {
+              "name": "Heist Timer",
+              "segments": 6,
+              "current": 0
+            },
+            {
+              "name": "Watch Patrol",
+              "segments": 4,
+              "current": 0
+            }
           ],
           "encounters": [
             {
@@ -691,55 +891,97 @@
       "id": "loc-silkstrand",
       "name": "Silkstrand",
       "description": "A city of bridges and canals where favours are measured in threads. The Matron rules, but the Ragman, Tide Father, and Silk Mother hold the underworld. The ninth bridge leads to the Sunken Quarter.",
-      "tags": ["city", "trade", "canals", "velvet-court"]
+      "tags": [
+        "city",
+        "trade",
+        "canals",
+        "velvet-court"
+      ]
     },
     {
       "id": "loc-millhaven",
       "name": "Millhaven",
       "description": "A small farming community in the Acasian marches. The village sits in a fertile valley surrounded by rolling hills, its thatched-roof cottages clustered around a central square where the weekly market is held.",
-      "tags": ["village", "farm", "acasia"]
+      "tags": [
+        "village",
+        "farm",
+        "acasia"
+      ]
     },
     {
       "id": "loc-old-imperial-bridge",
       "name": "The Old Imperial Bridge",
       "description": "A bridge over the millstream with nine arches. The locals count only eight. The ninth arch is there, but they will not look at it. The site of a broken promise - a tax collector swore an oath on his child's life and then defaulted.",
-      "tags": ["bridge", "threshold", "curse"]
+      "tags": [
+        "bridge",
+        "threshold",
+        "curse"
+      ]
     },
     {
       "id": "loc-pale-causeway",
       "name": "The Pale Causeway",
       "description": "The last high road that survives the spring thaws in Acasia. The causeway is made of bones - the bones of the workers who built it. Crossing the Causeway at dusk forces a Resolve test (DV 4).",
-      "tags": ["road", "bones", "curse"]
+      "tags": [
+        "road",
+        "bones",
+        "curse"
+      ]
     },
     {
       "id": "loc-valvano-ford",
       "name": "The Valvano Ford",
       "description": "A contested crossing where Ykrul herders, Aeler toll-keepers, and Vilikari merchants stare at one another across a span of gray stone. The bridge has nine arches. The locals count only eight.",
-      "tags": ["ford", "bridge", "standoff", "acasia", "ecktoria", "ykrul"]
+      "tags": [
+        "ford",
+        "bridge",
+        "standoff",
+        "acasia",
+        "ecktoria",
+        "ykrul"
+      ]
     },
     {
       "id": "loc-castra-ferrum",
       "name": "Castra Ferrum",
       "description": "A walled city built atop a Ykrul burial ground. The Bronze Gate is the only pass through the mountains for three weeks' march. Ecktorian officers, tax farmers, and priest-magistrates hold sway through a web of patronage.",
-      "tags": ["city", "ecktoria", "military", "bronze-gate"]
+      "tags": [
+        "city",
+        "ecktoria",
+        "military",
+        "bronze-gate"
+      ]
     },
     {
       "id": "loc-bronze-gate",
       "name": "The Bronze Gate",
       "description": "A portcullis of bronze-banded iron, etched with the names of every legionary who died defending it. A Censor's clerk keeps the Ledger of Blood - a book recording every soul who passes. The Ykrul call it the Weeping Gate.",
-      "tags": ["gate", "threshold", "ecktoria", "legion"]
+      "tags": [
+        "gate",
+        "threshold",
+        "ecktoria",
+        "legion"
+      ]
     },
     {
       "id": "loc-praetorium",
       "name": "The Praetorium",
       "description": "The fortified hall where Prefect Marcellus holds his tribunal. Inside, the Iron Seal of Varus rests in a lead-lined chest on an altar to Mars.",
-      "tags": ["tribunal", "military", "ecktoria"]
+      "tags": [
+        "tribunal",
+        "military",
+        "ecktoria"
+      ]
     },
     {
       "id": "loc-archive",
       "name": "The Archive",
       "description": "A labyrinth of scrolls and curse tablets awaiting destruction. Censor Cassia's office is filled with the weight of history and secrets.",
-      "tags": ["archive", "scrolls", "censor"]
+      "tags": [
+        "archive",
+        "scrolls",
+        "censor"
+      ]
     }
   ],
   "factions": [
@@ -819,7 +1061,6 @@
     }
   ],
   "notes": "The Blood and Silk saga is a complete campaign arc following exiles from Silkstrand as they defend Millhaven, mediate at the Valvano Ford, and heist the Iron Seal of Varus at the Bronze Gate. The Curse of Acasia is a persistent threat throughout. Key themes: redemption, community, second chances, the weight of exile, and the power of belonging.",
-
   "_gmhints": {
     "pacing": {
       "prequel": "This is a flashback prologue. The Velvet Court is a looming threat, but its deeper structure (the Silken Blade, the Court's long-term plans) is not revealed yet. Old Kes dies—his sacrifice should feel personal and immediate, not mythologized. The players' choices here create their Legacy Tokens; emphasize consequence over exposition. The ninth bridge (and its curse) can be hinted at but not explained.",
@@ -852,12 +1093,233 @@
       "Quick Lena's Silk Coin past — she may recognize the players' style, but she will not volunteer her history"
     ]
   },
-
   "currentAct": 0,
   "currentScene": 0,
   "startedAt": null,
   "completedAt": null,
   "status": "planned",
   "createdAt": "2026-07-28T00:00:00.000Z",
-  "updatedAt": "2026-07-28T00:00:00.000Z"
+  "updatedAt": "2026-07-28T00:00:00.000Z",
+  "knowledge": [
+    {
+      "id": "elder-thorne-secret",
+      "subject": "npc-elder-thorne",
+      "gm": "His secret about the old Imperial bridge is a hook, not a reveal. He may share his ritual (leaving milk on the bridge) as a strange local custom, but the full story of the broken promise should only emerge if players investigate the bridge directly or earn his complete trust.",
+      "player": "Elder Thorne plays the part everyone assumes: Village Leader of Millhaven. Nothing about their manner invites a second look.",
+      "revealed": false,
+      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "tags": [
+        "npc-secret"
+      ]
+    },
+    {
+      "id": "mira-baker-secret",
+      "subject": "npc-mira-baker",
+      "gm": "Her grandmother's knowledge of the vanished tax collector is a clue that leads to the bridge's curse. This should surface in Act I if players ask about the village's history, but the connection to the Curse of Acasia is an Act II/III realization.",
+      "player": "Mira the Baker plays the part everyone assumes: Village Representative. Nothing about their manner invites a second look.",
+      "revealed": false,
+      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "tags": [
+        "npc-secret"
+      ]
+    },
+    {
+      "id": "tema-secret",
+      "subject": "npc-tema",
+      "gm": "Her desperation is visible from Act II onward, but her ruin-level investment should be revealed gradually. In Act II, she is a hopeful merchant. In Act III, her urgency reveals the full stakes—if the seal is not recovered, she loses everything.",
+      "player": "Tema plays the part everyone assumes: Vilikari Merchant. Nothing about their manner invites a second look.",
+      "revealed": false,
+      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "tags": [
+        "npc-secret"
+      ]
+    },
+    {
+      "id": "old-kes-secret",
+      "subject": "npc-old-kes",
+      "gm": "He is already deceased by the start of the campaign. His legacy is carried by the players. His secret (the principles of the Silk Coin) is the party's inheritance—it defines their moral compass, not a plot twist.",
+      "player": "Old Kes plays the part everyone assumes: Silk Coin Fence (Deceased). Nothing about their manner invites a second look.",
+      "revealed": false,
+      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "tags": [
+        "npc-secret"
+      ]
+    },
+    {
+      "id": "mareth-secret",
+      "subject": "npc-mareth",
+      "gm": "Their past as a Runekeeper of the Traveler is a private burden. They may reveal it slowly over the campaign, especially if the party encounters way-routes or gets lost. It is not a secret to guard tightly, but it should be earned through trust and shared hardship.",
+      "player": "Mareth plays the part everyone assumes: Exiled Scholar of Thepyrgos. Nothing about their manner invites a second look.",
+      "revealed": false,
+      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "tags": [
+        "npc-secret"
+      ]
+    },
+    {
+      "id": "the-iron-seal-of-varus-and",
+      "subject": "plot",
+      "gm": "The Iron Seal of Varus and its curse mechanics (Act III only)",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "the-ninth-clause-the-ghost-s-true",
+      "subject": "plot",
+      "gm": "The Ninth Clause (the ghost's true name ending the curse) — this is a late Act III discovery",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "prefect-marcellus-s-cult-of-oathbreakers",
+      "subject": "plot",
+      "gm": "Prefect Marcellus's cult of oathbreakers",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "censor-cassia-s-terminal-illness",
+      "subject": "plot",
+      "gm": "Censor Cassia's terminal illness",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "captain-rusk-s-possession-of-varus-s-badge",
+      "subject": "plot",
+      "gm": "Captain Rusk's possession of Varus's badge of rank",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "khatun-sarnai-s-daughter-yel-is-a",
+      "subject": "plot",
+      "gm": "Khatun Sarnai's daughter Yelü is a legionary's child",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "the-full-mechanics-of-the-curse",
+      "subject": "plot",
+      "gm": "The full mechanics of the Curse of Acasia and The Hollow's Attention timers — hint at the curse as a folk belief, not a mechanical system",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "the-ninth-arch-of-any-bridge",
+      "subject": "plot",
+      "gm": "The ninth arch of any bridge is the site of a broken promise — this is a recurring motif; mention it as superstition early, but do not explain its deeper magical significance until Act II or III",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "garrick-ursillo-s-vhasian-army-brand-it-s",
+      "subject": "plot",
+      "gm": "Garrick Ursillo's Vhasian army brand — it's a visible scar if players look closely, but its meaning is a discovery, not a first-meeting detail",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "quick-lena-s-silk-coin-past-she",
+      "subject": "plot",
+      "gm": "Quick Lena's Silk Coin past — she may recognize the players' style, but she will not volunteer her history",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "captain-rusk-secret",
+      "subject": "npc-captain-rusk",
+      "gm": "His debt to the smuggler Peyton is a pragmatic detail, not a plot centerpiece. It can surface in Act II during negotiation. His carrying of Varus's badge of rank is a major Act III reveal—do not mention it before the heist. It connects him to the Ninth Legion's fall.",
+      "player": "Captain Rusk plays the part everyone assumes: Black Banner mercenary captain who sells steel to whoever can pay. Nothing about their manner invites a second look.",
+      "revealed": false,
+      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "tags": [
+        "npc-secret"
+      ]
+    },
+    {
+      "id": "khatun-sarnai-secret",
+      "subject": "npc-khatun-sarnai",
+      "gm": "Her daughter Yelü's parentage is a delicate secret. Sarnai will not volunteer it. If the party earns her trust (e.g., through the Act II mediation or an Act III horse race), she may reveal it privately. This is a moment of vulnerability, not a casual conversation.",
+      "player": "Khatun Sarnai plays the part everyone assumes: Proud and grieving chieftain of the Ykrul Gray Ash clan. Nothing about their manner invites a second look.",
+      "revealed": false,
+      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "tags": [
+        "npc-secret"
+      ]
+    },
+    {
+      "id": "quick-lena-secret",
+      "subject": "npc-quick-lena",
+      "gm": "Her past as a Silk Coin apprentice is a sympathetic detail that can surface during the heist, especially if the party recognizes her skills or shares their own exile stories. It creates a potential alliance—or a tragic parallel if they become rivals.",
+      "player": "Quick Lena plays the part everyone assumes: Sidhi rogue working for Captain Rusk. Nothing about their manner invites a second look.",
+      "revealed": false,
+      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "tags": [
+        "npc-secret"
+      ]
+    },
+    {
+      "id": "prefect-marcellus-secret",
+      "subject": "npc-prefect-marcellus",
+      "gm": "His cult of oathbreakers is a hard Act III reveal. In Act II, he is a distant rumor. In Act III Scene 2, he appears as a commanding, pragmatic officer—perhaps even likeable. Only during the heist or the curse-ending should his corruption become undeniable. His brother's death in a Ykrul raid explains his hatred, but that is a sympathetic detail, not a justification.",
+      "player": "Prefect Gaius Marcellus plays the part everyone assumes: Commander of Castra Ferrum. Nothing about their manner invites a second look.",
+      "revealed": false,
+      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "tags": [
+        "npc-secret"
+      ]
+    },
+    {
+      "id": "censor-cassia-secret",
+      "subject": "npc-censor-cassia",
+      "gm": "Her fatal illness is an Act III revelation that justifies her dangerous counter-offer. She is dying and has nothing to lose. Do not hint at this in Acts I-II—she is merely a diligent archivist until the party earns her trust or breaks into the Archive.",
+      "player": "Censor Cassia plays the part everyone assumes: Archivist of Castra Ferrum with a lie-detecting silver eye. Nothing about their manner invites a second look.",
+      "revealed": false,
+      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "tags": [
+        "npc-secret"
+      ]
+    }
+  ]
 }

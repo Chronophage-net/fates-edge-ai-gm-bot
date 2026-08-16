@@ -18,11 +18,28 @@
       "class": "V",
       "category": "fae",
       "description": "The spirit of the dark, wet wood. Patient, territorial, and cruel in the way of a snare: he does not hate you, but he will not let you go. His domain is the Thornwood, a shifting forest that appears where alders grow in circles.",
-      "stats": { "Spirit": 5, "Presence": 4, "Resolve": 5, "hp": 50 },
+      "stats": {
+        "Spirit": 5,
+        "Presence": 4,
+        "Resolve": 5,
+        "hp": 50
+      },
       "sb_spends": [
-        { "cost": 2, "name": "Root Grasp", "effect": "Target is Grappled (Controlled Position to escape)." },
-        { "cost": 3, "name": "The King's Bargain", "effect": "Target must accept a geas or take Harm 3 (Mental)." },
-        { "cost": 4, "name": "Thornwood Manifestation", "effect": "The forest shifts; all navigation rolls are Desperate for the scene." }
+        {
+          "cost": 2,
+          "name": "Root Grasp",
+          "effect": "Target is Grappled (Controlled Position to escape)."
+        },
+        {
+          "cost": 3,
+          "name": "The King's Bargain",
+          "effect": "Target must accept a geas or take Harm 3 (Mental)."
+        },
+        {
+          "cost": 4,
+          "name": "Thornwood Manifestation",
+          "effect": "The forest shifts; all navigation rolls are Desperate for the scene."
+        }
       ],
       "weakness": "Running water. The Alder King cannot cross a stream or river that flows toward the sea."
     },
@@ -33,11 +50,28 @@
       "class": "V",
       "category": "fae",
       "description": "The hag of crossroads and hedgerows. She offers exactly what you need — for a price you will not understand until the hazel nuts have fallen thrice. Her domain is the Hedge, a living labyrinth of thorn and hazel.",
-      "stats": { "Wits": 5, "Presence": 5, "Sway": 5, "hp": 40 },
+      "stats": {
+        "Wits": 5,
+        "Presence": 5,
+        "Sway": 5,
+        "hp": 40
+      },
       "sb_spends": [
-        { "cost": 1, "name": "Hedge Debt", "effect": "Target owes a debt to the Hazel Queen. Mark 1 Obligation." },
-        { "cost": 2, "name": "Crossroads Choice", "effect": "Target must choose between two bad outcomes. The Queen will honor the choice." },
-        { "cost": 3, "name": "The Queen's Price", "effect": "Target loses a memory (GM chooses). The Queen gains 1 Boon." }
+        {
+          "cost": 1,
+          "name": "Hedge Debt",
+          "effect": "Target owes a debt to the Hazel Queen. Mark 1 Obligation."
+        },
+        {
+          "cost": 2,
+          "name": "Crossroads Choice",
+          "effect": "Target must choose between two bad outcomes. The Queen will honor the choice."
+        },
+        {
+          "cost": 3,
+          "name": "The Queen's Price",
+          "effect": "Target loses a memory (GM chooses). The Queen gains 1 Boon."
+        }
       ],
       "weakness": "Salt. The Hazel Queen cannot cross a line of salt. She will not bargain with someone who carries a handful of salt."
     },
@@ -48,11 +82,28 @@
       "class": "IV",
       "category": "fae",
       "description": "The Silent Tracker. He serves neither king nor queen — he serves the hunt itself. He appears as a tall figure in weathered leather, his face hidden by a hood of stitched leaves. His hounds are the ghosts of wolves.",
-      "stats": { "Body": 4, "Wits": 4, "Stealth": 5, "hp": 35 },
+      "stats": {
+        "Body": 4,
+        "Wits": 4,
+        "Stealth": 5,
+        "hp": 35
+      },
       "sb_spends": [
-        { "cost": 2, "name": "The Hunt Begins", "effect": "Advance the Hunt Timer by 2 segments." },
-        { "cost": 3, "name": "Hound Attack", "effect": "A ghost-wolf attacks (Cap 3, Harm 2)." },
-        { "cost": 4, "name": "The Huntsman's Choice", "effect": "Target must sacrifice a memory or be caught (the Hunt Timer fills immediately)." }
+        {
+          "cost": 2,
+          "name": "The Hunt Begins",
+          "effect": "Advance the Hunt Timer by 2 segments."
+        },
+        {
+          "cost": 3,
+          "name": "Hound Attack",
+          "effect": "A ghost-wolf attacks (Cap 3, Harm 2)."
+        },
+        {
+          "cost": 4,
+          "name": "The Huntsman's Choice",
+          "effect": "Target must sacrifice a memory or be caught (the Hunt Timer fills immediately)."
+        }
       ],
       "weakness": "A true name. If the party discovers the Huntsman's true name and speaks it, the Hunt ends. The name is lost somewhere in the Thornwood."
     },
@@ -63,11 +114,28 @@
       "class": "IV",
       "category": "fae",
       "description": "The mender of liminal wounds. She walks where the Alder King and Hazel Queen have torn the world. She appears as an old woman with a spindle of gray thread, her fingers moving in patterns that hurt to watch.",
-      "stats": { "Wits": 5, "Lore": 5, "Spirit": 4, "hp": 30 },
+      "stats": {
+        "Wits": 5,
+        "Lore": 5,
+        "Spirit": 4,
+        "hp": 30
+      },
       "sb_spends": [
-        { "cost": 1, "name": "Unknot the Way", "effect": "Open a locked door or sealed promise." },
-        { "cost": 2, "name": "Weave the Lost Path", "effect": "Reveal a hidden route between two locations." },
-        { "cost": 3, "name": "Mend the Threshold", "effect": "Permanently repair a broken threshold — but cost a memory." }
+        {
+          "cost": 1,
+          "name": "Unknot the Way",
+          "effect": "Open a locked door or sealed promise."
+        },
+        {
+          "cost": 2,
+          "name": "Weave the Lost Path",
+          "effect": "Reveal a hidden route between two locations."
+        },
+        {
+          "cost": 3,
+          "name": "Mend the Threshold",
+          "effect": "Permanently repair a broken threshold — but cost a memory."
+        }
       ],
       "weakness": "She cannot refuse a true request made at a crossroads — but she will exact a price for her aid."
     },
@@ -78,10 +146,23 @@
       "class": "III",
       "category": "undead",
       "description": "A traveler who died in the Thornwood, their body claimed by the Alder King's roots. They move slowly, their limbs wrapped in thorn and bark. They do not speak, but they remember who they were.",
-      "stats": { "Body": 3, "Melee": 3, "Endurance": 3, "hp": 20 },
+      "stats": {
+        "Body": 3,
+        "Melee": 3,
+        "Endurance": 3,
+        "hp": 20
+      },
       "sb_spends": [
-        { "cost": 1, "name": "Thorn Grasp", "effect": "Target is Grappled and takes Harm 1 (piercing)." },
-        { "cost": 2, "name": "Root Burst", "effect": "All within Close take Harm 1 (thorns)." }
+        {
+          "cost": 1,
+          "name": "Thorn Grasp",
+          "effect": "Target is Grappled and takes Harm 1 (piercing)."
+        },
+        {
+          "cost": 2,
+          "name": "Root Burst",
+          "effect": "All within Close take Harm 1 (thorns)."
+        }
       ],
       "weakness": "Fire. A Briar Wight exposed to fire must test Spirit (DV 3) or flee."
     }
@@ -97,8 +178,18 @@
           "title": "The Hollowed Scholar",
           "description": "The party finds Lerris in a quiet corner of the University's Archivolt. He is pale, hollow-eyed, and clutching a lead-lined box. He speaks in fragments, his mind still scarred by the journey through the Ways Between. He offers the party a bargain: help him find the Pathweaver, and he will share what he learned about Malachai's curse.",
           "timers": [
-            { "name": "Hollow Attention", "segments": 6, "current": 0, "description": "How much the Hollow has noticed Lerris's quest" },
-            { "name": "Lerris's Desperation", "segments": 8, "current": 0, "description": "How close Lerris is to making a reckless bargain" }
+            {
+              "name": "Hollow Attention",
+              "segments": 6,
+              "current": 0,
+              "description": "How much the Hollow has noticed Lerris's quest"
+            },
+            {
+              "name": "Lerris's Desperation",
+              "segments": 8,
+              "current": 0,
+              "description": "How close Lerris is to making a reckless bargain"
+            }
           ],
           "encounters": [
             {
@@ -119,8 +210,16 @@
           "title": "The First Thread",
           "description": "Lerris reveals that the Pathweaver's favor is a single gray thread, tied to a crossroads shrine near the Thornwood. He has not used it because he fears the price. The party must decide: help him find the Pathweaver, or warn him against the bargain.",
           "timers": [
-            { "name": "Lerris's Desperation", "segments": 8, "current": 0 },
-            { "name": "Hollow Attention", "segments": 6, "current": 0 }
+            {
+              "name": "Lerris's Desperation",
+              "segments": 8,
+              "current": 0
+            },
+            {
+              "name": "Hollow Attention",
+              "segments": 6,
+              "current": 0
+            }
           ],
           "encounters": [
             {
@@ -148,8 +247,18 @@
           "title": "The Thornwood",
           "description": "The forest is wrong. The trees are too close, the light too dim, the roots too eager. Navigation is impossible. The party must find the Hedge before the Thornwood claims them.",
           "timers": [
-            { "name": "Thornwood Timer", "segments": 10, "current": 0, "description": "How deeply the forest has claimed the party" },
-            { "name": "The Hunt Timer", "segments": 12, "current": 0, "description": "How close the Huntsman is to catching the party" }
+            {
+              "name": "Thornwood Timer",
+              "segments": 10,
+              "current": 0,
+              "description": "How deeply the forest has claimed the party"
+            },
+            {
+              "name": "The Hunt Timer",
+              "segments": 12,
+              "current": 0,
+              "description": "How close the Huntsman is to catching the party"
+            }
           ],
           "encounters": [
             {
@@ -181,9 +290,22 @@
           "title": "The Hazel Queen's Hedge",
           "description": "The Hedge is a living labyrinth of thorn and hazel. The Hazel Queen is waiting. She offers Lerris a choice: she can restore his mother's eyes — but only if he brings her a thorn from the Alder King's crown. The party must decide: accept the Queen's bargain, or find another way.",
           "timers": [
-            { "name": "Hedge Debt Timer", "segments": 8, "current": 0, "description": "How much the party owes the Hazel Queen" },
-            { "name": "Lerris's Desperation", "segments": 8, "current": 0 },
-            { "name": "The Hunt Timer", "segments": 12, "current": 0 }
+            {
+              "name": "Hedge Debt Timer",
+              "segments": 8,
+              "current": 0,
+              "description": "How much the party owes the Hazel Queen"
+            },
+            {
+              "name": "Lerris's Desperation",
+              "segments": 8,
+              "current": 0
+            },
+            {
+              "name": "The Hunt Timer",
+              "segments": 12,
+              "current": 0
+            }
           ],
           "encounters": [
             {
@@ -212,9 +334,21 @@
           "title": "The Alder King's Throne",
           "description": "The party finds the Alder King's throne — a massive alder tree at the heart of the Thornwood. The King is waiting. He offers a bargain: a thorn from his crown, in exchange for a seed from the Hazel Queen's Hedge. The party must decide: accept the King's bargain, or fight for the thorn.",
           "timers": [
-            { "name": "Thornwood Timer", "segments": 10, "current": 0 },
-            { "name": "The Hunt Timer", "segments": 12, "current": 0 },
-            { "name": "Hedge Debt Timer", "segments": 8, "current": 0 }
+            {
+              "name": "Thornwood Timer",
+              "segments": 10,
+              "current": 0
+            },
+            {
+              "name": "The Hunt Timer",
+              "segments": 12,
+              "current": 0
+            },
+            {
+              "name": "Hedge Debt Timer",
+              "segments": 8,
+              "current": 0
+            }
           ],
           "encounters": [
             {
@@ -236,8 +370,16 @@
           "title": "The Pathweaver's Third Path",
           "description": "The Pathweaver appears at the crossroads between the Thornwood and the Hedge. She offers a third path: she will restore Lerris's memory herself — but only if he agrees to become her student, learning to mend thresholds for the rest of his life. The party must decide: accept the Pathweaver's bargain, or continue the war.",
           "timers": [
-            { "name": "Lerris's Desperation", "segments": 8, "current": 0 },
-            { "name": "Hollow Attention", "segments": 6, "current": 0 }
+            {
+              "name": "Lerris's Desperation",
+              "segments": 8,
+              "current": 0
+            },
+            {
+              "name": "Hollow Attention",
+              "segments": 6,
+              "current": 0
+            }
           ],
           "encounters": [
             {
@@ -266,8 +408,16 @@
           "title": "The Huntsman's Court",
           "description": "The Huntsman corners the party at a crossroads. He offers no bargain — only a choice: one member of the party stays behind as a sacrifice, or the entire party faces his hounds. Lerris is willing to sacrifice himself. The party must decide.",
           "timers": [
-            { "name": "The Hunt Timer", "segments": 12, "current": 0 },
-            { "name": "Hollow Attention", "segments": 6, "current": 0 }
+            {
+              "name": "The Hunt Timer",
+              "segments": 12,
+              "current": 0
+            },
+            {
+              "name": "Hollow Attention",
+              "segments": 6,
+              "current": 0
+            }
           ],
           "encounters": [
             {
@@ -381,31 +531,51 @@
       "id": "loc-university-archivolt",
       "name": "The Archivolt, University of Thepyrgos",
       "description": "The main hall of the Library of Keys. Witness's Archivists hold court. Lerris has been hiding here, reading forbidden texts.",
-      "tags": ["university", "library", "witness"]
+      "tags": [
+        "university",
+        "library",
+        "witness"
+      ]
     },
     {
       "id": "loc-thornwood",
       "name": "The Thornwood",
       "description": "A shifting forest that appears where alders grow in circles. The Alder King's domain. Paths lead nowhere. Roots reach for the unwary.",
-      "tags": ["forest", "fae", "threshold"]
+      "tags": [
+        "forest",
+        "fae",
+        "threshold"
+      ]
     },
     {
       "id": "loc-hedge",
       "name": "The Hazel Queen's Hedge",
       "description": "A living labyrinth of thorn and hazel. The Hazel Queen's domain. Each path offers a choice. Each choice has a price.",
-      "tags": ["hedge", "fae", "bargain"]
+      "tags": [
+        "hedge",
+        "fae",
+        "bargain"
+      ]
     },
     {
       "id": "loc-crossroads",
       "name": "The Crossroads Shrine",
       "description": "A place where the Pathweaver appears. The gray thread is tied to a hazel branch. The air smells of honey and old promises.",
-      "tags": ["crossroads", "threshold", "pathweaver"]
+      "tags": [
+        "crossroads",
+        "threshold",
+        "pathweaver"
+      ]
     },
     {
       "id": "loc-alder-throne",
       "name": "The Alder King's Throne",
       "description": "A massive alder tree at the heart of the Thornwood. The King's crown is woven from living branches. His throne is a nest of roots.",
-      "tags": ["throne", "fae", "threshold"]
+      "tags": [
+        "throne",
+        "fae",
+        "threshold"
+      ]
     }
   ],
   "factions": [
@@ -479,17 +649,14 @@
     }
   ],
   "notes": "A folk horror investigation bridging the Chained Angel Archives and the war between the Alder King and Hazel Queen. Lerris Fenwood returns as a hollowed, desperate figure. The party must navigate the Thornwood, bargain with the Hazel Queen, and survive the Huntsman's hunt. The Pathweaver offers a third path — but her aid comes at a price. Themes: memory, identity, the cost of knowledge, and the ancient war between the old powers. This adventure sets up Lerris's next canonical appearance as the Pathweaver's apprentice.",
-
   "_gmhints": {
     "tone": "THIS ADVENTURE IS A SLOW, ATMOSPHERIC FOLK HORROR INVESTIGATION. The tone should be rooted in place, isolation, and the weight of ancient bargains. Unlike cosmic horror (which overwhelms with scale), folk horror isolates with intimacy. The land is sentient—the forest watches, the hedge has thorns that reach for blood, the paths lead where they want you to go. Rituals have teeth; every interaction with the old powers has a cost, even if it is only a forgotten name. Lerris is hollowed and desperate—he is not the wry, adventurous scholar from the Chained Angel Archives. He is scarred, haunted, and willing to pay any price to restore what he has lost. The party is his last hope—and they may have to save him from himself.",
-
     "pacing": {
       "act1": "Act I is about introduction and desperation. The party meets Lerris in the Archivolt—he is pale, hollow-eyed, and speaking in fragments. He is not the man who left the University a year ago. The lead-lined box contains Sister Aris's confession—this is the hook that ties the adventure to the Chained Angel Archives. The Pathweaver's favor is a gray thread tied to a crossroads shrine—a tangible link to the old powers. The tone should be academic and mournful: Lerris is a scholar who has lost something irreplaceable, and he will do anything to get it back. The party must decide whether to help him or warn him away. Lerris's Desperation timer is ticking—if the party delays, he will make a reckless bargain.",
       "act2": "Act II is the crossing into the old world. The Thornwood is not a forest—it is a domain. The trees are too close, the light too dim, the roots too eager. Navigation is impossible. The Alder King is patient and territorial—he does not hate the party, but he will not let them go. The Hazel Queen's Hedge is a labyrinth of choice—every path offers a bargain, and every bargain has a price. The Huntsman begins to hunt them. The Thornwood Timer and The Hunt Timer are the primary pressures—the party must find the Hedge before the forest claims them, and evade the Huntsman before he catches them. The tone should be claustrophobic and oppressive: the land itself is the antagonist.",
       "act3": "Act III is the confrontation. The Alder King's Throne is the heart of the Thornwood—a massive alder tree where the King sits in judgment. He offers a bargain: a thorn from his crown in exchange for a seed from the Hazel Queen's Hedge. The party must choose: accept the King's bargain, fight for the thorn, or find a third path. The Pathweaver appears at the crossroads—she offers a third way: she will restore Lerris's memory if he becomes her apprentice. Lerris must decide how far he is willing to go. The tone should be tense and philosophical: every choice has a cost, and Lerris is running out of options.",
       "act4": "Act IV is the resolution. The Huntsman corners the party at a crossroads—he offers no bargain, only a choice: one member stays behind, or the entire party faces his hounds. The party can find his true name (carved into the Alder King's throne) to end the Hunt, or they can sacrifice someone to buy time. The Hollow Bride may appear if the Hollow Attention timer has filled—she offers a bargain that could settle the war, but at a terrible price. The resolution paths offer different outcomes: the Pathweaver's Peace, the Huntsman's Service, or the Hollow's Bargain. Each has lasting consequences. The tone should be bittersweet and final: Lerris's story reaches a turning point, and the party must live with the cost of their choices."
     },
-
     "npcSecrets": {
       "lerris-fenwood": "Lerris is hollowed and desperate. He is not the wry, adventurous scholar from the Chained Angel Archives—he is a man who has lost something irreplaceable and will do anything to get it back. He carries Sister Aris's confession in a lead-lined box; he has not opened it since the night he crossed the Ways Between. He is marked by the Hollow—this is why the Hollow Attention timer advances when he speaks of Malachai. His desperation is his flaw and his strength: he will accept any bargain if it promises to restore his mother's eyes. The party must save him from himself.",
       "alder-king": "The Alder King is patient, territorial, and cruel in the way of a snare. He does not hate the party—he simply will not let them go. He fears the Pathweaver because she has mended thresholds that he once claimed. He was once in love with the Hazel Queen—the war began when she refused his bargain. This backstory is not something he volunteers, but it can be discovered through lore or negotiation. He offers bargains that seem fair but always serve his domain.",
@@ -498,7 +665,6 @@
       "pathweaver": "The Pathweaver is the third sister—the one who was forgotten by the King and Queen. She mends thresholds and repairs what the war has broken. She cannot refuse a true request made at a crossroads—but she will exact a price for her aid. She owes Lerris a favor from his youth, when he mended a threshold for her. She is not happy to see him again—he is too close to the Hollow. She offers a third path, but her aid requires sacrifice: Lerris must become her apprentice, leaving the University behind forever.",
       "sister-aris": "Sister Aris is deceased before this adventure begins. Her confession is the hook that ties Lerris's quest to the Chained Angel Archives. She is the mother of Bryn, who now serves the Cord. The Hollowed child she raised was never truly free. Lerris carries her confession—and her guilt."
     },
-
     "forbiddenEarlyRevelations": [
       "That the Pathweaver is the third sister — this is a deep lore reveal for Act III; hint at it through her actions, but do not state it plainly",
       "That the Alder King and Hazel Queen were once in love — this is a tragic backstory that adds depth to their conflict; it should be discovered through lore or negotiation, not volunteered",
@@ -507,7 +673,6 @@
       "That the Hollow Bride may appear — the Hollow Attention timer is a background pressure; her appearance should feel earned, not telegraphed",
       "That the Threshold Fracture timer leads to a ninth threshold opening — this is the final Act IV threat; reveal it gradually through the war's escalation"
     ],
-
     "folkHorrorTactics": {
       "kill_the_road": "The party cannot simply leave. The road turns, the bridge is out, the map is wrong. Isolation is the first horror. Describe the journey as increasingly strange: landmarks shift, familiar paths lead to unfamiliar places, the sky is the wrong color. The party is not lost—they are being guided.",
       "make_the_land_sentient": "The forest watches. The well whispers. The hedge has thorns that reach for blood. Describe these as natural in a world that has different rules. The Alder King's domain is not a forest—it is an extension of his will. The Hazel Queen's Hedge is not a labyrinth—it is a conversation.",
@@ -517,12 +682,145 @@
       "lerris_as_heart": "Lerris is the emotional core of this adventure. He is not a hero—he is a broken man who will do anything to restore what he has lost. The party's job is not just to help him—it is to save him from himself. His Desperation timer is the measure of his fall. If it fills, he will make a reckless bargain—and the party will have to live with the consequences."
     }
   },
-
   "currentAct": 0,
   "currentScene": 0,
   "startedAt": null,
   "completedAt": null,
   "status": "planned",
   "createdAt": "2026-08-03T00:00:00.000Z",
-  "updatedAt": "2026-08-03T00:00:00.000Z"
+  "updatedAt": "2026-08-03T00:00:00.000Z",
+  "knowledge": [
+    {
+      "id": "lerris-fenwood-secret",
+      "subject": "npc-lerris-fenwood",
+      "gm": "Lerris is hollowed and desperate. He is not the wry, adventurous scholar from the Chained Angel Archives—he is a man who has lost something irreplaceable and will do anything to get it back. He carries Sister Aris's confession in a lead-lined box; he has not opened it since the night he crossed the Ways Between. He is marked by the Hollow—this is why the Hollow Attention timer advances when he speaks of Malachai. His desperation is his flaw and his strength: he will accept any bargain if it promises to restore his mother's eyes. The party must save him from himself.",
+      "player": "Lerris Fenwood plays the part everyone assumes: Hollowed Scholar, Fifth Son of Duke Braedon Fenwood. Nothing about their manner invites a second look.",
+      "revealed": false,
+      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "tags": [
+        "npc-secret"
+      ]
+    },
+    {
+      "id": "alder-king-secret",
+      "subject": "npc-alder-king",
+      "gm": "The Alder King is patient, territorial, and cruel in the way of a snare. He does not hate the party—he simply will not let them go. He fears the Pathweaver because she has mended thresholds that he once claimed. He was once in love with the Hazel Queen—the war began when she refused his bargain. This backstory is not something he volunteers, but it can be discovered through lore or negotiation. He offers bargains that seem fair but always serve his domain.",
+      "player": "The Alder King plays the part everyone assumes: Spirit of the Dark, Wet Wood. Nothing about their manner invites a second look.",
+      "revealed": false,
+      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "tags": [
+        "npc-secret"
+      ]
+    },
+    {
+      "id": "hazel-queen-secret",
+      "subject": "npc-hazel-queen",
+      "gm": "The Hazel Queen is cunning and quick. She offers exactly what you need—for a price you will not understand until the hazel nuts have fallen thrice. She once loved the Alder King; the war began when he refused her bargain. She is the hag of crossroads and hedgerows, and she collects debts the way others collect coins. She will bargain with the party, but every bargain deepens the Hedge Debt Timer. She does not forgive debts—she compounds them.",
+      "player": "The Hazel Queen plays the part everyone assumes: Hag of Crossroads and Hedgerows. Nothing about their manner invites a second look.",
+      "revealed": false,
+      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "tags": [
+        "npc-secret"
+      ]
+    },
+    {
+      "id": "huntsman-secret",
+      "subject": "npc-huntsman",
+      "gm": "The Huntsman serves neither king nor queen—he serves the hunt itself. He was once mortal; his true name is carved into the Alder King's throne. He does not speak; he leaves notes carved into bark. His hounds are not dogs but the ghosts of wolves, the memories of teeth. He offers no bargains, only choices. The party can evade him, confront him, or find his true name to end the Hunt. He is not evil—he is a force of nature, and nature is indifferent.",
+      "player": "The Huntsman plays the part everyone assumes: The Silent Tracker. Nothing about their manner invites a second look.",
+      "revealed": false,
+      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "tags": [
+        "npc-secret"
+      ]
+    },
+    {
+      "id": "pathweaver-secret",
+      "subject": "npc-pathweaver",
+      "gm": "The Pathweaver is the third sister—the one who was forgotten by the King and Queen. She mends thresholds and repairs what the war has broken. She cannot refuse a true request made at a crossroads—but she will exact a price for her aid. She owes Lerris a favor from his youth, when he mended a threshold for her. She is not happy to see him again—he is too close to the Hollow. She offers a third path, but her aid requires sacrifice: Lerris must become her apprentice, leaving the University behind forever.",
+      "player": "The Pathweaver plays the part everyone assumes: Mender of Liminal Wounds. Nothing about their manner invites a second look.",
+      "revealed": false,
+      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "tags": [
+        "npc-secret"
+      ]
+    },
+    {
+      "id": "sister-aris-secret",
+      "subject": "npc-sister-aris",
+      "gm": "Sister Aris is deceased before this adventure begins. Her confession is the hook that ties Lerris's quest to the Chained Angel Archives. She is the mother of Bryn, who now serves the Cord. The Hollowed child she raised was never truly free. Lerris carries her confession—and her guilt.",
+      "player": "Sister Aris plays the part everyone assumes: Former Daughter of the Cord (deceased). Nothing about their manner invites a second look.",
+      "revealed": false,
+      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "tags": [
+        "npc-secret"
+      ]
+    },
+    {
+      "id": "that-the-hollow-bride-may-appear",
+      "subject": "plot",
+      "gm": "That the Hollow Bride may appear — the Hollow Attention timer is a background pressure; her appearance should feel earned, not telegraphed",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "that-the-threshold-fracture-timer-leads",
+      "subject": "plot",
+      "gm": "That the Threshold Fracture timer leads to a ninth threshold opening — this is the final Act IV threat; reveal it gradually through the war's escalation",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "that-the-pathweaver-is-the-third-sister",
+      "subject": "plot",
+      "gm": "That the Pathweaver is the third sister — this is a deep lore reveal for Act III; hint at it through her actions, but do not state it plainly",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "that-the-alder-king-and-hazel-queen-were",
+      "subject": "plot",
+      "gm": "That the Alder King and Hazel Queen were once in love — this is a tragic backstory that adds depth to their conflict; it should be discovered through lore or negotiation, not volunteered",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "that-the-huntsman-s-true-name-is-carved",
+      "subject": "plot",
+      "gm": "That the Huntsman's true name is carved into the Alder King's throne — this is the key to ending the Hunt; it is a discovery, not a handout",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "that-lerris-will-become-the-pathweaver-s",
+      "subject": "plot",
+      "gm": "That Lerris will become the Pathweaver's apprentice — this is the Act III resolution; foreshadow it through his desperation, but do not reveal it mechanically until the choice is offered",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    }
+  ]
 }

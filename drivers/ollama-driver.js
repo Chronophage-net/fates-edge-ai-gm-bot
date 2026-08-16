@@ -25,6 +25,14 @@ class OllamaDriver extends AIDriver {
         // much larger) -- operators running Ollama should set this to
         // match whatever OLLAMA_MODEL actually is. Defaults conservative.
         this.contextWindow = parseInt(process.env.OLLAMA_CONTEXT_WINDOW || '8192', 10);
+        // CHANGED: this was never actually read anywhere -- generateResponse()
+        // below hardcoded 400 directly at both call sites regardless of what
+        // an operator set, and trimToFit()'s reserve (ai-driver.js) silently
+        // fell back to its own default since this.maxTokens didn't exist. Wire
+        // it up like the other drivers so OLLAMA_MAX_TOKENS actually does
+        // something, and default it higher -- 400 routinely truncated
+        // responses mid-tag (see deepseek-driver.js for the fuller story).
+        this.maxTokens = parseInt(process.env.OLLAMA_MAX_TOKENS || '1200', 10);
 
         // CHANGED: the interactive recovery flow below (readline prompts
         // for "pull this model?" / "choose a model") is genuinely good UX
@@ -65,9 +73,9 @@ class OllamaDriver extends AIDriver {
 
         try {
             if (onToken && typeof onToken === 'function') {
-                return await this._makeStreamingRequest(prompt, 400, 0.8, onToken);
+                return await this._makeStreamingRequest(prompt, this.maxTokens, 0.8, onToken);
             }
-            const data = await this._makeRequest(prompt, 400, 0.8);
+            const data = await this._makeRequest(prompt, this.maxTokens, 0.8);
             // Ollama's non-streaming /api/generate reports real counts
             // (prompt_eval_count / eval_count) once done: true fires --
             // no need to estimate when they're present.
@@ -82,6 +90,12 @@ class OllamaDriver extends AIDriver {
                     completionTokens: this.estimateTokens(data.response || ''),
                     estimated: true
                 });
+            }
+            // NEW: mirror deepseek-driver.js's finish_reason warning --
+            // Ollama's equivalent is done_reason === 'length' (hit
+            // num_predict before the model naturally stopped).
+            if (data.done_reason && data.done_reason !== 'stop') {
+                console.warn(`⚠️  Ollama done_reason was "${data.done_reason}" (model: ${this.model}) — response may be truncated.`);
             }
             return (data.response || '').trim();
         } catch (e) {

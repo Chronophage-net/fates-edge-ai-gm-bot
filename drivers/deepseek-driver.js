@@ -14,7 +14,17 @@ class DeepSeekDriver extends AIDriver {
             throw new Error('DEEPSEEK_API_KEY environment variable is required for DeepSeek driver');
         }
         this.model = process.env.DEEPSEEK_MODEL || 'deepseek-v4-pro';
-        this.maxTokens = parseInt(process.env.DEEPSEEK_MAX_TOKENS || '400', 10);
+        // CHANGED: 400 was too low in practice -- a GM turn routinely
+        // needs room for a paragraph or two of narration PLUS several
+        // mechanical tags ([NPC CREATE], [ROLL]/[CALL FOR ROLL], [APPLY
+        // HARM], etc.), each of which costs real completion tokens before
+        // any of the actual prose. At 400 the model frequently got cut off
+        // mid-tag, which left a dangling, unclosed bracket for
+        // processSpecialTags() to untangle (see closeUnterminatedAITags())
+        // and made every turn feel slow/stuck resolving garbage. 1200 gives
+        // realistic headroom while still being cheap; override via
+        // DEEPSEEK_MAX_TOKENS if a campaign needs more or less.
+        this.maxTokens = parseInt(process.env.DEEPSEEK_MAX_TOKENS || '1200', 10);
         this.temperature = parseFloat(process.env.DEEPSEEK_TEMPERATURE || '0.8');
         this.timeoutMs = parseInt(process.env.DEEPSEEK_TIMEOUT_MS || '30000', 10);
         this.maxRetries = parseInt(process.env.DEEPSEEK_MAX_RETRIES || '2', 10);

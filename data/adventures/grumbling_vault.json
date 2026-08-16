@@ -5,7 +5,12 @@
   "tier": "II",
   "author": "Nicholas A. Gasper",
   "sessions": "1",
-  "themes": ["Dungeon Delve", "Traps", "Magic vs. Muscle", "Grumpy Old Men"],
+  "themes": [
+    "Dungeon Delve",
+    "Traps",
+    "Magic vs. Muscle",
+    "Grumpy Old Men"
+  ],
   "bestiary": [
     {
       "id": "iron-wraith",
@@ -14,10 +19,24 @@
       "class": "III",
       "category": "construct",
       "description": "A towering suit of Aelerian armor, animated by ancient grudges. It moves with a grinding, clockwork precision, and its joints weep rust. It's resistant to magic – spells slide off its plates like water off a duck's back. Best to hit it with something heavy.",
-      "stats": { "Body": 3, "Spirit": 2, "Presence": 1, "armor": 2, "hp": 25 },
+      "stats": {
+        "Body": 3,
+        "Spirit": 2,
+        "Presence": 1,
+        "armor": 2,
+        "hp": 25
+      },
       "sb_spends": [
-        { "cost": 1, "name": "Sundering Bash", "effect": "The Wraith shatters a piece of cover or equipment; a PC loses one Minor Asset until repaired." },
-        { "cost": 2, "name": "Rust Cloud", "effect": "The Wraith shakes itself, releasing a cloud of rust; all in Near range must test Body+Endurance or gain 1 Fatigue." }
+        {
+          "cost": 1,
+          "name": "Sundering Bash",
+          "effect": "The Wraith shatters a piece of cover or equipment; a PC loses one Minor Asset until repaired."
+        },
+        {
+          "cost": 2,
+          "name": "Rust Cloud",
+          "effect": "The Wraith shakes itself, releasing a cloud of rust; all in Near range must test Body+Endurance or gain 1 Fatigue."
+        }
       ],
       "lore": "The Aeler didn't just build guards – they built accountants of violence. Each Wraith was once a Spirit Shield warrior, bound to the armor after death to continue their duty. They don't remember their names, but they remember their oaths."
     },
@@ -28,9 +47,17 @@
       "class": "I",
       "category": "elemental",
       "description": "A flickering, cackling ball of magical energy that escaped a broken ward. It's not intelligent – just hungry for attention. And light. And your eyebrows.",
-      "stats": { "Spirit": 2, "Arcana": 2, "hp": 8 },
+      "stats": {
+        "Spirit": 2,
+        "Arcana": 2,
+        "hp": 8
+      },
       "sb_spends": [
-        { "cost": 1, "name": "Flash of Light", "effect": "A PC is Blinded for one exchange (all actions at Desperate)." }
+        {
+          "cost": 1,
+          "name": "Flash of Light",
+          "effect": "A PC is Blinded for one exchange (all actions at Desperate)."
+        }
       ]
     },
     {
@@ -40,11 +67,29 @@
       "class": "V",
       "category": "construct",
       "description": "The vault's ultimate guardian – a crackling humanoid shape of living runes and stored arcane energy. It is immune to magic; spells simply feed it. Only cold steel, a well-aimed hammer, or a clever word can stop it.",
-      "stats": { "Body": 5, "Spirit": 5, "Presence": 3, "armor": 3, "hp": 45 },
+      "stats": {
+        "Body": 5,
+        "Spirit": 5,
+        "Presence": 3,
+        "armor": 3,
+        "hp": 45
+      },
       "sb_spends": [
-        { "cost": 2, "name": "Absorb Magic", "effect": "The Primus negates the next spell cast and heals 2 Harm." },
-        { "cost": 3, "name": "Force Burst", "effect": "All in Near range take Harm 2; Body+Endurance DV 4 halves." },
-        { "cost": 2, "name": "Rune Lock", "effect": "The Primus seals a door or passage, trapping a PC away from the group." }
+        {
+          "cost": 2,
+          "name": "Absorb Magic",
+          "effect": "The Primus negates the next spell cast and heals 2 Harm."
+        },
+        {
+          "cost": 3,
+          "name": "Force Burst",
+          "effect": "All in Near range take Harm 2; Body+Endurance DV 4 halves."
+        },
+        {
+          "cost": 2,
+          "name": "Rune Lock",
+          "effect": "The Primus seals a door or passage, trapping a PC away from the group."
+        }
       ],
       "lore": "The Primus was not built to fight – it was built to enforce the vault's internal laws. It doesn't hate you; it simply cannot allow you to leave with what is not yours. It can be reasoned with, if you offer it something it values more than the keystone – like a fresh memory of a sunrise, or a promise to destroy a rival's ward elsewhere."
     }
@@ -60,8 +105,18 @@
           "title": "Chamber 1: The Sealed Door",
           "description": "A massive bronze door, etched with Aeler runes that pulse faintly. No handle. No keyhole. Durin belches. The door hums with ancient power – and it's hungry for a reaction.",
           "timers": [
-            { "name": "Ward Resonance", "segments": 8, "current": 0, "description": "Every spell or rite ticks this up. When full, the Ward-Primus awakens." },
-            { "name": "Durin's Debt", "segments": 4, "current": 0, "description": "Each time you use Durin's advice, tick this. When full, he demands his 'trinket'." }
+            {
+              "name": "Ward Resonance",
+              "segments": 8,
+              "current": 0,
+              "description": "Every spell or rite ticks this up. When full, the Ward-Primus awakens."
+            },
+            {
+              "name": "Durin's Debt",
+              "segments": 4,
+              "current": 0,
+              "description": "Each time you use Durin's advice, tick this. When full, he demands his 'trinket'."
+            }
           ],
           "encounters": [
             {
@@ -92,7 +147,11 @@
           "title": "Chamber 2: The Hall of Sundered Oaths",
           "description": "A long hall lined with suits of animated Aeler armor – three Iron Wraiths. They do not move until a spell is cast or a loud noise is made. They are resistant to magic, but vulnerable to being sundered.",
           "timers": [
-            { "name": "Ward Resonance", "segments": 8, "current": 0 }
+            {
+              "name": "Ward Resonance",
+              "segments": 8,
+              "current": 0
+            }
           ],
           "encounters": [
             {
@@ -114,7 +173,11 @@
           "title": "Chamber 3: The Heart of Silence",
           "description": "A domed chamber. The Keystone of Unmaking floats above a black altar. Four pillars pulse with light. The Ward Resonance Timer is visible as a glowing ring around the keystone. If the timer fills, the Ward-Primus rises.",
           "timers": [
-            { "name": "Ward Resonance", "segments": 8, "current": 0 }
+            {
+              "name": "Ward Resonance",
+              "segments": 8,
+              "current": 0
+            }
           ],
           "encounters": [
             {
@@ -159,19 +222,31 @@
       "id": "loc-vault-entrance",
       "name": "The Sealed Door",
       "description": "A massive bronze door, etched with Aeler runes that pulse faintly. No handle. No keyhole. The runes seem to watch you.",
-      "tags": ["door", "ward", "trap"]
+      "tags": [
+        "door",
+        "ward",
+        "trap"
+      ]
     },
     {
       "id": "loc-hall-of-oaths",
       "name": "The Hall of Sundered Oaths",
       "description": "A long hall lined with suits of animated Aeler armor. The air is thick with the memory of broken promises.",
-      "tags": ["hall", "guardians", "combat"]
+      "tags": [
+        "hall",
+        "guardians",
+        "combat"
+      ]
     },
     {
       "id": "loc-heart-of-silence",
       "name": "The Heart of Silence",
       "description": "A domed chamber where the Keystone of Unmaking floats above a black altar. The walls pulse with stored energy.",
-      "tags": ["altar", "keystone", "boss"]
+      "tags": [
+        "altar",
+        "keystone",
+        "boss"
+      ]
     }
   ],
   "factions": [
@@ -197,7 +272,6 @@
     }
   ],
   "notes": "This is a classic dungeon crawl with a twist: magic is actively punished. The Ward Resonance Timer forces players to think about whether to use spells or rely on muscle and wits. Durin is a comic relief NPC whose advice is half-true – players who fact-check him gain an edge. The final boss (Ward-Primus) is immune to magic, so melee characters get a chance to shine. Designed for a single session of 3–4 hours.",
-
   "_gmhints": {
     "pacing": {
       "act1": "This is a lean, single-session dungeon crawl. Keep the pace brisk—every scene is a set piece. The Ward Resonance timer is the central tension: make its ticking visible and visceral (the runes on the walls pulse brighter; the door groans; the keystone's glow intensifies). Durin is comic relief, not a lore-dispenser—his advice is unreliable, and his true nature (a cook, not an Iron Avenger) is a punchline for observant players or a fun reveal at the end. The Hall of Sundered Oaths is a combat puzzle: the Wraiths don't move until magic is used, rewarding clever players who sneak past or sunder them with physical force. The Heart of Silence is a stealth-or-fight climax; the Ward-Primus is a boss that requires either brute force or clever negotiation. Emphasize the visual of the timer ring around the keystone—it's the players' 'health bar' for the entire delve. The Iron Wraiths' weakness (sundering) should be discoverable through environmental clues (cracked armor, a sledgehammer left by a previous delver) rather than explained outright.",
@@ -221,12 +295,90 @@
       "primus_negotiation": "The Ward-Primus is a construct of law, not malice. If the party offers it something it values more than the keystone—a fresh memory, a promise to destroy a rival's ward, a confession of a crime they committed elsewhere—it may let them pass. This should feel like a earned discovery, not a handout."
     }
   },
-
   "currentAct": 0,
   "currentScene": 0,
   "startedAt": null,
   "completedAt": null,
   "status": "planned",
   "createdAt": "2026-07-28T00:00:00.000Z",
-  "updatedAt": "2026-07-28T00:00:00.000Z"
+  "updatedAt": "2026-07-28T00:00:00.000Z",
+  "knowledge": [
+    {
+      "id": "durin-stoneshield-secret",
+      "subject": "npc-durin-stoneshield",
+      "gm": "He is a fraud—a cook who tells tall tales. This is a comedic reveal, not a tragic one. He genuinely believes he was an Iron Avenger, but his stories are full of holes. Players who roll Lore or Investigation might notice the inconsistencies. His 'debt' is to a tavern owner who he owes for three years of ale. The keystone is his ticket to paying that debt—or at least to getting another round. Don't reveal this too early; let him be the grumpy, authoritative quest-giver until the party either fact-checks him or reaches the end.",
+      "player": "Durin Stoneshield plays the part everyone assumes: Iron Avenger (Retired, Drunk). Nothing about their manner invites a second look.",
+      "revealed": false,
+      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "tags": [
+        "npc-secret"
+      ]
+    },
+    {
+      "id": "that-durin-was-never-an-iron",
+      "subject": "plot",
+      "gm": "That Durin was never an Iron Avenger — this is the capstone joke; let it land at the end",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "that-the-ward-primus-is-immune",
+      "subject": "plot",
+      "gm": "That the Ward-Primus is immune to magic — this is a tactical discovery; players should learn it through trial, error, or observation (e.g., seeing a spell absorb into its form)",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "that-magic-ticks-the-ward-resonance",
+      "subject": "plot",
+      "gm": "That magic ticks the Ward Resonance timer — the timer itself is visible (the ring around the keystone), but the cause-and-effect (spells = ticks) should be discovered, not announced",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "that-the-iron-wraiths-only-activate",
+      "subject": "plot",
+      "gm": "That the Iron Wraiths only activate when magic is used — this is a puzzle to solve; describe them as 'motionless, waiting,' and let players deduce the trigger",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "that-the-ward-primus-can-be",
+      "subject": "plot",
+      "gm": "That the Ward-Primus can be reasoned with — this is a high-level solution for clever players; hint at it through the Primus's lore (it 'enforces laws,' not 'kills intruders') but don't hand it out",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "that-the-keystone-can-destabilize-wards",
+      "subject": "plot",
+      "gm": "That the keystone can destabilize wards within a mile — the description says it; the AI should not repeat this in dialogue as a casual fact; it's the party's mission objective, not a piece of exposition to be recited",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    }
+  ]
 }

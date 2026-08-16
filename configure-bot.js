@@ -151,8 +151,8 @@ async function writeEnvFile(driver, envVars) {
     // Add WebSocket / room settings (optional)
     const wsUrl = await question('WS_URL (WebSocket server, default ws://localhost:10000): ');
     lines.push(`WS_URL=${wsUrl || 'ws://localhost:10000'}`);
-    const room = await question('ROOM (Room code, default ABC123): ');
-    lines.push(`ROOM=${room || 'ABC123'}`);
+    const room = await question('ROOM (Room code, default AC12): ');
+    lines.push(`ROOM=${room || 'AC12'}`);
 
     // The socket server's campaign save/load endpoints (auto-save included)
     // always require a non-empty x-api-key header -- without this, the bot

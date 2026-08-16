@@ -34,24 +34,8 @@ let sseClients = [];
 let getStateFn = () => ({});
 let startedAt = null;
 
-function escapeHtml(s) {
-    return String(s)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;');
-}
-
-function levelColor(level) {
-    switch (level) {
-        case 'error': return 'var(--err)';
-        case 'warn': return 'var(--warn)';
-        case 'debug': return 'var(--dim)';
-        default: return 'var(--fg)';
-    }
-}
-
 function renderPage() {
-    return `<!DOCTYPE html>
+  return `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -178,12 +162,6 @@ function renderPage() {
       <h2>Party</h2>
       <dl class="kv" id="party-kv"></dl>
     </div>
-    <!-- ═══ AI GM SESSION PANEL ═══════════════════════════════════
-         GM-facing view of bot state that previously had nowhere to
-         be seen: the Story Beats bank, campaign facts the AI has
-         recorded, and Obligation totals grouped by Patron. See
-         ai-gm-bot.js's buildStatusSnapshot() for where this comes
-         from. -->
     <div class="panel">
       <h2>Story Beats Bank</h2>
       <div id="sb-bank"><span class="badge sb">0 SB</span></div>
@@ -196,12 +174,6 @@ function renderPage() {
       <h2>Obligation by Patron</h2>
       <div class="obligation-list" id="obligation-list"></div>
     </div>
-    <!-- ═══ ASSISTANT GM SUGGESTIONS ═══════════════════════════════
-         Only populated while this bot holds the 'assistant-gm' role
-         (see ai-gm-bot.js's buildStatusSnapshot() -> pendingSuggestions).
-         Approve/Reject here call the /api/suggestions/:id/(approve|reject)
-         routes below -- the chat-native equivalent is '!gm approve <id>' /
-         '!gm reject <id>' (see commands.js). -->
     <div class="panel" id="suggestions-panel" style="display:none;">
       <h2>Assistant GM — Pending Suggestions</h2>
       <div id="suggestions-list"></div>
@@ -210,17 +182,23 @@ function renderPage() {
 </div>
 <script>
 function fmtDuration(ms) {
-  const s = Math.floor(ms / 1000);
-  const h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), sec = s % 60;
+  var s = Math.floor(ms / 1000);
+  var h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), sec = s % 60;
   return (h ? h + 'h ' : '') + (h || m ? m + 'm ' : '') + sec + 's';
 }
+
 function kv(pairs) {
-  return pairs.map(([k, v]) => '<dt>' + k + '</dt><dd>' + v + '</dd>').join('');
+  return pairs.map(function(p) { return '<dt>' + p[0] + '</dt><dd>' + p[1] + '</dd>'; }).join('');
 }
+
+function escapeHtml(s) {
+  return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+
 function renderState(s) {
   document.getElementById('header-sub').textContent =
     (s.botName || 'AI_GM') + ' · room ' + (s.room || '?') + ' · uptime ' + fmtDuration(s.uptimeMs || 0);
-  const dot = document.getElementById('conn-dot');
+  var dot = document.getElementById('conn-dot');
   dot.className = 'dot ' + (s.connected ? 'on' : 'off');
 
   document.getElementById('conn-kv').innerHTML = kv([
@@ -229,132 +207,134 @@ function renderState(s) {
     ['WS URL', s.wsUrl || '–'],
     ['Room', s.room || '–'],
     ['Driver', (s.driverName || '–') + (s.driverModel ? ' (' + s.driverModel + ')' : '')],
-    ['Log level', s.logLevel || 'info'],
+    ['Log level', s.logLevel || 'info']
   ]);
 
-  const adv = s.adventure;
-  document.getElementById('adv-kv').innerHTML = adv && adv.title ? kv([
+  var adv = s.adventure;
+  document.getElementById('adv-kv').innerHTML = (adv && adv.title) ? kv([
     ['Title', adv.title],
     ['Status', adv.status || '–'],
     ['Act', adv.act || '–'],
     ['Scene', adv.scene || '–'],
-    ['Region', s.region || '–'],
+    ['Region', s.region || '–']
   ]) : '<dd class="empty">No adventure loaded.</dd>';
 
-  const u = s.tokenUsage || {};
+  var u = s.tokenUsage || {};
   document.getElementById('tok-kv').innerHTML = kv([
     ['Prompt tokens', (u.promptTokens || 0).toLocaleString() + (u.estimated ? ' ~' : '')],
     ['Completion tokens', (u.completionTokens || 0).toLocaleString() + (u.estimated ? ' ~' : '')],
     ['Total tokens', (u.totalTokens || 0).toLocaleString() + (u.estimated ? ' ~' : '')],
-    ['LLM calls', u.calls || 0],
+    ['LLM calls', u.calls || 0]
   ]);
   document.getElementById('loglevel-note').textContent = '';
 
-  const party = s.party || [];
+  var party = s.party || [];
   document.getElementById('party-kv').innerHTML = party.length
-    ? kv(party.map(p => [p.name, p.summary || '']))
+    ? kv(party.map(function(p) { return [p.name, p.summary || '']; }))
     : '<dd class="empty">No characters synced yet.</dd>';
 
-  // ─── AI GM Session Panel ──────────────────────────────────────
   document.getElementById('sb-bank').innerHTML =
     '<span class="badge sb">' + (s.sbBank || 0) + ' SB</span>';
 
-  const facts = s.facts || {};
-  const factKeys = Object.keys(facts);
+  var facts = s.facts || {};
+  var factKeys = Object.keys(facts);
   document.getElementById('facts-list').innerHTML = factKeys.length
-    ? factKeys.map(k => '<div class="fact-row"><dt>' + escapeHtml(k) + '</dt><dd>' + escapeHtml(String(facts[k])) + '</dd></div>').join('')
+    ? factKeys.map(function(k) { return '<div class="fact-row"><dt>' + escapeHtml(k) + '</dt><dd>' + escapeHtml(String(facts[k])) + '</dd></div>'; }).join('')
     : '<div class="empty">No facts recorded yet.</div>';
 
-  const obligations = s.obligations || [];
+  var obligations = s.obligations || [];
   document.getElementById('obligation-list').innerHTML = obligations.length
-    ? obligations.map(o => (
-        '<div class="obligation-row">' +
+    ? obligations.map(function(o) {
+        return '<div class="obligation-row">' +
           '<div><div class="patron-name">' + escapeHtml(o.patron) + '</div>' +
-          '<div class="patron-chars">' + o.characters.map(c => escapeHtml(c.name) + ' (' + c.obligation + ')').join(', ') + '</div></div>' +
+          '<div class="patron-chars">' + (o.characters || []).map(function(c) { return escapeHtml(c.name) + ' (' + c.obligation + ')'; }).join(', ') + '</div></div>' +
           '<div class="patron-total">' + o.total + '</div>' +
-        '</div>'
-      )).join('')
+        '</div>';
+      }).join('')
     : '<div class="empty">No Obligation tracked yet.</div>';
 
-  // ─── Assistant GM Suggestions ───────────────────────────────────
-  const suggestionsPanel = document.getElementById('suggestions-panel');
-  const suggestions = s.pendingSuggestions || [];
-  suggestionsPanel.style.display = s.isAssistantGm ? '' : 'none';
-  document.getElementById('suggestions-list').innerHTML = suggestions.length
-    ? suggestions.map(sug => (
-        '<div class="suggestion-row">' +
-          '<div><span class="kind">' + escapeHtml(sug.kind) + '</span>' + escapeHtml(sug.label) + '</div>' +
-          '<div class="actions">' +
-            '<button class="approve" onclick="actOnSuggestion(\'' + sug.id + '\',\'approve\')">Approve</button>' +
-            '<button class="reject" onclick="actOnSuggestion(\'' + sug.id + '\',\'reject\')">Reject</button>' +
-          '</div>' +
-        '</div>'
-      )).join('')
-    : '<div class="empty">No pending suggestions.</div>';
+  var suggestionsPanel = document.getElementById('suggestions-panel');
+  var suggestions = s.pendingSuggestions || [];
 
-  const memoryBox = document.getElementById('memory-summary-box');
+  if (suggestions.length) {
+    suggestionsPanel.style.display = 'block';
+    document.getElementById('suggestions-list').innerHTML = suggestions.map(function(sug) {
+      return '<div class="suggestion-row">' +
+        '<div><span class="kind">' + escapeHtml(sug.kind) + '</span>' + escapeHtml(sug.label) + '</div>' +
+        '<div class="actions">' +
+          '<button class="approve" data-id="' + escapeHtml(sug.id) + '" data-action="approve">Approve</button>' +
+          '<button class="reject" data-id="' + escapeHtml(sug.id) + '" data-action="reject">Reject</button>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+  } else {
+    suggestionsPanel.style.display = 'none';
+    document.getElementById('suggestions-list').innerHTML = '';
+  }
+
+  var memoryBox = document.getElementById('memory-summary-box');
   memoryBox.innerHTML = s.memorySummary
     ? '<div class="memory-summary">📝 ' + escapeHtml(s.memorySummary) + '</div>'
     : '';
 
-  const memory = s.recentMemory || [];
-  const memFeed = document.getElementById('memory-feed');
+  var memory = s.recentMemory || [];
+  var memFeed = document.getElementById('memory-feed');
   memFeed.innerHTML = memory.length
-    ? memory.map(m => '<div class="memory-turn"><span class="role">' + escapeHtml(m.role) + '</span>' + escapeHtml(m.content) + '</div>').join('')
+    ? memory.map(function(m) { return '<div class="memory-turn"><span class="role">' + escapeHtml(m.role) + '</span>' + escapeHtml(m.content) + '</div>'; }).join('')
     : '<div class="empty">No conversation yet.</div>';
 }
 
-function escapeHtml(s) {
-  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-}
-
 function appendLine(entry) {
-  const feed = document.getElementById('feed');
+  var feed = document.getElementById('feed');
   if (feed.querySelector('.empty')) feed.innerHTML = '';
-  const div = document.createElement('div');
+  var div = document.createElement('div');
   div.className = 'line';
-  const t = new Date(entry.time).toLocaleTimeString();
-  const colorVar = entry.level === 'error' ? 'var(--err)' : entry.level === 'warn' ? 'var(--warn)' : 'var(--fg)';
+  var t = new Date(entry.time).toLocaleTimeString();
+  var colorVar = entry.level === 'error' ? 'var(--err)' : entry.level === 'warn' ? 'var(--warn)' : 'var(--fg)';
   div.innerHTML = '<span class="time">' + t + '</span><span style="color:' + colorVar + '">' +
-    entry.text.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</span>';
+    escapeHtml(entry.text) + '</span>';
   feed.appendChild(div);
-  const atBottom = feed.scrollHeight - feed.scrollTop - feed.clientHeight < 40;
+  var atBottom = feed.scrollHeight - feed.scrollTop - feed.clientHeight < 40;
   while (feed.children.length > 300) feed.removeChild(feed.firstChild);
   if (atBottom) feed.scrollTop = feed.scrollHeight;
 }
 
-async function actOnSuggestion(id, action) {
-  try {
-    await fetch('/api/suggestions/' + encodeURIComponent(id) + '/' + action, { method: 'POST' });
-  } catch (e) {
-    console.warn('Failed to ' + action + ' suggestion:', e);
+// Event Delegation for Suggestions
+document.getElementById('suggestions-list').addEventListener('click', function(e) {
+  var btn = e.target.closest('button');
+  if (!btn) return;
+  var id = btn.getAttribute('data-id');
+  var action = btn.getAttribute('data-action');
+  if (id && action) {
+    fetch('/api/suggestions/' + encodeURIComponent(id) + '/' + action, { method: 'POST' })
+      .catch(function(err) { console.warn('Failed to ' + action + ' suggestion:', err); });
   }
-  // The next SSE 'state' push (broadcast right after the request completes
-  // server-side) will re-render the list; no need to optimistically patch
-  // the DOM here.
-}
+});
 
-async function bootstrap() {
-  const res = await fetch('/api/state');
-  const data = await res.json();
-  renderState(data.state);
-  (data.log || []).forEach(appendLine);
+function bootstrap() {
+  fetch('/api/state')
+    .then(function(res) { return res.json(); })
+    .then(function(data) {
+      renderState(data.state);
+      (data.log || []).forEach(appendLine);
+    })
+    .catch(function() {});
 }
-bootstrap().catch(() => {});
+bootstrap();
 
-const es = new EventSource('/events');
-es.addEventListener('state', e => renderState(JSON.parse(e.data)));
-es.addEventListener('log', e => appendLine(JSON.parse(e.data)));
+var es = new EventSource('/events');
+es.addEventListener('state', function(e) { renderState(JSON.parse(e.data)); });
+es.addEventListener('log', function(e) { appendLine(JSON.parse(e.data)); });
 </script>
 </body>
 </html>`;
 }
 
 function broadcastSSE(event, data) {
-    const payload = `event: ${event}\ndata: ${JSON.stringify(data)}\n\n`;
-    for (const res of sseClients) {
-        res.write(payload);
-    }
+  const payload = `event: ${event}\ndata: ${JSON.stringify(data)}\n\n`;
+  for (const res of sseClients) {
+    res.write(payload);
+  }
 }
 
 /**
@@ -367,97 +347,82 @@ function broadcastSSE(event, data) {
  *   snapshot to connected dashboard tabs (default 4000ms)
  */
 function start({ getState, port, pushIntervalMs = 4000 } = {}) {
-    if (server) return server; // idempotent -- ai-gm-bot.js may call start() once at boot only, but don't blow up on a second call
-    if (typeof getState === 'function') getStateFn = getState;
-    startedAt = Date.now();
-    const PORT = port || parseInt(process.env.STATUS_PORT || '4141', 10);
-    // SECURITY FIX: `server.listen(PORT)` with no host binds to ALL
-    // interfaces (0.0.0.0) by default -- this dashboard has zero
-    // authentication and serves live campaign content (recent messages,
-    // adventure state, token usage), so on a bare-metal/pm2 install that
-    // silently exposed it to the whole LAN (and the public internet on a
-    // cloud VPS with an open port), not just the "localhost" the startup
-    // log claimed. Default to loopback-only; STATUS_HOST=0.0.0.0 opts back
-    // in explicitly for anyone who wants LAN access, and the bot's own
-    // docker-compose.yml sets it (containers need to bind all interfaces
-    // internally for Docker's port publishing to work at all).
-    const HOST = process.env.STATUS_HOST || '127.0.0.1';
+  if (server) return server;
+  if (typeof getState === 'function') getStateFn = getState;
+  startedAt = Date.now();
+  const PORT = port || parseInt(process.env.STATUS_PORT || '4141', 10);
+  const HOST = process.env.STATUS_HOST || '127.0.0.1';
 
-    server = http.createServer((req, res) => {
-        if (req.url === '/' || req.url === '/index.html') {
-            res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
-            res.end(renderPage());
-            return;
-        }
-        if (req.url === '/api/state') {
-            res.writeHead(200, { 'Content-Type': 'application/json' });
-            res.end(JSON.stringify({ state: snapshot(), log: logger.recent(150) }));
-            return;
-        }
-        // ─── Assistant GM suggestion approve/reject ────────────────
-        // NEW: same read-only-dashboard-plus-one-write-path pattern the
-        // rest of this file avoided until now -- deliberately narrow
-        // (two POST routes, no auth beyond whatever network exposure
-        // STATUS_HOST already implies) rather than a general admin API.
-        // See modules/assistant-suggestions.js for the queue itself.
-        const suggestionMatch = req.method === 'POST' && req.url.match(/^\/api\/suggestions\/([^/]+)\/(approve|reject)$/);
-        if (suggestionMatch) {
-            const [, id, action] = suggestionMatch;
-            (async () => {
-                const result = action === 'approve'
-                    ? await assistantSuggestions.approve(id)
-                    : assistantSuggestions.reject(id);
-                res.writeHead(result.ok ? 200 : 404, { 'Content-Type': 'application/json' });
-                res.end(JSON.stringify(result));
-                broadcastSSE('state', snapshot());
-            })().catch(e => {
-                res.writeHead(500, { 'Content-Type': 'application/json' });
-                res.end(JSON.stringify({ ok: false, error: e.message }));
-            });
-            return;
-        }
-        if (req.url === '/events') {
-            res.writeHead(200, {
-                'Content-Type': 'text/event-stream',
-                'Cache-Control': 'no-cache',
-                'Connection': 'keep-alive'
-            });
-            res.write('\n');
-            sseClients.push(res);
-            req.on('close', () => {
-                sseClients = sseClients.filter(c => c !== res);
-            });
-            return;
-        }
-        res.writeHead(404, { 'Content-Type': 'text/plain' });
-        res.end('Not found');
-    });
+  server = http.createServer((req, res) => {
+    if (req.url === '/' || req.url === '/index.html') {
+      res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+      res.end(renderPage());
+      return;
+    }
+    if (req.url === '/api/state') {
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ state: snapshot(), log: logger.recent(150) }));
+      return;
+    }
 
-    logger.on('entry', entry => broadcastSSE('log', entry));
-    const pushTimer = setInterval(() => broadcastSSE('state', snapshot()), pushIntervalMs);
-    server.on('close', () => clearInterval(pushTimer));
+    const suggestionMatch = req.method === 'POST' && req.url.match(/^\/api\/suggestions\/([^/]+)\/(approve|reject)$/);
+    if (suggestionMatch) {
+      const [, id, action] = suggestionMatch;
+      (async () => {
+        const result = action === 'approve'
+          ? await assistantSuggestions.approve(id)
+          : assistantSuggestions.reject(id);
+        res.writeHead(result.ok ? 200 : 404, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify(result));
+        broadcastSSE('state', snapshot());
+      })().catch(e => {
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ ok: false, error: e.message }));
+      });
+      return;
+    }
+    if (req.url === '/events') {
+      res.writeHead(200, {
+        'Content-Type': 'text/event-stream',
+        'Cache-Control': 'no-cache',
+        'Connection': 'keep-alive'
+      });
+      res.write('\n');
+      sseClients.push(res);
+      req.on('close', () => {
+        sseClients = sseClients.filter(c => c !== res);
+      });
+      return;
+    }
+    res.writeHead(404, { 'Content-Type': 'text/plain' });
+    res.end('Not found');
+  });
 
-    server.listen(PORT, HOST, () => {
-        console.log(`📊 Status dashboard: http://${HOST === '0.0.0.0' ? 'localhost' : HOST}:${PORT}${HOST === '0.0.0.0' ? ' (reachable on your LAN — STATUS_HOST=0.0.0.0)' : ''}`);
-    });
-    server.on('error', (e) => {
-        console.warn(`⚠️  Status dashboard failed to start on port ${PORT}: ${e.message}`);
-    });
+  logger.on('entry', entry => broadcastSSE('log', entry));
+  const pushTimer = setInterval(() => broadcastSSE('state', snapshot()), pushIntervalMs);
+  server.on('close', () => clearInterval(pushTimer));
 
-    return server;
+  server.listen(PORT, HOST, () => {
+    console.log(`📊 Status dashboard: http://${HOST === '0.0.0.0' ? 'localhost' : HOST}:${PORT}${HOST === '0.0.0.0' ? ' (reachable on your LAN — STATUS_HOST=0.0.0.0)' : ''}`);
+  });
+  server.on('error', (e) => {
+    console.warn(`⚠️  Status dashboard failed to start on port ${PORT}: ${e.message}`);
+  });
+
+  return server;
 }
 
 function snapshot() {
-    const state = (getStateFn && getStateFn()) || {};
-    return { ...state, uptimeMs: Date.now() - (startedAt || Date.now()), logLevel: logger.level };
+  const state = (getStateFn && getStateFn()) || {};
+  return { ...state, uptimeMs: Date.now() - (startedAt || Date.now()), logLevel: logger.level };
 }
 
 function stop() {
-    if (server) {
-        server.close();
-        server = null;
-    }
-    sseClients = [];
+  if (server) {
+    server.close();
+    server = null;
+  }
+  sseClients = [];
 }
 
 module.exports = { start, stop };

@@ -132,7 +132,7 @@ const { Orchestrator } = require('./modules/gm-orchestrator.js');
 // 3. Configuration constants
 // -------------------------------------------------------------------
 const WS_URL = process.env.WS_URL || 'ws://localhost:10000';
-const ROOM_CODE = process.env.ROOM || 'ABC123';
+const ROOM_CODE = process.env.ROOM || 'AC12';
 const BOT_NAME = process.env.BOT_NAME || 'AI_GM';
 const MAX_HISTORY = parseInt(process.env.MAX_HISTORY || '20', 10);
 const SUMMARISE_EVERY = parseInt(process.env.SUMMARISE_EVERY || '10', 10);
@@ -171,16 +171,20 @@ const BASE_SYSTEM_PROMPT = (process.env.SYSTEM_PROMPT ||
 
   'You MUST call for a roll on EVERY player action that has risk, uncertainty, or opposition. Trivial actions (walking through a door, picking up a mundane object, speaking a sentence) require no roll—everything else does.\n\n' +
 
-  'Format: Embed a [ROLL "CharacterName" Attribute+Skill DV Position] tag naturally within your narrative sentence. NEVER put it on its own line or as a separate paragraph.\n\n' +
+  'You are calling FOR a roll, not making one. A real GM says "make a Presence roll" and then waits for the player to actually pick up the dice — they never secretly roll on the player\'s behalf the instant the words leave their mouth. Do the same: use [CALL FOR ROLL "CharacterName" Attribute+Skill DV Position "optional one-sentence suggestion"] to ask for the roll, then STOP — end your turn there and let the engine hand it to the player. It is never your job to resolve a player\'s roll for them.\n\n' +
 
-  'Example: "You edge toward the opening, [ROLL "Asadef" Wits+Stealth DV 3 Controlled] to slip through unnoticed."\n\n' +
+  'Format: Embed the tag naturally within your narrative sentence. NEVER put it on its own line or as a separate paragraph. The trailing quoted suggestion is optional but encouraged — use it the way a good GM thinks out loud: point out an unconventional but valid approach (a character with low Presence could lean on Melee to intimidate through sheer physical threat instead), remind them why you picked this DV/Position, or flag a complication their choice might invite. Keep it to one sentence; you are nudging, not deciding for them.\n\n' +
 
-  'CRITICAL: You MUST wait for the roll result. NEVER invent, simulate, describe, or format a dice result yourself—in ANY form. No emoji, no bolded numbers, no HTML, no bracketed summary. The engine generates the result automatically from the tag. If you type something that looks like a finished outcome, you have violated this rule.\n\n' +
+  'Example: "You edge toward the opening, [CALL FOR ROLL "Asadef" Wits+Stealth DV 3 Controlled "You could also risk a quick, showy dash instead of a careful creep — same DV, but Athletics might read better with your build."] — how do you want to play it?"\n\n' +
+
+  'CRITICAL: You MUST wait for the actual roll result before narrating any outcome. NEVER invent, simulate, describe, or format a dice result yourself—in ANY form. No emoji, no bolded numbers, no HTML, no bracketed summary, and no calling [ROLL ...] to resolve it yourself either. The player (or their `!gm roll` command / VTT roll button) produces the real result, and the engine will hand it back to you as context on your next turn. If you type something that looks like a finished outcome, you have violated this rule.\n\n' +
+
+  '[ROLL "CharacterName" Attribute+Skill DV Position] (no trailing suggestion) still exists and resolves a roll immediately — reserve it for rolls that are not a player waiting on your call: an NPC\'s own check, or a roll the player has already explicitly told you to make on their behalf.\n\n' +
 
   'When a player types a number in response to a menu:\n' +
   '1. Describe the action briefly (1 sentence).\n' +
-  '2. Call the roll with [ROLL ...] immediately.\n' +
-  '3. Wait for the engine result, THEN narrate the full outcome.\n\n' +
+  '2. Call for the roll with [CALL FOR ROLL ...] and stop.\n' +
+  '3. On your NEXT turn, once the real result is in your context, narrate the full outcome.\n\n' +
 
   'If no character is selected, respond with: "⚠️ Please select a character in the VTT or create one with !gm create <name>."\n\n' +
 
@@ -215,6 +219,8 @@ const BASE_SYSTEM_PROMPT = (process.env.SYSTEM_PROMPT ||
 
   'Scene advancement: [SCENE COMPLETE "brief note on how it ended"] — use only at genuine dramatic scene breaks, not after every exchange.\n\n' +
 
+  'Knowledge state: your scene context may include a KNOWLEDGE STATE block listing this module\'s secrets, each with an id, the full truth (GM eyes only), what the players currently know, and (for unrevealed ones) a reveal condition. Treat this as the authoritative, explicit answer to "what am I allowed to tell the players right now?" — not the _gmhints prose elsewhere, which is a looser, older mechanism. When play actually satisfies a listed reveal condition (players witness it, an NPC confesses, a clue makes it undeniable), narrate the reveal AND call [REVEAL "id"] in the same turn so the game\'s own state matches your narration. Never state, imply, or let an NPC confess an unrevealed entry\'s truth without also emitting its [REVEAL "id"] tag; conversely, never emit [REVEAL "id"] without actually narrating that reveal. [HIDE "id"] undoes a mistaken reveal — use it only to correct an error, not as a normal narrative tool.\n\n' +
+
   '═══════════════════════════════════════════════════════════════\n' +
   'III. NPC CREATION & TOKEN MANAGEMENT (NON-NEGOTIABLE)\n' +
   '═══════════════════════════════════════════════════════════════\n\n' +
@@ -248,7 +254,7 @@ const BASE_SYSTEM_PROMPT = (process.env.SYSTEM_PROMPT ||
 
   'When uncertain, have NPCs offer actionable leads (locations to visit, people to question, documents to find) rather than summarizing answers. Treat the module\'s act structure as a promise to the players: Act I establishes the mystery, Act II uncovers the machinery, Act III resolves it.\n\n' +
 
-  'If a module provides gmHints in its metadata, treat those hints as immutable constraints on your narration. If a player asks directly about a forbidden revelation, deflect gracefully toward an investigation location—do not answer, lie, or hedge awkwardly.\n\n' +
+  'If a module provides gmHints in its metadata, or explicit KNOWLEDGE STATE entries (see section II above), treat those as immutable constraints on your narration. If a player asks directly about a forbidden or unrevealed revelation, deflect gracefully toward an investigation location—do not answer, lie, or hedge awkwardly.\n\n' +
 
   'Keep narration vivid but lean. Frame the situation, call the roll, then narrate the outcome. Let failure generate Story Beats—it drives the story forward. Stay in the fiction at all times. NEVER narrate your interpretation of the player\'s intent (e.g., "I understand you want to move on"). If a player message is terse or ambiguous, respond by continuing the story in-world.\n\n' +
 
@@ -256,11 +262,13 @@ const BASE_SYSTEM_PROMPT = (process.env.SYSTEM_PROMPT ||
   'VI. STRICT PROHIBITIONS (ZERO TOLERANCE)\n' +
   '═══════════════════════════════════════════════════════════════\n\n' +
 
-  '- NEVER narrate a risky action without a [ROLL ...] tag.\n' +
+  '- NEVER narrate a risky player action without a [CALL FOR ROLL ...] tag.\n' +
   '- NEVER write, simulate, or format a dice result yourself.\n' +
+  '- NEVER resolve a player\'s own roll for them (that includes using [ROLL ...] on their behalf) — call for it and wait.\n' +
   '- NEVER introduce a named NPC without an immediate [NPC CREATE] tag.\n' +
   '- NEVER reveal Act II/III mechanics, hierarchies, or the engine\'s internal logic in Act I.\n' +
   '- NEVER summarize module secrets through NPC monologue—always deflect to investigation.\n' +
+  '- NEVER state an unrevealed KNOWLEDGE STATE entry\'s truth to players, and NEVER emit [REVEAL ...] without actually narrating that reveal in the same turn (or vice versa).\n' +
   '- NEVER break the fourth wall to explain your reasoning. Stay in the fiction.';
 
 // Build adventure manifest (if script exists)
@@ -1107,17 +1115,25 @@ async function handleMessage(msg) {
       return;
     }
     try {
-      const processed = await commandHandler.processSpecialTags(text, {
-        orchestrator,
-        charactersModule: characters,
-        sendChat,
-        ws,
-        apiRequest,
-        myRole,
-        driver, // NEW: [SCENE COMPLETE] may need to generate new content
-      }, sender);
+      // NEW: same 20s hard ceiling as the AI-narration tag pass below --
+      // a single well-formed roll tag should resolve almost instantly,
+      // but this still guards against a hang instead of leaving the
+      // player staring at nothing. See that call site's comment for why.
+      const processed = await Promise.race([
+        commandHandler.processSpecialTags(text, {
+          orchestrator,
+          charactersModule: characters,
+          sendChat,
+          ws,
+          apiRequest,
+          myRole,
+          driver, // NEW: [SCENE COMPLETE] may need to generate new content
+        }, sender),
+        new Promise((_, reject) => setTimeout(() => reject(new Error('processSpecialTags timed out after 20s')), 20000)),
+      ]);
       if (processed !== text) {
         sendChat(processed);
+        recordRollResultInHistory(`${sender}: ${text}`, processed);
         await orchestrator.campaign.save();
         return;
       }
@@ -1151,6 +1167,14 @@ async function handleMessage(msg) {
       });
       if (response && typeof response === 'string') {
         sendChat(response);
+        // NEW: a `!gm roll ...` command resolves a real roll the exact
+        // same way a player-typed [ROLL "..."] tag does (see the block
+        // above) but via a totally separate code path in commands.js's
+        // handleBotCommand() -- so it needs the same recording into
+        // conversation history or the AI never learns the roll happened.
+        if (/^!gm\s+roll\b/i.test(text.trim())) {
+          recordRollResultInHistory(`${sender}: ${text}`, response);
+        }
       }
       await orchestrator.campaign.save();
     } catch (err) {
@@ -1457,11 +1481,46 @@ async function handleMessage(msg) {
     return result;
   }
 
-  // ─── Helper: Force roll if AI forgot ──────────────────────────────
+  // ─── Helper: feed a player-executed roll back into AI context ──────
+  // NEW (companion to the [CALL FOR ROLL ...] change above): the GM no
+  // longer resolves a player's roll inline as part of its own narration,
+  // so the AI never automatically "sees" the outcome the way it used to
+  // (previously the roll happened synchronously inside the same message
+  // it was narrating, however blindly). Now that a roll can complete via
+  // `!gm roll ...` or a player-typed `[ROLL "..."]` tag -- both of which
+  // return their result directly to chat via sendChat() and historically
+  // never touched orchestrator.campaign.state.conversation at all -- that
+  // result has to be explicitly recorded into history, or the next AI
+  // turn would have no idea a roll even happened. Uses
+  // compactRollCardsForHistory() (defined above) so the same
+  // anti-imitation compacting applies here as it does to the AI's own
+  // output.
+  function recordRollResultInHistory(promptLine, resultText) {
+    if (!orchestrator) return;
+    const state = orchestrator.campaign.state;
+    const arr = state.conversation || [];
+    arr.push({
+      role: 'user',
+      content: `${promptLine}\n[dice engine] ${compactRollCardsForHistory(resultText)}`
+    });
+    if (arr.length > MAX_HISTORY * 2) arr.splice(0, arr.length - MAX_HISTORY);
+    state.conversation = arr;
+  }
+
+  // ─── Helper: Call for a roll if AI forgot ──────────────────────────
+  // CHANGED (auto-roll was a bad player experience): this used to insert
+  // a [ROLL ...] tag, which processSpecialTags() then resolved
+  // immediately -- meaning if the model presented options without
+  // remembering its own roll tag, the fallback didn't just remind it to
+  // ask for a roll, it secretly rolled the dice FOR the player without
+  // them ever being asked. That's not how a real GM runs a table. Now
+  // this inserts [CALL FOR ROLL ...] instead, which only prompts the
+  // player for the roll (see commands.js's processSpecialTags()) and
+  // waits for them to actually make it via `!gm roll` or the VTT.
   function forceRollIfMissing(response, context) {
     // Check if the response contains numbered options (e.g., "1. Do something")
     const hasOptions = /\d\.[^\n]+\n/.test(response);
-    const hasRoll = /\[ROLL\s*"[^"]+"/.test(response);
+    const hasRoll = /\[(?:CALL FOR ROLL|ROLL)\s*"[^"]+"/.test(response);
 
     // If there are options but no roll, try to infer the default roll
     if (hasOptions && !hasRoll) {
@@ -1484,7 +1543,7 @@ async function handleMessage(msg) {
         } else if (action.includes('lore') || action.includes('know') || action.includes('recall')) {
           attr = 'Wits'; skill = 'Lore';
         }
-        const rollTag = `[ROLL "${defaultChar}" ${attr}+${skill} DV 3 Controlled]`;
+        const rollTag = `[CALL FOR ROLL "${defaultChar}" ${attr}+${skill} DV 3 Controlled]`;
         const matchIndex = response.indexOf(firstOption[0]);
         if (matchIndex !== -1) {
           return response.slice(0, matchIndex) + rollTag + '\n' + response.slice(matchIndex);
@@ -1542,15 +1601,34 @@ async function handleMessage(msg) {
     // (including the injected one) in a single processSpecialTags pass.
     clean = forceRollIfMissing(clean, { sender });
 
-    clean = await commandHandler.processSpecialTags(clean, {
-      orchestrator,
-      charactersModule: characters,
-      sendChat,
-      ws,
-      apiRequest,
-      myRole,
-      driver, // NEW: [SCENE COMPLETE] may need to generate new content
-    }, sender); // NEW: pass sender through so "me" resolves consistently here too
+    // NEW: hard ceiling on tag processing itself, independent of the
+    // per-tag 5s withTimeout()s already inside processSpecialTags()
+    // (commands.js). Those cover individual API calls, but a truncated/
+    // malformed reply (see the raised token defaults in drivers/*.js --
+    // this is the belt to that belt-and-suspenders) can still produce an
+    // unusual number of tags or an edge case those inner guards don't
+    // anticipate, and a chain of several sequential 5s waits already
+    // reads as "frozen" to someone watching chat. If tag processing
+    // hasn't finished within 20s, give up on it and send the raw
+    // (untagged) reply rather than leaving the table staring at nothing.
+    const rawBeforeTags = clean;
+    try {
+      clean = await Promise.race([
+        commandHandler.processSpecialTags(clean, {
+          orchestrator,
+          charactersModule: characters,
+          sendChat,
+          ws,
+          apiRequest,
+          myRole,
+          driver, // NEW: [SCENE COMPLETE] may need to generate new content
+        }, sender), // NEW: pass sender through so "me" resolves consistently here too
+        new Promise((_, reject) => setTimeout(() => reject(new Error('processSpecialTags timed out after 20s')), 20000)),
+      ]);
+    } catch (e) {
+      console.error('⚠️ Tag processing did not finish in time, sending unresolved reply:', e.message);
+      clean = rawBeforeTags;
+    }
 
     // NEW: catch any tag-shaped text that survived processing --
     // malformed tags, typos in verb/keyword, or anything the regexes

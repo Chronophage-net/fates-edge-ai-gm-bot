@@ -20,7 +20,8 @@
 // Each entry is:
 //   {
 //     id,               // string, stable for this process's lifetime
-//     kind,             // 'fact' | 'npc-create' | 'scene-complete'
+//     kind,             // 'fact' | 'npc-create' | 'scene-complete' |
+//                       //   'knowledge-reveal' | 'knowledge-hide'
 //     label,            // short human-readable description for the panel
 //     createdAt,        // epoch ms
 //     apply,            // async () => string|void -- performs the actual

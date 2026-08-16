@@ -5,7 +5,13 @@
   "tier": "III",
   "author": "Nicholas A. Gasper",
   "sessions": "2-3",
-  "themes": ["Political Intrigue", "Social Combat", "Legitimacy and Loyalty", "Ritual Silence", "Moral Cost"],
+  "themes": [
+    "Political Intrigue",
+    "Social Combat",
+    "Legitimacy and Loyalty",
+    "Ritual Silence",
+    "Moral Cost"
+  ],
   "bestiary": [],
   "acts": [
     {
@@ -18,7 +24,12 @@
           "title": "The Silent Chamber",
           "description": "Elders stand locked in place — some mid-agreement, others caught in the heat of argument, hands raised, mouths open on words that never came. No one moves. No one speaks. The single scrawled warning left behind reads: 'The first to speak will break the silence but pay a price. Find the source before we are all lost.'",
           "timers": [
-            { "name": "Court Tension", "segments": 10, "current": 3, "description": "Tracks the court's stability. 0-2 Calm (-1 DV on social checks), 3-5 Tense (normal DV), 6-8 Strained (+1 DV), 9-10 Fracturing (+2 DV, violence becomes possible). Worsens on a miss when negotiating, when the party disrupts the court, or when an alliance goes unmaintained. Improves on a clean success strengthening an alliance, uncovering truth about the silence, or performing a stabilizing rite." }
+            {
+              "name": "Court Tension",
+              "segments": 10,
+              "current": 3,
+              "description": "Tracks the court's stability. 0-2 Calm (-1 DV on social checks), 3-5 Tense (normal DV), 6-8 Strained (+1 DV), 9-10 Fracturing (+2 DV, violence becomes possible). Worsens on a miss when negotiating, when the party disrupts the court, or when an alliance goes unmaintained. Improves on a clean success strengthening an alliance, uncovering truth about the silence, or performing a stabilizing rite."
+            }
           ],
           "encounters": [
             {
@@ -74,7 +85,12 @@
           "title": "Breaking the Silence",
           "description": "The silence is not merely quiet — it is a binding, ancient and deliberate. Any attempt to speak against it exacts a toll from the speaker: a kept promise called due, a reputation reshaped, a relationship renegotiated on terms not of their choosing.",
           "timers": [
-            { "name": "Unspoken Price", "segments": 8, "current": 0, "description": "Tracks the party's attempts to break the silence. -1 on a successful attempt, +1 on a failed attempt, +2 if a character chooses to risk a steeper toll for greater effect, -2 if a Songweaver sings the court open instead of forcing it. At 0, the silence breaks at minimal cost. At 8, the silence calcifies into something closer to permanent — the court itself begins to forget how to speak." }
+            {
+              "name": "Unspoken Price",
+              "segments": 8,
+              "current": 0,
+              "description": "Tracks the party's attempts to break the silence. -1 on a successful attempt, +1 on a failed attempt, +2 if a character chooses to risk a steeper toll for greater effect, -2 if a Songweaver sings the court open instead of forcing it. At 0, the silence breaks at minimal cost. At 8, the silence calcifies into something closer to permanent — the court itself begins to forget how to speak."
+            }
           ],
           "encounters": [
             {
@@ -112,7 +128,12 @@
           "title": "Finding the Shepherd",
           "description": "The High Shepherd has been missing since the silence began — not kidnapped, not struck down, but withdrawn into a hidden chamber where they willingly entered a vision of the court's past, seeking answers to a crisis they saw coming and could not yet name.",
           "timers": [
-            { "name": "Shepherd's Will", "segments": 10, "current": 0, "description": "Tracks the restoration of the court once the Shepherd is found. -1 per successful restoration attempt, +1 per failed attempt, -2 if the Shepherd personally leads a restoration. At 0, the court and the Aelinnel are saved. At 10, the court collapses and the Aelinnel lose their guiding tradition." }
+            {
+              "name": "Shepherd's Will",
+              "segments": 10,
+              "current": 0,
+              "description": "Tracks the restoration of the court once the Shepherd is found. -1 per successful restoration attempt, +1 per failed attempt, -2 if the Shepherd personally leads a restoration. At 0, the court and the Aelinnel are saved. At 10, the court collapses and the Aelinnel lose their guiding tradition."
+            }
           ],
           "encounters": [
             {
@@ -133,7 +154,12 @@
           "title": "The Shepherd's Vision",
           "description": "The High Shepherd relives a founding moment of Aelinnel history — the first time the court chose silence over a truth too dangerous to speak aloud. To free them, the party must navigate the vision honestly, not fight their way through it, and convince the Shepherd that this crisis deserves a different answer than the first one did.",
           "timers": [
-            { "name": "Vision Stability", "segments": 6, "current": 0, "description": "-1 per successful, honest interaction with the vision; +1 per failed interaction; +2 if the party damages or forces the vision rather than engaging it. At 0, the vision stabilizes and the Shepherd is freed. At 6, the vision collapses and the Shepherd is lost to it." }
+            {
+              "name": "Vision Stability",
+              "segments": 6,
+              "current": 0,
+              "description": "-1 per successful, honest interaction with the vision; +1 per failed interaction; +2 if the party damages or forces the vision rather than engaging it. At 0, the vision stabilizes and the Shepherd is freed. At 6, the vision collapses and the Shepherd is lost to it."
+            }
           ],
           "encounters": [
             {
@@ -193,13 +219,21 @@
       "id": "loc-silent-chamber",
       "name": "The Court of the Silent Shepherds",
       "description": "A vast, ancient chamber where Aelinnel elders stand frozen in the moments the silence caught them — some mid-agreement, others locked in argument. The air itself feels like it is holding its breath.",
-      "tags": ["ritual", "social", "frozen"]
+      "tags": [
+        "ritual",
+        "social",
+        "frozen"
+      ]
     },
     {
       "id": "loc-hidden-chamber",
       "name": "The Hidden Chamber",
       "description": "A concealed room beneath the court where the High Shepherd sits motionless, caught in a vision of the court's founding. Old memory hums in the stone here like a held note.",
-      "tags": ["vision", "sacred", "hidden"]
+      "tags": [
+        "vision",
+        "sacred",
+        "hidden"
+      ]
     }
   ],
   "factions": [
@@ -243,7 +277,6 @@
     }
   ],
   "notes": "This adventure trades combat for social stakes almost entirely — treat every DV and Position exactly as seriously as a combat encounter, because for this table, it is the combat. The core reframe from the source material: the 'price' of speech is never accounting-style debt or ledger language — it is always social and narrative (a favor called in, a standing strained, a promise that follows the speaker home). Avoid framing any twist as a shocking betrayal; the Silent Watch's opportunism and the High Shepherd's self-imposed trap are both consequences of legitimate, sympathetic motives taken too far, not villainy for its own sake. Designed for 2-3 sessions; scales cleanly to Tier II by reducing all DVs by 1 and timer sizes by 2.",
-
   "_gmhints": {
     "pacing": {
       "act1": "Let the frozen court feel eerie rather than puzzle-boxy — this is a place, not a mechanism. Elder Lysara should be discoverable but not obvious; reward players who take time to actually look at individual elders rather than treating the room as a single obstacle. Court Tension starts at 3 (Tense) to establish immediate but not desperate stakes.",
@@ -265,12 +298,68 @@
       "songweaver_spotlight": "If a Songweaver PC is at the table, look for chances to let their song visibly ease Court Tension in ways other approaches can't — this adventure is built to make that path feel special without making other approaches feel weak."
     }
   },
-
   "currentAct": 0,
   "currentScene": 0,
   "startedAt": null,
   "completedAt": null,
   "status": "planned",
   "createdAt": "2026-08-07T00:00:00.000Z",
-  "updatedAt": "2026-08-07T00:00:00.000Z"
+  "updatedAt": "2026-08-07T00:00:00.000Z",
+  "knowledge": [
+    {
+      "id": "high-shepherd-secret",
+      "subject": "npc-high-shepherd",
+      "gm": "Entered the vision willingly and became trapped by their own reluctance to leave without an answer. This should read as a leader's very human fear of failing their people, not a mystery to be 'solved' with suspicion.",
+      "player": "The High Shepherd plays the part everyone assumes: Leader of the Aelinnel, missing since the silence began. Nothing about their manner invites a second look.",
+      "revealed": false,
+      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "tags": [
+        "npc-secret"
+      ]
+    },
+    {
+      "id": "elder-lysara-secret",
+      "subject": "npc-elder-lysara",
+      "gm": "Knows the Songweaver bypass exists but withholds it out of genuine concern for the court's authority, not personal gain. She will share it once she trusts the party isn't looking for the cheapest way out, but the deepest way through.",
+      "player": "Elder Lysara plays the part everyone assumes: Songweaver elder, the party's most likely ally within the court. Nothing about their manner invites a second look.",
+      "revealed": false,
+      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "tags": [
+        "npc-secret"
+      ]
+    },
+    {
+      "id": "the-songweaver-bypass-for-breaking-the",
+      "subject": "plot",
+      "gm": "The Songweaver bypass for breaking the silence — Lysara should only reveal this once real trust is established; it is not a freebie to be handed out in Act I",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "the-silent-watch-s-exact-role-if",
+      "subject": "plot",
+      "gm": "The Silent Watch's exact role, if any — keep their involvement ambiguous and optional; they should never be revealed as a mustache-twirling saboteur, only ever as opportunists reacting to a crisis they didn't cause",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "that-the-high-shepherd-entered-the-vision",
+      "subject": "plot",
+      "gm": "That the High Shepherd entered the vision willingly — this should surface only once the party actually finds them in Act III, not be hinted at as a 'mystery' earlier",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    }
+  ]
 }

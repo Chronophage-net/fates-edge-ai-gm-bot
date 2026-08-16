@@ -5,7 +5,12 @@
   "tier": "III",
   "author": "Nicholas A. Gasper",
   "sessions": "3-4",
-  "themes": ["Infernal Bargain", "Political Intrigue", "Patron Politics", "Unreliable Alliances"],
+  "themes": [
+    "Infernal Bargain",
+    "Political Intrigue",
+    "Patron Politics",
+    "Unreliable Alliances"
+  ],
   "bestiary": [
     {
       "id": "silent-collector",
@@ -14,11 +19,28 @@
       "class": "IV",
       "category": "outsider",
       "description": "A gaunt figure in a ledger-gray coat who never raises his voice, because he has never needed to. He is the instrument by which Maelstraeus and Mor'iraath alike enforce a bargain's fine print. He does not negotiate — he simply arrives, states the clause being invoked, and waits for compliance or refusal. Refusal is rarely wise.",
-      "stats": { "Wits": 4, "Presence": 4, "Resolve": 5, "hp": 30 },
+      "stats": {
+        "Wits": 4,
+        "Presence": 4,
+        "Resolve": 5,
+        "hp": 30
+      },
       "sb_spends": [
-        { "cost": 1, "name": "Cited Clause", "effect": "The Collector recites the exact wording of a bargain a PC made; that PC suffers -1 die on any roll to argue against the clause's plain meaning this scene." },
-        { "cost": 2, "name": "Immediate Enforcement", "effect": "The Collector seizes an asset, follower, or favor on the spot as payment; the target loses it until it is bought or bargained back." },
-        { "cost": 3, "name": "Emergency Clause", "effect": "The Collector invokes a hard trigger: the target must perform a costly service immediately or be marked In Default (a Condition that worsens all future bargains with that patron)." }
+        {
+          "cost": 1,
+          "name": "Cited Clause",
+          "effect": "The Collector recites the exact wording of a bargain a PC made; that PC suffers -1 die on any roll to argue against the clause's plain meaning this scene."
+        },
+        {
+          "cost": 2,
+          "name": "Immediate Enforcement",
+          "effect": "The Collector seizes an asset, follower, or favor on the spot as payment; the target loses it until it is bought or bargained back."
+        },
+        {
+          "cost": 3,
+          "name": "Emergency Clause",
+          "effect": "The Collector invokes a hard trigger: the target must perform a costly service immediately or be marked In Default (a Condition that worsens all future bargains with that patron)."
+        }
       ],
       "lore": "No one has ever seen the Silent Collector make a bargain of his own. Cinderites whisper that he was once a mortal moneylender so scrupulously fair that both Mor'iraath and Maelstraeus wanted him — and that he now serves whichever patron currently holds his own debt, a detail he has never confirmed or denied."
     },
@@ -29,11 +51,29 @@
       "class": "VI",
       "category": "outsider",
       "description": "Not the demon himself but a shard of his will given shape — a towering figure of cracked obsidian and slow-crawling fire, wreathed in the smoke of a thousand burnt contracts. It speaks with the voice of every ruined debtor it has ever consumed. It appears when a deal that threatens Mor'iraath's expansion is close to closing.",
-      "stats": { "Body": 6, "Spirit": 5, "Presence": 5, "armor": 3, "hp": 55 },
+      "stats": {
+        "Body": 6,
+        "Spirit": 5,
+        "Presence": 5,
+        "armor": 3,
+        "hp": 55
+      },
       "sb_spends": [
-        { "cost": 2, "name": "Conflagration Clause", "effect": "A zone ignites; all within suffer -1 die to actions requiring patience, stability, or cooperation for the scene." },
-        { "cost": 3, "name": "Burning Ledger", "effect": "Target suffers Harm 2 (Burn) and their most recent bargain is publicly, catastrophically revealed." },
-        { "cost": 4, "name": "The Maw's Hunger", "effect": "The Avatar consumes a nearby Asset, structure, or minor NPC outright, denying it to everyone; gain 1 Boon for Mor'iraath's worshippers present." }
+        {
+          "cost": 2,
+          "name": "Conflagration Clause",
+          "effect": "A zone ignites; all within suffer -1 die to actions requiring patience, stability, or cooperation for the scene."
+        },
+        {
+          "cost": 3,
+          "name": "Burning Ledger",
+          "effect": "Target suffers Harm 2 (Burn) and their most recent bargain is publicly, catastrophically revealed."
+        },
+        {
+          "cost": 4,
+          "name": "The Maw's Hunger",
+          "effect": "The Avatar consumes a nearby Asset, structure, or minor NPC outright, denying it to everyone; gain 1 Boon for Mor'iraath's worshippers present."
+        }
       ],
       "lore": "The Avatar is not sent to kill — killing is inefficient, and Mor'iraath despises waste born of haste rather than purpose. It is sent to force a closing: to make a deal happen faster and worse than it would have otherwise, because a rushed bargain is a bad bargain, and bad bargains burn brightest."
     },
@@ -44,10 +84,23 @@
       "class": "II",
       "category": "humanoid (cinderite)",
       "description": "A quill-fingered clerk of the Infernal Bazaar who records every deal made within Cinder's walls in ink that never fades. Ember-Scribes are neutral information brokers, technically loyal to no faction — which makes their ledgers the single most valuable (and dangerous) resource in the city.",
-      "stats": { "Wits": 4, "Lore": 4, "Presence": 2, "hp": 15 },
+      "stats": {
+        "Wits": 4,
+        "Lore": 4,
+        "Presence": 2,
+        "hp": 15
+      },
       "sb_spends": [
-        { "cost": 1, "name": "Selective Recall", "effect": "The Scribe 'misremembers' a detail, costing the party a die on a roll that depended on it." },
-        { "cost": 2, "name": "Sell the Secret", "effect": "The Scribe reveals what they know to a rival faction instead, changing that faction's Relationship track." }
+        {
+          "cost": 1,
+          "name": "Selective Recall",
+          "effect": "The Scribe 'misremembers' a detail, costing the party a die on a roll that depended on it."
+        },
+        {
+          "cost": 2,
+          "name": "Sell the Secret",
+          "effect": "The Scribe reveals what they know to a rival faction instead, changing that faction's Relationship track."
+        }
       ],
       "lore": "Ember-Scribes answer the right question for the right price — but every answer is itself logged, and every log is itself for sale. Asking one a question about someone is, functionally, telling Cinder that you're interested in them."
     }
@@ -63,7 +116,12 @@
           "title": "Scene 1: Maelstraeus's Offer",
           "description": "Maelstraeus doesn't demand an audience — he arranges for the party to already be having one, mid-conversation, as though it were always going to happen. He lays out the problem plainly: Mor'iraath's influence is spreading along a trade corridor that several of Maelstraeus's other clients depend on, and a demon who consumes value faster than it can be replaced is bad for everyone's business, his most of all. He offers immediate, tangible help — enough to solve whatever the party's current crisis is — if they'll go to the City of Cinder and broker terms that starve Mor'iraath's expansion. The price is 4 Obligation to Maelstraeus, marked the moment they shake on it.",
           "timers": [
-            { "name": "Mor'iraath's Expansion", "segments": 8, "current": 0, "description": "How far the demon's influence has spread into the mortal trade corridor. Ticks whenever the party delays, whenever a Cinder faction deal favors Mor'iraath, or whenever a scene closes without progress against him. At 8, the corridor is lost and a Front advances." }
+            {
+              "name": "Mor'iraath's Expansion",
+              "segments": 8,
+              "current": 0,
+              "description": "How far the demon's influence has spread into the mortal trade corridor. Ticks whenever the party delays, whenever a Cinder faction deal favors Mor'iraath, or whenever a scene closes without progress against him. At 8, the corridor is lost and a Front advances."
+            }
           ],
           "encounters": [
             {
@@ -84,7 +142,11 @@
           "title": "Scene 2: The Road to Cinder",
           "description": "The journey to the City of Cinder isn't measured in miles but in what travelers are willing to give up along the way — the Realm of Fire charges its own toll. A minor agent of Mor'iraath (a debt-collector spirit, a burnt courier, a smiling toll-taker) tests the party's resolve before they even arrive, offering a small, genuinely useful bargain that costs almost nothing — which is exactly the shape of Livaea's earliest foreshadowing, though no one will recognize it as such yet.",
           "timers": [
-            { "name": "Livaea's Manipulation", "segments": 6, "current": 0, "description": "How much of Livaea's scheme the party has unknowingly walked into. Ticks whenever they accept a suspiciously perfect offer, whenever an NPC becomes fixated on a PC's private desire, or whenever they ignore a too-good-to-be-true clause. At 6, her Act III reveal lands with full weight; below 4, it lands as a rumor they can still investigate on their own terms."
+            {
+              "name": "Livaea's Manipulation",
+              "segments": 6,
+              "current": 0,
+              "description": "How much of Livaea's scheme the party has unknowingly walked into. Ticks whenever they accept a suspiciously perfect offer, whenever an NPC becomes fixated on a PC's private desire, or whenever they ignore a too-good-to-be-true clause. At 6, her Act III reveal lands with full weight; below 4, it lands as a rumor they can still investigate on their own terms."
             }
           ],
           "encounters": [
@@ -113,8 +175,17 @@
           "title": "Scene 3: The Grand Exchange",
           "description": "A vast dome where screams are the bidding currency and every transaction is public theater. This is where the party makes first contact with Cinder's power brokers: the Ember Merchants' Guild (commerce and stability), and, if they ask the wrong Ember-Scribe the wrong question, the first whisper of the Whisperer of Better Deals — a Cinderite fixer whose advice always steers toward Mor'iraath's interests while sounding disinterested.",
           "timers": [
-            { "name": "Mor'iraath's Expansion", "segments": 8, "current": 0 },
-            { "name": "Cinder Market Stability", "segments": 6, "current": 0, "description": "How stable the Bazaar's economy remains. Ticks down when the party disrupts a monopoly or exposes a fraud; ticks up when they strike deals that concentrate power. At 0, the market crashes and the Ember Merchants' Guild turns hostile; at 6, the Guild is unassailable and every future deal in Cinder costs +1 die of effort." }
+            {
+              "name": "Mor'iraath's Expansion",
+              "segments": 8,
+              "current": 0
+            },
+            {
+              "name": "Cinder Market Stability",
+              "segments": 6,
+              "current": 0,
+              "description": "How stable the Bazaar's economy remains. Ticks down when the party disrupts a monopoly or exposes a fraud; ticks up when they strike deals that concentrate power. At 0, the market crashes and the Ember Merchants' Guild turns hostile; at 6, the Guild is unassailable and every future deal in Cinder costs +1 die of effort."
+            }
           ],
           "encounters": [
             {
@@ -145,8 +216,16 @@
           "title": "Scene 4: The Arena of Wills",
           "description": "Fights here settle disputes that words can't, and champions are political currency — a Pit-Fighter's favor can swing a faction's loyalty as surely as a bribe. The party can back a champion, become one for a bout, or use the Arena's chaos as cover for other business. This is also where the Whisperer of Better Deals, if not already met, makes a direct approach to whichever PC has expressed the clearest personal desire.",
           "timers": [
-            { "name": "Mor'iraath's Expansion", "segments": 8, "current": 0 },
-            { "name": "Livaea's Manipulation", "segments": 6, "current": 0 }
+            {
+              "name": "Mor'iraath's Expansion",
+              "segments": 8,
+              "current": 0
+            },
+            {
+              "name": "Livaea's Manipulation",
+              "segments": 6,
+              "current": 0
+            }
           ],
           "encounters": [
             {
@@ -177,8 +256,16 @@
           "title": "Scene 5: The Archive of Regrets",
           "description": "A repository of every secret Cinder has ever traded, curated and sold by the Regret-Sellers. This is the party's best chance to learn Mor'iraath's actual weakness in this scheme, and — if they dig deep or carelessly enough — the first hard evidence that someone besides Maelstraeus and Mor'iraath has been shaping events. The truth here should feel earned, not handed over.",
           "timers": [
-            { "name": "Mor'iraath's Expansion", "segments": 8, "current": 0 },
-            { "name": "Livaea's Manipulation", "segments": 6, "current": 0 }
+            {
+              "name": "Mor'iraath's Expansion",
+              "segments": 8,
+              "current": 0
+            },
+            {
+              "name": "Livaea's Manipulation",
+              "segments": 6,
+              "current": 0
+            }
           ],
           "encounters": [
             {
@@ -216,8 +303,16 @@
           "title": "Scene 6: Choosing the Approach",
           "description": "The party has enough pieces to move against Mor'iraath's expansion directly. They must choose: Direct Confrontation (face the Avatar and the deal it's trying to force closed) or Infernal Subterfuge (use the leverage gathered in Act II to unravel the deal from the inside, faction by faction). Either path is viable; neither is safe.",
           "timers": [
-            { "name": "Mor'iraath's Expansion", "segments": 8, "current": 0 },
-            { "name": "Livaea's Manipulation", "segments": 6, "current": 0 }
+            {
+              "name": "Mor'iraath's Expansion",
+              "segments": 8,
+              "current": 0
+            },
+            {
+              "name": "Livaea's Manipulation",
+              "segments": 6,
+              "current": 0
+            }
           ],
           "encounters": [
             {
@@ -259,7 +354,11 @@
           "title": "Scene 7: Livaea's Reveal",
           "description": "Whatever path the party chose, the pattern becomes undeniable here: the too-perfect offers, the fixated NPCs, the rumors of a 'Patron of Perfect Outcomes' — all threads of the same web. Livaea appears, or is unmasked through an intermediary, and her actual game becomes clear: she has been quietly making sure every deal in Cinder that touches the party trends toward outcomes that feel like triumphs but leave them owing her, specifically, the one favor that matters. This should land as the uncovering of a plan already visible in hindsight, not a twist pulled from nowhere.",
           "timers": [
-            { "name": "Livaea's Manipulation", "segments": 6, "current": 0 }
+            {
+              "name": "Livaea's Manipulation",
+              "segments": 6,
+              "current": 0
+            }
           ],
           "encounters": [
             {
@@ -280,8 +379,16 @@
           "title": "Scene 8: Hard Choices",
           "description": "The demon's expansion can be stopped. The question left is what that costs, and to whom. Complete Maelstraeus's goal outright, and risk whatever hidden agenda he's been nursing since Act I (the favor he quietly noted). Defy him — walk away from full compliance with the original bargain — and risk his displeasure, which for a patron of interdependence means being quietly cut out of every future web of favors that matters. Livaea, meanwhile, is owed whatever the party actually marked against her over the last two acts, regardless of which patron they side with.",
           "timers": [
-            { "name": "Mor'iraath's Expansion", "segments": 8, "current": 0 },
-            { "name": "Livaea's Manipulation", "segments": 6, "current": 0 }
+            {
+              "name": "Mor'iraath's Expansion",
+              "segments": 8,
+              "current": 0
+            },
+            {
+              "name": "Livaea's Manipulation",
+              "segments": 6,
+              "current": 0
+            }
           ],
           "encounters": [
             {
@@ -347,31 +454,51 @@
       "id": "loc-grand-exchange",
       "name": "The Grand Exchange",
       "description": "A vast domed auction house where screams are the bidding currency and every deal is public theater. The Ember Merchants' Guild holds unofficial court here, and nothing of consequence trades hands without half of Cinder watching.",
-      "tags": ["market", "faction", "social"]
+      "tags": [
+        "market",
+        "faction",
+        "social"
+      ]
     },
     {
       "id": "loc-crucible-foundry",
       "name": "The Crucible Foundry",
       "description": "A vast forge where memories are melted down into ingots of raw emotion, feeding Mor'iraath's foundries directly. The pending contract that would seat his claim on the mortal trade corridor is being formalized somewhere within.",
-      "tags": ["foundry", "moriraath", "objective"]
+      "tags": [
+        "foundry",
+        "moriraath",
+        "objective"
+      ]
     },
     {
       "id": "loc-arena-of-wills",
       "name": "The Arena of Wills",
       "description": "A gladiatorial pit where disputes are settled by champions, and champions are political currency. The Whisperer of Better Deals is known to frequent the high boxes, watching for desperate hearts.",
-      "tags": ["arena", "faction", "combat"]
+      "tags": [
+        "arena",
+        "faction",
+        "combat"
+      ]
     },
     {
       "id": "loc-archive-of-regrets",
       "name": "The Archive of Regrets",
       "description": "A repository of every secret Cinder has ever traded, curated by the Regret-Sellers. What the party needs to know about Mor'iraath's weakness — and about Livaea's pattern — is filed here, for a price.",
-      "tags": ["archive", "secrets", "leverage"]
+      "tags": [
+        "archive",
+        "secrets",
+        "leverage"
+      ]
     },
     {
       "id": "loc-alley-of-discarded-wishes",
       "name": "The Alley of Discarded Wishes",
       "description": "A cramped, ash-choked lane where the truly desperate come to trade their last hope. The Whisperer's earliest, subtlest offers are often made here, disguised as pity.",
-      "tags": ["alley", "livaea", "foreshadowing"]
+      "tags": [
+        "alley",
+        "livaea",
+        "foreshadowing"
+      ]
     }
   ],
   "factions": [
@@ -451,7 +578,6 @@
     }
   ],
   "notes": "This adventure is built around three patrons pulling in three directions, and the party's job is to notice that only one of the three is being honest about what they want. Maelstraeus is genuinely useful and genuinely self-interested at the same time — that's not a contradiction to resolve, it's the adventure's whole thesis about bargains. Mor'iraath is the visible threat but not the real one; he's blunt, and blunt is easy to plan against. Livaea is the actual antagonist, and her victory condition isn't stopping the party or even opposing Mor'iraath's containment — it's making sure the party's success feels so good that they never stop to ask what it cost, or who it was owed to. Every 'good deal' in this adventure should have a specific, nameable cost attached (a memory, a favor, a reputation, a secret), never an abstract numeric debt. When in doubt, make the bargain concrete: what is offered, what is given up, and what happens later when it's called in.",
-
   "_gmhints": {
     "pacing": {
       "act1": "Act I should move fast — one strong scene establishing Maelstraeus's offer, one on the road that plants Livaea's first seed. Don't let the Obligation math slow things down; state it once, clearly, and move on. The Toll-Taker encounter is the adventure's tone-setter: it should feel genuinely helpful and only in retrospect (or on a miss) suspicious. Resist the urge to have the Toll-Taker or any early NPC wink at the camera about being one of Livaea's pieces — nobody in this adventure, including her own unwitting agents, should telegraph her involvement early.",
@@ -479,12 +605,134 @@
       "faction_leverage": "Treat the three Faction Deal Timers (Guild, Arena, Archive) as currency the party can spend against each other — a favor owed by the Guild can be leveraged to pressure the Archive, and so on. Encourage players to think of Cinder's factions as a web, not a checklist."
     }
   },
-
   "currentAct": 0,
   "currentScene": 0,
   "startedAt": null,
   "completedAt": null,
   "status": "planned",
   "createdAt": "2026-08-07T00:00:00.000Z",
-  "updatedAt": "2026-08-07T00:00:00.000Z"
+  "updatedAt": "2026-08-07T00:00:00.000Z",
+  "knowledge": [
+    {
+      "id": "maelstraeus-agent-secret",
+      "subject": "npc-maelstraeus-agent",
+      "gm": "Corvain is not lying to the party so much as he genuinely doesn't know the full shape of Maelstraeus's plan — he's a mid-level broker, not a confidant. If pressed hard (Investigate or Sway, high DV), he'll admit he's uneasy about how neatly the deal was structured, which is a fair clue without giving away the twist.",
+      "player": "Corvain Ashwright plays the part everyone assumes: Maelstraeus's Broker in Mortal Affairs. Nothing about their manner invites a second look.",
+      "revealed": false,
+      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "tags": [
+        "npc-secret"
+      ]
+    },
+    {
+      "id": "whisperer-of-better-deals-secret",
+      "subject": "npc-whisperer-of-better-deals",
+      "gm": "The Whisperer is a genuine victim of Livaea's influence as much as a tool of it — they believe their own hype. This makes them sympathetic if unmasked, not villainous. A satisfying resolution might let a PC free the Whisperer from Livaea's unconscious grip rather than simply defeating them.",
+      "player": "The Whisperer of Better Deals plays the part everyone assumes: Cinderite Fixer, unofficial agent of Livaea. Nothing about their manner invites a second look.",
+      "revealed": false,
+      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "tags": [
+        "npc-secret"
+      ]
+    },
+    {
+      "id": "guildmaster-emberlyn-secret",
+      "subject": "npc-guildmaster-emberlyn",
+      "gm": "Emberlyn's double-dealing with both Mor'iraath's court and Maelstraeus's agents is a strong SB spend or Archive-purchased secret — using it against her should shift the Ember Merchants' Guild Influence timer sharply, for good or ill depending on how it's deployed.",
+      "player": "Guildmaster Emberlyn Voss plays the part everyone assumes: Head of the Ember Merchants' Guild. Nothing about their manner invites a second look.",
+      "revealed": false,
+      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "tags": [
+        "npc-secret"
+      ]
+    },
+    {
+      "id": "regret-seller-secret",
+      "subject": "npc-regret-seller",
+      "gm": "Ilsevet is the adventure's ace in the hole for a party that's fully lost the thread on Livaea — she can be bargained with (a fair trade, an equal secret, real coin-equivalent value) to reveal her private ledger on Livaea's pattern, jumping the party straight to Act III's revelation if they're stuck.",
+      "player": "Ilsevet Coldmarrow plays the part everyone assumes: Senior Regret-Seller, Archive of Regrets. Nothing about their manner invites a second look.",
+      "revealed": false,
+      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "tags": [
+        "npc-secret"
+      ]
+    },
+    {
+      "id": "livaea-avatar-secret",
+      "subject": "npc-livaea-avatar",
+      "gm": "Livaea never lies and never breaks a bargain's letter — her danger is entirely in what she doesn't say and what people don't ask. She considers Mor'iraath crude and Maelstraeus a rival worth outlasting, not defeating; she wants the party to owe her, not to serve her, because owed favors compound and served subjects eventually rebel.",
+      "player": "Livaea, Unseen Until Named plays the part everyone assumes: Patron of Perfect Outcomes. Nothing about their manner invites a second look.",
+      "revealed": false,
+      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "tags": [
+        "npc-secret"
+      ]
+    },
+    {
+      "id": "that-maelstraeus-is-nursing-a-hidden",
+      "subject": "plot",
+      "gm": "That Maelstraeus is nursing a hidden agenda regarding the party specifically — hint at it only through Corvain's unease, never state it outright before Act III",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "that-mor-iraath-s-avatar-can-be-talked",
+      "subject": "plot",
+      "gm": "That Mor'iraath's Avatar can be talked down rather than only fought or subterfuged around — let players discover through Archive research that a completed, formal bargain is his actual win condition, not raw destruction",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "that-the-ember-merchants-guild-is",
+      "subject": "plot",
+      "gm": "That the Ember Merchants' Guild is double-dealing with Mor'iraath's court — this is a purchasable or discoverable secret, not background color to be announced",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "that-every-sb-hearts-marked-this",
+      "subject": "plot",
+      "gm": "That every SB (Hearts) marked this adventure compounds toward a specific favor Livaea intends to collect — the mechanical throughline should be felt, not explained, until the reveal",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "livaea-avatar-secret-2",
+      "subject": "npc-livaea-avatar",
+      "gm": "Livaea should never appear as an obvious villain. Every specific thing she does in this adventure — every offer made through the Whisperer, every fixation on a PC's desire — should be individually defensible as helpful. The horror is cumulative, not singular. When she is finally named, she should be almost pleased about it, since being known is itself valuable to her.",
+      "player": "Livaea, Unseen Until Named plays the part everyone assumes: Patron of Perfect Outcomes. Nothing about their manner invites a second look.",
+      "revealed": false,
+      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "tags": [
+        "npc-secret"
+      ]
+    },
+    {
+      "id": "that-livaea-is-behind-the-whisperer-of",
+      "subject": "plot",
+      "gm": "That Livaea is behind the Whisperer of Better Deals — this is the Act III reveal; keep her name out of NPC dialogue entirely until Scene 7",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    }
+  ]
 }

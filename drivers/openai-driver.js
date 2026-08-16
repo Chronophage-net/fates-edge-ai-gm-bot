@@ -9,7 +9,10 @@ class OpenAIDriver extends AIDriver {
             throw new Error('OPENAI_API_KEY environment variable is required for OpenAI driver');
         }
         this.model = model || process.env.OPENAI_MODEL || 'gpt-4o-mini';
-        this.maxTokens = parseInt(process.env.OPENAI_MAX_TOKENS || '400', 10);
+        // CHANGED: see deepseek-driver.js -- 400 tokens routinely truncated
+        // mid-tag. 1200 matches the other drivers' new default; override
+        // via OPENAI_MAX_TOKENS.
+        this.maxTokens = parseInt(process.env.OPENAI_MAX_TOKENS || '1200', 10);
         this.temperature = parseFloat(process.env.OPENAI_TEMPERATURE || '0.8');
         // gpt-4o-mini's real context window; overridable for other models.
         this.contextWindow = parseInt(process.env.OPENAI_CONTEXT_WINDOW || '128000', 10);
@@ -79,6 +82,12 @@ class OpenAIDriver extends AIDriver {
 
             if (!completion.choices || completion.choices.length === 0) {
                 throw new Error('OpenAI returned no choices in response');
+            }
+
+            // NEW: mirror deepseek-driver.js's truncation warning.
+            const finishReason = completion.choices[0].finish_reason;
+            if (finishReason && finishReason !== 'stop') {
+                console.warn(`⚠️  OpenAI finish_reason was "${finishReason}" (model: ${this.model}) — response may be truncated or filtered.`);
             }
 
             if (completion.usage) {

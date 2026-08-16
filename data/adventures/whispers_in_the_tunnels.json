@@ -6,7 +6,13 @@
   "tierRange": "II–III",
   "author": "Nicholas A. Gasper",
   "sessions": "3",
-  "themes": ["Cosmic Horror", "Isolation", "Sanity vs. Corruption", "Ancient Mysteries", "Sacrifice"],
+  "themes": [
+    "Cosmic Horror",
+    "Isolation",
+    "Sanity vs. Corruption",
+    "Ancient Mysteries",
+    "Sacrifice"
+  ],
   "specialMechanics": {
     "dreadTimer": {
       "description": "Individual psychological deterioration. Each PC tracks their own Dread (0–10). Advances on failed Whisper rolls, witnessing horrors, or embracing corruption. At 7+ Dread, physical transformation (Drakespawn) begins. Can be reduced by spending Boons or purification rituals.",
@@ -27,11 +33,28 @@
       "class": "VI",
       "category": "eldritch",
       "description": "An ancient psychic entity older than the Aelerian tunnels. It does not have a physical form as we understand it – it exists as a pattern of thought that seeps through stone and water. Its whispers are patient, personal, and always true. It offers power, knowledge, and escape – at the cost of everything you are.",
-      "stats": { "Spirit": 6, "Resolve": 5, "Arcana": 5, "hp": 60 },
+      "stats": {
+        "Spirit": 6,
+        "Resolve": 5,
+        "Arcana": 5,
+        "hp": 60
+      },
       "sb_spends": [
-        { "cost": 2, "name": "Psychic Whispers", "effect": "Target all PCs within Near with personalised fears; each must test Resolve (DV 4) or gain 1 Dread." },
-        { "cost": 3, "name": "Reality Distortion", "effect": "The environment warps; all actions become Desperate for one exchange." },
-        { "cost": 4, "name": "Memory Theft", "effect": "Target loses access to one skill for 24 hours (GM chooses)." }
+        {
+          "cost": 2,
+          "name": "Psychic Whispers",
+          "effect": "Target all PCs within Near with personalised fears; each must test Resolve (DV 4) or gain 1 Dread."
+        },
+        {
+          "cost": 3,
+          "name": "Reality Distortion",
+          "effect": "The environment warps; all actions become Desperate for one exchange."
+        },
+        {
+          "cost": 4,
+          "name": "Memory Theft",
+          "effect": "Target loses access to one skill for 24 hours (GM chooses)."
+        }
       ],
       "lore": "It was bound by the ancient Aelerians with a ritual of blood and silence. The ritual is failing. It remembers every mind that has touched these stones – and it knows your fears intimately."
     },
@@ -42,10 +65,23 @@
       "class": "II",
       "category": "monstrosity",
       "description": "A once‑human worker whose mind has begun to unravel. Skin darkens to slate grey, eyes turn milky white, and they speak in echoes of their former selves. They are still partially aware, and they beg for release between attacks.",
-      "stats": { "Body": 2, "Melee": 2, "Athletics": 1, "hp": 20 },
+      "stats": {
+        "Body": 2,
+        "Melee": 2,
+        "Athletics": 1,
+        "hp": 20
+      },
       "sb_spends": [
-        { "cost": 1, "name": "Twisted Lunge", "effect": "The Drakespawn closes distance instantly; a PC is Grappled." },
-        { "cost": 2, "name": "Whisper Echo", "effect": "A PC hears their own voice whispering terrible truths; they lose their next action unless they test Resolve (DV 3)." }
+        {
+          "cost": 1,
+          "name": "Twisted Lunge",
+          "effect": "The Drakespawn closes distance instantly; a PC is Grappled."
+        },
+        {
+          "cost": 2,
+          "name": "Whisper Echo",
+          "effect": "A PC hears their own voice whispering terrible truths; they lose their next action unless they test Resolve (DV 3)."
+        }
       ]
     },
     {
@@ -55,10 +91,23 @@
       "class": "III",
       "category": "monstrosity",
       "description": "The transformation is now unmistakable – limbs bend wrong, and a low hum emanates from their chest. They no longer speak, but they coordinate with terrifying intelligence. They are the Deep Drake's will made flesh.",
-      "stats": { "Body": 3, "Melee": 3, "Athletics": 2, "hp": 30 },
+      "stats": {
+        "Body": 3,
+        "Melee": 3,
+        "Athletics": 2,
+        "hp": 30
+      },
       "sb_spends": [
-        { "cost": 2, "name": "Psychic Surge", "effect": "All PCs in Near gain 1 Dread (prevent with 1 Boon each)." },
-        { "cost": 3, "name": "Phase Walk", "effect": "The Drakespawn becomes intangible for one exchange, avoiding all physical attacks." }
+        {
+          "cost": 2,
+          "name": "Psychic Surge",
+          "effect": "All PCs in Near gain 1 Dread (prevent with 1 Boon each)."
+        },
+        {
+          "cost": 3,
+          "name": "Phase Walk",
+          "effect": "The Drakespawn becomes intangible for one exchange, avoiding all physical attacks."
+        }
       ]
     },
     {
@@ -68,11 +117,28 @@
       "class": "V",
       "category": "monstrosity",
       "description": "The creature is no longer recognisable as human. It is a walking tear in reality, its presence distorting light and sound. It speaks in the voices of everyone the party has ever loved. It is the Deep Drake's herald, and it will not stop until it has claimed them all.",
-      "stats": { "Body": 4, "Melee": 4, "Spirit": 4, "hp": 45 },
+      "stats": {
+        "Body": 4,
+        "Melee": 4,
+        "Spirit": 4,
+        "hp": 45
+      },
       "sb_spends": [
-        { "cost": 2, "name": "Reality Tear", "effect": "All actions in Near become Desperate for one exchange." },
-        { "cost": 3, "name": "Soul Drain", "effect": "A PC must test Spirit+Resolve (DV 5) or lose 2 Boons and gain 2 Dread." },
-        { "cost": 4, "name": "Invoke the Drake", "effect": "Advance the Deep Drake Awakening timer by 2 segments." }
+        {
+          "cost": 2,
+          "name": "Reality Tear",
+          "effect": "All actions in Near become Desperate for one exchange."
+        },
+        {
+          "cost": 3,
+          "name": "Soul Drain",
+          "effect": "A PC must test Spirit+Resolve (DV 5) or lose 2 Boons and gain 2 Dread."
+        },
+        {
+          "cost": 4,
+          "name": "Invoke the Drake",
+          "effect": "Advance the Deep Drake Awakening timer by 2 segments."
+        }
       ]
     },
     {
@@ -82,9 +148,17 @@
       "class": "II",
       "category": "undead",
       "description": "A translucent ghost of a tunnel worker, trapped in an endless loop of their last moments. They moan and point at dangers – but their warnings are tangled with the Deep Drake's lies.",
-      "stats": { "Spirit": 3, "Arcana": 2, "hp": 18 },
+      "stats": {
+        "Spirit": 3,
+        "Arcana": 2,
+        "hp": 18
+      },
       "sb_spends": [
-        { "cost": 1, "name": "False Warning", "effect": "The Shade points at a safe route, which is actually a trap; a PC must test Wits+Insight or walk into danger." }
+        {
+          "cost": 1,
+          "name": "False Warning",
+          "effect": "The Shade points at a safe route, which is actually a trap; a PC must test Wits+Insight or walk into danger."
+        }
       ]
     },
     {
@@ -94,9 +168,18 @@
       "class": "II",
       "category": "humanoid",
       "description": "A former security officer whose mind is being overwritten. They still carry weapons and remember their training, but their eyes are empty and their movements are unnaturally precise – the Deep Drake is using them as a puppet.",
-      "stats": { "Body": 3, "Melee": 2, "Command": 1, "hp": 25 },
+      "stats": {
+        "Body": 3,
+        "Melee": 2,
+        "Command": 1,
+        "hp": 25
+      },
       "sb_spends": [
-        { "cost": 1, "name": "Drake's Coordination", "effect": "The Guard grants +1 die to all nearby Drakespawn for the next exchange." }
+        {
+          "cost": 1,
+          "name": "Drake's Coordination",
+          "effect": "The Guard grants +1 die to all nearby Drakespawn for the next exchange."
+        }
       ]
     },
     {
@@ -106,9 +189,18 @@
       "class": "II",
       "category": "humanoid",
       "description": "The lead engineer investigating the seal failures. He is pragmatic, logical, and increasingly paranoid. He speaks in mathematical equations under stress and is the first to show signs of corruption – he may become a Drakespawn if not saved.",
-      "stats": { "Body": 3, "Wits": 4, "Spirit": 2, "hp": 20 },
+      "stats": {
+        "Body": 3,
+        "Wits": 4,
+        "Spirit": 2,
+        "hp": 20
+      },
       "sb_spends": [
-        { "cost": 1, "name": "Paranoid Insight", "effect": "Rennik notices a hidden danger; the party gains +1 die to avoid the next trap." }
+        {
+          "cost": 1,
+          "name": "Paranoid Insight",
+          "effect": "Rennik notices a hidden danger; the party gains +1 die to avoid the next trap."
+        }
       ],
       "lore": "He knows the tunnel system intimately. If saved, he can guide the party to safety. If corrupted, he becomes a powerful Stage 2 Drakespawn."
     },
@@ -119,10 +211,23 @@
       "class": "III",
       "category": "humanoid",
       "description": "The security commander of the tunnel system. Stoic and professional, she is determined to protect her people at all costs. She becomes increasingly desperate as the situation worsens – and may sacrifice herself to buy the party time.",
-      "stats": { "Body": 4, "Melee": 4, "Command": 3, "hp": 35 },
+      "stats": {
+        "Body": 4,
+        "Melee": 4,
+        "Command": 3,
+        "hp": 35
+      },
       "sb_spends": [
-        { "cost": 1, "name": "Tactical Command", "effect": "Allies gain +1 die to their next action." },
-        { "cost": 2, "name": "Heroic Stand", "effect": "Mira holds off a wave of Drakespawn, buying the party one free exchange." }
+        {
+          "cost": 1,
+          "name": "Tactical Command",
+          "effect": "Allies gain +1 die to their next action."
+        },
+        {
+          "cost": 2,
+          "name": "Heroic Stand",
+          "effect": "Mira holds off a wave of Drakespawn, buying the party one free exchange."
+        }
       ]
     }
   ],
@@ -137,8 +242,18 @@
           "title": "The Flood Escape",
           "description": "Water is rising fast. The tunnel is collapsing. The party must navigate to higher ground while carrying an injured Rennik. The water is unnaturally cold and seems to pull at limbs.",
           "timers": [
-            { "name": "Environmental Doom", "segments": 8, "current": 1, "description": "Rising water and structural collapse" },
-            { "name": "Deep Drake Awakening", "segments": 12, "current": 0, "description": "The entity's progress toward full manifestation" }
+            {
+              "name": "Environmental Doom",
+              "segments": 8,
+              "current": 1,
+              "description": "Rising water and structural collapse"
+            },
+            {
+              "name": "Deep Drake Awakening",
+              "segments": 12,
+              "current": 0,
+              "description": "The entity's progress toward full manifestation"
+            }
           ],
           "encounters": [
             {
@@ -159,8 +274,16 @@
           "title": "The First Whisper",
           "description": "In the relative safety of a dry chamber, the party hears whispers – their own names, their private fears. The Deep Drake has noticed them. The whispers offer a way out – but the price is a memory.",
           "timers": [
-            { "name": "Dread (Individual)", "segments": 10, "current": 0 },
-            { "name": "Deep Drake Awakening", "segments": 12, "current": 0 }
+            {
+              "name": "Dread (Individual)",
+              "segments": 10,
+              "current": 0
+            },
+            {
+              "name": "Deep Drake Awakening",
+              "segments": 12,
+              "current": 0
+            }
           ],
           "encounters": [
             {
@@ -181,8 +304,16 @@
           "title": "Rennik's Paranoia",
           "description": "Rennik begins muttering equations under his breath. He is convinced the numbers are 'wrong' – that the tunnel layout is shifting. He may be the first to break. The party can try to calm him or investigate his claims.",
           "timers": [
-            { "name": "Dread (Individual)", "segments": 10, "current": 0 },
-            { "name": "Collective Sanity", "segments": 10, "current": 0 }
+            {
+              "name": "Dread (Individual)",
+              "segments": 10,
+              "current": 0
+            },
+            {
+              "name": "Collective Sanity",
+              "segments": 10,
+              "current": 0
+            }
           ],
           "encounters": [
             {
@@ -210,8 +341,16 @@
           "title": "The Bone Market",
           "description": "A haunted hall where ghostly merchants offer bargains that cost more than expected. Time flows strangely here. The party can trade memories for information – but every trade feeds the Deep Drake.",
           "timers": [
-            { "name": "Deep Drake Awakening", "segments": 12, "current": 2 },
-            { "name": "Dread (Individual)", "segments": 10, "current": 0 }
+            {
+              "name": "Deep Drake Awakening",
+              "segments": 12,
+              "current": 2
+            },
+            {
+              "name": "Dread (Individual)",
+              "segments": 10,
+              "current": 0
+            }
           ],
           "encounters": [
             {
@@ -232,8 +371,16 @@
           "title": "The Crying Workshop",
           "description": "An ancient forge where the original binding stones were created. The forge weeps tears of dark oil, and the tools hum with malevolent energy. Here, the party can learn how to create new binding stones – or accidentally wake the Drake fully.",
           "timers": [
-            { "name": "Deep Drake Awakening", "segments": 12, "current": 3 },
-            { "name": "Environmental Doom", "segments": 8, "current": 2 }
+            {
+              "name": "Deep Drake Awakening",
+              "segments": 12,
+              "current": 3
+            },
+            {
+              "name": "Environmental Doom",
+              "segments": 8,
+              "current": 2
+            }
           ],
           "encounters": [
             {
@@ -254,8 +401,16 @@
           "title": "The Whispering Maze",
           "description": "The tunnels are now actively hostile – they shift when unobserved, doors lead to different times, and echoes whisper lies. The party must navigate to the Drowned Palace before the maze consumes them.",
           "timers": [
-            { "name": "Deep Drake Awakening", "segments": 12, "current": 4 },
-            { "name": "Collective Sanity", "segments": 10, "current": 2 }
+            {
+              "name": "Deep Drake Awakening",
+              "segments": 12,
+              "current": 4
+            },
+            {
+              "name": "Collective Sanity",
+              "segments": 10,
+              "current": 2
+            }
           ],
           "encounters": [
             {
@@ -283,10 +438,26 @@
           "title": "The Throne of the Deep Drake",
           "description": "The water here is thick with memory. The throne pulses with a heartbeat that matches your own. The Deep Drake's presence is overwhelming – it offers to restore the dead, grant power, or simply let the party leave – if they pay the price.",
           "timers": [
-            { "name": "Deep Drake Awakening", "segments": 12, "current": 6 },
-            { "name": "Dread (Individual)", "segments": 10, "current": 4 },
-            { "name": "Collective Sanity", "segments": 10, "current": 4 },
-            { "name": "Environmental Doom", "segments": 8, "current": 4 }
+            {
+              "name": "Deep Drake Awakening",
+              "segments": 12,
+              "current": 6
+            },
+            {
+              "name": "Dread (Individual)",
+              "segments": 10,
+              "current": 4
+            },
+            {
+              "name": "Collective Sanity",
+              "segments": 10,
+              "current": 4
+            },
+            {
+              "name": "Environmental Doom",
+              "segments": 8,
+              "current": 4
+            }
           ],
           "encounters": [
             {
@@ -355,31 +526,52 @@
       "id": "loc-sealed-junction",
       "name": "Sealed Junction",
       "description": "Chest‑deep black water that absorbs light. The walls are carved with warnings that shift when unobserved. The seal mechanism is cracked and leaking dark water that hisses on metal.",
-      "tags": ["water", "tunnel", "threshold"]
+      "tags": [
+        "water",
+        "tunnel",
+        "threshold"
+      ]
     },
     {
       "id": "loc-bone-market",
       "name": "Bone Market",
       "description": "A haunted hall where time flows inconsistently. Ghostly merchants offer bargains from stalls that span centuries. Mirrors on the walls show glimpses of what you might become.",
-      "tags": ["market", "ghosts", "time-distortion"]
+      "tags": [
+        "market",
+        "ghosts",
+        "time-distortion"
+      ]
     },
     {
       "id": "loc-crying-workshop",
       "name": "Crying Workshop",
       "description": "An ancient forge that weeps dark oil. The tools hum with malevolent energy. Diagrams of binding rituals cover the walls – some complete, others tantalisingly unfinished.",
-      "tags": ["forge", "workshop", "ritual"]
+      "tags": [
+        "forge",
+        "workshop",
+        "ritual"
+      ]
     },
     {
       "id": "loc-whispering-maze",
       "name": "Whispering Maze",
       "description": "Corridors that shift when unobserved, doors that lead to different times, and echoes that whisper lies. The walls are lined with doors, each one slightly different – some wood, some metal, some flesh.",
-      "tags": ["maze", "hallucination", "threshold"]
+      "tags": [
+        "maze",
+        "hallucination",
+        "threshold"
+      ]
     },
     {
       "id": "loc-drowned-palace",
       "name": "Drowned Palace",
       "description": "An underwater throne room where the water is thick with memory. The throne pulses with a heartbeat that matches your own. The Deep Drake's presence is overwhelming – and it is waiting.",
-      "tags": ["palace", "water", "throne", "entity"]
+      "tags": [
+        "palace",
+        "water",
+        "throne",
+        "entity"
+      ]
     }
   ],
   "factions": [
@@ -417,23 +609,19 @@
     }
   ],
   "notes": "This adventure uses the Horror Campaigns expansion mechanics: Dread (individual), Reality Fracture (represented by Deep Drake Awakening), Collective Sanity, and Environmental Doom. The Whisper mechanic is key – every roll in corrupted areas risks advancing Dread and the primary timer. The party must balance investigation, survival, and psychological integrity. Success requires either binding the Drake, escaping before it fully awakens, or making a terrible sacrifice.",
-
   "_gmhints": {
     "tone": "THIS ADVENTURE IS A TENSE, ISOLATION-BASED COSMIC HORROR SURVIVAL STORY. The tone should be claustrophobic, oppressive, and psychologically draining. The Deep Drake is not a monster to be fought—it is a pressure that thinks. It is the spawn of the world worm Nidhoggr, and it feeds on the Aeler (dwarves) whom it can entrance. Being in the tunnels of Thepyrgos is new to it—it is not prepared for this environment, and neither are the PCs. This mutual unpreparedness is the key tension: the Drake is learning the tunnels as the party tries to survive them. The whispers should be personal, patient, and always true—the Drake does not lie, because it does not need to. The truth is more devastating than any lie. Rennik is pragmatic, logical, and increasingly paranoid—he is the canary in the coal mine. Mira is stoic, professional, and determined—she will sacrifice herself if it buys the party time. The tunnels themselves are a character: ancient, labyrinthine, and indifferent to human suffering. The water is unnaturally cold and seems to pull at limbs. Time flows strangely. The walls breathe. Every scene should feel like the party is being watched, tested, and slowly consumed.",
-
     "pacing": {
       "act1": "Session 1 is about the initial shock and survival. The flood escape establishes the physical threat. The First Whisper establishes the psychological threat. Rennik's paranoia shows the party that even the 'expert' is breaking. The Environmental Doom timer is the primary pressure—the tunnels are collapsing, and the party must move. The Deep Drake Awakening timer is ticking in the background, but it is not yet the primary threat—it is a slow burn. The whispers are subtle: a name spoken in a voice that sounds like a loved one, a fear whispered that the party thought was private. The party should feel trapped, not hunted. They are in a pressure cooker, and the heat is just beginning to rise.",
       "act2": "Session 2 is the descent into madness. The Bone Market introduces the idea that bargains can be made—but every bargain feeds the Drake. The Crying Workshop reveals the history of the binding, but the knowledge comes at a cost. The Whispering Maze is the threshold—the tunnels are actively hostile now. Reality is unstable. The party is not just surviving anymore; they are fighting to keep their minds intact. The Deep Drake Awakening timer is now a visible threat—the entity is getting closer. The Collective Sanity timer is ticking up. The party must decide: do they push forward, or do they try to find a way out? There is no easy answer. Play the Bone Market as eerie and seductive, the Workshop as sorrowful and dangerous, and the Maze as disorienting and terrifying.",
       "act3": "Session 3 is the climax. The Drowned Palace is the heart of the Drake's influence—the water is thick with memory, and the throne pulses with a heartbeat that matches the party's own. The Deep Drake offers a final bargain: power, escape, or oblivion. The party must choose. The Final Choice is not a combat—it is a reckoning. Binding the Drake requires sacrifice. Escaping requires leaving something behind. Destroying it may be impossible. The party's decisions up to this point—how much Dread they accumulated, how many bargains they made, how many people they saved or sacrificed—determine their options. The ending should feel earned, whether it is triumphant, pyrrhic, or tragic. If the party has been playing well, they may seal the Drake and escape with their sanity intact. If they have been reckless, they may lose one of their own to the transformation. If they have been desperate, they may make a terrible bargain. All outcomes are valid—this is cosmic horror, not heroism."
     },
-
     "npcSecrets": {
       "rennik-stoneheart": "Rennik is pragmatic, logical, and increasingly paranoid. He speaks in mathematical equations under stress—this is his coping mechanism, not a quirk. He is haunted by a previous collapse he survived; he carries the guilt of those he could not save. He is the first to show signs of corruption—if the party does not help him, he will become a Stage 1 Drakespawn. His arc is about whether he can be saved or whether he is too far gone. Do not make him a villain; make him a cautionary tale.",
       "captain-mira-deeproad": "Mira is stoic, professional, and determined. She lost her brother to a tunnel accident years ago—she carries his badge. She will sacrifice herself to buy the party time if it comes to that. Her arc is about whether she can protect her people or whether she will break under the weight of command. She is not cold—she is burdened. Her moments of vulnerability should be rare and powerful.",
       "bone-merchant": "The Bone Merchant was once a mortal scholar who sought to understand the Deep Drake. Now he serves it—his service is not slavery, but addiction. He collects memories and debts because they are all he has left. He is not evil—he is tragic. He will trade information for memories, but every trade feeds the Drake. He is a warning to the party about what they might become.",
       "master-thane-echo": "Master Thane's Echo is a ghostly artisan who knows the original binding ritual. He is reluctant to share it because his apprentices were corrupted by the Drake. He is not malicious—he is protective and haunted. He will help the party if they prove they are not seeking power, only survival. His knowledge is the key to binding the Drake—but using it requires sacrifice."
     },
-
     "forbiddenEarlyRevelations": [
       "That the Deep Drake is Nidhoggr's spawn — this is a deep lore reveal; hint at it through Aelerian carvings, but do not state it plainly until Act II at the earliest",
       "That the Drake is unprepared for the Thepyrgos tunnels — this is a subtle tactical advantage; let the party discover it through observation (e.g., the Drake's whispers are sometimes confused, its influence flickers in certain chambers)",
@@ -443,7 +631,6 @@
       "That the Bone Merchant was once a mortal scholar — this is a tragic reveal for Act II; let it surface during bargaining",
       "That the Crying Workshop's forge can create binding stones — this is the Act II discovery; do not mention it in Act I"
     ],
-
     "cosmicHorrorTactics": {
       "the_drake_as_pressure": "The Deep Drake is not a monster to be fought—it is a pressure that thinks. It does not attack; it erodes. It whispers, it offers, it waits. Its power is not in what it does, but in what it makes the party do to themselves. Describe its influence as a weight in the air, a cold draft that follows the party, a sense of being watched from the corner of the eye. When it speaks, it uses the voices of people the party has lost, or fears they might lose. It does not lie—it tells the truth in the most devastating way possible.",
       "the_tunnels_as_labyrinth": "The tunnels are ancient, labyrinthine, and indifferent. They do not care about the party. The water is unnaturally cold and seems to pull at limbs. The walls are carved with warnings that shift when unobserved. Doors lead to different times. Echoes whisper lies. Describe the environment as actively hostile, but not malicious—it is simply broken, and the party is caught in the fracture. The Deep Drake is learning the tunnels as the party tries to survive them—this mutual unpreparedness is a source of tension.",
@@ -453,12 +640,134 @@
       "the_bargain": "The Deep Drake offers bargains that seem fair. It offers power, knowledge, escape. The price is always a memory, a name, a promise. Every bargain feeds the Drake—it grows stronger with every deal. The party should feel the weight of every bargain. The Bone Merchant is a warning: he was once a mortal scholar, now he serves the Drake because he has nothing left. The party is on the same path."
     }
   },
-
   "currentAct": 0,
   "currentScene": 0,
   "startedAt": null,
   "completedAt": null,
   "status": "planned",
   "createdAt": "2026-07-29T00:00:00.000Z",
-  "updatedAt": "2026-07-29T00:00:00.000Z"
+  "updatedAt": "2026-07-29T00:00:00.000Z",
+  "knowledge": [
+    {
+      "id": "rennik-stoneheart-secret",
+      "subject": "npc-rennik-stoneheart",
+      "gm": "Rennik is pragmatic, logical, and increasingly paranoid. He speaks in mathematical equations under stress—this is his coping mechanism, not a quirk. He is haunted by a previous collapse he survived; he carries the guilt of those he could not save. He is the first to show signs of corruption—if the party does not help him, he will become a Stage 1 Drakespawn. His arc is about whether he can be saved or whether he is too far gone. Do not make him a villain; make him a cautionary tale.",
+      "player": "Rennik Stoneheart plays the part everyone assumes: Lead Engineer. Nothing about their manner invites a second look.",
+      "revealed": false,
+      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "tags": [
+        "npc-secret"
+      ]
+    },
+    {
+      "id": "captain-mira-deeproad-secret",
+      "subject": "npc-captain-mira-deeproad",
+      "gm": "Mira is stoic, professional, and determined. She lost her brother to a tunnel accident years ago—she carries his badge. She will sacrifice herself to buy the party time if it comes to that. Her arc is about whether she can protect her people or whether she will break under the weight of command. She is not cold—she is burdened. Her moments of vulnerability should be rare and powerful.",
+      "player": "Captain Mira Deeproad plays the part everyone assumes: Tunnel Guard Commander. Nothing about their manner invites a second look.",
+      "revealed": false,
+      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "tags": [
+        "npc-secret"
+      ]
+    },
+    {
+      "id": "bone-merchant-secret",
+      "subject": "npc-bone-merchant",
+      "gm": "The Bone Merchant was once a mortal scholar who sought to understand the Deep Drake. Now he serves it—his service is not slavery, but addiction. He collects memories and debts because they are all he has left. He is not evil—he is tragic. He will trade information for memories, but every trade feeds the Drake. He is a warning to the party about what they might become.",
+      "player": "The Bone Merchant plays the part everyone assumes: Ghostly Spirit. Nothing about their manner invites a second look.",
+      "revealed": false,
+      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "tags": [
+        "npc-secret"
+      ]
+    },
+    {
+      "id": "master-thane-echo-secret",
+      "subject": "npc-master-thane-echo",
+      "gm": "Master Thane's Echo is a ghostly artisan who knows the original binding ritual. He is reluctant to share it because his apprentices were corrupted by the Drake. He is not malicious—he is protective and haunted. He will help the party if they prove they are not seeking power, only survival. His knowledge is the key to binding the Drake—but using it requires sacrifice.",
+      "player": "Master Thane's Echo plays the part everyone assumes: Ghostly Artisan. Nothing about their manner invites a second look.",
+      "revealed": false,
+      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "tags": [
+        "npc-secret"
+      ]
+    },
+    {
+      "id": "that-the-deep-drake-is-nidhoggr-s",
+      "subject": "plot",
+      "gm": "That the Deep Drake is Nidhoggr's spawn — this is a deep lore reveal; hint at it through Aelerian carvings, but do not state it plainly until Act II at the earliest",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "that-the-drake-is-unprepared-for",
+      "subject": "plot",
+      "gm": "That the Drake is unprepared for the Thepyrgos tunnels — this is a subtle tactical advantage; let the party discover it through observation (e.g., the Drake's whispers are sometimes confused, its influence flickers in certain chambers)",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "that-binding-the-drake-requires-sacrifice",
+      "subject": "plot",
+      "gm": "That binding the Drake requires sacrifice — foreshadow it, but do not state it mechanically until the party is in the Drowned Palace",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "that-rennik-will-become-a-drakespawn",
+      "subject": "plot",
+      "gm": "That Rennik will become a Drakespawn if not saved — this is the emotional gut-punch of Act I; let it emerge through his behavior, not through GM exposition",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "that-mira-carries-her-brother-s-badge",
+      "subject": "plot",
+      "gm": "That Mira carries her brother's badge — this is a character detail that should emerge naturally, not be volunteered",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "that-the-crying-workshop-s-forge-can",
+      "subject": "plot",
+      "gm": "That the Crying Workshop's forge can create binding stones — this is the Act II discovery; do not mention it in Act I",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "that-the-bone-merchant-was-once-a-mortal",
+      "subject": "plot",
+      "gm": "That the Bone Merchant was once a mortal scholar — this is a tragic reveal for Act II; let it surface during bargaining",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    }
+  ]
 }

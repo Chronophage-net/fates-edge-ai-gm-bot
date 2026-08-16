@@ -141,7 +141,7 @@ AI_DRIVER=./drivers/openai-driver
 OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxx
 AI_MODEL=gpt-4o-mini
 WS_URL=ws://localhost:10000
-ROOM=ABC123
+ROOM=AC12
 BOT_NAME=AI_GM
 ```
 
@@ -152,7 +152,7 @@ AI_DRIVER=./drivers/ollama-driver
 OLLAMA_BASE_URL=http://localhost:11434
 OLLAMA_MODEL=mistral
 WS_URL=ws://localhost:10000
-ROOM=ABC123
+ROOM=AC12
 ```
 
 For DeepSeek:
@@ -162,7 +162,7 @@ AI_DRIVER=./drivers/deepseek-driver
 DEEPSEEK_API_KEY=sk-xxxxxxxxxxxxxxxx
 DEEPSEEK_MODEL=deepseek-chat
 WS_URL=ws://localhost:10000
-ROOM=ABC123
+ROOM=AC12
 ```
 
 ---

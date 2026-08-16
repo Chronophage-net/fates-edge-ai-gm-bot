@@ -8,6 +8,14 @@ const { formatColumns, shortTitle } = require('./format-utils');
 const { getVocab, encounterType, DEFAULT_TYPE } = require('./objective-types');
 const knowledgeIndex = require('./knowledge-index');
 const assistantSuggestions = require('./assistant-suggestions');
+// NEW: structured knowledge-state reveal/hide (module.knowledge[] entries)
+// -- see adventure-context.js's KNOWLEDGE STATE section and
+// server/adventure.js's revealKnowledge()/hideKnowledge(). Not required by
+// adventure-director.js (that file only ever reads via context.apiRequest),
+// but commands.js needs invalidate() directly here so a [REVEAL ...]/
+// [HIDE ...] tag or `!gm knowledge reveal/hide` command takes effect on
+// the very next prompt build, not after the next TTL expiry.
+const adventureContext = require('./adventure-context');
 
 // Icon per encounter type, used in [ENCOUNTER START]/[ENCOUNTER RESOLVE]
 // chat replies so player-facing text doesn't always show a crossed-swords
@@ -424,6 +432,9 @@ async function handleBotCommand(sender, text, context) {
 !gm adventure debug - full adventure state + reference data dump (GM only)
 !gm session end - mark a real-world play session as ended (dynamic-growth adventures)
 !gm npc create "Name" ["Role"] ["Motivation"] - register an ad-hoc NPC into the current adventure
+!gm knowledge [list] - show this adventure's knowledge/secret state (GM only)
+!gm knowledge reveal <id> - mark a knowledge entry revealed, safe to share (GM only)
+!gm knowledge hide <id> - mark a knowledge entry secret again (GM only)
 !gm resume - show current adventure status (shortcut for !gm adventure)
 !gm seed - seed campaign with Crown Spread (GM only)
 !gm spell <name> - show details of a spell
@@ -1336,6 +1347,53 @@ async function handleBotCommand(sender, text, context) {
         }
     }
 
+    // ─── Knowledge state (manual GM control over module.knowledge[]) ──
+    // Human-GM equivalent of the AI's [REVEAL "id"]/[HIDE "id"] tags --
+    // see adventure-context.js's KNOWLEDGE STATE section for the full
+    // design and server/adventure.js's revealKnowledge()/hideKnowledge()
+    // for the underlying state mutation. GM-only: this is exactly the
+    // "what am I allowed to tell the players?" gate, so only the GM
+    // (human or the bot acting as full GM, never a player) should flip it
+    // directly -- the AI still goes through [REVEAL ...] like everyone
+    // else, subject to the same Assistant GM suggestion-queue gating as
+    // [FACT ...]/[NPC CREATE ...].
+    if (cmd === 'knowledge') {
+        if (context.myRole !== 'gm') return 'Only the GM can view or change knowledge state.';
+        const sub = (args[0] || '').toLowerCase();
+
+        if (!sub || sub === 'list' || sub === 'status') {
+            let ref;
+            try {
+                ref = await context.apiRequest('GET', ['adventure', 'reference']);
+            } catch (e) {
+                return `Failed to fetch knowledge state: ${e.message}`;
+            }
+            const list = ref?.knowledge || [];
+            if (list.length === 0) return 'This adventure defines no `knowledge` entries (or none is loaded).';
+            const lines = list.map(k =>
+                `${k.revealed ? '🔓' : '🔒'} \`${k.id}\`${k.subject ? ` (${k.subject})` : ''} — ${k.revealed ? 'REVEALED' : 'secret'}: ${k.revealed ? k.gm : (k.player ?? '(nothing to tell yet)')}`
+            );
+            return '📖 **Knowledge State**\n' + lines.join('\n') +
+                '\n\nUse `!gm knowledge reveal <id>` / `!gm knowledge hide <id>` to change one.';
+        }
+
+        if (sub === 'reveal' || sub === 'hide') {
+            const id = args[1];
+            if (!id) return `Usage: !gm knowledge ${sub} <id>`;
+            try {
+                await context.apiRequest('POST', ['adventure', 'knowledge', sub], { id, by: sender || 'GM' });
+                adventureContext.invalidate();
+                return sub === 'reveal'
+                    ? `🔓 Revealed knowledge entry \`${id}\`. The AI GM (if running) will now treat it as safe to share.`
+                    : `🔒 Hid knowledge entry \`${id}\` again.`;
+            } catch (e) {
+                return `Failed to ${sub} "${id}": ${e.message}`;
+            }
+        }
+
+        return 'Usage: !gm knowledge [list] | !gm knowledge reveal <id> | !gm knowledge hide <id>';
+    }
+
     // ─── Enemy Turn ────────────────────────────────────────────────
     if (cmd === 'enemy-turn') {
         if (context.myRole !== 'gm') return 'Only the GM can run enemy turns.';
@@ -1534,10 +1592,12 @@ async function handleBotCommand(sender, text, context) {
 // kept in this order for clarity/safety if more keywords are added).
 const AI_TAG_KEYWORDS = [
     'ENCOUNTER START', 'ENCOUNTER RESOLVE', 'SCENE COMPLETE',
+    'CALL FOR ROLL',
     'LOOKUP RULE', 'SET POSITION', 'SET DV', 'TICK TIMER',
     'NPC CAST', 'NPC CREATE', 'NPC LOCATION',
     'TOKEN MOVE', 'TOKEN REMOVE', 'SPEND SB',
     'APPLY', 'ADD', 'ROLL', 'TIMER', 'DRAW', 'CROWN', 'FACT',
+    'REVEAL', 'HIDE',
 ].sort((a, b) => b.length - a.length);
 
 // 1) Case repair: force the leading keyword of any recognized tag to
@@ -1565,8 +1625,10 @@ function normalizeAITagCase(text) {
 // naturally writes an attribute+skill pool) fails to match at all.
 // Squeeze whitespace out of just the `+` joins in that segment.
 function tightenRollPoolSpacing(text) {
+    // Covers both [ROLL "Name" ...] and [CALL FOR ROLL "Name" ...] --
+    // same pool-expression shape, same spacing drift from the model.
     return text.replace(
-        /(\[ROLL\s+"[^"]*"\s+)([^\]]*?)(\s+DV\s+\d+)/gi,
+        /(\[(?:CALL FOR ROLL|ROLL)\s+"[^"]*"\s+)([^\]]*?)(\s+DV\s+\d+)/gi,
         (full, prefix, pool, suffix) => prefix + pool.replace(/\s*\+\s*/g, '+').trim() + suffix
     );
 }
@@ -1626,39 +1688,27 @@ async function processSpecialTags(text, context, senderName = null) {
     }
 
     // Repair drift in the model's own tag syntax before any of the
-    // strict per-tag regexes below get a chance at it. See the block of
-    // functions immediately above for what this fixes and why.
+    // strict per-tag regexes below get a chance at it.
     text = repairAITagSyntax(text);
     const campaignState = context.orchestrator.campaign.state;
     const saveCampaign = () => context.orchestrator.campaign.save();
     const ws = context.ws;
 
+    // ─── Timeout helper ──────────────────────────────────────────────
+    // Prevents any individual API request from hanging the entire function.
+    const withTimeout = (promise, ms = 5000, fallback = null) => {
+        return Promise.race([
+            promise,
+            new Promise((resolve) => setTimeout(() => resolve(fallback), ms))
+        ]).catch(() => fallback);
+    };
+
     // ─── Assistant GM mode ──────────────────────────────────────────
-    // NEW: when this bot holds the 'assistant-gm' role (a human GM/Co-GM
-    // is still present and in charge), tags that carry real narrative
-    // authority -- a new fact becoming campaign truth, a brand-new NPC
-    // appearing, a scene ending -- are held in assistant-suggestions.js's
-    // queue instead of applied immediately, so the human keeps final say.
-    // Everything else (rolls, resource deltas, timers, NPC spellcasting
-    // triggered by an already-approved scene) is mechanical, not
-    // authorial, and still applies immediately in this mode exactly like
-    // full-GM mode -- see the design note in the README's "Assistant GM
-    // Mode" section for the full list and rationale.
     const isAssistant = context.myRole === 'assistant-gm';
 
     let output = text;
 
     // Helper to resolve character name
-    // CHANGED: a real production log showed a roll card displaying
-    // "Unknown" as the character name (e.g. "Unknown rolls Body+Athletics
-    // ..."). Whether that came from the model genuinely writing
-    // `[ROLL "Unknown" ...]` because it wasn't sure which character was
-    // acting, or from a hallucinated card that slipped past the strip
-    // filters, the right fix is the same either way: "Unknown" almost
-    // certainly means "whoever is actually speaking right now," so
-    // resolve it to the real sender exactly like "me" already is,
-    // instead of silently creating/rolling for a bogus character
-    // literally named "Unknown".
     const resolveCharName = (name) => {
         if ((name === 'me' || (typeof name === 'string' && name.toLowerCase() === 'unknown')) && senderName) {
             return senderName;
@@ -1693,27 +1743,68 @@ async function processSpecialTags(text, context, senderName = null) {
         return formatted;
     }
 
+    let match;
+
+    // ─── [CALL FOR ROLL ...] – GM calls for a roll, does NOT resolve it ──
+    // Unlike [ROLL ...] below (which immediately rolls dice and returns a
+    // finished result), this tag is how the GM asks a player to make a
+    // check without deciding the outcome for them. A real GM says "make a
+    // Presence roll" (and maybe "-- though your low Presence means you
+    // might get more out of leaning on your Melee skill to intimidate
+    // instead") and then *waits*; they don't secretly roll the dice on the
+    // player's behalf the instant the words leave their mouth. This
+    // renders a prompt telling the player exactly what to roll (and an
+    // optional GM suggestion/alternative-approach note) and leaves the
+    // actual roll to the player's own `!gm roll ...` command or VTT roll
+    // button -- see ai-gm-bot.js's recordRollResultInHistory() for how
+    // that eventual result gets back into the AI's context so it can
+    // react to a roll it didn't fabricate itself.
+    const callForRollRegex = /\[CALL FOR ROLL\s*"([^"]+)"\s*([A-Za-z\+]+)\s*DV\s*(\d+)\s*([A-Za-z]+)(?:\s*"([^"]*)")?\s*\]/gi;
+    while ((match = callForRollRegex.exec(output)) !== null) {
+        const name = resolveCharName(match[1]);
+        const poolExpr = match[2];
+        const dv = parseInt(match[3]);
+        const position = match[4];
+        const suggestion = (match[5] || '').trim();
+
+        const char = charactersModule.get(name);
+        const hasAttributes = char && Object.keys(char.attributes || {}).some(k => char.attributes[k] !== undefined);
+
+        let replacement;
+        if (!hasAttributes) {
+            replacement = `*(⚠️ Character "${name}" not found. Please select a character in the VTT or create one with \`!gm create "${name}"\`.)*`;
+        } else {
+            const diceCount = charactersModule.getPool(name, poolExpr);
+            const poolNote = diceCount > 0 ? ` (${diceCount} dice)` : '';
+            replacement = `🎲 **${name}**, this calls for a **${poolExpr}** roll — DV ${dv}, ${position}${poolNote}.` +
+                (suggestion ? ` _${suggestion}_` : '') +
+                ` Roll it with \`!gm roll "${name}" ${poolExpr} DV ${dv} ${position}\` — or describe a different approach and I'll adjust the pool — whenever you're ready.`;
+        }
+        output = output.replace(match[0], replacement);
+        callForRollRegex.lastIndex = 0;
+    }
+
     // ─── [ROLL ...] – supports "me" placeholder ────────────────────
+    // Immediately rolls and resolves. Still used for GM/system-driven
+    // rolls (e.g. an NPC's own check, or a roll a player already agreed to
+    // out loud) — the AI's system prompt now steers it toward [CALL FOR
+    // ROLL ...] instead for asking a *player* to roll, so this tag firing
+    // less often against player characters is expected and fine.
     // First, try the regex approach with flexible spacing
     const rollRegex = /\[ROLL\s*"([^"]+)"\s*([A-Za-z\+]+)\s*DV\s*(\d+)\s*([A-Za-z]+)\s*\]/gi;
-    let match;
     let foundAny = false;
-    console.log('🔍 [processSpecialTags] Processing text for roll tags:', text.slice(0, 200));
     while ((match = rollRegex.exec(text)) !== null) {
         foundAny = true;
-        console.log('🔍 [processSpecialTags] Found roll tag via regex:', match[0]);
         const name = match[1];
         const poolExpr = match[2];
         const dv = parseInt(match[3]);
         const position = match[4];
         const replacement = await processRollTag(name, poolExpr, dv, position, match[0]);
         output = output.replace(match[0], replacement);
-        console.log('🔍 [processSpecialTags] Replaced with:', replacement);
     }
 
     // If regex found nothing, try a more manual parser (more forgiving of whitespace)
     if (!foundAny) {
-        console.log('🔍 [processSpecialTags] Regex found no roll tags, trying manual parser...');
         let startIdx = 0;
         while (true) {
             const rollStart = output.indexOf('[ROLL "', startIdx);
@@ -1721,27 +1812,15 @@ async function processSpecialTags(text, context, senderName = null) {
             const rollEnd = output.indexOf(']', rollStart);
             if (rollEnd === -1) break;
             const fullTag = output.slice(rollStart, rollEnd + 1);
-            const tagContent = output.slice(rollStart + 7, rollEnd); // after '[ROLL "'
-            // Parse: "name" whitespace Attribute+Skill whitespace DV number whitespace Position
+            const tagContent = output.slice(rollStart + 7, rollEnd);
             const parts = tagContent.match(/"([^"]+)"\s*([A-Za-z\+]+)\s*DV\s*(\d+)\s*([A-Za-z]+)/);
             if (parts) {
                 const name = parts[1];
                 const poolExpr = parts[2];
                 const dv = parseInt(parts[3]);
                 const position = parts[4];
-                console.log('🔍 [processSpecialTags] Found roll tag via manual parser:', fullTag);
                 const replacement = await processRollTag(name, poolExpr, dv, position, fullTag);
                 output = output.replace(fullTag, replacement);
-                console.log('🔍 [processSpecialTags] Replaced with:', replacement);
-                // FIXED: same family of bug as the regex loops below --
-                // `rollEnd + 1` was an offset into the PRE-replacement
-                // string. Once `replacement` differs in length from
-                // `fullTag` (always true in practice), that offset points
-                // to the wrong place in the mutated `output`, and a
-                // second [ROLL ...] tag later in the same message could
-                // be skipped or mis-sliced. Advance from `rollStart` by
-                // the actual replacement length instead, which is always
-                // correct in the new string.
                 startIdx = rollStart + replacement.length;
             } else {
                 startIdx = rollEnd + 1;
@@ -1750,14 +1829,6 @@ async function processSpecialTags(text, context, senderName = null) {
     }
 
     // ─── [LOOKUP RULE "..."] ────────────────────────────────────────
-    // Companion to the compact rules index ai-gm-bot.js now sends
-    // instead of the full rules.txt on every turn (see
-    // rules-index.js / buildIndex()) -- the model asks for a specific
-    // section by name when it actually needs the full text, and this
-    // resolves it inline the same way [ROLL ...] resolves to a real
-    // result. Plain keyword lookup against an in-memory list, not RAG:
-    // rules.txt is small enough to hold in full, this just avoids
-    // re-sending all of it every turn.
     const lookupRegex = /\[LOOKUP RULE\s*"([^"]+)"\s*\]/gi;
     while ((match = lookupRegex.exec(output)) !== null) {
         const query = match[1];
@@ -1767,15 +1838,6 @@ async function processSpecialTags(text, context, senderName = null) {
             ? `\n---\n**${section.title}**\n${section.body}\n---\n`
             : `*(No rule section found matching "${query}".)*`;
         output = output.replace(match[0], replacement);
-        // FIXED: `output` is being mutated inside this loop while the
-        // *global* regex's `lastIndex` keeps advancing as if the string
-        // never changed. Once a replacement text differs in length from
-        // the tag it replaced, `lastIndex` points at the wrong offset in
-        // the new string and subsequent tags of this type in the same
-        // message get silently skipped (left as literal unresolved text).
-        // Resetting to 0 re-scans the already-mutated string from the
-        // start; already-replaced spans are gone so they can't re-match,
-        // this just guarantees every remaining real tag is still found.
         lookupRegex.lastIndex = 0;
     }
 
@@ -1786,7 +1848,7 @@ async function processSpecialTags(text, context, senderName = null) {
         campaignState.scene.position = pos;
         saveCampaign();
         output = output.replace(match[0], `*(Position set to ${pos})*`);
-        posRegex.lastIndex = 0; // see FIXED note above (lookupRegex)
+        posRegex.lastIndex = 0;
     }
 
     // ─── [SET DV ...] ──────────────────────────────────────────────
@@ -1796,16 +1858,10 @@ async function processSpecialTags(text, context, senderName = null) {
         campaignState.scene.defaultDV = dv;
         saveCampaign();
         output = output.replace(match[0], `*(Default DV set to ${dv})*`);
-        dvRegex.lastIndex = 0; // see FIXED note above (lookupRegex)
+        dvRegex.lastIndex = 0;
     }
 
     // ─── [APPLY ...] – supports "me" placeholder ───────────────────
-    // CHANGED: the system prompt (index.js) instructs the model to use
-    // "[ADD BOON Name N]" for boons, but this regex only ever matched
-    // the literal word APPLY -- so every boon grant the model actually
-    // followed instructions for silently failed to parse. Also added
-    // support for negative amounts (e.g. removing a boon/spending one
-    // via a tag) which the old `(\d+)` couldn't match at all.
     const applyRegex = /\[(?:APPLY|ADD)\s+(HARM|FATIGUE|BOON|OBLIGATION|CORRUPTION|LEASH)\s+([A-Za-z0-9_]+)\s+(-?\d+)(?:\s+(\d+))?\]/gi;
     while ((match = applyRegex.exec(output)) !== null) {
         const type = match[1].toLowerCase();
@@ -1822,26 +1878,10 @@ async function processSpecialTags(text, context, senderName = null) {
             charactersModule.applyDelta(name, type, amount, saveCampaign);
             output = output.replace(match[0], `*(${name} ${type} ${amount >= 0 ? '+' : ''}${amount})*`);
         }
-        // FIXED (was the reported bug): see lookupRegex note above -- with
-        // multiple [APPLY]/[ADD] tags of differing replacement length in
-        // one message, `applyRegex.lastIndex` used to desync from the
-        // mutated `output` string and later tags were silently left
-        // unresolved. Confirmed by test: 2 of 4 tags previously skipped.
         applyRegex.lastIndex = 0;
     }
 
     // ─── [TICK TIMER ...] ──────────────────────────────────────────
-    // NOTE: this ticks the LOCAL orchestrator scene timer
-    // (campaignState.scene.timers), a different system from the server
-    // adventure engine's own scene/campaign timers (server/adventure.js
-    // tickTimer(), reached via apiRequest POST ['adventure','timer']).
-    // The two are not reconciled -- a [TICK TIMER "X" N] tag here will
-    // silently create/advance a LOCAL timer named X even if an adventure
-    // module timer with the same name already exists server-side. If you
-    // want the AI's [TICK TIMER] tags to drive the adventure engine's
-    // scene timers instead, route this branch through
-    // context.apiRequest('POST', ['adventure','timer'], {ref:name, amount:ticks, scope:'scene'})
-    // and drop the local timersModule call.
     const tickRegex = /\[TICK TIMER "([^"]+)" (\d+)\]/gi;
     while ((match = tickRegex.exec(output)) !== null) {
         const name = match[1];
@@ -1859,7 +1899,7 @@ async function processSpecialTags(text, context, senderName = null) {
             }
         }
         saveCampaign();
-        tickRegex.lastIndex = 0; // see FIXED note above (lookupRegex)
+        tickRegex.lastIndex = 0;
     }
 
     // ─── [TIMER ...] – create timer ───────────────────────────────
@@ -1871,13 +1911,10 @@ async function processSpecialTags(text, context, senderName = null) {
         timersModule.addTimer(campaignState, name, max, onFill);
         saveCampaign();
         output = output.replace(match[0], `*(Timer "${name}" created with ${max} segments)*`);
-        createRegex.lastIndex = 0; // see FIXED note above (lookupRegex)
+        createRegex.lastIndex = 0;
     }
 
     // ─── [DRAW ...] – WebSocket deck-draw ──────────────────────────
-    // CHANGED: \w+ doesn't match hyphens, so a region like
-    // "acasia-broken-marches" (the actual default region) never matched
-    // and this tag silently failed to fire for the default region.
     const drawRegex = /\[DRAW (\d+) ([\w-]+)\]/gi;
     while ((match = drawRegex.exec(output)) !== null) {
         const count = parseInt(match[1]);
@@ -1888,11 +1925,10 @@ async function processSpecialTags(text, context, senderName = null) {
         } else {
             output = output.replace(match[0], `*(Deck draw not available – WebSocket closed)*`);
         }
-        drawRegex.lastIndex = 0; // see FIXED note above (lookupRegex)
+        drawRegex.lastIndex = 0;
     }
 
     // ─── [CROWN ...] – WebSocket crown-spread ──────────────────────
-    // CHANGED: same hyphen fix as [DRAW] above.
     const crownRegex = /\[CROWN ([\w-]+)\]/gi;
     while ((match = crownRegex.exec(output)) !== null) {
         const region = match[1];
@@ -1902,7 +1938,7 @@ async function processSpecialTags(text, context, senderName = null) {
         } else {
             output = output.replace(match[0], `*(Crown Spread not available – WebSocket closed)*`);
         }
-        crownRegex.lastIndex = 0; // see FIXED note above (lookupRegex)
+        crownRegex.lastIndex = 0;
     }
 
     // ─── [SPEND SB ...] ────────────────────────────────────────────
@@ -1916,7 +1952,7 @@ async function processSpecialTags(text, context, senderName = null) {
         } else {
             output = output.replace(match[0], '*(Not enough SB)*');
         }
-        sbRegex.lastIndex = 0; // see FIXED note above (lookupRegex)
+        sbRegex.lastIndex = 0;
     }
 
     // ─── [FACT ...] ────────────────────────────────────────────────
@@ -1940,7 +1976,7 @@ async function processSpecialTags(text, context, senderName = null) {
             knowledgeIndex.indexFact(context.orchestrator?.campaign?.campaignCode, key, value).catch(() => {});
         }
         output = output.replace(match[0], '');
-        factRegex.lastIndex = 0; // see FIXED note above (lookupRegex)
+        factRegex.lastIndex = 0;
     }
 
     // ─── [NPC CAST ...] – supports "me" placeholder ───────────────
@@ -1952,7 +1988,7 @@ async function processSpecialTags(text, context, senderName = null) {
         const spell = context.orchestrator?.world?.getSpell(spellName);
         if (!spell) {
             output = output.replace(match[0], `*(NPC spell "${spellName}" not found)*`);
-            npcCastRegex.lastIndex = 0; // see FIXED note above (lookupRegex)
+            npcCastRegex.lastIndex = 0;
             continue;
         }
         const tagCount = spell.tags ? spell.tags.length : 1;
@@ -1963,7 +1999,7 @@ async function processSpecialTags(text, context, senderName = null) {
         }
         if ((campaignState.sb || 0) < sbCost) {
             output = output.replace(match[0], `*(Not enough SB (need ${sbCost}, have ${campaignState.sb || 0}) for NPC spell "${spellName}")*`);
-            npcCastRegex.lastIndex = 0; // see FIXED note above (lookupRegex)
+            npcCastRegex.lastIndex = 0;
             continue;
         }
         campaignState.sb -= sbCost;
@@ -1985,19 +2021,10 @@ async function processSpecialTags(text, context, senderName = null) {
         }
         saveCampaign();
         output = output.replace(match[0], resultMsg);
-        npcCastRegex.lastIndex = 0; // see FIXED note above (lookupRegex)
+        npcCastRegex.lastIndex = 0;
     }
 
     // ─── [SCENE COMPLETE "notes"] ──────────────────────────────────
-    // NEW: this is the actual scene-advancement mechanism -- previously
-    // nothing in the bot ever called the adventure engine's advanceScene()
-    // at all, so the "current scene" never moved forward regardless of
-    // how the story actually progressed. The AI emits this tag when a
-    // scene's dramatic question has resolved and it's time to move on;
-    // adventureDirector.handleSceneComplete() decides whether that's a
-    // plain advance, generating a new scene (dynamic-growth adventures
-    // with content running low), generating a climax (session threshold
-    // reached), or letting the adventure complete and archiving a summary.
     const sceneCompleteRegex = /\[SCENE COMPLETE(?:\s+"([^"]*)")?\]/gi;
     while ((match = sceneCompleteRegex.exec(output)) !== null) {
         const notes = match[1] || '';
@@ -2007,7 +2034,12 @@ async function processSpecialTags(text, context, senderName = null) {
                 label: `Advance the scene${notes ? ` — ${notes}` : ''}`,
                 apply: async () => {
                     try {
-                        return await adventureDirector.handleSceneComplete(context, notes);
+                        // Timeout the scene completion call to avoid hanging
+                        return await withTimeout(
+                            adventureDirector.handleSceneComplete(context, notes),
+                            5000,
+                            '*(Scene completion timed out – please try again)*'
+                        );
                     } catch (e) {
                         return `*(Scene completion error: ${e.message})*`;
                     }
@@ -2017,56 +2049,39 @@ async function processSpecialTags(text, context, senderName = null) {
         } else {
             let resultMsg;
             try {
-                resultMsg = await adventureDirector.handleSceneComplete(context, notes);
+                // Timeout the scene completion call
+                resultMsg = await withTimeout(
+                    adventureDirector.handleSceneComplete(context, notes),
+                    5000,
+                    '*(Scene completion timed out – please try again)*'
+                );
             } catch (e) {
                 resultMsg = `*(Scene completion error: ${e.message})*`;
             }
             output = output.replace(match[0], resultMsg || '');
         }
-        sceneCompleteRegex.lastIndex = 0; // see FIXED note above (lookupRegex)
+        sceneCompleteRegex.lastIndex = 0;
     }
 
     // ─── [NPC CREATE "Name" "Role" "Motivation" "Location"] ────────
-    // NEW: registers an ad-hoc NPC the AI just invented (mid-narration)
-    // into the currently loaded adventure's own npcs[] array, so it
-    // becomes a real, trackable NPC from here on (matched by
-    // adventure-context.js's getActiveNpc() the same as any pre-authored
-    // one) instead of vanishing the moment the scene ends. Deliberately
-    // silent on success -- the name already appears naturally in the
-    // AI's own sentence; a visible confirmation would be redundant
-    // clutter every time a new character is introduced. Fails silently
-    // (logged only) if no adventure is loaded, e.g. during freeform play.
-    //
-    // The 4th quoted arg (Location) is OPTIONAL -- plenty of NPCs
-    // wander, travel with the party, or just don't have a fixed address
-    // worth recording. Omit it entirely rather than inventing one; it
-    // can always be set/changed later via [NPC LOCATION "Name" "Place"]
-    // as they move around, below.
     const npcCreateRegex = /\[NPC CREATE "([^"]+)"(?:\s+"([^"]*)")?(?:\s+"([^"]*)")?(?:\s+"([^"]*)")?\]/gi;
     while ((match = npcCreateRegex.exec(output)) !== null) {
         const name = match[1];
         const role = match[2] || 'NPC';
         const motivation = match[3] || '';
-        const location = match[4] || undefined; // optional -- see comment above
+        const location = match[4] || undefined;
         const registerNpc = async () => {
             try {
-                await context.apiRequest('POST', ['adventure', 'npc'], { npc: { name, role, motivation, location } });
+                // Timeout the API call to avoid hanging
+                await withTimeout(
+                    context.apiRequest('POST', ['adventure', 'npc'], { npc: { name, role, motivation, location } }),
+                    5000
+                );
             } catch (e) {
                 console.warn(`[NPC CREATE] failed to register "${name}":`, e.message);
             }
-            // NEW: also drop a token for them on the whiteboard grid, so a
-            // newly-introduced NPC is visible on the map the moment they're
-            // named, not just tracked in text. Best-effort/non-blocking --
-            // failures here shouldn't affect the narration itself.
+            // Best-effort token placement and indexing – these are fire-and-forget with .catch()
             placeOrUpdateToken(context, { name, faction: inferFaction(role, motivation) }).catch(() => {});
-            // Also indexed into Elasticsearch if configured (see
-            // modules/knowledge-index.js) -- this is what lets "who knows
-            // about X?" / "where does Y live?" stay answerable across a long
-            // campaign. `location` is left out of the indexed record
-            // entirely when omitted, rather than defaulting to something
-            // like "unknown" -- an absent field searches differently than
-            // one that says "unknown", and only the former is honest about
-            // "nobody said."
             knowledgeIndex.indexNpc(context.orchestrator?.campaign?.campaignCode, {
                 name, role, motivation, location, faction: inferFaction(role, motivation), source: 'created'
             }).catch(() => {});
@@ -2081,33 +2096,69 @@ async function processSpecialTags(text, context, senderName = null) {
             await registerNpc();
         }
         output = output.replace(match[0], '');
-        npcCreateRegex.lastIndex = 0; // see FIXED note above (lookupRegex)
+        npcCreateRegex.lastIndex = 0;
     }
 
     // ─── [NPC LOCATION "Name" "Place"] ──────────────────────────────
-    // Updates just an NPC's location after the fact -- for wandering
-    // NPCs, ones who relocate, or ones whose whereabouts weren't known
-    // at creation time and have since become clear. Pass an empty
-    // string ("") to explicitly CLEAR a previously set location (the
-    // NPC has left / is unaccounted for again) rather than leaving
-    // stale location data searchable. Silent on success, same reasoning
-    // as [NPC CREATE ...] above. Elasticsearch-only -- see "no PATCH
-    // endpoint for the room's own adventure.npcs[]" note in
-    // knowledge-index.js's updateNpcLocation().
     const npcLocationRegex = /\[NPC LOCATION "([^"]+)" "([^"]*)"\]/gi;
     while ((match = npcLocationRegex.exec(output)) !== null) {
         const name = match[1];
         const place = match[2].trim();
         knowledgeIndex.updateNpcLocation(context.orchestrator?.campaign?.campaignCode, name, place || null).catch(() => {});
         output = output.replace(match[0], '');
-        npcLocationRegex.lastIndex = 0; // see FIXED note above (lookupRegex)
+        npcLocationRegex.lastIndex = 0;
+    }
+
+    // ─── [REVEAL "knowledge-id"] / [HIDE "knowledge-id"] ────────────
+    const revealRegex = /\[REVEAL\s+"([^"]+)"\]/gi;
+    while ((match = revealRegex.exec(output)) !== null) {
+        const id = match[1];
+        const doReveal = async () => {
+            try {
+                // Timeout the API call to avoid hanging
+                await withTimeout(
+                    context.apiRequest('POST', ['adventure', 'knowledge', 'reveal'], { id, by: context.myRole === 'assistant-gm' ? 'AI_GM (assistant)' : 'AI_GM' }),
+                    5000
+                );
+                adventureContext.invalidate();
+            } catch (e) {
+                console.warn(`[REVEAL] failed to reveal "${id}":`, e.message);
+            }
+        };
+        if (isAssistant) {
+            assistantSuggestions.enqueue({ kind: 'knowledge-reveal', label: `Reveal knowledge — ${id}`, apply: doReveal });
+        } else {
+            await doReveal();
+        }
+        output = output.replace(match[0], '');
+        revealRegex.lastIndex = 0;
+    }
+
+    const hideRegex = /\[HIDE\s+"([^"]+)"\]/gi;
+    while ((match = hideRegex.exec(output)) !== null) {
+        const id = match[1];
+        const doHide = async () => {
+            try {
+                // Timeout the API call to avoid hanging
+                await withTimeout(
+                    context.apiRequest('POST', ['adventure', 'knowledge', 'hide'], { id, by: context.myRole === 'assistant-gm' ? 'AI_GM (assistant)' : 'AI_GM' }),
+                    5000
+                );
+                adventureContext.invalidate();
+            } catch (e) {
+                console.warn(`[HIDE] failed to hide "${id}":`, e.message);
+            }
+        };
+        if (isAssistant) {
+            assistantSuggestions.enqueue({ kind: 'knowledge-hide', label: `Hide knowledge — ${id}`, apply: doHide });
+        } else {
+            await doHide();
+        }
+        output = output.replace(match[0], '');
+        hideRegex.lastIndex = 0;
     }
 
     // ─── [TOKEN MOVE "Name" col row] ────────────────────────────────
-    // Lets the AI reposition a combatant on the grid as a fight moves
-    // (e.g. an enemy closing distance, a PC retreating). Silent on
-    // success like [NPC CREATE] -- the movement should already be
-    // implied by the narration around it.
     const tokenMoveRegex = /\[TOKEN MOVE "([^"]+)"\s+(-?\d+)\s+(-?\d+)\]/gi;
     while ((match = tokenMoveRegex.exec(output)) !== null) {
         const name = match[1];
@@ -2115,28 +2166,19 @@ async function processSpecialTags(text, context, senderName = null) {
         const row = parseInt(match[3], 10);
         moveToken(context, name, col, row).catch(() => {});
         output = output.replace(match[0], '');
-        tokenMoveRegex.lastIndex = 0; // see FIXED note above (lookupRegex)
+        tokenMoveRegex.lastIndex = 0;
     }
 
     // ─── [TOKEN REMOVE "Name"] ───────────────────────────────────────
-    // Take a token off the board (fled, defeated and dragged off,
-    // teleported away, etc.) without necessarily resolving a whole
-    // encounter -- e.g. one enemy out of several going down.
     const tokenRemoveRegex = /\[TOKEN REMOVE "([^"]+)"\]/gi;
     while ((match = tokenRemoveRegex.exec(output)) !== null) {
         const name = match[1];
         removeToken(context, name).catch(() => {});
         output = output.replace(match[0], '');
-        tokenRemoveRegex.lastIndex = 0; // see FIXED note above (lookupRegex)
+        tokenRemoveRegex.lastIndex = 0;
     }
 
     // ─── [ENCOUNTER START "Name" type] ─────────────────────────────
-    // NEW: lets the AI kick off an ad-hoc encounter and tag its type in
-    // the same breath as narrating it, mirroring !gm encounter start
-    // above. `type` is optional and defaults to 'combat' -- exactly
-    // current behavior when the AI (or an older prompt) omits it
-    // entirely, so this is fully back-compatible with narration that
-    // never mentions a type at all.
     const encStartRegex = /\[ENCOUNTER START\s+"([^"]+)"(?:\s+(\w+))?\]/gi;
     while ((match = encStartRegex.exec(output)) !== null) {
         const name = match[1];
@@ -2144,9 +2186,13 @@ async function processSpecialTags(text, context, senderName = null) {
         try {
             const apiRequest = context.apiRequest;
             if (apiRequest) {
-                const result = await apiRequest('POST', ['adventure', 'encounter', 'start'], {
-                    encounter: { name, type: encType },
-                });
+                // Timeout the API call to avoid hanging
+                const result = await withTimeout(
+                    apiRequest('POST', ['adventure', 'encounter', 'start'], {
+                        encounter: { name, type: encType },
+                    }),
+                    5000
+                );
                 const vocab = getVocab(encType);
                 const dv = result?.activeEncounter?.dv;
                 output = output.replace(match[0], `${encounterIcon(encType)} Encounter "${name}" (${vocab.label}) begins.${dv !== undefined ? ` DV ${dv}.` : ''}`);
@@ -2156,7 +2202,7 @@ async function processSpecialTags(text, context, senderName = null) {
         } catch (e) {
             output = output.replace(match[0], `⚠️ Encounter start error: ${e.message}`);
         }
-        encStartRegex.lastIndex = 0; // see FIXED note above (lookupRegex)
+        encStartRegex.lastIndex = 0;
     }
 
     // ─── [ENCOUNTER RESOLVE outcome "notes"] ──────────────────────
@@ -2167,20 +2213,14 @@ async function processSpecialTags(text, context, senderName = null) {
         try {
             const apiRequest = context.apiRequest;
             if (apiRequest) {
-                const result = await apiRequest('POST', ['adventure', 'encounter', 'resolve'], { outcome, notes });
-                // Fight's over -- clear enemy tokens off the grid. Best-effort;
-                // never lets a whiteboard hiccup break the resolution message.
+                // Timeout the API call to avoid hanging
+                const result = await withTimeout(
+                    apiRequest('POST', ['adventure', 'encounter', 'resolve'], { outcome, notes }),
+                    5000
+                );
                 clearEnemyTokens(context).catch(() => {});
                 if (result && result.lastResolution) {
                     const r = result.lastResolution;
-                    // CHANGED: was hardcoded to the ⚔️ crossed-swords icon and
-                    // the bare word "Encounter" regardless of what kind of
-                    // encounter it actually was -- a resolved lockpick or
-                    // negotiation read exactly like a finished fight. Now
-                    // picks the icon (and could pick different phrasing) from
-                    // the resolved encounter's own `type`, defaulting to
-                    // 'combat' when the server doesn't send one back (older
-                    // server versions / back-compat).
                     const encType = encounterType(r);
                     const msg = `${encounterIcon(encType)} Encounter "${r.encounter || 'Unknown'}" resolved as ${r.outcome}.${r.result ? ' ' + r.result : ''}`;
                     output = output.replace(match[0], msg);
@@ -2193,7 +2233,7 @@ async function processSpecialTags(text, context, senderName = null) {
         } catch (e) {
             output = output.replace(match[0], `⚠️ Encounter resolution error: ${e.message}`);
         }
-        encResolveRegex.lastIndex = 0; // see FIXED note above (lookupRegex)
+        encResolveRegex.lastIndex = 0;
     }
 
     return output;

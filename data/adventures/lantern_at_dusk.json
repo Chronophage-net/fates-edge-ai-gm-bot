@@ -6,7 +6,13 @@
   "tierRange": "I",
   "author": "Nicholas A. Gasper",
   "sessions": "1–2",
-  "themes": ["Curse", "Barrow", "Spirits", "Exploration", "Rival"],
+  "themes": [
+    "Curse",
+    "Barrow",
+    "Spirits",
+    "Exploration",
+    "Rival"
+  ],
   "status": "planned",
   "currentAct": 0,
   "currentScene": 0,
@@ -21,11 +27,27 @@
       "class": "I",
       "category": "spirit",
       "description": "A restless spirit bound to the barrow. It drifts through the corridors, its form flickering like a dying candle. It does not attack unless provoked, but it will not let anyone pass without an offering.",
-      "stats": { "Spirit": 2, "Resolve": 2, "hp": 12 },
+      "stats": {
+        "Spirit": 2,
+        "Resolve": 2,
+        "hp": 12
+      },
       "sb_spends": [
-        { "cost": 1, "name": "Draining Touch", "effect": "A PC is touched by cold dread; they mark 1 Fatigue." },
-        { "cost": 2, "name": "Terrifying Visage", "effect": "The Duskwight reveals its true form; a PC must test Spirit+Resolve (DV 3) or be Frightened (-1 die to all actions for one exchange)." },
-        { "cost": 1, "name": "Fade to Mist", "effect": "The Duskwight becomes incorporeal for one exchange, avoiding all physical attacks." }
+        {
+          "cost": 1,
+          "name": "Draining Touch",
+          "effect": "A PC is touched by cold dread; they mark 1 Fatigue."
+        },
+        {
+          "cost": 2,
+          "name": "Terrifying Visage",
+          "effect": "The Duskwight reveals its true form; a PC must test Spirit+Resolve (DV 3) or be Frightened (-1 die to all actions for one exchange)."
+        },
+        {
+          "cost": 1,
+          "name": "Fade to Mist",
+          "effect": "The Duskwight becomes incorporeal for one exchange, avoiding all physical attacks."
+        }
       ],
       "lore": "They were once guardians of the lantern, sworn to protect it from those who would misuse its power. They do not remember their names, only their duty."
     },
@@ -36,11 +58,28 @@
       "class": "I",
       "category": "humanoid",
       "description": "A brash young treasure hunter with quick fingers and a quicker temper. She's here for the lantern, and she doesn't intend to share.",
-      "stats": { "Wits": 3, "Stealth": 2, "Melee": 1, "hp": 18 },
+      "stats": {
+        "Wits": 3,
+        "Stealth": 2,
+        "Melee": 1,
+        "hp": 18
+      },
       "sb_spends": [
-        { "cost": 1, "name": "Dirty Trick", "effect": "Lena throws dust in a PC's eyes; they act at Desperate for one exchange." },
-        { "cost": 2, "name": "Slippery Escape", "effect": "Lena disengages from melee and moves to Near range without provoking opportunity." },
-        { "cost": 1, "name": "Taunt", "effect": "Lena insults a PC, goading them into a reckless action; their next attack is at -1 die." }
+        {
+          "cost": 1,
+          "name": "Dirty Trick",
+          "effect": "Lena throws dust in a PC's eyes; they act at Desperate for one exchange."
+        },
+        {
+          "cost": 2,
+          "name": "Slippery Escape",
+          "effect": "Lena disengages from melee and moves to Near range without provoking opportunity."
+        },
+        {
+          "cost": 1,
+          "name": "Taunt",
+          "effect": "Lena insults a PC, goading them into a reckless action; their next attack is at -1 die."
+        }
       ],
       "lore": "She's been chasing legends since she was a child. She doesn't know what the lantern does—she just knows it's worth something to someone."
     },
@@ -51,11 +90,29 @@
       "class": "II",
       "category": "construct",
       "description": "A crude statue of a warrior, animated by ancient magic. It stands motionless until the lantern is disturbed, then it lurches into action, its stone limbs grinding.",
-      "stats": { "Body": 3, "Melee": 2, "Athletics": 1, "armor": 2, "hp": 25 },
+      "stats": {
+        "Body": 3,
+        "Melee": 2,
+        "Athletics": 1,
+        "armor": 2,
+        "hp": 25
+      },
       "sb_spends": [
-        { "cost": 1, "name": "Stone Fist", "effect": "A PC is knocked Prone; they must spend an action to stand." },
-        { "cost": 2, "name": "Shatter the Ground", "effect": "The Guardian slams the floor; all in Near must test Body+Athletics (DV 3) or be Slowed for one exchange." },
-        { "cost": 2, "name": "Rumbling Charge", "effect": "The Guardian charges in a straight line; any PC in its path must test Body+Athletics (DV 4) or take Harm 2." }
+        {
+          "cost": 1,
+          "name": "Stone Fist",
+          "effect": "A PC is knocked Prone; they must spend an action to stand."
+        },
+        {
+          "cost": 2,
+          "name": "Shatter the Ground",
+          "effect": "The Guardian slams the floor; all in Near must test Body+Athletics (DV 3) or be Slowed for one exchange."
+        },
+        {
+          "cost": 2,
+          "name": "Rumbling Charge",
+          "effect": "The Guardian charges in a straight line; any PC in its path must test Body+Athletics (DV 4) or take Harm 2."
+        }
       ],
       "lore": "It was built to protect the lantern, but it has stood so long that it has forgotten its purpose. It attacks anything that moves, hoping to remember why it exists."
     }
@@ -72,7 +129,12 @@
           "description": "The barrow entrance is a narrow stone passage. A faint green glow pulses from deeper inside. A cave-in blocks the way.",
           "completed": false,
           "timers": [
-            { "name": "Barrow Collapse", "segments": 6, "current": 0, "description": "Ticks on failure inside. At 6, the entrance seals." }
+            {
+              "name": "Barrow Collapse",
+              "segments": 6,
+              "current": 0,
+              "description": "Ticks on failure inside. At 6, the entrance seals."
+            }
           ],
           "encounters": [
             {
@@ -93,7 +155,12 @@
           "description": "The passage widens into a hall where three Duskwights drift. They do not attack unless provoked, but they will not let anyone pass without an offering.",
           "completed": false,
           "timers": [
-            { "name": "Barrow Collapse", "segments": 6, "current": 0, "description": "Ticks on failure inside." }
+            {
+              "name": "Barrow Collapse",
+              "segments": 6,
+              "current": 0,
+              "description": "Ticks on failure inside."
+            }
           ],
           "encounters": [
             {
@@ -125,8 +192,18 @@
           "description": "The lantern sits on a stone altar. Quick Lena is there, trying to pry it loose.",
           "completed": false,
           "timers": [
-            { "name": "Barrow Collapse", "segments": 6, "current": 0, "description": "Ticks on failure inside." },
-            { "name": "Lena's Agenda", "segments": 4, "current": 0, "description": "Ticks each scene inside. At 4, Lena takes the lantern first." }
+            {
+              "name": "Barrow Collapse",
+              "segments": 6,
+              "current": 0,
+              "description": "Ticks on failure inside."
+            },
+            {
+              "name": "Lena's Agenda",
+              "segments": 4,
+              "current": 0,
+              "description": "Ticks each scene inside. At 4, Lena takes the lantern first."
+            }
           ],
           "encounters": [
             {
@@ -148,7 +225,12 @@
           "description": "After you take the lantern, the barrow begins to collapse in earnest. The party needs 3 successes before 2 failures to escape.",
           "completed": false,
           "timers": [
-            { "name": "Barrow Collapse", "segments": 6, "current": 0, "description": "Ticks on failure. At 6, entrance seals." }
+            {
+              "name": "Barrow Collapse",
+              "segments": 6,
+              "current": 0,
+              "description": "Ticks on failure. At 6, entrance seals."
+            }
           ],
           "encounters": [
             {
@@ -186,13 +268,36 @@
     }
   ],
   "npcs": [
-    { "id": "npc-sarai", "name": "Elder Sarai", "role": "Village elder of Duskwood", "motivation": "Save her village from the blight." },
-    { "id": "npc-lena", "name": "Quick Lena", "role": "Rival treasure hunter", "motivation": "Get the lantern for herself." },
-    { "id": "npc-duskwights", "name": "Duskwights", "role": "Restless spirits (3)", "motivation": "Guard the barrow." }
+    {
+      "id": "npc-sarai",
+      "name": "Elder Sarai",
+      "role": "Village elder of Duskwood",
+      "motivation": "Save her village from the blight."
+    },
+    {
+      "id": "npc-lena",
+      "name": "Quick Lena",
+      "role": "Rival treasure hunter",
+      "motivation": "Get the lantern for herself."
+    },
+    {
+      "id": "npc-duskwights",
+      "name": "Duskwights",
+      "role": "Restless spirits (3)",
+      "motivation": "Guard the barrow."
+    }
   ],
   "locations": [
-    { "id": "loc-barrow", "name": "The Old Barrow", "description": "A moss-covered stone mound on a hill overlooking Duskwood." },
-    { "id": "loc-stone-circle", "name": "The Stone Circle", "description": "A ring of standing stones in the valley below the barrow." }
+    {
+      "id": "loc-barrow",
+      "name": "The Old Barrow",
+      "description": "A moss-covered stone mound on a hill overlooking Duskwood."
+    },
+    {
+      "id": "loc-stone-circle",
+      "name": "The Stone Circle",
+      "description": "A ring of standing stones in the valley below the barrow."
+    }
   ],
   "factions": [],
   "campaignTimers": [
@@ -233,10 +338,8 @@
   ],
   "createdAt": "2026-07-28T00:00:00.000Z",
   "updatedAt": "2026-07-28T00:00:00.000Z",
-
   "_gmhints": {
     "tone": "THIS ADVENTURE IS A TUTORIAL. The tone should be clear, encouraging, and slightly instructional — like a friendly GM showing new players how the game works. The narration should be vivid but not overwhelming, and every mechanic should be explained as it arises. This is the adventure that comes with the GM guide, so it has a pedagogical purpose: teach Position & DV, Outcomes, Timers, and Story Beats through play. Lean into the teaching moments. When a player fails a roll, explain how that generates Story Beats. When a timer ticks, explain what it means. When a Clean Success happens, describe why it feels good. This is not the adventure to be mysterious or withholding — it's the adventure to say 'Here's how the game works, and here's why it's fun.'",
-
     "pacing": {
       "act1": "This is a single-act tutorial adventure designed for 1-2 sessions. Each scene introduces a new core mechanic, building complexity as the party progresses through the barrow. Keep the pace brisk — this is not a slow-burn horror investigation, it's a 'learn by doing' dungeon crawl.",
       "scene_entry": "Scene 1: Introduces the core roll mechanic (Position, DV, Outcomes). Explain to players: 'Controlled Position means you have the upper hand — you're not in immediate danger. DV 3 means you need 3 successes to get a Clean Success. The barrow is dangerous, but you're approaching it carefully.' The Barrow Collapse timer is introduced here — this is the first 'ticking clock' mechanic. Explain it as: 'The barrow is unstable. Every failure inside makes it more likely to collapse. This timer represents that pressure — it's not a punishment, it's dramatic tension.' This scene is about the party's first action as a group. Encourage teamwork: if one character has Body+Athletics, they can lead; others can assist (spend a Boon to give +1 die).",
@@ -245,7 +348,6 @@
       "scene_escape": "Scene 4: Introduces the group challenge — 3 successes before 2 failures. This is a classic 'skill challenge' format. Explain to players: 'This is a Desperate Position escape — the barrow is collapsing around you. Each success brings you closer to safety. Each failure makes the collapse worse. You need to work together.' This is the climax of the mechanical tutorial: everything they've learned (Position, DV, Outcomes, Timers) comes together in a high-stakes group roll. Encourage players to describe their actions creatively — using different skills for different obstacles.",
       "scene_resolution": "Resolution: Introduces the 'Ritual of Breaking' — a low-DV Controlled encounter that demonstrates how Clean, Partial, and Miss outcomes create narrative consequences beyond just success/failure. This is the 'reward' scene — the party has survived, and now they see the results of their choices. Clean Success means the village is saved and the party gains a String (a narrative asset). Partial Success means the lantern survives as a future plot hook. Miss means the curse is merely postponed — a recurring enemy is born. This teaches players that their actions have lasting consequences, and that Fate's Edge is a game about narrative as much as mechanics."
     },
-
     "pedagogical_notes": {
       "core_mechanics": {
         "position": "Explain Position as: 'Controlled = you have the advantage. Desperate = the odds are against you. Dominant = you're in control. Position affects the stakes, not just the difficulty — a Clean Success in Desperate feels more heroic.'",
@@ -269,20 +371,17 @@
         "assist_explanation": "When a player wants to help another, say: 'You can spend a Boon to assist — that gives your ally +1 die to their roll. Teamwork is powerful in Fate's Edge.'"
       }
     },
-
     "npcSecrets": {
       "elder-sarai": "Sarai is sincere — she genuinely wants to save her village. She doesn't know the full history of the lantern, only that it was buried to stop the blight. She will offer the party a String (a social asset) as a reward, but she cannot pay in coin. Her village is poor, but grateful.",
       "quick-lena": "Lena is not evil — she's ambitious and reckless. She doesn't know what the lantern does, only that someone in the city will pay handsomely for 'ancient artifacts.' She is in over her head. If the party is kind to her, she may become a recurring ally (or rival). If they are cruel, she will remember. Her true motivation: she wants to prove she's more than a common thief.",
       "duskwights": "The Duskwights were once guardians of the lantern, sworn to protect it. They do not remember their names, only their duty. They are tragic figures, not monsters. If the party offers a meaningful memory (not just a 'secret' but something real), the Duskwights will bow and let them pass. They are testing the party's worth."
     },
-
     "forbiddenEarlyRevelations": [
       "That the lantern cannot be destroyed — this is a Partial Outcome reveal in the Resolution scene; do not telegraph it early",
       "That Lena is working for someone else — this is a potential recurring plot hook; let her mention 'someone in the city' vaguely, but do not name the patron",
       "That the Duskwights were once human — this is the emotional weight of the Spirit Corridor; let it emerge through roleplay, not GM exposition",
       "That the Barrow Guardian exists — it appears only if the party disturbs the lantern; do not foreshadow it heavily"
     ],
-
     "tutorialTactics": {
       "call_rolls_explicitly": "Always call rolls with the [ROLL] tag embedded, and explain why: 'You edge toward the rubble, [ROLL \"Character\" Body+Athletics DV 3 Controlled] to see if you can clear a path without causing a collapse.' This models the GM's role.",
       "explain_outcomes": "After each roll, explain what happened in mechanical terms: 'That's a Clean Success — you clear the rubble without any trouble. The barrow is stable for now.' 'That's a Partial — you make it through, but the rubble shifts. The Barrow Collapse timer advances by 1.' 'That's a Miss — you're pinned by a rock. Mark 1 Harm and the timer advances by 1.'",
@@ -291,5 +390,84 @@
       "use_story_beats": "When a player fails a roll, say: 'That's a Miss. You gain a Story Beat, and I'm going to spend one to make things interesting...' Then introduce a complication. This teaches the SB economy.",
       "summarize_lessons": "At the end of each scene, briefly summarize: 'So in this scene, you learned how Position works, how to use Boons, and how Timers build tension. In the next scene, we'll look at social encounters and alternative resolutions.' This reinforces learning."
     }
-  }
+  },
+  "knowledge": [
+    {
+      "id": "that-the-lantern-cannot-be-destroyed",
+      "subject": "plot",
+      "gm": "That the lantern cannot be destroyed — this is a Partial Outcome reveal in the Resolution scene; do not telegraph it early",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "that-lena-is-working-for-someone",
+      "subject": "plot",
+      "gm": "That Lena is working for someone else — this is a potential recurring plot hook; let her mention 'someone in the city' vaguely, but do not name the patron",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "that-the-duskwights-were-once-human",
+      "subject": "plot",
+      "gm": "That the Duskwights were once human — this is the emotional weight of the Spirit Corridor; let it emerge through roleplay, not GM exposition",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "that-the-barrow-guardian-exists-it",
+      "subject": "plot",
+      "gm": "That the Barrow Guardian exists — it appears only if the party disturbs the lantern; do not foreshadow it heavily",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "sarai-secret",
+      "subject": "npc-sarai",
+      "gm": "Sarai is sincere — she genuinely wants to save her village. She doesn't know the full history of the lantern, only that it was buried to stop the blight. She will offer the party a String (a social asset) as a reward, but she cannot pay in coin. Her village is poor, but grateful.",
+      "player": "Elder Sarai plays the part everyone assumes: Village elder of Duskwood. Nothing about their manner invites a second look.",
+      "revealed": false,
+      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "tags": [
+        "npc-secret"
+      ]
+    },
+    {
+      "id": "lena-secret",
+      "subject": "npc-lena",
+      "gm": "Lena is not evil — she's ambitious and reckless. She doesn't know what the lantern does, only that someone in the city will pay handsomely for 'ancient artifacts.' She is in over her head. If the party is kind to her, she may become a recurring ally (or rival). If they are cruel, she will remember. Her true motivation: she wants to prove she's more than a common thief.",
+      "player": "Quick Lena plays the part everyone assumes: Rival treasure hunter. Nothing about their manner invites a second look.",
+      "revealed": false,
+      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "tags": [
+        "npc-secret"
+      ]
+    },
+    {
+      "id": "duskwights-secret",
+      "subject": "npc-duskwights",
+      "gm": "The Duskwights were once guardians of the lantern, sworn to protect it. They do not remember their names, only their duty. They are tragic figures, not monsters. If the party offers a meaningful memory (not just a 'secret' but something real), the Duskwights will bow and let them pass. They are testing the party's worth.",
+      "player": "Duskwights play the part everyone assumes: Restless spirits guarding the barrow. Nothing about their manner invites a second look.",
+      "revealed": false,
+      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "tags": [
+        "npc-secret"
+      ]
+    }
+  ]
 }

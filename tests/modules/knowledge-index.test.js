@@ -167,7 +167,7 @@ test('search() with an empty query returns [] without hitting the client', async
 });
 
 test('indexNameFor() namespaces by campaign code and sanitizes it', () => {
-    assert.strictEqual(ki.indexNameFor('ABC123'), 'gm-knowledge-abc123');
+    assert.strictEqual(ki.indexNameFor('AC12'), 'gm-knowledge-AC12');
     assert.strictEqual(ki.indexNameFor(null), 'gm-knowledge-default');
 });
 

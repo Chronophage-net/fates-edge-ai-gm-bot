@@ -179,6 +179,49 @@ async function getSceneContextForPrompt(context) {
     }
 
     // ================================================================
+    // 1.5. KNOWLEDGE STATE — explicit secret/reveal data, GM/AI eyes only
+    // ================================================================
+    // NEW: the structured alternative to burying secrets in _gmhints
+    // prose above (which still works, unchanged, for older modules).
+    // Each entry in the module's `knowledge` array gives an explicit
+    // answer to "what am I allowed to tell the players?" instead of
+    // making the LLM infer it: `player` is what's safe to say NOW
+    // (possibly null -- nothing to say yet), `gm` is the full truth,
+    // and `revealed` is the live gate between them. Comes from
+    // getReferenceData() server-side (GM/AI-eyes-only fetch) -- this
+    // text NEVER reaches getPublicState()'s player-safe view, so it's
+    // safe to print the raw secret here.
+    const ref = await getReference(context);
+    if (ref?.knowledge?.length) {
+        const unrevealed = ref.knowledge.filter(k => !k.revealed);
+        const revealed = ref.knowledge.filter(k => k.revealed);
+
+        lines.push('═══════════════════════════════════════════════════════════════');
+        lines.push('KNOWLEDGE STATE (GM/AI EYES ONLY — never repeat `gm` text below to players unless its entry is REVEALED)');
+        lines.push('═══════════════════════════════════════════════════════════════');
+
+        if (unrevealed.length) {
+            lines.push('SECRET (not yet revealed — you may ONLY share the "players currently know" line for these; deflect or stay in the fiction if pressed further):');
+            for (const k of unrevealed) {
+                lines.push(`  [${k.id}]${k.subject ? ` (${k.subject})` : ''}`);
+                lines.push(`    truth (DO NOT reveal): ${k.gm}`);
+                lines.push(`    players currently know: ${k.player ?? '(nothing yet)'}`);
+                if (k.revealCondition) lines.push(`    reveal when: ${k.revealCondition}`);
+            }
+        }
+        if (revealed.length) {
+            lines.push('REVEALED (safe to narrate/confirm openly now):');
+            for (const k of revealed) {
+                lines.push(`  [${k.id}]${k.subject ? ` (${k.subject})` : ''}: ${k.gm}`);
+            }
+        }
+
+        lines.push('When a reveal condition above is met in play (the players witness it, an NPC confesses, etc.), emit [REVEAL "id"] so the game\'s knowledge state stays in sync with your narration -- do not just narrate the reveal and leave the tag out, and do not emit [REVEAL "id"] without narrating the reveal actually happening. Use [HIDE "id"] only to correct a mistaken reveal.');
+        lines.push('═══════════════════════════════════════════════════════════════');
+        lines.push('');
+    }
+
+    // ================================================================
     // 2. Current adventure / act / scene state
     // ================================================================
     lines.push(`**Current Adventure: "${state.title}"** (${state.status})`);
@@ -231,7 +274,8 @@ async function getSceneContextForPrompt(context) {
     // ================================================================
     // 3. Reference data (NPCs, locations, factions, notes)
     // ================================================================
-    const ref = await getReference(context);
+    // `ref` already fetched above for the KNOWLEDGE STATE section (1.5) --
+    // reused here, not re-fetched.
     if (ref) {
         if (ref.npcs?.length) {
             lines.push('\nKnown NPCs:');
@@ -262,7 +306,8 @@ async function getSceneContextForPrompt(context) {
     lines.push(
         '\nStay consistent with the NPCs/locations/factions listed above when they\'re relevant. ' +
         'You may still improvise minor, unnamed background characters as needed. ' +
-        'The GM Hints at the top of this block are IMMUTABLE — they override all other narrative instincts.'
+        'The GM Hints at the top of this block are IMMUTABLE — they override all other narrative instincts. ' +
+        'The KNOWLEDGE STATE block (if present) is the authoritative answer to what you may tell the players about each secret it lists — treat it as equally immutable.'
     );
 
     return '\n\n' + lines.join('\n');

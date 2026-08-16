@@ -151,6 +151,59 @@ test('processSpecialTags - malformed ROLL tag does not crash', async () => {
 });
 
 // ------------------------------------------------------------------
+// Part B.2: [CALL FOR ROLL ...] tag – calls for a roll WITHOUT resolving
+// it (unlike [ROLL ...] above). See ai-gm-bot.js's system prompt change
+// and commands.js's processSpecialTags() for the full rationale: the GM
+// should ask for a roll and wait, not secretly roll on the player's
+// behalf.
+// ------------------------------------------------------------------
+test('processSpecialTags - CALL FOR ROLL prompts for the roll instead of resolving it', async () => {
+  const context = buildMockContext();
+  const input = '[CALL FOR ROLL "Levi" Body+Melee DV 3 Controlled]';
+  const result = await processSpecialTags(input, context, 'Tester');
+  // Tag itself is gone.
+  assert.doesNotMatch(result, /\[CALL FOR ROLL/);
+  // But it must NOT have actually rolled dice -- no roll-result card.
+  assert.doesNotMatch(result, /rolls <strong>/);
+  assert.doesNotMatch(result, /Successes:/);
+  // It should tell the player what to roll and how.
+  assert.match(result, /Levi/);
+  assert.match(result, /Body\+Melee/);
+  assert.match(result, /DV 3/);
+  assert.match(result, /!gm roll "Levi" Body\+Melee DV 3 Controlled/);
+});
+
+test('processSpecialTags - CALL FOR ROLL includes the GM suggestion when given', async () => {
+  const context = buildMockContext();
+  const input = '[CALL FOR ROLL "Levi" Presence+Sway DV 4 Desperate "Low Presence, but Melee could sell the threat instead"]';
+  const result = await processSpecialTags(input, context, 'Tester');
+  assert.match(result, /Low Presence, but Melee could sell the threat instead/);
+});
+
+test('processSpecialTags - CALL FOR ROLL with spaces around + (fuzzy tag repair applies here too)', async () => {
+  const context = buildMockContext();
+  const input = '[CALL FOR ROLL "Levi" Body + Melee DV 3 Controlled]';
+  const result = await processSpecialTags(input, context, 'Tester');
+  assert.doesNotMatch(result, /\[CALL FOR ROLL/);
+  assert.match(result, /Body\+Melee/);
+});
+
+test('processSpecialTags - CALL FOR ROLL with "me" resolves to sender', async () => {
+  const context = buildMockContext();
+  const input = '[CALL FOR ROLL "me" Body+Melee DV 3 Controlled]';
+  const result = await processSpecialTags(input, context, 'Levi');
+  assert.match(result, /Levi/);
+  assert.doesNotMatch(result, /\[CALL FOR ROLL/);
+});
+
+test('processSpecialTags - CALL FOR ROLL with unknown character reports the same error as ROLL', async () => {
+  const context = buildMockContext();
+  const input = '[CALL FOR ROLL "Nobody" Body+Melee DV 3 Controlled]';
+  const result = await processSpecialTags(input, context, 'Tester');
+  assert.match(result, /Character "Nobody" not found/);
+});
+
+// ------------------------------------------------------------------
 // Part C: [APPLY ...] / [ADD ...] / [SET POSITION ...] / [SET DV ...]
 // ------------------------------------------------------------------
 

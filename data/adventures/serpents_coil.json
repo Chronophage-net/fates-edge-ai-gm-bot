@@ -5,7 +5,13 @@
   "tier": "II",
   "author": "Nicholas A. Gasper",
   "sessions": "3",
-  "themes": ["Sword & Sorcery", "Cosmic Horror", "Rising Legend", "Serpent Cult", "Transformation"],
+  "themes": [
+    "Sword & Sorcery",
+    "Cosmic Horror",
+    "Rising Legend",
+    "Serpent Cult",
+    "Transformation"
+  ],
   "bestiary": [
     {
       "id": "isokai-cultist",
@@ -14,10 +20,23 @@
       "class": "II",
       "category": "humanoid",
       "description": "A fanatic who has already exchanged half their skin for scales. They fight with the desperate zeal of the newly converted—and the terrible hunger of something that was human yesterday.",
-      "stats": { "Body": 2, "Melee": 2, "Athletics": 1, "hp": 18 },
+      "stats": {
+        "Body": 2,
+        "Melee": 2,
+        "Athletics": 1,
+        "hp": 18
+      },
       "sb_spends": [
-        { "cost": 1, "name": "Coil and Crush", "effect": "The cultist's serpentine limbs constrict a PC; they are Held until they break free with a Body+Athletics test (DV 4)." },
-        { "cost": 2, "name": "Fanatical Scream", "effect": "The cultist's shriek draws 1d4 more cultists from the shadows." }
+        {
+          "cost": 1,
+          "name": "Coil and Crush",
+          "effect": "The cultist's serpentine limbs constrict a PC; they are Held until they break free with a Body+Athletics test (DV 4)."
+        },
+        {
+          "cost": 2,
+          "name": "Fanatical Scream",
+          "effect": "The cultist's shriek draws 1d4 more cultists from the shadows."
+        }
       ]
     },
     {
@@ -27,10 +46,23 @@
       "class": "III",
       "category": "humanoid",
       "description": "The cult's elite—warriors who have embraced the change more deeply. Their fangs drip venom, and their eyes are all black. They regenerate, which is annoying.",
-      "stats": { "Body": 3, "Melee": 3, "Athletics": 2, "hp": 28 },
+      "stats": {
+        "Body": 3,
+        "Melee": 3,
+        "Athletics": 2,
+        "hp": 28
+      },
       "sb_spends": [
-        { "cost": 1, "name": "Venomous Bite", "effect": "A PC is poisoned; they mark 1 Fatigue and act at Desperate until they test Resolve (DV 4)." },
-        { "cost": 2, "name": "Unnatural Regeneration", "effect": "The Fang Bearer heals 2 Harm at the start of its turn." }
+        {
+          "cost": 1,
+          "name": "Venomous Bite",
+          "effect": "A PC is poisoned; they mark 1 Fatigue and act at Desperate until they test Resolve (DV 4)."
+        },
+        {
+          "cost": 2,
+          "name": "Unnatural Regeneration",
+          "effect": "The Fang Bearer heals 2 Harm at the start of its turn."
+        }
       ]
     },
     {
@@ -40,11 +72,28 @@
       "class": "III",
       "category": "monstrosity",
       "description": "A nightmare made flesh—a grotesque fusion of human and serpent that barely remembers it was ever anything else. It climbs walls, hisses, and has no sense of humour.",
-      "stats": { "Body": 3, "Melee": 3, "Athletics": 3, "hp": 30 },
+      "stats": {
+        "Body": 3,
+        "Melee": 3,
+        "Athletics": 3,
+        "hp": 30
+      },
       "sb_spends": [
-        { "cost": 1, "name": "Wall Crawl", "effect": "The Spawn climbs out of reach; ranged attacks become Desperate for one exchange." },
-        { "cost": 2, "name": "Constrict and Crush", "effect": "A PC is Grappled; they take 1 Harm automatically each round until they escape." },
-        { "cost": 2, "name": "Acid Spray", "effect": "The Spawn vomits acid; all in Near range mark 1 Fatigue." }
+        {
+          "cost": 1,
+          "name": "Wall Crawl",
+          "effect": "The Spawn climbs out of reach; ranged attacks become Desperate for one exchange."
+        },
+        {
+          "cost": 2,
+          "name": "Constrict and Crush",
+          "effect": "A PC is Grappled; they take 1 Harm automatically each round until they escape."
+        },
+        {
+          "cost": 2,
+          "name": "Acid Spray",
+          "effect": "The Spawn vomits acid; all in Near range mark 1 Fatigue."
+        }
       ]
     },
     {
@@ -54,11 +103,28 @@
       "class": "IV",
       "category": "humanoid",
       "description": "The self‑proclaimed Voice of Isoka. He is a terrible orator who monologues at length. Let the heroes interrupt him. It's more fun that way.",
-      "stats": { "Spirit": 3, "Presence": 3, "Arcana": 3, "hp": 35 },
+      "stats": {
+        "Spirit": 3,
+        "Presence": 3,
+        "Arcana": 3,
+        "hp": 35
+      },
       "sb_spends": [
-        { "cost": 2, "name": "Dramatic Monologue", "effect": "Thaliss launches into a speech; all PCs must test Resolve or lose a Boon to his rhetoric." },
-        { "cost": 1, "name": "Flog the Cult", "effect": "He sacrifices a cultist to fuel the ritual; Cult Ascendancy +1." },
-        { "cost": 3, "name": "Call the Serpent", "effect": "He summons a Serpent Spawn to defend him." }
+        {
+          "cost": 2,
+          "name": "Dramatic Monologue",
+          "effect": "Thaliss launches into a speech; all PCs must test Resolve or lose a Boon to his rhetoric."
+        },
+        {
+          "cost": 1,
+          "name": "Flog the Cult",
+          "effect": "He sacrifices a cultist to fuel the ritual; Cult Ascendancy +1."
+        },
+        {
+          "cost": 3,
+          "name": "Call the Serpent",
+          "effect": "He summons a Serpent Spawn to defend him."
+        }
       ],
       "lore": "He genuinely believes he is the chosen one. He is not. His cultists are just too afraid to tell him."
     },
@@ -69,11 +135,28 @@
       "class": "VI",
       "category": "celestial",
       "description": "A fraction of the Angel of Serpents—beautiful, terrible, and coiled like a building. Her voice is honey and razors, and she is not entirely sure this whole cult thing was her idea.",
-      "stats": { "Spirit": 6, "Presence": 5, "Arcana": 5, "hp": 50 },
+      "stats": {
+        "Spirit": 6,
+        "Presence": 5,
+        "Arcana": 5,
+        "hp": 50
+      },
       "sb_spends": [
-        { "cost": 2, "name": "Gaze of the Serpent", "effect": "A PC must test Spirit+Resolve (DV 5) or be Paralyzed with awe for one exchange." },
-        { "cost": 3, "name": "Shed the Skin", "effect": "Isoka sheds her projection; all attacks miss this round." },
-        { "cost": 3, "name": "Offer the Bargain", "effect": "Isoka offers a PC a deal; if they accept, they gain 3 Serpent's Favor and 2 Corruption." }
+        {
+          "cost": 2,
+          "name": "Gaze of the Serpent",
+          "effect": "A PC must test Spirit+Resolve (DV 5) or be Paralyzed with awe for one exchange."
+        },
+        {
+          "cost": 3,
+          "name": "Shed the Skin",
+          "effect": "Isoka sheds her projection; all attacks miss this round."
+        },
+        {
+          "cost": 3,
+          "name": "Offer the Bargain",
+          "effect": "Isoka offers a PC a deal; if they accept, they gain 3 Serpent's Favor and 2 Corruption."
+        }
       ],
       "lore": "She did not start the cult. She is curious to see what happens. The real question isn't whether the heroes will change—it's whether they'll notice, and whether they'll care."
     },
@@ -84,10 +167,23 @@
       "class": "II",
       "category": "humanoid",
       "description": "A former City Watchman, now serving the serpent cult. They move too fluidly—their joints bend wrong. Their eyes are all black.",
-      "stats": { "Body": 2, "Melee": 2, "Command": 1, "hp": 20 },
+      "stats": {
+        "Body": 2,
+        "Melee": 2,
+        "Command": 1,
+        "hp": 20
+      },
       "sb_spends": [
-        { "cost": 1, "name": "Snake-Hiss Surprise", "effect": "The guard hisses as they strike; all PCs in Close range act at Desperate for the next exchange." },
-        { "cost": 2, "name": "Call the Watch", "effect": "The guard sounds an alarm; 1d4 more guards arrive in 2 rounds." }
+        {
+          "cost": 1,
+          "name": "Snake-Hiss Surprise",
+          "effect": "The guard hisses as they strike; all PCs in Close range act at Desperate for the next exchange."
+        },
+        {
+          "cost": 2,
+          "name": "Call the Watch",
+          "effect": "The guard sounds an alarm; 1d4 more guards arrive in 2 rounds."
+        }
       ]
     },
     {
@@ -97,10 +193,23 @@
       "class": "II",
       "category": "humanoid",
       "description": "Orun's daughter, now a willing cultist. She has vertical pupils, patches of iridescent scales, and a smile that's a bit too wide. She thinks becoming a snake-person is 'cool.' She hasn't thought it through.",
-      "stats": { "Wits": 1, "Spirit": 2, "Presence": 2, "hp": 16 },
+      "stats": {
+        "Wits": 1,
+        "Spirit": 2,
+        "Presence": 2,
+        "hp": 16
+      },
       "sb_spends": [
-        { "cost": 1, "name": "Snake Eyes", "effect": "Yara's gaze makes a PC hesitate; they lose their next action unless they test Resolve (DV 3)." },
-        { "cost": 2, "name": "Call the Mother", "effect": "Yara summons a Serpent Spawn to defend her." }
+        {
+          "cost": 1,
+          "name": "Snake Eyes",
+          "effect": "Yara's gaze makes a PC hesitate; they lose their next action unless they test Resolve (DV 3)."
+        },
+        {
+          "cost": 2,
+          "name": "Call the Mother",
+          "effect": "Yara summons a Serpent Spawn to defend her."
+        }
       ],
       "lore": "She genuinely believes the transformation is an honor. She needs a lecture about why this is a bad idea. With small words."
     }
@@ -116,8 +225,18 @@
           "title": "The Black Goat Tavern",
           "description": "An ancient Ykrul chieftain sits in the flickering lamplight, clutching a purse heavy with gold. 'They took her,' he whispers. 'My Yara. Said she'd become the cornerstone of some... serpent age.' The heroes accept the job. What could go wrong?",
           "timers": [
-            { "name": "City Corruption", "segments": 4, "current": 0, "description": "How much the serpent influence has spread" },
-            { "name": "Cult Ascendancy", "segments": 6, "current": 0, "description": "How close the ritual is to completion" }
+            {
+              "name": "City Corruption",
+              "segments": 4,
+              "current": 0,
+              "description": "How much the serpent influence has spread"
+            },
+            {
+              "name": "Cult Ascendancy",
+              "segments": 6,
+              "current": 0,
+              "description": "How close the ritual is to completion"
+            }
           ],
           "encounters": [
             {
@@ -138,8 +257,17 @@
           "title": "The Temple of Open Sky Visions",
           "description": "A vision comes: serpents coiling around the city's heart, whispers of transformation, the taste of bitter corruption. The heroes see something ominous—and then immediately forget half of it.",
           "timers": [
-            { "name": "City Corruption", "segments": 4, "current": 0 },
-            { "name": "Serpent's Favor", "segments": 13, "current": 0, "description": "Secret track; each SB generated here adds a point" }
+            {
+              "name": "City Corruption",
+              "segments": 4,
+              "current": 0
+            },
+            {
+              "name": "Serpent's Favor",
+              "segments": 13,
+              "current": 0,
+              "description": "Secret track; each SB generated here adds a point"
+            }
           ],
           "encounters": [
             {
@@ -160,8 +288,16 @@
           "title": "The City Approach",
           "description": "Midh Ahkaz looms like a hungry beast. The gates are reinforced with iron that gleams like fangs. A curfew has been imposed. The streets are empty. Your forged passage papers feel sticky with something suspiciously red.",
           "timers": [
-            { "name": "City Corruption", "segments": 4, "current": 0 },
-            { "name": "Serpent's Favor", "segments": 13, "current": 0 }
+            {
+              "name": "City Corruption",
+              "segments": 4,
+              "current": 0
+            },
+            {
+              "name": "Serpent's Favor",
+              "segments": 13,
+              "current": 0
+            }
           ],
           "encounters": [
             {
@@ -189,9 +325,21 @@
           "title": "Palace Penetration",
           "description": "The walls are carved with serpent motifs that writhe in torchlight. The hallways bend in ways that hurt the head. The guards move too fluidly, their armor gleaming with an oily sheen. Their eyes are all black.",
           "timers": [
-            { "name": "City Corruption", "segments": 4, "current": 0 },
-            { "name": "Cult Ascendancy", "segments": 6, "current": 0 },
-            { "name": "Serpent's Favor", "segments": 13, "current": 0 }
+            {
+              "name": "City Corruption",
+              "segments": 4,
+              "current": 0
+            },
+            {
+              "name": "Cult Ascendancy",
+              "segments": 6,
+              "current": 0
+            },
+            {
+              "name": "Serpent's Favor",
+              "segments": 13,
+              "current": 0
+            }
           ],
           "encounters": [
             {
@@ -213,8 +361,16 @@
           "title": "The Serpent Spawn Ambush",
           "description": "Nightmares made flesh—grotesque fusions of human and serpent. Their mouths drip venom that sizzles on stone. They climb walls. They have no sense of humor.",
           "timers": [
-            { "name": "Cult Ascendancy", "segments": 6, "current": 0 },
-            { "name": "Serpent's Favor", "segments": 13, "current": 0 }
+            {
+              "name": "Cult Ascendancy",
+              "segments": 6,
+              "current": 0
+            },
+            {
+              "name": "Serpent's Favor",
+              "segments": 13,
+              "current": 0
+            }
           ],
           "encounters": [
             {
@@ -236,7 +392,11 @@
           "title": "Yara's Revelation",
           "description": "Yara is beautiful but twisted—patches of iridescent scales, vertical pupils, a smile that's too wide. She is not a victim. She's a volunteer. She thinks becoming a snake-person is 'cool.' The heroes must explain why this is a bad idea. With small words.",
           "timers": [
-            { "name": "Serpent's Favor", "segments": 13, "current": 0 }
+            {
+              "name": "Serpent's Favor",
+              "segments": 13,
+              "current": 0
+            }
           ],
           "encounters": [
             {
@@ -265,8 +425,16 @@
           "title": "The Chamber of Transformation",
           "description": "The ceiling disappears into shadow. The walls pulse with a heartbeat that's not human. The air tastes of copper and ruin. The cult is ready to complete its ritual. The heroes must act.",
           "timers": [
-            { "name": "Cult Ascendancy", "segments": 6, "current": 0 },
-            { "name": "Serpent's Favor", "segments": 13, "current": 0 }
+            {
+              "name": "Cult Ascendancy",
+              "segments": 6,
+              "current": 0
+            },
+            {
+              "name": "Serpent's Favor",
+              "segments": 13,
+              "current": 0
+            }
           ],
           "encounters": [
             {
@@ -287,7 +455,11 @@
           "title": "Isoka's Manifestation",
           "description": "She is beautiful and terrible—a serpent the size of a building, with the face of every person you've ever loved and hated. Her voice is honey and razors. 'Become my children. I will give you power beyond mortal dreams.' The heroes must choose.",
           "timers": [
-            { "name": "Corruption Score", "segments": 16, "current": 0 }
+            {
+              "name": "Corruption Score",
+              "segments": 16,
+              "current": 0
+            }
           ],
           "encounters": [
             {
@@ -397,25 +569,41 @@
       "id": "loc-black-goat",
       "name": "The Black Goat Tavern",
       "description": "Not as scary as it smells. The patrons have tiny scales you might not notice. The barmaid is a cultist, but she's just in it for the dental plan.",
-      "tags": ["tavern", "acasia", "cult"]
+      "tags": [
+        "tavern",
+        "acasia",
+        "cult"
+      ]
     },
     {
       "id": "loc-temple-open-sky",
       "name": "The Temple of Open Sky",
       "description": "Definitely not a trap. The visions are real. The headaches are also real. A helpful ghost gives cryptic advice that the heroes will misunderstand completely.",
-      "tags": ["temple", "visions", "threshold"]
+      "tags": [
+        "temple",
+        "visions",
+        "threshold"
+      ]
     },
     {
       "id": "loc-governors-palace",
       "name": "The Governor's Palace",
       "description": "Architecture that actively hates you. The guards are polite until they're not. A locked door can be opened with the password 'hiss,' which a hero might guess after standing there for ten minutes.",
-      "tags": ["palace", "ecktoria", "cult"]
+      "tags": [
+        "palace",
+        "ecktoria",
+        "cult"
+      ]
     },
     {
       "id": "loc-chamber-transformation",
       "name": "The Chamber of Transformation",
       "description": "Where the snake happens. The boss fight has phases: cultists, then serpent spawn, then Isoka's projection. The heroes will likely set something on fire. Improvise.",
-      "tags": ["chamber", "ritual", "finale"]
+      "tags": [
+        "chamber",
+        "ritual",
+        "finale"
+      ]
     }
   ],
   "factions": [
@@ -465,10 +653,8 @@
     }
   ],
   "notes": "This is a sword & sorcery adventure with a wink. The heroes are not the sharpest swords in the armory—they solve problems with axes, miss clues until they trip over them, and tend to believe the first explanation offered. Play them with affection. A heavy brow and a trusting nature are their own kind of courage. The Serpent's Favor is a secret track the GM keeps for each character—they think they're becoming legendary heroes. They are, but also they're becoming something else.",
-
   "_gmhints": {
     "tone": "THIS ADVENTURE IS PULPY, CHEESY, AND DOES NOT TAKE ITSELF SERIOUSLY. Lean into the sword & sorcery tropes: heroes who solve problems with axes, miss clues until they trip over them, and believe the first explanation offered. The narration should be dramatic, over-the-top, and slightly winking at the audience. Thaliss monologues—let him! Then let the heroes interrupt him. Isoka is beautiful and terrible and also a bit bemused by the whole cult thing. Yara thinks becoming a snake-person is 'cool'—this is meant to be funny and a little tragic. The heroes are not the sharpest swords in the armory; play that with affection. By Crom!",
-
     "pacing": {
       "act1": "Session 1 is all about setup and investigation—but the heroes are likely to bumble through it. That's fine. Let them miss clues. Let them accept drinks from strangers. The City Corruption timer is a subtle pressure, not a ticking bomb. Orun is sincere but slightly drunk; his description of events may be exaggerated. The Temple of Open Sky visions are cryptic and weird—let the heroes misunderstand them. The Serpent's Favor is a secret track; don't announce it, but describe Isoka's influence as 'a strange luck' or 'a weird intuition' when it procs. The tone should be: 'You're in way over your heads, but you're too dumb to realize it yet.'",
       "act2": "Session 2 is the palace infiltration. The guards are cult-infected—they move wrong, their eyes are black. This should be unsettling but also a little cool. The Serpent Spawn is a nightmare, but the heroes will probably set it on fire. Yara is the emotional core: she's not a victim, she's a volunteer who hasn't thought this through. The party needs to convince her with small words. Let this scene be equal parts dramatic and absurd. The Cult Ascendancy timer is ticking; the ritual is getting closer. The heroes should feel the pressure, but also feel like they're making progress—even if they're making it badly.",
@@ -499,12 +685,156 @@
       "the_choice": "The Final Choice is a moment of pulp drama. Let players debate it in character. If they can't decide, let the timer (Cult Ascendancy) make the choice for them—the ritual completes, and they must adapt."
     }
   },
-
   "currentAct": 0,
   "currentScene": 0,
   "startedAt": null,
   "completedAt": null,
   "status": "planned",
   "createdAt": "2026-07-28T00:00:00.000Z",
-  "updatedAt": "2026-07-28T00:00:00.000Z"
+  "updatedAt": "2026-07-28T00:00:00.000Z",
+  "knowledge": [
+    {
+      "id": "orun-gray-ash-secret",
+      "subject": "npc-orun-gray-ash",
+      "gm": "He is sincere but slightly drunk. His description of events may be exaggerated. Let players roll Wits+Lore to catch inconsistencies. This is played for comedy, not tragedy.",
+      "player": "Orun of the Gray Ash plays the part everyone assumes: Ykrul Chieftain (Quest Giver). Nothing about their manner invites a second look.",
+      "revealed": false,
+      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "tags": [
+        "npc-secret"
+      ]
+    },
+    {
+      "id": "yara-secret",
+      "subject": "npc-yara",
+      "gm": "She thinks becoming a snake-person is 'cool.' She hasn't thought it through. This is tragicomic—she's a kid making a terrible decision. The party's job is to convince her with small words. Don't make her evil; make her naïve and enthusiastic about a terrible idea.",
+      "player": "Yara plays the part everyone assumes: Orun's Daughter / Cult Volunteer. Nothing about their manner invites a second look.",
+      "revealed": false,
+      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "tags": [
+        "npc-secret"
+      ]
+    },
+    {
+      "id": "captain-dravik-secret",
+      "subject": "npc-captain-dravik",
+      "gm": "He broods, then charges. He was drummed out of the Black Banner for refusing to burn a village. The cult reminds him of his failure. He's useful in a fight and otherwise a mess.",
+      "player": "Captain James 'The Disgraced' Dravik plays the part everyone assumes: Former Black Banner, Current Drunk. Nothing about their manner invites a second look.",
+      "revealed": false,
+      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "tags": [
+        "npc-secret"
+      ]
+    },
+    {
+      "id": "korvash-secret",
+      "subject": "npc-korvash",
+      "gm": "Swings axe, says something about his ancestors, swings again. He can't actually remember his ancestors' names. He just says 'ancestors' and hopes nobody asks.",
+      "player": "Korvash the Iron-Blooded plays the part everyone assumes: Vilikari Warrior. Nothing about their manner invites a second look.",
+      "revealed": false,
+      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "tags": [
+        "npc-secret"
+      ]
+    },
+    {
+      "id": "szik-secret",
+      "subject": "npc-szik",
+      "gm": "Rolls his eyes, picks the lock, disappears when fighting starts. He's far too competent to be hanging out with these people. He's staying because they're the only ones who don't judge his gambling debts.",
+      "player": "Szik the Swift plays the part everyone assumes: Ykrul Rogue. Nothing about their manner invites a second look.",
+      "revealed": false,
+      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "tags": [
+        "npc-secret"
+      ]
+    },
+    {
+      "id": "isoka-secret",
+      "subject": "npc-isoka",
+      "gm": "She didn't start the cult. She's curious to see what happens. She finds her followers exhausting. The real question isn't whether the heroes will change—it's whether they'll notice, and whether they'll care. Play her as amused and slightly distant, not malevolent.",
+      "player": "Isoka, Angel of Serpents plays the part everyone assumes: Cosmic Entity / Patron. Nothing about their manner invites a second look.",
+      "revealed": false,
+      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "tags": [
+        "npc-secret"
+      ]
+    },
+    {
+      "id": "thaliss-secret",
+      "subject": "npc-thaliss",
+      "gm": "He is a terrible orator. He monologues at length. Let the heroes interrupt him—it's more fun that way. He genuinely believes he's the chosen one. He is not. His cultists are just too afraid to tell him.",
+      "player": "Thaliss plays the part everyone assumes: High Priest of the Serpent Cult. Nothing about their manner invites a second look.",
+      "revealed": false,
+      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "tags": [
+        "npc-secret"
+      ]
+    },
+    {
+      "id": "that-yara-is-a-willing-cultist",
+      "subject": "plot",
+      "gm": "That Yara is a willing cultist, not a victim — this is the Act II reveal; let the party discover it when they find her",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "that-the-serpent-s-favor-is-a",
+      "subject": "plot",
+      "gm": "That the Serpent's Favor is a corruption track — players should notice physical changes and strange luck before they understand the mechanic",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "that-isoka-is-ambivalent-about-the",
+      "subject": "plot",
+      "gm": "That Isoka is ambivalent about the cult — she appears as a terrifying cosmic entity first; her bemused ambivalence is a later discovery",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "that-the-final-choice-has-multiple",
+      "subject": "plot",
+      "gm": "That the Final Choice has multiple outcomes — the module describes five options; let the players discover them organically, not as a menu",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "that-korvash-doesn-t-remember-his-ancestors",
+      "subject": "plot",
+      "gm": "That Korvash doesn't remember his ancestors' names — this is a running gag; let it emerge when a player asks a follow-up question",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "that-thaliss-is-a-terrible-orator-this-is",
+      "subject": "plot",
+      "gm": "That Thaliss is a terrible orator — this is a running joke; let it emerge naturally through his monologues",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    }
+  ]
 }

@@ -14,11 +14,28 @@
         "class": "IV",
         "category": "outsider",
         "description": "An ancient entity that feeds on suffering, despair, and life force. It spreads its curse through manipulation, emotion, and possession.",
-        "stats": { "Spirit": 4, "Resolve": 4, "Presence": 3, "hp": 40 },
+        "stats": {
+          "Spirit": 4,
+          "Resolve": 4,
+          "Presence": 3,
+          "hp": 40
+        },
         "sb_spends": [
-          { "cost": 1, "name": "Whisper of Despair", "effect": "Target gains 1 Fatigue and must test Resolve or mark Dread." },
-          { "cost": 2, "name": "Grip of the Curse", "effect": "All enemies in Near zone suffer -1 die to actions for one exchange." },
-          { "cost": 3, "name": "Manifest Hunger", "effect": "The entity manifests partially, dealing Harm 2 to all in zone and advancing the Curse Escalation timer by 1." }
+          {
+            "cost": 1,
+            "name": "Whisper of Despair",
+            "effect": "Target gains 1 Fatigue and must test Resolve or mark Dread."
+          },
+          {
+            "cost": 2,
+            "name": "Grip of the Curse",
+            "effect": "All enemies in Near zone suffer -1 die to actions for one exchange."
+          },
+          {
+            "cost": 3,
+            "name": "Manifest Hunger",
+            "effect": "The entity manifests partially, dealing Harm 2 to all in zone and advancing the Curse Escalation timer by 1."
+          }
         ]
       },
       {
@@ -28,9 +45,17 @@
         "class": "III",
         "category": "undead",
         "description": "Secrets made flesh; they feed on awareness and fear. They appear where the party hesitates or falters.",
-        "stats": { "Spirit": 3, "Resolve": 2, "hp": 20 },
+        "stats": {
+          "Spirit": 3,
+          "Resolve": 2,
+          "hp": 20
+        },
         "sb_spends": [
-          { "cost": 1, "name": "Ethereal Touch", "effect": "Target loses 1 Fatigue and gains a Condition: Haunted." }
+          {
+            "cost": 1,
+            "name": "Ethereal Touch",
+            "effect": "Target loses 1 Fatigue and gains a Condition: Haunted."
+          }
         ]
       },
       {
@@ -40,9 +65,17 @@
         "class": "III",
         "category": "undead",
         "description": "Corpse-puppets bound in root and bone. Slow, relentless, territorial.",
-        "stats": { "Body": 3, "Melee": 3, "hp": 25 },
+        "stats": {
+          "Body": 3,
+          "Melee": 3,
+          "hp": 25
+        },
         "sb_spends": [
-          { "cost": 1, "name": "Relentless Advance", "effect": "Ignore one point of Fatigue and gain +1 die to next attack." }
+          {
+            "cost": 1,
+            "name": "Relentless Advance",
+            "effect": "Ignore one point of Fatigue and gain +1 die to next attack."
+          }
         ]
       }
     ],
@@ -57,8 +90,18 @@
             "title": "The Desperate Merchant",
             "description": "The party finds the caravan stalled on the road. Merchant Aldric Thorne offers a reward for help. The curse manifests as supplies rot and animals die.",
             "timers": [
-              { "name": "Curse Escalation", "segments": 8, "current": 0, "description": "How quickly the curse worsens" },
-              { "name": "Caravan Supplies", "segments": 6, "current": 0, "description": "Depletes as supplies rot" }
+              {
+                "name": "Curse Escalation",
+                "segments": 8,
+                "current": 0,
+                "description": "How quickly the curse worsens"
+              },
+              {
+                "name": "Caravan Supplies",
+                "segments": 6,
+                "current": 0,
+                "description": "Depletes as supplies rot"
+              }
             ],
             "encounters": [
               {
@@ -105,8 +148,16 @@
             "title": "The Chest Investigation",
             "description": "The party examines the mysterious sealed cargo item that is the source of the curse.",
             "timers": [
-              { "name": "Curse Escalation", "segments": 8, "current": 0 },
-              { "name": "Hungering Dark's Strength", "segments": 6, "current": 0 }
+              {
+                "name": "Curse Escalation",
+                "segments": 8,
+                "current": 0
+              },
+              {
+                "name": "Hungering Dark's Strength",
+                "segments": 6,
+                "current": 0
+              }
             ],
             "encounters": [
               {
@@ -153,7 +204,11 @@
             "title": "The Confrontation",
             "description": "The party faces the Hungering Dark's strongest influence at the crossroads.",
             "timers": [
-              { "name": "Curse Escalation", "segments": 8, "current": 0 }
+              {
+                "name": "Curse Escalation",
+                "segments": 8,
+                "current": 0
+              }
             ],
             "encounters": [
               {
@@ -214,19 +269,28 @@
         "id": "loc-pale-causeway",
         "name": "The Pale Causeway",
         "description": "The last high road that survives the spring thaws. Crossings are perilous, and the road seems to shift and change.",
-        "tags": ["road", "curse"]
+        "tags": [
+          "road",
+          "curse"
+        ]
       },
       {
         "id": "loc-blackwood-hollow",
         "name": "Blackwood Hollow",
         "description": "A charcoal burner's clearing with a hedge-witch's dwelling, protected by strong wards.",
-        "tags": ["forest", "sanctuary"]
+        "tags": [
+          "forest",
+          "sanctuary"
+        ]
       },
       {
         "id": "loc-cursed-crossroads",
         "name": "The Cursed Crossroads",
         "description": "Meeting point of multiple roads, a place of choice and consequence where the Hungering Dark's influence is strongest.",
-        "tags": ["crossroads", "threshold"]
+        "tags": [
+          "crossroads",
+          "threshold"
+        ]
       }
     ],
     "factions": [
@@ -264,7 +328,6 @@
       }
     ],
     "notes": "A folk horror survival module with multiple resolutions: contain the curse, strike a bargain, or destroy the entity. The tone is bleak and desperate.",
-
     "_gmhints": {
       "pacing": {
         "act1": "The curse manifests through rot, decay, and omens—show, don't explain. Aldric is desperate but evasive; his secret (the stranger who gave him the chest) is a clue, not a confession. Mira Blackwood is a source of folk wisdom, not a solution—she offers protection, not answers. The Chest Investigation is Act II's centerpiece; do not reveal its contents or the entity's nature in Act I. Emphasize the ticking clocks: Caravan Supplies dwindles visibly, Curse Escalation advances with every failed mitigation. The Pale Causeway should feel like a living, watching place—the road itself is a character.",
@@ -284,14 +347,103 @@
         "Margravine Xara's manipulation of the curse"
       ]
     },
-
     "currentAct": 0,
     "currentScene": 0,
     "startedAt": null,
     "completedAt": null,
     "status": "planned",
     "createdAt": "2026-08-03T00:00:00.000Z",
-    "updatedAt": "2026-08-03T00:00:00.000Z"
+    "updatedAt": "2026-08-03T00:00:00.000Z",
+    "knowledge": [
+      {
+        "id": "aldric-thorne-secret",
+        "subject": "npc-aldric-thorne",
+        "gm": "His secret is a hook, not a reveal. He will not volunteer the stranger's identity unless pressed or given reason to trust. If the party saves the caravan, he may confess in Act III as a moment of redemption.",
+        "player": "Merchant Aldric Thorne plays the part everyone assumes: Caravan Leader. Nothing about their manner invites a second look.",
+        "revealed": false,
+        "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+        "tags": [
+          "npc-secret"
+        ]
+      },
+      {
+        "id": "mira-blackwood-secret",
+        "subject": "npc-mira-blackwood",
+        "gm": "Her personal stake is a late Act II or Act III revelation. She is a guide in Act I, a ritualist in Act II, and a potential sacrifice or ally in Act III depending on the party's choices. Do not reveal her secret until she has reason to share it.",
+        "player": "Hedge-Witch Mira Blackwood plays the part everyone assumes: Local Supernatural Practitioner. Nothing about their manner invites a second look.",
+        "revealed": false,
+        "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+        "tags": [
+          "npc-secret"
+        ]
+      },
+      {
+        "id": "margravine-xara-secret",
+        "subject": "npc-margravine-xara",
+        "gm": "She is a background threat. Her secret (using the curse as a tool) is a late Act III revelation if the party investigates regional politics. She is not a primary antagonist unless the party makes her one.",
+        "player": "Margravine Xara Rothari plays the part everyone assumes: Regional Ruler. Nothing about their manner invites a second look.",
+        "revealed": false,
+        "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+        "tags": [
+          "npc-secret"
+        ]
+      },
+      {
+        "id": "the-chest-contains-a-bound-entity",
+        "subject": "plot",
+        "gm": "The chest contains a bound entity (the Hungering Dark) — its contents are an Act II discovery",
+        "player": null,
+        "revealed": false,
+        "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+        "tags": [
+          "plot-secret"
+        ]
+      },
+      {
+        "id": "the-exact-nature-of-the-containment",
+        "subject": "plot",
+        "gm": "The exact nature of the containment ritual — Mira offers folk protection, but the full ritual requires investigation",
+        "player": null,
+        "revealed": false,
+        "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+        "tags": [
+          "plot-secret"
+        ]
+      },
+      {
+        "id": "the-hungering-dark-s-true-nature-ancient",
+        "subject": "plot",
+        "gm": "The Hungering Dark's true nature (ancient entity feeding on suffering) — describe its effects, not its origin",
+        "player": null,
+        "revealed": false,
+        "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+        "tags": [
+          "plot-secret"
+        ]
+      },
+      {
+        "id": "the-bargain-resolution-option-present-it",
+        "subject": "plot",
+        "gm": "The Bargain resolution option — present it as a moral discovery, not a listed choice upfront",
+        "player": null,
+        "revealed": false,
+        "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+        "tags": [
+          "plot-secret"
+        ]
+      },
+      {
+        "id": "margravine-xara-s-manipulation-of-the-curse",
+        "subject": "plot",
+        "gm": "Margravine Xara's manipulation of the curse",
+        "player": null,
+        "revealed": false,
+        "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+        "tags": [
+          "plot-secret"
+        ]
+      }
+    ]
   },
   {
     "id": "silk-and-velvet",
@@ -308,9 +460,17 @@
         "class": "III",
         "category": "undead",
         "description": "An illusion given form, used by the Crimson Masque troupe to confuse and misdirect.",
-        "stats": { "Spirit": 3, "Presence": 3, "hp": 15 },
+        "stats": {
+          "Spirit": 3,
+          "Presence": 3,
+          "hp": 15
+        },
         "sb_spends": [
-          { "cost": 1, "name": "Illusory Double", "effect": "Create a duplicate that forces opponents to reroll attacks." }
+          {
+            "cost": 1,
+            "name": "Illusory Double",
+            "effect": "Create a duplicate that forces opponents to reroll attacks."
+          }
         ]
       }
     ],
@@ -325,9 +485,21 @@
             "title": "The Redwater Audit",
             "description": "The party must enter the dyeworks with forged or earned permits to investigate the source of the poisoned water.",
             "timers": [
-              { "name": "City Unrest", "segments": 6, "current": 0 },
-              { "name": "Poisonings", "segments": 4, "current": 0 },
-              { "name": "Sel's Glamour Net", "segments": 4, "current": 0 }
+              {
+                "name": "City Unrest",
+                "segments": 6,
+                "current": 0
+              },
+              {
+                "name": "Poisonings",
+                "segments": 4,
+                "current": 0
+              },
+              {
+                "name": "Sel's Glamour Net",
+                "segments": 4,
+                "current": 0
+              }
             ],
             "encounters": [
               {
@@ -374,8 +546,16 @@
             "title": "Conservatory of Masks",
             "description": "Choose alliances and navigate the etiquette of masks. Violating taboos advances Etiquette Breach.",
             "timers": [
-              { "name": "Midnight Duel", "segments": 8, "current": 0 },
-              { "name": "Etiquette Breach", "segments": 4, "current": 0 }
+              {
+                "name": "Midnight Duel",
+                "segments": 8,
+                "current": 0
+              },
+              {
+                "name": "Etiquette Breach",
+                "segments": 4,
+                "current": 0
+              }
             ],
             "encounters": [
               {
@@ -403,7 +583,11 @@
             "title": "The On-Stage Challenge",
             "description": "Dismantle the ritual pillars (Bell Cadence, Mask Index, Applause Escrow) before the final bell.",
             "timers": [
-              { "name": "Act Countdown", "segments": 6, "current": 0 }
+              {
+                "name": "Act Countdown",
+                "segments": 6,
+                "current": 0
+              }
             ],
             "encounters": [
               {
@@ -453,19 +637,30 @@
         "id": "loc-silkstrand",
         "name": "Silkstrand",
         "description": "A city of canals, dyed waterways, and legal bridges. Permits and seals are visible power.",
-        "tags": ["city", "trade", "canals"]
+        "tags": [
+          "city",
+          "trade",
+          "canals"
+        ]
       },
       {
         "id": "loc-ravenswood-manor",
         "name": "Ravenswood Manor",
         "description": "A noble estate where the party must survive a night of velvet hospitality and intricate social traps.",
-        "tags": ["manor", "social"]
+        "tags": [
+          "manor",
+          "social"
+        ]
       },
       {
         "id": "loc-thepyrgos",
         "name": "Thepyrgos",
         "description": "A stair-ruled metropolis where bell-law and stair-rights can crown or crush reputations overnight.",
-        "tags": ["city", "law", "stairs"]
+        "tags": [
+          "city",
+          "law",
+          "stairs"
+        ]
       }
     ],
     "factions": [
@@ -527,7 +722,6 @@
       }
     ],
     "notes": "Urban intrigue module with strong social mechanics. Can be run as three separate arcs or a single campaign. Emphasis on Position, DV, and leverage via Diamonds.",
-
     "_gmhints": {
       "pacing": {
         "act1": "This is the investigation phase. The poison is a symptom, not the cause—guild tensions are the real battlefield. Sel Virelle is a charming antagonist; she should seem helpful until the party reads her tells or investigates her. The Crimson Masque is a shadow—their name may be whispered, but their true goal (soul-swapping) is an Act III discovery. Emphasize the City Unrest timer: the streets are a powder keg. The Gemcutters and Alchemists are both guilty and both victims—avoid a simple 'good vs evil' framing.",
@@ -547,14 +741,103 @@
         "Ravenswood Manor's hidden passages or secrets — should be discovered through exploration, not exposited"
       ]
     },
-
     "currentAct": 0,
     "currentScene": 0,
     "startedAt": null,
     "completedAt": null,
     "status": "planned",
     "createdAt": "2026-08-03T00:00:00.000Z",
-    "updatedAt": "2026-08-03T00:00:00.000Z"
+    "updatedAt": "2026-08-03T00:00:00.000Z",
+    "knowledge": [
+      {
+        "id": "guildmistress-kavra-secret",
+        "subject": "npc-guildmistress-kavra",
+        "gm": "Her secret (using the poison to discredit the Alchemists) is a mid-Act I discovery if the party investigates her. It makes her a potential ally—or a target—depending on the party's morals. She is not a villain; she is a pragmatist.",
+        "player": "Guildmistress Kavra plays the part everyone assumes: Gemcutters Guild Leader. Nothing about their manner invites a second look.",
+        "revealed": false,
+        "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+        "tags": [
+          "npc-secret"
+        ]
+      },
+      {
+        "id": "master-orun-secret",
+        "subject": "npc-master-orun",
+        "gm": "His secret (producing the poison but blaming the Gemcutters) is a parallel to Kavra's. The truth is that both guilds are being manipulated by the Crimson Masque. This revelation should land in Act II or early Act III.",
+        "player": "Master Orun plays the part everyone assumes: Alchemists Guild Master. Nothing about their manner invites a second look.",
+        "revealed": false,
+        "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+        "tags": [
+          "npc-secret"
+        ]
+      },
+      {
+        "id": "sel-virelle-secret",
+        "subject": "npc-sel-virelle",
+        "gm": "Her secret (orchestrating chaos for the Crimson Masque) is the Act II/III linchpin. If the party reads her tells in Act I, they may suspect her; if they fail, her charm offensive continues. She should be a mirror to the party—talented, ambitious, and willing to burn the city for a stage.",
+        "player": "Sel Virelle plays the part everyone assumes: Bard of Desire. Nothing about their manner invites a second look.",
+        "revealed": false,
+        "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+        "tags": [
+          "npc-secret"
+        ]
+      },
+      {
+        "id": "the-crimson-masque-s-soul-swapping-ritual",
+        "subject": "plot",
+        "gm": "The Crimson Masque's soul-swapping ritual — Act III only",
+        "player": null,
+        "revealed": false,
+        "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+        "tags": [
+          "plot-secret"
+        ]
+      },
+      {
+        "id": "the-specific-mechanics-of-the-ritual",
+        "subject": "plot",
+        "gm": "The specific mechanics of the ritual pillars (Bell Cadence, Mask Index, Applause Escrow) — Act III only",
+        "player": null,
+        "revealed": false,
+        "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+        "tags": [
+          "plot-secret"
+        ]
+      },
+      {
+        "id": "the-poison-s-true-source-is-the",
+        "subject": "plot",
+        "gm": "The poison's true source is the Crimson Masque manipulating both guilds — Act II/III discovery",
+        "player": null,
+        "revealed": false,
+        "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+        "tags": [
+          "plot-secret"
+        ]
+      },
+      {
+        "id": "ravenswood-manor-s-hidden-passages-or-secrets",
+        "subject": "plot",
+        "gm": "Ravenswood Manor's hidden passages or secrets — should be discovered through exploration, not exposited",
+        "player": null,
+        "revealed": false,
+        "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+        "tags": [
+          "plot-secret"
+        ]
+      },
+      {
+        "id": "that-sel-virelle-is-working-for-the",
+        "subject": "plot",
+        "gm": "That Sel Virelle is working for the Crimson Masque — Act II/III reveal",
+        "player": null,
+        "revealed": false,
+        "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+        "tags": [
+          "plot-secret"
+        ]
+      }
+    ]
   },
   {
     "id": "the-dwarven-debt",
@@ -571,10 +854,22 @@
         "class": "V",
         "category": "outsider",
         "description": "An ancient entity bound to the stone, communicating through resonance and dreams. It guards the Forgefather's Crypt.",
-        "stats": { "Spirit": 4, "Resolve": 4, "hp": 45 },
+        "stats": {
+          "Spirit": 4,
+          "Resolve": 4,
+          "hp": 45
+        },
         "sb_spends": [
-          { "cost": 2, "name": "Stone Resonance", "effect": "All enemies in zone take Harm 1 and must test Athletics or be pinned." },
-          { "cost": 3, "name": "Dream of the Deep", "effect": "Target falls into a vision, losing their next action." }
+          {
+            "cost": 2,
+            "name": "Stone Resonance",
+            "effect": "All enemies in zone take Harm 1 and must test Athletics or be pinned."
+          },
+          {
+            "cost": 3,
+            "name": "Dream of the Deep",
+            "effect": "Target falls into a vision, losing their next action."
+          }
         ]
       }
     ],
@@ -589,8 +884,16 @@
             "title": "The Legal Consultation",
             "description": "Clan-Speaker Thrain explains the contract's details and the history of the Forgefather's Voice.",
             "timers": [
-              { "name": "Debt Resolution", "segments": 8, "current": 0 },
-              { "name": "Dwarven Honor", "segments": 6, "current": 0 }
+              {
+                "name": "Debt Resolution",
+                "segments": 8,
+                "current": 0
+              },
+              {
+                "name": "Dwarven Honor",
+                "segments": 6,
+                "current": 0
+              }
             ],
             "encounters": [
               {
@@ -618,8 +921,16 @@
             "title": "The Spine Underway",
             "description": "Navigate the dangerous tunnels and encounter the first signs of the Deep Stirrings.",
             "timers": [
-              { "name": "Ancient Ward Stability", "segments": 6, "current": 0 },
-              { "name": "Stone-Song Resonance", "segments": 4, "current": 0 }
+              {
+                "name": "Ancient Ward Stability",
+                "segments": 6,
+                "current": 0
+              },
+              {
+                "name": "Stone-Song Resonance",
+                "segments": 4,
+                "current": 0
+              }
             ],
             "encounters": [
               {
@@ -647,7 +958,11 @@
             "title": "The Crypt Confrontation",
             "description": "The party faces the Stone-Singer and must choose between restoration, legal victory, or supernatural compromise.",
             "timers": [
-              { "name": "Debt Resolution", "segments": 8, "current": 0 }
+              {
+                "name": "Debt Resolution",
+                "segments": 8,
+                "current": 0
+              }
             ],
             "encounters": [
               {
@@ -698,19 +1013,28 @@
         "id": "loc-khaz-vurim-halls",
         "name": "Khaz-Vurim Halls",
         "description": "Ancestral home carved from massive stone formation. Perfect stonework and intricate metalwork.",
-        "tags": ["dwarven", "halls"]
+        "tags": [
+          "dwarven",
+          "halls"
+        ]
       },
       {
         "id": "loc-spine-underway",
         "name": "The Spine Underway",
         "description": "Vast network of ancient tunnels connecting dwarven holds. Remnants of pre-dwarven civilizations.",
-        "tags": ["underground", "tunnels"]
+        "tags": [
+          "underground",
+          "tunnels"
+        ]
       },
       {
         "id": "loc-forgefathers-crypt",
         "name": "The Forgefather's Crypt",
         "description": "Sacred resting place of the Forgefather's Voice, protected by ancient wards and the Stone-Singer.",
-        "tags": ["crypt", "artifact"]
+        "tags": [
+          "crypt",
+          "artifact"
+        ]
       }
     ],
     "factions": [
@@ -754,7 +1078,6 @@
       }
     ],
     "notes": "A moral and legal drama set in dwarven culture. Themes of honor, tradition, and supernatural balance. Multiple resolution paths: restoration, legal victory, or supernatural compromise.",
-
     "_gmhints": {
       "pacing": {
         "act1": "This is a legal and cultural introduction. The Debt Resolution timer represents the legal pressure—House Khaz-Vurim's financial desperation is palpable, but they will not break tradition. Thrain is a diplomat; he will not reveal the contract's loopholes unless pressed. Thora's secret (the artifact was never properly transferred) is a major Act III reveal—hint at it through her evasiveness, not her confession. Dwarven Honor is a social currency; insults or breaches of etiquette can close doors. The Forgefather's Voice is described as a 'sacred artifact'—its true nature (a binding instrument of the Deep Stirrings) is an Act II/III discovery.",
@@ -774,14 +1097,103 @@
         "The contract's loophole (the legal resolution) — Act I/II investigation find"
       ]
     },
-
     "currentAct": 0,
     "currentScene": 0,
     "startedAt": null,
     "completedAt": null,
     "status": "planned",
     "createdAt": "2026-08-03T00:00:00.000Z",
-    "updatedAt": "2026-08-03T00:00:00.000Z"
+    "updatedAt": "2026-08-03T00:00:00.000Z",
+    "knowledge": [
+      {
+        "id": "thora-stonebeard-secret",
+        "subject": "npc-thora-stonebeard",
+        "gm": "Her secret (the artifact was never properly transferred) is the legal loophole. She will not reveal it unless the party earns her trust or discovers it through research. It is the key to the Legal Victory resolution.",
+        "player": "Vault-Queen Thora Stonebeard plays the part everyone assumes: Leader of House Khaz-Vurim. Nothing about their manner invites a second look.",
+        "revealed": false,
+        "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+        "tags": [
+          "npc-secret"
+        ]
+      },
+      {
+        "id": "thrain-ironhold-secret",
+        "subject": "npc-thrain-ironhold",
+        "gm": "His secret (prepared to enforce house rights) means he is not an ally—he is a neutral arbiter. He will enforce the contract as written, not as the party wishes. He is a source of information, not a source of sympathy.",
+        "player": "Clan-Speaker Thrain Ironhold plays the part everyone assumes: Diplomatic Representative. Nothing about their manner invites a second look.",
+        "revealed": false,
+        "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+        "tags": [
+          "npc-secret"
+        ]
+      },
+      {
+        "id": "durin-emberheart-secret",
+        "subject": "npc-durin-emberheart",
+        "gm": "His secret (the true nature of the artifact and its connection to the Deep Stirrings) is the key to the Restoration resolution. He knows the ancient rituals and the artifact's purpose. He is a reluctant ally—he wants balance, not power.",
+        "player": "Forge-Master Durin Emberheart plays the part everyone assumes: Elder Master Smith. Nothing about their manner invites a second look.",
+        "revealed": false,
+        "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+        "tags": [
+          "npc-secret"
+        ]
+      },
+      {
+        "id": "the-forgefather-s-voice-is-a-binding",
+        "subject": "plot",
+        "gm": "The Forgefather's Voice is a binding instrument of the Deep Stirrings, not merely a sacred artifact — Act II/III discovery",
+        "player": null,
+        "revealed": false,
+        "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+        "tags": [
+          "plot-secret"
+        ]
+      },
+      {
+        "id": "the-artifact-was-never-properly-transferred",
+        "subject": "plot",
+        "gm": "The artifact was never properly transferred (Thora's secret) — Act III legal reveal",
+        "player": null,
+        "revealed": false,
+        "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+        "tags": [
+          "plot-secret"
+        ]
+      },
+      {
+        "id": "the-stone-singer-is-a-guardian",
+        "subject": "plot",
+        "gm": "The Stone-Singer is a guardian, not a monster — its nature is discovered through interaction, not combat",
+        "player": null,
+        "revealed": false,
+        "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+        "tags": [
+          "plot-secret"
+        ]
+      },
+      {
+        "id": "the-specific-ritual-required-for-restoration",
+        "subject": "plot",
+        "gm": "The specific ritual required for Restoration — Act III discovery through Durin or ancient texts",
+        "player": null,
+        "revealed": false,
+        "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+        "tags": [
+          "plot-secret"
+        ]
+      },
+      {
+        "id": "the-contract-s-loophole-the-legal-resolution",
+        "subject": "plot",
+        "gm": "The contract's loophole (the legal resolution) — Act I/II investigation find",
+        "player": null,
+        "revealed": false,
+        "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+        "tags": [
+          "plot-secret"
+        ]
+      }
+    ]
   },
   {
     "id": "ashes-of-the-infernal-accord",
@@ -798,10 +1210,23 @@
         "class": "VI",
         "category": "outsider",
         "description": "An avatar of the Demon of Fire and Destruction, a being of entropic consumption.",
-        "stats": { "Body": 5, "Spirit": 5, "Presence": 4, "hp": 60 },
+        "stats": {
+          "Body": 5,
+          "Spirit": 5,
+          "Presence": 4,
+          "hp": 60
+        },
         "sb_spends": [
-          { "cost": 2, "name": "Conflagration", "effect": "Deal Harm 2 to all enemies in a zone and advance the Consumption Timer." },
-          { "cost": 3, "name": "Infernal Audit", "effect": "Target loses 1 Obligation and suffers a curse." }
+          {
+            "cost": 2,
+            "name": "Conflagration",
+            "effect": "Deal Harm 2 to all enemies in a zone and advance the Consumption Timer."
+          },
+          {
+            "cost": 3,
+            "name": "Infernal Audit",
+            "effect": "Target loses 1 Obligation and suffers a curse."
+          }
         ]
       }
     ],
@@ -816,9 +1241,21 @@
             "title": "The Journey",
             "description": "Travel through the shifting landscapes to the City of Cinder, encountering a minor Mor'iraath agent or a Livaea whisper test.",
             "timers": [
-              { "name": "Mor'iraath's Expansion", "segments": 8, "current": 0 },
-              { "name": "Cinder Market Stability", "segments": 6, "current": 0 },
-              { "name": "Livaea's Manipulation", "segments": 6, "current": 0 }
+              {
+                "name": "Mor'iraath's Expansion",
+                "segments": 8,
+                "current": 0
+              },
+              {
+                "name": "Cinder Market Stability",
+                "segments": 6,
+                "current": 0
+              },
+              {
+                "name": "Livaea's Manipulation",
+                "segments": 6,
+                "current": 0
+              }
             ],
             "encounters": [
               {
@@ -846,7 +1283,11 @@
             "title": "The Grand Exchange",
             "description": "The party must broker a deal with a faction to gain access to the Fractured Court.",
             "timers": [
-              { "name": "Cinder Market Stability", "segments": 6, "current": 0 }
+              {
+                "name": "Cinder Market Stability",
+                "segments": 6,
+                "current": 0
+              }
             ],
             "encounters": [
               {
@@ -874,7 +1315,11 @@
             "title": "The Revelation",
             "description": "Livaea's scheme is exposed; the party must make a hard choice.",
             "timers": [
-              { "name": "Mor'iraath's Expansion", "segments": 8, "current": 0 }
+              {
+                "name": "Mor'iraath's Expansion",
+                "segments": 8,
+                "current": 0
+              }
             ],
             "encounters": [
               {
@@ -924,13 +1369,19 @@
         "id": "loc-city-of-cinder",
         "name": "City of Cinder",
         "description": "A sprawling marketplace built from the calcified remnants of broken dreams. Currency is concepts: fragments of soul, moments of joy, oaths.",
-        "tags": ["infernal", "bazaar"]
+        "tags": [
+          "infernal",
+          "bazaar"
+        ]
       },
       {
         "id": "loc-fractured-court",
         "name": "The Fractured Court",
         "description": "The seat of power where the fate of the infernal accord is decided.",
-        "tags": ["court", "confrontation"]
+        "tags": [
+          "court",
+          "confrontation"
+        ]
       }
     ],
     "factions": [
@@ -974,7 +1425,6 @@
       }
     ],
     "notes": "Epic-tier infernal politics module with cosmic stakes. Focus on Obligation and hard choices. The City of Cinder generator provides faction and location variety.",
-
     "_gmhints": {
       "pacing": {
         "act1": "The journey to the City of Cinder is a descent into a world where concepts are currency. Mor'iraath's Expansion is the background threat—his agents are scouts, not armies. Livaea's whispers are temptations; failing the Whisper Test grants Obligation, which will matter in Act III. Maelstraeus is a distant patron—his offer is not a trick, but it has strings. The City of Cinder's nature (calcified remnants of broken dreams) should feel surreal and ominous, not cartoonishly evil. Cinder Market Stability is a fragile peace; the party's actions in Act II affect it.",
@@ -994,14 +1444,103 @@
         "The specific cost of Obligation to Livaea in Act III — foreshadow, but do not spell out"
       ]
     },
-
     "currentAct": 0,
     "currentScene": 0,
     "startedAt": null,
     "completedAt": null,
     "status": "planned",
     "createdAt": "2026-08-03T00:00:00.000Z",
-    "updatedAt": "2026-08-03T00:00:00.000Z"
+    "updatedAt": "2026-08-03T00:00:00.000Z",
+    "knowledge": [
+      {
+        "id": "maelstraeus-secret",
+        "subject": "npc-maelstraeus",
+        "gm": "His hidden agenda is not evil—it's self-preservation. He wants to stop Mor'iraath, but he also wants to emerge stronger. His secret is a late Act III revelation if the party investigates him. He is not a villain; he is a pragmatist.",
+        "player": "Maelstraeus plays the part everyone assumes: Infernal Patron of Webs. Nothing about their manner invites a second look.",
+        "revealed": false,
+        "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+        "tags": [
+          "npc-secret"
+        ]
+      },
+      {
+        "id": "moriraath-secret",
+        "subject": "npc-moriraath",
+        "gm": "His secret (he is the principle of entropic consumption) means he cannot be destroyed, only contained or redirected. This is the key to the Infernal Subterfuge resolution. Reveal this through lore, not combat.",
+        "player": "Mor'iraath plays the part everyone assumes: Demon of Fire and Destruction. Nothing about their manner invites a second look.",
+        "revealed": false,
+        "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+        "tags": [
+          "npc-secret"
+        ]
+      },
+      {
+        "id": "livaea-secret",
+        "subject": "npc-livaea",
+        "gm": "Her secret (the unseen hand behind many deals) is the Act III twist. She has been manipulating all factions. The party's Obligation to her is her leverage. She is not a boss fight—she is a moral test.",
+        "player": "Livaea plays the part everyone assumes: Patron of Desire and Manipulation. Nothing about their manner invites a second look.",
+        "revealed": false,
+        "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+        "tags": [
+          "npc-secret"
+        ]
+      },
+      {
+        "id": "livaea-is-manipulating-all-parties-the",
+        "subject": "plot",
+        "gm": "Livaea is manipulating all parties — the Act III twist",
+        "player": null,
+        "revealed": false,
+        "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+        "tags": [
+          "plot-secret"
+        ]
+      },
+      {
+        "id": "the-infernal-subterfuge-resolution-path-present",
+        "subject": "plot",
+        "gm": "The Infernal Subterfuge resolution path — present it as an option discovered through investigation, not a menu choice upfront",
+        "player": null,
+        "revealed": false,
+        "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+        "tags": [
+          "plot-secret"
+        ]
+      },
+      {
+        "id": "the-specific-cost-of-obligation-to",
+        "subject": "plot",
+        "gm": "The specific cost of Obligation to Livaea in Act III — foreshadow, but do not spell out",
+        "player": null,
+        "revealed": false,
+        "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+        "tags": [
+          "plot-secret"
+        ]
+      },
+      {
+        "id": "maelstraeus-s-hidden-agenda-act-iii",
+        "subject": "plot",
+        "gm": "Maelstraeus's hidden agenda — Act III revelation if investigated",
+        "player": null,
+        "revealed": false,
+        "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+        "tags": [
+          "plot-secret"
+        ]
+      },
+      {
+        "id": "mor-iraath-is-a-principle-not-a-being-act",
+        "subject": "plot",
+        "gm": "Mor'iraath is a principle, not a being — Act II/III lore discovery",
+        "player": null,
+        "revealed": false,
+        "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+        "tags": [
+          "plot-secret"
+        ]
+      }
+    ]
   },
   {
     "id": "the-ninth-bell",
@@ -1018,9 +1557,17 @@
         "class": "V",
         "category": "concept",
         "description": "Not a physical entity but a force of cultural consequence. The land's enforcement mechanism for broken oaths.",
-        "stats": { "Spirit": 6, "Resolve": 6, "hp": 0 },
+        "stats": {
+          "Spirit": 6,
+          "Resolve": 6,
+          "hp": 0
+        },
         "sb_spends": [
-          { "cost": 2, "name": "Claim the Unmourned", "effect": "Target is marked for death; must make Resolve DV 5 or be claimed." }
+          {
+            "cost": 2,
+            "name": "Claim the Unmourned",
+            "effect": "Target is marked for death; must make Resolve DV 5 or be claimed."
+          }
         ]
       }
     ],
@@ -1035,7 +1582,11 @@
             "title": "The Silent Village",
             "description": "Arriving at a village where no one speaks, the party discovers the bell tolling at the edge of town.",
             "timers": [
-              { "name": "Bell's Countdown", "segments": 9, "current": 0 }
+              {
+                "name": "Bell's Countdown",
+                "segments": 9,
+                "current": 0
+              }
             ],
             "encounters": [
               {
@@ -1063,7 +1614,11 @@
             "title": "The Unmarked Grave",
             "description": "The party finds a fresh grave with no marker, dug by the land itself.",
             "timers": [
-              { "name": "Bell's Countdown", "segments": 9, "current": 0 }
+              {
+                "name": "Bell's Countdown",
+                "segments": 9,
+                "current": 0
+              }
             ],
             "encounters": [
               {
@@ -1091,7 +1646,11 @@
             "title": "The Ritual of Appeasement",
             "description": "The party must speak all nine names, perform the Silent Vigil, and take the Ninth Path.",
             "timers": [
-              { "name": "Bell's Countdown", "segments": 9, "current": 0 }
+              {
+                "name": "Bell's Countdown",
+                "segments": 9,
+                "current": 0
+              }
             ],
             "encounters": [
               {
@@ -1133,19 +1692,28 @@
         "id": "loc-silent-bell",
         "name": "The Silent Bell",
         "description": "A bell hanging from a single iron post on a windswept hill. No rope, no striker—yet it rings.",
-        "tags": ["bell", "threshold"]
+        "tags": [
+          "bell",
+          "threshold"
+        ]
       },
       {
         "id": "loc-stone-silent",
         "name": "The Village of Stone-Silent",
         "description": "A village where no doors are locked but no voices are heard. Ritual silence is observed.",
-        "tags": ["village", "silence"]
+        "tags": [
+          "village",
+          "silence"
+        ]
       },
       {
         "id": "loc-unmarked-grave",
         "name": "The Unmarked Grave",
         "description": "A fresh grave in a field with no marker, dug by the land itself. A ninth flower grows in the center.",
-        "tags": ["grave", "omen"]
+        "tags": [
+          "grave",
+          "omen"
+        ]
       }
     ],
     "factions": [
@@ -1165,7 +1733,6 @@
       }
     ],
     "notes": "A short, low-fantasy horror module about cultural consequences. Combat is minimal; the focus is on investigation, ritual, and moral choice.",
-
     "_gmhints": {
       "pacing": {
         "act1": "The village is silent—this is the first mystery. The party must discover the Ninth Law and the bell's significance. Jordan is the Keeper; he is evasive, not hostile. The Bell's Countdown is the primary tension—it ticks relentlessly, and the party must manage their time. The Green Host is a concept, not a creature; its arrival is inevitable if the taboo is not addressed. The handprints in the snow are an omen—the land is already responding. Do not reveal Jordan's secret or Elyra's punishment yet.",
@@ -1184,13 +1751,91 @@
         "The ninth path is a physical location in the village — Act III discovery"
       ]
     },
-
     "currentAct": 0,
     "currentScene": 0,
     "startedAt": null,
     "completedAt": null,
     "status": "planned",
     "createdAt": "2026-08-03T00:00:00.000Z",
-    "updatedAt": "2026-08-03T00:00:00.000Z"
+    "updatedAt": "2026-08-03T00:00:00.000Z",
+    "knowledge": [
+      {
+        "id": "jordan-secret",
+        "subject": "npc-jordan",
+        "gm": "His secret (his son spoke the ninth name) is the heart of the mystery. He will not confess unless the party uncovers the truth through investigation (the grave, the bell, or village records). His guilt is palpable—use his body language, not his confession.",
+        "player": "Jordan plays the part everyone assumes: Keeper of the Silent Bell. Nothing about their manner invites a second look.",
+        "revealed": false,
+        "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+        "tags": [
+          "npc-secret"
+        ]
+      },
+      {
+        "id": "elyra-secret",
+        "subject": "npc-elyra",
+        "gm": "Her secret (her silence is punishment) is a tragic parallel to Jordan's guilt. She is a source of ritual knowledge but cannot speak it directly. The party must interpret her gestures, her silence, and the village's traditions to understand the Ritual of Appeasement.",
+        "player": "Elyra plays the part everyone assumes: Village Elder. Nothing about their manner invites a second look.",
+        "revealed": false,
+        "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+        "tags": [
+          "npc-secret"
+        ]
+      },
+      {
+        "id": "jordan-s-son-spoke-the-ninth-name",
+        "subject": "plot",
+        "gm": "Jordan's son spoke the ninth name — Act II/III discovery",
+        "player": null,
+        "revealed": false,
+        "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+        "tags": [
+          "plot-secret"
+        ]
+      },
+      {
+        "id": "the-exact-steps-of-the-ritual",
+        "subject": "plot",
+        "gm": "The exact steps of the Ritual of Appeasement — Act III discovery through investigation and Elyra's guidance",
+        "player": null,
+        "revealed": false,
+        "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+        "tags": [
+          "plot-secret"
+        ]
+      },
+      {
+        "id": "the-green-host-is-not-a",
+        "subject": "plot",
+        "gm": "The Green Host is not a physical entity — this is a conceptual horror; reveal its nature through lore and omens, not exposition",
+        "player": null,
+        "revealed": false,
+        "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+        "tags": [
+          "plot-secret"
+        ]
+      },
+      {
+        "id": "the-ninth-name-that-was-spoken",
+        "subject": "plot",
+        "gm": "The ninth name that was spoken — the climax of the investigation",
+        "player": null,
+        "revealed": false,
+        "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+        "tags": [
+          "plot-secret"
+        ]
+      },
+      {
+        "id": "the-ninth-path-is-a-physical",
+        "subject": "plot",
+        "gm": "The ninth path is a physical location in the village — Act III discovery",
+        "player": null,
+        "revealed": false,
+        "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+        "tags": [
+          "plot-secret"
+        ]
+      }
+    ]
   }
 ]
