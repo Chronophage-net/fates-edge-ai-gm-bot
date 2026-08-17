@@ -5,6 +5,14 @@ Format loosely follows [Keep a Changelog](https://keepachangelog.com/), versions
 
 ## [Unreleased]
 
+## [4.11.2] - 2026-08-17
+
+### Changed
+- **Modularized `modules/commands.js`** (2326 lines, two ~600-1200 line mega-functions) into `modules/commands/` — `api-client.js`, `tokens.js`, `characters-sync.js`, `npc-actions.js`, `tag-repair.js`, `messages.js`, plus `gm-commands.js` (the `!gm` command dispatcher) and `process-tags.js` (the `[TAG ...]` directive processor), each kept whole since their internal control flow shares mutable local state that would be risky to split further mechanically. `modules/commands/index.js` re-exports the exact same public API, so no call site (`ai-gm-bot.js`, tests) needed to change beyond the two test files' require paths. Verified as a pure extraction: every moved function's source is byte-identical between the old and new files (checked programmatically before the swap), and the full test suite passes at the same baseline as before (one pre-existing, unrelated `indexNameFor()` failure).
+
+### Fixed
+- **Assistant GM's own `!gm suggestions` / `!gm approve` / `!gm reject` / `!gm confirm-takeover` commands were unreachable dead code.** Found while mapping `handleBotCommand`'s branch order for the refactor above: a blanket "Only the Game Master can run resource commands" gate (requires `myRole === 'gm'`) ran ahead of this block, which itself requires `myRole === 'assistant-gm'` — since no caller is ever both at once, the gate rejected every call before it could reach its own check. These four commands now run for anyone in Assistant GM mode, exactly as documented; the gate still applies to every other resource command unchanged. Covered by three new regression tests in `tests/modules/gm-commands-assistant.test.js`.
+
 ## [4.11.1] - 2026-08-17
 
 ### Fixed

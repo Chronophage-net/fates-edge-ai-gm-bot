@@ -285,7 +285,15 @@ async function handleBotCommand(sender, text, context) {
     }
 
     // ─── Resource commands (GM only) ──────────────────────────────
-    if (context.myRole !== 'gm') {
+    // BUGFIX: this gate used to run unconditionally, ahead of the
+    // suggestions/approve/reject/confirm-takeover block below (which
+    // requires myRole === 'assistant-gm'). Since nobody can be both
+    // 'gm' and 'assistant-gm' at once, that made those four commands
+    // unreachable dead code -- an Assistant GM's own suggestion-queue
+    // commands could never actually run via chat for anyone. Exempting
+    // them here (rather than moving them earlier) keeps this fix a
+    // single-line, easy-to-audit change instead of reordering the file.
+    if (context.myRole !== 'gm' && !['suggestions', 'approve', 'reject', 'confirm-takeover'].includes(cmd)) {
         return 'Only the Game Master can run resource commands.';
     }
 
