@@ -63,6 +63,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # FIX: previously missing -- without QEMU, buildx can only build
+      # for the runner's own native platform (linux/amd64), and since
+      # `platforms:` wasn't set on the build step either, that's exactly
+      # what happened: a single-arch amd64-only image. Anyone pulling it
+      # on Apple Silicon (or any other arm64 host) got either a slow
+      # QEMU-emulated container or an outright "no matching manifest"
+      # pull error, unlike the fates-edge-apps images which already
+      # publish both architectures. Added to match.
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
@@ -114,10 +125,12 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: ${{ steps.tags.outputs.tags }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+          provenance: false
 
   # ─── Create the GitHub Release ────────────────────────────────────
   create-release:
