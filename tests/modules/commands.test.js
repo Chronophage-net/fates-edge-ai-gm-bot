@@ -1,6 +1,6 @@
 const test = require('node:test');
 const assert = require('node:assert');
-const { processSpecialTags } = require('../../modules/commands.js');
+const { processSpecialTags } = require('../../modules/commands');
 
 // ------------------------------------------------------------------
 // Mock context object – mimics what ai-gm-bot.js passes to commands.js
