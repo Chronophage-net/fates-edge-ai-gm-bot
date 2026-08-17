@@ -1668,9 +1668,29 @@ function closeUnterminatedAITags(text) {
     return out;
 }
 
+// 0) Bare (unquoted) name repair: the model sometimes drops the required
+// quotes around a roll tag's name entirely -- e.g. emits
+// "[CALL FOR ROLL Asadef Wits+Stealth DV 3 Controlled]" instead of
+// '[CALL FOR ROLL "Asadef" Wits+Stealth DV 3 Controlled]'. Every regex
+// downstream of this (rollRegex, callForRollRegex, and even
+// tightenRollPoolSpacing above) requires the name to already be quoted,
+// so without this repair the whole tag leaks into chat as literal
+// unresolved bracket text -- exactly what a first-time user saw running
+// the demo against a small local model. Only fires when a pool
+// expression containing "+" (Attribute+Skill) is found before "DV" --
+// that's the one part of this syntax reliable enough to anchor on
+// without risking mis-slicing a legitimate multi-word name.
+function quoteBareRollName(text) {
+    return text.replace(
+        /\[(CALL FOR ROLL|ROLL)\s+(?!")([A-Za-z][A-Za-z '-]*?)\s+([A-Za-z]+\+[A-Za-z]+)(\s+DV\s+\d+)/gi,
+        (full, kw, name, pool, suffix) => `[${kw} "${name.trim()}" ${pool}${suffix}`
+    );
+}
+
 function repairAITagSyntax(text) {
     if (!text || typeof text !== 'string') return text;
     let repaired = normalizeAITagCase(text);
+    repaired = quoteBareRollName(repaired);
     repaired = tightenRollPoolSpacing(repaired);
     repaired = closeUnterminatedAITags(repaired);
     return repaired;

@@ -5,6 +5,11 @@ Format loosely follows [Keep a Changelog](https://keepachangelog.com/), versions
 
 ## [Unreleased]
 
+## [4.11.1] - 2026-08-17
+
+### Fixed
+- **`[CALL FOR ROLL ...]` (and `[ROLL ...]`) leaked into chat as literal unresolved bracket text when the model dropped the required quotes around the name.** Spotted live in the demo recording: a small local model (`llama3.2:1b`) emitted `[CALL FOR ROLL Asadef Wits+Stealth DV 3 Controlled]` instead of `[CALL FOR ROLL "Asadef" Wits+Stealth DV 3 Controlled]` -- every downstream regex (`callForRollRegex`, `rollRegex`, even `tightenRollPoolSpacing`'s own spacing fix) requires the name to already be quoted, so the tag fell through unrepaired and the player saw the GM's own tag syntax mid-sentence instead of a roll prompt. New `quoteBareRollName()` repair pass (`modules/commands.js`) runs first in `repairAITagSyntax()`, adding quotes around a bare name when a `Attribute+Skill DV <n>` pool expression is found right after it -- the one part of this tag's syntax reliable enough to anchor on without risking mis-slicing a legitimate multi-word name. Covered by a new regression test using the exact string observed in the demo.
+
 ## [4.11.0] - 2026-08-17
 
 ### Changed

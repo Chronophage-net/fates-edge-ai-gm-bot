@@ -188,6 +188,18 @@ test('processSpecialTags - CALL FOR ROLL with spaces around + (fuzzy tag repair 
   assert.match(result, /Body\+Melee/);
 });
 
+test('processSpecialTags - CALL FOR ROLL with an unquoted name (fuzzy tag repair applies here too)', async () => {
+  const context = buildMockContext();
+  // Real drift seen from a small local model (llama3.2:1b) in practice --
+  // it dropped the required quotes around the name entirely. Before
+  // quoteBareRollName() this leaked the whole tag into chat as literal
+  // unresolved bracket text instead of prompting for a roll.
+  const input = 'You edge toward the opening, [CALL FOR ROLL Levi Body+Melee DV 3 Controlled] -- how do you want to play it?';
+  const result = await processSpecialTags(input, context, 'Tester');
+  assert.doesNotMatch(result, /\[CALL FOR ROLL/);
+  assert.match(result, /Body\+Melee/);
+});
+
 test('processSpecialTags - CALL FOR ROLL with "me" resolves to sender', async () => {
   const context = buildMockContext();
   const input = '[CALL FOR ROLL "me" Body+Melee DV 3 Controlled]';
