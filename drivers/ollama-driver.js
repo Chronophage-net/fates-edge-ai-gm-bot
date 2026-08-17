@@ -21,9 +21,28 @@ class OllamaDriver extends AIDriver {
         this.apiKey = process.env.OLLAMA_API_KEY || null;
         this.timeoutMs = parseInt(process.env.OLLAMA_TIMEOUT_MS || '60000', 10); // local models are slow
         this.maxRetries = parseInt(process.env.OLLAMA_MAX_RETRIES || '1', 10);
-        // Highly model-dependent (a 7B local model might be 4k-8k, others
-        // much larger) -- operators running Ollama should set this to
-        // match whatever OLLAMA_MODEL actually is. Defaults conservative.
+        // Highly model-dependent -- operators running Ollama should set
+        // this to match whatever OLLAMA_MODEL actually is. Defaults
+        // conservative. Two different things read this value, and both
+        // matter:
+        //   1. ai-driver.js's trimToFit() uses it as the client-side
+        //      budget for how much system prompt + history to send at all.
+        //   2. CHANGED: it's now ALSO sent to Ollama itself as `num_ctx`
+        //      on every request (see _makeRequest()/_makeStreamingRequest()
+        //      below) -- previously this.contextWindow only drove #1, so
+        //      even a correctly-sized prompt could still get silently
+        //      truncated server-side by Ollama's own default num_ctx
+        //      (commonly 2048-4096 depending on the model/Modelfile,
+        //      regardless of that model's real max context) rather than
+        //      whatever was configured here. Now the two stay in sync by
+        //      construction instead of requiring an operator to separately
+        //      configure Ollama's Modelfile to match.
+        // Note this is genuinely model-specific, not just size-class-
+        // specific -- e.g. Llama 3.2 1B/3B both officially support up to
+        // 128K tokens, but that's irrelevant if you don't raise this to
+        // match; conversely raising this far past what your hardware/model
+        // can actually hold just wastes RAM/VRAM reserving KV-cache space.
+        // Check `ollama show <model>` for a given model's real ceiling.
         this.contextWindow = parseInt(process.env.OLLAMA_CONTEXT_WINDOW || '8192', 10);
         // CHANGED: this was never actually read anywhere -- generateResponse()
         // below hardcoded 400 directly at both call sites regardless of what
@@ -125,7 +144,7 @@ class OllamaDriver extends AIDriver {
                     model: this.model,
                     prompt,
                     stream: false,
-                    options: { temperature, num_predict: numPredict }
+                    options: { temperature, num_predict: numPredict, num_ctx: this.contextWindow }
                 })
             },
             {
@@ -164,7 +183,7 @@ class OllamaDriver extends AIDriver {
                     model: this.model,
                     prompt,
                     stream: true,
-                    options: { temperature, num_predict: numPredict }
+                    options: { temperature, num_predict: numPredict, num_ctx: this.contextWindow }
                 }),
                 signal: controller.signal
             });

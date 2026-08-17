@@ -7,7 +7,7 @@ DEEPSEEK_TEMPERATURE=0.8             # optional
 
 # WebSocket server connection
 WS_URL=ws://localhost:10000
-ROOM=AIGM
+ROOM=AC12
 BOT_NAME=AIGM
 
 #API key

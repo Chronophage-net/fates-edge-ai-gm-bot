@@ -15,7 +15,16 @@ An extensible, pluggable AI bot that connects to the Fate's Edge WebSocket serve
 - **Automatic GM takeover** – joins the room, requests the Game Master role, and manages GM approvals.
 - **Narrative generation** – interprets player chat and creates immersive, descriptive responses.
 - **Dice rolling** – uses Fate's Edge dice mechanics (d10 pool, successes, story beats).
+- **Calls for rolls instead of auto-rolling** – `[CALL FOR ROLL "Name" Attribute+Skill DV Position
+  "optional suggestion"]` prompts the player with what to roll (plus an optional one-sentence GM
+  suggestion) and waits for `!gm roll` or a player-typed roll, instead of silently resolving the
+  roll on the player's behalf. `[ROLL ...]` still exists for GM/NPC-driven rolls.
 - **Deck of Consequences** – draws cards, performs Crown Spreads, and tracks deck state.
+- **Structured knowledge state** – adventure modules can define explicit `knowledge[]` secrets
+  (a GM-only truth, an optional player-safe cover text, and a live `revealed` gate) as a
+  first-class alternative to burying secrets in `_gmhints` prose. The AI flips a reveal the moment
+  it narrates one, via `[REVEAL "id"]`/`[HIDE "id"]`; a human GM can do the same with
+  `!gm knowledge [list] | !gm knowledge reveal <id> | !gm knowledge hide <id>`.
 - **Timer management** – creates and ticks scene timers on demand.
 - **Player management** – kick, ban, and unban players directly from the bot's terminal.
 - **Conversation memory** – maintains a sliding window of recent messages for coherent stories.
@@ -206,7 +215,7 @@ so behavior doesn't drift between backends:
 | Driver | File | Retries/Timeout | Context Window | Streaming |
 |--------|------|------------------|-----------------|-----------|
 | **OpenAI** | `openai-driver.js` | Via SDK (`OPENAI_MAX_RETRIES`, `OPENAI_TIMEOUT_MS`) | `OPENAI_CONTEXT_WINDOW` (default 128000) | ✅ |
-| **Ollama** | `ollama-driver.js` | `OLLAMA_MAX_RETRIES`, `OLLAMA_TIMEOUT_MS` | `OLLAMA_CONTEXT_WINDOW` (default 8192 — **set this to match your actual model**) | ✅ |
+| **Ollama** | `ollama-driver.js` | `OLLAMA_MAX_RETRIES`, `OLLAMA_TIMEOUT_MS` | `OLLAMA_CONTEXT_WINDOW` (default 8192 — sent to Ollama as `num_ctx` on every request, **set this to match your actual model**, check with `ollama show <model>`) | ✅ |
 | **DeepSeek** | `deepseek-driver.js` | `DEEPSEEK_MAX_RETRIES`, `DEEPSEEK_TIMEOUT_MS` | `DEEPSEEK_CONTEXT_WINDOW` (default 64000) | ✅ |
 
 All three now handle transient failures (429/5xx/network errors) with exponential backoff
@@ -238,7 +247,7 @@ object rather than reaching for globals, and each has a matching test file under
 | Module | Responsibility |
 |--------|-----------------|
 | **`gm-orchestrator.js`** | The brain of the bot — integrates every other module, owns campaign state defaults, and drives the scene lifecycle each turn. |
-| **`commands.js`** | Parses `[TAG ...]` markers out of the AI's raw text output (`[ROLL ...]`, `[APPLY ...]`, `[LOOKUP RULE ...]`, `[SET POSITION/DV ...]`, `[TIMER ...]`, `[DRAW ...]`, `[CROWN ...]`, `[NPC CAST/CREATE ...]`, `[SCENE COMPLETE ...]`, `[TOKEN MOVE/REMOVE ...]`, `[ENCOUNTER RESOLVE ...]`, and more) and dispatches each to the module that actually performs it. Also handles `!gm` terminal/chat command dispatch. The single highest-blast-radius file in the bot — regex-based tag parsing silently breaks if the model's output drifts even slightly, so every tag handler here is covered by `tests/modules/commands.test.js`. `repairAITagSyntax()` runs first and repairs common drift (wrong case, spacing around `+`, dropped closing quote/bracket) before any of those regexes see the text. When `context.myRole === 'assistant-gm'`, narrative-authority tags (`[FACT ...]`, `[NPC CREATE ...]`, `[SCENE COMPLETE ...]`) are routed to `assistant-suggestions.js`'s queue instead of applied immediately — see "Assistant GM Mode" below. |
+| **`commands.js`** | Parses `[TAG ...]` markers out of the AI's raw text output (`[ROLL ...]`, `[CALL FOR ROLL ...]`, `[APPLY ...]`, `[LOOKUP RULE ...]`, `[SET POSITION/DV ...]`, `[TIMER ...]`, `[DRAW ...]`, `[CROWN ...]`, `[NPC CAST/CREATE ...]`, `[SCENE COMPLETE ...]`, `[TOKEN MOVE/REMOVE ...]`, `[ENCOUNTER RESOLVE ...]`, `[REVEAL "id"]`/`[HIDE "id"]`, and more) and dispatches each to the module that actually performs it. Also handles `!gm` terminal/chat command dispatch. The single highest-blast-radius file in the bot — regex-based tag parsing silently breaks if the model's output drifts even slightly, so every tag handler here is covered by `tests/modules/commands.test.js`. `repairAITagSyntax()` runs first and repairs common drift (wrong case, spacing around `+`, dropped closing quote/bracket) before any of those regexes see the text. When `context.myRole === 'assistant-gm'`, narrative-authority tags (`[FACT ...]`, `[NPC CREATE ...]`, `[SCENE COMPLETE ...]`) are routed to `assistant-suggestions.js`'s queue instead of applied immediately — see "Assistant GM Mode" below. |
 | **`assistant-suggestions.js`** | In-memory pending-suggestion queue for Assistant GM mode — `enqueue()`/`list()`/`approve()`/`reject()`/`clear()`. Not persisted to the campaign JSON (a pending suggestion is a proposal, not committed state); see "Assistant GM Mode" below. |
 | **`dice.js`** | Fate's Edge dice-pool mechanics: rolling, Position modifiers, the Outcome Matrix (Clean Success / Success with Story Beat / Partial / Miss), Story Beat generation on 1s, Harm/Fatigue application with armor conversion. |
 | **`characters.js`** | In-memory character store for the session — attribute/skill resolution (case-insensitive), delta application (Harm/Fatigue/Boons/Obligation/Corruption/Leash) with clamping at their max values. |
@@ -424,7 +433,7 @@ A few things worth knowing before adding to this suite:
 | Variable | Applies To | Default | Purpose |
 |----------|-----------|---------|---------|
 | `HEADLESS` / `OLLAMA_NONINTERACTIVE` | Ollama | off | Skip interactive model-recovery prompts; fail fast instead. **Required for any unattended deployment.** |
-| `OLLAMA_CONTEXT_WINDOW` | Ollama | `8192` | Set to your actual model's real context window. |
+| `OLLAMA_CONTEXT_WINDOW` | Ollama | `8192` | Sent to Ollama as `num_ctx` on every request (not just this bot's local trimming budget) — set to your actual model's real context window; check with `ollama show <model>`. |
 | `OLLAMA_TIMEOUT_MS` | Ollama | `60000` | Per-request timeout (local models are slow). |
 | `OLLAMA_MAX_RETRIES` | Ollama | `1` | Retries on transient HTTP/network failures. |
 | `OPENAI_CONTEXT_WINDOW` | OpenAI | `128000` | Context window for the configured model. |
