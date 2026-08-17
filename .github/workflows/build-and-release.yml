@@ -59,6 +59,14 @@ jobs:
     name: Build & Push Docker Image
     needs: build
     runs-on: ubuntu-latest
+    # FIX: the "Log in to Docker Hub" step's `if:` can't reference the
+    # secrets context directly (GitHub Actions validation error:
+    # "Unrecognized named-value: 'secrets'" -- the secrets context is
+    # not available in step `if:` conditionals, only in run/env/with).
+    # Mirroring the secret into a job-level env var here works around
+    # that, since the env context IS available in step `if:`.
+    env:
+      DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4

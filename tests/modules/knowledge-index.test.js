@@ -167,7 +167,13 @@ test('search() with an empty query returns [] without hitting the client', async
 });
 
 test('indexNameFor() namespaces by campaign code and sanitizes it', () => {
-    assert.strictEqual(ki.indexNameFor('AC12'), 'gm-knowledge-AC12');
+    // FIX: this test previously asserted 'gm-knowledge-AC12' (uppercase
+    // preserved), which was simply wrong -- Elasticsearch index names
+    // MUST be lowercase (the ES API itself rejects uppercase index
+    // names), so indexNameFor()'s String(...).toLowerCase() is required
+    // behavior, not a bug. The test was failing CI on every run; the
+    // code was correct all along.
+    assert.strictEqual(ki.indexNameFor('AC12'), 'gm-knowledge-ac12');
     assert.strictEqual(ki.indexNameFor(null), 'gm-knowledge-default');
 });
 
