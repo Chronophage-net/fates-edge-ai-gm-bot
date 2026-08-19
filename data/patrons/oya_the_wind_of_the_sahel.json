@@ -27,11 +27,11 @@
   ],
   "runekeeper_options": {
     "thiasos": {
-      "description": "A Runekeeper sworn to Oya does not bind a creature of settled earth or still water — they bind a creature of dust and dry wind. Their Thiasos is a small beast or mythological being that embodies the harmattan: a sand-colored gecko that sheds its skin twice as fast as any other, a small horned viper that leaves no tracks in loose sand, a dust-bathed finch that appears only after a windstorm, a scarab beetle that rolls dry dung across the hottest plains, or a pale mouse that nests in abandoned grain silos and vanishes when the wind shifts.",
+      "description": "Those who Runekeep for Oya do not bind a creature of settled earth or still water — they bind a creature of dust and dry wind. Their Thiasos is a small beast or mythological being that embodies the harmattan: a sand-colored gecko that sheds its skin twice as fast as any other, a small horned viper that leaves no tracks in loose sand, a dust-bathed finch that appears only after a windstorm, a scarab beetle that rolls dry dung across the hottest plains, or a pale mouse that nests in abandoned grain silos and vanishes when the wind shifts.",
       "care": "This creature requires no food, but it must be allowed to feel the dry wind each day — a sealed room suffocates it. If neglected for a week, it becomes Compromised (its color fades, and its bearer suffers –1 die on all rolls involving escape or evasion until it next tastes a dust storm)."
     },
     "codex": {
-      "description": "The Codex of Oya is never a book kept indoors. It may be a collection of cracked clay tablets that must be read in the wind, a scroll of desert leather that crumbles if not exposed to dry air, a bundle of dried reeds tied with red thread, or a single shard of green glass that holds the memory of a storm.",
+      "description": "Oya's Codex is never a book kept indoors. It may be a collection of cracked clay tablets that must be read in the wind, a scroll of desert leather that crumbles if not exposed to dry air, a bundle of dried reeds tied with red thread, or a single shard of green glass that holds the memory of a storm.",
       "upkeep": "Because the harmattan erases what is written, the Codex requires upkeep: the Runekeeper must spend an hour each week in a dry, windy place, allowing the dust to resettle on the pages, or the Rites stored there become faint (treat as Compromised until re-swept)."
     }
   },
@@ -49,7 +49,11 @@
       "action": "Scene",
       "range": "Zone",
       "resist": "No",
-      "tags": ["WIND", "STEALTH", "DECEPTION"],
+      "tags": [
+        "WIND",
+        "STEALTH",
+        "DECEPTION"
+      ],
       "materials": "A pinch of red dust blown from the palm, or a dry leaf that has never been wet.",
       "effect": "For one scene, you may extinguish any non-magical fire in a zone. The extinguishing is silent and leaves no smoke. Additionally, any open flame within Near range gutters and may be snuffed with a gesture.",
       "push_it": "The wind carries the extinguishing effect to all fires in Near range. Magical fires are suppressed for one exchange (they flicker but do not go out). Mark 1 SB (Spades) as the unnatural stillness draws attention. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -65,7 +69,11 @@
       "action": "Scene",
       "range": "Self or Ally",
       "resist": "No",
-      "tags": ["PROTECT", "WEATHER", "SURVIVAL"],
+      "tags": [
+        "PROTECT",
+        "WEATHER",
+        "SURVIVAL"
+      ],
       "materials": "A strip of cloth that has been dried in the harmattan for nine days.",
       "effect": "You or an ally within Near becomes immune to the effects of sandstorms, dust clouds, and airborne irritants for one scene. Visibility is unaffected for you; you can see through blowing dust as if it were clear air. The cloth wraps itself around your face, cool and dry.",
       "push_it": "Extend the effect to all allies within Near. The cloth becomes permanently stained red; it may be recognized by those who know Oya's sign. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -81,7 +89,11 @@
       "action": "Scene",
       "range": "Touch",
       "resist": "Yes",
-      "tags": ["LIBERATE", "WIND", "BOOST"],
+      "tags": [
+        "LIBERATE",
+        "WIND",
+        "BOOST"
+      ],
       "materials": "A length of chain, rope, or a physical restraint no longer in use.",
       "effect": "Touch a restrained creature (mundane bonds, a locked cage, a shackle) and unmake the binding as if the wind had loosened every knot and hinge at once. The target is freed and gains +1 die on their next action taken to flee or resist recapture.",
       "push_it": "Free all restrained creatures within Near, and mark the area with a haze of drifting red dust that lingers for an hour, marking it visibly as Oya's work. Mark 1 SB (Clubs). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -97,7 +109,12 @@
       "action": "Extended",
       "range": "Zone",
       "resist": "No",
-      "tags": ["WIND", "ERASURE", "DEBT", "FEAR"],
+      "tags": [
+        "WIND",
+        "ERASURE",
+        "DEBT",
+        "FEAR"
+      ],
       "materials": "A corrupt contract, a slave collar, or a false ledger; and a handful of red dust from the Ashaani desert.",
       "effect": "Summon a dust storm that lasts one hour within a zone (approximately a city block). All actions within are Desperate due to poor visibility. The storm scatters one specific piece of evidence — a single document, a set of tracks, or a witness's memory of a specific event — as chosen by the caster. The evidence is carried away by the wind and cannot be recovered by mundane means.",
       "push_it": "The dust storm also reveals one hidden truth — a secret door, a buried body, a false wall — as the wind strips away what was hidden. The caster gains the Dust-Marked condition (a red stain on their hands that cannot be washed off for one month; imposes –1 die on social rolls with those who recognize the mark). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
@@ -113,7 +130,12 @@
       "action": "Extended",
       "range": "Zone",
       "resist": "Yes",
-      "tags": ["WIND", "LIBERATE", "FEAR", "AREA"],
+      "tags": [
+        "WIND",
+        "LIBERATE",
+        "FEAR",
+        "AREA"
+      ],
       "materials": "The broken links of a chain that once bound many, scattered to the four directions.",
       "effect": "Call the full weight of the harmattan down upon a single site of oppression. For one hour, all locks, chains, cages, and mundane restraints within the zone spring open of their own accord, and every corrupt document within it is scoured of ink. Those who would re-bind the freed suffer –2 dice to any roll to restrain, imprison, or coerce for the duration.",
       "push_it": "The wind marks every oppressor present with the Dust-Marked condition, and the site itself becomes known as a place Oya has claimed — locals will whisper of it for a generation. Mark 2 SB (Spades) as the Hollow takes note of so much erased at once. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",

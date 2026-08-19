@@ -28,11 +28,11 @@
   ],
   "runekeeper_options": {
     "thiasos": {
-      "description": "A Runekeeper sworn to the Gallow's Bell does not bind a creature of force or threat. They bind a creature of quiet judgment. Their Thiasos is a small beast or mythological being that embodies impartial witness: a gray mouse that lives in courthouses and never cheeps false testimony, a small brass-bell frog whose croak sounds like a distant chime, a black-and-white cat that sits on the judge's bench and stares at those who lie, or a mechanical songbird that rings a tiny bell each time a promise is broken.",
+      "description": "the Gallow's Bell's Runekeepers do not bind a creature of force or threat. They bind a creature of quiet judgment. Their Thiasos is a small beast or mythological being that embodies impartial witness: a gray mouse that lives in courthouses and never cheeps false testimony, a small brass-bell frog whose croak sounds like a distant chime, a black-and-white cat that sits on the judge's bench and stares at those who lie, or a mechanical songbird that rings a tiny bell each time a promise is broken.",
       "care": "This creature requires no food, but it must witness a formal promise or a judgment each day. If neglected for a week, it becomes Compromised (it rings at the wrong moment or remains silent when truth is spoken, imposing –1 die on all social rolls involving oaths or honesty for its bearer)."
     },
     "codex": {
-      "description": "The Codex of the Gallow's Bell is never a book of spells alone. It may be a court ledger bound in iron, each page sealed with a drop of wax for every case heard; a set of bronze bells, each inscribed with a precedent; or a slate tablet that records the last verdict as a faint, glowing chime.",
+      "description": "One will not find the Gallow's Bell's Codex written as a book of spells alone. It may be a court ledger bound in iron, each page sealed with a drop of wax for every case heard; a set of bronze bells, each inscribed with a precedent; or a slate tablet that records the last verdict as a faint, glowing chime.",
       "upkeep": "Because the Bell's judgments are final, the Codex requires upkeep: the Runekeeper must spend an hour each week ringing each bell or re-reading each precedent, or the Rites stored there become uncertain (treat as Compromised until re-rung)."
     }
   },
@@ -50,7 +50,10 @@
       "action": "Scene",
       "range": "Near",
       "resist": "No",
-      "tags": ["VOW", "COMMAND"],
+      "tags": [
+        "VOW",
+        "COMMAND"
+      ],
       "materials": "A pair of scales balanced with tokens from both sides.",
       "effect": "Establish a temporary accord. Both parties suffer –1 die if they break it first. You gain +1 die to enforce compliance.",
       "push_it": "The accord is mystically weighted; breach inflicts 1 SB (Hearts). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -66,7 +69,10 @@
       "action": "Scene",
       "range": "Near",
       "resist": "No",
-      "tags": ["TRUTH", "SENSE"],
+      "tags": [
+        "TRUTH",
+        "SENSE"
+      ],
       "materials": "A small brass scale touched briefly to the chest.",
       "effect": "Sense if the target acts against their nature or oath. Gain +1 die when pressing them.",
       "push_it": "Target must test Resolve (DV 3) or disclose a hidden conflict. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -82,7 +88,11 @@
       "action": "Scene",
       "range": "Near",
       "resist": "No",
-      "tags": ["DEBT", "BOND", "TRANSFER"],
+      "tags": [
+        "DEBT",
+        "BOND",
+        "TRANSFER"
+      ],
       "materials": "A set of scales inscribed with runes of parity.",
       "effect": "Exchange a burden between two willing parties (Harm for Fatigue, Debt for Favor, etc.). Both gain +1 die to cooperate.",
       "push_it": "May compel an unwilling exchange with contested Command + Wits. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -98,7 +108,10 @@
       "action": "Scene",
       "range": "Self",
       "resist": "No",
-      "tags": ["TRUTH", "FEAR"],
+      "tags": [
+        "TRUTH",
+        "FEAR"
+      ],
       "materials": "A black hood worn in silence for one minute.",
       "effect": "Detect lies within Near range; +2 dice to Insight. Liars suffer –1 die to maintain their falsehood.",
       "push_it": "All deception is laid bare for the scene, but mark Exposure +1. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -114,7 +127,12 @@
       "action": "Scene",
       "range": "Zone",
       "resist": "No",
-      "tags": ["AREA", "COMMAND", "TRUTH", "FEAR"],
+      "tags": [
+        "AREA",
+        "COMMAND",
+        "TRUTH",
+        "FEAR"
+      ],
       "materials": "A circle of iron bells, each etched with nameless runes.",
       "effect": "The Bell tolls through you. All present feel compelled to name a debt or wrongdoing. Those who lie suffer Harm 2; those who speak true gain +2 dice to persuasion for the scene.",
       "push_it": "The Reckoning manifests as spectral echoes of past wrongs — liars automatically suffer narrative punishment (GM decides). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",

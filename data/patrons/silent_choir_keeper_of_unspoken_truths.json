@@ -32,11 +32,11 @@
   ],
   "runekeeper_options": {
     "thiasos": {
-      "description": "A Runekeeper sworn to the Silent Choir does not bind a familiar of sound and fury. Their Thiasos is a small creature that embodies quiet discretion: a gray mouse that nests in letter-boxes and never cheeps, a moth whose wings are dusted with the powder of forgetfulness, a small owl that flies without stirring air, a whippoorwill whose call is a barely audible sigh, or a tiny toad that hibernates in sealed jars and wakes only when a secret is told.",
+      "description": "To Runekeep for the Silent Choir is not to bind a familiar of sound and fury. Their Thiasos is a small creature that embodies quiet discretion: a gray mouse that nests in letter-boxes and never cheeps, a moth whose wings are dusted with the powder of forgetfulness, a small owl that flies without stirring air, a whippoorwill whose call is a barely audible sigh, or a tiny toad that hibernates in sealed jars and wakes only when a secret is told.",
       "care": "This creature requires no food, but it must be present when a confidence is kept — when someone refrains from speaking a harmful truth. If neglected for a week (no witnessed restraint), it becomes Compromised (it emits a faint, anxious buzzing; its bearer gains –1 die to all rolls involving discretion or secrecy until it is soothed with a whispered promise)."
     },
     "codex": {
-      "description": "The Codex of the Silent Choir is never a book meant to be read aloud. It may be a locked journal whose pages are blank until breathed upon, a set of sealed wax tablets that crumble if opened by the wrong hands, a collection of memory-knots tied in gray silk, or the inside of a bell that has been silenced with felt.",
+      "description": "One will not find the Silent Choir's Codex written as a book meant to be read aloud. It may be a locked journal whose pages are blank until breathed upon, a set of sealed wax tablets that crumble if opened by the wrong hands, a collection of memory-knots tied in gray silk, or the inside of a bell that has been silenced with felt.",
       "upkeep": "Because the Choir's truths are kept in omission, the Codex requires upkeep: the Runekeeper must spend an hour each week reviewing the secrets they have carried (without speaking them aloud) or the Rites stored there become faint (treat as Compromised until re-sealed)."
     }
   },
@@ -54,7 +54,12 @@
       "action": "Scene",
       "range": "Near/Touch",
       "resist": "Yes",
-      "tags": ["SILENCE", "PROTECT", "BOOST", "DEBT"],
+      "tags": [
+        "SILENCE",
+        "PROTECT",
+        "BOOST",
+        "DEBT"
+      ],
       "materials": "A white feather or cloth that has drunk whispered confidences; or a sealed envelope or locked reliquary holding a sensitive fact.",
       "effect": "Choose one: Gentle Silence — hush a space with respectful quiet; all present gain +1 die to actions of discretion, confidentiality, or de-escalation this scene. Shielded Truth — ward one piece of information from discovery; gain +2 dice to resist extraction or revelation of the protected truth.",
       "push_it": "(Shielded Truth) Protection becomes absolute but dependent: removing the ward triggers 1 SB (Hearts) as bottled truths surge. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -70,7 +75,11 @@
       "action": "Instant",
       "range": "Self",
       "resist": "No",
-      "tags": ["SILENCE", "PROTECT", "RESIST"],
+      "tags": [
+        "SILENCE",
+        "PROTECT",
+        "RESIST"
+      ],
       "materials": "A stone held in a closed fist until it warms.",
       "effect": "When you would be compelled to blurt a harmful truth (by shock, torture, or social pressure), you may instead say nothing at all, without penalty for refusing to answer. This does not stop magical compulsion outright — it simply lets silence count as a valid response.",
       "push_it": "Extend the protection to one ally within Touch range for the same instant. Mark 1 SB (Clubs) as the questioner grows suspicious of the shared silence. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -86,7 +95,12 @@
       "action": "Scene",
       "range": "Near",
       "resist": "Yes",
-      "tags": ["VOW", "BOND", "SILENCE", "TRUTH"],
+      "tags": [
+        "VOW",
+        "BOND",
+        "SILENCE",
+        "TRUTH"
+      ],
       "materials": "A pact signed in fading ink or a vow witnessed in silence.",
       "effect": "Bind an understanding without paper teeth. All parties gain +1 die when honoring the accord; breach draws social costs even without proof.",
       "push_it": "The accord is supernaturally enforced: a breaker suffers swift ostracism; mark +1 Obligation. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -102,7 +116,12 @@
       "action": "Scene",
       "range": "Touch",
       "resist": "Yes",
-      "tags": ["TRANSFER", "HEAL", "DEBT", "FEAR"],
+      "tags": [
+        "TRANSFER",
+        "HEAL",
+        "DEBT",
+        "FEAR"
+      ],
       "materials": "An object heavy with someone's shame or grief.",
       "effect": "Take another's social or emotional weight for a time. The target gains relief (+2 dice to social rolls) while you suffer the drag (–1 die to social rolls) this scene.",
       "push_it": "A shard remains: gain insight, keep a sliver of pain; mark 1 SB (Diamonds). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -118,7 +137,13 @@
       "action": "Extended",
       "range": "Zone",
       "resist": "Yes",
-      "tags": ["WARD", "AREA", "SILENCE", "PROTECT", "DEBT"],
+      "tags": [
+        "WARD",
+        "AREA",
+        "SILENCE",
+        "PROTECT",
+        "DEBT"
+      ],
       "materials": "A room seasoned by trusted confidences and sealed with hush-signs.",
       "effect": "Consecrate a sanctuary where secrets hold fast. Truths cannot be compelled; all within gain immunity to forced revelation and +2 dice to maintain discretion.",
       "push_it": "The sanctuary becomes a keep: none may leave until each offers one guarded truth; mark +2 Obligation. Cost: Mark +1 Obligation (total +4) or Mark +1 Fatigue.",

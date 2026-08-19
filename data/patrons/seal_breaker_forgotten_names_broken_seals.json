@@ -27,11 +27,11 @@
   ],
   "runekeeper_options": {
     "thiasos": {
-      "description": "A Runekeeper sworn to the Seal-Breaker does not bind a creature of bright light or easy memory. Their Thiasos is a small creature that embodies forgotten things: a ghost moth that appears only when a sealed door is opened, a clay scarab that crumbles to dust when a false oath is sworn, a gray mouse that nests in the voids of broken seals, a blind cave fish that has never seen a name carved in stone, or a pale spider that weaves webs in the shape of missing letters.",
+      "description": "the Seal-Breaker keeps no Runekeeper bound to a creature of bright light or easy memory. Their Thiasos is a small creature that embodies forgotten things: a ghost moth that appears only when a sealed door is opened, a clay scarab that crumbles to dust when a false oath is sworn, a gray mouse that nests in the voids of broken seals, a blind cave fish that has never seen a name carved in stone, or a pale spider that weaves webs in the shape of missing letters.",
       "care": "This creature requires no food, but it must be shown a new broken seal — a cracked wax stamp, a snapped lock, a torn ribbon — each day. If neglected for a week, it becomes Compromised (it hides, and its bearer suffers –1 die on all Deception and Forgery rolls until a forgotten name is whispered to it)."
     },
     "codex": {
-      "description": "The Codex of the Seal-Breaker is never a book of finished contracts. It may be a ledger with every name struck through, a box of shattered seals, a scroll of water-stained parchment that can never be dried, or a single sheet of vellum that was signed and then burned.",
+      "description": "The Codex kept in the Seal-Breaker's name is never a book of finished contracts. It may be a ledger with every name struck through, a box of shattered seals, a scroll of water-stained parchment that can never be dried, or a single sheet of vellum that was signed and then burned.",
       "upkeep": "Because the Seal-Breaker's truths are written in erasure, the Codex requires upkeep: the Runekeeper must spend an hour each week cutting a new line through a name in the ledger or adding a fresh crack to a seal, or the Rites stored there become uncertain (treat as Compromised until a new false contract is witnessed)."
     }
   },
@@ -49,7 +49,11 @@
       "action": "Scene",
       "range": "Self",
       "resist": "No",
-      "tags": ["ERASURE", "DECEPTION", "DEBT"],
+      "tags": [
+        "ERASURE",
+        "DECEPTION",
+        "DEBT"
+      ],
       "materials": "A document that is clearly a forgery, or a blank piece of vellum.",
       "effect": "You may present a document to an official without speaking your name. For one scene, they cannot use your lineage, prior debts, or past crimes against you — they treat you as a stranger. The document smokes slightly as you hand it over.",
       "push_it": "The official also forgets your face immediately after the interaction. Mark 1 SB (Diamonds) as the memory gap causes suspicion later. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -65,7 +69,11 @@
       "action": "Instant",
       "range": "Touch",
       "resist": "No",
-      "tags": ["ERASURE", "UNSEAL", "LIBERATE"],
+      "tags": [
+        "ERASURE",
+        "UNSEAL",
+        "LIBERATE"
+      ],
       "materials": "A shard of broken wax seal, or a key filed down to nothing.",
       "effect": "Touch a lock, chain, or mundane binding and speak the name it was sealed under. The binding opens as if it had never held — no lockpicking roll required. This does not work on wards specifically enchanted against tampering.",
       "push_it": "The opening is silent and leaves no trace of forced entry, but the Seal-Breaker takes an interest in what you freed. Mark 1 SB (Clubs) as a complication tied to the freed thing surfaces later. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -81,7 +89,11 @@
       "action": "Scene",
       "range": "Near",
       "resist": "Yes",
-      "tags": ["ERASURE", "DECEPTION", "SECRET"],
+      "tags": [
+        "ERASURE",
+        "DECEPTION",
+        "SECRET"
+      ],
       "materials": "A name written on paper and torn in half.",
       "effect": "Choose a target within Near. For the scene, any attempt by others to identify, describe, or recall that target's name or face suffers –2 dice. The target themself feels a faint unease, as though a piece of them has gone missing.",
       "push_it": "Extend the effect to include written records of the target's name — ledgers, wanted posters, letters — which blur and smudge for the scene. Mark 1 SB (Hearts) as the erasure leaves a debt owed to someone whose paperwork now makes no sense. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -97,7 +109,11 @@
       "action": "Instant",
       "range": "Touch",
       "resist": "No",
-      "tags": ["ERASURE", "DEATH", "DEBT"],
+      "tags": [
+        "ERASURE",
+        "DEATH",
+        "DEBT"
+      ],
       "materials": "A weapon that has never been named, or a weapon that has been filed smooth of all markings.",
       "effect": "Your next attack with this weapon leaves no trace — no wound pattern, no blood type, no memory. If you kill, the victim's name is struck from all public ledgers for a generation. No divination or spirit questioning can identify you as the killer.",
       "push_it": "The victim's name is also erased from the memory of their closest kin. Mark 2 SB (Hearts); the Seal-Breaker may ask you to forget a friend's face in return. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
@@ -113,7 +129,12 @@
       "action": "Extended",
       "range": "Touch",
       "resist": "No",
-      "tags": ["ERASURE", "FATE", "DEBT", "CORRUPTION"],
+      "tags": [
+        "ERASURE",
+        "FATE",
+        "DEBT",
+        "CORRUPTION"
+      ],
       "materials": "The original wax seal of a contract, a marriage certificate, or an oath of fealty.",
       "effect": "Permanently void one formal contract, marriage, or oath of fealty. The two parties no longer owe each other anything. However, you become the witness — any future betrayal between them adds 1 Story Beat to the GM's pool, and dangerous things sealed elsewhere may take an interest in the broken bond. The seal itself melts and reforms into a coin that cannot be spent; it will reappear in your pocket at the worst possible moment.",
       "push_it": "Void a contract without the consent of one party. They will know something has changed, but not what. Mark +3 Corruption and the hollow coin has a pulse. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",

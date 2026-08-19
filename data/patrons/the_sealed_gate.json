@@ -29,11 +29,11 @@
   ],
   "runekeeper_options": {
     "thiasos": {
-      "description": "A Runekeeper sworn to the Sealed Gate does not bind a living creature — they bind a threshold given will. Their Thiasos is a small object imbued with boundary-sense: a bronze key that fits no lock yet trembles when a boundary is near, a brass bell that rings only when a ward is about to break, or a small iron gate that stands on the Runekeeper's desk and opens only when a lie is spoken.",
+      "description": "Those who Runekeep for the Sealed Gate do not bind a living creature — they bind a threshold given will. Their Thiasos is a small object imbued with boundary-sense: a bronze key that fits no lock yet trembles when a boundary is near, a brass bell that rings only when a ward is about to break, or a small iron gate that stands on the Runekeeper's desk and opens only when a lie is spoken.",
       "care": "This object requires no food, but it must be anointed with oil and placed on a threshold at dawn each day. If neglected for a week, the Thiasos becomes Compromised (it emits a low hum that imposes –1 die on Stealth rolls for its bearer)."
     },
     "codex": {
-      "description": "The Codex of the Sealed Gate is never a simple book. It may be a leather strap carved with runes that tighten when a ward is violated, a set of iron rings linked in a chain, or the inside of a lock.",
+      "description": "the Sealed Gate's Codex is never a simple book. It may be a leather strap carved with runes that tighten when a ward is violated, a set of iron rings linked in a chain, or the inside of a lock.",
       "upkeep": "Because boundaries are physical, the Codex requires upkeep: the Runekeeper must spend an hour each week testing each seal (touching, ringing, or whispering to it), or the Rites stored there become uncertain (treat as Compromised until restored)."
     }
   },
@@ -51,7 +51,10 @@
       "action": "Scene",
       "range": "Touch",
       "resist": "No",
-      "tags": ["WARD", "BIND"],
+      "tags": [
+        "WARD",
+        "BIND"
+      ],
       "materials": "Chalk, iron dust, or sanctified cord.",
       "effect": "Mark a doorway or passage as sealed. Unauthorized crossing tests Spirit+Resolve (DV 3) or suffers a Position penalty. Creates a 4-segment Ward Integrity timer.",
       "push_it": "The barrier becomes a visible shimmer, imposing –1 die on attempts to cross it. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -67,7 +70,10 @@
       "action": "Instant",
       "range": "Near",
       "resist": "No",
-      "tags": ["FORCE", "BANISH"],
+      "tags": [
+        "FORCE",
+        "BANISH"
+      ],
       "materials": "A gesture of denial or a barrier symbol.",
       "effect": "The target must test Body+Resolve (DV 3) or be pushed back from the threshold. On success, create a Rebuke Echo token granting +1 die to the next boundary defense.",
       "push_it": "The rebuke lingers — the target cannot cross this threshold for the rest of the scene. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -83,7 +89,11 @@
       "action": "Scene",
       "range": "Zone",
       "resist": "No",
-      "tags": ["WARD", "AREA", "BANISH"],
+      "tags": [
+        "WARD",
+        "AREA",
+        "BANISH"
+      ],
       "materials": "A salt ring, iron filings, or boundary stones.",
       "effect": "Create a protective circle. Supernatural beings test against the caster's Spirit+Arcana (DV 4) to cross. Mortals suffer –2 dice to force entry. Creates a 6-segment Circle Integrity timer.",
       "push_it": "The circle becomes a two-way barrier (no one can cross). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -99,7 +109,11 @@
       "action": "Scene",
       "range": "Zone",
       "resist": "No",
-      "tags": ["BOND", "COMMAND", "MOVEMENT"],
+      "tags": [
+        "BOND",
+        "COMMAND",
+        "MOVEMENT"
+      ],
       "materials": "Signed authorization or spoken permissions.",
       "effect": "Designate an authorized passage route. Allies gain Position +1 when using the route. Unauthorized intruders suffer –1 die to movement or stealth. Creates an 8-segment Writ Authority timer.",
       "push_it": "Extend authorization to additional allies; mark +1 Obligation. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -115,7 +129,11 @@
       "action": "Instant",
       "range": "Near",
       "resist": "No",
-      "tags": ["BANISH", "FORCE", "FEAR"],
+      "tags": [
+        "BANISH",
+        "FORCE",
+        "FEAR"
+      ],
       "materials": "A knotted cord sealed with a gate-sigil.",
       "effect": "The target supernatural entity tests against the caster's Spirit+Resolve (DV = entity Cap). On success, the entity is forced to immediately depart the scene. A failed attempt creates a 4-segment Banishment Backlash timer.",
       "push_it": "The banishment lasts until the next moon phase. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
@@ -131,7 +149,12 @@
       "action": "Extended",
       "range": "Zone",
       "resist": "No",
-      "tags": ["WARD", "AREA", "SANCTUARY", "FATE"],
+      "tags": [
+        "WARD",
+        "AREA",
+        "SANCTUARY",
+        "FATE"
+      ],
       "materials": "Relics from three traditions, boundary markers, a trespasser's acknowledgment.",
       "effect": "Consecrate an area against all unauthorized passage. The tests required scale with the intrusion attempt's severity. A 10-segment Sacred Boundary timer tracks the barrier's strength.",
       "push_it": "Make the barrier semi-permanent (lasts one season); start a Maintenance [6] timer. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",

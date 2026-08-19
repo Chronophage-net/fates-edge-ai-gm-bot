@@ -34,11 +34,11 @@
   ],
   "runekeeper_options": {
     "thiasos": {
-      "description": "A Runekeeper sworn to Varnek Karn does not bind a living familiar. Their Thiasos is a remnant of the honored dead: a lead seal that has witnessed a funeral, a knucklebone from an ancestor who died content, or a small iron bell that rings only when a spirit is willing to speak.",
+      "description": "Varnek Karn's Runekeepers do not bind a living familiar. Their Thiasos is a remnant of the honored dead: a lead seal that has witnessed a funeral, a knucklebone from an ancestor who died content, or a small iron bell that rings only when a spirit is willing to speak.",
       "care": "This object requires no food, but it must be placed on a grave or threshold at dusk each day. If neglected for a week, the Thiasos becomes Compromised (it emits a faint keening that imposes –1 die on all social rolls with the living)."
     },
     "codex": {
-      "description": "The Codex of Varnek Karn is never a living book. It may be a slate carved with names that fade and reappear, a bundle of burial tablets, or the inside of a lead-lined casket.",
+      "description": "The Codex kept in Varnek Karn's name is never a living book. It may be a slate carved with names that fade and reappear, a bundle of burial tablets, or the inside of a lead-lined casket.",
       "upkeep": "Because the dead are not bound by paper, the Codex requires upkeep: the Runekeeper must spend an hour each week recording a new death or a settled dispute, or the Rites stored there become illegible (treat as Compromised until restored)."
     }
   },
@@ -56,7 +56,10 @@
       "action": "Scene",
       "range": "Near",
       "resist": "No",
-      "tags": ["SPIRIT", "TRUTH"],
+      "tags": [
+        "SPIRIT",
+        "TRUTH"
+      ],
       "materials": "A coin for the tongue of the deceased, or a lock of hair from the bereaved.",
       "effect": "Open speech with a specific dead individual. Gain +1 die to Investigation or Lore when seeking knowledge they once held.",
       "push_it": "The spirit offers a deeper fragment of memory, but demands a future favor in return. Mark 1 SB (Hearts). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -72,7 +75,11 @@
       "action": "Scene",
       "range": "Self",
       "resist": "Yes",
-      "tags": ["SPIRIT", "TRUTH", "FATE"],
+      "tags": [
+        "SPIRIT",
+        "TRUTH",
+        "FATE"
+      ],
       "materials": "A personal token of the departed, or their favored food or drink.",
       "effect": "Ask one question of an ancestral spirit regarding family history, hidden legacies, or inherited debts.",
       "push_it": "The spirit grants detailed, prophetic guidance but exacts a small favor; mark 1 SB (Hearts). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -88,7 +95,12 @@
       "action": "Scene",
       "range": "Near",
       "resist": "Yes",
-      "tags": ["VOW", "BOND", "COMMAND", "SPIRIT"],
+      "tags": [
+        "VOW",
+        "BOND",
+        "COMMAND",
+        "SPIRIT"
+      ],
       "materials": "Two copies of a written accord (one buried with the dead, one kept by the living), or a circle of salt mixed with grave-dust.",
       "effect": "Choose one: Death-Bound Pact: Bind a compact between a living signatory and a willing spirit. Both gain +1 die when fulfilling the terms. Breach angers the spirit and Varnek both. Spirit Medium: Serve as a conduit for several spirits to speak. Gain +2 dice to mediate disputes between living and dead and to facilitate group negotiation.",
       "push_it": "If you chose Pact, the pact enforces itself: a breach triggers supernatural reprisal; mark +1 Obligation. If you chose Medium, a potent spirit rides your voice to speak directly; mark Exposure +1. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -104,7 +116,12 @@
       "action": "Scene",
       "range": "Zone",
       "resist": "Yes",
-      "tags": ["SUMMON", "AREA", "BOND", "DEBT"],
+      "tags": [
+        "SUMMON",
+        "AREA",
+        "BOND",
+        "DEBT"
+      ],
       "materials": "A battlefield relic (a broken sword, a skull, a scrap of uniform) and a handful of grave-earth.",
       "effect": "You negotiate with the lingering dead of a place. Summon a Temporary Host — a spectral warband treated as a single Cap 3 Follower with the following traits: Assist: May grant +3 dice to a single combat or intimidation roll, or provide a free Setup action (e.g., 'they distract the guards'). Independent Action: Once per scene, the Host may take one action from the Follower list (e.g., Scout & Signal, Distract & Draw) at the cost of marking Exposure +1. Weakness: The Host is vulnerable to salt, bells, and consecrated ground. Any attack using such materials ignores their spectral nature. The Host lasts for the remainder of the current scene, or until dismissed. When it departs, the dead demand their due: you must either mark +2 Obligation or perform a Memorial Rite before the next dawn (a downtime action, no roll). If you fail to do so, the Host returns unbidden at the worst moment, acting as a hostile hazard (GM's discretion).",
       "push_it": "Extend the Host's duration to the entire session. The debt is doubled: mark +4 Obligation or perform a memorial rite and sacrifice a personal memory (erase a minor fact or a Bond for one session). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -120,7 +137,12 @@
       "action": "Extended",
       "range": "Touch",
       "resist": "Yes",
-      "tags": ["VOW", "FATE", "COMMAND", "DEATH"],
+      "tags": [
+        "VOW",
+        "FATE",
+        "COMMAND",
+        "DEATH"
+      ],
       "materials": "A dying person's last words recorded in their blood, witnessed by you.",
       "effect": "Seal the last request with weight beyond life. Targets must pass Resolve (DV 4) to ignore it.",
       "push_it": "The testament becomes a geas: only fulfillment — or Varnek's wrath — can break it; mark +2 Obligation. Cost: Mark +1 Obligation (total +4) or Mark +1 Fatigue.",
@@ -136,7 +158,12 @@
       "action": "Extended",
       "range": "Zone",
       "resist": "Yes",
-      "tags": ["TRUTH", "AREA", "FATE", "SANCTUARY"],
+      "tags": [
+        "TRUTH",
+        "AREA",
+        "FATE",
+        "SANCTUARY"
+      ],
       "materials": "A library mortared with tomb-stone, ink from cremation ash.",
       "effect": "Found a repository where the dead deposit knowledge. Gain a permanent +1 die to Lore for historical or genealogical research made within. Spirits periodically contribute testimonies.",
       "push_it": "The archive awakens and begins to demand curatorship and payment; mark Harm 1 (Stress). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",

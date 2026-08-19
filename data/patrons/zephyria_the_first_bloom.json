@@ -27,11 +27,11 @@
   ],
   "runekeeper_options": {
     "thiasos": {
-      "description": "A Runekeeper sworn to Zephyria does not bind a creature of claw or fang — they bind a companion of fleeting connection. Their Thiasos is a small being of anticipation: a hummingbird that hovers just beyond reach, a night-blooming flower that closes at dawn, a pair of shoes left pointing toward each other by the door, or a moth whose wings shimmer only when two people stand near but do not touch.",
+      "description": "One does not become a Runekeeper of Zephyria by binding a creature of claw or fang — they bind a companion of fleeting connection. Their Thiasos is a small being of anticipation: a hummingbird that hovers just beyond reach, a night-blooming flower that closes at dawn, a pair of shoes left pointing toward each other by the door, or a moth whose wings shimmer only when two people stand near but do not touch.",
       "care": "This creature requires no food, but it must be given a token of almost-touch each day (a feather brushed against skin but not grasped, a shadow that nearly overlaps, a silence stretched just past comfort). If neglected for a week, it becomes Compromised (its aura of longing turns frantic, imposing –1 die on all Sway rolls involving genuine attraction for its bearer until offered a fresh token of near-contact)."
     },
     "codex": {
-      "description": "The Codex of Zephyria is never a book of dry ink. It may be a fan of silk whose folds reveal different poems with each opening, a vial of perfume that changes scent when held between two palms, a sketchbook where each page shows a half-finished portrait of the Runekeeper's current fascination, or a music box that plays a different melody when wound by different hands.",
+      "description": "A Codex sworn to Zephyria is never a book of dry ink. It may be a fan of silk whose folds reveal different poems with each opening, a vial of perfume that changes scent when held between two palms, a sketchbook where each page shows a half-finished portrait of the Runekeeper's current fascination, or a music box that plays a different melody when wound by different hands.",
       "upkeep": "Because Zephyria's truths are written in the space between, the Codex requires upkeep: the Runekeeper must spend an hour each week engaging in a ritual of near-intimacy with another (holding hands without speaking, gazing into eyes for three minutes straight, sharing a breath without kissing), or the Rites stored there fade (treat as Compromised until re-suspended)."
     }
   },
@@ -49,7 +49,11 @@
       "action": "Scene",
       "range": "Near",
       "resist": "Yes",
-      "tags": ["READ", "BOOST", "SECRET"],
+      "tags": [
+        "READ",
+        "BOOST",
+        "SECRET"
+      ],
       "materials": "Two mirrors positioned to catch each other's reflection, or a moment of sustained eye-contact (3+ seconds).",
       "effect": "Your gaze becomes a promise. Gain +1 die to Sway one target in a moment of mutual regard. The target feels a subtle thrill of being truly seen; they are more likely to remember your presence fondly.",
       "push_it": "The target feels safe enough to name a hope they've hidden (a secret desire, a fear of vulnerability). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -65,7 +69,11 @@
       "action": "Scene",
       "range": "Touch",
       "resist": "No",
-      "tags": ["BOND", "BOOST", "READ"],
+      "tags": [
+        "BOND",
+        "BOOST",
+        "READ"
+      ],
       "materials": "A flower petal, a silk ribbon, or a token meant to be given but retained.",
       "effect": "Create a temporary bond of mutual anticipation. Both parties gain +1 die when aiding each other in acts of playful teasing or flirtatious banter. The bond manifests as a shared warmth, like sunlight on skin just before contact.",
       "push_it": "The bond deepens to shared vulnerability; both sense when the other is hiding longing but suffer –1 die to conceal their own desire. The bond may persist as a gentle ache until the next dawn. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -81,7 +89,12 @@
       "action": "Scene",
       "range": "Near",
       "resist": "Yes",
-      "tags": ["VOW", "BOND", "BOOST", "FEAR"],
+      "tags": [
+        "VOW",
+        "BOND",
+        "BOOST",
+        "FEAR"
+      ],
       "materials": "Token exchanged but not kept — a ring held briefly then returned, a lock of hair given then taken back, or a promise spoken into wind.",
       "effect": "Forge a promise of mutual discovery. Both gain +1 Effect when cooperating in acts of shared vulnerability or mutual exploration; breach inflicts 1 SB (Hearts) and a hollowness where anticipation once was. Create a 6-segment Almost Strength timer.",
       "push_it": "Breach also causes a visible retreat (a tendency to look away too quickly, a habit of ending conversations prematurely, or an inability to linger in shared space). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -97,7 +110,11 @@
       "action": "Scene",
       "range": "Self",
       "resist": "No",
-      "tags": ["GLAMOUR", "BOOST", "SOCIAL"],
+      "tags": [
+        "GLAMOUR",
+        "BOOST",
+        "SOCIAL"
+      ],
       "materials": "Perfume applied while imagining a future touch, or a garment worn that hints at what lies beneath.",
       "effect": "Assume an aura of magnetic potential and poised allure. Gain +2 dice to Sway or Performance in settings of flirtation or courtship. Your presence lingers in the memory like a half-remembered dream of what could be.",
       "push_it": "Become the embodiment of possibility; all who interact with you feel a shiver of 'what if' (Resolve DV 2 to resist imagining deeper connection). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -113,7 +130,13 @@
       "action": "Extended",
       "range": "Zone",
       "resist": "No",
-      "tags": ["AREA", "COMMAND", "BOOST", "GLAMOUR", "DEBT"],
+      "tags": [
+        "AREA",
+        "COMMAND",
+        "BOOST",
+        "GLAMOUR",
+        "DEBT"
+      ],
       "materials": "A path lined with flowers that bloom only at twilight; two cups filled from different sources but meant to be shared; a length of ribbon wound around both participants' wrists then loosened.",
       "effect": "You become the sovereign of romantic potential. For the scene: you gain +1 Effect on all social rolls focused on flirtation or mutual discovery, and opponents suffer –1 die when attempting to rush or demand commitment. Anyone who attempts to deceive you about their intentions must test Resolve (DV 4) or reveal a hidden hope. Allies who share a ritual of near-intimacy regain 1 Fatigue. Start a 10-segment Garden of Almost timer; when it fills, you may declare one irrevocable social judgment that the zone's inhabitants will uphold for one month.",
       "push_it": "Newcomers must test Resolve (DV 4) or become briefly inclined toward courtship. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",

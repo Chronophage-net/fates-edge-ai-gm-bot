@@ -28,11 +28,11 @@
   ],
   "runekeeper_options": {
     "thiasos": {
-      "description": "A Runekeeper sworn to Mab does not bind a familiar of raw power. Their Thiasos is a small creature of glamour and wit: a talking cricket that gives advice in riddles, a cat with mismatched eyes that appears at masquerades, a small fox that steals shiny baubles and leaves cryptic notes, a white jay that mimics voices with uncanny accuracy, or a spider that weaves its web in the shape of a courtly dance.",
+      "description": "A Runekeeper who serves Mab does not bind a familiar of raw power. Their Thiasos is a small creature of glamour and wit: a talking cricket that gives advice in riddles, a cat with mismatched eyes that appears at masquerades, a small fox that steals shiny baubles and leaves cryptic notes, a white jay that mimics voices with uncanny accuracy, or a spider that weaves its web in the shape of a courtly dance.",
       "care": "This creature requires no food, but it must witness a promise or a performance each day. If neglected for a week, it becomes Compromised (it pulls pranks at the worst moments — tugging a sleeve during a lie, knocking over a wine glass — imposing –1 die on all Deception and Performance rolls for its bearer until it next witnesses a genuine oath)."
     },
     "codex": {
-      "description": "The Codex of Mab is never a book of straightforward text. It may be a deck of playing cards whose suits shift when no one is looking, a mirror that reflects only the backs of words, a set of silk handkerchiefs knotted into a puzzle, or a scroll that must be read while dancing.",
+      "description": "You will not find Mab's Codex bound as a book of straightforward text. It may be a deck of playing cards whose suits shift when no one is looking, a mirror that reflects only the backs of words, a set of silk handkerchiefs knotted into a puzzle, or a scroll that must be read while dancing.",
       "upkeep": "Because Mab's truths are written in misdirection, the Codex requires upkeep: the Runekeeper must spend an hour each week re-ordering the cards (or re-knotting the handkerchiefs) while recounting a story from memory, or the patterns become scrambled (treat as Compromised until re-woven)."
     }
   },
@@ -50,7 +50,12 @@
       "action": "Scene",
       "range": "Near",
       "resist": "No",
-      "tags": ["VOW", "BOND", "DEBT", "FEAR"],
+      "tags": [
+        "VOW",
+        "BOND",
+        "DEBT",
+        "FEAR"
+      ],
       "materials": "A token freely given (flower, coin, ribbon).",
       "effect": "Offer a fae bargain. The target may accept (both gain +1 die to actions that uphold the terms) or refuse (target marks 1 Fatigue from social pressure).",
       "push_it": "If the target later betrays the bargain, they suffer Harm 1 (Stress) and start an Oathbreaker [4] timer. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -66,7 +71,11 @@
       "action": "Scene",
       "range": "Self",
       "resist": "No",
-      "tags": ["GLAMOUR", "SOCIAL", "MASK"],
+      "tags": [
+        "GLAMOUR",
+        "SOCIAL",
+        "MASK"
+      ],
       "materials": "A sprig of hawthorn or a silver thread worn visibly.",
       "effect": "Subtle glamour makes you appear as the expected rank or guest. Gain +1 die to social rolls in refined settings.",
       "push_it": "Mask one personal tell (an accent, a scar, a nervous habit); the first probing question about it generates 1 SB (Hearts). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -82,7 +91,12 @@
       "action": "Scene",
       "range": "Near",
       "resist": "No",
-      "tags": ["VOW", "BOND", "DEBT", "TRUTH"],
+      "tags": [
+        "VOW",
+        "BOND",
+        "DEBT",
+        "TRUTH"
+      ],
       "materials": "Equal tokens exchanged ritually (two rings, two signed notes, two locks of hair).",
       "effect": "Bind a formal bargain. While the bargain is honored, both parties gain +1 Effect when cooperating. Breach forces 1 SB (Hearts/Diamonds) and a reputation penalty (–1 die to social rolls involving honor for one week).",
       "push_it": "Add a minor boon to one party (+1 die once). If that party breaches, they suffer an additional 1 SB and you mark +1 Obligation. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -98,7 +112,13 @@
       "action": "Extended",
       "range": "Zone",
       "resist": "No",
-      "tags": ["AREA", "GLAMOUR", "COMMAND", "WARD", "FEAR"],
+      "tags": [
+        "AREA",
+        "GLAMOUR",
+        "COMMAND",
+        "WARD",
+        "FEAR"
+      ],
       "materials": "A circle of silk or green felt, courtly music, and a drop of honey and vinegar.",
       "effect": "Establish a fae court in the zone. For the scene: allies gain +1 die to social rolls; blunt threats (Intimidation, crude Force) suffer –1 die. Once per scene, strip an illusion or reveal a hidden motive as a free action (target tests Resolve DV 3). Violating a promise made within the zone triggers 2 SB and a visible glamour mark (a blush, a stutter) lasting a day.",
       "push_it": "Impose a temporary Court Law (e.g., 'no steel,' 'speak only truth,' 'every third word must be a compliment'). Violators suffer 2 SB. Cost: Mark +2 Obligation (total +4) or Mark +1 Fatigue.",
@@ -114,7 +134,13 @@
       "action": "Extended",
       "range": "Large Zone",
       "resist": "No",
-      "tags": ["AREA", "GLAMOUR", "MASK", "BOND", "TRUTH"],
+      "tags": [
+        "AREA",
+        "GLAMOUR",
+        "MASK",
+        "BOND",
+        "TRUTH"
+      ],
       "materials": "Hand-made masks for all participants, enchanted music, and a cup of wine blessed (or cursed) with a whispered lie.",
       "effect": "Create a lasting glamoured court — a masquerade that persists for the duration of the event. All social magic (Sway, Performance, Deception) gains +1 Effect. Outsiders who enter suffer –1 die to perceive truths, read emotions, or see through disguises. Any promise made while masked is magically witnessed; breaking it inflicts 2 SB and the mask of the oath-breaker cracks (visible to all).",
       "push_it": "The masquerade persists between scenes for the rest of the session. Cost: Mark +3 Obligation (total +5) or Mark +1 Fatigue.",

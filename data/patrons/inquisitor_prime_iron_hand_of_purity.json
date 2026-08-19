@@ -37,7 +37,7 @@
       "care": "This creature requires no food, but it must be present at a daily prayer or rite of purification. If neglected for a week, it becomes Compromised (it growls at strangers or sings discordantly, imposing –1 die on all social rolls with those suspected of impurity for its bearer)."
     },
     "codex": {
-      "description": "The Codex of the Inquisitor Prime is never a book of common knowledge. It may be an iron-bound ledger with pages of sanctified vellum, each Rite sealed with a drop of wax; a slate tablet that records only the names of the damned; or a scroll of censure that burns heretical text upon reading.",
+      "description": "A Codex sworn to the Inquisitor Prime is never a book of common knowledge. It may be an iron-bound ledger with pages of sanctified vellum, each Rite sealed with a drop of wax; a slate tablet that records only the names of the damned; or a scroll of censure that burns heretical text upon reading.",
       "upkeep": "Because the Prime's laws are absolute, the Codex requires upkeep: the Runekeeper must spend an hour each week reciting each Rite aloud in a purified space, or the seals weaken (treat as Compromised until re-consecrated)."
     }
   },
@@ -55,7 +55,11 @@
       "action": "Scene",
       "range": "Self",
       "resist": "No",
-      "tags": ["PROTECT", "RADIANT", "FEAR"],
+      "tags": [
+        "PROTECT",
+        "RADIANT",
+        "FEAR"
+      ],
       "materials": "Ash from a burned grimoire or sigil-scarred candle.",
       "effect": "Gain +2 dice to resist supernatural influence (fear, charm, possession) and +1 Armor vs. magical attacks. Undead/demonic foes suffer –1 die against you.",
       "push_it": "Extend the effect to allies in Near range, but supernatural entities sense you immediately; mark 1 SB (Diamonds). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -71,7 +75,10 @@
       "action": "Scene",
       "range": "Self",
       "resist": "No",
-      "tags": ["TRUTH", "RADIANT"],
+      "tags": [
+        "TRUTH",
+        "RADIANT"
+      ],
       "materials": "Silver dust stirred into holy water.",
       "effect": "+2 dice to Investigate/Insight when spotting illusions, glamours, or magical deception. Cannot be surprised by sorcery this scene.",
       "push_it": "For one exchange, pierce all illusions; mark 1 SB (Hearts). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -87,7 +94,11 @@
       "action": "Instant",
       "range": "Near",
       "resist": "No",
-      "tags": ["DISPEL", "RADIANT", "FORCE"],
+      "tags": [
+        "DISPEL",
+        "RADIANT",
+        "FORCE"
+      ],
       "materials": "A shard of blessed mirror and consecrated oil.",
       "effect": "Target a magical effect (ward, curse, enchantment). Test DV = Tier. On Hit: Dispel. On Partial: Weaken. On Miss: The effect lashes back, generating 1 SB.",
       "push_it": "Dispel absolutely and trace its caster; mark +1 Obligation and 1 SB (Spades). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -103,7 +114,12 @@
       "action": "Extended",
       "range": "Zone",
       "resist": "No",
-      "tags": ["WARD", "AREA", "FORCE", "SANCTUARY"],
+      "tags": [
+        "WARD",
+        "AREA",
+        "FORCE",
+        "SANCTUARY"
+      ],
       "materials": "Relics from three rival faiths, salt, crushed gemstones.",
       "effect": "Consecrate an area. Supernatural entities must pass Spirit+Resolve (DV 4) to enter. Undead/demonic suffer –2 dice inside. The site gains the [WARD] tag.",
       "push_it": "Permanently sanctify a larger area, but start a Magical Dead Zone [6] timer and mark +2 Obligation. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
@@ -119,7 +135,12 @@
       "action": "Scene",
       "range": "Touch",
       "resist": "No",
-      "tags": ["DEATH", "BANISH", "FORCE", "FEAR"],
+      "tags": [
+        "DEATH",
+        "BANISH",
+        "FORCE",
+        "FEAR"
+      ],
       "materials": "Ash from a destroyed spellbook, martyr's water, and the target's true name.",
       "effect": "Attempt to annihilate one supernatural foe. Target tests Spirit+Resolve (DV 5). On Fail: destroyed outright. On Success: suffer Harm 3 and –2 dice this scene. Once per target only.",
       "push_it": "Absolute destruction leaves behind Sanctified Ground; mark 2 SB (Diamonds). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",

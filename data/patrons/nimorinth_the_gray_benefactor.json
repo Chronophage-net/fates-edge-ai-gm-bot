@@ -27,11 +27,11 @@
   ],
   "runekeeper_options": {
     "thiasos": {
-      "description": "A Runekeeper sworn to Nimorinth does not bind a familiar of flesh and blood. Their Thiasos is a creature of silence and gaps: a moth that flies only in the blind spot of the eye, a spider that weaves webs only in unlit corners, a mouse that is only ever heard, never seen, or a patch of shadow that moves against the light.",
+      "description": "Nimorinth does not ask a Runekeeper to bind a familiar of flesh and blood. Their Thiasos is a creature of silence and gaps: a moth that flies only in the blind spot of the eye, a spider that weaves webs only in unlit corners, a mouse that is only ever heard, never seen, or a patch of shadow that moves against the light.",
       "care": "This creature requires no food, but it must be offered a silence daily — a minute of absolute stillness and quiet contemplation from its bearer. If neglected for a week, it becomes Compromised (it fades, imposing –1 die on all Stealth or Subterfuge rolls for its bearer until a significant silence is given)."
     },
     "codex": {
-      "description": "The Codex of Nimorinth is never a whole book. It may be a collection of blank vellum pages that reveal writing only when held in a specific type of shadow, a slate that must be dusted with ash from an extinguished lamp, or a key that unlocks a non-existent drawer.",
+      "description": "Nimorinth's Codex is never a whole book. It may be a collection of blank vellum pages that reveal writing only when held in a specific type of shadow, a slate that must be dusted with ash from an extinguished lamp, or a key that unlocks a non-existent drawer.",
       "upkeep": "Because Nimorinth's truths are written in omissions, the Codex requires upkeep: the Runekeeper must spend an hour each week in a truly liminal space (a doorway at twilight, a forgotten attic, a crossroads) and erase one of their own memories onto its pages, or the symbols fade (treat as Compromised until a suitable omission is made)."
     }
   },
@@ -49,7 +49,10 @@
       "action": "Scene",
       "range": "Self",
       "resist": "No",
-      "tags": ["GAP", "STEALTH"],
+      "tags": [
+        "GAP",
+        "STEALTH"
+      ],
       "materials": "An inward-opening door; a held breath to the count of three.",
       "effect": "Create one Gap token — a specific absence that others ignore (a watcher forgets a latch, a ledger skips a line, a patrol overlooks a side door). You gain +1 die when exploiting this gap. An ally may spend 1 Boon to treat one failed roll as 'never happened' (retcon of that action only).",
       "push_it": "The gap becomes contagious: nearby like-absences echo. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -65,7 +68,10 @@
       "action": "Scene",
       "range": "Touch",
       "resist": "No",
-      "tags": ["MEMORY", "TRUTH"],
+      "tags": [
+        "MEMORY",
+        "TRUTH"
+      ],
       "materials": "A silver thread tied fingertip-to-fingertip; a whispered 'I was there.'",
       "effect": "Hold another's specific memory as collateral. Gain +1 die on actions grounded in that memory's context. Memory returns slightly out of order unless 'paid in full' with a truthful account before witnesses.",
       "push_it": "Hold two memories simultaneously; mark +1 Obligation as temporal dissonance builds. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -81,7 +87,10 @@
       "action": "Scene",
       "range": "Near",
       "resist": "No",
-      "tags": ["OMISSION", "TRUTH"],
+      "tags": [
+        "OMISSION",
+        "TRUTH"
+      ],
       "materials": "A document with space for amendment; a shadowless gray feather.",
       "effect": "Cause one clause, name, or line to vanish from a witnessed text. DV = complexity/scope. On success, the erasure is seamless and socially 'always so.'",
       "push_it": "The omission propagates to directly-referenced copies; mark +1 SB (Diamonds) as reality adjusts. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -97,7 +106,10 @@
       "action": "Scene",
       "range": "Zone",
       "resist": "No",
-      "tags": ["PASSAGE", "TRAVEL"],
+      "tags": [
+        "PASSAGE",
+        "TRAVEL"
+      ],
       "materials": "Two duskmarks set at twilight; an unlit pipe that smokes by itself.",
       "effect": "Declare safe-conduct between the paired thresholds. Allies gain +2 dice to Traverse; enemies suffer -1 die to intercept within the lane. A counter-witness at either end can block.",
       "push_it": "Passage becomes bidirectional for the scene; mark +1 Obligation — the path remembers you. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -113,7 +125,10 @@
       "action": "Scene",
       "range": "Zone",
       "resist": "No",
-      "tags": ["VEIL", "ILLUSION"],
+      "tags": [
+        "VEIL",
+        "ILLUSION"
+      ],
       "materials": "A room with four doors; a mirror that reflects only doorways.",
       "effect": "Reverse directions within the space; quiet a name until dawn; align exits with intent rather than map. Zone gains the [VEIL] tag: +2 dice to misdirection; -2 dice to direct confrontation.",
       "push_it": "Make it permanent for this site; start Threshold Drift [6] as the place migrates from the world. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",

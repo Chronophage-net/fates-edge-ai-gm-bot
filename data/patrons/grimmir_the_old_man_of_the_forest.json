@@ -32,11 +32,11 @@
   ],
   "runekeeper_options": {
     "thiasos": {
-      "description": "A Runekeeper sworn to Grimmir does not bind a tame creature of hearth and home—they partner with a wild spirit of the forest. Their Thiasos is a small beast or mythological creature of the wild wood: a pine marten with eyes like amber, a raven that knows the migration routes of every bird, a fox with a single white paw that leaves no prints in snow, a toad that hibernates in rotten logs and sings at the first thaw, or a stag-calf with antlers budding like spring shoots.",
+      "description": "Grimmir keeps no Runekeeper bound to a tame creature of hearth and home—they partner with a wild spirit of the forest. Their Thiasos is a small beast or mythological creature of the wild wood: a pine marten with eyes like amber, a raven that knows the migration routes of every bird, a fox with a single white paw that leaves no prints in snow, a toad that hibernates in rotten logs and sings at the first thaw, or a stag-calf with antlers budding like spring shoots.",
       "care": "This creature requires no food in the usual sense, but it must be allowed to roam freely in unspoiled nature each day. If confined for more than a day, it becomes Compromised (it scratches at doors, refuses to eat, and its coat grows dull; its bearer loses the benefit of Seasonal Sense until it is released)."
     },
     "codex": {
-      "description": "The Codex of Grimmir is never a book of paper and ink. It may be a slab of slate carved with seasonal runes that frost over in winter, a bundle of bark scrolls sealed with pine resin, a set of knotted cords woven from the hair of a wild boar, or the hollowed horn of a stag filled with charcoal and ash.",
+      "description": "You will not find Grimmir's Codex bound as a book of paper and ink. It may be a slab of slate carved with seasonal runes that frost over in winter, a bundle of bark scrolls sealed with pine resin, a set of knotted cords woven from the hair of a wild boar, or the hollowed horn of a stag filled with charcoal and ash.",
       "upkeep": "Because the wild resists being fixed in writing, the Codex requires upkeep: the Runekeeper must spend an hour each week in a natural place, re-carving or re-knotting the Rites by memory, or the symbols fade (treat as Compromised until restored under open sky)."
     }
   },
@@ -54,7 +54,11 @@
       "action": "Scene",
       "range": "Touch",
       "resist": "Yes",
-      "tags": ["SACRIFICE", "NATURE", "STEALTH"],
+      "tags": [
+        "SACRIFICE",
+        "NATURE",
+        "STEALTH"
+      ],
       "materials": "A drop of your own blood (1 Fatigue) or the blood of a freshly killed animal.",
       "effect": "The forest accepts your offering. For the remainder of the scene, you gain +1 die to all Survival and Stealth rolls in natural terrain. Additionally, you may ask the GM one yes/no question about a threat hidden in the wilderness (e.g., 'Is there a predator watching us?').",
       "push_it": "The offering is accepted with hunger—you gain +2 dice instead, but you must leave a visible token (a hair, a scrap of clothing) on the ground. That token can be used by the GM later as a sympathetic link (spend 1 SB to have an animal or spirit track you). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -70,7 +74,10 @@
       "action": "Scene",
       "range": "Zone",
       "resist": "No",
-      "tags": ["TRUTH", "NATURE"],
+      "tags": [
+        "TRUTH",
+        "NATURE"
+      ],
       "materials": "Soil from a grave or a crossroads, held in the mouth.",
       "effect": "You listen to the memory of the land. Gain +2 dice to Investigation or Lore when seeking to understand what happened in a natural place—a death, a ritual, a violation of the wild. The GM must give you a truthful but cryptic answer.",
       "push_it": "The roots speak too clearly. You see a vision of the event, but it leaves you shaken: mark Fatigue 1 and the GM gains 1 SB. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -86,7 +93,11 @@
       "action": "Scene",
       "range": "Near",
       "resist": "Yes",
-      "tags": ["CURSE", "TERRAIN", "FEAR"],
+      "tags": [
+        "CURSE",
+        "TERRAIN",
+        "FEAR"
+      ],
       "materials": "A knotted cord woven from thorns and hair.",
       "effect": "The forest bends against your enemies. Choose a single target within Near. For the remainder of the scene, all their navigation, tracking, and movement rolls suffer –1 die as roots trip them, branches block their way, and the path turns subtly wrong.",
       "push_it": "The curse also causes the target to suffer 1 Fatigue as they struggle against the hostile woods. Mark 1 SB (Diamonds) as the forest's malice becomes visible. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -102,7 +113,12 @@
       "action": "Instant",
       "range": "Touch",
       "resist": "No",
-      "tags": ["CONSUME", "HEAL", "BOOST", "FEAR"],
+      "tags": [
+        "CONSUME",
+        "HEAL",
+        "BOOST",
+        "FEAR"
+      ],
       "materials": "The fresh heart of an animal (or a sentient creature, if you dare), still warm.",
       "effect": "You consume the heart raw. Gain one of the following: Heal 1 Harm (the heart's vitality transfers to you); Gain a +2 die bonus on your next physical action (the heart's strength); Learn a secret the creature knew in life (GM discretion; the heart whispers as you eat). After the rite, you are marked—animals within Near range are nervous around you (disadvantage on animal handling) for one scene.",
       "push_it": "Eat the heart of a thinking creature. The benefit is doubled, but you gain a Hunger Condition (must eat another heart within a month or suffer 1 Fatigue per week). The GM gains 2 SB. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -118,7 +134,12 @@
       "action": "Extended",
       "range": "Zone",
       "resist": "Yes",
-      "tags": ["HEAL", "AREA", "NATURE", "TERRAIN"],
+      "tags": [
+        "HEAL",
+        "AREA",
+        "NATURE",
+        "TERRAIN"
+      ],
       "materials": "A sacred grove-site, a circle of stones, an offering of blood or seed.",
       "effect": "Heal a blighted place or quicken a damaged ecosystem. Clear taint, restore fertility, awaken dormant forces. Gain +2 dice to related Lore/Nature actions in the region. Start an Ecosystem Restoration [8] timer.",
       "push_it": "The cure spreads to adjacent areas but unbalances another; mark 2 SB (Diamonds). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
@@ -134,7 +155,12 @@
       "action": "Scene",
       "range": "Self/Zone",
       "resist": "Yes",
-      "tags": ["TRANSFORM", "NATURE", "BOOST", "PROTECT"],
+      "tags": [
+        "TRANSFORM",
+        "NATURE",
+        "BOOST",
+        "PROTECT"
+      ],
       "materials": "A circlet of woven branches, antlers, and seasonal tokens.",
       "effect": "Become an avatar of the cycle. Choose two: Seasonal Mastery (+2 dice to all actions keyed to the current season: spring—healing and growth; summer—strength and harvest; autumn—preservation and preparation; winter—endurance and hiding); Verdant Command (command plant life in Near automatically); Cycle's Healing (remove one Condition or downgrade Harm by one level); Growth's Protection (allies gain +1 Armor from natural cover). Begin a Seasonal Avatar [6] timer.",
       "push_it": "Extend the blessings to all present; mark +2 Obligation and gain Seasonal Attunement (see Corruption). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",

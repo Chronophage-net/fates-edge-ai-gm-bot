@@ -27,11 +27,11 @@
   ],
   "runekeeper_options": {
     "thiasos": {
-      "description": "A Runekeeper sworn to Venara does not bind a creature of claw or fang — they bind a companion of quiet devotion. Their Thiasos is a small being of constancy: a pair of lovebirds that preen each other's feathers in silence, a stone that stays warm when held between two palms, a moth whose wings bear the imprint of two touching fingers, or a sprout that grows only when watered by shared tears.",
+      "description": "No Runekeeper sworn to Venara binds a creature of claw or fang — they bind a companion of quiet devotion. Their Thiasos is a small being of constancy: a pair of lovebirds that preen each other's feathers in silence, a stone that stays warm when held between two palms, a moth whose wings bear the imprint of two touching fingers, or a sprout that grows only when watered by shared tears.",
       "care": "This creature requires no food, but it must be given a token of shared presence each day (a pressed flower from a joint walk, a sip from the same cup, a moment of silent eye-contact). If neglected for a week, it becomes Compromised (its aura of calm turns heavy, imposing –1 die on all Sway rolls involving genuine empathy for its bearer until offered a fresh token of mutual presence)."
     },
     "codex": {
-      "description": "The Codex of Venara is never a book of dry ink. It may be a braided cord whose knots tighten with each shared hardship, a collection of mended garments whose patches tell stories of repair, a hollow stone filled with rainwater that reflects both holders' faces, or a journal where each page bears the fingerprints of two hands writing in turn.",
+      "description": "You will not find Venara's Codex bound as a book of dry ink. It may be a braided cord whose knots tighten with each shared hardship, a collection of mended garments whose patches tell stories of repair, a hollow stone filled with rainwater that reflects both holders' faces, or a journal where each page bears the fingerprints of two hands writing in turn.",
       "upkeep": "Because Venara's truths are written in shared silence, the Codex requires upkeep: the Runekeeper must spend an hour each week sitting in quiet companionship with another (speaking no more than three sentences total), or the Rites stored there fade (treat as Compromised until re-silenced)."
     }
   },
@@ -49,7 +49,11 @@
       "action": "Scene",
       "range": "Near",
       "resist": "Yes",
-      "tags": ["BOND", "HEAL", "SECRET"],
+      "tags": [
+        "BOND",
+        "HEAL",
+        "SECRET"
+      ],
       "materials": "Two cups filled from the same source, or a strip of cloth worn against both heartbeats.",
       "effect": "Your quiet presence becomes a balm. Gain +1 die to Sway one target in a supportive conversation. The target feels a subtle lifting of burden; they are more likely to confide a worry.",
       "push_it": "The target feels safe enough to name a fear they've hidden (a secret weakness, a past failure). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -65,7 +69,11 @@
       "action": "Scene",
       "range": "Touch",
       "resist": "No",
-      "tags": ["MEND", "BOND", "READ"],
+      "tags": [
+        "MEND",
+        "BOND",
+        "READ"
+      ],
       "materials": "A torn garment or cloth, needle and thread touched to both participants' lips.",
       "effect": "Create a temporary bond of mutual care. Both parties gain +1 die when aiding each other in acts of nurturing (Medicine, Craft, Sway). The bond manifests as a shared warmth, like sunlight on wool.",
       "push_it": "The bond deepens to shared vulnerability; both sense when the other is hiding pain but suffer –1 die to conceal their own distress. The bond may persist as a gentle ache until the next dusk. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -81,7 +89,12 @@
       "action": "Scene",
       "range": "Near",
       "resist": "Yes",
-      "tags": ["VOW", "BOND", "HEAL", "FEAR"],
+      "tags": [
+        "VOW",
+        "BOND",
+        "HEAL",
+        "FEAR"
+      ],
       "materials": "Token exchanged between parties — a knot tied from both hairs, a cup shared at dawn and dusk, or a stone warmed by mutual grip.",
       "effect": "Forge a promise of enduring presence. Both gain +1 Effect when cooperating in acts of care or healing; breach inflicts 1 SB (Hearts) and a hollow ache where warmth once was. Create a 6-segment Vow Strength timer.",
       "push_it": "Breach also causes a visible withdrawal (a reluctance to meet eyes, a tendency to fade from gatherings, or an inability to accept comfort). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -97,7 +110,11 @@
       "action": "Scene",
       "range": "Self",
       "resist": "No",
-      "tags": ["GLAMOUR", "BOOST", "SOCIAL"],
+      "tags": [
+        "GLAMOUR",
+        "BOOST",
+        "SOCIAL"
+      ],
       "materials": "A blanket shared during storytelling, or a meal prepared while humming a tune of quiet joy.",
       "effect": "Assume an aura of profound calm and magnetic steadiness. Gain +2 dice to Sway or Medicine in settings of distress or vulnerability. Your presence lingers in the memory like a safe harbor remembered in storm.",
       "push_it": "Become the emotional anchor; all who seek comfort gravitate toward you with +1 Effect. Those who confide in you may feel a shiver of relief (Resolve DV 2 to resist sharing deeper burdens). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -113,7 +130,13 @@
       "action": "Extended",
       "range": "Zone",
       "resist": "No",
-      "tags": ["AREA", "COMMAND", "HEAL", "GLAMOUR", "DEBT"],
+      "tags": [
+        "AREA",
+        "COMMAND",
+        "HEAL",
+        "GLAMOUR",
+        "DEBT"
+      ],
       "materials": "A circle of stones, each touched by a participant's tear; a shared loaf broken and passed hand to hand; a vial of water mixed from each person's source.",
       "effect": "You become the heart of a healing zone. For the scene: you gain +1 Effect on all social rolls focused on care or healing, and opponents suffer –1 die when attempting to sow discord. Anyone who attempts to deceive you about their emotional state must test Resolve (DV 4) or reveal a hidden pain. Allies who share food or drink from the communal offerings regain 1 Fatigue. Start a 10-segment Circle of Care timer; when it fills, you may declare one irrevocable communal judgment that the zone's inhabitants will uphold for one month.",
       "push_it": "Newcomers must test Resolve (DV 4) or become briefly inclined toward peace. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",

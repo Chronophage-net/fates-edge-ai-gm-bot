@@ -38,11 +38,11 @@
   ],
   "runekeeper_options": {
     "thiasos": {
-      "description": "A Runekeeper sworn to Livaea does not bind a creature of claw or fang—they bind a companion of allure and intimacy. Their Thiasos is a small being of desire: a white cat that curls around the necks of sleeping lovers, a red songbird that mimics the sigh of a satisfied paramour, a small spider that weaves its web in the shape of a kiss, or a moth whose wings are dusted with a powder that makes the heart race.",
+      "description": "One does not become a Runekeeper of Livaea by binding a creature of claw or fang—they bind a companion of allure and intimacy. Their Thiasos is a small being of desire: a white cat that curls around the necks of sleeping lovers, a red songbird that mimics the sigh of a satisfied paramour, a small spider that weaves its web in the shape of a kiss, or a moth whose wings are dusted with a powder that makes the heart race.",
       "care": "This creature requires no food, but it must be given a token of desire (a lock of hair, a love letter, a single tear) each day. If neglected for a week, it becomes Compromised (its pheromone dust becomes cloying, imposing –1 die on all Sway rolls involving genuine emotion for its bearer until offered a fresh token of passion)."
     },
     "codex": {
-      "description": "The Codex of Livaea is never a book of dry ink. It may be a velvet_bound journal whose pages stain with the reader's own lipstick, a collection of love letters that rewrite themselves each night, a sheaf of pressed flowers whose petals hold whispered secrets, or a mirror that shows not the face but the heart's most secret desire.",
+      "description": "The Codex kept in Livaea's name is never a book of dry ink. It may be a velvet_bound journal whose pages stain with the reader's own lipstick, a collection of love letters that rewrite themselves each night, a sheaf of pressed flowers whose petals hold whispered secrets, or a mirror that shows not the face but the heart's most secret desire.",
       "upkeep": "Because Livaea's truths are written in desire, the Codex requires upkeep: the Runekeeper must spend an hour each week whispering a confession of longing into its pages, or the Rites stored there fade (treat as Compromised until re_seduced)."
     }
   },
@@ -60,7 +60,11 @@
       "action": "Scene",
       "range": "Near",
       "resist": "Yes",
-      "tags": ["MANIPULATION", "BOOST", "SECRET"],
+      "tags": [
+        "MANIPULATION",
+        "BOOST",
+        "SECRET"
+      ],
       "materials": "Silk ribbon touched to lips, or a single strand of hair from a lover's head.",
       "effect": "Your private words carry irresistible charm. Gain +1 die to Sway one target in confidential conversation. The target feels a faint flush of warmth; they are more likely to remember you fondly.",
       "push_it": "The target feels compelled to share a secret in return (a hidden desire, a shameful memory). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -76,7 +80,11 @@
       "action": "Scene",
       "range": "Touch",
       "resist": "No",
-      "tags": ["BOND", "BOOST", "READ"],
+      "tags": [
+        "BOND",
+        "BOOST",
+        "READ"
+      ],
       "materials": "Shared wine, tea, or perfume; a cup from which both drink.",
       "effect": "Create a temporary bond of intimacy. Both parties gain +1 die when aiding each other socially. The bond is faintly sensual – a lingering scent, a remembered caress.",
       "push_it": "The bond deepens to emotional empathy; both sense each other's moods but suffer –1 die to deceive each other. The bond may persist as a faint ache until the next dawn. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -92,7 +100,12 @@
       "action": "Scene",
       "range": "Near",
       "resist": "Yes",
-      "tags": ["VOW", "BOND", "DEBT", "FEAR"],
+      "tags": [
+        "VOW",
+        "BOND",
+        "DEBT",
+        "FEAR"
+      ],
       "materials": "Token exchanged between parties – a ring, a lock of hair, a signed letter, or a knotted ribbon from a lover's garter.",
       "effect": "Forge a magical promise of affection or loyalty. Both gain +1 Effect when cooperating; breach inflicts 1 SB (Hearts) and a phantom kiss of betrayal (the oathbreaker feels a cold emptiness where warmth once was). Create a 6_segment Vow Strength timer.",
       "push_it": "Breach also causes a visible social stain (a blush that will not fade, a nervous tic, or an inability to look certain people in the eye). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -108,7 +121,11 @@
       "action": "Scene",
       "range": "Self",
       "resist": "No",
-      "tags": ["GLAMOUR", "BOOST", "SOCIAL"],
+      "tags": [
+        "GLAMOUR",
+        "BOOST",
+        "SOCIAL"
+      ],
       "materials": "Perfume or cosmetics applied ritually, preferably while humming a tune of longing.",
       "effect": "Assume perfect social poise and an aura of magnetic attraction. Gain +2 dice to Sway or Performance in refined settings. Your presence lingers in the memory like a half_remembered dream.",
       "push_it": "Become the social centerpiece; all attention focuses on you with +1 Effect. Those who meet your gaze may feel a shiver of desire (Resolve DV 2 to ignore). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -124,7 +141,13 @@
       "action": "Extended",
       "range": "Zone",
       "resist": "No",
-      "tags": ["AREA", "COMMAND", "FEAR", "GLAMOUR", "DEBT"],
+      "tags": [
+        "AREA",
+        "COMMAND",
+        "FEAR",
+        "GLAMOUR",
+        "DEBT"
+      ],
       "materials": "A throne draped in scarlet, an assembled court (real or imagined), and a drop of blood from each participant mixed into wine – or a single tear of jealousy.",
       "effect": "You become the social sovereign of the zone. For the scene: (a) You gain +1 Effect on all social rolls, and opponents suffer –1 die. (b) Anyone who attempts to deceive you must test Resolve (DV 4) or reveal a hidden desire – the one thing they crave most in the dark. (c) Allies who drink from the shared cup regain 1 Fatigue (the wine of adoration, warm and sweet on the tongue). Start a 10_segment Court Dominion timer; when it fills, you may declare one irrevocable social judgment (exile, scandal, or a binding oath of fealty) that the zone's inhabitants will enforce for one month. Those who defy it feel a phantom longing for your approval.",
       "push_it": "Newcomers must test Resolve (DV 4) or become briefly devoted – they will follow one simple social command, such as 'introduce me to your patron' or 'whisper your lover's name in my ear.' Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",

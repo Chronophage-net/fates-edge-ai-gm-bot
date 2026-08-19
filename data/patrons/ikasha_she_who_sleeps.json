@@ -4,7 +4,16 @@
   "title": "Ikasha, She Who Sleeps",
   "subtitle": "Latent Potential & Shadow",
   "version": "1.0.0",
-  "tags": ["shadow", "secrets", "thresholds", "ravens", "sleep", "latent", "potential", "darkness"],
+  "tags": [
+    "shadow",
+    "secrets",
+    "thresholds",
+    "ravens",
+    "sleep",
+    "latent",
+    "potential",
+    "darkness"
+  ],
   "lore": {
     "description": "Ikasha is the hush between footfalls, the patience of dark water, the black-feathered watcher at every threshold. In stillness she gathers what might be, at crossroads she whispers of what may yet come. Ravens circle her, bearing secrets between worlds. Her followers learn to move unseen and speak unremembered, becoming shadows that slip between what is and what could be.",
     "followers": "Ikasha does not act; she waits. She does not command; she suggests. Her power is not in force but in possibility – the hidden door, the forgotten name, the secret that, if spoken, would change everything. Those who serve her become keepers of thresholds, listeners at the edge of sleep, and witnesses to the shape of things not yet born. She is the patron of spies, dreamers, outcasts, and those who know that the darkest shadow is also the safest cloak.",
@@ -23,11 +32,11 @@
   ],
   "runekeeper_options": {
     "thiasos": {
-      "description": "A Runekeeper sworn to Ikasha does not bind a familiar of sunlight and noise. Their Thiasos is a small creature of shadow and stillness: a black cat with silver eyes that sees in perfect darkness, a gray mouse that nests in the walls of confessionals, a small owl whose feathers drink the light, a pale moth that appears only when a secret is spoken, or a raven chick with one white feather that knows the way to every crossroads.",
+      "description": "Ikasha's Runekeepers do not bind a familiar of sunlight and noise. Their Thiasos is a small creature of shadow and stillness: a black cat with silver eyes that sees in perfect darkness, a gray mouse that nests in the walls of confessionals, a small owl whose feathers drink the light, a pale moth that appears only when a secret is spoken, or a raven chick with one white feather that knows the way to every crossroads.",
       "care": "This creature requires no food, but it must spend at least an hour each day in absolute darkness (a closed drawer, a shuttered room). If neglected for a week, it becomes Compromised (it grows restless and fidgets in light, imposing –1 die on all Stealth rolls for its bearer until appeased with a secret whispered in the dark)."
     },
     "codex": {
-      "description": "The Codex of Ikasha is never a book read by lamplight. It may be a sheaf of blank pages that fill with whispered secrets only when the reader sleeps, a set of black silk ribbons knotted in patterns that change with the moon, or a slate that shows fading images of thresholds crossed.",
+      "description": "Ikasha keeps no Codex that resembles a book read by lamplight. It may be a sheaf of blank pages that fill with whispered secrets only when the reader sleeps, a set of black silk ribbons knotted in patterns that change with the moon, or a slate that shows fading images of thresholds crossed.",
       "upkeep": "Because Ikasha's truths are written in the unwitnessed, the Codex requires upkeep: the Runekeeper must spend an hour each week in a dark room, letting the Codex rest in shadow, or the Rites stored there become faint (treat as Compromised until re-darkened)."
     }
   },
@@ -45,7 +54,11 @@
       "action": "Action",
       "range": "Self",
       "resist": "Yes (Stealth)",
-      "tags": ["STEALTH", "DECEPTION", "SHADOW"],
+      "tags": [
+        "STEALTH",
+        "DECEPTION",
+        "SHADOW"
+      ],
       "materials": "A candle snuffed with a whisper.",
       "effect": "You step into the space between notices. Gain +1 die to a single Stealth or Subterfuge roll, and if you succeed, you may also declare one minor detail 'forgotten' by any observer (e.g., 'they don't remember my face,' 'they left the key in the lock').",
       "push_it": "Extend the effect to one ally within Near, but your shadow lingers independently for a moment – the GM gains 1 SB (Diamonds) as evidence remains. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -61,7 +74,11 @@
       "action": "Scene",
       "range": "Near",
       "resist": "No",
-      "tags": ["OMEN", "NAVIGATION", "SECRET"],
+      "tags": [
+        "OMEN",
+        "NAVIGATION",
+        "SECRET"
+      ],
       "materials": "Three black feathers scattered at a crossing.",
       "effect": "A raven appears, visible only to you and your allies. It offers an omen: you may reroll one failed navigation, pursuit, or escape roll this scene, or force one enemy to hesitate (lose their next minor action).",
       "push_it": "The raven whispers a true secret about the current situation (the GM must answer one yes/no question truthfully). In return, it demands a secret from you – the GM gains 1 SB (Hearts) to spend later as a complication involving that secret. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -77,7 +94,11 @@
       "action": "Action",
       "range": "Self or Ally",
       "resist": "No",
-      "tags": ["SHADOW", "RESTORATION", "BOOST"],
+      "tags": [
+        "SHADOW",
+        "RESTORATION",
+        "BOOST"
+      ],
       "materials": "Water gathered on a moonless night, held in a black vessel.",
       "effect": "Draw on deep reserves of patience and shadow. Choose one: Gain +2 dice on your next Stealth, Deception, or Resolve roll; Clear 1 Fatigue from yourself or a touched ally; Gain one free success on an attempt to escape restraint or pursuit (no roll needed).",
       "push_it": "Apply two benefits instead of one, but you mark +1 Obligation and the GM gains 1 SB (Clubs) as the shadow's debt comes due. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -93,7 +114,12 @@
       "action": "Instant",
       "range": "Near",
       "resist": "Yes",
-      "tags": ["SECRET", "TRUTH", "UNSEAL", "READ"],
+      "tags": [
+        "SECRET",
+        "TRUTH",
+        "UNSEAL",
+        "READ"
+      ],
       "materials": "A key that has never been used, bent in a circle, or a lock of hair / personal token / name written on black paper.",
       "effect": "Choose one: Unlatched Door: Persuade a mundane threshold to open. One lock, seal, or barrier (door, chain, shutter, even a pursuer's grip) opens or loosens as if never secured. Does not work on magical wards. Secret Keeper: Compel a truthful answer to one direct question about a secret the target knows. They resist with Resolve (DV 4). On failure, they answer truthfully (cryptically permitted). On success, they suffer 1 Fatigue from concealment.",
       "push_it": "If you chose Unlatched Door, you may also silence any noise the opening makes, but the threshold 'remembers' you – the GM gains 1 SB (Spades) for a later complication. If you chose Secret Keeper, you also learn a hidden emotion or related secret (GM's choice), but the target learns one of your secrets – the GM gains 1 SB (Hearts) to reveal it later. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -109,7 +135,13 @@
       "action": "Extended",
       "range": "Self",
       "resist": "No",
-      "tags": ["SHADOW", "DREAM", "FATE", "TRANSPORT", "INVISIBLE"],
+      "tags": [
+        "SHADOW",
+        "DREAM",
+        "FATE",
+        "TRANSPORT",
+        "INVISIBLE"
+      ],
       "materials": "Stand in absolute darkness or at a deserted crossroads at midnight; or burn a vivid dream written down.",
       "effect": "You become a living shadow or reach into latent potential. Choose one: Shadow Form: For the scene, you are intangible to mundane harm, can pass through small gaps and thresholds, gain +2 dice to all Stealth rolls, and automatically succeed on one escape attempt. You cannot manipulate objects normally, and you cannot carry items through shadows or bring objects with you when you become intangible. Any items you are carrying fall to the ground (or to the surface you were on) when you assume this form; you may retrieve them after the effect ends. Whisper of Possibility: Once before the next dawn, reroll any single roll after seeing the result (before outcome is declared). The GM gains 1 SB as fate wavers. Hidden Path: You and allies bypass one major obstacle (guarded gate, collapsed bridge, social dead end) as if a secret way had always been there – the GM gains 1 SB as the world adjusts. Unspoken Name: Learn the true name of one creature or place (GM discretion). That name can be used for future rites or bargains.",
       "push_it": "Apply two benefits instead of one. If you chose Shadow Form, you may also interact once with a locked or warded object while intangible, but your next defense roll is Desperate. In all cases, the GM gains 2 SB (the dream's echoes attract attention). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",

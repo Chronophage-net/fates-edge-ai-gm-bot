@@ -27,11 +27,11 @@
   ],
   "runekeeper_options": {
     "thiasos": {
-      "description": "A Runekeeper sworn to Malachai does not bind a familiar of purity or light. Their Thiasos is a small creature touched by her corruption: a black rat with one red eye that gnaws at the bars of its cage, a crow with a broken feather that always points toward the nearest corpse, a toad that secretes a toxin causing fever dreams, a small bat that drinks blood from a silver dish, or a moth whose wing dust leaves a rash that itches for a week.",
+      "description": "A Runekeeper who serves Malachai does not bind a familiar of purity or light. Their Thiasos is a small creature touched by her corruption: a black rat with one red eye that gnaws at the bars of its cage, a crow with a broken feather that always points toward the nearest corpse, a toad that secretes a toxin causing fever dreams, a small bat that drinks blood from a silver dish, or a moth whose wing dust leaves a rash that itches for a week.",
       "care": "This creature requires no food, but it must be given a small sacrifice of pain (a pinprick, a pinch of salt in a wound) each day. If neglected for a week, it becomes Compromised (it grows sullen and its aura of despair thickens, imposing –1 die on all Resolve rolls for its bearer until a proper curse is laid)."
     },
     "codex": {
-      "description": "The Codex of Malachai is never a book of hope. It may be a chain of iron links, each etched with a curse; a box of cracked bells that toll when a Rite is spoken; a scroll of skin from a sinner who died unshriven; or a set of silver nails driven into a board, each nail a promise broken.",
+      "description": "No Codex of Malachai takes the form of a book of hope. It may be a chain of iron links, each etched with a curse; a box of cracked bells that toll when a Rite is spoken; a scroll of skin from a sinner who died unshriven; or a set of silver nails driven into a board, each nail a promise broken.",
       "upkeep": "Because Malachai's truths are written in pain, the Codex requires upkeep: the Runekeeper must spend an hour each week pricking their finger and letting a drop of blood fall onto each nail (or each bell), or the curses stored there become faint (treat as Compromised until re-blooded)."
     }
   },
@@ -49,7 +49,12 @@
       "action": "Scene",
       "range": "Self or Near/Touch",
       "resist": "Yes",
-      "tags": ["CURSE", "BOOST", "DEBT", "FEAR"],
+      "tags": [
+        "CURSE",
+        "BOOST",
+        "DEBT",
+        "FEAR"
+      ],
       "materials": "Blood mixed with sweet wine, or a broken chain link.",
       "effect": "Choose one: Honeyed Curse — target gains +2 dice to their next roll (counts as Triumph); they take 1 Corruption (unresistable). Binding Curse — target gains +1 die to physical actions but suffers Fatigue 1 unless they perform a dominance act (beat a weaker creature, drink blood, break something precious).",
       "push_it": "(Honeyed) Grant +3 dice and auto-Triumph; inflict 2 Corruption instead. (Binding) Grant +2 dice but Fatigue 2; mark 1 SB (Spades) as the curse's hunger grows. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -65,7 +70,11 @@
       "action": "Scene",
       "range": "Near",
       "resist": "Yes",
-      "tags": ["CURSE", "DEBT", "FATE"],
+      "tags": [
+        "CURSE",
+        "DEBT",
+        "FATE"
+      ],
       "materials": "Meteoric iron shard blessed by false light.",
       "effect": "Bestow a gift with a hidden curse. Target gains a significant advantage (e.g., +1 die to all rolls for one scene) but accrues a 4-segment Corruption timer. Each time they use the gift, tick the timer. When full, they suffer a related curse (GM chooses: festering wounds, beastly urges, or the attention of a Collector).",
       "push_it": "The gift is more powerful (+2 dice, or extended duration). The timer advances 2 segments immediately; mark 1 SB (Diamonds). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -81,7 +90,12 @@
       "action": "Scene",
       "range": "Touch",
       "resist": "Yes",
-      "tags": ["CURSE", "TRANSFORM", "DEBT", "FEAR"],
+      "tags": [
+        "CURSE",
+        "TRANSFORM",
+        "DEBT",
+        "FEAR"
+      ],
       "materials": "Holy water mixed with graveyard dust.",
       "effect": "Infect a target with a supernatural condition (vampiric hunger, bestial rage, shadow-bind). Lasts one scene. Start a 6-segment Transformation timer. Each time the target resists feeding or transformation, tick the timer. When full, the condition becomes permanent.",
       "push_it": "The condition becomes permanent immediately; target gains +1 die to relevant actions but is marked by Malachai (a Collector will visit within a week). Mark 1 SB (Hearts). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -97,7 +111,12 @@
       "action": "Extended",
       "range": "Self",
       "resist": "Yes",
-      "tags": ["CURSE", "BOOST", "PRESSURE", "DEBT"],
+      "tags": [
+        "CURSE",
+        "BOOST",
+        "PRESSURE",
+        "DEBT"
+      ],
       "materials": "Manacles worn while speaking her name.",
       "effect": "Channel Malachai directly. Gain +2 dice to one action per beat this scene, but each use marks 1 SB as her influence spreads. Start an 8-segment Corruption's Grip timer. When it fills, a Collector arrives to demand a memory, a name, or a year of your life.",
       "push_it": "+3 dice but mark 2 SB, suffer Fatigue 1, and her voice becomes permanent — you hear whispers of cruel bargains in quiet moments. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
@@ -113,7 +132,12 @@
       "action": "Extended",
       "range": "Zone",
       "resist": "No",
-      "tags": ["CURSE", "AREA", "SACRIFICE", "FATE"],
+      "tags": [
+        "CURSE",
+        "AREA",
+        "SACRIFICE",
+        "FATE"
+      ],
       "materials": "A chapel bell cracked by divine lightning, or a silver coin that cannot be spent.",
       "effect": "Corrupt a sacred space or consecrate a site to Malachai. Within the zone: supernatural effects gain +1 Effect; blessings and healing spells generate +1 SB on a failure; any creature that accepts a gift from Malachai within the zone immediately ticks a Corruption timer twice. Start a 10-segment Divine Perversion timer. When it fills, the site becomes a permanent beacon for the Worn — the ghouls of Zahk'Kozahn.",
       "push_it": "The corruption spreads to adjacent areas; mark 3 SB (Diamonds). Cost: Mark +1 Obligation (total +4) or Mark +1 Fatigue.",

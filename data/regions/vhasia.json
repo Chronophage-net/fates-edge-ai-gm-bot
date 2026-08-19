@@ -982,5 +982,67 @@
     "Dauphin of Vhasia",
     "Ninth Taboo"
   ],
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "named_lineage_cross_reference": {
+    "note": "For GMs running the FIXED (non-random) history from The Fenwood-Everblood Chronicles (reference/expansions/fenwood-everblood-chronicles.tex) instead of rolling on succession_mini_campaign.determine_legitimacy, use this mapping. It resolves the Dauphin question definitively rather than leaving it to the table.",
+    "queen_mother": "Elianor Everblood, twice-married, twice-doubted",
+    "longblood_claimant": "Valdais Longblood, Duke of Adria — son of King Wymund IV, or, per rumor, of Baldvyn the Good",
+    "sack_architect": "Duke Braedyn Fenwood",
+    "sack_witness": "Veralyn \"Demoneye\" Everblood, disguised page, later Warrior Queen of Viterra",
+    "coldmorrow_victim": "Logan Thornhill, killed by Veralyn at Coldmorrow, 832 AR",
+    "coldmorrow_heir": "Ylena of Coldmorrow, Logan's daughter, raised in secret"
+  },
+  "political_factions": [
+    {
+      "id": "longblood-court",
+      "name": "The Longblood Court",
+      "figurehead": "Valdais Longblood",
+      "base": [
+        "Adria",
+        "Ethor"
+      ],
+      "aim": "Prove the western line's legitimacy beyond doubt; unite Vhasia under a strong crown."
+    },
+    {
+      "id": "queen-mothers-household",
+      "name": "The Queen-Mother's Household",
+      "figurehead": "Elianor Everblood",
+      "base": [
+        "Ethor"
+      ],
+      "aim": "Protect the Dauphin (real, false, or useful) until the realm chooses whose blood to believe."
+    },
+    {
+      "id": "fenwood-interest",
+      "name": "The Fenwood Interest",
+      "figurehead": "Duke Braedyn Fenwood",
+      "base": [
+        "Istovar",
+        "Belworth"
+      ],
+      "aim": "Convert a war debt into a permanent seat at every Vhasian table that matters."
+    },
+    {
+      "id": "shadow-court-remnant",
+      "name": "The Shadow-Court Remnant",
+      "figurehead": null,
+      "base": [
+        "scattered",
+        "Renard highlands"
+      ],
+      "aim": "Keep faith with Myrmis in secret; treat the succession crisis as a debt the goddess is collecting."
+    }
+  ],
+  "terrestrial_patrons": [
+    {
+      "name": "Myrmis",
+      "domain": "bargains kept in blood",
+      "note": "Answers prayers in kind, not mercy. Hidden, disproportionately Renard worship."
+    },
+    {
+      "name": "Canray (Kon'reh)",
+      "domain": "clauses, ledgers, patience",
+      "note": "Not a god but a discipline; the Fenwood way of turning debts into leverage."
+    }
+  ]
 }

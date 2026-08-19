@@ -43,7 +43,7 @@
       "care": "This creature requires no food, but it must witness something significant (a lie told, a secret revealed, a confession made) each week. If neglected, it becomes Compromised (it grows silent and still, and its bearer loses +1 die on all Investigation rolls until it is shown a hidden truth)."
     },
     "codex": {
-      "description": "The Codex of the Witness is never a book that can be closed. It may be a set of loose_leaf pages that reorganise themselves each dawn, a scroll that writes itself when no one is looking, a chalkboard that cannot be erased, or a stack of wax tablets that melt and reset each season.",
+      "description": "A Codex sworn to the Witness is never a book that can be closed. It may be a set of loose_leaf pages that reorganise themselves each dawn, a scroll that writes itself when no one is looking, a chalkboard that cannot be erased, or a stack of wax tablets that melt and reset each season.",
       "upkeep": "Because the Witness values accuracy over permanence, the Codex requires upkeep: the Runekeeper must spend an hour each week correcting a single error in its records (a misspelled name, a misdated event) or the Rites stored there become garbled (treat as Compromised until restored)."
     }
   },
@@ -61,7 +61,10 @@
       "action": "Instant",
       "range": "Near",
       "resist": "Yes (Investigation/Notice only)",
-      "tags": ["INVESTIGATION", "TRUTH"],
+      "tags": [
+        "INVESTIGATION",
+        "TRUTH"
+      ],
       "materials": "A trace of the thing to be remembered (hair, dust, a spoken name).",
       "effect": "You follow a hidden thread. Gain +1 die to investigate or notice something directly related to the trace within the current scene. Additionally, you may ask the GM one yes/no question about whether the trace is connected to a specific person, event, or object.",
       "push_it": "Gain +2 dice instead, but mark 1 segment on a Memory Strain Timer [4]. If the timer fills, you gain Fatigue 1 and suffer –1 die on Investigation/Notice rolls until the end of the next scene (the Witness taxes your mind). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -77,7 +80,11 @@
       "action": "Scene",
       "range": "Near",
       "resist": "No",
-      "tags": ["COMMAND", "FEAR", "TRUTH"],
+      "tags": [
+        "COMMAND",
+        "FEAR",
+        "TRUTH"
+      ],
       "materials": "A circle drawn with chalk or string while focusing on a specific person.",
       "effect": "You force a moment of raw honesty. Ask one question of a target within the zone. They may either answer truthfully (the GM must give a true answer, though it may be cryptic) or mark 1 Fatigue and gain a Guilty Tell Condition (–1 die to all social rolls until they confess the truth to someone).",
       "push_it": "The target must also reveal a surface emotion or a forgotten detail (GM's choice). Mark 1 SB (Hearts) as the Witness records the strain. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -93,7 +100,11 @@
       "action": "Instant",
       "range": "Near",
       "resist": "No",
-      "tags": ["READ", "TRUTH", "FEAR"],
+      "tags": [
+        "READ",
+        "TRUTH",
+        "FEAR"
+      ],
       "materials": "A reflective surface (mirror, still water, polished metal) used to focus on the target.",
       "effect": "The target must make a Resolve test (DV 3) or suffer –1 die to rolls involving memory, deception, or resisting interrogation for the scene. If they fail, you may ask one specific, factual question about something they know, and they must answer truthfully or suffer 1 SB (Hearts) as the memory is forcibly drawn forth.",
       "push_it": "If the target fails their Resolve test, you may ask a second question, but the mental intrusion causes them Harm 1 (Stress). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -109,7 +120,11 @@
       "action": "Scene",
       "range": "Near",
       "resist": "No",
-      "tags": ["VOW", "BOND", "TRUTH"],
+      "tags": [
+        "VOW",
+        "BOND",
+        "TRUTH"
+      ],
       "materials": "A document signed by all parties within the zone, or a spoken pact witnessed by the caster.",
       "effect": "Bind the agreement. Any party who knowingly breaches it suffers 1 SB (Hearts) immediately and gains a persistent Oathbreaker's Mark Condition (–1 die on social rolls involving honor, trust, or oaths until amends are made or a significant act redeems them).",
       "push_it": "The bond becomes magically enforced for one specific, crucial clause: violation automatically inflicts Harm 1 (Stress) on the breaker in addition to the SB and Mark. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -125,7 +140,11 @@
       "action": "Instant",
       "range": "Touch",
       "resist": "No",
-      "tags": ["HEAL", "DEBT", "READ"],
+      "tags": [
+        "HEAL",
+        "DEBT",
+        "READ"
+      ],
       "materials": "A written secret (yours or another's) and a candle.",
       "effect": "You transfer the weight of a truth. Choose one: you may remove a Guilty Tell, Haunted, or similar psychological Condition from yourself and give it to a willing or unwilling target (they resist with Resolve DV 4). Alternatively, you may share a secret with an ally; both of you clear 1 Fatigue as the burden is halved.",
       "push_it": "Transfer a Condition without the target's consent (they automatically resist, but on failure they gain it). Mark 1 SB (Spades) as the secret stains them. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -141,7 +160,12 @@
       "action": "Scene",
       "range": "Near",
       "resist": "No",
-      "tags": ["MANIPULATION", "FEAR", "TRUTH", "AREA"],
+      "tags": [
+        "MANIPULATION",
+        "FEAR",
+        "TRUTH",
+        "AREA"
+      ],
       "materials": "A private setting where the target feels safe or is speaking freely.",
       "effect": "The target suffers –2 dice to all attempts to conceal true emotions, intentions, or lies for the scene. Any successful social roll (Sway, Command, Deceit) made by the target generates 1 SB (Hearts) as the effort to maintain falsehoods under the Witness's gaze creates internal discord.",
       "push_it": "You may designate one specific, complex question about the target's motivations, fears, or hidden loyalties. If you successfully use Sway or Insight against them this scene, you automatically learn the answer to that question. The intense scrutiny marks 1 SB (Spades) for you as the Witness's attention lingers. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
@@ -157,7 +181,12 @@
       "action": "Scene",
       "range": "Zone",
       "resist": "No",
-      "tags": ["AREA", "COMMAND", "TRUTH", "FEAR"],
+      "tags": [
+        "AREA",
+        "COMMAND",
+        "TRUTH",
+        "FEAR"
+      ],
       "materials": "A formally called gathering (court, council, family meeting) within the consecrated zone.",
       "effect": "All present must speak their greatest debt, wrongdoing, or hidden truth related to the gathering's purpose. Those who lie or withhold suffer Harm 2 (Stress/Reputation). Truth_tellers gain +2 dice to social actions for the remainder of the scene within the zone.",
       "push_it": "The truth becomes inescapable—even indirect lies or evasions related to the core topic suffer the Harm 2 penalty. The absolute nature of the revelation creates 2 SB (Diamonds) as the disruption to fates and secrets resonates. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",

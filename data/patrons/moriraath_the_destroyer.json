@@ -38,11 +38,11 @@
   ],
   "runekeeper_options": {
     "thiasos": {
-      "description": "A Runekeeper sworn to Mor'iraath does not bind a familiar of hearth and home—they bind a companion of ash and ember. Their Thiasos is a small creature touched by finality: a blackened salamander that sleeps in hot coals, a fire_scorpion whose sting leaves a cauterized wound, a soot_colored moth that leaves ash trails on whatever it touches, or a tiny phoenix fledgling that cannot yet rise from its own ashes (and may one day burn its keeper).",
+      "description": "A Runekeeper bound to Mor'iraath does not keep a familiar of hearth and home—they bind a companion of ash and ember. Their Thiasos is a small creature touched by finality: a blackened salamander that sleeps in hot coals, a fire_scorpion whose sting leaves a cauterized wound, a soot_colored moth that leaves ash trails on whatever it touches, or a tiny phoenix fledgling that cannot yet rise from its own ashes (and may one day burn its keeper).",
       "care": "This creature requires no food, but it must be fed a small amount of combustible material (charcoal, oil, or a burnt offering) each day. If neglected for a week, it becomes Compromised (it smolders constantly, emitting smoke that imposes –1 die on all Stealth rolls and attracts the attention of fire_wardens)."
     },
     "codex": {
-      "description": "The Codex of Mor'iraath is never a book of paper and ink. It may be a slab of fused glass etched with runes of ending, a set of iron plates that must be heated before the Rites become visible, or a scroll of asbestos that burns without being consumed.",
+      "description": "Mor'iraath's Codex is never a book of paper and ink. It may be a slab of fused glass etched with runes of ending, a set of iron plates that must be heated before the Rites become visible, or a scroll of asbestos that burns without being consumed.",
       "upkeep": "Because Mor'iraath's truths are written in ash, the Codex requires upkeep: the Runekeeper must spend an hour each week burning a small offering (a scrap of vellum, a lock of hair) and letting the smoke imprint the Rites anew, or the symbols fade (treat as Compromised until re_burned)."
     }
   },
@@ -60,7 +60,11 @@
       "action": "Instant",
       "range": "Touch",
       "resist": "No",
-      "tags": ["RADIANT", "CONSUME", "ERASURE"],
+      "tags": [
+        "RADIANT",
+        "CONSUME",
+        "ERASURE"
+      ],
       "materials": "The final component of something (last brick, final word, closing signature), or a pinch of ash from a previous fire.",
       "effect": "Cause one small object to be utterly consumed by flame—no remains, no trace, no possibility of reconstruction. Gain +1 die to rolls involving finality or absolute conclusions.",
       "push_it": "The ending creates a beneficial void—gain 1 Boon as space opens for something else; mark 1 SB (Spades) as reality adjusts to the absence. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -76,7 +80,11 @@
       "action": "Scene",
       "range": "Self",
       "resist": "No",
-      "tags": ["TRUTH", "RADIANT", "OMEN"],
+      "tags": [
+        "TRUTH",
+        "RADIANT",
+        "OMEN"
+      ],
       "materials": "A lens of obsidian or fire_scarred glass.",
       "effect": "+2 dice to identify the precise weakness that will cause complete collapse. See the 'breaking point' in any structure, plan, or construct—the spot where a single spark would bring it all down. Your next destructive action against the identified target gains +1 Effect.",
       "push_it": "The gaze becomes prophetic—see three possible endings for one target; choose which occurs, but mark 1 SB (Diamonds) as fate resists your vision. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -92,7 +100,12 @@
       "action": "Scene",
       "range": "Zone",
       "resist": "No",
-      "tags": ["RADIANT", "AREA", "ERASURE", "BARRIER"],
+      "tags": [
+        "RADIANT",
+        "AREA",
+        "ERASURE",
+        "BARRIER"
+      ],
       "materials": "Fuel that was once part of what you intend to destroy (a beam from the building, a lock of hair from the person).",
       "effect": "Create a fire that burns not just substance but essence—what is consumed by this flame never existed. The zone becomes a pyre zone; anything entering risks being marked for erasure. Enemies suffer –2 dice to actions that would preserve or continue anything within the zone.",
       "push_it": "The flame becomes selective—choose what is unmade and what remains; mark +1 Obligation as you assume judgment over existence itself. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -108,7 +121,12 @@
       "action": "Instant",
       "range": "Near",
       "resist": "No",
-      "tags": ["RADIANT", "BANISH", "FATE", "FEAR"],
+      "tags": [
+        "RADIANT",
+        "BANISH",
+        "FATE",
+        "FEAR"
+      ],
       "materials": "The complete destruction of a representation of the target (a lock for a door, a written name for a person, a fragment for a whole), burned to ash.",
       "effect": "The target suffers –2 dice to resist any effect that would cause their non_existence. If they are reduced to Harm 0 by your actions, they are utterly consumed by infernal flame—[BANISH]ed from all realities, never were, never could be.",
       "push_it": "The negation becomes retroactive—the target never existed in your presence; mark 2 SB (Hearts) as the timeline rewrites around their absence. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -124,7 +142,12 @@
       "action": "Scene",
       "range": "Touch",
       "resist": "No",
-      "tags": ["RADIANT", "AREA", "FATE", "DEATH"],
+      "tags": [
+        "RADIANT",
+        "AREA",
+        "FATE",
+        "DEATH"
+      ],
       "materials": "The foundational element of what you wish to unmake (keystone, cornerstone, source code, a written covenant).",
       "effect": "Your touch ignites a cascading dissolution. The target and all things fundamentally connected to it begin immediate combustion, crumbling to ash as if they had never been. Test DV = Complexity. Success: Target and connections cease to exist. Partial: Significant damage, accelerated decay, but some remnants remain. Miss: Backlash; the fire turns on you—mark 2 SB and suffer Harm 1 (Burn).",
       "push_it": "The unraveling becomes contagious—similar things in Near range also ignite; mark +2 Obligation. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
@@ -140,7 +163,12 @@
       "action": "Extended",
       "range": "Zone",
       "resist": "No",
-      "tags": ["RADIANT", "AREA", "ERASURE", "PRESSURE"],
+      "tags": [
+        "RADIANT",
+        "AREA",
+        "ERASURE",
+        "PRESSURE"
+      ],
       "materials": "Complete dedication of the space to Mor'iraath—every flammable object arranged as a funeral offering, and a drop of your own blood to seal the pact.",
       "effect": "The zone becomes a pocket of absolute combustion. Anything that enters is set ablaze, suffering Harm 1 each round (ignores Armor). At the end of each round, they must test Spirit+Resolve (DV 5) or be consumed entirely (cease to exist). The space itself becomes a pyre scar—it remains hot to the touch for a year and a day, and nothing will grow there.",
       "push_it": "The pyre becomes permanent and expands at 1 segment per scene; you suffer Harm 2 (Burn) and mark +3 Obligation as you become partially unmade yourself, your left hand now permanently blackened and smoking. Cost: Mark +1 Obligation (total +4) or Mark +1 Fatigue.",

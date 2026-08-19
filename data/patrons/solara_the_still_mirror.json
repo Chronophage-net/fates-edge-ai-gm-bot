@@ -27,11 +27,11 @@
   ],
   "runekeeper_options": {
     "thiasos": {
-      "description": "A Runekeeper sworn to Solara does not bind a creature of claw or fang — they bind a companion of mutual witnessing. Their Thiasos is a small being of reflection: a still pond that mirrors two faces at once, a pair of glasses with lenses swapped so each sees the world through the other's eyes, a candle whose flame burns equally for two wicks, or a stone that warms only when held by two palms seeking truth.",
+      "description": "To Runekeep for Solara is not to bind a creature of claw or fang — they bind a companion of mutual witnessing. Their Thiasos is a small being of reflection: a still pond that mirrors two faces at once, a pair of glasses with lenses swapped so each sees the world through the other's eyes, a candle whose flame burns equally for two wicks, or a stone that warms only when held by two palms seeking truth.",
       "care": "This creature requires no food, but it must be given a token of shared witness each day (a moment of silent eye-contact where both seek to understand, a truth spoken and heard without defense, a sketch made of the other's likeness while they watch). If neglected for a week, it becomes Compromised (its aura of clarity turns harsh, imposing –1 die on all Sway rolls involving genuine empathy for its bearer until offered a fresh token of mutual witness)."
     },
     "codex": {
-      "description": "The Codex of Solara is never a book of dry ink. It may be a journal whose pages only show text when held to the light at a specific angle, a collection of mirrors that fog unless two people breathe on them together, a loom that weaves a pattern only when two threads pull in truth, or a bell that rings a pure tone only when struck by two hands in unison.",
+      "description": "The Codex kept in Solara's name is never a book of dry ink. It may be a journal whose pages only show text when held to the light at a specific angle, a collection of mirrors that fog unless two people breathe on them together, a loom that weaves a pattern only when two threads pull in truth, or a bell that rings a pure tone only when struck by two hands in unison.",
       "upkeep": "Because Solara's truths are written in shared silence, the Codex requires upkeep: the Runekeeper must spend an hour each week engaged in a ritual of mutual witnessing with another (sitting in silence while seeking to understand, sharing one hard truth and listening without interruption, gazing into eyes until the mask slips), or the Rites stored there fade (treat as Compromised until re-silenced)."
     }
   },
@@ -49,7 +49,11 @@
       "action": "Scene",
       "range": "Near",
       "resist": "Yes",
-      "tags": ["READ", "HEAL", "SECRET"],
+      "tags": [
+        "READ",
+        "HEAL",
+        "SECRET"
+      ],
       "materials": "Two candles lit and left to burn in silence, or a moment of sustained eye-contact seeking understanding (3+ seconds).",
       "effect": "Your presence becomes a witness. Gain +1 die to Sway one target in a moment of mutual regard. The target feels a subtle lifting of isolation; they are more likely to confide a worry.",
       "push_it": "The target feels safe enough to name a fear they've hidden (a secret weakness, a past failure). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -65,7 +69,11 @@
       "action": "Scene",
       "range": "Touch",
       "resist": "No",
-      "tags": ["MEND", "BOND", "READ"],
+      "tags": [
+        "MEND",
+        "BOND",
+        "READ"
+      ],
       "materials": "A cloth for wiping tears, or a token meant to be held while sharing a truth.",
       "effect": "Create a temporary bond of mutual care. Both parties gain +1 die when aiding each other in acts of nurturing or truth-sharing. The bond manifests as a shared warmth, like sunlight on skin after tears.",
       "push_it": "The bond deepens to shared vulnerability; both sense when the other is hiding pain but suffer –1 die to conceal their own distress. The bond may persist as a gentle ache until the next dusk. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -81,7 +89,12 @@
       "action": "Scene",
       "range": "Near",
       "resist": "Yes",
-      "tags": ["VOW", "BOND", "HEAL", "FEAR"],
+      "tags": [
+        "VOW",
+        "BOND",
+        "HEAL",
+        "FEAR"
+      ],
       "materials": "Token exchanged as a promise of truth — a written confession sealed in wax, a stone warmed by mutual grip during a hard truth, or a length of thread cut from both shirts.",
       "effect": "Forge a promise of mutual witnessing. Both gain +1 Effect when cooperating in acts of truth-sharing or healing; breach inflicts 1 SB (Hearts) and a hollowness where recognition once was. Create a 6-segment Vow Strength timer.",
       "push_it": "Breach also causes a visible withdrawal (a reluctance to meet eyes, a tendency to hide behind humor, or an inability to accept comfort). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -97,7 +110,11 @@
       "action": "Scene",
       "range": "Self",
       "resist": "No",
-      "tags": ["GLAMOUR", "BOOST", "SOCIAL"],
+      "tags": [
+        "GLAMOUR",
+        "BOOST",
+        "SOCIAL"
+      ],
       "materials": "A stone held during shared silence, or a garment worn that feels like a second skin.",
       "effect": "Assume an aura of profound calm and magnetic authenticity. Gain +2 dice to Sway or Medicine in settings of distress or vulnerability. Your presence lingers in the memory like a safe harbor remembered in storm.",
       "push_it": "Become the emotional anchor; all who seek comfort gravitate toward you with +1 Effect. Those who confide in you may feel a shiver of relief (Resolve DV 2 to resist sharing deeper burdens). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -113,7 +130,13 @@
       "action": "Extended",
       "range": "Zone",
       "resist": "No",
-      "tags": ["AREA", "COMMAND", "HEAL", "GLAMOUR", "DEBT"],
+      "tags": [
+        "AREA",
+        "COMMAND",
+        "HEAL",
+        "GLAMOUR",
+        "DEBT"
+      ],
       "materials": "A circle of stones, each touched by a participant's tear during a truth shared; a bowl of water where each person has gazed into their reflection; a length of silk woven from threads spun in mutual silence.",
       "effect": "You become the heart of a witnessing zone. For the scene: you gain +1 Effect on all social rolls focused on truth-sharing or healing, and opponents suffer –1 die when attempting to sow deception or distraction. Anyone who attempts to deceive you about their emotional state must test Resolve (DV 4) or reveal a hidden pain (–1 die on their next action as guilt wells up). Allies who share a ritual of mutual witnessing regain 1 Fatigue. Start a 10-segment Circle of Witness timer; when it fills, you may declare one irrevocable communal judgment that the zone's inhabitants will uphold for one month.",
       "push_it": "Newcomers must test Resolve (DV 4) or become briefly inclined toward witnessing. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",

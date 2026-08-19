@@ -15,7 +15,7 @@ You’ll learn:
 The AI GM Bot is a client of the Fate's Edge Socket Server. It connects via WebSocket, claims the GM role, and uses the server’s HTTP API to manage adventure state.
 
 **Key server endpoints (from `server/api.js` and `server/adventure.js`):**
-- `GET /api/rooms/:code/adventure` – get current adventure status (acts, scenes, active encounter, timers, etc.).
+- `GET /api/rooms/:code/adventure` – get current adventure status (acts, scenes, active encounter, timers, plus climax-pacing fields `climaxPadScenes`, `climaxScenesSinceTrigger`, `climaxForced`).
 - `POST /api/rooms/:code/adventure/load` – load a module by ID.
 - `POST /api/rooms/:code/adventure/start` – transition from `planned` to `active`.
 - `POST /api/rooms/:code/adventure/scene` – advance to the next scene (or start the first if none active).
@@ -28,17 +28,37 @@ The AI GM Bot is a client of the Fate's Edge Socket Server. It connects via WebS
 - `POST /api/rooms/:code/adventure/act/append` – append a new act (dynamic growth).
 - `POST /api/rooms/:code/adventure/scene/append` – append a new scene to the current act.
 - `POST /api/rooms/:code/adventure/climax-triggered` – mark that the climax act has begun.
+- `POST /api/rooms/:code/adventure/climax-forced` – mark that a forced climax twist has already been generated and appended (`climaxForced: true`), so this only ever fires once per climax. The bot calls this after appending the twist scene itself, not before — the route records the fact, it doesn't generate anything.
 - `POST /api/rooms/:code/adventure/session/end` – increment the session counter (for dynamic‑growth adventures).
-- `GET /api/rooms/:code/adventure/reference` – get read‑only NPC/location/faction/bestiary data from the current module.
+- `GET /api/rooms/:code/adventure/reference` – get read‑only NPC/location/faction/bestiary data from the current module, plus (if the module declares one) its `persistence` schema — see "Legacy Tracker" in §4.6 below.
 - `GET /api/modules` – list all available modules (adventures) installed on the server.
 
 The bot’s `adventure-director.js` and `adventure-context.js` modules are the glue: they call these endpoints, cache responses, and inject scene context into the LLM’s prompt. The bot also listens for server‑broadcast events (`state-updated`, `crown-spread`, etc.) to keep its local state in sync.
+
+**Adventure status lifecycle**, including the climax-pacing sub-states that only ever apply to dynamic-growth (Crown-Spread-generated) adventures — see [DESIGN.md](DESIGN.md) for the full mechanism:
+
+```mermaid
+stateDiagram-v2
+    [*] --> planned: load / load-custom
+    planned --> active: start
+    active --> planned: reset
+    active --> active: scene / scene/append / act/append
+    active --> completed: last scene of last act finishes
+    completed --> [*]
+
+    state active {
+        [*] --> climaxNotTriggered
+        climaxNotTriggered --> climaxTriggered: dynamic-growth only —\nsessionsPlayed >= climaxAfterSessions\n(climax-triggered)
+        climaxTriggered --> climaxForced: climaxScenesSinceTrigger >= climaxPadScenes\n(climax-forced, fires once)
+        climaxForced --> climaxForced: further scenes in the climax\n(no more forcing this climax)
+    }
+```
 
 ---
 
 ## 2. Adventure Module Structure (JSON)
 
-A module is a JSON file placed in the `campaigns/` folder or installed via the server’s module system. It has the following top‑level fields (see `lantern_at_dusk.json` for a complete example):
+A module is a JSON file placed in the **server's** `data/adventures/` folder (`fates-edge-socket-server/data/adventures/` — not the bot's own `campaigns/`, which only holds a small session-save pointer file, unrelated to adventure content) or installed via the server's module system (`POST /api/modules`). It has the following top‑level fields (see `lantern_at_dusk.json` for a complete example):
 
 ```json
 {
@@ -57,6 +77,11 @@ A module is a JSON file placed in the `campaigns/` folder or installed via the s
   "factions": [...],
   "campaignTimers": [...],
   "knowledge": [...],
+  "persistence": {
+    "schema": "fenwood-legacy-v1",
+    "carryover": [ { "key": "millhouse_standing", "type": "dictionary", "default": "unknown" } ],
+    "reset_on_complete": false
+  },
   "_gmhints": { ... }
 }
 ```
@@ -67,6 +92,8 @@ The bot uses:
 - **`scenes`** – Each scene has `title`, `description` (read‑aloud), `timers` (array of timer definitions), and `encounters` (one or more possible encounters for that scene). Encounters can be *skill‑based* (with `dv`, `position`, and `outcomes` for clean/partial/miss) or *creature‑based* (with `creatureId`, `quantity`, `dv`, `position`, `outcomes`).
 - **`npcs` / `locations` / `factions`** – Reference data that the bot injects into its prompt.
 - **`knowledge`** – Array of secrets with `id`, `gm` (the truth), `player` (what players currently know, often `null`), `revealed` (boolean), and `revealCondition` (guidance for when to reveal). The bot respects `revealed` and will only mention the `gm` text when the secret is revealed.
+- **`persistence`** *(optional)* – The Legacy Tracker's declarative schema for carryover state that survives past this adventure's completion (reputations, favors, lingering consequences). `carryover` is an array of `{ key, type?, default?, max? }` objects, not plain key names — see §4.6 below and [DESIGN.md](DESIGN.md) in the bot repo for exactly how each key's value gets populated at finalize-time (a deterministic Facts/timer/default lookup, not an LLM extraction step). This field works the same way for pre-written modules and Crown-Spread-generated adventures alike.
+- **Climax pacing** (`climaxPadScenes`, `dynamicGrowth`, `climaxAfterSessions`) is **not** something a pre-written module's JSON file can set — these fields only apply to Crown-Spread-generated adventures, and a pre-written module loaded from the server's `data/adventures/` always runs with growth pacing forced off, regardless of what (if anything) its JSON contains for these keys. See [DESIGN.md](DESIGN.md) §2.1.a/§3.2 if you're curious why.
 - **`_gmhints`** – A free‑form object that the bot injects into the LLM prompt as **immutable constraints** – e.g., pacing notes, forbidden early revelations, and NPC secrets. This overrides generic narrative instincts.
 - **`campaignTimers`** – Long‑lasting timers that persist across scenes (e.g., the Barrow Collapse timer).
 
@@ -76,7 +103,7 @@ The bot uses:
 
 ### 3.1. Load the Adventure
 
-Ensure `lantern_at_dusk.json` is in the server’s modules list (or in `campaigns/`). Then, in the chat:
+Ensure `lantern_at_dusk.json` is in the server's `data/adventures/` folder (it ships there by default) or otherwise in the server's modules list. Then, in the chat:
 
 ```
 !gm adventure load lantern_at_dusk
@@ -204,6 +231,26 @@ The bot also understands `[REVEAL "id"]` and `[HIDE "id"]` tags, which are used 
 
 The bot automatically places tokens when it emits `[NPC CREATE ...]` with a role/motivation that suggests faction; you can also do it manually.
 
+### 4.6. Legacy Tracker (Adventure-Specific Carryover)
+
+| Command | Description |
+|---------|-------------|
+| `!gm adventure legacy` | List every legacy schema with tracked state (GM only). |
+| `!gm adventure legacy <schema>` | Show the full carryover values recorded for one schema (GM only). |
+| `!gm adventure legacy <schema> set <key> <value>` | Manually override one carryover value (JSON-parsed when possible, else stored as a plain string) (GM only). |
+| `!gm adventure legacy <schema> clear` | Wipe an entire schema's legacy entry (GM only). |
+
+An adventure module opts into carryover by declaring a `persistence` block (see §2 above). Its
+`schema` id is a stable name shared by any other module meant to read/write the same legacy state
+(e.g. a trilogy where module 2 should know what happened in module 1) — modules that don't share a
+schema id never see each other's legacy state. When an adventure completes, `legacy-tracker.js`
+extracts the values described by the schema and writes them into a small in-memory legacy store
+(capped to the most recent few schemas, oldest evicted first); when a later adventure declaring the
+same schema starts, those values are folded into the AI's system prompt so it can reference past
+consequences without needing the old transcript. `reset_on_complete: true` in the schema clears the
+entry instead of writing it — useful for a one-shot flag that should only ever apply to the very
+next adventure. See [DESIGN.md](DESIGN.md) in the bot repo for the full mechanism.
+
 ---
 
 ## 5. Troubleshooting
@@ -232,7 +279,8 @@ ai-gm-bot-adventure – using structured adventures with the AI GM Bot
 **!gm scene** [*subcommand*]  
 **!gm timer** [*subcommand*]  
 **!gm encounter** [*subcommand*]  
-**!gm knowledge** [*subcommand*]
+**!gm knowledge** [*subcommand*]  
+**!gm adventure legacy** [*schema*] [*set <key> <value>|clear*]
 
 ## DESCRIPTION
 
@@ -322,6 +370,20 @@ Remove a token.
 **`!gm token clear`**  
 Remove all enemy tokens.
 
+### Legacy / Carryover
+
+**`!gm adventure legacy`**  
+List every legacy schema with tracked carryover state.
+
+**`!gm adventure legacy <schema>`**  
+Show the full carryover values recorded for one schema.
+
+**`!gm adventure legacy <schema> set <key> <value>`**  
+Manually override one carryover value.
+
+**`!gm adventure legacy <schema> clear`**  
+Wipe an entire schema's legacy entry.
+
 ## WORKED EXAMPLE: THE LANTERN AT DUSK
 
 1. **Load the module:**  
@@ -353,7 +415,9 @@ Remove all enemy tokens.
 
 ## FILES
 
-- `campaigns/*.json` – Adventure module files.
-- `data/adventures/manifest.json` – Module manifest (optional).
+- **`fates-edge-socket-server/data/adventures/*.json`** – the actual adventure module files the server loads and runs (`ADVENTURES_DIR` in `server/adventure.js`). This is on the **server**, not the bot.
+- `data/adventures/manifest.json` (bot-local) – maps module ids to their full-text doc HTML for `adventure-context.js`'s `getAdventureDoc()`; doesn't drive what the server can load.
+- `campaigns/{ROOM}_code.txt` (bot-local) – **not** adventure content — the bot's own auto-save short-code pointer for `!gm upload`/`!gm load <code>` session persistence (`world-manager.js`'s `CampaignManager`).
 - `server/adventure.js` – Server-side adventure engine.
 - `modules/adventure-director.js`, `modules/adventure-context.js` – Bot integration.
+- `modules/legacy-tracker.js` – Legacy Tracker (adventure-specific carryover); see [DESIGN.md](DESIGN.md).

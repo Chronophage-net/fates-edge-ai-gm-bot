@@ -38,11 +38,11 @@
   ],
   "runekeeper_options": {
     "thiasos": {
-      "description": "A Runekeeper sworn to Maelstraeus does not bind a familiar of whimsy or war—they bind a creature of shrewd calculation and hidden value. Their Thiasos is a small creature that embodies profit and accounting: a rat that counts coins with its paws, a ferret that steals only the most valuable trinkets, a magpie that hoards silver, a small brass spider that weaves ledgers in its web, or a gray mouse that lives in counting_houses and nibbles the corners of unpaid bills.",
+      "description": "Maelstraeus keeps no Runekeeper bound to a familiar of whimsy or war—they bind a creature of shrewd calculation and hidden value. Their Thiasos is a small creature that embodies profit and accounting: a rat that counts coins with its paws, a ferret that steals only the most valuable trinkets, a magpie that hoards silver, a small brass spider that weaves ledgers in its web, or a gray mouse that lives in counting_houses and nibbles the corners of unpaid bills.",
       "care": "This creature requires no food, but it must be given a small coin (or a written debt) each day. If neglected for a week, it becomes Compromised (it hoards the bearer's own valuables, hiding keys or coins, imposing –1 die on all Appraise and Bargain rolls for its bearer until a new coin is offered)."
     },
     "codex": {
-      "description": "The Codex of Maelstraeus is never a book of abstract knowledge. It may be a leather_bound ledger with brass corners, its pages ruled for double_entry accounting; a slate tablet that calculates interest on its own; a set of scales whose pans hold the Rites as weights; or a scroll of parchment that feels heavier when a debt is unpaid.",
+      "description": "Maelstraeus's Codex does not resemble a book of abstract knowledge. It may be a leather_bound ledger with brass corners, its pages ruled for double_entry accounting; a slate tablet that calculates interest on its own; a set of scales whose pans hold the Rites as weights; or a scroll of parchment that feels heavier when a debt is unpaid.",
       "upkeep": "Because Maelstraeus's truths are written in profit, the Codex requires upkeep: the Runekeeper must spend an hour each week balancing its accounts (adding a fictitious entry or correcting a deliberate error), or the numbers become scrambled (treat as Compromised until re_balanced)."
     }
   },
@@ -60,7 +60,11 @@
       "action": "Scene",
       "range": "Near",
       "resist": "No",
-      "tags": ["NEGOTIATION", "DEBT", "BOOST"],
+      "tags": [
+        "NEGOTIATION",
+        "DEBT",
+        "BOOST"
+      ],
       "materials": "A scale where one pan is shaved or weighted.",
       "effect": "Establish a trading ground. All parties gain +1 die to negotiate—but you bank a [4] Hidden Profit timer to spend reducing complications in your favor.",
       "push_it": "Compel one party to reveal their desperation or a hidden term; mark 1 SB (Hearts). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -76,7 +80,12 @@
       "action": "Scene",
       "range": "Self",
       "resist": "No",
-      "tags": ["TRUTH", "VALUE", "BOOST", "BURDEN"],
+      "tags": [
+        "TRUTH",
+        "VALUE",
+        "BOOST",
+        "BURDEN"
+      ],
       "materials": "A coin pressed flat until its face is erased.",
       "effect": "+2 dice to appraise goods, favors, or leverage. Create a [6] Profit Margin timer.",
       "push_it": "Perceive emotional or hidden value as well, but mark +1 Exposure and 1 SB (Diamonds). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -92,7 +101,12 @@
       "action": "Scene",
       "range": "Near/Touch",
       "resist": "No",
-      "tags": ["VOW", "DEBT", "BOND", "FEAR"],
+      "tags": [
+        "VOW",
+        "DEBT",
+        "BOND",
+        "FEAR"
+      ],
       "materials": "Two items, one secretly flawed, or a parchment scorched before stamping.",
       "effect": "Choose one: (a) Secret Advantage: Bind a bargain where you secretly shift one advantage in your favor. Both sides gain +1 Effect if honored. Create a [6] Shrewd Bargain timer. (b) Seared Seal: Bind an agreement with a scorched seal. You gain +1 die to enforce compliance; breakers suffer –2 dice in all dealings until next session. Create an [8] Burned Ledger timer.",
       "push_it": "(Secret Advantage) Breaking terms lashes the weaker party with 1 SB (Hearts/Clubs). (Seared Seal) Breach burns the sigil into the breaker's hand, inflicting Harm 1 and 1 SB (Spades). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -108,7 +122,13 @@
       "action": "Scene",
       "range": "Zone",
       "resist": "No",
-      "tags": ["AREA", "NEGOTIATION", "DEBT", "FEAR", "BOOST"],
+      "tags": [
+        "AREA",
+        "NEGOTIATION",
+        "DEBT",
+        "FEAR",
+        "BOOST"
+      ],
       "materials": "A canopy stitched from debtors' contracts.",
       "effect": "Create a cursed market_zone. Allies gain +1 Effect on bargains and may reroll one failed negotiation. Enemies suffer –1 die to deception. Start a [10] Predatory Market timer.",
       "push_it": "Attract wealthy powers eager—and doomed—to deal. Mark 2 SB (Hearts/Clubs). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
@@ -124,7 +144,12 @@
       "action": "Extended",
       "range": "Self",
       "resist": "No",
-      "tags": ["TRANSFER", "FATE", "DEBT", "SACRIFICE"],
+      "tags": [
+        "TRANSFER",
+        "FATE",
+        "DEBT",
+        "SACRIFICE"
+      ],
       "materials": "A book that writes entries in your blood (a personal ledger, each entry a drop).",
       "effect": "Once per session, convert one resource into another (e.g., Boon → Fatigue, Obligation → SB, Harm → Debt Timer segments). All trades tilt slightly in your favor (you gain +1 die on the next roll related to that resource). Start a [6] Balance Owed timer.",
       "push_it": "Make the trade brutally lopsided (double the conversion rate, e.g., 2 Boons → 2 Fatigue). Create a [6] Cosmic Debt timer and mark 2 SB (Diamonds). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",

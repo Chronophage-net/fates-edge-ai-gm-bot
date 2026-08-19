@@ -38,11 +38,11 @@
   ],
   "runekeeper_options": {
     "thiasos": {
-      "description": "A Runekeeper sworn to the Unbroken Way does not bind a creature of claw and fang. Their Thiasos is a focus crystal—a translucent stone that hums faintly when they are at peace and grows cold when they are in danger. It requires no food, but they must meditate with it for one hour each day.",
+      "description": "A Runekeeper who serves the Unbroken Way does not bind a creature of claw and fang. Their Thiasos is a focus crystal—a translucent stone that hums faintly when they are at peace and grows cold when they are in danger. It requires no food, but they must meditate with it for one hour each day.",
       "care": "If neglected for a week, it becomes Clouded (its hum becomes discordant, imposing –1 die on all Resolve rolls until they spend a scene in silent meditation)."
     },
     "codex": {
-      "description": "The Codex of the Unbroken Way is never a book of spells. It is a meditation manual—a collection of koans, breathing exercises, and ethical precepts. It cannot be read in the usual way; the follower must practice each Rite before it becomes legible.",
+      "description": "the Unbroken Way keeps no Codex that resembles a book of spells. It is a meditation manual—a collection of koans, breathing exercises, and ethical precepts. It cannot be read in the usual way; the follower must practice each Rite before it becomes legible.",
       "upkeep": "Because the Way resists being fixed in ink, the Codex requires upkeep: one hour of practice per week. If neglected, the Rites become faded (treat as Compromised until re_practiced)."
     }
   },
@@ -60,7 +60,10 @@
       "action": "Scene",
       "range": "Self",
       "resist": "No",
-      "tags": ["SENSE", "BOOST"],
+      "tags": [
+        "SENSE",
+        "BOOST"
+      ],
       "materials": "A moment of stillness, eyes closed, breath held for one heartbeat.",
       "effect": "For the next scene, gain +1 die to all Perception and Insight rolls. You feel the presence of living things within Near range and can sense strong emotions (fear, rage, joy) as faint temperature changes.",
       "push_it": "Extend the effect to the full session. Cost: Mark +1 Fatigue.",
@@ -76,7 +79,10 @@
       "action": "Instant",
       "range": "Near",
       "resist": "Yes",
-      "tags": ["FORCE", "PRESSURE"],
+      "tags": [
+        "FORCE",
+        "PRESSURE"
+      ],
       "materials": "An open palm, facing the target.",
       "effect": "A wave of invisible pressure pushes one target within Near back one range band (Close → Near, or Near → Far). The target must test Body + Athletics vs. your Spirit + Lore. On a failure, they are shoved and lose their next Move action.",
       "push_it": "Push two targets instead of one; mark 1 SB (Spades) as the force ripples visibly through the air. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -92,7 +98,10 @@
       "action": "Instant",
       "range": "Near",
       "resist": "Yes",
-      "tags": ["COMMAND", "DECEPTION"],
+      "tags": [
+        "COMMAND",
+        "DECEPTION"
+      ],
       "materials": "Eye contact with the target, sustained for a full heartbeat.",
       "effect": "One willing or unsuspecting target within Near hears a short suggestion (eight words or fewer) that they believe is their own thought. The suggestion cannot be obviously self_destructive or impossible. Test Spirit + Lore vs. Wits + Resolve.",
       "push_it": "The suggestion lasts until the target completes it (instead of a single action). Mark +1 Obligation (total +2). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -108,7 +117,10 @@
       "action": "Scene",
       "range": "Self",
       "resist": "No",
-      "tags": ["WARD", "PROTECT"],
+      "tags": [
+        "WARD",
+        "PROTECT"
+      ],
       "materials": "A weapon in hand, or empty hands held in a defensive posture.",
       "effect": "For the rest of the scene, you may Defend against ranged attacks as a reaction. On a success, the attack misses entirely. On a partial, reduce Harm by 1 (minimum 0). You cannot use this Rite while wearing heavy armor.",
       "push_it": "Extend the protection to one adjacent ally. Cost: Mark +1 Fatigue.",
@@ -124,7 +136,9 @@
       "action": "Instant",
       "range": "Self",
       "resist": "No",
-      "tags": ["STRIKE"],
+      "tags": [
+        "STRIKE"
+      ],
       "materials": "A light blade (one_handed sword, knife, or equivalent), held in a relaxed grip.",
       "effect": "Your next melee attack with a light blade gains +2 dice, ignores 1 Armor, and deals +1 Harm to any creature actively using dark or corrupting powers (GM discretion). The blade seems to move before you do.",
       "push_it": "The attack also disarms the target (they drop one held item). Cost: Mark +1 Fatigue.",
@@ -140,7 +154,11 @@
       "action": "Scene",
       "range": "Zone",
       "resist": "No",
-      "tags": ["BOOST", "AREA", "DEBUFF"],
+      "tags": [
+        "BOOST",
+        "AREA",
+        "DEBUFF"
+      ],
       "materials": "A moment of silence, eyes closed, breath held at the still point.",
       "effect": "For the next scene, all allies within Near gain +1 die to all rolls, and all enemies within Near suffer –1 die to all rolls. You must concentrate (cannot take other actions) or the effect ends at the end of the current exchange.",
       "push_it": "The effect lasts for the full scene even if you act, but you mark 2 Obligation. Cost: Mark +2 Obligation (total +4) or Mark +1 Fatigue.",

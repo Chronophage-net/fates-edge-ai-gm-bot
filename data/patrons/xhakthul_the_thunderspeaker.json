@@ -28,11 +28,11 @@
   ],
   "runekeeper_options": {
     "thiasos": {
-      "description": "A Runekeeper sworn to Xhak'Thul does not bind a quiet familiar. Their Thiasos is a small beast or mythological creature that embodies the storm's wild heart: an electric blue salamander that crackles when touched, a tiny hawk whose feathers hum with static, a mouse that drums its tail in thunderstorms, or a small snake that vibrates like a plucked string before lightning strikes.",
+      "description": "To Runekeep for Xhak'Thul is not to bind a quiet familiar. Their Thiasos is a small beast or mythological creature that embodies the storm's wild heart: an electric blue salamander that crackles when touched, a tiny hawk whose feathers hum with static, a mouse that drums its tail in thunderstorms, or a small snake that vibrates like a plucked string before lightning strikes.",
       "care": "This creature requires no food, but it must feel the open sky and hear thunder each week — a storm, a war drum, or even a slammed door. If neglected for a week, it becomes Compromised (it sparks uncontrollably, imposing –1 die on Stealth rolls for its bearer and occasionally setting small fires)."
     },
     "codex": {
-      "description": "The Codex of Xhak'Thul is never a book of quiet study. It may be a drumhead painted with storm-runes, a set of carved bones that rattle like thunder when shaken, a stone tablet scored by a lightning strike, or a bundle of twigs tied with sinew that snaps like a whip crack when a Rite is invoked.",
+      "description": "One will not find Xhak'Thul's Codex written as a book of quiet study. It may be a drumhead painted with storm-runes, a set of carved bones that rattle like thunder when shaken, a stone tablet scored by a lightning strike, or a bundle of twigs tied with sinew that snaps like a whip crack when a Rite is invoked.",
       "upkeep": "Because the storm resists stillness, the Codex requires upkeep: the Runekeeper must spend an hour each week beating a rhythm into it (or exposing it to loud percussion), or the Rites stored there become sluggish (treat as Compromised until re-awakened)."
     }
   },
@@ -50,7 +50,12 @@
       "action": "Scene",
       "range": "Near",
       "resist": "No",
-      "tags": ["FEAR", "COMMAND", "AREA", "PRESSURE"],
+      "tags": [
+        "FEAR",
+        "COMMAND",
+        "AREA",
+        "PRESSURE"
+      ],
       "materials": "A drum made from storm-felled wood or any suitable improvised percussion.",
       "effect": "Your presence becomes overwhelming. All NPCs within Near range must test Resolve (DV 2) or suffer –1 die to social actions due to awe or terror for the scene. Allies gain +1 die to Intimidation or Command actions.",
       "push_it": "Extend the effect to Far range, but you mark 1 Fatigue and mark 1 SB (Hearts) as your presence becomes difficult to control. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -66,7 +71,11 @@
       "action": "Scene",
       "range": "Self",
       "resist": "No",
-      "tags": ["SPEED", "FEAR", "BOOST"],
+      "tags": [
+        "SPEED",
+        "FEAR",
+        "BOOST"
+      ],
       "materials": "Earth from a lightning strike site, worn boot leather.",
       "effect": "You move with the storm's speed. Gain +2 dice to Athletics or Stealth rolls. The first attack you make this scene gains +1 Effect.",
       "push_it": "Gain +3 dice and move as a blur, becoming difficult to track or clearly remember; mark 1 SB (Diamonds). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -82,7 +91,12 @@
       "action": "Scene",
       "range": "Zone",
       "resist": "No",
-      "tags": ["AREA", "FORCE", "FEAR", "WEATHER"],
+      "tags": [
+        "AREA",
+        "FORCE",
+        "FEAR",
+        "WEATHER"
+      ],
       "materials": "A shard of meteoric iron or metal touched by a severe storm.",
       "effect": "You call a localized, supernatural storm in a Zone. Choose one effect: Lightning Strike: Single target, Harm 2. Wind Blast: Knockback, dispersing arrows or scattering foes. Hail Barrage: Harm 1 (AREA). All enemies in the Zone suffer –1 die to actions from chaos and distraction.",
       "push_it": "Double the chosen effect's scale or potency (e.g., Harm 3, large knockback), but the effect also applies to allies in the Zone; mark 2 SB (Clubs). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
@@ -98,7 +112,12 @@
       "action": "Scene",
       "range": "Self",
       "resist": "No",
-      "tags": ["FEAR", "HEAL", "COMMAND", "BOOST"],
+      "tags": [
+        "FEAR",
+        "HEAL",
+        "COMMAND",
+        "BOOST"
+      ],
       "materials": "Soil or dust from a place of great terror (battlefield, prison, ruins).",
       "effect": "You feed on the fear around you. For each Frightened target in the scene, gain +1 die on your next action (max +3). If you successfully Intimidate a target during this scene, you heal 1 Fatigue.",
       "push_it": "Absorb all palpable fear in the scene, gaining a flat +3 dice bonus to your next action, but mark 1 permanent Scar related to fear. Mark 1 SB (Hearts). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -114,7 +133,13 @@
       "action": "Extended",
       "range": "Zone",
       "resist": "No",
-      "tags": ["AREA", "FEAR", "COMMAND", "TRANSFORM", "WEATHER"],
+      "tags": [
+        "AREA",
+        "FEAR",
+        "COMMAND",
+        "TRANSFORM",
+        "WEATHER"
+      ],
       "materials": "A drum fashioned from lightning-struck wood, with a hide from a beast killed by natural force.",
       "effect": "You become an incarnation of the storm for one scene: Gain +2 dice to rolls based on strength, speed, and intimidation. Your anger echoes as thunder; attacks against you may be answered by lightning (GM decides, usually 1 SB and Harm 1 to the attacker). Enemies must test Resolve at –2 dice to resist Fear effects you create. Start a 6-segment Natural Disasters timer; when it fills, the storm's wrath manifests as a random environmental hazard (landslide, lightning strike, flash flood).",
       "push_it": "The transformation lingers after the scene, and your emotional state causes minor environmental effects (windows rattle, small fires flicker). Mark 2 SB (Diamonds) and advance the timer by 2 segments. Cost: Mark +1 Obligation (total +4) or Mark +1 Fatigue.",

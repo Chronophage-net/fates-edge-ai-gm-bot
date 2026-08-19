@@ -34,11 +34,11 @@
   ],
   "runekeeper_options": {
     "thiasos": {
-      "description": "A Runekeeper sworn to the Pale Shepherd does not bind a creature of fierce guardianship — they bind a companion of gentle thresholds. Their Thiasos is a small beast or being that embodies passage and memory: a gray mouse that nests in graveyards and knows every hidden crack, a moth with dusty wings that lands on the hands of the dying, a small lamb with wool the color of ash that appears only at crossroads, a pale fox that leaves no footprints in fresh snow, or a white-breasted raven that calls once when a soul is ready to cross.",
+      "description": "A Runekeeper who serves the Pale Shepherd does not bind a creature of fierce guardianship — they bind a companion of gentle thresholds. Their Thiasos is a small beast or being that embodies passage and memory: a gray mouse that nests in graveyards and knows every hidden crack, a moth with dusty wings that lands on the hands of the dying, a small lamb with wool the color of ash that appears only at crossroads, a pale fox that leaves no footprints in fresh snow, or a white-breasted raven that calls once when a soul is ready to cross.",
       "care": "This creature requires no food, but it must witness a farewell or a threshold crossing each day (a death, a departure, or a significant goodbye). If neglected for a week, it becomes Compromised (it grows silent, refusing to guide; its bearer suffers –1 die to all rolls involving thresholds or transitions until the creature is shown a proper farewell)."
     },
     "codex": {
-      "description": "The Codex of the Pale Shepherd is never a book of spells alone. It may be a ledger of names written in disappearing ink that reappears only at twilight, a bundle of woolen cords each tied for a soul guided, a series of river stones stacked in a cairn that shifts with each passing, or a smooth slate etched with the outline of a door that never quite closes.",
+      "description": "A Codex sworn to the Pale Shepherd is never a book of spells alone. It may be a ledger of names written in disappearing ink that reappears only at twilight, a bundle of woolen cords each tied for a soul guided, a series of river stones stacked in a cairn that shifts with each passing, or a smooth slate etched with the outline of a door that never quite closes.",
       "upkeep": "Because the Shepherd's truths are written in passage, the Codex requires upkeep: the Runekeeper must spend an hour each week whispering the names of those they have guided, or the Rites stored there become faint (treat as Compromised until re-dedicated at a threshold)."
     }
   },
@@ -56,7 +56,12 @@
       "action": "Scene",
       "range": "Near/Self",
       "resist": "Yes",
-      "tags": ["GUIDANCE", "BOOST", "THRESHOLD", "RISK"],
+      "tags": [
+        "GUIDANCE",
+        "BOOST",
+        "THRESHOLD",
+        "RISK"
+      ],
       "materials": "A small stone from a grave or threshold, warmed in the palm; or a thread from a worn garment and a pinch of dawn mist.",
       "effect": "Choose one: Gentle Guidance: Ease a hard crossing. One target gains +1 die to rolls involving change, decision, or emotional steadiness this scene. Hidden Path: Find or make a way where none is seen. Gain +2 dice to Navigation or Investigation when seeking unconventional routes.",
       "push_it": "(Hidden Path only) The way runs through a true between-place; gain the route but mark 1 SB (Spades) as boundary powers take notice. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -72,7 +77,13 @@
       "action": "Scene",
       "range": "Touch/Zone",
       "resist": "Yes",
-      "tags": ["GUIDANCE", "TRUTH", "HEAL", "AREA", "RISK"],
+      "tags": [
+        "GUIDANCE",
+        "TRUTH",
+        "HEAL",
+        "AREA",
+        "RISK"
+      ],
       "materials": "Black wool and a personal token of the one to be guided; or ash of burned letters and wool shaped into little sheep.",
       "effect": "Choose one: Shadow Passage: Open a brief passage through shadow-realms. The target bypasses one insurmountable obstacle or reaches a place normally shut. Memory Flock: Call shadow-sheep that carry fragments of weighty moments. Retrieve lost details, soothe grief, or glean counsel from what was.",
       "push_it": "(Passage) The passage leaves a scent-trail; mark 1 SB (Clubs) as something may follow. (Flock) The memories ride too close to the skin – participants relive them as their own; mark 1 SB (Hearts). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -88,7 +99,12 @@
       "action": "Instant",
       "range": "Touch",
       "resist": "No",
-      "tags": ["HEAL", "CLEANSE", "DEBT", "FEAR"],
+      "tags": [
+        "HEAL",
+        "CLEANSE",
+        "DEBT",
+        "FEAR"
+      ],
       "materials": "A personal letter never sent, burned in a copper dish.",
       "effect": "Speak a final goodbye to someone who is not present – a lost lover, a dead parent, a friend you wronged. Clear 1 Fatigue and remove one psychological Condition (e.g., Haunted, Guilty) caused by that relationship. The GM gains 1 SB as the words drift into the threshold.",
       "push_it": "The farewell also grants +1 die on your next roll related to moving on from that relationship. Mark +1 Obligation. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -104,7 +120,12 @@
       "action": "Extended",
       "range": "Touch",
       "resist": "Yes",
-      "tags": ["BOND", "FATE", "DEBT", "THRESHOLD"],
+      "tags": [
+        "BOND",
+        "FATE",
+        "DEBT",
+        "THRESHOLD"
+      ],
       "materials": "Two keepsakes: one of what is left, one of what is sought.",
       "effect": "Bind two states, places, or conditions with a felt thread. Those bound can sense across the threshold and lend one another strength during change.",
       "push_it": "The bond sets like iron – permanent and inescapable. Mark +2 Obligation. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",

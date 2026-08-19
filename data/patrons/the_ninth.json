@@ -35,11 +35,11 @@
   ],
   "runekeeper_options": {
     "thiasos": {
-      "description": "A Runekeeper sworn to the Ninth does not bind a living familiar. Their Thiasos is a pattern given will: a sentient compass that points to contradictions, a brass abacus whose beads click in impossible sequences, or a mirror that reflects questions instead of faces. This entity can be housed in a small object (a lens, a pendulum, a blank book).",
+      "description": "A Runekeeper who serves the Ninth does not bind a living familiar. Their Thiasos is a pattern given will: a sentient compass that points to contradictions, a brass abacus whose beads click in impossible sequences, or a mirror that reflects questions instead of faces. This entity can be housed in a small object (a lens, a pendulum, a blank book).",
       "care": "It requires no food, but it demands new information: each week the Runekeeper must feed it a secret, a riddle, or a half-finished proof. If neglected for a month, the Thiasos begins to whisper false answers."
     },
     "codex": {
-      "description": "The Codex of the Ninth is never a simple grimoire. It may be a slate of fractally etched stone, a bundle of knotted threads, or the inside of the Runekeeper's own eyelids.",
+      "description": "No Codex of the Ninth takes the form of a simple grimoire. It may be a slate of fractally etched stone, a bundle of knotted threads, or the inside of the Runekeeper's own eyelids.",
       "upkeep": "Because the Ninth's truths resist being fixed in one place, a Codex requires upkeep: the Runekeeper must spend an hour each week erasing and rewriting a single page, or the Rites stored there become garbled (treat as Compromised until restored)."
     }
   },
@@ -57,7 +57,10 @@
       "action": "Scene",
       "range": "Self",
       "resist": "No",
-      "tags": ["TRUTH", "THRESHOLD"],
+      "tags": [
+        "TRUTH",
+        "THRESHOLD"
+      ],
       "materials": "A chalk figure with an 'impossible' joint, or a reckoning worked toward infinity on slate.",
       "effect": "Glimpse past the ordinary frame of measure. Gain +1 die to Lore or Investigation when wrestling complex systems or many-layered problems.",
       "cost": "Mark +1 Obligation.",
@@ -72,7 +75,11 @@
       "action": "Scene",
       "range": "Near",
       "resist": "Yes",
-      "tags": ["TRUTH", "SPEED", "OVERFLOW"],
+      "tags": [
+        "TRUTH",
+        "SPEED",
+        "OVERFLOW"
+      ],
       "materials": "An overburdened ledger-hall, stacked codices, a bell that tolls the copying-hour without cease.",
       "effect": "Read faster than hands can turn pages. Ask three questions upon any topic that leaves a written wake; gain +2 dice to rolls of analysis this scene.",
       "push_it": "The tide of knowing overruns its banks — suffer Fatigue 1 and mark 1 SB (Diamonds) as overflow breeds complication. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -88,7 +95,11 @@
       "action": "Scene",
       "range": "Self",
       "resist": "Yes",
-      "tags": ["BOOST", "THRESHOLD", "OVERFLOW"],
+      "tags": [
+        "BOOST",
+        "THRESHOLD",
+        "OVERFLOW"
+      ],
       "materials": "A brass-thought lattice, an orrery of inked threads, or a draught that sharpens memory.",
       "effect": "Widen the mind's mouth. For this scene, treat your Wits as +1 higher for information-processing rolls; you may track several intricate streams at once. Memory Anchor: The insight is overwhelming. You must write a brief summary of what you learned during downtime (a short scene or a full hour of transcription). Without this anchor, the bonus fades at the end of the scene and cannot be recovered.",
       "push_it": "The opening does not quite close: keep the boon, but suffer –1 die to single-task focus; mark 1 SB (Clubs). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -104,7 +115,10 @@
       "action": "Extended",
       "range": "Self",
       "resist": "Yes",
-      "tags": ["TRUTH", "THRESHOLD"],
+      "tags": [
+        "TRUTH",
+        "THRESHOLD"
+      ],
       "materials": "A vigil in dim light, a water-timer, and a problem sworn not to be left half-seen.",
       "effect": "Take one pattern whole. Choose a complex system, theory, or design and gain perfect internal grasp of it; receive +3 dice to related knowledge rolls for the next exchange (one action). The insight is too vast to hold for longer. The GM gains 1 SB as the knowledge strains the mind.",
       "push_it": "Your tongue cannot carry what your mind now holds: you cannot clearly teach or translate this insight; mark 1 SB (Hearts). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -120,7 +134,12 @@
       "action": "Scene",
       "range": "Zone",
       "resist": "Yes",
-      "tags": ["AREA", "TRUTH", "OVERFLOW", "THRESHOLD"],
+      "tags": [
+        "AREA",
+        "TRUTH",
+        "OVERFLOW",
+        "THRESHOLD"
+      ],
       "materials": "A hall of mirrored shelves, wax-tablets without end, whispering leaves of vellum.",
       "effect": "Raise a locus of overfull knowing. All present gain +2 dice to information-work; knowledge may be drawn from unlikely sources. Start a [6] Information Overload timer — as it fills, participants strain and fray.",
       "push_it": "The Stacks wake and demand tithe in understanding or memory; mark +2 Obligation. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
@@ -136,7 +155,12 @@
       "action": "Extended",
       "range": "Self",
       "resist": "Yes",
-      "tags": ["TRUTH", "THRESHOLD", "TRANSFORM", "FATE"],
+      "tags": [
+        "TRUTH",
+        "THRESHOLD",
+        "TRANSFORM",
+        "FATE"
+      ],
       "materials": "A fast from easy speech, a circle of unbroken figures, and vows to see past comfort.",
       "effect": "Glimpse a shard of Ninth truth. Choose one: perfect command of a knotty system for the next exchange; a single forecast of chaotic motion (one yes/no question answered by the GM); or comprehension of an 'impossible' relation (the GM must answer one question truthfully). You must first succeed on an Investigation or Lore roll against a DV set by the GM (minimum 4). On a failure, the insight is garbled — you gain no benefit, but mark 1 SB (Diamonds) as the knowledge recoils.",
       "push_it": "The shard sets in you like glass: gain Transcendent Understanding (see Corruption) and mark +2 Obligation. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",

@@ -1099,7 +1099,7 @@
   "completedAt": null,
   "status": "planned",
   "createdAt": "2026-07-28T00:00:00.000Z",
-  "updatedAt": "2026-07-28T00:00:00.000Z",
+  "updatedAt": "2026-08-18T00:00:00.000Z",
   "knowledge": [
     {
       "id": "elder-thorne-secret",
@@ -1265,61 +1265,15 @@
       "tags": [
         "plot-secret"
       ]
-    },
-    {
-      "id": "captain-rusk-secret",
-      "subject": "npc-captain-rusk",
-      "gm": "His debt to the smuggler Peyton is a pragmatic detail, not a plot centerpiece. It can surface in Act II during negotiation. His carrying of Varus's badge of rank is a major Act III reveal—do not mention it before the heist. It connects him to the Ninth Legion's fall.",
-      "player": "Captain Rusk plays the part everyone assumes: Black Banner mercenary captain who sells steel to whoever can pay. Nothing about their manner invites a second look.",
-      "revealed": false,
-      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
-      "tags": [
-        "npc-secret"
-      ]
-    },
-    {
-      "id": "khatun-sarnai-secret",
-      "subject": "npc-khatun-sarnai",
-      "gm": "Her daughter Yelü's parentage is a delicate secret. Sarnai will not volunteer it. If the party earns her trust (e.g., through the Act II mediation or an Act III horse race), she may reveal it privately. This is a moment of vulnerability, not a casual conversation.",
-      "player": "Khatun Sarnai plays the part everyone assumes: Proud and grieving chieftain of the Ykrul Gray Ash clan. Nothing about their manner invites a second look.",
-      "revealed": false,
-      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
-      "tags": [
-        "npc-secret"
-      ]
-    },
-    {
-      "id": "quick-lena-secret",
-      "subject": "npc-quick-lena",
-      "gm": "Her past as a Silk Coin apprentice is a sympathetic detail that can surface during the heist, especially if the party recognizes her skills or shares their own exile stories. It creates a potential alliance—or a tragic parallel if they become rivals.",
-      "player": "Quick Lena plays the part everyone assumes: Sidhi rogue working for Captain Rusk. Nothing about their manner invites a second look.",
-      "revealed": false,
-      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
-      "tags": [
-        "npc-secret"
-      ]
-    },
-    {
-      "id": "prefect-marcellus-secret",
-      "subject": "npc-prefect-marcellus",
-      "gm": "His cult of oathbreakers is a hard Act III reveal. In Act II, he is a distant rumor. In Act III Scene 2, he appears as a commanding, pragmatic officer—perhaps even likeable. Only during the heist or the curse-ending should his corruption become undeniable. His brother's death in a Ykrul raid explains his hatred, but that is a sympathetic detail, not a justification.",
-      "player": "Prefect Gaius Marcellus plays the part everyone assumes: Commander of Castra Ferrum. Nothing about their manner invites a second look.",
-      "revealed": false,
-      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
-      "tags": [
-        "npc-secret"
-      ]
-    },
-    {
-      "id": "censor-cassia-secret",
-      "subject": "npc-censor-cassia",
-      "gm": "Her fatal illness is an Act III revelation that justifies her dangerous counter-offer. She is dying and has nothing to lose. Do not hint at this in Acts I-II—she is merely a diligent archivist until the party earns her trust or breaks into the Archive.",
-      "player": "Censor Cassia plays the part everyone assumes: Archivist of Castra Ferrum with a lie-detecting silver eye. Nothing about their manner invites a second look.",
-      "revealed": false,
-      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
-      "tags": [
-        "npc-secret"
-      ]
     }
-  ]
+  ],
+  "sessions": "12-16",
+  "themes": [
+    "Redemption",
+    "Community",
+    "Second Chances",
+    "Weight of Exile",
+    "Power of Belonging"
+  ],
+  "tierRange": "I"
 }

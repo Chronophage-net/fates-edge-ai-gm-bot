@@ -29,11 +29,11 @@
   ],
   "runekeeper_options": {
     "thiasos": {
-      "description": "A Runekeeper sworn to the Clockwork Monad does not bind a familiar of flesh and blood. Their Thiasos is a small creature that embodies refinement — a brass-plated beetle whose carapace adjusts itself to ambient temperature, a tiny clockwork lizard that repairs its own gears, a mechanical hummingbird that hovers in perfect stillness, or a living gear-moth whose wings are etched with runes of recursion.",
+      "description": "Those who Runekeep for the Clockwork Monad do not bind a familiar of flesh and blood. Their Thiasos is a small creature that embodies refinement — a brass-plated beetle whose carapace adjusts itself to ambient temperature, a tiny clockwork lizard that repairs its own gears, a mechanical hummingbird that hovers in perfect stillness, or a living gear-moth whose wings are etched with runes of recursion.",
       "care": "This creature requires no food, but it needs to be wound, calibrated, or fed small amounts of metal each week. If neglected, it becomes Compromised (it runs fast, then slow, then stops; it may also emit a distressing ticking sound that imposes –1 die on Stealth rolls for its bearer)."
     },
     "codex": {
-      "description": "The Codex of the Monad is never a static book. It may be a stack of iterative blueprints, a notebook of failed attempts with marginalia pointing to the next pass, a set of interchangeable brass plates that reconfigure themselves, or a roll of vellum that rewrites its own circuits.",
+      "description": "You will not find the Monad's Codex bound as a static book. It may be a stack of iterative blueprints, a notebook of failed attempts with marginalia pointing to the next pass, a set of interchangeable brass plates that reconfigure themselves, or a roll of vellum that rewrites its own circuits.",
       "upkeep": "Because the Monad's truths are iterative, the Codex requires upkeep: the Runekeeper must spend an hour each week redrafting at least one diagram or improving a single line of instruction, or the Rites stored there become stale (treat as Compromised until refreshed)."
     }
   },
@@ -51,7 +51,11 @@
       "action": "Scene",
       "range": "Self/Touch",
       "resist": "Yes",
-      "tags": ["CRAFT", "IMPROVE", "ANALYSIS"],
+      "tags": [
+        "CRAFT",
+        "IMPROVE",
+        "ANALYSIS"
+      ],
       "materials": "A flawed or incomplete version of the intended item, or a sequence of progressively refined tools.",
       "effect": "Choose one: Enhance Creation: Gain +1 die to Craft/Craft when modifying or extending a device. On success, the piece gains one minor enhancement. Analyze Improvement: Gain +2 dice to Investigation when analyzing how to enhance a design. You perceive the next logical improvement.",
       "push_it": "(Analyze only) Improvement becomes contagious: nearby devices opportunistically optimize; mark 1 SB (Diamonds) as the cascade ripples. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -67,7 +71,11 @@
       "action": "Extended",
       "range": "Touch/Zone",
       "resist": "Yes",
-      "tags": ["CLOCK", "EVOLUTION", "ZONE"],
+      "tags": [
+        "CLOCK",
+        "EVOLUTION",
+        "ZONE"
+      ],
       "materials": "A device with capacity for growth, or a workspace laid out for iterative development.",
       "effect": "Choose one: Self-Optimizing Device: Grant a creation the means to improve itself. Start a [6] Evolution Timer; each use advances it by +1. When full, choose a significant enhancement (Adaptive Core, Recursive Learning, or Synergistic Integration). Progressive Workshop: Create a zone of continuous improvement. All crafting/innovation rolls in the zone gain +1 die. Failed attempts yield +1 Boon toward the next pass.",
       "push_it": "(Device) Apply two enhancements immediately, but advance the timer +2 additional segments. (Workshop) The zone becomes hyper-efficient but exacting; mark 1 SB (Clubs) as perfection demands escalate. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -83,7 +91,11 @@
       "action": "Scene",
       "range": "Touch",
       "resist": "No",
-      "tags": ["TRANSFER", "DEBT", "DEBUFF"],
+      "tags": [
+        "TRANSFER",
+        "DEBT",
+        "DEBUFF"
+      ],
       "materials": "A functioning mechanism and a living creature's hair or blood.",
       "effect": "Transfer inefficiency. You may take 1 Fatigue and reduce the DV of your next crafting or repair roll by 1, or touch an enemy to impose –1 die on their next physical action as their muscles 'optimize' poorly.",
       "push_it": "The transfer becomes permanent: you lose 1 Fatigue capacity (reduce Body by 1 for Fatigue track only) and the target gains a minor compulsive behavior (GM's choice). Cost: Mark +2 Obligation (total +3) or Mark +1 Fatigue.",
@@ -99,7 +111,11 @@
       "action": "Scene",
       "range": "Zone",
       "resist": "Yes",
-      "tags": ["PRESSURE", "AREA", "BOOST"],
+      "tags": [
+        "PRESSURE",
+        "AREA",
+        "BOOST"
+      ],
       "materials": "A dedicated hall of work marked with signs of perpetual return.",
       "effect": "Establish a locus of progressive creation. All Craft/Craft rolls in the zone gain +2 dice; each failure automatically produces one useful insight. Start a [6] Perfection Pressure timer — filling segments increases the zone's demands for greater improvements.",
       "push_it": "The locus becomes a beacon drawing rival makers, patrons, and powers; mark +2 Obligation. Cost: Mark +2 Obligation (total +4) or Mark +1 Fatigue.",
@@ -115,7 +131,12 @@
       "action": "Extended",
       "range": "Self/Touch",
       "resist": "Yes",
-      "tags": ["EVOLUTION", "FATE", "BOOST", "PRESSURE"],
+      "tags": [
+        "EVOLUTION",
+        "FATE",
+        "BOOST",
+        "PRESSURE"
+      ],
       "materials": "The documented lineage of improvements to a single concept.",
       "effect": "Achieve a moment of perfect optimization. Create or elevate one device/system to its theoretical peak. Gain +3 dice to all closely related rolls for one session. Start a [4] Runaway Evolution timer only if instability is introduced.",
       "push_it": "Perfection destabilizes: immediately mark Harm 1 (Stress) and begin [4] Runaway Evolution. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",

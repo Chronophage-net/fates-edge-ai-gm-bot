@@ -35,11 +35,11 @@
   ],
   "runekeeper_options": {
     "thiasos": {
-      "description": "A Runekeeper sworn to the Carrion King does not bind a creature of bright sun or clean air. Their Thiasos is a small creature of the dark, damp places: a carrion beetle that clicks its mandibles in a language of decomposition, a pale fungus that pulses faintly when a death is near, a maggot that pupates into a fly only when its keeper is in danger, a mole that nests in graveyards and knows the taste of every soil, or a toad that hibernates in the hollow of a dead oak and croaks the names of the recently dead.",
+      "description": "To Runekeep for the Carrion King is not to bind a creature of bright sun or clean air. Their Thiasos is a small creature of the dark, damp places: a carrion beetle that clicks its mandibles in a language of decomposition, a pale fungus that pulses faintly when a death is near, a maggot that pupates into a fly only when its keeper is in danger, a mole that nests in graveyards and knows the taste of every soil, or a toad that hibernates in the hollow of a dead oak and croaks the names of the recently dead.",
       "care": "This creature requires no food, but it must be allowed to consume something dead—a fallen leaf, a dead insect, a scrap of hide—each day. If neglected for a week, it becomes Compromised (its shell cracks and its scent turns sweet, imposing –1 die on all Medicine and Survival rolls involving decay or death until it is fed a proper corpse)."
     },
     "codex": {
-      "description": "The Codex of the Carrion King is never a clean book. It may be a grave-soil ledger with entries written in mushroom-ink, a bundle of pressed fungi whose spores form the Rites when disturbed, a skull whose teeth are etched with runes that can only be read by candlelight, or a roll of cured leather that smells of the tannery.",
+      "description": "A Codex sworn to the Carrion King is never a clean book. It may be a grave-soil ledger with entries written in mushroom-ink, a bundle of pressed fungi whose spores form the Rites when disturbed, a skull whose teeth are etched with runes that can only be read by candlelight, or a roll of cured leather that smells of the tannery.",
       "upkeep": "Because decay resists being fixed in writing, the Codex requires upkeep: the Runekeeper must spend an hour each week burying it in fresh soil (or allowing it to rest on a corpse) to refresh its memory, or the Rites stored there become faint (treat as Compromised until re-interred)."
     }
   },
@@ -57,7 +57,11 @@
       "action": "Instant",
       "range": "Touch",
       "resist": "No",
-      "tags": ["CONSUME", "DECAY", "DEBUFF"],
+      "tags": [
+        "CONSUME",
+        "DECAY",
+        "DEBUFF"
+      ],
       "materials": "A handful of soil from a grave, or a scrap of dead matter.",
       "effect": "Touch a small object (size of a lock or smaller) and cause it to decay. A rope snaps, a lock rusts, a leather strap weakens. The target must be mundane (not enchanted). The decay is immediate and permanent. On a miss, the object resists—the GM gains 1 SB as the decay spreads to your own gear.",
       "push_it": "The decay also weakens a metal weapon, imposing –1 die on its next attack. Mark +1 Fatigue.",
@@ -73,7 +77,11 @@
       "action": "Scene",
       "range": "Touch",
       "resist": "No",
-      "tags": ["HEAL", "REST", "BOOST"],
+      "tags": [
+        "HEAL",
+        "REST",
+        "BOOST"
+      ],
       "materials": "A handful of soil or moss, placed on the skin.",
       "effect": "You or a touched ally may rest for an hour as if they had rested a full day. They clear 2 Fatigue and remove one minor Condition (Fatigue, Shaken, or a minor poison). The rest is deep and dreamless; the sleeper wakes with dirt under their nails and a faint taste of earth.",
       "push_it": "The rest also removes one level of Harm (minimum 0). Mark +1 Obligation.",
@@ -89,7 +97,11 @@
       "action": "Scene",
       "range": "Near",
       "resist": "No",
-      "tags": ["SUMMON", "FEAR", "DEBUFF"],
+      "tags": [
+        "SUMMON",
+        "FEAR",
+        "DEBUFF"
+      ],
       "materials": "A piece of raw meat or a bone.",
       "effect": "You summon a swarm of carrion insects (flies, beetles, maggots) that cluster around one target within Near. The target suffers –1 die to all physical actions for the scene as the swarm distracts and disgusts. The swarm can be dispersed by fire, smoke, or a strong wind. On a miss, the swarm turns on you briefly—you suffer –1 die to your next action.",
       "push_it": "The swarm is aggressive and also imposes –1 die to the target's social rolls (others find them repulsive). Mark +1 Obligation.",
@@ -105,7 +117,11 @@
       "action": "Scene",
       "range": "Touch",
       "resist": "Yes",
-      "tags": ["READ", "DEATH", "TRUTH"],
+      "tags": [
+        "READ",
+        "DEATH",
+        "TRUTH"
+      ],
       "materials": "A bone or tooth from a corpse less than a year dead.",
       "effect": "You touch the bone and see the last moments of the person it belonged to. The GM must describe one significant event from the deceased's final day—a face, a word, a choice. If the bone belongs to a creature that died violently, you also learn the manner of their death. On a miss, the vision is garbled or false; the GM gains 1 SB.",
       "push_it": "You also learn the name of the person who killed them (if applicable). Mark +1 Fatigue.",
@@ -121,7 +137,11 @@
       "action": "Scene",
       "range": "Zone",
       "resist": "No",
-      "tags": ["VEIL", "AREA", "PROTECT"],
+      "tags": [
+        "VEIL",
+        "AREA",
+        "PROTECT"
+      ],
       "materials": "A handful of mushroom spores, blown into the air.",
       "effect": "You create a zone of thick, spore-laden air. The zone lasts for the scene. Any creature entering the zone must test Endurance (DV 3) or suffer –1 die to physical actions from coughing and irritation. The spores also mask scents; tracking through the zone suffers –1 die. On a miss, the spores settle on you instead—you suffer –1 die to your next action.",
       "push_it": "The spores also cause mild hallucinations; creatures in the zone suffer –1 die to Perception rolls. Mark +1 Obligation.",
@@ -138,7 +158,12 @@
       "action": "Extended",
       "range": "Zone",
       "resist": "No",
-      "tags": ["CONSUME", "HEAL", "AREA", "SACRIFICE"],
+      "tags": [
+        "CONSUME",
+        "HEAL",
+        "AREA",
+        "SACRIFICE"
+      ],
       "materials": "A body (freshly dead or long buried), a knife, and a clay vessel.",
       "effect": "You harvest the body's remaining vitality. All allies within Near gain +2 dice to their next action and clear 1 Fatigue as the energy of the dead flows through them. The body crumbles to dust afterward, its usefulness spent. On a miss, the ritual fails—the body remains, but the GM gains 2 SB as the dead are not yet willing to give.",
       "push_it": "The harvest also heals 1 Harm to all allies in the zone. Mark +1 Obligation.",
@@ -155,7 +180,12 @@
       "action": "Extended",
       "range": "Self",
       "resist": "No",
-      "tags": ["TRANSFORM", "BOOST", "DEBT", "SACRIFICE"],
+      "tags": [
+        "TRANSFORM",
+        "BOOST",
+        "DEBT",
+        "SACRIFICE"
+      ],
       "materials": "A circlet woven from the bones of a creature you killed yourself, worn for nine days.",
       "effect": "You become an avatar of the cycle of decay and renewal for one scene. You gain: +2 dice to all Medicine and Survival rolls involving death or decay; Immunity to poison and disease; The Carrion's Gaze: Once during the scene, you may force one target to test Spirit+Resolve (DV 4) or be paralysed by the vision of their own death. When the scene ends, you suffer Fatigue 2 as the transformation taxes your body. On a miss, the ritual fails, and you gain a permanent Condition (Rot-Touched: animals shy from you, and you cannot use healing magic on yourself).",
       "push_it": "The transformation lasts for the entire session instead of one scene. Mark +2 Obligation.",

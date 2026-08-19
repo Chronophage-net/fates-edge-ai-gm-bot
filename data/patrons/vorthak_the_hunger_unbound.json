@@ -38,11 +38,11 @@
   ],
   "runekeeper_options": {
     "thiasos": {
-      "description": "A Runekeeper sworn to Vorthak does not bind a familiar of mere companionship—their Thiasos is a small creature of endless appetite: a glossy black beetle that devours rot and grows more lustrous with each meal, a pale grub that pupates into a moth only after consuming something precious, a leech that clings to the shadow of the wounded, a small eel that lives in the bilge and grows an eye each time its master consumes an essence, or a rat with a second mouth that whispers the names of things recently devoured.",
+      "description": "A Runekeeper bound to Vorthak does not keep a familiar of mere companionship—their Thiasos is a small creature of endless appetite: a glossy black beetle that devours rot and grows more lustrous with each meal, a pale grub that pupates into a moth only after consuming something precious, a leech that clings to the shadow of the wounded, a small eel that lives in the bilge and grows an eye each time its master consumes an essence, or a rat with a second mouth that whispers the names of things recently devoured.",
       "care": "This creature requires no food in the ordinary sense, but it must be allowed to consume something significant (a memory, a secret, a physical token) each week. If neglected, it becomes Compromised (it gnaws at its bearer's belongings, consumes a stray thought, and imposes –1 die on Concentration or memory rolls)."
     },
     "codex": {
-      "description": "The Codex of Vorthak is never a static record. It may be a stomach_bound journal written on cured hide, its pages growing thicker each time a Rite is performed; a set of teeth strung on a leather cord, each tooth etched with a consumed spell; or a wooden bowl stained with the residue of a thousand meals, the grain of the wood shifting as new essences are added.",
+      "description": "You will not find Vorthak's Codex bound as a static record. It may be a stomach_bound journal written on cured hide, its pages growing thicker each time a Rite is performed; a set of teeth strung on a leather cord, each tooth etched with a consumed spell; or a wooden bowl stained with the residue of a thousand meals, the grain of the wood shifting as new essences are added.",
       "upkeep": "Because hunger is never satisfied, the Codex requires upkeep: the Runekeeper must spend an hour each week feeding it—a drop of blood, a burnt letter, a morsel of rare meat—or the Rites stored there become faint (treat as Compromised until re_fed)."
     }
   },
@@ -60,7 +60,12 @@
       "action": "Scene",
       "range": "Touch/Self",
       "resist": "Yes",
-      "tags": ["CONSUME", "BOOST", "SENSE", "RISK"],
+      "tags": [
+        "CONSUME",
+        "BOOST",
+        "SENSE",
+        "RISK"
+      ],
       "materials": "A fragment of the thing to be consumed (food, substance, symbol); or an empty vessel or a place where something was devoured.",
       "effect": "Choose one: (a) Metabolic Touch: Absorb an essential trait of the target. Gain +1 die to actions aligned with the absorbed property for one scene. (b) Hunger's Whisper: Sense what in the area may be consumed and the benefit it offers. Gain +1 die to Investigation when seeking consumable resources.",
       "push_it": "(Whisper only) The hunger turns contagious: nearby feel your appetite; mark 1 SB (Clubs). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -76,7 +81,12 @@
       "action": "Scene",
       "range": "Touch",
       "resist": "Yes",
-      "tags": ["CONSUME", "TRANSFORM", "BOOST", "DEBT"],
+      "tags": [
+        "CONSUME",
+        "TRANSFORM",
+        "BOOST",
+        "DEBT"
+      ],
       "materials": "The complete consumption of a significant item (weapon, book, relic).",
       "effect": "Gain one minor property or +1 die to a closely related skill from the consumed item's nature. This benefit lasts for the remainder of the session. If the consumed item is truly legendary (a dragon's heart, a god's tooth, etc.), the GM may allow the absorption to be permanent at their discretion. The item is utterly destroyed.",
       "push_it": "Take a major property instead of a minor one, but gain a permanent Hunger Mark (a visible scar or discoloration that imposes –1 die on social rolls with those who notice it). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -92,7 +102,12 @@
       "action": "Scene",
       "range": "Near",
       "resist": "Yes",
-      "tags": ["CONSUME", "TRANSFORM", "BOOST", "RISK"],
+      "tags": [
+        "CONSUME",
+        "TRANSFORM",
+        "BOOST",
+        "RISK"
+      ],
       "materials": "A personal token or a clear memory of the target.",
       "effect": "Temporarily adopt one aspect of a specific person's nature (a skill, a talent, or a defining trait). Gain +2 dice to actions matching that aspect for the remainder of the scene. The aspect cannot be a Patron_granted Rite or other supernatural ability without the GM's explicit permission.",
       "push_it": "The adoption deepens and clings, lasting for the rest of the session; mark 1 SB (Hearts). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -108,7 +123,13 @@
       "action": "Scene",
       "range": "Zone",
       "resist": "Yes",
-      "tags": ["CONSUME", "AREA", "TRANSFORM", "PRESSURE", "FATE"],
+      "tags": [
+        "CONSUME",
+        "AREA",
+        "TRANSFORM",
+        "PRESSURE",
+        "FATE"
+      ],
       "materials": "A site scarred by great consumption.",
       "effect": "Become a locus of transformative hunger. All present may consume aspects (skills, memories, properties), but each must pass Spirit+Resolve (DV 4) or suffer uncontrolled transformation effects.",
       "push_it": "Some changes become permanent; mark +1 Obligation (total +3). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
@@ -124,7 +145,13 @@
       "action": "Extended",
       "range": "Self",
       "resist": "Yes",
-      "tags": ["TRANSFORM", "BOOST", "SACRIFICE", "FATE", "DEBT"],
+      "tags": [
+        "TRANSFORM",
+        "BOOST",
+        "SACRIFICE",
+        "FATE",
+        "DEBT"
+      ],
       "materials": "The deliberate offering_up of your current limits to Vorthak.",
       "effect": "Consume your own constraints and transform. Choose two of the following benefits, which last for the remainder of the current scene: +1 to any Attribute (temporarily), +2 dice to one skill (temporarily), Immunity to one Condition type (temporarily), One major supernatural capability (temporarily, GM discretion). If you wish to make the benefits permanent, you must accept a permanent cost: lose a Bond, take a permanent Condition, or sacrifice a core identity trait (GM discretion).",
       "push_it": "Take all four benefits (instead of two) for the scene, but lose one core aspect of your original identity permanently; mark Harm 2. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",

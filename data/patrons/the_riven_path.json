@@ -38,11 +38,11 @@
   ],
   "runekeeper_options": {
     "thiasos": {
-      "description": "A Runekeeper sworn to the Riven Path does not bind a living creature of loyalty or service—they bind a fragment of broken power. Their Thiasos is a cracked crystal: a focus that was once whole, now broken, now more. It burns warm when they are angry and grows hot when they are in danger.",
+      "description": "One does not become a Runekeeper of the Riven Path by binding a living creature of loyalty or service—they bind a fragment of broken power. Their Thiasos is a cracked crystal: a focus that was once whole, now broken, now more. It burns warm when they are angry and grows hot when they are in danger.",
       "care": "It requires no food, but they must feed it a drop of their own blood each day (mark 1 Fatigue once per week if neglected). If neglected for a week, it becomes Compromised (it goes cold, imposing –1 die on all Intimidation and Command rolls until they feed it)."
     },
     "codex": {
-      "description": "The Codex of the Riven Path is never a book of prayers. It is a manifesto—a collection of maxims, battle cries, and personal victories. It cannot be read in the usual way; the follower must earn each Rite by proving their worth through combat, theft, or domination.",
+      "description": "You will not find the Riven Path's Codex bound as a book of prayers. It is a manifesto—a collection of maxims, battle cries, and personal victories. It cannot be read in the usual way; the follower must earn each Rite by proving their worth through combat, theft, or domination.",
       "upkeep": "Because the Path's truths are written in acts of dominance, the Codex requires upkeep: the Runekeeper must perform one act of dominance per week (win a spar, intimidate someone, break something that held them back). If neglected, it becomes Compromised (the Rites become illegible until you win a meaningful victory)."
     }
   },
@@ -60,7 +60,10 @@
       "action": "Instant",
       "range": "Self",
       "resist": "No",
-      "tags": ["DRAIN", "FEAR"],
+      "tags": [
+        "DRAIN",
+        "FEAR"
+      ],
       "materials": "A target that is actively frightened or in your power.",
       "effect": "When you cause a creature to become Frightened or gain a fear_based Condition, you immediately clear 1 Fatigue. The terror of others sustains you.",
       "push_it": "Clear 2 Fatigue instead of 1. Mark 1 SB (Hearts) as the fear becomes palpable to nearby observers. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -76,7 +79,10 @@
       "action": "Instant",
       "range": "Near",
       "resist": "Yes",
-      "tags": ["FORCE", "STRANGLE"],
+      "tags": [
+        "FORCE",
+        "STRANGLE"
+      ],
       "materials": "A closed hand, reaching toward the target, fingers slowly tightening.",
       "effect": "One target within Near must test Body + Athletics vs. your Spirit + Lore. On a failure, they take 1 Harm and cannot speak, breathe, or cast spells with verbal components until they break free (test again as an action each round). You must maintain concentration (cannot take other actions) or the effect ends.",
       "push_it": "The target also suffers –1 die to all actions while gripped. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -92,7 +98,11 @@
       "action": "Instant",
       "range": "Close",
       "resist": "Yes",
-      "tags": ["STORM", "STRIKE", "AREA"],
+      "tags": [
+        "STORM",
+        "STRIKE",
+        "AREA"
+      ],
       "materials": "A raised hand, fingers spread, as if holding a sphere of static.",
       "effect": "A cone of arcing lightning lashes from your hand. All targets in Close range must test Body + Athletics (DV 4) or take Harm 2. Those who succeed take Harm 1 instead.",
       "push_it": "The range extends to Near. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -108,7 +118,10 @@
       "action": "Scene",
       "range": "Self",
       "resist": "No",
-      "tags": ["PASSION", "BOOST"],
+      "tags": [
+        "PASSION",
+        "BOOST"
+      ],
       "materials": "A moment of silent, building fury.",
       "effect": "For the next three exchanges, you gain +2 dice to all melee attacks, ignore the first Harm 1 each round, and ignore all Fatigue penalties. However, your Position becomes Desperate (reroll one success) for the duration—you are reckless, not careful. When the rage ends, mark 1 Fatigue.",
       "push_it": "The rage lasts for the full scene. Mark 2 Obligation and mark 1 SB (Diamonds) as collateral damage. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
@@ -124,7 +137,12 @@
       "action": "Instant",
       "range": "Zone",
       "resist": "Yes",
-      "tags": ["FORCE", "AREA", "FEAR", "PRESSURE"],
+      "tags": [
+        "FORCE",
+        "AREA",
+        "FEAR",
+        "PRESSURE"
+      ],
       "materials": "A clenched fist and a whispered promise of pain.",
       "effect": "Invisible pressure descends on all enemies within the zone. Each target must test Body + Endurance (DV 4) or suffer Harm 1 (crushing) and be knocked prone. Even on a successful save, the target suffers 1 Fatigue from the sheer pressure and cannot voluntarily move closer to you until the end of their next turn (they are held at bay).",
       "push_it": "The pressure intensifies to a bone_crushing degree. All enemies in the zone who fail their save instead suffer Harm 2 and are Stunned (lose their next action). Those who succeed still suffer 1 Fatigue and are pushed back one range band. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
@@ -140,7 +158,10 @@
       "action": "Scene",
       "range": "Self",
       "resist": "No",
-      "tags": ["STRIKE", "BRUTAL"],
+      "tags": [
+        "STRIKE",
+        "BRUTAL"
+      ],
       "materials": "A blade or bo staff held in a defensive stance.",
       "effect": "For the rest of the scene, you gain +1 defense dice. Once per round, when you are targeted by a melee attack, you may make a counter_attack against the attacker. You reduce the Harm you would have taken from the triggering attack by 1 (minimum 0). The counter_attack gains +1 die and deals +1 Harm on a hit.",
       "push_it": "The counter_attack also ignores the attacker's Armor. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",

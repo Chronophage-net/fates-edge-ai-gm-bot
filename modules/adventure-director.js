@@ -55,6 +55,7 @@
 
 const adventureContext = require('./adventure-context');
 const { formatColumns, shortTitle } = require('./format-utils');
+const legacyTracker = require('./legacy-tracker'); // NEW: structured cross-adventure carryover -- see that file's header
 
 const MAX_CUSTOM_ADVENTURES = 5;
 const ABANDON_VOTE_RATIO = 0.5; // majority of currently-present players
@@ -64,6 +65,12 @@ const ABANDON_VOTE_RATIO = 0.5; // majority of currently-present players
 // (e.g. asked as a question during Crown Spread setup) if 4 doesn't fit
 // your table's pace.
 const DEFAULT_CLIMAX_AFTER_SESSIONS = 4;
+// NEW: default cap on scene-transitions a dynamic-growth adventure's climax
+// act gets before this director is allowed to force a dramatic turn toward
+// resolution instead of letting the climax stall indefinitely -- see
+// handleSceneComplete()'s climax-pacing check and server/adventure.js's
+// matching DEFAULT_CLIMAX_PAD_SCENES/climaxScenesSinceTrigger tracking.
+const DEFAULT_CLIMAX_PAD_SCENES = 2;
 // Cap on how many completed-adventure summaries to keep for continuity.
 // This is the whole point of archiving summaries instead of raw chat
 // logs -- a handful of paragraphs of history, not megabytes of transcript.
@@ -548,6 +555,7 @@ async function runCrownSpreadFlow(context, regionArg) {
             id: customId,
             dynamicGrowth: true,
             climaxAfterSessions: DEFAULT_CLIMAX_AFTER_SESSIONS,
+            climaxPadScenes: DEFAULT_CLIMAX_PAD_SCENES,
         });
         adventureContext.invalidate();
         resetNarrativeState(context.orchestrator); // NEW: clear stale chat history from any prior adventure
@@ -612,7 +620,7 @@ async function handleAdventureCommand(sender, args, context) {
     // selection/state. `vote abandon` stays open to all players (that's
     // the whole point of it being a vote), and the bare status command
     // (`!gm adventure` with no args) is read-only so it's fine for anyone.
-    const gmOnlySubs = ['choose', 'region', 'crown', 'reset', 'debug'];
+    const gmOnlySubs = ['choose', 'region', 'crown', 'reset', 'debug', 'legacy'];
     if (gmOnlySubs.includes(sub) && context.myRole !== 'gm') {
         return '*Only the Game Master can manage adventure selection. Players can use `!gm adventure vote abandon`.*';
     }
@@ -795,6 +803,43 @@ async function handleAdventureCommand(sender, args, context) {
         return lines.join('\n');
     }
 
+    // ─── !gm adventure legacy [schema] [set <key> <json-value>|clear] ──
+    // NEW: GM transparency/override for the legacy tracker (see
+    // modules/legacy-tracker.js) -- "the GM can see exactly what carries
+    // over and override it if needed" from the design brief. GM-only
+    // (gmOnlySubs above) since legacy values can include GM-facing plot
+    // state a player shouldn't be able to rewrite via chat.
+    //   !gm adventure legacy                       -- list every tracked schema
+    //   !gm adventure legacy <schema>               -- show one schema's values
+    //   !gm adventure legacy <schema> set <key> <v> -- override one key by hand
+    //   !gm adventure legacy <schema> clear         -- wipe that schema's entry
+    if (sub === 'legacy') {
+        const schema = args[1];
+        if (!schema) {
+            return legacyTracker.formatAllLegacy(context.orchestrator);
+        }
+        const action = (args[2] || '').toLowerCase();
+        if (!action) {
+            return legacyTracker.formatLegacyEntry(context.orchestrator, schema);
+        }
+        if (action === 'clear') {
+            const existed = legacyTracker.clearLegacy(context.orchestrator, schema);
+            await context.orchestrator.campaign.save();
+            return existed ? `*Cleared legacy state for \`${schema}\`.*` : `*No legacy state existed for \`${schema}\`.*`;
+        }
+        if (action === 'set') {
+            const key = args[3];
+            const rawValue = args.slice(4).join(' ');
+            if (!key || !rawValue) {
+                return 'Usage: `!gm adventure legacy <schema> set <key> <value>` -- value may be plain text or JSON (e.g. `["a","b"]`, `5`, `{"status":"kept"}`).';
+            }
+            legacyTracker.setLegacyValue(context.orchestrator, schema, key, rawValue);
+            await context.orchestrator.campaign.save();
+            return legacyTracker.formatLegacyEntry(context.orchestrator, schema);
+        }
+        return 'Usage: `!gm adventure legacy [schema] [set <key> <value>|clear]`';
+    }
+
     // ─── !gm adventure preview [n] ───────────────────────────────────
     // NEW: player-facing summary command -- deliberately NOT in
     // gmOnlySubs above, since the whole point is letting any player get
@@ -864,7 +909,8 @@ async function handleAdventureCommand(sender, args, context) {
         '`!gm adventure crown` — jump straight to a Crown Spread\n' +
         '`!gm adventure vote abandon` — vote to abandon the current adventure\n' +
         '`!gm adventure reset` — restart the current adventure from the top\n' +
-        '`!gm adventure debug` — full state + reference data dump (GM only)'
+        '`!gm adventure debug` — full state + reference data dump (GM only)\n' +
+        '`!gm adventure legacy [schema] [set <key> <value>|clear]` — view/override cross-adventure legacy state (GM only)'
     );
 }
 
@@ -918,6 +964,21 @@ async function handleSceneComplete(context, notes = '') {
     const isLastSceneOfAct = state.currentSceneIndex >= currentActScenes.length - 1;
     const isLastAct = state.currentActIndex >= toc.length - 1;
     const wouldExhaust = isLastSceneOfAct && isLastAct;
+
+    // NEW: CLIMAX PACING -- if the climax has been running longer than
+    // climaxPadScenes (scene-transitions since climaxTriggered flipped
+    // true) without reaching its own final scene, force one dramatic
+    // turn now rather than letting it drift indefinitely. Only ever
+    // fires once per climax (climaxForced), and only while there's still
+    // climax content left to play through -- wouldExhaust below means
+    // the climax's own last scene just concluded, which already
+    // completes the adventure normally with no forcing needed.
+    if (state.climaxTriggered && !state.climaxForced && !wouldExhaust) {
+        const pad = state.climaxPadScenes || DEFAULT_CLIMAX_PAD_SCENES;
+        if ((state.climaxScenesSinceTrigger || 0) >= pad) {
+            return await generateForcedClimaxTwist(context, state, notes);
+        }
+    }
 
     if (!wouldExhaust) {
         return await advanceAndReport(context, notes);
@@ -1038,7 +1099,16 @@ async function generateAndAppendClimax(context, state, notes) {
 Story so far: ${summary || '(the story so far)'}
 ${notes ? `Most recent development: ${notes}` : ''}
 
-Write a final CLIMAX act with 1-2 scenes that bring this story to a satisfying conclusion, paying off its threads. Respond with ONLY a JSON object (no markdown fences, no commentary):
+Write a final CLIMAX act with 1-2 scenes that bring this story to a satisfying conclusion, paying off its threads.
+
+CLIMAX WRITING RULES -- this act's scene descriptions and encounter outcome text should already read differently from an ordinary scene, since the live narration during play will be held to these same constraints:
+- Short, punchy sentences. Cut extraneous description.
+- Escalating stakes -- make clear what the party stands to lose.
+- No filler (no shopping, travel montages, or idle small-talk beats).
+- Urgent, tense, decisive tone throughout.
+- Encounter outcomes should feel weighty: "miss" should read as genuinely costly, "clean" as hard-won and consequential.
+
+Respond with ONLY a JSON object (no markdown fences, no commentary):
 {
   "title": "Act title (e.g. 'The Reckoning')",
   "description": "What this final act is about",
@@ -1091,6 +1161,67 @@ Output ONLY the JSON object.`;
 }
 
 /**
+ * NEW: CLIMAX PACING -- called once per climax, the first time
+ * handleSceneComplete() sees state.climaxScenesSinceTrigger reach
+ * climaxPadScenes without the climax act itself having finished. Generates
+ * ONE short, forceful scene ("the ritual completes," "the tower begins to
+ * collapse" -- whatever fits THIS story's own stakes, not a generic
+ * insert) that pushes events forward regardless of what the party was in
+ * the middle of doing, appends it to the current (climax) act, marks
+ * climaxForced via POST /adventure/climax-forced so this only ever fires
+ * once, then advances into it via the same append-before-advance trick
+ * generateAndAppendScene()/generateAndAppendClimax() already use.
+ */
+async function generateForcedClimaxTwist(context, state, notes) {
+    const summary = context.orchestrator.campaign.getSummary() || '';
+
+    const prompt = `You are running the climax of a Fate's Edge adventure titled "${state.title}". The party has been taking longer than expected to bring it to a resolution.
+
+Story so far: ${summary || '(the story so far)'}
+${notes ? `Most recent development: ${notes}` : ''}
+
+Write ONE short, forceful scene that pushes the climax toward its conclusion RIGHT NOW, regardless of what the party was in the middle of -- a ticking threat completes, reinforcements arrive, the ground gives way, the villain acts first, whatever fits THIS story's own stakes. It should read as the world refusing to wait any longer, not a random non-sequitur. Keep it short and punchy -- see the climax writing rules (escalating stakes, no filler, urgent/decisive tone). Respond with ONLY a JSON object (no markdown fences, no commentary):
+{
+  "title": "Scene title",
+  "description": "2-4 sentences: short, punchy, urgent",
+  "timers": [],
+  "encounters": []
+}
+Output ONLY the JSON object.`;
+
+    let sceneContent;
+    try {
+        const raw = await context.driver.generateResponse({
+            systemPrompt: 'You are a Fate\'s Edge scene designer forcing a stalled climax forward. You output only valid JSON, nothing else.',
+            messages: [{ role: 'user', content: prompt }]
+        });
+        sceneContent = parseAdventureJson(raw);
+        if (!sceneContent.title) throw new Error('generated forced scene is missing a title');
+    } catch (e) {
+        console.warn('[AdventureDirector] Forced climax twist generation failed, using fallback:', e.message);
+        sceneContent = {
+            title: 'The Reckoning Accelerates',
+            description: 'Whatever time remained runs out. The threat that has been building completes itself -- there is no more time for hesitation.',
+            timers: [],
+            encounters: [],
+        };
+    }
+
+    try {
+        await context.apiRequest('POST', ['adventure', 'scene', 'append'], {
+            actIndex: state.currentActIndex,
+            scene: sceneContent,
+        });
+        await context.apiRequest('POST', ['adventure', 'climax-forced'], {});
+        await context.apiRequest('POST', ['adventure', 'scene'], {});
+        adventureContext.invalidate();
+        return `*(${notes ? notes + ' ' : ''}The climax forces itself forward: "${sceneContent.title}".)*`;
+    } catch (e) {
+        return `*(Failed to force the climax onward: ${e.message})*`;
+    }
+}
+
+/**
  * Called once an adventure's status genuinely becomes 'completed'
  * (either a pre-written adventure finishing naturally, or a
  * dynamic-growth adventure whose climax act just finished). Generates a
@@ -1101,6 +1232,16 @@ Output ONLY the JSON object.`;
  * a short summary per completed adventure, not raw transcript.
  */
 async function finalizeAdventure(context, finishedState) {
+    // NEW: LEGACY TRACKER -- extract this adventure's declared carryover
+    // (if any -- see modules/legacy-tracker.js) BEFORE anything else, while
+    // the module's reference data (and its `persistence` declaration) is
+    // still fetchable. Deliberately not awaited-and-blocking the rest of
+    // finalize on failure -- finalizeLegacy() already swallows its own
+    // errors (logs + returns) rather than throwing, so a broken/unreachable
+    // adventure engine here degrades to "no legacy captured this time,"
+    // never to "the adventure fails to conclude."
+    await legacyTracker.finalizeLegacy(context, finishedState);
+
     let summaryText;
     try {
         const conv = context.orchestrator.campaign.state.conversation || [];

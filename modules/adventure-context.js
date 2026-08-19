@@ -31,6 +31,7 @@
 const fs = require('fs');
 const path = require('path');
 const { getVocab, encounterType } = require('./objective-types');
+const legacyTracker = require('./legacy-tracker'); // NEW: structured cross-adventure carryover -- see that file's header
 
 const CACHE_TTL_MS = 15000;
 const DOC_CACHE_TTL_MS = 60000; // doc changes rarely, cache longer
@@ -217,6 +218,53 @@ async function getSceneContextForPrompt(context) {
         }
 
         lines.push('When a reveal condition above is met in play (the players witness it, an NPC confesses, etc.), emit [REVEAL "id"] so the game\'s knowledge state stays in sync with your narration -- do not just narrate the reveal and leave the tag out, and do not emit [REVEAL "id"] without narrating the reveal actually happening. Use [HIDE "id"] only to correct a mistaken reveal.');
+        lines.push('═══════════════════════════════════════════════════════════════');
+        lines.push('');
+    }
+
+    // ================================================================
+    // 1.6. LEGACY / CARRYOVER STATE — structured cross-adventure facts
+    // ================================================================
+    // NEW: see modules/legacy-tracker.js's header for the full design.
+    // Only ever non-empty when the CURRENTLY loaded adventure itself
+    // declares a `persistence.schema` (via its reference data) AND a
+    // previous adventure using that same schema has already finished and
+    // left a legacy entry behind -- both conditions checked inside
+    // getLegacyContextBlock() itself, so this is always safe to call.
+    // Injected every turn (not just at load) so the model can reference
+    // exact carried-over figures consistently throughout play.
+    if (ref?.persistence) {
+        lines.push(legacyTracker.getLegacyContextBlock(context.orchestrator, ref.persistence));
+    }
+
+    // ================================================================
+    // 1.7. CLIMAX NARRATION & PACING — active only once the dynamic-growth
+    // engine has triggered this adventure's final act (see
+    // adventure-director.js's generateAndAppendClimax()/handleSceneComplete()
+    // and server/adventure.js's climaxTriggered/climaxPadScenes/
+    // climaxScenesSinceTrigger fields). These are STRONG narration
+    // constraints, not a suggestion -- the whole point is that the model's
+    // prose noticeably tightens up once the climax begins, rather than
+    // continuing at the same unhurried pace it used for the rest of the
+    // adventure.
+    // ================================================================
+    if (state.climaxTriggered && state.status !== 'completed') {
+        const pad = state.climaxPadScenes || 2;
+        const soFar = state.climaxScenesSinceTrigger || 0;
+        lines.push('═══════════════════════════════════════════════════════════════');
+        lines.push('YOU ARE NOW IN THE FINAL ARC OF THIS ADVENTURE — obey these constraints:');
+        lines.push('═══════════════════════════════════════════════════════════════');
+        lines.push(`This climax is expected to resolve within roughly ${pad} more scene(s) (${soFar}/${pad} used so far). Move with purpose toward a conclusion.`);
+        lines.push('NARRATION RULES FOR THE CLIMAX:');
+        lines.push('  1. Use SHORT, PUNCHY sentences. Cut extraneous description.');
+        lines.push('  2. Escalate stakes with every action. Remind players what they stand to lose.');
+        lines.push('  3. Eliminate filler -- no shopping, no travel montages, no idle NPC small-talk.');
+        lines.push('  4. The tone is urgent, tense, and decisive.');
+        lines.push('  5. Every roll now carries higher stakes: a Miss should feel catastrophic; a Clean Success should feel earned and consequential.');
+        if (state.climaxForced) {
+            lines.push('A forced dramatic turn has already occurred this climax (the story pushed itself forward because play was dragging) -- do not let it stall again; drive hard toward resolution now.');
+        }
+        lines.push('The adventure ends when the climax resolves. Drive the narrative toward that resolution without railroading -- player choices still matter, but keep the pressure constant and rising. Use [SCENE COMPLETE "notes"] as soon as this beat reaches a real conclusion rather than dragging it out.');
         lines.push('═══════════════════════════════════════════════════════════════');
         lines.push('');
     }

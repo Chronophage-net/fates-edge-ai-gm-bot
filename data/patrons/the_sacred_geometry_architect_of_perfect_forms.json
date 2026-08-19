@@ -35,11 +35,11 @@
   ],
   "runekeeper_options": {
     "thiasos": {
-      "description": "A Runekeeper sworn to the Sacred Geometry does not bind a familiar of flesh and blood. Their Thiasos is a living embodiment of perfect form: a small brass beetle whose wing-cases are etched with golden-ratio spirals, a mechanical hummingbird that hovers in mathematically precise arcs, a chameleon whose skin shifts in symmetrical patterns, a compass spider (a tiny arachnid that builds webs in perfect hexagons), or a sentient set of Kon'reh pieces that clack together to spell out advice.",
+      "description": "the Sacred Geometry's Runekeepers do not bind a familiar of flesh and blood. Their Thiasos is a living embodiment of perfect form: a small brass beetle whose wing-cases are etched with golden-ratio spirals, a mechanical hummingbird that hovers in mathematically precise arcs, a chameleon whose skin shifts in symmetrical patterns, a compass spider (a tiny arachnid that builds webs in perfect hexagons), or a sentient set of Kon'reh pieces that clack together to spell out advice.",
       "care": "This creature requires no food, but it must be allowed to trace geometric figures (real or imagined) each day. If neglected for a week, it becomes Compromised (its patterns grow erratic, imposing –1 die on all Lore and Investigation rolls involving measurement or analysis until it is recalibrated)."
     },
     "codex": {
-      "description": "The Codex of the Sacred Geometry is never a normal book. It may be a set of brass stencils of Platonic solids, a roll of vellum covered in interlaced tessellations, a slate tablet on which proofs can be drawn and erased, the inside of a Kon'reh board, or a set of crystal lenses that project perfect geometric shapes when held to the light.",
+      "description": "the Sacred Geometry keeps no Codex that resembles a normal book. It may be a set of brass stencils of Platonic solids, a roll of vellum covered in interlaced tessellations, a slate tablet on which proofs can be drawn and erased, the inside of a Kon'reh board, or a set of crystal lenses that project perfect geometric shapes when held to the light.",
       "upkeep": "Because the Geometry's truths are relationships, the Codex requires upkeep: the Runekeeper must spend an hour each week redrawing or re-proving at least one theorem, or the Rites stored there become tangled (treat as Compromised until re-proved)."
     }
   },
@@ -57,7 +57,11 @@
       "action": "Scene",
       "range": "Self",
       "resist": "No",
-      "tags": ["BALANCE", "FOCUS", "BOOST"],
+      "tags": [
+        "BALANCE",
+        "FOCUS",
+        "BOOST"
+      ],
       "materials": "A tool calibrated to pristine ratios (e.g., golden ratio gauge, well-cut compass arc, a Kon'reh piece set to true measure).",
       "effect": "Align to natural harmonics. Gain +1 die to actions involving balance, proportion, cadence, or keeping true time.",
       "push_it": "The resonance sharpens to a faultless edge: gain +2 dice instead, but mark 1 SB (Diamonds) as nearby imperfect forms momentarily warp. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -73,7 +77,11 @@
       "action": "Scene",
       "range": "Touch",
       "resist": "Yes",
-      "tags": ["TRANSFORM", "REPAIR", "PRESSURE"],
+      "tags": [
+        "TRANSFORM",
+        "REPAIR",
+        "PRESSURE"
+      ],
       "materials": "A consecrated compass and straightedge, inked to tolerance.",
       "effect": "Impose right form on a chaotic or damaged structure (scaffold, plan, treaty, formation). Treat one structural obstacle as one step easier; gain +1 die to build/repair/spatial-reason rolls.",
       "push_it": "Perfection hardens: for the scene the structure gains unnatural resilience, but order draws opposition; mark 1 SB (Clubs). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -89,7 +97,11 @@
       "action": "Scene",
       "range": "Zone",
       "resist": "Yes",
-      "tags": ["AREA", "TEAMWORK", "HARMONY"],
+      "tags": [
+        "AREA",
+        "TEAMWORK",
+        "HARMONY"
+      ],
       "materials": "A floor or air traced with precise tessellations and nodes (or a Kon'reh board laid out as a focus).",
       "effect": "Establish a harmonic field. Allies gain +1 die to precise, coordinated, or team actions; disruptive acts suffer –1 die.",
       "push_it": "The field self-sustains and begins to spread beyond intent; mark +1 Obligation. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -105,7 +117,10 @@
       "action": "Scene",
       "range": "Self",
       "resist": "Yes",
-      "tags": ["TRUTH", "OMEN"],
+      "tags": [
+        "TRUTH",
+        "OMEN"
+      ],
       "materials": "A solved proof, a perfectly symmetrical token, or a completed Kon'reh puzzle.",
       "effect": "Perceive the governing pattern of a complex situation (supply chain, intrigue, weather, battle). Gain +2 dice to prediction/strategy/systemic-understanding and ask two questions about how the pattern drives the present.",
       "push_it": "Clarity cuts: gain the insight, but for this scene suffer –1 die to intuitive or purely emotional responses; mark 1 SB (Diamonds). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -121,7 +136,12 @@
       "action": "Extended",
       "range": "Zone",
       "resist": "Yes",
-      "tags": ["TERRAIN", "PRESSURE", "FATE", "AREA"],
+      "tags": [
+        "TERRAIN",
+        "PRESSURE",
+        "FATE",
+        "AREA"
+      ],
       "materials": "A space gridded for measure and set with true ratios (like a Kon'reh court).",
       "effect": "For the scene, rewrite local behavior by perfect principle. Choose one: gravity follows geometric progression; time flows by harmonic ratios; space conforms to exact symmetry.",
       "push_it": "Make the design persist, but elsewhere thins and wobbles: mark +2 Obligation and begin Harmonic Dissonance [4]. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
@@ -137,7 +157,12 @@
       "action": "Extended",
       "range": "Self",
       "resist": "Yes",
-      "tags": ["OMEN", "BOOST", "BURDEN", "TRUTH"],
+      "tags": [
+        "OMEN",
+        "BOOST",
+        "BURDEN",
+        "TRUTH"
+      ],
       "materials": "A ledger of forms and their tuned relations (or a record of Kon'reh victories).",
       "effect": "For one session, treat all rolls of pattern recognition, structural analysis, or harmonic application as one step better (Position or Effect, GM's choice).",
       "push_it": "Sight devours softness: gain the power, but lose ease with imperfection's beauty; mark Harm 1 (Stress). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
@@ -218,7 +243,7 @@
       "master": {
         "name": "Architect of Reality",
         "xp": 12,
-        "description": "Once per session, briefly refit local reality by perfect principle. You may ignore one environmental penalty entirely, or reroute a debt obligation as if the numbers had always been different (the creditor's ledger shows a different debtor). After the scene, you gain a permanent Debt Scar (your eyes are mildly faceted, like cut gems). Thereafter, once per arc, you may treat a failure on a skill roll involving measurement, prediction, or analysis as a success — but you must correct the balance by performing a pure, selfless act of symmetry (e.g., returning a stolen item, repairing a broken wall).",
+        "description": "Once per session, briefly refit local reality by perfect principle. You may ignore one environmental penalty entirely, or reroute a debt obligation as if the numbers had always been different (the underlying figures had always summed differently (the equation simply resolves elsewhere)). After the scene, you gain a permanent Debt Scar (your eyes are mildly faceted, like cut gems). Thereafter, once per arc, you may treat a failure on a skill roll involving measurement, prediction, or analysis as a success — but you must correct the balance by performing a pure, selfless act of symmetry (e.g., returning a stolen item, repairing a broken wall).",
         "cost": "2 Fatigue and +1 Obligation to the Geometry",
         "prereq": "Tier III, Wits 4+"
       }

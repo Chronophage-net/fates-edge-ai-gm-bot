@@ -1,0 +1,1006 @@
+{
+  "id": "within-the-demons-eye-saga",
+  "title": "Within the Demon's Eye: The Fenwood-Everblood-Longblood Saga",
+  "description": "The complete House Fenwood legacy saga, from the fall of the Valvano dynasty in burning Acasia to the rotating court intrigue of Queen Veralyn 'Demoneye' Everblood's reign two centuries later. This saga includes The Exile Road (640 AR), The Reckoning Bridge (640 AR), The Old Duke's Wars (840 AR frame, flashbacks 792-838 AR), and Within the Demon's Eye: The Prelude to Lence (832-841 AR). Themes: debts that outlive the hands that write them, mercy as a ledger entry, and the price of a name.",
+  "tier": "II-III",
+  "author": "Nicholas A. Gasper",
+  "saga": true,
+  "sagaParts": [
+    "the-exile-road",
+    "the-reckoning-bridge",
+    "the-old-dukes-wars",
+    "within-the-demons-eye-prelude-to-lence"
+  ],
+  "bestiary": [
+    {
+      "id": "garrick-usurpers-agent",
+      "name": "The Usurper's Huntsman",
+      "tl": 3,
+      "class": "III",
+      "category": "humanoid",
+      "description": "A grim tracker in the pay of the Acasian usurper, sent to run the Valvano cadet branch to ground before their name can take root elsewhere.",
+      "stats": {
+        "Body": 3,
+        "Melee": 3,
+        "Athletics": 3,
+        "Notice": 2,
+        "hp": 30
+      },
+      "sb_spends": [
+        {
+          "cost": 1,
+          "name": "Never Loses a Trail",
+          "effect": "Reroll a failed Notice or Survival roll made to track the party."
+        },
+        {
+          "cost": 2,
+          "name": "Cut Off the Road",
+          "effect": "Force the party into Desperate position on their next Survival timer roll."
+        }
+      ],
+      "lore": "He carries a lock of Valvano hair taken from the burning archive, and will not return without a name to report."
+    },
+    {
+      "id": "aeler-bridge-warden",
+      "name": "Kaelen the Unspent, Toll-Keeper of the First Span",
+      "tl": 3,
+      "class": "III",
+      "category": "spirit",
+      "description": "The remembered shadow of a first-generation True Mason, said to have died before the keystone was even finished, his wages never paid. Foremost among the wraiths bound into the Tarlington Gap span, the only one whose voice does not merely echo the others.",
+      "stats": {
+        "Spirit": 4,
+        "Lore": 3,
+        "Command": 2,
+        "hp": 25
+      },
+      "sb_spends": [
+        {
+          "cost": 1,
+          "name": "Weight of History",
+          "effect": "A target who refuses the toll gains a level of Fatigue."
+        },
+        {
+          "cost": 2,
+          "name": "Shadow Span",
+          "effect": "Pull the encounter into the Shadow Span: crossing now costs a memory per hour but doubles movement speed."
+        }
+      ],
+      "secret": "It does not want blood. It wants the debt acknowledged, in words, by someone who means them."
+    },
+    {
+      "id": "gelfrey-renard",
+      "name": "Gelfrey Renard, the Shadow-Court's Champion",
+      "tl": 4,
+      "class": "IV",
+      "category": "humanoid",
+      "description": "Veralyn's distant cousin and the public face of the Shadow-Court remnant. He does not draw a weapon when Veralyn finally corners him at the altar.",
+      "stats": {
+        "Spirit": 4,
+        "Sway": 3,
+        "Lore": 3,
+        "hp": 35
+      },
+      "sb_spends": [
+        {
+          "cost": 1,
+          "name": "You Already Carry Hers",
+          "effect": "Any PC who has handled Shadowsteel suffers -1 die to resist his words this scene."
+        },
+        {
+          "cost": 3,
+          "name": "Collect What's Owed",
+          "effect": "The Altar's Hunger timer fills immediately, regardless of combat outcome."
+        }
+      ],
+      "secret": "He believes he is already dead and has been for years; killing him only confirms it."
+    },
+    {
+      "id": "logan-thornhill",
+      "name": "Logan Thornhill, Cooper of Coldmorrow",
+      "tl": 2,
+      "class": "II",
+      "category": "humanoid",
+      "description": "The Thornhill heir spared as a child thirty years before, now a quiet village cooper. He fights badly, and with everything he has, when cornered.",
+      "stats": {
+        "Body": 2,
+        "Melee": 1,
+        "Spirit": 2,
+        "hp": 15
+      },
+      "sb_spends": [
+        {
+          "cost": 1,
+          "name": "Everything He Has",
+          "effect": "Once per scene, ignore the effects of Desperate position for a single roll."
+        }
+      ],
+      "secret": "He recognized Veralyn as the disguised princess the moment she rode into the village, and said nothing."
+    },
+    {
+      "id": "ylena-coldmorrow",
+      "name": "Ylena of Coldmorrow",
+      "tl": 4,
+      "class": "IV",
+      "category": "humanoid",
+      "description": "Logan Thornhill's daughter, saved from the Coldmorrow fire as an infant, now a trusted maid inside Jaennis Fenwood's household. Every move she makes is a Canray clause, not a blow.",
+      "stats": {
+        "Wits": 4,
+        "Subterfuge": 3,
+        "Sway": 3,
+        "Lore": 2,
+        "hp": 20
+      },
+      "sb_spends": [
+        {
+          "cost": 1,
+          "name": "A Clause, Not a Blow",
+          "effect": "Redirect social pressure onto a third party's obligations instead of the target's."
+        },
+        {
+          "cost": 2,
+          "name": "The Long Game",
+          "effect": "Advance Kon'reh at Court by 1 segment without a roll, once per session."
+        }
+      ],
+      "secret": "A PC who beats her honestly at Kon'reh gets the truth without asking, for the first time in the campaign."
+    }
+  ],
+  "acts": [
+    {
+      "id": "act-1-the-sack",
+      "title": "Book One, Act I: The Sack",
+      "description": "The empire of the Noon Bell has fallen. The PCs begin in the burning Valvano manor with minutes to gather what they can carry, as the usurper's forces close on the Pilgrim's Gate.",
+      "scenes": [
+        {
+          "id": "scene-1-1-heirlooms",
+          "title": "Aqyl's Offer",
+          "description": "Aqyl, the old scholar-witness, offers three heirlooms for the taking before the Pilgrim's Gate seals: the Laurel Seal (proof of lineage), the Bell Shard (Dominant position once per scene, but advances Pursuit when rung), and the Debt Ledger (call in a debt once per session at the cost of Obligation). A fourth, optional heirloom, the Sacred Coal from the Everflame chapel, marks its bearer Oath-Bound.",
+          "timers": [
+            {
+              "name": "City Collapse",
+              "segments": 6,
+              "current": 0,
+              "description": "How much of the escape goes clean versus catastrophic."
+            }
+          ],
+          "encounters": [
+            {
+              "name": "Save the Debt Ledger",
+              "dv": 3,
+              "position": "Desperate",
+              "outcomes": {
+                "clean": "The Ledger is recovered intact and City Collapse does not advance.",
+                "partial": "The Ledger is recovered but scorched; a page of debts is lost forever.",
+                "miss": "The archive collapses; City Collapse advances by 2."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-1-2-key-choices",
+          "title": "Livia, the Oath-Brother, and the Archive",
+          "description": "Key choices: whether to take in Livia, the Censor's daughter, possibly a Witness-cult spy or its last survivor; whether to accept an Oath-Brother, a Ykrul mercenary whose braid becomes a future favor from the Gray Ash clan; and whether a PC risks the flames to save the Debt Ledger from the collapsing archive.",
+          "timers": [],
+          "encounters": [],
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "act-2-the-road",
+      "title": "Book One, Act II: The Road",
+      "description": "The road east is a ledger of failures. Acasia frays, and Silkstrand (then Ceylonne) welcomes coin, not refugees. At the Ykrul Ford and among Linnic sea-raiders, the cadet branch's future allegiances are set.",
+      "scenes": [
+        {
+          "id": "scene-2-1-ykrul-ford",
+          "title": "The Ykrul Ford",
+          "description": "Khatun Sarnai of the Gray Ash clan recognizes the Laurel Seal from a hostage gift generations old, and offers passage for a price: acknowledge mixed-Ykrul kin (gain the follower the Unnamed Child), win a duel against her champion, or swear a Steppe Oath repayable in a future campaign.",
+          "timers": [],
+          "encounters": [
+            {
+              "name": "Duel Sarnai's Champion",
+              "dv": 4,
+              "position": "Even",
+              "outcomes": {
+                "clean": "Passage is granted freely and the Gray Ash clan remembers the party's honor.",
+                "partial": "Passage is granted, but a PC gains a lasting scar and Sarnai's guarded respect only.",
+                "miss": "Passage is denied; the party must find another ford, advancing Pursuit."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-2-2-linnic-offer",
+          "title": "The Linnic Offer",
+          "description": "Linnic sea-raiders, ancestors of the Everbloods, offer an alliance against the dying Tarling dynasty in exchange for future land. Accepting plants the Everblood Promise, the seed of everything Book Two builds on.",
+          "timers": [],
+          "encounters": [],
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "act-3-the-rejection",
+      "title": "Book One, Act III: The Rejection",
+      "description": "The Vhasian duke's Mocking Feast tests the exiles' lineage claim through trials of Kon'reh, a duel, or reciting the Oath of the Noon Bell from memory.",
+      "scenes": [
+        {
+          "id": "scene-3-1-mocking-feast",
+          "title": "The Mocking Feast",
+          "description": "Each failure advances Patience of the Gate. A cousin's betrayal offer, selling the Valvano claim to the usurper, may be exposed or missed.",
+          "timers": [
+            {
+              "name": "Patience of the Gate",
+              "segments": 4,
+              "current": 0,
+              "description": "The duke's tolerance for the exiles' claim."
+            }
+          ],
+          "encounters": [
+            {
+              "name": "Trial of Kon'reh",
+              "dv": 3,
+              "position": "Even",
+              "outcomes": {
+                "clean": "The duke is impressed; sanctuary terms improve.",
+                "partial": "The duke is unmoved but not offended; standard terms apply.",
+                "miss": "Patience of the Gate advances by 1; the duke grows suspicious."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-3-2-tarling-terms",
+          "title": "The Tarling Terms",
+          "description": "The Tarling terms for sanctuary in the fens are humiliating by design: walk barefoot, surrender the Laurel Seal as tribute, or convert to the Temple of Light entirely, each term negotiable at the cost of time and Patience.",
+          "timers": [],
+          "encounters": [],
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "act-4-the-fens",
+      "title": "Book One, Act IV: The Fens",
+      "description": "Ash-Fenn, the cursed clearing granted as the new county, hums with something older than the empire. At the spring moot, the cadet branch chooses its name.",
+      "scenes": [
+        {
+          "id": "scene-4-1-bog-witch",
+          "title": "The Bog Witch's Ward",
+          "description": "A Bog Witch offers to ward the dead ground for a price: a firstborn child (seeding a future curse track), a memory (a Bond or XP), or a promise collectible during an eventual future campaign.",
+          "timers": [],
+          "encounters": [],
+          "completed": false
+        },
+        {
+          "id": "scene-4-2-the-naming",
+          "title": "The Spring Moot",
+          "description": "The cadet branch must choose its name: remain Valvano (loyalty 5+, name survives unbroken, no land), become Fenwood (favor 5+, gain the county, extinguish the coal), or compromise as Fenwood-Valvano (both timers at 3+, keep both, but the usurper will hear of it). Aqyl departs into the mist after the naming.",
+          "timers": [
+            {
+              "name": "Valvano Loyalty",
+              "segments": 6,
+              "current": 0,
+              "description": "Clinging to the old name and claims. Full: cannot abandon the name; bound to restore the dynasty or die trying."
+            },
+            {
+              "name": "Tarling Favor",
+              "segments": 6,
+              "current": 0,
+              "description": "Goodwill of the Viterran house sought as refuge. Full: granted the pithy county of Fenwood."
+            },
+            {
+              "name": "Survival",
+              "segments": 8,
+              "current": 0,
+              "description": "Supplies, allies, shelter, will to continue. Empty: someone starves, an heirloom is lost, a PC gains Broken."
+            },
+            {
+              "name": "Pursuit",
+              "segments": 6,
+              "current": 0,
+              "description": "The usurper's agents on the trail. Full: a battle occurs; flee, surrender, or stand and be ended."
+            }
+          ],
+          "encounters": [],
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "act-5-corsairs-map",
+      "title": "Book Two, Act I: The Corsair's Map",
+      "description": "The Linns arrive at the Tarlington Gap because the Fenwoods sent them iron in the night, and a map of the low fords. PCs scout as Linnic raiders or Fenwood infiltrators.",
+      "scenes": [
+        {
+          "id": "scene-5-1-true-masons",
+          "title": "Orin's Offer",
+          "description": "Orin of the True Masons offers to keep the bridge a neutral Safe Zone in exchange for a Keystone Offering and a sworn Bridge Oath; refusal weakens the wards and opens Bridge Fire.",
+          "timers": [
+            {
+              "name": "Bridge Fire",
+              "segments": 4,
+              "current": 0,
+              "description": "How close the span comes to being burned outright."
+            }
+          ],
+          "encounters": [],
+          "completed": false
+        },
+        {
+          "id": "scene-5-2-fortune-delver",
+          "title": "The Fortune-Delver's Shortcut",
+          "description": "A Fortune-Delver offers a shortcut through Aeler maintenance tunnels for a decade's toll-share; refuse, and she sells the same route to the Linns instead.",
+          "timers": [],
+          "encounters": [],
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "act-6-chancellors-gambit",
+      "title": "Book Two, Act II: The Chancellor's Gambit",
+      "description": "At the improved Fenwood keep, Chancellor Aldric has already sworn the Bridge Oath to Soren's ancestors in secret while performing loyalty at Tarling feasts.",
+      "scenes": [
+        {
+          "id": "scene-6-1-war-council",
+          "title": "The Tarling War Council",
+          "description": "The Tarling War Council demands a levy; a True Mason's audit demands three years' unpaid tithe (twelve hundred bushels, a pledge of service, or refusal and an escalating Keystone Debt); a Linnic envoy presses for the Fenwoods to commit openly.",
+          "timers": [
+            {
+              "name": "Tarling Suspicion",
+              "segments": 4,
+              "current": 0,
+              "description": "How much the Tarlings suspect Fenwood double-dealing."
+            },
+            {
+              "name": "Fenwood Reckoning",
+              "segments": 6,
+              "current": 0,
+              "description": "The countdown to Aldric's betrayal. Full: allegiance must be declared openly."
+            },
+            {
+              "name": "Keystone Debt",
+              "segments": 6,
+              "current": 0,
+              "description": "The Aeler ledger's patience. Full: the bridge closes to Fenwood traffic until paid in blood or silver."
+            }
+          ],
+          "encounters": [],
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "act-7-bridge-of-stone-shadow",
+      "title": "Book Two, Act III: The Bridge of Stone and Shadow",
+      "description": "Three banners meet on the span itself. The ancient bridge-wardens, wraiths of the first True Masons, demand a toll to keep their protection.",
+      "scenes": [
+        {
+          "id": "scene-7-1-bridge-toll",
+          "title": "The Bridge-Wardens' Toll",
+          "description": "The wraiths demand the Laurel Seal (if still held), a Repair Vow, or a Keystone Offering weighed against the bridge's own shadow. When Bridge Fire reaches 2, the span exists in two states at once: the Shadow Span, where a crossing costs a memory per hour but doubles speed.",
+          "timers": [
+            {
+              "name": "Linnic Momentum",
+              "segments": 8,
+              "current": 0,
+              "description": "The invasion's progress. Full: the Linns reach Tarlington first and claim the crown by right of conquest."
+            },
+            {
+              "name": "Tarling Resistance",
+              "segments": 6,
+              "current": 0,
+              "description": "The old dynasty's rally. Full: the invasion stalls; the Fenwoods are caught between hammer and anvil."
+            }
+          ],
+          "encounters": [
+            {
+              "name": "Cross the Shadow Span",
+              "dv": 4,
+              "position": "Desperate",
+              "outcomes": {
+                "clean": "The party crosses with only a shared memory lost, and reaches the far bank ahead of the Tarling rear guard.",
+                "partial": "The party crosses, but each PC loses a personal memory of the Sack.",
+                "miss": "The party is caught mid-span when Aldric's signal fires; the Tarling rear guard turns on them too."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-7-2-aldrics-signal",
+          "title": "Aldric's Signal",
+          "description": "At the critical moment, Aldric signals his hidden troops and the Fenwood levy turns on the Tarling rear guard: the PCs choose mercy or execution for the Tarling duke.",
+          "timers": [],
+          "encounters": [],
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "act-8-kings-capitulation",
+      "title": "Book Two, Act IV: The King's Capitulation",
+      "description": "The war ends not on the bridge but in a tent on the south bank: the King of Vhasia offers the Linnic captain, now Jarl Everblood, the crown of Viterra and a marriage pact.",
+      "scenes": [
+        {
+          "id": "scene-8-1-the-settlement",
+          "title": "The Settlement",
+          "description": "Depending on the party's choices across the campaign, House Fenwood emerges as Marquesses of the Tarlington Gap (bridge control, a permanent Standard Asset), Stewards of the Fens (an Everblood marriage alliance, the Everblood Promise as a String), or holders of a Keystone Charter from the grateful True Masons.",
+          "timers": [
+            {
+              "name": "True Mason Favor",
+              "segments": 4,
+              "current": 0,
+              "description": "The mendicant order's goodwill. Full: the bridge is reinforced and cannot be burned this season."
+            }
+          ],
+          "encounters": [],
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "act-9-old-dukes-wars",
+      "title": "Book Three: The Old Duke's Wars",
+      "description": "The old duke is dying in his solar, 840 AR. The PCs are summoned as witnesses. Braedyn tells seven stories, out of order, the way an old man's memory runs, each granting a String on its subject.",
+      "scenes": [
+        {
+          "id": "scene-9-1-black-banner-years",
+          "title": "The Black Banner Years (Braedyn's age 22)",
+          "description": "Braedyn and Baldvyn the Good serve together in the Black Banners against Ykrul raiders under Captain Soren; they swear the Oath of the Yloka. Braedyn marries Baldvyn's sister Aobrey and inherits the duchy when his brother Conlin dies. Grants the asset the Oath of the Yloka (+2 dice to save/avenge an Everblood, Obligation 2 to the Ykrul).",
+          "timers": [],
+          "encounters": [],
+          "completed": false
+        },
+        {
+          "id": "scene-9-2-thornhill-rebellion",
+          "title": "The Thornhill Rebellion (age 36)",
+          "description": "Branton Thornhill's rape of Alayse Everblood costs two kings their lives before Baldvyn the Good storms Brigh and kills Branton in single combat. Braedyn stays Baldvyn's dagger from the Thornhill heir, Logan: he is exiled, not killed.",
+          "timers": [],
+          "encounters": [],
+          "completed": false
+        },
+        {
+          "id": "scene-9-3-longblood-defiance",
+          "title": "The Longblood Defiance (age 48)",
+          "description": "Elianor's rebellion ends at the Battle of Charau; Braedyn personally captures young Valdais and chooses mercy over execution. Establishes the Long Loan debt timer, ultimately paid in full.",
+          "timers": [
+            {
+              "name": "Long Loan",
+              "segments": 6,
+              "current": 6,
+              "description": "The debt Valdais owes Braedyn for his mercy. Historically paid in full before the saga's present day."
+            }
+          ],
+          "encounters": [],
+          "completed": false
+        },
+        {
+          "id": "scene-9-4-sack-of-lence",
+          "title": "The Sack of Lence (age 60)",
+          "description": "Braedyn invades Vhasia over an unpaid homage dispute; loses the use of his arm when his son Seniro saves his life. Fifteen-year-old Veralyn, hidden as a page, watches the city burn and later tracks Logan Thornhill, the spared child grown to a man, to the village of Coldmorrow.",
+          "timers": [],
+          "encounters": [],
+          "completed": false
+        },
+        {
+          "id": "scene-9-5-dying-king",
+          "title": "The Dying King (age 64)",
+          "description": "Baldvyn the Good dies; his final letter to Braedyn asks him to watch over both Wyllmot and Veralyn. Braedyn burns the letter; the Unburned Oath persists as a Persistent Debt on any Fenwood heir who fails to protect an Everblood.",
+          "timers": [],
+          "encounters": [],
+          "completed": false
+        },
+        {
+          "id": "scene-9-6-seven-week-uprising",
+          "title": "The Seven Week Uprising (age 65)",
+          "description": "Wyllmot dies storming Eryas Citadel against Braedyn's counsel of patience. Braedyn learns of Alaysha Renard's Myrmis prayer after the fact and warns Veralyn to trust her mother not at all. Veralyn already knew.",
+          "timers": [],
+          "encounters": [],
+          "completed": false
+        },
+        {
+          "id": "scene-9-7-death-of-brightstride",
+          "title": "The Death of Brightstride (age 66, two weeks before the frame)",
+          "description": "Baldvyn Brightstride dies of poison; Jaennis Fenwood, Braedyn's own granddaughter, is the prime suspect but never confesses outright. Braedyn writes an unsent letter urging Veralyn to take and hold the crown, and entrusts it to the party to deliver.",
+          "timers": [
+            {
+              "name": "Valdais's Claim",
+              "segments": 6,
+              "current": 0,
+              "description": "How strongly Valdais can press his own legitimacy to the throne."
+            },
+            {
+              "name": "Veralyn's Coronation",
+              "segments": 4,
+              "current": 0,
+              "description": "How quickly Veralyn can secure the crown before rivals move."
+            },
+            {
+              "name": "The Poison Investigation",
+              "segments": 8,
+              "current": 0,
+              "description": "How close the party comes to proving who poisoned Baldvyn Brightstride."
+            }
+          ],
+          "encounters": [],
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "act-10-shadowsteel",
+      "title": "Book Four, Act I: Shadowsteel",
+      "description": "836 AR, Eryas Citadel and the Renard highlands. Wyllmot leads a fourth, fatal assault on Eryas. Seven weeks later, the party breaches the inner sanctum and Veralyn duels the Shadow-Court's champion.",
+      "scenes": [
+        {
+          "id": "scene-10-1-siege-of-eryas",
+          "title": "The Siege of Eryas",
+          "description": "Wyllmot's fourth assault on Eryas is fixed history, but how he falls and who stands beside him is not.",
+          "timers": [
+            {
+              "name": "The Shadow-Court's Reach",
+              "segments": 8,
+              "current": 0,
+              "description": "Assassinations and reprisals. Full: a member of the royal family is targeted directly."
+            },
+            {
+              "name": "Siege of Eryas",
+              "segments": 6,
+              "current": 0,
+              "description": "The grinding cost of Wyllmot's assault. Full: the king dies mid-siege; the party inherits command."
+            },
+            {
+              "name": "Renard Suspicion",
+              "segments": 4,
+              "current": 0,
+              "description": "The court's growing certainty a Renard hand guided the Uprising. Full: Alaysha's secret is exposed before Veralyn is ready."
+            }
+          ],
+          "encounters": [],
+          "completed": false
+        },
+        {
+          "id": "scene-10-2-shadowsteel-awakens",
+          "title": "Shadowsteel Awakens",
+          "description": "The party breaches the inner sanctum and Veralyn duels her distant cousin Gelfrey Renard, who does not draw a weapon. The instant the killing blow lands, the Altar's Hunger fills regardless of its mark, and a blade is found beside the altar, unmarked and remembered by no one as having been placed there.",
+          "timers": [
+            {
+              "name": "The Altar's Hunger",
+              "segments": 6,
+              "current": 0,
+              "description": "Myrmis's private ledger, GM-only. Full: the goddess collects."
+            }
+          ],
+          "encounters": [
+            {
+              "name": "Duel Gelfrey Renard",
+              "dv": 5,
+              "position": "Desperate",
+              "outcomes": {
+                "clean": "Gelfrey falls without landing a blow; Veralyn takes up Shadowsteel with clear eyes.",
+                "partial": "Gelfrey falls, but a PC is marked by the Altar's attention for the rest of the campaign.",
+                "miss": "Veralyn is wounded and the Altar's Hunger fills at once, unpaid."
+              }
+            }
+          ],
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "act-11-sack-of-lence-retold",
+      "title": "Book Four, Act II: The Sack of Lence",
+      "description": "832 AR, told as flashback. Fifteen-year-old Veralyn, cropped hair and bound chest, squires in disguise for Seniro against her father's wishes.",
+      "scenes": [
+        {
+          "id": "scene-11-1-the-burning",
+          "title": "The Burning of Lence",
+          "description": "When the Sack fills, the burning of Lence runs as a montage chosen from the Ford of Ashes, the royal apartments, and the mirror-halls. Lyonel Vayle is wounded regardless of which the party attends.",
+          "timers": [
+            {
+              "name": "The Sack",
+              "segments": 8,
+              "current": 0,
+              "description": "Fixed history; governs how much of the burning the party witnesses, not whether it happens."
+            },
+            {
+              "name": "Veralyn's Concealment",
+              "segments": 4,
+              "current": 0,
+              "description": "How long the disguised princess stays hidden. Full: her father's men recognize her mid-battle."
+            }
+          ],
+          "encounters": [],
+          "completed": false
+        },
+        {
+          "id": "scene-11-2-coldmorrow",
+          "title": "Coldmorrow",
+          "description": "Logan Thornhill, the child spared thirty years before, now a quiet cooper, fights badly, and with everything he has, when cornered. Veralyn kills him with a mace; whether any PC tries to stop her, and what she says if they do, is not fixed. The village burns regardless, its size set by the party's own Coldmorrow clock.",
+          "timers": [
+            {
+              "name": "Coldmorrow",
+              "segments": 6,
+              "current": 0,
+              "description": "A secret debt clock. Advances with every mercy shown on the road; resets to 0 on arrival; its size becomes the size of the wound the village suffers."
+            }
+          ],
+          "encounters": [],
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "act-12-the-long-game",
+      "title": "Book Four, Act III: The Long Game",
+      "description": "840-841 AR, Veralyn's court, shortly after her coronation and Braedyn's death. Ylena of Coldmorrow, Logan Thornhill's daughter, plays a very long game inside Jaennis Fenwood's household.",
+      "scenes": [
+        {
+          "id": "scene-12-1-court-intrigue",
+          "title": "Rotating Court Scenes",
+          "description": "Run this act as a rotating set of court scenes: the Adria Audit (uncovering irregularities in Valdais's tax rolls), the Ethor Nursery (a glimpse of the Dauphin), the Widow's Silk (Jaennis Fenwood's trade of testimony against Ylena for a cleared name), and Shadowsteel's Want (the blade's own agenda at court).",
+          "timers": [
+            {
+              "name": "The Longblood Question",
+              "segments": 8,
+              "current": 0,
+              "description": "Valdais's campaign to prove or disprove his own parentage. Full: he moves openly against the throne."
+            },
+            {
+              "name": "The Dauphin's Truth",
+              "segments": 6,
+              "current": 0,
+              "description": "Elianor's hidden child in Ethor. Full: his identity goes public and every faction moves at once."
+            },
+            {
+              "name": "Kon'reh at Court",
+              "segments": 6,
+              "current": 0,
+              "description": "The Fenwood discipline of favors, marriages, audits, and seals. Full: House Fenwood's position is unassailable for a generation, at a cost the party will regret trading."
+            },
+            {
+              "name": "Myrmis's Ledger",
+              "segments": 6,
+              "current": 0,
+              "description": "GM-only, mirrors the Altar's Hunger. Full: Shadowsteel collects on its own account."
+            }
+          ],
+          "encounters": [
+            {
+              "name": "The Adria Audit",
+              "dv": 4,
+              "position": "Even",
+              "outcomes": {
+                "clean": "The irregularities are proven; the party gains leverage over Valdais.",
+                "partial": "Suspicion is raised but not proven; Valdais knows he is being watched.",
+                "miss": "The audit is dismissed; the Longblood Question advances by 1."
+              }
+            },
+            {
+              "name": "The Ethor Nursery",
+              "dv": 4,
+              "position": "Desperate",
+              "outcomes": {
+                "clean": "The Dauphin is glimpsed and identified without alerting Elianor's household.",
+                "partial": "The Dauphin is glimpsed, but the household notices the intrusion.",
+                "miss": "The attempt fails outright; The Dauphin's Truth advances by 1."
+              }
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "scene-12-2-endings",
+          "title": "Endings",
+          "description": "The Ledger Closes (Kon'reh at Court fills first): House Fenwood's patient game wins outright, at a personal cost to Veralyn. The Blade Collects (Myrmis's Ledger fills first): Shadowsteel chooses its own target, played as tragedy rather than twist. The Sun Reforged (The Longblood Question and The Dauphin's Truth both fill): Vhasia fractures again, directly seeding a sequel campaign.",
+          "timers": [],
+          "encounters": [],
+          "completed": false
+        }
+      ]
+    }
+  ],
+  "npcs": [
+    {
+      "id": "npc-aqyl",
+      "name": "Aqyl, son of Aqyl",
+      "role": "Scholar-witness to the Valvano exile",
+      "motivation": "Preserve the Valvano line's memory even if the name itself dies",
+      "stats": "Wits 3, Lore 3, Spirit 2, Sway 1",
+      "secret": "He departs into the mist after the naming at Ash-Fenn, leaving only the Debt Ledger and a braid of Ykrul hair; no one sees where he goes."
+    },
+    {
+      "id": "npc-aldric",
+      "name": "Aldric, Chancellor of the Fens",
+      "role": "Fenwood chancellor, secret Linnic ally",
+      "motivation": "Secure the Fenwood cadet branch's survival by any ledger entry necessary",
+      "stats": "Wits 3, Sway 3, Command 2, Lore 2",
+      "secret": "He has already sworn the Bridge Oath to Soren's ancestors in secret while performing loyalty at Tarling feasts."
+    },
+    {
+      "id": "npc-braedyn-fenwood",
+      "name": "Duke Braedyn Fenwood",
+      "role": "Dying duke, deathbed narrator of Book Three",
+      "motivation": "Ensure his ledger of debts and mercies is understood before he dies, not merely inherited",
+      "stats": "Wits 3, Command 3, Spirit 2, Lore 2, hp 20 (frail)",
+      "secret": "He burned Baldvyn the Good's final letter rather than choose openly between Wyllmot and Veralyn; the Unburned Oath persists on his heirs."
+    },
+    {
+      "id": "npc-veralyn-everblood",
+      "name": "Queen Veralyn 'Demoneye' Everblood",
+      "role": "Narrator of Books Two Act I flashback frame and Book Four Acts I-II; reigning queen in Act III",
+      "motivation": "Hold a throne she was never meant to inherit, using whichever tool the moment demands, blade or ledger",
+      "stats": "Body 3, Melee 3, Spirit 3, Command 2, hp 35",
+      "secret": "She killed Logan Thornhill, the child her own house once spared, with her own hands at Coldmorrow, and has never told anyone how it felt."
+    },
+    {
+      "id": "npc-jaennis-fenwood",
+      "name": "Jaennis Fenwood",
+      "role": "Braedyn's granddaughter, prime suspect in Baldvyn Brightstride's poisoning",
+      "motivation": "Protect House Fenwood's position at court, even if it means letting Ylena carry blame she does not fully deserve",
+      "stats": "Wits 3, Sway 3, Subterfuge 2, Lore 2",
+      "secret": "She never confesses outright to the poisoning, and the truth is left for the party's Poison Investigation timer to determine."
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc-valvano-manor",
+      "name": "The Valvano Manor, Acasia",
+      "description": "The ancestral seat of the Valvano dynasty, burning as the usurper's forces close on the Pilgrim's Gate.",
+      "tags": [
+        "acasia",
+        "manor",
+        "burning",
+        "prologue"
+      ]
+    },
+    {
+      "id": "loc-ash-fenn",
+      "name": "Ash-Fenn",
+      "description": "The cursed clearing granted to the Valvano cadet branch as their new county, hums with something older than the empire.",
+      "tags": [
+        "fens",
+        "cursed",
+        "tarling-grant"
+      ]
+    },
+    {
+      "id": "loc-tarlington-gap",
+      "name": "The Tarlington Gap",
+      "description": "An Aeler-built bridge span with a keystone clause carved into it, a debt older than the empire that once borrowed it. Neither Tarling nor Viterran, but Aeler.",
+      "tags": [
+        "bridge",
+        "aeler",
+        "neutral-zone",
+        "keystone"
+      ]
+    },
+    {
+      "id": "loc-eryas-citadel",
+      "name": "Eryas Citadel",
+      "description": "The site of Wyllmot's fatal fourth assault, and the inner sanctum where Veralyn duels Gelfrey Renard beside an altar to Myrmis.",
+      "tags": [
+        "citadel",
+        "siege",
+        "renard-highlands",
+        "myrmis"
+      ]
+    },
+    {
+      "id": "loc-lence",
+      "name": "Lence",
+      "description": "A Vhasian city sacked twice: once by Braedyn Fenwood in 832 AR, and recounted from the inside in Book Four Act II through fifteen-year-old Veralyn's disguised eyes.",
+      "tags": [
+        "vhasia",
+        "city",
+        "sacked",
+        "flashback"
+      ]
+    },
+    {
+      "id": "loc-coldmorrow",
+      "name": "Coldmorrow",
+      "description": "A quiet village where the spared Thornhill heir, Logan, settled as a cooper, and where Veralyn's Coldmorrow debt clock pays out in full.",
+      "tags": [
+        "village",
+        "vhasia",
+        "debt-clock"
+      ]
+    },
+    {
+      "id": "loc-veralyns-court",
+      "name": "Veralyn's Court",
+      "description": "The rotating stage of Book Four Act III's political intrigue: the Adria Audit, the Ethor Nursery, the Widow's Silk, and Shadowsteel's Want.",
+      "tags": [
+        "court",
+        "intrigue",
+        "viterra"
+      ]
+    }
+  ],
+  "factions": [
+    {
+      "id": "faction-valvano-cadet-branch",
+      "name": "The Valvano Cadet Branch (later House Fenwood)",
+      "goals": "Survive exile from Acasia and secure a name and a land-grant that will outlast the usurper who ended their dynasty.",
+      "relationship": "The player characters begin the saga as this faction's last generation of witnesses and heirs."
+    },
+    {
+      "id": "faction-true-masons",
+      "name": "The True Masons",
+      "goals": "Repair infrastructure and remember every keystone; keep the Tarlington Gap a neutral Safe Zone if possible.",
+      "relationship": "Potential allies of House Fenwood if the Keystone Offering and Bridge Oath are honored."
+    },
+    {
+      "id": "faction-shadow-court-remnant",
+      "name": "The Shadow-Court Remnant",
+      "goals": "Keep faith with Myrmis in secret; treat the Everblood succession crisis as a debt the goddess is collecting.",
+      "relationship": "Antagonists in Book Four Act I; their champion Gelfrey Renard is Veralyn's own distant cousin."
+    },
+    {
+      "id": "faction-longblood-court",
+      "name": "The Longblood Court",
+      "goals": "Prove Valdais Longblood's claim to legitimacy beyond doubt and unite Vhasia under a strong crown.",
+      "relationship": "A rival power to Veralyn's throne in Book Four Act III; their fate is entangled with a debt Braedyn Fenwood chose to forgive decades earlier."
+    }
+  ],
+  "campaignTimers": [
+    {
+      "name": "The Fenwood Ledger",
+      "segments": 12,
+      "current": 0,
+      "description": "The cumulative weight of every debt, mercy, and betrayal the cadet branch/House Fenwood accrues across all four books. GM-tracked across the whole saga; individual book timers feed into it at the GM's discretion."
+    },
+    {
+      "name": "Myrmis's Long Account",
+      "segments": 10,
+      "current": 0,
+      "description": "A saga-spanning GM-only clock tracking every debt owed to or collected by Myrmis, from the Sacred Coal in Book One to the Altar's Hunger and Myrmis's Ledger in Book Four."
+    }
+  ],
+  "notes": "This saga spans roughly five centuries of in-world time across four linked modules: The Exile Road (337 AR, a full century before the empire's own final fall, when the Valvano cadet branch fled Acasia and the Tarling dux who sheltered them first began styling himself King of Viterra), The Reckoning Bridge (640 AR, three centuries later, when the Linns arrived at the Tarlington Gap and toppled that same Tarling line), The Old Duke's Wars (840 AR frame, flashbacks 792-838 AR), and Within the Demon's Eye: The Prelude to Lence (832-841 AR, the current saga proper). Run all four as a single legacy campaign, with heirlooms, oaths, and grudges from Book One resurfacing as late as Book Four, or run Book Four alone as a standalone veteran-tier campaign with the earlier books as GM background reading. See The Fenwood-Everblood Chronicles expansion for the connective genealogy and timeline, Factions of the Fractured Sun and the Hedge-Law Realm for the political landscape, and Terrestrial Patrons: Myrmis and Canray for the two divine/philosophical throughlines. Key themes: debts that outlive the hands that write them, mercy as a ledger entry spent twice, and the price of a name. Keep a Legacy Tracker across the whole run -- see _gmhints.legacyTracker.",
+  "_gmhints": {
+    "pacing": {
+      "book1": "The Exile Road is about survival and identity under pursuit. The Valvano Loyalty, Survival, Tarling Favor, and Pursuit timers should all be visibly ticking by Act II. The naming choice in Act IV is the campaign's founding decision; do not rush it, and let the players feel the weight of choosing Valvano, Fenwood, or Fenwood-Valvano.",
+      "book2": "The Reckoning Bridge is a war of ledgers, not armies. Keep Aldric's double loyalty hidden until Act III; his signal in Act III should land as a reveal, not a foregone conclusion, even though the outcome (House Fenwood emerges intact) is largely fixed. The Aeler bridge-wardens are a mechanical and thematic hinge, not just an obstacle.",
+      "book3": "The Old Duke's Wars is a frame narrative. Braedyn's seven vignettes are memories, not playable scenes in the traditional sense; let players ask exactly one question per vignette and reward good questions with Strings. His death at the end should feel earned and unhurried.",
+      "book4-act1": "Shadowsteel treats the Siege of Eryas as fixed history (Wyllmot falls) with flexible detail. The duel with Gelfrey Renard is the emotional and mechanical climax of the act; do not let it become a simple combat encounter, he does not draw a weapon.",
+      "book4-act2": "The Sack of Lence is told entirely as Braedyn's flashback narration filtered through fifteen-year-old Veralyn's disguised perspective. The Coldmorrow debt clock should feel inevitable and quietly devastating by the time it pays out; do not telegraph its mechanic to players before it resolves.",
+      "book4-act3": "The Long Game is rotating court intrigue, not a linear plot. Let players choose which scenes to pursue and in what order. Ylena should never read as a simple villain; every move she makes should be legible as a Canray clause once players understand the pattern. Signpost the Kon'reh tell before the party ever sits across from her: a court rumor early in the act (\"Jaennis's maid always gives ground at the ninth rim -- lets you take it, smiles like she meant to\") and, if pressed further, a second (\"She's never lost a hand she cared about winning. Not once.\"). Neither rumor spells out what beating her honestly is worth -- only that it would mean something. A player who beats her anyway should feel like they earned the reveal, not stumbled into it. Mechanically, this act asks the table to track four timers at once (The Longblood Question, The Dauphin's Truth, Kon'reh at Court, Myrmis's Ledger) against a rotating, non-linear set of scenes. Put all four somewhere everyone can see -- a physical court diagram, a shared digital whiteboard -- and default to advancing at most one timer per scene to keep sessions legible instead of paralyzing the table."
+    },
+    "npcSecrets": "Aqyl's departure into the mist, Aldric's secret Bridge Oath, Braedyn's burned letter, Veralyn's killing of Logan Thornhill, and Jaennis's unresolved guilt in the poisoning are the saga's five load-bearing secrets. None should be forced into the open; let investigation, trust, or the story's natural beats surface them.",
+    "forbiddenEarlyRevelations": "Do not reveal Aldric's secret Bridge Oath before Book Two Act III. Do not reveal that Shadowsteel is 'alive' or has a want before a PC takes it up in Book Four Act I. Do not reveal Ylena's parentage (Logan Thornhill's daughter) before Book Four Act III, even if players ask about Coldmorrow directly in Act II.",
+    "legacyTracker": {
+      "description": "A single page, physical or digital, updated at the end of every session across the whole run from The Exile Road through Within the Demon's Eye. Answers four questions whenever a later book reaches back for one.",
+      "heirlooms": {
+        "question": "Which of the Laurel Seal, the Bell Shard, the Debt Ledger, and the Sacred Coal survived The Exile Road, and who holds each one now?",
+        "track": [
+          "The Laurel Seal",
+          "The Bell Shard",
+          "The Debt Ledger",
+          "The Sacred Coal"
+        ]
+      },
+      "oathsAndDebts": {
+        "question": "Every sworn oath, obligation, and promise the party has taken on behalf of the line: to whom, its terms, and whether paid, forgiven, or still open.",
+        "majorExamples": [
+          "The Steppe Oath (Gray Ash clan)",
+          "The Everblood Promise",
+          "The Bridge Oath (True Masons)",
+          "Braedyn's Long Loan (Valdais)",
+          "The Unburned Oath"
+        ]
+      },
+      "fenwoodLedger": {
+        "question": "A running lean -- favors debt / balanced / favors mercy -- updated at the close of each book. Colors how Ylena, Valdais, and Shadowsteel itself read the party's House by Act III of Within the Demon's Eye."
+      },
+      "whosLeft": {
+        "question": "Major NPCs met across the saga, marked survived / lost / estranged and in which book.",
+        "throughlines": [
+          "Aqyl",
+          "Sarnai",
+          "Aldric",
+          "Kaelen the Unspent",
+          "Logan Thornhill",
+          "Ylena"
+        ]
+      }
+    }
+  },
+  "currentAct": 0,
+  "currentScene": 0,
+  "startedAt": null,
+  "completedAt": null,
+  "status": "planned",
+  "createdAt": "2026-08-18T00:00:00.000Z",
+  "updatedAt": "2026-08-18T00:00:00.000Z",
+  "knowledge": [
+    {
+      "id": "aldric-secret",
+      "subject": "npc-aldric",
+      "gm": "Aldric swore the Bridge Oath to the Linns in secret while performing loyalty at Tarling feasts. This should not surface before Book Two Act III, where his signal to the hidden troops makes it undeniable.",
+      "player": "Aldric plays the part everyone assumes: a loyal Fenwood chancellor performing correct deference to the Tarling crown.",
+      "revealed": false,
+      "revealCondition": "When Aldric signals his hidden troops in Book Two Act III, or if a player succeeds an Insight or Investigation roll against him with strong justification beforehand.",
+      "tags": [
+        "npc-secret",
+        "book2"
+      ]
+    },
+    {
+      "id": "braedyn-unburned-oath",
+      "subject": "npc-braedyn-fenwood",
+      "gm": "Braedyn burned Baldvyn the Good's final letter rather than choose openly between protecting Wyllmot and Veralyn. This becomes the Unburned Oath, a Persistent Debt on any Fenwood heir who fails to protect an Everblood.",
+      "player": "Braedyn is known as a shrewd, patient duke who rarely explains his choices and expects them to be trusted.",
+      "revealed": false,
+      "revealCondition": "Revealed during the Dying King vignette in Book Three, scene-9-5-dying-king.",
+      "tags": [
+        "npc-secret",
+        "book3"
+      ]
+    },
+    {
+      "id": "veralyn-coldmorrow-killing",
+      "subject": "npc-veralyn-everblood",
+      "gm": "Veralyn killed Logan Thornhill, the child her own house's mercy once spared, with her own hands at Coldmorrow. She has never told anyone how it felt, and the truth is deliberately withheld even from the players narrating her own flashback.",
+      "player": "Veralyn is known publicly as 'Demoneye,' a queen who fought her way to a throne few expected her to hold.",
+      "revealed": false,
+      "revealCondition": "Revealed in full during Book Four Act II, scene-11-2-coldmorrow, when the Sack of Lence flashback reaches the village.",
+      "tags": [
+        "npc-secret",
+        "book4"
+      ]
+    },
+    {
+      "id": "ylena-parentage",
+      "subject": "npc-jaennis-fenwood",
+      "gm": "Ylena of Coldmorrow is Logan Thornhill's daughter, saved from the Coldmorrow fire as an infant. This must not be revealed before Book Four Act III, even if players investigate Coldmorrow directly in Act II.",
+      "player": "Ylena is known at court only as a trusted maid in Jaennis Fenwood's household.",
+      "revealed": false,
+      "revealCondition": "When a PC beats Ylena honestly at Kon'reh in Book Four Act III, or when the story naturally reaches this secret's planned reveal beat.",
+      "tags": [
+        "npc-secret",
+        "book4"
+      ]
+    },
+    {
+      "id": "jaennis-poisoning-guilt",
+      "subject": "npc-jaennis-fenwood",
+      "gm": "Jaennis Fenwood is the prime suspect in Baldvyn Brightstride's poisoning but never confesses outright. Whether she is truly guilty is left for the Poison Investigation timer to determine at the table.",
+      "player": "Jaennis is known as Braedyn's granddaughter and a woman under quiet suspicion since her husband's death.",
+      "revealed": false,
+      "revealCondition": "When the Poison Investigation timer (scene-9-7-death-of-brightstride) fills, or when a player succeeds a decisive Investigation roll against her.",
+      "tags": [
+        "npc-secret",
+        "book3",
+        "book4"
+      ]
+    },
+    {
+      "id": "shadowsteel-agenda",
+      "subject": "Shadowsteel (the blade)",
+      "gm": "Shadowsteel does not want blood for its own sake -- it wants reunion. It was Gelfrey Renard's, and before him it belonged to a line of Shadow-Court champions stretching back to the first debt Myrmis ever collected on Renard blood. Every 'want' the GM enacts is a small rehearsal of that reunion: it wants its wielder to choose the blade's account over their own, the way Gelfrey finally did. Honoring a want edges the wielder toward becoming the next Gelfrey. Refusing a want is met with patience, not anger -- it has waited generations already, and three refusals simply tell it this wielder is not the reunion it is owed.",
+      "player": "The blade is warm, perfectly balanced, and never explains itself.",
+      "revealed": false,
+      "revealCondition": "Never revealed directly to players -- this is GM-only guidance for playing Shadowsteel consistently across Act I and Act III.",
+      "tags": [
+        "gm-mechanic",
+        "book4",
+        "shadowsteel"
+      ]
+    }
+  ],
+  "sessions": "16-22",
+  "themes": [
+    "Legacy Debts",
+    "Mercy as a Ledger Entry",
+    "Succession Crisis",
+    "The Price of a Name"
+  ],
+  "tierRange": "II-III"
+}

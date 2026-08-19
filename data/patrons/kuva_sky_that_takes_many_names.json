@@ -28,11 +28,11 @@
   ],
   "runekeeper_options": {
     "thiasos": {
-      "description": "A Runekeeper sworn to Kuva does not bind a creature of the shelter — they bind a companion of the open air. Their Thiasos is a small beast or being that embodies wind and witness: a storm petrel that nests only on the highest peaks, a wind-chaser beetle that clicks its shell when a gale is coming, a gray-feathered kestrel that never lands on a roof, a silver moth that appears only during lightning storms, or a field mouse that sits perfectly still when the sky is about to break.",
+      "description": "Kuva keeps no Runekeeper bound to a creature of the shelter — they bind a companion of the open air. Their Thiasos is a small beast or being that embodies wind and witness: a storm petrel that nests only on the highest peaks, a wind-chaser beetle that clicks its shell when a gale is coming, a gray-feathered kestrel that never lands on a roof, a silver moth that appears only during lightning storms, or a field mouse that sits perfectly still when the sky is about to break.",
       "care": "This creature requires no food, but it must be shown the open sky each day — a glimpse through a window is not enough. If confined for a week, it becomes Compromised (its feathers or scales grow dull, and its bearer suffers –1 die on all navigation and weather-sense rolls until it is released)."
     },
     "codex": {
-      "description": "The Codex of Kuva is never a book kept under a roof. It may be a bundle of wind-knotted cords that must be untied and retied each dawn, a slate tablet that must be read in the rain, a scroll of vellum that shrivels if not exposed to the elements, or a leather pouch of stones collected from nine different hilltops.",
+      "description": "You will not find Kuva's Codex bound as a book kept under a roof. It may be a bundle of wind-knotted cords that must be untied and retied each dawn, a slate tablet that must be read in the rain, a scroll of vellum that shrivels if not exposed to the elements, or a leather pouch of stones collected from nine different hilltops.",
       "upkeep": "Because the sky resists being fixed in ink, the Codex requires upkeep: the Runekeeper must spend an hour each week under open sky, reciting each Rite aloud to the wind, or the words fade (treat as Compromised until re-consecrated in a storm)."
     }
   },
@@ -50,7 +50,11 @@
       "action": "Scene",
       "range": "Near",
       "resist": "No",
-      "tags": ["OATH", "TRUTH", "FEAR"],
+      "tags": [
+        "OATH",
+        "TRUTH",
+        "FEAR"
+      ],
       "materials": "A pinch of ash thrown upward, or a single breath spoken into a knot.",
       "effect": "For one scene, when you speak a promise outdoors, any listener who hears it must test Resolve (DV 3) to lie about that promise. If you break your own promise, the GM gains 2 Story Beats to spend on a sky-related complication (lightning, sudden fog, a hawk stealing your food).",
       "push_it": "The oath is witnessed by a passing storm — the liar suffers –2 dice to all rolls until they make amends under open sky. Mark 1 SB (Diamonds). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -66,7 +70,10 @@
       "action": "Instant",
       "range": "Self",
       "resist": "No",
-      "tags": ["SENSE", "TRUTH"],
+      "tags": [
+        "SENSE",
+        "TRUTH"
+      ],
       "materials": "A handful of dust or leaves cast to the wind.",
       "effect": "Ask the sky a single question about the weather to come, a direction to travel, or whether a promise made nearby was sincere. The GM must answer truthfully, though the answer comes as an omen (a bird's flight, a change in wind) rather than plain words. Gain +1 die on your next Lore or Navigation roll this scene.",
       "push_it": "Ask a second question in the same casting, but mark 1 SB (Diamonds) as the sky grows less patient with your curiosity. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -82,7 +89,11 @@
       "action": "Scene",
       "range": "Zone",
       "resist": "Yes",
-      "tags": ["STORM", "FEAR", "FORCE"],
+      "tags": [
+        "STORM",
+        "FEAR",
+        "FORCE"
+      ],
       "materials": "A mirror polished under a new moon, or a piece of sky-stone (meteorite fragment).",
       "effect": "Call down a brief flash of lightning or a clap of thunder. All who see or hear it within the zone must test Spirit (DV 4) or be Stunned for one exchange. Cannot be used indoors or underground. The lightning always strikes the highest point in the zone, which may be inconvenient.",
       "push_it": "The storm lingers for the scene. All ranged attacks suffer –1 die, and any fire in the zone is extinguished. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -98,7 +109,11 @@
       "action": "Scene",
       "range": "Zone",
       "resist": "No",
-      "tags": ["MOVEMENT", "STORM", "BOOST"],
+      "tags": [
+        "MOVEMENT",
+        "STORM",
+        "BOOST"
+      ],
       "materials": "A sail, banner, or cloak spread wide to catch the wind.",
       "effect": "Summon a favoring wind across the zone for the scene. All allies gain +1 Speed and +1 die to sailing, flying, or gliding rolls. This cannot be used indoors, underground, or in still air unnaturally maintained.",
       "push_it": "The wind becomes a squall, adding +1 die to allied ranged attacks made downwind but –1 die to those made upwind. Mark 1 SB (Clubs). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -114,7 +129,12 @@
       "action": "Extended",
       "range": "Zone",
       "resist": "No",
-      "tags": ["WEATHER", "SACRIFICE", "FATE", "DEBT"],
+      "tags": [
+        "WEATHER",
+        "SACRIFICE",
+        "FATE",
+        "DEBT"
+      ],
       "materials": "A visible scar on your own flesh (cut during the rite) and a handful of earth from the place you wish to affect.",
       "effect": "Once per season, you may pray for rain (or clear skies) over a one-mile area. The weather shifts within an hour and lasts for a full day. If you pray while standing under open sky, you may also ask for a specific omen — a double rainbow, a lightning strike on a named target, or a wind that carries a message to a distant friend. The cost is a permanent scar; Kuva will remember your debt.",
       "push_it": "The weather shift is immediate and dramatic (a cloudburst or a sudden clearing), and the scar never fully heals. Mark 3 SB (Spades) as the sky's disruption draws attention. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",

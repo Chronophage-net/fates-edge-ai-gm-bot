@@ -36,7 +36,7 @@
       "care": "It requires no food, but it must be kept submerged in salt water when not in use. If left dry for a week, it becomes Compromised (it emits a distressing keening at random, imposing –1 die on Stealth rolls for its bearer)."
     },
     "codex": {
-      "description": "The Codex of Khemesh is never a book of paper. It may be a slab of slate etched with runes that weep condensation, a chain of iron links each inscribed with a single syllable, or the inside of a deep-sea diving helmet.",
+      "description": "The Codex kept in Khemesh's name is never a book of paper. It may be a slab of slate etched with runes that weep condensation, a chain of iron links each inscribed with a single syllable, or the inside of a deep-sea diving helmet.",
       "upkeep": "Because the deep resists being fixed in writing, the Codex requires upkeep: the Runekeeper must immerse it in cold salt water for an hour each week, or the Rites stored there become illegible (treat as Compromised until restored)."
     }
   },
@@ -54,7 +54,12 @@
       "action": "Scene",
       "range": "Near",
       "resist": "Yes",
-      "tags": ["FEAR", "DEBUFF", "AREA", "SILENCE"],
+      "tags": [
+        "FEAR",
+        "DEBUFF",
+        "AREA",
+        "SILENCE"
+      ],
       "materials": "A broken shell filled with ink-dark water.",
       "effect": "Choose one: Whisper of the Trench: Target hears impossible echoes and suffers –1 die on their next action. Crushing Silence: Establish an oppressive silence in a zone; enemies in the zone suffer –1 die to coordination or morale-driven actions.",
       "push_it": "(Whisper) Echoes coil in your own skull — take Fatigue 1, but the target also loses their next minor action. (Silence) A single enemy's voice is stolen entirely for the scene. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -70,7 +75,11 @@
       "action": "Scene",
       "range": "Near",
       "resist": "No",
-      "tags": ["BIND", "PRESSURE", "DEBUFF"],
+      "tags": [
+        "BIND",
+        "PRESSURE",
+        "DEBUFF"
+      ],
       "materials": "A length of rusted chain submerged in water.",
       "effect": "Target is pinned by invisible crushing force: treat as [ENTANGLE] with Great Effect if underwater or confined.",
       "push_it": "Inflict Fatigue 1 on the target in addition to the restraint. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -86,7 +95,11 @@
       "action": "Scene",
       "range": "Self",
       "resist": "No",
-      "tags": ["TRUTH", "BURDEN", "FEAR"],
+      "tags": [
+        "TRUTH",
+        "BURDEN",
+        "FEAR"
+      ],
       "materials": "None (requires standing in absolute darkness or near deep water).",
       "effect": "You perceive the world as Khemesh does — fractured, alien, crushing. Gain +2 dice to Notice and Arcana, and may ask one 'true nature' question about a foe or structure. When the scene ends, you suffer Exposure +1 as your perception warps.",
       "push_it": "Extend the vision to one ally, but both take Fatigue 1. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -102,7 +115,12 @@
       "action": "Scene",
       "range": "Zone",
       "resist": "No",
-      "tags": ["PRESSURE", "AREA", "FATE", "DEATH"],
+      "tags": [
+        "PRESSURE",
+        "AREA",
+        "FATE",
+        "DEATH"
+      ],
       "materials": "A sealed vessel of abyssal water, broken open.",
       "effect": "Reality in the zone folds inward like the crushing deep: Enemies act at Desperate Position by default; Each beat, the GM may force 1 SB (Spades/Clubs favored) as the deep pressures reality; Structures, vessels, or wards fracture as if under immense weight.",
       "push_it": "For one beat, declare a single enemy 'crushed' (severe harm/effect). You immediately suffer Fatigue 2. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",

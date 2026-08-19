@@ -28,11 +28,11 @@
   ],
   "runekeeper_options": {
     "thiasos": {
-      "description": "A Runekeeper sworn to Ibeji does not bind a single familiar — they bind two, for Ibeji are never one. Their Thiasos is a pair of small creatures that embody partnership: two twin mice that sleep curled together, two small lizards that change color in synchrony, two beetles that roll the same ball of dung, two gray doves that nest in the same bell tower, or two small brass gears that click in perfect rhythm (these are not alive, but they hum when the partner is near).",
+      "description": "A Runekeeper who serves Ibeji does not bind a single familiar — they bind two, for Ibeji are never one. Their Thiasos is a pair of small creatures that embody partnership: two twin mice that sleep curled together, two small lizards that change color in synchrony, two beetles that roll the same ball of dung, two gray doves that nest in the same bell tower, or two small brass gears that click in perfect rhythm (these are not alive, but they hum when the partner is near).",
       "care": "Each creature requires no food in the usual sense, but they must be kept together; separating them for more than a day makes them Compromised (they grow listless, and the bearer suffers –1 die to all rolls involving coordination or assistance until reunited)."
     },
     "codex": {
-      "description": "The Codex of Ibeji is never a book written by one hand. It may be a pair of matched slate tablets, each inscribed with half of every Rite; a single scroll that must be held by two people to be read; a set of twin bells that ring only when struck together; or a keystone with two faces, each carved by a different mason.",
+      "description": "A Codex sworn to Ibeji is never a book written by one hand. It may be a pair of matched slate tablets, each inscribed with half of every Rite; a single scroll that must be held by two people to be read; a set of twin bells that ring only when struck together; or a keystone with two faces, each carved by a different mason.",
       "upkeep": "Because Ibeji's truths are written in duality, the Codex requires upkeep: the Runekeeper must spend an hour each week with a partner (any willing person), reading each Rite aloud together, or the words become mismatched (treat as Compromised until re-paired)."
     }
   },
@@ -50,7 +50,11 @@
       "action": "Scene",
       "range": "Self and One Ally",
       "resist": "No",
-      "tags": ["ASSIST", "BOOST", "BOND"],
+      "tags": [
+        "ASSIST",
+        "BOOST",
+        "BOND"
+      ],
       "materials": "Two stones of equal weight, or a single gear that has been split and re-joined.",
       "effect": "You and an ally within Near gain +1 die to any roll made to assist each other for the scene. When one of you takes the Assist action, the other gains an additional +1 die (stacking with the normal assist bonus).",
       "push_it": "The bond is visible — a faint line of golden light connects you. Any enemy who sees it must test Resolve (DV 3) or be unable to target only one of you; they must attack both or neither. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -66,7 +70,11 @@
       "action": "Instant",
       "range": "Touch",
       "resist": "No",
-      "tags": ["CRAFT", "ASSIST", "BOND"],
+      "tags": [
+        "CRAFT",
+        "ASSIST",
+        "BOND"
+      ],
       "materials": "A pair of matched tools, or a shared handhold on a single object.",
       "effect": "You and an ally lifting, carrying, or crafting the same object together treat it as if it weighed half as much, and gain +1 die to any Craft or Body roll made jointly on it for the scene.",
       "push_it": "Extend the effect to a third and fourth pair of hands working the same task, so long as all are within Near range. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -82,7 +90,11 @@
       "action": "Instant",
       "range": "Touch",
       "resist": "No",
-      "tags": ["BOND", "FATE", "PROTECT"],
+      "tags": [
+        "BOND",
+        "FATE",
+        "PROTECT"
+      ],
       "materials": "Two objects that belong to two different people (a ring, a lock of hair, a personal seal).",
       "effect": "Touch two objects; for one day, they cannot be separated by less than magical force. If one is moved, the other moves with it. This can be used to lock a door (the door and its frame), to bind a prisoner's hands (left and right manacle), or to keep two allies from being pulled apart by a trap.",
       "push_it": "The seal is permanent until broken by a ritual of separation (requiring the consent of both parties). Mark +2 Obligation. If one party breaks the seal by force, they suffer 2 Harm (spiritual backlash). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -98,7 +110,11 @@
       "action": "Scene",
       "range": "Near",
       "resist": "No",
-      "tags": ["PROTECT", "BOND", "BOOST"],
+      "tags": [
+        "PROTECT",
+        "BOND",
+        "BOOST"
+      ],
       "materials": "A keystone or capstone fragment, split evenly between two partners.",
       "effect": "You and a bonded partner each gain +1 Effect on rolls to defend the other from harm, and once per scene, one of you may intercept an attack meant for the other, treating the Harm as if it were one level lower.",
       "push_it": "Fully absorb one instance of Harm meant for your partner, taking it as your own at full severity. Mark 1 SB (Spades). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -114,7 +130,12 @@
       "action": "Extended",
       "range": "Zone",
       "resist": "No",
-      "tags": ["MOVEMENT", "CRAFT", "SACRIFICE", "DEBT"],
+      "tags": [
+        "MOVEMENT",
+        "CRAFT",
+        "SACRIFICE",
+        "DEBT"
+      ],
       "materials": "A keystone chip from a walking city, and a gear from an Aeler bearing.",
       "effect": "You and an ally may move a stone city's roller 1 mile without oxen — but you both mark 2 Fatigue. The city will remember your aid; the Mason-Kin will grant you a Keystone Charter (right to dwell in any Ngomebe city for a season) if you succeed. If you fail, the roller cracks, and the city stops until a Mason-Kin can repair it.",
       "push_it": "Move the roller 2 miles instead of 1. Mark +3 Obligation and both you and your ally gain a permanent scar — a crack on your palm that never heals, matching the crack in the roller. Cost: Mark +1 Obligation (total +4) or Mark +1 Fatigue.",

@@ -27,11 +27,11 @@
   ],
   "runekeeper_options": {
     "thiasos": {
-      "description": "A Runekeeper sworn to the Savage Heart does not bind a familiar of hearth and home. Their Thiasos is a small predator or hunting companion: a wolf pup with eyes the color of amber, a lynx kitten whose fur prickles at danger, a hawk with one white feather that never misses its mark, a viper that coils around the wrist and tastes the air for fear, or a shadow-fox that follows silently and leaves no tracks.",
+      "description": "the Savage Heart keeps no Runekeeper bound to a familiar of hearth and home. Their Thiasos is a small predator or hunting companion: a wolf pup with eyes the color of amber, a lynx kitten whose fur prickles at danger, a hawk with one white feather that never misses its mark, a viper that coils around the wrist and tastes the air for fear, or a shadow-fox that follows silently and leaves no tracks.",
       "care": "This creature requires no food in the usual sense, but it must hunt and kill its own prey each week (a rat, a rabbit, or larger, depending on the keeper's means). If neglected, it becomes Compromised (it grows listless, and its keeper loses the benefit of Stalker's Instinct until the creature is fed with a fresh kill)."
     },
     "codex": {
-      "description": "The Codex of the Savage Heart is never a book of paper and ink. It may be a belt of predator teeth, each tooth carved with a hunting verse; a bundle of cured hides painted with the kill-records of the keeper's lineage; a set of bone tally sticks, notched for every successful hunt; or the skull of a great beast, its jaw etched with runes that can only be read by the light of a fresh kill.",
+      "description": "the Savage Heart keeps no Codex that resembles a book of paper and ink. It may be a belt of predator teeth, each tooth carved with a hunting verse; a bundle of cured hides painted with the kill-records of the keeper's lineage; a set of bone tally sticks, notched for every successful hunt; or the skull of a great beast, its jaw etched with runes that can only be read by the light of a fresh kill.",
       "upkeep": "Because the hunt resists being fixed in writing, the Codex requires upkeep: the Runekeeper must spend an hour each week oiling the leather, sharpening the teeth, or adding a new notch for a recent kill; otherwise the Rites stored there fade (treat as Compromised until the keeper makes an offering of fresh blood)."
     }
   },
@@ -49,7 +49,11 @@
       "action": "Scene",
       "range": "Near",
       "resist": "No",
-      "tags": ["MARK", "FEAR", "TRACK"],
+      "tags": [
+        "MARK",
+        "FEAR",
+        "TRACK"
+      ],
       "materials": "A tooth from a predator that killed its own prey.",
       "effect": "Mark a single target as your prey. Gain +1 die on all rolls to track, pursue, or intimidate that target. The effect lasts until the target escapes or is killed.",
       "push_it": "The prey feels your gaze; they suffer –1 die to resist social pressure from you. Mark 1 SB (Spades). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -65,7 +69,11 @@
       "action": "Scene",
       "range": "Self",
       "resist": "Yes",
-      "tags": ["SENSE", "FEAR", "TRACK"],
+      "tags": [
+        "SENSE",
+        "FEAR",
+        "TRACK"
+      ],
       "materials": "A fresh kill's blood smeared on your face.",
       "effect": "You scent the air like a beast. Gain +2 dice to Investigation or Survival when tracking by smell. You may also detect fear — you sense if a creature within Near is Frightened.",
       "push_it": "Your sense expands to Far, but you are overwhelmed by the smell of blood; mark 1 SB (Hearts) and suffer –1 die to social rolls until the end of the scene. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -81,7 +89,11 @@
       "action": "Scene",
       "range": "Near",
       "resist": "Yes",
-      "tags": ["TEAMWORK", "TRANSFORM", "BOOST"],
+      "tags": [
+        "TEAMWORK",
+        "TRANSFORM",
+        "BOOST"
+      ],
       "materials": "A token from each member of your pack (a claw, a feather, a scrap of hide).",
       "effect": "You and up to three allies form a hunting pack. While within Near of each other, all gain +1 die to attacks against a single designated prey, and the first ally to attack each round gains +1 Effect.",
       "push_it": "Coordination extends to Far, but hunters become territorial; mark 1 SB (Spades) as rivalries flare. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -97,7 +109,11 @@
       "action": "Scene",
       "range": "Touch",
       "resist": "Yes",
-      "tags": ["CONSUME", "HEAL", "BOOST"],
+      "tags": [
+        "CONSUME",
+        "HEAL",
+        "BOOST"
+      ],
       "materials": "The flesh of a fallen enemy, consumed raw.",
       "effect": "Devour the strength of the fallen. Heal 1 Fatigue immediately, and gain +1 die to your next physical action. If the enemy was supernatural (spirit, demon, fey), you also gain a minor property of theirs for one scene.",
       "push_it": "Heal 1 Harm instead of Fatigue, but mark 1 SB (Hearts) as the feast attracts scavengers. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -113,7 +129,12 @@
       "action": "Extended",
       "range": "Near",
       "resist": "No",
-      "tags": ["TRANSFORM", "FEAR", "SPEED", "DEATH"],
+      "tags": [
+        "TRANSFORM",
+        "FEAR",
+        "SPEED",
+        "DEATH"
+      ],
       "materials": "The heart of a predator you have killed in single combat, still warm.",
       "effect": "You become the ultimate hunter for one scene: ignore all difficult terrain; gain +3 dice to tracking and combat rolls against your designated prey; if you reduce a prey to 0 Harm, make a free attack against another target within Near.",
       "push_it": "The hunt consumes you — you cannot end the rite until all designated prey are dead or fled, and you suffer Harm 1 (Weariness) when the scene ends. Mark +2 Obligation. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",

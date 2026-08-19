@@ -38,11 +38,11 @@
   ],
   "runekeeper_options": {
     "thiasos": {
-      "description": "A Runekeeper sworn to Raéyn does not bind a creature of dry land—they bind a companion of the tides. Their Thiasos is a small sea_creature or mythological being of the waves: a storm_petrel that appears before gales and can sense pressure drops, a gray seal pup that sings in harmonic tones audible only underwater, a hermit crab whose shell is etched with wave_runes, a small octopus that changes color to reflect the weather, or a sea_horse that can hover in still air for a heartbeat.",
+      "description": "Raéyn keeps no Runekeeper bound to a creature of dry land—they bind a companion of the tides. Their Thiasos is a small sea_creature or mythological being of the waves: a storm_petrel that appears before gales and can sense pressure drops, a gray seal pup that sings in harmonic tones audible only underwater, a hermit crab whose shell is etched with wave_runes, a small octopus that changes color to reflect the weather, or a sea_horse that can hover in still air for a heartbeat.",
       "care": "This creature requires no food in the usual sense, but it must be immersed in salt water (or exposed to sea spray) each day. If kept dry for more than a day, it becomes Compromised (it grows listless and its color fades; its bearer loses the benefit of Sailor's Instinct until it is returned to the sea)."
     },
     "codex": {
-      "description": "The Codex of Raéyn is never a book of dry paper. It may be a set of tide_charts etched on whalebone, a bundle of knotted cords that record the phases of the moon and the turn of currents, a conch shell whose interior spiral is inscribed with navigational verse, or a driftwood plank carved with wave_runes that only become visible when wet.",
+      "description": "Raéyn keeps no Codex that resembles a book of dry paper. It may be a set of tide_charts etched on whalebone, a bundle of knotted cords that record the phases of the moon and the turn of currents, a conch shell whose interior spiral is inscribed with navigational verse, or a driftwood plank carved with wave_runes that only become visible when wet.",
       "upkeep": "Because the sea resists being fixed in writing, the Codex requires upkeep: the Runekeeper must spend an hour each week soaking it in salt water or tracing its symbols by the light of a tide pool, or the Rites stored there become faint (treat as Compromised until re_consecrated at the shore)."
     }
   },
@@ -60,7 +60,12 @@
       "action": "Scene",
       "range": "Self",
       "resist": "No",
-      "tags": ["MOVEMENT", "NAVIGATION", "BOOST", "RISK"],
+      "tags": [
+        "MOVEMENT",
+        "NAVIGATION",
+        "BOOST",
+        "RISK"
+      ],
       "materials": "A knotted length of salt_twine brushed with seawater, or a shell held to the ear while facing the wind.",
       "effect": "Choose one: (a) Tidemark's Blessing: Treat slick, swaying, or water_slicked footing as stable for this scene. Gain +1 die on boarding, balance, or shipboard movement. Create a 4_segment Tide's Favor timer to ignore one level of difficult terrain. (b) Whispering Currents: Learn the safest near_term route across water or coastline, or gain +1 die to navigation checks for this scene. If Khemesh's influence is present, suffer –1 die from conflicting currents.",
       "push_it": "(Tidemark) Extend to one ally in Close for one beat, but generate 1 SB (Spades) as the deck shifts. (Currents) Also learn the fastest route, but mark Exposure +1 (leaving a telltale wake). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -76,7 +81,12 @@
       "action": "Scene",
       "range": "Zone",
       "resist": "No",
-      "tags": ["TERRAIN", "AREA", "MOVEMENT", "PRESSURE"],
+      "tags": [
+        "TERRAIN",
+        "AREA",
+        "MOVEMENT",
+        "PRESSURE"
+      ],
       "materials": "A handful of pebbles cast in a crescent.",
       "effect": "Bias currents and water levels in the zone (must be water_adjacent). Those moving with the tide gain +1 die; those moving against suffer –1 die. Small craft must test to hold position. Create a 6_segment Tidal Influence timer.",
       "push_it": "Brief surge or drawdown (one beat): open a ford or swamp a skiff. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -92,7 +102,12 @@
       "action": "Scene",
       "range": "Route",
       "resist": "No",
-      "tags": ["GUIDANCE", "BOOST", "BOND", "FATE"],
+      "tags": [
+        "GUIDANCE",
+        "BOOST",
+        "BOND",
+        "FATE"
+      ],
       "materials": "Two sea_glass markers dropped overboard at start and end.",
       "effect": "Consecrate a wave_road between two visible points. Allies gain +2 dice on travel, evade, or carry actions at sea. Designated pursuers suffer –1 die to intercept. One active wave_road at a time. Create an 8_segment Blessed Passage timer.",
       "push_it": "Extend the route's favor to an adjacent leg for one beat; mark +1 Obligation. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -108,7 +123,13 @@
       "action": "Scene",
       "range": "Zone",
       "resist": "No",
-      "tags": ["WEATHER", "AREA", "COMMAND", "FEAR", "BOOST"],
+      "tags": [
+        "WEATHER",
+        "AREA",
+        "COMMAND",
+        "FEAR",
+        "BOOST"
+      ],
       "materials": "A vial of rainwater gathered at three crossings.",
       "effect": "Shape a storm_band over the zone (sea, shore, or open sky). Choose two modes at cast; switch one once per scene: (a) Propulsion: Vessel gains +1 band of movement per beat (or +1 Effect to maneuvers). (b) Concealment: Veil of rain/spray; ranged targeting impaired; –1 die to hostile sighting. (c) Smite: Once per beat, lash with wave or lightning as [AREA] hazard.",
       "push_it": "Add a third mode for one beat, then the GM spends 1 SB on collateral. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
@@ -124,7 +145,13 @@
       "action": "Extended",
       "range": "Zone",
       "resist": "No",
-      "tags": ["CURSE", "DEBT", "FEAR", "AREA", "FATE"],
+      "tags": [
+        "CURSE",
+        "DEBT",
+        "FEAR",
+        "AREA",
+        "FATE"
+      ],
       "materials": "Tears of a betrayed lover mixed with salt from seven seas.",
       "effect": "Curse those who wronged you. The target suffers –2 dice to maritime/weather rolls for one session. At sea, they must roll Spirit+Resolve (DV 4) each day or suffer Harm 1 (Weather). Create a 6_segment Mother's Ire timer.",
       "push_it": "The curse spreads to the target's allies or family; mark 2 SB (Diamonds). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",

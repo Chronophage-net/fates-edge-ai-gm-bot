@@ -41,7 +41,7 @@
       "care": "This creature is not bound by precision or efficiency; it is bound by curiosity. It requires no fuel, but it needs to be shown new things—new materials, new techniques, new failures. If neglected, it becomes sullen and still (Compromised: it refuses to move or sing until you show it something it has never seen before)."
     },
     "codex": {
-      "description": "The Codex of the Breath is never a finished book. It may be a growing collection of sketches, a scrapbook of failed attempts and happy accidents, a set of interlocking wooden blocks that can be rearranged into infinite configurations, or a roll of birchbark that records only the first draft of each Rite (the later refinements are left unwritten).",
+      "description": "A Codex sworn to the Breath is never a finished book. It may be a growing collection of sketches, a scrapbook of failed attempts and happy accidents, a set of interlocking wooden blocks that can be rearranged into infinite configurations, or a roll of birchbark that records only the first draft of each Rite (the later refinements are left unwritten).",
       "upkeep": "Because the Breath values the moment of ignition, the Codex requires upkeep: the Runekeeper must spend an hour each week attempting to create something new—a sketch, a carving, a new combination of materials—or the Rites stored there become static (treat as Compromised until refreshed)."
     }
   },
@@ -59,7 +59,11 @@
       "action": "Scene",
       "range": "Self/Touch",
       "resist": "Yes",
-      "tags": ["SPARK", "INSPIRE", "HEAT"],
+      "tags": [
+        "SPARK",
+        "INSPIRE",
+        "HEAT"
+      ],
       "materials": "A cold hearth, a dead forge, or a project that has stalled.",
       "effect": "Choose one: Spark the Forge: Relight any non-magical fire or forge as if it had been tended for hours. Gain +2 dice to the next Craft or Craft roll made at that forge. Inspire the Maker: A touched ally gains +1 die to their next creative or skill roll and may reroll one failure on that roll. The Breath delights in seeing what they will make.",
       "push_it": "The spark leaps—the fire catches in an unexpected way. Mark 1 SB (Diamonds) as the Breath's enthusiasm spreads beyond your control. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -75,7 +79,11 @@
       "action": "Instant",
       "range": "Self",
       "resist": "Yes",
-      "tags": ["CHANCE", "DISCOVERY", "BOOST"],
+      "tags": [
+        "CHANCE",
+        "DISCOVERY",
+        "BOOST"
+      ],
       "materials": "A failed attempt—a cracked pot, a misshapen blade, a smeared sketch.",
       "effect": "When you fail a Craft, Craft, or creative roll, you may invoke this Rite to turn the failure into a discovery. The Breath reveals a hidden lesson in the wreckage: Gain +1 die on your next attempt at the same task. Or, gain a Boon (the failure was educational). Or, learn a minor secret about the materials you were working with (GM grants a hint).",
       "push_it": "The failure is so spectacular it inspires a completely new approach. Gain +2 dice on your next attempt, but the Breath's enthusiasm marks 1 SB (Clubs) as your improvisation draws attention. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -91,7 +99,11 @@
       "action": "Extended",
       "range": "Touch",
       "resist": "Yes",
-      "tags": ["ANIMA", "LIFE", "IMPROVE"],
+      "tags": [
+        "ANIMA",
+        "LIFE",
+        "IMPROVE"
+      ],
       "materials": "A creation that is nearly finished, and a willing breath from the maker.",
       "effect": "You breathe a spark of life into a creation. Choose one: Temporary Anima: A mundane object gains a spark of sentience for one scene. It can perform simple tasks (hold a door, fetch a tool, warn of danger) but cannot speak or make complex decisions. Mark +1 Obligation. Permanent Anima: A creation gains a minor magical property (equivalent to a 2 XP enchantment). This requires a Downtime Timer (4 segments) and the Breath's continued attention. Mark +2 Obligation.",
       "push_it": "The anima is unusually strong—the object gains a personality and may act independently. Mark 1 SB (Spades) as the Breath's gift becomes complicated. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
@@ -107,7 +119,11 @@
       "action": "Scene",
       "range": "Zone",
       "resist": "Yes",
-      "tags": ["CREATION", "AREA", "BOOST"],
+      "tags": [
+        "CREATION",
+        "AREA",
+        "BOOST"
+      ],
       "materials": "A workshop or space littered with half-finished projects.",
       "effect": "The Breath blesses a space where making is happening. For the scene: All Craft, Craft, and creative rolls in the zone gain +1 die. Any failure in the zone yields +1 Boon (the Breath loves a learning moment). Start a [4] Inspiration Flood timer. When it fills, the Breath's enthusiasm becomes overwhelming—everyone in the zone must make a creative roll (any skill) or mark Fatigue from the pressure of too many ideas.",
       "push_it": "The inspiration flood is immediate. Everyone in the zone gains +2 dice to their next creative roll, but they also gain a Compulsion: Create (must attempt at least one creative act before the scene ends). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",

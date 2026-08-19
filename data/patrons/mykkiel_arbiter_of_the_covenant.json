@@ -33,7 +33,7 @@
   ],
   "runekeeper_options": {
     "thiasos": {
-      "description": "A Runekeeper sworn to Mykkiel does not bind a creature of shadow or wild. Their Thiasos is a small beast or being of zealous loyalty and keen perception: a white hound with brass eyes that can smell lies and taint, a ferret that hunts rodents of corruption with relentless efficiency, a bronze-feathered hawk that circles above suspected heretics, or a small mechanical bird that sings hymns of purity at dawn.",
+      "description": "Those who Runekeep for Mykkiel do not bind a creature of shadow or wild. Their Thiasos is a small beast or being of zealous loyalty and keen perception: a white hound with brass eyes that can smell lies and taint, a ferret that hunts rodents of corruption with relentless efficiency, a bronze-feathered hawk that circles above suspected heretics, or a small mechanical bird that sings hymns of purity at dawn.",
       "care": "This creature requires no food, but it must be present at a daily prayer or rite of purification. If neglected for a week, it becomes Compromised (it growls at strangers or sings discordantly, imposing –1 die on all social rolls with those suspected of impurity for its bearer)."
     },
     "codex": {
@@ -55,7 +55,12 @@
       "action": "Scene",
       "range": "Zone",
       "resist": "No",
-      "tags": ["WARD", "COMMAND", "FEAR", "AREA"],
+      "tags": [
+        "WARD",
+        "COMMAND",
+        "FEAR",
+        "AREA"
+      ],
       "materials": "A war-banner sanctified with sacred oils, or sanctified salt and ritual boundaries.",
       "effect": "Choose one: Burning Banner: Consecrate an area for a righteous cause. Followers gain +1 die to resist fear; enemies suffer –1 die to oppose your proclamation. Create a 4-segment Divine Mandate timer. Hallowed Ground: Create sacred space where divine law prevails. All oath-breaking, theft, or violence suffers –1 die. Creates a 6-segment Sacred Space timer.",
       "push_it": "(Banner) The banner emits visible radiance; unbelievers must test Resolve (DV 3) or falter, taking –1 die to attacks for the scene. (Hallowed) The space becomes consecrated ground that repels supernatural desecration; any creature with the [UNDEAD] or [DEMON] tag must test Spirit (DV 4) to enter. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -71,7 +76,12 @@
       "action": "Instant",
       "range": "Near",
       "resist": "Yes",
-      "tags": ["COMMAND", "FEAR", "TRUTH", "FORCE"],
+      "tags": [
+        "COMMAND",
+        "FEAR",
+        "TRUTH",
+        "FORCE"
+      ],
       "materials": "A stone tablet or scroll with divine commandments.",
       "effect": "Issue a divine commandment ('Cease,' 'Repent,' 'Submit'). The target tests Spirit+Resolve (DV 3) or complies. Higher DV for more demanding commands.",
       "push_it": "The command carries divine authority; resistance causes 1 SB (Hearts) of spiritual distress, and the target suffers –1 die to all actions for the remainder of the scene. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -87,7 +97,13 @@
       "action": "Extended",
       "range": "Zone",
       "resist": "No",
-      "tags": ["VOW", "BOND", "DEBT", "FEAR", "TRUTH"],
+      "tags": [
+        "VOW",
+        "BOND",
+        "DEBT",
+        "FEAR",
+        "TRUTH"
+      ],
       "materials": "Wax, sacred seals, the names of sworn parties.",
       "effect": "Formalize a binding covenant. All participants suffer concrete penalties for breach (–1 die to relevant actions). Creates an 8-segment Covenant Bond timer; each major breach advances the timer by 2. When full, the covenant shatters and all parties mark +1 Obligation.",
       "push_it": "A breach triggers a visible divine mark (a brand, a stutter, a scar); the marked suffer –2 dice in pious company until they atone. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -103,7 +119,13 @@
       "action": "Extended",
       "range": "Near",
       "resist": "Yes",
-      "tags": ["COMMAND", "FEAR", "FATE", "DEBT", "TRUTH"],
+      "tags": [
+        "COMMAND",
+        "FEAR",
+        "FATE",
+        "DEBT",
+        "TRUTH"
+      ],
       "materials": "Scales of justice, testimony (written or spoken), ritual condemnation.",
       "effect": "Pronounce divine judgment. The target suffers escalating penalties (–1 die, then –2 dice) on all social and contested rolls until they atone. Serious crimes may warrant greater effects (e.g., Harm 2, exile, or the attention of Covenant inquisitors). Start a 10-segment Judgment timer; each sunrise advances it by 1. When full, the judgment becomes permanent until a greater authority lifts it.",
       "push_it": "The judgment becomes public knowledge; the community shuns an unrepentant target (all social rolls against them gain +1 die for the community, and the target suffers –1 die to all social rolls). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",

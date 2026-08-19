@@ -25,6 +25,17 @@ An extensible, pluggable AI bot that connects to the Fate's Edge WebSocket serve
   first-class alternative to burying secrets in `_gmhints` prose. The AI flips a reveal the moment
   it narrates one, via `[REVEAL "id"]`/`[HIDE "id"]`; a human GM can do the same with
   `!gm knowledge [list] | !gm knowledge reveal <id> | !gm knowledge hide <id>`.
+- **Legacy Tracker** – adventure modules can declare a `persistence` schema (carryover facts that
+  survive past a single adventure's completion — reputations, favors owed, lingering
+  consequences). The bot reads/writes this state via `!gm adventure legacy [schema] [set <key>
+  <value>|clear]` (GM-only) and folds it into the system prompt so the AI can reference prior
+  adventures' consequences without re-reading old transcripts — see `modules/legacy-tracker.js`
+  and [DESIGN.md](DESIGN.md) for the full mechanism.
+- **Climax narration & pacing** – once a dynamic-growth adventure's climax act triggers, the
+  Adventure Director tracks scenes-since-trigger against `climaxPadScenes` and, if the climax
+  stalls past that pad without concluding, automatically generates a wrap-up twist
+  (`generateForcedClimaxTwist()`) and marks it on the server via `climax-forced` — so a session
+  can't run indefinitely in the same climax scene. See [DESIGN.md](DESIGN.md).
 - **Timer management** – creates and ticks scene timers on demand.
 - **Player management** – kick, ban, and unban players directly from the bot's terminal.
 - **Conversation memory** – maintains a sliding window of recent messages for coherent stories.
@@ -257,7 +268,8 @@ object rather than reaching for globals, and each has a matching test file under
 | **`deck.js`** | Deck of Consequences: card draws, Crown Spreads, `transformRegionData()` (converts a region's authored content into the flat suit/rank meaning table), ace effects (region-specific, generic fallback, or partial-key match). |
 | **`timers.js`** | Scene- and campaign-level timer create/tick/fill, with boundary clamping so a timer's `current` segment count never exceeds its `max`. |
 | **`adventure-director.js`** | Adventure selection and lifecycle — the module selection menu, Crown Spread-driven adventure picks, and handing off into `adventure-context.js`'s scene tracking once one is active. |
-| **`adventure-context.js`** | Bridges the bot to the server's Adventure Engine (`server/adventure.js`): `isAdventureActive()` status-machine checks (`planned`/`active`/`completed` × `moduleId` presence) and scene context building for the current turn. Must stay in sync with the server-side contract — see that file's own header comment. |
+| **`adventure-context.js`** | Bridges the bot to the server's Adventure Engine (`server/adventure.js`): `isAdventureActive()` status-machine checks (`planned`/`active`/`completed` × `moduleId` presence) and scene context building for the current turn, including climax-pacing fields (`climaxPadScenes`, `climaxScenesSinceTrigger`, `climaxForced`) and the adventure's `persistence` schema. Must stay in sync with the server-side contract — see that file's own header comment. |
+| **`legacy-tracker.js`** | The Legacy Tracker — reads an adventure's declarative `persistence` schema, resolves/validates carryover key/value state across adventures, and exposes `!gm adventure legacy [schema] [set <key> <value>|clear]`. See [DESIGN.md](DESIGN.md). |
 | **`format-utils.js`** | Small shared text-formatting helpers for chat output: `formatColumns()` (multi-column `ls`-style layout), `shortTitle()` (truncates a long title at its first em-dash/colon). |
 | **`logger.js`** | Leveled logging (`error`/`warn`/`info`/`debug`, via `LOG_LEVEL`) shared by the whole bot. Monkey-patches `console.log/warn/error` so every existing call site is automatically level-aware and feeds the in-memory ring buffer the status dashboard reads from — no per-call-site changes needed except the handful of intentionally spammy lines, which call `logger.debug()` directly. |
 | **`status-server.js`** | Serves the local status dashboard (see "Status Dashboard" below) — plain `http` + Server-Sent Events, no extra dependency. |

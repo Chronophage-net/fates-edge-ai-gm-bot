@@ -28,11 +28,11 @@
   ],
   "runekeeper_options": {
     "thiasos": {
-      "description": "A Runekeeper sworn to Gaila does not bind a creature of claw or fang — they bind a companion of shared delight. Their Thiasos is a small being of joy: a pair of butterflies that dance in sync only when two people laugh together, a songbird that trills a silly tune when tickled near a smiling face, a fox kit that playfully steals small tokens from friends' pockets, or a dandelion clock whose seeds float only when blown by two laughing breaths.",
+      "description": "Gaila keeps no Runekeeper bound to a creature of claw or fang — they bind a companion of shared delight. Their Thiasos is a small being of joy: a pair of butterflies that dance in sync only when two people laugh together, a songbird that trills a silly tune when tickled near a smiling face, a fox kit that playfully steals small tokens from friends' pockets, or a dandelion clock whose seeds float only when blown by two laughing breaths.",
       "care": "This creature requires no food, but it must be given a token of shared joy each day (a recalled laugh shared aloud, a doodle exchanged that makes both grin, a pebble from a place where joy was felt). If neglected for a week, it becomes Compromised (its aura of lightness turns brittle, imposing –1 die on all Sway rolls involving genuine mirth for its bearer until offered a fresh token of mutual delight)."
     },
     "codex": {
-      "description": "The Codex of Gaila is never a book of dry ink. It may be a journal whose pages fill with doodles and jokes when laughter touches it, a set of three bells that chime in harmony only when two people smile at once, a deck of cards where each pair bears a private joke only the holders understand, or a hollow gourd that rattles with joyous noise when shaken by happy hands.",
+      "description": "One will not find Gaila's Codex written as a book of dry ink. It may be a journal whose pages fill with doodles and jokes when laughter touches it, a set of three bells that chime in harmony only when two people smile at once, a deck of cards where each pair bears a private joke only the holders understand, or a hollow gourd that rattles with joyous noise when shaken by happy hands.",
       "upkeep": "Because Gaila's truths are written in shared merriment, the Codex requires upkeep: the Runekeeper must spend an hour each week engaged in a ritual of pure joy with another (playing a childish game until both laugh until tears, sharing three silly memories that spark giggles, or simply sitting in silence while exchanging smiles that reach the eyes), or the Rites stored there fade (treat as Compromised until re-joyed)."
     }
   },
@@ -50,7 +50,11 @@
       "action": "Scene",
       "range": "Near",
       "resist": "Yes",
-      "tags": ["BOOST", "READ", "SECRET"],
+      "tags": [
+        "BOOST",
+        "READ",
+        "SECRET"
+      ],
       "materials": "A silly joke told in confidence, or a token meant to provoke a smile (a funny pebble, a joke-novelty).",
       "effect": "Your mirth becomes contagious. Gain +1 die to Sway one target in a joyful exchange. The target feels a subtle lift of spirit; they are more likely to remember your presence fondly.",
       "push_it": "The target feels safe enough to name a hidden delight (a secret pleasure, a guilty joy). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -66,7 +70,11 @@
       "action": "Scene",
       "range": "Touch",
       "resist": "No",
-      "tags": ["BOND", "BOOST", "READ"],
+      "tags": [
+        "BOND",
+        "BOOST",
+        "READ"
+      ],
       "materials": "Two matching silly trinkets (e.g., mismatched socks, novelty buttons), or a shared doodle only the pair understands.",
       "effect": "Create a temporary bond of playful kinship. Both parties gain +1 die when aiding each other in acts of lighthearted teasing or shared amusement. The bond manifests as a shared warmth, like sunlight on skin after laughter.",
       "push_it": "The bond deepens to shared vulnerability; both sense when the other is hiding joy but suffer –1 die to conceal their own delight. The bond may persist as a gentle ache until the next dusk. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -82,7 +90,11 @@
       "action": "Scene",
       "range": "Self",
       "resist": "No",
-      "tags": ["GLAMOUR", "BOOST", "SOCIAL"],
+      "tags": [
+        "GLAMOUR",
+        "BOOST",
+        "SOCIAL"
+      ],
       "materials": "Perfume applied while recalling a joyful memory, or a garment worn that feels like a second skin of happiness.",
       "effect": "Assume an aura of effortless charm and magnetic lightness. Gain +2 dice to Sway or Performance in settings of playfulness or shared delight. Your presence lingers in the memory like a half-remembered giggle.",
       "push_it": "Become the embodiment of joy; all who interact with you feel a shiver of \"more, please\" (Resolve DV 2 to resist seeking deeper connection). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -98,7 +110,12 @@
       "action": "Scene",
       "range": "Near",
       "resist": "Yes",
-      "tags": ["VOW", "BOND", "BOOST", "FEAR"],
+      "tags": [
+        "VOW",
+        "BOND",
+        "BOOST",
+        "FEAR"
+      ],
       "materials": "Token exchanged as a promise of joy — a shared silly vow spoken into wind, a length of ribbon tied in a bow then loosened, or a stone warmed by mutual grip during laughter.",
       "effect": "Forge a promise of mutual delight. Both gain +1 Effect when cooperating in acts of shared playfulness or lighthearted bonding; breach inflicts 1 SB (Hearts) and a hollowness where laughter once was. Create a 6-segment Joy Strength timer.",
       "push_it": "Breach also causes a visible withdrawal (a tendency to deflect humor, a habit of taking things too seriously, or an inability to linger in lighthearted space). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -114,7 +131,13 @@
       "action": "Extended",
       "range": "Zone",
       "resist": "Yes",
-      "tags": ["AREA", "COMMAND", "BOOST", "GLAMOUR", "DEBT"],
+      "tags": [
+        "AREA",
+        "COMMAND",
+        "BOOST",
+        "GLAMOUR",
+        "DEBT"
+      ],
       "materials": "A circle of stones, each touched by a participant's tear of laughter; a chalice filled with sparkling cider shared sip by sip; a length of silk woven from threads spun in mutual silliness.",
       "effect": "You become the heart of a joyful zone. For the scene: you gain +1 Effect on all social rolls focused on playfulness or mutual delight, and opponents suffer –1 die when attempting to impose seriousness or demand solemnity. Anyone who attempts to deceive you about their emotional state must test Resolve (DV 4) or reveal a hidden sorrow. Allies who share a ritual of pure joy regain 1 Fatigue. Start a 10-segment Circle of Giggles timer; when it fills, you may declare one irrevocable social judgment that the zone's inhabitants will uphold for one month.",
       "push_it": "Newcomers must test Resolve (DV 4) or become briefly inclined toward joy — they will accept one simple act of mutual delight. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",

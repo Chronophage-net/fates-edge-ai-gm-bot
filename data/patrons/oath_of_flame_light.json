@@ -40,7 +40,7 @@
       "care": "This creature requires no food, but it must be present when the Runekeeper renews their daily vows (a short prayer at dawn). If neglected for a week, it becomes Compromised (its glow flickers or goes out, imposing –1 die on all social rolls involving oaths or truth for its bearer until a new vow is sworn in its presence)."
     },
     "codex": {
-      "description": "The Codex of the Oath is never a book of ink and paper. It may be a brass scroll etched with commandments that glow when read aloud, a set of consecrated candles whose flames spell out Rites, or a sun-stone carved with runes that only appear when touched by direct sunlight.",
+      "description": "the Oath's Codex is never a book of ink and paper. It may be a brass scroll etched with commandments that glow when read aloud, a set of consecrated candles whose flames spell out Rites, or a sun-stone carved with runes that only appear when touched by direct sunlight.",
       "upkeep": "Because the Oath's truths are written in light, the Codex requires upkeep: the Runekeeper must spend an hour each week in dawn light, re-reading each Rite aloud, or the engravings fade (treat as Compromised until re-consecrated at dawn)."
     }
   },
@@ -58,7 +58,10 @@
       "action": "Action",
       "range": "Self/Ally",
       "resist": "No",
-      "tags": ["VOW", "RADIANT"],
+      "tags": [
+        "VOW",
+        "RADIANT"
+      ],
       "materials": "A glass ampoule of consecrated flame.",
       "effect": "Declare a short vow for this scene (e.g., 'protect the villagers,' 'speak only truth'). The bearer gains +1 die to actions fulfilling it.",
       "push_it": "The first hesitation forces 1 SB (Hearts) on the bearer. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -74,7 +77,11 @@
       "action": "Instant",
       "range": "Touch",
       "resist": "No",
-      "tags": ["HEAL", "PURIFY", "RADIANT"],
+      "tags": [
+        "HEAL",
+        "PURIFY",
+        "RADIANT"
+      ],
       "materials": "A bare palm, a whispered vow.",
       "effect": "Cleanse an affliction, downgrade Harm by 1, or remove 1 Fatigue. For curses or poisons, test Spirit+Resolve (DV set by fiction).",
       "push_it": "The target gains +1 die to their next Resist roll this scene; you mark Exposure +1. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -90,7 +97,11 @@
       "action": "Scene",
       "range": "Zone",
       "resist": "No",
-      "tags": ["TRUTH", "COMMAND", "RADIANT"],
+      "tags": [
+        "TRUTH",
+        "COMMAND",
+        "RADIANT"
+      ],
       "materials": "A vow-ring engraved with sunrise.",
       "effect": "Establish terms in open light. Honest persuasion gains +1 die; deceit suffers –1 die. Create a 6-segment Parley Accord timer.",
       "push_it": "Demand one public answer; evasion forces 1 SB (Hearts) on the evader. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -106,7 +117,11 @@
       "action": "Action",
       "range": "Self",
       "resist": "No",
-      "tags": ["STRIKE", "ANNIHILATE", "RADIANT"],
+      "tags": [
+        "STRIKE",
+        "ANNIHILATE",
+        "RADIANT"
+      ],
       "materials": "A consecrated spark on a weapon or badge.",
       "effect": "Your next melee strike flares with dawnfire. Upgrade Effect by one step, add +1 Burn Harm, or impose –1 die on the target's next roll. Against undead, oath-breakers, or outsiders: oath-breakers suffer +1 Harm and –1 die; outsiders gain +1 leash ticks.",
       "push_it": "The attack ignores the target's armor entirely (no armor conversion applies to this strike; the target marks direct Harm). Additionally, the burst drives back enemies in Close (worse Position). Mark +1 additional Obligation (total +3). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
@@ -122,7 +137,11 @@
       "action": "Instant",
       "range": "Near",
       "resist": "No",
-      "tags": ["DISPEL", "REVEAL", "RADIANT"],
+      "tags": [
+        "DISPEL",
+        "REVEAL",
+        "RADIANT"
+      ],
       "materials": "A shattered consecrated spark.",
       "effect": "Reveal illusions and suppress one ongoing glamour or curse in Near range. Creates a 4-segment Purity's Light timer.",
       "push_it": "Brand the source with a visible tell for this arc; mark 1 SB (Diamonds). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -138,7 +157,12 @@
       "action": "Scene",
       "range": "Zone",
       "resist": "No",
-      "tags": ["WARD", "FORCE", "RADIANT", "COMMAND"],
+      "tags": [
+        "WARD",
+        "FORCE",
+        "RADIANT",
+        "COMMAND"
+      ],
       "materials": "A brazier lit while three names are spoken.",
       "effect": "The sworn within are haloed: they gain +1 die to keep their oath; aggressors suffer –1 die if violating the terms. Oath-breakers suffer 2 SB (Hearts/Spades) and Harm 1 (Burn).",
       "push_it": "Sanctify a threshold with one beat of [WARD] against oath-breakers; mark +2 Obligation. Cost: Mark +2 Obligation (total +4) or Mark +1 Fatigue.",

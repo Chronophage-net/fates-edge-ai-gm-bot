@@ -42,11 +42,11 @@
   ],
   "runekeeper_options": {
     "thiasos": {
-      "description": "A Runekeeper sworn to Thrysos does not bind a familiar of quiet habits. Their Thiasos is a small beast or being of primal appetites: a satyr-kid with too-bright eyes that nibbles at wine-soaked bread, a fox that dances on its hind legs when the moon is full, a ferret that steals silk ribbons from lovers' bedposts, a gecko that clings to wine jugs and changes color with desire, or a small bronze cymbal that claps of its own accord during moments of flirtation.",
+      "description": "No Runekeeper sworn to Thrysos binds a familiar of quiet habits. Their Thiasos is a small beast or being of primal appetites: a satyr-kid with too-bright eyes that nibbles at wine-soaked bread, a fox that dances on its hind legs when the moon is full, a ferret that steals silk ribbons from lovers' bedposts, a gecko that clings to wine jugs and changes color with desire, or a small bronze cymbal that claps of its own accord during moments of flirtation.",
       "care": "This creature requires no ordinary food, but it must be present during an act of indulgence (drinking, dancing, lovemaking, or feasting) each day. If neglected for a week, it becomes Compromised (it shrieks at inappropriate moments, or its antics become grotesque, imposing –1 die on all social rolls involving subtlety or discretion for its bearer)."
     },
     "codex": {
-      "description": "The Codex of Thrysos is never a sober book. It may be a wine-stained journal of erotic poetry, a set of ivory tablets carved with scenes of revelry, a leather folio containing pressed flowers from orgies, or a scroll that unravels further each time the reader laughs.",
+      "description": "Thrysos keeps no Codex that resembles a sober book. It may be a wine-stained journal of erotic poetry, a set of ivory tablets carved with scenes of revelry, a leather folio containing pressed flowers from orgies, or a scroll that unravels further each time the reader laughs.",
       "upkeep": "Because Thrysos's truths are written in the body's language, the Codex requires upkeep: the Runekeeper must spend an hour each week adding a new verse, sketch, or memory of indulgence, or the Rites stored there become dull (treat as Compromised until reinvigorated with a night of celebration)."
     }
   },
@@ -64,7 +64,11 @@
       "action": "Scene",
       "range": "Near",
       "resist": "No",
-      "tags": ["SOCIAL", "FEAR", "AREA"],
+      "tags": [
+        "SOCIAL",
+        "FEAR",
+        "AREA"
+      ],
       "materials": "A brimming vessel of wine (or a more intimate offering).",
       "effect": "Allies who drink gain +1 die to social rolls this scene; enemies who drink suffer –1 die. Those who drink deeply may find their inhibitions loosened in other ways (GM's discretion for romantic or scandalous complications).",
       "push_it": "All in Near must test Resolve (DV 3) or be swept into revelry, possibly leading to unplanned liaisons or public confessions; mark 1 SB (Hearts). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -80,7 +84,11 @@
       "action": "Scene",
       "range": "Self",
       "resist": "No",
-      "tags": ["BOOST", "FOCUS", "TRANSFORM"],
+      "tags": [
+        "BOOST",
+        "FOCUS",
+        "TRANSFORM"
+      ],
       "materials": "A mask or antlers (carved from a stag that died in rut).",
       "effect": "Enter an ecstatic frenzy: +2 dice to melee or performance; ignore 1 Fatigue per round. Your movements become both seductive and threatening; those watching may be captivated or disturbed.",
       "push_it": "The frenzy spreads: one ally joins you in the dance, but both mark 1 SB (Spades) as the lines between combat and carnality blur. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -96,7 +104,11 @@
       "action": "Instant",
       "range": "Near",
       "resist": "No",
-      "tags": ["TRUTH", "DEBUFF", "FEAR"],
+      "tags": [
+        "TRUTH",
+        "DEBUFF",
+        "FEAR"
+      ],
       "materials": "A mask smashed in hand (or a lover's token torn in two).",
       "effect": "Reveal the true face beneath the social mask: the target suffers –2 dice to disguise, deceit, or composure until scene end. They may also be compelled to admit a hidden desire (GM's discretion).",
       "push_it": "Truth is forced: the target must declare one hidden desire aloud, possibly to the wrong person; mark 1 SB (Diamonds). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -112,7 +124,11 @@
       "action": "Scene",
       "range": "Zone",
       "resist": "No",
-      "tags": ["SUMMON", "WARD", "AREA"],
+      "tags": [
+        "SUMMON",
+        "WARD",
+        "AREA"
+      ],
       "materials": "A horn sounded thrice (or a kiss passed around a circle).",
       "effect": "Summon spectral revelers — satyrs, dancers, horned riders, and a few figures whose embraces are more than friendly. For the scene, the zone is [WARD]ed: hostile entry forces 1 SB (Spades); allies gain +1 die to resist compulsion or fear. The revelers may also grant a boon of Vigor to one couple (restore 1 Fatigue to two allies who share a bond of intimacy).",
       "push_it": "The procession spills beyond the zone; outsiders in Near must test Resolve (DV 4) or join the dance — and perhaps the revel's other activities. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -128,7 +144,12 @@
       "action": "Scene",
       "range": "Zone",
       "resist": "No",
-      "tags": ["HEAL", "BOOST", "AREA", "BURDEN"],
+      "tags": [
+        "HEAL",
+        "BOOST",
+        "AREA",
+        "BURDEN"
+      ],
       "materials": "A feast laid for twelve, with wine, music, and comfortable cushions.",
       "effect": "For one scene, the zone floods with plenty: allies restore Fatigue; all rolls tied to appetite or indulgence gain +2 dice. Leaving requires Resolve (DV 3) — the comforts are hard to abandon. The feast also grants a temporary Heightened Desire condition: the first seduction or intimidation roll each ally makes gains +1 die.",
       "push_it": "The feast persists as a hunger-haunt; start Hedonist's Curse [6]. Participants may find themselves unable to derive pleasure from mundane means, always craving the excess of that night. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
@@ -144,7 +165,12 @@
       "action": "Extended",
       "range": "Touch",
       "resist": "No",
-      "tags": ["TRANSFORM", "BOOST", "FATE", "SACRIFICE"],
+      "tags": [
+        "TRANSFORM",
+        "BOOST",
+        "FATE",
+        "SACRIFICE"
+      ],
       "materials": "A crown of twisted vines that bleed when touched, the first laugh of a newborn, a promise broken at a crossroads, and the willing touch of a lover.",
       "effect": "Grant the ultimate reveler's gift — transformation into pure ecstatic essence. The target becomes immune to fear and despair, gains +3 dice to performance or frenzy, and can inspire allies within Near (+1 die to all rolls). Their aura also carries a scent of desire; anyone within Near who sees them must test Resolve (DV 3) or be mildly infatuated (disadvantage on hostile actions).",
       "push_it": "The transformation becomes contagious — nearby allies may also transform but risk losing their humanity (their sense of self blurs into the ecstatic mob); mark +2 Obligation. Cost: Mark +1 Obligation (total +4) or Mark +1 Fatigue.",

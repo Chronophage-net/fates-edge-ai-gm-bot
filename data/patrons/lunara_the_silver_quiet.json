@@ -28,11 +28,11 @@
   ],
   "runekeeper_options": {
     "thiasos": {
-      "description": "A Runekeeper sworn to Lunara does not bind a creature of shadow or flame. Their Thiasos is a small being of moonlight and stillness: a silver-eyed owl that flies only at moonrise, a pale moth that emerges only under the full moon, a small white fox that leaves no footprints in moonlight, a silver fish that swims in still water and reflects the night sky, or a moon-cat with eyes that change phase.",
+      "description": "To Runekeep for Lunara is not to bind a creature of shadow or flame. Their Thiasos is a small being of moonlight and stillness: a silver-eyed owl that flies only at moonrise, a pale moth that emerges only under the full moon, a small white fox that leaves no footprints in moonlight, a silver fish that swims in still water and reflects the night sky, or a moon-cat with eyes that change phase.",
       "care": "This creature requires no food, but it must be shown moonlight each night (even a reflection in a mirror or a pool of water counts). If neglected for a week, it becomes Compromised (it grows restless and its silver aura dims, imposing –1 die on all rolls involving perception or stealth for its bearer until it next sees moonlight)."
     },
     "codex": {
-      "description": "The Codex of Lunara is never a book of ordinary script. It may be a mirror that shows only the moonshadow of a Rite, a set of silver leaves that tarnish as Rites are used and must be polished, a scroll of moon-calf skin that glows only under lunar light, or a spiral of polished stone that must be turned to reveal each Rite.",
+      "description": "There is no Codex of Lunara that looks like a book of ordinary script. It may be a mirror that shows only the moonshadow of a Rite, a set of silver leaves that tarnish as Rites are used and must be polished, a scroll of moon-calf skin that glows only under lunar light, or a spiral of polished stone that must be turned to reveal each Rite.",
       "upkeep": "Because Lunara's truths are written in phases, the Codex requires upkeep: the Runekeeper must spend an hour each week under open moonlight, re-reading each Rite by the moon's reflection, or the inscriptions fade (treat as Compromised until re-mooned)."
     }
   },
@@ -50,7 +50,9 @@
       "action": "Scene",
       "range": "Self",
       "resist": "No",
-      "tags": ["TRUTH"],
+      "tags": [
+        "TRUTH"
+      ],
       "materials": "A mirror or bowl of still water under moonlight.",
       "effect": "Peer beyond surfaces. Gain +1 die to detect illusions, veils, or hidden motives. Once per scene, you may ask one veiled question about the present; the GM answers in riddle or omen.",
       "push_it": "Glimpse too deeply — gain the truth, but mark 1 SB (Diamonds) as the moon reveals more than you intended. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -66,7 +68,10 @@
       "action": "Instant",
       "range": "Near",
       "resist": "No",
-      "tags": ["COMMUNICATION", "BOND"],
+      "tags": [
+        "COMMUNICATION",
+        "BOND"
+      ],
       "materials": "A silvered thread knotted three times.",
       "effect": "Deliver a secret thought to a single target; they hear it as if whispered beside them. You gain +1 die to aid their next action.",
       "push_it": "The whisper echoes beyond its mark, creating 1 SB (Hearts) as others sense your intrusion. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -82,7 +87,11 @@
       "action": "Scene",
       "range": "Zone",
       "resist": "No",
-      "tags": ["MOVEMENT", "GUIDANCE", "AREA"],
+      "tags": [
+        "MOVEMENT",
+        "GUIDANCE",
+        "AREA"
+      ],
       "materials": "Three lit candles set at a crossroads.",
       "effect": "Reveal a hidden path, door, or liminal way. Allies gain +2 dice to traverse or escape; enemies suffer –1 die to pursue.",
       "push_it": "The road opens farther than intended — toward an unknown realm. Mark 1 SB (Spades). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -98,7 +107,11 @@
       "action": "Scene",
       "range": "Self",
       "resist": "No",
-      "tags": ["SPIRIT", "TRUTH", "FATE"],
+      "tags": [
+        "SPIRIT",
+        "TRUTH",
+        "FATE"
+      ],
       "materials": "A ring of herbs burned beneath a dark moon.",
       "effect": "Commune with veiled knowledge or subtle entities. Ask two questions; answers come in omen, dream-symbol, or paradox.",
       "push_it": "The answer is too direct — gain it fully, but mark 1 SB (Diamonds). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -114,7 +127,11 @@
       "action": "Scene",
       "range": "Zone",
       "resist": "No",
-      "tags": ["UNSEAL", "GATE", "FATE"],
+      "tags": [
+        "UNSEAL",
+        "GATE",
+        "FATE"
+      ],
       "materials": "A silver key forged or anointed under a new moon.",
       "effect": "Open a way where none should exist — between places, states, or wards. Creates a 6-segment Gateway timer.",
       "push_it": "Something else comes through; mark 2 SB (Clubs). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",

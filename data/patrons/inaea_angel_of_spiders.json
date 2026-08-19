@@ -41,7 +41,7 @@
       "care": "This creature requires no food, but it must be given a fresh length of thread, ribbon, or cloth to work with each day. If neglected for a week, it becomes Compromised (it tangles cords and knots laces at inopportune moments, imposing –1 die on all fine manipulation rolls for its bearer until offered a new thread)."
     },
     "codex": {
-      "description": "The Codex of Inaea is never a book of ink and paper. It may be a frame loom with a half-finished weaving that records Rites as colored threads, a bundle of knotted cords that must be read by touch, or a wooden spindle wrapped with silk strands that sing when plucked.",
+      "description": "You will not find Inaea's Codex bound as a book of ink and paper. It may be a frame loom with a half-finished weaving that records Rites as colored threads, a bundle of knotted cords that must be read by touch, or a wooden spindle wrapped with silk strands that sing when plucked.",
       "upkeep": "Because Inaea's truths are woven, the Codex requires upkeep: the Runekeeper must spend an hour each week adding a new row to the weaving (or untying and retying a knot), or the patterns become tangled (treat as Compromised until re-woven)."
     }
   },
@@ -59,7 +59,11 @@
       "action": "Scene",
       "range": "Near",
       "resist": "Yes (link once)",
-      "tags": ["BOND", "PROTECT", "HEAL"],
+      "tags": [
+        "BOND",
+        "PROTECT",
+        "HEAL"
+      ],
       "materials": "A thread tied around a wrist or shared cup.",
       "effect": "Bind yourself and one willing target (ally or neutral) with a sympathetic thread. Both gain +1 die to Aid each other this scene. Additionally, if either takes Harm, the other may reduce it by 1 (to a minimum of 0) by suffering that same Harm instead. This transfer is voluntary for an ally; for an unwilling target, you must succeed on a Resolve test (DV 3) to force the link.",
       "push_it": "Extend to two allies; mark 1 SB (Hearts) as your own lifeline strains. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -75,7 +79,11 @@
       "action": "Scene",
       "range": "Zone",
       "resist": "No",
-      "tags": ["TRAP", "AREA", "BIND"],
+      "tags": [
+        "TRAP",
+        "AREA",
+        "BIND"
+      ],
       "materials": "A knotted cord or woven scrap.",
       "effect": "Lay an invisible snare in a lane, doorway, or narrow passage. The first hostile creature to cross suffers –2 dice on their next action and must succeed on a Resolve test (DV 2) or lose their movement for that turn (tangled). The snare lasts for the scene or until triggered.",
       "push_it": "Lay a second snare elsewhere, but allies risk entanglement if they forget its location; mark 1 SB (Spades) as the web spreads thin. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -91,7 +99,11 @@
       "action": "Scene",
       "range": "Near",
       "resist": "No",
-      "tags": ["BOND", "FATE", "MANIPULATION"],
+      "tags": [
+        "BOND",
+        "FATE",
+        "MANIPULATION"
+      ],
       "materials": "Three colored threads (white, black, red) braided together.",
       "effect": "Link two actors (which can include yourself) with a visible or invisible strand. For the rest of the scene, whenever one acts, the other is dragged into consequence. You may trigger this linkage once to either: (a) Force 1 SB (Hearts) on the linked target after they perform a significant action, or (b) Gain +2 dice on a Setup, Predict, or Manipulate roll that exploits the link (e.g., 'you cannot betray me without hurting your ally'). The link is one-way or two-way as you choose.",
       "push_it": "Invert the direction of the link once after it is set (e.g., make the pursuer stumble instead of the pursued). Mark 1 SB (Diamonds) as the weave resists. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -107,7 +119,10 @@
       "action": "Instant",
       "range": "Self",
       "resist": "No",
-      "tags": ["TRUTH", "SENSE"],
+      "tags": [
+        "TRUTH",
+        "SENSE"
+      ],
       "materials": "Observe a spider finishing a web's radial line (or a convincing imitation).",
       "effect": "Ask the GM one question about a hidden tie, debt, or leverage between two people, or between a person and a faction. The GM must answer truthfully. Your next Manipulate, Pressure, or Intimidate action exploiting that knowledge gains +1 Effect.",
       "push_it": "Reveal a secret tie that was not previously declared in the fiction (the GM must invent a plausible connection). Mark Exposure +1 as your own entanglements surface. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -123,7 +138,12 @@
       "action": "Scene",
       "range": "Near",
       "resist": "No",
-      "tags": ["VOW", "DEBT", "BOND", "COMMAND"],
+      "tags": [
+        "VOW",
+        "DEBT",
+        "BOND",
+        "COMMAND"
+      ],
       "materials": "A silver coin and a strand of your own hair, knotted together.",
       "effect": "Offer a willing creature a boon: they may immediately clear 1 Fatigue or gain +1 die on their next roll. In return, they accept a Promise Timer [4] named 'Debt to the Web.' You may advance this timer by 1 segment as a free action (once per scene) only when the target is present or the debt is directly relevant to the current scene. When the timer fills, you may demand a single service from them—not impossible, but significant (e.g., 'speak for me at court,' 'reveal a secret,' 'take a blow meant for me'). Refusal causes them to suffer Harm 1 (Stress) and the timer resets.",
       "push_it": "Extend the offer to a group (up to three targets). Each who accepts gives you a separate Promise Timer. Mark +1 Obligation. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -139,7 +159,12 @@
       "action": "Scene",
       "range": "Near",
       "resist": "No",
-      "tags": ["VOW", "BOND", "FATE", "COMMAND"],
+      "tags": [
+        "VOW",
+        "BOND",
+        "FATE",
+        "COMMAND"
+      ],
       "materials": "A silk loop tied between two hands, then cut or knotted with a spoken vow.",
       "effect": "Bind two parties (individuals or small groups) to a mutual oath. Breaking the vow forces 2 SB on the violator and marks them with a subtle tell (a visible thread, a nervous twitch, a lingering scent) that persists for one week.",
       "push_it": "Widen the binding to up to four parties, each of whom may define one loophole. Exploiting a loophole causes 1 SB (Clubs) as the web tightens around the exploiter. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
@@ -155,7 +180,12 @@
       "action": "Scene",
       "range": "Touch",
       "resist": "No",
-      "tags": ["HEAL", "DISPEL", "MERCY", "DEBT"],
+      "tags": [
+        "HEAL",
+        "DISPEL",
+        "MERCY",
+        "DEBT"
+      ],
       "materials": "A white thread burned to ash, spoken with a name.",
       "effect": "Sever one harmful tie—a curse, a toxic obsession, a coercive bond, or a supernatural debt. Remove one Condition or 1 SB tied to it (if removing a Story Beat, the GM replaces it with a narrative complication of equal weight; the pressure does not vanish, it merely changes form). This is an act of genuine mercy; the target may be unwilling, but the thread can still be cut (Resolve test DV 4 to resist).",
       "push_it": "Sever a tie without the target's consent or knowledge; they will not know who cut them free, but you mark +2 Obligation as the web recoils against you, and the severed strand may attach to you instead (GM's discretion). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
@@ -171,7 +201,12 @@
       "action": "Extended",
       "range": "Zone",
       "resist": "No",
-      "tags": ["AREA", "SLEEP", "BIND", "FEAR"],
+      "tags": [
+        "AREA",
+        "SLEEP",
+        "BIND",
+        "FEAR"
+      ],
       "materials": "A complete spider's web, stolen at dawn, and a lullaby hummed into it.",
       "effect": "Weave an area of drowsy stillness. For the next hour, any creature entering the zone must succeed on a Resolve test (DV 4) or fall into a light trance, losing their next action and suffering –1 die to all perception rolls while inside. Allies you touch beforehand are immune. The web is invisible until triggered.",
       "push_it": "The trance becomes deeper—sleeping creatures cannot be woken by non-magical means for the duration. Mark 2 SB (Spades/Hearts) as the web draws hungry attention. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",

@@ -1,0 +1,304 @@
+{
+  "id": "the-ninth-bell",
+  "title": "The Ninth Bell",
+  "description": "In Theona, a cultural taboo has been broken. The Ninth Law states: 'The ninth word is never spoken, the ninth path is hidden, and the ninth name is erased from history.' A bell has begun ringing where no bell should ring, marking the countdown to the Green Host's arrival. The horror is inevitable; the only choice is how to appease the land.",
+  "tier": "II",
+  "author": "Nicholas A. Gasper",
+  "saga": false,
+  "bestiary": [
+    {
+      "id": "green-host",
+      "name": "The Green Host",
+      "tl": 5,
+      "class": "V",
+      "category": "concept",
+      "description": "Not a physical entity but a force of cultural consequence. The land's enforcement mechanism for broken oaths.",
+      "stats": {
+        "Spirit": 6,
+        "Resolve": 6,
+        "hp": 0
+      },
+      "sb_spends": [
+        {
+          "cost": 2,
+          "name": "Claim the Unmourned",
+          "effect": "Target is marked for death; must make Resolve DV 5 or be claimed."
+        }
+      ]
+    }
+  ],
+  "acts": [
+    {
+      "id": "act-1",
+      "title": "The Bell Rings",
+      "description": "The party encounters the ringing bell and the silent village. They learn of the Ninth Law and the countdown to the ninth chime.",
+      "scenes": [
+        {
+          "id": "scene-1-1",
+          "title": "The Silent Village",
+          "description": "Arriving at a village where no one speaks, the party discovers the bell tolling at the edge of town.",
+          "timers": [
+            {
+              "name": "Bell's Countdown",
+              "segments": 9,
+              "current": 0
+            }
+          ],
+          "encounters": [
+            {
+              "name": "Investigating the Bell",
+              "dv": 3,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "You find handprints in the snow leading to the bell but ending where no human could stand.",
+                "partial": "You learn the bell is a warning; tick Bell's Countdown +1.",
+                "miss": "You trigger a supernatural echo; tick Bell's Countdown +2."
+              }
+            }
+          ],
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "act-2",
+      "title": "The Land Remembers",
+      "description": "The land's memory becomes active; cold spots, visual distortions, and the Green Host draws near. The party must find the person who broke the Ninth Law.",
+      "scenes": [
+        {
+          "id": "scene-2-1",
+          "title": "The Unmarked Grave",
+          "description": "The party finds a fresh grave with no marker, dug by the land itself.",
+          "timers": [
+            {
+              "name": "Bell's Countdown",
+              "segments": 9,
+              "current": 0
+            }
+          ],
+          "encounters": [
+            {
+              "name": "The Grave",
+              "dv": 4,
+              "position": "Controlled",
+              "outcomes": {
+                "clean": "You learn the name of the dead person and the ninth name that was spoken.",
+                "partial": "You find a clue but not the full name.",
+                "miss": "The land hinders you; tick Bell's Countdown +1."
+              }
+            }
+          ],
+          "completed": false
+        }
+      ]
+    },
+    {
+      "id": "act-3",
+      "title": "The Ninth Chime",
+      "description": "Dawn approaches. The party must perform the proper ritual of appeasement to prevent the Green Host from claiming the village.",
+      "scenes": [
+        {
+          "id": "scene-3-1",
+          "title": "The Ritual of Appeasement",
+          "description": "The party must speak all nine names, perform the Silent Vigil, and take the Ninth Path.",
+          "timers": [
+            {
+              "name": "Bell's Countdown",
+              "segments": 9,
+              "current": 0
+            }
+          ],
+          "encounters": [
+            {
+              "name": "The Ritual",
+              "dv": 5,
+              "position": "Desperate",
+              "outcomes": {
+                "clean": "The land is appeased; the bell stops ringing. The village is saved.",
+                "partial": "The Green Host claims only the one who broke the law; the bell stops.",
+                "miss": "The Green Host claims the entire village; the bell rings eternally."
+              }
+            }
+          ],
+          "completed": false
+        }
+      ]
+    }
+  ],
+  "npcs": [
+    {
+      "id": "npc-jordan",
+      "name": "Jordan",
+      "role": "Keeper of the Silent Bell",
+      "motivation": "Protect the village from the consequences of the broken taboo.",
+      "stats": "Lore 3, Notice 2, Command 2",
+      "secret": "His son spoke the ninth name of a dead man."
+    },
+    {
+      "id": "npc-elyra",
+      "name": "Elyra",
+      "role": "Village Elder",
+      "motivation": "Maintain cultural traditions and protect the community.",
+      "stats": "Command 3, Lore 3, Insight 2",
+      "secret": "Her silence is punishment for not preventing the taboo."
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc-silent-bell",
+      "name": "The Silent Bell",
+      "description": "A bell hanging from a single iron post on a windswept hill. No rope, no striker—yet it rings.",
+      "tags": [
+        "bell",
+        "threshold"
+      ]
+    },
+    {
+      "id": "loc-stone-silent",
+      "name": "The Village of Stone-Silent",
+      "description": "A village where no doors are locked but no voices are heard. Ritual silence is observed.",
+      "tags": [
+        "village",
+        "silence"
+      ]
+    },
+    {
+      "id": "loc-unmarked-grave",
+      "name": "The Unmarked Grave",
+      "description": "A fresh grave in a field with no marker, dug by the land itself. A ninth flower grows in the center.",
+      "tags": [
+        "grave",
+        "omen"
+      ]
+    }
+  ],
+  "factions": [
+    {
+      "id": "faction-law-keepers",
+      "name": "The Law-Keepers of Theona",
+      "goals": "Uphold the Ninth Law.",
+      "relationship": "They may help or hinder the party."
+    }
+  ],
+  "campaignTimers": [
+    {
+      "name": "Bell's Countdown",
+      "segments": 9,
+      "current": 0,
+      "description": "Advances each hour until dawn. When full, the Green Host arrives."
+    }
+  ],
+  "notes": "A short, low-fantasy horror module about cultural consequences. Combat is minimal; the focus is on investigation, ritual, and moral choice.",
+  "_gmhints": {
+    "pacing": {
+      "act1": "The village is silent—this is the first mystery. The party must discover the Ninth Law and the bell's significance. Jordan is the Keeper; he is evasive, not hostile. The Bell's Countdown is the primary tension—it ticks relentlessly, and the party must manage their time. The Green Host is a concept, not a creature; its arrival is inevitable if the taboo is not addressed. The handprints in the snow are an omen—the land is already responding. Do not reveal Jordan's secret or Elyra's punishment yet.",
+      "act2": "The land's memory becomes active. Cold spots, visual distortions, and the Unmarked Grave are manifestations of the broken taboo. The party must investigate the grave to learn the ninth name and the identity of the one who spoke it. Elyra is a source of cultural wisdom, but her silence is a punishment—she will not speak directly. The Green Host draws nearer; describe its approach as atmospheric (distant thunder, wilting crops, a chill in the air) rather than a physical threat. The Bell's Countdown accelerates; each investigation consumes precious time.",
+      "act3": "Dawn approaches. The Ritual of Appeasement requires the party to speak all nine names, perform the Silent Vigil, and take the Ninth Path. This is a ritual challenge—combat is minimal or absent. The three outcomes: clean (the land is appeased), partial (the Green Host claims only the guilty), miss (the village is lost). The tone is bleak and final; there is no 'winning' in a traditional sense—only making the least terrible choice."
+    },
+    "npcSecrets": {
+      "jordan": "His secret (his son spoke the ninth name) is the heart of the mystery. He will not confess unless the party uncovers the truth through investigation (the grave, the bell, or village records). His guilt is palpable—use his body language, not his confession.",
+      "elyra": "Her secret (her silence is punishment) is a tragic parallel to Jordan's guilt. She is a source of ritual knowledge but cannot speak it directly. The party must interpret her gestures, her silence, and the village's traditions to understand the Ritual of Appeasement."
+    },
+    "forbiddenEarlyRevelations": [
+      "Jordan's son spoke the ninth name — Act II/III discovery",
+      "The exact steps of the Ritual of Appeasement — Act III discovery through investigation and Elyra's guidance",
+      "The Green Host is not a physical entity — this is a conceptual horror; reveal its nature through lore and omens, not exposition",
+      "The ninth name that was spoken — the climax of the investigation",
+      "The ninth path is a physical location in the village — Act III discovery"
+    ]
+  },
+  "currentAct": 0,
+  "currentScene": 0,
+  "startedAt": null,
+  "completedAt": null,
+  "status": "planned",
+  "createdAt": "2026-08-03T00:00:00.000Z",
+  "updatedAt": "2026-08-18T00:00:00.000Z",
+  "knowledge": [
+    {
+      "id": "jordan-secret",
+      "subject": "npc-jordan",
+      "gm": "His secret (his son spoke the ninth name) is the heart of the mystery. He will not confess unless the party uncovers the truth through investigation (the grave, the bell, or village records). His guilt is palpable—use his body language, not his confession.",
+      "player": "Jordan plays the part everyone assumes: Keeper of the Silent Bell. Nothing about their manner invites a second look.",
+      "revealed": false,
+      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "tags": [
+        "npc-secret"
+      ]
+    },
+    {
+      "id": "elyra-secret",
+      "subject": "npc-elyra",
+      "gm": "Her secret (her silence is punishment) is a tragic parallel to Jordan's guilt. She is a source of ritual knowledge but cannot speak it directly. The party must interpret her gestures, her silence, and the village's traditions to understand the Ritual of Appeasement.",
+      "player": "Elyra plays the part everyone assumes: Village Elder. Nothing about their manner invites a second look.",
+      "revealed": false,
+      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "tags": [
+        "npc-secret"
+      ]
+    },
+    {
+      "id": "jordan-s-son-spoke-the-ninth-name",
+      "subject": "plot",
+      "gm": "Jordan's son spoke the ninth name — Act II/III discovery",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "the-exact-steps-of-the-ritual",
+      "subject": "plot",
+      "gm": "The exact steps of the Ritual of Appeasement — Act III discovery through investigation and Elyra's guidance",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "the-green-host-is-not-a",
+      "subject": "plot",
+      "gm": "The Green Host is not a physical entity — this is a conceptual horror; reveal its nature through lore and omens, not exposition",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "the-ninth-name-that-was-spoken",
+      "subject": "plot",
+      "gm": "The ninth name that was spoken — the climax of the investigation",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    },
+    {
+      "id": "the-ninth-path-is-a-physical",
+      "subject": "plot",
+      "gm": "The ninth path is a physical location in the village — Act III discovery",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
+      "tags": [
+        "plot-secret"
+      ]
+    }
+  ],
+  "sessions": "2-3",
+  "themes": [
+    "Cultural Taboo",
+    "Investigation",
+    "Erasure",
+    "Folk Horror"
+  ],
+  "tierRange": "II"
+}

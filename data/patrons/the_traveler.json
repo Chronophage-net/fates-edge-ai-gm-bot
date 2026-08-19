@@ -33,11 +33,11 @@
   ],
   "runekeeper_options": {
     "thiasos": {
-      "description": "A Runekeeper sworn to the Traveler does not bind a familiar of hearth and home — they bind a companion of the open road. Their Thiasos is a small beast or mythological being that embodies movement and guidance: a gray hare that never tires, a sparrow that knows every shortcut, a small fox that leaves no tracks, a dung beetle that rolls its ball unerringly toward the nearest water, or a tiny brass compass that hums when the bearer is on the true path.",
+      "description": "Those who Runekeep for the Traveler do not bind a familiar of hearth and home — they bind a companion of the open road. Their Thiasos is a small beast or mythological being that embodies movement and guidance: a gray hare that never tires, a sparrow that knows every shortcut, a small fox that leaves no tracks, a dung beetle that rolls its ball unerringly toward the nearest water, or a tiny brass compass that hums when the bearer is on the true path.",
       "care": "This creature requires no food, but it must walk at least a mile each day (or be allowed to roam freely in a new place). If confined for more than a day, it becomes Compromised (it grows lethargic and its guidance becomes unreliable, imposing –1 die on all Navigation and Lore rolls for its bearer until it is exercised)."
     },
     "codex": {
-      "description": "The Codex of the Traveler is never a stationary book. It may be a leather strap knotted with directions, a set of scrolls kept in different saddlebags, a map that redraws itself after each journey, or a pilgrim's diary whose blank pages fill with route descriptions as the bearer walks.",
+      "description": "There is no Codex of the Traveler that looks like a stationary book. It may be a leather strap knotted with directions, a set of scrolls kept in different saddlebags, a map that redraws itself after each journey, or a pilgrim's diary whose blank pages fill with route descriptions as the bearer walks.",
       "upkeep": "Because the road resists being captured in ink, the Codex requires upkeep: the Runekeeper must spend an hour each week walking a new path and annotating it, or the Rites stored there become faded (treat as Compromised until updated)."
     }
   },
@@ -55,7 +55,10 @@
       "action": "Scene",
       "range": "Self",
       "resist": "No",
-      "tags": ["NAVIGATION", "AWARENESS"],
+      "tags": [
+        "NAVIGATION",
+        "AWARENESS"
+      ],
       "materials": "A road-nail or waystone pebble.",
       "effect": "Unerringly pick the fastest safe route in Near/Far. Gain +1 die to avoid ambushes or delays. Create a 4-segment Path Memory timer to ignore difficult terrain once.",
       "push_it": "Spot one hidden bypass, but generate 1 SB (Clubs). Cost: Mark +1 Obligation (total +1) or Mark +1 Fatigue.",
@@ -71,7 +74,11 @@
       "action": "Scene",
       "range": "Self/Ally",
       "resist": "No",
-      "tags": ["MOVEMENT", "BOND", "HASTE"],
+      "tags": [
+        "MOVEMENT",
+        "BOND",
+        "HASTE"
+      ],
       "materials": "Thread tied at the wrist.",
       "effect": "Ignore one level of difficult terrain or bureaucratic delay; +1 Effect to travel or escape checks. If shared, create a 2-segment Shared Journey bond with an ally.",
       "push_it": "Extend to one more ally; mark 1 SB (Diamonds). Cost: Mark +1 Obligation (total +1) or Mark +1 Fatigue.",
@@ -87,7 +94,11 @@
       "action": "Scene",
       "range": "Near",
       "resist": "No",
-      "tags": ["MARK", "GUIDANCE", "PASSAGE"],
+      "tags": [
+        "MARK",
+        "GUIDANCE",
+        "PASSAGE"
+      ],
       "materials": "A chalk mark or small cairn.",
       "effect": "Declare a lane as permitted or easy. Allies gain improved Position/Effect or ignore one obstacle. Create a 6-segment Marked Path timer.",
       "push_it": "The lane persists between scenes; the first enemy to exploit it forces 1 SB (Spades). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -103,7 +114,11 @@
       "action": "Instant",
       "range": "Near",
       "resist": "No",
-      "tags": ["TRANSPORT", "PASSAGE", "BOND"],
+      "tags": [
+        "TRANSPORT",
+        "PASSAGE",
+        "BOND"
+      ],
       "materials": "Two pinches of road-dust clapped.",
       "effect": "Relocate a willing target within Far along a visible or named route. Unwilling targets may resist (Body+Resolve DV 3). Create a 4-segment Pathway Established timer.",
       "push_it": "Carry one extra ally or bundle; arrivals are off-balance. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -119,7 +134,12 @@
       "action": "Scene",
       "range": "Zone",
       "resist": "No",
-      "tags": ["AREA", "COMMAND", "MOVEMENT", "FEAR"],
+      "tags": [
+        "AREA",
+        "COMMAND",
+        "MOVEMENT",
+        "FEAR"
+      ],
       "materials": "A brass compass missing its needle.",
       "effect": "Call the Road: allies gain +1 die to move or evade; pursuers suffer –1 die. Once, declare 'the long way is short' to finish a travel timer segment for free. Enemies must test (Wits+Command DV 4) or suffer –1 die to movement.",
       "push_it": "Seal a hostile route briefly; generate 2 SB (Clubs/Diamonds). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
@@ -135,7 +155,12 @@
       "action": "Extended",
       "range": "Near",
       "resist": "No",
-      "tags": ["VOW", "COMMAND", "BOND", "FEAR"],
+      "tags": [
+        "VOW",
+        "COMMAND",
+        "BOND",
+        "FEAR"
+      ],
       "materials": "Waystones from multiple regions.",
       "effect": "Bind present parties to safe passage. While honored: +2 Effect on travel, reroll one failed travel roll per scene. Breaking the oath inflicts Harm 1 (Fatigue) and marks the breaker as Oathbreaker of the Road (–2 dice to travel rolls).",
       "push_it": "Breaking the covenant inflicts Harm 2 (Stress) and attracts hostile Wayward spirits. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",

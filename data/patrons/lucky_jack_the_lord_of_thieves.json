@@ -27,11 +27,11 @@
   ],
   "runekeeper_options": {
     "thiasos": {
-      "description": "A Runekeeper sworn to Lucky Jack does not bind a creature of hearth and home. Their Thiasos is a small creature of luck and observation: a magpie that collects shiny objects and knows every hiding place, a mouse that nests in counting-houses and nibbles the corners of unpaid bills, a spider that weaves webs in the shape of a question mark, or a cricket that chirps only when fortune is about to turn.",
+      "description": "Those who Runekeep for Lucky Jack do not bind a creature of hearth and home. Their Thiasos is a small creature of luck and observation: a magpie that collects shiny objects and knows every hiding place, a mouse that nests in counting-houses and nibbles the corners of unpaid bills, a spider that weaves webs in the shape of a question mark, or a cricket that chirps only when fortune is about to turn.",
       "care": "This creature requires no food, but it must witness a successful theft or a clever deception each day. If neglected for a week, it becomes Compromised (it grows listless and its predictions turn sour, imposing –1 die on all Subterfuge and Stealth rolls for its bearer until they pull off a successful heist)."
     },
     "codex": {
-      "description": "The Codex of Lucky Jack is never a book of prayers. It is a stolen ledger, a floor plan of a place you have never robbed, or a collection of coins from failed heists.",
+      "description": "Lucky Jack's Codex is never a book of prayers. It is a stolen ledger, a floor plan of a place you have never robbed, or a collection of coins from failed heists.",
       "upkeep": "Because luck resists being written down, the Codex requires upkeep: the Runekeeper must spend an hour each week adding a new entry — a plan, a sketch, a note on a mark's habits — or the Rites stored there become stale (treat as Compromised until you case a new location)."
     }
   },
@@ -49,7 +49,11 @@
       "action": "Instant",
       "range": "Self",
       "resist": "No",
-      "tags": ["LUCK", "BOOST", "DEBT"],
+      "tags": [
+        "LUCK",
+        "BOOST",
+        "DEBT"
+      ],
       "materials": "A coin that has been in your pocket for at least a day.",
       "effect": "Spend 1 Boon to reroll one die that came up 1. You must keep the new result. If the reroll is also a 1, the GM gains 2 SB instead of 1 — the luck has turned against you.",
       "push_it": "Reroll two dice instead of one, but you must keep the second result. Cost: Mark +1 Fatigue.",
@@ -65,7 +69,11 @@
       "action": "Scene",
       "range": "Self",
       "resist": "No",
-      "tags": ["STEALTH", "DEXTERITY", "TRICK"],
+      "tags": [
+        "STEALTH",
+        "DEXTERITY",
+        "TRICK"
+      ],
       "materials": "A piece of string tied in a simple knot.",
       "effect": "Gain +2 dice on a single Subterfuge, Craft, or Sleight of Hand roll. If you fail, the GM gains 1 SB as your hand slips at the worst moment.",
       "push_it": "Extend the bonus to one ally within Near. Cost: Mark +1 Fatigue.",
@@ -81,7 +89,11 @@
       "action": "Instant",
       "range": "Self",
       "resist": "No",
-      "tags": ["ESCAPE", "MOVEMENT", "LUCK"],
+      "tags": [
+        "ESCAPE",
+        "MOVEMENT",
+        "LUCK"
+      ],
       "materials": "A handful of dust or sand, thrown over your shoulder.",
       "effect": "When you would be caught or cornered, you may reroll one failed escape roll. If you succeed, the GM gains 1 SB (your escape was too close).",
       "push_it": "Also gain +1 Position on your next action. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -97,7 +109,12 @@
       "action": "Scene",
       "range": "Zone",
       "resist": "No",
-      "tags": ["PLANNING", "BOOST", "FATE", "DEBT"],
+      "tags": [
+        "PLANNING",
+        "BOOST",
+        "FATE",
+        "DEBT"
+      ],
       "materials": "A map, a floor plan, or a detailed description of the target.",
       "effect": "Spend a scene planning a heist. During the execution, all rolls that are part of the plan gain +2 dice. However, any unexpected complication (GM spends SB) doubles its severity. Create a 6-segment Heist Timer.",
       "push_it": "The plan is so good it accounts for one unexpected complication — the GM cannot spend SB on that specific type of complication for the remainder of the scene. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -113,7 +130,11 @@
       "action": "Scene",
       "range": "Near",
       "resist": "No",
-      "tags": ["SOCIAL", "STEALTH", "TRICK"],
+      "tags": [
+        "SOCIAL",
+        "STEALTH",
+        "TRICK"
+      ],
       "materials": "A coin tossed into a crowd, or a loud noise made at the right moment.",
       "effect": "Create a distraction that affects all observers in Near range. Gain +2 dice to any Stealth or Subterfuge action taken during the distraction. The distraction lasts one exchange.",
       "push_it": "The distraction lasts for the full scene. Cost: Mark +1 Fatigue.",
@@ -129,7 +150,11 @@
       "action": "Instant",
       "range": "Touch",
       "resist": "No",
-      "tags": ["STEALTH", "TRICK", "ACCESS"],
+      "tags": [
+        "STEALTH",
+        "TRICK",
+        "ACCESS"
+      ],
       "materials": "A pair of gloves, or a small tool that has never been used for violence.",
       "effect": "You may pick any one lock, disarm any one trap, or bypass any one guard within the current scene as if you had +2 dice. If you fail, the GM gains 2 SB (the trap resets, the guard notices).",
       "push_it": "You may also silence any noise the action makes. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -145,7 +170,12 @@
       "action": "Scene",
       "range": "Self",
       "resist": "No",
-      "tags": ["LUCK", "FATE", "DEBT", "BOOST"],
+      "tags": [
+        "LUCK",
+        "FATE",
+        "DEBT",
+        "BOOST"
+      ],
       "materials": "A collection of nine stolen items, each from a different target.",
       "effect": "You gain +2 dice to all rolls for the remainder of the session. However, Jack will demand repayment before the next session — you must complete a heist of at least 6 segments, or lose all accumulated Boons.",
       "push_it": "The bonus becomes +3 dice. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
@@ -161,7 +191,12 @@
       "action": "Scene",
       "range": "Near",
       "resist": "Yes",
-      "tags": ["DEBT", "FATE", "CURSE", "COMMAND"],
+      "tags": [
+        "DEBT",
+        "FATE",
+        "CURSE",
+        "COMMAND"
+      ],
       "materials": "A single coin that has been in the hands of nine thieves.",
       "effect": "You may demand one service from a creature who has accepted your help in the past. They must comply or gain a permanent Condition (Marked by Jack) that imposes –1 die on all luck-based rolls until they comply. The target may test Spirit + Resolve (DV 5) to resist.",
       "push_it": "The service can be life-threatening. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",

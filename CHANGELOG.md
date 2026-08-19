@@ -3,6 +3,23 @@ All notable changes to this project will be documented here.
 
 Format loosely follows [Keep a Changelog](https://keepachangelog.com/), versions follow [Semantic Versioning](https://semver.org/).
 
+## [4.12.0] - 2026-08-19
+
+Adventure Director v2: Legacy Tracker, Climax Pacing Engine
+
+### Added
+- **`modules/legacy-tracker.js` (new)** — structured, adventure-specific carryover between adventures in the same campaign. An adventure module opts in with a `persistence` block (`{ schema, carryover: [{key, type, default?, max?}], reset_on_complete }`); `adventure-director.js`'s `finalizeAdventure()` extracts the declared keys (reading `campaign.state.facts`/`[FACT ...]` first, falling back to matching campaign/scene timers, then the item's own `default`) into `campaign.state.legacy[schema]` when the adventure finishes. `adventure-context.js` injects that schema's tracked values as a structured JSON block into the LLM system prompt every turn a matching-schema adventure is active, not just at load. New GM-only command: `!gm adventure legacy [schema] [set <key> <value>|clear]` for visibility and manual override.
+- **Climax narration & pacing** — `adventure-context.js` now injects strong, explicit narration constraints (short/punchy sentences, escalating stakes, no filler, heavier roll stakes) into the system prompt whenever `state.climaxTriggered` is true, plus live progress (`climaxScenesSinceTrigger`/`climaxPadScenes`). `generateAndAppendClimax()`'s own act-generation prompt got the same constraints. New `generateForcedClimaxTwist()` in `adventure-director.js` generates one short, forceful scene (LLM-generated, with a fallback) and calls the server's new `POST /adventure/climax-forced` route if a climax runs past its pad without resolving — a mechanical "the story pushes itself forward" hook for a stalled table, firing at most once per climax.
+- New `DESIGN.md` — an architecture deep dive into the Adventure Director's dynamic-growth engine (scene/climax generation, session-count-based climax triggering, climax pacing/forcing, the Legacy Tracker), how it hands off to `server/adventure.js`'s live state machine, and how `adventure-context.js` assembles the LLM system prompt from all of it every turn.
+
+### Docs
+- `README.md` and `adventure_manual.md` updated to document `!gm adventure legacy`, climax pacing behavior, and the `persistence` adventure-schema field.
+
+### Other
+- Fix Docker Hub login condition + wrong indexNameFor() test assertion
+- Fix to workflow, check for the DOCKER_HUB environment variable, if it doesn't exist, log in using the secrets instead.
+- Build & publish the Docker image as multi-arch (amd64+arm64)
+
 ## [Unreleased]
 
 ## [4.11.2] - 2026-08-17

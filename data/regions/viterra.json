@@ -910,5 +910,69 @@
     "Queen's Peace front",
     "Queen's Dial"
   ],
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "named_lineage_cross_reference": {
+    "note": "For GMs running the FIXED (non-random) history from The Fenwood-Everblood Chronicles (reference/expansions/fenwood-everblood-chronicles.tex). Duke Braedyn Fenwood dies soon after Veralyn is crowned Queen of Viterra.",
+    "warrior_queen": "Veralyn \"Demoneye\" Everblood, Duchess of Aberiel, Queen of Viterra",
+    "queens_parents": {
+      "father": "King Wyllmot the Warrior, killed storming Eryas Citadel, 836 AR",
+      "mother": "Queen Alaysha, nee Renard, secret Myrmis devotee"
+    },
+    "poisoned_brother": "King Baldvyn \"Brightstride\", died 838 AR",
+    "poison_suspect": "Jaennis Fenwood, Brightstride's young widow",
+    "sack_architect": "Duke Braedyn Fenwood",
+    "shadowsteel": "Blade that appeared at Gelfrey Renard's death during the Seven Week Uprising; Veralyn has not set it down since"
+  },
+  "political_factions": [
+    {
+      "id": "the-crown",
+      "name": "The Crown",
+      "figurehead": "Queen Veralyn Everblood",
+      "base": [
+        "Valora",
+        "Aberiel"
+      ],
+      "aim": "Convert conquest into legitimacy before the earls, barons, or grief convert it back into war."
+    },
+    {
+      "id": "northern-earls",
+      "name": "The Northern Earls",
+      "figurehead": "Earl Morcar",
+      "base": [
+        "Ulsven"
+      ],
+      "aim": "Restore the old pre-Fenwood balance of power; wait for the Queen's first real misstep."
+    },
+    {
+      "id": "eastern-barons",
+      "name": "The Eastern Barons",
+      "figurehead": null,
+      "base": [
+        "Argona"
+      ],
+      "aim": "Reclaim the spoils they believe the Lence campaign owed them."
+    },
+    {
+      "id": "house-fenwood",
+      "name": "House Fenwood",
+      "figurehead": "Duke Braedyn Fenwood",
+      "base": [
+        "Belworth",
+        "Tarlington"
+      ],
+      "aim": "Hold the throne they built, patiently, one audit and one marriage at a time."
+    }
+  ],
+  "terrestrial_patrons": [
+    {
+      "name": "Myrmis",
+      "domain": "bargains kept in blood",
+      "note": "Barely spoken since the Seven Week Uprising; Renard blood still watched for it."
+    },
+    {
+      "name": "Canray (Kon'reh)",
+      "domain": "clauses, ledgers, patience",
+      "note": "Played openly as a board game at court; practiced silently as a philosophy of rule."
+    }
+  ]
 }

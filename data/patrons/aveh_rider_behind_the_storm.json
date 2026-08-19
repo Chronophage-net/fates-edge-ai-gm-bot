@@ -28,7 +28,7 @@
   ],
   "runekeeper_options": {
     "thiasos": {
-      "description": "A Runekeeper sworn to Aveh does not bind a willing servant — they befriend a creature as fleeting as the wind. Their Thiasos is a small beast or mythological being that embodies freedom: a storm-petrel that appears before gales, a gray fox that leaves no tracks, a shadow-hound pup whose fur shifts like cloud, or a raven that knows every crossroads. The bond is one of mutual escape, not mastery.",
+      "description": "One does not become a Runekeeper of Aveh by binding a willing servant — they befriend a creature as fleeting as the wind. Their Thiasos is a small beast or mythological being that embodies freedom: a storm-petrel that appears before gales, a gray fox that leaves no tracks, a shadow-hound pup whose fur shifts like cloud, or a raven that knows every crossroads. The bond is one of mutual escape, not mastery.",
       "care": "This creature requires no food, but it must be allowed to run free each day; if confined for more than a day, it becomes Compromised (it refuses to return, or returns only to harry its keeper)."
     },
     "codex": {
@@ -50,7 +50,10 @@
       "action": "Scene",
       "range": "Self",
       "resist": "Yes",
-      "tags": ["LIBERATE", "STEALTH"],
+      "tags": [
+        "LIBERATE",
+        "STEALTH"
+      ],
       "materials": "A breath cast into the wind, or a line drawn in dust.",
       "effect": "Choose one: Storm-Step: Slip free of notice or restraint. Gain +1 die on one escape or evasion roll this scene. Exile's Banner: Mark a target as \"outside.\" The target suffers –1 die on all social rolls for the scene.",
       "push_it": "(Storm-Step) Gain +2 dice instead, but mark 1 SB (Spades) as your absence unsettles the scene. (Exile's Banner) The target is fully estranged; allies treat them as forgotten, but you immediately advance your Corruption timer by 1 segment. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -66,7 +69,10 @@
       "action": "Instant",
       "range": "Touch",
       "resist": "No",
-      "tags": ["LIBERATE", "STEALTH"],
+      "tags": [
+        "LIBERATE",
+        "STEALTH"
+      ],
       "materials": "A pinch of dust blown across a lock, latch, or knot.",
       "effect": "Open a mundane lock, chain, or knot as if it had never been fastened. This works on doors, manacles, shutters, and rope, but not on magical wards. Alternatively, unfasten a grip: a creature holding you or an ally must succeed at a contested Body test or release their grasp.",
       "push_it": "Unlatch every mundane binding in Near range at once (all doors on a corridor, every manacle in a cell), but the sudden gust knocks over anything unsecured. Mark 1 SB (Clubs). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -82,7 +88,11 @@
       "action": "Scene",
       "range": "Zone",
       "resist": "Yes",
-      "tags": ["ERASURE", "AREA", "LIBERATE"],
+      "tags": [
+        "ERASURE",
+        "AREA",
+        "LIBERATE"
+      ],
       "materials": "A threshold or roadway under open sky, or stormwater rubbed into skin.",
       "effect": "Choose one: Erase the Road: All attempts to follow you this session suffer –2 dice. In exchange, erase part of your own path: lose a detail (a memory, a name) chosen by the GM. Rider's Mark: A companion gains +2 dice to resist capture or coercion, but others forget them more easily.",
       "push_it": "(Erase the Road) Expand the effect to an entire group, but mark 1 SB (Clubs) as reality warps around the erasure. (Rider's Mark) Grant +3 dice instead, but mark 1 SB (Diamonds) as the Rider's storm distorts bonds. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
@@ -98,7 +108,12 @@
       "action": "Extended",
       "range": "Self",
       "resist": "Yes",
-      "tags": ["ERASURE", "TRANSFORM", "FATE", "LIBERATE"],
+      "tags": [
+        "ERASURE",
+        "TRANSFORM",
+        "FATE",
+        "LIBERATE"
+      ],
       "materials": "A circle of ash or dust drawn at a boundary, and a personal token (a lock of hair, a written name).",
       "effect": "For one week, your name is erased from mundane records and casual memory. Those who knew you must succeed on a Resolve test (DV 4) to recall you. You gain +2 dice to all rolls to avoid detection, impersonate another, or pass unseen. At the end of the week, the erasure fades, but the GM may retain one lingering rumor or false memory.",
       "push_it": "The erasure becomes permanent — your original identity is gone. You cannot recover it except by divine intervention or a major quest. Mark +3 Obligation. Cost: Mark +1 Obligation (total +4) or Mark +1 Fatigue.",
@@ -114,7 +129,12 @@
       "action": "Extended",
       "range": "Zone",
       "resist": "No",
-      "tags": ["ERASURE", "AREA", "FATE", "DEATH"],
+      "tags": [
+        "ERASURE",
+        "AREA",
+        "FATE",
+        "DEATH"
+      ],
       "materials": "A circle of ash or dust drawn at a boundary, and a storm that answers.",
       "effect": "All thresholds in a zone collapse. Doors lead nowhere; borders dissolve; memory of the place becomes vague. In exchange, something of you is erased — your reflection, your name, or your presence in a specific person's memory (GM's choice).",
       "push_it": "The storm devours even time; mark 3 SB (Spades) as history forgets you. Cost: Mark +1 Obligation (total +4) or Mark +1 Fatigue.",
