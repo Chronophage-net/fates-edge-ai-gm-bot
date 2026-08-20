@@ -3,6 +3,11 @@ All notable changes to this project will be documented here.
 
 Format loosely follows [Keep a Changelog](https://keepachangelog.com/), versions follow [Semantic Versioning](https://semver.org/).
 
+## [4.13.1] - 2026-08-20
+
+### Fixed
+- don't let empty-text broadcasts reach the AI RESPONSE path
+
 ## [4.12.0] - 2026-08-19
 
 Adventure Director v2: Legacy Tracker, Climax Pacing Engine
