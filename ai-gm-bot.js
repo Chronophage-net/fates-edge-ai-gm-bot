@@ -1087,7 +1087,18 @@ async function handleMessage(msg) {
     text = msg.text || '';
     sender = msg.sender || 'Unknown';
   }
-  if (!text && !sender) return;
+  // CHANGED: `sender` defaults to 'Unknown' above (never falsy), so the
+  // old `!text && !sender` guard could never actually fire on an empty
+  // `text` alone -- any inbound WS frame whose msg.type didn't match one
+  // of the explicit branches above (e.g. a presence/roster broadcast this
+  // bot has no handler for) fell through with text='' sender='Unknown'
+  // and sailed straight past this "guard" into the AI RESPONSE section
+  // below, pushing an empty "Unknown: " turn into conversation history
+  // and triggering a real (wasted, story-derailing) LLM completion --
+  // this is the "GM rolls/narrates out of nowhere when someone joins"
+  // bug. The only thing that actually means "not a real chat message" is
+  // an empty `text`; `sender` being 'Unknown' is irrelevant to that.
+  if (!text) return;
 
   console.log(`💬 [${sender}] ${text}`);
 
