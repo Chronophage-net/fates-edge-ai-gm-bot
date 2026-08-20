@@ -3,6 +3,11 @@ All notable changes to this project will be documented here.
 
 Format loosely follows [Keep a Changelog](https://keepachangelog.com/), versions follow [Semantic Versioning](https://semver.org/).
 
+## [4.13.2] - 2026-08-20
+
+### Docs
+- **`docs/local-voice-cloning/VOICE-CLONING-LOCAL-SETUP.md`** (new) — a from-scratch, outside-Docker walkthrough for testing Chatterbox zero-shot voice cloning and the optional RVC conversion layer locally against this bot's `TTS_*`/`RVC_*` env vars, including two small Flask adapter scripts (`chatterbox_adapter.py`, `rvc_adapter.py`) that bridge those services' real APIs to this bot's fixed contract. Now leads with a pointer to `fates-edge-apps`'s new `docker-compose.voice.yml` overlay (`npm run demo -- --voice`/`--voice-rvc`) as the fastest path, keeping the manual instructions below for anyone not using that demo stack.
+
 ## [4.13.1] - 2026-08-20
 
 ### Fixed
