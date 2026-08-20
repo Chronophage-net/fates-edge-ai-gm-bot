@@ -56,6 +56,7 @@
 const adventureContext = require('./adventure-context');
 const { formatColumns, shortTitle } = require('./format-utils');
 const legacyTracker = require('./legacy-tracker'); // NEW: structured cross-adventure carryover -- see that file's header
+const WebSocket = require('ws'); // NEW: Reactive Soundscape -- see advanceScene()/maybeSendAmbience() below
 
 const MAX_CUSTOM_ADVENTURES = 5;
 const ABANDON_VOTE_RATIO = 0.5; // majority of currently-present players
@@ -1004,6 +1005,49 @@ async function handleSceneComplete(context, notes = '') {
 }
 
 /**
+ * NEW: Reactive Soundscape -- fire-and-forget, best-effort ambience cue
+ * for the scene a POST /adventure/scene just landed on. No-ops silently
+ * (never throws past this function) when soundscape isn't configured
+ * (adventureContext.resolveAmbienceEvent() returns null), the scene's
+ * inferred mood doesn't map to anything in the GM's profile, or the
+ * bot's own WS connection isn't open right now -- exactly the same
+ * fail-soft posture as every other optional integration in this repo.
+ */
+function maybeSendAmbience(context, state) {
+    try {
+        const mood = adventureContext.inferSceneMood(state);
+        const ambience = adventureContext.resolveAmbienceEvent(mood);
+        if (!ambience) return;
+        const ws = context.ws;
+        if (!ws || ws.readyState !== WebSocket.OPEN) return;
+        ws.send(JSON.stringify({
+            type: 'soundboard-ambience',
+            mood: ambience.mood,
+            trackId: ambience.trackId,
+            transitionDuration: ambience.transitionDuration,
+        }));
+    } catch (e) {
+        console.warn('[AdventureDirector] Soundscape ambience trigger failed:', e.message);
+    }
+}
+
+/**
+ * NEW: single choke point for "advance to the next scene" -- every path
+ * below (ordinary advance, generated scene, generated climax, forced
+ * climax twist) used to duplicate this exact
+ * apiRequest+invalidate pair inline; centralizing it here is also where
+ * the Reactive Soundscape hook above naturally belongs, so a scene
+ * change triggers an ambience cue regardless of which of those four
+ * paths caused it.
+ */
+async function advanceScene(context) {
+    const newState = await context.apiRequest('POST', ['adventure', 'scene'], {});
+    adventureContext.invalidate();
+    maybeSendAmbience(context, newState);
+    return newState;
+}
+
+/**
  * Plain sequential advance (no growth decision needed), reporting either
  * the new scene or -- if this was the natural end of the adventure --
  * running finalizeAdventure() to archive a summary and re-prompt
@@ -1012,8 +1056,7 @@ async function handleSceneComplete(context, notes = '') {
 async function advanceAndReport(context, notes) {
     let newState;
     try {
-        newState = await context.apiRequest('POST', ['adventure', 'scene'], {});
-        adventureContext.invalidate();
+        newState = await advanceScene(context);
     } catch (e) {
         return `*(Scene advance failed: ${e.message})*`;
     }
@@ -1079,8 +1122,7 @@ Write ONE new scene that continues this act naturally from here. Respond with ON
         // Appending BEFORE advancing means the server's own ordinary
         // sequential-advance logic naturally lands on the new scene --
         // no explicit actIndex/sceneIndex needed here.
-        await context.apiRequest('POST', ['adventure', 'scene'], {});
-        adventureContext.invalidate();
+        await advanceScene(context);
         return `*(${notes ? notes + ' ' : ''}A new chapter unfolds: "${sceneContent.title}".)*`;
     } catch (e) {
         return `*(Failed to continue the adventure: ${e.message})*`;
@@ -1152,8 +1194,7 @@ Output ONLY the JSON object.`;
         await context.apiRequest('POST', ['adventure', 'climax-triggered'], {});
         // Same append-before-advance trick as generateAndAppendScene --
         // ordinary sequential advance now lands in the new act's first scene.
-        await context.apiRequest('POST', ['adventure', 'scene'], {});
-        adventureContext.invalidate();
+        await advanceScene(context);
         return `*(${notes ? notes + ' ' : ''}The final act begins: "${actContent.title}".)*`;
     } catch (e) {
         return `*(Failed to begin the climax: ${e.message})*`;
@@ -1213,8 +1254,7 @@ Output ONLY the JSON object.`;
             scene: sceneContent,
         });
         await context.apiRequest('POST', ['adventure', 'climax-forced'], {});
-        await context.apiRequest('POST', ['adventure', 'scene'], {});
-        adventureContext.invalidate();
+        await advanceScene(context);
         return `*(${notes ? notes + ' ' : ''}The climax forces itself forward: "${sceneContent.title}".)*`;
     } catch (e) {
         return `*(Failed to force the climax onward: ${e.message})*`;

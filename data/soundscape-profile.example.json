@@ -1,0 +1,14 @@
+{
+  "_comment": "Reactive Soundscape (optional) -- mood -> trackId mapping. See README's 'Reactive Soundscape' section. Copy this file to soundscape-profile.json (same directory) and edit it -- soundscape-profile.json itself is NOT loaded until it exists, so nothing about the bot's normal operation depends on this being set up. Restart the bot after editing.",
+
+  "_howToGetTrackIds": "Each trackId below must match an id already generated in YOUR room's web client soundboard (GM Tools -> Soundboard -> add a track). There is no way for the bot to invent one -- add your ambience tracks in the web client first, then copy each track's id here. The bot has no built-in way to show you a track's id yet; for now, check it via your browser's dev tools (inspect state.soundboard.tracks in localStorage) or ask in a future version of this app for an id-display affordance.",
+
+  "tense": "sound_REPLACE_WITH_YOUR_TRACK_ID",
+  "combat": "sound_REPLACE_WITH_YOUR_TRACK_ID",
+  "calm": "sound_REPLACE_WITH_YOUR_TRACK_ID",
+  "social": "sound_REPLACE_WITH_YOUR_TRACK_ID",
+  "climax": {
+    "trackId": "sound_REPLACE_WITH_YOUR_TRACK_ID",
+    "transitionDuration": 3000
+  }
+}

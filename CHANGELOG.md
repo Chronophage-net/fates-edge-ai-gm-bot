@@ -20,7 +20,12 @@ Adventure Director v2: Legacy Tracker, Climax Pacing Engine
 - Fix to workflow, check for the DOCKER_HUB environment variable, if it doesn't exist, log in using the secrets instead.
 - Build & publish the Docker image as multi-arch (amd64+arm64)
 
-## [Unreleased]
+## [4.13.0] - 2026-08-20
+
+### Added
+- **`modules/tts-client.js` (new)** — optional voice narration for the GM's chat replies (GM/assistant-GM turns only), synthesized via any Chatterbox/Coqui-XTTS-shaped HTTP TTS service and broadcast to the room as a `tts-audio` WebSocket event alongside `chat-message`. Off by default (`TTS_ENABLED`); fails soft on any synthesis error. Propagated to every VTT client that can meaningfully act on it: the web client (Web Audio API playback, opt-in toggle), the Foundry bridge (`AudioHelper`, client-scoped opt-in setting), and the Discord bot (`@discordjs/voice`, opt-in channel config) — the Roll20 mod, terminal client, and Python client acknowledge the event but don't attempt playback (no audio capability / out of scope). See `fates-edge-ai-gm-bot`'s README "Voice Narration" section and `fates-edge-apps`' `API.md`.
+- **Voice cloning (RVC), on top of the above** — `RVC_ENABLED`/`RVC_URL` route the synthesized TTS audio through a second HTTP service running RVC (Retrieval-based Voice Conversion) so the GM consistently sounds like one specific trained voice regardless of the underlying TTS voice. Falls back to the un-cloned TTS audio on any RVC failure. Exact-text results (TTS + RVC combined) are cached in memory (`RVC_CACHE_SIZE`, LRU-evicted) so repeated stock lines skip both network calls. See README's "Voice Cloning" section for the HTTP contract `convertVoice()` expects, and `docker-compose.yml`'s new `tts`/`rvc` profiles.
+- **Reactive Soundscape** — `adventure-context.js` loads an optional mood → trackId profile (`SOUNDSCAPE_PROFILE`/`SOUNDSCAPE_PROFILE_PATH`, template at `data/soundscape-profile.example.json`) mapping short mood names to ambience track ids from the web client's own soundboard. Fires a `soundboard-ambience` WebSocket event ( `{mood, trackId, transitionDuration}`) automatically whenever a scene advances (`adventure-director.js`'s new `advanceScene()`, resolving the new scene's explicit `mood` field or an encounter-type heuristic), or explicitly via a new `[MOOD "..."]` narration tag the AI can call mid-scene. The web client (`js/core/soundboard.js`) crossfades to the matching track over `transitionDuration` ms (default 2000ms); a mood mapped to a track no room has created is a silent no-op. Discord posts a text-only "🎵 Now Playing" embed to `VTT_LOG_CHANNEL`. Off entirely with no profile configured. See README's "Reactive Soundscape" section and `fates-edge-apps`'s `API.md`.
 
 ## [4.11.2] - 2026-08-17
 

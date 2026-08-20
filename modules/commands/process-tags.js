@@ -284,6 +284,40 @@ async function processSpecialTags(text, context, senderName = null) {
         crownRegex.lastIndex = 0;
     }
 
+    // ─── [MOOD "mood-name"] ─────────────────────────────────────────
+    // NEW: Reactive Soundscape (optional -- see adventure-context.js's
+    // mood -> trackId profile and README's "Reactive Soundscape"
+    // section). Lets the AI explicitly shift the scene's ambience
+    // mid-scene -- not just on [SCENE COMPLETE] advance (see
+    // adventure-director.js's advanceScene()/maybeSendAmbience()) -- for
+    // moments like a calm scene suddenly turning tense without a real
+    // scene break. Fails silently (tag just disappears, no error text
+    // shown to players) when soundscape isn't configured or the named
+    // mood isn't in the GM's profile, exactly like every other optional
+    // integration in this repo. force:true means the AI explicitly
+    // calling this out is itself the signal -- it fires even if it
+    // happens to repeat the last mood sent, unlike the scene-advance
+    // hook's own dedupe.
+    const moodRegex = /\[MOOD\s+"([^"]+)"\]/gi;
+    while ((match = moodRegex.exec(output)) !== null) {
+        const mood = match[1];
+        try {
+            const ambience = adventureContext.resolveAmbienceEvent(mood, { force: true });
+            if (ambience && ws && ws.readyState === WebSocket.OPEN) {
+                ws.send(JSON.stringify({
+                    type: 'soundboard-ambience',
+                    mood: ambience.mood,
+                    trackId: ambience.trackId,
+                    transitionDuration: ambience.transitionDuration,
+                }));
+            }
+        } catch (e) {
+            console.warn(`[MOOD] failed to trigger ambience for "${mood}":`, e.message);
+        }
+        output = output.replace(match[0], '');
+        moodRegex.lastIndex = 0;
+    }
+
     // ─── [SPEND SB ...] ────────────────────────────────────────────
     const sbRegex = /\[SPEND SB (\d+)\]/gi;
     while ((match = sbRegex.exec(output)) !== null) {

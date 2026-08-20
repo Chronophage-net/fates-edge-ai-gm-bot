@@ -486,6 +486,137 @@ function getCachedStateSync() {
     return cachedState;
 }
 
+// ================================================================
+// REACTIVE SOUNDSCAPE (optional, mood -> trackId) ─────────────────
+// ================================================================
+// Same fail-soft, off-by-default posture as every other optional
+// integration in this repo (see modules/knowledge-index.js's header,
+// modules/tts-client.js): with no profile configured, isSoundscapeEnabled()
+// is false and both callers of this section (process-tags.js's
+// [MOOD "..."] tag, and the scene-advance hook in adventure-director.js)
+// never fire a WS event. Nothing about the bot's normal operation
+// depends on this being set up.
+//
+// The mapping is mood (a short string like "tense"/"combat"/"calm") ->
+// trackId (a track id the GM already created in their web client's
+// soundboard -- see fates-edge-web-client's core/soundboard.js). The bot
+// has no way to invent a meaningful trackId itself (those ids are
+// generated client-side when a GM adds a track), so this MUST be
+// configured by the GM after they've built their soundboard, pointing
+// each mood at one of their own track ids. See README's "Reactive
+// Soundscape" section for the exact setup steps.
+//
+// Loaded once (lazily, on first use) and cached for the process
+// lifetime -- like every other env-driven module config here, this
+// isn't expected to change while the bot is running; restart the bot
+// after editing the profile.
+const DEFAULT_TRANSITION_MS = 2000; // the "bonus" smooth-fade default from the feature request
+const SOUNDSCAPE_PROFILE_PATH = process.env.SOUNDSCAPE_PROFILE_PATH
+    ? path.resolve(process.env.SOUNDSCAPE_PROFILE_PATH)
+    : path.resolve(process.cwd(), 'data', 'soundscape-profile.json');
+
+let soundscapeProfile = null;
+let soundscapeLoadAttempted = false;
+let lastAmbienceMood = null; // dedupe -- see resolveAmbienceEvent()'s doc comment
+
+function loadSoundscapeProfile() {
+    if (soundscapeLoadAttempted) return soundscapeProfile;
+    soundscapeLoadAttempted = true;
+
+    // A compact inline JSON mapping takes precedence when set -- handy for
+    // small setups that would rather not manage a separate file. Shape is
+    // { "mood": "trackId" | { "trackId": "...", "transitionDuration": 1500 } }.
+    if (process.env.SOUNDSCAPE_PROFILE) {
+        try {
+            soundscapeProfile = JSON.parse(process.env.SOUNDSCAPE_PROFILE);
+            return soundscapeProfile;
+        } catch (e) {
+            console.warn('[AdventureContext] SOUNDSCAPE_PROFILE env var is not valid JSON, ignoring:', e.message);
+            soundscapeProfile = null;
+        }
+    }
+
+    try {
+        if (fs.existsSync(SOUNDSCAPE_PROFILE_PATH)) {
+            soundscapeProfile = JSON.parse(fs.readFileSync(SOUNDSCAPE_PROFILE_PATH, 'utf-8'));
+        }
+    } catch (e) {
+        console.warn('[AdventureContext] Failed to load soundscape profile:', e.message);
+        soundscapeProfile = null;
+    }
+    return soundscapeProfile;
+}
+
+function isSoundscapeEnabled() {
+    const profile = loadSoundscapeProfile();
+    return !!(profile && typeof profile === 'object' && Object.keys(profile).length > 0);
+}
+
+/** mood (string, case-insensitive) -> { mood, trackId, transitionDuration } | null. */
+function getSoundscapeForMood(mood) {
+    if (!mood) return null;
+    const profile = loadSoundscapeProfile();
+    if (!profile) return null;
+    const key = Object.keys(profile).find(k => k.toLowerCase() === String(mood).toLowerCase());
+    if (!key) return null;
+    const entry = profile[key];
+    if (typeof entry === 'string' && entry) {
+        return { mood: key, trackId: entry, transitionDuration: DEFAULT_TRANSITION_MS };
+    }
+    if (entry && typeof entry === 'object' && entry.trackId) {
+        return {
+            mood: key,
+            trackId: entry.trackId,
+            transitionDuration: Number.isFinite(entry.transitionDuration) ? entry.transitionDuration : DEFAULT_TRANSITION_MS,
+        };
+    }
+    return null;
+}
+
+/**
+ * Resolve the "auto" mood for the CURRENT scene: an explicit
+ * state.currentScene.mood (set by an adventure module author, or by a
+ * generated scene -- adventure-director.js's LLM scene-generation JSON
+ * schema doesn't require this field, so it's simply absent unless a
+ * module chooses to set it) wins outright. Only when nothing explicit is
+ * set does this fall back to a light heuristic off the active encounter
+ * type, so a module author who deliberately tags a scene's mood is never
+ * second-guessed by the heuristic.
+ */
+function inferSceneMood(state) {
+    if (state?.currentScene?.mood) return state.currentScene.mood;
+    if (state?.climaxTriggered && state.status !== 'completed') return 'climax';
+    const enc = state?.activeEncounter;
+    if (enc) {
+        const type = encounterType(enc);
+        if (type === 'combat') return 'combat';
+        if (type === 'social') return 'social';
+        if (['heist', 'lockpick', 'trap_ward'].includes(type)) return 'tense';
+    }
+    return null;
+}
+
+/**
+ * Convenience used by both the scene-advance hook (adventure-director.js)
+ * and the [MOOD "..."] tag (process-tags.js): resolve a mood against the
+ * configured profile, in one call. Returns null if soundscape isn't
+ * configured, the mood doesn't resolve to a mapped track, or (unless
+ * `force`) this mood is already the last one sent -- the dedupe exists so
+ * an ordinary scene-advance during an unchanged encounter doesn't re-fire
+ * the same ambience cue on every single ensuing message; the explicit
+ * [MOOD "..."] tag passes force:true since the AI calling it out loud is
+ * itself the meaningful signal, even if the resolved mood happens to
+ * repeat the last one sent.
+ */
+function resolveAmbienceEvent(mood, { force = false } = {}) {
+    if (!isSoundscapeEnabled()) return null;
+    const resolved = getSoundscapeForMood(mood);
+    if (!resolved) return null;
+    if (!force && resolved.mood === lastAmbienceMood) return null;
+    lastAmbienceMood = resolved.mood;
+    return resolved;
+}
+
 module.exports = {
     invalidate,
     hasActiveAdventure,
@@ -498,4 +629,9 @@ module.exports = {
     getActiveCreature,
     getAdventureDoc,
     getCachedStateSync,      // NEW export -- used by modules/status-server.js
+    // NEW exports -- Reactive Soundscape (optional, see the section above)
+    isSoundscapeEnabled,
+    getSoundscapeForMood,
+    inferSceneMood,
+    resolveAmbienceEvent,
 };

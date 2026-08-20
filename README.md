@@ -63,6 +63,15 @@ An extensible, pluggable AI bot that connects to the Fate's Edge WebSocket serve
   Elasticsearch for relevance-ranked recall across a long-running campaign ("who knows about the
   cursed well?"), instead of relying only on a fixed recent-history window — see "Long-Term
   Memory" below. Fully optional; the bot works exactly the same without it.
+- **Optional voice narration** – point `TTS_URL` at an HTTP text-to-speech service (e.g.
+  [Chatterbox](https://github.com/resemble-ai/chatterbox) or Coqui XTTS) and the bot speaks its
+  GM/assistant-GM replies into connected clients' voice channel via the socket server, in addition
+  to the text it already sends. Off by default, generated in the background so it never delays
+  chat, and fails soft if the TTS service is slow or unreachable — see "Voice Narration" below.
+- **Optional reactive soundscape** – map moods (`"tense"`, `"combat"`, `"calm"`, ...) to ambience
+  tracks already in your web client's soundboard, and the bot crossfades the room's ambience
+  automatically on scene changes, or explicitly via `[MOOD "..."]` in its own narration. Off by
+  default with no profile configured — see "Reactive Soundscape" below.
 
 ---
 
@@ -268,12 +277,13 @@ object rather than reaching for globals, and each has a matching test file under
 | **`deck.js`** | Deck of Consequences: card draws, Crown Spreads, `transformRegionData()` (converts a region's authored content into the flat suit/rank meaning table), ace effects (region-specific, generic fallback, or partial-key match). |
 | **`timers.js`** | Scene- and campaign-level timer create/tick/fill, with boundary clamping so a timer's `current` segment count never exceeds its `max`. |
 | **`adventure-director.js`** | Adventure selection and lifecycle — the module selection menu, Crown Spread-driven adventure picks, and handing off into `adventure-context.js`'s scene tracking once one is active. |
-| **`adventure-context.js`** | Bridges the bot to the server's Adventure Engine (`server/adventure.js`): `isAdventureActive()` status-machine checks (`planned`/`active`/`completed` × `moduleId` presence) and scene context building for the current turn, including climax-pacing fields (`climaxPadScenes`, `climaxScenesSinceTrigger`, `climaxForced`) and the adventure's `persistence` schema. Must stay in sync with the server-side contract — see that file's own header comment. |
+| **`adventure-context.js`** | Bridges the bot to the server's Adventure Engine (`server/adventure.js`): `isAdventureActive()` status-machine checks (`planned`/`active`/`completed` × `moduleId` presence) and scene context building for the current turn, including climax-pacing fields (`climaxPadScenes`, `climaxScenesSinceTrigger`, `climaxForced`) and the adventure's `persistence` schema. Must stay in sync with the server-side contract — see that file's own header comment. Also owns the optional Reactive Soundscape mood → trackId profile (see "Reactive Soundscape" below) — no-ops everywhere when no profile is configured. |
 | **`legacy-tracker.js`** | The Legacy Tracker — reads an adventure's declarative `persistence` schema, resolves/validates carryover key/value state across adventures, and exposes `!gm adventure legacy [schema] [set <key> <value>|clear]`. See [DESIGN.md](DESIGN.md). |
 | **`format-utils.js`** | Small shared text-formatting helpers for chat output: `formatColumns()` (multi-column `ls`-style layout), `shortTitle()` (truncates a long title at its first em-dash/colon). |
 | **`logger.js`** | Leveled logging (`error`/`warn`/`info`/`debug`, via `LOG_LEVEL`) shared by the whole bot. Monkey-patches `console.log/warn/error` so every existing call site is automatically level-aware and feeds the in-memory ring buffer the status dashboard reads from — no per-call-site changes needed except the handful of intentionally spammy lines, which call `logger.debug()` directly. |
 | **`status-server.js`** | Serves the local status dashboard (see "Status Dashboard" below) — plain `http` + Server-Sent Events, no extra dependency. |
 | **`knowledge-index.js`** | Optional Elasticsearch-backed long-term memory (see "Long-Term Memory" below) — indexes Facts/NPCs/campaign summaries and serves relevance-ranked search. No-ops everywhere when `ES_URL` isn't set. |
+| **`tts-client.js`** | Optional voice narration (see "Voice Narration" below) — synthesizes speech for the GM's chat replies via any Chatterbox/Coqui-XTTS-shaped HTTP TTS service, with an optional second layer (see "Voice Cloning") that re-voices the result through RVC and caches repeated lines. No-ops everywhere when `TTS_ENABLED` isn't `true`. |
 
 ---
 
@@ -464,6 +474,20 @@ A few things worth knowing before adding to this suite:
 | `ES_USERNAME` / `ES_PASSWORD` | Long-Term Memory | unset | Basic-auth fallback if `ES_API_KEY` isn't set. |
 | `ES_INDEX_PREFIX` | Long-Term Memory | `gm-knowledge` | Index name prefix; one index per campaign (`<prefix>-<campaignCode>`). |
 | `ES_TLS_REJECT_UNAUTHORIZED` | Long-Term Memory | `true` | Set to `false` only for a local/dev cluster with a self-signed cert. |
+| `TTS_ENABLED` | Voice Narration | unset (feature disabled) | Set to `true` to turn narration on. Requires `TTS_URL` too — see "Voice Narration" below. |
+| `TTS_URL` | Voice Narration | unset | HTTP endpoint of a Chatterbox/Coqui-XTTS-shaped TTS service, e.g. `http://localhost:8080/synthesize`. Expects a JSON POST of `{text, voice, format}` back raw audio bytes. |
+| `TTS_VOICE` | Voice Narration | `default` | Voice ID passed through to the TTS service (e.g. a cloned voice). |
+| `TTS_FORMAT` | Voice Narration | `wav` | Audio format requested from the TTS service; must be one the web client's `decodeAudioData()` can decode (wav/mp3/ogg). |
+| `TTS_MAX_CHARS` | Voice Narration | `2000` | Narration text longer than this is truncated (at a sentence boundary where possible) before synthesis, to bound request time and payload size. |
+| `TTS_TIMEOUT_MS` | Voice Narration | `15000` | Per-request timeout against the TTS service. |
+| `RVC_ENABLED` | Voice Cloning (RVC) | unset (feature disabled) | Set to `true` to re-voice TTS output through an RVC voice-cloning service. Requires `TTS_ENABLED`+`TTS_URL` too — RVC converts existing narration audio, it doesn't generate its own. |
+| `RVC_URL` | Voice Cloning (RVC) | unset | HTTP endpoint of your RVC service, e.g. `http://localhost:5000/convert`. See "Voice Cloning" below for the exact request/response contract expected. |
+| `RVC_VOICE` | Voice Cloning (RVC) | `default` | Target voice/model id passed to the RVC service (whatever id your deployment uses for the trained model you want). |
+| `RVC_FORMAT` | Voice Cloning (RVC) | same as `TTS_FORMAT` | Audio format of the RVC service's *output*, if different from its input. |
+| `RVC_TIMEOUT_MS` | Voice Cloning (RVC) | `20000` | Per-request timeout against the RVC service. Conversion is often slower than TTS synthesis itself, especially on CPU. |
+| `RVC_CACHE_SIZE` | Voice Cloning (RVC) | `50` | Number of exact-text (post-conversion) results kept in an in-memory LRU cache, so repeated lines skip both the TTS and RVC calls entirely. `0` disables caching. |
+| `SOUNDSCAPE_PROFILE` | Reactive Soundscape | unset | Inline JSON mood → trackId profile, e.g. `{"tense":"sound_abc"}`. Takes precedence over `SOUNDSCAPE_PROFILE_PATH` if both are set. See "Reactive Soundscape" below. |
+| `SOUNDSCAPE_PROFILE_PATH` | Reactive Soundscape | `data/soundscape-profile.json` | Path to the mood → trackId profile file, if you'd rather manage it as a file than an env var. Feature is off (no-op) if neither this file nor `SOUNDSCAPE_PROFILE` resolves to anything. |
 
 ---
 
@@ -600,6 +624,194 @@ Entirely optional and fails soft: with `ES_URL` unset, or if the cluster is brie
 every part of this silently no-ops and the bot behaves exactly as it did before — Elasticsearch
 is never the only copy of any of this data (facts/NPCs/summaries all still live where they always
 did), so nothing is lost or blocked if it's down.
+
+---
+
+## 🎙️ Voice Narration (optional, TTS)
+
+Off by default, like Elasticsearch above. Set `TTS_ENABLED=true` and `TTS_URL` and the bot
+synthesizes speech for its own chat replies — GM/assistant-GM turns only, never a player's
+message — and broadcasts the audio to the room over the same WebSocket connection everything
+else already uses, right alongside (not instead of) the text reply.
+
+**Why a WebSocket relay instead of the bot joining the voice call directly:** the bot is a plain
+WebSocket client, not a WebRTC peer (see `js/features/vtt/voice.js` in the web client for how
+player-to-player voice actually works) — making it join the WebRTC mesh would mean a full SFU/
+media-server buildout for one speaking participant. Sending synthesized audio as a `tts-audio`
+event over the connection the bot already has is simpler, needs no new infrastructure, and every
+connected client already knows how to receive WebSocket events.
+
+**How it works:**
+
+1. The bot generates its narration and sends the chat message as usual — nothing about the text
+   path changes, and players see the reply immediately.
+2. In the background (fire-and-forget, so this never delays the chat message), `tts-client.js`
+   POSTs the clean narration text to `TTS_URL` and gets audio bytes back.
+3. The audio is base64-encoded and sent as a `tts-audio` WebSocket event, which the socket server
+   relays to everyone else in the room exactly like `chat-message` (see
+   `server/socketio-handlers.js`'s `relayEvents` and `server/ws-handlers.js`'s matching case).
+4. Each connected web client decodes and plays it via the Web Audio API
+   (`js/features/vtt/tts-narration.js`), with its own per-client mute toggle and volume — so
+   narration is never forced on anyone, the same way voice chat itself is opt-in.
+
+**Setup:** run any TTS service that accepts `{text, voice, format}` as JSON and returns raw audio
+bytes.
+
+```yaml
+# docker-compose.yml (fates-edge-apps) -- optional service, not part of the default `up`
+tts:
+  image: ghcr.io/resemble-ai/chatterbox-api:latest   # or a Coqui XTTS server image
+  ports: ["8080:8080"]
+  environment:
+    - DEVICE=cpu   # or cuda, if you have a GPU
+```
+
+```
+TTS_ENABLED=true
+TTS_URL=http://localhost:8080/synthesize
+TTS_VOICE=default
+```
+
+(Running the bot itself via `docker compose` too — point `TTS_URL` at the service's container
+name, e.g. `http://tts:8080/synthesize`, same as the `ES_URL` container-networking note above.)
+
+Entirely optional and fails soft: with `TTS_ENABLED` unset (or not exactly `'true'`), or if the
+TTS service is slow/unreachable/erroring, `tts-client.js`'s `synthesize()` resolves to `null` and
+the bot behaves exactly as it did before — the chat message has already gone out either way, so a
+down TTS service costs a campaign silence, never a blocked or delayed reply.
+
+---
+
+## 🗣️ Voice Cloning (optional, RVC)
+
+A second, separate layer on top of Voice Narration above: once `TTS_ENABLED` is working, set
+`RVC_ENABLED=true` and `RVC_URL` to re-voice every line through
+[RVC](https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI) (Retrieval-based
+Voice Conversion) — so instead of whatever stock voice your TTS service shipped with, the GM
+consistently sounds like a specific trained voice model. `RVC_ENABLED` alone does nothing; there
+has to be TTS audio already flowing for it to convert.
+
+**What this actually needs, honestly:** unlike TTS servers (which mostly agree on "POST text, get
+audio back"), there is no single standard HTTP API across RVC forks/servers — most ship as a
+Gradio WebUI, not a documented REST endpoint, and you'll typically be running one of several
+community projects/images rather than one canonical "RVC server." `tts-client.js`'s
+`convertVoice()` POSTs a small, explicit JSON contract to `RVC_URL`:
+
+```
+POST {RVC_URL}
+Body: { "audio": "<base64>", "format": "wav", "voice": "<RVC_VOICE>" }
+Response: raw audio bytes, OR { "audio": "<base64>" } JSON — either is accepted.
+```
+
+If whatever RVC server/image you deploy doesn't speak this natively, put a small adapter service
+in front of it that does — that adapter, not this bot, is where you'd translate into that
+project's actual API. You'll also need a voice model already trained for RVC (its own `.pth`/
+`.index` files) — training one is outside this project's scope; see the RVC project's own docs.
+
+**Setup** (local dev, alongside the `tts` service from above):
+
+```bash
+docker compose --profile tts --profile rvc up -d   # see docker-compose.yml -- `rvc`'s image is a
+                                                     # placeholder; point it at your own RVC deployment
+```
+
+```
+RVC_ENABLED=true
+RVC_URL=http://localhost:5000/convert
+RVC_VOICE=my-trained-voice
+```
+
+(Running the bot itself via `docker compose` too — point `RVC_URL` at the service's container
+name, e.g. `http://rvc:5000/convert`, same as `TTS_URL`/`ES_URL`'s container-networking note
+above.)
+
+**Latency and caching:** voice conversion is a second network round-trip on top of TTS synthesis,
+and is often the slower of the two on CPU. Since a lot of GM narration reuses short stock phrases
+("Roll for it!", scene-transition boilerplate) verbatim, `tts-client.js` keeps an in-memory
+LRU cache (`RVC_CACHE_SIZE`, default 50 entries) of exact-text results, covering the *whole*
+pipeline — a cache hit skips both the TTS and RVC calls entirely, not just the conversion step.
+This is deliberately a plain exact-match cache (hashed on text+voice+format), not a paraphrase or
+similarity match — most AI-generated narration is unique enough per turn that it wouldn't help
+much, and a wrong "close enough" hit would mean genuinely wrong audio playing.
+
+Entirely optional and fails soft, the same way TTS itself is: with `RVC_ENABLED` unset, or if the
+RVC service is slow/unreachable/erroring, `convertVoice()` returns `null` and `synthesize()` falls
+back to the original **un-cloned** TTS audio rather than losing narration for the turn — a down
+RVC service costs voice consistency, never audio entirely.
+
+---
+
+## 🎵 Reactive Soundscape (optional)
+
+A totally separate feature from Voice Narration/Voice Cloning above — no TTS/RVC setup required.
+Instead of narrating with a *voice*, this lets the bot shift the *background ambience music* the
+web client is playing, keyed to the scene's mood.
+
+**How it works:** `modules/adventure-context.js` loads an optional mood → trackId profile (see
+below for setup), and two things trigger it:
+
+1. **Automatic, on scene change** — every time `[SCENE COMPLETE ...]` advances the adventure
+   (`modules/adventure-director.js`'s `advanceScene()`), the new scene's mood is resolved (an
+   explicit `mood` field on the scene, if an adventure module sets one, or a light heuristic off
+   the active encounter type — combat/social/heist-lockpick-trap_ward map to
+   combat/social/tense — otherwise) and, if it matches an entry in the profile, a
+   `soundboard-ambience` WebSocket event fires.
+2. **Explicit, mid-scene** — the AI can also call `[MOOD "mood-name"]` in its own narration (e.g.
+   `[MOOD "tense"]`) to shift ambience without a real scene break, for moments like a calm
+   conversation suddenly turning hostile. The system prompt tells the model when to reach for this.
+
+Either way, the event is just `{ mood, trackId, transitionDuration }` — the web client's
+`js/core/soundboard.js` crossfades to `trackId` over `transitionDuration` ms (default 2000ms) if a
+track with that id exists in the current room's soundboard; if it doesn't, nothing happens (a
+silent no-op, not an error — see that event's own doc comment in the socket server).
+
+**Setup:** the profile maps mood names to **track ids from your own web client soundboard** — the
+bot has no way to invent a meaningful trackId itself, since those ids are generated client-side
+when a GM adds an ambience track (GM Tools → Soundboard). Copy the template and fill in real ids:
+
+```bash
+cp data/soundscape-profile.example.json data/soundscape-profile.json
+# edit data/soundscape-profile.json, replacing each sound_REPLACE_WITH_YOUR_TRACK_ID
+```
+
+```json
+{
+  "tense": "sound_abc123",
+  "combat": "sound_def456",
+  "calm": "sound_ghi789"
+}
+```
+
+A profile entry can also be an object instead of a bare string, to override the default 2000ms
+transition per-mood: `"climax": { "trackId": "sound_xyz", "transitionDuration": 3000 }`. Restart
+the bot after editing — the profile is loaded once and cached for the process lifetime, same as
+other env/file-driven config in this repo.
+
+With no `data/soundscape-profile.json` present (and no `SOUNDSCAPE_PROFILE` env var set — a
+compact inline-JSON alternative to the file, same shape), the feature is entirely off:
+`isSoundscapeEnabled()` returns `false` and neither trigger above ever sends anything.
+
+**Discord:** if the Discord bot is connected, ambience changes post a "🎵 Now Playing" embed to
+the VTT log channel (`VTT_LOG_CHANNEL`) — text-only, since the actual audio plays client-side in
+each player's own browser, not through the Discord bot's voice connection (that's what Voice
+Narration/RVC above are for).
+
+---
+
+## ♿ Accessibility
+
+This bot is a headless service — no UI of its own — so there's no accessibility audit to run
+against it directly. But **Voice Narration** above (§ "Voice Narration") is itself an
+accessibility feature, not just a production-value nicety: hearing the AI GM's replies read
+aloud, alongside (never instead of) the text, is the same category of accommodation as a screen
+reader, purpose-built for this app. It's opt-in everywhere it's wired up — the web client, the
+Foundry bridge, and the Discord bot — mirroring the web client's own "Type to Speak" chat TTS
+feature (reads incoming chat aloud), which serves the same underlying need from the other
+direction. See [DESIGN.md's "Accessibility" section](DESIGN.md#9-accessibility) for more detail,
+and [`fates-edge-apps`'s web client `ACCESSIBILITY.md`](../fates-edge-apps/utilities/javascript/fates-edge-web-client/ACCESSIBILITY.md)
+for the full, actively-maintained accessibility record across every client this bot talks to —
+ARIA labels, focus management, screen-reader announcements, contrast, keyboard navigation, and
+more.
 
 ---
 

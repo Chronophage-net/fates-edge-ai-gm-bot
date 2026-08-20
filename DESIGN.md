@@ -1,8 +1,9 @@
 # Design Deep Dive: Fate's Edge AI GM Bot
 
 This document explains *how* the bot works, not just what it does — the mechanisms behind the
-Adventure Director's dynamic-growth engine, climax pacing/forcing, the Legacy Tracker, and how
-`adventure-context.js` assembles what the LLM actually sees each turn. It complements
+Adventure Director's dynamic-growth engine, climax pacing/forcing, the Legacy Tracker, how
+`adventure-context.js` assembles what the LLM actually sees each turn, and the optional voice/audio
+pipeline (TTS narration, RVC voice cloning, and the Reactive Soundscape — see §6). It complements
 [README.md](README.md) (feature list, module table, setup) and
 [adventure_manual.md](adventure_manual.md) (adventure-author/GM-facing command reference) —
 this document is for anyone modifying the bot's internals or trying to understand *why* it
@@ -435,7 +436,154 @@ in the first place: the AI already knows the secret from turn one, and `[REVEAL 
 model's own signal that its narration just crossed the line from "hint around it" to "confirmed it
 outright" — not a request for the server to hand it new information it didn't have before.
 
-## 6. Design principles this ecosystem leans on repeatedly
+## 6. Voice & audio pipeline (TTS, voice cloning, reactive soundscape)
+
+Three optional, independently-toggleable audio features sit on top of the narrative engine
+described in the sections above. None of them is required to run the bot — each is entirely
+off by default, and each degrades to "the text still arrives as normal chat" (or, for the
+soundscape, "nothing happens") rather than ever blocking gameplay. This section walks through
+how each one actually moves data end to end, and why it's shaped the way it is; for the
+user-facing setup steps see README.md's "Voice Narration," "Voice Cloning," and "Reactive
+Soundscape" sections.
+
+### 6.1. Voice Narration (TTS) — `modules/tts-client.js`
+
+**What it does:** synthesizes speech for the GM/assistant-GM's own chat replies and broadcasts
+the audio alongside the text, so every connected client *hears* the reply in addition to reading
+it.
+
+**Data flow:**
+
+```
+ai-gm-bot.js (after sendChat(clean))
+  → ttsClient.synthesize(text)                       [modules/tts-client.js]
+      → POST {TTS_URL}  { text, voice, format }
+      ← raw audio bytes  →  base64-encoded, tagged with its actual format
+  → sendWS('tts-audio', { audio, text, voice, format })
+      → socket server relays to the room             [socketio-handlers.js / ws-handlers.js]
+          → web client: decodeAudioData() + Web Audio API playback (opt-in toggle)
+          → Foundry bridge: AudioHelper.play() via a data: URI (client-scoped opt-in setting)
+          → Discord bot: @discordjs/voice, transcoded through FFmpeg/prism-media (opt-in channel config)
+          → Roll20 / terminal / Python clients: acknowledged (logged), not played — no audio
+            capability in those environments
+```
+
+**Why base64-over-WebSocket, not a separate audio-fetch endpoint:** the room's WebSocket
+connection is already the single channel every client (web, Foundry, Discord, bots) is
+guaranteed to have open and authenticated on. A parallel HTTP audio endpoint would mean a second
+auth story and a second connection per client, for a payload that — per line of narration — is
+usually well under a megabyte. `WS_MAX_PAYLOAD_BYTES` (default 8 MiB, see the socket server's
+`config.js`/`index.js`) exists specifically to keep this payload from being the thing that trips
+a default Socket.IO/`ws` frame-size limit.
+
+**Why `format` is an explicit field, not inferred:** early in this feature's life the returned
+object only carried `audio`/`text`/`voice` — every consumer either hardcoded `'wav'` or guessed.
+That was fine for the web client (`decodeAudioData()` sniffs the container from the bytes
+themselves) but broke down the moment a consumer needed to construct a `data:` URI (Foundry) or
+decide whether to transcode before sending to Discord's voice pipeline — both need to *know* the
+format up front, not discover it by trial and error. `synthesize()` now always returns the real
+format it requested from `TTS_URL` (`TTS_FORMAT`, default `wav`), and every downstream consumer
+reads it from the payload instead of assuming.
+
+**Fail-soft posture:** `synthesize()` returns `null` on any failure (unreachable `TTS_URL`,
+timeout via `TTS_TIMEOUT_MS`, non-2xx response) — never throws past its own boundary. The caller
+in `ai-gm-bot.js` only sends `tts-audio` when it gets a non-null result, and the narration *text*
+has already gone out via the ordinary `sendChat()` call regardless, so a slow or down TTS service
+costs voice, never the reply itself.
+
+### 6.2. Voice Cloning (RVC) — a second, optional layer on `tts-client.js`
+
+**What it does:** re-voices the TTS output above through a second HTTP service running
+[RVC](https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI) (Retrieval-based
+Voice Conversion), so instead of whatever stock voice the TTS service shipped with, the GM
+consistently sounds like one specific trained voice model across the whole campaign.
+
+**Data flow:** `synthesize()`'s existing TTS result is passed into `convertVoice(audioBase64,
+format)`, which POSTs `{ audio, format, voice: RVC_VOICE }` to `RVC_URL` and accepts either raw
+audio bytes or `{ audio: base64 }` JSON back (there's no single standard HTTP contract across RVC
+forks/servers the way there roughly is for TTS, so this is a small, explicit, documented contract
+rather than an attempt to match an external standard — see README's "Voice Cloning" section for
+the exact shape). On success, the result's `audio`/`format`/`voice` fields are overwritten with
+the converted version before it's ever broadcast — every downstream consumer (web/Foundry/Discord)
+is unaware RVC even exists; it just receives narration audio.
+
+**Caching, and why it's scoped the way it is:** a lot of GM narration reuses short stock phrases
+verbatim ("Roll for it!", scene-transition boilerplate), and voice conversion is a second network
+round-trip that's often slower than TTS synthesis itself — especially on CPU. `tts-client.js` keeps
+an in-memory LRU `Map` (`RVC_CACHE_SIZE`, default 50 entries), keyed on a SHA-256 hash of
+`text + voice + rvcVoice + format`, covering the *whole* pipeline: a cache hit skips both the TTS
+and RVC network calls, not just the conversion step. This is a plain exact-match cache, not a
+paraphrase/similarity match — most AI-generated narration is unique enough per turn that fuzzy
+matching wouldn't help much, and a wrong "close enough" hit would mean genuinely wrong audio
+playing over the table.
+
+One correctness detail worth calling out because it was a real bug caught during development: a
+failed RVC conversion must **never** be cached under the success key. An early draft cached
+whatever `synthesize()` returned regardless of whether `convertVoice()` actually succeeded — which
+meant a transient RVC outage would get "stuck": the first failure during that outage would cache
+the un-cloned fallback audio under that exact line's cache key, and every repeat of that line would
+keep serving the un-cloned fallback *even after RVC recovered*, until the LRU entry eventually aged
+out. The fix moves `cacheSet()` inside the `if (converted)` success branch only, so a failed
+conversion always gets a fresh retry next time, and a down RVC service costs voice consistency for
+exactly as long as it's actually down — never longer.
+
+### 6.3. Reactive Soundscape — `adventure-context.js` + `adventure-director.js` + `[MOOD "..."]`
+
+**What it does:** shifts the *background ambience track* the web client is looping, keyed to the
+scene's mood — a completely separate axis from voice narration above (this changes what music is
+playing, not who's speaking).
+
+**The trackId problem, and why the mapping lives where it does:** the bot cannot itself invent a
+meaningful ambience track to play — track ids are generated client-side, per room, when a GM adds
+a track to their web client's soundboard (`core/soundboard.js`'s `addSoundTrack()`). So the bot
+can only ever *reference* a track a human already created, never conjure one. This is why the
+mood → trackId profile is GM-authored configuration (`data/soundscape-profile.json`, or the
+`SOUNDSCAPE_PROFILE` env var for a compact inline alternative), not something the bot derives on
+its own — `adventure-context.js` just resolves a mood string against whatever mapping the GM
+supplied, and emits nothing at all when no profile is configured (`isSoundscapeEnabled()` false)
+or the resolved mood isn't in it.
+
+**Two distinct triggers, one resolution path:**
+
+1. **Automatic, on scene change.** Every scene-advance path in `adventure-director.js`
+   (`advanceAndReport()`, `generateAndAppendScene()`, `generateAndAppendClimax()`,
+   `generateForcedClimaxTwist()`) used to duplicate the same `apiRequest('POST', ['adventure',
+   'scene'])` + `adventureContext.invalidate()` pair inline; all four now go through a single
+   `advanceScene()` helper, which is also where `maybeSendAmbience()` hangs off — one choke point
+   means a scene change triggers ambience resolution regardless of which of the four paths caused
+   it, instead of needing the hook re-added at each call site (and inevitably missed at one of
+   them). The mood itself is resolved by `inferSceneMood()`: an explicit `mood` field an adventure
+   module set on the scene wins outright; only when nothing explicit is present does it fall back
+   to a light heuristic off the active encounter's type (combat/social/heist-lockpick-trap_ward →
+   combat/social/tense) or `climaxTriggered` → `"climax"`. The explicit-wins-over-heuristic
+   ordering matters: a module author who deliberately tags a scene's mood should never be
+   second-guessed by the fallback.
+2. **Explicit, mid-scene.** The AI can call `[MOOD "mood-name"]` in its own narration — parsed by
+   `process-tags.js` alongside every other `[TAG ...]` directive — for a mood shift that isn't
+   tied to a real scene break (a calm conversation turning hostile without the scene itself
+   ending). The system prompt tells the model to reach for this only for that case, since scene
+   changes already trigger resolution automatically.
+
+Both triggers funnel through the same `resolveAmbienceEvent(mood, { force })` in
+`adventure-context.js`, which also owns a small piece of state: `lastAmbienceMood`, a
+one-entry dedupe so an unchanged encounter across many turns of scene-advance doesn't re-fire the
+same ambience cue on every single message. The explicit `[MOOD ...]` tag passes `force: true` and
+bypasses that dedupe — the AI calling it out loud mid-scene is itself the meaningful signal, even
+on the rare occasion it happens to repeat the currently-playing mood.
+
+**On the wire**, the event is deliberately tiny — `{ mood, trackId, transitionDuration }`, no
+audio payload — broadcast via the same relay mechanism as `tts-audio` (`socketio-handlers.js`'s
+`relayEvents` / `ws-handlers.js`'s direct-broadcast switch), so it needed no special payload-size
+handling. The web client's `core/soundboard.js` crossfades to `trackId` over `transitionDuration`
+ms (default 2000ms, the "smooth fade" this feature was specifically asked for) using plain
+`<audio>.volume` ramping across two overlapping elements via `requestAnimationFrame` — deliberately
+not a WebAudio `GainNode` graph, consistent with that module's existing "no WebAudio graph"
+design note, since a manual volume ramp gets the identical audible result for a single ambience
+loop without pulling in an `AudioContext`. A `trackId` the receiving room's soundboard doesn't
+recognize is a silent no-op there, logged at `console.log` for debugging, not an error surfaced to
+players — the same fail-soft posture as every other optional feature in this document.
+
+## 7. Design principles this ecosystem leans on repeatedly
 
 A few patterns recur across the Adventure Director, Legacy Tracker, and climax pacing — worth
 naming explicitly since they'll likely apply to the next feature added here too:
@@ -474,7 +622,7 @@ naming explicitly since they'll likely apply to the next feature added here too:
   mutations back — this is what lets a human GM using the web client and the AI bot coexist in
   the same room without the two disagreeing about what's currently true.
 
-## 7. Troubleshooting common issues
+## 8. Troubleshooting common issues
 
 All three checklists below assume `!gm adventure debug` (GM-only) as your first move — it dumps
 the full adventure state object, which is where every field named below actually lives.
@@ -535,7 +683,33 @@ the full adventure state object, which is where every field named below actually
   the forced-twist path is specifically skipped in that case (`!wouldExhaust` in the guard clause)
   since forcing a twist on the ending itself would be redundant.
 
-## 8. Glossary
+## 9. Accessibility
+
+This bot itself is a headless service with no UI of its own, so there's nothing here to run an
+accessibility audit *against* directly — but two of its features are directly accessibility-
+relevant to the clients that do have a UI, and are worth calling out explicitly rather than
+leaving buried in the "Voice & audio pipeline" section above:
+
+- **Voice Narration (§6.1) is an assistive feature for low-vision/blind players and GMs**, not
+  just a production-value nicety — hearing the AI GM's replies read aloud, in addition to (never
+  instead of) the text, is the same category of accommodation as a screen reader, just purpose-
+  built for this app rather than general-purpose. It's opt-in everywhere it's wired up (web
+  client, Foundry bridge, Discord bot), consistent with the web client's own "Type to Speak" chat
+  TTS feature (reads incoming chat aloud for players who'd rather listen than read a fast-moving
+  log) — the same opt-in pattern, serving the same underlying need, from two different directions.
+- **Reactive Soundscape (§6.3) has no accessibility dimension of its own** (it's background
+  ambience, always optional, never carries information the way narration or chat text does) —
+  noted here only to be explicit that it wasn't overlooked, not because there's anything to report.
+
+The actual accessibility implementation work — ARIA labels, focus management, screen-reader
+announcements, contrast, keyboard navigation, and the narration/TTS toggles themselves — lives in
+the clients this bot talks to, not in this repo. See
+[`fates-edge-apps`'s web client `ACCESSIBILITY.md`](../fates-edge-apps/utilities/javascript/fates-edge-web-client/ACCESSIBILITY.md)
+for the full, actively-maintained pass-by-pass record, including the Foundry bridge's
+`CONFIG.ariaLabels` support and the Discord bot's embed-alt-text audit, both covered there since
+that's where the rest of the cross-client accessibility work is tracked.
+
+## 10. Glossary
 
 - **`dynamicGrowth`** — adventure-state flag. `true` for Crown-Spread-generated adventures (which
   can grow new scenes/a climax act on demand); always `false` for pre-written, file-based modules.

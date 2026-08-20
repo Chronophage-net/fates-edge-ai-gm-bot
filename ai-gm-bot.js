@@ -18,6 +18,7 @@ const rulesIndexModule = require('./modules/rules-index');
 const statusServer = require('./modules/status-server');
 const knowledgeIndex = require('./modules/knowledge-index');
 const assistantSuggestions = require('./modules/assistant-suggestions');
+const ttsClient = require('./modules/tts-client');
 const { generateStartupMessage, generateEtiquetteReminder } = commandHandler;
 
 // -------------------------------------------------------------------
@@ -218,6 +219,8 @@ const BASE_SYSTEM_PROMPT = (process.env.SYSTEM_PROMPT ||
   'Encounters are not always fights. Check the "Active Encounter" block in your scene context for its type and vocabulary before narrating: combat uses Harm/Heal and attacks; obstruction and skill_challenge use Progress/Setback; trap_ward uses Disarm Progress/Trigger; lockpick uses Tumblers/Jam; heist uses Heat/Cover; social uses Leverage/Resistance. Only narrate attacks, weapons, or [APPLY HARM ...] when the active encounter is type combat (or has no type at all, which also means combat). For every other type, narrate in that type\'s own vocabulary instead — e.g. a lockpick encounter is about tumblers catching or a pick slipping, not blows landing.\n\n' +
 
   'Scene advancement: [SCENE COMPLETE "brief note on how it ended"] — use only at genuine dramatic scene breaks, not after every exchange.\n\n' +
+
+  'Ambience (optional, only if a GM has configured it — silently ignored otherwise): [MOOD "mood-name"] shifts the scene\'s background music/ambience, e.g. [MOOD "tense"] or [MOOD "combat"]. Scene changes already trigger this automatically based on the new scene\'s own tagged mood or its encounter type, so only use this tag mid-scene, when the mood shifts WITHOUT a real scene break — a friendly conversation suddenly turning hostile, a quiet room being breached. Use short, generic mood words (e.g. "tense", "calm", "combat", "social", "climax") rather than inventing overly specific ones, since it only does anything if it matches a mood the GM has actually mapped to a track.\n\n' +
 
   'Knowledge state: your scene context may include a KNOWLEDGE STATE block listing this module\'s secrets, each with an id, the full truth (GM eyes only), what the players currently know, and (for unrevealed ones) a reveal condition. Treat this as the authoritative, explicit answer to "what am I allowed to tell the players right now?" — not the _gmhints prose elsewhere, which is a looser, older mechanism. When play actually satisfies a listed reveal condition (players witness it, an NPC confesses, a clue makes it undeniable), narrate the reveal AND call [REVEAL "id"] in the same turn so the game\'s own state matches your narration. Never state, imply, or let an NPC confess an unrevealed entry\'s truth without also emitting its [REVEAL "id"] tag; conversely, never emit [REVEAL "id"] without actually narrating that reveal. [HIDE "id"] undoes a mistaken reveal — use it only to correct an error, not as a normal narrative tool.\n\n' +
 
@@ -1641,6 +1644,24 @@ async function handleMessage(msg) {
 
     if (clean) {
       sendChat(clean);
+
+      // ─── Voice Narration (optional -- see modules/tts-client.js) ────
+      // Fire-and-forget: synthesis runs in the background so it never
+      // delays the chat message players already saw above. On success,
+      // the resulting audio is broadcast the same way any other event
+      // is (sendWS() -> socket server's 'tts-audio' relay, alongside
+      // 'chat-message' -- see socketio-handlers.js/ws-handlers.js) for
+      // connected web clients to decode and play. Gated the same way
+      // the AI response itself is (gm/assistant-gm only): narration
+      // should only ever speak the GM's own words, never echo a
+      // player's. No-ops entirely when TTS_ENABLED isn't set to
+      // 'true' -- see tts-client.js's fail-soft isEnabled().
+      if (ttsClient.isEnabled() && (myRole === 'gm' || myRole === 'assistant-gm')) {
+        ttsClient.synthesize(clean)
+          .then(audioData => { if (audioData) sendWS('tts-audio', audioData); })
+          .catch(e => console.warn('⚠️ Voice narration failed:', e.message));
+      }
+
       // NEW: store a compacted (roll-cards-summarized) version in
       // conversation history rather than the full rich HTML that
       // sendChat() just used -- see compactRollCardsForHistory() above.

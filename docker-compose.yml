@@ -12,6 +12,8 @@
 # Usage:
 #   docker compose up -d                        # just the bot (no long-term memory)
 #   docker compose --profile elastic up -d       # bot + local Elasticsearch, with ES_URL wired up
+#   docker compose --profile tts up -d           # bot + a TTS service, with TTS_URL wired up (voice narration)
+#   docker compose --profile tts --profile rvc up -d   # + RVC voice cloning on top (see the `rvc` service below)
 #
 # This is a single-node, security-disabled ES config meant for local
 # development only — do not run it this way in production. For a real
@@ -63,6 +65,55 @@ services:
       interval: 10s
       timeout: 5s
       retries: 10
+    restart: unless-stopped
+
+  # ─── Optional TTS service (voice narration) ──────────────────────
+  # See modules/tts-client.js and README's "Voice Narration" section.
+  # Off by default, same reasoning as `elasticsearch` above: this pulls
+  # a real model-serving image and (without a GPU) can be slow, so a
+  # plain `docker compose up -d` shouldn't force it on anyone who just
+  # wants the bot's text.
+  #
+  # `ghcr.io/resemble-ai/chatterbox-api` is a placeholder -- confirm the
+  # actual published image name/tag before relying on this (the
+  # Chatterbox project may not publish one under this exact path; if
+  # not, see README's Appendix on Coqui XTTS as a fallback, or build
+  # your own image from either project's source). Either way, set
+  # TTS_URL in your .env to match whatever you end up running here --
+  # this service's container name (`tts`) is what `bot` above resolves
+  # it through when both are on this same Compose network.
+  tts:
+    profiles: ["tts"]
+    image: ghcr.io/resemble-ai/chatterbox-api:latest
+    environment:
+      - DEVICE=cpu   # set to `cuda` if this host has a GPU passed through
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+
+  # ─── Optional RVC voice cloning (on top of TTS above) ────────────
+  # See modules/tts-client.js's "Optional voice cloning (RVC)" section
+  # for the exact HTTP contract this expects (POST {audio, format,
+  # voice} JSON, get back audio bytes or {audio: base64} JSON) and why
+  # there's no one canonical RVC server image to point at here --
+  # unlike `tts` above, this is a real placeholder you need to replace
+  # with your own RVC deployment (built from
+  # https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI
+  # or a maintained fork/image), or a small adapter service in front of
+  # one, speaking the contract above. Needs a trained voice model
+  # (`.pth`/`.index` files from that project) mounted in wherever your
+  # actual image expects them -- there's no default model bundled here.
+  # Requires the `tts` profile too -- there's nothing for this to
+  # convert without it.
+  rvc:
+    profiles: ["rvc"]
+    image: your-registry/rvc-inference:latest
+    environment:
+      - DEVICE=cpu   # RVC conversion is meaningfully slower on CPU than TTS is -- a GPU matters more here
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./rvc_models:/app/models   # mount your trained voice model(s) here
     restart: unless-stopped
 
 volumes:
