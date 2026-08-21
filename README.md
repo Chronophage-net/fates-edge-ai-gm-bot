@@ -124,7 +124,7 @@ before. The short version below still works fine too.
 ## 📦 Prerequisites
 
 - **Node.js** ≥ 18 (includes built‑in `fetch`; no extra dependencies needed for most drivers)
-- **A Fate's Edge WebSocket server** (the modular socket server from this repo)
+- **A Fate's Edge WebSocket server** — the socket server from the sibling [`fates-edge-apps`](https://github.com/Chronophage-net/fates-edge-apps) repo (`utilities/javascript/fates-edge-socket-server/`), not part of this repo
 - **An API key for your chosen AI service** (or a local LLM running via Ollama)
 
 ---
