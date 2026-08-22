@@ -3,6 +3,13 @@ All notable changes to this project will be documented here.
 
 Format loosely follows [Keep a Changelog](https://keepachangelog.com/), versions follow [Semantic Versioning](https://semver.org/).
 
+## [4.13.3] - 2026-08-22
+
+Docs fixes (AI_PROVIDER vs AI_DRIVER, stale version banner) plus a new lite Docker Compose stack for small/underpowered machines
+
+### Other
+- Updated README.md
+
 ## [4.13.2] - 2026-08-20
 
 ### Docs

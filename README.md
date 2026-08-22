@@ -2,10 +2,68 @@
 
 An extensible, pluggable AI bot that connects to the Fate's Edge WebSocket server and acts as a fully automated Game Master. It drives the narrative, interprets player actions, rolls dice, manages the Deck of Consequences, and handles timers – all through a simple terminal or headless operation.
 
-> **v4.9.0 — first public release.** This project has been developed
-> privately up to this point; this is the first version published for
-> outside use. See [CHANGELOG.md](CHANGELOG.md) for the full release
-> history, and [SECURITY.md](SECURITY.md) to report a vulnerability.
+> **v4.9.0 was the first public release** (developed privately up to that
+> point); the bot has moved forward steadily since — see
+> [CHANGELOG.md](CHANGELOG.md) for the full release history and current
+> version, and [SECURITY.md](SECURITY.md) to report a vulnerability.
+
+---
+
+## 🎬 Demo
+
+![The AI GM bot narrating a live reply in the Fate's Edge web client, running on DeepSeek](docs/media/ai-gm-deepseek-demo.gif)
+
+*A real, unscripted session against the client above: `npm run start` connects a fresh bot to a
+running [`fates-edge-apps`](https://github.com/Chronophage-net/fates-edge-apps) socket server on
+**DeepSeek** (`deepseek-v4-pro`), takes the GM seat, and answers a player's action — "I step into
+the tavern and look around for the hooded stranger I was told to meet." — with live narration,
+straight from the model, no canned responses.*
+
+This is the bot on its own, talking directly to DeepSeek's API — no Ollama, no local model, no GPU.
+[`fates-edge-apps`'s `npm run demo`](https://github.com/Chronophage-net/fates-edge-apps#quick-start)
+is a different, heavier thing: a one-command Docker Compose stack (client + server + Redis + a
+**local Ollama** instance + this bot) built so anyone can see the ecosystem run with zero API keys.
+Reach for that one to explore the whole toolkit hands-off; reach for the setup below when you
+already have a `fates-edge-apps` socket server running and want the AI GM itself, driven by
+DeepSeek (or OpenAI), talking to it directly.
+
+<table>
+<tr>
+<td width="50%">
+
+**Live narration, mid-session**
+<img src="docs/media/live-narration.png" alt="Chat log showing a player action, a dice roll, and the AI GM's live narrated reply" width="100%">
+
+A player rolls (`/roll 3 2 3` → a Fate's Edge d10-pool Clean Success with a Story Beat and a
+critical), then narrates freely — the GM answers both in character, composed live by the driver
+in `drivers/deepseek-driver.js`.
+
+</td>
+<td width="50%">
+
+**The bot's own status dashboard**
+<img src="docs/media/status-dashboard.png" alt="AI GM bot status dashboard showing DeepSeek connection, GM role, and real session token usage" width="100%">
+
+`http://localhost:4141` (see "Status Dashboard" below) — connection state, driver/model in use,
+and **real token usage reported by DeepSeek's own API** (prompt/completion/total, not an estimate)
+for this exact session.
+
+</td>
+</tr>
+</table>
+
+**Try it yourself** (needs a running [`fates-edge-apps`](https://github.com/Chronophage-net/fates-edge-apps) socket server — see its README for that half):
+
+```bash
+git clone https://github.com/Chronophage-net/fates-edge-ai-gm-bot.git
+cd fates-edge-ai-gm-bot
+npm install
+npm run configure        # pick DeepSeek, paste an API key — see "Configuration" below
+npm start                 # connects, claims the GM seat, and starts narrating
+```
+
+Then open the `fates-edge-apps` web client, join the bot's room, and talk to it. `http://localhost:4141`
+shows the same live status view pictured above the moment the bot connects.
 
 ---
 
@@ -163,10 +221,13 @@ After the wizard finishes, you can start the bot immediately.
 
 ### Manual Configuration (optional)
 
-Create a `.env` file in the bot's root directory. Example for OpenAI:
+Create a `.env` file in the bot's root directory. `ai-gm-bot.js` selects its driver by
+**`AI_PROVIDER`** (`ollama` / `openai` / `deepseek`), not by a driver file path — the wizard also
+writes an `AI_DRIVER=./drivers/...` line for reference, but only `AI_PROVIDER` is actually read at
+startup. Example for OpenAI:
 
 ```
-AI_DRIVER=./drivers/openai-driver
+AI_PROVIDER=openai
 OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxx
 AI_MODEL=gpt-4o-mini
 WS_URL=ws://localhost:10000
@@ -177,7 +238,7 @@ BOT_NAME=AI_GM
 For Ollama (local or cloud):
 
 ```
-AI_DRIVER=./drivers/ollama-driver
+AI_PROVIDER=ollama
 OLLAMA_BASE_URL=http://localhost:11434
 OLLAMA_MODEL=mistral
 WS_URL=ws://localhost:10000
@@ -187,7 +248,7 @@ ROOM=AC12
 For DeepSeek:
 
 ```
-AI_DRIVER=./drivers/deepseek-driver
+AI_PROVIDER=deepseek
 DEEPSEEK_API_KEY=sk-xxxxxxxxxxxxxxxx
 DEEPSEEK_MODEL=deepseek-chat
 WS_URL=ws://localhost:10000
@@ -253,7 +314,12 @@ MyDriver.meta = {
 module.exports = MyDriver;
 ```
 
-It will automatically appear in the configuration wizard.
+It will automatically appear in the configuration wizard's driver list, and the wizard will write
+an `AI_PROVIDER=<yourfilename>` line derived from your file's name (`my-driver.js` → `my`). That's
+necessary but not sufficient: `ai-gm-bot.js` itself only recognizes the three literal values
+`ollama`/`openai`/`deepseek` in its provider switch, so running the bot with a genuinely new driver
+also needs one more `else if (AI_PROVIDER === '...')` branch added there by hand — the wizard can't
+wire that part up for you.
 
 ---
 

@@ -1,0 +1,124 @@
+# =================================================================
+# Fate's Edge AI GM Bot — LITE stack (small/underpowered machines)
+#
+# For a machine that can't comfortably run a "real" model (Mistral,
+# GPT-4o-mini-scale quality, a GPU-backed Ollama) or doesn't have any
+# spare RAM for extras. Bundles the bot with a local Ollama instance
+# running the smallest practical model (llama3.2:1b, ~1.3GB), and
+# deliberately OMITS Elasticsearch (long-term memory), TTS (voice
+# narration), and RVC (voice cloning) entirely — not just left off by
+# a profile like the main docker-compose.yml, but not defined in this
+# file at all, so there's nothing extra sitting in `docker compose ps`
+# that a constrained machine could accidentally be asked to start.
+#
+# This assumes a Fate's Edge SOCKET SERVER is already running
+# somewhere reachable (see fates-edge-apps) — this file only brings up
+# the bot itself plus a tiny local model, not the whole ecosystem.
+#
+# See "Running on small/underpowered machines" in
+# RUNNING-THE-AI-GM-BOT.md for what this configuration trades away for
+# its smaller footprint, and when you'll want to graduate off it.
+#
+# Quick start:
+#   cp env-lite-example.md .env.lite   # fill in WS_URL / ROOM / API_KEY
+#   docker compose -f docker-compose.lite.yml --env-file .env.lite up -d --build
+#
+# Requires Docker Compose V2 (the `docker compose` subcommand) — this
+# file uses `service_completed_successfully`, which v1 doesn't support.
+# =================================================================
+
+services:
+  # ─── Local Ollama instance (CPU-only, no GPU assumed) ─────────
+  ollama:
+    image: ollama/ollama:latest
+    container_name: fates-edge-lite-ollama
+    restart: unless-stopped
+    volumes:
+      - lite-ollama-data:/root/.ollama
+    # Uncomment these two lines to hard-cap what Ollama can use, if
+    # you're running this alongside other things on the same box and
+    # want a guaranteed ceiling rather than "best effort." Leave
+    # commented to let it use whatever's available — usually the
+    # right default for a machine that's already modest.
+    # mem_limit: 2g
+    # cpus: 2.0
+    healthcheck:
+      test: ["CMD-SHELL", "ollama list || exit 1"]
+      interval: 10s
+      timeout: 10s
+      retries: 10
+      start_period: 15s
+    networks:
+      - fates-edge-lite-network
+
+  # ─── One-shot: pull the tiny model, then exit ──────────────────
+  ollama-pull:
+    image: ollama/ollama:latest
+    container_name: fates-edge-lite-ollama-pull
+    depends_on:
+      ollama:
+        condition: service_healthy
+    environment:
+      - OLLAMA_HOST=ollama:11434
+      - PULL_MODEL=${LITE_OLLAMA_MODEL:-llama3.2:1b}
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        set -e
+        echo "Pulling $$PULL_MODEL (first run only — cached in the lite-ollama-data volume after)..."
+        ollama pull "$$PULL_MODEL"
+        echo "Model ready."
+    restart: "no"
+    networks:
+      - fates-edge-lite-network
+
+  # ─── AI GM Bot, talking only to the local Ollama above ────────
+  bot:
+    build: .
+    container_name: fates-edge-lite-bot
+    depends_on:
+      ollama-pull:
+        condition: service_completed_successfully
+    env_file:
+      # WS_URL, ROOM, API_KEY (your socket server's, for auto-save),
+      # and BOT_NAME live here — see env-lite-example.md.
+      - .env.lite
+    environment:
+      # Hardcoded to the bundled Ollama above and a small, RAM-friendly
+      # context window — overridable in .env.lite if your model/machine
+      # can take more, but these are the "just make it fit" defaults.
+      - AI_PROVIDER=ollama
+      - OLLAMA_BASE_URL=http://ollama:11434
+      - OLLAMA_MODEL=${LITE_OLLAMA_MODEL:-llama3.2:1b}
+      - OLLAMA_CONTEXT_WINDOW=${LITE_OLLAMA_CONTEXT_WINDOW:-4096}
+      # CPU-only inference on a modest machine is slow — this is
+      # deliberately generous (5 min) so a slow first response doesn't
+      # get killed and reported as "(AI error)" before the model's even
+      # finished. See the caveats doc for what this costs you in
+      # practice (a slower-feeling table, not a broken one).
+      - OLLAMA_TIMEOUT_MS=${LITE_OLLAMA_TIMEOUT_MS:-300000}
+      # Required for any unattended/headless deployment (this is one) —
+      # without it, a missing/broken model hangs the process forever at
+      # an interactive prompt with no terminal attached to answer it.
+      - HEADLESS=true
+      - NODE_ENV=production
+      - STATUS_HOST=0.0.0.0
+      # The dashboard itself is negligible overhead (a plain http
+      # server + SSE), so it's left on by default even here. Set
+      # STATUS_SERVER=false in .env.lite if you want to shave it anyway.
+    # Uncomment to cap the bot process itself — it's normally light
+    # (no local model, no audio processing), so this is mostly headroom
+    # for a *very* tight machine rather than something most setups need.
+    # mem_limit: 512m
+    ports:
+      - "${STATUS_PORT:-4141}:4141"
+    restart: unless-stopped
+    networks:
+      - fates-edge-lite-network
+
+networks:
+  fates-edge-lite-network:
+    driver: bridge
+
+volumes:
+  lite-ollama-data:
