@@ -332,6 +332,21 @@ async function processSpecialTags(text, context, senderName = null) {
         sbRegex.lastIndex = 0;
     }
 
+    // ─── [ADD SB ...] ──────────────────────────────────────────────
+    // Counterpart to [SPEND SB ...] above. Mainly used for the "Selling
+    // the Action" reward (system prompt section I-B): a character-driven
+    // description improves Position by one step at no cost to the
+    // player, and in exchange the GM banks 1 SB into their own pool --
+    // fuel for a later complication, not a penalty right now.
+    const addSbRegex = /\[ADD SB (\d+)\]/gi;
+    while ((match = addSbRegex.exec(output)) !== null) {
+        const gain = parseInt(match[1]);
+        campaignState.sb = (campaignState.sb || 0) + gain;
+        saveCampaign();
+        output = output.replace(match[0], `*(Banked ${gain} Story Beat${gain > 1 ? 's' : ''})*`);
+        addSbRegex.lastIndex = 0;
+    }
+
     // ─── [FACT ...] ────────────────────────────────────────────────
     const factRegex = /\[FACT (.+?) (.+?)\]/gi;
     while ((match = factRegex.exec(output)) !== null) {

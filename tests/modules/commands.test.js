@@ -319,6 +319,45 @@ test('processSpecialTags - SET DV updates campaign scene state', async () => {
   assert.strictEqual(context.orchestrator.campaign.state.scene.defaultDV, 4);
 });
 
+test('processSpecialTags - SPEND SB decrements the GM SB pool when affordable', async () => {
+  const context = buildMockContext();
+  context.orchestrator.campaign.state.sb = 3;
+  const input = '[SPEND SB 2]';
+  const result = await processSpecialTags(input, context, 'Tester');
+  assert.doesNotMatch(result, /\[SPEND SB/);
+  assert.match(result, /Spent 2 Story Beats/);
+  assert.strictEqual(context.orchestrator.campaign.state.sb, 1);
+});
+
+test('processSpecialTags - SPEND SB refuses when the GM pool cannot afford it', async () => {
+  const context = buildMockContext();
+  context.orchestrator.campaign.state.sb = 1;
+  const input = '[SPEND SB 2]';
+  const result = await processSpecialTags(input, context, 'Tester');
+  assert.match(result, /Not enough SB/);
+  assert.strictEqual(context.orchestrator.campaign.state.sb, 1);
+});
+
+test('processSpecialTags - ADD SB banks Story Beats into the GM pool (Selling the Action reward)', async () => {
+  const context = buildMockContext();
+  context.orchestrator.campaign.state.sb = 0;
+  const input = '[ADD SB 1]';
+  const result = await processSpecialTags(input, context, 'Tester');
+  assert.doesNotMatch(result, /\[ADD SB/);
+  assert.match(result, /Banked 1 Story Beat/);
+  assert.strictEqual(context.orchestrator.campaign.state.sb, 1);
+});
+
+test('processSpecialTags - ADD SB works from an unset (undefined) starting pool', async () => {
+  const context = buildMockContext();
+  // No `sb` field set at all -- mirrors a freshly-initialized campaign
+  // state before any roll has generated a Story Beat yet.
+  const input = '[ADD SB 2]';
+  const result = await processSpecialTags(input, context, 'Tester');
+  assert.match(result, /Banked 2 Story Beats/);
+  assert.strictEqual(context.orchestrator.campaign.state.sb, 2);
+});
+
 // ------------------------------------------------------------------
 // Part D: [ENCOUNTER START ...] / [ENCOUNTER RESOLVE ...] tags --
 // type-aware vocabulary (combat vs. non-combat encounter types).
