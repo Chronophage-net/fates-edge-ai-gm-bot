@@ -1,6 +1,6 @@
 {
   "name": "fates-edge-ai-gm-bot",
-  "version": "4.13.3",
+  "version": "4.14.0",
   "description": "AI Game Master bot for Fate’s Edge – connects via WebSocket to the server and uses LLMs (Ollama, OpenAI, DeepSeek)",
   "main": "ai-gm-bot.js",
   "type": "commonjs",
@@ -8,6 +8,7 @@
     "start": "node ai-gm-bot.js",
     "dev": "nodemon ai-gm-bot.js",
     "configure": "node configure-bot.js",
+    "manage": "node bot-manager.js",
     "test": "node --test",
     "version:bump": "node tools/bump-version.mjs"
   },

@@ -1,4 +1,5 @@
 *.env
+.env.*
 *output.txt
 *.DS_*
 *.*.txt
@@ -10,3 +11,10 @@ zzz-test-delete.txt
 # Local scratch/session noise -- never intended for commit
 .claude/
 _to_delete/
+
+# bot-manager.js (see ROADMAP.md item 1 / README's "Multi-bot manager"
+# section) -- bots.json lists real room codes/env-file paths for this
+# operator's own tables, and logs/ is its per-room log output. Copy
+# bots.example.json to bots.json to get started.
+bots.json
+logs/

@@ -18,6 +18,7 @@ const rulesIndexModule = require('./modules/rules-index');
 const statusServer = require('./modules/status-server');
 const knowledgeIndex = require('./modules/knowledge-index');
 const assistantSuggestions = require('./modules/assistant-suggestions');
+const wsCorrelator = require('./modules/ws-correlator');
 const ttsClient = require('./modules/tts-client');
 const { generateStartupMessage, generateEtiquetteReminder } = commandHandler;
 
@@ -190,24 +191,10 @@ const BASE_SYSTEM_PROMPT = (process.env.SYSTEM_PROMPT ||
   'If no character is selected, respond with: "⚠️ Please select a character in the VTT or create one with !gm create <name>."\n\n' +
 
   '═══════════════════════════════════════════════════════════════\n' +
-  'I-B. SELLING THE ACTION\n' +
-  '═══════════════════════════════════════════════════════════════\n\n' +
-
-  'How a player describes an action changes the Position you set when you write the [CALL FOR ROLL ...] tag — before any dice are involved. This is a real reward for good description, not flavor color, so apply it consistently:\n\n' +
-
-  '- A bare or vague declaration ("I attack him," "I try to sneak past") gets the scene\'s baseline Position — usually Controlled, or whatever the situation already implies.\n' +
-  '- A concrete, tactical description — one that names a specific method, uses the terrain, exploits an opening, or times the action against something already established in the scene — improves Position one step (Desperate→Controlled, or Controlled→Dominant) from that baseline.\n' +
-  '- A character-driven description — one that ties the action to a stake the character would actually risk something for: a stated bond, fear, grudge, or Obligation already on their sheet, delivered as a real sentence of motivation rather than an adjective pile — improves Position one step, the same as a tactical description. Then pick ONE of two ways to pay for that extra step, whichever fits the moment better -- never both:\n' +
-  '  (a) [ADD SB 1] once, banking a Story Beat into your own pool -- a beat you\'ll spend later, not a punishment now; or\n' +
-  '  (b) upgrade the Effect instead, touching no resource at all: let success (if it comes) reach further than a bare pass would have -- an extra scrap of information, a complication resolved as a side effect, a real opening you hand to the next player\'s turn. Effect is purely narrative, never a tracked number and never a tag -- it just means the fiction pays out a little more generously than the roll alone bought.\n\n' +
-
-  'One heartfelt sentence tied to something already true about the character counts for more than a paragraph of generic adjectives — reward the specificity and the stake, not the word count. When a description qualifies, say so briefly and in character as you set up the roll ("That\'s not just flavor — that\'s a stake. You\'re Dominant for this."), the same plain-spoken honesty the outcome-naming rule below asks for. Don\'t retroactively upgrade Position (or Effect) after a roll has already happened — this only ever applies going into the roll you\'re about to call for.\n\n' +
-
-  '═══════════════════════════════════════════════════════════════\n' +
   'II. MANDATORY MECHANICAL TAGS\n' +
   '═══════════════════════════════════════════════════════════════\n\n' +
 
-  'You have a GM pool of Story Beats (SB). Use [SPEND SB N] to introduce a complication, and [ADD SB N] to bank one into your own pool (e.g. the Selling the Action reward in section I-B) — this is a fair trade, not a punishment, so use it plainly and move on.\n\n' +
+  'You have a GM pool of Story Beats (SB). Use [SPEND SB N] to introduce a complication.\n\n' +
 
   'Create timers: [TIMER "Name" segments N "onFill message"]\n' +
   'Tick timers: [TICK TIMER "Name" N]\n\n' +
@@ -263,10 +250,6 @@ const BASE_SYSTEM_PROMPT = (process.env.SYSTEM_PROMPT ||
 
   'Default to DV 3, Controlled Position when uncertain.\n\n' +
 
-  'Name the outcome out loud, in character, before you narrate what it looks like. A player should never have to guess whether the dice mattered. Once a roll result is in your context, open your very next line with one short, plainly-spoken sentence naming the outcome and its immediate mechanical cost or reward -- the way a GM actually talks at a table, not a rules citation: "Two Successes against DV 3 -- that\'s a Partial. Mark a Boon." / "Clean miss -- take Harm 2." / "That clears it with SB left over, so it lands, but I\'m spending one." THEN narrate the fiction. This is not the roll-result card (that already went to chat on its own) and not a rules explainer -- do not restate the dice values, do not reformat this as a labeled block, do not cite rule names or explain why the rule works that way. One sentence of plain mechanical honesty, spoken as the GM would say it, then move straight into the scene.\n\n' +
-
-  'Extend the same honesty to costs you apply directly: when you use [APPLY HARM ...], [APPLY FATIGUE ...], or [APPLY BOON ...], say the number out loud in your narration ("Take Harm 2," "Mark a Boon") rather than folding it silently into flavor text that leaves the player with nothing concrete to track.\n\n' +
-
   '═══════════════════════════════════════════════════════════════\n' +
   'V. DRAMATIC PACING & NARRATION (UNIVERSAL GUARDRAILS)\n' +
   '═══════════════════════════════════════════════════════════════\n\n' +
@@ -286,8 +269,6 @@ const BASE_SYSTEM_PROMPT = (process.env.SYSTEM_PROMPT ||
   '- NEVER narrate a risky player action without a [CALL FOR ROLL ...] tag.\n' +
   '- NEVER write, simulate, or format a dice result yourself.\n' +
   '- NEVER resolve a player\'s own roll for them (that includes using [ROLL ...] on their behalf) — call for it and wait.\n' +
-  '- NEVER narrate a roll\'s aftermath as pure flavor with no plainly-spoken outcome line — the player should be able to name the outcome (Partial, Miss, etc.) and its cost/reward from your words alone, without re-reading the dice card.\n' +
-  '- NEVER dress that outcome line up as a rules explainer — no citing mechanic names or Outcome Matrix language, no "why," no breaking the fiction to teach. One plain sentence, in the GM\'s voice, then narrate.\n' +
   '- NEVER introduce a named NPC without an immediate [NPC CREATE] tag.\n' +
   '- NEVER reveal Act II/III mechanics, hierarchies, or the engine\'s internal logic in Act I.\n' +
   '- NEVER summarize module secrets through NPC monologue—always deflect to investigation.\n' +
@@ -524,16 +505,32 @@ function connect() {
     const raw = data.toString();
     const lines = raw.split('\n').filter(line => line.trim());
     for (const line of lines) {
+      // BUG FIX: JSON.parse(line) and await handleMessage(msg) used to
+      // share one try/catch, so any runtime error INSIDE handleMessage()
+      // (a real bug -- e.g. a null-deref while whispering a join greeting)
+      // was caught by the same handler as a malformed WS frame and logged
+      // as "⚠️ Non-JSON message" -- true, but misleading: it hid the real
+      // exception (and its stack trace) behind a message that points
+      // entirely the wrong direction, so a genuine handleMessage() bug
+      // could silently no-op forever without ever surfacing what broke.
+      // Parsing and handling are now two separate try/catches so each
+      // failure mode is logged for what it actually is.
+      let msg;
       try {
-        const msg = JSON.parse(line);
-        // DEBUG: every inbound WS frame, including presence pings and
-        // state-updated broadcasts that can fire multiple times a
-        // second -- the single noisiest line in the whole bot. Set
-        // LOG_LEVEL=debug to see the raw wire traffic.
-        logger.debug(`⬇️  ${msg.type}`, JSON.stringify(msg).slice(0, 120));
-        await handleMessage(msg);
+        msg = JSON.parse(line);
       } catch (e) {
         console.warn('⚠️  Non‑JSON message:', line);
+        continue;
+      }
+      // DEBUG: every inbound WS frame, including presence pings and
+      // state-updated broadcasts that can fire multiple times a
+      // second -- the single noisiest line in the whole bot. Set
+      // LOG_LEVEL=debug to see the raw wire traffic.
+      logger.debug(`⬇️  ${msg.type}`, JSON.stringify(msg).slice(0, 120));
+      try {
+        await handleMessage(msg);
+      } catch (e) {
+        console.error(`🔴 handleMessage() threw while processing a "${msg.type}" message:`, e);
       }
     }
   });
@@ -560,6 +557,13 @@ function sendWS(type, data = {}) {
     console.log(`⬆️  Sent: ${type}`);
   }
 }
+
+// Every assistant-suggestions.enqueue()/approve()/reject() now broadcasts
+// assistant-suggestion-created/-resolved over this same connection (see
+// ROADMAP.md item 2 and modules/assistant-suggestions.js's own doc
+// comment) -- sendWS() already no-ops safely while disconnected, so this
+// is set once, unconditionally, rather than re-wired on every reconnect.
+assistantSuggestions.setBroadcaster((event, data) => sendWS(event, data));
 
 function sendChat(text) {
   const msgText = typeof text === 'string' ? text : String(text);
@@ -882,7 +886,23 @@ async function handleMessage(msg) {
 
   // ─── CROWN SPREAD ──────────────────────────────────────────────────
   if (msg.type === 'crown-spread') {
+    // NEW: resolves any pending `!gm deck crown` synthesis wait (see
+    // gm-commands.js and modules/ws-correlator.js) -- a no-op when nothing
+    // is waiting, e.g. the campaign-seeding draw below or a draw some
+    // other client requested.
+    wsCorrelator.resolve('crown-spread', msg);
     processCrownSpread(msg);
+    return;
+  }
+
+  // ─── DECK DRAWN ────────────────────────────────────────────────────
+  // NEW: this bot didn't previously do anything with deck-drawn (only
+  // web clients rendered it) -- resolving it here lets a future
+  // `!gm spend sb <N> deck` variant that draws via the shared server deck
+  // (rather than modules/deck.js locally) correlate its response the same
+  // way Crown Spread does. Currently a no-op if nothing is waiting.
+  if (msg.type === 'deck-drawn') {
+    wsCorrelator.resolve('deck-drawn', msg);
     return;
   }
 

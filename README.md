@@ -187,6 +187,104 @@ before. The short version below still works fine too.
 
 ---
 
+## 🖥️ Machine Sizing & Scaling
+
+Both the bot and the socket server are small, event-driven Node.js processes. Neither one does
+the actual "thinking" — that's delegated to your AI provider (OpenAI/DeepSeek's servers, or your
+own box if you're self-hosting via Ollama) — and the socket server's job is message relay plus a
+few KB of in-memory state per room. Provision for process count and network I/O, not CPU-bound
+compute.
+
+### TL;DR
+
+| Component | Minimum | Comfortable | What actually drives the number |
+|---|---|---|---|
+| **AI GM Bot** (per table) | 1 shared vCPU, 256–512 MB RAM | 1 vCPU, 512 MB–1 GB RAM if running several tables on one host | Nothing on this box — it's idle between a WebSocket message and the outbound HTTPS call to your AI provider |
+| **Socket Server** | 1 vCPU, 512 MB RAM | 1–2 vCPU, 1 GB RAM | Number of concurrent rooms × connected clients, not raw message volume |
+
+A $5–6/mo VPS (1 vCPU, 1 GB RAM — DigitalOcean's smallest droplet, a Linode Nanode, etc.) is
+enough to run the socket server *and* several bot processes for a handful of concurrent tables,
+as long as you're using a cloud AI provider rather than self-hosting the model. These are
+engineering estimates from what each process actually does, not a benchmarked load test — see
+"Measuring this yourself" below before committing to a production size.
+
+### Why so little
+
+- **The bot** is a thin orchestrator: dice math, `[TAG ...]` parsing, and campaign state are all
+  cheap in-memory operations (see "Modules" above). The expensive part — actually generating
+  narration — happens on your AI provider's infrastructure over HTTPS, not on this machine.
+- **The socket server**, per its own [`SCALING.md`](https://github.com/Chronophage-net/fates-edge-apps/blob/main/utilities/javascript/fates-edge-socket-server/SCALING.md),
+  is event-driven and non-blocking, and "each room's live state is a few KB in memory" — one
+  instance "comfortably handles many simultaneous rooms" without any of the scaling options below.
+
+### What actually needs more (and isn't either of these two processes)
+
+These are separate services, not part of the bot or socket server process, and you only pay for
+the hardware they need if you turn them on:
+
+- **Self-hosted Ollama**, if you're not using a cloud API — real CPU/RAM at minimum, a GPU for
+  good response times with anything beyond a tiny model. `docker-compose.lite.yml`'s
+  `llama3.2:1b` is sized for a small CPU-only box (~1.3 GB model); a "real" model (Mistral-class
+  and up) wants a GPU-backed machine — see `INSTALL.md`'s prerequisites note.
+- **Elasticsearch**, if `ES_URL` is set for long-term memory — JVM-based, and easily the single
+  heaviest optional piece here (budget at least 1 GB of heap on its own). Size it independently of
+  the bot.
+- **TTS/RVC voice services**, if enabled — CPU works but is "often the slower of the two" for RVC
+  specifically (see "Voice Cloning" below); a GPU is worth it if you're running these for real.
+
+### Scaling the bot
+
+One bot process is one `ROOM_CODE` — one table (`ROOM` env var; see `ai-gm-bot.js`'s
+`ROOM_CODE`). There is no multi-room-per-process mode.
+
+So scaling to more concurrent tables means running more processes, not making one process bigger:
+
+- Each additional table is one more `node ai-gm-bot.js` (or Docker container), its own `.env`,
+  pointed at the same socket server with a different `ROOM`.
+- These processes share nothing and need no coordination between them — this is embarrassingly
+  parallel. Run 1, 5, or 50 side by side on one host as long as it has the RAM (an idle Node
+  process typically sits well under 100 MB RSS) and your AI provider's rate limits/budget allow
+  it.
+- The real ceiling is usually your AI provider's requests-per-minute limit or API spend, not
+  CPU/RAM on this box — check that before assuming you need a bigger machine.
+- At real scale, prefer a process manager (`pm2`, systemd template units, or one Compose service
+  per table) over hand-managed `nohup` — see "Running Headless" below.
+
+**Running several tables from one console:** `bot-manager.js` (`npm run manage`) is an opt-in
+alternative to hand-managing N terminals — it forks one `ai-gm-bot.js` child process per room
+(listed in `bots.json`; copy `bots.example.json` to start) and serves a tabbed HTTP dashboard
+(`http://127.0.0.1:4140/` by default — `MANAGER_PORT`) with one tab per bot (its own existing
+status dashboard, plus a live log pane) and an Overview tab showing per-bot CPU/RAM (and, on
+Linux, disk I/O). Capped at `MAX_BOTS` (env var, default **12**) — a dozen live tables is already
+a lot for one meta-process to hold; this manager deliberately doesn't try to coordinate multiple
+manager instances or discover bots across hosts. `node ai-gm-bot.js` directly (and the Docker
+images) are completely unaffected — this is a separate entry point, not a required change to how
+you already run one bot. See `ROADMAP.md` for the fuller design writeup.
+
+### Scaling the socket server
+
+Unlike the bot, the socket server is designed to hold many rooms in one process — that's the
+piece worth actually reasoning about "scaling" for. Its own `SCALING.md` covers this in depth;
+summarized:
+
+1. **Default (single process)** — plenty for most self-hosted tables. No configuration needed.
+2. **Vertical (`CLUSTER_WORKERS`)** — use more CPU cores on one machine before reaching for a
+   second one. No external dependency (no Redis).
+3. **Horizontal (`REDIS_URL` + sticky sessions at the load balancer + a shared Postgres/MySQL
+   instead of per-instance SQLite)** — only once one machine genuinely isn't enough.
+
+See that document for configuration, what each mode does and doesn't do, and how it was verified.
+
+### Measuring this yourself
+
+The numbers above are reasoned from what each process actually does (I/O-bound relay and
+orchestration, not compute) — not a benchmark run against this specific codebase. Before
+committing to a production machine size, profile your own deployment (`docker stats`, or your
+host's monitoring) under real play, especially once Ollama, Elasticsearch, TTS, or RVC are in the
+mix — those are where an actual resource ceiling is likely to show up first.
+
+---
+
 ## 🚀 Installation
 
 ```bash
@@ -612,6 +710,14 @@ narrative authority:
 - `[FACT ...]` — a new fact becoming canon.
 - `[NPC CREATE ...]` — a brand-new NPC being registered into the adventure.
 - `[SCENE COMPLETE ...]` — advancing/ending the current scene.
+- **SB spends and Crown Spread interpretations, LLM-synthesized.** `!gm spend sb <N> [table|deck]`
+  and `!gm deck crown [region]` no longer just post a templated card-meaning readout in Assistant
+  GM mode — they run one short, extra LLM call (`modules/assistant-synthesis.js`), grounded in the
+  current scene, to propose real grounded prose instead. A Crown Spread proposes up to 3 genuinely
+  distinct interpretations as separate suggestions sharing one `groupId`; approving one
+  auto-rejects the rest. Skippable per-call with `--raw`, or bot-wide via
+  `ASSISTANT_SYNTHESIS_ENABLED=false` for cost-conscious tables — either way falls back to today's
+  plain templated text with no extra API call.
 
 Each held tag becomes a **pending suggestion** (`modules/assistant-suggestions.js`), visible on the
 status dashboard's "Assistant GM — Pending Suggestions" panel with Approve/Reject buttons, and
@@ -622,6 +728,13 @@ manageable from chat too:
 !gm approve <id>         - approve one (applies it exactly as full-GM mode would)
 !gm reject <id>          - reject one (discarded, never applied)
 ```
+
+Every suggestion also fires `assistant-suggestion-created`/`assistant-suggestion-resolved` over
+the room's WebSocket connection (plain pass-through relay, same as `tts-audio`/
+`soundboard-ambience`) — `fates-edge-web-client`, `fates-edge-discord-bot`,
+`foundry_fates-edge-bridge`, and `fates-edge-roll20` all render these with live Approve/Reject
+buttons or chat links, so a GM isn't limited to the status dashboard or typing `!gm approve <id>`
+by hand.
 
 **GM-disconnect behavior is deliberately different from full-GM mode's auto-takeover.** An
 ordinary player-role bot silently requests the GM seat if no GM is present after
@@ -878,6 +991,16 @@ and [`fates-edge-apps`'s web client `ACCESSIBILITY.md`](../fates-edge-apps/utili
 for the full, actively-maintained accessibility record across every client this bot talks to —
 ARIA labels, focus management, screen-reader announcements, contrast, keyboard navigation, and
 more.
+
+---
+
+## 🗺️ Roadmap
+
+The multi-bot tabbed manager (`bot-manager.js`, see "Machine Sizing & Scaling" above) and
+LLM-synthesized SB spends/Crown Spread interpretations for Assistant GM mode (see "Assistant GM
+Mode" above) are both implemented as of v4.14.0. [ROADMAP.md](ROADMAP.md) keeps the design history
+behind them and anything still genuinely planned/proposed beyond what's shipped — not a wishlist,
+and not a commitment.
 
 ---
 

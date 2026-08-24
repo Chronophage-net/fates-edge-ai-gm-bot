@@ -17,6 +17,8 @@ const { getVocab, encounterType, DEFAULT_TYPE } = require('../objective-types');
 const knowledgeIndex = require('../knowledge-index');
 const assistantSuggestions = require('../assistant-suggestions');
 const adventureContext = require('../adventure-context');
+const assistantSynthesis = require('../assistant-synthesis');
+const wsCorrelator = require('../ws-correlator');
 const WebSocket = require('ws');
 const { globalApiRequest } = require('./api-client');
 const { encounterIcon, placeOrUpdateToken, moveToken, removeToken, clearEnemyTokens, inferFaction } = require('./tokens');
@@ -118,8 +120,9 @@ async function handleBotCommand(sender, text, context) {
 !gm enemy-turn - tick enemy turn timer (use SB for actions)
 !gm deck draw [count] [region] - draw cards (via WebSocket)
 !gm deck shuffle - shuffle the deck
-!gm deck crown [region] - Crown Spread
+!gm deck crown [region] [--raw] - Crown Spread. As Assistant GM, synthesizes up to 3 grounded interpretations for GM approval (!gm suggestions) unless --raw or ASSISTANT_SYNTHESIS_ENABLED=false
 !gm deck history - show recent draws (if supported)
+!gm spend sb <N> [table|deck] [--raw] - spend N Story Beats; as Assistant GM, synthesizes a grounded complication for GM approval unless --raw or ASSISTANT_SYNTHESIS_ENABLED=false
 !gm whiteboard - show whiteboard summary (drawings, notes, images)
 !gm grid - show grid combat status (tokens, enabled)
 !gm token place <name> <col> <row> [ally|enemy] - place a token on the grid
@@ -293,7 +296,13 @@ async function handleBotCommand(sender, text, context) {
     // commands could never actually run via chat for anyone. Exempting
     // them here (rather than moving them earlier) keeps this fix a
     // single-line, easy-to-audit change instead of reordering the file.
-    if (context.myRole !== 'gm' && !['suggestions', 'approve', 'reject', 'confirm-takeover'].includes(cmd)) {
+    // NEW: 'spend' (!gm spend sb ...) and 'deck' (!gm deck crown ...) are
+    // also now reachable by an Assistant GM -- see ROADMAP.md item 2 --
+    // each with its own inner role check further down (spend sb allows
+    // gm/assistant-gm and applies-vs-suggests accordingly; deck now
+    // allows gm/assistant-gm for the same reason). Same fix shape as the
+    // four commands above: exempt here rather than reorder the file.
+    if (context.myRole !== 'gm' && !['suggestions', 'approve', 'reject', 'confirm-takeover', 'spend', 'deck'].includes(cmd)) {
         return 'Only the Game Master can run resource commands.';
     }
 
@@ -688,6 +697,53 @@ async function handleBotCommand(sender, text, context) {
         // block the command response either way.
         knowledgeIndex.indexFact(context.orchestrator?.campaign?.campaignCode, key, value).catch(() => {});
         return `Fact updated: ${key} = ${value}`;
+    }
+
+    // ─── SB spend synthesis ────────────────────────────────────────────
+    // See ROADMAP.md item 2. Available to full GM too (applies immediately,
+    // no approval needed there) as well as Assistant GM (goes through the
+    // suggestion queue below, same as everything else with narrative
+    // weight in that mode).
+    if (cmd === 'spend' && args[0]?.toLowerCase() === 'sb') {
+        const isAssistant = context.myRole === 'assistant-gm';
+        if (context.myRole !== 'gm' && !isAssistant) return 'Only the GM (or Assistant GM) can spend Story Beats this way.';
+        const rawFlag = args.includes('--raw');
+        const positional = args.slice(1).filter(a => a !== '--raw');
+        const n = parseInt(positional[0]);
+        if (!n || n < 1) return 'Usage: `!gm spend sb <N> [table|deck] [--raw]`';
+        const mode = (positional[1] || 'deck').toLowerCase();
+        if (mode !== 'table' && mode !== 'deck') return 'Usage: `!gm spend sb <N> [table|deck] [--raw]` — mode must be "table" or "deck".';
+        if ((campaignState.sb || 0) < n) return `❌ Not enough SB (need ${n}, have ${campaignState.sb || 0}).`;
+
+        const region = campaignState.scene?.region || 'Acasia';
+        let sceneContext = '';
+        try { sceneContext = await adventureContext.getSceneContextForPrompt({ apiRequest: context.apiRequest }); } catch (e) { /* best-effort */ }
+        const { text, synthesized } = await assistantSynthesis.synthesizeSbSpend({
+            n, mode, region, driver: context.driver, sceneContext, raw: rawFlag,
+        });
+
+        // Returned directly by a full-GM invocation (posted as this
+        // command's own reply); returned from the suggestion's apply()
+        // when Assistant GM approves it (posted as *that* command's
+        // reply by the existing `!gm approve` handler below -- see its
+        // "✅ Approved.\n${result}" line). Either way this is returned,
+        // never sent directly, so it's never posted twice.
+        const applySpend = async () => {
+            campaignState.sb -= n;
+            await saveCampaign();
+            return `💥 **Spending ${n} SB${synthesized ? '' : ' (raw)'}:** ${text}`;
+        };
+
+        if (!isAssistant) {
+            return await applySpend();
+        }
+        assistantSuggestions.enqueue({
+            kind: 'sb-spend-synthesis',
+            label: `Spend ${n} SB (${mode})${synthesized ? '' : ' — raw'}`,
+            preview: text,
+            apply: applySpend,
+        });
+        return `📋 Proposed spending ${n} SB — see \`!gm suggestions\` to approve.`;
     }
 
     // ─── Assistant GM suggestion queue ───────────────────────────────
@@ -1092,11 +1148,18 @@ async function handleBotCommand(sender, text, context) {
     }
 
     // ─── Deck commands (via WebSocket) ─────────────────────────────
+    // NEW: Assistant GM may use these too (previously gm-only) -- see
+    // ROADMAP.md item 2. Drawing/shuffling/crown-spreading isn't itself a
+    // narrative-authority act (it doesn't mutate campaign truth), so it
+    // doesn't need to go through the suggestion queue; only the *synthesis*
+    // step below (crown interpretations, sb-spend complications) does.
     if (cmd === 'deck') {
-        if (context.myRole !== 'gm') return 'Only the GM can use deck commands.';
+        const isAssistant = context.myRole === 'assistant-gm';
+        if (context.myRole !== 'gm' && !isAssistant) return 'Only the GM (or Assistant GM) can use deck commands.';
         const sub = args[0]?.toLowerCase();
         const param1 = args[1];
         const param2 = args[2];
+        const rawFlag = args.includes('--raw');
         if (!ws || ws.readyState !== WebSocket.OPEN) {
             return '❌ WebSocket not connected. Deck commands unavailable.';
         }
@@ -1113,8 +1176,51 @@ async function handleBotCommand(sender, text, context) {
             }
             case 'crown': {
                 const region = param1 || campaignState.scene?.region || 'Acasia';
+                // The actual draw always goes through the server (same as
+                // before) so every connected client's deck history / Crown
+                // Spread visualization stays in sync. What's new: we also
+                // wait for that draw's response and, in Assistant GM mode,
+                // run it through an LLM synthesis pass instead of just
+                // letting the templated broadcast speak for itself.
+                const waitP = wsCorrelator.waitFor('crown-spread', 15000);
+                waitP.catch(() => {}); // avoid an unhandled rejection when the full-GM branch below never awaits it
                 ws.send(JSON.stringify({ type: 'crown-spread', region }));
-                return `👑 Crown Spread requested from ${region}.`;
+                if (!isAssistant) {
+                    // Full GM: unchanged behavior, fire-and-forget -- the
+                    // server's broadcast (and web client's toast/chat card)
+                    // already covers this.
+                    return `👑 Crown Spread requested from ${region}.`;
+                }
+                let crownSpreadResult;
+                try {
+                    crownSpreadResult = await waitP;
+                } catch (e) {
+                    return `👑 Crown Spread requested from ${region} (drawing on the shared table now) — synthesis will be skipped: ${e.message}`;
+                }
+                let sceneContext = '';
+                try { sceneContext = await adventureContext.getSceneContextForPrompt({ apiRequest: context.apiRequest }); } catch (e) { /* best-effort */ }
+                const { texts, synthesized } = await assistantSynthesis.synthesizeCrownInterpretations({
+                    crownSpreadResult, driver: context.driver, sceneContext, raw: rawFlag, count: 3,
+                });
+                if (!synthesized) {
+                    // Raw/disabled/failed -- nothing to approve, the
+                    // server's own broadcast already delivered the
+                    // templated reading to the table.
+                    return `👑 Crown Spread drawn from ${region} (raw — no synthesis).`;
+                }
+                const groupId = `crown_${Date.now()}`;
+                const entries = texts.map((text, idx) => assistantSuggestions.enqueue({
+                    kind: 'crown-synthesis',
+                    label: `Crown Spread interpretation ${idx + 1}/${texts.length} — ${region}`,
+                    preview: text,
+                    groupId,
+                    // See the SB-spend applySpend() comment above -- apply()
+                    // returns the text, it doesn't send it directly, so the
+                    // existing `!gm approve` handler is the single place
+                    // that ever posts it to chat.
+                    apply: async () => `👑 **Crown Spread (${region}):** ${text}`,
+                }));
+                return `👑 ${entries.length} Crown Spread interpretation(s) from ${region} proposed — see \`!gm suggestions\` (approving one auto-rejects the others).`;
             }
             case 'history': {
                 ws.send(JSON.stringify({ type: 'deck-history' }));

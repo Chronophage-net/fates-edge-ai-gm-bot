@@ -3,6 +3,14 @@ All notable changes to this project will be documented here.
 
 Format loosely follows [Keep a Changelog](https://keepachangelog.com/), versions follow [Semantic Versioning](https://semver.org/).
 
+
+## [4.14.0] - 2026-08-24
+
+Multi-bot manager (bot-manager.js), Co-GM SB-spend/Crown Spread LLM synthesis, and cross-repo assistant-suggestion events wired into all four VTT integrations (web client, Discord, Foundry, Roll20)
+
+### Other
+- Updated the bot prompts for Effect (narrative) and to narrate the results without die roll info to avoid hallucinations
+
 ## [4.13.3] - 2026-08-22
 
 Docs fixes (AI_PROVIDER vs AI_DRIVER, stale version banner) plus a new lite Docker Compose stack for small/underpowered machines

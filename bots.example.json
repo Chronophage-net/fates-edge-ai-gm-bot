@@ -1,0 +1,9 @@
+{
+  "//": "Copy this file to bots.json (git-ignored) and edit for your tables.",
+  "//_room": "Room code this bot connects to -- must be unique across the manifest.",
+  "//_envFile": "Path (relative to the repo root, or absolute) to a .env-style file for this bot -- same format as the repo's own .env. Omit to just inherit this process's own environment. STATUS_PORT and ROOM in the file are ignored: the manager assigns those (ROOM from this entry's \"room\", STATUS_PORT sequentially from BASE_BOT_STATUS_PORT, or from an explicit \"statusPort\" below).",
+  "bots": [
+    { "room": "AC12", "envFile": ".env" },
+    { "room": "XY99", "envFile": ".env.xy99" }
+  ]
+}

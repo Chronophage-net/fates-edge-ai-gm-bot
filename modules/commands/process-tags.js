@@ -356,6 +356,7 @@ async function processSpecialTags(text, context, senderName = null) {
             assistantSuggestions.enqueue({
                 kind: 'fact',
                 label: `New fact — ${key}: ${value}`,
+                preview: `${key}: ${value}`,
                 apply: async () => {
                     campaignState.facts[key] = value;
                     saveCampaign();
@@ -424,6 +425,7 @@ async function processSpecialTags(text, context, senderName = null) {
             assistantSuggestions.enqueue({
                 kind: 'scene-complete',
                 label: `Advance the scene${notes ? ` — ${notes}` : ''}`,
+                preview: notes ? `Advance the scene — ${notes}` : 'Advance the scene',
                 apply: async () => {
                     try {
                         // Timeout the scene completion call to avoid hanging
@@ -482,6 +484,7 @@ async function processSpecialTags(text, context, senderName = null) {
             assistantSuggestions.enqueue({
                 kind: 'npc-create',
                 label: `New NPC — ${name}${role ? ` (${role})` : ''}`,
+                preview: `${name}${role ? ` — ${role}` : ''}${motivation ? `: ${motivation}` : ''}${location ? ` (${location})` : ''}`,
                 apply: registerNpc,
             });
         } else {
@@ -518,7 +521,7 @@ async function processSpecialTags(text, context, senderName = null) {
             }
         };
         if (isAssistant) {
-            assistantSuggestions.enqueue({ kind: 'knowledge-reveal', label: `Reveal knowledge — ${id}`, apply: doReveal });
+            assistantSuggestions.enqueue({ kind: 'knowledge-reveal', label: `Reveal knowledge — ${id}`, preview: `Reveal knowledge entry "${id}" to players`, apply: doReveal });
         } else {
             await doReveal();
         }
@@ -542,7 +545,7 @@ async function processSpecialTags(text, context, senderName = null) {
             }
         };
         if (isAssistant) {
-            assistantSuggestions.enqueue({ kind: 'knowledge-hide', label: `Hide knowledge — ${id}`, apply: doHide });
+            assistantSuggestions.enqueue({ kind: 'knowledge-hide', label: `Hide knowledge — ${id}`, preview: `Hide knowledge entry "${id}" from players again`, apply: doHide });
         } else {
             await doHide();
         }

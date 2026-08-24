@@ -259,8 +259,18 @@ function renderState(s) {
   if (suggestions.length) {
     suggestionsPanel.style.display = 'block';
     document.getElementById('suggestions-list').innerHTML = suggestions.map(function(sug) {
+      // preview is redundant with label for most kinds (see
+      // assistant-suggestions.js's enqueue() doc comment) -- only show it
+      // as its own line when it actually says something more, which today
+      // means the two synthesis kinds' real proposed prose.
+      var previewHtml = (sug.preview && sug.preview !== sug.label)
+        ? '<div class="preview" style="white-space:pre-wrap;color:var(--dim);font-size:12px;margin-top:3px;">' + escapeHtml(sug.preview) + '</div>'
+        : '';
+      var groupHtml = sug.groupId
+        ? '<span class="kind" title="Approving one option in this group auto-rejects the others">group</span>'
+        : '';
       return '<div class="suggestion-row">' +
-        '<div><span class="kind">' + escapeHtml(sug.kind) + '</span>' + escapeHtml(sug.label) + '</div>' +
+        '<div style="flex:1;min-width:0;"><span class="kind">' + escapeHtml(sug.kind) + '</span>' + groupHtml + escapeHtml(sug.label) + previewHtml + '</div>' +
         '<div class="actions">' +
           '<button class="approve" data-id="' + escapeHtml(sug.id) + '" data-action="approve">Approve</button>' +
           '<button class="reject" data-id="' + escapeHtml(sug.id) + '" data-action="reject">Reject</button>' +
