@@ -611,7 +611,7 @@
   "completedAt": null,
   "status": "planned",
   "createdAt": "2026-08-07T00:00:00.000Z",
-  "updatedAt": "2026-08-07T00:00:00.000Z",
+  "updatedAt": "2026-08-18T00:00:00.000Z",
   "knowledge": [
     {
       "id": "maelstraeus-agent-secret",
@@ -638,7 +638,7 @@
     {
       "id": "guildmaster-emberlyn-secret",
       "subject": "npc-guildmaster-emberlyn",
-      "gm": "Emberlyn's double-dealing with both Mor'iraath's court and Maelstraeus's agents is a strong SB spend or Archive-purchased secret — using it against her should shift the Ember Merchants' Guild Influence timer sharply, for good or ill depending on how it's deployed.",
+      "gm": "Emberlyn has been quietly selling information to both Mor'iraath's court and Maelstraeus's agents simultaneously. If exposed, the Guild's neutrality — and its usefulness to the party — collapses instantly.",
       "player": "Guildmaster Emberlyn Voss plays the part everyone assumes: Head of the Ember Merchants' Guild. Nothing about their manner invites a second look.",
       "revealed": false,
       "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
@@ -711,28 +711,7 @@
       "tags": [
         "plot-secret"
       ]
-    },
-    {
-      "id": "livaea-avatar-secret-2",
-      "subject": "npc-livaea-avatar",
-      "gm": "Livaea should never appear as an obvious villain. Every specific thing she does in this adventure — every offer made through the Whisperer, every fixation on a PC's desire — should be individually defensible as helpful. The horror is cumulative, not singular. When she is finally named, she should be almost pleased about it, since being known is itself valuable to her.",
-      "player": "Livaea, Unseen Until Named plays the part everyone assumes: Patron of Perfect Outcomes. Nothing about their manner invites a second look.",
-      "revealed": false,
-      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
-      "tags": [
-        "npc-secret"
-      ]
-    },
-    {
-      "id": "that-livaea-is-behind-the-whisperer-of",
-      "subject": "plot",
-      "gm": "That Livaea is behind the Whisperer of Better Deals — this is the Act III reveal; keep her name out of NPC dialogue entirely until Scene 7",
-      "player": null,
-      "revealed": false,
-      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
-      "tags": [
-        "plot-secret"
-      ]
     }
-  ]
+  ],
+  "tierRange": "III"
 }

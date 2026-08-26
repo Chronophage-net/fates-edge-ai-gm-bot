@@ -1,90 +1,88 @@
 {
-  "id": "usurpers-gambit",
+  "id": "the-usurpers-gambit",
   "title": "The Usurper's Gambit",
   "description": "Ecktoria, heir to the shattered Utaran Empire, teeters on the edge of civil war. A charismatic pretender, Duke Logan the Bold, has won the militia's loyalty and begun invoking the ancient rites that would claim the Mandate of Everflame. The recognized heir, King Aldric the Lame, clings to power through law, tradition, and the blessing of a wavering High Temple. The party must move through marble forums, sealed archives, and a besieged basilica to decide who — if anyone — deserves the crown, in a city where legitimacy is manufactured as often as it is inherited.",
   "tier": "III",
+  "tierRange": "III",
   "author": "Nicholas A. Gasper",
-  "sessions": "4-5",
+  "sessions": "4",
   "themes": [
     "Court Intrigue",
     "Legitimacy vs. Popularity",
-    "Bureaucracy as Battlefield",
-    "Imperial Decline"
+    "Political Maneuvering",
+    "Civil War"
   ],
+  "specialMechanics": {},
   "bestiary": [
     {
-      "id": "militia-enforcer",
+      "id": "new-militia-enforcer",
       "name": "New Militia Enforcer",
       "tl": 2,
       "class": "II",
-      "category": "mortal",
-      "description": "A city militiaman who has traded the Lame King's gray sash for the Pretender's crimson one. Young, well-fed, and convinced reform is coming whether the old families like it or not. Fights in disciplined pairs, more comfortable clearing a colonnade of protesters than facing a real duel.",
+      "category": "humanoid",
+      "description": "Fights in disciplined pairs. Loyal to Duke Logan.",
       "stats": {
         "Body": 2,
-        "Spirit": 2,
-        "Presence": 1,
-        "armor": 1,
+        "Melee": 2,
+        "Armor": 1,
         "hp": 14
       },
       "sb_spends": [
         {
           "cost": 1,
           "name": "Whistle for Backup",
-          "effect": "A second pair of enforcers arrives at the top of the next exchange."
+          "effect": "Reinforcements arrive in 1 exchange."
         },
         {
           "cost": 2,
           "name": "Cordon the Street",
-          "effect": "The enforcers seal an exit; escaping this scene now costs an additional action or a Sway/Subterfuge check DV 4."
+          "effect": "Seals an exit for the scene."
         }
-      ],
-      "lore": "Most of the New Militia are Ecktorian-born sons of merchants and guildsmen who were never welcome in the old Standard-Bearer companies. Logan gave them crimson sashes and back pay in arrears; that alone bought loyalty the Lame King never thought to offer."
+      ]
     },
     {
-      "id": "standard-bearer-veteran",
+      "id": "veteran-standard-bearer",
       "name": "Veteran Standard-Bearer",
       "tl": 3,
       "class": "III",
-      "category": "mortal",
-      "description": "A grizzled loyalist of the old imperial legions, still carrying a genuine campaign standard rather than a militia sash. They fight with the patient discipline of soldiers who have buried three commanders and outlasted them all.",
+      "category": "humanoid",
+      "description": "Rallies allies and holds the line. Fights for Aldric or Logan depending on allegiance.",
       "stats": {
         "Body": 3,
-        "Spirit": 3,
-        "Presence": 2,
-        "armor": 2,
+        "Melee": 3,
+        "Command": 2,
+        "Armor": 2,
         "hp": 20
       },
       "sb_spends": [
         {
           "cost": 1,
           "name": "Hold the Line",
-          "effect": "The Standard-Bearer and one ally gain +1 die to Body defense until the end of the exchange."
+          "effect": "Gain +1 die to Body defense for self and one ally."
         },
         {
           "cost": 2,
           "name": "Rally Cry",
-          "effect": "All Lame King loyalists in Near range clear 1 Fatigue and gain +1 die on their next Command roll."
+          "effect": "Allies clear 1 Fatigue and gain +1 die to Command until end of scene."
         }
-      ],
-      "lore": "These soldiers remember an empire that actually functioned. They are not fighting for Aldric the man so much as for the idea that law should outlast any single king's popularity."
+      ]
     }
   ],
   "acts": [
     {
       "id": "act-1-cracks-in-marble",
       "title": "Act I — Cracks in Marble",
-      "description": "The party witnesses, firsthand, how fragile Ecktoria's legitimacy has become. Public ceremony and street theater are political weapons here, and the party must learn to read them before they can wield them.",
+      "description": "The party witnesses, firsthand, how fragile Ecktoria's legitimacy has become — and learns to read ceremony as the weapon it is.",
       "scenes": [
         {
-          "id": "scene-1-1-the-envoys-humiliation",
+          "id": "scene-1-1-envoy-humiliation",
           "title": "The Envoy's Humiliation",
-          "description": "Before the Great Baths of Aurix, the Lame King's Envoy is struck from their ceremonial staff and jeered by a crowd primed for the Pretender's heralds. The players arrive as witnesses, mediators, or bystanders swept into the spectacle — and their reaction here becomes the city's first read on where they stand.",
+          "description": "Before the Great Baths of Aurix, the Lame King's Envoy is struck from their ceremonial staff and jeered by a crowd primed for the Pretender's heralds. The party's reaction here becomes the city's first read on where they stand.",
           "timers": [
             {
-              "name": "Legitimacy Timer",
+              "name": "Legitimacy",
               "segments": 8,
-              "current": 0,
-              "description": "Tracks how firmly public opinion and institutional weight have swung to the Pretender. Advances through the acts; when full, Logan controls the capital in all but name."
+              "current": 0
             }
           ],
           "encounters": [
@@ -93,19 +91,19 @@
               "dv": 4,
               "position": "Controlled",
               "outcomes": {
-                "clean": "You defuse the humiliation before it becomes a riot; the Envoy is grateful and offers a name — Grand Magistrate Valeria Thorne — as someone worth speaking to.",
-                "partial": "The crowd disperses, but not before the story spreads with the worst details intact. Tick Legitimacy Timer +1.",
-                "miss": "The Envoy is struck again, publicly, in front of you. Tick Legitimacy Timer +2 and the party is marked as bystanders who did nothing."
+                "clean": "Defuse it; the Envoy names Grand Magistrate Thorne as a contact worth seeking.",
+                "partial": "Crowd disperses but the worst version of the story spreads. Legitimacy +1.",
+                "miss": "Envoy struck again publicly. Legitimacy +2; party marked as passive bystanders."
               }
             },
             {
-              "name": "Read the Crowd (Investigation)",
+              "name": "Read the Crowd",
               "dv": 3,
               "position": "Dominant",
               "outcomes": {
-                "clean": "You recognize planted agitators among the jeering crowd — this humiliation was staged, not spontaneous.",
-                "partial": "You sense something's off but can't place it without more digging.",
-                "miss": "You misjudge the mood entirely and are swept along with the crowd's momentum."
+                "clean": "You identify the ringleaders and gain a lead on Logan's network.",
+                "partial": "You learn some names but are spotted; Legitimacy +1.",
+                "miss": "The crowd turns on you; you must flee or face a riot."
               }
             }
           ],
@@ -114,28 +112,33 @@
         {
           "id": "scene-1-2-statues-and-sashes",
           "title": "Statues and Sashes",
-          "description": "Overnight, imperial statues along the Forum colonnade have had their sashes repainted crimson, and militia in unfamiliar colors now stand where gray-sashed Standard-Bearers once did. The change is subtle enough to deny, obvious enough to unsettle anyone who's lived here more than a season.",
+          "description": "Overnight, imperial statues have new crimson sashes and unfamiliar militia stand where grey-sashed Standard-Bearers once did — a subtle, deniable, unsettling shift.",
+          "timers": [
+            {
+              "name": "Legitimacy",
+              "segments": 8,
+              "current": 0
+            }
+          ],
           "encounters": [
             {
-              "name": "Statue Alteration Investigation",
+              "name": "Statue Investigation",
               "dv": 4,
               "position": "Controlled",
               "outcomes": {
-                "clean": "You trace the paint to a guild workshop paid in advance by a New Merchant sympathetic to Logan — hard evidence of coordinated messaging.",
-                "partial": "You confirm the change is deliberate, but the trail to who ordered it goes cold at a middleman.",
-                "miss": "You're seen investigating by New Militia and questioned; nothing incriminating, but you're now a face they remember."
+                "clean": "You find a hidden marker tying the sashes to Logan's quartermaster.",
+                "partial": "You confirm the shift but gain little actionable evidence.",
+                "miss": "You are spotted by militia; they detain you for questioning."
               }
             },
             {
-              "name": "New Militia Patrol Encounter",
-              "creatureId": "militia-enforcer",
-              "quantity": 2,
+              "name": "New Militia Patrol",
               "dv": 4,
               "position": "Controlled",
               "outcomes": {
-                "clean": "You talk your way past or subdue them without incident; word doesn't spread.",
-                "partial": "The encounter ends without violence, but the militia file a report noting your names and business.",
-                "miss": "Things turn physical. Tick Legitimacy Timer +1 as the militia spin the story as an attack on lawful order."
+                "clean": "You slip past or bribe them; gain information on their numbers.",
+                "partial": "They let you pass but are now suspicious; future interactions are Desperate.",
+                "miss": "A fight breaks out; defeat or escape."
               }
             },
             {
@@ -143,9 +146,9 @@
               "dv": 3,
               "position": "Dominant",
               "outcomes": {
-                "clean": "You collect three solid leads: Duke Logan's coronation rite is already being drafted at the Coin-House; Grand Magistrate Thorne has gone quiet; a courier died carrying a sealed tablet last week.",
-                "partial": "You get rumor and noise, mostly contradictory, but confirm the political temperature is rising fast.",
-                "miss": "You draw attention from Silent Opposition watchers who now know outsiders are asking questions."
+                "clean": "You learn the crowd's mood: they favor Logan, but many are undecided.",
+                "partial": "You hear conflicting rumors; gain a lead but also attract unwanted attention.",
+                "miss": "You are overheard; Legitimacy +1 against you."
               }
             }
           ],
@@ -156,41 +159,33 @@
     {
       "id": "act-2-shadows-in-the-censorium",
       "title": "Act II — Shadows in the Censorium",
-      "description": "Grand Magistrate Valeria Thorne, keeper of every precedent that governs imperial succession, is attacked in her own hall. The party must decide how far they're willing to go into Ecktoria's archive of buried truths to learn who actually has the stronger claim — and discover that the answer is messier than either faction wants it to be.",
+      "description": "Grand Magistrate Thorne is attacked in her own hall. The party must dig into Ecktoria's buried legal truths — and discover the answer is messier than either faction wants.",
       "scenes": [
         {
-          "id": "scene-2-1-the-magistrates-hall",
+          "id": "scene-2-1-magistrates-hall",
           "title": "The Magistrate's Hall",
-          "description": "Thorne is found bleeding on the floor of her own study, files scattered, a censer overturned. She survives, but she's frightened in a way that unsettles everyone who knows her reputation for icy composure. Someone wanted a specific document before she could act on it.",
+          "description": "Thorne is found bleeding among scattered files. Someone wanted a specific document before she could act on it.",
           "timers": [
-            {
-              "name": "Legitimacy Timer",
-              "segments": 8,
-              "current": 0,
-              "description": "Carried over from Act I."
-            },
             {
               "name": "Legal Standing — Aldric",
               "segments": 6,
-              "current": 0,
-              "description": "Tracks the strength of the Lame King's documented legal claim. Advances when the party surfaces genuine precedent or legitimate support for him."
+              "current": 0
             },
             {
               "name": "Legal Standing — Logan",
               "segments": 6,
-              "current": 0,
-              "description": "Tracks the strength of the Pretender's claim. Advances when the party surfaces genuine precedent or legitimate support for him."
+              "current": 0
             }
           ],
           "encounters": [
             {
-              "name": "Stabilize and Question Thorne",
+              "name": "Stabilize & Question Thorne",
               "dv": 4,
               "position": "Controlled",
               "outcomes": {
-                "clean": "Thorne tells you what was taken: a genealogical record referencing 'the Pact of Three Flames' and a name she won't speak aloud yet. Tick Legal Standing — Aldric +1.",
-                "partial": "She's too shaken to say more than 'the Censor's Hall — go now.' You have a destination but no context.",
-                "miss": "She loses consciousness before saying anything useful, and the attending priest orders you out."
+                "clean": "You save her and she reveals the document was about the Line of Fire.",
+                "partial": "She lives but speaks cryptically; you must investigate further.",
+                "miss": "She dies; the document is lost, and you are framed for the attack."
               }
             },
             {
@@ -198,37 +193,49 @@
               "dv": 5,
               "position": "Desperate",
               "outcomes": {
-                "clean": "You catch the fleeing agent — not militia, not a soldier, but a Censor's Hall clerk paid by the Silent Opposition to muddy both claims equally.",
-                "partial": "You lose them in the crowd but recover a dropped token marking them as Censor's Hall staff.",
-                "miss": "You lose the trail entirely and alert whoever hired them that someone's watching."
+                "clean": "You follow the trail to a safehouse with evidence of Logan's involvement.",
+                "partial": "You find a clue but the attacker escapes; advance Legal Standing for one side.",
+                "miss": "You are ambushed; fight or flee."
               }
             }
           ],
           "completed": false
         },
         {
-          "id": "scene-2-2-censors-hall-infiltration",
+          "id": "scene-2-2-censors-hall",
           "title": "The Censor's Hall",
-          "description": "A labyrinth of red-lacquered tablets and censored histories, where the Line of Fire — the genealogical record of every legitimate claimant in a century — is kept under lock the party does not have.",
+          "description": "A labyrinth of red-lacquered tablets and censored histories, holding the Line of Fire — the genealogical record of every legitimate claimant in a century.",
+          "timers": [
+            {
+              "name": "Legal Standing — Aldric",
+              "segments": 6,
+              "current": 0
+            },
+            {
+              "name": "Legal Standing — Logan",
+              "segments": 6,
+              "current": 0
+            }
+          ],
           "encounters": [
             {
               "name": "Infiltrate the Archive",
               "dv": 5,
               "position": "Desperate",
               "outcomes": {
-                "clean": "You reach the Line of Fire unnoticed and have time to actually read it before anyone comes looking.",
-                "partial": "You get in, but a night clerk notices something's disturbed and raises a quiet alarm — you have limited time before guards arrive.",
-                "miss": "You're caught red-handed. Tick Legitimacy Timer +1 as word spreads that outsiders were rifling the imperial archive."
+                "clean": "You find the Line of Fire and learn both claims are flawed.",
+                "partial": "You find part of the truth but trigger an alarm; must escape quickly.",
+                "miss": "You are caught; imprisoned or exiled."
               }
             },
             {
-              "name": "Verify the Genealogical Puzzle",
+              "name": "Genealogical Puzzle",
               "dv": 6,
               "position": "Controlled",
               "outcomes": {
-                "clean": "The truth is uncomfortable for everyone: Aldric's line is legitimate but was formalized through a procedural shortcut two generations back that Logan's lawyers could plausibly challenge — and Logan's own bloodline claim is real, but far more distant than his heralds claim. Both sides have been telling half-truths. Gain the 'Pact of Three Flames' clause, usable as leverage on either faction.",
-                "partial": "You confirm one side's claim is shakier than advertised but can't yet prove which, or resolve the ambiguity cleanly.",
-                "miss": "You misread the censored annotations and walk away with a plausible-sounding but wrong conclusion — which could be dangerous if you act on it."
+                "clean": "Both claims turn out partly flawed — Aldric's formalized through a shortcut, Logan's bloodline more distant than advertised. Gain the Pact of Three Flames clause as leverage.",
+                "partial": "One side's claim is shakier — but you can't yet prove which.",
+                "miss": "You misread the censored annotations and reach a plausible but wrong conclusion."
               }
             }
           ],
@@ -237,41 +244,40 @@
       ]
     },
     {
-      "id": "act-3-coin-steel-and-fire",
+      "id": "act-3-coin-steel-fire",
       "title": "Act III — Coin, Steel, and Fire",
-      "description": "The Pretender's forces blockade the Fire-Blessed Basilica, where any coronation must ultimately be sanctified. The party's information and alliances from the first two acts now become leverage — or liabilities — as every faction moves to lock in its position before the crisis resolves itself without them.",
+      "description": "The Pretender's forces blockade the Fire-Blessed Basilica. Every alliance the party built now becomes leverage — or liability.",
       "scenes": [
         {
-          "id": "scene-3-1-the-coin-house-floor",
+          "id": "scene-3-1-coin-house",
           "title": "The Coin-House Floor",
-          "description": "Ecktoria's financial temple, where abacus-boards and chanting clerks quietly decide which faction can actually afford to win. Sabotaging or securing this support here shapes the Coronation Readiness Timer more than any speech in the Forum.",
+          "description": "Ecktoria's financial temple decides, quietly, which faction can actually afford to win.",
           "timers": [
             {
-              "name": "Coronation Readiness Timer",
+              "name": "Coronation Readiness",
               "segments": 6,
-              "current": 0,
-              "description": "Tracks how prepared Logan's coronation bid is to proceed. Advances as his faction secures funding, military support, and public opinion."
+              "current": 0
             }
           ],
           "encounters": [
             {
-              "name": "Coin-House Sabotage or Support",
+              "name": "Coin-House Sabotage/Support",
               "dv": 5,
               "position": "Desperate",
               "outcomes": {
-                "clean": "You redirect or expose a major funding stream, decisively shifting financial backing toward whichever faction you support. Advance or retreat Coronation Readiness Timer by 2, GM's choice matching your action.",
-                "partial": "You cause a disruption, but the clerks quietly route around it within the day.",
-                "miss": "You're identified interfering with sealed financial records — a crime that carries real legal weight in Ecktoria. Tick Legitimacy Timer +1 against you specifically."
+                "clean": "You secure funding for Aldric or deny it to Logan; Legitimacy shifts in your favor.",
+                "partial": "You gain some resources but cause a scandal; Legitimacy +1 for your opponent.",
+                "miss": "The Coin-House turns hostile; you are blacklisted."
               }
             },
             {
-              "name": "Negotiate with the New Merchants",
+              "name": "Negotiate New Merchants",
               "dv": 4,
               "position": "Controlled",
               "outcomes": {
-                "clean": "The merchant guilds commit real resources to your chosen side — or agree to withhold support from both, buying the party room to maneuver.",
-                "partial": "They'll help, but want something concrete in return — a favor, a contract, a promise the party may regret making.",
-                "miss": "They read the party as unreliable and quietly begin hedging against them specifically."
+                "clean": "You bring new coin into the city; Legitimacy advances for your chosen faction.",
+                "partial": "You gain some support but at a high cost; lose a Boon.",
+                "miss": "They side with Logan; Legitimacy +2 for him."
               }
             }
           ],
@@ -280,28 +286,33 @@
         {
           "id": "scene-3-2-basilica-blockade",
           "title": "The Basilica Blockade",
-          "description": "Logan's militia rings the Fire-Blessed Basilica, ostensibly for 'public safety' ahead of a coronation that hasn't been sanctified yet. High Priest Dominicus is trapped inside with the Sacred Brazier, torn between the stability of tradition and the pull of a renewal he isn't certain is genuine.",
+          "description": "Logan's militia rings the Fire-Blessed Basilica. High Priest Dominicus, trapped inside, is torn between stability and a renewal he isn't sure is genuine.",
+          "timers": [
+            {
+              "name": "Coronation Readiness",
+              "segments": 6,
+              "current": 0
+            }
+          ],
           "encounters": [
             {
               "name": "Break the Blockade",
-              "creatureId": "standard-bearer-veteran",
-              "quantity": 1,
               "dv": 5,
               "position": "Desperate",
               "outcomes": {
-                "clean": "You get inside, or get a channel of communication open, without a full battle in the street.",
-                "partial": "You get through, but it costs — a Standard-Bearer or Militia unit is hurt on your account, and the political blame will land on someone.",
-                "miss": "The blockade holds and the confrontation escalates publicly. Tick Legitimacy Timer +2."
+                "clean": "You force a path to the Basilica; you can enter and speak with Dominicus.",
+                "partial": "You get through but at a cost: lose 1 Boon and gain a wound.",
+                "miss": "The blockade holds; you are repelled and the siege tightens."
               }
             },
             {
-              "name": "Counsel High Priest Dominicus",
+              "name": "Counsel Dominicus",
               "dv": 5,
               "position": "Controlled",
               "outcomes": {
-                "clean": "Dominicus commits to a position — conditional blessing pending proof of legitimate succession, refusing to be rushed by either faction. This effectively freezes any coronation until the party resolves the succession question honestly.",
-                "partial": "He remains publicly neutral but privately leans toward whichever side seems most sincere, not most powerful — a soft advantage the party can build on.",
-                "miss": "He caves to the pressure of the blockade itself and prepares to bless whoever controls the building when the ritual hour comes — meaning force, not legitimacy, may decide everything."
+                "clean": "You convince him to withhold blessing until the true claimant is proven; gain his trust.",
+                "partial": "He hesitates but agrees to wait; you gain time but no firm commitment.",
+                "miss": "He decides to bless Logan to avoid bloodshed; Coronation Readiness advances by 2."
               }
             }
           ],
@@ -312,21 +323,43 @@
     {
       "id": "act-4-coronation-of-ash-or-glory",
       "title": "Act IV — The Coronation of Ash or Glory",
-      "description": "Dawn breaks over the Basilica. Every thread the party has pulled — legal, financial, religious, popular — converges into a single ritual hour. This is not a fight to be won by force alone; it is a public reckoning over what legitimacy actually means in a dying empire.",
+      "description": "Every thread converges into a single ritual hour — a public reckoning over what legitimacy actually means.",
       "scenes": [
         {
-          "id": "scene-4-1-the-reckoning",
+          "id": "scene-4-1-reckoning",
           "title": "The Reckoning at the Basilica",
-          "description": "Aldric, Logan, and whatever third option the party has built all converge at the Basilica steps as the Coronation Readiness Timer and Legal Standing timers reach their conclusions. Dominicus waits at the Sacred Brazier, and the crowd — real people, not a mechanic — watches to see who blinks first.",
+          "description": "Aldric, Logan, and whatever third option the party has built converge at the Basilica steps as the crowd watches to see who blinks first.",
+          "timers": [
+            {
+              "name": "Legitimacy",
+              "segments": 8,
+              "current": 0
+            },
+            {
+              "name": "Legal Standing — Aldric",
+              "segments": 6,
+              "current": 0
+            },
+            {
+              "name": "Legal Standing — Logan",
+              "segments": 6,
+              "current": 0
+            },
+            {
+              "name": "Coronation Readiness",
+              "segments": 6,
+              "current": 0
+            }
+          ],
           "encounters": [
             {
               "name": "The Rhetorical Reckoning",
               "dv": 5,
               "position": "Desperate",
               "outcomes": {
-                "clean": "The party's evidence and alliances carry the day publicly — whichever outcome they've built toward becomes the crowd's outcome too, not just the factions'.",
-                "partial": "The crowd is swayed but divided; the resolution holds, but resentment and rival claims will linger for years.",
-                "miss": "The debate collapses into shouting and the decision falls to whoever has soldiers in the square, not whoever has the truth."
+                "clean": "You present irrefutable evidence and the crowd turns away from Logan.",
+                "partial": "You weaken Logan's position but he still has support; a compromise is needed.",
+                "miss": "Your argument fails; Logan's coronation proceeds by force."
               }
             },
             {
@@ -334,9 +367,9 @@
               "dv": 5,
               "position": "Controlled",
               "outcomes": {
-                "clean": "Dominicus blesses the outcome the party has built the strongest legitimate case for, whether that's Aldric, Logan, or a third path — and the Everflame's sanction quiets most dissent.",
-                "partial": "Dominicus blesses an outcome, but publicly notes his reservations, ensuring the winner's legitimacy is real but not unquestioned.",
-                "miss": "Dominicus refuses to bless anyone until the succession dispute is resolved through proper channels — postponing the crisis, not solving it, and leaving the city in dangerous limbo."
+                "clean": "Dominicus publicly endorses the rightful claimant (or no one) based on evidence you've provided.",
+                "partial": "He gives a divided verdict; civil war seems inevitable.",
+                "miss": "He blesses Logan; Aldric is deposed."
               }
             }
           ],
@@ -347,276 +380,240 @@
   ],
   "npcs": [
     {
-      "id": "npc-king-aldric",
+      "id": "npc-aldric",
       "name": "King Aldric the Lame",
       "role": "Recognized heir to Ecktoria",
-      "motivation": "Preserve legitimate succession and imperial stability, even if it means the empire changes only glacially.",
-      "stats": "Command 4, Lore 3, Presence 3",
-      "secret": "He knows his own claim was formalized through a procedural shortcut two generations back. He has spent his reign making sure no one looks closely enough to find it — which is why he's slower to challenge Logan's claim than his advisors want."
+      "motivation": "Preserve legitimate succession and imperial stability.",
+      "stats": null,
+      "secret": "His claim was formalized through a procedural shortcut two generations back."
     },
     {
-      "id": "npc-duke-logan",
+      "id": "npc-logan",
       "name": "Duke Logan the Bold",
       "role": "Charismatic pretender to the throne",
-      "motivation": "Seize power through popular support and promise of reform, genuinely believing the empire needs him more than it needs the old rules.",
-      "stats": "Presence 5, Sway 4, Command 3",
-      "secret": "His bloodline claim is real but far more distant than his heralds advertise — several generations more distant than any prior claimant has attempted to press. He knows this, and knows that if the Line of Fire is read too carefully, his 'restoration' looks a great deal more like a coup."
+      "motivation": "Seize power through popular support and promised reform.",
+      "stats": null,
+      "secret": "His bloodline claim is real, but far more distant than his heralds advertise."
     },
     {
-      "id": "npc-grand-magistrate-thorne",
+      "id": "npc-thorne",
       "name": "Grand Magistrate Valeria Thorne",
       "role": "Keeper of imperial law and succession precedent",
-      "motivation": "Preserve the legal integrity of the imperial system, even when the law itself is inconvenient for everyone including her.",
-      "stats": "Lore 5, Insight 4, Sway 2",
-      "secret": "She has known about the flaw in Aldric's formalization for years and buried it out of personal loyalty to his late father. The attack on her wasn't random — someone else found out she knew, and wanted to make sure she never had to choose between the law and her conscience."
+      "motivation": "Preserve legal integrity, even when it's inconvenient.",
+      "stats": null,
+      "secret": "Has known of the flaw in Aldric's formalization for years, buried out of loyalty."
     },
     {
-      "id": "npc-high-priest-dominicus",
+      "id": "npc-dominicus",
       "name": "High Priest Dominicus",
       "role": "Keeper of the Sacred Brazier and the Everflame",
-      "motivation": "Ensure whoever receives divine sanction actually deserves it — stability matters to him, but not more than honesty.",
-      "stats": "Arcana 4, Presence 3, Lore 3",
-      "secret": "He has already privately decided he will not bless a coronation built on force or fear, regardless of which faction wins the street. He is waiting to see who brings him truth instead of an army."
+      "motivation": "Ensure whoever receives divine sanction actually deserves it.",
+      "stats": null,
+      "secret": "Has already privately decided not to bless a coronation built on force alone."
     },
     {
-      "id": "npc-lame-kings-envoy",
+      "id": "npc-envoy",
       "name": "The Lame King's Envoy",
       "role": "Mysterious representative of King Aldric",
-      "motivation": "Advance Aldric's cause through means the king himself cannot be seen using.",
-      "stats": "Subterfuge 4, Insight 3, Command 2",
-      "secret": "The Envoy is not acting purely on Aldric's orders — they are also quietly investigating whether Aldric's own claim will survive scrutiny, because if it won't, they intend to have a contingency ready before anyone else finds out."
+      "motivation": "Advance Aldric's cause through means he cannot use himself.",
+      "stats": null,
+      "secret": "Quietly investigating whether Aldric's own claim will survive scrutiny."
     }
   ],
   "locations": [
     {
       "id": "loc-grand-forum",
       "name": "The Grand Forum",
-      "description": "A marble theater of politics with multi-level balconies, statues of emperors, and mosaic floors that carry political messages as loudly as any speech. Public opinion lives and dies here.",
-      "tags": [
-        "urban",
-        "public",
-        "social"
-      ]
+      "description": "Marble theater of politics; public opinion lives and dies here.",
+      "tags": ["forum", "public", "political"]
     },
     {
       "id": "loc-imperial-arena",
       "name": "Imperial Arena",
-      "description": "Site of trials by ordeal and ceremonial oaths, riddled with underground tunnels and heavily guarded during public events.",
-      "tags": [
-        "arena",
-        "ritual",
-        "combat"
-      ]
+      "description": "Site of trials by ordeal and ceremonial oaths, heavily guarded.",
+      "tags": ["arena", "trials", "guarded"]
     },
     {
-      "id": "loc-coin-house-floor",
+      "id": "loc-coin-house",
       "name": "Coin-House Floor",
-      "description": "A Byzantine-style financial temple of abacus-boards and wax tablets, where clerks chant transactions that can bankrupt provinces or fund armies.",
-      "tags": [
-        "financial",
-        "investigation",
-        "faction"
-      ]
+      "description": "Byzantine financial temple that can bankrupt provinces or fund armies.",
+      "tags": ["finance", "temple", "merchants"]
     },
     {
       "id": "loc-censors-hall",
       "name": "Censor's Hall",
-      "description": "A labyrinth of red-lacquered tablets, genealogical records, and censored histories. Access requires high-level authorization the party almost certainly doesn't have.",
-      "tags": [
-        "archive",
-        "secret",
-        "legal"
-      ]
+      "description": "Labyrinth of red-lacquered tablets and censored histories.",
+      "tags": ["archive", "history", "censored"]
     },
     {
-      "id": "loc-fire-blessed-basilica",
+      "id": "loc-basilica",
       "name": "The Fire-Blessed Basilica",
-      "description": "The spiritual heart of Ecktoria, its gold-and-lapis dome depicting the Everflame. Any coronation must be sanctified here. Currently blockaded by the Pretender's forces.",
-      "tags": [
-        "religious",
-        "ritual",
-        "climax"
-      ]
+      "description": "Spiritual heart of Ecktoria; any coronation must be sanctified here.",
+      "tags": ["basilica", "coronation", "sacred"]
     }
   ],
   "factions": [
     {
-      "id": "faction-lame-kings-line",
+      "id": "faction-aldric",
       "name": "The Lame King's Line",
-      "goals": "Preserve law and tradition through Aldric's succession; strengths in ritual and institutional authority, weakness in speed and popular appeal.",
-      "relationship": "Controlled but slipping toward Desperate as public support erodes. DV for alliance: 4 (mutual benefit), 5 (neutral), 6+ (opposed)."
+      "goals": "Preserve legitimate succession and imperial stability.",
+      "relationship": "Controlled, slipping toward Desperate. DV for alliance: 4/5/6+."
     },
     {
-      "id": "faction-pretenders-cause",
+      "id": "faction-logan",
       "name": "The Pretender's Cause",
-      "goals": "Install Logan through the 'New Augustan Revival,' leveraging popular support, military flexibility, and economic pressure over legal standing.",
-      "relationship": "Currently Dominant through popular momentum but shallow on legal legitimacy. DV for alliance: 3 (shared goals), 4 (neutral), 5+ (opposed)."
+      "goals": "Seize power through popular support and promised reform.",
+      "relationship": "Dominant through popular momentum, shallow on legal standing. DV for alliance: 3/4/5+."
     },
     {
       "id": "faction-silent-opposition",
       "name": "The Silent Opposition",
-      "goals": "Reject both claimants and secure provincial autonomy through economic sabotage and covert manipulation.",
-      "relationship": "Hidden and Controlled, patient rather than powerful. DV for alliance: 4 (shared opposition), 5 (neutral), 6+ (competing interests)."
+      "goals": "Hidden, patient, seeking to influence succession from the shadows.",
+      "relationship": "Hidden, Controlled, patient. DV for alliance: 4/5/6+."
     }
   ],
   "campaignTimers": [
     {
-      "name": "Legitimacy Timer",
+      "name": "Legitimacy",
       "segments": 8,
       "current": 0,
-      "description": "Tracks the drift of public and institutional opinion toward the Pretender. When full, Logan achieves effective control of the capital regardless of the legal question."
+      "description": "Tracks the drift of opinion toward the Pretender. When full, Logan controls the capital regardless of legal question."
     },
     {
       "name": "Legal Standing — Aldric",
       "segments": 6,
       "current": 0,
-      "description": "Strength of Aldric's documented legal claim. When full, his claim is unimpeachable in Ecktorian courts."
+      "description": "Strength of Aldric's documented claim."
     },
     {
       "name": "Legal Standing — Logan",
       "segments": 6,
       "current": 0,
-      "description": "Strength of Logan's documented legal claim. When full, his claim is unimpeachable in Ecktorian courts."
+      "description": "Strength of Logan's documented claim."
     },
     {
-      "name": "Coronation Readiness Timer",
+      "name": "Coronation Readiness",
       "segments": 6,
       "current": 0,
-      "description": "How prepared Logan's faction is to force a coronation regardless of legal resolution. When full, the coronation proceeds by force of arms."
+      "description": "How prepared Logan's faction is to force a coronation. When full, coronation proceeds by force."
     }
   ],
-  "notes": "This adventure runs on parallel timers rather than a single villain clock — the party should feel like every faction is a legitimate, if flawed, political actor, not a shorthand for good or evil. The twist (both claims have real flaws) should surface gradually through Act II investigation, not be dumped in one exposition scene. The strongest endings come from players building a genuinely defensible third path rather than simply picking a winner. Designed for 4-5 sessions; can compress to 3 by combining Acts I and II if the table wants a faster pace.",
+  "notes": "This adventure is a political intrigue with a heavy focus on legitimacy, legal evidence, and public perception. The party must gather evidence, sway factions, and navigate a city where ceremony is politics. The GM should track each faction's standing and the timers closely.",
   "_gmhints": {
+    "tone": "Ecktoria is a city where every mosaic is a political statement and every sash color is a declaration of war. The tone is tense, cynical, and theatrical—legitimacy is manufactured, but the people believe in the theater. The party should feel like they are navigating a minefield of symbols and alliances.",
     "pacing": {
-      "act1": "Establish Ecktoria as a place where ceremony IS politics — every gesture, sash color, and mosaic panel is a move on the board. Let the party witness the Envoy's humiliation as bystanders first; their reaction (intervene, investigate, or stay neutral) sets their initial reputation with both factions. Don't rush to reveal that both claims are flawed — that's an Act II discovery, earned through the archive, not handed out here.",
-      "act2": "This act is the emotional and legal core of the adventure. Thorne's attack should feel personal and frightening, not just a plot device — she is one of the few characters in Ecktoria who has chosen truth over comfort, and it's cost her. The genealogical puzzle (verifying claimant lineages) is the mechanical centerpiece: both Aldric's and Logan's claims should turn out to be real but compromised, in different ways, so that neither faction is simply 'right.' Resist the urge to make this a shocking betrayal reveal — it should read as the natural, sad consequence of an empire that has been quietly cutting legal corners for generations.",
-      "act3": "Coin, Steel, and Fire is about consequences catching up. Every relationship or piece of leverage from Acts I-II should matter here — track who owes the party what. The Coin-House and Basilica scenes should run in whatever order the table wants; don't force sequence. Dominicus's storyline (torn between stability and renewal) should culminate in him refusing to be rushed, which raises the stakes for Act IV rather than resolving them early.",
-      "act4": "The coronation should feel like a genuine public reckoning, not a boss fight. If the party has built a strong case (legal, financial, religious, or popular), let mechanics reflect that they've already effectively won before the final rolls — the encounters here are about whether the city as a whole accepts that victory, not whether the party can out-fight anyone. Reward creative third-path solutions generously; that's the ending this adventure is built to reward."
+      "act1": "Establish Ecktoria as a place where ceremony IS politics. Let the party's reaction to the Envoy's humiliation set their initial reputation.",
+      "act2": "The genealogical puzzle is the mechanical centerpiece — both claims are real but compromised. This is the natural, sad consequence of an empire quietly cutting corners for generations, not a shocking betrayal.",
+      "act3": "Every relationship or piece of leverage from earlier acts should matter here. Track who owes the party what.",
+      "act4": "If the party has built a strong case, let mechanics reflect they've effectively already won — this act is about whether the city accepts that victory. Reward creative third-path solutions generously."
     },
     "npcSecrets": {
-      "king-aldric": "His claim's procedural flaw should never be presented as fraud — it was a shortcut taken during a genuine crisis two generations ago, the kind of thing that happens in every long-lived bureaucracy. His caution about pressing Logan too hard on legitimacy comes from fear of exactly this scrutiny being turned back on him.",
-      "duke-logan": "Logan genuinely believes his own cause, which is what makes him dangerous and sympathetic rather than a simple villain. His heralds have been rounding up his bloodline claim for years; he's aware of this but has let it happen because he believes the empire needs him regardless of the technicalities.",
-      "grand-magistrate-thorne": "She is the moral center of the adventure — a woman who has spent years balancing personal loyalty against professional integrity, and is finally being forced to choose. Her attack should read as a consequence of that choice becoming known, not a random act of violence.",
-      "high-priest-dominicus": "He has already made up his mind that force and fear cannot substitute for legitimacy, but he keeps this private until Act IV to preserve his position as a genuinely neutral arbiter — announcing it early would make him a target for both factions immediately."
+      "aldric": "His claim was formalized through a procedural shortcut two generations back. He is aware of it but has hidden it out of pride.",
+      "logan": "His bloodline claim is real but far more distant than advertised. He knows this and overcompensates with populism.",
+      "thorne": "She has known of the flaw in Aldric's formalization for years, buried out of loyalty to the institution. Her attack was likely by Logan's agents who suspected her knowledge.",
+      "dominicus": "He has already decided not to bless a coronation built on force. He will only bless a candidate who proves legitimacy.",
+      "envoy": "The envoy is quietly investigating both claims, possibly to undermine Aldric if needed—he is not entirely loyal."
     },
     "forbiddenEarlyRevelations": [
-      "That both Aldric's and Logan's claims have real legal flaws — this is the Act II archive discovery; don't foreshadow it as a 'twist,' let it emerge as the natural texture of imperial bureaucracy",
-      "The specific nature of Thorne's knowledge about Aldric's formalization — she should stay evasive and frightened until the party has earned real trust or found independent evidence",
-      "Dominicus's private decision to reject force-based coronation — reveal only in Act IV, when it becomes the fulcrum of the climax",
-      "That the Silent Opposition orchestrated the attack on Thorne — this should surface through investigation (the captured clerk in Act II), not be stated outright"
+      "Don't reveal both claims are flawed before Act II's archive discovery.",
+      "Keep Thorne evasive about her knowledge until trust is earned.",
+      "Keep Dominicus's private decision hidden until Act IV.",
+      "Let the Silent Opposition's role surface through investigation, not exposition."
     ],
-    "tacticalHints": {
-      "legitimacy_vs_force": "Constantly remind players that military and financial power are not the same as legitimacy in Ecktoria — a faction can be Dominant in the streets and still lose at the Basilica if the party builds a strong enough legal and religious case against them.",
-      "third_path_support": "If players start angling toward a third path (hidden claimant, Council of Three Flames, regional autonomy), lean in — provide NPC reactions (Thorne cautiously approving, Dominicus intrigued, both factions alarmed) that make it feel viable rather than punishing improvisation.",
-      "timer_visibility": "Make the Legitimacy and Legal Standing timers visible in play — describe crowds thickening, militia colors spreading, or archive dust settling differently as they shift, so the table feels the drift even between sessions."
+    "politicalTactics": {
+      "legitimacyTimer": "Use this as a pressure gauge. The party's actions in public, their alliances, and their ability to sway opinion affect this timer. When it fills, Logan's popular support becomes unstoppable.",
+      "legalStanding": "These timers represent the strength of each claimant's documented evidence. The party can increase these by finding documents, securing testimonies, or discrediting the other side.",
+      "coronationReadiness": "This represents Logan's military and logistical readiness to force a coronation. The party can slow it by disrupting his supplies, exposing his agents, or rallying the militia to Aldric."
     }
   },
+  "knowledge": [
+    {
+      "id": "aldric-secret",
+      "subject": "npc-aldric",
+      "gm": "His claim was formalized through a procedural shortcut two generations back. He is aware of it but has hidden it out of pride.",
+      "player": "King Aldric appears to be the legitimate heir, but his documents may have been expedited.",
+      "revealed": false,
+      "revealCondition": "When the party succeeds an Investigation or Lore roll in the Censor's Hall, or when they confront Aldric directly with evidence.",
+      "tags": ["npc-secret"]
+    },
+    {
+      "id": "logan-secret",
+      "subject": "npc-logan",
+      "gm": "His bloodline claim is real but far more distant than advertised. He knows this and overcompensates with populism.",
+      "player": "Duke Logan's public claim may be exaggerated; his bloodline might be thinner than he admits.",
+      "revealed": false,
+      "revealCondition": "When the party deciphers the genealogical records or hears a confession from a disgruntled herald.",
+      "tags": ["npc-secret"]
+    },
+    {
+      "id": "thorne-secret",
+      "subject": "npc-thorne",
+      "gm": "She has known of the flaw in Aldric's formalization for years, buried out of loyalty to the institution. Her attack was likely by Logan's agents who suspected her knowledge.",
+      "player": "Grand Magistrate Thorne may be hiding something about Aldric's claim.",
+      "revealed": false,
+      "revealCondition": "When the party earns her trust or succeeds an Insight roll after her attack.",
+      "tags": ["npc-secret"]
+    },
+    {
+      "id": "dominicus-secret",
+      "subject": "npc-dominicus",
+      "gm": "He has already decided not to bless a coronation built on force. He will only bless a candidate who proves legitimacy.",
+      "player": "High Priest Dominicus may be holding a private judgment that could sway the coronation.",
+      "revealed": false,
+      "revealCondition": "When the party converses with him in the Basilica and earns his confidence, or in Act IV.",
+      "tags": ["npc-secret"]
+    },
+    {
+      "id": "envoy-secret",
+      "subject": "npc-envoy",
+      "gm": "The envoy is quietly investigating both claims, possibly to undermine Aldric if needed—he is not entirely loyal.",
+      "player": "The Lame King's Envoy may have his own agenda.",
+      "revealed": false,
+      "revealCondition": "When the party succeeds an Insight roll against him or discovers his correspondence.",
+      "tags": ["npc-secret"]
+    },
+    {
+      "id": "plot-both-claims-flawed",
+      "subject": "plot",
+      "gm": "Both Aldric's and Logan's claims are flawed—Aldric's formalized through a procedural shortcut, Logan's bloodline more distant. This is the central revelation of Act II.",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "Reveal only after the party completes the genealogical puzzle in Act II.",
+      "tags": ["plot-secret"]
+    },
+    {
+      "id": "plot-thorne-knows",
+      "subject": "plot",
+      "gm": "Thorne has known of the flaw in Aldric's formalization for years; she buried it out of loyalty. She will only reveal this if pressed and trusted.",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "Reveal when the party earns her trust (e.g., saving her life) and asks directly.",
+      "tags": ["plot-secret"]
+    },
+    {
+      "id": "plot-dominicus-decision",
+      "subject": "plot",
+      "gm": "Dominicus has privately decided not to bless a coronation built on force. He will only bless a candidate who proves legitimacy through legal means.",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "Reveal in Act IV during the reckoning, or earlier if the party gains his confidence.",
+      "tags": ["plot-secret"]
+    },
+    {
+      "id": "plot-silent-opposition",
+      "subject": "plot",
+      "gm": "The Silent Opposition is a hidden faction that seeks to influence succession from the shadows. They may offer a third path if the party discovers them.",
+      "player": null,
+      "revealed": false,
+      "revealCondition": "Reveal through investigation and successful Influence rolls with key NPCs, not through exposition.",
+      "tags": ["plot-secret"]
+    }
+  ],
   "currentAct": 0,
   "currentScene": 0,
   "startedAt": null,
   "completedAt": null,
   "status": "planned",
-  "createdAt": "2026-08-07T00:00:00.000Z",
-  "updatedAt": "2026-08-07T00:00:00.000Z",
-  "knowledge": [
-    {
-      "id": "king-aldric-secret",
-      "subject": "npc-king-aldric",
-      "gm": "His claim's procedural flaw should never be presented as fraud — it was a shortcut taken during a genuine crisis two generations ago, the kind of thing that happens in every long-lived bureaucracy. His caution about pressing Logan too hard on legitimacy comes from fear of exactly this scrutiny being turned back on him.",
-      "player": "King Aldric the Lame plays the part everyone assumes: Recognized heir to Ecktoria. Nothing about their manner invites a second look.",
-      "revealed": false,
-      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
-      "tags": [
-        "npc-secret"
-      ]
-    },
-    {
-      "id": "duke-logan-secret",
-      "subject": "npc-duke-logan",
-      "gm": "Logan genuinely believes his own cause, which is what makes him dangerous and sympathetic rather than a simple villain. His heralds have been rounding up his bloodline claim for years; he's aware of this but has let it happen because he believes the empire needs him regardless of the technicalities.",
-      "player": "Duke Logan the Bold plays the part everyone assumes: Charismatic pretender to the throne. Nothing about their manner invites a second look.",
-      "revealed": false,
-      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
-      "tags": [
-        "npc-secret"
-      ]
-    },
-    {
-      "id": "grand-magistrate-thorne-secret",
-      "subject": "npc-grand-magistrate-thorne",
-      "gm": "She is the moral center of the adventure — a woman who has spent years balancing personal loyalty against professional integrity, and is finally being forced to choose. Her attack should read as a consequence of that choice becoming known, not a random act of violence.",
-      "player": "Grand Magistrate Valeria Thorne plays the part everyone assumes: Keeper of imperial law and succession precedent. Nothing about their manner invites a second look.",
-      "revealed": false,
-      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
-      "tags": [
-        "npc-secret"
-      ]
-    },
-    {
-      "id": "high-priest-dominicus-secret",
-      "subject": "npc-high-priest-dominicus",
-      "gm": "He has already made up his mind that force and fear cannot substitute for legitimacy, but he keeps this private until Act IV to preserve his position as a genuinely neutral arbiter — announcing it early would make him a target for both factions immediately.",
-      "player": "High Priest Dominicus plays the part everyone assumes: Keeper of the Sacred Brazier and the Everflame. Nothing about their manner invites a second look.",
-      "revealed": false,
-      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
-      "tags": [
-        "npc-secret"
-      ]
-    },
-    {
-      "id": "lame-kings-envoy-secret",
-      "subject": "npc-lame-kings-envoy",
-      "gm": "The Envoy is not acting purely on Aldric's orders — they are also quietly investigating whether Aldric's own claim will survive scrutiny, because if it won't, they intend to have a contingency ready before anyone else finds out.",
-      "player": "The Lame King's Envoy plays the part everyone assumes: Mysterious representative of King Aldric. Nothing about their manner invites a second look.",
-      "revealed": false,
-      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
-      "tags": [
-        "npc-secret"
-      ]
-    },
-    {
-      "id": "that-both-aldric-s-and-logan-s-claims",
-      "subject": "plot",
-      "gm": "That both Aldric's and Logan's claims have real legal flaws — this is the Act II archive discovery; don't foreshadow it as a 'twist,' let it emerge as the natural texture of imperial bureaucracy",
-      "player": null,
-      "revealed": false,
-      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
-      "tags": [
-        "plot-secret"
-      ]
-    },
-    {
-      "id": "the-specific-nature-of-thorne-s-knowledge",
-      "subject": "plot",
-      "gm": "The specific nature of Thorne's knowledge about Aldric's formalization — she should stay evasive and frightened until the party has earned real trust or found independent evidence",
-      "player": null,
-      "revealed": false,
-      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
-      "tags": [
-        "plot-secret"
-      ]
-    },
-    {
-      "id": "dominicus-s-private-decision-to-reject-force",
-      "subject": "plot",
-      "gm": "Dominicus's private decision to reject force-based coronation — reveal only in Act IV, when it becomes the fulcrum of the climax",
-      "player": null,
-      "revealed": false,
-      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
-      "tags": [
-        "plot-secret"
-      ]
-    },
-    {
-      "id": "that-the-silent-opposition-orchestrated-the",
-      "subject": "plot",
-      "gm": "That the Silent Opposition orchestrated the attack on Thorne — this should surface through investigation (the captured clerk in Act II), not be stated outright",
-      "player": null,
-      "revealed": false,
-      "revealCondition": "GM/AI discretion, guided by this adventure's pacing notes above -- reveal once the party has actually earned it through play, not on request.",
-      "tags": [
-        "plot-secret"
-      ]
-    }
-  ]
+  "createdAt": "2026-08-15T00:00:00.000Z",
+  "updatedAt": "2026-08-15T00:00:00.000Z"
 }
