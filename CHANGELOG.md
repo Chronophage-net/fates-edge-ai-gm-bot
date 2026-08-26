@@ -4,6 +4,13 @@ All notable changes to this project will be documented here.
 Format loosely follows [Keep a Changelog](https://keepachangelog.com/), versions follow [Semantic Versioning](https://semver.org/).
 
 
+## [4.15.0] - 2026-08-26
+
+Reactive Soundscape auto-search (Freesound) + !gm soundsearch
+
+### Added
+- reactive soundscape auto-search (Freesound) + soundboard search propagation
+
 ## [4.14.0] - 2026-08-24
 
 Multi-bot manager (bot-manager.js), Co-GM SB-spend/Crown Spread LLM synthesis, and cross-repo assistant-suggestion events wired into all four VTT integrations (web client, Discord, Foundry, Roll20)
