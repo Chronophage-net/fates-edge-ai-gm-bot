@@ -1053,6 +1053,10 @@ material is CC BY-NC-SA 4.0. See [LICENSE](LICENSE) for the full split.
 
 ---
 
+Continuity: see [`SUCCESSION.md` in fates-edge-docs](https://github.com/Chronophage-net/fates-edge-docs/blob/main/SUCCESSION.md)
+for what happens to repo/domain admin access if the author becomes
+unreachable — the AGPL grant above doesn't depend on it.
+
 ## 🤝 Contributing & Security
 
 Contributions are welcome — see [CONTRIBUTING.md](CONTRIBUTING.md) for how to
