@@ -220,12 +220,33 @@ function renderState(s) {
   ]) : '<dd class="empty">No adventure loaded.</dd>';
 
   var u = s.tokenUsage || {};
-  document.getElementById('tok-kv').innerHTML = kv([
+  var tokRows = [
     ['Prompt tokens', (u.promptTokens || 0).toLocaleString() + (u.estimated ? ' ~' : '')],
     ['Completion tokens', (u.completionTokens || 0).toLocaleString() + (u.estimated ? ' ~' : '')],
     ['Total tokens', (u.totalTokens || 0).toLocaleString() + (u.estimated ? ' ~' : '')],
-    ['LLM calls', u.calls || 0]
-  ]);
+    ['LLM calls', u.calls || 0],
+    // NEW: how many of those calls the provider itself reported as
+    // truncated/filtered (finish_reason/done_reason !== "stop") -- see
+    // ai-driver.js's recordUsage(). Average completion length alone
+    // can't tell you this (a handful of long calls and a handful of
+    // short ones average out to something unremarkable), so surface the
+    // real count directly instead of leaving it buried in console logs.
+    ['Truncated replies', (u.truncatedCalls || 0) + (u.calls ? (' / ' + u.calls) : '')]
+  ];
+  // NEW: only DeepSeekDriver currently sets this (the empty-content-on-
+  // truncation retry -- see drivers/deepseek-driver.js), so only show
+  // the row when it's actually present rather than always printing 0
+  // for drivers that don't have this failure mode at all.
+  if (typeof u.emptyContentRetries === 'number') {
+    tokRows.push(['Empty-content retries', u.emptyContentRetries + ' (re-sent whole prompt)']);
+  }
+  // NEW: approximate cost, only shown once the operator has configured
+  // their actual rate card (see ai-gm-bot.js's buildTokenUsageForDashboard) --
+  // otherwise this stays silent rather than implying a number nobody set.
+  if (u.priceConfigured && typeof u.estimatedCostUSD === 'number') {
+    tokRows.push(['Est. cost (configured rate)', '$' + u.estimatedCostUSD.toFixed(4) + (u.estimated ? ' ~' : '')]);
+  }
+  document.getElementById('tok-kv').innerHTML = kv(tokRows);
   document.getElementById('loglevel-note').textContent = '';
 
   var party = s.party || [];

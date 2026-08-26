@@ -95,26 +95,31 @@ class OllamaDriver extends AIDriver {
                 return await this._makeStreamingRequest(prompt, this.maxTokens, 0.8, onToken);
             }
             const data = await this._makeRequest(prompt, this.maxTokens, 0.8);
+            // NEW: mirror deepseek-driver.js's finish_reason warning --
+            // Ollama's equivalent is done_reason === 'length' (hit
+            // num_predict before the model naturally stopped). Computed
+            // BEFORE recordUsage() now so it can be passed through and
+            // counted toward the dashboard's "Truncated replies" stat.
+            const truncated = !!(data.done_reason && data.done_reason !== 'stop');
+            if (truncated) {
+                console.warn(`⚠️  Ollama done_reason was "${data.done_reason}" (model: ${this.model}) — response may be truncated.`);
+            }
             // Ollama's non-streaming /api/generate reports real counts
             // (prompt_eval_count / eval_count) once done: true fires --
             // no need to estimate when they're present.
             if (typeof data.prompt_eval_count === 'number' || typeof data.eval_count === 'number') {
                 this.recordUsage({
                     promptTokens: data.prompt_eval_count || 0,
-                    completionTokens: data.eval_count || 0
+                    completionTokens: data.eval_count || 0,
+                    truncated
                 });
             } else {
                 this.recordUsage({
                     promptTokens: this.estimateTokens(prompt),
                     completionTokens: this.estimateTokens(data.response || ''),
-                    estimated: true
+                    estimated: true,
+                    truncated
                 });
-            }
-            // NEW: mirror deepseek-driver.js's finish_reason warning --
-            // Ollama's equivalent is done_reason === 'length' (hit
-            // num_predict before the model naturally stopped).
-            if (data.done_reason && data.done_reason !== 'stop') {
-                console.warn(`⚠️  Ollama done_reason was "${data.done_reason}" (model: ${this.model}) — response may be truncated.`);
             }
             return (data.response || '').trim();
         } catch (e) {
@@ -213,16 +218,22 @@ class OllamaDriver extends AIDriver {
                             onToken(parsed.response);
                         }
                         if (parsed.done) {
+                            const truncated = !!(parsed.done_reason && parsed.done_reason !== 'stop');
+                            if (truncated) {
+                                console.warn(`⚠️  Ollama (streaming) done_reason was "${parsed.done_reason}" (model: ${this.model}) — response may be truncated.`);
+                            }
                             if (typeof parsed.prompt_eval_count === 'number' || typeof parsed.eval_count === 'number') {
                                 this.recordUsage({
                                     promptTokens: parsed.prompt_eval_count || 0,
-                                    completionTokens: parsed.eval_count || 0
+                                    completionTokens: parsed.eval_count || 0,
+                                    truncated
                                 });
                             } else {
                                 this.recordUsage({
                                     promptTokens: this.estimateTokens(prompt),
                                     completionTokens: this.estimateTokens(full),
-                                    estimated: true
+                                    estimated: true,
+                                    truncated
                                 });
                             }
                             return full.trim();

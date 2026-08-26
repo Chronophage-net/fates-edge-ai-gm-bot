@@ -9,7 +9,6 @@
 // restructuring than a mechanical extraction.
 
 const diceModule = require('../dice');
-const timersModule = require('../timers');
 const adventureDirector = require('../adventure-director');
 const rulesModule = require('../rules-index');
 const { getVocab, encounterType } = require('../objective-types');
@@ -205,6 +204,24 @@ async function processSpecialTags(text, context, senderName = null) {
     }
 
     // ─── [APPLY ...] – supports "me" placeholder ───────────────────
+    // FIX ("server should be canonical for characters"): this handler
+    // used to ONLY mutate the bot's local character cache
+    // (charactersModule.applyDelta()/dice's applyHarmAndFatigue()) and
+    // saveCampaign() -- the bot's own opaque auto-save blob -- with NO
+    // apiRequest() call to the server at all. That's the single most
+    // active violation of "server is canonical": every harm/fatigue/
+    // boon/obligation/corruption/leash change the AI itself applies
+    // during ordinary narrated play (this tag, per the system prompt's
+    // "MANDATORY MECHANICAL TAGS") never reached the same
+    // POST /api/rooms/:code/characters/:name/<field> routes the human
+    // `!gm harm/fatigue/...` slash commands already correctly use (see
+    // gm-commands.js) -- meaning a human GM's own web client/VTT (and
+    // any other connected client) never saw these changes, and a later
+    // wholesale local-cache refresh from the server could silently wipe
+    // them back out from the bot's own memory too. Now pushes the same
+    // way the slash-command path does, best-effort (a transient network
+    // hiccup here shouldn't block narration -- the local mutation still
+    // happens either way, same as before).
     const applyRegex = /\[(?:APPLY|ADD)\s+(HARM|FATIGUE|BOON|OBLIGATION|CORRUPTION|LEASH)\s+([A-Za-z0-9_]+)\s+(-?\d+)(?:\s+(\d+))?\]/gi;
     while ((match = applyRegex.exec(output)) !== null) {
         const type = match[1].toLowerCase();
@@ -212,6 +229,11 @@ async function processSpecialTags(text, context, senderName = null) {
         name = resolveCharName(name);
         const amount = parseInt(match[3]);
         const extra = match[4] ? parseInt(match[4]) : null;
+        // Server field names: 'boon' (this tag's own vocabulary) maps to
+        // the server's 'boons' (see CHAR_FIELDS in server/api.js, and
+        // gm-commands.js's slash-command equivalent) -- every other name
+        // matches as-is.
+        const serverField = type === 'boon' ? 'boons' : type;
         if (type === 'harm') {
             const armorStep = extra || 1;
             const char = charactersModule.get(name);
@@ -221,39 +243,94 @@ async function processSpecialTags(text, context, senderName = null) {
             charactersModule.applyDelta(name, type, amount, saveCampaign);
             output = output.replace(match[0], `*(${name} ${type} ${amount >= 0 ? '+' : ''}${amount})*`);
         }
+        if (context.apiRequest) {
+            try {
+                await withTimeout(
+                    context.apiRequest('POST', ['characters', encodeURIComponent(name), serverField], { delta: amount }),
+                    5000
+                );
+            } catch (e) {
+                console.warn(`[APPLY ${type.toUpperCase()}] failed to push "${name}" to server:`, e.message);
+            }
+        }
         applyRegex.lastIndex = 0;
     }
 
     // ─── [TICK TIMER ...] ──────────────────────────────────────────
+    // Timers are entirely server-authoritative now -- see
+    // fates-edge-socket-server's server/timers.js for GM/AI-improvised
+    // ad-hoc timers (created below by [TIMER ...]/!gm timer add) and
+    // server/adventure.js for an adventure module's own pre-authored
+    // pacing clocks (e.g. "Adventure Clock"). Nothing timer-related
+    // lives in local campaignState any more -- there is no bot-local
+    // timer state left to fall back to, so a name that matches neither
+    // server system just reports "not found" honestly. Try the ad-hoc
+    // system first (the common case for a GM-improvised timer), then
+    // the adventure module's campaign/scene timers, since the same
+    // tag/name could plausibly mean either.
     const tickRegex = /\[TICK TIMER "([^"]+)" (\d+)\]/gi;
     while ((match = tickRegex.exec(output)) !== null) {
         const name = match[1];
         const ticks = parseInt(match[2]);
-        const filled = timersModule.tickTimer(campaignState, name, ticks);
-        if (filled) {
-            const event = timersModule.resolveTimer(campaignState, name);
-            output = output.replace(match[0], `*(Timer "${name}" fills! ${event})*`);
+        let tickedTimer = null;
+        let fromAdventure = false;
+
+        const adhocResult = await withTimeout(
+            context.apiRequest('POST', ['timers', 'tick'], { name, amount: ticks }),
+            5000
+        );
+        if (adhocResult && adhocResult.tickedTimer) {
+            tickedTimer = adhocResult.tickedTimer;
         } else {
-            const timer = campaignState.scene.timers.find(t => t.name === name);
-            if (timer) {
-                output = output.replace(match[0], `*(Timer "${name}" advanced to ${timer.current}/${timer.max})*`);
-            } else {
-                output = output.replace(match[0], `*(Timer "${name}" not found)*`);
+            for (const scope of ['campaign', 'scene']) {
+                const result = await withTimeout(
+                    context.apiRequest('POST', ['adventure', 'timer'], { scope, name, amount: ticks }),
+                    5000
+                );
+                if (result && result.tickedTimer) {
+                    tickedTimer = result.tickedTimer;
+                    fromAdventure = true;
+                    break;
+                }
             }
         }
-        saveCampaign();
+
+        if (tickedTimer) {
+            if (tickedTimer.full) {
+                output = output.replace(match[0], `*(Timer "${name}" fills! ${tickedTimer.description || 'The pressure driving this adventure comes to a head.'})*`);
+            } else {
+                output = output.replace(match[0], `*(Timer "${name}" advanced to ${tickedTimer.current}/${tickedTimer.segments})*`);
+            }
+            // NEW: invalidate either way (not just fromAdventure) so the
+            // ad-hoc timer cache (adventureContext.getAdhocTimersForPrompt())
+            // picks up the fresh value on the very next turn instead of
+            // waiting out the 15s TTL.
+            adventureContext.invalidate();
+        } else {
+            output = output.replace(match[0], `*(Timer "${name}" not found)*`);
+        }
         tickRegex.lastIndex = 0;
     }
 
     // ─── [TIMER ...] – create timer ───────────────────────────────
+    // NEW: ad-hoc timers are created server-side (server/timers.js),
+    // not in local campaignState -- see the [TICK TIMER ...] comment
+    // above.
     const createRegex = /\[TIMER "([^"]+)" (\d+) "([^"]*)"\]/gi;
     while ((match = createRegex.exec(output)) !== null) {
         const name = match[1];
-        const max = parseInt(match[2]);
-        const onFill = match[3] || 'Timer fills.';
-        timersModule.addTimer(campaignState, name, max, onFill);
-        saveCampaign();
-        output = output.replace(match[0], `*(Timer "${name}" created with ${max} segments)*`);
+        const segments = parseInt(match[2]);
+        const description = match[3] || 'Timer fills.';
+        const result = await withTimeout(
+            context.apiRequest('POST', ['timers'], { name, segments, description }),
+            5000
+        );
+        if (result) {
+            output = output.replace(match[0], `*(Timer "${name}" created with ${segments} segments)*`);
+            adventureContext.invalidate();
+        } else {
+            output = output.replace(match[0], `*(Failed to create timer "${name}")*`);
+        }
         createRegex.lastIndex = 0;
     }
 
@@ -302,12 +379,20 @@ async function processSpecialTags(text, context, senderName = null) {
     while ((match = moodRegex.exec(output)) !== null) {
         const mood = match[1];
         try {
-            const ambience = adventureContext.resolveAmbienceEvent(mood, { force: true });
+            // NEW: async now -- resolveAmbienceEventAsync() may fall
+            // through to a live Freesound search when SOUNDSCAPE_AUTO_SEARCH
+            // is enabled and this mood has no manual profile entry. Still
+            // inside this tag's own try/catch, so a slow/failed lookup
+            // just means the [MOOD] tag silently no-ops, same as before.
+            const ambience = await adventureContext.resolveAmbienceEventAsync(mood, { force: true });
             if (ambience && ws && ws.readyState === WebSocket.OPEN) {
                 ws.send(JSON.stringify({
                     type: 'soundboard-ambience',
                     mood: ambience.mood,
                     trackId: ambience.trackId,
+                    url: ambience.url,
+                    name: ambience.name,
+                    attribution: ambience.attribution,
                     transitionDuration: ambience.transitionDuration,
                 }));
             }
@@ -588,6 +673,18 @@ async function processSpecialTags(text, context, senderName = null) {
                     }),
                     5000
                 );
+                // FIX: this never invalidated the adventure-context cache
+                // (adventure-context.js, 15s TTL) after starting an
+                // encounter, unlike every other adventure-mutating tag
+                // (scene advance, REVEAL/HIDE, the [TICK TIMER] server
+                // fallback). getSceneContextForPrompt() surfaces
+                // state.activeEncounter into the system prompt, so the
+                // model's VERY NEXT turn could be built from a stale
+                // cached state still showing no active encounter (or the
+                // previous one) for up to 15 seconds -- not theoretical,
+                // since consecutive chat turns easily land inside that
+                // window.
+                adventureContext.invalidate();
                 const vocab = getVocab(encType);
                 const dv = result?.activeEncounter?.dv;
                 output = output.replace(match[0], `${encounterIcon(encType)} Encounter "${name}" (${vocab.label}) begins.${dv !== undefined ? ` DV ${dv}.` : ''}`);
@@ -613,6 +710,10 @@ async function processSpecialTags(text, context, senderName = null) {
                     apiRequest('POST', ['adventure', 'encounter', 'resolve'], { outcome, notes }),
                     5000
                 );
+                // FIX: same stale-cache issue as [ENCOUNTER START] above --
+                // never invalidated, so the model's next turn could still
+                // see the just-resolved encounter as active.
+                adventureContext.invalidate();
                 clearEnemyTokens(context).catch(() => {});
                 if (result && result.lastResolution) {
                     const r = result.lastResolution;

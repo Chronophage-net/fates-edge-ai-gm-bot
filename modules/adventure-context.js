@@ -32,6 +32,8 @@ const fs = require('fs');
 const path = require('path');
 const { getVocab, encounterType } = require('./objective-types');
 const legacyTracker = require('./legacy-tracker'); // NEW: structured cross-adventure carryover -- see that file's header
+const { globalApiRequest } = require('./commands/api-client'); // NEW: SOUNDSCAPE_AUTO_SEARCH -- see the Reactive Soundscape section below
+const { classifySoundLicense } = require('./sound-license');
 
 const CACHE_TTL_MS = 15000;
 const DOC_CACHE_TTL_MS = 60000; // doc changes rarely, cache longer
@@ -43,9 +45,11 @@ const MANIFEST_PATH = path.resolve(process.cwd(), 'data', 'adventures', 'manifes
 let cachedState = null;
 let cachedReference = null;
 let cachedDoc = null;
+let cachedTimers = null;
 let stateFetchedAt = 0;
 let referenceFetchedAt = 0;
 let docFetchedAt = 0;
+let timersFetchedAt = 0;
 
 /** Call after any command that mutates adventure state (scene change,
  *  encounter start/resolve, timer tick, load, reset) so the next read
@@ -54,6 +58,46 @@ function invalidate() {
     stateFetchedAt = 0;
     referenceFetchedAt = 0;
     docFetchedAt = 0; // also clear doc cache
+    timersFetchedAt = 0; // also clear the (adventure-independent) ad-hoc timer cache
+}
+
+/**
+ * Ad-hoc timers (server/timers.js) -- DELIBERATELY fetched independent of
+ * adventure state above: they exist and matter with or without an
+ * adventure loaded (see that file's header), so this can't be folded
+ * into getState()/isAdventureActive()'s early-return.
+ */
+async function getAdhocTimers(context) {
+    if (cachedTimers && Date.now() - timersFetchedAt < CACHE_TTL_MS) {
+        return cachedTimers;
+    }
+    try {
+        cachedTimers = await context.apiRequest('GET', ['timers']);
+        timersFetchedAt = Date.now();
+    } catch (e) {
+        console.warn('[AdventureContext] Failed to fetch ad-hoc timers:', e.message);
+        cachedTimers = null;
+    }
+    return cachedTimers;
+}
+
+/**
+ * Formatted block for the LLM system prompt covering ad-hoc timers --
+ * the ones the AI itself creates on the fly via [TIMER ...]/!gm timer add
+ * (server/timers.js), as opposed to an adventure module's own authored
+ * campaignTimers/scene timers (surfaced separately inside
+ * getSceneContextForPrompt() below). Returns '' when there are none, so
+ * this stays a real gap: before this, the AI could create/tick an ad-hoc
+ * timer but never saw its current value again -- it had no way to know
+ * if "Guard Patrol" was at 1/4 or 3/4 except by remembering its own past
+ * narration, which is exactly the kind of state the server is supposed
+ * to be the source of truth for instead.
+ */
+async function getAdhocTimersForPrompt(context) {
+    const data = await getAdhocTimers(context);
+    if (!data || !data.timers || data.timers.length === 0) return '';
+    return '\n\nActive Timers (GM-created, tick with [TICK TIMER "Name" N]): ' +
+        data.timers.map(t => `${t.name} ${t.current}/${t.segments}${t.full ? ' (FULL)' : ''}`).join(', ');
 }
 
 async function getState(context) {
@@ -617,11 +661,104 @@ function resolveAmbienceEvent(mood, { force = false } = {}) {
     return resolved;
 }
 
+// ================================================================
+// SOUNDSCAPE_AUTO_SEARCH -- automatic mood -> Freesound search fallback
+// ================================================================
+// Opt-in (default OFF, same fail-soft/off-by-default posture as the rest
+// of this section): when a mood has no entry in the GM's manually-curated
+// soundscape-profile.json above, and SOUNDSCAPE_AUTO_SEARCH=true, the bot
+// searches Freesound itself via the socket server's
+// GET /api/soundboard/search proxy (server/api.js in fates-edge-apps) --
+// "provided everything is set up on the server" means that server route
+// needs its own FREESOUND_API_KEY configured; if it isn't, the search
+// call 503s, this fails soft, and the mood is simply skipped exactly as
+// if auto-search were off. Only CC0/CC-BY/CC-BY-SA/Sampling+ results are
+// ever picked -- never CC-BY-NC/NC-SA or an unrecognized license, same
+// fail-CLOSED rule as sound-license.js's classifySoundLicense() and the
+// web client's own filter checkboxes, since nothing here has a human in
+// the loop to eyeball a license before it goes out to every player in
+// the room.
+//
+// Unlike the manual profile (a trackId the GM already curated), there's
+// no existing local track to point at -- the WS event this sends carries
+// a `url` (+ name/attribution) instead of `trackId`; see
+// fates-edge-web-client's vtt-connected.js soundboardAmbienceHandler for
+// the receiving side, which auto-adds a track from the URL into each
+// room's own soundboard the moment it arrives.
+const AUTO_SEARCH_ENABLED = process.env.SOUNDSCAPE_AUTO_SEARCH === 'true';
+const AUTO_SEARCH_PAGE_SIZE = 10;
+let autoSearchWarned = false; // log a misconfiguration (e.g. missing FREESOUND_API_KEY) once, not on every mood
+
+async function searchAmbienceForMood(mood) {
+    if (!AUTO_SEARCH_ENABLED || !mood) return null;
+    try {
+        const query = `${mood} ambience`;
+        const data = await globalApiRequest(`/soundboard/search?q=${encodeURIComponent(query)}&page=1&page_size=${AUTO_SEARCH_PAGE_SIZE}`);
+        const results = (data && data.results) || [];
+        for (const sound of results) {
+            if (!sound.preview_url) continue;
+            const license = classifySoundLicense(sound.license);
+            if (!license.commercial) continue; // NC and unknown licenses are never auto-picked
+            const attribution = license.attribution ? {
+                author: sound.username,
+                license: license.label,
+                licenseUrl: sound.license,
+                url: `https://freesound.org/s/${sound.id}/`,
+                title: sound.name,
+            } : null;
+            return {
+                mood,
+                url: sound.preview_url,
+                name: sound.name,
+                transitionDuration: DEFAULT_TRANSITION_MS,
+                attribution,
+            };
+        }
+        return null; // no result cleared the license bar
+    } catch (e) {
+        if (!autoSearchWarned) {
+            autoSearchWarned = true;
+            console.warn('[AdventureContext] SOUNDSCAPE_AUTO_SEARCH lookup failed (will keep trying silently after this) -- likely FREESOUND_API_KEY isn\'t set on the socket server:', e.message);
+        }
+        return null;
+    }
+}
+
+/**
+ * Same contract as resolveAmbienceEvent() above, but async and with the
+ * SOUNDSCAPE_AUTO_SEARCH fallback: tries the GM's manual profile first
+ * (fast, synchronous, unchanged), and only falls through to a live
+ * Freesound search when that profile has no entry for this mood AND
+ * auto-search is enabled. Callers (adventure-director.js's
+ * maybeSendAmbience(), process-tags.js's [MOOD "..."] handler) await this
+ * instead of calling the sync version.
+ */
+async function resolveAmbienceEventAsync(mood, { force = false } = {}) {
+    if (!mood) return null;
+    if (!isSoundscapeEnabled() && !AUTO_SEARCH_ENABLED) return null;
+
+    const normalizedMood = String(mood).toLowerCase();
+    if (!force && normalizedMood === lastAmbienceMood) return null;
+
+    const manual = getSoundscapeForMood(mood);
+    if (manual) {
+        lastAmbienceMood = normalizedMood;
+        return manual;
+    }
+
+    if (!AUTO_SEARCH_ENABLED) return null;
+    const searched = await searchAmbienceForMood(mood);
+    if (!searched) return null;
+    lastAmbienceMood = normalizedMood;
+    return searched;
+}
+
 module.exports = {
     invalidate,
     hasActiveAdventure,
     isAdventureActive,       // NEW export -- shared source of truth for adventure-director.js
     getSceneContextForPrompt,
+    getAdhocTimersForPrompt, // NEW export -- ad-hoc timers, independent of adventure state
     getFirstSceneTimerName,  // NEW export -- used by ai-gm-bot.js's auto-tick fix
     getActiveNpc,
     getActiveLocation,
@@ -634,4 +771,5 @@ module.exports = {
     getSoundscapeForMood,
     inferSceneMood,
     resolveAmbienceEvent,
+    resolveAmbienceEventAsync, // NEW -- SOUNDSCAPE_AUTO_SEARCH
 };

@@ -1,0 +1,27 @@
+name: Feature Request
+description: Propose a new GM directive, LLM driver, transport improvement, or other enhancement.
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        See [Ways to Contribute](https://dev.fates-edge.com/contribute) for the areas most in need of help — your idea may already have a guided starting point there.
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What do you want to add or change?
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why does it matter?
+      description: What does this unlock, or what problem does it solve?
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+    validations:
+      required: false

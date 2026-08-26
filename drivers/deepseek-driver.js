@@ -31,6 +31,34 @@ class DeepSeekDriver extends AIDriver {
         // DeepSeek V4's real context window; overridable in case a
         // different model alias is configured.
         this.contextWindow = parseInt(process.env.DEEPSEEK_CONTEXT_WINDOW || '64000', 10);
+        // NEW: optional passthrough for whatever reasoning-control knob
+        // this model/endpoint actually honors -- official DeepSeek
+        // "deepseek-reasoner" doesn't expose one, but several
+        // OpenAI-compatible aggregators/proxies serving DeepSeek models
+        // (and this account's model alias, "deepseek-v4-pro", isn't a
+        // published DeepSeek Platform model name, so it may well be
+        // fronted by one) accept "reasoning_effort" the same way OpenAI's
+        // o-series does. Unset by default -- sending an unrecognized
+        // field is normally harmless (ignored), but this stays opt-in
+        // rather than guessing a value, since an unsupported endpoint's
+        // behavior on an unknown field isn't guaranteed. If the empty-
+        // content-on-truncation issue (see generateResponse()'s retry
+        // logic below) keeps recurring, setting this to "low"/"minimal"
+        // is worth trying to cut the invisible reasoning-token spend at
+        // the source instead of just retrying after the fact.
+        this.reasoningEffort = process.env.DEEPSEEK_REASONING_EFFORT || null;
+        // NEW: the empty-content-on-truncation retry (see
+        // generateResponse()) re-sends the WHOLE prompt again at a
+        // higher max_tokens -- essentially double-billing that turn's
+        // prompt tokens if it fires. Both the multiplier and the ability
+        // to disable it entirely are configurable, since how often it's
+        // worth firing (and how much headroom to give it) depends on how
+        // often this failure mode actually shows up for a given
+        // model/endpoint -- see the "Truncated replies" dashboard stat
+        // (modules/status-server.js) to gauge that empirically instead
+        // of guessing.
+        this.emptyRetryMultiplier = parseFloat(process.env.DEEPSEEK_EMPTY_RETRY_MULTIPLIER || '4');
+        this.emptyRetryEnabled = process.env.DEEPSEEK_EMPTY_RETRY_ENABLED !== 'false';
     }
 
     /**
@@ -133,46 +161,105 @@ class DeepSeekDriver extends AIDriver {
             return this._generateStreaming(systemPrompt, history, onToken);
         }
 
-        const body = {
-            model: this.model,
-            messages: [{ role: 'system', content: systemPrompt }, ...history],
-            max_tokens: this.maxTokens,
-            temperature: this.temperature,
-            stream: false
-        };
+        // NEW ("empty content, finish_reason: length"): confirmed live --
+        // this model can burn its ENTIRE max_tokens budget on invisible
+        // reasoning/thinking tokens (returned separately as
+        // `reasoning_content`, if the API exposes it at all) and hit the
+        // ceiling before ever emitting a single character of the actual
+        // reply, leaving `choice.message.content` empty/null while
+        // finish_reason still reads "length". That's indistinguishable,
+        // from the caller's side, from a genuinely truncated normal
+        // reply -- except the caller gets NOTHING instead of a partial
+        // sentence to work with. One capped retry with a much larger
+        // budget and an explicit "stop deliberating, answer now"
+        // instruction gives the model room to actually finish a turn
+        // instead of the table silently losing it. Only retries when
+        // content came back empty; a normal (non-empty) truncated reply
+        // still returns as-is, same as before.
+        // NEW: retry is now off-by-default-config'able (DEEPSEEK_EMPTY_RETRY_ENABLED=false
+        // to disable) and its budget multiplier tunable (DEEPSEEK_EMPTY_RETRY_MULTIPLIER,
+        // default 4x) -- see the constructor. Disabling collapses this to
+        // the original single-attempt behavior.
+        const attemptTokenBudgets = this.emptyRetryEnabled
+            ? [this.maxTokens, Math.min(Math.round(this.maxTokens * this.emptyRetryMultiplier), this.contextWindow)]
+            : [this.maxTokens];
+        let lastChoice = null;
+        for (let i = 0; i < attemptTokenBudgets.length; i++) {
+            const isRetry = i > 0;
+            const body = {
+                model: this.model,
+                messages: isRetry
+                    ? [
+                        { role: 'system', content: systemPrompt },
+                        ...history,
+                        { role: 'user', content: '(Your previous reply ran out of room before producing any visible text. Skip any extended internal deliberation and answer directly now, within the length budget already given to you.)' },
+                    ]
+                    : [{ role: 'system', content: systemPrompt }, ...history],
+                max_tokens: attemptTokenBudgets[i],
+                temperature: this.temperature,
+                stream: false,
+                // NEW: optional passthrough -- see constructor. Omitted
+                // entirely (not sent as null/undefined) when unset, so an
+                // endpoint that validates unknown-but-present fields
+                // strictly still isn't affected by default.
+                ...(this.reasoningEffort ? { reasoning_effort: this.reasoningEffort } : {})
+            };
 
-        let data;
-        try {
-            data = await this._request(body, { retries: this.maxRetries });
-        } catch (e) {
-            console.error('DeepSeek request failed. Prompt length:', systemPrompt.length,
-                'History length:', history.length);
-            throw e;
+            let data;
+            try {
+                data = await this._request(body, { retries: this.maxRetries });
+            } catch (e) {
+                console.error('DeepSeek request failed. Prompt length:', systemPrompt.length,
+                    'History length:', history.length);
+                throw e;
+            }
+
+            if (!data.choices || data.choices.length === 0) {
+                throw new Error('DeepSeek returned no choices in response');
+            }
+
+            const choice = data.choices[0];
+            lastChoice = choice;
+            const truncated = !!(choice.finish_reason && choice.finish_reason !== 'stop');
+            const content = (choice.message?.content || '').trim();
+
+            if (truncated) {
+                console.warn(`⚠️  DeepSeek finish_reason was "${choice.finish_reason}" (model: ${this.model}, attempt ${i + 1}/${attemptTokenBudgets.length}, max_tokens ${attemptTokenBudgets[i]}) — response may be truncated or filtered.`);
+                if (!content && choice.message?.reasoning_content) {
+                    console.warn(`⚠️  ...content was empty but reasoning_content was present (${choice.message.reasoning_content.length} chars) -- the model spent its whole budget "thinking" and never got to an answer.`);
+                }
+            }
+
+            if (data.usage) {
+                this.recordUsage({
+                    promptTokens: data.usage.prompt_tokens || 0,
+                    completionTokens: data.usage.completion_tokens || 0,
+                    truncated
+                });
+            } else {
+                this.recordUsage({
+                    promptTokens: this.estimateTokens(systemPrompt) + history.reduce((n, m) => n + this.estimateTokens(m.content), 0),
+                    completionTokens: this.estimateTokens(content),
+                    estimated: true,
+                    truncated
+                });
+            }
+
+            const shouldRetry = truncated && !content && i < attemptTokenBudgets.length - 1;
+            if (!shouldRetry) {
+                return content;
+            }
+            // NEW: counted separately from recordUsage()'s per-call stats
+            // (this is a retry EVENT, not a token count) and surfaced on
+            // the status dashboard -- see modules/status-server.js --
+            // so how often this expensive-double-prompt path actually
+            // fires is visible instead of only ever showing up as a
+            // console warning.
+            this.usage.emptyContentRetries = (this.usage.emptyContentRetries || 0) + 1;
+            console.warn(`⚠️  Empty content on a truncated reply -- retrying once with max_tokens ${attemptTokenBudgets[i + 1]}.`);
         }
 
-        if (!data.choices || data.choices.length === 0) {
-            throw new Error('DeepSeek returned no choices in response');
-        }
-
-        const choice = data.choices[0];
-        if (choice.finish_reason && choice.finish_reason !== 'stop') {
-            console.warn(`⚠️  DeepSeek finish_reason was "${choice.finish_reason}" (model: ${this.model}) — response may be truncated or filtered.`);
-        }
-
-        if (data.usage) {
-            this.recordUsage({
-                promptTokens: data.usage.prompt_tokens || 0,
-                completionTokens: data.usage.completion_tokens || 0
-            });
-        } else {
-            this.recordUsage({
-                promptTokens: this.estimateTokens(systemPrompt) + history.reduce((n, m) => n + this.estimateTokens(m.content), 0),
-                completionTokens: this.estimateTokens(choice.message?.content || ''),
-                estimated: true
-            });
-        }
-
-        return (choice.message?.content || '').trim();
+        return (lastChoice?.message?.content || '').trim();
     }
 
     /**
@@ -203,7 +290,10 @@ class DeepSeekDriver extends AIDriver {
                     // OpenAI-compatible option DeepSeek's API also
                     // supports -- emits a final usage-only chunk so
                     // streamed replies feed the session token total too.
-                    stream_options: { include_usage: true }
+                    stream_options: { include_usage: true },
+                    // NEW: same optional passthrough as the non-streaming
+                    // path -- see constructor.
+                    ...(this.reasoningEffort ? { reasoning_effort: this.reasoningEffort } : {})
                 }),
                 signal: controller.signal
             });
@@ -217,6 +307,7 @@ class DeepSeekDriver extends AIDriver {
             }
 
             let usage = null;
+            let finishReason = null;
             for await (const chunk of parseSSEStream(response.body)) {
                 if (chunk === '[DONE]') break;
                 try {
@@ -226,21 +317,34 @@ class DeepSeekDriver extends AIDriver {
                         full += delta;
                         onToken(delta);
                     }
+                    // NEW: the final content-bearing chunk carries finish_reason
+                    // (it's null on every delta chunk until then) -- capture it
+                    // the same way the non-streaming path does, so a truncated
+                    // streamed reply also counts toward the dashboard's
+                    // "Truncated replies" stat instead of only ever being
+                    // logged for non-streaming calls.
+                    if (parsed.choices?.[0]?.finish_reason) finishReason = parsed.choices[0].finish_reason;
                     if (parsed.usage) usage = parsed.usage;
                 } catch (e) {
                     // Malformed/partial SSE frame -- skip it rather than abort the whole stream.
                 }
             }
+            const truncated = !!(finishReason && finishReason !== 'stop');
+            if (truncated) {
+                console.warn(`⚠️  DeepSeek (streaming) finish_reason was "${finishReason}" (model: ${this.model}) — response may be truncated or filtered.`);
+            }
             if (usage) {
                 this.recordUsage({
                     promptTokens: usage.prompt_tokens || 0,
-                    completionTokens: usage.completion_tokens || 0
+                    completionTokens: usage.completion_tokens || 0,
+                    truncated
                 });
             } else {
                 this.recordUsage({
                     promptTokens: this.estimateTokens(systemPrompt) + history.reduce((n, m) => n + this.estimateTokens(m.content), 0),
                     completionTokens: this.estimateTokens(full),
-                    estimated: true
+                    estimated: true,
+                    truncated
                 });
             }
             return full.trim();

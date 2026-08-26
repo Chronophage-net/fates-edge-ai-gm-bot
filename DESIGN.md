@@ -27,10 +27,18 @@ that's a lesson learned from an earlier version of the bot where the two files' 
 `current.status === 'active'` quietly drifted apart.
 
 Don't confuse the bot's own `campaigns/` folder with adventure module storage — it's unrelated.
-`campaigns/` holds exactly one small pointer file (`{ROOM}_code.txt`) that `world-manager.js`'s
-`CampaignManager` uses to remember which auto-save short-code belongs to which room, for the
-bot's own conversation/facts/adventure-progress persistence (`orchestrator.campaign.save()`,
-called after nearly every command). It has never contained adventure content. The bot repo also
+`campaigns/` may contain a leftover `{ROOM}_code.txt` file from an older persistence scheme, but
+`world-manager.js`'s `CampaignManager` no longer reads or writes it — that field
+(`this.codeFilePath`) is set in the constructor and never touched again. Auto-save/auto-load now
+go through a *deterministic* per-room slot on the socket server itself
+(`POST`/`GET /api/rooms/:code/campaigns/auto-save`, called after nearly every command via
+`orchestrator.campaign.save()`), keyed by the room code rather than a random generated code, so
+there's no local pointer file needed to know which save is current any more — see the
+`_loadAutoSave()`/`save()` comments in `world-manager.js` for the full before/after. The old
+random-code endpoint (`POST/GET /api/rooms/:code/campaigns[/:code]`) still exists, but only for
+the explicit, opt-in manual share flow (`!gm upload` / `!gm load <code>`, `exportSnapshot()`/
+`importSnapshot()`), a deliberately different mechanism from automatic restart-survival
+persistence. It has never contained adventure content. The bot repo also
 carries its own local mirror of `data/adventures/*.json` plus `data/docs/adventures/*.html`, but
 that copy exists only so `adventure-context.js` can read `getAdventureDoc()`'s full prose text and
 the manifest for the LLM prompt — the module the server actually *loads and runs* always comes
@@ -200,9 +208,9 @@ pull the adventure's themes, bestiary, or recent chat history the way some other
 do. It's built from exactly three pieces of context:
 
 - The adventure's `title`.
-- `context.orchestrator.campaign.getSummary()` — the bot's existing rolling campaign summary
-  (the same one shown in `!gm adventure debug` and reused elsewhere), or a placeholder string if
-  there isn't one yet.
+- `context.orchestrator.campaign.getNarrativeSummary()` — the bot's stored free-text narrative
+  recap (the same one shown in `!gm adventure debug` and reused elsewhere), or a placeholder
+  string if there isn't one yet.
 - `notes` — whatever the AI passed as the `[SCENE COMPLETE "notes"]` tag's argument for the scene
   that just ended, i.e. a one-line note on how that scene concluded.
 
@@ -409,6 +417,16 @@ follow. Everything here is stateless-per-call from the caller's perspective: `ad
 never has to know or care how the prompt block is assembled, only that calling `invalidate()`
 after a mutation guarantees the next call reflects it.
 
+**Ad-hoc timers are deliberately NOT part of this function.** `ai-gm-bot.js`'s own prompt-assembly
+step calls `adventure-context.js`'s separate `getAdhocTimersForPrompt()` unconditionally, alongside
+(not inside) the `getSceneContextForPrompt()` block above, precisely *because* GM/AI-improvised
+timers (§ ad-hoc timers in the README's Modules table) exist independent of whether an adventure is
+even loaded — gating them on adventure state the way everything else in this section is gated would
+mean the AI could create/tick a timer via `[TIMER ...]` outside an adventure and never see its
+current value again next turn. Both calls share the same 15-second-cache-then-`invalidate()` pattern,
+just against separate cache entries (`getSceneContextForPrompt()`'s adventure-state cache vs.
+`getAdhocTimers()`'s own).
+
 ### 5.1. Knowledge/secrets state
 
 Adventure modules can define a top-level `knowledge` array — the mechanism `_gmhints` predates
@@ -582,6 +600,32 @@ design note, since a manual volume ramp gets the identical audible result for a 
 loop without pulling in an `AudioContext`. A `trackId` the receiving room's soundboard doesn't
 recognize is a silent no-op there, logged at `console.log` for debugging, not an error surfaced to
 players — the same fail-soft posture as every other optional feature in this document.
+
+**`SOUNDSCAPE_AUTO_SEARCH` — closing the trackId problem for moods nobody curated.** The trackId
+problem above (the bot can't invent a track id) has a second answer besides "the GM must
+pre-populate one for every mood": when `SOUNDSCAPE_AUTO_SEARCH=true` and a mood resolves against
+neither the manual profile, `adventure-context.js`'s `searchAmbienceForMood()` calls the socket
+server's `GET /api/soundboard/search` (a Freesound proxy — see `fates-edge-apps`'s `server/api.js`
+and its own DESIGN.md) with a `<mood> ambience` query, and walks the results for the first one
+`modules/sound-license.js`'s `classifySoundLicense()` clears as commercial-safe (CC0/CC BY/CC BY-SA/
+Sampling+ — never NC or an unrecognized license, since nothing here has a human eyeballing the
+license before it reaches every player in the room). `resolveAmbienceEventAsync()` is the async
+sibling of `resolveAmbienceEvent()` that both triggers now call: it tries the manual profile first
+(unchanged, synchronous, and always wins when it has an entry), and only awaits the Freesound
+lookup when that comes back empty and auto-search is on. A failed/unconfigured lookup (most
+commonly: the *server* doesn't have `FREESOUND_API_KEY` set — a separate setting from anything on
+this bot) warns once via `console.warn` and behaves exactly like auto-search being off from then on
+for that call, never throwing past `maybeSendAmbience()`/the `[MOOD]` tag handler's own try/catch.
+
+Since there's no pre-existing track id to reference in this path, the WS event carries `url` (the
+Freesound preview URL) and `name` instead of `trackId`, plus `attribution` when the picked
+license requires it. The web client's `vtt-connected.js` `soundboardAmbienceHandler` branches on
+which field is present: `trackId` plays an existing local track (unchanged); `url` calls the same
+`addSoundTrack()` the "Search Sounds" modal uses to create a brand-new local track from that URL
+on the spot (attribution attached via `setTrackAttribution()`), then plays that. Each room that
+receives the cue ends up with its own independent track pointing at the same URL — there's still
+no server-side soundboard state, consistent with the "Nothing here writes to `room.data`" note in
+the socket server's own DESIGN.md.
 
 ## 7. Design principles this ecosystem leans on repeatedly
 

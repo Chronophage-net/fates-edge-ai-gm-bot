@@ -8,7 +8,6 @@
 // dispatch order or the role gate's exact logical position.
 
 const diceModule = require('../dice');
-const timersModule = require('../timers');
 const adventureDirector = require('../adventure-director');
 const travelModule = require('../travel');
 const rulesModule = require('../rules-index');
@@ -21,12 +20,22 @@ const assistantSynthesis = require('../assistant-synthesis');
 const wsCorrelator = require('../ws-correlator');
 const WebSocket = require('ws');
 const { globalApiRequest } = require('./api-client');
+const { soundLicenseLabel } = require('../sound-license');
 const { encounterIcon, placeOrUpdateToken, moveToken, removeToken, clearEnemyTokens, inferFaction } = require('./tokens');
 const { ensureCharacterOnServer, syncCharactersFromServer } = require('./characters-sync');
 const { resolveNPCAction } = require('./npc-actions');
 
 function parseArgs(text) {
-    const parts = text.split(/\s+/);
+    // FIX ("DV NaN" / quoted names carrying literal quote characters):
+    // a bare text.split(/\s+/) has no concept of quoting at all, so a
+    // quoted multi-word token (or even a simple single-quoted name like
+    // `"Oathus"`) got split apart on its internal whitespace and/or kept
+    // its literal `"` characters in the output -- every command
+    // documented as taking a quoted argument (roll, bond, complication,
+    // ...) was affected. Tokenize with quotes as grouping instead: a
+    // "..." run becomes ONE token with the surrounding quotes stripped.
+    const rawParts = text.match(/"[^"]*"|\S+/g) || [];
+    const parts = rawParts.map(p => (p.length >= 2 && p.startsWith('"') && p.endsWith('"')) ? p.slice(1, -1) : p);
     const cmd = parts[1]?.toLowerCase();
     const args = parts.slice(2);
     return { cmd, args };
@@ -60,8 +69,8 @@ async function handleBotCommand(sender, text, context) {
 !gm dice XdY - roll generic dice
 !gm roll "Name" Attribute+Skill DV Position - roll Fate's Edge pool
 !gm harm/fatigue/boons/obligation/corruption/leash <name> <amount> [armorStep] - change resource
-!gm setattr <name> <attribute> <value> - set attribute (local only)
-!gm setskill <name> <skill> <value> - set skill (local only)
+!gm setattr <name> <attribute> <value> - set attribute (synced to server)
+!gm setskill <name> <skill> <value> - set skill (synced to server)
 !gm addtalent <name> <talent> - add a talent
 !gm bond <name> <target> "<description>" - add a bond
 !gm complication <name> "<description>" - add a complication
@@ -129,7 +138,8 @@ async function handleBotCommand(sender, text, context) {
 !gm token move <name> <col> <row> - move an existing token
 !gm token remove <name> - remove a token
 !gm token clear - remove all enemy tokens
-!gm modules - list loaded modules (if any)`;
+!gm modules - list loaded modules (if any)
+!gm soundsearch <query> - search Freesound for ambience/SFX (preview only -- add via the web client's soundboard "Search Sounds" button)`;
     }
 
     // ─── Adventure command (handled by adventure-director) ────────
@@ -267,8 +277,26 @@ async function handleBotCommand(sender, text, context) {
     if (cmd === 'roll' && args.length >= 4) {
         const name = args[0];
         const poolExpr = args[1];
-        const dv = parseInt(args[2]);
-        const position = args[3];
+        // FIX ("vs DV NaN"): this used to read args[2] as the DV number
+        // and args[3] as the position purely positionally. The actual
+        // (documented, and AI-emitted) grammar is
+        // `<name> <pool> DV <n> <position>` -- args[2] is the literal
+        // word "DV", not a number, so parseInt(args[2]) was always NaN,
+        // args[3] (the real DV number, as a string) was being used as
+        // the "position" instead (silently no-opping Dominant/Desperate
+        // rerolls, since a bare numeral never matches either), and the
+        // actual position word in args[4] was never read at all. Locate
+        // the literal "DV" keyword instead of assuming a fixed index.
+        let dv, position;
+        const dvIdx = args.findIndex(a => a.toUpperCase() === 'DV');
+        if (dvIdx !== -1 && args[dvIdx + 1] !== undefined) {
+            dv = parseInt(args[dvIdx + 1], 10);
+            position = args[dvIdx + 2] || 'Controlled';
+        } else {
+            // Fallback if a caller omits the "DV" keyword entirely.
+            dv = parseInt(args[2], 10);
+            position = args[3];
+        }
         const diceCount = charactersModule.getPool(name, poolExpr);
         if (diceCount === 0) return `Could not resolve dice pool for ${name} with expression ${poolExpr}.`;
         let result = diceModule.rollDice(diceCount);
@@ -324,7 +352,14 @@ async function handleBotCommand(sender, text, context) {
         } else {
             charactersModule.applyDelta(name, cmd, amount, saveCampaign);
             result = `${name}'s ${cmd} changed by ${amount >= 0 ? '+' : ''}${amount} → now ${char[cmd]}`;
-            if (['fatigue', 'boons', 'obligation'].includes(cmd)) {
+            // FIX: 'corruption' and 'leash' were excluded from this list
+            // even though the server has always had identical routes for
+            // them (POST /api/rooms/:code/characters/:name/corruption|leash
+            // -- see server/api.js's CHAR_FIELDS). They were silently
+            // staying bot-local-only while harm/fatigue/boons/obligation
+            // correctly pushed to the server (the actual source of truth
+            // a human GM's own client reads).
+            if (['fatigue', 'boons', 'obligation', 'corruption', 'leash'].includes(cmd)) {
                 try {
                     await context.apiRequest('POST', ['characters', encodeURIComponent(name), cmd], { delta: amount });
                 } catch (e) { /* ignore */ }
@@ -642,46 +677,55 @@ async function handleBotCommand(sender, text, context) {
         }
     }
 
-    // ─── Timer management (LOCAL orchestrator timers -- see note in
-    // processSpecialTags below about how these differ from the server
-    // adventure engine's scene/campaign timers) ────────────────────
+    // ─── Timer management ──────────────────────────────────────────
+    // NEW: ad-hoc timers are entirely server-authoritative now
+    // (fates-edge-socket-server's server/timers.js), deliberately kept
+    // separate from that server's adventure-module scene/campaign
+    // timers (server/adventure.js) -- see process-tags.js's
+    // [TICK TIMER ...] comment for the full rationale. Nothing here
+    // touches local campaignState any more.
     if (cmd === 'timer') {
         const sub = args[0];
         if (sub === 'add') {
             const name = args[1];
-            const max = parseInt(args[2]);
-            const onFill = args.slice(3).join(' ') || 'Timer fills.';
-            if (!name || isNaN(max)) return 'Usage: !gm timer add <name> <segments> [onFill]';
-            timersModule.addTimer(campaignState, name, max, onFill);
-            await saveCampaign();
-            return `Timer "${name}" added with ${max} segments.`;
+            const segments = parseInt(args[2]);
+            const description = args.slice(3).join(' ') || 'Timer fills.';
+            if (!name || isNaN(segments)) return 'Usage: !gm timer add <name> <segments> [description]';
+            try {
+                await context.apiRequest('POST', ['timers'], { name, segments, description });
+                adventureContext.invalidate(); // NEW: so the AI's next turn sees it immediately, not after the 15s TTL
+                return `Timer "${name}" added with ${segments} segments.`;
+            } catch (e) {
+                return `Failed to add timer "${name}": ${e.message}`;
+            }
         } else if (sub === 'tick') {
             const name = args[1];
             const ticks = parseInt(args[2]) || 1;
             if (!name) return 'Usage: !gm timer tick <name> [ticks]';
-            const filled = timersModule.tickTimer(campaignState, name, ticks);
-            if (filled) {
-                const event = timersModule.resolveTimer(campaignState, name);
-                await saveCampaign();
-                return `Timer "${name}" filled! ${event}`;
-            } else {
-                const timer = campaignState.scene.timers.find(t => t.name === name);
-                await saveCampaign();
-                return `Timer "${name}" advanced to ${timer.current}/${timer.max}`;
+            try {
+                const result = await context.apiRequest('POST', ['timers', 'tick'], { name, amount: ticks });
+                const timer = result.tickedTimer;
+                adventureContext.invalidate(); // NEW
+                if (!timer) return `Timer "${name}" not found.`;
+                if (timer.full) {
+                    return `Timer "${name}" filled! ${timer.description || ''}`.trim();
+                }
+                return `Timer "${name}" advanced to ${timer.current}/${timer.segments}`;
+            } catch (e) {
+                return `Timer "${name}" not found.`;
             }
         } else if (sub === 'remove') {
             const name = args[1];
             if (!name) return 'Usage: !gm timer remove <name>';
-            const idx = campaignState.scene.timers.findIndex(t => t.name === name);
-            if (idx !== -1) {
-                campaignState.scene.timers.splice(idx, 1);
-                await saveCampaign();
+            try {
+                await context.apiRequest('DELETE', ['timers', encodeURIComponent(name)]);
+                adventureContext.invalidate(); // NEW
                 return `Timer "${name}" removed.`;
-            } else {
+            } catch (e) {
                 return `Timer "${name}" not found.`;
             }
         } else {
-            return 'Usage: !gm timer add/tick/remove <name> [segments] [onFill]';
+            return 'Usage: !gm timer add/tick/remove <name> [segments] [description]';
         }
     }
 
@@ -1001,6 +1045,11 @@ async function handleBotCommand(sender, text, context) {
                 const result = await context.apiRequest('POST', ['adventure', 'encounter', 'start'], {
                     encounter: { name, type: encType },
                 });
+                // FIX: same missing-invalidate bug as the AI's [ENCOUNTER
+                // START] tag (process-tags.js) -- without this, the very
+                // next AI turn could still be built from a stale cached
+                // adventure state showing no active encounter.
+                adventureContext.invalidate();
                 const vocab = getVocab(encType);
                 return `${encounterIcon(encType)} Encounter "${name}" (${vocab.label}) begins.${result?.activeEncounter?.dv ? ` DV ${result.activeEncounter.dv}.` : ''}`;
             } catch (e) {
@@ -1349,8 +1398,41 @@ async function handleBotCommand(sender, text, context) {
         }
     }
 
+    // ─── Sound search (Freesound, via the socket server's proxy) ────
+    // Chat-side lookup companion to the web client's GM soundboard
+    // "Search Sounds" modal (js/features/gm-tools/sound-search.js) and
+    // its server/api.js GET /api/soundboard/search route -- global (not
+    // room-scoped), so this uses globalApiRequest() rather than
+    // context.apiRequest(). Preview/lookup only: this command does NOT
+    // add anything to any room's soundboard (that state lives client-
+    // side in the web client's localStorage, per core/soundboard.js --
+    // there's no server-side "soundboard" for a bot to write into). A
+    // GM sees a result here, then adds it from the web client if they
+    // want it on the board.
+    if (cmd === 'soundsearch') {
+        if (context.myRole !== 'gm') return 'Only the GM can search for sounds.';
+        const query = args.join(' ').trim();
+        if (!query || query.length < 2) return 'Usage: !gm soundsearch <query> (at least 2 characters)';
+        try {
+            const data = await globalApiRequest(`/soundboard/search?q=${encodeURIComponent(query)}&page=1&page_size=5`);
+            const results = (data && data.results) || [];
+            if (results.length === 0) return `🔎 No sounds found for "${query}".`;
+            let result = `🔎 **Sound search: "${query}"** (showing ${results.length} of ${data.count || results.length})\n`;
+            results.forEach(s => {
+                const license = { label: soundLicenseLabel(s.license) };
+                const duration = typeof s.duration === 'number' ? s.duration.toFixed(1) : '?';
+                result += `• **${s.name}** by ${s.username} (${duration}s) — ${license.label}\n  ${s.preview_url || '(no preview available)'}\n`;
+            });
+            result += `\nAdd one from the web client's Soundboard panel → 🔎 Search Sounds.`;
+            return result;
+        } catch (e) {
+            return `Sound search failed: ${e.message} (needs FREESOUND_API_KEY set on the socket server)`;
+        }
+    }
+
     return 'Unknown command. Try !gm help';
 }
+
 
 // ─── Fuzzy tag repair ────────────────────────────────────────────────
 // The tag regexes below (rollRegex, applyRegex, tickRegex, ...) expect

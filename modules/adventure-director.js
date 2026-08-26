@@ -128,8 +128,8 @@ function resetNarrativeState(orchestrator) {
     const state = orchestrator.campaign.state;
     state.conversation = [];
     state.messagesSinceLastSummary = 0;
-    if (typeof orchestrator.campaign.setSummary === 'function') {
-        orchestrator.campaign.setSummary('');
+    if (typeof orchestrator.campaign.setNarrativeSummary === 'function') {
+        orchestrator.campaign.setNarrativeSummary('');
     }
 }
 
@@ -647,6 +647,24 @@ async function handleAdventureCommand(sender, args, context) {
     // ─── !gm adventure choose <n> ───────────────────────────────────
     if (sub === 'choose') {
         if (!dir.pendingSelection) {
+            // FIX: don't blindly re-show the "no adventure running" menu --
+            // it hardcodes that claim (see formatSelectionMenu) regardless
+            // of live server state. If pendingSelection was already
+            // consumed (e.g. by a prior successful `choose`) but an
+            // adventure IS actually active, check first and say so instead
+            // of lying to the table. Mirrors maybePromptOnStartup's check.
+            let current;
+            try {
+                current = await context.apiRequest('GET', ['adventure']);
+            } catch (e) {
+                return `*Couldn't reach the adventure engine: ${e.message}*`;
+            }
+            if (adventureContext.isAdventureActive(current)) {
+                const sceneTitle = current.currentScene?.title || 'Unknown scene';
+                const actTitle = current.currentAct?.title || 'Unknown act';
+                return `**${current.title}** is already running (${actTitle} / ${sceneTitle}).\n` +
+                    `Use \`!gm adventure vote abandon\` or \`!gm adventure reset\` to change it, or \`!gm adventure\` for status.`;
+            }
             await promptSelection(context);
             return null;
         }
@@ -1007,16 +1025,20 @@ async function handleSceneComplete(context, notes = '') {
 /**
  * NEW: Reactive Soundscape -- fire-and-forget, best-effort ambience cue
  * for the scene a POST /adventure/scene just landed on. No-ops silently
- * (never throws past this function) when soundscape isn't configured
- * (adventureContext.resolveAmbienceEvent() returns null), the scene's
- * inferred mood doesn't map to anything in the GM's profile, or the
- * bot's own WS connection isn't open right now -- exactly the same
- * fail-soft posture as every other optional integration in this repo.
+ * (never throws past this function) when soundscape isn't configured at
+ * all (adventureContext.resolveAmbienceEventAsync() returns null), the
+ * scene's inferred mood doesn't map to anything in the GM's profile (and
+ * SOUNDSCAPE_AUTO_SEARCH is off or its Freesound lookup also came up
+ * empty), or the bot's own WS connection isn't open right now -- exactly
+ * the same fail-soft posture as every other optional integration in this
+ * repo. Async now (the auto-search fallback is a live HTTP call), but
+ * still called fire-and-forget at its one call site below -- a scene
+ * advance never blocks on a Freesound lookup.
  */
-function maybeSendAmbience(context, state) {
+async function maybeSendAmbience(context, state) {
     try {
         const mood = adventureContext.inferSceneMood(state);
-        const ambience = adventureContext.resolveAmbienceEvent(mood);
+        const ambience = await adventureContext.resolveAmbienceEventAsync(mood);
         if (!ambience) return;
         const ws = context.ws;
         if (!ws || ws.readyState !== WebSocket.OPEN) return;
@@ -1024,6 +1046,9 @@ function maybeSendAmbience(context, state) {
             type: 'soundboard-ambience',
             mood: ambience.mood,
             trackId: ambience.trackId,
+            url: ambience.url,
+            name: ambience.name,
+            attribution: ambience.attribution,
             transitionDuration: ambience.transitionDuration,
         }));
     } catch (e) {
@@ -1043,7 +1068,7 @@ function maybeSendAmbience(context, state) {
 async function advanceScene(context) {
     const newState = await context.apiRequest('POST', ['adventure', 'scene'], {});
     adventureContext.invalidate();
-    maybeSendAmbience(context, newState);
+    maybeSendAmbience(context, newState).catch(() => {}); // fire-and-forget; errors are already handled inside
     return newState;
 }
 
@@ -1074,7 +1099,7 @@ async function advanceAndReport(context, notes) {
  * exact same "LLM might wrap output in prose or fences" failure mode.
  */
 async function generateAndAppendScene(context, state, notes) {
-    const summary = context.orchestrator.campaign.getSummary() || '';
+    const summary = context.orchestrator.campaign.getNarrativeSummary() || '';
     const facts = context.orchestrator.campaign.state.facts || {};
     const factsText = Object.entries(facts).map(([k, v]) => `- ${k}: ${v}`).join('\n');
 
@@ -1134,7 +1159,7 @@ Write ONE new scene that continues this act naturally from here. Respond with ON
  * climaxTriggered so this only ever happens once, then advance into it.
  */
 async function generateAndAppendClimax(context, state, notes) {
-    const summary = context.orchestrator.campaign.getSummary() || '';
+    const summary = context.orchestrator.campaign.getNarrativeSummary() || '';
 
     const prompt = `You are bringing a Fate's Edge adventure titled "${state.title}" to its climax and conclusion.
 
@@ -1214,7 +1239,7 @@ Output ONLY the JSON object.`;
  * generateAndAppendScene()/generateAndAppendClimax() already use.
  */
 async function generateForcedClimaxTwist(context, state, notes) {
-    const summary = context.orchestrator.campaign.getSummary() || '';
+    const summary = context.orchestrator.campaign.getNarrativeSummary() || '';
 
     const prompt = `You are running the climax of a Fate's Edge adventure titled "${state.title}". The party has been taking longer than expected to bring it to a resolution.
 
@@ -1286,7 +1311,7 @@ async function finalizeAdventure(context, finishedState) {
     try {
         const conv = context.orchestrator.campaign.state.conversation || [];
         const recent = conv.slice(-40).map(m => `${m.role}: ${m.content}`).join('\n');
-        const priorSummary = context.orchestrator.campaign.getSummary() || '';
+        const priorSummary = context.orchestrator.campaign.getNarrativeSummary() || '';
         const prompt = `${priorSummary ? `Prior rolling summary:\n${priorSummary}\n\n` : ''}Recent events:\n${recent}\n\nWrite a concise (150-200 word) archival summary of this now-completed adventure: what happened, key NPCs and their fates, unresolved threads that could matter later, and the overall outcome. Output only the summary text, nothing else.`;
         summaryText = await context.driver.generateResponse({
             systemPrompt: 'You are a campaign archivist. Output only the summary text, nothing else.',

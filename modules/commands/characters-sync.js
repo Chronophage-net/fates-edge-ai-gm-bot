@@ -63,6 +63,44 @@ async function ensureCharacterOnServer(name, context) {
  * @param {object} context - needs { apiRequest, charactersModule }
  * @returns {Promise<{synced: number, error?: string}>}
  */
+/**
+ * NEW: the actual per-character field-by-field merge, extracted out of
+ * syncCharactersFromServer() below so ai-gm-bot.js's 'state-updated'
+ * websocket handler can use the exact same safe merge instead of the
+ * wholesale-replace (charactersModule.loadCharacters()) it used to do.
+ * That wholesale replace overwrote the ENTIRE local character object
+ * with whatever the broadcast contained -- if the AI had just applied a
+ * [APPLY HARM ...] (or any local mutation) between sync ticks, an
+ * unrelated 'state-updated' broadcast (triggered by ANY client's
+ * action) arriving before the next save/sync would silently wipe that
+ * change back out of the bot's own memory, even though (pre-fix) it had
+ * never reached the server in the first place either. Merging field-by-
+ * field instead means a delayed/out-of-order broadcast can only ever
+ * bring a character's tracked fields up to date, never regress fields
+ * the broadcast didn't itself carry.
+ * @param {object} charactersModule
+ * @param {object} data - one character's server-shaped record
+ */
+function mergeCharacterFromServerData(charactersModule, data) {
+    if (!data || !data.name) return;
+    const char = charactersModule.get(data.name);
+    if (data.harm !== undefined) char.harm = data.harm;
+    if (data.fatigue !== undefined) char.fatigue = data.fatigue;
+    if (data.obligation !== undefined) char.obligation = data.obligation;
+    if (data.boons !== undefined) char.boons = data.boons;
+    if (data.leash !== undefined) char.leash = data.leash;
+    if (data.corruption !== undefined) char.corruption = data.corruption;
+    if (data.attributes) char.attributes = { ...char.attributes, ...data.attributes };
+    if (data.skills) char.skills = { ...char.skills, ...data.skills };
+    if (data.talents) char.talents = data.talents;
+    if (data.bonds) char.bonds = data.bonds;
+    if (data.complications) char.complications = data.complications;
+    if (data.assets) char.assets = data.assets;
+    if (data.followers) char.followers = data.followers;
+    if (data.tier !== undefined) char.tier = data.tier;
+    if (data.xp !== undefined) char.xp = data.xp;
+}
+
 async function syncCharactersFromServer(context) {
     const listData = await context.apiRequest('GET', ['characters']);
     if (!listData || !Array.isArray(listData.characters)) {
@@ -72,22 +110,7 @@ async function syncCharactersFromServer(context) {
     let synced = 0;
     for (const data of serverChars) {
         if (!data || !data.name) continue;
-        const char = context.charactersModule.get(data.name);
-        if (data.harm !== undefined) char.harm = data.harm;
-        if (data.fatigue !== undefined) char.fatigue = data.fatigue;
-        if (data.obligation !== undefined) char.obligation = data.obligation;
-        if (data.boons !== undefined) char.boons = data.boons;
-        if (data.leash !== undefined) char.leash = data.leash;
-        if (data.corruption !== undefined) char.corruption = data.corruption;
-        if (data.attributes) char.attributes = { ...char.attributes, ...data.attributes };
-        if (data.skills) char.skills = { ...char.skills, ...data.skills };
-        if (data.talents) char.talents = data.talents;
-        if (data.bonds) char.bonds = data.bonds;
-        if (data.complications) char.complications = data.complications;
-        if (data.assets) char.assets = data.assets;
-        if (data.followers) char.followers = data.followers;
-        if (data.tier !== undefined) char.tier = data.tier;
-        if (data.xp !== undefined) char.xp = data.xp;
+        mergeCharacterFromServerData(context.charactersModule, data);
         synced++;
     }
     return { synced };
@@ -95,4 +118,4 @@ async function syncCharactersFromServer(context) {
 
 // ─── Helper: NPC action resolver (unchanged) ──────────────────────
 
-module.exports = { ensureCharacterOnServer, syncCharactersFromServer };
+module.exports = { ensureCharacterOnServer, syncCharactersFromServer, mergeCharacterFromServerData };

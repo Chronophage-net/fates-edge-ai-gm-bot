@@ -86,20 +86,23 @@ class OpenAIDriver extends AIDriver {
 
             // NEW: mirror deepseek-driver.js's truncation warning.
             const finishReason = completion.choices[0].finish_reason;
-            if (finishReason && finishReason !== 'stop') {
+            const truncated = !!(finishReason && finishReason !== 'stop');
+            if (truncated) {
                 console.warn(`⚠️  OpenAI finish_reason was "${finishReason}" (model: ${this.model}) — response may be truncated or filtered.`);
             }
 
             if (completion.usage) {
                 this.recordUsage({
                     promptTokens: completion.usage.prompt_tokens || 0,
-                    completionTokens: completion.usage.completion_tokens || 0
+                    completionTokens: completion.usage.completion_tokens || 0,
+                    truncated
                 });
             } else {
                 this.recordUsage({
                     promptTokens: this.estimateTokens(systemPrompt) + history.reduce((n, m) => n + this.estimateTokens(m.content), 0),
                     completionTokens: this.estimateTokens(completion.choices[0].message?.content || ''),
-                    estimated: true
+                    estimated: true,
+                    truncated
                 });
             }
 
@@ -134,24 +137,32 @@ class OpenAIDriver extends AIDriver {
 
         let full = '';
         let usage = null;
+        let finishReason = null;
         for await (const part of stream) {
             const delta = part.choices?.[0]?.delta?.content;
             if (delta) {
                 full += delta;
                 onToken(delta);
             }
+            if (part.choices?.[0]?.finish_reason) finishReason = part.choices[0].finish_reason;
             if (part.usage) usage = part.usage;
+        }
+        const truncated = !!(finishReason && finishReason !== 'stop');
+        if (truncated) {
+            console.warn(`⚠️  OpenAI (streaming) finish_reason was "${finishReason}" (model: ${this.model}) — response may be truncated or filtered.`);
         }
         if (usage) {
             this.recordUsage({
                 promptTokens: usage.prompt_tokens || 0,
-                completionTokens: usage.completion_tokens || 0
+                completionTokens: usage.completion_tokens || 0,
+                truncated
             });
         } else {
             this.recordUsage({
                 promptTokens: this.estimateTokens(systemPrompt || '') + (history || []).reduce((n, m) => n + this.estimateTokens(m.content), 0),
                 completionTokens: this.estimateTokens(full),
-                estimated: true
+                estimated: true,
+                truncated
             });
         }
         return full.trim();

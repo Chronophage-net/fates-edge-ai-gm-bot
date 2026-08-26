@@ -20,6 +20,7 @@ const knowledgeIndex = require('./modules/knowledge-index');
 const assistantSuggestions = require('./modules/assistant-suggestions');
 const wsCorrelator = require('./modules/ws-correlator');
 const ttsClient = require('./modules/tts-client');
+const { mergeCharacterFromServerData } = require('./modules/commands/characters-sync');
 const { generateStartupMessage, generateEtiquetteReminder } = commandHandler;
 
 // -------------------------------------------------------------------
@@ -167,6 +168,20 @@ const BASE_SYSTEM_PROMPT = (process.env.SYSTEM_PROMPT ||
   'You are the Game Master for a Fate\'s Edge session. Provide vivid, concise narration. Use game mechanics appropriately.') +
 
   '\n\n' +
+  '═══════════════════════════════════════════════════════════════\n' +
+  '0. LENGTH BUDGET\n' +
+  '═══════════════════════════════════════════════════════════════\n\n' +
+
+  // NEW: replies were routinely hitting the DeepSeek driver's token
+  // ceiling (finish_reason "length") mid-tag, which left a dangling
+  // bracket for closeUnterminatedAITags() to untangle and, in the worst
+  // case, cut a reply down to nothing at all once the leftover tag was
+  // stripped -- see ai-gm-bot.js's empty-`clean` fallback. Better to
+  // stop the model short of the wall in the first place than to keep
+  // raising DEEPSEEK_MAX_TOKENS indefinitely. Two-turn structure keeps
+  // reveals/options from ever needing to fit in one shot.\n' +
+  'Keep each turn to roughly 120-180 words of prose, plus tags. Favor tight, cinematic narration over exhaustive description -- one vivid beat is worth more than three restated ones. If a scene genuinely needs more room (a climax, a big reveal, several NPCs to introduce), narrate the most important beat now, end on a hook or a roll call, and continue the rest on your NEXT turn rather than trying to fit it all into one reply. Never sacrifice a mechanical tag to save space -- if you are running long, cut prose first.\n\n' +
+
   '═══════════════════════════════════════════════════════════════\n' +
   'I. CRITICAL ROLL DISCIPLINE\n' +
   '═══════════════════════════════════════════════════════════════\n\n' +
@@ -845,13 +860,21 @@ async function handleMessage(msg) {
       charList = msg.state.characters;
     }
     if (charList && charList.length > 0) {
-      const charObj = {};
+      // FIX ("server should be canonical for characters"): this used to
+      // be a WHOLESALE replace (characters.loadCharacters(charObj)) --
+      // it overwrote the entire local character store with whatever this
+      // one broadcast happened to contain. Since 'state-updated' can be
+      // triggered by any client's action, a broadcast landing between
+      // the AI applying a local mutation (e.g. [APPLY HARM ...], see
+      // process-tags.js) and that mutation's own next save/sync tick
+      // would silently erase it from the bot's own memory. Field-by-
+      // field merge (the same one syncCharactersFromServer() and
+      // characters-sync.js use elsewhere) can only bring fields THIS
+      // broadcast actually carries up to date -- it can't regress
+      // anything else.
       for (const c of charList) {
-        if (c.name) {
-          charObj[c.name.toLowerCase()] = { ...c };
-        }
+        mergeCharacterFromServerData(characters, c);
       }
-      characters.loadCharacters(charObj);
       // DEBUG: fires on every state-updated broadcast -- see the
       // inbound-message note above.
       logger.debug(`📥 Auto‑synced ${charList.length} characters from state-updated.`);
@@ -1282,65 +1305,101 @@ async function handleMessage(msg) {
     fullSystemPrompt = rulesIndex + '\n\n' + fullSystemPrompt;
   }
 
-  const summary = orchestrator.campaign.getSummary();
-  if (summary) fullSystemPrompt += '\n\nCampaign Summary:\n' + summary;
+  // ─── Prompt-caching-friendly ordering ─────────────────────────
+  //
+  // NEW: DeepSeek (like most OpenAI-compatible providers) caches the
+  // system prompt by matching a shared PREFIX byte-for-byte across
+  // calls -- identical text at the start of the prompt gets billed at a
+  // steep discount, but the moment the text diverges, everything AFTER
+  // that point is a cache miss even if it's byte-identical to some
+  // OTHER previous call. This used to interleave the most volatile
+  // content (a full-text knowledge-index search keyed on THIS turn's
+  // message, and the live scene context that changes every position/DV/
+  // timer tick) in the MIDDLE of the prompt, ahead of the character
+  // sheets -- which broke the cacheable prefix early and made
+  // everything after it (including the sheets) a miss on every single
+  // turn, even on turns where the sheets themselves hadn't changed.
+  // Below, every piece is still computed exactly as before (nothing
+  // about WHAT gets included has changed) but assembled into the
+  // prompt ordered from least-volatile to most-volatile, so the shared
+  // prefix -- and therefore the cache hit -- stays as long as possible
+  // turn to turn. Only genuinely-per-turn content (the message-keyed
+  // memory search, and the "Story Beats available" counter) sits at
+  // the very end now.
+  const summary = orchestrator.campaign.getNarrativeSummary();
+  const summaryText = summary ? '\n\nCampaign Summary:\n' + summary : '';
 
-  // NEW: continuity from PAST completed adventures -- a handful of
-  // compact LLM-generated summaries (see adventure-director.js's
-  // finalizeAdventure()), not raw chat transcript. This is the actual
-  // mechanism for "history to draw on without ingesting insane amounts
-  // of history" -- each entry is ~150-200 words, capped at the last 10
-  // completed adventures.
+  // Continuity from PAST completed adventures -- a handful of compact
+  // LLM-generated summaries (see adventure-director.js's
+  // finalizeAdventure()), not raw chat transcript. Effectively static
+  // within a session (only changes when an adventure finishes).
   const archive = orchestrator.campaign.state.adventureArchive;
+  let archiveText = '';
   if (archive?.length) {
-    fullSystemPrompt += '\n\nPast Completed Adventures (for continuity/reference only -- not currently active):\n';
+    archiveText = '\n\nPast Completed Adventures (for continuity/reference only -- not currently active):\n';
     for (const entry of archive) {
-      fullSystemPrompt += `- "${entry.title}": ${entry.summary}\n`;
+      archiveText += `- "${entry.title}": ${entry.summary}\n`;
     }
   }
 
-  // Add facts
   const factsText = orchestrator.campaign.state.facts ? Object.entries(orchestrator.campaign.state.facts).map(([k,v]) => `- ${k}: ${v}`).join('\n') : '';
-  if (factsText) fullSystemPrompt += '\n\nCurrent World Facts:\n' + factsText;
+  const factsBlock = factsText ? '\n\nCurrent World Facts:\n' + factsText : '';
+
+  // Live adventure scene context + doc excerpt. The doc excerpt changes
+  // only when the current SCENE changes (low volatility); the scene
+  // context itself (position/DV/active encounter/timers) can change
+  // every turn (high volatility) -- but it's still far more stable
+  // turn-to-turn than the memory search below, which is keyed directly
+  // on the player's current message text.
+  let sceneContextText = '';
+  let docText = '';
+  let timersText = '';
+  try {
+    const sceneContext = await adventureContext.getSceneContextForPrompt({ apiRequest });
+    if (sceneContext) sceneContextText = sceneContext;
+
+    // Excerpt of the full adventure doc text, if one exists for the
+    // currently loaded module (manifest-backed modules only -- AI-
+    // generated Crown Spread adventures have no doc file and this will
+    // just return null, which is fine). Bounded to 4000 chars so a full
+    // module doc doesn't blow the context budget on every turn.
+    const doc = await adventureContext.getAdventureDoc({ apiRequest });
+    if (doc) docText = '\n\nAdventure Reference Text (excerpt):\n' + doc.slice(0, 4000);
+
+    // NEW: ad-hoc timers (server/timers.js) -- deliberately fetched even
+    // when no adventure is loaded/active, since these exist independent
+    // of adventure state. Without this the AI could create/tick a timer
+    // via [TIMER ...] but never see its current value again next turn.
+    timersText = await adventureContext.getAdhocTimersForPrompt({ apiRequest });
+  } catch (e) {
+    console.warn('[AdventureContext] Failed to build scene context for prompt:', e.message);
+  }
 
   // NEW: relevance-ranked long-term memory retrieval (Elasticsearch,
-  // optional -- see modules/knowledge-index.js). The block above dumps
-  // ALL of campaignState.facts every turn, which is fine for a short
-  // campaign but grows unbounded over a long one and eventually crowds
-  // out everything else in the prompt. When ES is configured, this
-  // additionally pulls just the handful of facts/NPCs/past-summary
+  // optional -- see modules/knowledge-index.js). The facts block above
+  // dumps ALL of campaignState.facts every turn, which is fine for a
+  // short campaign but grows unbounded over a long one and eventually
+  // crowds out everything else in the prompt. When ES is configured,
+  // this additionally pulls just the handful of facts/NPCs/past-summary
   // snippets that are actually relevant to what the player just said --
   // e.g. "who told you about the well?" surfaces the NPC and fact docs
   // that mention it, however many sessions ago they were created,
   // without needing them in the always-on facts dump or raw chat
   // history at all. No-ops (empty array) when ES isn't configured, so
-  // this is purely additive.
+  // this is purely additive. THE single most cache-hostile piece of the
+  // prompt (its input is literally this turn's message text), so it's
+  // placed as late as possible.
+  let memoryText = '';
   if (knowledgeIndex.isEnabled()) {
     try {
       const memoryHits = await knowledgeIndex.search(orchestrator.campaign.campaignCode, text, { size: 5 });
       if (memoryHits.length) {
-        fullSystemPrompt += '\n\nRelevant Memory (retrieved -- may include past facts, NPCs, or session summaries; use only what\'s actually relevant to this turn):\n' +
+        memoryText = '\n\nRelevant Memory (retrieved -- may include past facts, NPCs, or session summaries; use only what\'s actually relevant to this turn):\n' +
           memoryHits.map(h => `- [${h.type}] ${h.text}`).join('\n');
       }
     } catch (e) {
       console.warn('⚠️  Knowledge index retrieval failed:', e.message);
     }
-  }
-
-  // Live adventure scene context
-  try {
-    const sceneContext = await adventureContext.getSceneContextForPrompt({ apiRequest });
-    if (sceneContext) fullSystemPrompt += sceneContext;
-
-    // NEW: also inject an excerpt of the full adventure doc text, if one
-    // exists for the currently loaded module (manifest-backed modules
-    // only -- AI-generated Crown Spread adventures have no doc file and
-    // this will just return null, which is fine). Bounded to 4000 chars
-    // so a full module doc doesn't blow the context budget on every turn.
-    const doc = await adventureContext.getAdventureDoc({ apiRequest });
-    if (doc) fullSystemPrompt += '\n\nAdventure Reference Text (excerpt):\n' + doc.slice(0, 4000);
-  } catch (e) {
-    console.warn('[AdventureContext] Failed to build scene context for prompt:', e.message);
   }
 
   // Character sheets
@@ -1359,6 +1418,7 @@ async function handleMessage(msg) {
   // character who isn't currently the focus.
   const allChars = characters.getAll();
   const charNames = Object.keys(allChars);
+  let charSheetsText = '';
   if (charNames.length > 0) {
     const lowerText = (text || '').toLowerCase();
     const relevantNames = new Set();
@@ -1373,43 +1433,48 @@ async function handleMessage(msg) {
     // guess wrong and silently withhold stats the model actually needs.
     const giveFullDetail = relevantNames.size > 0 ? relevantNames : new Set(charNames);
 
-    fullSystemPrompt += '\n\n**Player Characters:**\n';
+    charSheetsText += '\n\n**Player Characters:**\n';
     for (const name of charNames) {
       const c = allChars[name];
       if (!giveFullDetail.has(name)) {
-        fullSystemPrompt += `\n${name} (Tier ${c.tier || 1}): Harm ${c.harm || 0}, Fatigue ${c.fatigue || 0}, Boons ${c.boons || 0}, Obligation ${c.obligation || 0}. ` +
+        charSheetsText += `\n${name} (Tier ${c.tier || 1}): Harm ${c.harm || 0}, Fatigue ${c.fatigue || 0}, Boons ${c.boons || 0}, Obligation ${c.obligation || 0}. ` +
           `(Not the current focus -- full sheet omitted this turn; it'll be included automatically if they're named or acting.)\n`;
         continue;
       }
-      fullSystemPrompt += `\n${name} (Tier ${c.tier || 1}):\n`;
-      fullSystemPrompt += `  Harm: ${c.harm || 0}, Fatigue: ${c.fatigue || 0}, Boons: ${c.boons || 0}, Obligation: ${c.obligation || 0}\n`;
-      fullSystemPrompt += `  Attributes: `;
+      charSheetsText += `\n${name} (Tier ${c.tier || 1}):\n`;
+      charSheetsText += `  Harm: ${c.harm || 0}, Fatigue: ${c.fatigue || 0}, Boons: ${c.boons || 0}, Obligation: ${c.obligation || 0}\n`;
+      charSheetsText += `  Attributes: `;
       const attrs = c.attributes || {};
       const attrStr = Object.entries(attrs).map(([k,v]) => `${k}: ${v}`).join(', ');
-      fullSystemPrompt += attrStr || 'None\n';
-      fullSystemPrompt += `  Skills: `;
+      charSheetsText += attrStr || 'None\n';
+      charSheetsText += `  Skills: `;
       const skills = c.skills || {};
       const skillStr = Object.entries(skills).map(([k,v]) => `${k}: ${v}`).join(', ');
-      fullSystemPrompt += skillStr || 'None\n';
+      charSheetsText += skillStr || 'None\n';
       if (c.talents && c.talents.length) {
-        fullSystemPrompt += `  Talents: ${c.talents.join(', ')}\n`;
+        charSheetsText += `  Talents: ${c.talents.join(', ')}\n`;
       }
       if (c.bonds && c.bonds.length) {
-        fullSystemPrompt += `  Bonds: ${c.bonds.map(b => `${b.target} (${b.description})`).join(', ')}\n`;
+        charSheetsText += `  Bonds: ${c.bonds.map(b => `${b.target} (${b.description})`).join(', ')}\n`;
       }
       if (c.complications && c.complications.length) {
-        fullSystemPrompt += `  Complications: ${c.complications.join(', ')}\n`;
+        charSheetsText += `  Complications: ${c.complications.join(', ')}\n`;
       }
       if (c.assets && c.assets.length) {
-        fullSystemPrompt += `  Assets: ${c.assets.join(', ')}\n`;
+        charSheetsText += `  Assets: ${c.assets.join(', ')}\n`;
       }
       if (c.followers && c.followers.length) {
-        fullSystemPrompt += `  Followers: ${c.followers.map(f => `${f.name} (Cap ${f.cap})`).join(', ')}\n`;
+        charSheetsText += `  Followers: ${c.followers.map(f => `${f.name} (Cap ${f.cap})`).join(', ')}\n`;
       }
     }
   }
 
-  fullSystemPrompt += `\n\nStory Beats available: ${orchestrator.campaign.state.sb || 0}.`;
+  const sbText = `\n\nStory Beats available: ${orchestrator.campaign.state.sb || 0}.`;
+
+  // Assemble least-volatile-first (see comment above): summary/archive
+  // -> doc excerpt -> facts -> scene context -> memory search ->
+  // character sheets -> per-turn SB counter.
+  fullSystemPrompt += summaryText + archiveText + docText + factsBlock + sceneContextText + memoryText + charSheetsText + timersText + sbText;
 
   // ─── NEW: Strip self-authored fake roll-result cards ──────────────
   // Diagnosis: the model has been fed its own past roll results as full
@@ -1723,6 +1788,28 @@ async function handleMessage(msg) {
       if (conv.length > MAX_HISTORY * 2) conv.splice(0, conv.length - MAX_HISTORY);
       orchestrator.campaign.state.conversation = conv;
       await orchestrator.campaign.save();
+    } else {
+      // FIX ("perpetual composing message"): if the model's reply was
+      // truncated hard enough (finish_reason "length") that it consisted
+      // ENTIRELY of an unresolved/malformed tag, tag processing can
+      // legitimately collapse `clean` down to '' with no error thrown --
+      // driver.generateResponse() resolved fine, processSpecialTags()
+      // resolved fine, there's just nothing left to say. Previously that
+      // silently skipped this whole block, so the "(The GM is composing a
+      // reply...)" placeholder sent above (see typingTimer) was never
+      // followed by anything and looked permanently stuck. Always give
+      // the table SOMETHING to close the loop.
+      // DIAGNOSTIC: log the raw text as it stood right before tag
+      // processing ran (i.e. after stripHallucinatedRollCards/
+      // forceRollIfMissing but before processSpecialTags) so it's
+      // possible to tell, after the fact, whether the reply was ALREADY
+      // empty/whitespace at that point (raw LLM output was blank, or was
+      // entirely a hallucinated roll card that got stripped) versus
+      // non-empty but fully consumed by tag resolution (a reply that was
+      // 100% mechanical tags with no prose around them). Don't assume
+      // "ran long" -- that's only one of several ways this can happen.
+      console.warn('⚠️ AI response reduced to empty string after tag processing. Raw pre-tag text was:', JSON.stringify(rawBeforeTags));
+      sendChat("*(The GM's last reply didn't come through cleanly. Try again, or rephrase.)*");
     }
   } catch (err) {
     clearTimeout(typingTimer);
@@ -1738,7 +1825,7 @@ async function summariseStory() {
   if (!driver || !orchestrator) return;
   const conv = orchestrator.campaign.state.conversation || [];
   const recent = conv.slice(-SUMMARISE_EVERY).map(m => `${m.role}: ${m.content}`).join('\n');
-  const existing = orchestrator.campaign.getSummary() ? `Previous summary:\n${orchestrator.campaign.getSummary()}\n\n` : '';
+  const existing = orchestrator.campaign.getNarrativeSummary() ? `Previous summary:\n${orchestrator.campaign.getNarrativeSummary()}\n\n` : '';
   const prompt = existing + recent + '\n\nWrite a concise campaign summary (max 200 words) including key characters, locations, and unresolved plot threads.';
   try {
     const fresh = await driver.generateResponse({
@@ -1746,7 +1833,7 @@ async function summariseStory() {
       messages: [{ role: 'user', content: prompt }]
     });
     if (fresh && fresh.trim()) {
-      orchestrator.campaign.setSummary(fresh.trim());
+      orchestrator.campaign.setNarrativeSummary(fresh.trim());
       // Indexed into Elasticsearch too, if configured (see
       // modules/knowledge-index.js) -- each summary becomes its own
       // searchable snapshot rather than overwriting the last one, so
@@ -1789,6 +1876,36 @@ function scheduleStartupMessage() {
 }
 
 // -------------------------------------------------------------------
+// 11a2. Token usage + estimated cost, for the status dashboard
+// -------------------------------------------------------------------
+// NEW: driver.getUsage() only ever returned raw token/call counts --
+// turning that into a dollar figure requires knowing this account's
+// actual $/1M-token rate, which varies by provider AND by whether a
+// call hit cache (DeepSeek discounts cache-hit prompt tokens heavily,
+// but getUsage() has no way to know the cache-hit/miss split -- the
+// non-streaming response's `usage` object would need to surface
+// prompt_cache_hit_tokens/prompt_cache_miss_tokens for that, which
+// isn't threaded through recordUsage() today). So this is deliberately
+// opt-in and approximate: set *_PRICE_PER_1M env vars to your actual
+// rate card and a rough estimate appears; leave them unset and only
+// the raw counts show, same as before. Never invents a number the
+// operator didn't ask for.
+function buildTokenUsageForDashboard() {
+  if (!driver || typeof driver.getUsage !== 'function') return null;
+  const usage = driver.getUsage();
+
+  const promptPrice = parseFloat(process.env.DEEPSEEK_PRICE_PER_1M_PROMPT || '');
+  const completionPrice = parseFloat(process.env.DEEPSEEK_PRICE_PER_1M_COMPLETION || '');
+  if (!isNaN(promptPrice) && !isNaN(completionPrice)) {
+    const estimatedCostUSD =
+      (usage.promptTokens || 0) / 1_000_000 * promptPrice +
+      (usage.completionTokens || 0) / 1_000_000 * completionPrice;
+    return { ...usage, estimatedCostUSD, priceConfigured: true };
+  }
+  return { ...usage, priceConfigured: false };
+}
+
+// -------------------------------------------------------------------
 // 11b. Status dashboard snapshot
 // -------------------------------------------------------------------
 // Pure read of live module-scope state -- no side effects -- so
@@ -1818,13 +1935,17 @@ function buildStatusSnapshot() {
   const facts = campaignState?.facts || {};
   // Last 12 conversation turns (see handleMessage()'s `conv.push(...)`
   // and generateAndSendResponse()'s assistant-side push) — "what the bot
-  // currently remembers" in the most literal, verifiable sense: this
-  // (plus any earlier summary — see campaign.getSummary()) is the exact
-  // context window the model itself sees.
+  // currently remembers" in the most literal, verifiable sense: this is
+  // the exact context window the model itself sees.
   const recentMemory = (campaignState?.conversation || []).slice(-12).map(m => ({
     role: m.role,
     content: typeof m.content === 'string' ? m.content.slice(0, 400) : ''
   }));
+  // NOTE: intentionally getSummary() (the computed Mandate/Crisis/
+  // Factions/Trusts/Timers snapshot), NOT getNarrativeSummary() (the
+  // LLM-generated story recap fed into the model's own prompt) -- this
+  // is what the dashboard's "Recent AI Memory" panel has always shown
+  // here, a quick campaign-state readout rather than narrative prose.
   const memorySummary = orchestrator?.campaign?.getSummary?.() || null;
 
   // Obligation totals per Patron. Characters didn't carry a `.patron`
@@ -1852,7 +1973,7 @@ function buildStatusSnapshot() {
     botName: BOT_NAME,
     driverName: driver ? (driver.constructor?.meta?.name || driver.constructor?.name) : null,
     driverModel: driver ? driver.model : null,
-    tokenUsage: driver && typeof driver.getUsage === 'function' ? driver.getUsage() : null,
+    tokenUsage: buildTokenUsageForDashboard(),
     adventure: adv ? {
       title: adv.title,
       status: adv.status,

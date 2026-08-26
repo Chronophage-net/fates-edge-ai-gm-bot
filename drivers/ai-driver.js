@@ -29,7 +29,7 @@ class AIDriver {
         // provider's API returns; drivers fall back to estimateTokens()
         // when the API doesn't report it (e.g. Ollama's non-streaming
         // response does, but the streaming path doesn't always).
-        this.usage = { promptTokens: 0, completionTokens: 0, totalTokens: 0, calls: 0, estimated: false };
+        this.usage = { promptTokens: 0, completionTokens: 0, totalTokens: 0, calls: 0, estimated: false, truncatedCalls: 0 };
     }
 
     /**
@@ -44,12 +44,18 @@ class AIDriver {
      * real API-reported count, so the dashboard can label the total
      * "~approx" instead of implying precision it doesn't have.
      */
-    recordUsage({ promptTokens = 0, completionTokens = 0, estimated = false } = {}) {
+    recordUsage({ promptTokens = 0, completionTokens = 0, estimated = false, truncated = false } = {}) {
         this.usage.promptTokens += promptTokens;
         this.usage.completionTokens += completionTokens;
         this.usage.totalTokens += promptTokens + completionTokens;
         this.usage.calls += 1;
         if (estimated) this.usage.estimated = true;
+        // NEW: surfaces on the status dashboard as "Truncated replies" --
+        // a call whose provider-reported finish_reason wasn't "stop"
+        // (hit the max_tokens ceiling, or was filtered) hit a real ceiling
+        // regardless of how short the average completion length looks in
+        // the aggregate totals above.
+        if (truncated) this.usage.truncatedCalls += 1;
     }
 
     /** Current session usage totals, for the status dashboard. */

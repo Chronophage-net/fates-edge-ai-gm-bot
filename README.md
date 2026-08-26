@@ -94,7 +94,7 @@ shows the same live status view pictured above the moment the bot connects.
   stalls past that pad without concluding, automatically generates a wrap-up twist
   (`generateForcedClimaxTwist()`) and marks it on the server via `climax-forced` — so a session
   can't run indefinitely in the same climax scene. See [DESIGN.md](DESIGN.md).
-- **Timer management** – creates and ticks scene timers on demand.
+- **Timer management** – creates and ticks ad-hoc GM/AI-improvised timers on demand (`[TIMER ...]`/`[TICK TIMER ...]`/`!gm timer add|tick|remove`). These are entirely server-authoritative (tracked by the socket server, not the bot itself) so their state survives a bot restart and stays visible to every connected client — see the Modules table below.
 - **Player management** – kick, ban, and unban players directly from the bot's terminal.
 - **Conversation memory** – maintains a sliding window of recent messages for coherent stories.
 - **MUD‑style terminal** – all events are logged in color, and you can manually override the AI by typing messages.
@@ -439,7 +439,7 @@ object rather than reaching for globals, and each has a matching test file under
 | **`rules-index.js`** | Splits `data/rules.txt` into named sections and builds a compact section-title index for the system prompt, plus `findSection()` keyword lookup (title match, falling back to body-text match) for `[LOOKUP RULE "..."]`. Lets the bot avoid re-sending the full rulebook every turn — see "Context Management" above. |
 | **`travel.js`** | Core Travel Procedure and Worked Itineraries: `generateJourney()` (suit-locked card draws, timer-segment table, policed-region club-source toggling), `generateItineraryJourney()`, `generateTravelersSpread()`, and `handleTravelCommand()` dispatch for the bot's travel subcommands. |
 | **`deck.js`** | Deck of Consequences: card draws, Crown Spreads, `transformRegionData()` (converts a region's authored content into the flat suit/rank meaning table), ace effects (region-specific, generic fallback, or partial-key match). |
-| **`timers.js`** | Scene- and campaign-level timer create/tick/fill, with boundary clamping so a timer's `current` segment count never exceeds its `max`. |
+| *(ad-hoc timers)* | No longer a bot-local module — `modules/timers.js` was deleted. GM/AI-improvised timers (`[TIMER "Name" N "desc"]`, `[TICK TIMER "Name" N]`, `!gm timer add/tick/remove`) are now entirely server-authoritative: the bot talks to them purely over REST (`GET/POST /api/rooms/:code/timers`, `POST /api/rooms/:code/timers/tick`, `DELETE /api/rooms/:code/timers/:ref`), implemented by `fates-edge-socket-server`'s own `server/timers.js` (a separate module from that server's adventure-authored scene/campaign timers in `server/adventure.js`). See `modules/adventure-context.js` (`getAdhocTimers()`/`getAdhocTimersForPrompt()`) and `modules/commands/process-tags.js`/`gm-commands.js` for the client-side handlers. |
 | **`adventure-director.js`** | Adventure selection and lifecycle — the module selection menu, Crown Spread-driven adventure picks, and handing off into `adventure-context.js`'s scene tracking once one is active. |
 | **`adventure-context.js`** | Bridges the bot to the server's Adventure Engine (`server/adventure.js`): `isAdventureActive()` status-machine checks (`planned`/`active`/`completed` × `moduleId` presence) and scene context building for the current turn, including climax-pacing fields (`climaxPadScenes`, `climaxScenesSinceTrigger`, `climaxForced`) and the adventure's `persistence` schema. Must stay in sync with the server-side contract — see that file's own header comment. Also owns the optional Reactive Soundscape mood → trackId profile (see "Reactive Soundscape" below) — no-ops everywhere when no profile is configured. |
 | **`legacy-tracker.js`** | The Legacy Tracker — reads an adventure's declarative `persistence` schema, resolves/validates carryover key/value state across adventures, and exposes `!gm adventure legacy [schema] [set <key> <value>|clear]`. See [DESIGN.md](DESIGN.md). |
@@ -481,7 +481,7 @@ For automated admin via the REST API, set the `API_KEY` environment variable to 
 3. **Processes special commands** found in the AI's output:
    - `[ROLL "Name" Attribute+Skill DV N Position]` → performs a dice roll and posts the result.
    - `[DRAW count region]` → draws cards from the Deck of Consequences.
-   - `[TIMER name segments]` / `[SET POSITION ...]` / `[SET DV ...]` / `[APPLY HARM/FATIGUE/BOON ...]` → mechanical state changes.
+   - `[TIMER "Name" segments "description"]` / `[TICK TIMER "Name" N]` / `[SET POSITION ...]` / `[SET DV ...]` / `[APPLY HARM/FATIGUE/BOON ...]` → mechanical state changes. Timers created/ticked this way are entirely server-authoritative (see the Modules table below) — the bot has no local timer state of its own.
    - `[LOOKUP RULE "Section Title or keyword"]` → looks up and inserts the full text of one rules.txt
      section. The system prompt only includes a compact section-title index by default (see
      "Context Management" below); the model asks for a section by name when it actually needs the
@@ -557,6 +557,7 @@ everything in `tests/`. Layout mirrors the source tree:
 
 ```
 tests/
+├── bot-manager.test.js
 ├── drivers/
 │   ├── ai-driver.test.js       — trimToFit(), estimateTokens()
 │   ├── deepseek-driver.test.js — fetch mocked: happy path, retry/backoff, SSE streaming, error formatting
@@ -571,9 +572,20 @@ tests/
     ├── dice.test.js
     ├── characters.test.js
     ├── world-manager.test.js
-    ├── timers.test.js
-    └── adventure-context.test.js
+    ├── adventure-context.test.js
+    ├── objective-types.test.js
+    ├── knowledge-index.test.js
+    ├── ws-correlator.test.js
+    ├── assistant-suggestions.test.js
+    ├── assistant-suggestions-broadcast.test.js
+    ├── assistant-synthesis.test.js
+    ├── assistant-gm-tags.test.js
+    └── gm-commands-assistant.test.js
 ```
+
+Note: `timers.test.js` no longer exists — `modules/timers.js` was deleted (ad-hoc timer logic
+moved server-side, see the Modules table above), so there's no bot-local timer module left to
+unit-test.
 
 A few things worth knowing before adding to this suite:
 
@@ -652,6 +664,7 @@ A few things worth knowing before adding to this suite:
 | `RVC_CACHE_SIZE` | Voice Cloning (RVC) | `50` | Number of exact-text (post-conversion) results kept in an in-memory LRU cache, so repeated lines skip both the TTS and RVC calls entirely. `0` disables caching. |
 | `SOUNDSCAPE_PROFILE` | Reactive Soundscape | unset | Inline JSON mood → trackId profile, e.g. `{"tense":"sound_abc"}`. Takes precedence over `SOUNDSCAPE_PROFILE_PATH` if both are set. See "Reactive Soundscape" below. |
 | `SOUNDSCAPE_PROFILE_PATH` | Reactive Soundscape | `data/soundscape-profile.json` | Path to the mood → trackId profile file, if you'd rather manage it as a file than an env var. Feature is off (no-op) if neither this file nor `SOUNDSCAPE_PROFILE` resolves to anything. |
+| `SOUNDSCAPE_AUTO_SEARCH` | Reactive Soundscape | `false` | When `true`, moods with no entry in the profile above fall back to a live Freesound search via the socket server's `GET /api/soundboard/search` (needs `FREESOUND_API_KEY` set **there**). See "Reactive Soundscape" below. |
 
 ---
 
@@ -969,6 +982,22 @@ other env/file-driven config in this repo.
 With no `data/soundscape-profile.json` present (and no `SOUNDSCAPE_PROFILE` env var set — a
 compact inline-JSON alternative to the file, same shape), the feature is entirely off:
 `isSoundscapeEnabled()` returns `false` and neither trigger above ever sends anything.
+
+**Auto-search (optional, no profile needed):** set `SOUNDSCAPE_AUTO_SEARCH=true` and the bot will
+search [Freesound](https://freesound.org) itself — via the socket server's
+`GET /api/soundboard/search` proxy, `fates-edge-apps`'s `server/api.js` — for any mood that *isn't*
+in your manually-curated profile above, instead of just skipping it. This needs
+`FREESOUND_API_KEY` configured on **the socket server** (not this bot) — see that server's README;
+if it isn't set, the lookup 503s, `modules/adventure-context.js` logs one warning (not one per
+mood) and falls back to the same silent no-op as having auto-search off. Manual profile entries
+always win when both are set — auto-search only fires for a mood with no matching entry. Only
+CC0/CC BY/CC BY-SA/Sampling+ results are ever picked (never NC or an unrecognized license — see
+`modules/sound-license.js`), so nothing requiring non-commercial-only use goes out automatically.
+The event sent in this case carries a `url` (the sound's Freesound preview) instead of `trackId` —
+the web client auto-creates its own track from that URL in each room's soundboard the moment the
+cue arrives (with attribution attached, when the license needs it), rather than looking one up by
+an id it doesn't have. See `js/features/vtt/vtt-connected.js`'s `soundboardAmbienceHandler` in the
+web client for that side.
 
 **Discord:** if the Discord bot is connected, ambience changes post a "🎵 Now Playing" embed to
 the VTT log channel (`VTT_LOG_CHANNEL`) — text-only, since the actual audio plays client-side in

@@ -1,0 +1,40 @@
+name: Bug Report
+description: Something in the rules engine, AI GM, Tag DSL, or transport layer isn't behaving as expected.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for filing a bug! If you're not sure this is a bug vs. intended behavior, ask in [Discussions](https://github.com/Chronophage-net/fate-edge-dev/discussions) first — the architecture overview on the [dev portal](https://dev.fates-edge.com/architecture) may also clarify.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you expect, and what actually occurred?
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      description: Minimal steps, a specific adventure/session state, or a code snippet.
+    validations:
+      required: true
+  - type: dropdown
+    id: layer
+    attributes:
+      label: Which layer does this affect?
+      options:
+        - "Layer 0 — Rules Engine"
+        - "Layer 1 — AI GM / Tag DSL"
+        - "Layer 2 — Transport"
+        - "Not sure"
+    validations:
+      required: false
+  - type: textarea
+    id: env
+    attributes:
+      label: Environment
+      description: LLM driver in use (if relevant), OS, Node version, client surface (web/terminal/Discord/etc).
+    validations:
+      required: false
