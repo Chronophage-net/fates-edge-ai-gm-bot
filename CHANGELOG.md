@@ -4,6 +4,13 @@ All notable changes to this project will be documented here.
 Format loosely follows [Keep a Changelog](https://keepachangelog.com/), versions follow [Semantic Versioning](https://semver.org/).
 
 
+## [4.15.1] - 2026-08-28
+
+### Other
+- Fix SUCCESSION.md link: point at public dev-portal page, not private repo
+- Point to fates-edge-docs SUCCESSION.md from README
+- Sync data from fates-edge-docs: new adventures, region/patron updates
+
 ## [4.15.0] - 2026-08-26
 
 Reactive Soundscape auto-search (Freesound) + !gm soundsearch
