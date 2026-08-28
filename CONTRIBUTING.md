@@ -27,6 +27,12 @@ a running Fate's Edge Socket Server if you want to test against a real game.
 - Keep changes focused; unrelated formatting-only diffs make review harder.
 - If you're adding a new AI driver, see "Driver System" in README.md — it's
   a small, well-defined interface.
+- **No image-generation drivers or features.** The Bot narrates pre-written
+  scenes and calls for rolls; it does not and will not generate illustrative
+  art of those scenes, however easy that would be to wire up as a driver.
+  This project has a hard [No AI Art Policy](https://dev.fates-edge.com/no-ai-art)
+  — PRs adding AI image generation in any form will be declined regardless
+  of implementation quality.
 
 ## A note on licensing (why this matters more than usual)
 
