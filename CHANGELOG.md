@@ -4,6 +4,11 @@ All notable changes to this project will be documented here.
 Format loosely follows [Keep a Changelog](https://keepachangelog.com/), versions follow [Semantic Versioning](https://semver.org/).
 
 
+## [4.15.2] - 2026-08-28
+
+### Other
+- Updating contributing with AI Art policy
+
 ## [4.15.1] - 2026-08-28
 
 ### Other
