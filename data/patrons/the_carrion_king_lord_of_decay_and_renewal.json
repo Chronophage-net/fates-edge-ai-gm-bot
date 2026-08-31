@@ -266,38 +266,7 @@
         "prereq": "Tier III, Spirit 4+"
       }
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "Rot-Sense: +1 die to notice decay, poison, or hidden death.",
-        "cost": "Compost-Stained: You smell faintly of turned earth and mushrooms. –1 die to social rolls with the fastidious or those who fear death."
-      },
-      {
-        "tier": 2,
-        "benefit": "The Root's Patience: Once/scene, treat a failed Medicine or Survival roll as a success, but mark 1 SB (Clubs).",
-        "cost": "Grave-Touched: –1 die to resist despair or fear in places of life and vitality; the quiet of the grave calls to you."
-      },
-      {
-        "tier": 3,
-        "benefit": "Fungal Resilience: +2 dice to resist poison, disease, and environmental hazards related to decay.",
-        "cost": "Earth-Stained: You cannot grow plants or make things grow; your touch causes small things to wither (flowers wilt, food spoils slightly faster)."
-      },
-      {
-        "tier": 4,
-        "benefit": "The Harvest's Gift: Once/session, automatically succeed on a Medicine roll to stabilise a dying creature.",
-        "cost": "The Hunger of the Root: You must be near death or decay each day, or suffer 1 Fatigue."
-      },
-      {
-        "tier": 5,
-        "benefit": "Carrion's Boon: Once/session, consume a corpse to heal 1 Harm or clear 1 Fatigue.",
-        "cost": "Rot-Touched: –1 die to social rolls with those who fear death or decay; you are unsettling to the healthy."
-      },
-      {
-        "tier": "6+",
-        "benefit": "Avatar of the Cycle: Once/session, become the living embodiment of decay and renewal for one scene. You ignore all poison and disease, and any creature you touch must test Endurance (DV 4) or suffer 1 Fatigue.",
-        "cost": "The Root's Claim: Mark +3 Obligation. You can no longer enter a place that has not known death without suffering 1 Fatigue. Your eyes are the colour of turned soil, and mushrooms grow in your footsteps."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -371,5 +340,7 @@
       "text": "The body that does not rot is a debt unpaid. The soil that does not feed is a wound unhealed. The Carrion King is patient, but even patience has its limits."
     }
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "order": "chthonic",
+  "register": "fear"
 }

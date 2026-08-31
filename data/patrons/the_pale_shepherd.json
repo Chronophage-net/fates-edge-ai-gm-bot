@@ -196,38 +196,7 @@
         "prereq": "Tier III, Spirit 4+"
       }
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "Boundary Sense: +1 die to Notice thresholds, limens, and turning-moments.",
-        "cost": "Melancholic Aura: –1 die to bright company and celebrations; your presence gentles joy."
-      },
-      {
-        "tier": 2,
-        "benefit": "Passage Insight: Once/scene, guide another through change (+1 die to their action).",
-        "cost": "Compulsive Counsel: Urge to advise even when unwelcome."
-      },
-      {
-        "tier": 3,
-        "benefit": "Shadow Comfort: +2 dice to soothe the distressed or those nearing an end.",
-        "cost": "Near to Death: In lively places, suffer Fatigue 1 from the sting of contrast."
-      },
-      {
-        "tier": 4,
-        "benefit": "Memory Keeper: Once/session, recall a marked moment of your past with perfect clarity.",
-        "cost": "Burdened Sight: –1 die on hopeful framings; farewells tint your view."
-      },
-      {
-        "tier": 5,
-        "benefit": "Liminal Mastery: Once/session, find a path through any maze, snare, or barred way.",
-        "cost": "Unmoored: –1 die to acts that demand firm anchoring in the present."
-      },
-      {
-        "tier": "6+",
-        "benefit": "Shepherd's Crown: Once/session, be the sure guide for any great passage.",
-        "cost": "Soul's Weight: Mark +3 Obligation; risk binding to the between, never wholly in one state."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -276,5 +245,7 @@
     "description": "A small village has been plagued by a strange malady: its inhabitants are forgetting their own names, their loved ones' faces, and the way home. The local priest believes it is a curse, but the Pale Shepherd's followers know it is a threshold—a door that has been left open too long. The party must find the forgotten threshold, close it, and help the villagers remember who they are before the forgetting consumes them all.",
     "quote": "The door is never locked. We only hold it open. But some doors are better left closed."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "order": "chthonic",
+  "register": "fear"
 }

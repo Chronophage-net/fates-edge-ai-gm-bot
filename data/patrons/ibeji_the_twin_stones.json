@@ -221,38 +221,7 @@
         "prereq": "Tier III, Body 4+"
       }
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "Steady Hand: +1 die to Craft rolls when working with a partner.",
-        "cost": "Partner-Dependent: –1 die to any Craft roll made alone."
-      },
-      {
-        "tier": 2,
-        "benefit": "Twin's Instinct: Once per scene, you may know the emotional state of your bonded partner without speaking.",
-        "cost": "Shared Pain: When your partner takes Harm, you must test Resolve (DV 3) or mark 1 Fatigue."
-      },
-      {
-        "tier": 3,
-        "benefit": "Two as One: +2 dice to assists, and the first assist each scene does not cost a Boon.",
-        "cost": "Jealous Joint: –1 die to social rolls with anyone your partner distrusts."
-      },
-      {
-        "tier": 4,
-        "benefit": "Unbreakable Seal: Once per session, declare a bond between two objects or people; it cannot be broken by non-magical means for one week.",
-        "cost": "Compulsive Union: You must try to reconcile any two arguing parties you witness; ignoring a quarrel costs 1 Fatigue."
-      },
-      {
-        "tier": 5,
-        "benefit": "Dance of Stone: Once per session, you and a partner may move a massive object as if it weighed nothing — but you both mark 1 Fatigue.",
-        "cost": "Cracked Keystone: Each use causes a visible crack to appear on your skin. After nine cracks, you cannot be separated from your partner by any means, but you also cannot leave their side."
-      },
-      {
-        "tier": "6+",
-        "benefit": "Avatar of the Twin Stones: Once per session, you and a bonded partner may act on the same turn, sharing a single pool of actions.",
-        "cost": "Twin's Doom: Mark +3 Obligation. If one of you dies, the other must test Resolve (DV 6) or fall catatonic for 1d4 days. Your reflections now always appear in pairs, even when you are alone."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -300,5 +269,7 @@
     "description": "A walking city's central roller has cracked mid-stride, stranding thousands and threatening to collapse the district it carries. The Mason-Kin who first built the roller has died, leaving no partner to complete the repair rite — Ibeji's craft requires two hands from two different traditions working as one. The party must find (or become) an unlikely pair capable of finishing what was left half-done, before the city's slow grinding halt turns into a catastrophic fall.",
     "quote": "The roller does not care who fixes it, mason or stranger, kin or foreigner. It asks only that two hands work as one. Find your twin. Do not let go."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "order": "beyond_the_triune",
+  "register": "unclassifiable"
 }

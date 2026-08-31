@@ -215,38 +215,7 @@
         "prereq": "Tier III"
       }
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "Stone Sense: +1 die to detect ancient sites, hidden history, or geological features.",
-        "cost": "Temporal Drift: Speak in archaic patterns; –1 die to modern social interactions."
-      },
-      {
-        "tier": 2,
-        "benefit": "Memory Echo: Once/session, perfectly recall one historical fact as if witnessed.",
-        "cost": "Heavy Presence: 1 Fatigue in places with no history or recent construction."
-      },
-      {
-        "tier": 3,
-        "benefit": "Earth Whisper: +2 dice to commune with stone, read echoes, or interpret ancient sites.",
-        "cost": "Rooted: –1 die to actions requiring rapid movement or aerial maneuvers."
-      },
-      {
-        "tier": 4,
-        "benefit": "Dream Prophet: Once/scene, gain +1 die to actions tied to ancient mysteries.",
-        "cost": "Ancestral Haunting: Visions interrupt sleep; mark 1 SB if rest is disturbed."
-      },
-      {
-        "tier": 5,
-        "benefit": "Timeless Gaze: Once/session, witness distant past events through stone communion.",
-        "cost": "Geological Pace: –1 die to reactions requiring haste; act with deliberate slowness."
-      },
-      {
-        "tier": "6+",
-        "benefit": "World-Memory: Become a living archive for one scene (+3 dice to historical knowledge).",
-        "cost": "Time's Weight: Mark +2 Obligation; risk permanent Harm from temporal overload."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -295,5 +264,7 @@
     "description": "Deep beneath the Aelerian foothills, a vault has been sealed for centuries. The miners who found it heard whispers in their sleep—a voice counting backward from nine. The local vent-prior believes it is Nidhoggr's attention, and the vault is a door to a memory that was never meant to be unearthed. The party must descend into the vault, uncover its secret, and decide whether to seal it again—or let the world remember what was buried.",
     "quote": "The past is not dead. It is merely sleeping. And some doors, once opened, do not close."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "order": "chthonic",
+  "register": "fear"
 }

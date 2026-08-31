@@ -9,7 +9,7 @@
   "manifest_path": "/data/docs/manifest.json",
   "overview": {
     "tagline": "The sea keeps better counsel than any scribe, and the frost remembers every oath sworn upon its winds — but the Temple of Light arrives with ink and fire to rewrite what the ice has carved.",
-    "genre": "Norse coastal saga, oath-driven honor, horror of the unwitnessed death, the tyranny of seasons, the weight of wyrd.",
+    "genre": "Norse coastal saga. Oath-driven honor, the tyranny of the season, and one specific terror: the deed nobody saw.",
     "mood": "Skerries & Storm-Oaths",
     "starting_location": "A longship house lined with storm-charms and whale-bone runes, salt wind clawing at the doors. A Net-Wife binds a storm-token into a PC's palm. 'The Whale-Road sings,' she says. 'But the Mistlands whistle back. Bring us three keel-lengths of ironwood from the Valewood edge, or the tide will take our boats in the spring. The frost remembers the shelter you took last winter. Pay, or the ice will hold it against you.'",
     "lore": {
@@ -28,8 +28,8 @@
     "current_hook": "The sea keeps better counsel than any scribe, and the frost remembers every oath sworn upon its winds — but the Temple of Light arrives with ink and fire to rewrite what the ice has carved.",
     "core_conflict": "Players are caught between the **Jarls' raiding economy**, the **Sea-Queen's coastal law**, and the **Temple of Light's crusade** of re-education and assimilation — each demanding oaths that contradict the others. The Linn fear the Mistlands and the Direwood across the Aberderrin sea, but they also fear the Valewood to their south. The Ninth is the unwitnessed death; the Hollow is the silence of the forgotten.",
     "unique_feature": "**Frost-Bound Memory:** Oaths are carved in ice that never fully melts; breaking a storm-oath inflicts mechanical penalties (Fatigue/Harm) and gives the GM free Story Beats representing the sea's attention.",
-    "ninth_taboo": "In any longhouse, the ninth horn blown at a feast summons the Hollow. The wise stop at eight. Those who blow the ninth see a pale figure (Adar) standing at the high table — waiting to collect a weight. Bell-towers ring eight notes; the ninth is discovered, and discovery is fatal.",
-    "price": "Every gift carries a Frost Mark (weight timer); every oath sworn is carved in ice that never fully melts. Power requires gambling memory (Adar's ravens), accepting storm-marks (Rorg's attention), or submitting to Temple re-education (losing shrine-devotion). The Linn want to be remembered—they fear being forgotten more than they fear death. This is their psychic wound: without a saga, a life has no weight.",
+    "ninth_taboo": "The ninth horn frightens the Linn exactly as much as it frightens anybody else. They are not braver than the Mistlanders or the Aelaerem. They have simply gone the other way about it.\n\nEverywhere else the wise stop at eight. In a Linn longhouse a man calls for the ninth and blows it, and he does it fast, before his nerve can get a word in. The custom exists because nerve fails: the horn is kept by someone other than the man who will blow it, intent is announced out loud in front of the hall so it cannot be quietly reconsidered, and the village turns out so that walking away costs more than going on. None of that is there for ceremony. It is there because men change their minds, and the Linn have built a machine for not letting them.\n\nMen are sick beforehand. This is unremarkable and no one comments. What is remarked on, for the rest of a life, is the man who called for the horn and then did not blow it.\n\nSomething comes and stands at the high table when it sounds, and the Linn call it Adar, and it takes its weight. Ask a man who has done it and he will change the subject with no skill at all. The ones who talk about the ninth in a loud voice are, without exception, the ones who have not.",
+    "price": "**Warmth, years, and safety, spent gladly.** A Linn does not gamble these for power. They spend them for a witness, which is the only currency the Linn treat as real.",
     "faction_triad": [
       {
         "faction": "High Jarls",
@@ -830,38 +830,93 @@
   "boss_archetypes": [
     {
       "name": "The Draugr Jarl",
-      "tags": ["Undead", "Oath"],
+      "tags": [
+        "Undead",
+        "Oath"
+      ],
       "description": "A dead jarl whose oath was never fulfilled. He rises when the ninth bell tolls, demanding a blood-price paid in stories.",
-      "phases": ["Frost Awakens", "The Reckoning", "Bargain or Blood"],
-      "cracks": ["Fulfill the oath he swore in life", "Convince the Thing-Speaker to record a new verdict", "Offer a memory heavy enough to satisfy the frost"]
+      "phases": [
+        "Frost Awakens",
+        "The Reckoning",
+        "Bargain or Blood"
+      ],
+      "cracks": [
+        "Fulfill the oath he swore in life",
+        "Convince the Thing-Speaker to record a new verdict",
+        "Offer a memory heavy enough to satisfy the frost"
+      ]
     },
     {
       "name": "The Temple Bishop",
-      "tags": ["Authority", "Faith"],
+      "tags": [
+        "Authority",
+        "Faith"
+      ],
       "description": "A southern prelate determined to convert the Linn, by grain, by law, or by fire.",
-      "phases": ["Grain Fleet Arrives", "Synod Court Opens", "Iconoclasm"],
-      "cracks": ["Expose a corruption in his synod court", "Persuade a converted jarl to switch sides", "Restore a shrine he ordered burned"]
+      "phases": [
+        "Grain Fleet Arrives",
+        "Synod Court Opens",
+        "Iconoclasm"
+      ],
+      "cracks": [
+        "Expose a corruption in his synod court",
+        "Persuade a converted jarl to switch sides",
+        "Restore a shrine he ordered burned"
+      ]
     },
     {
       "name": "The Mist-Walker",
-      "tags": ["Otherworld", "Fear"],
+      "tags": [
+        "Otherworld",
+        "Fear"
+      ],
       "description": "A Linn who entered the Mistlands without an offering and became part of the fog.",
-      "phases": ["Whisper", "Fogfall", "The Ninth Breath"],
-      "cracks": ["Tell the Mist-Walker a story it has never heard", "Offer a memory of sunlight", "Speak its true name"]
+      "phases": [
+        "Whisper",
+        "Fogfall",
+        "The Ninth Breath"
+      ],
+      "cracks": [
+        "Tell the Mist-Walker a story it has never heard",
+        "Offer a memory of sunlight",
+        "Speak its true name"
+      ]
     },
     {
       "name": "The Valewood Queen",
-      "tags": ["Fey", "Memory"],
+      "tags": [
+        "Fey",
+        "Memory"
+      ],
       "description": "A queen of a phasing city in the Valewood, whose crown was stolen and whose attention is jealous.",
-      "phases": ["Phasing City Appears", "The Hunt", "The Relic Returned"],
-      "cracks": ["Return the stolen relic", "Speak a true regret", "Allow a willing sacrifice to take the queen's place"]
+      "phases": [
+        "Phasing City Appears",
+        "The Hunt",
+        "The Relic Returned"
+      ],
+      "cracks": [
+        "Return the stolen relic",
+        "Speak a true regret",
+        "Allow a willing sacrifice to take the queen's place"
+      ]
     },
     {
       "name": "The Sea-Queen's Rival",
-      "tags": ["Politics", "Leverage"],
+      "tags": [
+        "Politics",
+        "Leverage"
+      ],
       "description": "A jarl who has gathered enough ships and oaths to challenge the Sea-Queen's law.",
-      "phases": ["Muster", "Challenge", "Thing-Holm Verdict"],
-      "cracks": ["Broker a truce between the two", "Sway the Thing-Speaker to the queen's side", "Expose the rival's broken oath"]
+      "phases": [
+        "Muster",
+        "Challenge",
+        "Thing-Holm Verdict"
+      ],
+      "cracks": [
+        "Broker a truce between the two",
+        "Sway the Thing-Speaker to the queen's side",
+        "Expose the rival's broken oath"
+      ]
     }
   ],
   "encounter_seeds": [
@@ -932,5 +987,10 @@
     "The Ninth Breath",
     "The Hollow"
   ],
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "being_looked_at": {
+    "name": "Counter-Phobia",
+    "summary": "Do not write the Linn as bold. Write them as a people in the grip of a dread they refuse to be governed by, who have decided that the only tolerable relationship with the thing that watches is to walk straight at it in front of witnesses.\n\nTheir real horror is the unwitnessed death: going into the water in bad weather with nobody on the shore, coming to nothing, and no one afterward able to say it happened. Set against that, being noticed by something at the high table is the lesser of two terrors, and the Linn have organized an entire culture around always choosing the lesser one at speed. The boast comes before the deed and not after — not swagger, but a door locked behind them.\n\nThe sagas give this away if you read them closely. They are not much interested in the fight. They dwell, at length and in detail, on the hour before it: the weather, who was in the hall, what a man's hands were doing. That is the part the Linn find worth recording, because that is the part that was hard.",
+    "at_the_table": "Linn characters gain real benefit from acting in front of witnesses and lose standing for quiet successes, however sensible — a Linn who solves a problem by stealth has not solved it. But play the cost honestly: they are afraid, visibly, before they commit, and a Linn player who never shows the fear is playing a different people. The courage is in the going, not in the absence of dread."
+  }
 }

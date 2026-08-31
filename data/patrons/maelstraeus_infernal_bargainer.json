@@ -230,38 +230,7 @@
         "prereq": "Tier III"
       }
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "Appraiser's Eye: +1 die to judge value in goods, favors, or leverage.",
-        "cost": "Transactional Reflex: Must assign a 'cost' to every interaction; –1 die to selfless acts."
-      },
-      {
-        "tier": 2,
-        "benefit": "Sharp Dealer: Once/scene, reroll a failed bargain.",
-        "cost": "Compulsive Trade: Must haggle or strike a deal when value is present—even if destructive."
-      },
-      {
-        "tier": 3,
-        "benefit": "Merchant's Fortune: +1 die to predict or exploit markets.",
-        "cost": "Greed's Hunger: Suffer 1 Fatigue if you allow profit or advantage to pass untaken."
-      },
-      {
-        "tier": 4,
-        "benefit": "Infernal Credit: Once/session, call in a major favor (merchant prince, syndicate, guild).",
-        "cost": "Debt Anchor: Draw in exploitative offers; refusing marks 1 SB (Diamonds)."
-      },
-      {
-        "tier": 5,
-        "benefit": "Price of Truth: Once/scene, see the hidden worth of any item, pact, or person.",
-        "cost": "Tagged by Price: See every being as a commodity; –1 die to genuine intimacy."
-      },
-      {
-        "tier": "6+",
-        "benefit": "Market Tyrant: Once/session, impose absolute dominance over a domain of trade; all exchanges within Near range bend to your terms (+2 dice to Bargain, –2 dice to resist your deals).",
-        "cost": "Cosmic Recompense: Mark +2 Obligation; the universe exacts repayment in brutal, unexpected form. Your hands are now stained with ink that never washes off—a visible mark of your covenant."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -310,5 +279,7 @@
     "description": "A merchant prince has been found dead in his counting_house, his ledger burned to ash. But the debts he held did not die with him—they have been transferred to his creditors, and now the city's most powerful families are at war over who owes what. The party is hired to untangle the accounts, but the deeper they dig, the more they find that Maelstraeus himself has a stake in the outcome—and he always collects his interest.",
     "quote": "A deal is never even. The scales tilt; the Merchant smiles. All debts come due."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "order": "empyreal",
+  "register": "mystery"
 }

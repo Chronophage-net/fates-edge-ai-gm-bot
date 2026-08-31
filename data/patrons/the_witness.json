@@ -267,38 +267,7 @@
         "prereq": "Tier III"
       }
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "Truth's Sight: +1 die to Insight when detecting deception or hidden motives.",
-        "cost": "Burden of Knowledge: –1 die to social rolls involving lies or deception; others become uncomfortable with your piercing gaze."
-      },
-      {
-        "tier": 2,
-        "benefit": "Memory's Keeper: Once/scene, recall one specific detail from a previous scene with perfect clarity.",
-        "cost": "Compulsive Honesty: Must correct obvious falsehoods witnessed, even when tactically disadvantageous."
-      },
-      {
-        "tier": 3,
-        "benefit": "Revelation's Power: +2 dice to rolls involving exposing secrets, uncovering lies, or forcing confessions.",
-        "cost": "Truth_Blind: Suffer 1 Fatigue when exposed to comforting lies or willful ignorance."
-      },
-      {
-        "tier": 4,
-        "benefit": "Witness's Authority: Once/session, force one target to make a Resolve test (DV 4) or reveal a significant hidden truth.",
-        "cost": "Isolation: –1 die to rolls requiring trust or close relationships; others fear your ability to uncover their secrets."
-      },
-      {
-        "tier": 5,
-        "benefit": "Omniscient Gaze: Once/session, see through all deceptions and lies for one exchange, gaining +3 dice to related actions.",
-        "cost": "Paranoia: –1 die to rolls involving personal peace or rest; the weight of all truths witnessed creates constant mental strain."
-      },
-      {
-        "tier": "6+",
-        "benefit": "Absolute Witness: Once/session, become the living embodiment of truth. For one scene, all deceptions within Near range automatically fail.",
-        "cost": "Truth's Prison: Mark +3 Obligation when using this power; become unable to tolerate any form of deception, making normal social interaction nearly impossible. The Unmasking Beckons: The apocalyptic urge grows—you may be called to expose a truth that will destroy a community, a nation, or yourself."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -347,5 +316,7 @@
     "description": "A powerful noble has been murdered, and the party is hired to investigate. But every clue leads to a dead end—until they discover that the noble was killed to protect a secret that could topple a kingdom. The party must decide: expose the secret and risk war, or bury it and become complicit in the very lies they swore to reveal. The Witness watches, and she will not forget which path they choose.",
     "quote": "I will show you what you would rather forget. But first, you must forget what you think you know."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "order": "seraphic",
+  "register": "conviction"
 }

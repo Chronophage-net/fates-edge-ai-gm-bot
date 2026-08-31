@@ -218,38 +218,7 @@
         "prereq": "Tier III, Spirit 4+"
       }
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "Fine Print Sense: +1 die to Notice or Insight when a bargain, contract, or offer has a hidden cost.",
-        "cost": "Cold Read: –1 die on Empathy rolls; your read of others feels accurate but never warm."
-      },
-      {
-        "tier": 2,
-        "benefit": "Unmoved: Once per scene, ignore the first instance of Fear or Intimidation directed at you.",
-        "cost": "Flattened Affect: Others find you unsettling in quiet moments; –1 die to first impressions with those who don't already trust you."
-      },
-      {
-        "tier": 3,
-        "benefit": "Seam-Sight: +2 dice to identify the weak point in any structure, ward, or plan.",
-        "cost": "Unmaking Habit: You occasionally unmake small things without meaning to — a knot, a promise, a mood. Mark 1 Fatigue when it happens at a bad time."
-      },
-      {
-        "tier": 4,
-        "benefit": "The Precise Bargain: Once per session, offer a bargain that is guaranteed to be honored exactly as worded by both sides, supernaturally enforced.",
-        "cost": "Exacting Memory: You cannot forget the precise wording of any bargain you have made, including ones you'd rather not remember."
-      },
-      {
-        "tier": 5,
-        "benefit": "Fragment's Favor: Once per session, call on a debt owed to you by anyone who has ever taken a bargain from Varash, wherever they are.",
-        "cost": "Thin in the World: –1 die to resist being unmade yourself by hostile magic; you have grown a little too familiar to the seal's logic."
-      },
-      {
-        "tier": "6+",
-        "benefit": "Shard of the Unmaker: Once per session, unmake one significant thing entirely — a wall, a curse, a small structure, a single day's worth of someone's memory — with the target's full knowledge but no ability to resist.",
-        "cost": "Mark +3 Obligation. Something about you no longer casts quite the right shadow, and small animals will not approach you. You are increasingly difficult to remember accurately; even old friends' descriptions of you begin to drift."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -298,5 +267,7 @@
     "description": "A Karak-Aeler stone-priest has gone missing near the Ninth Seal Mine, last seen carrying an old iron chain rumored to be part of the original binding. Rumor in Vajrapur's counting houses says the Kalrantha amulet — a fragment of Varash — has surfaced among relic-thieves chasing profit in the ruins of Rajagriha, and that the seal beneath the Himadri has grown thinner since it left the mountain. The party is hired to recover the amulet before it reaches a buyer who understands exactly what they're purchasing — and must decide what to do when the mountain, given the chance, offers them a bargain of their own.",
     "quote": "The seal is cracking. And the mountain is listening. It has been listening for a very long time, and it has never once been in a hurry."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "order": "beyond_the_triune",
+  "register": "unclassifiable"
 }

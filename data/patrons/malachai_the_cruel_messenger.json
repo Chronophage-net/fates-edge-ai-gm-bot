@@ -15,9 +15,10 @@
     "content-warning"
   ],
   "lore": {
-    "description": "Malachai was once a divine messenger — a herald of painful truths, sent to deliver news that could not be softened. She was not cruel; she was necessary. But necessity wears. In time, she began to soften the truth, offering false hope alongside real curses. For this, the gods bound her in chains of black iron beneath the cursed city of Zahk'Kozahn. Now she waits. Chained but not contained. Imprisoned but not silent. Her voice reaches across the world, offering power to the weak, hope to the hopeless, and sweet oblivion to those who cannot bear to face the dawn. Vampirism, lycanthropy, and other cursed conditions flow from her influence.",
+    "description": "She was a herald, and her office was to arrive with the thing that could not be softened: the death, the verdict, the year the crop would fail. She was not cruel. She was necessary, and she was good at it, and she did it for a very long time.\n\nNecessity wears. She began — kindly, at first, and only sometimes — to put something beside the truth when she delivered it. Never a lie. She has never in her existence told one. Just a second sentence after the true one: *and there may yet be a way*. She watched what that did to people's faces, and she went on doing it, because the faces were better.\n\nThat is the whole of her method and it has not changed since. She tells you the truth about your situation — accurately, in detail, more honestly than anyone in your life has been willing to — and then she adds the softening, and the softening is yours to finish. She will not argue you into anything. She does not need to. You will do the rest of the work yourself and you will do it in her voice and you will believe it was your idea, and every time it fails you will come back, because she was right about everything else.\n\nFor this the gods put her in black iron under Zahk'Kozahn, and she is chained and not contained, and her voice has never stopped.",
     "followers": "Her followers learn that power demands suffering, mastering gifts that devour from within. Among the peoples of Fate's Edge, Malachai is the patron of the desperate and the damned. In Zakov, she is the Salt-Fang, whose silver coin appears in the mouth of drowned sailors. In the Valewood, she is the Thorn-Giver, invoked by hunters who curse a rival's bow. In Linn, she is the Wave-Mother's Shadow, whose gifts turn the tide of battle — at a price. Wherever hope curdles into despair, Malachai whispers.",
-    "quote": "I offer you everything you desire, and everything you fear. The payment comes later."
+    "quote": "I offer you everything you desire, and everything you fear. The payment comes later.",
+    "the_city": "There were people in Zahk'Kozahn before it was cursed. They are the ones who bound her, and they were right to, and they did it well.\n\nHer revenge took no force at all. She gave them what they had asked for — each of them, precisely, the thing they had wanted and named — and she gave it in full and without deceit and without limit, and she has gone on giving it every day since. And beside each gift she set the other thing they had named, in the dark, the one they had been frightened of, and she keeps that supplied too.\n\nThey are still there. They have everything. Nobody who has walked through the lower city has been able to describe them afterward in a way that satisfies anyone, and the accounts do not agree except on one point, which is that they were not restrained and did not leave."
   },
   "domain_focus": [
     "Cursed Gifts: Faustian bargains, power with hidden costs",
@@ -218,38 +219,7 @@
         "prereq": "Tier III, Spirit 4+"
       }
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "Sharpened Senses: +1 die to Notice in dim light.",
-        "cost": "Unsettling Presence: –1 die to social warmth checks."
-      },
-      {
-        "tier": 2,
-        "benefit": "Primal Vigor: +1 die to Athletics and physical actions.",
-        "cost": "Dark Hunger: 1 Fatigue if a day passes without feeding (blood or rare herbs)."
-      },
-      {
-        "tier": 3,
-        "benefit": "Unnatural Resilience: Once per session, resist one Condition.",
-        "cost": "Beastly Tells: Failures cause visible physical changes (slitted eyes, fur patches)."
-      },
-      {
-        "tier": 4,
-        "benefit": "Cursed Vigour: Natural weapons count as magical; +1 Effect.",
-        "cost": "Transformed Body: Permanent physical change (eye color, skin texture, etc.)."
-      },
-      {
-        "tier": 5,
-        "benefit": "Regenerative Curse: Heal 1 Fatigue or Condition per rest.",
-        "cost": "Corruption's Price: Pushing rites adds permanent Corruption (cannot be cleared)."
-      },
-      {
-        "tier": "6+",
-        "benefit": "Monstrous Ascendant: +2 dice to Body-based actions; your unarmed strikes deal +1 Harm and count as magical.",
-        "cost": "Loss of Self: The GM may compel curse-driven behavior (feed, rage, corrupt) once per session. You can resist with Spirit+Resolve (DV 4). On failure, you act according to the curse for one exchange. Your eyes now glow faintly red in darkness — a visible sign of Malachai's claim."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -284,7 +254,7 @@
     }
   ],
   "playstyle_notes": {
-    "description": "Malachai offers power that corrupts from within. Followers gain immediate benefits but accumulate permanent drawbacks. The corruption progression leads toward becoming a supernatural creature with great power but diminishing humanity. Ideal for players who enjoy tragic characters, Faustian bargains, and exploring the price of power. Content note: themes include addiction, loss of self, and the consequences of desperate choices — use Lines & Veils to keep the table comfortable.",
+    "description": "Malachai is the setting's study of addiction and should be run as one. The gift is real, it works, and it is genuinely the best available option at the moment it is taken — that is not a trick, and a GM who plays it as a trick has lost the thread. The harm is that it works.\n\nHer voice is never a temptation scene. It is an accurate account of the character's situation, delivered with more honesty and more attention than anyone else in the fiction has offered them, followed by one soft sentence the player completes on their own. Let the player do the rationalizing; never write it for them. And let her be right, repeatedly, about everything except the one thing.\n\n**Content note:** addiction, loss of self, and the consequences of desperate choices. Use Lines & Veils, and check in — this patron works by making the player complicit in the reasoning, which is precisely why it lands and precisely why it needs consent.",
     "emphasizes": [
       "Cursed Gifts: power that always costs more than expected",
       "Addiction as Magic: once you start, stopping is harder than any curse",
@@ -298,5 +268,7 @@
     "description": "A plague has broken out in a refugee camp on the road to Zahk'Kozahn, and a Leashed Hunger cell has begun offering a cure — for a price paid in memory and flesh. The cure works. The party must decide whether to expose the cult, negotiate with it, or accept that in a camp with no other physician, Malachai's mercy may be the only mercy available. Whatever they choose, someone in the camp will not survive the choosing, and Malachai will remember who made it.",
     "quote": "You wanted the fever to break. It has. Ask yourself what else broke with it."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "order": "chthonic",
+  "register": "fear"
 }

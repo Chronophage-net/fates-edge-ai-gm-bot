@@ -17,7 +17,7 @@
     "wrath"
   ],
   "lore": {
-    "description": "Raéyn is the tempestuous goddess of the sea, the restless tide that carries news between shores and the promise of change between lives. She is mother to all who sail, her voice the wind that fills sails and her moods the storms that test every mariner's resolve. In Kahfagia, she is called the Storm_Queen; in Linn, the Tide_Mother; in the Brass Coast, the Salt_Widow. Her cult is syncretic, blending the fierce protectiveness of a mother goddess with the practical cunning of a harbor_master. But Raéyn's heart is torn by her greatest tragedy: her son Khemesh, the Kraken of the Depths, who embodies the crushing inevitability of the ocean's dark heart. Where Raéyn brings change and opportunity, Khemesh brings the final, inescapable pressure that grinds all things to nothing. Sailors pray to Raéyn for safe passage and favorable winds, but whisper Khemesh's name when seeking to lay the dead to rest beneath the waves. Raéyn is passionate, mercurial, and fiercely protective of those who respect her domain. She favors those who read currents, bargain with weather, and carry news between shores. But cross her, and the sea itself becomes your enemy: fair weather turns to fury, and every wave a judgment.",
+    "description": "She arrives. That is the first thing and most of the rest of it.\n\nA morning of flat silver, gulls sitting on the water, and then a line on the horizon the color of a bruise, and then the line is a wall, and then the wall is over you and the noise is such that men standing a yard apart cannot make each other understand a single word. Four hours later there is sun on the wet deck and the sea is the color of milk and glass and someone is laughing, which is the part outsiders never believe.\n\nRaéyn is not a kind mother and has never once claimed to be. She is enormous, she is free, and she is in a mood — and the mood is not about you, which is the hardest thing about her for people who want the world to be about them. She is called Storm-Queen in Kahfagia, Tide-Mother in Linn, Salt-Widow on the Brass Coast, and she answers to all of it and to none of it and to whistling, sometimes, which is why nobody whistles.\n\nShe favors those who read a current, bargain with weather, and go anyway. She is fiercely protective of them and will not be relied upon, and both of those are permanently true at the same time.\n\nHer son is Khemesh. She does not speak of him and the sea does not stop being one water.",
     "followers": "Among the peoples of Fate's Edge, Raéyn is called by many names. In Kahfagia, she is the Storm_Queen; in Linn, the Tide_Mother; in the Brass Coast, the Salt_Widow. Her cult is syncretic, blending the fierce protectiveness of a mother goddess with the practical cunning of a harbor_master.",
     "signs": [
       "A sudden shift in the wind that favours your course",
@@ -232,38 +232,7 @@
         "prereq": "Tier III"
       }
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "Sailor's Instinct: +1 die to Navigation and maritime survival rolls.",
-        "cost": "Sea_Sick on Land: –1 die to rolls requiring prolonged time away from water or open spaces."
-      },
-      {
-        "tier": 2,
-        "benefit": "Tide's Favor: Once/scene, treat a failed maritime or weather_related roll as a success, but mark 1 SB (Clubs).",
-        "cost": "Weather Sensitive: Must make a Resolve test (DV 3) to resist acting on every weather change or maritime opportunity."
-      },
-      {
-        "tier": 3,
-        "benefit": "Storm's Child: +2 dice to rolls involving weather manipulation or sea_based combat.",
-        "cost": "Tempestuous Nature: Suffer 1 Fatigue when denied access to open water or weather changes for extended periods."
-      },
-      {
-        "tier": 4,
-        "benefit": "Mother's Protection: Once/session, call upon Raéyn's favor to protect a vessel or coastal area from harm.",
-        "cost": "Protective Instinct: –1 die to rolls involving personal safety when others are endangered nearby."
-      },
-      {
-        "tier": 5,
-        "benefit": "Wave_Rider: Once/session, navigate any water_based obstacle or hazard with perfect ease.",
-        "cost": "Restless Spirit: –1 die to rolls requiring patience or stillness; the call of the sea is constant."
-      },
-      {
-        "tier": "6+",
-        "benefit": "Storm Queen: Once/session, become the living embodiment of the sea's power. For one scene, control weather and tides within Near range.",
-        "cost": "Mother's Burden: Mark +2 Obligation when using this power; the weight of protecting all who sail becomes overwhelming, causing Harm 1 (Stress) until the storm passes. Khemesh's Attention: The Kraken's gaze turns your way; the GM may introduce oceanic complications (rogue waves, crushing pressure) as narrative fallout."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -298,7 +267,7 @@
     }
   ],
   "playstyle_notes": {
-    "description": "Raéyn is the patron of sailors, navigators, storm_callers, and anyone who lives by the sea's rhythm. Her followers gain power over tides, currents, and weather, but pay with a restless spirit and a fierce protectiveness that can turn to wrath. The rivalry with her son Khemesh is ever_present—Raéyn's gifts bring change and opportunity, but the deep always waits. Ideal for characters who love the sea, embrace change, and understand that the tide that lifts you can also drag you down.",
+    "description": "Raéyn is for a character who wants motion, weather, and the freedom of not being owed anything — and who can live with a patron whose favor is real, immense, and not dependable. She does not withdraw her blessing to punish; she is simply otherwise engaged, at scale, and the consequences of that arrive at full size.\n\nPlay her in weather rather than in words. Her attention should be felt as barometric before it is felt as narrative — the light going wrong, the gulls inland, the temperature dropping in a closed room. When she is pleased, it is glorious and slightly too much. Her rivalry with Khemesh is the whole architecture of the sea: she is what the water does, he is what it weighs.",
     "emphasizes": [
       "Tides and Change: power over currents, weather, and the rhythm of the sea",
       "Maritime Syncretism: a goddess of creole Kahfagia, blending mother, warrior, and storm",
@@ -312,5 +281,7 @@
     "description": "A fleet of merchant ships has been vanishing without a trace in the Sea of Thorns. The survivors speak of a massive shape beneath the waves, of a pressure that crushes hulls and a silence that swallows screams. The party must sail into the heart of the deep to confront the truth—but the truth is that Khemesh has awakened, and Raéyn cannot protect those who sail into his domain. The party must choose: face the Kraken, or turn back and let the sea claim more.",
     "quote": "Mark the tide, name your course, and trust the wave_road. But speak ill of Khemesh, and even I may let the deep take you."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "order": "empyreal",
+  "register": "mystery"
 }

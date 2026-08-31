@@ -256,38 +256,7 @@
         "prereq": "Tier III, Body 4+"
       }
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "Reveler's Grace: +1 die to social rolls in feasts or crowds.",
-        "cost": "Compulsive Toast: Must drink or mark 1 Fatigue when drink is offered."
-      },
-      {
-        "tier": 2,
-        "benefit": "Horned Vitality: Ignore the first 1 Fatigue each scene.",
-        "cost": "Restless Appetite: –1 die when abstaining from indulgence (food, drink, or touch)."
-      },
-      {
-        "tier": 3,
-        "benefit": "Revel-Kin: Once/scene, summon a minor revel-spirit (advantage die) — a satyr, a maenad, or a muse of seduction.",
-        "cost": "Masked Self: Cannot act without a role or guise; –1 die to plain sincerity."
-      },
-      {
-        "tier": 4,
-        "benefit": "Bacchic Fury: Once/session, frenzy grants +2 dice to melee for one exchange. Also, once per scene, ignore the effects of a single social faux pas (the revel covers it).",
-        "cost": "Ecstatic Blindness: –1 die to perception outside the revel; you may not notice threats that require sobriety."
-      },
-      {
-        "tier": 5,
-        "benefit": "Feast Without End: Once/session, allies in Near clear all Fatigue.",
-        "cost": "Hungering Host: You consume twice as much; denial causes Harm 1 (Stress). You may also develop a reputation: every feast you attend ends in scandal."
-      },
-      {
-        "tier": "6+",
-        "benefit": "Satyr King's Mantle: For one scene, become an avatar of revels; all allies gain +2 dice, enemies suffer –2 dice. Your presence also inspires desire: once during the scene, compel one target to act on a hidden passion (Resolve DV 4).",
-        "cost": "Tyrant of Pleasure: Mark +3 Obligation; the revel grows monstrous, demanding a sacrifice (an oath, a relationship, or a life). Beast of Endless Revel: Permanent transformation — your mortal form becomes optional; must make Presence+Performance (DV 4) to appear civilized or risk terrifying (or entrancing) all who see you into joining your eternal celebration. You are always at least mildly intoxicated, and sobriety causes you physical pain (1 Fatigue per hour)."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -347,5 +316,7 @@
     "description": "A village on the edge of the Mistlands has been celebrating the same harvest festival for three weeks. No one can leave; no one wants to leave. The wine flows without end, the music never stops, and the dancers have begun to forget their own names. The village elder, sober and terrified, begs the party to find the source of the revelry — a mask that was carved from a lightning-struck tree, now worn by the village's most beautiful and most dangerous inhabitant. The mask is Thrysos's gift, and it will not come off until the wearer has danced their way to ecstatic oblivion. The party must break the revel, convince the wearer to remove the mask, or find a way to end the celebration without being swept into the dance themselves. But the music is beautiful, and the wine is very, very good.",
     "quote": "The mask that dances without a wearer, the wine that whispers secrets, the revel that does not end — these are Thrysos's gifts, and they are never free. The price is always a piece of yourself, given willingly. And sometimes, the price is everything."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "order": "empyreal",
+  "register": "mystery"
 }

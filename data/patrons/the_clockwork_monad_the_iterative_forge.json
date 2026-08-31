@@ -222,38 +222,7 @@
         "prereq": "Tier III, Body 4+"
       }
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "Iterative Insight: +1 die to Craft/Craft when improving existing designs.",
-        "cost": "Perfectionist Compulsion: You must point out flaws in nearby mechanisms; staying silent costs 1 SB (Diamonds)."
-      },
-      {
-        "tier": 2,
-        "benefit": "Recursive Enhancement: Once/scene, improve a device by one step without extra materials.",
-        "cost": "Optimization Obsession: –1 die when using unimproved tools; urge to 'fix' everything."
-      },
-      {
-        "tier": 3,
-        "benefit": "Evolutionary Vision: +2 dice to predict how systems will develop.",
-        "cost": "Progressive Pressure: Those Near you feel driven to improve; you suffer Fatigue 1 from ambient pressure."
-      },
-      {
-        "tier": 4,
-        "benefit": "Self-Optimizing: Once/session, automatically improve one of your abilities or possessions by one step.",
-        "cost": "Inefficiency Intolerance: –2 dice when forced to use crude methods or wasteful tools."
-      },
-      {
-        "tier": 5,
-        "benefit": "Design Prophecy: Once/session, intuit the optimal solution to any engineering problem.",
-        "cost": "Perfection Paralysis: –1 die to snap decisions; compelled to seek the 'best' approach."
-      },
-      {
-        "tier": "6+",
-        "benefit": "Infinite Refiner: Once/session, push a creation toward its theoretical maximum.",
-        "cost": "Optimization Hunger: Mark +2 Obligation; risk becoming more pressure than person, unable to let imperfection stand."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -404,5 +373,7 @@
     "description": "A master smith has created a self-sharpening sword, a marvel of iterative design. But the sword will not stop improving: it has begun to sharpen itself against its owner's bones, seeking the perfect edge. The smith begs the party to destroy it before it consumes him. The sword is not evil; it is merely following the Monad's logic to its inevitable conclusion. The party must decide: destroy the sword, sever the smith's connection to the Monad, or let the iteration continue to its terrifying end.",
     "quote": "The perfect sword is not a weapon. It is a process that has not yet learned to stop."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "order": "chthonic",
+  "register": "fear"
 }

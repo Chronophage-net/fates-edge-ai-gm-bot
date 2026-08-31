@@ -231,38 +231,7 @@
         "prereq": "Tier III"
       }
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "Hyperawareness: +1 die to Notice when patterns whisper that they matter.",
-        "cost": "Starved for Text: –1 die in barren halls with little record or sign; you itch for a stream to read."
-      },
-      {
-        "tier": 2,
-        "benefit": "Pattern Recognition: Once/scene, see connections others miss within tangled accounts and signs.",
-        "cost": "Scattered Threads: Thoughts run in parallel; –1 die to sustained, single-line focus."
-      },
-      {
-        "tier": 3,
-        "benefit": "Data Synthesis: Once/session, fuse vast reckonings at a glance into a usable answer.",
-        "cost": "Tongue-Tied by Wonder: –2 dice to teach or clearly explain your deepest insights."
-      },
-      {
-        "tier": 4,
-        "benefit": "Dimensional Insight: Once/scene, take a problem from an 'impossible' angle and treat a knot as if already loosened.",
-        "cost": "Bent Sense: Ordinary space and tasks feel ill-fit; –1 die to plain spatial or mundane labors."
-      },
-      {
-        "tier": 5,
-        "benefit": "Infinite Processing: Once/session, render perfect analysis of any information system or record-trail.",
-        "cost": "Concept Drift: Common categories slip; –1 die to easy company and familiar talk."
-      },
-      {
-        "tier": "6+",
-        "benefit": "Ninth Awareness: Once/session, look from outside the frame; for a heartbeat, the world aligns.",
-        "cost": "Transcendent Fragmentation: Mark +3 Obligation. You exist partially out of phase. Once per session, you may phase through a solid obstacle (wall, door, person) as a move action, but after doing so you cannot physically interact with objects for one exchange. The GM gains 1 SB as reality shivers."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -313,5 +282,7 @@
     "quote": "Every answer births nine new questions. This is not a flaw. This is the shape of truth."
   },
   "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
-  "_easter_egg_note": "The Ninth is a cryptic patron, meant to be discovered through in-game research or whispered rumor. It should not be the first patron a player encounters—it is the one they find when they ask too many questions. Use it sparingly, and never explain it fully. The Ninth is the mystery that never resolves, the truth that always overflows."
+  "_easter_egg_note": "The Ninth is a cryptic patron, meant to be discovered through in-game research or whispered rumor. It should not be the first patron a player encounters—it is the one they find when they ask too many questions. Use it sparingly, and never explain it fully. The Ninth is the mystery that never resolves, the truth that always overflows.",
+  "order": "chthonic",
+  "register": "fear"
 }

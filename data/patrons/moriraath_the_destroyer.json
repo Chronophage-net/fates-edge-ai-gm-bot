@@ -249,38 +249,7 @@
         "prereq": "Tier III"
       }
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "Ending's Sight: +1 die to Notice when something is approaching its natural conclusion or final form.",
-        "cost": "Completion Anxiety: Must resist urge to 'finish' things prematurely; –1 die to rolls involving patience or process."
-      },
-      {
-        "tier": 2,
-        "benefit": "Perfect Strike: Once/scene, your destructive action gains +2 dice and ignores all resistance to ending/ceasing.",
-        "cost": "Destruction Proximity: Suffer 1 Fatigue when near things of personal value; their existence pains you."
-      },
-      {
-        "tier": 3,
-        "benefit": "Unmaking Touch: +2 dice to rolls involving absolute destruction—no remains, no possibility of return.",
-        "cost": "Entropy Aura: Objects of value near you show signs of decay/premature aging; allies suffer –1 die to rolls involving cherished possessions."
-      },
-      {
-        "tier": 4,
-        "benefit": "Final Judgment: Once/session, declare one thing in Near range must make Spirit+Resolve (DV 4) or cease to exist entirely.",
-        "cost": "Existential Hunger: –1 die to rolls involving creation, preservation, or continuation; you hunger to end what others would sustain."
-      },
-      {
-        "tier": 5,
-        "benefit": "Principle of Negation: Once/session, unmake an abstract concept (hope, fear, memory) from a willing target.",
-        "cost": "Conceptual Erosion: Your presence causes ideas and beliefs to weaken; –1 die to rolls requiring stable reality or consistent identity."
-      },
-      {
-        "tier": "6+",
-        "benefit": "Avatar of Unbeing: Once/session, become the living embodiment of annihilation—anything you touch burns to ash and ceases to exist for one scene.",
-        "cost": "Void Incarnate: Mark +3 Obligation when using; risk becoming a permanent fire that must constantly consume to maintain existence, eventually burning even yourself."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -329,5 +298,7 @@
     "description": "A city's central archive has been set ablaze by an unknown arsonist. But the fire refuses to go out—it has been burning for three days, and the flames are spreading not through wood and paper, but through memory itself. Citizens are forgetting their own names, their histories, their loved ones. The party must find the source of the fire and stop it before the entire city forgets itself—but the fire whispers to them, and each step closer to the source brings a choice: end the fire, or end what it is burning for.",
     "quote": "Every treasure is fuel. Every pact is tinder. Ash is the only inheritance."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "order": "chthonic",
+  "register": "fear"
 }

@@ -221,38 +221,7 @@
         "prereq": "Tier III, Spirit 4+"
       }
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "Serpent's Gaze: +1 die on Intimidation or social rolls using menace.",
-        "cost": "Cold-Blooded: –1 die on Empathy or warmth-based Persuasion."
-      },
-      {
-        "tier": 2,
-        "benefit": "Shed the Old Skin: Once/session, negate one Condition (Fear, Fatigue, Poison) by discarding it like molted skin.",
-        "cost": "Mark of Scales: Faint reptilian patches visible, causing +1 SB in social encounters if noticed."
-      },
-      {
-        "tier": 3,
-        "benefit": "Venomous Strike: Bite or kiss may inflict Poison (DV 2).",
-        "cost": "Hungry Coil: Must consume raw meat or eggs weekly, or mark 1 Fatigue."
-      },
-      {
-        "tier": 4,
-        "benefit": "Serpentine Grace: +2 dice to Stealth or Evasion rolls, ignore minor movement penalties.",
-        "cost": "Slitted Eyes: Bright light imposes –1 die on Notice rolls."
-      },
-      {
-        "tier": 5,
-        "benefit": "Hypnotic Sway: Once/scene, roll Presence + Lore vs. Resolve (DV 3) to mesmerize a single target.",
-        "cost": "Forked Tongue: –1 die on Deception when attempting warmth or sincerity."
-      },
-      {
-        "tier": "6+",
-        "benefit": "Ascendant Form: Partial serpent-body; immune to mundane poison, +2 dice on Body rolls.",
-        "cost": "Monstrous Aspect: Cannot easily hide your nature; every session begins with 1 SB that may be compelled by the GM."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -301,5 +270,7 @@
     "description": "A member of the Coiled Heart cult has been found dead, their body covered in serpentine markings that were not there before. The cult believes they were trying to shed their humanity — and failed. Now the markings are spreading to others who were present at the ritual. The party must investigate the cult, discover the source of the markings, and decide whether to help the survivors complete their transformation, or to sever their connection to Isoka before the serpent claims them all. But some of the marked do not want to be saved — they have tasted the venom of change, and they hunger for more.",
     "quote": "The serpent does not ask permission to shed. It simply grows until the skin splits, and then it leaves the old behind. Some transformations are chosen. Others are endured. And some — the most dangerous — are desired."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "order": "chthonic",
+  "register": "fear"
 }

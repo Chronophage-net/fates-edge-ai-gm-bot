@@ -242,38 +242,7 @@
         "prereq": "Tier III"
       }
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "Predator's Focus: +1 die to Intimidation and Command rolls.",
-        "cost": "Hunger: –1 die to resist acting on strong emotion (anger, lust, greed, vengeance)."
-      },
-      {
-        "tier": 2,
-        "benefit": "Blood Scent: Once/scene, automatically locate the nearest wounded creature within Far range.",
-        "cost": "Mercy Blind: –1 die to show compassion, restraint, or forgiveness."
-      },
-      {
-        "tier": 3,
-        "benefit": "Unstoppable: +2 dice to resist being grappled, bound, or restrained.",
-        "cost": "Reckless: –1 die to defensive actions (you favor attack over parry)."
-      },
-      {
-        "tier": 4,
-        "benefit": "Fear Eater: Once/scene, when you cause a creature to become Frightened, gain 1 Boon.",
-        "cost": "Isolation: –1 die to social rolls with anyone you have not intimidated."
-      },
-      {
-        "tier": 5,
-        "benefit": "Crack the Chain: Once/session, automatically break any mundane restraint (rope, manacles, cage, locked door).",
-        "cost": "Hunted: A rival from your past appears. The GM gains 1 SB per session to spend on their pursuit."
-      },
-      {
-        "tier": "6+",
-        "benefit": "Unbound: Once/session, ignore all penalties from Fatigue and Harm for one scene.",
-        "cost": "The Rift Claims You: Mark +3 Obligation. You may no longer take any action that requires submission, surrender, or yielding. You cannot be reasoned with—only fought or fled."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -322,5 +291,7 @@
     "description": "A powerful merchant lord has been using a network of magical contracts to bind the citizens of a city in debt slavery. The party is hired to free the city—but the merchant lord is not just a villain; he is a former follower of the Riven Path who broke his own chains and now wears the chains of others. To defeat him, the party must confront not only his power but also the question: what makes them different from him? The Riven Path offers power without mercy—will they take it?",
     "quote": "The chain that binds you is the chain you refuse to break. The hand that holds you down is the hand you have not yet bitten."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "order": "beyond_the_triune",
+  "register": "unclassifiable"
 }

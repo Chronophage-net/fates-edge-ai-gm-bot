@@ -246,38 +246,7 @@
         "prereq": "Tier III, Wits 4+"
       }
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "Pathfinding Instinct: +1 die to Navigation and movement rolls in familiar territory.",
-        "cost": "Restless Spirit: You feel the urge to keep moving. Staying in one place for too long makes you slightly uncomfortable, but this imposes no mechanical penalty."
-      },
-      {
-        "tier": 2,
-        "benefit": "Wayfarer's Luck: Once/scene, treat a failed travel or navigation roll as a success, but mark 1 SB (Clubs).",
-        "cost": "Wandering Streak: You are drawn to the less obvious path. Following a direct route is possible, but requires a moment's thought."
-      },
-      {
-        "tier": 3,
-        "benefit": "Road Mastery: +2 dice to rolls involving travel, escape, or finding hidden paths.",
-        "cost": "Nomadic Habits: –1 die to settlement-based social rolls until you have spent at least a day in a place."
-      },
-      {
-        "tier": 4,
-        "benefit": "Journey's Blessing: Once/session, grant all allies within Near range +1 die to travel-related rolls for one scene.",
-        "cost": "Road's Call: You feel a strong pull toward the horizon; being cooped up is genuinely unpleasant but not debilitating."
-      },
-      {
-        "tier": 5,
-        "benefit": "Waypoint Sense: Once/session, instantly know the location and nature of all significant paths, routes, or crossroads within a day's travel.",
-        "cost": "Path Obsession: You tend to think in terms of routes and destinations, sometimes missing the point of staying still."
-      },
-      {
-        "tier": "6+",
-        "benefit": "Master of All Ways: Once/session, become one with the road network. For one scene, teleport between any known waypoints and grant +2 dice to all travel-related actions.",
-        "cost": "Eternal Journey: Mark +3 Obligation when using this power. The road is your home now; you can still function in settlements, but you will always be looking for the way out."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -332,5 +301,7 @@
     "description": "A stretch of the King's High Road has begun to forget itself. Travelers report walking for days and arriving back where they started, or finding bridges that lead to empty air. The local waystone-carvers are baffled; the road's memory is fading. The party must walk the road, find the source of the forgetting — a forgotten oath, a broken waystone, or something older — and restore the path before the road forgets itself entirely. The Traveler's servants are divided: some believe the road must be re-consecrated; others believe it must be allowed to become something new.",
     "quote": "A road that forgets itself is a road that has been betrayed. Find the broken promise, mend it, and the way will remember. But some roads are better left forgotten — and the Traveler does not always answer the ones who call."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "order": "empyreal",
+  "register": "mystery"
 }

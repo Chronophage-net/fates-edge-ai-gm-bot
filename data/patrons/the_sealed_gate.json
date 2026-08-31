@@ -240,38 +240,7 @@
         "prereq": "Tier III, Spirit 4+"
       }
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "Threshold Sense: +1 die to detect weak points, unauthorized passage, or boundary violations.",
-        "cost": "Paranoid Vigilance: Must repeatedly check seals; –1 die to trust-based actions."
-      },
-      {
-        "tier": 2,
-        "benefit": "Ward Resonance: Once/scene, treat a failed protection roll as a success (mark 1 SB).",
-        "cost": "Isolation Tendency: 1 Fatigue in unsecured or open spaces."
-      },
-      {
-        "tier": 3,
-        "benefit": "Boundary Mastery: +2 dice to ward, barrier, or containment magic.",
-        "cost": "Compulsive Sealing: Must secure any vulnerability noticed."
-      },
-      {
-        "tier": 4,
-        "benefit": "Absolute Barrier: Once/session, create an impenetrable barrier (size of a door) for one exchange.",
-        "cost": "Prison Mindset: –1 die to freedom or escape actions."
-      },
-      {
-        "tier": 5,
-        "benefit": "Gate Sovereign: Once/session, banish a major threat with a single test (Spirit+Resolve vs Cap+1).",
-        "cost": "Boundary Obsession: –1 die to non-containment actions."
-      },
-      {
-        "tier": "6+",
-        "benefit": "Threshold Incarnate: For one scene, become a living ward. Allies within Near gain +1 Armor; any creature attempting to pass a threshold you guard must test Spirit+Resolve (DV 5) or be turned back.",
-        "cost": "Ultimate Containment Risk: Mark +3 Obligation. You cannot leave the warded area until the scene ends, and you suffer 1 Fatigue."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -326,5 +295,7 @@
     "description": "A vault beneath the Law Quarter of Valora has been breached. The seals were not broken from the outside — they were opened from within. Something that was imprisoned is now walking the city, wearing the face of the warden who sealed it. The party must track the escapee, learn what it truly is, and decide whether to seal it again or let it walk free. The Sealed Gate's servants are divided: some believe in redemption, others in containment. The decision will shape the city's future.",
     "quote": "Some doors are sealed for a reason. The Gate does not judge the prisoner — it only keeps the boundary. But when the boundary breaks, the Gate must decide: to seal again, or to let pass what should have stayed contained."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "order": "seraphic",
+  "register": "conviction"
 }

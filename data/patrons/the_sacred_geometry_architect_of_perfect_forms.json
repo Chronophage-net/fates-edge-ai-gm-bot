@@ -248,38 +248,7 @@
         "prereq": "Tier III, Wits 4+"
       }
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "Harmonic Sense: +1 die to Notice when patterns, ratios, or symmetries matter.",
-        "cost": "Pattern Obsession: Must measure or set-right pleasing patterns you spot; resisting costs time or 1 SB (Diamonds)."
-      },
-      {
-        "tier": 2,
-        "benefit": "Perfect Precision: Once/scene, achieve faultless calculation or measure.",
-        "cost": "Social Dissonance: –1 die to emotive social rolls; harmony feels truer than feeling."
-      },
-      {
-        "tier": 3,
-        "benefit": "Structural Insight: +2 dice to architecture/engineering or imposing order on chaos.",
-        "cost": "Order Compulsion: Must correct deliberate disorder; suffer Fatigue 1 when forced to abide it."
-      },
-      {
-        "tier": 4,
-        "benefit": "Universal Harmony: Once/session, apply a harmonic rule that makes a chaotic situation predictable.",
-        "cost": "Perfectionist Limitation: –1 die to improvisation; the 'correct' solution calls."
-      },
-      {
-        "tier": 5,
-        "benefit": "Divine Proportion: Once/session, see perfect ratios in any phenomenon and work with them.",
-        "cost": "Mathematical Focus: –1 die to acts not readily quantified; the abstract blurs unless counted."
-      },
-      {
-        "tier": "6+",
-        "benefit": "Architect of Reality: Once/session, briefly refit local reality by perfect principle.",
-        "cost": "Form Prison: Mark +3 Obligation; risk failing in rough, noisy worlds, taking Harm 1 in chaotic zones. You cannot willingly enter a space that is not geometrically 'pure' (e.g., a cave, a tent, a ruin) without first performing a measuring rite (1 minute, no roll)."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -336,5 +305,7 @@
     "description": "A Kon'reh master has discovered a pattern in the game's geometry that seems to predict the movement of the Hollow. She is convinced that if she can complete the proof, she can map the Hollow's attention and avoid its influence entirely. But the proof is incomplete, and the Hollow is taking notice—her workshop is visited by figures who are not quite there, and her Kon'reh pieces move at night. The party must help her complete the proof, protect her from the Hollow's agents, and decide whether a map of the Hollow's attention is a tool of liberation or a trap that will draw its gaze to all who see it.",
     "quote": "The line that maps the Hollow's path is also the line that invites it to follow. To trace the geometry of what you fear is to risk drawing it closer."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "order": "seraphic",
+  "register": "conviction"
 }

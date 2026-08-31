@@ -190,38 +190,7 @@
         "prereq": "Tier III, Spirit 4+"
       }
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "Healer's Touch: +1 die to Medicine or Sway when comforting or aiding.",
-        "cost": "Empathic Overload: Suffer 1 Fatigue when immersed in strong conflict or grief."
-      },
-      {
-        "tier": 2,
-        "benefit": "Gentle Presence: Once/scene, treat a failed Sway roll as a success when offering comfort.",
-        "cost": "Burden of Care: Must aid those in need when asked; hesitation costs 1 SB (Hearts)."
-      },
-      {
-        "tier": 3,
-        "benefit": "Shared Strength: +2 dice to resist despair or hopelessness when aiding another.",
-        "cost": "Fragile Peace: –1 die when facing cruelty or indifference; you are shaken by callousness."
-      },
-      {
-        "tier": 4,
-        "benefit": "Healing Grace: Once/session, fully remove one Condition from an ally by taking it onto yourself.",
-        "cost": "Self-Sacrifice: You cannot ignore suffering; taking the Condition also costs 1 Fatigue."
-      },
-      {
-        "tier": 5,
-        "benefit": "Unbroken Presence: Your aura soothes; allies within Near gain +1 die to resist fear and despair.",
-        "cost": "Inexorable Hope: You cannot act against a promise to help; breaking a vow of care costs 1 Obligation."
-      },
-      {
-        "tier": "6+",
-        "benefit": "Avatar of Mercy: Once/session, become a living embodiment of grace. All allies within Near gain +2 dice to resist harm and +1 die to all actions for one scene.",
-        "cost": "The Price of Grace: Mark +2 Obligation; you are physically weakened (Harm 1) after the scene, and you cannot refuse a plea for help for the next 24 hours."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -270,5 +239,7 @@
     "description": "A village healer has been unable to cure a mysterious wasting sickness that afflicts the children. The local lord blames the Oath of Mercy and Grace, claiming its followers have failed. The party must investigate the source of the sickness—perhaps it is a curse from a rival cult, a broken promise from the lord's past, or a natural plague that requires a different kind of healing. They must decide whether to offer mercy to the lord or seek justice for the afflicted.",
     "quote": "To heal is not to erase the wound, but to sit beside it until it becomes bearable."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "order": "beyond_the_triune",
+  "register": "unclassifiable"
 }

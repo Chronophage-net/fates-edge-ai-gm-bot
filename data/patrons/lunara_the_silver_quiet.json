@@ -212,38 +212,7 @@
         "prereq": "Tier III, Wits 4+"
       }
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "Moonlit Sight: +1 die to detect hidden or liminal presences.",
-        "cost": "Shadows cling: Eyes glimmer in dim light, unnerving the uninitiated."
-      },
-      {
-        "tier": 2,
-        "benefit": "Silver Memory: Recall any event witnessed under moonlight with perfect clarity.",
-        "cost": "Dreams blur: Suffer strange, intrusive visions when sleeping."
-      },
-      {
-        "tier": 3,
-        "benefit": "Quiet Step: +1 die to stealth or subtle speech acts.",
-        "cost": "Tongue falters: –1 die to open confrontation or commands."
-      },
-      {
-        "tier": 4,
-        "benefit": "Seam-Walker: Once per scene, cross a minor threshold unseen.",
-        "cost": "Alien aura: Mortals feel watched, suffering unease in your company."
-      },
-      {
-        "tier": 5,
-        "benefit": "Triple Aspect: Call on maiden, mother, or crone aspect for +2 dice in related rolls.",
-        "cost": "Dissociation: After use, lose sense of time or self until rested."
-      },
-      {
-        "tier": "6+",
-        "benefit": "Silver Ascendancy: Once per session, unveil hidden truths of an entire scene (+3 dice to perception/investigation).",
-        "cost": "Bound to the Veil: Mark +2 Obligation. Your presence slips between worlds, inviting lunar forces to notice you."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -291,5 +260,7 @@
     "description": "A hedge-wright's silvered well in Viterra has begun showing visions to anyone who drinks from it after dark — not nightmares erased, but nightmares of strangers, bleeding through. The party is asked to investigate before the village's fear turns to violence against the well's caretaker, a quiet witch who insists she has done nothing but what Lunara taught her. The truth lies in whose reflection the well was truly built to hide, and what happens when a threshold is asked to conceal too much for too long.",
     "quote": "The mirror does not lie. It simply waits until you are ready to see what it has always shown."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "order": "beyond_the_triune",
+  "register": "unclassifiable"
 }

@@ -4,62 +4,62 @@
   "type": "generator",
   "title": "Viterra — The Hedge-Law Realm",
   "label": "chap:viterra",
-  "key_demographic": "Lethai-al",
+  "key_demographic": "Humans (Viterran)",
   "capital": "Valora",
   "manifest_path": "/data/docs/manifest.json",
   "overview": {
-    "tagline": "Every hedge is a boundary. Every boundary is a claim. Every claim is a blade. The law that is not enforced is only a memory. The Queen intends to be remembered.",
-    "genre": "Post-imperial consolidation, legal warfare as blood sport, border adventurism, fragile crown haunted by fratricide and the ghost of a king who died too young.",
+    "tagline": "Every hedge is a boundary, every boundary a claim, and every claim ends with a man holding a sword and a piece of paper. The Queen has both.",
+    "genre": "Early Tudor instability. A two-year-old crown, law used as weapon and as costume, and a moral order everyone believes in and nobody can afford to keep.",
     "mood": "The Queen's Long Shadow",
-    "starting_location": "The Hall of Dawning tilt-yard at first light. Dawn-knights drill in armor polished like mirrors—each dent a story from last week's legal duel. Beside them, advocates rehearse arguments with the same intensity, palms slick on pommels. A Queen's Justiciar slides a parchment across an oaken rail, her seal ring catching the dawn. 'Three charters, one road across the Belworth. The Vhasian claimant says the bridge is theirs. The local reeve says it's crown land. The abbey says it's a pilgrimage, not a toll. Carry the Queen's writ, break the Quiet Tolls, and make them agree—by clause or by cut. The Earls are watching, and the Queen has only just secured the throne. Fail, and you'll give her enemies the excuse they need: that she is still Fenwood's bloody handmaiden, not Viterra's queen.'",
+    "starting_location": "The Hall of Dawning tilt-yard at first light. Dawn-knights drill in armor kept mirror-bright, every dent in it from a licensed duel rather than a war. Advocates rehearse along the same rail with the same white knuckles. A Queen's Justiciar slides parchment across the oak, her seal ring catching the light. 'Three charters, one road over the Belworth. The Baron's man says the bridge is his by ancient right. The reeve says crown land. The abbey says it is a pilgrim way and no toll lies upon it. Carry the Queen's writ and make them agree, by clause or by cut — I do not much mind which, and neither will the record. The Earls are watching from the north. They are patient men. Give them nothing to be patient about.'",
     "lore": {
-      "history": "Viterra is a kingdom learning to stand alone after throwing off the Utaran yoke. Once a proud realm before the legions came, it never forgave the empire. Its hedge-laws and parish courts preserved a stubborn identity that parchment and wax could never erase. Now, under the young Warrior Queen Veralyn Everblood—ward of the Fenwood dukes, veteran of the sack of Lence, and still Duchess of Aberiel in Vhasia—Viterra is trying to remember what it means to rule itself. But the crown is not secure. Veralyn took the throne only after the sudden death of her brother, King Baldwyn Brightstide, whose two-year reign ended in a swift, mysterious illness. Rumors whisper it was Fenwood's doing, to clear the path for *their* claim. His death was a wound the kingdom has not healed. The northern earls, descendants of old hill-kings, watched for a misstep that proved she was still Fenwood's instrument. Some of them secretly funded the fanatics who killed her father, Wyllmot, five years earlier—a betrayal she has just finished rooting out with steel and statute. The eastern barons, who expected greater spoils from the Lence campaign because she was the Fenwood duke's ward, now grumble that she has rewarded loyalty to the crown, not to the sword. Every spring, the Queen's justiciars ride west with warrants. Every autumn, Vhasian routiers raid the grain convoys. The border is not a line on a map. It is an argument. And the Queen intends to win it—even if she must become the thing she swore to leave behind.",
-      "first_notice": "The smell of damp parchment laced with old iron. The clatter of writ-runners' boots on blood-soaked cobblestones. The way every noble's hand rests on a seal ring worn thin from constant gripping—and every commoner's hand rests on a hatchet notched with Vhasian blood.",
-      "rule_that_kills": "Never cross the Belworth without a charter recognized on both banks. Viterran law and Vhasian claim fight every crossing, and the river takes the losers—sometimes still clutching a forged writ to their chest."
+      "history": "Viterra threw off the Utaran yoke and has spent every year since discovering how much of the empire it kept. Its hedge-laws and parish courts outlasted the legions and gave the kingdom something to be, and they are now the instrument by which it is being taken apart from the inside.\n\nThe crown is two years old. Veralyn Everblood came to it after her brother, King Baldwyn Brightstide, took a swift illness at the end of a two-year reign, and every household in the kingdom has done the arithmetic and none of them will say the total out loud. She was a Fenwood ward at sixteen, she took the walls of Lence for her guardian, and she is Duchess of Aberiel in Vhasia besides, which is three separate reasons for a Viterran earl to keep his own counsel.\n\nTo the north and east sit the Earls, old hill-king stock, English in tongue and in temper, obedient in every particular that costs them nothing. Some of them paid the fanatics who killed her father Wyllmot five years ago, and she has finished proving which, with steel and with statute in that order. To the west along the Belworth sit the Barons, who speak French at table, marry into Vhasia, and produce charters that are always older than yours. Between the two lie the Hedges, and every party with an interest is trying to get around them rather than through.\n\nUnderstand what the quarrel is actually about. Nobody in Viterra argues that the Queen has no right. Degree, order, and obedience are held here to be the shape God gave the world, and to break them is not politics but sin — which is exactly why the crown finds the doctrine so useful, and exactly why the Earls will not move until they can show that the sin is hers.",
+      "first_notice": "Damp parchment and old iron. Writ-runners' boots on wet cobble at hours when no honest business is done. And the way a stranger's question is answered by first establishing who is asking, under whose authority, and whether the exchange is likely to be reported.",
+      "rule_that_kills": "Never cross the Belworth without a charter that will be honored on both banks. Viterran law and Baronial right contest every crossing, and the river settles the cases the courts cannot."
     },
     "entanglements": {
-      "west": "Vhasia — The Belworth River is a border written in blood; chevauchée raids are a seasonal plague. The Queen's justiciars ride west every spring.",
-      "east": "The Dolmis Sea — Theona and Zakov are reachable by sea; the Queen's navy is small but fierce. The hedge-law does not extend past the tide line.",
-      "north": "Ubral — The highland clans owe no allegiance to the crown; tax collectors go armed. The Queen's writ is respected only where her knights ride.",
-      "south": "Thepyrgos — The Black River marks the boundary of Synod law; fugitives cross both ways. A Viterran warrant is kindling in Thepyrgos, and vice versa.",
-      "theona": "Eastern Viterran earls clamor to dominate the isles; the Abbess plays a dangerous game."
+      "west": "Vhasia — The Belworth is less a border than an argument conducted in charters and, each autumn, in burning grain convoys. The Queen's justiciars ride west every spring and come back with fewer men than they took.",
+      "east": "The Dolmis Sea — Theona and Zakov within reach of a small and unreasonably aggressive navy. Hedge-law stops at the tide line and everyone on both sides finds that useful.",
+      "north": "Ubral — The highland clans owe the crown nothing they have not been made to owe. Tax collectors go armed, in company, and in daylight.",
+      "south": "Thepyrgos — The Black River bounds Synod law, and fugitives cross it in both directions with the same relief. A Viterran warrant is kindling south of it.",
+      "theona": "The eastern Earls want the isles and have wanted them for a century. The Abbess is playing all of them and is running out of room to do it in."
     }
   },
   "regional_diagnostic": {
-    "current_hook": "Every hedge is a boundary. Every boundary is a claim. Every claim is a blade.",
-    "core_conflict": "Players are caught between the **Crown's** fragile authority, the **Northern Earls'** simmering resentment, the **Eastern Barons'** greed, and the **Vhasian Claimants'** endless border disputes—all while the **Succession's Shadow** looms over every legal proceeding and the Queen's own legitimacy is questioned.",
-    "unique_feature": "**Hedge-Law Momentum:** Every boundary is a claim; every claim is a blade. Legal disputes are settled by duel or decree, and the first contradiction starts the Border-Lace timer. The law that is not enforced is only a memory.",
-    "ninth_taboo": "In any Viterran court, the ninth citation of precedent voids all previous citations. The wise stop at eight and settle out of court. Those who cite the ninth are said to hear faint laughter from the marble walls—and their cases are never heard again. Some say the laughter is Baldwyn Brightstide's, still judging from the shadow of the throne.",
-    "price": "Players sacrifice **legal standing, reputation, or loyalty** to gain power. Every reward requires a gamble: a contested charter, a duel sanction, a promise to the Queen, or a secret from the Succession's Shadow.",
+    "current_hook": "Every hedge is a boundary, every boundary a claim, and every claim ends in a court or a field.",
+    "core_conflict": "The **Crown's** legitimacy is two years old and everyone has done the sums. The **Northern and Eastern Earls** are old hill-king stock waiting courteously for a mistake. The **Belworth Barons** in the west hold by a French tongue and Vhasian cousinage and answer a summons when it suits them. Between them lie the **Hedges**, and every interested party is working to get around them rather than through.",
+    "unique_feature": "**Hedge-Law Momentum:** a hedge is a boundary, a boundary is a claim, and a claim gets heard. Disputes end in a clause or a licensed duel, and the first contradiction between two valid documents starts Border-Lace running. Nobody in Viterra breaks the law. They establish which law was on their side to begin with.",
+    "ninth_taboo": "In a Viterran court the ninth citation of precedent voids the eight before it. The wise stop at eight and settle in the yard. Those who go on are said to hear something like laughter come off the marble, and their case is never called again. The clerks record this without comment, as they record everything.",
+    "price": "**Standing, name, and the good opinion of people who will outlive you.** Every advantage here is bought with a contested charter, a duel licensed at court, or a service to the Crown that cannot afterward be described to your neighbors.",
     "faction_triad": [
       {
         "faction": "The Queen's Household (Crown Law)",
-        "goal": "Secure the throne and enforce the Queen's peace",
-        "method": "Justiciars, charters, legal duels, and the Queen's writ",
-        "why_players_care": "They hold the only legitimate authority"
+        "goal": "Make a two-year-old crown look like an old one",
+        "method": "Justiciars, charters, licensed duels, and the Queen's writ carried by people who can enforce it",
+        "why_players_care": "It is the only authority that is the same on both banks"
       },
       {
-        "faction": "The Northern Earls & Eastern Barons",
-        "goal": "Preserve local power and resist crown encroachment",
-        "method": "Hedge-moots, local levies, and quiet defiance",
-        "why_players_care": "They control the land and the levies"
+        "faction": "The Northern & Eastern Earls",
+        "goal": "Keep their own jurisdiction and outlast a crown they regard as provisional",
+        "method": "Hedge-moots, private levies, and punctual obedience in everything that does not matter",
+        "why_players_care": "They hold the land, the levies, and most of the north's memory"
       },
       {
-        "faction": "Vhasian Claimants & Border Routiers",
-        "goal": "Push the border west and profit from the chaos",
-        "method": "Chevauchée raids, forged charters, and bribes",
-        "why_players_care": "They are the constant threat to the Queen's peace"
+        "faction": "The Belworth Barons (West)",
+        "goal": "Move their bounds east one hedge at a time and keep the Vhasian door open",
+        "method": "Ancient right, cross-border marriage, and charters that are reliably older than yours",
+        "why_players_care": "They are legally impeccable and personally the most dangerous men in the kingdom"
       }
     ]
   },
   "quotes": [
     {
       "speaker": "Queen Veralyn Everblood (Elite)",
-      "text": "I was Fenwood's ward when I was sixteen. I took Lence's walls for him. I made the Vhasian Sun-court run red. Now I sit on a throne built of precedents—and I keep a dagger under my pillow. The hedge that is not defended is only a suggestion. The law that is not enforced is only a memory. I will have both remembered. But sometimes I wonder which hand shakes more when I seal a charter: the queen's, or the enforcer's."
+      "text": "I was Fenwood's ward at sixteen and I took Lence for him, and men who should know better still say those two things in one breath as though the second explained the first. Very well. Hear the rest of it. God set this realm in order, degree beneath degree, and where that order fails it is not misfortune, it is sin, and the correcting of it is my office. I would rather be feared for doing my office than loved for neglecting it. My brother is two years dead and no one has yet asked me to my face how. I have taken careful note of who does not ask."
     },
     {
       "speaker": "Fen Reeve Cuthbert (Commoner)",
-      "text": "Barons to the west with blood on their hands, Earls to the east shapenin' their knives... Witches to the south and Dukes everywhere, laws everywhere. I keep my nose down, count my sheep, pay my tax, and obey my lord. That's enough for me. The Queen's justiciars come and go. The river stays. The law that is not enforced is only a memory—and I have a long memory."
+      "text": "Barons west with blood on their hands, Earls north sharpening theirs, witches south and lawyers the whole way between. I keep my head down, count my sheep, pay what's asked and obey my lord — and I'll tell you plain that isn't cowardice, it's the shape of the world, and I'd not have it otherwise. A man who won't keep his station is a man who'd cut your hedge in the night. The justiciars come and go. The river stays. So do I."
     }
   ],
   "succession_shadow_timer": {

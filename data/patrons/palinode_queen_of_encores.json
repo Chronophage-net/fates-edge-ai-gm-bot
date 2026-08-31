@@ -250,38 +250,7 @@
         "prereq": "Tier III, Presence 4+"
       }
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "Perfect Pitch: +1 die to Performance.",
-        "cost": "Restless Ear: Distracted by any flaw; –1 die to non-performance focus."
-      },
-      {
-        "tier": 2,
-        "benefit": "Rapturous Presence: Once/scene, grant allies +1 die to social rolls.",
-        "cost": "Craves Applause: Suffer 1 Fatigue if ignored or without an audience."
-      },
-      {
-        "tier": 3,
-        "benefit": "Inspired Creation: +2 dice to one artistic act per scene.",
-        "cost": "Haunted by Drafts: Must obsessively rework; delays other actions."
-      },
-      {
-        "tier": 4,
-        "benefit": "Mesmerizing Performance: Once/session, captivate a crowd (Resolve DV 4 to resist).",
-        "cost": "Lost in the Moment: –1 die to awareness while performing."
-      },
-      {
-        "tier": 5,
-        "benefit": "Artistic Vision: Foresee the perfect form of a work; +2 dice to create it.",
-        "cost": "Consumed Spark: Must pursue inspiration immediately, no matter the cost."
-      },
-      {
-        "tier": "6+",
-        "benefit": "Queen of Encores: Once/session, create a legendary performance; all present +3 dice to social rolls.",
-        "cost": "Eternal Encore: Mark +3 Obligation; the performance demands endless repetition until sated. Voice of Palinode: Permanent condition—your words carry her power. Anyone who hears you speak must test Resolve (DV 3) to interrupt you or ignore a reasonable request. However, you cannot whisper; your quietest voice is still audible at Near range."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -330,5 +299,7 @@
     "description": "A theater troupe's lead singer has vanished mid-rehearsal. The only clue is a scrap of sheet music with a single note circled in red ink — a note that should not be possible to sing. The troupe's director is desperate: the performance must go on, or the patron who funded it will ruin them all. But the singer is not gone; she has been called to complete a song that Palinode left unfinished, and she cannot leave until the final note is sung — a note that, if sung, will bind her voice to the Queen of Encores forever. The party must find her, decide whether to let her complete the song, and face the consequences of an encore that never ends.",
     "quote": "The perfect note is not a destination. It is a promise that keeps you searching. Palinode's gift is the search itself — and the cost is that you will never stop searching."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "order": "empyreal",
+  "register": "mystery"
 }

@@ -218,38 +218,7 @@
         "prereq": "Tier III, Presence 4+"
       }
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "Judge's Intuition: +1 die to Insight when weighing truth.",
-        "cost": "Must point out falsehoods when noticed, regardless of tact."
-      },
-      {
-        "tier": 2,
-        "benefit": "Quiet Authority: Once/scene, treat a failed Command as success; mark 1 SB (Hearts).",
-        "cost": "Cannot remain neutral in disputes; indecision costs 1 Fatigue."
-      },
-      {
-        "tier": 3,
-        "benefit": "Scales of Balance: Once/session, enforce an exchange of burdens.",
-        "cost": "Compelled toward fairness even when it hinders you."
-      },
-      {
-        "tier": 4,
-        "benefit": "Bell's Resonance: +2 dice when calling for judgment or demanding restitution.",
-        "cost": "Suffer 1 Fatigue if wrongdoing is ignored."
-      },
-      {
-        "tier": 5,
-        "benefit": "Reckoner's Call: Once/session, declare a \"reckoning moment\" — truth must surface or consequence falls.",
-        "cost": "Cannot ignore pleas for justice without marking 1 SB (Spades)."
-      },
-      {
-        "tier": "6+",
-        "benefit": "Final Arbiter: Once/session, render an absolute decree; all within the scene must obey or suffer consequence (Harm 1, +1 Obligation).",
-        "cost": "Mark +2 Obligation; the Bell demands you bear the weight of enforcement. Your voice tolls like a bell when you speak judgment — those who hear you cannot interrupt until your sentence is complete."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -298,5 +267,7 @@
     "description": "A village's judgment-bell has cracked in half following a controversial verdict, and the local spirits are unsettled — crops wither, livestock startle at nothing, and old grudges resurface with unnatural speed. The party must investigate whether the verdict was truly unjust or whether someone has sabotaged the Bell to escape a debt they cannot pay. Reforging the bell will require both parties to the original dispute to speak the truth aloud, together, for the first time.",
     "quote": "A cracked bell does not lie quietly. It simply waits for someone to listen to the silence between its tolls."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "order": "seraphic",
+  "register": "conviction"
 }

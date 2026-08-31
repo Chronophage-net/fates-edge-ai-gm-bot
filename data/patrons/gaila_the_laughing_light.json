@@ -223,38 +223,7 @@
         "prereq": "Tier III, Presence 4+"
       }
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "Glee's Touch: +1 die to Sway or Performance when playful or joyful.",
-        "cost": "Need for Mirth: –1 die when acting without lightheartedness or delight."
-      },
-      {
-        "tier": 2,
-        "benefit": "Heart's Lightness: Once/scene, +2 dice to sense hidden joys or unspoken pleasures.",
-        "cost": "Emotional Whiplash: Mark 1 Fatigue if unable to sustain joy or mutual delight."
-      },
-      {
-        "tier": 3,
-        "benefit": "Aura of Buoyancy: Allies in Near gain +1 die to resist despair or hopelessness.",
-        "cost": "Pleasure Magnet: Others sense your allure and lean into fantasy, often seeking escape through you."
-      },
-      {
-        "tier": 4,
-        "benefit": "Veil of Delight: Once/session, issue a compelling invitation to \"play\" that feels like a shared dream (Resist DV 4).",
-        "cost": "Fear of Seriousness: –1 die to engage in solemn matters, especially when joy is sweet."
-      },
-      {
-        "tier": 5,
-        "benefit": "Joy Keeper: Once/session, call on contacts for aid — they remember the thrill of your shared laugh.",
-        "cost": "Hollow Delight: –1 die when isolated from those you play with; you hunger for the thrill of the lighthearted."
-      },
-      {
-        "tier": "6+",
-        "benefit": "Sovereign Merriment: Once/session, dominate a gathering in joy; all who meet your eyes must test Resolve (DV 5) or feel compelled to seek your lightness.",
-        "cost": "The Eternal Giggle: Mark +2 Obligation; your presence becomes a tease when you cannot delight, and you cannot stop chasing the shimmer just out of reach."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -303,5 +272,8 @@
     "description": "A beloved local jester — a devotee of the Gigglemoon — has stopped laughing, and the whole town has noticed the difference in ways they cannot quite name: shorter tempers, colder greetings, a market square gone quiet. The party learns the jester owes the Circle a joy they can no longer supply, and must find a way to restore what was lost before the Gigglemoon calls the debt due in a far crueler currency than laughter.",
     "quote": "We do not ask for gold. We ask only that you remember how to laugh — and that, sometimes, is the harder debt to pay."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "order": "beyond_the_triune",
+  "register": "unclassifiable",
+  "lineage": "A daughter of Inaea — born of the Spider's line, spinning beyond the web's architecture."
 }

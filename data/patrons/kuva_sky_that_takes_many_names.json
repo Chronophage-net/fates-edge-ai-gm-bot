@@ -220,38 +220,7 @@
         "prereq": "Tier III, Spirit 4+"
       }
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "Weather-Sense: +1 die to predict rain, wind, or fog.",
-        "cost": "Thin-Blooded: –1 die to resist cold; you shiver when the sky is clear."
-      },
-      {
-        "tier": 2,
-        "benefit": "Wind's Favor: Once per scene, reroll a failed navigation or sailing roll.",
-        "cost": "Compulsive Gaze: You must look up before speaking a promise; if you forget, the GM gains 1 SB."
-      },
-      {
-        "tier": 3,
-        "benefit": "Storm Heart: +2 dice to resist fear from storms; your voice carries over wind.",
-        "cost": "Restless: –1 die to social rolls in buildings without windows."
-      },
-      {
-        "tier": 4,
-        "benefit": "Lightning's Child: Once per session, redirect a lightning strike to a target of your choice (must be outdoors).",
-        "cost": "Static Brand: Your hair stands slightly on end when you are angry; –1 die to Deception."
-      },
-      {
-        "tier": 5,
-        "benefit": "Monsoon's Voice: Once per session, call a brief rain that extinguishes non-magical fires and gives +1 Position to Stealth.",
-        "cost": "Sky-Debt: Every use of this power adds 1 tick to a Hollow Attention timer — the Hollow is watching."
-      },
-      {
-        "tier": "6+",
-        "benefit": "Unclouded Eye: Once per session, see the weather of any place you have visited within the last nine days as if you were there.",
-        "cost": "Dome-Bound: You cannot enter a cave or cellar without suffering 2 Fatigue; the sky is your only roof. Your eyes are the color of a storm cloud, and you are always aware of the exact time until the next sunrise."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -299,5 +268,7 @@
     "description": "A merchant guild has been dodging a sworn promise for years, and the sky has apparently had enough — an unnatural, unmoving storm has parked itself over their warehouse district, refusing to break until the debt is settled. The Cult of the Unclouded Eye insists this is Kuva's judgment; local authorities insist it's sabotage by a rival guild. The party must climb into the storm itself to learn the truth, and decide who — if anyone — deserves to be forgiven.",
     "quote": "The sky does not forgive. It only reschedules. And ours has been waiting a very long time."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "order": "beyond_the_triune",
+  "register": "unclassifiable"
 }

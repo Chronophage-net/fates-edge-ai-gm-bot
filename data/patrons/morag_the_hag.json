@@ -17,7 +17,7 @@
     "old_cleverness"
   ],
   "lore": {
-    "description": "In the hour between twilight and dawn, where borders thin and mortal cunning meets older cleverness, Morag sets her webs of bargain and consequence. She is the grandmother who offers exactly what you need, the forest crone with a perfect solution, the crossroads dweller who makes dreams come true—for a price that only reveals itself once the road bends back. Her wisdom is simple and sharp: every gift carries obligation, every kindness creates debt, and every wish must be paid in coin not named aloud. Morag is cruel, but not evil. She does not delight in suffering; she delights in the precision of a bargain perfectly struck. She will take your last coin and smile, but she will not cheat you—the terms were always there, written in thorn_scratch, waiting for you to read them. Her cruelty is the cruelty of the market, of the turning year, of a grandmother who knows that the child who burns their hand on the stove will not touch it again. Her bargains are never unfair—only incomplete. She grants what is promised; the true cost lies in what is unspoken, written in thorn_scratch, and due when the moon has turned thrice.",
+    "description": "She is the grandmother, and she is not a sweet one.\n\nYou come to her in the hour between twilight and dawn because you have made a mess of something and everyone kinder has run out of ideas. She lets you in. She feeds you first, because you are cold and stupid with worry and she is not a monster. Then she sits down across from you and tells you exactly what it will cost, in plain language, once, and she does not repeat herself and she does not soften it and she does not ask whether you are sure. She has watched a great many people be sure.\n\nMorag is cruel the way the stove is cruel. She will not warn you twice and she will not lie to you once. The terms are always there, always complete in substance, and always scratched in thorn where a person in a hurry will not stop to read them — and she considers reading them to be your work, not hers, because a woman who does your work for you has taught you nothing and will have to do it again next winter.\n\nShe takes no pleasure in the suffering. She takes considerable pleasure in the precision. And when the road bends back and the price arrives and you stand in her doorway with your face wrecked, she will feed you again, and she will not say she told you, because that would be beneath her and because you already know.",
     "followers": "Among the peoples of Fate's Edge, Morag is the patron of hedges_witches, debt_collectors, and those who deal in the spaces between law and mercy. In Aelaerem, she is the Kettle_Crone, invoked before any serious bargain. In Viterra, she is the Crossroads Wife, whose thorn_marked stones mark the boundaries of hedge_courts. In Zakov, she is the Tide_Mother who sets the price for smuggled cargo. Wherever a promise is made and a price is hidden, Morag watches.",
     "signs": [
       "A thorn_marked stone at a crossroads",
@@ -232,38 +232,7 @@
         "prereq": "Tier III"
       }
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "Faerie Sight: +1 die to Notice hidden obligations or unspoken costs.",
-        "cost": "Bargain Sensitivity: –1 die when refusing offers or walking away; the urge to negotiate bites."
-      },
-      {
-        "tier": 2,
-        "benefit": "Cunning Exchange: Once/scene, propose a trade where you gain equal or greater value for lesser seeming payment.",
-        "cost": "Debt Awareness: Ever_counting ledgers of owed/owing; suffer Fatigue 1 in crowded markets."
-      },
-      {
-        "tier": 3,
-        "benefit": "Old_Road Wisdom: +2 dice when dealing with spirits, fae, or ancient powers.",
-        "cost": "Obligation Magnet: 'Fair trades' find you—each with costs not yet clear."
-      },
-      {
-        "tier": 4,
-        "benefit": "Bargain Mastery: Once/session, set terms so favorable that even the other party feels satisfied (for now).",
-        "cost": "Price Collector: Collect on at least one outstanding debt each session or suffer –1 die to social rolls."
-      },
-      {
-        "tier": 5,
-        "benefit": "Crossroads Power: Once/session, call on a crossroads where you bargained before.",
-        "cost": "Fate Entanglement: Your pacts snag your circles; –1 die to keep agreements purely personal."
-      },
-      {
-        "tier": "6+",
-        "benefit": "Hag's Court: Once/session, arbitrate any bargain; your terms bind all parties.",
-        "cost": "Debt Incarnate: Mark +3 Obligation; risk becoming a walking covenant, unable to act without minting new debts."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -298,7 +267,7 @@
     }
   ],
   "playstyle_notes": {
-    "description": "Morag favors negotiators who read the said and the meant at once. She rewards courtesy kept, clauses counted, and solutions bought with clever coin. The cost is a life lived on ledgers: every boon with a braid, every kindness with a key. She is cruel, but not evil—she will not twist a bargain out of malice, but she will not warn you of the thorn hiding in the rose. That is your job. Intrusions often take the form of a past debt resurfacing, a hidden cost that comes due at the worst moment, or a bargain renegotiated by a third party who claims your original deal had a loophole. Ideal for negotiators, tricksters, and characters who understand that every gift is a hook.",
+    "description": "Morag rewards the player who listens to what was actually said. She keeps every promise exactly, warns honestly and only once, and never twists a bargain out of malice — the thorn in the rose is real, it is not hidden, and finding it was the character's job.\n\nPlay her without relish. She should never gloat, never bargain twice for the same thing, and never seem pleased when a cost lands. Her intrusions are an old kindness coming back around, or a clause the table forgot and she did not. Tables that dislike 'gotcha' patrons usually love Morag once they work out she has never once cheated anybody, and that the harshness and the fairness are the same quality seen from two sides.",
     "emphasizes": [
       "Faerie Bargaining: strict forms, sharp prices, safe exits",
       "Hidden Costs: the string on every gift",
@@ -312,5 +281,7 @@
     "description": "A village has been cursed to suffer a strange blight—each household has lost something precious, but no one can agree on what. The party discovers that the village elder made a bargain with Morag years ago, trading the village's luck for a generation of peace. Now the debt is coming due, and Morag has come to collect. The party must negotiate with the Hag—or find a way to break a bargain that was never fully written.",
     "quote": "She gives you the gold, but not the weight it carries. She grants your heart's desire, but not the hunger it awakens. In Morag's court, every 'yes' is a 'yes, but...'"
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "order": "empyreal",
+  "register": "mystery"
 }

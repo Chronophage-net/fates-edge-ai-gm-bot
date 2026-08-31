@@ -211,38 +211,7 @@
         "prereq": "Tier III, Spirit 4+"
       }
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "Hunter's Instinct: +1 die to Notice magical auras or traps.",
-        "cost": "Black-and-White Thinking: Must label others 'pure' or 'corrupt'; –1 die when navigating moral nuance."
-      },
-      {
-        "tier": 2,
-        "benefit": "Sanctified Weapon: Once/scene, your weapon ignores 1 Armor/Resist from supernatural foes.",
-        "cost": "Purity Zeal: Exposure to filth or corruption causes 1 Fatigue."
-      },
-      {
-        "tier": 3,
-        "benefit": "Cold Clarity: +2 dice to resist deception, illusion, or mental sway.",
-        "cost": "Suspicion: –1 die to social rolls with anyone you suspect of 'impurity.'"
-      },
-      {
-        "tier": 4,
-        "benefit": "Burning Truth: Once/session, compel one target to answer truthfully (Resolve DV 4).",
-        "cost": "Compulsion: Cannot ignore supernatural activity; hesitation costs 1 SB (Clubs)."
-      },
-      {
-        "tier": 5,
-        "benefit": "Sterile Aura: Once/session, emit a presence that suppresses supernatural abilities (–2 dice in Near).",
-        "cost": "Purity Addiction: Suffer 1 Fatigue when in a supernatural area without taking action against it."
-      },
-      {
-        "tier": "6+",
-        "benefit": "Absolute Judgment: Once/session, name a supernatural foe as utterly corrupt. For that scene, gain +3 dice against them.",
-        "cost": "Monomania: When invoked, you tunnel on that target, suffering –2 dice to all else. Your eyes glow faintly with inner flame, and heretics recognize you on sight."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -290,5 +259,7 @@
     "description": "A village on the edge of the Mistlands has been harboring a fugitive witch who fled the Inquisition. The Inquisitor Prime has dispatched a Censer-Knight to bring her to justice. The party must decide: protect the witch, who claims she is innocent, or aid the Inquisitor in their hunt. The village's bell-line is failing, and the fog is rising. Whoever wins, the dead will not stay quiet for long.",
     "quote": "The flame that reveals the truth also burns the hand that holds it. Choose carefully, for the Inquisitor does not forgive."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "order": "seraphic",
+  "register": "conviction"
 }

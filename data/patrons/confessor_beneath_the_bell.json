@@ -226,38 +226,7 @@
         "prereq": "Tier III, Spirit 4+"
       }
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "Confessor's Ear: +1 die to Insight when someone speaks a hidden fear or guilt.",
-        "cost": "Ringing Silence: You hear phantom bells; checks that require perfect silence suffer –1 die."
-      },
-      {
-        "tier": 2,
-        "benefit": "Burden Bearer: Once/scene, convert 1 SB from an ally into 1 Fatigue for yourself.",
-        "cost": "Stitched Mouth: You cannot speak a lie about a sin you have absorbed; if you try, mark 1 Fatigue."
-      },
-      {
-        "tier": 3,
-        "benefit": "Weight of Shadows: Once/session, cause a target who has confessed to you to hesitate (lose Initiative or act at Desperate Position).",
-        "cost": "Shared Agony: When you transfer a Condition to yourself, you also transfer its outward sign (a scar, a tremor)."
-      },
-      {
-        "tier": 4,
-        "benefit": "The Bell Answers: Once/session, ring a bell and name a sin; all who share that sin within Near must test Resolve (DV 3) or admit it aloud.",
-        "cost": "Echoing Skin: Your body remembers every burden carried; touching you inflicts 1 Fatigue on the other party."
-      },
-      {
-        "tier": 5,
-        "benefit": "Absolution by Proxy: Once/session, fully clear a Minor Condition from an ally by taking it onto yourself.",
-        "cost": "Permanent Toll: Each time you use this benefit, mark +1 permanent Obligation to the Confessor."
-      },
-      {
-        "tier": "6+",
-        "benefit": "The Weight of Ages: You may transfer a Major Condition (or Harm 2) from an ally to yourself without a roll.",
-        "cost": "Bell's Heir: The Confessor whispers that you will one day take his place — or break. Mark +3 Obligation."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -306,5 +275,7 @@
     "description": "A parish bell has begun tolling on its own, once for every unconfessed sin within the town's walls, and the townsfolk are beginning to unravel under the weight of being counted. A local sin-eater has vanished, leaving behind a debt too heavy to carry alone. The party must find who — or what — is ringing the bell, and decide whether to silence it, feed it, or become its next keeper. Some in town would rather the bell ring forever than face what it counts.",
     "quote": "Every town has a bell it does not ring. Ours has started ringing itself."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "order": "seraphic",
+  "register": "conviction"
 }

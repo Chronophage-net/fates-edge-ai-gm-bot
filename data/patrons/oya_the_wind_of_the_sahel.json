@@ -216,38 +216,7 @@
         "prereq": "Tier III, Spirit 4+"
       }
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "Dust-Sense: +1 die to detect secret doors, hidden compartments, or buried objects.",
-        "cost": "Dry Throat: –1 die to social rolls requiring a smooth voice; you cough when you lie."
-      },
-      {
-        "tier": 2,
-        "benefit": "Scatter the Wind: Once per scene, treat a failed Stealth or Escape roll as a success (you vanish in a puff of dust).",
-        "cost": "Dust-Marked: Red dust clings to your clothes no matter how you brush it; –1 die to social rolls with authorities who notice."
-      },
-      {
-        "tier": 3,
-        "benefit": "Eraser's Hand: +2 dice to Forgery or Deception when destroying evidence.",
-        "cost": "Compulsive Erasure: You must erase one written lie you see; if you cannot, mark 1 Fatigue."
-      },
-      {
-        "tier": 4,
-        "benefit": "Dust Storm's Eye: Once per session, see through any dust, fog, or smoke as if it were clear air.",
-        "cost": "Wind-Blown: –1 die to resist being moved or knocked prone; you are lighter than you seem."
-      },
-      {
-        "tier": 5,
-        "benefit": "Cleansing Wind: Once per session, destroy one non-magical document, lock, or chain by touch.",
-        "cost": "Oblivion's Scent: Every object you destroy adds 1 tick to a Hollow Attention timer. The Hollow wants to know why you are erasing."
-      },
-      {
-        "tier": "6+",
-        "benefit": "Avatar of the Harmattan: Once per session, become immaterial for one exchange — you are a cloud of red dust. You cannot be harmed, but you cannot attack.",
-        "cost": "Dust to Dust: Mark +3 Obligation. You begin to forget your own past — memories crumble like dry parchment. Your eyes are the color of dried blood, and your voice sounds like wind over sand. Once per week, you must destroy something of personal value or suffer 2 Fatigue. Lost memories may be recovered through quests or significant roleplay, but the process is never complete."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -295,5 +264,7 @@
     "description": "A debt-broker in a border town keeps a ledger of every soul sold into indenture along the caravan road — and the ledger is warded against fire, water, and theft. The party is approached by a Red Dust cell to help destroy it before the broker can use it to reclaim three children sold years ago. But the ledger's wards were bought with real debts, real names, real Obligations — and unmaking it may mean someone else's carefully built freedom unravels too.",
     "quote": "You want to know what the wind spares? Nothing. That is the mercy of it. Nothing gets to keep what it took unfairly — not even us."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "order": "beyond_the_triune",
+  "register": "unclassifiable"
 }

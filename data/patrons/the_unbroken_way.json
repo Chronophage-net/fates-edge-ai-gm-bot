@@ -239,38 +239,7 @@
         "prereq": "Tier III"
       }
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "Calm Presence: +1 die to resist fear, intimidation, or emotional manipulation.",
-        "cost": "Emotion Leak: –1 die to social rolls involving passion (love, rage, joy, grief)."
-      },
-      {
-        "tier": 2,
-        "benefit": "Clarity of Purpose: Once/scene, reroll a failed Resolve test.",
-        "cost": "Detachment: –1 die to empathize with others' suffering or to share genuine emotional connection."
-      },
-      {
-        "tier": 3,
-        "benefit": "Flowing Defense: +2 dice to Defend actions when unarmored or in light armor.",
-        "cost": "Rigid Form: –1 die to improvise, adapt, or act on instinct rather than training."
-      },
-      {
-        "tier": 4,
-        "benefit": "Stillness of Mind: Immune to magical fear and charm effects.",
-        "cost": "Isolation: –1 die to all social rolls; others find your calm unsettling."
-      },
-      {
-        "tier": 5,
-        "benefit": "Current of Peace: Once/session, end all ongoing fear effects within Near.",
-        "cost": "Emotion Blind: Cannot recognize strong emotions in others without a successful Insight roll (DV 4)."
-      },
-      {
-        "tier": "6+",
-        "benefit": "Empty Vessel: Once/session, become immune to all mind_affecting magic for one scene.",
-        "cost": "The Stillness Claims You: Mark +3 Obligation. You may no longer take any action that would cause direct harm to another living creature."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -319,5 +288,7 @@
     "description": "A powerful warlord has arisen in the east, conquering villages and threatening the fragile peace of the region. The party is asked to stop him—but not to kill him. The Unbroken Way demands that they find a solution that restores balance without taking a life. The warlord is not evil; he is desperate, driven by a famine that only he can solve. The party must navigate a web of politics, diplomacy, and restraint to end the threat without becoming what they oppose.",
     "quote": "The blade that is not drawn cannot be broken. The hand that is not clenched cannot be bound."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "order": "beyond_the_triune",
+  "register": "unclassifiable"
 }

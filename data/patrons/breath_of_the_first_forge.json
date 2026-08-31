@@ -194,38 +194,7 @@
         "prereq": "Tier III, Spirit 3+"
       }
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "The Spark of Inspiration: +1 die to Craft/Craft when starting a new project.",
-        "cost": "Restless Hands: You must be making something. Sitting idle costs 1 SB (Spades)."
-      },
-      {
-        "tier": 2,
-        "benefit": "The Joy of Discovery: Once/scene, gain +1 Boon when you fail a creative roll (the Breath rewards trying).",
-        "cost": "The Unfinished Urge: –1 die to complete tasks; you are always tempted to start something new instead."
-      },
-      {
-        "tier": 3,
-        "benefit": "Breath of the Maker: +2 dice to creative rolls made in moments of genuine inspiration (GM's judgment).",
-        "cost": "The Flame of Enthusiasm: Those Near you feel your creative pressure; you suffer Fatigue 1 from the intensity of your own ideas."
-      },
-      {
-        "tier": 4,
-        "benefit": "The Gift of Anima: Once/session, breathe life into a mundane object (as the Rite of the Anima Breath) without the Obligation cost.",
-        "cost": "The Maker's Grief: –2 dice when forced to destroy or abandon a creation."
-      },
-      {
-        "tier": 5,
-        "benefit": "The Vision of the Unfinished: Once/session, intuitively understand how to complete any creative project.",
-        "cost": "The Curse of Perfection (Reversed): –1 die to accept help from others; you believe only your hands can do it right."
-      },
-      {
-        "tier": "6+",
-        "benefit": "The Breath Incarnate: Once/session, create something from nothing—a temporary tool, a weapon, or a piece of art that lasts one scene.",
-        "cost": "The Fire That Never Dies: Mark +2 Obligation; you become a conduit for the Breath, unable to stop creating. Your hands move even when you sleep."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -275,5 +244,7 @@
     "description": "A village forge has been burning for a week without fuel. The smith cannot stop working; his hands move even when he sleeps. The villagers believe he is cursed, but the Breath of the First Forge sees it differently—the smith has been touched by an excess of inspiration. The party must find a way to let the smith rest, and perhaps to remind the Breath that even the brightest spark needs to breathe.",
     "quote": "Before the first hammer struck, there was the Breath. Before the last hammer falls, there will be silence. The silence is not an ending—it is a pause."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "order": "beyond_the_triune",
+  "register": "unclassifiable"
 }

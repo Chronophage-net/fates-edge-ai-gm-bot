@@ -215,38 +215,7 @@
         "prereq": "Tier III, Spirit 4+"
       }
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "Forgotten Face: +1 die to Deception when claiming a false identity.",
-        "cost": "Name-Slippery: –1 die when signing legal documents; your signature looks different each time."
-      },
-      {
-        "tier": 2,
-        "benefit": "Unwitnessed Step: Once per scene, treat a failed Stealth roll as a success.",
-        "cost": "Compulsive Erasure: You must correct a false name when you hear one; doing so marks 1 Fatigue."
-      },
-      {
-        "tier": 3,
-        "benefit": "Seal-Sight: +2 dice to detect forged seals or broken contracts.",
-        "cost": "Debt-Blind: –1 die to recall any debt owed to you; someone else keeps that ledger now."
-      },
-      {
-        "tier": 4,
-        "benefit": "Empty Ledger: Once per session, demand a single page from any ledger be left blank. The page will not be noticed missing.",
-        "cost": "Echo of the Missing: You occasionally forget your own name for a moment; –1 die to social rolls when it happens."
-      },
-      {
-        "tier": 5,
-        "benefit": "Name-Eater: Once per session, speak a person's true name and erase it from their own memory for one hour.",
-        "cost": "Watched List: Every name you erase adds 1 tick to a rival's attention timer. Someone out there wants those names back."
-      },
-      {
-        "tier": "6+",
-        "benefit": "The Unsealed: Once per session, become completely anonymous — no one can recognize you, describe you, or remember meeting you. This lasts for one scene.",
-        "cost": "Unnamed: Mark +3 Obligation. You have forgotten your own name. Until you recover it, you cannot be the subject of any oath, blessing, or curse — but neither can you swear one. Your reflection shows a blank space where your face should be."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -294,5 +263,7 @@
     "description": "A Runekeeper who used the Rite of the Broken Seal to void a cruel marriage contract finds the melted seal-coin back in their pocket three days later, warm as though freshly forged. The freed spouse has vanished, and the family they escaped is offering a reward for anyone who can prove the marriage was ever broken at all. The party must decide whether to protect the erasure, or let the seal reform and the old name return.",
     "quote": "Every broken seal leaves a witness. The Seal-Breaker only promised to erase the debt — not to forget that you asked."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "order": "beyond_the_triune",
+  "register": "unclassifiable"
 }

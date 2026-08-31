@@ -249,38 +249,7 @@
         "prereq": "Tier III, Spirit 4+"
       }
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "Death's Whisper: +1 die to Notice when the dead seek to communicate.",
-        "cost": "Graveyard Pallor: –1 die to social rolls with the living; your presence unsettles."
-      },
-      {
-        "tier": 2,
-        "benefit": "Ancestral Insight: Once/scene, gain +2 dice for family history or inherited troubles.",
-        "cost": "Spectral Awareness: Ever-aware of nearby spirits; suffer Fatigue 1 in places of many deaths."
-      },
-      {
-        "tier": 3,
-        "benefit": "Medium's Gift: Once/session, act as a flawless conduit for a spirit.",
-        "cost": "Death-Touched: Cold spots and small portents follow you; –1 die to ordinary social grace."
-      },
-      {
-        "tier": 4,
-        "benefit": "Final Authority: Once/scene, compel adherence to a true last request (Resolve DV 4).",
-        "cost": "Corpse-Pale: Visibly wan; –2 dice where warmth or vigor is required."
-      },
-      {
-        "tier": 5,
-        "benefit": "Archive Keeper: Once/session, access perfect recall of a historical event or family secret.",
-        "cost": "Unquiet Presence: The dead trail you; –1 die to stealth and to surprising the living."
-      },
-      {
-        "tier": "6+",
-        "benefit": "Death's Confidant: Once/session, compel a willing spirit to answer three questions truthfully.",
-        "cost": "Halfway House: Mark +2 Obligation; risk becoming half-withdrawn from the living world. You must perform a funeral rite for a stranger before the next dawn, or mark an additional +2 Obligation."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -340,5 +309,7 @@
     "description": "A village's dead have begun to walk, not in anger but in confusion. They do not attack — they ask questions. 'Where is my daughter?' 'Did my son receive the sword I left him?' 'Who buried my cow?' The village elders are terrified, but a Bone Monk of Varnek Karn recognizes the signs: a death-bound contract has been broken, and the dead are seeking their due. The party must find the broken promise, renegotiate the terms, and lay the dead to rest before the confusion turns to resentment — or before the dead begin to demand payment in flesh.",
     "quote": "The dead do not forget. They wait. They watch. And when the contract is broken, they ask. Be careful what you promise them — because they will remember, and they will hold you to your word."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "order": "seraphic",
+  "register": "conviction"
 }

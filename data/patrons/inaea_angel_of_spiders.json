@@ -287,38 +287,7 @@
         "prereq": "Tier III"
       }
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "Hearth-Blessed: +1 die to Comfort or Aid actions.",
-        "cost": "Must offer solace when asked, or mark 1 SB (Hearts)."
-      },
-      {
-        "tier": 2,
-        "benefit": "Web-Sense: Once/scene, sense hidden ties between two people (debt, rivalry, affection).",
-        "cost": "Empathic Overload: suffer 1 Fatigue when immersed in strong conflict."
-      },
-      {
-        "tier": 3,
-        "benefit": "Binding Presence: Once/session, compel a promise unless target passes Resolve DV 4.",
-        "cost": "Over-Attachment: –1 die when abandoning those you've aided or bound."
-      },
-      {
-        "tier": 4,
-        "benefit": "Fate's Pattern: +2 dice to predict alliances, betrayals, or bargains.",
-        "cost": "Manipulative Urge: mark 1 SB (Diamonds) when acting selflessly without agenda."
-      },
-      {
-        "tier": 5,
-        "benefit": "Spider's Mercy: Once/session, sever one harmful tie for yourself or another (as Merciful Severing).",
-        "cost": "Hunger for Threads: suffer 1 Fatigue if a session passes without weaving a new tie or extracting a promise."
-      },
-      {
-        "tier": "6+",
-        "benefit": "Weaver's Dominion: Once/session, declare all ties in a scene bend toward you; gain +2 dice on social manipulation.",
-        "cost": "Entanglement: Mark +2 Obligation; those affected become subtly dependent on your will."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -366,5 +335,7 @@
     "description": "A dispute between two noble houses threatens to erupt into war. Both sides have come to the party seeking mediation—but each is also trying to bind the party into their web of obligation. The party must navigate the threads of promises, debts, and loyalties, weaving a solution that satisfies both houses without being ensnared themselves. But Inaea watches, and she has her own plans for those who would play the spider's game.",
     "quote": "The thread that comforts is the same that binds. The knot that saves is also the snare."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "order": "seraphic",
+  "register": "conviction"
 }

@@ -215,38 +215,7 @@
         "prereq": "Tier III"
       }
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "Stalker's Instinct: +1 die to tracking and stealth in wilderness.",
-        "cost": "Blood Hunger: Must kill or consume fresh meat each day or suffer 1 Fatigue."
-      },
-      {
-        "tier": 2,
-        "benefit": "Apex Demeanor: +1 die to Intimidation against those weaker than you.",
-        "cost": "Pack Guilt: –1 die to social rolls in civilized company; you smell faintly of carrion."
-      },
-      {
-        "tier": 3,
-        "benefit": "Scavenger's Resilience: +2 dice to resist disease and poison from raw meat.",
-        "cost": "Compulsive Dominance: Must assert physical dominance when challenged; –1 die to de-escalation."
-      },
-      {
-        "tier": 4,
-        "benefit": "Wound Licker: Once/session, heal 1 Fatigue by licking a fresh wound (your own or ally's).",
-        "cost": "Beastly Tells: Your teeth sharpen, your eyes reflect light; –1 die to disguise."
-      },
-      {
-        "tier": 5,
-        "benefit": "Alpha's Roar: Once/session, make a terrifying sound that forces all nearby prey to test Resolve (DV 4) or flee.",
-        "cost": "Lone Wolf: –2 dice to cooperate with those who have not proven themselves in battle."
-      },
-      {
-        "tier": "6+",
-        "benefit": "Maw Incarnate: Once/session, become a true predator. For one scene, all attacks ignore 1 Armor and you heal 1 Fatigue on each kill.",
-        "cost": "The Red Eats All: Mark +3 Obligation; risk becoming feral, unable to speak or reason until you have fed again."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -295,5 +264,7 @@
     "description": "A Painted Maw hunter has begun killing outside the old boundaries, claiming territory that borders a farming settlement. The pack sees this as natural expansion; the settlers see it as an invasion. The party is called to mediate, hunt, or negotiate — but the Savage Heart does not recognize property lines, and any solution that ignores the hunter's claim to dominance will simply invite a stronger predator to test the same ground next season.",
     "quote": "You want peace with the wolf? Then be the bigger wolf, or feed it something else."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "order": "beyond_the_triune",
+  "register": "unclassifiable"
 }

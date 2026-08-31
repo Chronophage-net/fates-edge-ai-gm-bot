@@ -228,38 +228,7 @@
         "prereq": "Tier III"
       }
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "Silver Tongue: +1 die to Persuade or Sway in intimate settings.",
-        "cost": "Need for Attention: –1 die when acting unnoticed or ignored."
-      },
-      {
-        "tier": 2,
-        "benefit": "Heart's Insight: Once/scene, +2 dice to detect hidden desires or motives.",
-        "cost": "Emotional Drain: Mark 1 Fatigue if denied meaningful social connection or physical affection."
-      },
-      {
-        "tier": 3,
-        "benefit": "Enchanting Presence: Allies in Near gain +1 die to social actions.",
-        "cost": "Rivalry Magnet: Often attract envy or social competition – others sense your allure and covet it."
-      },
-      {
-        "tier": 4,
-        "benefit": "Velvet Command: Once/session, issue a compelling suggestion that feels like a lover's whisper (Resist DV 4).",
-        "cost": "Temptation's Pull: –1 die to resist appealing offers, especially those that promise intimacy or adoration."
-      },
-      {
-        "tier": 5,
-        "benefit": "Court Network: Once/session, call on contacts for information – they remember the taste of your kiss.",
-        "cost": "Glamour Dependence: –1 die when isolated from social circles; you hunger for the warmth of another's gaze."
-      },
-      {
-        "tier": "6+",
-        "benefit": "Sovereign Allure: Once/session, dominate a social gathering; all who meet your eyes must test Resolve (DV 5) or be captivated.",
-        "cost": "Addicted to Adoration: Mark +2 Obligation; suffer if denied praise or touch. Your lovers leave you, and you leave them, but the hunger never fades."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -308,5 +277,7 @@
     "description": "A powerful noble has fallen under the spell of a mysterious suitor who seems to have appeared from nowhere. The noble's family hires the party to investigate—but the suitor is a follower of Livaea, and every attempt to expose them only makes the noble more devoted. The party must navigate a web of desire, jealousy, and social manipulation to break the hold before the noble is bound forever—or learn that some loves are not meant to be broken.",
     "quote": "A promise sealed with desire is harder to break than any oath sworn in iron. When they want you, they will give you anything. When they need you, they will give you everything."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "order": "empyreal",
+  "register": "mystery"
 }

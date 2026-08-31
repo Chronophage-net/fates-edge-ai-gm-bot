@@ -224,38 +224,7 @@
         "prereq": "Tier III"
       }
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "Discretion's Gift: +1 die to Notice when someone is about to speak what should be kept.",
-        "cost": "Silent Compulsion: Urge to still tongues; –1 die to ordinary conversation."
-      },
-      {
-        "tier": 2,
-        "benefit": "Confidence Keeper: Once/scene, shelter a secret from accidental spill.",
-        "cost": "Secret Burden: In places thick with confidences, suffer Fatigue 1."
-      },
-      {
-        "tier": 3,
-        "benefit": "Merciful Blindness: Once/session, prevent discovery of a truth that would harm if revealed.",
-        "cost": "Truth Sensitivity: Lies grate; –1 die while surrounded by deception."
-      },
-      {
-        "tier": 4,
-        "benefit": "Sanctuary Sense: Once/scene, veil a brief zone from eavesdropping.",
-        "cost": "Communication Strain: Others balk at full candor; –1 die to personal disclosure."
-      },
-      {
-        "tier": 5,
-        "benefit": "Wisdom of Restraint: Once/session, see the full cost of airing any one truth.",
-        "cost": "Silent Isolation: –2 dice to form close bonds; you hold too much back."
-      },
-      {
-        "tier": "6+",
-        "benefit": "Choir's Voice: Once/session, speak with the gathered prudence of unspoken truths.",
-        "cost": "Truth Prison: Mark +3 Obligation; risk becoming a living vault unable to share without harm. You cannot speak any secret you have carried unless you first mark 1 Fatigue to 'loosen' it."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -304,5 +273,7 @@
     "description": "A Sealed Lip archivist has died, and the locked chest of unopened confessions they guarded has gone missing from the notary's back room. Rumor says one envelope inside names a killer still walking free — but opening any of them, even to find the right one, means breaking a hundred years of kept confidences. The party is hired to recover the chest, but must decide whether the Choir's mercy is worth more than the truth that could exonerate the wrongly accused.",
     "quote": "Every secret in that chest was a kindness to someone. Open it, and you decide whose kindness mattered less."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "order": "seraphic",
+  "register": "conviction"
 }

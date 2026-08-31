@@ -9,8 +9,8 @@
   "manifest_path": "/data/docs/manifest.json",
   "overview": {
     "tagline": "The hollow counts your steps. The thread remembers your name.",
-    "genre": "Pastoral folk horror, hearth-magic, the weight of thresholds.",
-    "mood": "Warm Hearths, Cold Thresholds, and the Fear of Being Interesting",
+    "genre": "Cottagecore folk horror. The hearth is real, the welcome is real, the cake is genuinely very good, and so is the hill. An examination of the cosy halfling, stretched until it shows what it is made of.",
+    "mood": "Warmth, good manners, and the settled calm of a people who have already decided how this ends.",
     "starting_location": "A cider-press barn perfumed with crushed apples and rain, where masks hang from beams awaiting the next festival. The Apple-Matron sits on a stool of woven twigs. Behind her, a Moot Oak leaf bleeding red sap onto a stone. 'The Hollow walks early this year,' she says. 'The Moot Oak bleeds wine. Will you speak for the field, or let the Neighbors claim it? Speak true—the geese are listening.'",
     "lore": {
       "history": "In Amedell, the Aelaerem keep their bonds with bread, bells, and careful counting. Lanes run under ash and hawthorn; doors reddened with thread promise a seat and a story to any who step right. Their magic is housekeeping writ large — thresholds groomed, names jarred like jam, the Hollow fed with silence and the ninth cup left unpoured. When the Neighbors stir beneath the barrows, the folk answer with kettle songs and lantern law, and the fields behave because someone asked them to. Hospitality here is not kindness—it is a covenant. Every meal is a promise, every gift a thread, every candle an argument against the dark. Amedell lies south of the Aelinnel homeland of Aevrossa, separated by the rolling downs and the slow waters of the River Adder. The two small-folk peoples share trade in red thread, copper, and seasonal hospitality, though the Aelaerem keep a wary distance from the fae-touched gnomish courts. It lies on the southeastern coast of the Dolmis, although the Aelaerem are rarely out to sea beyond coastal fishing.",
@@ -27,9 +27,9 @@
   "regional_diagnostic": {
     "current_hook": "The hollow counts your steps. The thread remembers your name.",
     "core_conflict": "Players are caught between the **Hollow's** ancient hunger, the **Neighbors'** quiet claims, and the **Aelaerem's** desperate ritual to remain uninteresting. The Ninth is the fourth wall—the setting leans on it but never breaks it. The Hollow is narrative pressure. The Aelaerem are terrified of being interesting; they don't want to be protagonists, so they placate both.",
-    "unique_feature": "**Geometric Hospitality:** Roads loop if you count wrong, thresholds demand offerings, and guests who break custom become part of the landscape. The ninth cup is never poured.",
-    "ninth_taboo": "In any Aelaerem scene, the ninth cup poured is never the last. The wise pour eight and leave the ninth for the empty chair. The empty chair is the Hollow's seat. The Hollow is the Curse's cousin—older, quieter, and more patient.",
-    "price": "Players sacrifice **memory, identity, or careful custom** to gain power. Every reward requires a gamble: memory loss, Hollow attention, a favor owed to the Neighbors, or the slow erosion of self.",
+    "unique_feature": "**Anticipatory Mourning:** when a character becomes notable in an Aelaerem community — renown, a title, a deed people repeat — the village begins, gently and without hostility, to treat them as already gone. Invitations continue. Warmth continues. Nobody is cruel. But they are spoken of in a slightly finished tense, and the community closes around the gap where they were, long before any enemy arrives.",
+    "ninth_taboo": "Eight cups poured, and the ninth left standing for the empty chair. Every household does it and not one of them will tell you what the chair is for. The answer given to children is that it is polite. The answer given to adults is the same answer in a flatter voice.\n\nWhat everyone understands without having been told is that the ninth cup is how you get noticed, and that being noticed is the entire danger. There is no Aelaerem word for the thing that notices. There is an enormous vocabulary for not attracting it, and most of it looks like hospitality.",
+    "price": "**Memory, name, and the safety of being unremarkable.** Every advantage here spends a little of the ordinariness that was keeping you and yours out of the story, and the village will grieve that in you before you have understood what you spent.",
     "faction_triad": [
       {
         "faction": "Apple-Matron Circles",
@@ -911,5 +911,16 @@
     "Guest-right violations",
     "Hollow Stirrs"
   ],
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "being_looked_at": {
+    "name": "The Quiet Work",
+    "summary": "Aelaerem manners are technique. Deference, understatement, the third cup refused, the story told about someone else two valleys over — the practice of a people who concluded that the safest life is one with no shape to it. Watch how fast an Aelaerem redirects a conversation off themselves and you will see it is not modesty; it has the speed of flinching.",
+    "at_the_table": "An Aelaerem character gains nothing from renown and is harmed by it. Where others bank reputation, they spend resources shedding it. Play their community's response to heroics as sorrow rather than disapproval — they are not scolding the character, they are bracing."
+  },
+  "the_cosy_and_the_hill": {
+    "name": "The Cosy and the Hill",
+    "the_warmth_is_not_a_mask": "Write this carefully, because the usual version gets it wrong. The Aelaerem welcome is not a disguise over something rotten. It is sincere. They will take your wet coat, feed you properly, put you by the fire, ask after your mother, and mean all of it — and the same warmth, unchanged and undiminished, is what carries a person up the hill when it has to be done. There is no switch. Nobody drops the act, because there is no act. That is the horror, and any scene that plays it as a mask coming off has thrown the region away.\n\nAn Aelaerem village that has made a decision about you does not threaten, posture, or confront. Doors simply stop opening. Conversations are warm and end early. You are given the good chair and no information. And then a door does open, and everyone inside is kind to you, and they have brought cakes.",
+    "not_harmless": "They are small, agreeable, and easy to underestimate, and every one of those things is an operational advantage they are fully aware of. They know their ground to the yard. They are patient beyond an outsider's ability to wait them out. They are numerous, they agree with one another to a degree that other peoples find eerie, and they have done this before. A village does not need weapons to settle a matter; it needs only to be unanimous and unhurried, and it is reliably both.",
+    "their_courage": "Aelaerem courage exists and looks nothing like anyone else's. It is not standing and fighting — they will not, and do not think less of themselves for it. It is three other things.\n\n**Staying.** Remaining in the valley when everyone understands what the season is going to require, and getting the harvest in anyway, and being pleasant about it.\n\n**Carrying.** Being the one who does the necessary awful thing so that a neighbor does not have to, and walking back down, and going to work the next morning. An Aelaerem will volunteer for this and will never afterward mention it, and the village will know, and will be kinder to them forever in ways nobody explains.\n\n**Going quiet.** The highest form. An Aelaerem who has become interesting — who has done something that draws the eye toward the valley — may choose to make themselves uninteresting again: to give up the story, the credit, the name, and become a person nothing happened to, so that nothing happens to anyone else either. Their neighbors regard this as the bravest act available to a person. Outsiders, watching someone hand back everything they earned and go back to keeping bees, generally conclude the Aelaerem are timid."
+  }
 }

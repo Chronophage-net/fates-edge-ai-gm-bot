@@ -9,21 +9,21 @@
   "manifest_path": "/data/docs/manifest.json",
   "system_type": "Portable overlay — apply to any region (Acasia, Violet Steppe, Ecktorian borderlands). Not a fixed geography.",
   "overview": {
-    "tagline": "A contract is only as good as the next settlement — but loyalty is earned in blood, not silver.",
-    "genre": "Mercenary realism, winter warfare, logistics-driven violence, loyalty in the mud.",
-    "mood": "Condotta & Crowns — The Weight of Every Coin, The Grip of Every Oath",
-    "starting_location": "A mercenary camp between seasons — mud, canvas, and the smell of wet wool and old blood. Every tent has a roster pinned to its flap, and beside it, a list of the fallen. A Veteran Sergeant looks you over. 'I've seen three captains rise and fall in the time it takes to grow a beard. The mud stays the same. The pay comes when it pleases. But the men? They remember who shared their fire and who ate alone. Keep your blade sharp and your word sharper.'",
+    "tagline": "A contract is good until the next settlement. Loyalty is paid in blood and remembered longer.",
+    "genre": "Mercenary western. Winter warfare, pay-chests, broken axles, and the loyalty of men standing in mud.",
+    "mood": "Condotta and crowns — every coin weighed, every oath collected on.",
+    "starting_location": "A camp between seasons: mud, wet canvas, wet wool, old blood. Every tent has a roster pinned to the flap and the fallen listed beneath it. A veteran sergeant looks you over the way he would look at a horse. 'Three captains up and down in the time it takes to grow a beard. The mud doesn't change. Pay comes when it comes. But the men remember who shared a fire and who ate alone, so keep your blade sharp and your word sharper.'",
     "lore": {
-      "history": "Ecktorian treasuries bankroll a perpetual border-war they claim to be 'containing.' In truth, the gold keeps the fire burning. The Black Banners are mercenary leagues — ex-legionaries, second-sons, deserters, and exiles — who sell steel to the highest bidder, today's ally becoming tomorrow's quarry. Between them move the Ykrul steppe-clans (swift, pragmatic, oath-canny) and the Vilikari hill tribes (crafty, patient, and proud). Ecktorian ministers call it 'pressure management.' The companies call it a season — and a season is measured in the rhythm of pay, but also in snowdrifts, broken wheels, and the weight of a dead friend's shield. Here, war is a marketplace — but also a forge, a campfire, a brotherhood of mud and steel. The Black Banners are not a single army but a squabbling league of freelance violence, bound by camp law, customs of compensation, and the shared knowledge that tomorrow's enemy might be today's employer. The real battles are fought in tents over agreements; the clash outside is just the review. Between the rigid honor codes of Ecktorian nobility and the fluid pragmatism of steppe clans and hill tribes, mercenaries navigate a dangerous middle ground. Survival depends on knowing when to keep an oath and when to break one — always at dawn, with a witness, and with surety paid.",
-      "first_notice": "The smell of wet wool and old blood. The way every tent has a roster pinned to its flap — and beside it, a list of the fallen. The silence when the pay chest is opened — and the murmur when it's light. The way veterans watch the horizon not for enemies, but for the supply train. The way the camp sings when the pay is good — and falls silent when the chest is empty.",
-      "rule_that_kills": "Never break a Bell Dawn. Three bells at sunrise means bury the dead, trade prisoners, fix the wells, no ambushes. Violating it is how legends end badly — and how captains end hanging. The dead don't forget. The Hollow watches Bell Dawns."
+      "history": "Ecktorian treasuries pay for a border war they describe as containment. The gold is what keeps it lit. The Black Banners are the leagues that spend it — ex-legionaries, second sons, deserters, exiles — selling steel by the season, and this spring's ally is next spring's contract. Between them move the Ykrul clans, quick and hard to bind, and the Vilikari hill tribes, patient and proud, and neither is anybody's auxiliary no matter what the charter says.\n\nMinisters call it pressure management. The companies call it a season, and a season is measured in pay-days, snowdrifts, broken axles, and the weight of a dead friend's shield carried back to his mother. It is a marketplace. It is also a forge and a campfire and the only family some of these men have. The real fighting happens in tents, over terms; what happens in the field is mostly confirmation.\n\nThe Banners are not an army but a quarrelsome league of freelance violence held together by camp law, custom, and the certain knowledge that tomorrow's enemy may be next month's employer. Survival is knowing when to keep an oath and when to break one — at dawn, before a witness, with surety paid, because there is a right way to break one and everything else is murder.",
+      "first_notice": "Wet wool and old blood. A roster on every tent flap with the fallen listed under it. The particular quiet when the pay chest is opened, and the murmur when it comes up light. Veterans watching the horizon for the supply train and not for enemies.",
+      "rule_that_kills": "Never break a Bell Dawn. Three bells at sunrise: bury the dead, trade prisoners, mend the wells, no ambushes. Companies that break it are not outlawed. They are simply never hired again, which is slower and worse, and their captains hang once the men work out why the work stopped."
     }
   },
   "regional_diagnostic": {
-    "current_hook": "A contract is only as good as the next settlement — but loyalty is earned in blood, not silver.",
-    "core_conflict": "Mercenary companies are caught between conflicting condotta contracts, the honor codes of the powers who hire them, and the pragmatic need to survive the season — every choice trades coin, reputation, and the loyalty of the men in the mud.",
+    "current_hook": "A contract is good until the next settlement. Loyalty is paid in blood and remembered longer.",
+    "core_conflict": "Companies serve conflicting charters, the honor codes of the people who hire them, and the plain need to reach spring. Every choice spends coin, name, or the loyalty of the men in the mud — and the third one cannot be spent twice.",
     "unique_feature": "**Allegiances in Flux:** at the start of every scene involving mercenaries, roll to determine which pressure (a rival charter, a counter-offer, false orders) reshapes the moment.",
-    "ninth_taboo": "In any mercenary camp, the ninth tent in a row collapses before dawn. The ground beneath is always damp, as if something rose from below and left. Those who sleep in that tent wake with no memory of the night — but a new name carved into their belt buckle. The name is never theirs. The Hollow is collecting.",
+    "ninth_taboo": "The ninth tent in a row goes down before dawn, every time, and the ground beneath it comes up damp. Whoever slept there wakes with the night missing and a name scratched into their belt-buckle. It is never their own, and it is never on any roster the company keeps.",
     "quickstart": [
       "Condotta Crossroads: put two conflicting charters on the table. Ask: who do you disappoint first?",
       "Company Sheet: Name, Colors, Captain. Add timers: Payday [4], Supplies [4], Cohesion [6].",
@@ -35,18 +35,46 @@
   "quotes": [
     {
       "speaker": "Banner-Captain (Elite)",
-      "text": "A contract is only as good as the next payday, and a grudge is only as sharp as the sword backing it. In this game, we sell steel by the season and vendettas by the year. But a captain who forgets the men in the mud won't last the winter."
+      "text": "A contract's good till the next settlement, and a grudge is only as sharp as the sword behind it. We sell steel by the season and vendettas by the year, and both are honest trades so long as the price is said out loud. But a captain who forgets the men in the mud won't see spring, and it won't be the enemy that does it."
     },
     {
       "speaker": "Veteran Sergeant (Commoner)",
-      "text": "I've seen three captains rise and fall in the time it takes to grow a beard. The mud stays the same. The pay comes when it pleases. But the men? They remember who shared their fire and who ate alone. Keep your blade sharp and your word sharper. The camp sings? You live. They stop singing? Even the best charter bleeds."
+      "text": "Three captains up and down in the time it takes to grow a beard, and the mud never changed once. Pay comes when it pleases. The men remember who shared a fire and who ate alone, and they remember it a lot longer than they remember who won. Camp's singing? You'll live. Camp goes quiet? I don't care whose seal is on your charter."
     }
   ],
   "names": {
-    "first_male": ["Rurik", "Dragan", "Sebastian", "Vladan", "Temur", "Caspian"],
-    "first_female": ["Svetlana", "Mira", "Olena", "Zoya", "Nadezhda", "Rada"],
-    "banner_names": ["Blackwolf", "Ironhand", "Rustcloak", "Ashbanner", "Greyboar", "Redtally"],
-    "epithets": ["the Unpaid", "the Scarred", "Bell-Heart", "the Silent", "Six-Fingers", "the Lame"],
+    "first_male": [
+      "Rurik",
+      "Dragan",
+      "Sebastian",
+      "Vladan",
+      "Temur",
+      "Caspian"
+    ],
+    "first_female": [
+      "Svetlana",
+      "Mira",
+      "Olena",
+      "Zoya",
+      "Nadezhda",
+      "Rada"
+    ],
+    "banner_names": [
+      "Blackwolf",
+      "Ironhand",
+      "Rustcloak",
+      "Ashbanner",
+      "Greyboar",
+      "Redtally"
+    ],
+    "epithets": [
+      "the Unpaid",
+      "the Scarred",
+      "Bell-Heart",
+      "the Silent",
+      "Six-Fingers",
+      "the Lame"
+    ],
     "note": "Mercenary names are often aliases, nicknames from past campaigns, or the color of a faded banner. Surnames are rare; epithets are everything."
   },
   "places": [
@@ -590,16 +618,32 @@
     }
   ],
   "pursuit_ladder": [
-    { "move": "Advance/Withdraw (Wits + Ride or Stealth)", "effect": "On a hit, shift one band. On a strong hit, also impose Dust Cloud (cover retreat)." },
-    { "move": "Cut the Contract (Presence + Sway)", "effect": "On a hit, freeze range for one exchange; if a Condotta Rider's Pass is in your possession, +1 die." },
-    { "move": "Weather the Blizzard (Endurance + Survival)", "effect": "On a hit in Blizzard Pins, you pick who finds shelter; on a miss, the GM does." }
+    {
+      "move": "Advance/Withdraw (Wits + Ride or Stealth)",
+      "effect": "On a hit, shift one band. On a strong hit, also impose Dust Cloud (cover retreat)."
+    },
+    {
+      "move": "Cut the Contract (Presence + Sway)",
+      "effect": "On a hit, freeze range for one exchange; if a Condotta Rider's Pass is in your possession, +1 die."
+    },
+    {
+      "move": "Weather the Blizzard (Endurance + Survival)",
+      "effect": "On a hit in Blizzard Pins, you pick who finds shelter; on a miss, the GM does."
+    }
   ],
   "boss_archetypes": [
     {
       "name": "The Coin-Captain",
-      "tags": ["Mercenary", "Turncoat"],
+      "tags": [
+        "Mercenary",
+        "Turncoat"
+      ],
       "description": "A charming officer who has already sold your company's position twice.",
-      "phases": ["Fair Offer", "Betrayal Clause", "Payday Massacre"],
+      "phases": [
+        "Fair Offer",
+        "Betrayal Clause",
+        "Payday Massacre"
+      ],
       "cracks": [
         "expose his dual contract before the company",
         "pay off his debt to the Condotta Broker",
@@ -608,9 +652,16 @@
     },
     {
       "name": "The Quartermaster-Provost",
-      "tags": ["Logistics", "Tyrant"],
+      "tags": [
+        "Logistics",
+        "Tyrant"
+      ],
       "description": "A logistics officer who has turned hunger into a weapon.",
-      "phases": ["Supply Freeze", "Ration Cuts", "Starvation Siege"],
+      "phases": [
+        "Supply Freeze",
+        "Ration Cuts",
+        "Starvation Siege"
+      ],
       "cracks": [
         "steal his secret ledger",
         "rally the men with a shared meal (spend 1 Supplies)",
@@ -619,9 +670,16 @@
     },
     {
       "name": "The Singing Wakes",
-      "tags": ["Weapon-Host", "Uncanny"],
+      "tags": [
+        "Weapon-Host",
+        "Uncanny"
+      ],
       "description": "A chorus of fallen blades that has learned to want.",
-      "phases": ["Whisper", "Chorus", "Scream"],
+      "phases": [
+        "Whisper",
+        "Chorus",
+        "Scream"
+      ],
       "cracks": [
         "perform the Three Silencing Acts (funeral honors for a fallen blade, bury a broken standard, ring the wind-break bell)",
         "offer a memory to the Hollow in exchange for silence",
@@ -630,9 +688,16 @@
     },
     {
       "name": "The Bannerless One",
-      "tags": ["Legend", "Hollow"],
+      "tags": [
+        "Legend",
+        "Hollow"
+      ],
       "description": "The Hollow's messenger, wearing a borrowed face and collecting promises.",
-      "phases": ["Offer", "Collection", "Judgment"],
+      "phases": [
+        "Offer",
+        "Collection",
+        "Judgment"
+      ],
       "cracks": [
         "pay the Price of Mercy before it matures",
         "offer a memory the Hollow does not yet have",
@@ -677,5 +742,64 @@
     "The Bannerless One",
     "The Hollow"
   ],
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "winter_bites_timer": {
+    "name": "Winter Bites",
+    "max_segments": 8,
+    "premise": "Nobody in a mercenary company is killed by the enemy first. They are killed by the season, and the enemy finishes it.",
+    "advance_on": [
+      "The pay chest comes up light or late (+1)",
+      "The company moves camp in weather the sergeants advised against (+1)",
+      "A Bell Dawn is used for anything but its four purposes (+1)",
+      "The party spends Supply to buy a social or combat advantage (+1)",
+      "A named soldier dies and is not buried properly (+1)"
+    ],
+    "thresholds": {
+      "3": "Firewood, boots, and dry powder run short. All Supply costs are doubled and the camp stops singing.",
+      "5": "Camp fever. One named NPC per session falls sick; the company's effective Cap drops by 1 until they recover or don't.",
+      "8": "The company breaks. Half the men take another banner or walk, whichever comes first, and the party keeps whoever they personally earned."
+    }
+  },
+  "start_of_scene_twists_d8": [
+    {
+      "roll": 1,
+      "twist": "Counter-Offer",
+      "effect": "A rival captain's man is already in camp with better terms. Someone the party trusts is listening to him."
+    },
+    {
+      "roll": 2,
+      "twist": "Chest Comes Light",
+      "effect": "Pay is short by a quarter and the sergeants want a reason before the men do. Winter Bites advances 1."
+    },
+    {
+      "roll": 3,
+      "twist": "Bell Dawn",
+      "effect": "Three bells at sunrise. No violence is possible this scene; everything must be solved by talking, burying, or trading."
+    },
+    {
+      "roll": 4,
+      "twist": "Old Company",
+      "effect": "Someone across the field served beside a party member. Both sides know it. First combat roll between them is at Desperate position for whoever swings first."
+    },
+    {
+      "roll": 5,
+      "twist": "Wheel Off",
+      "effect": "A supply wagon is down and the road is closing. Choose what gets left: powder, grain, or wounded."
+    },
+    {
+      "roll": 6,
+      "twist": "False Orders",
+      "effect": "Written orders arrive with a good seal and wrong content. Spotting the forgery costs a scene; obeying costs more."
+    },
+    {
+      "roll": 7,
+      "twist": "The Camp Sings",
+      "effect": "Morale is genuinely high. +1 die to every roll made in the camp this scene, and any betrayal committed here lands twice as hard later."
+    },
+    {
+      "roll": 8,
+      "twist": "Ninth Tent",
+      "effect": "The tent is down again and the ground is damp again. Whoever slept in it is missing four hours and has a stranger's name on their buckle."
+    }
+  ]
 }

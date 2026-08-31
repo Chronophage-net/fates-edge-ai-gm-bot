@@ -15,14 +15,14 @@
     "inexorability"
   ],
   "lore": {
-    "description": "Khemesh is not merely a lord of the depths but the hunger beneath them, a pressure older than seas. Those who bargain with him are marked by the abyss — seen in the way shadows cling, in the whispers heard when no voice speaks, in the certainty that all things will sink. He is the classic warlock's patron: distant, vast, and utterly indifferent to mortal morality. To serve Khemesh is to accept that the universe is cold, that the deep does not hate — it simply consumes.",
-    "followers": "His followers are deep-salvagers, pressure-scribes, and those who have looked into the abyss and let it look back. They gain power over pressure, darkness, and the crushing inevitability of the deep, but pay with their warmth, their humanity, and eventually their sanity. The cults of Khemesh are eldritch and alien, and even the most benevolent follower of the Maw is marked by a cold that never leaves.",
+    "description": "Everyone imagines the deep as open. It is the opposite of open.\n\nGo down far enough and the water stops being a place you are in and becomes a thing that is on you — on the chest, on the eyes, on the joints of the fingers — and there is no up, because up is four thousand feet of the same weight, and no direction is a way out. The room does not have walls. The room is *everywhere at once and closing*, and it has been closing since before there were eyes to be shut by it.\n\nKhemesh is that. Not a lord of it. There is no court down there, no throne, nothing that answers, and no gap between him and the condition of being at that depth. What his sworn receive is not a voice but a certainty arriving inside them rather than at them: that everything descends in the end, that the descent is narrow, and that nothing is waiting at the bottom to receive it.\n\nHe is Raéyn's son, which the sailors say and the sworn do not discuss. Whatever the sea is when it is wild and enormous and alive, this is what it is at the bottom of itself, in the dark, with the lid on.\n\nYou will know a marked one before they speak. Shadows hang against them wrong, heavy, like wet cloth. They flinch at sounds nobody else has heard. They stand nearer to walls than they used to. And they are calm about it — that is the part that empties a room — calm the way a man is calm after the argument is over and he has lost it.",
+    "followers": "Deep-salvagers. Pressure-scribes. People who went down after something and came back up too slowly. What they get is the depth itself: dark that gives way for them, air that stays in the lungs past all reason, a steadiness that goes down through rock. What they pay is warmth, and not all at once — a season of it, then another, until their households stop setting out a chair. There are gentle followers of the Maw. It makes no difference to the room. Something is always cold where they are standing, and no animal will settle near them.",
     "names_across_regions": {
       "zakov": "The Salt-Hunger's Father, the pressure beneath the reef that claims ships and souls",
       "thepyrgos": "The Deep Chime, the bell that rings from the trench and drives listeners mad",
       "mistlands": "The Fog-Breath's Origin, the cold that follows the bell-line's failure"
     },
-    "quote": "In the trench without light, the Maw waits. Even silence drowns."
+    "quote": "Down there the dark is not empty. It is occupied, and it has all the time there is."
   },
   "domain_focus": [
     "Depths and Pressure: crushing weight, darkness, the alien geometry of the abyss",
@@ -32,18 +32,18 @@
   ],
   "runekeeper_options": {
     "thiasos": {
-      "description": "A Runekeeper sworn to Khemesh does not keep a living familiar. Their Thiasos is a preserved remnant of the deep: a vial of abyssal water that never warms, a piece of coral that grows only in absolute darkness, or a polished tooth from a creature that has never seen the sun. This object pulses faintly when pressure changes.",
-      "care": "It requires no food, but it must be kept submerged in salt water when not in use. If left dry for a week, it becomes Compromised (it emits a distressing keening at random, imposing –1 die on Stealth rolls for its bearer)."
+      "description": "Nothing living will stay with a sworn of Khemesh, so they carry a piece of the deep instead: a vial of trench water that never comes up to the temperature of the room, a coral grown where no light has ever been, a tooth from something that had no use for eyes. It stirs before a storm — hours before the sky knows.",
+      "care": "It wants no food. It wants to be wet. Left dry a week it begins to keen, thin and continuous and just at the edge of hearing, and is Compromised (–1 die on Stealth rolls for its bearer) until it is submerged in salt water again."
     },
     "codex": {
-      "description": "The Codex kept in Khemesh's name is never a book of paper. It may be a slab of slate etched with runes that weep condensation, a chain of iron links each inscribed with a single syllable, or the inside of a deep-sea diving helmet.",
-      "upkeep": "Because the deep resists being fixed in writing, the Codex requires upkeep: the Runekeeper must immerse it in cold salt water for an hour each week, or the Rites stored there become illegible (treat as Compromised until restored)."
+      "description": "Nothing Khemesh gives will hold still on paper. His sworn keep the Rites on slate that sweats in dry rooms, on a chain whose links carry one syllable each, or scratched inside a diving helmet where the wearer's own breath reads them back.",
+      "upkeep": "The deep resists being written down. An hour each week submerged in cold salt water, or the Rites go illegible — not faded, rearranged (treat as Compromised until restored)."
     }
   },
   "patrons_gift": {
     "name": "Khemesh's Blessing",
-    "description": "Once per scene as an action, a Runekeeper of Khemesh may touch a held item (weapon, shield, or tool) and whisper a promise of sinking.",
-    "effect": "For the rest of the scene, the item grants +1 die to Intimidation or Endurance rolls, and its first use each scene ignores one point of Armor (the deep's pressure finds the cracks).",
+    "description": "Once per scene as an action, a Runekeeper of Khemesh may set a hand on a held item — weapon, shield, tool — and promise it the bottom.",
+    "effect": "For the rest of the scene the item grants +1 die to Intimidation or Endurance rolls, and its first use each scene ignores one point of Armor. Pressure finds the seam. It always has.",
     "cost": "After the scene, the user marks +1 Obligation to Khemesh."
   },
   "rites": [
@@ -60,7 +60,7 @@
         "AREA",
         "SILENCE"
       ],
-      "materials": "A broken shell filled with ink-dark water.",
+      "materials": "A cracked shell with an inch of water in it that will not go clear.",
       "effect": "Choose one: Whisper of the Trench: Target hears impossible echoes and suffers –1 die on their next action. Crushing Silence: Establish an oppressive silence in a zone; enemies in the zone suffer –1 die to coordination or morale-driven actions.",
       "push_it": "(Whisper) Echoes coil in your own skull — take Fatigue 1, but the target also loses their next minor action. (Silence) A single enemy's voice is stolen entirely for the scene. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
@@ -80,7 +80,7 @@
         "PRESSURE",
         "DEBUFF"
       ],
-      "materials": "A length of rusted chain submerged in water.",
+      "materials": "A length of chain that lay on the seabed long enough to stop being iron in the ordinary way.",
       "effect": "Target is pinned by invisible crushing force: treat as [ENTANGLE] with Great Effect if underwater or confined.",
       "push_it": "Inflict Fatigue 1 on the target in addition to the restraint. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
@@ -100,7 +100,7 @@
         "BURDEN",
         "FEAR"
       ],
-      "materials": "None (requires standing in absolute darkness or near deep water).",
+      "materials": "None. You must be standing where there is no light at all, or close enough over deep water to feel it working under the boards.",
       "effect": "You perceive the world as Khemesh does — fractured, alien, crushing. Gain +2 dice to Notice and Arcana, and may ask one 'true nature' question about a foe or structure. When the scene ends, you suffer Exposure +1 as your perception warps.",
       "push_it": "Extend the vision to one ally, but both take Fatigue 1. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
@@ -121,7 +121,7 @@
         "FATE",
         "DEATH"
       ],
-      "materials": "A sealed vessel of abyssal water, broken open.",
+      "materials": "A sealed vessel of trench water, opened. There is one use in a vessel and no second.",
       "effect": "Reality in the zone folds inward like the crushing deep: Enemies act at Desperate Position by default; Each beat, the GM may force 1 SB (Spades/Clubs favored) as the deep pressures reality; Structures, vessels, or wards fracture as if under immense weight.",
       "push_it": "For one beat, declare a single enemy 'crushed' (severe harm/effect). You immediately suffer Fatigue 2. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
       "cost": "Mark +2 Obligation.",
@@ -133,20 +133,20 @@
   "cantors_and_cults": {
     "cantors": {
       "name": "The Cantor's Song",
-      "description": "A Cantor of Khemesh sings in pressures — low, resonant drones that feel like the weight of water on the chest. Their voice is used to invoke the crushing depths, to rupture a ship's hull with a single sustained note, or to fill a room with the sensation of drowning. Khemesh's Cantors are rare, feared, and often found in coastal cults where they sing the tides into madness."
+      "description": "A Cantor of Khemesh does not sing notes. They sing pressure: a drone so low the chest takes it before the ear does, and then the ear never quite gets it at all. Held long enough it opens the seams of a hull. Held in a closed room it persuades everyone in it that they are underwater, and two or three will breathe in. They are rare. Nobody has ever trained one on purpose."
     },
     "cult": {
       "name": "The Cult of the Drowned Chorus",
-      "description": "Khemesh's cults are the stuff of eldritch horror — sunken temples beneath storm-tossed seas, congregations of shore-dwellers with wet eyes and too-pale skin, and the occasional deep one or kraken-spawn acolyte. A ritual of the Drowned Chorus involves each member cutting a small sigil into their palm (a spiral within a triangle) and then drinking a cup of brine and salt water while whispering a secret hope into the cup — hope that the depths will grant, or consume. The water whispers back in a voice that sounds like their own, but wrong. Their creed is whispered in wet, gurgling tones: 'All things sink. The only question is what you carry down with you.' Outsiders are bait, or converts. Sometimes both."
+      "description": "They meet where the tide has already taken something: a flooded crypt, a chapel below the waterline, a stretch of shingle at the hour it goes under. The congregation is shore-people with wet-looking eyes and skin that never entirely dries. Each cuts a spiral into the palm, drinks brine, and whispers one hope into the cup. The cup answers. It answers in the whisperer's own voice, and it is close enough to what they said that most of them come back to find out where the difference is. Outsiders are bait or converts, and the Chorus has never been careful about the distinction."
     }
   },
   "witchcraft": {
     "name": "The Art of the Abyss",
-    "description": "A witch who walks with Khemesh is a deep-salvager or pressure-scribe — one who works with the spoils of the abyss. Their craft is the art of enduring pressure: sealing a letter with wax drawn from deep-sea vents, inscribing a ward that holds back the tide, or writing a contract in ink made from the blood of a drowned sailor. Their tools are not hammers; they use vials, seals, and the patient weight of water. In Linn, a shipwright might season a keel with a prayer, but a hedge-witch of Khemesh might instead seal a curse into the hull with a drop of abyssal water, so that the ship will never sink — but its crew will dream of drowning every night.",
+    "description": "A witch who walks with Khemesh is a deep-salvager or a pressure-scribe, working with what the abyss gives up. The craft is endurance made portable: wax drawn from a vent seal, a ward that holds a tide out of a doorway, ink thinned with water off a drowned man. No hammers. Vials, seals, and the patient weight of water. In Linn a shipwright seasons a keel with a prayer; a hedge-witch of Khemesh seals one drop into the hull instead, and the ship will never founder, and the crew will dream of drowning every night they sleep aboard her.",
     "color": "#1a2a4a",
-    "lore": "The abyss-witch learns to endure what others cannot: the crushing weight of the deep, the cold that seeps into bone, and the whispers that drive lesser minds mad. Khemesh does not offer comfort — he offers survival. Those who walk his path become living vessels of the deep's pressure, carrying the weight of the trench wherever they go.",
+    "lore": "The abyss-witch learns to hold what would fold anyone else: the weight, the cold that gets into the marrow and stays, the sound that is almost a voice. Khemesh offers no comfort and does not pretend to. He offers survival, which is a different thing and worth less than people expect. Those who walk the path become carriers — the trench travels with them, and it is felt in every room they enter before they are.",
     "signature_rite": "Rite of the Crushing Whisper",
-    "quote": "In the trench without light, the Maw waits. Even silence drowns.",
+    "quote": "Down there the dark is not empty. It is occupied, and it has all the time there is.",
     "tools": {
       "vessel_of_depth": {
         "name": "The Vessel of the Unspoken Depth",
@@ -173,11 +173,11 @@
   },
   "monastic_tradition": {
     "name": "The Way of the Abyssal Maw",
-    "description": "Monks of the Abyssal Maw learn to endure the crushing weight of the deep and to move with the inexorable certainty of sinking water. They are cold, patient, and utterly unyielding—their stillness is not peace but pressure, their silence not emptiness but the weight of the trench. They understand that all things sink, and they have made peace with the bottom.",
+    "description": "Monks of the Abyssal Maw learn to hold weight and to move with the certainty of a thing sinking. They are cold, unhurried and impossible to hurry. Their stillness is not peace; it is load. Their silence is not emptiness; it is the trench. They have made their arrangement with the bottom and consider the question closed.",
     "color": "#1a2a4a",
     "prerequisites": "Spirit 3+, Body 2+, Rite of the Crushing Whisper or Cantor of Khemesh.",
-    "quote": "In the trench without light, the Maw waits. Even silence drowns.",
-    "debt_resistant_frame": "The deep does not collect debts—it consumes them. Monks of the Abyssal Maw gain +1 die to resist any magical debt, geas, or contract that would bind them to a fixed place or force them to rise when they should sink. If they succeed, the creditor's demand is crushed by pressure—the obligation simply ceases to matter.",
+    "quote": "Down there the dark is not empty. It is occupied, and it has all the time there is.",
+    "debt_resistant_frame": "Nothing collects from the deep. The deep only takes. Monks of the Abyssal Maw gain +1 die to resist any binding, geas, or compulsion that would fix them in a place or force them upward. On a success the compulsion does not break — it sinks out of relevance, and whoever laid it feels it go.",
     "techniques": {
       "basic": {
         "name": "Crushing Grip",
@@ -201,38 +201,7 @@
         "prereq": "Tier III, Spirit 4+"
       }
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "Abyssal Resilience: +1 die to resist fear and pressure-based effects.",
-        "cost": "Claustrophobic Comfort: Suffer –1 die in open, well-lit spaces or above ground."
-      },
-      {
-        "tier": 2,
-        "benefit": "Crushing Insight: Once/scene, treat a failed Investigation or Arcana roll as a success, but mark 1 SB (Clubs).",
-        "cost": "Weight of Knowledge: When you learn a secret someone wanted hidden, test Resolve (DV 3) or gain 1 Fatigue as the abyss presses on you."
-      },
-      {
-        "tier": 3,
-        "benefit": "Silent Hunter: +2 dice to Stealth in dark or confined spaces.",
-        "cost": "Voice of the Deep: When speaking normally, your voice sounds distant and hollow, causing –1 die to social rolls requiring warmth or clarity."
-      },
-      {
-        "tier": 4,
-        "benefit": "Pressure Adaptation: Immune to underwater combat penalties; gain +1 die to resist drowning.",
-        "cost": "Crushing Presence: Allies within Near range suffer –1 die to morale-based rolls due to your oppressive aura."
-      },
-      {
-        "tier": 5,
-        "benefit": "Abyssal Empathy: Once/session, sense the deepest fear of any creature within Near range (GM tells you one thing they are afraid of).",
-        "cost": "Fractured Perception: –1 die to rolls requiring normal vision; the world appears warped and alien. You cannot recover Fatigue from rest while at sea."
-      },
-      {
-        "tier": "6+",
-        "benefit": "Maw-Touched: Once/session, extinguish all non-magical light sources in a zone as a free action. Your presence causes light to dim.",
-        "cost": "Hunger of the Maw: Mark +2 Obligation when using this power. You are vulnerable to fire (take +1 Harm from fire-based attacks). Each dawn, you must consume something (food, memory, hope) or mark 1 Fatigue."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -267,19 +236,21 @@
     }
   ],
   "playstyle_notes": {
-    "description": "Khemesh is the classic warlock's patron: distant, vast, and utterly indifferent. His followers gain power over pressure, darkness, and the crushing inevitability of the deep, but pay with their warmth, their humanity, and eventually their sanity. The cults of Khemesh are eldritch and alien, and even the most benevolent follower of the Maw is marked by a cold that never leaves. Ideal for players who enjoy cosmic horror, the price of forbidden knowledge, and characters who have looked into the abyss — and let it look back.",
+    "description": "Khemesh suits a table that wants horror to be structural rather than sudden, and enclosing rather than large. The power is slow, heavy, and entirely reliable, and the cost is never paid in the scene where it is incurred — it is paid in the way the other characters gradually sit further away, and in the way rooms in the fiction get smaller around the character without anyone describing them as smaller.\n\nRun him as an absence of negotiation. He does not bargain, explain, or punish. Things simply become true, and by the time anyone objects the room is too cold and too close for the argument to go anywhere.",
     "emphasizes": [
-      "Eldritch Horror: powers that are alien, vast, and morally indifferent",
-      "Crushing Pressure: mechanical weight, slowness, inevitability",
-      "Deep as Warlock Patron: bargains with the abyss, forbidden knowledge, madness",
-      "Consumption: hunger that devours matter, memory, and hope",
-      "Isolation: the follower grows cold, distant, and unsettling to others"
+      "Weight, not violence — powers that press, hold, and outlast rather than strike",
+      "Cold arriving early — the mark shows in other people's behavior before it shows in the character",
+      "No terms offered — nothing to appeal to, negotiate with, or be forgiven by",
+      "Hunger without appetite — it consumes matter, memory, and hope with the same indifference",
+      "The slow room — isolation played out socially, scene by scene, until the character is alone in company"
     ]
   },
   "sample_adventure": {
     "title": "The Sundering of the Deep",
-    "description": "A ship's hull has been found cracked open on the shore, its crew vanished. The only survivor is a cabin boy who babbles about 'a voice from the deep' and 'a pressure that sang.' The local harbormaster wants to cover it up, but the Ordo Artificum has taken an interest — they believe the ship was carrying a sealed vessel of abyssal water. The party must find the vessel before the cult of the Drowned Chorus claims it, and decide whether to seal it forever or let the deep speak.",
-    "quote": "The seal holds back more than water. It holds back the weight of what waits beneath. Break it, and you will hear the song of the Maw. Some songs are not meant to be heard."
+    "description": "A hull is on the shingle, opened from the inside, and the crew is not in it. The only survivor is a cabin boy who will not stop talking about a pressure that sang. The harbormaster wants the whole thing quietly buried before the season's shipping decides otherwise, and the Ordo Artificum has already sent someone, because they believe the ship was carrying a sealed vessel of trench water and they would very much like to know where it is now. So would the Drowned Chorus, who have been on the beach since before the wreck came in.",
+    "quote": "The seal is not holding water. Water does not need holding. Break it and find out what it was actually for."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "order": "chthonic",
+  "register": "fear"
 }

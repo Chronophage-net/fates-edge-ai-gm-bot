@@ -277,38 +277,7 @@
       "cost": "2 Fatigue and +1 Obligation to Lucky Jack",
       "prereq": "Tier III, Wits 4+"
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "Thief's Instinct: +1 die to Notice traps, hidden doors, and valuable objects.",
-        "cost": "Compulsive Gambler: Must take a risk when one is presented; –1 die to refuse a bet."
-      },
-      {
-        "tier": 2,
-        "benefit": "Lucky Break: Once/scene, treat a failed Subterfuge or Stealth roll as a success, but mark 1 SB (Hearts).",
-        "cost": "Debt-Blind: –1 die to recall any debt owed to you; Jack collects the interest."
-      },
-      {
-        "tier": 3,
-        "benefit": "Crowd's Eye: +2 dice to blend into crowds or find a mark in a busy place.",
-        "cost": "Restless Hands: –1 die to resist picking a pocket or taking a shiny object that is unguarded."
-      },
-      {
-        "tier": 4,
-        "benefit": "Unseen Step: Once/session, automatically succeed on one escape or evasion roll.",
-        "cost": "Marked by the Coin: A rival thief knows your face; the GM gains 1 SB per session to spend on their pursuit."
-      },
-      {
-        "tier": 5,
-        "benefit": "The Unspent Coin: Once/session, spend 1 Boon to ignore any one penalty from a debt or obligation — Jack has forgotten you owe.",
-        "cost": "The Interest Comes Due: Every time you use this benefit, mark 1 permanent Obligation to Jack."
-      },
-      {
-        "tier": "6+",
-        "benefit": "Magpie King's Mantle: Once/session, become the embodiment of luck for one scene. All allies within Near gain +2 dice to Subterfuge and Stealth; all enemies suffer –1 die to detect them.",
-        "cost": "The Hollow's Coin: Mark +3 Obligation. You can no longer refuse a heist — the plan is always there, waiting. You must attempt any theft that is presented to you, or suffer 1 Fatigue per day until you do. Your reflection shows a coin where your face should be."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -357,5 +326,7 @@
     "description": "A member of the Unlucky Coin cult has been found dead, the Unlucky Coin missing from their hand. The cult is in chaos — without the coin, their rituals cannot continue, and they believe Jack has withdrawn his favor. The party must find the coin, discover who stole it, and decide whether to return it to the cult or keep it for themselves. But the coin is not just a symbol — it is a debt, and whoever carries it owes Jack a heist. The party must plan a heist to pay the debt, or face the consequences of Jack's interest.",
     "quote": "The coin that never spends is the debt that never dies. Some debts are worth paying. Others are worth stealing."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "order": "beyond_the_triune",
+  "register": "unclassifiable"
 }

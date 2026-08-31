@@ -217,38 +217,7 @@
         "prereq": "Tier III, Spirit 4+"
       }
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "Tease's Touch: +1 die to Sway or Performance when flirting or teasing.",
-        "cost": "Need for the Chase: –1 die when acting without playful tension or anticipation."
-      },
-      {
-        "tier": 2,
-        "benefit": "Heart's Flutter: Once/scene, +2 dice to sense hidden hopes or unspoken longings.",
-        "cost": "Emotional Whiplash: Mark 1 Fatigue if unable to sustain anticipation or mutual discovery."
-      },
-      {
-        "tier": 3,
-        "benefit": "Aura of Possibility: Allies in Near gain +1 die to resist cynicism or hopelessness.",
-        "cost": "Expectation Magnet: Others sense your allure and lean into fantasy, whether or not you invited it."
-      },
-      {
-        "tier": 4,
-        "benefit": "Veil of Longing: Once/session, issue a compelling invitation to 'what if' that feels like a shared dream (Resist DV 4).",
-        "cost": "Fear of Fulfillment: –1 die to pursue actual commitment, especially when anticipation is sweet."
-      },
-      {
-        "tier": 5,
-        "benefit": "Garden Keeper: Once/session, call on contacts for aid — they remember the thrill of your near-touch.",
-        "cost": "Hollow Hope: –1 die when isolated from those you flirt with; you hunger for the thrill of the almost."
-      },
-      {
-        "tier": "6+",
-        "benefit": "Sovereign Anticipation: Once/session, dominate a gathering in courtship; all who meet your eyes must test Resolve (DV 5) or feel compelled to seek your nearness.",
-        "cost": "The Eternal Almost: Mark +2 Obligation; suffer if denied the chance to linger in threshold. Your presence becomes a tease when you cannot promise — and you cannot stop chasing the shimmer just out of reach."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -297,5 +266,8 @@
     "description": "A member of the Blush Circle has broken tradition — pressing a promise into words and demanding an answer from a courtship partner who isn't ready to give one. The Circle is scandalized; Zephyria's threshold has been trespassed. The party is asked to mediate before the dispute turns into something uglier, and must decide whether love that refuses to resolve is a gift worth protecting, or a cage dressed in flowers.",
     "quote": "Not every bloom is meant to become fruit. Some flowers are only ever meant to be beautiful, and then to fall."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "order": "beyond_the_triune",
+  "register": "unclassifiable",
+  "lineage": "A daughter of Inaea — born of the Spider's line, spinning beyond the web's architecture."
 }

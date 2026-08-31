@@ -220,38 +220,7 @@
         "prereq": "Tier III"
       }
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "Storm-sense: +1 die to Notice rolls outdoors.",
-        "cost": "Voice falters: Others forget your words more easily."
-      },
-      {
-        "tier": 2,
-        "benefit": "Fleetness: +1 die on escape or chase rolls.",
-        "cost": "Shadow lags: Mark 1 Fatigue when first seen in a scene."
-      },
-      {
-        "tier": 3,
-        "benefit": "Erasure's Mercy: Once/session, negate 1 Harm or capture.",
-        "cost": "Memory slips: Allies forget one fact or bond tied to you."
-      },
-      {
-        "tier": 4,
-        "benefit": "Rider's Endurance: Resist 1 Condition (Fear, Fatigue, Bind) once/session.",
-        "cost": "Reflections falter: You do not appear clearly in mirrors."
-      },
-      {
-        "tier": 5,
-        "benefit": "Storm-banner: +1 die to inspire rebellion or defiance.",
-        "cost": "Exile's weight: Each Push of a Rite marks 1 permanent Corruption."
-      },
-      {
-        "tier": "6+",
-        "benefit": "Horizon's Claim: You may ride unseen across any threshold.",
-        "cost": "Self-erasure: On social rolls, roll twice and take the worst result."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -300,5 +269,7 @@
     "description": "A knotted cord has appeared tied to the party's door — an invitation, or a warning. Someone they know has vanished into the Cult of the Unbannered, leaving behind a debt, a broken oath, and a family desperate for answers. The party must find the crossroads where the cult gathers before the missing soul's name is fully burned away. But the vanished may not want to be found; some erasures are chosen freely, and Aveh does not undo a gift once given.",
     "quote": "You came looking for a name. I have none to give you. But I can teach you how to stop needing one."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "order": "empyreal",
+  "register": "mystery"
 }

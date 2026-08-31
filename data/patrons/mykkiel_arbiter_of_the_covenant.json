@@ -196,38 +196,7 @@
         "prereq": "Tier III, Rite of Divine Judgment"
       }
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "Righteous Insight: +1 die to detect falsehood or covenant-breaking.",
-        "cost": "Uncompromising: Must uphold law absolutely; –1 die to merciful actions."
-      },
-      {
-        "tier": 2,
-        "benefit": "Zealous Conviction: Once per scene, +1 die when enforcing divine law.",
-        "cost": "Judge's Severity: Cannot easily overlook infractions; suffer 1 Fatigue if forced to."
-      },
-      {
-        "tier": 3,
-        "benefit": "Divine Authority: +2 dice when commanding in matters of faith or law.",
-        "cost": "Implacable: –1 die to diplomacy or negotiation with transgressors."
-      },
-      {
-        "tier": 4,
-        "benefit": "Sanctified Presence: Once per session, project an aura that makes resistance difficult (enemies test Spirit DV 3 or suffer –1 die to attack you).",
-        "cost": "Intolerant: –1 die when dealing with other faiths or traditions."
-      },
-      {
-        "tier": 5,
-        "benefit": "Prophetic Decree: Once per session, speak judgment that carries supernatural weight (target must obey a single command or mark 2 Corruption).",
-        "cost": "Blind to Nuance: –1 die to perceive gray areas or partial truths."
-      },
-      {
-        "tier": "6+",
-        "benefit": "Divine Proxy: Once per session, channel absolute judgment; bypass a target's resistance to a Rite of Mykkiel (they cannot roll to resist).",
-        "cost": "Instrument of Wrath: Mark +2 Obligation whenever you use this power; risk harming innocents alongside the guilty (GM may introduce collateral on a mixed success)."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -276,5 +245,7 @@
     "description": "A small barony has been struck by a series of misfortunes—blighted crops, stillborn calves, and a mysterious fever. The baron believes he is being punished by Mykkiel for a broken oath his grandfather made. The party must investigate the old covenant, uncover the truth, and decide whether to uphold the law or offer mercy—and face the consequences of either choice.",
     "quote": "The law is a debt that must be paid, whether you remember it or not."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "order": "seraphic",
+  "register": "conviction"
 }

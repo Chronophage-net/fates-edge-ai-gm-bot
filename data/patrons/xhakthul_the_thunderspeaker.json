@@ -225,38 +225,7 @@
         "prereq": "Tier III, Body 4+"
       }
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "Static Cling: Your touch carries a static shock. Metal objects faintly hum in your presence.",
-        "cost": "You feel restless energy before a storm. Minor lies itch like a rash."
-      },
-      {
-        "tier": 2,
-        "benefit": "Storm-Touched: Your hair stirs without wind. Your voice occasionally cracks like thunder. Small flames flicker near you.",
-        "cost": "You become irritable in calm, silent places. You crave loud arguments and violent weather."
-      },
-      {
-        "tier": 3,
-        "benefit": "Lightning Rod: You are dangerously magnetic. Unshielded metal flies to your hands. Your eyes crackle with faint light.",
-        "cost": "You feel a compulsion to disrupt order and create chaos. Peace feels like a cage."
-      },
-      {
-        "tier": 4,
-        "benefit": "Walking Storm: A localized wind stirs around you. You smell of ozone and wet stone. You cannot whisper; your voice is a low rumble.",
-        "cost": "You lose patience with lengthy plans. You prefer direct, explosive action, regardless of the cost."
-      },
-      {
-        "tier": 5,
-        "benefit": "Heart of the Tempest: You are the eye of a personal storm. Rain sheets indoors; lightning threatens those who anger you.",
-        "cost": "You see the world only as a force to be broken or commanded. Gentler emotions are foreign memories."
-      },
-      {
-        "tier": "6+",
-        "benefit": "Living Thunder: Once/session, you may become a bolt of lightning, teleporting to any point you can see within Far range and unleashing an automatic Harm 2 blast upon arrival.",
-        "cost": "Storm's Prison: Mark +3 Obligation. You can no longer remain indoors for more than an hour without suffering 1 Fatigue; the sky demands your presence."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -315,5 +284,7 @@
     "description": "A village in the highlands has been plagued by a storm that will not end. For three weeks, the rain has fallen, the thunder has rolled, and the lightning has struck the same hilltop every night. The villagers believe they have angered Xhak'Thul. In truth, a shaman of the First Drum has become storm-taken — she cannot stop drumming, and the storm is her heartbeat. The party must find her, calm her, and break the rhythm before the storm drowns the valley or the lightning finds the village. But she does not want to be saved. She has felt the thunder in her bones, and she will not give it up.",
     "quote": "The storm does not ask permission. It speaks. And when it speaks, the only answer is to dance — or to be struck down. Some dancers never stop. And some storms never end."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "order": "beyond_the_triune",
+  "register": "unclassifiable"
 }

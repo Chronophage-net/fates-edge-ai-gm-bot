@@ -232,38 +232,7 @@
         "prereq": "Tier III"
       }
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "Hunger's Sight: +1 die to Notice consumable properties in objects, beings, or ideas.",
-        "cost": "Metabolic Craving: Must consume something significant daily or suffer Fatigue 1."
-      },
-      {
-        "tier": 2,
-        "benefit": "Essence Thief: Once/scene, temporarily gain a minor property by consuming it.",
-        "cost": "Identity Bleed: Absorbed aspects surface unbidden; –1 die to maintain your original persona."
-      },
-      {
-        "tier": 3,
-        "benefit": "Metamorphic Resilience: Once/session, consume a Condition or Harm to negate it.",
-        "cost": "Hunger Aura: Those Near feel urges to consume or hoard; they suffer –1 die to self_control rolls."
-      },
-      {
-        "tier": 4,
-        "benefit": "Transformation Feast: Once/scene, consume and permanently absorb one minor supernatural ability.",
-        "cost": "Essence Instability: Conflicting properties clash; –1 die when relying on multiple absorbed aspects."
-      },
-      {
-        "tier": 5,
-        "benefit": "Identity Cannibal: Once/session, consume a significant aspect of another (major skill or core trait).",
-        "cost": "Self_Consumption: Risk eating your own memories or abilities; mark 1 SB (Spades) when stressed."
-      },
-      {
-        "tier": "6+",
-        "benefit": "Hunger Incarnate: Once/session, become living consumption; absorb nearby properties, abilities, or aspects for one scene. You may consume one physical object as a free action.",
-        "cost": "Void Hunger: Mark +3 Obligation; risk dissolving into pure appetite that must feed every hour to keep form. Your eyes reflect no light."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -312,5 +281,7 @@
     "description": "A village has been cursed to experience endless hunger. The crops grow, the livestock thrive, but no one can eat—every meal turns to ash in their mouths. A local alchemist has traced the curse to a nearby cave where a creature of endless appetite slumbers. The party must find the creature and decide: consume it, be consumed by it, or find a way to satisfy a hunger that can never be sated.",
     "quote": "To consume is to become. To devour is to transform."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "order": "chthonic",
+  "register": "fear"
 }

@@ -16,9 +16,9 @@
     "wit"
   ],
   "lore": {
-    "description": "Mab, the Hazel Queen, rules not from throne or blade, but from dance and debt. She is the smile that binds, the jest that ensnares, the hostess who makes guests complicit in her game. To speak in her Court is to pay; to receive her token is to owe. Mab is an Archfae — one of the great powers of the Gloaming Courts, neither wholly cruel nor kind, but always bound by her own rules. She cannot lie, but she can mislead so beautifully that truth becomes irrelevant. She cannot break an oath, but she can interpret it until it screams.",
-    "followers": "Her followers thrive on charm, wit, and story, spreading webs of bargains too subtle to escape. The Cantor's Path sings her name most sweetly, for every verse carries a price. Among the peoples of Fate's Edge, Mab is the patron of courtiers, actors, and those who live by their wits. In Aelinnel, she is the Unbounded Guest, whose arrival at a feast is marked by laughter and shattered glass — and a new debt for the host. In Vilikari salons, she is the Gilded Tongue, invoked before every negotiation. Wherever masks are worn and words have double meanings, Mab watches.",
-    "quote": "Every laugh is a promise. Every promise is a debt. Every debt belongs to Mab."
+    "description": "Mab keeps the Hazel Court, and she keeps it the way a very good hostess does: by arranging things so that no one can say afterward at what moment they became a guest. She does not command. She invites, she notices, she remembers — and by the time you understand that she has been holding the shape of your evening for you, you are standing inside it.\n\nShe is an Archfae, bound by rules she did not write and cannot step around. She cannot lie. She has never once needed to. She can set true things in an order that leaves you nowhere sensible to stand, and then look sorry about it, and mean that too.",
+    "followers": "Courtiers, players, and anyone whose living depends on being welcome. In Aelinnel she is the Unbounded Guest, and her arrival is announced by laughter and the sound of a glass going over. In the Vilikari salons she is the Gilded Tongue, named quietly before anyone sits down to talk terms. Wherever a mask is worn without apology and a sentence can be meant two ways, she is somewhere in the room, and generally enjoying herself.",
+    "quote": "You were not tricked. You were charmed, and you agreed, and I have the whole evening by heart."
   },
   "domain_focus": [
     "Fae Glamour: illusions, enchantments, the art of seeming",
@@ -28,17 +28,17 @@
   ],
   "runekeeper_options": {
     "thiasos": {
-      "description": "A Runekeeper who serves Mab does not bind a familiar of raw power. Their Thiasos is a small creature of glamour and wit: a talking cricket that gives advice in riddles, a cat with mismatched eyes that appears at masquerades, a small fox that steals shiny baubles and leaves cryptic notes, a white jay that mimics voices with uncanny accuracy, or a spider that weaves its web in the shape of a courtly dance.",
-      "care": "This creature requires no food, but it must witness a promise or a performance each day. If neglected for a week, it becomes Compromised (it pulls pranks at the worst moments — tugging a sleeve during a lie, knocking over a wine glass — imposing –1 die on all Deception and Performance rolls for its bearer until it next witnesses a genuine oath)."
+      "description": "The Hazel Court sends companions rather than servants, and they arrive already knowing your name. A cricket that answers a question with a better one. A cat with mismatched eyes that attends masquerades and nothing else. A fox that takes small bright things and leaves notes about it. A white jay with a talent for other people's voices and no discretion at all.",
+      "care": "It does not eat. Once a day it wants to see something worth repeating — a promise, a performance, a good lie well told. Neglected a week it starts editorializing: a tug at the sleeve mid-untruth, a glass knocked over on the turn of a sentence (–1 die on Deception and Performance rolls for its bearer until it witnesses a genuine oath)."
     },
     "codex": {
-      "description": "You will not find Mab's Codex bound as a book of straightforward text. It may be a deck of playing cards whose suits shift when no one is looking, a mirror that reflects only the backs of words, a set of silk handkerchiefs knotted into a puzzle, or a scroll that must be read while dancing.",
-      "upkeep": "Because Mab's truths are written in misdirection, the Codex requires upkeep: the Runekeeper must spend an hour each week re-ordering the cards (or re-knotting the handkerchiefs) while recounting a story from memory, or the patterns become scrambled (treat as Compromised until re-woven)."
+      "description": "Nothing she gives you reads straight through. A deck whose suits rearrange while you are not looking at it. A mirror that shows the backs of words. Silk handkerchiefs knotted into an argument. A scroll that only makes sense to someone who is dancing.",
+      "upkeep": "An hour each week putting it back in order while telling a story aloud, from memory, to no one. Skip it and the pattern comes apart (treat as Compromised until re-set)."
     }
   },
   "patrons_gift": {
     "name": "Mab's Jest",
-    "description": "Once per scene as an action, a Runekeeper of Mab may touch a held item (weapon, tool, or garment) and whisper a jest.",
+    "description": "Once per scene as an action, a Runekeeper of Mab may touch a held item — weapon, tool, garment — and say something amusing to it.",
     "effect": "For the rest of the scene, the item grants +1 die to Deception or Performance rolls, and the first time each scene the bearer would be caught in a lie, they may roll Deception again (the glamour twists the truth).",
     "cost": "After the scene, the user marks +1 Obligation to Mab."
   },
@@ -56,7 +56,7 @@
         "DEBT",
         "FEAR"
       ],
-      "materials": "A token freely given (flower, coin, ribbon).",
+      "materials": "A token given freely and taken freely — a flower, a coin, a ribbon off a sleeve.",
       "effect": "Offer a fae bargain. The target may accept (both gain +1 die to actions that uphold the terms) or refuse (target marks 1 Fatigue from social pressure).",
       "push_it": "If the target later betrays the bargain, they suffer Harm 1 (Stress) and start an Oathbreaker [4] timer. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
@@ -76,7 +76,7 @@
         "SOCIAL",
         "MASK"
       ],
-      "materials": "A sprig of hawthorn or a silver thread worn visibly.",
+      "materials": "Hawthorn in the buttonhole, or a silver thread worn where it can be seen.",
       "effect": "Subtle glamour makes you appear as the expected rank or guest. Gain +1 die to social rolls in refined settings.",
       "push_it": "Mask one personal tell (an accent, a scar, a nervous habit); the first probing question about it generates 1 SB (Hearts). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
@@ -97,7 +97,7 @@
         "DEBT",
         "TRUTH"
       ],
-      "materials": "Equal tokens exchanged ritually (two rings, two signed notes, two locks of hair).",
+      "materials": "Two of a thing, exchanged in company: rings, notes in the same hand, locks of hair.",
       "effect": "Bind a formal bargain. While the bargain is honored, both parties gain +1 Effect when cooperating. Breach forces 1 SB (Hearts/Diamonds) and a reputation penalty (–1 die to social rolls involving honor for one week).",
       "push_it": "Add a minor boon to one party (+1 die once). If that party breaches, they suffer an additional 1 SB and you mark +1 Obligation. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
@@ -119,7 +119,7 @@
         "WARD",
         "FEAR"
       ],
-      "materials": "A circle of silk or green felt, courtly music, and a drop of honey and vinegar.",
+      "materials": "A circle of silk or green felt, music kept going, and a drop each of honey and vinegar.",
       "effect": "Establish a fae court in the zone. For the scene: allies gain +1 die to social rolls; blunt threats (Intimidation, crude Force) suffer –1 die. Once per scene, strip an illusion or reveal a hidden motive as a free action (target tests Resolve DV 3). Violating a promise made within the zone triggers 2 SB and a visible glamour mark (a blush, a stutter) lasting a day.",
       "push_it": "Impose a temporary Court Law (e.g., 'no steel,' 'speak only truth,' 'every third word must be a compliment'). Violators suffer 2 SB. Cost: Mark +2 Obligation (total +4) or Mark +1 Fatigue.",
       "cost": "Mark +2 Obligation.",
@@ -141,7 +141,7 @@
         "BOND",
         "TRUTH"
       ],
-      "materials": "Hand-made masks for all participants, enchanted music, and a cup of wine blessed (or cursed) with a whispered lie.",
+      "materials": "Masks made by hand for everyone present, music that does not stop, and a cup of wine over which someone has whispered a lie.",
       "effect": "Create a lasting glamoured court — a masquerade that persists for the duration of the event. All social magic (Sway, Performance, Deception) gains +1 Effect. Outsiders who enter suffer –1 die to perceive truths, read emotions, or see through disguises. Any promise made while masked is magically witnessed; breaking it inflicts 2 SB and the mask of the oath-breaker cracks (visible to all).",
       "push_it": "The masquerade persists between scenes for the rest of the session. Cost: Mark +3 Obligation (total +5) or Mark +1 Fatigue.",
       "cost": "Mark +2 Obligation.",
@@ -153,18 +153,18 @@
   "cantors_and_cults": {
     "cantors": {
       "name": "The Cantor's Song",
-      "description": "A Cantor of Mab sings in harmonies of the half-truth — melodies that shift key without warning, leaving the listener uncertain of what was heard. Their voice is used to seal a bargain with a sung clause, to make a crowd forget a social faux pas, or to weave a glamour that lasts as long as the music plays. Mab's Cantors are prized at every court where masks are worn, and feared by those who know that a beautiful tune can hide a poisoned promise."
+      "description": "A Cantor of Mab sings in half-truths: melodies that change key without warning and leave the listener unsure what they actually heard. The voice is used to seal a bargain inside a sung clause, to let a room forget an awkwardness, to keep a glamour standing as long as the music does. They are wanted at every court where masks are ordinary, and quietly watched at the ones where people know what a pretty tune can carry."
     },
     "cult": {
       "name": "The Cult of the Gilded Jest",
-      "description": "Mab's cults meet in places where masks are natural: masquerade balls, carnival tents, and the back rooms of theaters. The Gilded Jest is less a religion and more a conspiracy of wits — actors, gamblers, and lawyers who have learned that every exchange is a performance. A ritual of the Jest involves each member writing a true secret on a playing card, then exchanging cards with another member. They must then speak the secret they received as if it were their own — and the group votes on whether they told it 'true enough.' Those who fail must drink a cup of 'tea of forgotten clauses' and lose one minor memory (a face, a password, a small debt). Their creed is printed on a card that is passed, never kept: 'The best chains are made of laughter. The strongest oaths are sworn in jest.' Outsiders are welcome as 'audience,' but those who laugh too loudly may find themselves on stage — and the stage has its own rules."
+      "description": "They meet where a mask is unremarkable — a masquerade, a carnival tent, the rooms behind a stage. The Gilded Jest is less a faith than an understanding among people who noticed early that every exchange is a performance and decided to be good at it. Each writes something true on a playing card and passes it on, and must then speak a stranger's truth as their own until the table believes it. Those who cannot are given tea and lose something small: a face, a password, the name of the street they grew up on. They do not notice for weeks. The creed is printed on a card that is always passed and never kept."
     }
   },
   "witchcraft": {
     "name": "The Art of Glamour and Toy",
-    "description": "A witch who walks with Mab is a glamour-weaver or toy-maker — one who crafts objects that are never quite what they seem. Their magic works through misdirection: a doll that laughs when a promise is broken, a mirror that shows a flattering reflection (and nothing else), or a mask that lets the wearer speak any lie as truth. Their tools are never hammers; they use needles, masks, and the subtle art of a well-placed reflection. In Aeler, a True-Mason might carve a cornerstone that makes everyone forget the building's weak point, but a witch of Mab would instead sew a glamour seam into the cornerstone's shadow.",
+    "description": "A witch who walks with Mab is a glamour-weaver or a toy-maker, making things that are never quite what they appear. The craft works by misdirection: a doll that laughs when a promise goes bad, a mirror that gives a flattering reflection and no other information, a mask that lets its wearer say anything and be believed. Needles, masks, and a well-placed reflection. In Aeler a True-Mason carves a cornerstone that makes everyone forget where the building is weak; a witch of Mab sews a glamour seam into that cornerstone's shadow instead, and lets the mason take the credit.",
     "color": "#a94ba8",
-    "lore": "The glamour-weaver's path is the art of seeming. They learn that a well-told lie is a kindness as often as a weapon, that a mask worn honestly reveals more than a bare face, and that every party has a hostess who is owed a favor by morning. Mab's witches keep court in miniature — a table, a deck of cards, a room full of guests who do not yet know what they have agreed to.",
+    "lore": "The glamour-weaver's path is the art of seeming, and its first lesson is that seeming is not the opposite of truth. A mask worn honestly says more than a bare face. A kind lie is sometimes the only door left standing. Mab's witches keep court in miniature — a table, a deck, a room of guests who do not yet know what they have agreed to and will not be told until it would be rude to mention.",
     "signature_rite": "Rite of Courtly Guise",
     "quote": "Wear the mask well, and no one will ask what it hides.",
     "tools": {
@@ -193,11 +193,11 @@
   },
   "monastic_tradition": {
     "name": "The Way of the Hollow Crown",
-    "description": "Monks of the Hollow Crown study Mab's rules the way a duelist studies a blade — not to break them, but to find the gap between the letter and the intent. They speak precisely, bow correctly, and never once tell a plain lie, yet leave every negotiation having given away nothing and gained everything. Their training is as much etiquette as combat: how to hold a room, how to make silence cost more than words, how to let an opponent's own oath become the trap.",
+    "description": "Monks of the Hollow Crown study Mab's rules the way a duelist studies a blade — not to break them, but to find the gap between the letter and the intent. They speak precisely, bow correctly, and never tell a plain lie, and they leave every negotiation having given nothing away. The training is as much etiquette as combat: how to hold a room, how to make a silence cost more than a sentence, how to let a man's own promise close around him while he is still pleased with the wording.",
     "color": "#a94ba8",
     "prerequisites": "Presence 3+, Wits 2+, Rite of Courtly Guise or Cantor of Mab.",
     "quote": "Bow to no one you cannot outlast at the table.",
-    "debt_resistant_frame": "The Hollow Crown teaches that a debt is only as binding as its wording. Monks gain +1 die to resist or reinterpret a social debt, favor, or promise extracted from them under pressure or deception, so long as they can point to a technicality in how it was framed. If they succeed, the obligation holds in form but loses its teeth — everyone at the table knows it, and no one can prove it.",
+    "debt_resistant_frame": "The Hollow Crown teaches that a promise is exactly as wide as its words and not a hair wider. Monks gain +1 die to resist or reinterpret any favor, vow, or agreement pressed on them under duress or misdirection, provided they can name the gap in how it was put. On a success the promise still stands, formally, and does nothing whatever. Everyone at the table knows. Nobody can say so.",
     "techniques": {
       "basic": {
         "name": "Courtier's Poise",
@@ -221,38 +221,7 @@
         "prereq": "Tier III, Presence 4+"
       }
     },
-    "corruption": [
-      {
-        "tier": 1,
-        "benefit": "Glamour's Touch: +1 die to Deception/Performance with stories.",
-        "cost": "Truthbound: Cannot speak plain falsehood; only mislead."
-      },
-      {
-        "tier": 2,
-        "benefit": "Fairy Step: Once per scene, flicker Near as if teleporting.",
-        "cost": "Iron Weakness: 1 Fatigue if touched by cold iron."
-      },
-      {
-        "tier": 3,
-        "benefit": "Trickster's Delight: Spend 1 Boon to twist a Complication advantageously.",
-        "cost": "Compulsive Jest: Must play a trick each session or mark 1 SB."
-      },
-      {
-        "tier": 4,
-        "benefit": "Hospitality's Gift: Allies sharing food/drink gain +1 die to Resolve.",
-        "cost": "Hospitality Bound: Harming guests costs +2 Obligation."
-      },
-      {
-        "tier": 5,
-        "benefit": "Fae Sight: See veils/glamours; +2 dice to Notice.",
-        "cost": "Truth Debt: Must accept 'fair' trades or suffer."
-      },
-      {
-        "tier": "6+",
-        "benefit": "Twilight Crown: Once/session, declare an Oath; you gain +2 dice to all rolls that fulfill it, and enemies who swore the same oath suffer –1 die to resist its terms.",
-        "cost": "Oathbound: Breaking this oath inflicts Harm 2 (Stress) and starts an Iron Debt [6] timer that can only be cleared by a quest. Your shadow is now forked — a visible sign that Mab has marked you."
-      }
-    ]
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
   },
   "corruption": [
     {
@@ -287,19 +256,21 @@
     }
   ],
   "playstyle_notes": {
-    "description": "Mab excels in social manipulation and fae-style bargaining. Followers become masters of subtle magic, binding others through oaths and glamour. The corruption progression leads toward becoming fae-touched, gaining power over truth and perception at the cost of mortal constraints. Intrusions often take the form of a forgotten bargain resurfacing, a guest demanding hospitality you cannot refuse, or a jest that turns cruel. Ideal for players who enjoy social intrigue, wordplay, and characters who prefer cleverness over brute force.",
+    "description": "Mab is for tables that would rather win a room than a fight. Her power is social, indirect, and almost never announces itself; her corruption runs toward the fae, which is to say toward finding mortal limits arbitrary and then saying so out loud at dinner. Her intrusions are courtesies: an old favor calling at the wrong hour, a guest you cannot refuse without becoming the villain of the evening, a jest that lands harder than the teller intended and cannot now be taken back.",
     "emphasizes": [
-      "Archfae Sovereignty: Mab's word is law in her presence, but only if you play her game",
-      "Glamour as Social Weapon: illusions that bind, masks that deceive",
-      "Bargains and Debts: every gift is a hook, every promise a leash",
-      "Courtly Intrigue: etiquette, wordplay, the dance of masks",
-      "Trickster Wisdom: the truth is what you can make others believe"
+      "Sovereignty by invitation — her word governs her Court, and you walked in",
+      "Glamour as leverage — illusions that hold because people want them to",
+      "Courtesy with teeth — etiquette, wording, and the long memory of a hostess",
+      "The gap in the sentence — victory found in how a thing was phrased",
+      "Nothing quite provable — the party knows what happened and cannot demonstrate it"
     ]
   },
   "sample_adventure": {
     "title": "The Guest Who Would Not Leave",
-    "description": "A minor noble has thrown a masquerade in Mab's honor, hoping to curry favor before a contested inheritance. An uninvited guest arrived at midnight, laughing, and has not left — nor has anyone been able to make them. Every attempt to eject them results in an accident, a scandal, or a forgotten obligation surfacing at the worst moment. The party is hired to end the impasse, but Mab's guest cannot simply be removed: they must be out-bargained, out-witted, or given exactly what the Court decides they are owed.",
-    "quote": "You did not read the invitation closely enough. No one ever does. That is rather the point."
+    "description": "A minor noble threw a masquerade in Mab's honor, hoping it would help with a contested inheritance. An uninvited guest arrived at midnight, laughing, and has not left. Every attempt to put them out has produced an accident, a scandal, or an old favor surfacing at exactly the wrong hour, and the household has begun setting a place. The party is hired to end it. The guest cannot be removed — only out-talked, out-waited, or given precisely what the Court has decided they are owed, which nobody has yet been brave enough to ask about.",
+    "quote": "You did not read the invitation closely. Nobody does. That is rather what it is for."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "order": "empyreal",
+  "register": "mystery"
 }
