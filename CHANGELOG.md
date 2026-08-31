@@ -4,6 +4,13 @@ All notable changes to this project will be documented here.
 Format loosely follows [Keep a Changelog](https://keepachangelog.com/), versions follow [Semantic Versioning](https://semver.org/).
 
 
+## [4.16.0] - 2026-08-31
+
+Setting data sync from fates-edge-docs
+
+### Added
+- sync revised setting data from fates-edge-docs
+
 ## [4.15.2] - 2026-08-28
 
 ### Other
