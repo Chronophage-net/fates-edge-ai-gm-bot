@@ -9769,5 +9769,249 @@
         }
       ]
     }
+  },
+  {
+    "Emberdrake": {
+      "page": "Emberdrake",
+      "summary": "A small fire-drake: an omen with a temper, not a threat to a prepared party.",
+      "lore": "Minor dragons are read as portents rather than fought. Milk, ash or sweet-smoke pacifies one; clever play, bribes and geasa matter more than raw harm.",
+      "locations": [
+        "Dragon lairs",
+        "Territory-sign borderlands"
+      ],
+      "connections": [
+        "Dragon's Lair",
+        "Elder Sovereigns"
+      ],
+      "tl": 2,
+      "key_attribute": 2,
+      "harm": 1,
+      "fatigue": 2,
+      "armor": 1,
+      "harm_levels": "3 (standard)",
+      "sb_spends": [
+        {
+          "cost": 1,
+          "name": "[ENVIRONMENT] Scorch the ground",
+          "effect": "Fire spreads across the footing; the next movement through it is Desperate."
+        },
+        {
+          "cost": 1,
+          "name": "[AMBUSH] Steal a bright trinket",
+          "effect": "It takes something shiny and small. The owner notices later."
+        },
+        {
+          "cost": 2,
+          "name": "[ENVIRONMENT] Flare in panic",
+          "effect": "Everyone facing it is blinded for a beat; ranged attacks this exchange are Desperate."
+        }
+      ]
+    }
+  },
+  {
+    "Mirewing Basilisk-Drake": {
+      "page": "Mirewing_Basilisk-Drake",
+      "summary": "A swamp drake that roots its prey with a muddy gaze and fouls the water behind it.",
+      "lore": "Polished mirrors and sudden bright clatter break its attention. It is patient in swamp and clumsy anywhere else.",
+      "locations": [
+        "Dragon lairs",
+        "Territory-sign borderlands",
+        "Swamps and fens"
+      ],
+      "connections": [
+        "Dragon's Lair",
+        "Elder Sovereigns"
+      ],
+      "tl": 4,
+      "key_attribute": 3,
+      "harm": 2,
+      "fatigue": 3,
+      "armor": 1,
+      "harm_levels": "3 (standard)",
+      "sb_spends": [
+        {
+          "cost": 1,
+          "name": "[TRAP] Muddy gaze",
+          "effect": "One target is rooted until they spend an action breaking free."
+        },
+        {
+          "cost": 2,
+          "name": "[ENVIRONMENT] Foul the water",
+          "effect": "The water is undrinkable and the footing worse; any stumble in the Zone is Desperate."
+        },
+        {
+          "cost": 2,
+          "name": "[TACTICS] Lash to topple",
+          "effect": "It sweeps the tail; one character is prone and one Position step worse."
+        }
+      ]
+    }
+  },
+  {
+    "Barrow Serpent": {
+      "page": "Barrow_Serpent",
+      "summary": "A grave-cold burrower that sucks the warmth out of the air and collapses graves into pits.",
+      "lore": "Funeral bells and the true names of the buried hold it. Without steady light, everything near it is harder.",
+      "locations": [
+        "Dragon lairs",
+        "Territory-sign borderlands",
+        "Barrows and grave-fields"
+      ],
+      "connections": [
+        "Dragon's Lair",
+        "Elder Sovereigns"
+      ],
+      "tl": 4,
+      "key_attribute": 3,
+      "harm": 2,
+      "fatigue": 3,
+      "armor": "2 in darkness",
+      "harm_levels": "3 (standard)",
+      "sb_spends": [
+        {
+          "cost": 1,
+          "name": "[ENVIRONMENT] Torches sputter",
+          "effect": "Light fails; everyone acts at -1 die until it is restored."
+        },
+        {
+          "cost": 2,
+          "name": "[ENVIRONMENT] Crumble the graves",
+          "effect": "The ground opens into pits; the Zone becomes difficult terrain."
+        },
+        {
+          "cost": 2,
+          "name": "[TACTICS] Coil the shieldwall",
+          "effect": "It pins a formation in place; that group cannot move this exchange."
+        }
+      ]
+    }
+  },
+  {
+    "Sky-Needle Wyvern": {
+      "page": "Sky-Needle_Wyvern",
+      "summary": "A high-altitude hunter that snatches prey off open ground and drops it.",
+      "lore": "Nets, whistling cords and anchored lines are the counter. Open ground is where it wants you.",
+      "locations": [
+        "Dragon lairs",
+        "Territory-sign borderlands",
+        "Crags and high passes"
+      ],
+      "connections": [
+        "Dragon's Lair",
+        "Elder Sovereigns"
+      ],
+      "tl": 5,
+      "key_attribute": 4,
+      "harm": 3,
+      "fatigue": 4,
+      "armor": 1,
+      "harm_levels": "8 (advanced)",
+      "sb_spends": [
+        {
+          "cost": 1,
+          "name": "[ENVIRONMENT] Wing sheer",
+          "effect": "Wind turns arrows aside; ranged attacks against it this exchange are Desperate."
+        },
+        {
+          "cost": 2,
+          "name": "[AMBUSH] Snatch and drop",
+          "effect": "It lifts one character and releases them. Harm 3 and the scene rearranges."
+        },
+        {
+          "cost": 2,
+          "name": "[SOCIAL] Scream to scatter",
+          "effect": "Followers and mounts break; any assist is unavailable this exchange."
+        },
+        {
+          "cost": 4,
+          "name": "[TACTICS] Own the open ground",
+          "effect": "Signature. Until someone secures cover or ropes, every action in the open is Desperate."
+        }
+      ]
+    }
+  },
+  {
+    "Lampwyrm Archivist": {
+      "page": "Lampwyrm_Archivist",
+      "summary": "A hoarding, glowing wyrm that illuminates lies and files away everything it hears.",
+      "lore": "Not a combatant. It has been curating something for a very long time and would like that acknowledged.",
+      "locations": [
+        "Dragon lairs",
+        "Territory-sign borderlands",
+        "Libraries and archives"
+      ],
+      "connections": [
+        "Dragon's Lair",
+        "Elder Sovereigns"
+      ],
+      "tl": 3,
+      "key_attribute": 3,
+      "harm": 1,
+      "fatigue": 3,
+      "armor": "None",
+      "harm_levels": "None (puzzle)",
+      "resolution": "Killing it answers nothing. Snuff its candles respectfully, or gift it an annotation it does not already hold, and it yields what it has been hoarding. Refuse it that courtesy and it goes on illuminating every lie anyone tells for the rest of the scene.",
+      "sb_spends": [
+        {
+          "cost": 1,
+          "name": "[TIMER] Illuminate lies",
+          "effect": "Any deception in the scene ticks a Suspicion [4] timer; the speaker acts at -1 die."
+        },
+        {
+          "cost": 2,
+          "name": "[MEMORY] Hoard scribbles",
+          "effect": "It produces something the party wrote and discarded, and reads it aloud."
+        },
+        {
+          "cost": 2,
+          "name": "[HAUNT] Hum lullabies",
+          "effect": "Anyone who stays to listen marks 1 Fatigue and loses the thread of what they came for."
+        }
+      ]
+    }
+  },
+  {
+    "Frostling Wyrm": {
+      "page": "Frostling_Wyrm",
+      "summary": "A slow, warding cold-wyrm that seals doorways with ice-ribbing and ambushes out of hibernation.",
+      "lore": "Resonant bells reach it. So do shared fire and stories, which reduce its hostility rather than its strength.",
+      "locations": [
+        "Dragon lairs",
+        "Territory-sign borderlands",
+        "Glacier and high tundra"
+      ],
+      "connections": [
+        "Dragon's Lair",
+        "Elder Sovereigns"
+      ],
+      "tl": 6,
+      "key_attribute": 4,
+      "harm": 3,
+      "fatigue": 4,
+      "armor": 2,
+      "harm_levels": "8 (advanced)",
+      "sb_spends": [
+        {
+          "cost": 1,
+          "name": "[ENVIRONMENT] Cold taxes",
+          "effect": "Everyone in the scene marks 1 Fatigue."
+        },
+        {
+          "cost": 2,
+          "name": "[CURSE] Gear goes brittle",
+          "effect": "One carried item gains the Brittle flaw until repaired."
+        },
+        {
+          "cost": 2,
+          "name": "[TRAP] Ice-ribbing",
+          "effect": "It seals a door or passage; opening it is a DV 4 problem."
+        },
+        {
+          "cost": 4,
+          "name": "[AMBUSH] Hibernate-ambush",
+          "effect": "Signature. It was the terrain. It acts first and the party's Position is Desperate for the exchange."
+        }
+      ]
+    }
   }
 ]
