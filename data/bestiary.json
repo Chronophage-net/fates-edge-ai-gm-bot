@@ -9449,5 +9449,325 @@
         }
       ]
     }
+  },
+  {
+    "Ash-Thrall": {
+      "page": "Ash-Thrall",
+      "summary": "The recent dead, walked up out of the forge's draft and given a direction.",
+      "lore": "Not raised by any rite. The ash-draft of the Hollow Anvil simply reaches what is buried near it, and what it reaches stands. They wear the colours they were buried in, which is the whole of their horror.",
+      "locations": [
+        "Khaz-Vurim deep works",
+        "The Spine Underway",
+        "The Hollow Anvil"
+      ],
+      "connections": [
+        "The Hollow Anvil",
+        "House Khaz-Vurim",
+        "The Aeler"
+      ],
+      "tl": 2,
+      "key_attribute": 2,
+      "harm": 2,
+      "fatigue": 2,
+      "armor": "None",
+      "harm_levels": "3 (standard)",
+      "sb_spends": [
+        {
+          "cost": 1,
+          "name": "[AMBUSH] Out of the slack ash",
+          "effect": "A gallery the party cleared was not clear; one more stands up behind the line."
+        },
+        {
+          "cost": 2,
+          "name": "[REINFORCEMENT] It was not alone",
+          "effect": "Fill 1 segment of the Muster Strength timer."
+        },
+        {
+          "cost": 2,
+          "name": "[SOCIAL] It has a name",
+          "effect": "Someone present recognises it. That character's next roll this scene is one Position step worse."
+        }
+      ]
+    }
+  },
+  {
+    "Cindersworn Legionary": {
+      "page": "Cindersworn_Legionary",
+      "summary": "The Ash Muster's line infantry: dead soldiers rebuilt into proper ranks and better armour than the living side is wearing.",
+      "lore": "Made, not raised. The bound smiths of the Rememberers' Gallery fit them, dress them and issue them, and they hold formation because they were taught to and never stopped. Armor drops to 1 if the Gallery is stopped.",
+      "locations": [
+        "Khaz-Vurim deep works",
+        "The Spine Underway",
+        "The Hollow Anvil"
+      ],
+      "connections": [
+        "The Hollow Anvil",
+        "House Khaz-Vurim",
+        "The Aeler",
+        "The Rememberers' Gallery"
+      ],
+      "tl": 4,
+      "key_attribute": 3,
+      "harm": 3,
+      "fatigue": 3,
+      "armor": 2,
+      "harm_levels": "3 (standard)",
+      "sb_spends": [
+        {
+          "cost": 1,
+          "name": "[TACTICS] Dress the line",
+          "effect": "The rank closes. No flanking bonus is available against it this exchange."
+        },
+        {
+          "cost": 2,
+          "name": "[TACTICS] Advance by ranks",
+          "effect": "The front gives ground and a fresh rank arrives. Position worsens one step for everyone facing it."
+        },
+        {
+          "cost": 2,
+          "name": "[TRAP] Fighting withdrawal",
+          "effect": "It retreats onto ground of its own choosing; pursuit is Desperate."
+        },
+        {
+          "cost": 3,
+          "name": "[TIMER] The Muster does not rest",
+          "effect": "Advance any one front timer by 1 segment."
+        }
+      ]
+    }
+  },
+  {
+    "Molten Rememberer": {
+      "page": "Molten_Rememberer",
+      "summary": "A bound master-smith of the Khaz-Vurim deep works, still working, still excellent.",
+      "lore": "They agreed to the binding four centuries ago and maintain that the agreement was reasonable. They would rather talk than fight, and have had four hundred years to prepare what they want to say.",
+      "locations": [
+        "The Rememberers' Gallery",
+        "Khaz-Vurim deep works"
+      ],
+      "connections": [
+        "The Hollow Anvil",
+        "House Khaz-Vurim",
+        "The Aeler"
+      ],
+      "tl": 5,
+      "key_attribute": 4,
+      "harm": 3,
+      "fatigue": 4,
+      "armor": 1,
+      "harm_levels": "8 (advanced)",
+      "sb_spends": [
+        {
+          "cost": 1,
+          "name": "[ENVIRONMENT] Bank the anvil",
+          "effect": "The working heat rises; everyone in the gallery marks 1 Fatigue."
+        },
+        {
+          "cost": 2,
+          "name": "[SOCIAL] A reasonable agreement",
+          "effect": "It explains why the binding was correct, at length and persuasively."
+        },
+        {
+          "cost": 2,
+          "name": "[CURSE] Fitted to the wearer",
+          "effect": "A piece of the party's equipment was made here. It becomes Neglected."
+        },
+        {
+          "cost": 3,
+          "name": "[REINFORCEMENT] The work continues",
+          "effect": "A finished rank of Cindersworn walks out of the far door."
+        },
+        {
+          "cost": 4,
+          "name": "[BARGAIN] The commission",
+          "effect": "Signature. It offers to make one thing the party wants more than it wants to win the fight, and the offer is sincere."
+        }
+      ]
+    }
+  },
+  {
+    "Warden-Sergeant Bruni Ashgrave": {
+      "page": "Warden-Sergeant_Bruni_Ashgrave",
+      "summary": "The warden of Khaz-Vurim's Ninth Gate, grown into her own post by the ash-draft and still holding it.",
+      "lore": "Stone and iron up through the armour, hands fused to the winch she was turning. She held the gate for eleven days after the draft took her, refusing to let the Muster through. She is apologising for the eleven days she spent deciding.",
+      "locations": [
+        "The Ninth Gate",
+        "The Spine Underway"
+      ],
+      "connections": [
+        "The Hollow Anvil",
+        "House Khaz-Vurim",
+        "The Aeler"
+      ],
+      "tl": 6,
+      "key_attribute": 4,
+      "harm": 4,
+      "fatigue": 4,
+      "armor": 3,
+      "harm_levels": "8 (advanced)",
+      "sb_spends": [
+        {
+          "cost": 1,
+          "name": "[ENVIRONMENT] The gate answers",
+          "effect": "The mechanism moves; one character is cut off from the others."
+        },
+        {
+          "cost": 2,
+          "name": "[SOCIAL] I am sorry",
+          "effect": "She apologises by name to someone in the party's force. That force fills 1 segment of Morale."
+        },
+        {
+          "cost": 2,
+          "name": "[TRAP] Eleven days",
+          "effect": "She recounts the eleven days. Anyone who listens marks 1 Fatigue and learns one true thing about the tithe."
+        },
+        {
+          "cost": 4,
+          "name": "[POSSESSION] Relieve me",
+          "effect": "Signature. She offers the post to whoever is closest, and the gate is willing. Accepting ends the fight instantly and is not survivable as a player character."
+        }
+      ]
+    }
+  },
+  {
+    "Slagborn Breaker": {
+      "page": "Slagborn_Breaker",
+      "summary": "Six or seven dwarves' worth of mass poured into one frame and sent up the road to open doors.",
+      "lore": "Not a construct but a compaction. The Hollow Anvil makes them when it has more material than shape to put it in, and it uses them the way a siege train is used: on architecture first, and on people incidentally.",
+      "locations": [
+        "Khaz-Vurim deep works",
+        "The Spine Underway",
+        "The Hollow Anvil"
+      ],
+      "connections": [
+        "The Hollow Anvil",
+        "House Khaz-Vurim",
+        "The Aeler"
+      ],
+      "tl": 6,
+      "key_attribute": 4,
+      "harm": 4,
+      "fatigue": 4,
+      "armor": 3,
+      "harm_levels": "8 (advanced)",
+      "sb_spends": [
+        {
+          "cost": 1,
+          "name": "[ENVIRONMENT] Through the wall",
+          "effect": "It makes a new lane. Every Zone of Control in the scene is void this exchange."
+        },
+        {
+          "cost": 2,
+          "name": "[TACTICS] Open the door",
+          "effect": "A held position stops being held. Advance one front timer by 1."
+        },
+        {
+          "cost": 2,
+          "name": "[REINFORCEMENT] The road is open",
+          "effect": "Fill 1 segment of the Muster Strength timer."
+        },
+        {
+          "cost": 5,
+          "name": "[ENVIRONMENT] Bring it down",
+          "effect": "Signature. The chamber, span or stair the fight is in fails structurally. Everyone present is in the collapse, both sides, no exceptions."
+        }
+      ]
+    }
+  },
+  {
+    "The Ash Muster": {
+      "page": "The_Ash_Muster",
+      "summary": "The Hollow Anvil's army, statted as one adversary for when the party fights it rather than commanding against it.",
+      "lore": "It does not rout, resupply, rest or negotiate, and it grows every time anyone on any side dies within reach of the draft. Each phase is one rank: thralls, then Cindersworn, then Breakers.",
+      "locations": [
+        "Khaz-Vurim deep works",
+        "The Spine Underway",
+        "The Hollow Anvil"
+      ],
+      "connections": [
+        "The Hollow Anvil",
+        "House Khaz-Vurim",
+        "The Aeler"
+      ],
+      "tl": 7,
+      "key_attribute": 5,
+      "harm": 5,
+      "fatigue": 5,
+      "armor": 2,
+      "harm_levels": "8 per phase",
+      "sb_spends": [
+        {
+          "cost": 1,
+          "name": "[TIMER] Tireless",
+          "effect": "Advance the Forge Heat timer by 1 segment."
+        },
+        {
+          "cost": 2,
+          "name": "[TACTICS] Envelop",
+          "effect": "Position worsens one step for the whole party."
+        },
+        {
+          "cost": 2,
+          "name": "[REINFORCEMENT] The tithe",
+          "effect": "Anyone who fell this exchange joins the next phase."
+        },
+        {
+          "cost": 3,
+          "name": "[AMBUSH] Up through the floor",
+          "effect": "A phase begins behind the line."
+        },
+        {
+          "cost": 5,
+          "name": "[TACTICS] The whole weight",
+          "effect": "Signature. All remaining phases attack at once; the defence either breaks here or holds for good."
+        }
+      ]
+    }
+  },
+  {
+    "The Hollow Anvil": {
+      "page": "The_Hollow_Anvil",
+      "summary": "The soul-forge beneath Khaz-Vurim: a furnace the size of a cathedral nave, running correctly at the load it was given.",
+      "lore": "Built by the Aeler to power a hold and rationed by a seal for four centuries at one life a decade. House Khaz-Vurim stopped paying the tithe six weeks ago because its decline left nobody it could justify sending. It is not awake, not malevolent, and not addressable.",
+      "locations": [
+        "The Hollow Anvil",
+        "Khaz-Vurim deep works"
+      ],
+      "connections": [
+        "The Hollow Anvil",
+        "House Khaz-Vurim",
+        "The Aeler",
+        "Breath of the First Forge"
+      ],
+      "tl": 10,
+      "key_attribute": 6,
+      "harm": 8,
+      "fatigue": 6,
+      "armor": "None",
+      "harm_levels": "None (puzzle)",
+      "resolution": "A load problem, not a combat. It is resolved by changing what it draws on: quench it with the Deep Cistern, ration it by restoring the seal and reinstating the tithe, or sate it by feeding it the Ash Muster entire. No roll against the furnace itself does anything except cost the roller Fatigue.",
+      "sb_spends": [
+        {
+          "cost": 1,
+          "name": "[ENVIRONMENT] Draw",
+          "effect": "Everyone in the chamber marks 1 Fatigue."
+        },
+        {
+          "cost": 2,
+          "name": "[OMEN] The draft turns",
+          "effect": "The party learns, correctly and unhelpfully, exactly how long the hold has."
+        },
+        {
+          "cost": 3,
+          "name": "[MEMORY] What it has taken",
+          "effect": "The ash shows a character someone it took, accurately."
+        },
+        {
+          "cost": 5,
+          "name": "[TIMER] Full draw",
+          "effect": "Signature. The Forge Heat timer fills immediately and the module goes to its failure state."
+        }
+      ]
+    }
   }
 ]
