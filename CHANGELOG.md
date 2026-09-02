@@ -4,6 +4,13 @@ All notable changes to this project will be documented here.
 Format loosely follows [Keep a Changelog](https://keepachangelog.com/), versions follow [Semantic Versioning](https://semver.org/).
 
 
+## [4.17.6] - 2026-09-02
+
+Adventure document and data canon sync
+
+### Chore
+- sync canon fixes and the Censor's Daughter document
+
 ## [4.17.5] - 2026-09-02
 
 Adventure document sync, Hollowed saga, data corrections
