@@ -9,7 +9,7 @@ const AI_TAG_KEYWORDS = [
     'LOOKUP RULE', 'SET POSITION', 'SET DV', 'TICK TIMER',
     'NPC CAST', 'NPC CREATE', 'NPC LOCATION',
     'TOKEN MOVE', 'TOKEN REMOVE', 'SPEND SB',
-    'APPLY', 'ADD', 'ROLL', 'TIMER', 'DRAW', 'CROWN', 'FACT',
+    'APPLY', 'ADD', 'ROLL', 'TIMER', 'DRAW', 'CROWN', 'FACT', 'EFFECT',
     'REVEAL', 'HIDE',
 ].sort((a, b) => b.length - a.length);
 

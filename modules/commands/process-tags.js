@@ -403,6 +403,42 @@ async function processSpecialTags(text, context, senderName = null) {
         moodRegex.lastIndex = 0;
     }
 
+    // ─── [EFFECT ...] ──────────────────────────────────────────────
+    // Effect is a NARRATIVE quantity in Fate's Edge. A Scale mismatch
+    // moves Effect; it never moves DV or the dice pool. There is
+    // deliberately nothing to store — no track, no counter, no field on
+    // a character sheet — so this tag writes to no state, here or on the
+    // server. It announces, the table hears it, the fiction carries it.
+    //
+    //   [EFFECT +]                 one step up
+    //   [EFFECT ++ "outnumbered"]  two steps up, with the reason
+    //   [EFFECT - "a knife against a wall"]
+    //
+    // The count of +/- signs is the number of steps, capped at three
+    // because a fourth step is not a shift, it is a different scene.
+    // Fails silently when the socket is closed, like [MOOD] above: an
+    // Effect callout that does not arrive is a missed flourish, not a
+    // desynced game, precisely because it is not state.
+    const effectRegex = /\[EFFECT\s*([+-]{1,3})(?:\s*"([^"]*)")?\s*\]/gi;
+    while ((match = effectRegex.exec(output)) !== null) {
+        const marks = match[1];
+        const up = marks[0] === '+';
+        const steps = Math.min(3, marks.length);
+        const reason = (match[2] || '').trim();
+        if (ws && ws.readyState === WebSocket.OPEN) {
+            ws.send(JSON.stringify({
+                type: 'effect-called',
+                direction: up ? 1 : -1,
+                steps,
+                reason,
+                source: 'GM',
+            }));
+        }
+        const headline = `${(up ? '+' : '-').repeat(steps)} Effect${up ? '!' : ''}`;
+        output = output.replace(match[0], reason ? `*(${headline} — ${reason})*` : `*(${headline})*`);
+        effectRegex.lastIndex = 0;
+    }
+
     // ─── [SPEND SB ...] ────────────────────────────────────────────
     const sbRegex = /\[SPEND SB (\d+)\]/gi;
     while ((match = sbRegex.exec(output)) !== null) {
