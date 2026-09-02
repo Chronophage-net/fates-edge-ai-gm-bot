@@ -166,6 +166,16 @@ test('applyPosition - Desperate re-rolls one successful die (>= 6)', () => {
   const base = dice.rollDice(3, [2, 3, 6]);
   const result = dice.applyPosition(base, 'Desperate');
   assert.strictEqual(result.reRolled.length, 1);
-  const changedCount = result.dice.filter((d, i) => d !== base.dice[i]).length;
-  assert.strictEqual(changedCount, 1);
+  // Same FLAKY-FIX as the Dominant case above: asserting that a die
+  // VALUE changed fails ~1 run in 10 for the correct reason that a
+  // re-rolled 6 can come up 6 again. Assert what happened instead.
+  const { old: oldVal, new: newVal } = result.reRolled[0];
+  assert.strictEqual(oldVal, 6, 'the only success in the pool');
+  const idx = base.dice.indexOf(oldVal);
+  assert.strictEqual(result.dice[idx], newVal);
+  assert.deepStrictEqual(
+    result.dice.filter((_, i) => i !== idx),
+    base.dice.filter((_, i) => i !== idx),
+    'no other die may move'
+  );
 });
