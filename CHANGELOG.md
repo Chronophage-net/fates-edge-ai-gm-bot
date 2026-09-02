@@ -4,6 +4,13 @@ All notable changes to this project will be documented here.
 Format loosely follows [Keep a Changelog](https://keepachangelog.com/), versions follow [Semantic Versioning](https://semver.org/).
 
 
+## [4.17.1] - 2026-09-02
+
+Talent data sync
+
+### Chore
+- sync the 45 backported talents from fates-edge-docs
+
 ## [4.17.0] - 2026-09-02
 
 The [EFFECT] tag, and the Story Beat / Position dice corrections
