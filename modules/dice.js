@@ -50,55 +50,73 @@ function rollDice(count, existingDice = null) {
 function applyPosition(result, position) {
     const dice = result.dice.slice();
     const reRolled = [];
-    let successes = result.successes;
-    let storyBeats = result.sb;
 
+    // Pick the LOWEST eligible die, not the first one found. SRD: Dominant
+    // re-rolls one failure (the lowest), Desperate re-rolls one success
+    // (the lowest, and NEVER a 10 — a 10 is not on the table). This used
+    // to be findIndex(), i.e. whichever happened to come first in pool
+    // order, which is a different rule that merely coincides sometimes.
+    const lowestIndexWhere = (pred) => {
+        let best = -1;
+        for (let i = 0; i < dice.length; i++) {
+            if (!pred(dice[i])) continue;
+            if (best === -1 || dice[i] < dice[best]) best = i;
+        }
+        return best;
+    };
+
+    let index = -1;
     if (position === 'Dominant') {
-        // Re-roll one failure (die < 6)
-        const failIndex = dice.findIndex(d => d < 6);
-        if (failIndex !== -1) {
-            const oldVal = dice[failIndex];
-            const newVal = Math.floor(Math.random() * 10) + 1;
-            dice[failIndex] = newVal;
-            reRolled.push({ old: oldVal, new: newVal });
-            // Adjust successes and story beats
-            if (oldVal === 1) storyBeats--; // Remove the old 1
-            if (oldVal >= 6) successes--; // Remove old success
-            if (newVal === 1) storyBeats++;
-            if (newVal >= 6) {
-                successes++;
-                if (newVal === 10) successes++; // 10 counts as 2
-            }
-        }
+        index = lowestIndexWhere(d => d < 6);
     } else if (position === 'Desperate') {
-        // Re-roll one success (die >= 6)
-        const successIndex = dice.findIndex(d => d >= 6);
-        if (successIndex !== -1) {
-            const oldVal = dice[successIndex];
-            const newVal = Math.floor(Math.random() * 10) + 1;
-            dice[successIndex] = newVal;
-            reRolled.push({ old: oldVal, new: newVal });
-            // Adjust successes and story beats
-            if (oldVal === 10) successes--; // 10 counted as 2, so subtract 2? Actually we remove one success.
-            successes--; // Remove the success (since it was at least 6)
-            if (oldVal === 1) storyBeats--; // Shouldn't happen, but just in case
-            if (newVal === 1) storyBeats++;
-            if (newVal >= 6) {
-                successes++;
-                if (newVal === 10) successes++;
-            }
-        }
+        // 6–9 only. Re-rolling a 10 would let Desperate destroy the
+        // pool's best die, which the ladder never does.
+        index = lowestIndexWhere(d => d >= 6 && d < 10);
     }
-    // Controlled: no re-rolls
+    // Controlled: no re-rolls.
+
+    if (index !== -1) {
+        const oldVal = dice[index];
+        const newVal = Math.floor(Math.random() * 10) + 1;
+        dice[index] = newVal;
+        reRolled.push({ old: oldVal, new: newVal });
+    }
 
     return {
         dice,
-        successes: Math.max(0, successes),
-        sb: Math.max(0, storyBeats),
+        // Recounted from the final pool. Successes are a property of the
+        // dice as they stand, so counting them is always correct; the
+        // previous incremental arithmetic also got 10s wrong on Desperate
+        // (a 10 is worth 2, and it subtracted 1).
+        successes: countSuccesses(dice),
+        // Story Beats are NOT recounted. SRD 18.1: "Re-rolling a 1 does
+        // not erase its SB; if the re-rolled die also shows 1, it
+        // generates additional SB." A beat is owed for every 1 the dice
+        // have ever SHOWN, not every 1 still showing.
+        //
+        // This function used to do `if (oldVal === 1) storyBeats--`,
+        // deleting the beat outright — and because Dominant now picks the
+        // lowest failure, a 1 is always what it picks, so it fired on
+        // very nearly every roll that earned a beat. The same bug was
+        // live in three separate places in the web client. This was the
+        // fourth.
+        sb: (result.sb || 0) + (index !== -1 && dice[index] === 1 ? 1 : 0),
         results: dice.slice(),
         count: dice.length,
         reRolled
     };
+}
+
+/** Successes in a pool: 6–9 is one, a 10 is two. */
+function countSuccesses(dice) {
+    let successes = 0;
+    for (const die of dice) {
+        if (die >= 6) {
+            successes++;
+            if (die === 10) successes++;
+        }
+    }
+    return successes;
 }
 
 // ─── Outcome determination ─────────────────────────────────────────

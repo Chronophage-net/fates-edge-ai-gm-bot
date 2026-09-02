@@ -100,9 +100,59 @@ test('applyPosition - Dominant re-rolls one failing die (< 6)', () => {
   const base = dice.rollDice(3, [2, 3, 4]); // all failures
   const result = dice.applyPosition(base, 'Dominant');
   assert.strictEqual(result.reRolled.length, 1);
-  // Exactly one die should have changed from the original set.
-  const changedCount = result.dice.filter((d, i) => d !== base.dice[i]).length;
-  assert.strictEqual(changedCount, 1);
+  // FLAKY-FIX: this used to assert that exactly one die VALUE changed,
+  // which fails ~1 time in 10 for the entirely correct reason that a
+  // re-rolled 3 can come up 3 again. Assert on what actually happened
+  // (one die was re-rolled, at one index, and nothing else moved).
+  const { old: oldVal, new: newVal } = result.reRolled[0];
+  const idx = base.dice.indexOf(oldVal);
+  assert.ok(idx !== -1, 're-rolled die must have come from the pool');
+  assert.strictEqual(result.dice[idx], newVal);
+  const untouched = base.dice.filter((_, i) => i !== idx);
+  assert.deepStrictEqual(result.dice.filter((_, i) => i !== idx), untouched);
+});
+
+test('applyPosition - Dominant re-rolls the LOWEST failure, not the first', () => {
+  const base = dice.rollDice(3, [5, 2, 4]);
+  const result = dice.applyPosition(base, 'Dominant');
+  assert.strictEqual(result.reRolled[0].old, 2);
+});
+
+test('applyPosition - a re-rolled 1 keeps the Story Beat it already earned', () => {
+  // SRD 18.1: "Re-rolling a 1 does not erase its SB; if the re-rolled
+  // die also shows 1, it generates additional SB." This module used to
+  // do `if (oldVal === 1) storyBeats--`, and since Dominant re-rolls the
+  // lowest failure, a 1 is exactly what it picks — so the beat was lost
+  // on very nearly every roll that earned one.
+  for (let i = 0; i < 200; i++) {
+    const base = dice.rollDice(3, [1, 3, 4]);
+    assert.strictEqual(base.sb, 1);
+    const result = dice.applyPosition(base, 'Dominant');
+    assert.strictEqual(result.reRolled[0].old, 1);
+    const expected = result.reRolled[0].new === 1 ? 2 : 1;
+    assert.strictEqual(result.sb, expected,
+      'a beat is owed for every 1 ever shown, not every 1 still showing');
+  }
+});
+
+test('applyPosition - Desperate never re-rolls a 10', () => {
+  for (let i = 0; i < 200; i++) {
+    const base = dice.rollDice(3, [10, 7, 9]);
+    const result = dice.applyPosition(base, 'Desperate');
+    assert.notStrictEqual(result.reRolled[0].old, 10);
+    assert.strictEqual(result.reRolled[0].old, 7, 'lowest 6-9, not the first found');
+  }
+});
+
+test('applyPosition - successes are recounted, so a 10 is still worth two', () => {
+  // The old incremental arithmetic subtracted 1 for a re-rolled 10 that
+  // had counted for 2, leaving the total permanently one too high.
+  const base = dice.rollDice(2, [10, 6]);
+  assert.strictEqual(base.successes, 3);
+  const result = dice.applyPosition(base, 'Desperate');
+  let expected = 0;
+  for (const d of result.dice) { if (d >= 6) { expected++; if (d === 10) expected++; } }
+  assert.strictEqual(result.successes, expected);
 });
 
 test('applyPosition - Dominant is a no-op when there is no failing die to re-roll', () => {
