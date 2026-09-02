@@ -103,7 +103,7 @@
         "DECEPTION"
       ],
       "materials": "Eye contact with the target, sustained for a full heartbeat.",
-      "effect": "One willing or unsuspecting target within Near hears a short suggestion (eight words or fewer) that they believe is their own thought. The suggestion cannot be obviously self_destructive or impossible. Test Spirit + Lore vs. Wits + Resolve.",
+      "effect": "One willing or unsuspecting target within Near hears a short suggestion (eight words or fewer) that they believe is their own thought. The suggestion cannot be obviously self-destructive or impossible. Test Spirit + Lore vs. Wits + Resolve.",
       "push_it": "The suggestion lasts until the target completes it (instead of a single action). Mark +1 Obligation (total +2). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
       "requires": "Familiar + Codex (Invoke: 1 Boon).",
@@ -139,7 +139,7 @@
       "tags": [
         "STRIKE"
       ],
-      "materials": "A light blade (one_handed sword, knife, or equivalent), held in a relaxed grip.",
+      "materials": "A light blade (one-handed sword, knife, or equivalent), held in a relaxed grip.",
       "effect": "Your next melee attack with a light blade gains +2 dice, ignores 1 Armor, and deals +1 Harm to any creature actively using dark or corrupting powers (GM discretion). The blade seems to move before you do.",
       "push_it": "The attack also disarms the target (they drop one held item). Cost: Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
@@ -180,9 +180,9 @@
   },
   "witchcraft": {
     "name": "The Art of Stillness",
-    "description": "A witch who walks with the Unbroken Way is a breath_shaper or still_point_weaver—one who crafts through the art of patient attention. Their magic works through the materials of calm: a bell that rings only when rung with perfect intention, a candle that burns without smoke when lit by a steady hand, or a stone that does not roll when placed on a slope. In Thepyrgos, a True_Mason might carve a keystone that makes the arch above it stand for a thousand years, but a witch of the Unbroken Way would instead sit beneath the arch and breathe until the stone remembered how to hold itself.",
+    "description": "A witch who walks with the Unbroken Way is a breath-shaper or still-point weaver—one who crafts through the art of patient attention. Their magic works through the materials of calm: a bell that rings only when rung with perfect intention, a candle that burns without smoke when lit by a steady hand, or a stone that does not roll when placed on a slope. In Thepyrgos, a True_Mason might carve a keystone that makes the arch above it stand for a thousand years, but a witch of the Unbroken Way would instead sit beneath the arch and breathe until the stone remembered how to hold itself.",
     "color": "#4a6a7f",
-    "lore": "The breath_shaper's path is the art of patience. They learn that true strength is not in the action but in the pause between actions. To serve the Unbroken Way is to understand that the world will wait—and that waiting is itself a form of power.",
+    "lore": "The breath-shaper's path is the art of patience. They learn that true strength is not in the action but in the pause between actions. To serve the Unbroken Way is to understand that the world will wait—and that waiting is itself a form of power.",
     "signature_rite": "Rite of the Sensing Current",
     "quote": "The blade that is not drawn cannot be broken.",
     "tools": {
@@ -227,14 +227,14 @@
       "advanced": {
         "name": "Quiet Suggestion",
         "xp": 8,
-        "effect": "Target hears an 8_word suggestion they believe is their own thought. Not self_destructive. Resist Wits+Resolve vs. Spirit+Lore.",
+        "effect": "Target hears an 8_word suggestion they believe is their own thought. Not self-destructive. Resist Wits+Resolve vs. Spirit+Lore.",
         "cost": "1 Boon",
         "prereq": "Wits 3+, Spirit 2+"
       },
       "master": {
         "name": "Empty Vessel",
         "xp": 12,
-        "effect": "Once per session, become immune to all mind_affecting magic, fear, and charm for one scene. You may also end one ongoing emotional effect (rage, despair, terror) on a touched ally.",
+        "effect": "Once per session, become immune to all mind-affecting magic, fear, and charm for one scene. You may also end one ongoing emotional effect (rage, despair, terror) on a touched ally.",
         "cost": "After the scene, you gain a permanent Stillness Scar (your reflection is slightly delayed, as if the world is not sure you are there). You may ignore one Obligation call from the Unbroken Way—the Way simply waits. It is patient.",
         "prereq": "Tier III"
       }
@@ -269,7 +269,7 @@
     },
     {
       "tier": "6+",
-      "benefit": "Empty Vessel: Once/session, become immune to all mind_affecting magic for one scene.",
+      "benefit": "Empty Vessel: Once/session, become immune to all mind-affecting magic for one scene.",
       "cost": "The Stillness Claims You: Mark +3 Obligation. You may no longer take any action that would cause direct harm to another living creature."
     }
   ],

@@ -65,7 +65,7 @@
         "FEAR"
       ],
       "materials": "A target that is actively frightened or in your power.",
-      "effect": "When you cause a creature to become Frightened or gain a fear_based Condition, you immediately clear 1 Fatigue. The terror of others sustains you.",
+      "effect": "When you cause a creature to become Frightened or gain a fear-based Condition, you immediately clear 1 Fatigue. The terror of others sustains you.",
       "push_it": "Clear 2 Fatigue instead of 1. Mark 1 SB (Hearts) as the fear becomes palpable to nearby observers. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
       "requires": "Familiar (Invoke: 1 Boon).",
@@ -145,7 +145,7 @@
       ],
       "materials": "A clenched fist and a whispered promise of pain.",
       "effect": "Invisible pressure descends on all enemies within the zone. Each target must test Body + Endurance (DV 4) or suffer Harm 1 (crushing) and be knocked prone. Even on a successful save, the target suffers 1 Fatigue from the sheer pressure and cannot voluntarily move closer to you until the end of their next turn (they are held at bay).",
-      "push_it": "The pressure intensifies to a bone_crushing degree. All enemies in the zone who fail their save instead suffer Harm 2 and are Stunned (lose their next action). Those who succeed still suffer 1 Fatigue and are pushed back one range band. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "push_it": "The pressure intensifies to a bone-crushing degree. All enemies in the zone who fail their save instead suffer Harm 2 and are Stunned (lose their next action). Those who succeed still suffer 1 Fatigue and are pushed back one range band. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
       "cost": "Mark +2 Obligation.",
       "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
       "invoke": "Extended action.",
@@ -163,8 +163,8 @@
         "BRUTAL"
       ],
       "materials": "A blade or bo staff held in a defensive stance.",
-      "effect": "For the rest of the scene, you gain +1 defense dice. Once per round, when you are targeted by a melee attack, you may make a counter_attack against the attacker. You reduce the Harm you would have taken from the triggering attack by 1 (minimum 0). The counter_attack gains +1 die and deals +1 Harm on a hit.",
-      "push_it": "The counter_attack also ignores the attacker's Armor. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "effect": "For the rest of the scene, you gain +1 defense dice. Once per round, when you are targeted by a melee attack, you may make a counterattack against the attacker. You reduce the Harm you would have taken from the triggering attack by 1 (minimum 0). The counterattack gains +1 die and deals +1 Harm on a hit.",
+      "push_it": "The counterattack also ignores the attacker's Armor. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
       "cost": "Mark +2 Obligation.",
       "requires": "Familiar + Codex (Invoke: 1 Boon).",
       "invoke": "1 action.",
@@ -183,9 +183,9 @@
   },
   "witchcraft": {
     "name": "The Art of Unmaking",
-    "description": "A witch who walks with the Riven Path is a chain_shatterer or oath_breaker—one who crafts through the art of destruction. Their magic works through the materials of power seized: a hammer that breaks locks, a key that opens any door once (then crumbles), or a brand that leaves a mark that cannot be healed. In Zakov, a pirate captain might use a mutineer's compass that always points to the nearest source of fear, but a witch of the Riven Path would instead carry the fingerbone of a captain they killed, and the bone points to that captain's hidden treasure.",
+    "description": "A witch who walks with the Riven Path is a chain-shatterer or oath-breaker—one who crafts through the art of destruction. Their magic works through the materials of power seized: a hammer that breaks locks, a key that opens any door once (then crumbles), or a brand that leaves a mark that cannot be healed. In Zakov, a pirate captain might use a mutineer's compass that always points to the nearest source of fear, but a witch of the Riven Path would instead carry the fingerbone of a captain they killed, and the bone points to that captain's hidden treasure.",
     "color": "#8b1a1a",
-    "lore": "The chain_shatterer's path is the art of breaking. They learn that true freedom is not given—it is taken. Every lock is a challenge, every chain is an insult, every wall is an opportunity to prove that you will not be contained.",
+    "lore": "The chain-shatterer's path is the art of breaking. They learn that true freedom is not given—it is taken. Every lock is a challenge, every chain is an insult, every wall is an opportunity to prove that you will not be contained.",
     "signature_rite": "Rite of Feasting on Fear",
     "quote": "The chain that binds you is the chain you refuse to break.",
     "tools": {
@@ -277,7 +277,7 @@
     }
   ],
   "playstyle_notes": {
-    "description": "The Riven Path is the ideal patron for players who want to play an aggressive, self_determined character—a warlord, a revolutionary, a dark knight, or simply someone who refuses to bow. Its Rites reward aggression, intimidation, and the willingness to take what you want. The cost is isolation—the power that lets you break chains also breaks relationships, trust, and your ability to see others as anything but obstacles or tools. Intrusions often take the form of a rival who has also broken their chains and now wants yours, a debt you cannot pay (because you broke the contract), or a situation where mercy would be easier than violence—forcing you to choose between your principles and your mission. Ideal for sith analogues, warlocks, berserkers, and any character who believes that freedom is the right of the strong and that weakness is a choice.",
+    "description": "The Riven Path is the ideal patron for players who want to play an aggressive, self-determined character—a warlord, a revolutionary, a dark knight, or simply someone who refuses to bow. Its Rites reward aggression, intimidation, and the willingness to take what you want. The cost is isolation—the power that lets you break chains also breaks relationships, trust, and your ability to see others as anything but obstacles or tools. Intrusions often take the form of a rival who has also broken their chains and now wants yours, a debt you cannot pay (because you broke the contract), or a situation where mercy would be easier than violence—forcing you to choose between your principles and your mission. Ideal for sith analogues, warlocks, berserkers, and any character who believes that freedom is the right of the strong and that weakness is a choice.",
     "emphasizes": [
       "Liberation Through Power: freedom as the right of the strong",
       "Passion as Fuel: anger, desire, fear—all are fires to be stoked",
