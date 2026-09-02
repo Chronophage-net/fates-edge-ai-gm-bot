@@ -4,6 +4,13 @@ All notable changes to this project will be documented here.
 Format loosely follows [Keep a Changelog](https://keepachangelog.com/), versions follow [Semantic Versioning](https://semver.org/).
 
 
+## [4.17.2] - 2026-09-02
+
+Patron prose repairs
+
+### Chore
+- sync patron slug-leak repairs from fates-edge-docs
+
 ## [4.17.1] - 2026-09-02
 
 Talent data sync
