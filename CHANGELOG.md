@@ -4,6 +4,26 @@ All notable changes to this project will be documented here.
 Format loosely follows [Keep a Changelog](https://keepachangelog.com/), versions follow [Semantic Versioning](https://semver.org/).
 
 
+## [4.17.0] - 2026-09-02
+
+The [EFFECT] tag, and the Story Beat / Position dice corrections
+
+### Added
+- add [EFFECT +/-] for calling Effect at the table
+
+### Fixed
+- stop erasing Story Beats, and fix Position while we are here
+
+### Chore
+- sync adventure corrections from fates-edge-docs
+- sync from fates-edge-docs
+- sync SRD-conformant bestiary from fates-edge-docs
+- sync migrated bestiary.json from fates-edge-docs
+
+### Other
+- sync bestiary from fates-edge-docs
+- sync bestiary (Forge of Souls adversaries) from fates-edge-docs
+
 ## [4.16.0] - 2026-08-31
 
 Setting data sync from fates-edge-docs
