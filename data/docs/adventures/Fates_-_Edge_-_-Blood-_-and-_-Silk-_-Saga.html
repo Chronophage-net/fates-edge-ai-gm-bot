@@ -144,6 +144,7 @@
         .outcome-list { padding-left: 1rem; font-size: 0.75rem; }
         .outcome-list li { margin: 0.1rem 0; }
         .timers-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.3rem; }
+        .creature-stats { background: var(--bg4, var(--bg3, #1a1d24)); border-radius: var(--radius, 6px); padding: 0.45rem 0.6rem; margin: 0.35rem 0; font-size: 0.8rem; border-left: 3px solid var(--gold, #c9a227); }
     </style>
 </head>
 <body>
@@ -178,6 +179,10 @@
 <hr>
 
 <!-- ===== PROLOGUE ===== -->
+<div class="panel panel-blue" style="margin:0.6rem 0 1rem;">
+    <strong>Reading an encounter badge.</strong> Each badge names a <strong>DV</strong> and a <strong>Position</strong>. It does not name a dice pool, and that is deliberate: the pool is <em>Attribute + Skill</em>, chosen from how the player says they are going about it. Two characters can attempt the same encounter with different pools and both be right. Where an approach is obviously the intended one, the badge says so; where it does not, ask what they are doing and build the pool from the answer.
+</div>
+
 <h2 id="act-prequel">📜 Prologue: The Velvet War of Silkstrand</h2>
 <p><span class="badge badge-gray">Tier I</span> <span class="badge badge-blue">1 Session</span></p>
 <p style="color:var(--text2);">The fall of the Silk Coin, a principled thieves' guild. The player characters make choices that cost them their place in Silkstrand. Their Legacy Tokens carry into the main adventure.</p>
@@ -346,7 +351,7 @@
     <div class="scene-desc">The seal is in the party's possession — but it carries the old curse. The party must decide how to break the curse: return it to the Ykrul, destroy it with fire, or bind it with a new oath.</div>
     <div class="flex text-xs mt-1">
         <span class="badge badge-green">Encounter: Return to the Ykrul (DV 4, Controlled)</span>
-        <span class="badge badge-red">Encounter: Destroy with Fire (DV 6, Desperate)</span>
+        <span class="badge badge-red">Encounter: Destroy with Fire (DV 5, Desperate)</span>
         <span class="badge badge-gold">Encounter: Bind with a New Oath (DV 5, Controlled)</span>
         <span class="badge badge-purple">Secret Fourth Way: The Ninth Clause (DV 5, Dominant)</span>
     </div>
@@ -459,5 +464,28 @@
     © Nicholas A. Gasper — For use with the Fate's Edge RPG
 </div>
 
+
+<hr>
+
+<h2 id="bestiary">⚔️ Bestiary</h2>
+<p class="text-xs text-muted">Three blocks cover every fight in the saga. Millhaven's defence, the Ford, and the Brass Gate all draw from these.</p>
+<div class="creature-stats">
+    <strong style="color:var(--gold);">Ursillo Bravo</strong> — TL 3, Armor 1, Harm 2, Harm Levels: 3 (standard). Humanoid.
+    <div class="text-xs text-muted mt-1">Garrick's rank and file: farm boys with better weapons than sense, and a year of getting away with it behind them. They are brave in a group and nowhere else.</div>
+    <div class="text-xs text-muted mt-1"><strong>SB Spends:</strong> 1 &mdash; <em>Torch</em>: something of the village's starts burning; tick Ursillo Threat +1. 2 &mdash; <em>Drag One Off</em>: a named villager is taken, and the party must choose whether to break formation. 3 &mdash; <em>They Have Numbers</em>: three more arrive from a direction the party left open.</div>
+    <div class="text-xs text-muted mt-1"><strong>Weakness:</strong> Nobody here is paid enough. Break three of them and the rest will consider the evening's arithmetic.</div>
+</div>
+<div class="creature-stats">
+    <strong style="color:var(--gold);">Garrick Ursillo</strong> — TL 5, Armor 2, Harm 3, Harm Levels: 8 (advanced). Humanoid.
+    <div class="text-xs text-muted mt-1">He was a soldier before he was this, and it shows in how he stands. He would genuinely rather be paid than fight, which is not mercy &mdash; it is arithmetic, and he is good at it.</div>
+    <div class="text-xs text-muted mt-1"><strong>SB Spends:</strong> 1 &mdash; <em>Name the Price</em>: he makes a real offer mid-fight, and it is better than it should be. 2 &mdash; <em>Hold the Line</em>: his bravos rally; every Ursillo in the scene shrugs off one Harm Level of damage this exchange. 3 &mdash; <em>Take a Hostage</em>: he ends the exchange with a hand on someone the party cares about, and everything stops.</div>
+    <div class="text-xs text-muted mt-1"><strong>Weakness:</strong> He keeps his word. If the party makes a deal with him and honours it, he honours it too &mdash; which is the most dangerous thing about him, because it makes the deal tempting.</div>
+</div>
+<div class="creature-stats">
+    <strong style="color:var(--gold);">Brass Gate Sentry</strong> — TL 4, Armor 2, Harm 3, Harm Levels: 3 (standard). Humanoid (Vhasian regular).
+    <div class="text-xs text-muted mt-1">Professional soldiers on a professional wall. Unlike the Ursillos they are not afraid, not underpaid, and not going anywhere.</div>
+    <div class="text-xs text-muted mt-1"><strong>SB Spends:</strong> 1 &mdash; <em>Sound the Horn</em>: tick the heist's alarm clock. 2 &mdash; <em>Close the Portcullis</em>: one route in or out is shut for the rest of the scene. 3 &mdash; <em>The Watch Turns Out</em>: four more, in good order, and the party's plan is now a different plan.</div>
+    <div class="text-xs text-muted mt-1"><strong>Weakness:</strong> Paper. They obey orders, and orders arrive in writing under a seal the party might be able to obtain, forge, or steal.</div>
+</div>
 </body>
 </html>

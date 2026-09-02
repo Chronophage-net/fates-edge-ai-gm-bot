@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Court of the Silent Shepherds — A Fate's Edge Adventure</title>
+    <style>
+        :root {
+            --bg1: #0a0d12; --bg2: #131a22; --bg3: #1c2732; --bg4: #263441;
+            --text: #e4ecf0; --text2: #a9bcc7; --text3: #758795;
+            --gold: #9fb8c9; --gold-hover: #b5cbda;
+            --border: #2c3d4a; --red: #a34f4f; --green: #4c8c76; --blue: #4c7ea3;
+            --purple: #6a5c9e; --orange: #ba8a4c;
+            --radius: 8px; --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background: var(--bg1); color: var(--text); font-family: var(--font); padding: 1.5rem; max-width: 1100px; margin: 0 auto; line-height: 1.6; }
+        h1, h2, h3, h4, h5 { color: var(--gold); margin: 0.5rem 0 0.3rem; }
+        h1 { font-size: 1.8rem; border-bottom: 2px solid var(--gold); padding-bottom: 0.3rem; }
+        h2 { font-size: 1.4rem; border-bottom: 1px solid var(--border); padding-bottom: 0.2rem; }
+        h3 { font-size: 1.1rem; }
+        h4 { font-size: 0.95rem; color: var(--text); }
+        a { color: var(--gold); text-decoration: none; }
+        .panel { background: var(--bg2); border-radius: var(--radius); padding: 0.6rem 0.8rem; border: 1px solid var(--border); margin: 0.5rem 0; }
+        .panel-gold { border-left: 4px solid var(--gold); }
+        .panel-red { border-left: 4px solid var(--red); }
+        .panel-blue { border-left: 4px solid var(--blue); }
+        .panel-green { border-left: 4px solid var(--green); }
+        .panel-purple { border-left: 4px solid var(--purple); }
+        .panel-orange { border-left: 4px solid var(--orange); }
+        .badge { display: inline-block; padding: 0.05rem 0.5rem; border-radius: 12px; font-size: 0.65rem; font-weight: 600; }
+        .badge-gold { background: var(--gold); color: #10161c; }
+        .badge-red { background: var(--red); color: #fff; }
+        .badge-green { background: var(--green); color: #fff; }
+        .badge-blue { background: var(--blue); color: #fff; }
+        .badge-purple { background: var(--purple); color: #fff; }
+        .badge-orange { background: var(--orange); color: #fff; }
+        .badge-gray { background: var(--bg4); color: var(--text3); }
+        .flex { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
+        .flex-between { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.3rem; }
+        .text-muted { color: var(--text3); }
+        .text-gold { color: var(--gold); }
+        .text-sm { font-size: 0.85rem; }
+        .text-xs { font-size: 0.7rem; }
+        .mt-1 { margin-top: 0.5rem; }
+        .mb-1 { margin-bottom: 0.5rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+        @media (max-width: 600px) { .grid-2 { grid-template-columns: 1fr; } }
+        .scene-card { background: var(--bg3); border-radius: var(--radius); padding: 0.4rem 0.6rem; margin: 0.3rem 0; border-left: 3px solid var(--gold); }
+        .scene-card .scene-title { font-weight: 600; font-size: 0.9rem; }
+        .scene-card .scene-desc { font-size: 0.8rem; color: var(--text2); }
+        .timer-bar { background: var(--bg4); border-radius: 4px; height: 6px; overflow: hidden; flex: 1; min-width: 60px; }
+        .timer-bar-fill { height: 100%; border-radius: 4px; transition: width 0.3s; }
+        .npc-card, .loc-card { background: var(--bg3); border-radius: var(--radius); padding: 0.3rem 0.5rem; margin: 0.15rem 0; border-left: 2px solid var(--gold); }
+        .npc-card .npc-name { font-weight: 600; font-size: 0.85rem; }
+        .npc-card .npc-role { font-size: 0.7rem; color: var(--text3); }
+        .npc-card .npc-motivation { font-size: 0.75rem; color: var(--text2); }
+        .npc-card .npc-secret { font-size: 0.72rem; color: var(--text3); font-style: italic; margin-top: 0.15rem; }
+        hr { border: none; border-top: 1px solid var(--border); margin: 0.5rem 0; }
+        .toc { background: var(--bg3); border-radius: var(--radius); padding: 0.5rem 0.8rem; border: 1px solid var(--border); }
+        .toc a { color: var(--text2); display: block; padding: 0.1rem 0; font-size: 0.85rem; }
+        .toc a:hover { color: var(--gold); }
+        .encounter-box { background: var(--bg4); border-radius: var(--radius); padding: 0.3rem 0.5rem; margin: 0.2rem 0; border-left: 3px solid var(--orange); font-size: 0.8rem; }
+        .encounter-box .enc-name { font-weight: 600; color: var(--orange); }
+        .encounter-box .enc-outcomes { margin-top: 0.2rem; font-size: 0.75rem; color: var(--text2); }
+        .encounter-box .enc-outcomes div { margin: 0.1rem 0; }
+        .timers-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.3rem; }
+        blockquote { border-left: 3px solid var(--gold); padding-left: 1rem; margin: 0.5rem 0; color: var(--text2); font-style: italic; }
+        .gm-box { background: #0f1620; border: 1px solid var(--gold); border-radius: var(--radius); padding: 0.5rem 0.8rem; margin: 0.4rem 0; font-size: 0.82rem; color: var(--text2); }
+        .gm-box strong { color: var(--gold); }
+        table.tension-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; margin: 0.4rem 0; }
+        table.tension-table th, table.tension-table td { border: 1px solid var(--border); padding: 0.3rem 0.5rem; text-align: center; }
+        table.tension-table th { background: var(--bg3); color: var(--gold); }
+        .creature-stats { background: var(--bg4, var(--bg3, #1a1d24)); border-radius: var(--radius, 6px); padding: 0.45rem 0.6rem; margin: 0.35rem 0; font-size: 0.8rem; border-left: 3px solid var(--gold, #c9a227); }
+    </style>
+</head>
+<body>
+
+<h1>🕊️ The Court of the Silent Shepherds</h1>
+<p style="color:var(--text2);margin-bottom:1rem;">
+    <span class="badge badge-gold">Tier III</span>
+    <span class="badge badge-blue">2-3 Sessions</span>
+    <span class="badge badge-purple">Political Intrigue</span>
+    <span class="badge badge-purple">Social Combat</span>
+    <span class="badge badge-gray">Author: Nicholas A. Gasper</span>
+</p>
+<p style="color:var(--text2);margin-bottom:0.5rem;">
+    The Court of the Silent Shepherds — the gathering place where Aelinnel elders have settled disputes and
+    guided their people for a thousand years — has fallen into an unnatural silence. Every elder stands frozen
+    mid-gesture, mid-argument, mid-alliance, unable or unwilling to speak. One elder manages to scrawl a
+    warning before going still herself: the first to speak will break the silence, but at a price. The party
+    is summoned as mediators to find the source of the silence, break it without breaking the court, and
+    discover why the Aelinnel's most sacred tradition chose this moment to stop.
+</p>
+
+<blockquote>
+    "In the silence, every thought becomes a shout. In the court, every whisper is a command."
+</blockquote>
+
+<div class="toc">
+    <strong style="color:var(--gold);">📑 Table of Contents</strong>
+    <a href="#act-1">Act I — The Frozen Court</a>
+    <a href="#act-2">Act II — The Unspoken Price</a>
+    <a href="#act-3">Act III — The Shepherd's Return</a>
+    <a href="#npcs">👤 Key NPCs</a>
+    <a href="#locations">📍 Locations</a>
+    <a href="#factions">🏛️ Factions</a>
+    <a href="#timers">⏱️ Campaign Timers</a>
+    <a href="#gmnotes">🗒️ GM Notes</a>
+</div>
+
+<hr>
+
+<div class="panel panel-blue" style="margin:0.6rem 0 1rem;">
+    <strong>Reading an encounter badge.</strong> Each badge names a <strong>DV</strong> and a <strong>Position</strong>. It does not name a dice pool, and that is deliberate: the pool is <em>Attribute + Skill</em>, chosen from how the player says they are going about it. Two characters can attempt the same encounter with different pools and both be right. Where an approach is obviously the intended one, the badge says so; where it does not, ask what they are doing and build the pool from the answer.
+</div>
+
+<h2 id="act-1">🧊 Act I — The Frozen Court</h2>
+<p style="color:var(--text2);">The party enters a chamber where time has curdled around the Aelinnel elders. Every alliance and rivalry is frozen at its most vulnerable moment.</p>
+
+<div class="panel panel-gold">
+    <strong>Court Tension Timer [10]</strong> — begins at 3 (Tense)
+    <table class="tension-table">
+        <tr><th>Calm (0-2)</th><th>Tense (3-5)</th><th>Strained (6-8)</th><th>Fracturing (9-10)</th></tr>
+        <tr><td>&minus;1 DV social</td><td>Normal DV</td><td>+1 DV (never above 5)</td><td>Position one step worse; violence possible</td></tr>
+    </table>
+    <div class="text-xs text-muted">Worsens on a miss when negotiating, when the party disrupts the court, or an alliance goes unmaintained. Improves on a clean success strengthening an alliance, uncovering truth, or performing a stabilizing rite.</div>
+</div>
+
+<div class="scene-card">
+    <div class="scene-title">🗿 The Silent Chamber</div>
+    <div class="scene-desc">Elders stand locked mid-agreement or mid-argument. The scrawled warning reads: "The first to speak will break the silence but pay a price. Find the source before we are all lost."</div>
+    <div class="encounter-box mt-1">
+        <div class="enc-name">Read the Frozen Court — DV 3, Controlled</div>
+        <div class="enc-outcomes">
+            <div><strong>Clean:</strong> You piece together the court's structure and rough alliances.</div>
+            <div><strong>Partial:</strong> Fragmentary read; enough to act, not enough to be certain.</div>
+            <div><strong>Miss:</strong> You misread a tableau. Court Tension +1; GM banks 1 SB.</div>
+        </div>
+    </div>
+    <div class="encounter-box mt-1">
+        <div class="enc-name">Map the Web of Alliances — DV 3, Controlled</div>
+        <div class="enc-outcomes">
+            <div><strong>Clean:</strong> Elder Lysara is identified as a sympathetic contact; the silence began when the High Shepherd entered.</div>
+            <div><strong>Partial:</strong> Alliances confirmed real but fragile; no standout contact yet.</div>
+            <div><strong>Miss:</strong> You're mistaken for aligned with a rival faction. Court Tension +1.</div>
+        </div>
+    </div>
+</div>
+
+<div class="scene-card">
+    <div class="scene-title">⏳ Frozen Moments</div>
+    <div class="scene-desc">Moments locked mid-motion scatter the chamber — an accusation half-spoken, a hand withdrawn. Interacting risks briefly unfreezing them.</div>
+    <div class="encounter-box mt-1">
+        <div class="enc-name">Interact with a Frozen Moment — DV 3, Controlled</div>
+        <div class="enc-outcomes">
+            <div><strong>Clean:</strong> Real insight, no incident.</div>
+            <div><strong>Partial:</strong> Useful info, but the moment stutters unsettlingly.</div>
+            <div><strong>Miss:</strong> The moment briefly plays forward. Court Tension +1; GM banks 1 SB.</div>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<h2 id="act-2">🗣️ Act II — The Unspoken Price</h2>
+<p style="color:var(--text2);">Speaking against the silence exacts a toll — always social, never a ledger entry. The party must decide who speaks, when, and what they owe.</p>
+
+<div class="scene-card">
+    <div class="scene-title">💬 Breaking the Silence</div>
+    <div class="scene-desc">Any attempt to speak against the silence costs the speaker something real: a favor called in, a standing strained, a promise that follows them home.</div>
+    <div class="flex text-xs mt-1">
+        <span class="badge badge-gray">Timer: Unspoken Price [8]</span>
+    </div>
+    <div class="encounter-box mt-1">
+        <div class="enc-name">Speak Against the Silence — DV 4, Controlled</div>
+        <div class="enc-outcomes">
+            <div><strong>Clean:</strong> Silence yields. Court Tension improves +1. Toll owed is proportionate.</div>
+            <div><strong>Partial:</strong> Silence cracks; speaker pays a toll, court remains volatile.</div>
+            <div><strong>Miss:</strong> Attempt fails. Unspoken Price +1; minor toll owed regardless.</div>
+        </div>
+    </div>
+    <div class="panel panel-blue text-sm mt-1">
+        <strong>Unspoken Toll (narrative, never ledger language):</strong><br>
+        <em>Minor:</em> A debt of favor comes due early, a small confidence must be shared.<br>
+        <em>Moderate:</em> A relationship is visibly strained; standing among your own people quietly dips.<br>
+        <em>Severe:</em> A new, unwanted obligation of loyalty is incurred — it will follow the speaker past this adventure.
+    </div>
+</div>
+
+<hr>
+
+<h2 id="act-3">🌿 Act III — The Shepherd's Return</h2>
+<p style="color:var(--text2);">The silence traces to the High Shepherd's absence. Finding them — and understanding why they left — is the only way to restore the court.</p>
+
+<div class="scene-card">
+    <div class="scene-title">🔍 Finding the Shepherd</div>
+    <div class="scene-desc">The High Shepherd withdrew willingly into a vision of the court's founding, seeking answers to a crisis they could not yet name.</div>
+    <div class="flex text-xs mt-1">
+        <span class="badge badge-gray">Timer: Shepherd's Will [10]</span>
+        <span class="badge badge-red">Locate the Hidden Chamber (DV 4, Desperate)</span>
+    </div>
+</div>
+
+<div class="scene-card">
+    <div class="scene-title">👁️ The Shepherd's Vision</div>
+    <div class="scene-desc">The party must navigate the vision honestly, not fight through it, and convince the Shepherd this crisis deserves a different answer.</div>
+    <div class="flex text-xs mt-1">
+        <span class="badge badge-gray">Timer: Vision Stability [6]</span>
+        <span class="badge badge-red">Convince the Shepherd (DV 5, Desperate)</span>
+    </div>
+</div>
+
+<div class="scene-card">
+    <div class="scene-title">🕯️ Restoring the Court</div>
+    <div class="scene-desc">With the Shepherd returned, elders must be helped to speak again, one frozen relationship at a time.</div>
+    <div class="flex text-xs mt-1">
+        <span class="badge badge-orange">Lead the Court to Speech (DV 4, Controlled)</span>
+    </div>
+</div>
+
+<hr>
+
+<h2 id="npcs">👤 Key NPCs</h2>
+<div class="grid-2">
+    <div class="npc-card">
+        <div class="npc-name">The High Shepherd</div>
+        <div class="npc-role">Leader of the Aelinnel, missing since the silence began</div>
+        <div class="npc-motivation">🎯 Find an answer to a coming crisis before it fractures the court.</div>
+        <div class="npc-secret">Entered the vision willingly, and became trapped by their own reluctance to leave uncertain.</div>
+    </div>
+    <div class="npc-card">
+        <div class="npc-name">Elder Lysara</div>
+        <div class="npc-role">Songweaver elder, the party's likeliest ally</div>
+        <div class="npc-motivation">🎯 Protect the court's stability without making the Aelinnel more rigid.</div>
+        <div class="npc-secret">Knows a Songweaver can sing the silence open without the usual toll — withheld out of concern for the court's authority.</div>
+    </div>
+</div>
+
+<hr>
+
+<h2 id="locations">📍 Locations</h2>
+<div class="grid-2">
+    <div class="loc-card"><strong>The Court of the Silent Shepherds</strong> — A vast chamber where elders stand frozen mid-motion. The air holds its breath.</div>
+    <div class="loc-card"><strong>The Hidden Chamber</strong> — A concealed room where the High Shepherd sits caught in a vision of the court's founding.</div>
+</div>
+
+<hr>
+
+<h2 id="factions">🏛️ Factions</h2>
+<div class="panel panel-gold"><strong>The Pale Shepherds</strong> — Preserve the court exactly as it's always been; suspicious of change.</div>
+<div class="panel panel-blue"><strong>The Songweavers</strong> — Adapt tradition to survive; natural allies for unconventional solutions.</div>
+<div class="panel panel-purple"><strong>The Silent Watch</strong> — Opportunists shaping the court from the margins; never revealed as villains, only as those who let the silence do work they'd never dare attempt themselves.</div>
+
+<hr>
+
+<h2 id="timers">⏱️ Campaign Timers</h2>
+<div class="timers-grid">
+    <div class="panel panel-orange">
+        <div class="flex-between text-sm"><strong>⚡ Court Tension</strong><span>3/10</span></div>
+        <div class="timer-bar"><div class="timer-bar-fill" style="width:30%;background:var(--orange);"></div></div>
+        <div class="text-xs text-muted">Calm/Tense/Strained/Fracturing. At Fracturing, alliances shatter and violence becomes possible.</div>
+    </div>
+    <div class="panel panel-blue">
+        <div class="flex-between text-sm"><strong>🗣️ Unspoken Price</strong><span>0/8</span></div>
+        <div class="timer-bar"><div class="timer-bar-fill" style="width:0%;background:var(--blue);"></div></div>
+        <div class="text-xs text-muted">At 0, silence breaks at minimal cost. At 8, it calcifies toward permanence.</div>
+    </div>
+    <div class="panel panel-green">
+        <div class="flex-between text-sm"><strong>🌿 Shepherd's Will</strong><span>0/10</span></div>
+        <div class="timer-bar"><div class="timer-bar-fill" style="width:0%;background:var(--green);"></div></div>
+        <div class="text-xs text-muted">At 0, the Aelinnel are saved. At 10, the court collapses.</div>
+    </div>
+</div>
+
+<hr>
+
+<h2 id="gmnotes">🗒️ GM Notes</h2>
+<div class="gm-box"><strong>Tone guardrail:</strong> The Unspoken Price toll must always read as social — a favor, a strained bond, an obligation — never as a number owed or a ledger balance.</div>
+<div class="gm-box"><strong>Act I:</strong> Let the frozen court feel eerie, not puzzle-boxy. Reward players who actually look at individual elders.</div>
+<div class="gm-box"><strong>Act II:</strong> The toll should be proportionate to how the silence was broken, never arbitrary punishment.</div>
+<div class="gm-box"><strong>Act III:</strong> The High Shepherd's secret should land as tragic and understandable — a leader's fear of failing their people, not a mystery to interrogate.</div>
+<div class="gm-box"><strong>Forbidden early revelations:</strong> Don't reveal the Shepherd entered willingly before Act III; don't reveal the Songweaver bypass before trust is earned; keep the Silent Watch's role ambiguous throughout.</div>
+
+<hr>
+
+<div style="font-size:0.75rem;color:var(--text3);text-align:center;padding:1rem 0;">
+    The Court of the Silent Shepherds — A Fate's Edge Adventure<br>
+    © Nicholas A. Gasper — For use with the Fate's Edge RPG
+</div>
+
+
+<hr>
+
+<h2 id="bestiary">⚔️ When the Court Fractures</h2>
+<p>This adventure has no monsters, and that is not an oversight &mdash; it is a room full of people who will not speak. But <em>Court Tension</em> reaching Fracturing promises violence, so here is what that violence is. It is never a set-piece battle; it is one bad moment between people who have known each other for two hundred years.</p>
+<div class="creature-stats">
+    <strong style="color:var(--gold);">Aelinnel Elder (any of them)</strong> — TL 4, Armor 0, Harm 3, Harm Levels: 3 (standard). Small Folk.
+    <div class="text-xs text-muted mt-1">Old, formal, and entirely out of practice at this. An elder who draws is humiliated before the first exchange and knows it. They fight badly, briefly, and never twice.</div>
+    <div class="text-xs text-muted mt-1"><strong>SB Spends:</strong> 1 &mdash; <em>Said Aloud</em>: something unforgivable is finally spoken; tick Unspoken Price +2. 2 &mdash; <em>Take a Side</em>: another elder commits, and the room divides. 3 &mdash; <em>The First Blood</em>: someone is hurt who was not part of this, and the court cannot pretend afterwards.</div>
+    <div class="text-xs text-muted mt-1"><strong>Weakness:</strong> Witness. An elder will stop the instant a PC makes it clear they are watching and will remember. Nobody here wants to be the one who started it.</div>
+</div>
+<div class="creature-stats">
+    <strong style="color:var(--gold);">The Silence Itself</strong> — TL 6, <strong>Harm Levels: None (puzzle)</strong>. Condition.
+    <div class="text-xs text-muted mt-1">What actually opposes the party. It has no body, holds no weapon, and wins every scene in which nobody says the true thing.</div>
+    <div class="text-xs text-muted mt-1"><strong>SB Spends:</strong> 1 &mdash; <em>The Moment Passes</em>: a PC who hesitated loses the opening. 2 &mdash; <em>Everyone Agrees Not To</em>: a truth spoken aloud is politely ignored, and the speaker takes &minus;1 die socially for the scene. 3 &mdash; <em>Calcify</em>: tick Unspoken Price +2; what has gone unsaid this long starts to look permanent.</div>
+    <div class="text-xs text-muted mt-1"><strong>Resolution:</strong> Somebody says it, in front of everyone, and is not talked out of it. That is the whole adventure. Fracturing is what happens when the party runs out of time to do it gently.</div>
+</div>
+</body>
+</html>

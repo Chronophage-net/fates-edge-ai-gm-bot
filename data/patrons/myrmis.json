@@ -1,0 +1,326 @@
+{
+  "id": "myrmis-bloody-handed-matron",
+  "type": "patron",
+  "title": "Myrmis, the Bloody-Handed Matron",
+  "subtitle": "Sacrifice & Revelation",
+  "version": "1.0.0",
+  "tags": [
+    "sacrifice",
+    "revelation",
+    "war",
+    "justice",
+    "hidden-courts",
+    "blood-arithmetic",
+    "cairn-mother",
+    "shadow-court",
+    "reckoning"
+  ],
+  "lore": {
+    "description": "The Earls will tell you Myrmis was not born of heaven's grace but carved from the granite of the Viterran highlands, where the wind carries the names of the dead and the soil drinks deeply of the fallen. The Earls are wrong, and have been wrong for four hundred years with great conviction: she came north out of Astroegro with the people who had used her. But a goddess is partly where she is kept, and she has been kept in that granite long enough for the claim to have some granite in it. She is the patron of those who fight not for glory but for necessity, who understand that war is a bloody arithmetic of sacrifice and survival. She is mother to the hearth-fire that must be fed with kindling, grandmother to the blade that must be sharpened with grief. Her revelations come in the moment between breath and death, in the stillness of a battlefield when the last scream has faded, in the quiet of a war-council when the maps are spread and the blood is yet unspilled. She does not promise victory. She promises meaning.",
+    "followers": "Among the peoples of Fate's Edge, Myrmis is invoked by generals on the eve of battle, by assassins before their final strike, by mothers who have lost children to the sword. In Viterra, she is a syncretic relic of the Pereshi highlands, a reminder that the crown's justiciars are not the only ones who keep the reckoning of blood. In the Aelerian foothills, she is the Shadow-Court, a hidden order that judges the unworthy and dispenses justice where the law cannot reach. Her followers are soldiers, executioners, judges, and those who carry the weight of necessary violence. They do not seek glory; they seek the clarity that only sacrifice can bring.",
+    "names_across_regions": {
+      "pereshi": "The Cairn-Mother, who counts the stones of the fallen and weeps salt tears that harden into iron",
+      "aelerian_foothills": "The Lady of the Gathered Bones, patron of the Shadow-Court's assassins",
+      "viterra": "The Bloody-Handed Matron, invoked by justiciars when the law must be enforced without mercy",
+      "northern_earls": "The Unseen Reckoner, whispered in war-councils by those who would end a war before it begins"
+    },
+    "quote": "She does not ask if you are ready. She asks if you are willing. The blade does not care for your prayers. It cares for your grip. Myrmis does not love the strong. She loves the ones who stand when they should fall, and fall when they must. The matron reckons, and her reckoning is never balanced."
+  },
+  "domain_focus": [
+    "Sacrifice and Necessity: the willingness to give what must be given",
+    "The Revelation of Violence: truth that cannot be spoken, only shown",
+    "The Bloody Arithmetic: war as a calculus of costs and gains",
+    "Hidden Justice: the cult that judges what the law cannot reach",
+    "The Cairn-Mother's Grief: love for the fallen, fury for the cause"
+  ],
+  "runekeeper_options": {
+    "thiasos": {
+      "description": "One does not become a Runekeeper of Myrmis by binding a creature of battle and fury. Their Thiasos is a companion that embodies the stillness before the strike: a gray wolf with one ear missing, a hooded crow that perches on the bearer's shoulder and watches without blinking, a brass-and-iron scorpion that clicks its claws in a rhythm that mimics a heartbeat, or a moth whose wings are marked with the eight-pointed star of the Pereshi highlands.",
+      "care": "This creature requires no food, but it must be offered a drop of blood each week—not from the bearer, but from an enemy or a sacrifice. If neglected for a week, it becomes Compromised (it grows listless, and the bearer suffers –1 die on all Intimidation and Command rolls until a suitable offering is made)."
+    },
+    "codex": {
+      "description": "A Codex sworn to Myrmis is never a book of prayers. It is a roll of the fallen—a list of names, each marked with the price paid. It may be a scroll of vellum stained with blood, a stack of iron nails driven into a plank of old oak, a set of bone tallies threaded on a leather cord, or a cloth-of-battle that records each death in thread as dark as dried blood.",
+      "upkeep": "Because Myrmis's truths are written in the cost of violence, the Codex requires upkeep: the Runekeeper must spend an hour each week adding a name to the roll—an enemy slain, a sacrifice made, a debt called due—or the Rites stored there become uncertain (treat as Compromised until a new name is added)."
+    }
+  },
+  "patrons_gift": {
+    "name": "The Matron's Resolve",
+    "description": "Once per scene as an action, a Runekeeper of Myrmis may touch a held weapon and whisper the name of a sacrifice.",
+    "effect": "For the rest of the scene, the weapon grants +1 die to Melee or Command rolls, and the first time each scene the bearer would hesitate in battle (a moral quandary, a fear check, a moment of mercy), they may reroll the resistance check (the Matron's resolve steels them).",
+    "cost": "After the scene, the user marks +1 Obligation to Myrmis."
+  },
+  "rites": [
+    {
+      "name": "Rite of the Bloody Reckoning",
+      "tier": "Low",
+      "xp": 5,
+      "action": "Scene",
+      "range": "Self/Touch",
+      "resist": "Yes",
+      "tags": [
+        "DEBT",
+        "SACRIFICE",
+        "REVELATION"
+      ],
+      "materials": "A reckoning-stick marked with eight notches, or a knife that has drawn blood in battle.",
+      "effect": "Choose one: Reckon the Debt: Gain +1 die to Investigation or Insight when reading the cost of a battle, a feud, or a political maneuver. You see not just the outcome, but the price paid. OR Offer the Sacrifice: Gain +2 dice to Intimidation or Command when threatening a target with a cost they cannot bear. The Matron's arithmetic is terrifying in its clarity.",
+      "push_it": "(Reckon only) The debt is not yet paid. You glimpse the target's next move—gain +2 dice to your next roll against them in this scene. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Unforged Blade",
+      "tier": "Standard",
+      "xp": 9,
+      "action": "Extended",
+      "range": "Touch",
+      "resist": "Yes",
+      "tags": [
+        "CRAFT",
+        "DEBT",
+        "SACRIFICE",
+        "WEAPON"
+      ],
+      "materials": "A weapon that has drawn blood, and a lock of hair from someone who died in battle.",
+      "effect": "Forge the sacrifice into the blade. For the next day, the weapon gains +2 dice on attacks against a single target type (chosen at casting: 'the one who killed my brother,' 'those who wear the green banner,' 'the enemy's champion'). At the end of the day, the weapon's edge turns black, and it must be reforged.",
+      "push_it": "The weapon's purpose extends for a week—but you must mark +1 Obligation each day it is used. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "Extended action.",
+      "duration": "1 day."
+    },
+    {
+      "name": "Rite of the Iron Vow",
+      "tier": "Standard",
+      "xp": 8,
+      "action": "Scene",
+      "range": "Near",
+      "resist": "No",
+      "tags": [
+        "OATH",
+        "BOND",
+        "DEBT"
+      ],
+      "materials": "An iron nail, and a drop of blood from each party to the vow.",
+      "effect": "Swear an oath that cannot be broken without cost. Both parties gain +1 die while keeping the oath; breaking it causes Harm 1 (spiritual backlash) and marks +2 Obligation to Myrmis. The nail is driven into a wooden post or a threshold; removing it voids the oath, but causes Harm 2 to the one who removes it.",
+      "push_it": "The oath is sworn on the Matron's own reckoning—the cost of breaking it is Harm 2 and +3 Obligation. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Until the oath is fulfilled or the nail is removed."
+    },
+    {
+      "name": "Rite of the Revealing Wound",
+      "tier": "High",
+      "xp": 13,
+      "action": "Extended",
+      "range": "Touch",
+      "resist": "Yes",
+      "tags": [
+        "REVELATION",
+        "TRUTH",
+        "DEBT",
+        "FEAR"
+      ],
+      "materials": "A wound—fresh or old—and a witness who saw the blow struck.",
+      "effect": "Touch a wound and speak the question you cannot answer. The wound shows you the truth of the blow: who struck it, why, and what they truly wanted. The Matron's revelation is always true—but it may cost you. The answer comes as a vision, a memory, or a whisper from the wound's own flesh.",
+      "push_it": "The vision shows not just the truth of that wound, but the truth of all wounds you carry. Mark +1 Obligation and gain +2 dice to your next roll against the one who wounded you. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "Extended action.",
+      "duration": "Instant."
+    },
+    {
+      "name": "Rite of the Last Stand",
+      "tier": "High",
+      "xp": 14,
+      "action": "Scene",
+      "range": "Zone",
+      "resist": "No",
+      "tags": [
+        "SACRIFICE",
+        "DEBT",
+        "FEAR",
+        "AREA",
+        "FATE"
+      ],
+      "materials": "A banner that has flown over a battlefield, and a promise made in the moment before death.",
+      "effect": "Consecrate a zone of final resistance. All allies within the zone gain +2 dice to Melee and Resolve rolls. The first time each ally would fall in this scene, they may instead stand for one more exchange, their wounds held closed by the Matron's grace. At the end of the scene, each ally who used this grace must mark +1 Obligation—the Matron's debt is never free.",
+      "push_it": "The zone extends for the entire session, but every ally who uses the grace also marks Harm 1 (spiritual exhaustion). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "Extended action.",
+      "duration": "Scene."
+    }
+  ],
+  "cantors_and_cults": {
+    "cantors": {
+      "name": "The Cantor's Song",
+      "description": "A Cantor of Myrmis sings dirges of the fallen, melodies that rise with the weight of grief and fall with the finality of a blade. Their voice is used to consecrate the dead, to steel the hearts of soldiers before battle, and to call the Matron's attention to a sacrifice that must be witnessed. They are often found on battlefields, singing the names of the fallen into the wind, or in hidden halls where the Shadow-Court gathers to pronounce its judgments."
+    },
+    "cult": {
+      "name": "The Mound",
+      "description": "Myrmis's most organised cult is the Mound — the Shadow-Court to everyone outside it — a secret society of assassins, knights and judges seated in the hills and highlands between Ubral and Viterra — Renard country, and the country of the other Northern Earls who keep her the way they keep everything, quietly and not in front of the Crown. They meet in hidden halls under the ridges, their faces hidden behind masks of hammered bronze, their voices muffled by the chanting of old verses. Their ritual involves each member bringing a name—an enemy, a traitor, a tyrant—and placing it on a stone altar. The cult votes on which names are worthy of judgment. Those judged guilty are marked for death, and a member is chosen to carry out the sentence. Their creed is carved into the altar: 'The law is blind. We are not. The law is slow. We are not. The law forgets. We remember.' Outsiders are not welcome, but those who have lost everything to an unjust cause may petition the Shadow-Court for a hearing. The Court is patient. It has been judging for three centuries. It will not stop. A second, more insidious offshoot, the Bloody Table, operates among the northern and eastern earls—nobles who have sworn to end a war before it begins, even if it means beginning another. They gather in sealed chambers, their identities hidden behind sigils and pseudonyms, and they discuss the costs of war with the cold precision of accountants. Their creed is spoken in whispers: 'Better one death than a thousand. Better a knife in the dark than fire in the light. Better a secret than a war.' They are the Matron's most pragmatic children, and they are the ones who have most fully understood her arithmetic.",
+      "the_remnant": "What survives of the Court after the Seven Week Uprising is called the Shadow-Court Remnant: scattered, still keeping faith, and treating the Viterran succession as a debt Myrmis is in the middle of collecting. Queen Alaysha, née Renard, is a devotee and has never said so aloud. Gelfrey Renard was the Court's public face until he stopped being anyone's face at all. A GM running Viterra should assume the Court is a live faction with an opinion about the throne, not a historical footnote.",
+      "what_it_costs": "The Court is the Cold Hand institutionalised, which is exactly why it is dangerous to its own members. A body that votes on names and delegates the sentence has arranged for nobody in the room to have done it. Myrmis does not accept that arrangement — the vote and the knife are one act, and the stone afterward is carried by everyone who raised a hand. A Mound that forgets this stops being her cult and becomes a committee with weapons, which is a thing she has ended before. The heap by the door is the correction: you cannot delegate carrying a stone.",
+      "known_outside_as": "the Shadow-Court",
+      "the_name": "They call themselves **the Mound**, and the word is doing three jobs at once. It is an anthill: a structure raised by innumerable hands, perfectly coordinated, with no single author and no one to blame — the Cold Hand made architecture. It is a barrow: the thing you end up under. And it is literal, because a devotee who takes a name off the altar walks the field afterward and adds a stone, so every hall has a heap by the door that grows and is never counted aloud.\n\nOutsiders call them the Shadow-Court, which is what you call something when all you have seen is the masks and the voting. The Court is the procedure. The Mound is what the procedure is for, and the members do not correct anyone."
+    }
+  },
+  "witchcraft": {
+    "name": "The Art of the Blood-Reckoner",
+    "description": "A witch who walks with Myrmis is a blood-reckoner or harvest-witch—one who crafts with the materials of sacrifice and cost. Their magic works through the tools of the battlefield: a knife that cuts deeper than its blade, a reckoning-stick that never forgets a debt, a banner that whispers the names of the dead. In the Aelerian foothills, a True-Mason might carve a 'Judgment Stone' for the Shadow-Court, but a witch of Myrmis would instead place a blood-soaked reckoning-stick on the altar, writing the names of the condemned in iron.",
+    "color": "#8b0000",
+    "lore": "Blood-reckoners are often war-survivors or executioners' apprentices, those who have seen the cost of violence firsthand and chose to carry its weight as a craft rather than a curse. They are called upon to settle blood-feuds, to mark the condemned, and to read the truth in old wounds that no one else dares to touch.",
+    "signature_rite": "Rite of the Bloody Reckoning",
+    "quote": "Every debt has a weight. Every weight has a reckoning. The Matron's arithmetic is written in iron and memory.",
+    "tools": {
+      "reckoning_stick": {
+        "name": "The Reckoning-Stick of the Matron",
+        "description": "A rod of oak and iron, marked with eight notches per death, its surface stained with old blood. Once per session, the witch may tap the reckoning-stick against any surface and speak a name. For the next scene, that name is accounted for—the GM must answer one yes/no question about that person's debt, cost, or vulnerability. The reckoning-stick can also be used to 'mark' a threshold; pressing it into a doorframe ensures that the next person to pass through will be known to the Matron (treat as +1 die to Insight against them for the scene)."
+      }
+    },
+    "hedge_gifts": [
+      {
+        "name": "The Counting Breath",
+        "xp": 4,
+        "description": "Once per scene, when you strike a blow in combat, you may declare that you are 'counting the cost.' Roll the attack with +1 die. If you succeed, you also learn one of the target's vulnerabilities (a fear, a debt, a hidden wound). If you fail, the Matron's attention turns to you—mark +1 Obligation as the cost is tallied against your own balance."
+      }
+    ]
+  },
+  "monastic_tradition": {
+    "name": "The Shadow-Court",
+    "description": "Monks of the Shadow-Court are the living instruments of Myrmis's judgment—trained in stillness, patience, and the art of the final blow. They learn to read people as a ledger, to see the weight of unspoken debts, and to strike when the scale tips beyond balance. Their order maintains hidden safehouses throughout the Aelerian foothills, each marked with an iron nail driven into the lintel—a sign that judgment may be sought here.",
+    "color": "#8b0000",
+    "quote": "The law is blind. We are not. The law is slow. We are not. The law forgets. We remember.",
+    "prerequisites": "Wits 3+, Spirit 2+, Rite of the Bloody Reckoning or Cantor of Myrmis.",
+    "debt_resistant_frame": "The Shadow-Court does not forgive debts—it collects. Monks of the tradition gain +1 die to resist any magical debt, geas, or contract that would compel them to avoid judgment or show unwarranted mercy. If they succeed, the debtor feels a momentary chill, as if they have been marked by something patient—and the GM gains 1 SB (the Matron notes a new account).",
+    "techniques": {
+      "basic": {
+        "name": "Bloody Reckoning",
+        "xp": 5,
+        "description": "When you assess a person's cost, gain +1 die to Insight. The Matron's arithmetic is always clear.",
+        "cost": "1 Boon",
+        "prereq": "Spirit 2+"
+      },
+      "advanced": {
+        "name": "Unforged Blade",
+        "xp": 8,
+        "description": "Forge a sacrifice into a weapon; gain +2 dice on attacks against a chosen target for one scene.",
+        "cost": "1 Fatigue + 1 Boon",
+        "prereq": "Tier II, Body 3+"
+      },
+      "master": {
+        "name": "Judgment's Hand",
+        "xp": 12,
+        "description": "Once per session, declare a judgment that the Matron will enforce. The target must test Resolve (DV 6) or suffer Harm 2 (spiritual punishment). If they succeed, you must face them in combat—but you gain +1 die to all attacks against them for the scene. After using this technique, you gain a permanent Cairn-Scar (a mark on your palm that resembles a reckoning-stick, and the GM gains 1 SB per session to use against you in judgments). You may ignore one Obligation to the Matron—but she will remember, and the next judgment she places before you will be heavier.",
+        "cost": "2 Fatigue and +1 Obligation to Myrmis",
+        "prereq": "Tier III, Spirit 3+"
+      }
+    },
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
+  },
+  "corruption": [
+    {
+      "tier": 1,
+      "benefit": "Cairn-Sight: +1 die to Insight when assessing a person's cost or sacrifice.",
+      "cost": "Grievous Memory: –1 die to social rolls that require forgetting or forgiving a past wrong. You remember every debt."
+    },
+    {
+      "tier": 2,
+      "benefit": "Bloody Reckoning: Once/scene, when you cause a creature to take Harm, you may also learn their greatest fear or debt.",
+      "cost": "Reckoning's Weight: –1 die to resist the urge to exact justice, even when mercy would be wiser."
+    },
+    {
+      "tier": 3,
+      "benefit": "The Reckoning's Grip: +2 dice to Intimidation and Command when threatening a specific cost or sacrifice.",
+      "cost": "Relentless Arithmetic: –1 die to social rolls that require leniency or patience. You see the price, and you are not willing to waive it."
+    },
+    {
+      "tier": 4,
+      "benefit": "Unforged Purpose: Once/session, declare a target for your blade. Gain +2 dice on all attacks against that target for the scene.",
+      "cost": "Blood-Debt: Each use of this power marks +1 Obligation to Myrmis. The cost is always reckoned."
+    },
+    {
+      "tier": 5,
+      "benefit": "Revelation's Edge: Once/session, touch a wound and learn the true cost of the blow that caused it.",
+      "cost": "The Reckoning's Weight: –1 die to social rolls that do not involve war, sacrifice, or justice. You speak only of costs."
+    },
+    {
+      "tier": "6+",
+      "benefit": "Shadow-Court's Hand: Once/session, declare a judgment that the Matron will enforce. The target must test Resolve (DV 6) or suffer Harm 2 (spiritual punishment).",
+      "cost": "The Reckoning is Complete: Mark +3 Obligation. You are now the Matron's instrument, and you cannot refuse a judgment she places before you. Your face begins to be forgotten by those who have not paid their debts."
+    }
+  ],
+  "playstyle_notes": {
+    "description": "Myrmis favours those who understand the cost of violence, who are willing to sacrifice what must be sacrificed, and who see war as a bloody arithmetic of necessity and justice. She rewards precision, clarity, and the courage to make hard choices. The cost is a life lived in the shadow of the reckoning—every boon has a weight, every kindness a price, every friendship a debt that may be called due. She is cruel, but not without love. She loves those who act with purpose, even when the purpose is terrible. Intrusions often take the form of a debt called due at the worst moment, a past sacrifice that must be explained, or a judgment from the Shadow-Court that the party must fulfill—or resist. Ideal for soldiers, assassins, judges, and any character who believes that justice is a weight that must be carried, and that war is a cost that must be counted.",
+    "emphasizes": [
+      "Sacrifice and Necessity: the willingness to give what must be given",
+      "The Revelation of Violence: truth that cannot be spoken, only shown",
+      "The Bloody Arithmetic: war as a calculus of costs and gains",
+      "Hidden Justice: the cult that judges what the law cannot reach",
+      "The Cairn-Mother's Grief: love for the fallen, fury for the cause"
+    ]
+  },
+  "sample_adventure": {
+    "title": "The Shadow-Court's Summons",
+    "description": "A small village in the Aelerian foothills has been plagued by a series of unexplained deaths—each victim a corrupt official or a cruel landowner, each left with an iron nail driven through their palm. The Shadow-Court has been active, but their latest target is a local lord who has hired mercenaries to protect himself. The party is caught between the lord's gold and the Court's judgment—and the Matron is watching to see which side they choose.",
+    "quote": "The law is slow. The Court is not. Choose your side before the nail finds you."
+  },
+  "_license": "Fate's Edge Proprietary Content – © 2026 Nicholas A. Gasper. All rights reserved.",
+  "order": "chthonic",
+  "register": "reckoning",
+  "throne_note": "The eleventh Chthonic Throne. War belongs here and not among the Seraphic, whatever the heralds say: it is not a law that binds, it is an ending that renews, and the Order's price — transformation — is exactly what it exacts. Nobody comes back from a war as the thing that went into it. Her own provenance argues it: she is what outlived an empire that did not, and the surviving half was the reckoning.",
+  "philosophy": {
+    "name": "The Two Hands",
+    "summary": "Myrmis holds war with both hands and refuses to put either down. The **Red Hand** is war as it is suffered: wrath, the thing that happens to people, the scream and the burning thatch. The **Cold Hand** is war as it is made: a craft with tolerances, supply lines, siege geometry, a mind that can look at a valley and see how many days it feeds an army.",
+    "the_point": "Every atrocity in the world's history was authored by someone holding one hand and disclaiming the other. The planner says he only drew the lines. The soldier says she only did as she was told. Both are lying, and both believe themselves. Myrmis will not let either of them put the other hand down: to take her Symbol is to accept that the plan and the scream are one act, and that you did it.",
+    "the_third_thing": "Then she counts the dead. The Cairn-Mother's grief is not softness bolted onto a war-goddess — it is what makes the arithmetic honest. A calculus that never tallies the cost is not a calculus, it is an excuse, and her devotees are required to walk the field afterward and put a stone on every one of them. Her cruelty and her mourning are the same discipline observed at different hours.",
+    "at_the_table": "She is the patron for a character who intends to do something terrible on purpose and for a reason they can state out loud. She is wrong for a character who wants the reason without the doing, or the doing without the reckoning. When a player asks whether Myrmis approves, the question to hand back is always: *and afterwards, who carries the stones?*"
+  },
+  "guises": [
+    {
+      "among": "The Northern Earls",
+      "name": "The Bloody-Handed Matron",
+      "note": "Her oldest continuous worship, in the hills and highlands between Ubral and Viterra. The Earls are hill-king stock and keep her the way they keep everything — quietly, at home, and not in front of the Crown. Among the Renards she is a grandmother rather than a goddess: consulted before a feud, blamed after it, and never mentioned to a bishop."
+    },
+    {
+      "among": "The Mound (her cult)",
+      "name": "The Debt",
+      "note": "Her organised worship, and barely a name at all — which is the point. Faith kept in secret becomes bookkeeping: the Mound speaks of what she is owed and when she will collect, and has largely stopped speaking of her. This is the guise a devotee slides into when the Cold Hand is the only one they are still willing to hold."
+    },
+    {
+      "among": "Vhasia",
+      "name": "The Bloodied Mother",
+      "note": "Answers prayers in kind, not in mercy. Vhasian worship of her is disproportionately Renard and disproportionately deniable."
+    },
+    {
+      "among": "Thepyrgos",
+      "name": "Myrmis Aecuta, the Reckoner",
+      "note": "Her imperial name, and effectively an academic one now. In the city she is a subject rather than a patron: cited in old proofs about supply and attrition, taught in a footnote, prayed to by nobody. Thepyrgos is not hostile to her. It has simply moved on, which she would recognise as a kind of ending and might even approve of."
+    }
+  ],
+  "also_known_as": [
+    "The Bloody-Handed Matron",
+    "The Debt",
+    "The Bloodied Mother",
+    "Myrmis Aecuta, the Reckoner",
+    "Myrmis"
+  ],
+  "genre_guises": {
+    "_note": "A patron's face changes with the register a table is playing in, the same way it changes with the culture. These are GM guidance, not lore.",
+    "grimdark": "The arithmetic, stated plainly, with nobody exempt from it.",
+    "horror": "The Cairn-Mother, and the count that comes out wrong.",
+    "noir": "The Debt — a favour done years ago, called in now, in person, by someone wearing a bronze mask badly.",
+    "heroic": "The Red Hand, and the moment a hero learns what they authored."
+  },
+  "provenance": {
+    "origin": "Thepyric, of the Astroegro imperial period.",
+    "summary": "She is a southern goddess. Astroegro was a war-empire before it was a cautionary tale, and Myrmis is what its war looked like when it was still working — the drill and the ledger and the burning village, held together in one pair of hands and called a virtue. When the last emperor broke his covenant and the empire went into the water, most of its gods went with it. Hers did not. Her cult walked.",
+    "the_migration": "The Earls say she *crawled north*, which is their phrase and is not meant literally — it is how highlanders describe something that arrives slowly, from below, and is in the house before anyone agrees to have let it in. What actually travelled was worship: veterans, camp-followers, a handful of masks, and a practice of putting a stone down afterward. It took root in the Viterran Highlands because the Earls had a use for it and no bishop close enough to object.",
+    "why_it_took": "A goddess who counts the dead is portable in a way a goddess of imperial victory is not. Astroegro's Myrmis was the patron of an army that won; what survived the empire was the half of her that knew what winning cost, which is exactly the half a hill country full of feuding earls could use. She lost an empire and kept the arithmetic.",
+    "note": "Thepyrgos remembers her the way a university remembers a discipline it no longer teaches: there are proofs with her name on them and nobody left who prays."
+  }
+}

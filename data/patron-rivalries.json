@@ -1,0 +1,797 @@
+{
+  "_license": "Fate's Edge Copyright — © 2024-2026 Nicholas A. Gasper. All rights reserved.",
+  "_generated_by": "tools/extract_patron_rivalries.py",
+  "_source": "ttrpg/reference/patrons/index.tex",
+  "_note": "Cross-Resonance. Carrying Symbols from rival Patrons generates friction. edge_loci are places where one side starts a step better in Position; friction lines are prompts for SB spends. Relationships are symmetric — look a patron up on either side.",
+  "rulings": [
+    {
+      "name": "Position Nudge",
+      "text": "In a home locus, start one step better; in a rival's locus, one step worse."
+    },
+    {
+      "name": "Effect Shade",
+      "text": "Where a Patron dominates, consider an Effect bump; where opposed, consider Limited Effect unless it is paid for."
+    },
+    {
+      "name": "Symbol Interference",
+      "text": "Carrying both sides' Symbols raises the noise: the first rite each scene may mark +1 Obligation, at the GM's call."
+    },
+    {
+      "name": "SB Colour",
+      "text": "When spending SB in these matchups, prefer the suit that fits — Hearts for social, Spades for harm and escalation, Clubs for material cost, Diamonds for numinous disturbance."
+    }
+  ],
+  "pairs": [
+    {
+      "patron": "Aveh",
+      "patron_domains": [
+        "Freedom",
+        "Erasure"
+      ],
+      "rival": "Oath of Flame & Light",
+      "rival_domains": [
+        "Dawn",
+        "Vows"
+      ],
+      "edge_loci": "Crossroads, abandoned gates, wind-scoured battlefields.",
+      "friction": "vows dissolve in the storm; liberty shatters oaths; the dawn sears absence into memory."
+    },
+    {
+      "patron": "Aveh",
+      "patron_domains": [
+        "Freedom",
+        "Erasure"
+      ],
+      "rival": "Varnek Karn",
+      "rival_domains": [
+        "Death",
+        "Arbitration"
+      ],
+      "edge_loci": "Forgotten cairns, erased ledgers, storm-blown libraries.",
+      "friction": "records fade into silence; the storm devours testimony; archive cannot hold the exiled."
+    },
+    {
+      "patron": "Aveh",
+      "patron_domains": [
+        "Freedom",
+        "Erasure"
+      ],
+      "rival": "Sealed Gate",
+      "rival_domains": [
+        "Boundaries",
+        "Closure"
+      ],
+      "edge_loci": "Crumbling thresholds, broken wards, breached tombs.",
+      "friction": "the Rider tramples seals; closure collapses to exile; freedom births chaos beyond boundary."
+    },
+    {
+      "patron": "Aveh",
+      "patron_domains": [
+        "Freedom",
+        "Erasure"
+      ],
+      "rival": "Carrion King",
+      "rival_domains": [
+        "Decay",
+        "Renewal"
+      ],
+      "edge_loci": "Open steppes, plague winds, unmarked graves.",
+      "friction": "storm scatters the feast; renewal has no soil to root; liberty dissolves the cycle into absence."
+    },
+    {
+      "patron": "Aveh",
+      "patron_domains": [
+        "Freedom",
+        "Erasure"
+      ],
+      "rival": "Gallows Bell",
+      "rival_domains": [
+        "Justice",
+        "Judgment"
+      ],
+      "edge_loci": "Storm-dark tribunals, deserted execution grounds.",
+      "friction": "judgment unheard in storm's roar; rope snaps in gale; freedom mocks justice, leaving silence."
+    },
+    {
+      "patron": "Breath of the First Forge",
+      "patron_domains": [],
+      "rival": "Clockwork Monad",
+      "rival_domains": [],
+      "edge_loci": "Forges, workshops, design studios.",
+      "friction": "perfection chokes inspiration; the spark stutters under endless refinement; the gear grinds the nascent idea."
+    },
+    {
+      "patron": "Breath of the First Forge",
+      "patron_domains": [],
+      "rival": "Oath of Flame & Light",
+      "rival_domains": [
+        "Dawn",
+        "Vows"
+      ],
+      "edge_loci": "Altars, consecrated fires, vow-stones.",
+      "friction": "the flame demands purity; the Breath craves experimentation; the vow sears the playful spark."
+    },
+    {
+      "patron": "Breath of the First Forge",
+      "patron_domains": [],
+      "rival": "Seal-Breaker",
+      "rival_domains": [],
+      "edge_loci": "Forgotten ledgers, shattered seals, silent archives.",
+      "friction": "the Breath builds upon fragments; the Seal-Breaker unbuilds what the Breath has just made; creation meets erasure."
+    },
+    {
+      "patron": "Breath of the First Forge",
+      "patron_domains": [],
+      "rival": "The Witness",
+      "rival_domains": [],
+      "edge_loci": "Tribunal halls, truth-telling circles, places of record.",
+      "friction": "the Witness demands accountability; the Breath rewards the attempt; truth can cage the joyful spark."
+    },
+    {
+      "patron": "Breath of the First Forge",
+      "patron_domains": [],
+      "rival": "Savage Heart",
+      "rival_domains": [],
+      "edge_loci": "Hunting grounds, sacrificial altars, places of primal consumption.",
+      "friction": "the Maw consumes the unfinished; the Breath cherishes the half-made; hunger clashes with the joy of making."
+    },
+    {
+      "patron": "Carrion King",
+      "patron_domains": [
+        "Decay",
+        "Renewal"
+      ],
+      "rival": "Varnek Karn",
+      "rival_domains": [
+        "Death",
+        "Arbitration"
+      ],
+      "edge_loci": "Catacombs, bone-fields, ossuary halls.",
+      "friction": "the feast of decay disputes record; skulls reorder themselves; scavengers mock the archive."
+    },
+    {
+      "patron": "Clockwork Monad",
+      "patron_domains": [],
+      "rival": "The Traveler",
+      "rival_domains": [],
+      "edge_loci": "Caravans, milestones, repeating relays.",
+      "friction": "schedule collapses; detour offers safety; routine blinds to ambush."
+    },
+    {
+      "patron": "Confessor",
+      "patron_domains": [],
+      "rival": "Oath of Flame & Light",
+      "rival_domains": [
+        "Dawn",
+        "Vows"
+      ],
+      "edge_loci": "Burnt confessionals, sunrise absolutions, bells that toll at false dawn.",
+      "friction": "vows cleanse through pain; guilt burns but leaves ash; the penitent's light blinds the absolver."
+    },
+    {
+      "patron": "Confessor",
+      "patron_domains": [],
+      "rival": "The Witness",
+      "rival_domains": [],
+      "edge_loci": "Tribunal halls, bloodied ledgers, whispered testimonies.",
+      "friction": "confession births revelation; truth festers in silence; guilt migrates from sinner to judge."
+    },
+    {
+      "patron": "Confessor",
+      "patron_domains": [],
+      "rival": "Silent Choir",
+      "rival_domains": [],
+      "edge_loci": "Shuttered sanctuaries, wordless absolutions, drowned bells.",
+      "friction": "mercy silences guilt before forgiveness is granted; silence absolves but leaves the soul hollow."
+    },
+    {
+      "patron": "Confessor",
+      "patron_domains": [],
+      "rival": "Sealed Gate",
+      "rival_domains": [
+        "Boundaries",
+        "Closure"
+      ],
+      "edge_loci": "Locked confessionals, sealed reliquaries, hidden sins.",
+      "friction": "penance denied; the gate holds sin too tightly; absolution festers within confinement."
+    },
+    {
+      "patron": "Gallows Bell",
+      "patron_domains": [
+        "Justice",
+        "Judgment"
+      ],
+      "rival": "Mykkiel",
+      "rival_domains": [],
+      "edge_loci": "Courts, tribunals, execution grounds.",
+      "friction": "judgment pronounced but precedent denied; sentence demands haunting; writ echoes in the toll."
+    },
+    {
+      "patron": "Grimmir",
+      "patron_domains": [],
+      "rival": "Inquisitor Prime",
+      "rival_domains": [],
+      "edge_loci": "Hedge-rows, forest shrines, contested boundaries between field and wood.",
+      "friction": "the wild refuses the flame; order chokes root and vine; persecution kindles a green wrath."
+    },
+    {
+      "patron": "Grimmir",
+      "patron_domains": [],
+      "rival": "Carrion King",
+      "rival_domains": [
+        "Decay",
+        "Renewal"
+      ],
+      "edge_loci": "Rotting groves, compost-heaps, seasonal decay.",
+      "friction": "decay feasts where the wild weeps; renewal becomes carrion; the season turns on itself."
+    },
+    {
+      "patron": "Ikasha",
+      "patron_domains": [],
+      "rival": "Oath of Flame & Light",
+      "rival_domains": [
+        "Dawn",
+        "Vows"
+      ],
+      "edge_loci": "Twilight thresholds, oath-fires, vigil sites.",
+      "friction": "light corners a secret; vow drags shadow forth; escape costs more than silence."
+    },
+    {
+      "patron": "Ikasha",
+      "patron_domains": [],
+      "rival": "The Witness",
+      "rival_domains": [],
+      "edge_loci": "Silent cloisters, shaded rooms, hidden alcoves.",
+      "friction": "hush worsens Position; shadows betray your step; deferred answers arrive with weight."
+    },
+    {
+      "patron": "Inaea",
+      "patron_domains": [],
+      "rival": "Livaea",
+      "rival_domains": [],
+      "edge_loci": "Feasting halls, chambers of intimacy, hearth-feasts.",
+      "friction": "desire strains hospitality; passion corrodes mercy; kindness is answered with demand."
+    },
+    {
+      "patron": "Inquisitor Prime",
+      "patron_domains": [],
+      "rival": "Morag the Hag",
+      "rival_domains": [],
+      "edge_loci": "Crossroads, trial fires, cursed markets.",
+      "friction": "bargain taints purification; soul scoured clean but scarred; purity test twists to hunger."
+    },
+    {
+      "patron": "Isoka",
+      "patron_domains": [],
+      "rival": "Sealed Gate",
+      "rival_domains": [
+        "Boundaries",
+        "Closure"
+      ],
+      "edge_loci": "Doorways of shed skin, ritual molting chambers, thresholds of identity.",
+      "friction": "the shed skin slips the gate; closure cannot hold what has already left; the serpent mocks the seal."
+    },
+    {
+      "patron": "Isoka",
+      "patron_domains": [],
+      "rival": "Oath of Mercy and Grace",
+      "rival_domains": [],
+      "edge_loci": "Sickbeds where change is refused, hospices of last rites.",
+      "friction": "mercy seeks to heal; Isoka sheds the wound whole; forgiveness becomes a second skin."
+    },
+    {
+      "patron": "Khemesh",
+      "patron_domains": [],
+      "rival": "Raéyn",
+      "rival_domains": [],
+      "edge_loci": "Lightless holds, trenches, flooded caverns.",
+      "friction": "abyss groans; storm maps fail; pressure crushes speech; tide demands oath."
+    },
+    {
+      "patron": "Kuva",
+      "patron_domains": [],
+      "rival": "Khemesh",
+      "rival_domains": [],
+      "edge_loci": "Ship decks during storms, high peaks above deep chasms, places where sky meets sea.",
+      "friction": "the dome witnesses, the abyss swallows; lightning illuminates the deep, but pressure drags the light down."
+    },
+    {
+      "patron": "Kuva",
+      "patron_domains": [],
+      "rival": "Sealed Gate",
+      "rival_domains": [
+        "Boundaries",
+        "Closure"
+      ],
+      "edge_loci": "Unroofed thresholds, doorways open to the sky, bridges without walls.",
+      "friction": "the gate bars passage; the sky demands witness; closure cannot seal what is already witnessed by the dome."
+    },
+    {
+      "patron": "Kuva",
+      "patron_domains": [],
+      "rival": "The Witness",
+      "rival_domains": [],
+      "edge_loci": "Hilltop tribunals, open-air courts, storm-lit confessions.",
+      "friction": "two witnesses compete: one records facts, the other remembers oaths; the sky judges where ink fails."
+    },
+    {
+      "patron": "Livaea",
+      "patron_domains": [],
+      "rival": "Maelstraeus",
+      "rival_domains": [],
+      "edge_loci": "Masked balls, deal-feasts, salons.",
+      "friction": "desire sweetens the bargain; pact sealed in touch not ink; temptation costs more than coin."
+    },
+    {
+      "patron": "Lucky Jack",
+      "patron_domains": [],
+      "rival": "Maelstraeus",
+      "rival_domains": [],
+      "edge_loci": "Gambling dens, counting-houses, deal-tables.",
+      "friction": "luck bends the contract; the Infernal Bargainer's fine print crumbles against a lucky roll; the coin spins until someone loses."
+    },
+    {
+      "patron": "Lucky Jack",
+      "patron_domains": [],
+      "rival": "Gallows Bell",
+      "rival_domains": [
+        "Justice",
+        "Judgment"
+      ],
+      "edge_loci": "Courtrooms, execution grounds, places of final judgment.",
+      "friction": "justice demands a verdict; luck offers a reprieve; the Bell tolls but the coin is still in the air."
+    },
+    {
+      "patron": "Lucky Jack",
+      "patron_domains": [],
+      "rival": "The Witness",
+      "rival_domains": [],
+      "edge_loci": "Interrogation rooms, truth-telling circles, places where secrets are exposed.",
+      "friction": "luck hides the truth; the Witness demands it; a fortunate slip of the tongue or a misplaced piece of evidence alters the outcome."
+    },
+    {
+      "patron": "Lunara",
+      "patron_domains": [],
+      "rival": "The Witness",
+      "rival_domains": [],
+      "edge_loci": "Mirrored chambers, silver pools, moonlit halls.",
+      "friction": "reflection shows harsher truth; seams shine; witness misses what Lunara reveals."
+    },
+    {
+      "patron": "Mab",
+      "patron_domains": [],
+      "rival": "Palinode",
+      "rival_domains": [],
+      "edge_loci": "Masques, salons, theaters.",
+      "friction": "glamour demands encore; truth offends mask; favour must be sung aloud; court erupts at song's climax."
+    },
+    {
+      "patron": "Maelstraeus",
+      "patron_domains": [],
+      "rival": "Oath of Flame & Light",
+      "rival_domains": [
+        "Dawn",
+        "Vows"
+      ],
+      "edge_loci": "Oath-stones, consecrated doors, witness trees.",
+      "friction": "vow sears loophole shut; bargain price due early; sacred contract becomes trap."
+    },
+    {
+      "patron": "Malachai",
+      "patron_domains": [],
+      "rival": "Oath of Flame & Light",
+      "rival_domains": [
+        "Dawn",
+        "Vows"
+      ],
+      "edge_loci": "Desecrated shrines, dawn-lit altars, sacred vows broken.",
+      "friction": "a vow sanctifies but inflicts pain; the flame purges yet leaves despair."
+    },
+    {
+      "patron": "Malachai",
+      "patron_domains": [],
+      "rival": "The Witness",
+      "rival_domains": [],
+      "edge_loci": "Confessionals, false miracles, dark reliquaries.",
+      "friction": "a blessing unmasks a curse; truth corrodes faith; relics mock salvation; the witness must name corruption."
+    },
+    {
+      "patron": "Morag the Hag",
+      "patron_domains": [],
+      "rival": "Maelstraeus",
+      "rival_domains": [],
+      "edge_loci": "Markets, bargain-halls, crossroads.",
+      "friction": "deal's true cost unveiled; haste breeds ruin; balance exacts more than offered."
+    },
+    {
+      "patron": "Mor'iraath",
+      "patron_domains": [],
+      "rival": "Sacred Geometry",
+      "rival_domains": [],
+      "edge_loci": "Shattered temples, collapsing bridges, ruined cities.",
+      "friction": "pattern dissolves into static; perfect form breaks; compass needle spins; order devoured by entropy."
+    },
+    {
+      "patron": "Mykkiel",
+      "patron_domains": [],
+      "rival": "The Witness",
+      "rival_domains": [],
+      "edge_loci": "Courtrooms, sealed archives, oath-bound chambers.",
+      "friction": "judgment meets unblinking truth; the writ cannot hide; the covenant bleeds under witness."
+    },
+    {
+      "patron": "Nidhoggr",
+      "patron_domains": [],
+      "rival": "The Witness",
+      "rival_domains": [],
+      "edge_loci": "Ruins, ancestor shrines, truth-seeing rites.",
+      "friction": "revelation awakens the old; myth proven or destroyed; ancestor demands speech."
+    },
+    {
+      "patron": "Oath of Mercy and Grace",
+      "patron_domains": [],
+      "rival": "Inquisitor Prime",
+      "rival_domains": [],
+      "edge_loci": "Hospice doorways, plague villages, sites of public mercy.",
+      "friction": "mercy accused of weakness; forgiveness seen as treason; the Inquisitor demands payment where the Oath accepts tears."
+    },
+    {
+      "patron": "Oath of Mercy and Grace",
+      "patron_domains": [],
+      "rival": "Varnek Karn",
+      "rival_domains": [
+        "Death",
+        "Arbitration"
+      ],
+      "edge_loci": "Gravesides, funerary crypts, deathbeds.",
+      "friction": "the dead owed nothing but the Weepers weep anyway; Karn's ledger rejects tears as legal tender; forgiveness becomes a debt to the archive."
+    },
+    {
+      "patron": "Oath of Mercy and Grace",
+      "patron_domains": [],
+      "rival": "Silent Choir",
+      "rival_domains": [],
+      "edge_loci": "Shuttered hospices, wordless vigils, places where mercy is performed in silence.",
+      "friction": "mercy without witness fades; silence answers the spiral; the Choir forgives by forgetting; the Oath forgives by remembering the debt."
+    },
+    {
+      "patron": "Oath of Flame & Light",
+      "patron_domains": [
+        "Dawn",
+        "Vows"
+      ],
+      "rival": "Varnek Karn",
+      "rival_domains": [
+        "Death",
+        "Arbitration"
+      ],
+      "edge_loci": "Memorial crypts, plague pits, testaments.",
+      "friction": "bone ledger demands payment; consecration threatens archive; unfinished oath resurrects feud."
+    },
+    {
+      "patron": "Oya",
+      "patron_domains": [],
+      "rival": "Inquisitor Prime",
+      "rival_domains": [],
+      "edge_loci": "Desert courts, open-air prisons, sites of public flogging.",
+      "friction": "the wind scatters the inquisitor's writ; chains rust in the harmattan; persecution chokes on dust."
+    },
+    {
+      "patron": "Oya",
+      "patron_domains": [],
+      "rival": "Sealed Gate",
+      "rival_domains": [
+        "Boundaries",
+        "Closure"
+      ],
+      "edge_loci": "Unlocked thresholds, breached quarantines, desert border posts.",
+      "friction": "the gate holds but the wind erodes; closure cannot seal what the storm has already opened; Oya laughs at locks."
+    },
+    {
+      "patron": "Oya",
+      "patron_domains": [],
+      "rival": "The Witness",
+      "rival_domains": [],
+      "edge_loci": "Burned courthouses, vanished evidence, sand-covered ledgers.",
+      "friction": "the witness records, but Oya scatters; truth buried under red dust; revelation arrives too late, erased by wind."
+    },
+    {
+      "patron": "Pale Shepherd",
+      "patron_domains": [],
+      "rival": "Varnek Karn",
+      "rival_domains": [
+        "Death",
+        "Arbitration"
+      ],
+      "edge_loci": "Graveyards, liminal crossroads, shrines of passage.",
+      "friction": "shepherd offers peace, Karn demands duty; soul cannot rest; death's duty vs death's silence."
+    },
+    {
+      "patron": "Palinode",
+      "patron_domains": [],
+      "rival": "Sacred Geometry",
+      "rival_domains": [],
+      "edge_loci": "Concert halls, ritual theaters, metered dances.",
+      "friction": "form clashes with feeling; perfection dulls art; audience craves chaos in pattern."
+    },
+    {
+      "patron": "Palinode",
+      "patron_domains": [],
+      "rival": "Thrysos",
+      "rival_domains": [],
+      "edge_loci": "Festival grounds, taverns, moots.",
+      "friction": "song feeds revel; revel swallows song; crowd erupts beyond control; inspiration burns to mania."
+    },
+    {
+      "patron": "Raéyn",
+      "patron_domains": [],
+      "rival": "Oath of Flame & Light",
+      "rival_domains": [
+        "Dawn",
+        "Vows"
+      ],
+      "edge_loci": "Consecrated decks, sunrise rites at sea.",
+      "friction": "dawn sears back abyss; vow drags crew into peril; storm promises aid with debt."
+    },
+    {
+      "patron": "Riven Path",
+      "patron_domains": [],
+      "rival": "Unbroken Way",
+      "rival_domains": [],
+      "edge_loci": "Crossroads of choice, meditation chambers, arenas of contest.",
+      "friction": "passion shatters stillness; control chokes the breaking wave; the closed fist and open hand meet—one yields, one takes, neither forgets."
+    },
+    {
+      "patron": "Riven Path",
+      "patron_domains": [],
+      "rival": "Oath of Flame & Light",
+      "rival_domains": [
+        "Dawn",
+        "Vows"
+      ],
+      "edge_loci": "Desecrated shrines, battlefields, sites of broken oaths.",
+      "friction": "vows are chains to be broken; the dawn reveals the wound; passion answers duty with fire."
+    },
+    {
+      "patron": "Riven Path",
+      "patron_domains": [],
+      "rival": "Sealed Gate",
+      "rival_domains": [
+        "Boundaries",
+        "Closure"
+      ],
+      "edge_loci": "Prison walls, sealed vaults, thresholds that deny passage.",
+      "friction": "the gate exists to be shattered; closure is an insult; freedom has no lock."
+    },
+    {
+      "patron": "Sacred Geometry",
+      "patron_domains": [],
+      "rival": "Ninth Rim",
+      "rival_domains": [],
+      "edge_loci": "Perfect temples, empty circles, still points of order.",
+      "friction": "the pattern confronts absence; form trembles at the void; nothing is measured and found wanting."
+    },
+    {
+      "patron": "Sacred Geometry",
+      "patron_domains": [],
+      "rival": "Silent Choir",
+      "rival_domains": [],
+      "edge_loci": "Anechoic chambers, silent scriptoria, libraries of frozen light.",
+      "friction": "silence perfects form; the pattern prays without words; mercy becomes structure, structure becomes mercy."
+    },
+    {
+      "patron": "Savage Heart",
+      "patron_domains": [],
+      "rival": "Oath of Flame & Light",
+      "rival_domains": [
+        "Dawn",
+        "Vows"
+      ],
+      "edge_loci": "Blood-soaked altars, sacred hunting grounds, sites of sacrifice.",
+      "friction": "the flame judges but the Maw consumes; vows of mercy break on fangs; dawn reveals the kill."
+    },
+    {
+      "patron": "Savage Heart",
+      "patron_domains": [],
+      "rival": "Grimmir",
+      "rival_domains": [],
+      "edge_loci": "Wilderness edges, territory lines, places where predator and prey meet.",
+      "friction": "the wild speaks of balance; the Red Maw answers with hunger; the season turns red."
+    },
+    {
+      "patron": "Sealed Gate",
+      "patron_domains": [
+        "Boundaries",
+        "Closure"
+      ],
+      "rival": "Ninth Rim",
+      "rival_domains": [],
+      "edge_loci": "Failing wards, thinning thresholds, sealed vaults.",
+      "friction": "door rattles; ward flickers; void slips past; seal admits what it bars."
+    },
+    {
+      "patron": "Sealed Gate",
+      "patron_domains": [
+        "Boundaries",
+        "Closure"
+      ],
+      "rival": "The Traveler",
+      "rival_domains": [],
+      "edge_loci": "Customs houses, locks, liminal crossings.",
+      "friction": "ledger wrong; key refuses; toll extracted; desire path collapses to law."
+    },
+    {
+      "patron": "Seal-Breaker",
+      "patron_domains": [],
+      "rival": "The Witness",
+      "rival_domains": [],
+      "edge_loci": "Erased ledgers, burnt archives, silent testimonies.",
+      "friction": "the witness records, the seal-breaker erases; truth and oblivion contest every memory; the Hollow collects what both leave behind."
+    },
+    {
+      "patron": "Seal-Breaker",
+      "patron_domains": [],
+      "rival": "Mykkiel",
+      "rival_domains": [],
+      "edge_loci": "Voided contracts, broken seals, courts without record.",
+      "friction": "the writ binds but the seal-breaker cracks; law without witness is void; obligation erased from the ledger."
+    },
+    {
+      "patron": "Seal-Breaker",
+      "patron_domains": [],
+      "rival": "Varnek Karn",
+      "rival_domains": [
+        "Death",
+        "Arbitration"
+      ],
+      "edge_loci": "Unmarked graves, forgotten cairns, archives where names fade.",
+      "friction": "the dead owe nothing to the forgotten; Karn's ledger holds empty pages; the Seal-Breaker speaks and the record simply stops."
+    },
+    {
+      "patron": "Silent Choir",
+      "patron_domains": [],
+      "rival": "The Witness",
+      "rival_domains": [],
+      "edge_loci": "Echoing cloisters, confessionals with sealed lips, mirrors that reflect no mouth.",
+      "friction": "truth yearns to speak but mercy stills the tongue; revelation shatters peace; silence becomes its own confession."
+    },
+    {
+      "patron": "Silent Choir",
+      "patron_domains": [],
+      "rival": "Inaea",
+      "rival_domains": [],
+      "edge_loci": "Shuttered hearths, mourning halls, letters never sent.",
+      "friction": "mercy divides; the hearth forgives through warmth, the Choir through forgetting; love dies in gentleness unspoken."
+    },
+    {
+      "patron": "Silent Choir",
+      "patron_domains": [],
+      "rival": "Varnek Karn",
+      "rival_domains": [
+        "Death",
+        "Arbitration"
+      ],
+      "edge_loci": "Catacombs of still air, funerary archives where the names are erased.",
+      "friction": "the Choir hums among the bones; records fall mute; memory yields to rest; death and mercy share the same hymn."
+    },
+    {
+      "patron": "Silent Choir",
+      "patron_domains": [],
+      "rival": "Sacred Geometry",
+      "rival_domains": [],
+      "edge_loci": "Anechoic temples, fractal vaults that swallow sound.",
+      "friction": "silence perfects form; entropy refines design; mercy becomes architecture; the pattern prays without words."
+    },
+    {
+      "patron": "Silent Choir",
+      "patron_domains": [],
+      "rival": "Aveh",
+      "rival_domains": [
+        "Freedom",
+        "Erasure"
+      ],
+      "edge_loci": "Ruined cloisters, desert shrines scoured by wind.",
+      "friction": "silence liberates; erasure redeems; mercy untethers the self until nothing remains but peace."
+    },
+    {
+      "patron": "Thrysos",
+      "patron_domains": [],
+      "rival": "Carrion King",
+      "rival_domains": [
+        "Decay",
+        "Renewal"
+      ],
+      "edge_loci": "Feast halls, bonfires, festival graves.",
+      "friction": "revel spills to carrion; death becomes dance; feast breeds seed of decay."
+    },
+    {
+      "patron": "Thrysos",
+      "patron_domains": [],
+      "rival": "Livaea",
+      "rival_domains": [],
+      "edge_loci": "Bacchic revels, decadent salons, wine-feasts.",
+      "friction": "revel loosens restraint; passion binds harder; temptation drunk becomes vow."
+    },
+    {
+      "patron": "Ninth Rim",
+      "patron_domains": [],
+      "rival": "The Witness",
+      "rival_domains": [],
+      "edge_loci": "Forgotten vaults, failing records, silent ruins.",
+      "friction": "truth swallows itself; record fades to dust; memory refuses recall."
+    },
+    {
+      "patron": "The Traveler",
+      "patron_domains": [],
+      "rival": "Clockwork Monad",
+      "rival_domains": [],
+      "edge_loci": "Pilgrim routes, caravans, timetables.",
+      "friction": "routine bends to detour; detour grants swiftness but ambush; schedule cannot hold."
+    },
+    {
+      "patron": "Unbroken Way",
+      "patron_domains": [],
+      "rival": "Riven Path",
+      "rival_domains": [],
+      "edge_loci": "Meditation chambers, arenas, thresholds of choice.",
+      "friction": "stillness meets the breaking wave; control denies passion; the open hand refuses to close, and the closed fist refuses to open."
+    },
+    {
+      "patron": "Unbroken Way",
+      "patron_domains": [],
+      "rival": "Malachai",
+      "rival_domains": [],
+      "edge_loci": "Desecrated shrines, sites of fallen meditation, places where balance shattered.",
+      "friction": "calm resists the curse; corruption stains the still point; the Way absorbs and redirects, but the Chained Angel's hunger is patient."
+    },
+    {
+      "patron": "Unbroken Way",
+      "patron_domains": [],
+      "rival": "Savage Heart",
+      "rival_domains": [],
+      "edge_loci": "Wilderness edges, hunting grounds, places where predator meets prey.",
+      "friction": "the Way deflects; the Maw consumes; balance and hunger circle each other—neither yields, neither forgets."
+    },
+    {
+      "patron": "Varnek Karn",
+      "patron_domains": [
+        "Death",
+        "Arbitration"
+      ],
+      "rival": "Mykkiel",
+      "rival_domains": [],
+      "edge_loci": "Audit halls, courts martial, ledger-vaults.",
+      "friction": "writ binds restless; sentence offends precedent; archive haunts judgment."
+    },
+    {
+      "patron": "Vorthak",
+      "patron_domains": [],
+      "rival": "Sealed Gate",
+      "rival_domains": [
+        "Boundaries",
+        "Closure"
+      ],
+      "edge_loci": "Wards, vaults, guarded thresholds.",
+      "friction": "hunger devours lock; seal becomes meal; barrier broken by appetite."
+    },
+    {
+      "patron": "Xhak'Thul",
+      "patron_domains": [],
+      "rival": "Oath of Flame & Light",
+      "rival_domains": [
+        "Dawn",
+        "Vows"
+      ],
+      "edge_loci": "Storm-lit altars, dawn-thunder battles, sites of primal oaths sworn under sky.",
+      "friction": "lightning sanctifies but burns the vow-breaker; storm drowns the dawn-cry; thunder answers fire with its own judgment."
+    },
+    {
+      "patron": "Xhak'Thul",
+      "patron_domains": [],
+      "rival": "Raéyn",
+      "rival_domains": [],
+      "edge_loci": "Storm-tossed seas, coastal cliffs, places where sky and water meet.",
+      "friction": "lightning splits the waves; storm-queen and thunder-speaker contest the wind; the crew prays to both, and both demand a price."
+    }
+  ]
+}

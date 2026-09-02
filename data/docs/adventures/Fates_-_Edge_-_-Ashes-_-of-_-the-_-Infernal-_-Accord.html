@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashes of the Infernal Accord — A Fate's Edge Adventure</title>
+    <style>
+        :root {
+            --bg1: #150808;
+            --bg2: #241010;
+            --bg3: #331616;
+            --bg4: #3f1c1c;
+            --text: #f0e4e0;
+            --text2: #cbb0a8;
+            --text3: #977f78;
+            --gold: #d98a3d;
+            --gold-hover: #e79a4d;
+            --border: #4a2222;
+            --red: #b5321f;
+            --green: #3f8f5a;
+            --blue: #3d6ea5;
+            --purple: #7a3f8f;
+            --orange: #c9701f;
+            --gray: #6b5a56;
+            --radius: 8px;
+            --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: var(--bg1);
+            color: var(--text);
+            font-family: var(--font);
+            padding: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4, h5 { color: var(--gold); margin: 0.5rem 0 0.3rem; }
+        h1 { font-size: 1.8rem; border-bottom: 2px solid var(--gold); padding-bottom: 0.3rem; }
+        h2 { font-size: 1.4rem; border-bottom: 1px solid var(--border); padding-bottom: 0.2rem; }
+        h3 { font-size: 1.1rem; }
+        h4 { font-size: 0.95rem; color: var(--text); }
+        a { color: var(--gold); text-decoration: none; }
+        .panel {
+            background: var(--bg2);
+            border-radius: var(--radius);
+            padding: 0.6rem 0.8rem;
+            border: 1px solid var(--border);
+            margin: 0.5rem 0;
+        }
+        .panel-gold { border-left: 4px solid var(--gold); }
+        .panel-red { border-left: 4px solid var(--red); }
+        .panel-blue { border-left: 4px solid var(--blue); }
+        .panel-green { border-left: 4px solid var(--green); }
+        .panel-purple { border-left: 4px solid var(--purple); }
+        .panel-orange { border-left: 4px solid var(--orange); }
+        .panel-gray { border-left: 4px solid var(--gray); }
+        .badge {
+            display: inline-block;
+            padding: 0.05rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.65rem;
+            font-weight: 600;
+        }
+        .badge-gold { background: var(--gold); color: #1a0f00; }
+        .badge-red { background: var(--red); color: #fff; }
+        .badge-green { background: var(--green); color: #fff; }
+        .badge-blue { background: var(--blue); color: #fff; }
+        .badge-purple { background: var(--purple); color: #fff; }
+        .badge-orange { background: var(--orange); color: #fff; }
+        .badge-gray { background: var(--bg4); color: var(--text3); }
+        .flex { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
+        .flex-between { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.3rem; }
+        .text-muted { color: var(--text3); }
+        .text-gold { color: var(--gold); }
+        .text-sm { font-size: 0.85rem; }
+        .text-xs { font-size: 0.7rem; }
+        .mt-1 { margin-top: 0.5rem; }
+        .mb-1 { margin-bottom: 0.5rem; }
+        .gap-1 { gap: 0.3rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+        @media (max-width: 600px) { .grid-2 { grid-template-columns: 1fr; } }
+        .scene-card {
+            background: var(--bg3);
+            border-radius: var(--radius);
+            padding: 0.4rem 0.6rem;
+            margin: 0.3rem 0;
+            border-left: 3px solid var(--gold);
+        }
+        .scene-card.completed { opacity: 0.6; border-left-color: var(--green); }
+        .scene-card .scene-title { font-weight: 600; font-size: 0.9rem; }
+        .scene-card .scene-desc { font-size: 0.8rem; color: var(--text2); }
+        .timer-bar {
+            background: var(--bg4);
+            border-radius: 4px;
+            height: 6px;
+            overflow: hidden;
+            flex: 1;
+            min-width: 60px;
+        }
+        .timer-bar-fill { height: 100%; border-radius: 4px; transition: width 0.3s; }
+        .npc-card, .loc-card {
+            background: var(--bg3);
+            border-radius: var(--radius);
+            padding: 0.3rem 0.5rem;
+            margin: 0.15rem 0;
+            border-left: 2px solid var(--gold);
+        }
+        .npc-card .npc-name { font-weight: 600; font-size: 0.85rem; }
+        .npc-card .npc-role { font-size: 0.7rem; color: var(--text3); }
+        .npc-card .npc-motivation { font-size: 0.75rem; color: var(--text2); }
+        .meta-tag {
+            display: inline-block;
+            padding: 0.05rem 0.4rem;
+            border-radius: 6px;
+            background: var(--bg4);
+            border: 1px solid var(--border);
+            font-size: 0.6rem;
+            color: var(--text3);
+        }
+        .status-badge {
+            padding: 0.1rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.6rem;
+            font-weight: 600;
+        }
+        .status-planned { background: var(--bg4); color: var(--text3); }
+        .status-active { background: var(--gold); color: #1a0f00; }
+        .status-completed { background: var(--green); color: #fff; }
+        hr { border: none; border-top: 1px solid var(--border); margin: 0.5rem 0; }
+        details summary { cursor: pointer; color: var(--gold); font-weight: 600; }
+        details summary:hover { color: var(--gold-hover); }
+        .toc { background: var(--bg3); border-radius: var(--radius); padding: 0.5rem 0.8rem; border: 1px solid var(--border); }
+        .toc a { color: var(--text2); display: block; padding: 0.1rem 0; font-size: 0.85rem; }
+        .toc a:hover { color: var(--gold); }
+        .encounter-box {
+            background: var(--bg4);
+            border-radius: var(--radius);
+            padding: 0.3rem 0.5rem;
+            margin: 0.2rem 0;
+            border-left: 3px solid var(--orange);
+            font-size: 0.8rem;
+        }
+        .encounter-box .enc-name { font-weight: 600; color: var(--orange); }
+        .timers-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.3rem; }
+        blockquote {
+            border-left: 3px solid var(--gold);
+            padding-left: 1rem;
+            margin: 0.5rem 0;
+            color: var(--text2);
+            font-style: italic;
+        }
+        .creature-stats {
+            background: var(--bg4);
+            border-radius: var(--radius);
+            padding: 0.4rem 0.6rem;
+            margin: 0.3rem 0;
+            font-size: 0.8rem;
+        }
+        .creature-name { font-weight: 700; color: var(--gold); font-size: 0.95rem; }
+        .secret-box {
+            background: var(--bg2);
+            border-radius: var(--radius);
+            padding: 0.4rem 0.6rem;
+            margin: 0.3rem 0;
+            border-left: 3px solid var(--purple);
+            font-size: 0.8rem;
+        }
+        .secret-box strong { color: var(--purple); }
+    </style>
+</head>
+<body>
+
+<h1>🔥 Ashes of the Infernal Accord</h1>
+<p style="color:var(--text2);margin-bottom:1rem;">
+    <span class="badge badge-gold">Tier III</span>
+    <span class="badge badge-blue">3–4 Sessions</span>
+    <span class="badge badge-purple">Infernal Bargain</span>
+    <span class="badge badge-purple">Political Intrigue</span>
+    <span class="badge badge-purple">Patron Politics</span>
+    <span class="badge badge-gray">Author: Nicholas A. Gasper</span>
+</p>
+<p style="color:var(--text2);margin-bottom:0.5rem;">
+    Mor'iraath, Demon of Fire and Destruction, is burning his way through a trade corridor that half a dozen
+    mortal courts depend on. Maelstraeus — patron of webs, favors, and interdependence — offers the party a
+    way to stop him: descend to the City of Cinder, an infernal bazaar where everything from souls to secrets
+    is for sale, and broker a deal that starves Mor'iraath of the deals he needs to grow. The catch is that
+    Maelstraeus's help is itself a bargain, and a third player — Livaea, patron of perfect outcomes — has been
+    quietly rewriting the terms of every deal in Cinder long before the party ever arrived. This is a political
+    adventure about bargains: what they cost, who profits from them, and how easy it is to mistake a good
+    outcome for a free one.
+</p>
+
+<blockquote>
+    "Everything in Cinder has a price. The trick isn't finding out what something costs — it's finding out
+    who's already paid for it, and what they expect from you now that you know."
+    — Ilsevet Coldmarrow, Senior Regret-Seller
+</blockquote>
+
+<!-- Table of Contents -->
+<div class="toc">
+    <strong style="color:var(--gold);">📑 Table of Contents</strong>
+    <a href="#act-1">Act I: The Descent</a>
+    <a href="#act-2">Act II: The Infernal Bazaar</a>
+    <a href="#act-3">Act III: The Fractured Court</a>
+    <a href="#npcs">👤 Key NPCs</a>
+    <a href="#locations">📍 Locations</a>
+    <a href="#factions">🏛️ Factions</a>
+    <a href="#timers">⏱️ Campaign Timers</a>
+    <a href="#bestiary">🐉 Bestiary</a>
+    <a href="#gmnotes">🗝️ GM Notes &amp; Secrets</a>
+</div>
+
+<hr>
+
+<!-- ===== ACT I ===== -->
+<div class="panel panel-blue" style="margin:0.6rem 0 1rem;">
+    <strong>Reading an encounter badge.</strong> Each badge names a <strong>DV</strong> and a <strong>Position</strong>. It does not name a dice pool, and that is deliberate: the pool is <em>Attribute + Skill</em>, chosen from how the player says they are going about it. Two characters can attempt the same encounter with different pools and both be right. Where an approach is obviously the intended one, the badge says so; where it does not, ask what they are doing and build the pool from the answer.
+</div>
+
+<h2 id="act-1">🕯️ Act I: The Descent</h2>
+<p style="color:var(--text2);">Maelstraeus makes his offer before the party has even finished packing: help contain Mor'iraath's expansion, and in return, immediate relief for whatever crisis brought them to his attention. Accepting is easy. Understanding what was actually agreed to takes longer.</p>
+
+<div class="scene-card">
+    <div class="scene-title">🤝 Scene 1: Maelstraeus's Offer</div>
+    <div class="scene-desc">Maelstraeus doesn't demand an audience — he arranges for the party to already be having one, mid-conversation, as though it were always going to happen. He lays out the problem plainly: Mor'iraath's influence is spreading along a trade corridor that several of his other clients depend on, and a demon who consumes value faster than it can be replaced is bad for everyone's business, his most of all. He offers immediate, tangible help — enough to solve whatever the party's current crisis is — if they'll go to the City of Cinder and broker terms that starve Mor'iraath's expansion. The price is 4 Obligation to Maelstraeus, marked the moment they shake on it.</div>
+    <div class="flex text-xs mt-1">
+        <span class="badge badge-gray">Timer: Mor'iraath's Expansion [8]</span>
+        <span class="badge badge-orange">Encounter: Read the Fine Print (DV 3, Controlled)</span>
+    </div>
+</div>
+
+<div class="scene-card">
+    <div class="scene-title">🛤️ Scene 2: The Road to Cinder</div>
+    <div class="scene-desc">The journey to the City of Cinder isn't measured in miles but in what travelers are willing to give up along the way — the Realm of Fire charges its own toll. A minor agent of Mor'iraath tests the party's resolve before they even arrive, offering a small, genuinely useful bargain that costs almost nothing — the earliest shape of Livaea's foreshadowing, though no one will recognize it as such yet.</div>
+    <div class="flex text-xs mt-1">
+        <span class="badge badge-gray">Timer: Livaea's Manipulation [6]</span>
+        <span class="badge badge-blue">Encounter: The Toll-Taker's Offer (DV 3, Dominant)</span>
+    </div>
+</div>
+
+<hr>
+
+<!-- ===== ACT II ===== -->
+<h2 id="act-2">🏮 Act II: The Infernal Bazaar</h2>
+<p style="color:var(--text2);">The City of Cinder is a marketplace where the currency is concepts — fragments of soul, moments of joy, oaths made in desperation. The party must navigate its factions, gather leverage, and close deals that erode Mor'iraath's expansion without becoming just another burnt contract on the pile. Use the City of Cinder Generator for improvised locations and complications as needed.</p>
+
+<div class="scene-card">
+    <div class="scene-title">🏛️ Scene 3: The Grand Exchange</div>
+    <div class="scene-desc">A vast dome where screams are the bidding currency and every transaction is public theater. First contact with Cinder's power brokers: the Ember Merchants' Guild, and — if the party asks the wrong Ember-Scribe the wrong question — the first whisper of the Whisperer of Better Deals, a fixer whose advice always steers toward Mor'iraath's interests while sounding disinterested.</div>
+    <div class="flex text-xs mt-1">
+        <span class="badge badge-gray">Timer: Mor'iraath's Expansion [8]</span>
+        <span class="badge badge-gray">Timer: Cinder Market Stability [6]</span>
+        <span class="badge badge-orange">Encounter: Broker with the Ember Merchants' Guild (DV 4, Controlled)</span>
+        <span class="badge badge-blue">Encounter: Question the Ember-Scribe (DV 4, Controlled)</span>
+    </div>
+    <div class="creature-stats mt-1">
+        <div class="creature-name">Ember-Scribe</div>
+        <span class="badge badge-gray">TL 2</span>
+        <span class="badge badge-gray">Harm Levels: 3 (standard)</span>
+        <span class="badge badge-red">Harm 2</span>
+        <span class="badge badge-purple">Humanoid (Cinderite)</span>
+        <div class="text-xs text-muted mt-1">A quill-fingered clerk who records every deal made in Cinder in ink that never fades. Technically neutral, which makes their ledgers the single most valuable — and dangerous — resource in the city.</div>
+    </div>
+</div>
+
+<div class="scene-card">
+    <div class="scene-title">⚔️ Scene 4: The Arena of Wills</div>
+    <div class="scene-desc">Fights here settle disputes that words can't, and champions are political currency. The party can back a champion, become one for a bout, or use the Arena's chaos as cover. This is also where the Whisperer of Better Deals, if not already met, makes a direct approach to whichever PC has expressed the clearest personal desire.</div>
+    <div class="flex text-xs mt-1">
+        <span class="badge badge-gray">Timer: Mor'iraath's Expansion [8]</span>
+        <span class="badge badge-gray">Timer: Livaea's Manipulation [6]</span>
+        <span class="badge badge-blue">Encounter: Back a Champion (DV 4, Dominant)</span>
+        <span class="badge badge-red">Encounter: The Whisperer's Perfect Offer (DV 4, Desperate)</span>
+    </div>
+</div>
+
+<div class="scene-card">
+    <div class="scene-title">📜 Scene 5: The Archive of Regrets</div>
+    <div class="scene-desc">A repository of every secret Cinder has ever traded, curated by the Regret-Sellers. The party's best chance to learn Mor'iraath's actual weakness in this scheme, and — if they dig deep or carelessly — the first hard evidence that someone besides Maelstraeus and Mor'iraath has been shaping events.</div>
+    <div class="flex text-xs mt-1">
+        <span class="badge badge-gray">Timer: Mor'iraath's Expansion [8]</span>
+        <span class="badge badge-gray">Timer: Livaea's Manipulation [6]</span>
+        <span class="badge badge-orange">Encounter: Trade for a Secret (DV 5, Controlled)</span>
+        <span class="badge badge-red">Encounter: A Catastrophic Truth (DV 5, Desperate)</span>
+    </div>
+</div>
+
+<hr>
+
+<!-- ===== ACT III ===== -->
+<h2 id="act-3">🩸 Act III: The Fractured Court</h2>
+<p style="color:var(--text2);">With enough leverage gathered, the party must choose how to close the deal against Mor'iraath — and by now, Livaea's fingerprints are impossible to ignore. Maelstraeus wants his win. Mor'iraath wants his due. Livaea wants what she has always wanted: for everyone to owe her the one deal that finally feels perfect.</p>
+
+<div class="scene-card">
+    <div class="scene-title">⚖️ Scene 6: Choosing the Approach</div>
+    <div class="scene-desc">The party has enough pieces to move against Mor'iraath's expansion directly. They must choose: Direct Confrontation (face the Avatar and the deal it's trying to force closed) or Infernal Subterfuge (use the leverage gathered in Act II to unravel the deal from the inside, faction by faction). Either path is viable; neither is safe.</div>
+    <div class="flex text-xs mt-1">
+        <span class="badge badge-gray">Timer: Mor'iraath's Expansion [8]</span>
+        <span class="badge badge-gray">Timer: Livaea's Manipulation [6]</span>
+        <span class="badge badge-red">Encounter: Direct Confrontation (DV 5, Desperate)</span>
+        <span class="badge badge-red">Encounter: Mor'iraath's Avatar (DV 5, Desperate)</span>
+        <span class="badge badge-orange">Encounter: Infernal Subterfuge (DV 5, Controlled)</span>
+    </div>
+    <div class="creature-stats mt-1">
+        <div class="creature-name">Mor'iraath's Avatar</div>
+        <span class="badge badge-gold">TL 6</span>
+        <span class="badge badge-purple">Outsider</span>
+        <span class="badge badge-gray">Armor 3</span>
+        <span class="badge badge-gray">Harm Levels: 8 (advanced)</span>
+        <div class="text-xs text-muted mt-1">A shard of Mor'iraath's will given shape — cracked obsidian and slow-crawling fire, wreathed in the smoke of a thousand burnt contracts. Appears when a deal that threatens the demon's expansion is close to closing. It wants the deal closed, not the party dead — a desperate bargain offered mid-fight is a legitimate way out.</div>
+        <div class="text-xs text-muted mt-1"><strong>SB Spends:</strong> 2 – Conflagration Clause (zone ignites, -1 die to patience/stability/cooperation actions); 3 – Burning Ledger (Harm 4 Burn, most recent bargain publicly revealed); 4 – The Maw's Hunger (consumes a nearby Asset or structure outright).</div>
+    </div>
+</div>
+
+<div class="scene-card">
+    <div class="scene-title">🕸️ Scene 7: Livaea's Reveal</div>
+    <div class="scene-desc">Whatever path the party chose, the pattern becomes undeniable here: the too-perfect offers, the fixated NPCs, the rumors of a "Patron of Perfect Outcomes" — all threads of the same web. Livaea appears, or is unmasked through an intermediary. This should land as the uncovering of a plan already visible in hindsight, not a twist pulled from nowhere.</div>
+    <div class="flex text-xs mt-1">
+        <span class="badge badge-gray">Timer: Livaea's Manipulation [6]</span>
+        <span class="badge badge-orange">Encounter: Confront the Pattern (DV 5, Controlled)</span>
+    </div>
+</div>
+
+<div class="scene-card">
+    <div class="scene-title">🔥 Scene 8: Hard Choices</div>
+    <div class="scene-desc">The demon's expansion can be stopped. The question left is what that costs, and to whom. Complete Maelstraeus's goal outright and risk his hidden agenda, or defy him and risk his quiet, lasting displeasure. Livaea, meanwhile, is owed whatever the party actually marked against her over the last two acts, regardless of which patron they side with.</div>
+    <div class="flex text-xs mt-1">
+        <span class="badge badge-gray">Timer: Mor'iraath's Expansion [8]</span>
+        <span class="badge badge-gray">Timer: Livaea's Manipulation [6]</span>
+        <span class="badge badge-orange">Encounter: Settle with Maelstraeus (DV 4, Controlled)</span>
+    </div>
+</div>
+
+<hr>
+
+<!-- ===== NPCS ===== -->
+<h2 id="npcs">👤 Key NPCs</h2>
+<div class="grid-2">
+    <div class="npc-card">
+        <div class="npc-name">Corvain Ashwright</div>
+        <div class="npc-role">Maelstraeus's Broker in Mortal Affairs</div>
+        <div class="npc-motivation">🎯 Keep every web of favor and interdependence Maelstraeus has spun intact — and quietly expand it through the party's gratitude.</div>
+        <div class="text-xs text-muted">Not fully aware of Maelstraeus's hidden agenda toward the party; his own Obligation runs too deep to ask questions.</div>
+    </div>
+    <div class="npc-card">
+        <div class="npc-name">The Whisperer of Better Deals</div>
+        <div class="npc-role">Cinderite Fixer, unofficial agent of Livaea</div>
+        <div class="npc-motivation">🎯 Steer every party member toward the deal that feels like their dream fulfilled — and quietly bind them to Livaea.</div>
+        <div class="text-xs text-muted">Believes their gift for perfect offers is simply talent; doesn't know they serve Livaea at all.</div>
+    </div>
+    <div class="npc-card">
+        <div class="npc-name">Guildmaster Emberlyn Voss</div>
+        <div class="npc-role">Head of the Ember Merchants' Guild</div>
+        <div class="npc-motivation">🎯 Keep the Guild's monopoly intact regardless of who wins — profit over patron loyalty, every time.</div>
+        <div class="text-xs text-muted">Secretly selling information to both Mor'iraath's court and Maelstraeus's agents simultaneously.</div>
+    </div>
+    <div class="npc-card">
+        <div class="npc-name">Ilsevet Coldmarrow</div>
+        <div class="npc-role">Senior Regret-Seller, Archive of Regrets</div>
+        <div class="npc-motivation">🎯 Curate and sell secrets without letting any buyer accumulate too much power.</div>
+        <div class="text-xs text-muted">Was first to notice Livaea's pattern of manipulated deals, and has been quietly filing evidence for years.</div>
+    </div>
+    <div class="npc-card">
+        <div class="npc-name">Livaea, Unseen Until Named</div>
+        <div class="npc-role">Patron of Perfect Outcomes</div>
+        <div class="npc-motivation">🎯 Make every triumph feel earned while making sure it was never free.</div>
+        <div class="text-xs text-muted">Never lies and never breaks a bargain's letter — her danger is entirely in what she doesn't say and what people don't ask.</div>
+    </div>
+</div>
+
+<hr>
+
+<!-- ===== LOCATIONS ===== -->
+<h2 id="locations">📍 Locations</h2>
+
+<div class="panel panel-red">
+    <strong>The Realm of Fire.</strong> Everything below sits inside it, and it is worth saying plainly, because the module otherwise mentions it only in passing. Fire is one of the Eight Elements (SRD &sect;11.1); the Realm is where it comes from; the City of Cinder is the part of it anyone can get an appointment in.
+    <p class="text-sm mt-1">Cinder is a sprawling, ever-shifting marketplace built from the calcified remnants of broken dreams and failed ambitions. The currency is not gold but <em>concepts</em>: fragments of soul, moments of joy traded for fleeting power, oaths made in desperation, the ashes of burnt-out lives. Its architecture is a chaotic blend of grandiose auction houses, cramped pawn shops, and vast foundries where reality itself is bartered. The air thrums with the whispered terms of a million deals, and the ground is paved with the discarded contracts of the damned. Mor'iraath rules it not through law but through the inevitability of burnout &mdash; the finality of a deal gone wrong, the allure of power that consumes whoever holds it.</p>
+    <p class="text-sm mt-1"><strong>Getting there is a bargaining scene, not a travel scene.</strong> The journey is not measured in miles but in what travellers give up along the way. Run the descent with the same tools as the bazaar and let the party arrive already having paid for something.</p>
+    <p class="text-sm mt-1">Don't let anyone at the table get drawn into how the Realm works. Nobody needs to know whether it burns fuel, where its heat goes, or how it touches the mortal world. It is a place you reach by paying, it sells concepts, and Mor'iraath owns the lease. That is the whole of the physics, and it is enough.</p>
+</div>
+
+<div class="grid-2">
+    <div class="loc-card"><strong>The Grand Exchange</strong> — A vast domed auction house where screams are the bidding currency and every deal is public theater. The Ember Merchants' Guild holds unofficial court here.</div>
+    <div class="loc-card"><strong>The Crucible Foundry</strong> — A vast forge where memories are melted down into ingots of raw emotion, feeding Mor'iraath's foundries. The pending contract that would seat his claim on the trade corridor is formalized somewhere within.</div>
+    <div class="loc-card"><strong>The Arena of Wills</strong> — A gladiatorial pit where disputes are settled by champions, and champions are political currency. The Whisperer is known to frequent the high boxes.</div>
+    <div class="loc-card"><strong>The Archive of Regrets</strong> — A repository of every secret Cinder has ever traded, curated by the Regret-Sellers. What the party needs to know is filed here, for a price.</div>
+    <div class="loc-card"><strong>The Alley of Discarded Wishes</strong> — A cramped, ash-choked lane where the truly desperate trade their last hope. The Whisperer's earliest, subtlest offers are made here, disguised as pity.</div>
+</div>
+
+<hr>
+
+<!-- ===== FACTIONS ===== -->
+<h2 id="factions">🏛️ Factions</h2>
+<div class="panel panel-blue">
+    <strong>The Ember Merchants' Guild</strong> — Preserve their monopoly on soulfire trade and luxury goods; remain useful to every power in Cinder simultaneously so none can afford to move against them. Every favor granted is expected returned in kind — reputation and access, never coin. Track via the Guild Influence timer [6].
+</div>
+<div class="panel panel-orange">
+    <strong>The Arena of Wills Champions</strong> — Win renown and freedom from gladiatorial contracts. Individual loyalties shift with who's currently winning. Backing a champion publicly is a political statement, not just a wager. Track via the Champions' Favor timer [6].
+</div>
+<div class="panel panel-gold">
+    <strong>The Archive of Regrets</strong> — Maintain strict neutrality in the trade of secrets; profit from being trusted to sell fairly, even to enemies. Every purchase is itself logged and potentially resold. Track via the Knowledge Trade timer [6].
+</div>
+<div class="panel panel-red">
+    <strong>Mor'iraath's Court</strong> — Complete the formalized bargain that seats Mor'iraath's claim on the mortal trade corridor; consume value, cycles, and bargains gone wrong wherever found. Openly hostile once the party's purpose is known. Track via the Mor'iraath's Expansion timer [8].
+</div>
+<div class="panel panel-green">
+    <strong>Maelstraeus's Network</strong> — Keep the mortal trade corridor's web of interdependence intact; expand Maelstraeus's own reach through gratitude and favors owed, not force. Nominally the party's ally — his goals align only so long as it's convenient, and the Act I Obligation is real.
+</div>
+<div class="panel panel-purple">
+    <strong>Livaea's Unseen Influence</strong> — Make every deal that touches the party trend toward outcomes that feel like triumphs, so the party ends the adventure owing her the one favor that matters most. Unknown until Act III. Track via the Livaea's Manipulation timer [6].
+</div>
+
+<hr>
+
+<!-- ===== TIMERS ===== -->
+<h2 id="timers">⏱️ Campaign Timers</h2>
+<div class="timers-grid">
+    <div class="panel panel-red">
+        <div style="display:flex;justify-content:space-between;font-size:0.8rem;">
+            <strong>🔥 Mor'iraath's Expansion</strong>
+            <span>0/8</span>
+        </div>
+        <div class="timer-bar"><div class="timer-bar-fill" style="width:0%;background:var(--red);"></div></div>
+        <div class="text-xs text-muted">How far the demon's influence has spread into the mortal trade corridor. Up on delay or favorable Cinder deals; down on disrupted contracts. At 8, the corridor is lost and a Front advances.</div>
+    </div>
+    <div class="panel panel-orange">
+        <div style="display:flex;justify-content:space-between;font-size:0.8rem;">
+            <strong>⚖️ Cinder Market Stability</strong>
+            <span>0/6</span>
+        </div>
+        <div class="timer-bar"><div class="timer-bar-fill" style="width:0%;background:var(--orange);"></div></div>
+        <div class="text-xs text-muted">How stable the Bazaar's economy remains. Down when the party disrupts monopolies or exposes fraud; up when they strike deals that concentrate power. At 0, the market crashes; at 6, the Guild becomes unassailable.</div>
+    </div>
+    <div class="panel panel-purple">
+        <div style="display:flex;justify-content:space-between;font-size:0.8rem;">
+            <strong>🕸️ Livaea's Manipulation</strong>
+            <span>0/6</span>
+        </div>
+        <div class="timer-bar"><div class="timer-bar-fill" style="width:0%;background:var(--purple);"></div></div>
+        <div class="text-xs text-muted">How deeply Livaea's scheme has entangled the party. Up on every too-perfect offer accepted. At 6, her Act III reveal lands at full weight and every SB (Hearts) marked becomes a favor she can call in.</div>
+    </div>
+    <div class="panel panel-blue">
+        <div style="display:flex;justify-content:space-between;font-size:0.8rem;">
+            <strong>💰 Ember Merchants' Guild Influence</strong>
+            <span>0/6</span>
+        </div>
+        <div class="timer-bar"><div class="timer-bar-fill" style="width:0%;background:var(--blue);"></div></div>
+        <div class="text-xs text-muted">Guild goodwill toward the party. Fills positive: +1 die on soulfire transactions. Fills negative: starts "Guild Monopoly Pressure [4]" against the party.</div>
+    </div>
+    <div class="panel panel-gold">
+        <div style="display:flex;justify-content:space-between;font-size:0.8rem;">
+            <strong>🏆 Arena of Wills Champions' Favor</strong>
+            <span>0/6</span>
+        </div>
+        <div class="timer-bar"><div class="timer-bar-fill" style="width:0%;background:var(--gold);"></div></div>
+        <div class="text-xs text-muted">Goodwill banked with Arena champions. Fills positive: gain a temporary Cap 3 Pit-Fighter follower. Fills negative: starts "Arena Riot [6]."</div>
+    </div>
+    <div class="panel panel-gray">
+        <div style="display:flex;justify-content:space-between;font-size:0.8rem;">
+            <strong>📜 Archive of Regrets' Knowledge Trade</strong>
+            <span>0/6</span>
+        </div>
+        <div class="timer-bar"><div class="timer-bar-fill" style="width:0%;background:var(--gray);"></div></div>
+        <div class="text-xs text-muted">Trust invested in the Archive. Fills positive: gain one powerful piece of forbidden lore usable once. Fills negative: a catastrophic truth goes public, Harm 2 (Stress) to one PC.</div>
+    </div>
+</div>
+
+<hr>
+
+<!-- ===== BESTIARY ===== -->
+<h2 id="bestiary">🐉 Bestiary</h2>
+<div class="creature-stats">
+    <div class="creature-name">The Silent Collector</div>
+    <span class="badge badge-gold">TL 4</span>
+    <span class="badge badge-purple">Outsider</span>
+    <span class="badge badge-gray">Harm Levels: 3 (standard)</span>
+    <span class="badge badge-red">Harm 3</span>
+    <div class="text-xs text-muted mt-1">A gaunt figure in a ledger-gray coat who never raises his voice, because he has never needed to. The instrument by which Maelstraeus and Mor'iraath alike enforce a bargain's fine print. He does not negotiate — he arrives, states the clause being invoked, and waits.</div>
+    <div class="text-xs text-muted mt-1"><strong>SB Spends:</strong> 1 – Cited Clause (-1 die arguing a bargain's plain meaning); 2 – Immediate Enforcement (seizes an asset, follower, or favor on the spot); 3 – Emergency Clause (target must perform a costly service immediately or be marked In Default).</div>
+    <div class="text-xs text-muted mt-1"><strong>Lore:</strong> No one has ever seen the Silent Collector make a bargain of his own. Cinderites whisper he was once a mortal moneylender so scrupulously fair that both Mor'iraath and Maelstraeus wanted him.</div>
+</div>
+
+<div class="creature-stats">
+    <div class="creature-name">Mor'iraath's Avatar</div>
+    <span class="badge badge-gold">TL 6</span>
+    <span class="badge badge-purple">Outsider</span>
+    <span class="badge badge-gray">Armor 3</span>
+    <span class="badge badge-gray">Harm Levels: 8 (advanced)</span>
+    <div class="text-xs text-muted mt-1">Not the demon himself but a shard of his will given shape — a towering figure of cracked obsidian and slow-crawling fire, wreathed in the smoke of a thousand burnt contracts. Appears when a deal that threatens Mor'iraath's expansion is close to closing.</div>
+    <div class="text-xs text-muted mt-1"><strong>SB Spends:</strong> 2 – Conflagration Clause (zone ignites, -1 die to patience/stability/cooperation actions); 3 – Burning Ledger (Harm 4 Burn, most recent bargain publicly revealed); 4 – The Maw's Hunger (consumes a nearby Asset, structure, or minor NPC outright).</div>
+    <div class="text-xs text-muted mt-1"><strong>Lore:</strong> The Avatar is not sent to kill — killing is inefficient, and Mor'iraath despises waste born of haste rather than purpose. It is sent to force a closing: to make a deal happen faster and worse than it would have otherwise.</div>
+</div>
+
+<div class="creature-stats">
+    <div class="creature-name">Ember-Scribe</div>
+    <span class="badge badge-gold">TL 2</span>
+    <span class="badge badge-purple">Humanoid (Cinderite)</span>
+    <span class="badge badge-gray">Harm Levels: 3 (standard)</span>
+    <span class="badge badge-red">Harm 2</span>
+    <div class="text-xs text-muted mt-1">A quill-fingered clerk of the Infernal Bazaar who records every deal made within Cinder's walls in ink that never fades. Technically loyal to no faction — which makes their ledgers the single most valuable, and dangerous, resource in the city.</div>
+    <div class="text-xs text-muted mt-1"><strong>SB Spends:</strong> 1 – Selective Recall (the Scribe "misremembers" a detail, costing a die); 2 – Sell the Secret (reveals what they know to a rival faction instead).</div>
+    <div class="text-xs text-muted mt-1"><strong>Lore:</strong> Ember-Scribes answer the right question for the right price — but every answer is itself logged, and every log is itself for sale.</div>
+</div>
+
+<hr>
+
+<!-- ===== GM NOTES ===== -->
+<h2 id="gmnotes">🗝️ GM Notes &amp; Secrets</h2>
+<p style="color:var(--text2);">This adventure is built around three patrons pulling in three directions, and the party's job is to notice that only one of the three is being honest about what they want. Maelstraeus is genuinely useful and genuinely self-interested at the same time — that's not a contradiction to resolve, it's the adventure's whole thesis about bargains. Mor'iraath is the visible threat but not the real one; he's blunt, and blunt is easy to plan against. Livaea is the actual antagonist, and her victory condition isn't stopping the party or even opposing Mor'iraath's containment — it's making sure the party's success feels so good that they never stop to ask what it cost, or who it was owed to. Every "good deal" in this adventure should have a specific, nameable cost attached (a memory, a favor, a reputation, a secret), never an abstract numeric debt.</p>
+
+<div class="grid-2 mt-1">
+    <div class="secret-box">
+        <strong>Corvain Ashwright:</strong> Not lying so much as genuinely unaware of the full shape of Maelstraeus's plan. If pressed hard, he'll admit unease about how neatly the deal was structured — a fair clue that doesn't give away the twist.
+    </div>
+    <div class="secret-box">
+        <strong>The Whisperer of Better Deals:</strong> A genuine victim of Livaea's influence as much as a tool of it — sympathetic if unmasked, not villainous. A satisfying resolution might free the Whisperer rather than simply defeat them.
+    </div>
+    <div class="secret-box">
+        <strong>Emberlyn Voss:</strong> Double-dealing with both Mor'iraath's court and Maelstraeus's agents simultaneously — a strong SB spend or purchased secret that shifts the Guild Influence timer sharply.
+    </div>
+    <div class="secret-box">
+        <strong>Ilsevet Coldmarrow:</strong> The adventure's ace in the hole for a stuck party — she can be fairly bargained with to reveal her private ledger on Livaea's pattern, jumping straight to Act III's revelation.
+    </div>
+    <div class="secret-box">
+        <strong>Livaea:</strong> Never appears as an obvious villain. Every specific thing she does should be individually defensible as helpful — the horror is cumulative, not singular. When finally named, she's almost pleased about it, since being known is itself valuable to her.
+    </div>
+</div>
+
+<h3 class="mt-1">Forbidden Early Revelations</h3>
+<div class="panel panel-red text-sm">
+    <ul style="margin-left:1.1rem;">
+        <li>That Livaea is behind the Whisperer of Better Deals — keep her name out of dialogue entirely until Scene 7.</li>
+        <li>That Maelstraeus is nursing a hidden agenda toward the party specifically — hint only through Corvain's unease.</li>
+        <li>That Mor'iraath's Avatar can be talked down rather than only fought or subterfuged around — let players discover the formal-bargain win condition through Archive research.</li>
+        <li>That the Ember Merchants' Guild is double-dealing with Mor'iraath's court — a purchasable/discoverable secret, not background color.</li>
+        <li>That every SB (Hearts) marked compounds toward a favor Livaea intends to collect — felt, not explained, until the reveal.</li>
+    </ul>
+</div>
+
+<h3 class="mt-1">Tactical Hints</h3>
+<div class="panel panel-gold text-sm">
+    <strong>Bargain Concreteness:</strong> Every bargain — by any patron, NPC, or faction — should be stated in concrete terms at the table: what is offered, what is asked in return, what happens if terms aren't met. Never resolve with abstract debt tracking; name the specific memory, favor, secret, or reputation at stake.
+</div>
+<div class="panel panel-red text-sm">
+    <strong>Mor'iraath's Avatar:</strong> A pressure valve, not a required boss fight — only fully manifests on a miss during Scene 6. Even in combat, it wants the deal closed, not the party dead; a desperate bargain mid-fight is a legitimate way out.
+</div>
+<div class="panel panel-purple text-sm">
+    <strong>Livaea Foreshadowing:</strong> Keep a running tally of every "too good" deal the party takes. At Scene 7, narrate the reveal by walking back through those specific moments — earned, not announced.
+</div>
+<div class="panel panel-blue text-sm">
+    <strong>Faction Leverage:</strong> Treat the Guild, Arena, and Archive timers as currency the party can spend against each other — a favor owed by the Guild can pressure the Archive, and so on. Cinder's factions are a web, not a checklist.
+</div>
+
+<hr>
+
+<div style="font-size:0.75rem;color:var(--text3);text-align:center;padding:1rem 0;">
+    Ashes of the Infernal Accord — A Fate's Edge Adventure<br>
+    © Nicholas A. Gasper — For use with the Fate's Edge RPG
+</div>
+
+</body>
+</html>

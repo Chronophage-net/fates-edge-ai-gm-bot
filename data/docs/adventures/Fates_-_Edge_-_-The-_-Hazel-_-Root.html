@@ -191,6 +191,10 @@
 <hr>
 
 <!-- ===== PREMISE ===== -->
+<div class="panel panel-blue" style="margin:0.6rem 0 1rem;">
+    <strong>Reading an encounter badge.</strong> Each badge names a <strong>DV</strong> and a <strong>Position</strong>. It does not name a dice pool, and that is deliberate: the pool is <em>Attribute + Skill</em>, chosen from how the player says they are going about it. Two characters can attempt the same encounter with different pools and both be right. Where an approach is obviously the intended one, the badge says so; where it does not, ask what they are doing and build the pool from the answer.
+</div>
+
 <h2 id="premise">🌱 Premise & Tone</h2>
 
 <div class="panel panel-gold">
@@ -268,9 +272,9 @@
     <div class="scene-desc">The forest is wrong. The trees are too close, the light too dim, the roots too eager. Navigation is impossible. The party must find the Hedge before the Thornwood claims them.</div>
     <div class="flex text-xs mt-1">
         <span class="badge badge-purple">Timer: Thornwood Timer [10]</span>
-        <span class="badge badge-purple">Timer: The Hunt Timer [12]</span>
-        <span class="badge badge-red">Encounter: Navigate the Thornwood (Wits + Survival, DV 4)</span>
-        <span class="badge badge-red">Encounter: Briar Wights (Cap 3, Harm 2)</span>
+        <span class="badge badge-purple">Timer: The Hunt Timer [10]</span>
+        <span class="badge badge-red">Encounter: Navigate the Thornwood (Wits + Endurance, DV 4)</span>
+        <span class="badge badge-red">Encounter: Briar Wights (TL 5, Harm 2)</span>
     </div>
     <div class="outcome-table mt-1">
         <tr><td class="outcome-label">Clean:</td><td>You find a path through the forest. Tick Thornwood Timer -2. You see a clearing ahead — the Hedge.</td></tr>
@@ -288,7 +292,7 @@
     <div class="flex text-xs mt-1">
         <span class="badge badge-purple">Timer: Hedge Debt Timer [8]</span>
         <span class="badge badge-gray">Timer: Lerris's Desperation [8]</span>
-        <span class="badge badge-purple">Timer: The Hunt Timer [12]</span>
+        <span class="badge badge-purple">Timer: The Hunt Timer [10]</span>
         <span class="badge badge-red">Encounter: The Hazel Queen's Bargain (Presence + Sway, DV 5)</span>
     </div>
     <div class="outcome-table mt-1">
@@ -310,9 +314,9 @@
     <div class="scene-desc">The party finds the Alder King's throne — a massive alder tree at the heart of the Thornwood. The King is waiting. He offers a bargain: a thorn from his crown, in exchange for a seed from the Hazel Queen's Hedge.</div>
     <div class="flex text-xs mt-1">
         <span class="badge badge-purple">Timer: Thornwood Timer [10]</span>
-        <span class="badge badge-purple">Timer: The Hunt Timer [12]</span>
+        <span class="badge badge-purple">Timer: The Hunt Timer [10]</span>
         <span class="badge badge-purple">Timer: Hedge Debt Timer [8]</span>
-        <span class="badge badge-red">Encounter: The Alder King's Bargain (Presence + Resolve, DV 6)</span>
+        <span class="badge badge-red">Encounter: The Alder King's Bargain (Presence + Insight, DV 5)</span>
     </div>
     <div class="outcome-table mt-1">
         <tr><td class="outcome-label">Clean:</td><td>You negotiate a fair bargain: the Alder King will give you a thorn in exchange for a seed from the Hazel Queen's Hedge. He also warns you that the Huntsman is already here — and that he is not the only one hunting you.</td></tr>
@@ -350,9 +354,9 @@
     <div class="scene-title">🐺 The Huntsman's Court</div>
     <div class="scene-desc">The Huntsman corners the party at a crossroads. He offers no bargain — only a choice: one member of the party stays behind as a sacrifice, or the entire party faces his hounds. Lerris is willing to sacrifice himself.</div>
     <div class="flex text-xs mt-1">
-        <span class="badge badge-purple">Timer: The Hunt Timer [12]</span>
+        <span class="badge badge-purple">Timer: The Hunt Timer [10]</span>
         <span class="badge badge-gray">Timer: Hollow Attention [6]</span>
-        <span class="badge badge-red">Encounter: The Huntsman's Choice (Presence + Resolve, DV 6)</span>
+        <span class="badge badge-red">Encounter: The Huntsman's Choice (Presence + Insight, DV 5)</span>
     </div>
     <div class="outcome-table mt-1">
         <tr><td class="outcome-label">Clean:</td><td>You find the Huntsman's true name (hidden in a Briar Wight's memory) and speak it. The Huntsman retreats. The Hunt ends. Tick The Hunt Timer to 0.</td></tr>
@@ -399,7 +403,7 @@
 <div class="grid-2">
     <div class="npc-card">
         <div class="npc-name">Lerris Fenwood</div>
-        <div class="npc-role">Hollowed Scholar, Fifth Son of Duke Braedyn Fenwood</div>
+        <div class="npc-role">Hollowed Scholar, Fifth Son of Duke Braedon Fenwood</div>
         <div class="npc-motivation">🎯 Restore his mother's memory, stolen by the Baron Asselin</div>
         <div class="text-xs text-muted">He carries a lead-lined box containing Sister Aris's confession. He is marked by the Hollow. His mother's eyes are a void in his memory.</div>
     </div>
@@ -532,7 +536,8 @@
 <h2 id="bestiary">🐉 Bestiary</h2>
 <div class="creature-stats">
     <div class="creature-name">The Alder King</div>
-    <span class="badge badge-gold">Tier V</span>
+    <span class="badge badge-gold">TL 8</span>
+    <span class="badge badge-gray">Harm Levels: 8 per phase</span>
     <span class="badge badge-purple">Fae</span>
     <span class="badge badge-red">Harm 6</span>
     <div class="text-xs text-muted">The spirit of the dark, wet wood. Patient, territorial, and cruel. His domain is the Thornwood. He does not hate you — but he will not let you go.</div>
@@ -542,9 +547,10 @@
 
 <div class="creature-stats">
     <div class="creature-name">The Hazel Queen</div>
-    <span class="badge badge-gold">Tier V</span>
+    <span class="badge badge-gold">TL 8</span>
+    <span class="badge badge-gray">Harm Levels: 8 per phase</span>
     <span class="badge badge-purple">Fae</span>
-    <span class="badge badge-red">Harm 5</span>
+    <span class="badge badge-red">Harm 6</span>
     <div class="text-xs text-muted">The hag of crossroads and hedgerows. She offers exactly what you need — for a price you will not understand until the hazel nuts have fallen thrice.</div>
     <div class="text-xs text-muted mt-1"><strong>SB Spends:</strong> 1 – Hedge Debt (target marks 1 Obligation); 2 – Crossroads Choice (target must choose between two bad outcomes); 3 – The Queen's Price (target loses a memory).</div>
     <div class="text-xs text-muted mt-1"><strong>Weakness:</strong> Salt. The Hazel Queen cannot cross a line of salt. She will not bargain with someone who carries a handful of salt.</div>
@@ -552,19 +558,21 @@
 
 <div class="creature-stats">
     <div class="creature-name">The Huntsman</div>
-    <span class="badge badge-gold">Tier IV</span>
+    <span class="badge badge-gold">TL 6</span>
+    <span class="badge badge-gray">Harm Levels: 8 (advanced)</span>
     <span class="badge badge-purple">Fae</span>
     <span class="badge badge-red">Harm 4</span>
     <div class="text-xs text-muted">The Silent Tracker. He serves neither king nor queen — he serves the hunt itself. His hounds are the ghosts of wolves. His true name is carved into the Alder King's throne.</div>
-    <div class="text-xs text-muted mt-1"><strong>SB Spends:</strong> 2 – The Hunt Begins (advance The Hunt Timer by 2); 3 – Hound Attack (a ghost-wolf attacks, Cap 3); 4 – The Huntsman's Choice (target must sacrifice a memory or be caught).</div>
+    <div class="text-xs text-muted mt-1"><strong>SB Spends:</strong> 2 – The Hunt Begins (advance The Hunt Timer by 2); 3 – Hound Attack (a ghost-wolf attacks, TL 5); 4 – The Huntsman's Choice (target must sacrifice a memory or be caught).</div>
     <div class="text-xs text-muted mt-1"><strong>Weakness:</strong> A true name. If the party discovers the Huntsman's true name and speaks it, the Hunt ends.</div>
 </div>
 
 <div class="creature-stats">
     <div class="creature-name">The Pathweaver</div>
-    <span class="badge badge-gold">Tier IV</span>
+    <span class="badge badge-gold">TL 6</span>
+    <span class="badge badge-gray">Harm Levels: 8 (advanced)</span>
     <span class="badge badge-purple">Fae</span>
-    <span class="badge badge-red">Harm 3</span>
+    <span class="badge badge-red">Harm 4</span>
     <div class="text-xs text-muted">The mender of liminal wounds. She walks where the Alder King and Hazel Queen have torn the world. She weaves gray thread and mends thresholds. Her aid is never free.</div>
     <div class="text-xs text-muted mt-1"><strong>SB Spends:</strong> 1 – Unknot the Way (open a locked door or sealed promise); 2 – Weave the Lost Path (reveal a hidden route); 3 – Mend the Threshold (permanently repair a broken threshold — but cost a memory).</div>
     <div class="text-xs text-muted mt-1"><strong>Weakness:</strong> She cannot refuse a true request made at a crossroads — but she will exact a price for her aid.</div>
@@ -572,7 +580,8 @@
 
 <div class="creature-stats">
     <div class="creature-name">Briar Wight</div>
-    <span class="badge badge-gold">Tier III</span>
+    <span class="badge badge-gold">TL 5</span>
+    <span class="badge badge-gray">Harm Levels: 8 (advanced)</span>
     <span class="badge badge-purple">Undead</span>
     <span class="badge badge-red">Harm 3</span>
     <div class="text-xs text-muted">A traveler who died in the Thornwood, their body claimed by the Alder King's roots. They move slowly, their limbs wrapped in thorn and bark. They remember who they were — and they are angry.</div>

@@ -113,6 +113,7 @@
         .outcome-list li { margin: 0.1rem 0; }
 
         hr { border: none; border-top: 1px solid var(--border); margin: 1rem 0; }
+        .creature-stats { background: var(--bg4, var(--bg3, #1a1d24)); border-radius: var(--radius, 6px); padding: 0.45rem 0.6rem; margin: 0.35rem 0; font-size: 0.8rem; border-left: 3px solid var(--gold, #c9a227); }
     </style>
 </head>
 <body>
@@ -132,7 +133,11 @@
 
     <hr />
 
-    <h2>📖 What the Party Knows</h2>
+    <div class="panel panel-blue" style="margin:0.6rem 0 1rem;">
+    <strong>Reading an encounter badge.</strong> Each badge names a <strong>DV</strong> and a <strong>Position</strong>. It does not name a dice pool, and that is deliberate: the pool is <em>Attribute + Skill</em>, chosen from how the player says they are going about it. Two characters can attempt the same encounter with different pools and both be right. Where an approach is obviously the intended one, the badge says so; where it does not, ask what they are doing and build the pool from the answer.
+</div>
+
+<h2>📖 What the Party Knows</h2>
     <ul>
         <li>The lantern is in the central chamber of the barrow.</li>
         <li>The barrow is guarded by restless spirits (the <strong>Duskwights</strong>).</li>
@@ -188,7 +193,7 @@
         <ul class="outcome-list">
             <li><span class="badge badge-green">Clean</span> They bow and let you pass.</li>
             <li><span class="badge badge-orange">Partial</span> They take your offering but also steal a random piece of equipment.</li>
-            <li><span class="badge badge-red">Miss</span> They attack as a single mob (Cap 2, Harm 1 each, 2 Fatigue each on hit).</li>
+            <li><span class="badge badge-red">Miss</span> They attack as a single mob (TL 3, Harm 1 each, 2 Fatigue each on hit).</li>
         </ul>
     </div>
 
@@ -267,5 +272,15 @@
         © Nicholas A. Gasper — For use with the Fate's Edge RPG
     </div>
 
+
+<hr>
+
+<h2 id="bestiary">⚔️ Bestiary</h2>
+<div class="creature-stats">
+    <strong style="color:var(--gold);">Duskwight</strong> — TL 2, Armor 0, Harm 2, Harm Levels: 3 (standard). Undead.
+    <div class="text-xs text-muted mt-1">A barrow-spirit worn thin by waiting. It does not attack the living; it obstructs them, and takes offence at being walked past. Three drift in the hall, and they act together or not at all.</div>
+    <div class="text-xs text-muted mt-1"><strong>SB Spends:</strong> 1 &mdash; <em>Cold Question</em>: it asks something the barrow wants answered; refusing costs 1 Fatigue. 2 &mdash; <em>Close the Way</em>: the passage behind the party fills with grave-cold and cannot be used this scene. 3 &mdash; <em>Take the Toll</em>: it lays hands on a PC, dealing Harm 1 and taking with it a small memory the player names.</div>
+    <div class="text-xs text-muted mt-1"><strong>Weakness:</strong> An offering freely given &mdash; a memory, a secret, a name spoken aloud &mdash; lets the whole party pass without a roll. They are not guards. They are collectors, and they have been very patient.</div>
+</div>
 </body>
 </html>

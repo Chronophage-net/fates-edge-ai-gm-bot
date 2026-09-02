@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Dwarven Debt — A Fate's Edge Adventure</title>
+    <style>
+        :root {
+            --bg1: #100c08; --bg2: #1c1610; --bg3: #2a2116; --bg4: #382c1c;
+            --text: #f0e6d4; --text2: #c9b89a; --text3: #93826a;
+            --gold: #c17a3d; --gold-hover: #d18a4d;
+            --border: #4a3826; --red: #a3462f; --green: #4f7f5a; --blue: #4a6f8a;
+            --purple: #7a5a45; --orange: #c17a3d;
+            --radius: 8px; --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background: var(--bg1); color: var(--text); font-family: var(--font); padding: 1.5rem; max-width: 1100px; margin: 0 auto; line-height: 1.6; }
+        h1, h2, h3, h4, h5 { color: var(--gold); margin: 0.5rem 0 0.3rem; }
+        h1 { font-size: 1.8rem; border-bottom: 2px solid var(--gold); padding-bottom: 0.3rem; }
+        h2 { font-size: 1.4rem; border-bottom: 1px solid var(--border); padding-bottom: 0.2rem; }
+        h3 { font-size: 1.1rem; }
+        h4 { font-size: 0.95rem; color: var(--text); }
+        a { color: var(--gold); text-decoration: none; }
+        .panel { background: var(--bg2); border-radius: var(--radius); padding: 0.6rem 0.8rem; border: 1px solid var(--border); margin: 0.5rem 0; }
+        .panel-gold { border-left: 4px solid var(--gold); }
+        .panel-red { border-left: 4px solid var(--red); }
+        .panel-blue { border-left: 4px solid var(--blue); }
+        .panel-green { border-left: 4px solid var(--green); }
+        .panel-purple { border-left: 4px solid var(--purple); }
+        .panel-orange { border-left: 4px solid var(--orange); }
+        .badge { display: inline-block; padding: 0.05rem 0.5rem; border-radius: 12px; font-size: 0.65rem; font-weight: 600; }
+        .badge-gold { background: var(--gold); color: #1a1000; }
+        .badge-red { background: var(--red); color: #fff; }
+        .badge-green { background: var(--green); color: #fff; }
+        .badge-blue { background: var(--blue); color: #fff; }
+        .badge-purple { background: var(--purple); color: #fff; }
+        .badge-orange { background: var(--orange); color: #fff; }
+        .badge-gray { background: var(--bg4); color: var(--text3); }
+        .flex { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
+        .flex-between { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.3rem; }
+        .text-muted { color: var(--text3); }
+        .text-gold { color: var(--gold); }
+        .text-sm { font-size: 0.85rem; }
+        .text-xs { font-size: 0.7rem; }
+        .mt-1 { margin-top: 0.5rem; }
+        .mb-1 { margin-bottom: 0.5rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+        @media (max-width: 600px) { .grid-2 { grid-template-columns: 1fr; } }
+        .scene-card { background: var(--bg3); border-radius: var(--radius); padding: 0.4rem 0.6rem; margin: 0.3rem 0; border-left: 3px solid var(--gold); }
+        .scene-card .scene-title { font-weight: 600; font-size: 0.9rem; }
+        .scene-card .scene-desc { font-size: 0.8rem; color: var(--text2); }
+        .timer-bar { background: var(--bg4); border-radius: 4px; height: 6px; overflow: hidden; flex: 1; min-width: 60px; }
+        .timer-bar-fill { height: 100%; border-radius: 4px; transition: width 0.3s; }
+        .npc-card, .loc-card { background: var(--bg3); border-radius: var(--radius); padding: 0.3rem 0.5rem; margin: 0.15rem 0; border-left: 2px solid var(--gold); }
+        .npc-card .npc-name { font-weight: 600; font-size: 0.85rem; }
+        .npc-card .npc-role { font-size: 0.7rem; color: var(--text3); }
+        .npc-card .npc-motivation { font-size: 0.75rem; color: var(--text2); }
+        .npc-card .npc-secret { font-size: 0.72rem; color: var(--text3); font-style: italic; margin-top: 0.15rem; }
+        hr { border: none; border-top: 1px solid var(--border); margin: 0.5rem 0; }
+        .toc { background: var(--bg3); border-radius: var(--radius); padding: 0.5rem 0.8rem; border: 1px solid var(--border); }
+        .toc a { color: var(--text2); display: block; padding: 0.1rem 0; font-size: 0.85rem; }
+        .toc a:hover { color: var(--gold); }
+        .encounter-box { background: var(--bg4); border-radius: var(--radius); padding: 0.3rem 0.5rem; margin: 0.2rem 0; border-left: 3px solid var(--orange); font-size: 0.8rem; }
+        .encounter-box .enc-name { font-weight: 600; color: var(--orange); }
+        .encounter-box .enc-outcomes { margin-top: 0.2rem; font-size: 0.75rem; color: var(--text2); }
+        .encounter-box .enc-outcomes div { margin: 0.1rem 0; }
+        .timers-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.3rem; }
+        blockquote { border-left: 3px solid var(--gold); padding-left: 1rem; margin: 0.5rem 0; color: var(--text2); font-style: italic; }
+        .creature-stats { background: var(--bg4); border-radius: var(--radius); padding: 0.3rem 0.5rem; margin: 0.2rem 0; font-size: 0.8rem; }
+        .gm-box { background: #150f08; border: 1px solid var(--gold); border-radius: var(--radius); padding: 0.5rem 0.8rem; margin: 0.4rem 0; font-size: 0.82rem; color: var(--text2); }
+        .gm-box strong { color: var(--gold); }
+        .warn-box { background: #241408; border: 1px solid var(--red); border-radius: var(--radius); padding: 0.5rem 0.8rem; margin: 0.4rem 0; font-size: 0.82rem; color: var(--text2); }
+        .warn-box strong { color: var(--red); }
+    </style>
+</head>
+<body>
+
+<h1>⚒️ The Dwarven Debt</h1>
+<p style="color:var(--text2);margin-bottom:1rem;">
+    <span class="badge badge-gold">Tier II-III</span>
+    <span class="badge badge-blue">4-5 Sessions</span>
+    <span class="badge badge-purple">Honor &amp; Oath</span>
+    <span class="badge badge-purple">Underground Exploration</span>
+    <span class="badge badge-gray">Author: Nicholas A. Gasper</span>
+</p>
+<p style="color:var(--text2);margin-bottom:0.5rem;">
+    Decades ago, one of the party owes House Khaz-Vurim an oath sworn in good faith and never properly
+    honored — a promise entangled with a ceremonial hammer, the Forgefather's Voice, pledged as surety and
+    left unclaimed when the original bargain went unfinished. Now the house is faltering, its name losing
+    weight among the other holds, and Vault-Queen Thora Stonebeard has decided the old promise must finally
+    be kept. To honor it, the party must descend into the Spine Underway, where something ancient has been
+    waiting far longer than any dwarf for that promise to be settled — and where "debt," the party will
+    learn, was never really about the hammer at all.
+</p>
+
+<blockquote>
+    "A dwarf's word outlives his forge. If Khaz-Vurim's word means nothing, then neither does the stone we
+    stand on." — Clan-Speaker Thrain Ironhold
+</blockquote>
+
+<div class="warn-box">
+    <strong>Table note:</strong> "Debt" in this adventure is always social currency — an oath, a kinship, a
+    piece of reputation owed. It is never a ledger entry, a sum, or an accounting figure. Keep every timer,
+    toll, and consequence framed as trust and standing, not bookkeeping.
+</div>
+
+<div class="toc">
+    <strong style="color:var(--gold);">📑 Table of Contents</strong>
+    <a href="#act-1">Act I — The Debt Called</a>
+    <a href="#act-2">Act II — Into the Deep</a>
+    <a href="#act-3">Act III — The Deep Stirrings</a>
+    <a href="#act-4">Act IV — Resolution</a>
+    <a href="#npcs">👤 Key NPCs</a>
+    <a href="#locations">📍 Locations</a>
+    <a href="#factions">🏛️ Factions</a>
+    <a href="#bestiary">⚔️ Bestiary</a>
+    <a href="#timers">⏱️ Campaign Timers</a>
+    <a href="#gmnotes">🗒️ GM Notes</a>
+</div>
+
+<hr>
+
+<div class="panel panel-blue" style="margin:0.6rem 0 1rem;">
+    <strong>Reading an encounter badge.</strong> Each badge names a <strong>DV</strong> and a <strong>Position</strong>. It does not name a dice pool, and that is deliberate: the pool is <em>Attribute + Skill</em>, chosen from how the player says they are going about it. Two characters can attempt the same encounter with different pools and both be right. Where an approach is obviously the intended one, the badge says so; where it does not, ask what they are doing and build the pool from the answer.
+</div>
+
+<h2 id="act-1">🔔 Act I — The Debt Called</h2>
+<p style="color:var(--text2);">House Khaz-Vurim calls in an old promise. The party learns what dwarven kinship demands of a word given and not yet kept.</p>
+
+<div class="scene-card">
+    <div class="scene-title">🚪 The Delegation Arrives</div>
+    <div class="scene-desc">Clan-Speaker Thrain Ironhold lays out the old bargain in careful, respectful terms — the Forgefather's Voice, pledged as surety decades ago, never formally closed out.</div>
+    <div class="flex text-xs mt-1">
+        <span class="badge badge-gray">Timer: House Standing [8], starts at 2</span>
+        <span class="badge badge-orange">Hear the Delegation (DV 4, Controlled)</span>
+        <span class="badge badge-blue">Investigate the Bargain (DV 3, Controlled)</span>
+    </div>
+</div>
+
+<div class="scene-card">
+    <div class="scene-title">🏛️ The House in Decline</div>
+    <div class="scene-desc">Khaz-Vurim Halls show real strain — craftsmen leaving, allies distancing. This isn't about the hammer's worth; it's whether the house's word still means anything when tested.</div>
+    <div class="flex text-xs mt-1">
+        <span class="badge badge-orange">Audience with Thora (DV 4, Controlled)</span>
+        <span class="badge badge-blue">Read the House's Decline (DV 4, Controlled)</span>
+    </div>
+</div>
+
+<hr>
+
+<h2 id="act-2">⛰️ Act II — Into the Deep</h2>
+<p style="color:var(--text2);">The party descends into the Spine Underway toward the Forgefather's Crypt — and something older than dwarven custom takes notice.</p>
+
+<div class="scene-card">
+    <div class="scene-title">🕳️ The Spine Underway</div>
+    <div class="scene-desc">Ancient tunnels connecting the holds, part maintained thoroughfare, part crumbling remnant of a civilization older than the dwarves.</div>
+    <div class="flex text-xs mt-1">
+        <span class="badge badge-gray">Timer: Stone-Song Resonance [6]</span>
+        <span class="badge badge-orange">Navigate the Underway (DV 4, Controlled)</span>
+        <span class="badge badge-red">Ward-Construct Encounter (DV 4, Controlled)</span>
+        <span class="badge badge-blue">Edgewalker's Rival Claim (DV 4, Controlled)</span>
+    </div>
+    <div class="creature-stats mt-1">
+        <strong style="color:var(--gold);">Vault Ward-Construct</strong>
+        <span class="badge badge-gray">TL 5</span> <span class="badge badge-gray">Armor 3</span> <span class="badge badge-red">Harm Levels: 8 (advanced)</span>
+    <span class="badge badge-red">Harm 3</span>
+        <div class="text-xs text-muted">Enforces protocol, not malice. Seal the Passage (1 SB). Sound the Deep Alarm (2 SB): draws reinforcements.</div>
+    </div>
+</div>
+
+<div class="scene-card">
+    <div class="scene-title">🌊 Stone Whispering</div>
+    <div class="scene-desc">First contact with the Deep Stirrings arrives as dreams and half-heard resonance — unsettling, but not hostile.</div>
+    <div class="flex text-xs mt-1">
+        <span class="badge badge-red">Interpret the Stone-Song (DV 4, Desperate)</span>
+    </div>
+</div>
+
+<hr>
+
+<h2 id="act-3">🔥 Act III — The Deep Stirrings</h2>
+<p style="color:var(--text2);">The party reaches the Forgefather's Crypt. This isn't a story about a missing object — it's about a promise between the dwarves and something ancient, long before Khaz-Vurim's bargain ever existed.</p>
+
+<div class="scene-card">
+    <div class="scene-title">⚱️ The Forgefather's Crypt</div>
+    <div class="scene-desc">A sacred resting place, warded and locked by ceremony rather than mechanism.</div>
+    <div class="flex text-xs mt-1">
+        <span class="badge badge-gray">Timer: Ward Standing [6]</span>
+        <span class="badge badge-red">Approach with Proper Rite (DV 5, Desperate)</span>
+        <span class="badge badge-orange">Consult Durin's Secret (DV 4, Controlled)</span>
+    </div>
+</div>
+
+<div class="scene-card">
+    <div class="scene-title">🗣️ The Stone-Singer Speaks</div>
+    <div class="scene-desc">The Stone-Singer wants to know whether the old kinship the bargain represented is still honored — or has become just another transaction to be settled and forgotten.</div>
+    <div class="flex text-xs mt-1">
+        <span class="badge badge-red">Speak with the Stone-Singer (DV 5, Desperate)</span>
+    </div>
+    <div class="creature-stats mt-1">
+        <strong style="color:var(--gold);">The Stone-Singer</strong>
+        <span class="badge badge-gray">TL 8</span> <span class="badge badge-gray">Resistance 3</span> <span class="badge badge-gray">Harm Levels: None (puzzle)</span>
+        <div class="text-xs text-muted">Prefers patience over confrontation. Stone-Song Whisper (1 SB). Resonant Pressure (2 SB). The Old Bargain Remembered (3 SB).</div>
+        <div class="text-xs mt-1"><strong>Resolution:</strong> It has no body to cut and does not understand the question. It is answered, not defeated: prove that the old kinship the bargain represented is still honoured &mdash; in deed, where it can feel the difference through the stone &mdash; or say plainly that it is not, and live with what it does about that.</div>
+    </div>
+</div>
+
+<hr>
+
+<h2 id="act-4">🤝 Act IV — Resolution</h2>
+<p style="color:var(--text2);">The party returns carrying the full truth — not just a hammer, but the real shape of what's owed, to whom, and why.</p>
+
+<div class="scene-card">
+    <div class="scene-title">⚖️ The Reckoning</div>
+    <div class="scene-desc">Thora, Thrain, and — if earned — the Stone-Singer's presence gather to hear how the old promise will finally be settled.</div>
+    <div class="flex text-xs mt-1">
+        <span class="badge badge-orange">Present the Findings (DV 5, Controlled)</span>
+        <span class="badge badge-red">Broker the Final Resolution (DV 5, Desperate)</span>
+    </div>
+</div>
+
+<hr>
+
+<h2 id="npcs">👤 Key NPCs</h2>
+<div class="grid-2">
+    <div class="npc-card">
+        <div class="npc-name">Vault-Queen Thora Stonebeard</div>
+        <div class="npc-role">Leader of House Khaz-Vurim</div>
+        <div class="npc-motivation">🎯 Honor her house's obligations while preserving what dignity she can.</div>
+        <div class="npc-secret">Privately suspects the hammer was never fully hers to pledge; hasn't examined it too closely.</div>
+    </div>
+    <div class="npc-card">
+        <div class="npc-name">Clan-Speaker Thrain Ironhold</div>
+        <div class="npc-role">Diplomatic representative of House Khaz-Vurim</div>
+        <div class="npc-motivation">🎯 Resolve the situation without conflict, for everyone's honor.</div>
+        <div class="npc-secret">Genuinely likes the party but is bound by role to enforce the house's rights if pushed.</div>
+    </div>
+    <div class="npc-card">
+        <div class="npc-name">Forge-Master Durin Emberheart</div>
+        <div class="npc-role">Elder master smith, keeper of the hammer's true history</div>
+        <div class="npc-motivation">🎯 See a proper balance restored between the dwarves and the old kinship.</div>
+        <div class="npc-secret">Has always known the hammer's true nature but held his tongue out of loyalty.</div>
+    </div>
+    <div class="npc-card">
+        <div class="npc-name">Guild-Master Thorek Deepdelver</div>
+        <div class="npc-role">Leader of the Edgewalkers Guild, rival prospector</div>
+        <div class="npc-motivation">🎯 Profit and standing for his guild.</div>
+        <div class="npc-secret">Wants credit for solving a problem Khaz-Vurim couldn't — can be turned into an ally with an honest offer to share it.</div>
+    </div>
+</div>
+
+<hr>
+
+<h2 id="locations">📍 Locations</h2>
+<div class="grid-2">
+    <div class="loc-card"><strong>Khaz-Vurim Halls</strong> — Ancestral home, perfect stonework, dignity fraying at the edges.</div>
+    <div class="loc-card"><strong>The Spine Underway</strong> — Vast tunnel network connecting the holds, part maintained, part ancient ruin.</div>
+    <div class="loc-card"><strong>The Forgefather's Crypt</strong> — Sacred resting place of the Forgefather's Voice, ward and ceremony rather than mere lock.</div>
+    <div class="loc-card"><strong>The Living Stone Gallery</strong> — Tunnel section where stone responds to sound; threshold to the Deep Stirrings' domain.</div>
+</div>
+
+<hr>
+
+<h2 id="factions">🏛️ Factions</h2>
+<div class="panel panel-gold"><strong>House Khaz-Vurim</strong> — Controlled, sliding toward Desperate. DV for negotiation: 4/5.</div>
+<div class="panel panel-blue"><strong>The Deep Stirrings</strong> — Dominant in the deep places, patient. DV for communication: 4/5.</div>
+<div class="panel panel-purple"><strong>Edgewalkers Guild</strong> — Controlled, cooperative if approached honestly. DV for cooperation: 3/4/5+.</div>
+
+<hr>
+
+<h2 id="bestiary">⚔️ Bestiary</h2>
+<div class="creature-stats">
+    <strong style="color:var(--gold);">Vault Ward-Construct</strong> — TL 5, Armor 3, Harm Levels: 8 (advanced), Harm 3. Enforces protocol, not malice.
+</div>
+<div class="creature-stats">
+    <strong style="color:var(--gold);">The Stone-Singer</strong> — TL 8, Resistance 3, Harm Levels: None (puzzle). Ancient, patient, communicates through resonance and dream. <em>Resolution:</em> prove the old kinship the bargain represented is still honoured, or say plainly that it is not.
+</div>
+
+<hr>
+
+<h2 id="timers">⏱️ Campaign Timers</h2>
+<div class="timers-grid">
+    <div class="panel panel-orange">
+        <div class="flex-between text-sm"><strong>🏛️ House Standing</strong><span>2/8</span></div>
+        <div class="timer-bar"><div class="timer-bar-fill" style="width:25%;background:var(--orange);"></div></div>
+        <div class="text-xs text-muted">Trust and reputation, not treasury. When full, the house's word stops being trusted by the other clans.</div>
+    </div>
+    <div class="panel panel-blue">
+        <div class="flex-between text-sm"><strong>🌊 Stone-Song Resonance</strong><span>0/6</span></div>
+        <div class="timer-bar"><div class="timer-bar-fill" style="width:0%;background:var(--blue);"></div></div>
+        <div class="text-xs text-muted">How closely the Deep Stirrings are attending. When full, the Stone-Singer makes direct contact.</div>
+    </div>
+    <div class="panel panel-purple">
+        <div class="flex-between text-sm"><strong>⚱️ Ward Standing</strong><span>0/6</span></div>
+        <div class="timer-bar"><div class="timer-bar-fill" style="width:0%;background:var(--purple);"></div></div>
+        <div class="text-xs text-muted">Stability of the Crypt's ceremonial protections. When full, the wards fail.</div>
+    </div>
+</div>
+
+<hr>
+
+<h2 id="gmnotes">🗒️ GM Notes</h2>
+<div class="warn-box"><strong>Debt language guardrail:</strong> Never describe House Standing, the bargain, or any resolution in ledger or accounting terms. Always frame as trust, kinship, reputation, and honor.</div>
+<div class="gm-box"><strong>Act I:</strong> Establish dwarven honor culture as something to respect, not merely navigate. Thora's dignity should come through even in decline.</div>
+<div class="gm-box"><strong>Act II:</strong> Vary the tunnels' texture. Stone-Song Resonance should build a sense of being watched, not hunted — the Deep Stirrings are patient, not predatory.</div>
+<div class="gm-box"><strong>Act III:</strong> The reveal that the hammer represents an older kinship should land with weight but without melodrama — this is a shared, sympathetic complication, not a shocking betrayal.</div>
+<div class="gm-box"><strong>Act IV:</strong> Reward players who've built genuine relationships. The best ending leaves all three parties — Khaz-Vurim, the Stone-Singer, and the party — with their dignity intact.</div>
+
+<hr>
+
+<div style="font-size:0.75rem;color:var(--text3);text-align:center;padding:1rem 0;">
+    The Dwarven Debt — A Fate's Edge Adventure<br>
+    © Nicholas A. Gasper — For use with the Fate's Edge RPG
+</div>
+
+</body>
+</html>

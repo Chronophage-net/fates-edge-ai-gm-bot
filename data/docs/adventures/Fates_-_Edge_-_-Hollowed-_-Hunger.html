@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Hollowed Hunger — A Sequel to the Hollowed Plague</title>
+    <style>
+        :root {
+            --bg1: #0c0908;
+            --bg2: #1a1210;
+            --bg3: #261915;
+            --bg4: #33221c;
+            --text: #ece4de;
+            --text2: #c2b0a4;
+            --text3: #927e70;
+            --gold: #a03028;
+            --gold-hover: #b8443b;
+            --border: #3a2620;
+            --red: #a03028;
+            --green: #4d6b3f;
+            --blue: #4a6b7c;
+            --purple: #6b4a63;
+            --orange: #b06a2e;
+            --gray: #504840;
+            --radius: 8px;
+            --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: var(--bg1);
+            color: var(--text);
+            font-family: var(--font);
+            padding: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4, h5 { color: var(--gold); margin: 0.5rem 0 0.3rem; }
+        h1 { font-size: 1.8rem; border-bottom: 2px solid var(--gold); padding-bottom: 0.3rem; }
+        h2 { font-size: 1.4rem; border-bottom: 1px solid var(--border); padding-bottom: 0.2rem; }
+        h3 { font-size: 1.1rem; }
+        h4 { font-size: 0.95rem; color: var(--text); }
+        a { color: var(--gold); text-decoration: none; }
+        .panel {
+            background: var(--bg2);
+            border-radius: var(--radius);
+            padding: 0.6rem 0.8rem;
+            border: 1px solid var(--border);
+            margin: 0.5rem 0;
+        }
+        .panel-gold { border-left: 4px solid var(--gold); }
+        .panel-red { border-left: 4px solid var(--red); }
+        .panel-blue { border-left: 4px solid var(--blue); }
+        .panel-green { border-left: 4px solid var(--green); }
+        .panel-purple { border-left: 4px solid var(--purple); }
+        .panel-orange { border-left: 4px solid var(--orange); }
+        .badge {
+            display: inline-block;
+            padding: 0.05rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.65rem;
+            font-weight: 600;
+        }
+        .badge-gold { background: var(--gold); color: #fff0ec; }
+        .badge-red { background: var(--red); color: #fff; }
+        .badge-green { background: var(--green); color: #fff; }
+        .badge-blue { background: var(--blue); color: #fff; }
+        .badge-purple { background: var(--purple); color: #fff; }
+        .badge-orange { background: var(--orange); color: #fff; }
+        .badge-gray { background: var(--bg4); color: var(--text3); }
+        .flex { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
+        .flex-between { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.3rem; }
+        .text-muted { color: var(--text3); }
+        .text-gold { color: var(--gold); }
+        .text-sm { font-size: 0.85rem; }
+        .text-xs { font-size: 0.7rem; }
+        .mt-1 { margin-top: 0.5rem; }
+        .mb-1 { margin-bottom: 0.5rem; }
+        .gap-1 { gap: 0.3rem; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+        @media (max-width: 600px) { .grid-2 { grid-template-columns: 1fr; } }
+        .scene-card {
+            background: var(--bg3);
+            border-radius: var(--radius);
+            padding: 0.4rem 0.6rem;
+            margin: 0.3rem 0;
+            border-left: 3px solid var(--gold);
+        }
+        .scene-card.completed { opacity: 0.6; border-left-color: var(--green); }
+        .scene-card.branch-a { border-left-color: var(--orange); }
+        .scene-card.branch-b { border-left-color: var(--purple); }
+        .scene-card .scene-title { font-weight: 600; font-size: 0.9rem; }
+        .scene-card .scene-desc { font-size: 0.8rem; color: var(--text2); }
+        .timer-bar {
+            background: var(--bg4);
+            border-radius: 4px;
+            height: 6px;
+            overflow: hidden;
+            flex: 1;
+            min-width: 60px;
+        }
+        .timer-bar-fill { height: 100%; border-radius: 4px; transition: width 0.3s; }
+        .npc-card, .loc-card {
+            background: var(--bg3);
+            border-radius: var(--radius);
+            padding: 0.3rem 0.5rem;
+            margin: 0.15rem 0;
+            border-left: 2px solid var(--gold);
+        }
+        .npc-card .npc-name { font-weight: 600; font-size: 0.85rem; }
+        .npc-card .npc-role { font-size: 0.7rem; color: var(--text3); }
+        .npc-card .npc-motivation { font-size: 0.75rem; color: var(--text2); }
+        .meta-tag {
+            display: inline-block;
+            padding: 0.05rem 0.4rem;
+            border-radius: 6px;
+            background: var(--bg4);
+            border: 1px solid var(--border);
+            font-size: 0.6rem;
+            color: var(--text3);
+        }
+        .status-badge {
+            padding: 0.1rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.6rem;
+            font-weight: 600;
+        }
+        .status-planned { background: var(--bg4); color: var(--text3); }
+        .status-active { background: var(--gold); color: #1a1400; }
+        .status-completed { background: var(--green); color: #fff; }
+        hr { border: none; border-top: 1px solid var(--border); margin: 0.5rem 0; }
+        details summary { cursor: pointer; color: var(--gold); font-weight: 600; }
+        details summary:hover { color: var(--gold-hover); }
+        .toc { background: var(--bg3); border-radius: var(--radius); padding: 0.5rem 0.8rem; border: 1px solid var(--border); }
+        .toc a { color: var(--text2); display: block; padding: 0.1rem 0; font-size: 0.85rem; }
+        .toc a:hover { color: var(--gold); }
+        .encounter-box {
+            background: var(--bg4);
+            border-radius: var(--radius);
+            padding: 0.3rem 0.5rem;
+            margin: 0.2rem 0;
+            border-left: 3px solid var(--orange);
+            font-size: 0.8rem;
+        }
+        .encounter-box .enc-name { font-weight: 600; color: var(--orange); }
+        .timers-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.3rem; }
+        blockquote {
+            border-left: 3px solid var(--gold);
+            padding-left: 1rem;
+            margin: 0.5rem 0;
+            color: var(--text2);
+            font-style: italic;
+        }
+        .creature-stats {
+            background: var(--bg4);
+            border-radius: var(--radius);
+            padding: 0.3rem 0.5rem;
+            margin: 0.2rem 0;
+            font-size: 0.8rem;
+        }
+        .branch-header {
+            font-weight: 700;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 0.3rem;
+        }
+        .branch-a-header { background: var(--orange); color: #1a1000; }
+        .branch-b-header { background: var(--purple); color: #fff; }
+    </style>
+</head>
+<body>
+
+<h1>🩸 The Hollowed Hunger</h1>
+<p style="color:var(--text2);margin-bottom:1rem;">
+    <span class="badge badge-gold">Tier IV-V</span>
+    <span class="badge badge-blue">3-4 Sessions</span>
+    <span class="badge badge-purple">Sequel</span>
+    <span class="badge badge-orange">Branching Hook</span>
+    <span class="badge badge-gray">Author: Nicholas A. Gasper</span>
+</p>
+<p style="color:var(--text2);margin-bottom:0.5rem;">
+    Months after the Hollowed Plague, the region is scarred and the debt is unpaid. Depending on how the party
+    ended the plague, one of two crises now consumes the frontier: a tide of organized, hungering ghouls (the
+    <strong>Worn Tide</strong>) spilling out of the desert under banners bearing Malachai's ship-sigil, or
+    silver-eyed children who do not age and ask only one question — <em>"What do you owe?"</em> — dispensing
+    clemency or blood-payment as they see fit (the <strong>Hollowed Hunger</strong>). The party is the only
+    group who knows both factions by name. They must return to the threshold where it all went wrong and
+    choose, again, what kind of mercy the world deserves.
+</p>
+
+<blockquote>
+    "I thought the Needle was mercy. Now I wonder if mercy is just another word for control."
+    — Sister Vorna, Winter of the Cord
+</blockquote>
+
+<div class="panel panel-red mb-1">
+    <strong style="color:var(--gold);">⚠️ Safety and Consent at the Table</strong>
+    <p class="text-sm mt-1">This adventure includes mass suffering, famine, undeath, body horror, and difficult
+    moral choices with no clean resolution. It directly follows <em>The Hollowed Plague</em> and assumes the
+    party has witnessed the Turned Hollowed already. Before play, establish Lines (hard boundaries — no sexual
+    violence, no harm to children, no graphic torture), Veils (soft boundaries — describe the Hollowed's hunger
+    obliquely rather than in detail), and confirm an X-Card is available to any player at any time.</p>
+</div>
+
+<!-- Table of Contents -->
+<div class="toc">
+    <strong style="color:var(--gold);">📑 Table of Contents</strong>
+    <a href="#act-1">Act I — The Scarred Land</a>
+    <a href="#act-2">Act II — The Fork Inverted</a>
+    <a href="#act-3">Act III — The Debt That Remains</a>
+    <a href="#bestiary">🐉 Bestiary</a>
+    <a href="#npcs">👤 Key NPCs</a>
+    <a href="#locations">📍 Locations</a>
+    <a href="#factions">🏛️ Factions</a>
+    <a href="#timers">⏱️ Campaign Timers</a>
+    <a href="#gmnotes">🗒️ GM Notes &amp; Secrets</a>
+</div>
+
+<hr>
+
+<!-- ===== ACT I ===== -->
+<div class="panel panel-blue" style="margin:0.6rem 0 1rem;">
+    <strong>Reading an encounter badge.</strong> Each badge names a <strong>DV</strong> and a <strong>Position</strong>. It does not name a dice pool, and that is deliberate: the pool is <em>Attribute + Skill</em>, chosen from how the player says they are going about it. Two characters can attempt the same encounter with different pools and both be right. Where an approach is obviously the intended one, the badge says so; where it does not, ask what they are doing and build the pool from the answer.
+</div>
+
+<h2 id="act-1">🏜️ Act I — The Scarred Land</h2>
+<p><span class="badge badge-gold">Tier IV-V</span> <span class="badge badge-blue">Branch Point</span></p>
+<p style="color:var(--text2);">Months have passed. The Daughters are fractured, Malachai is more active than
+ever, and the party is known — as saviours, as liberators, or as those who failed to choose. This act branches
+hard at the Hook: which path the table plays is determined by how <em>The Hollowed Plague</em> ended, not by
+GM fiat.</p>
+
+<div class="scene-card">
+    <div class="scene-title">🔀 The Hook — Two Roads From One Ending</div>
+    <div class="scene-desc">Determine the branch from table history. <strong>Cord Path →</strong> the Worn Tide begins:
+    Malachai used the party's intrusion into Zahk'Kozahn as a catalyst to tear open a rift, and organized ghouls
+    now spill from the desert. <strong>Malachai Path →</strong> the Hollowed Hunger begins: freed Hollowed wander
+    the caravan routes, silver-eyed and ageless, judging every debt they witness. <strong>Catastrophe (did
+    nothing) →</strong> skip to the Appendix C epilogue instead of the full three acts.</div>
+    <div class="flex text-xs mt-1">
+        <span class="badge badge-gray">Timer: Worn Tide [10]</span>
+        <span class="badge badge-gray">Timer: Hollowed Hunger [10]</span>
+        <span class="badge badge-orange">Encounter: The Messenger (DV 3, Controlled)</span>
+        <span class="badge badge-purple">Encounter: The Silver-Eyed Child (DV 3, Controlled)</span>
+    </div>
+</div>
+
+<div class="scene-card">
+    <div class="scene-title">🔍 Investigation — The Rift or the Hunger</div>
+    <div class="scene-desc">The party gathers scene seeds along their branch: a village where every inhabitant
+    has been judged; a fortress overrun by Worn under Malachai's ship-sigil; a Daughters' hospice quietly
+    converted into a shrine to the Chained Angel. All roads trace to a single threshold.</div>
+    <div class="flex text-xs mt-1">
+        <span class="badge badge-orange">Encounter: Trace the Source (DV 4, Controlled)</span>
+    </div>
+</div>
+
+<div class="scene-card">
+    <div class="scene-title">🤝 Social — The Faction's Plea</div>
+    <div class="scene-desc">Sister Vorna offers a fragile alliance: healing, shelter, and loyal Hollowed scouts,
+    but no help in a fight. If the party seeks the Hollowed's aid instead, Ellia or Collector Prime will help
+    — for a price that is always social, never coin: a witnessed promise, a spared enemy, a surrendered memory.</div>
+    <div class="flex text-xs mt-1">
+        <span class="badge badge-blue">Encounter: Negotiate with Sister Vorna (DV 4, Dominant)</span>
+        <span class="badge badge-orange">Encounter: Negotiate with Ellia/Collector Prime (DV 5, Controlled)</span>
+    </div>
+</div>
+
+<div class="scene-card">
+    <div class="scene-title">⚔️ Combat — The First Incursion</div>
+    <div class="scene-desc">A tutorial encounter establishing the new threat's texture. Worn Ghouls attack in
+    disturbing, disciplined order; Hungry Hollowed circle a settlement asking questions before they act. Neither
+    should feel like a normal monster fight.</div>
+    <div class="flex text-xs mt-1">
+        <span class="badge badge-red">Encounter: Worn Ghouls, 1d4+2 (DV 4, Controlled)</span>
+        <span class="badge badge-red">Encounter: Hungry Hollowed, 1d3+1 (DV 4, Controlled)</span>
+    </div>
+</div>
+
+<hr>
+
+<!-- ===== ACT II ===== -->
+<h2 id="act-2">🔄 Act II — The Fork Inverted</h2>
+<p style="color:var(--text2);">The party must travel to the broken threshold and seal it. This act mirrors the
+original adventure's fork, inverted. Only one path is run per table.</p>
+
+<span class="branch-header branch-a-header">Path A — The Worn Tide</span>
+
+<div class="scene-card branch-a">
+    <div class="scene-title">🏕️ Step 1 — The Worn Siege Line</div>
+    <div class="scene-desc">The approach to Zahk'Kozahn is blocked by a warband encampment. Infiltrate using
+    captured Worn robes (requires a prior kill), or fight through directly.</div>
+    <div class="flex text-xs mt-1">
+        <span class="badge badge-gray">Timer: Worn Morale [8]</span>
+        <span class="badge badge-orange">Encounter: Infiltrate the Siege Line (DV 5, Desperate)</span>
+        <span class="badge badge-red">Encounter: Worn Captains, 1d3 (DV 5, Controlled)</span>
+    </div>
+    <div class="creature-stats mt-1">
+        <strong style="color:var(--gold);">Worn Captain</strong>
+        <span class="badge badge-gray">TL 6</span>
+        <span class="badge badge-gray">Harm Levels: 8 (advanced)</span>
+        <span class="badge badge-gray">Armor 2</span>
+        <span class="badge badge-red">Harm 4</span>
+        <div class="text-xs text-muted">Ichor Burst (2 SB): area Harm 2 in Near. Command Worn (3 SB): summon 2 Worn. Unnatural Vitality (1 SB): regenerate 1 Harm/round. Weakness: decapitation (DV 5 called shot ends regeneration).</div>
+    </div>
+</div>
+
+<div class="scene-card branch-a">
+    <div class="scene-title">⛪ Step 2 — The Cathedral Under Siege</div>
+    <div class="scene-desc">Malachai has broken one arm free of the Aetherium chain. She cannot leave, but she
+    directs the Worn and a handful of Turned Hollowed who still serve her. The party must fight through to
+    reach the rift.</div>
+    <div class="flex text-xs mt-1">
+        <span class="badge badge-gray">Timer: Worn Morale [8]</span>
+        <span class="badge badge-red">Encounter: Worn Ghouls, 1d6+2 (DV 5, Desperate)</span>
+    </div>
+</div>
+
+<div class="scene-card branch-a">
+    <div class="scene-title">💠 Step 3 — Sealing the Rift</div>
+    <div class="scene-desc">The rift bleeds ichor and Worn continuously. A Thread of the Cord, woven in through
+    a Ritual Sealing, can close it: three successes (Arcana, Lore, or Presence) before two failures. Each
+    failure triggers a Wave of Worn.</div>
+    <div class="flex text-xs mt-1">
+        <span class="badge badge-gray">Timer: Ritual Sealing [3, 2-failure cap]</span>
+        <span class="badge badge-orange">Encounter: Ritual Sealing (DV 5, Desperate)</span>
+    </div>
+</div>
+
+<span class="branch-header branch-b-header mt-1">Path B — The Hollowed Hunger</span>
+
+<div class="scene-card branch-b">
+    <div class="scene-title">🚪 Step 1 — The Liminal Descent</div>
+    <div class="scene-desc">The House Without Doors is guarded now by Hollowed who never turned, and by those
+    who have. The threshold trials are inverted: the party must prove they respect the Hollowed's new freedom,
+    not their loyalty to the Cord.</div>
+    <div class="flex text-xs mt-1">
+        <span class="badge badge-gray">Timer: House Trust [6]</span>
+        <span class="badge badge-purple">Encounter: Trial of the Witness (DV 4, Controlled)</span>
+        <span class="badge badge-purple">Encounter: Trial of the Unbroken Cord (DV 5, Dominant)</span>
+    </div>
+</div>
+
+<div class="scene-card branch-b">
+    <div class="scene-title">👑 Step 2 — The High Mother's Judgment</div>
+    <div class="scene-desc">The High Mother lays out the choice with no compromise: mend the Cord and the
+    Hollowed return to silence; cut it and she dies while they go free, hungering forever. This is a decision
+    scene — roleplayed, not rolled.</div>
+    <div class="flex text-xs mt-1">
+        <span class="badge badge-gray">No Roll — Decision Scene</span>
+    </div>
+</div>
+
+<div class="scene-card branch-b">
+    <div class="scene-title">⚖️ Step 3 — The Final Choice</div>
+    <div class="scene-desc"><strong>Mend:</strong> the Hollowed lose sentience and return to silent witnessing;
+    the High Mother survives, weakened; the party gains <em>Cord's Gratitude</em> — but some who tasted
+    freedom will turn again. <strong>Cut:</strong> the High Mother dies, the House collapses, and the Hollowed
+    become a new, lawless people; the party gains <em>Hollowed Covenant</em> — but the Daughters scatter for
+    good.</div>
+    <div class="flex text-xs mt-1">
+        <span class="badge badge-gray">No Roll — Consequence Resolves</span>
+    </div>
+</div>
+
+<hr>
+
+<!-- ===== ACT III ===== -->
+<h2 id="act-3">🕯️ Act III — The Debt That Remains</h2>
+<p style="color:var(--text2);">An epilogue act. No combat here — its job is to let consequences land and seed
+future adventures.</p>
+
+<div class="scene-card">
+    <div class="scene-title">🏔️ Epilogue — Worn Tide Aftermath</div>
+    <div class="scene-desc">The Worn are pushed back to the desert and cut off from reinforcement. Malachai
+    remains chained, but her one free arm reaches further than before. The Aeler holds honor the party and
+    offer a permanent mountain hold. Sister Vorna, reluctant and grieving, becomes the new High Mother.</div>
+</div>
+
+<div class="scene-card">
+    <div class="scene-title">🏘️ Epilogue — Hollowed Hunger Aftermath</div>
+    <div class="scene-desc">The Hollowed establish silent villages where no one ages and no one forgets. Some
+    seek them out for judgment; others hunt them out of fear. The party is remembered either as the ones who
+    gave freedom, or the ones who tried to take it back.</div>
+</div>
+
+<div class="scene-card">
+    <div class="scene-title">📖 Reference — Catastrophe Branch (Appendix C)</div>
+    <div class="scene-desc">If the Cord broke outright, run this shorter branch instead of the full three acts:
+    the Hollowed watch every birth, death, wedding, and treaty without attacking. The party must gather the
+    Cord's scattered fragments and choose to re-weave it, destroy it forever, or broker a Covenant (very high
+    DV, exceptional roleplay required). Bittersweet and tragic by design — do not pad it with combat.</div>
+</div>
+
+<hr>
+
+<!-- ===== BESTIARY ===== -->
+<h2 id="bestiary">🐉 Bestiary</h2>
+
+<div class="creature-stats">
+    <div class="flex-between">
+        <strong style="color:var(--gold);">Worn</strong>
+        <span><span class="badge badge-gray">TL 3</span> <span class="badge badge-gray">undead</span></span>
+    </div>
+    <p class="text-sm mt-1">A ghoul risen from the desert's dead, no longer mindless — organized into warbands
+    under officers who wear the stripped robes of Daughters as trophies. They shuffle in ranks, jaws working,
+    waiting for an order.</p>
+    <p class="text-xs text-muted mt-1">Body 3 · Endurance 3 · Melee 2 · Armor 1 · Harm Levels: 3 (standard), Harm 2</p>
+    <p class="text-xs mt-1"><strong>Ichor Hunger</strong> (1 SB): feeds on a nearby corpse or downed PC, heals 2 Harm. <strong>Desperate Lunge</strong> (2 SB): once bloodied, gains an extra action this exchange.</p>
+    <p class="text-xs text-muted">Weakness: fire. A Worn hit by fire cannot use Ichor Hunger for the rest of the scene.</p>
+</div>
+
+<div class="creature-stats">
+    <div class="flex-between">
+        <strong style="color:var(--gold);">Worn Captain</strong>
+        <span><span class="badge badge-gray">TL 4</span> <span class="badge badge-gray">undead</span></span>
+    </div>
+    <p class="text-sm mt-1">A Worn who kept enough of its old rank to command. It wears a Daughter's gray robe,
+    stitched shut over the wounds that killed it, and carries whatever weapon it died holding.</p>
+    <p class="text-xs text-muted mt-1">Body 4 · Endurance 4 · Melee 4 · Armor 2 · Harm Levels: 3 (standard)</p>
+    <p class="text-xs mt-1"><strong>Ichor Burst</strong> (2 SB): area Harm 3 in Near, DV 4 halves. <strong>Command Worn</strong> (3 SB): summons 2 Worn. <strong>Unnatural Vitality</strong> (1 SB): regenerates 1 Harm/round.</p>
+    <p class="text-xs text-muted">Weakness: decapitation. A DV 5 called shot ends regeneration permanently.</p>
+</div>
+
+<div class="creature-stats">
+    <div class="flex-between">
+        <strong style="color:var(--gold);">Hungry Hollowed</strong>
+        <span><span class="badge badge-gray">TL 3</span> <span class="badge badge-gray">fae-touched</span></span>
+    </div>
+    <p class="text-sm mt-1">A freed Hollowed whose sight has curdled into appetite. Silver wire still traces
+    their eye sockets, but where the First Free merely witness, the Hungry judge — and collect.</p>
+    <p class="text-xs text-muted mt-1">Wits 3 · Presence 3 · Sway 3 · Harm Levels: 3 (standard)</p>
+    <p class="text-xs mt-1"><strong>Silver Gaze</strong> (1 SB): target answers truthfully or takes Harm 2 (Mental). <strong>Witness Recall</strong> (2 SB): reveals a witnessed secret about the target, aloud.</p>
+    <p class="text-xs text-muted">Weakness: cannot cross a threshold of running water.</p>
+</div>
+
+<div class="creature-stats">
+    <div class="flex-between">
+        <strong style="color:var(--gold);">Hungry Hollowed Judge</strong>
+        <span><span class="badge badge-gray">TL 4</span> <span class="badge badge-gray">fae-touched</span></span>
+    </div>
+    <p class="text-sm mt-1">The pack-leader among the Hungry — the one whose hunger has gone furthest toward
+    becoming law. It genuinely believes it is being fair, which is the most dangerous thing about it.</p>
+    <p class="text-xs text-muted mt-1">Wits 4 · Presence 4 · Sway 4 · Harm Levels: 3 (standard)</p>
+    <p class="text-xs mt-1"><strong>Silver Gaze</strong> (1 SB). <strong>Debt Collection</strong> (2 SB): target loses 1 Boon or takes Harm 3. <strong>Witness Summon</strong> (2 SB): calls a nearby Hungry Hollowed within one exchange.</p>
+    <p class="text-xs text-muted">Weakness: cannot harm anyone who has publicly confessed a debt to it.</p>
+</div>
+
+<div class="creature-stats">
+    <div class="flex-between">
+        <strong style="color:var(--gold);">Collector Prime</strong>
+        <span><span class="badge badge-gray">TL 5</span> <span class="badge badge-gray">undead</span></span>
+    </div>
+    <p class="text-sm mt-1">Once a Silent One who chose Malachai's curse rather than remain a witness. It serves
+    as liaison between the Worn and Malachai, speaking in flat, echoing tones that carry no breath behind them.</p>
+    <p class="text-xs text-muted mt-1">Body 4 · Wits 4 · Presence 5 · Armor 2 · Harm Levels: 8 (advanced), Harm 3</p>
+    <p class="text-xs mt-1"><strong>The Well Is Dry</strong> (2 SB): nullifies one Asset or String the target would call on this scene. <strong>Command the Line</strong> (3 SB): rallies 1d3 Worn immediately. <strong>Echo of the Thread</strong> (2 SB): target tests Spirit + Insight DV 4 or is shaken (-1 die to next roll).</p>
+    <p class="text-xs text-muted">Weakness: a Thread of the Cord, held and named aloud, forces it to answer one direct question truthfully before it can act again.</p>
+</div>
+
+<hr>
+
+<!-- ===== NPCS ===== -->
+<h2 id="npcs">👤 Key NPCs</h2>
+<div class="grid-2">
+    <div class="npc-card">
+        <div class="npc-name">Sister Vorna</div>
+        <div class="npc-role">Winter of the Cord, Wounded Survivor</div>
+        <div class="npc-motivation">🎯 Rebuild something from the wreckage of her coven; keep faith with the party even as her faith in the Cord curdles.</div>
+        <div class="text-xs text-muted">Secret: She no longer believes the Needle was ever mercy.</div>
+    </div>
+    <div class="npc-card">
+        <div class="npc-name">Ellia, the First Free</div>
+        <div class="npc-role">First Hollowed to receive the Ichor; reluctant leader</div>
+        <div class="npc-motivation">🎯 Protect the Hollowed's freedom without becoming the tyrant she was made to see.</div>
+        <div class="text-xs text-muted">Secret: She fears freedom and hunger are the same shape wearing different names.</div>
+    </div>
+    <div class="npc-card">
+        <div class="npc-name">Collector Prime</div>
+        <div class="npc-role">Former Silent One, now Malachai's liaison</div>
+        <div class="npc-motivation">🎯 Serve Malachai without complaint, having chosen the curse deliberately.</div>
+        <div class="text-xs text-muted">Secret: It does not regret the choice, which unsettles even Malachai.</div>
+    </div>
+    <div class="npc-card">
+        <div class="npc-name">Malachai</div>
+        <div class="npc-role">The Chained Angel, chained but no longer wholly contained</div>
+        <div class="npc-motivation">🎯 Break fully free of the Aetherium chain.</div>
+        <div class="text-xs text-muted">Secret: One free arm already lets her reach the Worn's minds directly.</div>
+    </div>
+    <div class="npc-card">
+        <div class="npc-name">The High Mother</div>
+        <div class="npc-role">Leader of the Daughters of the Cord, dying</div>
+        <div class="npc-motivation">🎯 Preserve the Cord's order, or ensure its ending is chosen with full understanding.</div>
+        <div class="text-xs text-muted">Secret: She has known for years the Cord could not hold forever.</div>
+    </div>
+</div>
+
+<hr>
+
+<!-- ===== LOCATIONS ===== -->
+<h2 id="locations">📍 Locations</h2>
+<div class="grid-2">
+    <div class="loc-card"><strong>The Aeler Frontier Garrison</strong> — A stone hold on the desert's edge, its walls scorched, besieged under banners bearing Malachai's ship-sigil.</div>
+    <div class="loc-card"><strong>The Converted Hospice</strong> — A Daughters' hospice quietly rearranged into a shrine to the Chained Angel. Candles burn around an empty chain-shaped altar.</div>
+    <div class="loc-card"><strong>The Cathedral at Zahk'Kozahn</strong> — Malachai's prison, one arm now free. The rift she tore open bleeds ichor and Worn into the nave.</div>
+    <div class="loc-card"><strong>The House Without Doors</strong> — The threshold where the Hollowed were unmade, guarded now by Hollowed who never turned and by those who have.</div>
+    <div class="loc-card"><strong>The Old Caravan Route Villages</strong> — Settlements along roads older than the Cord, visited by silver-eyed children who wait, patiently, for an honest answer.</div>
+</div>
+
+<hr>
+
+<!-- ===== FACTIONS ===== -->
+<h2 id="factions">🏛️ Factions</h2>
+<div class="panel panel-blue">
+    <strong>The Daughters of the Cord</strong> — Fractured allies. Sister Vorna's remnant will help the party, but cannot fight for them; the Cord itself is unstable.
+</div>
+<div class="panel panel-red">
+    <strong>The Worn</strong> — Hostile. Organized in a way that should not be possible for mindless ghouls, which is itself the horror.
+</div>
+<div class="panel panel-purple">
+    <strong>The Freed Hollowed</strong> — Ambiguous. Some, led by Ellia, want restraint. Others, the Hungry, have let judgment curdle into appetite.
+</div>
+<div class="panel panel-orange">
+    <strong>Malachai's Faction</strong> — Enemy. Collector Prime serves as its patient, unsettling voice, consolidating the Worn and any loyal Turned Hollowed.
+</div>
+
+<hr>
+
+<!-- ===== TIMERS ===== -->
+<h2 id="timers">⏱️ Campaign Timers</h2>
+<div class="timers-grid">
+    <div class="panel panel-red">
+        <div style="display:flex;justify-content:space-between;font-size:0.8rem;">
+            <strong>🐺 Worn Tide</strong>
+            <span>0/10</span>
+        </div>
+        <div class="timer-bar"><div class="timer-bar-fill" style="width:0%;background:var(--red);"></div></div>
+        <div class="text-xs text-muted">Fills as the party delays intervening. At 8, major cities begin to fall.</div>
+    </div>
+    <div class="panel panel-purple">
+        <div style="display:flex;justify-content:space-between;font-size:0.8rem;">
+            <strong>👁️ Hollowed Hunger</strong>
+            <span>0/10</span>
+        </div>
+        <div class="timer-bar"><div class="timer-bar-fill" style="width:0%;background:var(--purple);"></div></div>
+        <div class="text-xs text-muted">Fills as the Hollowed are hunted or denied restitution. At 8, they begin judging indiscriminately.</div>
+    </div>
+</div>
+
+<hr>
+
+<!-- ===== GM NOTES ===== -->
+<h2 id="gmnotes">🗒️ GM Notes &amp; Secrets</h2>
+
+<div class="panel panel-gold">
+    <strong>Structure</strong>
+    <p class="text-sm mt-1">A direct sequel with a branching hook set by the prior adventure's ending: Cord Path
+    → Worn Tide (Path A, siege-and-rescue, back to Zahk'Kozahn); Malachai Path → Hollowed Hunger (Path B,
+    threshold-trial-and-judgment, back to the House Without Doors); Catastrophe → redirect to the shorter
+    Appendix C epilogue. Only one branch is run per table. Debts throughout are social and narrative — promises,
+    witnessed oaths, surrendered memories, spared enemies — never coin or ledger language.</p>
+</div>
+
+<div class="panel panel-red">
+    <strong>Act I Pacing</strong>
+    <p class="text-sm mt-1">Commit to the branch immediately once table history is known — do not let players
+    hedge between paths. Keep the investigation brisk; its job is to point at the return-to-threshold location,
+    not to be a mystery in its own right. Sister Vorna's plea is the emotional anchor: grieving and bitter, not
+    a quest-dispenser. The First Incursion is a tutorial — let the wrongness of organized ghouls or judging
+    children land before the numbers matter.</p>
+</div>
+
+<div class="panel panel-orange">
+    <strong>Act II Pacing</strong>
+    <p class="text-sm mt-1">Path A is a hard-timer siege-and-ritual structure — play it as escalating pressure
+    toward a violent climax. Path B is a near-diceless trial-and-judgment structure — play it as a slow
+    tightening of an impossible choice, culminating in a no-roll decision scene the table must actually debate.
+    Do not treat Path B's lack of dice as lesser; it should take at least as long at the table as Path A.</p>
+</div>
+
+<div class="panel panel-green">
+    <strong>Act III Pacing</strong>
+    <p class="text-sm mt-1">No combat, no new dice. Its function is to let consequences land and seed future
+    adventures (Rift Shard asset, Cord's Gratitude or Hollowed Covenant strings). Narrate as a montage; ask
+    each player what their PC does in the weeks after and let that shape the epilogue.</p>
+</div>
+
+<div class="panel panel-blue">
+    <strong>NPC Secrets</strong>
+    <p class="text-sm mt-1"><strong>Sister Vorna</strong> has quietly stopped believing the Needle was ever
+    mercy; she has not said this to another Daughter. <strong>Ellia</strong> fears she is becoming a Judge
+    rather than a witness — let this surface obliquely. <strong>Collector Prime</strong> chose its curse
+    willingly and does not regret it; reveal only if directly, respectfully asked. <strong>Malachai's</strong>
+    one free arm already lets her reach the Worn's minds directly, meaning Path A's resolution is only a
+    partial victory — let this surface through continued Worn coordination after the fact, not as an
+    announcement. <strong>The High Mother</strong> has known for years the Cord could not hold; her calm is
+    dignity, not defeat.</p>
+</div>
+
+<div class="panel panel-purple">
+    <strong>Forbidden Early Revelations</strong>
+    <ul class="text-sm mt-1" style="padding-left:1.2rem;">
+        <li>Malachai's free arm reaching the Worn's minds — surfaces through play, never announced</li>
+        <li>Collector Prime's willing, unregretted choice — only on direct, respectful question</li>
+        <li>The High Mother's acceptance of the Cord's end — emerges through demeanor, not pre-stated</li>
+        <li>That some Mended Hollowed will eventually turn again — a future-adventure seed, not a warning</li>
+        <li>The exact wording of the High Mother's ultimatum — gesture at the stakes; don't pre-script the choice</li>
+    </ul>
+</div>
+
+<div class="panel panel-gold">
+    <strong>Tactical Hints</strong>
+    <p class="text-sm mt-1">Play Worn discipline as horror, not numbers — a single Worn standing at attention
+    for an order that never comes is worse than a horde. Never let "What do you owe?" be rhetorical — make the
+    player actually answer, briefly, at the table. Keep Ritual Sealing urgent through description (rising
+    ichor, shaking ground) even without an explicit countdown timer. Resist adding a roll to the no-roll
+    decision scenes — the tension is the table's deliberation, not the dice.</p>
+</div>
+
+<hr>
+
+<div style="font-size:0.75rem;color:var(--text3);text-align:center;padding:1rem 0;">
+    The Hollowed Hunger — A Fate's Edge Adventure<br>
+    "The debt is never closed. It only changes shape."<br>
+    © Nicholas A. Gasper — For use with the Fate's Edge RPG
+</div>
+
+</body>
+</html>

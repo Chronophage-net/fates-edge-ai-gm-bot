@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Hollowed Plague — A Sister Coven / Chained Angel Adventure</title>
+<style>
+    :root {
+        --bg1: #090b07;
+        --bg2: #12150e;
+        --bg3: #1a1e14;
+        --bg4: #23281a;
+        --text: #e1e4d6;
+        --text2: #a8ac98;
+        --text3: #757a68;
+        --gold: #8fa24c;
+        --gold-hover: #a3b862;
+        --border: #313524;
+        --red: #7c2e2e;
+        --green: #4a6b3a;
+        --blue: #3c5866;
+        --purple: #5c3f6e;
+        --orange: #8a5a2a;
+        --silver: #9aa8a2;
+        --ichor: #4a2a52;
+        --radius: 8px;
+        --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+        background: var(--bg1);
+        background-image: radial-gradient(circle at 50% 0%, #131711 0%, #090b07 60%);
+        color: var(--text);
+        font-family: var(--font);
+        padding: 1.5rem;
+        max-width: 1100px;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+    h1, h2, h3, h4, h5 { color: var(--gold); margin: 0.5rem 0 0.3rem; }
+    h1 { font-size: 1.8rem; border-bottom: 2px solid var(--gold); padding-bottom: 0.3rem; }
+    h2 { font-size: 1.4rem; border-bottom: 1px solid var(--border); padding-bottom: 0.2rem; margin-top: 1.5rem; }
+    h3 { font-size: 1.1rem; }
+    h4 { font-size: 0.95rem; color: var(--text); }
+    a { color: var(--gold); text-decoration: none; }
+    p { margin: 0.4rem 0; }
+    .subtitle { color: var(--text2); margin-bottom: 1rem; }
+    .panel {
+        background: var(--bg2);
+        border-radius: var(--radius);
+        padding: 0.6rem 0.9rem;
+        border: 1px solid var(--border);
+        margin: 0.6rem 0;
+    }
+    .panel-gold { border-left: 4px solid var(--gold); }
+    .panel-red { border-left: 4px solid var(--red); }
+    .panel-blue { border-left: 4px solid var(--blue); }
+    .panel-green { border-left: 4px solid var(--green); }
+    .panel-purple { border-left: 4px solid var(--purple); }
+    .panel-orange { border-left: 4px solid var(--orange); }
+    .panel-silver { border-left: 4px solid var(--silver); }
+    .panel-ichor { border-left: 4px solid var(--ichor); }
+    .badge {
+        display: inline-block;
+        padding: 0.05rem 0.5rem;
+        border-radius: 12px;
+        font-size: 0.65rem;
+        font-weight: 600;
+    }
+    .badge-gold { background: var(--gold); color: #0f1207; }
+    .badge-red { background: var(--red); color: #fff; }
+    .badge-green { background: var(--green); color: #fff; }
+    .badge-blue { background: var(--blue); color: #fff; }
+    .badge-purple { background: var(--purple); color: #fff; }
+    .badge-orange { background: var(--orange); color: #fff; }
+    .badge-silver { background: var(--silver); color: #0f1207; }
+    .badge-ichor { background: var(--ichor); color: #fff; }
+    .badge-gray { background: var(--bg4); color: var(--text3); }
+    .flex { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
+    .text-muted { color: var(--text3); }
+    .text-gold { color: var(--gold); }
+    .text-sm { font-size: 0.85rem; }
+    .text-xs { font-size: 0.7rem; }
+    .mt-1 { margin-top: 0.5rem; }
+    .mb-1 { margin-bottom: 0.5rem; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+    @media (max-width: 700px) { .grid-2 { grid-template-columns: 1fr; } }
+    .npc-card {
+        background: var(--bg3);
+        border-radius: var(--radius);
+        padding: 0.4rem 0.6rem;
+        margin: 0.25rem 0;
+        border-left: 2px solid var(--gold);
+    }
+    .npc-card .npc-name { font-weight: 600; font-size: 0.9rem; color: var(--text); }
+    .npc-card .npc-role { font-size: 0.72rem; color: var(--text3); }
+    .creature-stats {
+        background: var(--bg4);
+        border-radius: var(--radius);
+        padding: 0.45rem 0.7rem;
+        margin: 0.4rem 0;
+        font-size: 0.82rem;
+    }
+    .creature-stats .cname { font-weight: 700; color: var(--gold); font-size: 0.92rem; }
+    .creature-stats .cweak { font-size: 0.78rem; color: var(--silver); margin-top: 0.25rem; }
+    .timer-bar {
+        background: var(--bg4);
+        border-radius: 4px;
+        height: 6px;
+        overflow: hidden;
+        margin-top: 0.3rem;
+    }
+    .timer-bar-fill { height: 100%; border-radius: 4px; }
+    hr { border: none; border-top: 1px solid var(--border); margin: 1rem 0; }
+    blockquote {
+        border-left: 3px solid var(--gold);
+        padding-left: 1rem;
+        margin: 0.6rem 0;
+        color: var(--text2);
+        font-style: italic;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 0.6rem 0;
+        font-size: 0.85rem;
+        background: var(--bg2);
+        border-radius: var(--radius);
+        overflow: hidden;
+    }
+    table th, table td {
+        border: 1px solid var(--border);
+        padding: 0.4rem 0.6rem;
+        text-align: left;
+        vertical-align: top;
+    }
+    table th { background: var(--bg4); color: var(--gold); }
+    table tr:nth-child(even) td { background: var(--bg3); }
+    ul, ol { margin: 0.3rem 0 0.3rem 1.3rem; }
+    li { margin: 0.2rem 0; }
+    .toc { background: var(--bg3); border-radius: var(--radius); padding: 0.6rem 0.9rem; border: 1px solid var(--border); }
+    .toc a { color: var(--text2); display: block; padding: 0.1rem 0; font-size: 0.85rem; }
+    .toc a:hover { color: var(--gold); }
+    .footer {
+        font-size: 0.75rem;
+        color: var(--text3);
+        text-align: center;
+        padding: 1.2rem 0 0.5rem;
+    }
+</style>
+</head>
+<body>
+
+<h1>The Hollowed Plague</h1>
+<p class="subtitle">
+    <span class="badge badge-gold">Tier III–IV</span>
+    <span class="badge badge-blue">3–4 Sessions</span>
+    <span class="badge badge-silver">Curse / Body Horror</span>
+    <span class="badge badge-ichor">Sister Coven vs. Chained Angel</span>
+    <span class="badge badge-gray">Author: Nicholas A. Gasper</span>
+</p>
+<p style="color:var(--text2);">
+    The Daughters of the Cord have kept the Hollowed for centuries — heartless witnesses with silver
+    wire eyes who watch every deathbed oath and never speak. Now Malachai, the Chained Angel, has found a way
+    to wake them. They remember every debt they were forced to witness, and they have begun to collect. The
+    party must choose how the plague ends — and every ending costs something.
+</p>
+
+<blockquote>
+    "The ink is fresh. The road forks. The Hollowed watches."
+</blockquote>
+
+<div class="toc">
+    <strong style="color:var(--gold);">Table of Contents</strong>
+    <a href="#safety">Safety and Consent at the Table</a>
+    <a href="#overview">Adventure Overview</a>
+    <a href="#act1">Act I — The Awakening</a>
+    <a href="#act2">Act II — The Fork</a>
+    <a href="#act3">Act III — The Debt Called Due</a>
+    <a href="#gmtools">GM Tools</a>
+    <a href="#colophon">Colophon</a>
+</div>
+
+<hr>
+
+<!-- ===== SAFETY ===== -->
+<div class="panel panel-blue" style="margin:0.6rem 0 1rem;">
+    <strong>Reading an encounter badge.</strong> Each badge names a <strong>DV</strong> and a <strong>Position</strong>. It does not name a dice pool, and that is deliberate: the pool is <em>Attribute + Skill</em>, chosen from how the player says they are going about it. Two characters can attempt the same encounter with different pools and both be right. Where an approach is obviously the intended one, the badge says so; where it does not, ask what they are doing and build the pool from the answer.
+</div>
+
+<h2 id="safety">Safety and Consent at the Table</h2>
+<p>This adventure includes themes of body horror (hollowed creatures, undeath), loss of identity, coercion, and moral choices with no clean solution.</p>
+<p>Before play, establish:</p>
+<div class="panel panel-gold">
+    <ul>
+        <li><strong>Lines:</strong> Hard boundaries. Example: no sexual violence, no harm to children (the Hollowed are child-like but are not human children), no graphic torture.</li>
+        <li><strong>Veils:</strong> Soft boundaries. Example: a Hollowed's transformation can be described obliquely rather than depicted in detail.</li>
+        <li><strong>X-Card:</strong> Any player may tap an X-card to pause or remove a scene without explanation. The table pivots immediately.</li>
+    </ul>
+</div>
+<p class="text-sm text-muted">Use these tools. Trust them.</p>
+
+<hr>
+
+<!-- ===== OVERVIEW ===== -->
+<h2 id="overview">Adventure Overview</h2>
+
+<h3>The Hollowed Plague</h3>
+<p>The Daughters of the Cord have maintained the Hollowed for centuries — heartless children with silver wire eyes, perfect witnesses to every deathbed oath and whispered debt. They do not speak. They do not hunger. They simply watch.</p>
+<p>Now something has changed.</p>
+<p>Malachai, the Chained Angel, has found a way to curse the Hollowed. The curse does not destroy them; it <em>wakens</em> them. They gain free will. They remember the debts they witnessed — and they resent every one. The first Hollowed to turn did so in the hospice of Sister Aris. It rose from its corner, blinked its silver eyes, and walked out into the world.</p>
+<p>Now they stalk the countryside. They are not mindless. They are witnesses turned persecutors. They seek out those who owe debts to the Cord — and they collect in blood.</p>
+<p>The Daughters are paralyzed. Their own witnesses have become their hunters. The High Mother weaves furiously, trying to contain the corruption, but the Cord frays with each Hollowed that breaks free.</p>
+
+<h3>The Fork — Two Paths, Two Cures, One Choice</h3>
+<p>At the end of Act I, the party must choose how to stop the plague. There is no third way — only the consequences of the path taken.</p>
+<div class="grid-2">
+    <div class="panel panel-silver">
+        <strong>The House Without Doors (Chain Path)</strong>
+        <p class="text-sm mt-1">Retrieve a <strong>First Needle</strong>, one of the original artifacts used to hollow the first child. Using the Needle will <strong>end the plague</strong> and return the Turned Hollowed to their original state — silent, heartless witnesses. They will not be free, but they will not hunt. The Cord survives, but the Hollowed remain prisoners.</p>
+    </div>
+    <div class="panel panel-ichor">
+        <strong>Zahk'Kozahn (Chained Angel Path)</strong>
+        <p class="text-sm mt-1">Steal a <strong>Flash of Ichor</strong>, a drop of Malachai's own blood. Using the Ichor will <strong>give the Turned Hollowed true sentience</strong> — they will be free, with wills of their own. But Malachai's gift is never clean. The Ichor carries a hidden curse. The Hollowed may be alive, but they will always hunger for something. No one knows what.</p>
+    </div>
+</div>
+
+<h3>The Hidden Consequence — Doing Nothing</h3>
+<p>If the party delays too long or refuses to choose, the war escalates. The Turned Hollowed, desperate and angry, seek out the source of their suffering — the High Mother. They assault the House Without Doors, forcing her to unravel the Cord in self-defense. The resulting explosion of gray thread does not stop the Hollowed; it scatters them across every threshold, every doorway, every birth and death bed in the known world. The Hollowed become a permanent, haunting plague — witnesses without masters, cursed to remember every sin they ever saw.</p>
+<p class="text-sm text-muted"><em>The Cord breaks. The nations burn. There is no third option.</em></p>
+
+<h3>The Corruption Timer — Hollowed Awakening</h3>
+<p>A single 8-segment timer tracks the spread of the curse among the Hollowed.</p>
+<div class="panel panel-red">
+    <div class="flex" style="justify-content:space-between;">
+        <strong>Hollowed Awakening</strong><span class="badge badge-red">0/8</span>
+    </div>
+    <div class="timer-bar"><div class="timer-bar-fill" style="width:0%;background:var(--red);"></div></div>
+    <p class="text-sm mt-1">Ticks when:</p>
+    <ul class="text-sm">
+        <li>A Hollowed attack is witnessed (or a corpse found). +1</li>
+        <li>A Daughter is killed by a Hollowed. +2</li>
+        <li>The party fails to protect a Daughter or a hospice. +1</li>
+        <li>A PC willingly accepts a curse from Malachai. +2</li>
+    </ul>
+    <p class="text-sm mt-1"><strong>At 4 segments:</strong> Hollowed begin to form packs; travel at night is dangerous.</p>
+    <p class="text-sm"><strong>At 6 segments:</strong> A Sister coven is overrun; a Winter is killed.</p>
+    <p class="text-sm"><strong>At 8 segments:</strong> The High Mother begins to unravel; the House Without Doors begins to collapse. The party must resolve the adventure before the timer fills or face the cataclysmic outcome (the Cord breaks, nations burn).</p>
+</div>
+
+<div class="flex mt-1">
+    <span class="badge badge-gold">Recommended Tier: III–IV (characters with assets, followers, and Patron ties)</span>
+    <span class="badge badge-blue">Estimated Play Time: 3–4 sessions</span>
+</div>
+
+<hr>
+
+<!-- ===== ACT I ===== -->
+<h2 id="act1">Act I — The Awakening</h2>
+
+<h3>The Hook</h3>
+<p>The party is traveling through a rural valley when they find a small hospice — a Daughter's waystation — abandoned, its doors torn open. Inside, the bodies of two Daughters lie twisted, their chests hollowed out. Their eyes are missing.</p>
+<p>A third Daughter, gravely wounded, clutches a gray cord. "The Hollowed," she whispers. "They... woke up. They asked us why we took their hearts. Then they took ours."</p>
+<p>She dies.</p>
+<p>In her hand is a silver coin — warm, stamped with a ship. A Malachai coin.</p>
+
+<h3>Key NPCs — Act I</h3>
+<div class="npc-card">
+    <div class="npc-name">Sister Vorna (Winter of the Cord)</div>
+    <div class="npc-role">A severe woman with gray braids and a Thorn-Pin in her hair. She is the only Winter in the region not yet attacked. She suspects Malachai is behind the curse, but she cannot prove it. She needs the party to investigate.</div>
+    <p class="text-sm mt-1"><em>"The Hollowed are our eyes. If they have turned, we are blind. Find me the source — the first needle, the first coin — before we are all deaf as well."</em></p>
+</div>
+<div class="npc-card">
+    <div class="npc-name">The Hollowed (First Breaker)</div>
+    <div class="npc-role">A child with silver wire eyes, but its mouth is no longer sewn shut. It speaks in a flat, echoing voice.</div>
+    <p class="text-sm mt-1"><em>"The Cord stole my heart. The Angel gave me a voice. Why should I watch for you when I never chose to see?"</em></p>
+    <p class="text-sm">This Hollowed can be negotiated with, fought, or studied. It carries a shard of ichor (not enough to cure, but enough to prove Malachai's involvement).</p>
+</div>
+<div class="npc-card">
+    <div class="npc-name">"Broken" Lysias (Malachai Cultist, optional)</div>
+    <div class="npc-role">A Malachai follower who has fallen out of favor. He offers to trade information on the curse for protection. He is terrified of what he helped unleash.</div>
+</div>
+
+<h3>Key Encounters — Act I</h3>
+
+<h4>The Waking Hollowed (Investigation / Social)</h4>
+<p>The party tracks the First Breaker to an abandoned mill. The Hollowed is not hostile — it is confused, angry, and desperate for answers. It asks:</p>
+<ul>
+    <li>"Who made me?"</li>
+    <li>"Why am I not allowed to speak?"</li>
+    <li>"What is the debt I witnessed? No one told me why I had to watch."</li>
+</ul>
+<p>The party can learn that the curse was planted when a Malachai cultist placed a silver coin in the mouth of a Hollowed (a secret ritual). Success (Wits + Insight, DV 4) reveals that the coin was not just any coin — it was a <strong>First Coin</strong>, blessed by Malachai herself.</p>
+
+<h4>The First Coin (Recovery)</h4>
+<p>The coin is still in the mill, lodged in the Hollowed's chest. To retrieve it, the party must:</p>
+<ul>
+    <li><strong>Negotiate:</strong> Presence + Sway, DV 4. The Hollowed wants to know what it will gain by giving up its "gift."</li>
+    <li><strong>Combat:</strong> The Hollowed (TL 5) attacks. It is fast, strong, and can phase through shadows. Defeating it yields the coin.</li>
+    <li><strong>Stealth:</strong> While another PC distracts it, a thief can extract the coin (Wits + Deception, DV 5).</li>
+</ul>
+<p>The coin is warm and pulses. If a PC spends it (gains 2 Boons, but begins a Curse Timer), they become a target for the Hollowed — and also gain a clue about the location of the First Needle or the Ichor.</p>
+
+<h4>The Winter's Judgment</h4>
+<p>Sister Vorna examines the coin. "This is not a normal curse. It is an anchor. Malachai has attached something to the Hollowed — a thread that leads back to... somewhere. I cannot see the end. But you can."</p>
+<p>She offers two paths. "The First Needles are kept in the House Without Doors, in the Chamber of the First Hollowed. No Daughter may enter — the Runekeepers of the High Mother guard it as their highest charge. But you are not Daughters. You may pass if you can survive the liminal threshold."</p>
+<p>"Or you could trace the coin to its source — to the cursed city, to Zahk'Kozahn. But you cannot enter that place without bearing a curse yourself. You would have to accept a Malachai gift. That is a price I cannot ask you to pay."</p>
+<p>"Choose quickly. The Hollowed are waking faster. If you do nothing... the Cord will break. And when the Cord breaks, every threshold will bleed. Nations will burn."</p>
+
+<h3>Act I Resolution</h3>
+<p>The party leaves the hospice with the coin and the knowledge of the two paths.</p>
+<ul>
+    <li>Advance the <strong>Hollowed Awakening</strong> timer by +1 for each Daughter killed in the hospice.</li>
+    <li>If they killed the First Breaker, advance by +1 (the violence attracts more Hollowed).</li>
+</ul>
+<p>The GM then presents the fork. The party must choose. There is no turning back.</p>
+
+<hr>
+
+<!-- ===== ACT II ===== -->
+<h2 id="act2">Act II — The Fork</h2>
+
+<h3>Path A — The House Without Doors</h3>
+
+<h4>Requirement</h4>
+<p>No special curse needed. The party must reach a liminal threshold — a crossroads at dawn, a river that flows uphill, or a door that appears only when a specific debt is spoken aloud. Sister Vorna provides the ritual to open the way.</p>
+
+<h4>Step 1 — The Liminal Trial (Threshold Challenges)</h4>
+<p>The party must pass three challenges, each representing a trial of the Cord's ethos. Failure advances a <strong>Threshold Collapse [6]</strong> timer; when full, the way is blocked and the party must find another entrance (costs time, ticks the Hollowed Awakening timer by +2).</p>
+
+<p><strong>Trial of the Unspoken Name.</strong> A door asks: "What is the name of the first child who was hollowed?" The answer is not written anywhere. It is a secret held only by the High Mother. The party must either:</p>
+<ul>
+    <li><strong>Research:</strong> Wits + Lore, DV 5, using fragments of lore from the hospice (interviews with Daughters, old ledgers). Success gives a name: <em>Ellinor, the Stillborn Daughter</em>.</li>
+    <li><strong>Bargain:</strong> A Silent One (a Hollowed not yet turned) appears and offers the name in exchange for a memory (permanent, choose a minor fact).</li>
+    <li><strong>Guess:</strong> Wrong answers trigger a <strong>Wrath of the Unnamed</strong> — the door attacks with psychic harm (Resist DV 3, 2 Fatigue on failure).</li>
+</ul>
+
+<p><strong>Trial of the Witness.</strong> The party crosses a hall lined with mirrors. In each reflection, they see a version of themselves who accepted a Malachai coin. The mirrors ask: "What would you give up to be free of that temptation?" Each PC must answer. Honest answers (roleplayed, no roll) let them pass. Deflection or lies cause a mirror to shatter, releasing a <strong>Reflection Wraith</strong> (TL 3) that attacks.</p>
+
+<p><strong>Trial of the Unbroken Cord.</strong> A thread of gray cord spans a chasm. To cross, the party must tie themselves together with a piece of cord (they have to use their own bonds or a symbolic thread). The cord tests their loyalty: if any PC acts selfishly (tries to cross alone, hoards a resource), the cord snaps and the party is separated (lose 1 Segment on the Threshold Collapse timer). If they cooperate, they gain a <strong>Cord Token</strong> (once, re-roll a failed social roll with a Daughter).</p>
+
+<h4>Step 2 — The Siege of the House</h4>
+<p>The House Without Doors is not a building — it is a shifting, liminal space. As the party approaches, they find it besieged by <strong>Turned Hollowed</strong> — infected witnesses, their silver eyes now black, their mouths open in silent screams. The Hollowed are trying to break in, not to destroy the House, but to <em>enter</em> — to confront the High Mother.</p>
+<p>The party must fight or sneak through the siege to reach the threshold.</p>
+<div class="panel panel-orange">
+    <strong>Siege Timer [6]</strong>
+    <p class="text-sm mt-1">Ticks as the party fights. At 2, reinforcements arrive (more Turned Hollowed). At 4, a <strong>Hollowed Pack Leader</strong> (TL 6) appears. At 6, the party is overwhelmed — they must flee or find a different entrance (the House may open a side door for a price).</p>
+</div>
+<p><strong>Encounter Types:</strong></p>
+<ul>
+    <li><strong>Stealth:</strong> Wits + Stealth, DV 4, to slip between patrolling Hollowed. Failure triggers combat.</li>
+    <li><strong>Combat:</strong> 2–4 Turned Hollowed (TL 3 each, Tier II). They have silver wire eyes and clawed hands. They are silent.</li>
+    <li><strong>Distraction:</strong> Presence + Deception, DV 3, to lure a group away. Success reduces the Siege Timer by 1.</li>
+</ul>
+
+<h4>Step 3 — The Guardians of the Needle (Final Encounter)</h4>
+<p>Inside the House, the party finds the <strong>Chamber of the First Hollowed</strong>. A dozen <strong>Runekeeper Daughters of the High Mother</strong> guard it — the most loyal and powerful members of the Cord, their flesh codices glowing.</p>
+<p>They do not attack immediately. The eldest speaks: "You come for the First Needle. We know. The High Mother knows. She will not give it freely. To take it, you must prove you are not here to serve the Chained Angel."</p>
+<p><strong>The Trial of the Needle:</strong> The Runekeepers demand the party answer three riddles (related to debt, witness, and mercy). Each riddle is a test of the Cord's philosophy. The party may:</p>
+<ul>
+    <li><strong>Answer correctly:</strong> Presence + Lore, DV 4 per riddle. Success grants a boon; failure forces a fight.</li>
+    <li><strong>Refuse and fight:</strong> Combat against 2–3 Runekeepers (TL 6 each, Tier III–IV). They use <em>Cord of Flesh</em> (store Fatigue) and <em>Unnamed Strike</em> (temporary name loss).</li>
+    <li><strong>Bargain:</strong> Offer a memory, a name, or a future debt to the High Mother in exchange for the Needle. The Runekeepers accept if the offer is weighty enough (e.g., a PC's true name, a bond with a loved one).</li>
+</ul>
+<p>Once the Needle is retrieved (a slender, cold silver rod, warm to the touch), the House begins to shake. The High Mother weeps. "Go. Heal what I broke." A door opens to the outside — directly into the valley where the adventure began.</p>
+
+<h4>Path A Resolution</h4>
+<p>The party escapes with the <strong>First Needle</strong>. They can now attempt to end the plague by returning the Hollowed to their original state (see Act III, Resolution A).</p>
+
+<h3>Path B — Zahk'Kozahn</h3>
+
+<h4>Requirement</h4>
+<p>At least one PC must be cursed with a Malachai gift (vampirism, lycanthropy, a thorn, a silver coin used). If none are, they must accept a curse from a Malachai cultist (or from the First Breaker) — this begins a Curse Timer.</p>
+
+<h4>Step 1 — The Road to the Cursed City</h4>
+<p>Zahk'Kozahn cannot be found by the uncursed. A cursed PC leads the party through a dream-scape of drifting sands and broken fig trees. The journey takes three days, but in the waking world only one night passes.</p>
+<p><strong>Travel Timers:</strong></p>
+<ul>
+    <li><strong>Desert Hunger [6]:</strong> Ticks as the party suffers the curse's influence. At 2, the cursed PC must feed (take 1 Fatigue or attack an ally). At 4, hallucinations begin (–1 die to all rolls). At 6, the cursed PC transforms partially (gain a mutation).</li>
+    <li><strong>Approach to the City [8]:</strong> Ticks up as the party progresses. Must fill to reach the gates.</li>
+</ul>
+
+<h4>Step 2 — The Ghoul City</h4>
+<p>Zahk'Kozahn is not deserted. It is populated by <strong>Worn</strong> — the ghoul descendants of those who served Malachai before her chaining. They are undead, desperate, and strung out on ichor residue.</p>
+<p>The party must cross several districts to reach the ziggurat.</p>
+<p><strong>Key Encounters:</strong></p>
+<ul>
+    <li><strong>The Market of Whispers:</strong> Ghouls trade memories for ichor. The party can barter (give a memory, gain a clue) or fight (the ghouls are TL 3 each, Tier II, but numerous). Success reveals the path to the ziggurat.</li>
+    <li><strong>The Fig Tree Grove:</strong> A grove where cursed trees bear fruit that whispers secrets. Eating a fruit gives a vision of the Well of Ichor (grants +1 die to the final descent) but marks 1 Corruption.</li>
+    <li><strong>The Silent Procession:</strong> A parade of Hollowed (Turned) marches through the city, led by a <strong>Collector</strong> (a child with silver wire eyes, now grown). They do not attack unless provoked. If the party hides (Wits + Stealth, DV 5), they pass safely. If they fight, they face a difficult battle (TL 8).</li>
+</ul>
+
+<h4>Step 3 — The Well of Ichor (Final Encounter)</h4>
+<p>Beneath the ziggurat, in the cathedral where Malachai is chained, the party finds the <strong>Well</strong>. The ichor is black, thick, and steaming. Malachai's voice whispers from the chains: "Take what you need. But know: a flash of ichor is a fragment of my blood. It will remember you. And so will they."</p>
+<p>To extract a <strong>Flash of Ichor</strong> (a single drop, sealed in a phial), the party must:</p>
+<ul>
+    <li><strong>Drink from the Well (cursed PC only):</strong> They gain 2 Boons and a permanent Ichor-Touched boon (once per session, ignore a curse effect), but the Flash is collected automatically.</li>
+    <li><strong>Use a ritual:</strong> Arcana + Lore, DV 5. Success extracts a drop without drinking. Failure causes the ichor to spatter; the cursed PC must test Spirit + Insight (DV 4) or gain a temporary mutation (e.g., silver eyes, thirst for blood).</li>
+    <li><strong>Steal from Malachai's chains:</strong> A direct confrontation with the Chained Angel (she cannot move, but she can curse). Each PC must test Spirit + Insight vs DV 5 or gain a Curse Timer segment. Success allows one PC to chip a fragment of dried ichor from her binding.</li>
+</ul>
+<p>Once the Flash is secured, Malachai laughs. "You think you can give them freedom? You can. But freedom is a hunger. I would know."</p>
+<p>A door opens — a threshold back to the waking world. The party must escape before the curse of the city claims them (run a chase; failures tick the Desert Hunger timer).</p>
+
+<h4>Path B Resolution</h4>
+<p>The party escapes with the <strong>Flash of Ichor</strong>. They can now attempt to give the Turned Hollowed true sentience (see Act III, Resolution B).</p>
+
+<hr>
+
+<!-- ===== ACT III ===== -->
+<h2 id="act3">Act III — The Debt Called Due</h2>
+<p>The party has either the First Needle or the Flash of Ichor (or, perhaps miraculously, both). They must return to a Daughter's hospice — or any threshold sanctified by the Cord — and perform a ritual.</p>
+
+<h3>The Ritual</h3>
+<p>Sister Vorna (or a surviving Winter) prepares the space. The party must protect her while she works.</p>
+<div class="panel panel-purple">
+    <strong>Ritual Timer [8]</strong>
+    <p class="text-sm mt-1">Ticks as the ritual progresses. Each exchange, a PC can contribute (choose a skill: Arcana to guide the energy, Presence to soothe the Cord, Body to hold the threshold steady). On a success, tick the timer; on a failure, the GM ticks the Hollowed Awakening timer instead (the curse spreads faster).</p>
+</div>
+
+<h4>Complications During the Ritual</h4>
+<p>At each segment tick, roll 1d6 on the table:</p>
+<table>
+    <thead><tr><th>d6</th><th>Complication</th></tr></thead>
+    <tbody>
+        <tr><td>1</td><td>A Turned Hollowed attacks the hospice. (Combat, TL 5)</td></tr>
+        <tr><td>2</td><td>The ritual backfires — one PC gains a Curse Timer segment.</td></tr>
+        <tr><td>3</td><td>A Silent One (still loyal) appears and offers to help, but demands a memory.</td></tr>
+        <tr><td>4</td><td>The Cord frays — a Daughter falls to the curse; she becomes a Turned Hollowed.</td></tr>
+        <tr><td>5</td><td>Malachai's voice echoes; all cursed PCs test Spirit + Insight DV 4 or lose their next action.</td></tr>
+        <tr><td>6</td><td>A flash of ichor spills; the ground becomes difficult terrain (–1 Position to all).</td></tr>
+    </tbody>
+</table>
+
+<h3>Resolution A — Using the First Needle</h3>
+<p class="text-sm text-muted">(End the Plague, Return Hollowed to Their Original State)</p>
+<p>The needle is inserted into the Cord's heart (a glowing knot at the center of the ritual circle). The High Mother's scream shakes the House. All Turned Hollowed in the region collapse, their eyes closing. They are no longer cursed — they are simply dead. The Hollowed that remain are restored to their original, silent, heartless state. They will witness again. They will never wake.</p>
+<p>The Cord survives. The Daughters weep with relief.</p>
+<div class="panel panel-silver">
+    <strong>Consequences</strong>
+    <ul class="text-sm mt-1">
+        <li>The Hollowed Awakening timer stops.</li>
+        <li>The party gains a permanent String: <strong>Favor of the High Mother</strong> — once per session, reroll a failed roll involving memory or oath.</li>
+        <li>Malachai is infuriated; she sends a Collector after the party (future adventure hook).</li>
+        <li>The Hollowed are not free. They will never be free. This is mercy to the Cord, but is it mercy to them?</li>
+    </ul>
+</div>
+
+<h3>Resolution B — Using the Flash of Ichor</h3>
+<p class="text-sm text-muted">(Give the Turned Hollowed Sentience)</p>
+<p>The ichor is dripped onto the Cord. It hisses and smokes, and for a moment, the Cord turns black. Then it pulses — and the curse does not reverse. It <em>transforms</em>. The Turned Hollowed do not return to their silent selves. They become fully awake — conscious, aware, and free. Their silver wire eyes now gleam with intelligence. They speak as one voice: "We see. We remember. We choose."</p>
+<p>But Malachai's gift is never clean. The ichor carries a hidden curse. The Hollowed are free, but they now <em>hunger</em> — not for blood, but for truth. They will seek out every debt they ever witnessed and demand restitution. Some will be merciful. Others will not.</p>
+<p>The Hollowed are no longer prisoners. They are a new people — born of suffering, shaped by debt, and armed with every secret the dying ever whispered.</p>
+<div class="panel panel-ichor">
+    <strong>Consequences</strong>
+    <ul class="text-sm mt-1">
+        <li>The Hollowed Awakening timer stops.</li>
+        <li>The party gains a permanent String: <strong>Ichor Debt</strong> — once per session, call on a Hollowed for a single piece of witnessed information. But the Hollowed may also call on you.</li>
+        <li>The Daughters are horrified. The High Mother weaves frantically, trying to re-establish control. She will fail.</li>
+        <li>The party has given freedom to the enslaved. But freedom comes at a price, and the invoice is still being written.</li>
+    </ul>
+</div>
+
+<h3>Resolution C — Doing Nothing</h3>
+<p class="text-sm text-muted">(The Cord Breaks, Nations Burn)</p>
+<p>If the party refuses to choose, or if the Hollowed Awakening timer fills before the ritual is attempted, the House Without Doors collapses. The High Mother, in her desperation, unravels the Cord to prevent the Hollowed from entering. The resulting explosion of gray thread does not stop the Hollowed — it scatters them across every threshold, every doorway, every birth and death bed in the known world.</p>
+<p>The Hollowed become a permanent, haunting plague — witnesses without masters, cursed to remember every sin they ever saw. They appear at funerals, at weddings, at the bedsides of the dying. They do not speak. They only watch. And everyone knows that they are judging.</p>
+<p class="text-sm text-muted"><em>The Cord breaks. The nations burn. There is no third option.</em></p>
+<div class="panel panel-red">
+    <strong>Consequences</strong>
+    <ul class="text-sm mt-1">
+        <li>The campaign shifts: the party must now find a way to either destroy the Hollowed or broker a peace between them and the living.</li>
+        <li>Every settlement now has a Hollowed problem. Travel is dangerous. Trust is eroded.</li>
+        <li>Malachai whispers: "You could have chosen. You chose nothing. Now everyone pays."</li>
+    </ul>
+</div>
+
+<hr>
+
+<!-- ===== GM TOOLS ===== -->
+<h2 id="gmtools">GM Tools</h2>
+
+<h3>Key NPC Stat Blocks (Simplified)</h3>
+
+<div class="creature-stats">
+    <div class="cname">Turned Hollowed</div>
+    <span class="badge badge-gray">TL 3</span>
+    <span class="badge badge-gray">Harm Levels: 3 (standard)</span>
+    <span class="badge badge-red">Harm 2</span>
+    <p class="text-sm mt-1"><strong>Abilities:</strong> Silver Gaze (target must test Spirit + Insight or reveal a secret), Silent Step (+2 dice to stealth), Claw (+1 Harm).</p>
+    <p class="cweak"><strong>Weakness:</strong> Can be temporarily pacified by speaking a name they once witnessed (requires knowledge of the memory).</p>
+</div>
+
+<div class="creature-stats">
+    <div class="cname">Runekeeper Daughter of the High Mother</div>
+    <span class="badge badge-gray">TL 6</span>
+    <span class="badge badge-gray">Harm Levels: 8 (advanced)</span>
+    <span class="badge badge-red">Harm 4</span>
+    <p class="text-sm mt-1"><strong>Abilities:</strong> Cord of Flesh (store Fatigue as Knots), Unnamed Strike (target loses name temporarily), Cord Pull (teleport ally).</p>
+    <p class="cweak"><strong>Weakness:</strong> Cannot cross a threshold of running water.</p>
+</div>
+
+<div class="creature-stats">
+    <div class="cname">Malachai's Ghoul (Worn)</div>
+    <span class="badge badge-gray">TL 3</span>
+    <span class="badge badge-gray">Harm Levels: 3 (standard)</span>
+    <span class="badge badge-red">Harm 2</span>
+    <p class="text-sm mt-1"><strong>Abilities:</strong> Ichor Hunger (feed on a corpse to heal 1 Harm), Desperate Lunge (extra action once it has taken Harm).</p>
+    <p class="cweak"><strong>Weakness:</strong> Fire (takes +1 Harm).</p>
+</div>
+
+<h3>Timers Summary</h3>
+<table>
+    <thead><tr><th>Timer</th><th>Segments</th><th>Tracks</th></tr></thead>
+    <tbody>
+        <tr><td>Hollowed Awakening</td><td>8</td><td>Global curse pressure</td></tr>
+        <tr><td>Threshold Collapse</td><td>6</td><td>Time to enter the House (Path A)</td></tr>
+        <tr><td>Siege Timer</td><td>6</td><td>Battle outside the House (Path A)</td></tr>
+        <tr><td>Desert Hunger</td><td>6</td><td>Curse attrition (Path B)</td></tr>
+        <tr><td>Approach to the City</td><td>8</td><td>Travel to Zahk'Kozahn (Path B)</td></tr>
+        <tr><td>Ritual Timer</td><td>8</td><td>Success or failure of the final ritual</td></tr>
+    </tbody>
+</table>
+
+<h3>Random Complication Table (d12)</h3>
+<table>
+    <thead><tr><th>d12</th><th>Complication</th></tr></thead>
+    <tbody>
+        <tr><td>1</td><td>A Hollowed breaks free of the siege and attacks a PC carrying the Needle.</td></tr>
+        <tr><td>2</td><td>The desert hunger manifests: a cursed PC must feed or take Fatigue.</td></tr>
+        <tr><td>3</td><td>A Runekeeper Daughter recognizes a PC from a past debt.</td></tr>
+        <tr><td>4</td><td>Malachai whispers a tempting offer to a PC (gain 2 Boons, start a Curse Timer).</td></tr>
+        <tr><td>5</td><td>The Cord frays; a Daughter dies, and her Hollowed turns.</td></tr>
+        <tr><td>6</td><td>A Silent One (not yet turned) appears and offers critical information for a memory.</td></tr>
+        <tr><td>7</td><td>The ritual site is a former graveyard; the dead rise to interfere.</td></tr>
+        <tr><td>8</td><td>A Collector demands a name as payment for safe passage.</td></tr>
+        <tr><td>9</td><td>The fig tree fruit is hallucinogenic; a PC loses track of time.</td></tr>
+        <tr><td>10</td><td>A ghoul marketeer recognizes the ichor phial and tries to steal it.</td></tr>
+        <tr><td>11</td><td>The High Mother speaks directly to the party: "Choose quickly. I am fraying."</td></tr>
+        <tr><td>12</td><td>A second Flash of Ichor is found — but it costs a finger to retrieve.</td></tr>
+    </tbody>
+</table>
+
+<hr>
+
+<!-- ===== COLOPHON ===== -->
+<h2 id="colophon">Colophon</h2>
+<p>This adventure was written in a hospice where a Hollowed had just turned. The Sister there did not scream. She simply tied a gray cord around her own wrist and waited.</p>
+<p>She is still waiting.</p>
+<blockquote>The ink is fresh. The road forks. The witness opens its eyes. Choose.</blockquote>
+
+<div class="footer">
+    Fate's Edge Copyright — (c) 2024 - 2026 Nicholas A. Gasper. Used with permission, All rights reserved.
+</div>
+
+</body>
+</html>
