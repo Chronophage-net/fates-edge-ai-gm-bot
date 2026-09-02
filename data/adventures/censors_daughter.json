@@ -63,7 +63,7 @@
         {
           "cost": 4,
           "name": "The Ledger Opens",
-          "effect": "Harperar speaks through the host and recites the true name of a PC's greatest failure. The PC must test Spirit+Resolve (DV 5) or be Stunned for one exchange."
+          "effect": "Harperar speaks through the host and recites the true name of a PC's greatest failure. The PC must test Spirit+Endurance (DV 5) or be Stunned for one exchange."
         }
       ],
       "lore": "Harperar was once a contract clause—a hidden interest rate on a loan that could never be repaid. When the original debtor died, the clause didn't vanish. It learned to walk, then to speak, then to wear faces. Now it feeds on obligation, growing stronger with each unpaid promise. Its true name is the interest rate itself, the first lie it told to enter the world."
@@ -489,7 +489,7 @@
     ],
     "trait_discovery": {
       "investigation_during_ritual": {
-        "roll": "Presence+Command vs. DV 12",
+        "roll": "Presence+Sway vs. DV 5",
         "success": "1 trait; Critical = 2 traits; Failure = nothing (+1 timer tick)"
       },
       "research_pre_ritual": {

@@ -182,7 +182,7 @@
       "title": "Ruined Outpost",
       "subtitle": "Watchstack, wayside shrine, marker pile.",
       "flavor": "The ruin's flagstones are warm, as if a great beast sleeps beneath them. The air tastes of rust and thyme. The ninth flagstone is always warm. It is always the one that moves.",
-      "mechanical_hook": "The ruin has a secret (a hidden door, a buried cache, a ghost). Searching takes a scene and a Wits+Investigation test (DV 4). On success, find 1 Diamond of the GM's choice. On failure, the land's attention sharpens — tick the Wilds Timer +1. The flagstones have a pattern—eight visible, one hidden. The hidden one is always the key."
+      "mechanical_hook": "The ruin has a secret (a hidden door, a buried cache, a ghost). Searching takes a scene and a Wits+Insight test (DV 4). On success, find 1 Diamond of the GM's choice. On failure, the land's attention sharpens — tick the Wilds Timer +1. The flagstones have a pattern—eight visible, one hidden. The hidden one is always the key."
     },
     {
       "rank": 9,
@@ -230,7 +230,7 @@
       "title": "Trail Nexus",
       "subtitle": "Migratory, pack, or contraband paths knot here.",
       "flavor": "Three trails meet, but only two are on any map. The third belongs to the dead. Their footprints point the wrong way. The ninth footprint is always the one that follows you.",
-      "mechanical_hook": "Following the dead's path leads to a thin place (see Ways Between). The footprints are fresh — someone walked this way recently. They did not come back. If you take the third path, roll Spirit+Resolve (DV 4). On failure, tick the Wilds Timer +2 and gain the Marked by the Dead condition. The ninth footprint is always the one that matches your boot."
+      "mechanical_hook": "Following the dead's path leads to a thin place (see Ways Between). The footprints are fresh — someone walked this way recently. They did not come back. If you take the third path, roll Spirit+Endurance (DV 4). On failure, tick the Wilds Timer +2 and gain the Marked by the Dead condition. The ninth footprint is always the one that matches your boot."
     }
   ],
   "people_and_factions": [
@@ -584,7 +584,7 @@
       "title": "Bell-Line Failure (Mistlands)",
       "subtitle": "[DEATH]",
       "description": "A ward-bell cracks. Wraiths cross the levee.",
-      "flavor": "Test Spirit + Resolve (DV 4) or gain the Marked by Mist condition (the next spirit encounter starts at Desperate Position). The ninth bell is always the one that cracks.",
+      "flavor": "Test Spirit + Endurance (DV 4) or gain the Marked by Mist condition (the next spirit encounter starts at Desperate Position). The ninth bell is always the one that cracks.",
       "mechanical_hook": "The wraiths are drawn to the party's warmth. If anyone carries a bell, they can ring it to drive them back — but the ring will attract something worse. Tick the Wilds Timer +1. The ninth ring is always the one that summons the Hollow."
     },
     {
@@ -754,7 +754,7 @@
     },
     {
       "roll": 4,
-      "manifestation": "**Ghost Procession** — The land's memory walks. A spectral column crosses the party's path. They must wait (lose 1 segment) or try to cross through (Spirit+Resolve DV 4, or take Harm 1). The ghosts are counting — they count in eights. If you take the ninth step, they will follow you. The ninth ghost is always the one that turns to look at you."
+      "manifestation": "**Ghost Procession** — The land's memory walks. A spectral column crosses the party's path. They must wait (lose 1 segment) or try to cross through (Spirit+Endurance DV 4, or take Harm 1). The ghosts are counting — they count in eights. If you take the ninth step, they will follow you. The ninth ghost is always the one that turns to look at you."
     },
     {
       "roll": 5,

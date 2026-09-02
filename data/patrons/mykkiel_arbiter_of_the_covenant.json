@@ -83,7 +83,7 @@
         "FORCE"
       ],
       "materials": "A stone tablet or scroll with divine commandments.",
-      "effect": "Issue a divine commandment ('Cease,' 'Repent,' 'Submit'). The target tests Spirit+Resolve (DV 3) or complies. Higher DV for more demanding commands.",
+      "effect": "Issue a divine commandment ('Cease,' 'Repent,' 'Submit'). The target tests Spirit+Endurance (DV 3) or complies. Higher DV for more demanding commands.",
       "push_it": "The command carries divine authority; resistance causes 1 SB (Hearts) of spiritual distress, and the target suffers –1 die to all actions for the remainder of the scene. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
       "requires": "Familiar + Codex (Invoke: 1 Boon).",
@@ -191,7 +191,7 @@
       "master": {
         "name": "Judgment Strike",
         "xp": 10,
-        "effect": "Once per session, after successfully hitting a target you have formally judged (via Rite of Divine Judgment or a similar legal ruling), you may declare the strike a Judgment. The target suffers +2 Harm and must test Spirit+Resolve (DV 4) or be Stunned for one round.",
+        "effect": "Once per session, after successfully hitting a target you have formally judged (via Rite of Divine Judgment or a similar legal ruling), you may declare the strike a Judgment. The target suffers +2 Harm and must test Spirit+Endurance (DV 4) or be Stunned for one round.",
         "cost": "Free (once)",
         "prereq": "Tier III, Rite of Divine Judgment"
       }

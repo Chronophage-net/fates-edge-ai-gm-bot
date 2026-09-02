@@ -212,7 +212,7 @@
       "subtitle": "[WARD]",
       "description": "Iron posts, eight bells per span; one bracket empty, one note forbidden.",
       "flavor": "The empty bracket is for the bell that never rings. The rope is still there. It is a reminder that the ninth note must not be sounded.",
-      "mechanical_hook": "Crossing the levee requires a Spirit+Resolve test (DV 4) to resist the mist's pull. On failure, mark 1 Fatigue. A character with a Bell-Key or correct ring sequence may pass without a test."
+      "mechanical_hook": "Crossing the levee requires a Spirit+Endurance test (DV 4) to resist the mist's pull. On failure, mark 1 Fatigue. A character with a Bell-Key or correct ring sequence may pass without a test."
     },
     {
       "rank": 4,
@@ -239,7 +239,7 @@
       "subtitle": "[RITUAL]",
       "description": "Stilted planks; votive lanterns gutter under damp rafters.",
       "flavor": "The icon has no face. Worshippers say it lost its features to the fog, one by one. The Protectorate calls it idolatry. The locals call it memory.",
-      "mechanical_hook": "Offering a prayer (Spirit+Resolve DV 4) clears 1 Fatigue but marks you as 'noticed' by the mist. The GM may spend 1 SB to have the mist ask you a question later."
+      "mechanical_hook": "Offering a prayer (Spirit+Endurance DV 4) clears 1 Fatigue but marks you as 'noticed' by the mist. The GM may spend 1 SB to have the mist ask you a question later."
     },
     {
       "rank": 7,
@@ -275,7 +275,7 @@
       "subtitle": "[RESOURCE]",
       "description": "Patched with peat; ward-salt dries under nets, watched by monks.",
       "flavor": "The monks chant without ceasing. If they stop, the salt spoils—and so does the warding. The Protectorate has tried to mechanize the pans twice. Both attempts failed. The salt knows its keepers.",
-      "mechanical_hook": "You may harvest 1 Supply of salt, but the monks demand a blessing (Spirit+Resolve DV 4) or a story. If you harvest without permission, you gain a Contamination Token."
+      "mechanical_hook": "You may harvest 1 Supply of salt, but the monks demand a blessing (Spirit+Endurance DV 4) or a story. If you harvest without permission, you gain a Contamination Token."
     },
     {
       "rank": 11,
@@ -302,7 +302,7 @@
       "subtitle": "[TRAVEL]",
       "description": "Through Aelerians; cairns ringed in iron nails, bells in the stones.",
       "flavor": "Each cairn holds a bell that rang once at the death of a warden. They ring again when mist takes another. There are nine cairns. The ninth is always silent.",
-      "mechanical_hook": "A PC who touches a cairn (Spirit+Resolve DV 4) may gain a warning of imminent danger. On failure, the bell rings and the mist takes notice—tick The Mist's Memory +1."
+      "mechanical_hook": "A PC who touches a cairn (Spirit+Endurance DV 4) may gain a warning of imminent danger. On failure, the bell rings and the mist takes notice—tick The Mist's Memory +1."
     },
     {
       "rank": 14,
@@ -311,7 +311,7 @@
       "subtitle": "[WARD] [DEATH]",
       "description": "Western palisade facing Direwood; bells wired to bones of trees.",
       "flavor": "The gate weeps sap that smells of iron and old grief. Wardens collect it in silver cups. They pour it into the bell-rings. The sap is the forest's memory of a promise it made—and is waiting to break.",
-      "mechanical_hook": "The gate is a threshold; crossing it invites the Direwood's attention. A Bell-Key or a Salt Oath may be required to pass safely. Without one, roll Spirit+Resolve DV 5 or face a wraith (Cap 2)."
+      "mechanical_hook": "The gate is a threshold; crossing it invites the Direwood's attention. A Bell-Key or a Salt Oath may be required to pass safely. Without one, roll Spirit+Endurance DV 5 or face a wraith (Cap 2)."
     }
   ],
   "people_and_factions": [
@@ -499,7 +499,7 @@
       "subtitle": "[DEATH] [FEAR]",
       "description": "At dusk; Weeping Gate ropes go taut by themselves.",
       "flavor": "The moan has words. You don't want to understand them. They are counting the breaths of the living.",
-      "mechanical_hook": "All PCs must test Spirit+Resolve (DV 4) or gain the Condition 'Fog-Sick' (—1 die to all actions until dawn). The Weeping Gate's ward loses 1 segment."
+      "mechanical_hook": "All PCs must test Spirit+Endurance (DV 4) or gain the Condition 'Fog-Sick' (—1 die to all actions until dawn). The Weeping Gate's ward loses 1 segment."
     },
     {
       "rank": 8,
@@ -690,9 +690,9 @@
     "ace_rule": "If any A appears, echo breath and boundary—bells answering across water, salt that won't dry, voices returning late. Also echo the Direwood's breath—a cold wind, a whisper of leaves, the smell of damp earth."
   },
   "additional_features": {
-    "breath_toll": "Many claim the mist remembers every breath. Travelers hold breath crossing bridges, fearing the mist will count them wrong. Mechanically, when you cross a threshold without a ward-salt or bell, roll Spirit + Resolve (DV 3). On a failure, the mist learns your name—gain the MARKED condition (the next spirit encounter starts at Desperate Position).",
+    "breath_toll": "Many claim the mist remembers every breath. Travelers hold breath crossing bridges, fearing the mist will count them wrong. Mechanically, when you cross a threshold without a ward-salt or bell, roll Spirit + Endurance (DV 3). On a failure, the mist learns your name—gain the MARKED condition (the next spirit encounter starts at Desperate Position).",
     "salt_as_promise": "A handful of salt is more than warding—it is a vow. Spill it on plank or stone to swear safety. Once per session, a character may spend a handful of ward-salt to create a Salt Oath [4] timer. While the timer has segments, the oath-taker gains +1 die to resist fear or possession. If the oath is broken, the timer fills and the breaker takes Harm 1 (spiritual backlash).",
-    "the_ninth_bell": "Legends say a ninth bell once rang on the Line. The note is not in any ringbook; no warden speaks of it. Some nights, though, it rings—and gates open where none should be. When the GM spends 3+ SB in a scene, they may declare that the Ninth Bell rings. All characters must test Spirit + Resolve (DV 4) or lose 1 Fatigue (the sound steals breath).",
+    "the_ninth_bell": "Legends say a ninth bell once rang on the Line. The note is not in any ringbook; no warden speaks of it. Some nights, though, it rings—and gates open where none should be. When the GM spends 3+ SB in a scene, they may declare that the Ninth Bell rings. All characters must test Spirit + Endurance (DV 4) or lose 1 Fatigue (the sound steals breath).",
     "paydens_port": "The only true city in the Mistlands, huddled on the western coast of the Aberderrin. Its wharves are built from salvaged longship timber, and its law is split between the Aeler Legate's seal and the old bell-wardens' traditions. Grain ships leave from its harbour each autumn, carrying the Protectorate's due east—and returning with iron, engineers, and the occasional missionary. The port's inn, the Drowned Rat, has a bell that rings once for every sailor lost at sea. It rings often. The Black Barrow Keep looms above the city, and the Weeping Gate stands to the west.",
     "local_patrons_syncretic": {
       "the_bell_keeper": "The Sealed Gate. A bell that never rings, yet holds the threshold closed. The Protectorate has tried to ring it. They have failed.",

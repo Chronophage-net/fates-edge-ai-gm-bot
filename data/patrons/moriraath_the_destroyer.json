@@ -170,7 +170,7 @@
         "PRESSURE"
       ],
       "materials": "Complete dedication of the space to Mor'iraath—every flammable object arranged as a funeral offering, and a drop of your own blood to seal the pact.",
-      "effect": "The zone becomes a pocket of absolute combustion. Anything that enters is set ablaze, suffering Harm 1 each round (ignores Armor). At the end of each round, they must test Spirit+Resolve (DV 5) or be consumed entirely (cease to exist). The space itself becomes a pyre scar—it remains hot to the touch for a year and a day, and nothing will grow there.",
+      "effect": "The zone becomes a pocket of absolute combustion. Anything that enters is set ablaze, suffering Harm 1 each round (ignores Armor). At the end of each round, they must test Spirit+Endurance (DV 5) or be consumed entirely (cease to exist). The space itself becomes a pyre scar—it remains hot to the touch for a year and a day, and nothing will grow there.",
       "push_it": "The pyre becomes permanent and expands at 1 segment per scene; you suffer Harm 2 (Burn) and mark +3 Obligation as you become partially unmade yourself, your left hand now permanently blackened and smoking. Cost: Mark +1 Obligation (total +4) or Mark +1 Fatigue.",
       "cost": "Mark +2 Obligation.",
       "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
@@ -198,7 +198,7 @@
     "tools": {
       "cinder_stamp": {
         "name": "The Cinder_Stamp",
-        "description": "An iron rod with a sigil of ending carved into its face, heated until it glows dull red. Once per session, the witch may press the stamp against a threshold (a door, a bridge, a city gate) while speaking a single word—the name of something that should never have existed. For the next scene, anyone who crosses that threshold and fails a Spirit+Resolve test (DV 3) will forget the last minute of their life—their memory is burned away, not suppressed. The stamp can also be used to 'unwrite' a single word from a document; the word becomes a smudge of ash, and the sentence restructures itself around the absence."
+        "description": "An iron rod with a sigil of ending carved into its face, heated until it glows dull red. Once per session, the witch may press the stamp against a threshold (a door, a bridge, a city gate) while speaking a single word—the name of something that should never have existed. For the next scene, anyone who crosses that threshold and fails a Spirit+Endurance test (DV 3) will forget the last minute of their life—their memory is burned away, not suppressed. The stamp can also be used to 'unwrite' a single word from a document; the word becomes a smudge of ash, and the sentence restructures itself around the absence."
       }
     },
     "hedge_gifts": [
@@ -269,7 +269,7 @@
     },
     {
       "tier": 4,
-      "benefit": "Final Judgment: Once/session, declare one thing in Near range must make Spirit+Resolve (DV 4) or cease to exist entirely.",
+      "benefit": "Final Judgment: Once/session, declare one thing in Near range must make Spirit+Endurance (DV 4) or cease to exist entirely.",
       "cost": "Existential Hunger: –1 die to rolls involving creation, preservation, or continuation; you hunger to end what others would sustain."
     },
     {

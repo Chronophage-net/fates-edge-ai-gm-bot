@@ -56,7 +56,7 @@
         "BIND"
       ],
       "materials": "Chalk, iron dust, or sanctified cord.",
-      "effect": "Mark a doorway or passage as sealed. Unauthorized crossing tests Spirit+Resolve (DV 3) or suffers a Position penalty. Creates a 4-segment Ward Integrity timer.",
+      "effect": "Mark a doorway or passage as sealed. Unauthorized crossing tests Spirit+Endurance (DV 3) or suffers a Position penalty. Creates a 4-segment Ward Integrity timer.",
       "push_it": "The barrier becomes a visible shimmer, imposing –1 die on attempts to cross it. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
       "requires": "Familiar (Invoke: 1 Boon).",
@@ -75,7 +75,7 @@
         "BANISH"
       ],
       "materials": "A gesture of denial or a barrier symbol.",
-      "effect": "The target must test Body+Resolve (DV 3) or be pushed back from the threshold. On success, create a Rebuke Echo token granting +1 die to the next boundary defense.",
+      "effect": "The target must test Body+Endurance (DV 3) or be pushed back from the threshold. On success, create a Rebuke Echo token granting +1 die to the next boundary defense.",
       "push_it": "The rebuke lingers — the target cannot cross this threshold for the rest of the scene. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
       "requires": "Familiar (Invoke: 1 Boon).",
@@ -135,7 +135,7 @@
         "FEAR"
       ],
       "materials": "A knotted cord sealed with a gate-sigil.",
-      "effect": "The target supernatural entity tests against the caster's Spirit+Resolve (DV = entity Cap). On success, the entity is forced to immediately depart the scene. A failed attempt creates a 4-segment Banishment Backlash timer.",
+      "effect": "The target supernatural entity tests against the caster's Spirit+Endurance (DV = entity Cap). On success, the entity is forced to immediately depart the scene. A failed attempt creates a 4-segment Banishment Backlash timer.",
       "push_it": "The banishment lasts until the next moon phase. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
       "cost": "Mark +2 Obligation.",
       "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
@@ -184,7 +184,7 @@
     "tools": {
       "iron_seal": {
         "name": "The Seal of the Unbroken Gate",
-        "description": "A small iron seal on a chain, cool to the touch, its face engraved with a closed door. Once per session, the witch may press the seal into wax (or directly onto a threshold while speaking a word of denial). For the next scene, any creature attempting to cross that threshold with hostile intent must make a Spirit+Resolve test (DV 3) or be turned back. The seal may also be used to 'witness' a lock: touching it to a mundane lock imposes +1 DV on any attempt to pick it until the next dawn. The seal's warmth tells the witch whether any binding placed with it still holds."
+        "description": "A small iron seal on a chain, cool to the touch, its face engraved with a closed door. Once per session, the witch may press the seal into wax (or directly onto a threshold while speaking a word of denial). For the next scene, any creature attempting to cross that threshold with hostile intent must make a Spirit+Endurance test (DV 3) or be turned back. The seal may also be used to 'witness' a lock: touching it to a mundane lock imposes +1 DV on any attempt to pick it until the next dawn. The seal's warmth tells the witch whether any binding placed with it still holds."
       }
     },
     "hedge_gifts": [
@@ -235,7 +235,7 @@
       "master": {
         "name": "Threshold Incarnate",
         "xp": 12,
-        "description": "Once per session, become a living ward for one scene. Allies within Near gain +1 Armor; any creature attempting to pass a threshold you guard must test Spirit+Resolve (DV 5) or be turned back. After the scene, you gain a permanent Debt Scar (a door-shaped mark on your palm) — but you may ignore one debt or obligation that would force you to abandon your guard (the creditor finds themselves facing a wall where once there was a door).",
+        "description": "Once per session, become a living ward for one scene. Allies within Near gain +1 Armor; any creature attempting to pass a threshold you guard must test Spirit+Endurance (DV 5) or be turned back. After the scene, you gain a permanent Debt Scar (a door-shaped mark on your palm) — but you may ignore one debt or obligation that would force you to abandon your guard (the creditor finds themselves facing a wall where once there was a door).",
         "cost": "2 Fatigue and +1 Obligation to the Gate",
         "prereq": "Tier III, Spirit 4+"
       }
@@ -265,12 +265,12 @@
     },
     {
       "tier": 5,
-      "benefit": "Gate Sovereign: Once/session, banish a major threat with a single test (Spirit+Resolve vs Cap+1).",
+      "benefit": "Gate Sovereign: Once/session, banish a major threat with a single test (Spirit+Endurance vs Cap+1).",
       "cost": "Boundary Obsession: –1 die to non-containment actions."
     },
     {
       "tier": "6+",
-      "benefit": "Threshold Incarnate: For one scene, become a living ward. Allies within Near gain +1 Armor; any creature attempting to pass a threshold you guard must test Spirit+Resolve (DV 5) or be turned back.",
+      "benefit": "Threshold Incarnate: For one scene, become a living ward. Allies within Near gain +1 Armor; any creature attempting to pass a threshold you guard must test Spirit+Endurance (DV 5) or be turned back.",
       "cost": "Ultimate Containment Risk: Mark +3 Obligation. You cannot leave the warded area until the scene ends, and you suffer 1 Fatigue."
     }
   ],

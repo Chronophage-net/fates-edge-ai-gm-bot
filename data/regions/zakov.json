@@ -201,7 +201,7 @@
       "subtitle": "[DEATH]",
       "description": "Wrecks and corpses tangled in kelp and rope.",
       "flavor": "The bones are from three empires — Utaran, Astroegro, and older. They shift at high tide to form new constellations. The oldest bones are not bone; they are crystal. The Reaping's first harvest. The Oligarchs pay well for Astroegro bones. They do not ask what they are for.",
-      "mechanical_hook": "Salvage here requires a successful Spirit+Resolve (DV 4) to avoid attracting the Reaping's attention."
+      "mechanical_hook": "Salvage here requires a successful Spirit+Endurance (DV 4) to avoid attracting the Reaping's attention."
     },
     {
       "rank": 4,
@@ -443,7 +443,7 @@
       "subtitle": "[TIDE] [TRAVEL]",
       "description": "Turns early; your ship is now ashore on the wrong side.",
       "flavor": "The tide stole a day. Your alibi is now a lie. The water has a new taste. It tastes of crystal. The reef is closer than it should be. The Gray Lady's cutter is already there.",
-      "mechanical_hook": "Navigation is Desperate; a successful Wits+Survival (DV 5) finds a new route; failure strands the party."
+      "mechanical_hook": "Navigation is Desperate; a successful Wits+Insight (DV 5) finds a new route; failure strands the party."
     },
     {
       "rank": 3,
@@ -461,7 +461,7 @@
       "subtitle": "[DEATH] [MAGIC]",
       "description": "Something in the hold is *watching*; cargo as a curse.",
       "flavor": "The cargo is a mirror. The reflection is not yours. The reflection has too many teeth. The frame is carved with Astroegro glyphs. They are instructions. You cannot read them. The Ordo Artificum will pay handsomely for it. They will pay in crystal.",
-      "mechanical_hook": "Ticks Reaping's Corrosion by +1; a successful Spirit+Resolve (DV 4) may resist its influence."
+      "mechanical_hook": "Ticks Reaping's Corrosion by +1; a successful Spirit+Endurance (DV 4) may resist its influence."
     },
     {
       "rank": 5,
@@ -470,7 +470,7 @@
       "subtitle": "[WEATHER] [FEAR]",
       "description": "Ships flee, prices soar, lawmen vanish.",
       "flavor": "The storm has a name. It is the name of a captain who swore revenge. The rain tastes of brine and old regrets. The lightning is green. It strikes the reef. The reef sings. The Gray Lady sails into the storm. She always comes back.",
-      "mechanical_hook": "All travel rolls are Desperate; a successful Wits+Survival (DV 5) finds shelter."
+      "mechanical_hook": "All travel rolls are Desperate; a successful Wits+Insight (DV 5) finds shelter."
     },
     {
       "rank": 6,
@@ -515,7 +515,7 @@
       "subtitle": "[DEATH] [MAGIC]",
       "description": "Reefs shift, ships vanish, sailors scream.",
       "flavor": "The kraken is not a monster. It is a bargain that has grown teeth. The teeth are crystalline. They are the Reaping's first children. The kraken does not attack. It collects. The Salt-Bitten have been feeding it.",
-      "mechanical_hook": "A successful Spirit+Resolve (DV 5) may bargain with the kraken; failure costs 1 Supply."
+      "mechanical_hook": "A successful Spirit+Endurance (DV 5) may bargain with the kraken; failure costs 1 Supply."
     },
     {
       "rank": 11,
@@ -705,7 +705,7 @@
     },
     {
       "name": "Salt Coins",
-      "description": "Salt coins are silver pieces that have been used to pay for a life (ransom, slave's purchase, bribe for execution). They are physically indistinguishable from ordinary coins, but they are always warm. A salt coin can be spent as a Boon to reroll any failed roll involving the sea, drowning, or escape; traded to the Drowned Prince to clear 1 segment of Obligation; or used as material for the Rite of Salt Coin's Toll. Carrying more than 3 salt coins at once forces a nightly Spirit+Resolve test (DV 4) or mark 1 Fatigue (drowning dreams). Three failed tests in a row sends a Salt Walker to collect."
+      "description": "Salt coins are silver pieces that have been used to pay for a life (ransom, slave's purchase, bribe for execution). They are physically indistinguishable from ordinary coins, but they are always warm. A salt coin can be spent as a Boon to reroll any failed roll involving the sea, drowning, or escape; traded to the Drowned Prince to clear 1 segment of Obligation; or used as material for the Rite of Salt Coin's Toll. Carrying more than 3 salt coins at once forces a nightly Spirit+Endurance test (DV 4) or mark 1 Fatigue (drowning dreams). Three failed tests in a row sends a Salt Walker to collect."
     },
     {
       "name": "Local Patrons (Syncretic Names)",
