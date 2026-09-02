@@ -4,6 +4,13 @@ All notable changes to this project will be documented here.
 Format loosely follows [Keep a Changelog](https://keepachangelog.com/), versions follow [Semantic Versioning](https://semver.org/).
 
 
+## [4.17.5] - 2026-09-02
+
+Adventure document sync, Hollowed saga, data corrections
+
+### Fixed
+- the bot was narrating from stale and missing adventure docs
+
 ## [4.17.4] - 2026-09-02
 
 Patron and region data sync
