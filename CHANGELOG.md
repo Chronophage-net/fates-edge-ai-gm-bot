@@ -4,6 +4,13 @@ All notable changes to this project will be documented here.
 Format loosely follows [Keep a Changelog](https://keepachangelog.com/), versions follow [Semantic Versioning](https://semver.org/).
 
 
+## [4.17.3] - 2026-09-02
+
+Patron name data
+
+### Chore
+- sync patron name notes from fates-edge-docs
+
 ## [4.17.2] - 2026-09-02
 
 Patron prose repairs
