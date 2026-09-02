@@ -1,0 +1,17 @@
+{
+  "id": "duelists-edge",
+  "name": "Duelist's Edge",
+  "cost": 8,
+  "tier": "prestige",
+  "activation": "passive",
+  "category": "combat",
+  "tags": ["passive", "melee", "combat", "prestige", "one-on-one"],
+  "useLimit": "passive",
+  "prerequisites": "Requires: Tier III",
+  "effect": "+1d Melee vs a single opponent | ignore first Harm",
+  "effects": [
+    { "type": "die_bonus", "scope": "skill", "key": "melee", "amount": 1 }
+  ],
+  "description": "When locked in a duel against a single opponent, you fight with unmatched focus: +1 die to Melee, and you ignore the first point of Harm you take in the engagement.",
+  "source": "guide"
+}

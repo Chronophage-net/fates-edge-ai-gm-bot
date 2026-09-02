@@ -1,0 +1,17 @@
+{
+  "id": "disciplined-body",
+  "name": "Disciplined Body",
+  "cost": 3,
+  "tier": "minor",
+  "activation": "passive",
+  "category": "monk-unarmed",
+  "tags": ["passive", "unarmed", "monk", "fatigue", "minor", "starter"],
+  "useLimit": "passive",
+  "prerequisites": "",
+  "effect": "+1d Unarmed | convert 1 Harm to Fatigue once per scene | improve Position by 1 step once per scene",
+  "effects": [
+    { "type": "die_bonus", "scope": "skill", "key": "unarmed", "amount": 1 }
+  ],
+  "description": "The Monk's starting talent. A constant +1 die to unarmed combat, plus once per scene you may convert 1 Harm to Fatigue and once per scene improve your Position by one step.",
+  "source": "guide"
+}

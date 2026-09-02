@@ -1,0 +1,17 @@
+{
+  "id": "weapon-master",
+  "name": "Weapon Master",
+  "cost": 5,
+  "tier": "major",
+  "activation": "passive",
+  "category": "combat",
+  "tags": ["passive", "melee", "combat", "major"],
+  "useLimit": "passive",
+  "prerequisites": "",
+  "effect": "+2d with chosen weapon category",
+  "effects": [
+    { "type": "die_bonus", "scope": "skill", "key": "melee", "amount": 2 }
+  ],
+  "description": "You've specialized in a single weapon category (e.g. swords, polearms) and gain +2 dice whenever you fight with it. Distinct from the general Weapon Mastery talent, which applies to all Melee rolls.",
+  "source": "guide"
+}

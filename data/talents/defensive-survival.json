@@ -1,0 +1,17 @@
+{
+  "id": "defensive-survival",
+  "name": "Defensive Survival",
+  "cost": 3,
+  "tier": "minor",
+  "activation": "passive",
+  "category": "defense",
+  "tags": ["passive", "defense", "fatigue", "minor"],
+  "useLimit": "passive",
+  "prerequisites": "",
+  "effect": "+1 to defense DV | convert 1 Harm to Fatigue",
+  "effects": [
+    { "type": "ignore_penalty", "source": "harm", "amount": 1 }
+  ],
+  "description": "You know how to protect yourself. +1 to your defense DV, and you may convert 1 Harm to Fatigue.",
+  "source": "guide"
+}
