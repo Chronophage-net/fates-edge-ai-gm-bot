@@ -9,13 +9,32 @@ fates-edge-socket-server/`. Items here that touch it are marked **cross-repo** a
 the ai-gm-bot side plus what they'd require from the server; they are not a commitment on that
 repo's own roadmap.
 
+## Open proposals
+
+### Human-delegated side tasks in a separate room — queued 2026-09-06 (cross-repo)
+
+**Requested behavior:** A human GM can delegate a bounded subtask involving one player or a group of players to the AI GM. The AI GM handles that task in a separate room while sending progress updates and the final outcome to the human GM in the original room. The main table can continue playing while the delegated group works through its task.
+
+**Proposed flow:**
+
+- The human GM selects the participating players, describes the task, and sets any limits or facts the AI GM should use.
+- Create or select a side room tied to the original room and task. Bring only the selected participants and the relevant context into it.
+- The AI GM runs the delegated task there and sends concise milestone, blocked/needs-ruling, and completion updates privately to the human GM in the original room.
+- The human GM can inspect progress, give new instructions, pause, or end the task from the original room.
+- At completion, provide a recap and proposed character/campaign changes for the human GM to review before incorporating them into the main campaign.
+
+**Design points to settle before implementation:** how participants join and return; which room/client identities establish the human GM's authority; private cross-room delivery; how simultaneous edits and reconnections are reconciled; and whether this uses an available managed bot process or starts a temporary one within the existing local bot limit. Keep side-room information scoped to its participants and the supervising GM.
+
+**Acceptance checks:** A human GM delegates a task for one player and for several players; the main room continues independently; updates reach the supervising GM without revealing private information to other players; pause/cancel work; reconnection does not duplicate rooms, updates, or outcomes; and final state changes are applied only after GM review.
+
+This is a queued feature request, not an implemented capability. It may require socket-server room membership/private-message support and controls in the participating clients.
+
 ## Implemented (v4.14.0)
 
 Both items below shipped in v4.14.0 (see [CHANGELOG.md](CHANGELOG.md)). Left in place as the
 design history/rationale behind what's now in [README.md](README.md) — "Machine Sizing & Scaling"
 for item 1, "Assistant GM Mode" for item 2 — rather than deleted, since the "why" is still useful
-context for anyone touching this code. There are no other open items right now; new proposals
-belong at the top of this section when they come up.
+context for anyone touching this code. New work is tracked under **Open proposals** above.
 
 ### 1. Multiple bot processes under one console (tabbed manager) — ✅ Implemented
 

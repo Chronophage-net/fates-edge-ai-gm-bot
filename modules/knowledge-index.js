@@ -276,3 +276,50 @@ module.exports = {
     indexSummary,
     search
 };
+
+// Public memory is physically separate from GM facts/NPCs/summaries. Even an
+// incorrectly widened query against this index cannot retrieve those records.
+const { isPublic } = require('./public-memory');
+const { legacyRoomId } = require('./room-identity');
+const { createHash } = require('node:crypto');
+const publicIndex = roomId => `${process.env.ES_INDEX_PREFIX || 'gm-knowledge'}-public-${legacyRoomId(roomId)}`;
+async function indexChat(roomId, message) {
+    if (!enabled || !roomId || !isPublic(message)) return false;
+    const at = Number(message.timestamp) || Date.now();
+    const days = Math.max(1, Number(process.env.CHAT_RETENTION_DAYS) || 30);
+    if(at < Date.now()-days*86400000) return false;
+    const id=message.id || createHash('sha256').update(JSON.stringify([at,message.sender,message.text])).digest('hex');
+    try {
+        await client.index({index:publicIndex(roomId),id:`chat:${id}`,document:{type:'chat',text:`${message.sender || 'Player'}: ${message.text.slice(0,6000)}`,updatedAt:new Date(at).toISOString()}});
+        return true;
+    } catch(e) { logger.warn('Public chat indexing failed:',e.message); return false; }
+}
+async function searchPublic(roomId, queryText, {since=0,size=10,chatOnly=false}={}) {
+    if(!enabled || !roomId || !queryText?.trim()) return [];
+    try {
+        const filter=[{terms:{type:chatOnly?['chat']:['chat','revealed']}}];
+        const cutoff=Math.max(since,Date.now()-Math.max(1,Number(process.env.CHAT_RETENTION_DAYS)||30)*86400000);
+        filter.push({bool:{should:[{term:{type:'revealed'}},{range:{updatedAt:{gte:new Date(cutoff).toISOString()}}}],minimum_should_match:1}});
+        const result=await client.search({index:publicIndex(roomId),size,query:{bool:{must:[{match:{text:queryText}}],filter}}});
+        return (result.hits?.hits || result.body?.hits?.hits || []).map(h=>({id:h._id,type:h._source.type,text:h._source.text,at:Date.parse(h._source.updatedAt),source:h._source.type==='revealed'?'Your GM has established':'Public table chat'}));
+    } catch { return []; }
+}
+async function syncRevealed(roomId, entries) {
+    if(!enabled || !roomId) return;
+    const index=publicIndex(roomId);
+    // Delete first, await visibility. On failure do not add or claim a successful sync.
+    try {await client.deleteByQuery({index,refresh:true,query:{term:{type:'revealed'}}});}
+    catch(e){if(e.meta?.statusCode!==404)throw e;}
+    for(const k of entries.filter(k=>k.revealed===true))await client.index({index,id:`revealed:${k.id}`,refresh:'wait_for',document:{type:'revealed',text:String(k.text||''),updatedAt:new Date().toISOString()}});
+}
+async function forgetPublic(roomId, query) {
+    if(!enabled || !query?.trim()) return 0;
+    const result=await client.deleteByQuery({index:publicIndex(roomId),refresh:true,query:{bool:{filter:[{term:{type:'chat'}}],must:[{match_phrase:{text:query}}]}}});
+    return result.deleted || result.body?.deleted || 0;
+}
+async function prunePublic(roomId) {
+    if(!enabled)return;
+    const cutoff=new Date(Date.now()-Math.max(1,Number(process.env.CHAT_RETENTION_DAYS)||30)*86400000).toISOString();
+    try {await client.deleteByQuery({index:publicIndex(roomId),query:{bool:{filter:[{term:{type:'chat'}},{range:{updatedAt:{lt:cutoff}}}]}}});}catch{}
+}
+Object.assign(module.exports,{indexChat,searchPublic,syncRevealed,forgetPublic,prunePublic,publicIndex});

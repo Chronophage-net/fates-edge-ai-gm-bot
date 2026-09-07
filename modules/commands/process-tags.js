@@ -481,13 +481,13 @@ async function processSpecialTags(text, context, senderName = null) {
                 apply: async () => {
                     campaignState.facts[key] = value;
                     saveCampaign();
-                    knowledgeIndex.indexFact(context.orchestrator?.campaign?.campaignCode, key, value).catch(() => {});
+                    knowledgeIndex.indexFact((context.roomId || context.orchestrator?.campaign?.roomCode), key, value).catch(() => {});
                 },
             });
         } else {
             campaignState.facts[key] = value;
             saveCampaign();
-            knowledgeIndex.indexFact(context.orchestrator?.campaign?.campaignCode, key, value).catch(() => {});
+            knowledgeIndex.indexFact((context.roomId || context.orchestrator?.campaign?.roomCode), key, value).catch(() => {});
         }
         output = output.replace(match[0], '');
         factRegex.lastIndex = 0;
@@ -597,7 +597,7 @@ async function processSpecialTags(text, context, senderName = null) {
             }
             // Best-effort token placement and indexing – these are fire-and-forget with .catch()
             placeOrUpdateToken(context, { name, faction: inferFaction(role, motivation) }).catch(() => {});
-            knowledgeIndex.indexNpc(context.orchestrator?.campaign?.campaignCode, {
+            knowledgeIndex.indexNpc((context.roomId || context.orchestrator?.campaign?.roomCode), {
                 name, role, motivation, location, faction: inferFaction(role, motivation), source: 'created'
             }).catch(() => {});
         };
@@ -620,7 +620,7 @@ async function processSpecialTags(text, context, senderName = null) {
     while ((match = npcLocationRegex.exec(output)) !== null) {
         const name = match[1];
         const place = match[2].trim();
-        knowledgeIndex.updateNpcLocation(context.orchestrator?.campaign?.campaignCode, name, place || null).catch(() => {});
+        knowledgeIndex.updateNpcLocation((context.roomId || context.orchestrator?.campaign?.roomCode), name, place || null).catch(() => {});
         output = output.replace(match[0], '');
         npcLocationRegex.lastIndex = 0;
     }

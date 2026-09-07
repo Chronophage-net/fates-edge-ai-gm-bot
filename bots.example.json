@@ -1,9 +1,19 @@
 {
   "//": "Copy this file to bots.json (git-ignored) and edit for your tables.",
-  "//_room": "Room code this bot connects to -- must be unique across the manifest.",
-  "//_envFile": "Path (relative to the repo root, or absolute) to a .env-style file for this bot -- same format as the repo's own .env. Omit to just inherit this process's own environment. STATUS_PORT and ROOM in the file are ignored: the manager assigns those (ROOM from this entry's \"room\", STATUS_PORT sequentially from BASE_BOT_STATUS_PORT, or from an explicit \"statusPort\" below).",
+  "//_room": "The table as humans say it out loud. NO LONGER unique across the manifest -- several bots may share a room, one per seat.",
+  "//_seat": "Integer >= 0, unique WITHIN a room. Omit it and the manager assigns the lowest free seat in manifest order, so a one-bot-per-room manifest needs no seats at all.",
+  "//_mode": "'gm' | 'player' | 'passive'. Defaults to 'gm', which is what a lone bot has always been. Exactly one 'gm' seat per room.",
+  "//_roomId": "Optional opaque durable room id (UUIDv7 recommended). Passed to the bot as ROOM_ID. See fates-edge-docs/SAAS_MANAGER.md: the UUID is the room's identity, the room code is a rotatable human locator. Omit it entirely for a self-hosted table.",
+  "//_envFile": "Path (relative to the repo root, or absolute) to a .env-style file for this bot -- same format as the repo's own .env. Omit to just inherit this process's own environment. ROOM, STATUS_PORT and BOT_SEAT in the file are ignored: the manager assigns those. MODE and ROOM_ID in the file are honoured unless this entry declares them.",
+
+  "//_example_one_table": "A full table: a GM bot, two idle player seats ready for `!gm player new`, and a rules oracle. The player seats hold no character until one is created -- they simply sit there.",
+
   "bots": [
-    { "room": "AC12", "envFile": ".env" },
-    { "room": "XY99", "envFile": ".env.xy99" }
+    { "room": "AC12", "envFile": ".env",           "mode": "gm",      "seat": 0 },
+    { "room": "AC12", "envFile": ".env.ac12.p1",   "mode": "player",  "seat": 1 },
+    { "room": "AC12", "envFile": ".env.ac12.p2",   "mode": "player",  "seat": 2 },
+    { "room": "AC12", "envFile": ".env.ac12.ask",  "mode": "passive", "seat": 3 },
+
+    { "//": "A second table, still on the pre-seats shape. Entries like this keep working exactly as before: seat 0, mode gm, log at logs/XY99.log.", "room": "XY99", "envFile": ".env.xy99" }
   ]
 }

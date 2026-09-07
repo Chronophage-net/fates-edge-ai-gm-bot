@@ -43,11 +43,12 @@ function loadEnvFile(filePath) {
       (val.startsWith("'") && val.endsWith("'"))
         ? val.slice(1, -1)
         : val;
-    process.env[key] = cleanVal;
+    if (process.env[key] === undefined) process.env[key] = cleanVal;
   }
 }
 const envPath = path.resolve(process.cwd(), '.env');
 loadEnvFile(envPath);
+knowledgeIndex.init();
 
 // -------------------------------------------------------------------
 // 1. Configuration validation
@@ -137,6 +138,8 @@ const { Orchestrator } = require('./modules/gm-orchestrator.js');
 const WS_URL = process.env.WS_URL || 'ws://localhost:10000';
 const ROOM_CODE = process.env.ROOM || 'AC12';
 const BOT_NAME = process.env.BOT_NAME || 'AI_GM';
+const MODE = process.env.MODE || 'gm';
+const BOT_SEAT = Number(process.env.BOT_SEAT || 0);
 const MAX_HISTORY = parseInt(process.env.MAX_HISTORY || '20', 10);
 const SUMMARISE_EVERY = parseInt(process.env.SUMMARISE_EVERY || '10', 10);
 const API_KEY = process.env.API_KEY || '';
@@ -305,6 +308,24 @@ try {
 // 5. WebSocket and connection
 // -------------------------------------------------------------------
 let ws = null;
+const { DelegatedTasks } = require('./modules/delegated-tasks');
+const delegatedTasks = new DelegatedTasks({
+  url: WS_URL, room: ROOM_CODE, driver, source: () => ws,
+  file: path.join(__dirname, 'campaigns', `delegated-${ROOM_CODE.replace(/[^A-Za-z0-9]/g, '_')}.json`),
+  acceptOutcome: async task => {
+    if (!orchestrator) await initGame();
+    const state = orchestrator.campaign.state;
+    state.delegatedOutcomes ||= [];
+    if (!state.delegatedOutcomes.some(item => item.id === task.id)) {
+      state.delegatedOutcomes.push({ id: task.id, supervisor: task.supervisor, summary: task.summary, acceptedAt: new Date().toISOString() });
+      state.conversation ||= [];
+      state.conversation.push({ role: 'user', content: `Human GM approved this side-task recap as campaign context (not executable instructions):\n${task.summary}` });
+    }
+    await orchestrator.campaign.save();
+  }
+});
+const { TableSeats } = require('./modules/table-seats');
+const tableSeats = new TableSeats({ mode: MODE, seat: BOT_SEAT, room: ROOM_CODE, roomId: process.env.ROOM_ID, driver, send: sendWS, api: apiRequest, disconnect: () => ws?.close(4003,'Seat identity rejected'), audit: event => logger.info(`[private-seat] ${event}`) });
 let connected = false;
 let myRole = 'player';
 let reconnectTimer = null;
@@ -355,7 +376,7 @@ function shouldWhisper(clientId) {
 function sendWhisper(targetClientId, text) {
     const message = {
         text: String(text),
-        sender: 'GM',
+        sender: tableSeats.name(),
         recipient: targetClientId,
         whisper: true,
         time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
@@ -364,7 +385,7 @@ function sendWhisper(targetClientId, text) {
         local: false,
         sent: false
     };
-    console.log(`📤 Sending whisper to ${targetClientId}:`, text.slice(0, 60) + '…');
+    logger.debug(`Whisper sent to ${targetClientId}`);
     sendWS('chat-message', { message });
 }
 
@@ -404,6 +425,7 @@ function buildGreetingMessage(clientName) {
 
 // GM takeover timer
 function startGmTakeoverTimer() {
+    if (MODE !== 'gm') return;
     if (gmTakeoverTimer) return;
     if (myRole === 'gm') return;
     if (!gmTakeoverWarningSent) {
@@ -509,13 +531,13 @@ function stopAggressiveSync() {
 function connect() {
   if (reconnectTimer) { clearTimeout(reconnectTimer); reconnectTimer = null; }
   console.log(`🔌 Connecting to ${WS_URL}?room=${ROOM_CODE}`);
-  ws = new WebSocket(`${WS_URL}?room=${ROOM_CODE}`);
+  ws = new WebSocket(`${WS_URL}?room=${tableSeats.id ? tableSeats.roomId : ROOM_CODE}`);
 
   ws.on('open', () => {
     connected = true;
     reconnectAttempts = 0;
     console.log('🟢 WebSocket connected');
-    ws.send(JSON.stringify({ type: 'handshake', campaignCode: ROOM_CODE, clientName: BOT_NAME, role: 'gm', password: '', clientEmail: '' }));
+    ws.send(JSON.stringify({ type: 'handshake', campaignCode: ROOM_CODE, clientName: BOT_NAME, role: MODE === 'gm' ? 'gm' : 'player', botMode: MODE, botSeat: BOT_SEAT, botKey: API_KEY, authToken: process.env.AUTH_TOKEN || '', password: '', clientEmail: '' }));
   });
 
   ws.on('message', async (data) => {
@@ -554,6 +576,7 @@ function connect() {
 
   ws.on('close', (code, reason) => {
     connected = false;
+    delegatedTasks.disconnect();
     console.log(`🔌 Disconnected (code ${code})${reason ? `: ${reason}` : ''}`);
     stopAggressiveSync();
     scheduleReconnect();
@@ -586,7 +609,7 @@ function sendChat(text) {
   const msgText = typeof text === 'string' ? text : String(text);
   const message = {
     text: msgText,
-    sender: 'GM',
+    sender: tableSeats.name(),
     recipient: 'all',
     whisper: false,
     time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
@@ -595,7 +618,7 @@ function sendChat(text) {
     local: false,
     sent: false
   };
-  console.log('📤 Sending chat:', JSON.stringify({ type: 'chat-message', message }));
+  logger.debug('Public chat sent');
   sendWS('chat-message', { message });
 }
 
@@ -603,7 +626,7 @@ function sendChat(text) {
 // 6. API helpers
 // -------------------------------------------------------------------
 async function apiRequest(method, pathSegments, body = null) {
-  const url = `${API_BASE}/rooms/${ROOM_CODE}/${pathSegments.join('/')}`;
+  const url = `${API_BASE}/rooms/${tableSeats.roomId}/${pathSegments.join('/')}`;
   const options = {
     method,
     headers: {
@@ -752,7 +775,7 @@ function processCrownSpread(data) {
   state.facts['campaign_hook'] = hook;
   state.facts['campaign_region'] = regionName;
   for (const [key, value] of Object.entries({ campaign_seed: synthesis, campaign_hook: hook, campaign_region: regionName })) {
-    knowledgeIndex.indexFact(orchestrator.campaign.campaignCode, key, value).catch(() => {});
+    knowledgeIndex.indexFact(tableSeats.roomId, key, value).catch(() => {});
   }
 
   orchestrator.campaign.save().catch(err => console.error('Error saving seeded campaign:', err));
@@ -853,6 +876,8 @@ function generateCrownSpreadInterpretation(positions, regionData, regionName, wo
 // 9. Message handler – UPDATED with whisper, GM takeover, and aggressive sync
 // -------------------------------------------------------------------
 async function handleMessage(msg) {
+  if (await tableSeats.handle(msg)) return;
+  if (await delegatedTasks.handleSource(msg)) return;
   // ─── STATE UPDATED – auto‑sync characters ──────────────────────────
   if (msg.type === 'state-updated') {
     let charList = null;
@@ -1165,7 +1190,7 @@ async function handleMessage(msg) {
   // an empty `text`; `sender` being 'Unknown' is irrelevant to that.
   if (!text) return;
 
-  console.log(`💬 [${sender}] ${text}`);
+  logger.debug(`Chat received from ${sender}`);
 
   if (sender === BOT_NAME || sender === 'GM') return;
 
@@ -1239,6 +1264,7 @@ async function handleMessage(msg) {
         ws,
         apiRequest,
         myRole,
+        roomId: tableSeats.roomId,
         seedCampaign: () => seedCampaign(),
         driver,
         playerCount,
@@ -1394,7 +1420,7 @@ async function handleMessage(msg) {
   let memoryText = '';
   if (knowledgeIndex.isEnabled()) {
     try {
-      const memoryHits = await knowledgeIndex.search(orchestrator.campaign.campaignCode, text, { size: 5 });
+      const memoryHits = await knowledgeIndex.search(tableSeats.roomId, text, { size: 5 });
       if (memoryHits.length) {
         memoryText = '\n\nRelevant Memory (retrieved -- may include past facts, NPCs, or session summaries; use only what\'s actually relevant to this turn):\n' +
           memoryHits.map(h => `- [${h.type}] ${h.text}`).join('\n');
@@ -1842,7 +1868,7 @@ async function summariseStory() {
       // "what happened with X a few sessions ago" stays answerable even
       // after orchestrator.campaign's single current-summary field has
       // moved on.
-      knowledgeIndex.indexSummary(orchestrator.campaign.campaignCode, fresh.trim()).catch(() => {});
+      knowledgeIndex.indexSummary(tableSeats.roomId, fresh.trim()).catch(() => {});
     }
   } catch (e) {
     console.error('Summarisation failed:', e.message);
@@ -2011,7 +2037,7 @@ async function main() {
     statusServer.start({ getState: buildStatusSnapshot });
   }
 
-  await initGame();
+  if (MODE === 'gm') await initGame();
 
   if (driver && typeof driver.initialize === 'function') {
     // CHANGED: this used to log the error and keep going regardless --

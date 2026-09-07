@@ -18,3 +18,7 @@ _to_delete/
 # bots.example.json to bots.json to get started.
 bots.json
 logs/
+
+# Private player-seat dossiers, hidden timers and local memory
+campaigns/seats/
+campaigns/delegated-*.json

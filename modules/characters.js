@@ -13,10 +13,10 @@
 // can check against real attribute/skill names instead of accepting typos.
 const ATTRIBUTE_NAMES = ['Body', 'Wits', 'Spirit', 'Presence'];
 const SKILL_NAMES = [
-  'Melee', 'Ranged', 'Unarmed',
+  'Melee', 'Ranged',
   'Athletics', 'Stealth', 'Endurance', 'Craft',
-  'Sway', 'Deception', 'Subterfuge', 'Performance', 'Insight',
-  'Lore', 'Investigation', 'Medicine',
+  'Sway', 'Deception', 'Performance', 'Insight',
+  'Lore',
   'Arcana'
 ];
 

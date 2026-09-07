@@ -176,10 +176,10 @@ async function handleBotCommand(sender, text, context) {
         const char = charactersModule.get(name);
         char.attributes = { Body: 2, Wits: 2, Spirit: 2, Presence: 2 };
         char.skills = {
-            Melee: 0, Ranged: 0, Unarmed: 0,
+            Melee: 0, Ranged: 0,
             Athletics: 0, Stealth: 0, Endurance: 0, Craft: 0,
-            Sway: 0, Deception: 0, Subterfuge: 0, Performance: 0, Insight: 0,
-            Lore: 0, Investigation: 0, Medicine: 0,
+            Sway: 0, Deception: 0, Performance: 0, Insight: 0,
+            Lore: 0,
             Arcana: 0
         };
         char.talents = [];
@@ -739,7 +739,7 @@ async function handleBotCommand(sender, text, context) {
         // Fire-and-forget: indexes into Elasticsearch if configured (see
         // modules/knowledge-index.js), no-ops silently otherwise. Doesn't
         // block the command response either way.
-        knowledgeIndex.indexFact(context.orchestrator?.campaign?.campaignCode, key, value).catch(() => {});
+        knowledgeIndex.indexFact((context.roomId || context.orchestrator?.campaign?.roomCode), key, value).catch(() => {});
         return `Fact updated: ${key} = ${value}`;
     }
 
@@ -850,7 +850,7 @@ async function handleBotCommand(sender, text, context) {
         if (!knowledgeIndex.isEnabled()) {
             return '❌ Recall requires Elasticsearch (set ES_URL) -- see README "Long-Term Memory".';
         }
-        const hits = await knowledgeIndex.search(context.orchestrator.campaign.campaignCode, query, { size: 5 });
+        const hits = await knowledgeIndex.search((context.roomId || context.orchestrator.campaign.roomCode), query, { size: 5 });
         if (!hits.length) return `No memory matches for "${query}".`;
         return `🔎 Memory matches for "${query}":\n` + hits.map(h => `- [${h.type}] ${h.text}`).join('\n');
     }

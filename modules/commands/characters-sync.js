@@ -26,10 +26,10 @@ async function ensureCharacterOnServer(name, context) {
             xp: 0,
             attributes: { Body: 2, Wits: 2, Spirit: 2, Presence: 2 },
             skills: {
-                Melee: 0, Ranged: 0, Unarmed: 0,
+                Melee: 0, Ranged: 0,
                 Athletics: 0, Stealth: 0, Endurance: 0, Craft: 0,
-                Sway: 0, Deception: 0, Subterfuge: 0, Performance: 0, Insight: 0,
-                Lore: 0, Investigation: 0, Medicine: 0,
+                Sway: 0, Deception: 0, Performance: 0, Insight: 0,
+                Lore: 0,
                 Arcana: 0
             },
             talents: [],
