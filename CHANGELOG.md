@@ -4,6 +4,13 @@ All notable changes to this project will be documented here.
 Format loosely follows [Keep a Changelog](https://keepachangelog.com/), versions follow [Semantic Versioning](https://semver.org/).
 
 
+## [4.18.0] - 2026-09-07
+
+Player and passive bot seats: several AI seats at one table, with private per-seat dossiers and a spoiler-firewalled rules oracle.
+
+### Added
+- player and passive bot seats, with per-seat private state
+
 ## [4.17.7] - 2026-09-05
 
 ### Other
