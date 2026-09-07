@@ -1,0 +1,57 @@
+name: Delete Actions Caches
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'If true, just list caches. Set to false to delete.'
+        required: true
+        default: 'true'
+
+permissions:
+  actions: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show info
+        run: |
+          echo "Repository: $GITHUB_REPOSITORY"
+          echo "Actor: $GITHUB_ACTOR"
+          echo "Dry run: ${{ github.event.inputs.dry_run }}"
+
+      - name: List and optionally delete caches
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DRY_RUN: ${{ github.event.inputs.dry_run }}
+        run: |
+          set -euo pipefail
+          owner="${GITHUB_REPOSITORY%/*}"
+          repo="${GITHUB_REPOSITORY#*/}"
+          per_page=100
+          page=1
+          echo "Listing caches for $owner/$repo"
+          while :; do
+            resp=$(curl -sSL -H "Authorization: Bearer $GITHUB_TOKEN" \
+              "https://api.github.com/repos/$owner/$repo/actions/caches?per_page=$per_page&page=$page")
+            ids=$(echo "$resp" | jq -r '.actions_caches[]?.id // empty')
+            if [ -z "$ids" ]; then
+              echo "No more caches."
+              break
+            fi
+            for id in $ids; do
+              key=$(echo "$resp" | jq -r --arg id "$id" '.actions_caches[] | select(.id == ($id|tonumber)) | .key')
+              size=$(echo "$resp" | jq -r --arg id "$id" '.actions_caches[] | select(.id == ($id|tonumber)) | .size_in_bytes')
+              created=$(echo "$resp" | jq -r --arg id "$id" '.actions_caches[] | select(.id == ($id|tonumber)) | .created_at')
+              echo "cache id=$id size=$size created=$created key=$key"
+              if [ "$DRY_RUN" = "false" ]; then
+                echo "  Deleting $id..."
+                curl -sSL -X DELETE -H "Authorization: Bearer $GITHUB_TOKEN" \
+                  "https://api.github.com/repos/$owner/$repo/actions/caches/$id"
+                echo "  Deleted (or attempted)."
+                sleep 0.2
+              fi
+            done
+            page=$((page+1))
+          done
