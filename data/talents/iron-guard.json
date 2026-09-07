@@ -7,10 +7,14 @@
   "category": "defense",
   "useLimit": "passive",
   "prerequisites": "Body 3+",
-  "effect": "ignore armor penalty",
+  "effect": "You ignore the movement and agility penalty of heavy armour.",
   "effects": [
-    { "type": "ignore_penalty", "source": "armor", "amount": 1 }
+    {
+      "type": "ignore_penalty",
+      "source": "armor",
+      "amount": 1
+    }
   ],
-  "description": "Years of drilling in heavy plate mean it slows you down less than it slows most people. Cancels 1 die of the current armor's physical-skill penalty.",
-  "source": "guide"
+  "description": "You ignore the movement and agility penalty of heavy armour. From the Book of Talents (Talents and Special Abilities).",
+  "source": "talents-and-special-abilities"
 }

@@ -1,16 +1,20 @@
 {
   "id": "untouchable-form",
   "name": "Untouchable Form",
-  "cost": 12,
-  "tier": "epic",
+  "cost": 10,
+  "tier": "prestige",
   "activation": "reactive",
   "category": "monk-unarmed",
   "useLimit": "once-session",
-  "prerequisites": "Unarmed 4+, Requires: Monastic Training",
-  "effect": "Reroll a failing die once per session",
+  "prerequisites": "Iron Fist Technique + Flowing Spirit Technique",
+  "effect": "Passive + Active. +1 die to unarmed attacks; convert 2 Harm into Fatigue; cannot be grappled.",
   "effects": [
-    { "type": "reroll", "trigger": "always", "dice": 1 }
+    {
+      "type": "reroll",
+      "trigger": "always",
+      "dice": 1
+    }
   ],
-  "description": "Your body moves before the blow lands. Once per session, reroll a single failing die on any physical roll — narrate it as slipping the strike rather than absorbing it.",
-  "source": "guide"
+  "description": "Passive + Active. +1 die to unarmed attacks; convert 2 Harm into Fatigue; cannot be grappled.From the Book of Talents (Talents and Special Abilities).",
+  "source": "talents-and-special-abilities"
 }

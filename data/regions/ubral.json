@@ -13,7 +13,7 @@
     "mood": "Cairn, Tor, and the Geometry of Grudges",
     "starting_location": "A Warden's Cairn at the fog line. Spears planted like grave markers, their shafts wrapped in faded clan ribbons. Hoofbeats echo in the valley below. The Hearth-Aunt offers a cup of small beer and a piece of oatcake. 'The Wolf Road wakes,' she says. 'Viterran tax men are asking which passes you used. The clans are counting your steps. Speak true, or the cairn will add your name to its tally. And mind the Aeler outcast in the smithy—he's been here forty years and still forgets to duck under doorframes. He counts his breaths in eights. You should too. If you hear a woman washing clothes by the ford at midnight, do not ask her name. She is the bean-nighe, and she is washing the shrouds of the dead.'",
     "lore": {
-      "history": "Ubral is a land of knife-edged ridges, mist-veiled glens, dark lochs, and stone cairns that mark the bones of old kings. Caught between the Aelerian mountains to the north and the lowland courts of Viterra to the south, its hills are scarred by centuries of raiding and reprisal. The clans speak a tongue thick with swallowed consonants and older grudges. They measure wealth in cattle, honor in wergild, and time in the generations since a Viterran banner last burned in the high passes. To the east, the gray waters of the Dolmis Sea crash against rocky shores, where fishing villages pay tribute to whichever clan controls the nearest pass—and sometimes to a different one each season. Exiled Aeler—dwarves who could not abide the Deep Vaults' suffocating tradition—have found refuge here, sharing their cunning with forge and toll-road, and their outcast bitterness with any clan willing to listen. The lowland lords of Viterra claim suzerainty over Ubral; the clans call those claims 'ink on wet stone.' Every pass holds a watch-fire, every ford a memory of a battle, every hearth a knife waiting for a guest who stays too long. The old folk still speak of the sluagh—the host of the unforgiven dead that flies through the night sky, snatching souls who have no cairn to call their own.",
+      "history": "Ubral is what remains between claims. The Aeler crown shades its northern ridges on maps; Viterran clerks color the southern glens; neither sends a collector uphill without guides, hostages, and the tact to call retreat a completed inspection. The clans require no ink to know where they are. Ask at one hearth and the answer is a watershed, a grandmother, and the place three men fell over a stolen dun cow. Ask at the next and receive the same story with the theft reversed.\n\nCattle matter because cattle walk. Land matters because cattle must stop somewhere. Wergild matters because the alternative is counting bodies until nobody remembers the first. Ubral law is less a code than a set of techniques for ending violence one death before extinction: fosterage, surety, sanctuary, cattle paid across a burn while both houses pretend not to watch. These customs are neither picturesque nor reliably just. A chief can price a poor man's grief cheaply. A fosterling can become beloved kin or a hostage taught to smile. The achievement is not harmony. It is that people whose grandfathers killed one another still share the same narrow road to winter pasture.\n\nAeler exiles have made another kind of home here. They cut roads into slopes their cousins consider unsound, marry or do not marry into the clans, and build forges whose stonework announces a permanence no Ubral chief is polite enough to promise. On the eastern lochs, fishing settlements pay whichever banner can reach them before the weather closes; this is called tribute by the receiver and weatherproofing by everyone else.\n\nThe dead complicate every settlement. Cairns stand as witnesses, voters, landmarks, and occasionally alibis. The sluagh take those left outside the agreements of the living: the unmourned, the unpriced, the stranger whose name nobody asked before burial. A fire on Three-Fires Ridge may mean peace, raid, invasion, or that something overhead has begun counting the houses. The fourth signal uses yew. No clan admits to keeping it ready.",
       "first_notice": "The smell of peat smoke and wet granite. The constant lowing of cattle on distant hills. The way every threshold has a knife hidden nearby—for guests, not against them. The way old men trace patterns in the dirt with sticks, arguing over angles that only they can see.",
       "rule_that_kills": "Never refuse a cup from a hearth-aunt. Hospitality is a contract sealed in salt and bread. Refusal is an insult that blood must answer. And never count to nine in a cairn's shadow. The dead are counting with you, and they stop at eight."
     },
@@ -281,11 +281,11 @@
     {
       "rank": 12,
       "suit": "spade",
-      "title": "Bride's Causey",
+      "title": "Neutral Causey",
       "subtitle": "[SOCIAL]",
-      "description": "Raised road to a valley kirk; ribbons hang like warnings.",
-      "flavor": "The ribbons are from wedding gowns—cut short when the groom fell in a feud. The kirk is neutral ground, but the path is not. The causey has eight spans. The ninth is a promise.",
-      "mechanical_hook": "To cross, you must accept a cup of water from the bride's kin. Refusal is an insult—start Bride-Price Default [4]."
+      "description": "A raised road to the valley kirk, pledged safe by rival clans.",
+      "flavor": "Each strip of wool names someone killed after reaching sanctuary but before reaching the kirk. The causey is neutral ground. The bog on either side observes no treaty.",
+      "mechanical_hook": "To cross, accept water from the kirk's fosterlings and name the feud you leave behind. Refusal starts **Sanctuary Broken [4]**."
     },
     {
       "rank": 13,
@@ -391,11 +391,11 @@
     {
       "rank": 11,
       "suit": "heart",
-      "title": "Bride-Carrier",
+      "title": "Ritual Mediator",
       "subtitle": "Peaceweaver walking bloodlines with a knife and a smile.",
-      "flavor": "Her knife has a wooden blade. The threat is real. She has walked between warring clans nine times. The ninth was a Viterran lord who wanted a wife. He got a treaty instead. She carries eight ribbons. The ninth is a scar.",
+      "flavor": "Mòrag carries a wooden knife and a strip of wool from every feud she has quieted. She has walked between armed clans nine times. The ninth time, both chiefs sent boys to foster in the other's hall and spent ten years pretending this had been their own idea.",
       "what_they_carry": "She demands a lock of hair from each PC (as a pledge of peace).",
-      "what_they_ask": "Refusal starts a Bride-Price Feud [4]."
+      "what_they_ask": "Refusal starts a **Mediation Spurned [4]** feud."
     },
     {
       "rank": 12,
@@ -510,11 +510,11 @@
     {
       "rank": 11,
       "suit": "club",
-      "title": "Bride-Theft",
-      "subtitle": "[SOCIAL] [COMBAT]",
-      "description": "A wedding becomes a war-party; you are caught between both.",
-      "flavor": "The bride's veil is on the ground. The groom's own kin drew first blood. The bride was promised to a neighboring clan. She chose her own groom. Now three clans want her head—and her hand. There are eight guests. The ninth is a ghost.",
-      "mechanical_hook": "Whoever you shelter, the other two clans will demand a wergild of 5 cows (2 Supply). Refusal starts a three-way feud."
+      "title": "Fosterling Claimed",
+      "subtitle": "[FEUD] [KINSHIP]",
+      "description": "Two clans demand the same young hostage be returned as kin.",
+      "flavor": "Iain was sent across the loch at six to secure a peace. At seventeen he saved his foster-father's life against raiders from his birth clan. Now both houses call him son, and both have come armed to prove it.",
+      "mechanical_hook": "Whichever household you shelter him with, the other demands cattle-worth of wergild (2 Supply). Let Iain choose publicly and both chiefs lose face; start a three-way feud, but gain him as an ally."
     },
     {
       "rank": 12,
@@ -611,10 +611,10 @@
     {
       "rank": 9,
       "suit": "diamond",
-      "title": "Bride-Escrow",
+      "title": "Wergild Surety",
       "subtitle": "[SOCIAL] [WEIGHT]",
-      "description": "Hold the bride-gift; both sides must humour you.",
-      "flavor": "The purse is a leather bag. The coins inside are from a dead man's hoard. The dead man was a Viterran lord who tried to tax the clans. His ghost asks for his money back. The purse has eight seams. The ninth is a stitch.",
+      "description": "Hold the settlement cattle-mark; both clans must hear you out.",
+      "flavor": "The hazel tally names twelve cattle and one winter pasture. One notch belongs to a beast dead thirty years. Every settlement copies it anyway, because removing the notch reopened the feud last time.",
       "curse_cost": "The ghost will appear if the purse is opened without a witness. If you fail to provide a witness, start Haunted [4]."
     },
     {
@@ -928,7 +928,7 @@
     {
       "name": "The Bride-Thief of Black Broom",
       "tags": [
-        "bride-theft",
+        "fosterling-claimed",
         "bog"
       ],
       "description": "A masked figure who steals brides from the Moot Hollow and hides them in the Black Broom Bog.",
@@ -1017,8 +1017,8 @@
       "description": "Viterran tax men are asking which passes you used. The clans are counting your steps. One clan has offered a bounty for the tax men's heads—in cattle, not coin. The reivers are already moving. The dead are watching."
     },
     {
-      "title": "The Bride-Price Default",
-      "description": "A Mac Tern groom cannot pay the wergild for an O'Creagh bride. The bride has fled to the Pass of Ashes. Retrieve her—or pay her price yourself. The groom has offered his sword. The bride's clan wants his head. The bride's ghost walks the pass, waiting."
+      "title": "The Fosterage Default",
+      "description": "The Mac Terns promised a chief's son to winter with the O'Creaghs and sent a servant's child in his place. The deception kept one boy safe and made another indispensable to strangers. Now both are missing in the Pass of Ashes, and each clan wants only the boy it considers its own."
     },
     {
       "title": "The Cairn that Weeps",

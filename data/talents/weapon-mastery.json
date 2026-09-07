@@ -1,16 +1,21 @@
 {
   "id": "weapon-mastery",
-  "name": "Weapon Mastery",
+  "name": "Weapon Master",
   "cost": 5,
   "tier": "major",
   "activation": "passive",
   "category": "combat",
   "useLimit": "passive",
   "prerequisites": "Melee 2+",
-  "effect": "+2d Melee",
+  "effect": "Choose a weapon type; +2 dice when using it. Once per scene, +1 Effect with signature weapon.",
   "effects": [
-    { "type": "die_bonus", "scope": "skill", "key": "melee", "amount": 2 }
+    {
+      "type": "die_bonus",
+      "scope": "skill",
+      "key": "melee",
+      "amount": 2
+    }
   ],
-  "description": "You've drilled with your chosen weapon until it feels like an extension of your arm. Applies to all Melee rolls, not just a single named weapon — keep it simple at the table.",
-  "source": "guide"
+  "description": "Choose a weapon type; +2 dice when using it. Once per scene, +1 Effect with signature weapon.From the Book of Talents (Talents and Special Abilities).",
+  "source": "talents-and-special-abilities"
 }

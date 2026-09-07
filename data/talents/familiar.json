@@ -5,11 +5,19 @@
   "tier": "minor",
   "activation": "passive",
   "category": "magic-access",
-  "tags": ["passive", "magic-access", "runekeeper", "invoker", "minor", "starter", "prerequisite"],
+  "tags": [
+    "passive",
+    "magic-access",
+    "runekeeper",
+    "invoker",
+    "minor",
+    "starter",
+    "prerequisite"
+  ],
   "useLimit": "passive",
   "prerequisites": "",
-  "effect": "Required for Patron features",
+  "effect": "You keep a bound familiar - a small animal or minor spirit that carries your Patron's attention. Prerequisite for Patron features that reach beyond arm's length.",
   "effects": [],
-  "description": "Bonds you to a spirit familiar, required for accessing Patron-granted features such as Codex or the Runekeeper path.",
-  "source": "guide"
+  "description": "You keep a bound familiar - a small animal or minor spirit that carries your Patron's attention. Prerequisite for Patron features that reach beyond arm's length. From the Book of Talents (Talents and Special Abilities).",
+  "source": "talents-and-special-abilities"
 }

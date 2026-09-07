@@ -1,15 +1,20 @@
 {
   "id": "perfect-timing-way",
-  "name": "Perfect Timing Way",
-  "cost": 7,
-  "tier": "prestige",
-  "activation": "passive",
+  "name": "Perfect Timing Technique",
+  "cost": 6,
+  "tier": "major",
+  "activation": "active",
   "category": "monk-unarmed",
-  "tags": ["passive", "unarmed", "monk", "prestige"],
+  "tags": [
+    "passive",
+    "unarmed",
+    "monk",
+    "prestige"
+  ],
   "useLimit": "passive",
-  "prerequisites": "Requires: Disciplined Body, Tier III",
-  "effect": "",
+  "prerequisites": "Wits 3+, Melee 2+",
+  "effect": "Twice per scene, improve Position by +1 step; +1 die to reaction rolls.",
   "effects": [],
-  "description": "An advanced Monk Way focused on reading and countering an opponent's rhythm. See the Player's Guide Monk Talents table for full write-up.",
-  "source": "guide"
+  "description": "Twice per scene, improve Position by +1 step; +1 die to reaction rolls.From the Book of Talents (Talents and Special Abilities).",
+  "source": "talents-and-special-abilities"
 }

@@ -5,13 +5,22 @@
   "tier": "minor",
   "activation": "passive",
   "category": "defense",
-  "tags": ["passive", "defense", "fatigue", "minor"],
-  "useLimit": "passive",
-  "prerequisites": "",
-  "effect": "+1 to defense DV | convert 1 Harm to Fatigue",
-  "effects": [
-    { "type": "ignore_penalty", "source": "harm", "amount": 1 }
+  "tags": [
+    "passive",
+    "defense",
+    "fatigue",
+    "minor"
   ],
-  "description": "You know how to protect yourself. +1 to your defense DV, and you may convert 1 Harm to Fatigue.",
-  "source": "guide"
+  "useLimit": "passive",
+  "prerequisites": "Melee 2+",
+  "effect": "Passive + Active. +1 to defense DV while engaged in melee. Once per scene, convert first Harm 1 from melee to Fatigue.",
+  "effects": [
+    {
+      "type": "ignore_penalty",
+      "source": "harm",
+      "amount": 1
+    }
+  ],
+  "description": "Passive + Active. +1 to defense DV while engaged in melee. Once per scene, convert first Harm 1 from melee to Fatigue.From the Book of Talents (Talents and Special Abilities).",
+  "source": "talents-and-special-abilities"
 }

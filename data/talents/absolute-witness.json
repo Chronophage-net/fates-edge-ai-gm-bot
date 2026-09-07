@@ -7,10 +7,15 @@
   "category": "investigation",
   "useLimit": "passive",
   "prerequisites": "Insight 4+, Requires: Tier IV",
-  "effect": "+2d Insight",
+  "effect": "+2 dice on Insight. Once per session, become living truth for one scene: every deception attempted within Near range automatically fails.",
   "effects": [
-    { "type": "die_bonus", "scope": "skill", "key": "insight", "amount": 2 }
+    {
+      "type": "die_bonus",
+      "scope": "skill",
+      "key": "insight",
+      "amount": 2
+    }
   ],
-  "description": "Within Near range, deception simply doesn't work on you — lies still get told, but you always know it. Mechanically represented as a heavy passive bonus to Insight.",
-  "source": "guide"
+  "description": "+2 dice on Insight. Once per session, become living truth for one scene: every deception attempted within Near range automatically fails. From the Book of Talents (Talents and Special Abilities).",
+  "source": "talents-and-special-abilities"
 }

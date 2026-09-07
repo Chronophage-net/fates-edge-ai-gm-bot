@@ -1,15 +1,20 @@
 {
   "id": "iron-fist-way",
-  "name": "Iron Fist Way",
+  "name": "Iron Fist Technique",
   "cost": 6,
   "tier": "major",
   "activation": "passive",
   "category": "monk-unarmed",
-  "tags": ["passive", "unarmed", "monk", "major"],
+  "tags": [
+    "passive",
+    "unarmed",
+    "monk",
+    "major"
+  ],
   "useLimit": "passive",
-  "prerequisites": "Requires: Disciplined Body",
-  "effect": "",
+  "prerequisites": "Disciplined Body, Melee 2+",
+  "effect": "+1 die to unarmed attacks; strikes count as enchanted for purposes of harming supernatural creatures.",
   "effects": [],
-  "description": "An advanced Monk Way focused on striking power. See the Player's Guide Monk Talents table for full write-up.",
-  "source": "guide"
+  "description": "+1 die to unarmed attacks; strikes count as enchanted for purposes of harming supernatural creatures.From the Book of Talents (Talents and Special Abilities).",
+  "source": "talents-and-special-abilities"
 }

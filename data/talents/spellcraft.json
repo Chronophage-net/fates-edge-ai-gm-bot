@@ -5,11 +5,18 @@
   "tier": "major",
   "activation": "passive",
   "category": "magic-access",
-  "tags": ["passive", "magic-access", "free-caster", "spellcraft", "major", "starter"],
+  "tags": [
+    "passive",
+    "magic-access",
+    "free-caster",
+    "spellcraft",
+    "major",
+    "starter"
+  ],
   "useLimit": "passive",
   "prerequisites": "",
-  "effect": "Grants access to Weave & Cast freeform spellcasting",
+  "effect": "Grants access to Weave \\& Cast freeform spellcasting using the Eight Elements. Without this, characters cannot freeform cast.",
   "effects": [],
-  "description": "Opens the Free Caster path — freeform Weave & Cast spellcasting per the Player's Guide TAGS system. Prerequisite for Free Caster enhancement talents.",
-  "source": "guide"
+  "description": "Grants access to Weave \\& Cast freeform spellcasting using the Eight Elements. Without this, characters cannot freeform cast.From the Book of Talents (Talents and Special Abilities).",
+  "source": "talents-and-special-abilities"
 }

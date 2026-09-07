@@ -7,10 +7,15 @@
   "category": "investigation",
   "useLimit": "passive",
   "prerequisites": "",
-  "effect": "+1d Investigation",
+  "effect": "+1 die on perception checks to spot danger or hidden details.",
   "effects": [
-    { "type": "die_bonus", "scope": "skill", "key": "investigation", "amount": 1 }
+    {
+      "type": "die_bonus",
+      "scope": "skill",
+      "key": "investigation",
+      "amount": 1
+    }
   ],
-  "description": "You notice what others miss — a stray thread, a too-quiet room, a face that doesn't belong. This bonus is always on; it never needs to be activated or spent.",
-  "source": "guide"
+  "description": "+1 die on perception checks to spot danger or hidden details.From the Book of Talents (Talents and Special Abilities).",
+  "source": "talents-and-special-abilities"
 }

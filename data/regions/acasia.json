@@ -10,9 +10,9 @@
     "tagline": "The Empire conquered it first. The Empire left it last. Now neither remembers why.",
     "genre": "Low-fantasy wasteland, mercenary realism, cursed borderlands",
     "mood": "Famine, Ambition, and the Ghost of Empire",
-    "starting_location": "The Pale Causeway's last inn, walls soot-blackened by coal and a century of gossip. A bounty poster flutters beside a half-empty hearth. The innkeeper is a one-eyed woman who pours small beer without asking. A stranger at the bar offers a sealed contract: retrieve a dowry chest from a Blackwood matriarch before the Margravine's feast day. 'The chest contains a claim, not coin,' the stranger whispers. 'But a claim in Acasia is worth more than gold—it is a key to a bridge that does not loop. The Empire's surveyors marked it. Then they died.'",
+    "starting_location": "The last inn before the Pale Causeway has three names, depending on which claimant's map you bought, and none on its sign. Rain worries the shutters. A company drum serves as a table beside the hearth, its hide painted over so many times that five dead employers show through. The innkeeper pours small beer for a courier whose boots are white with road-chalk. He sets down an imperial survey case, still sealed, and asks whether anyone present can escort a boundary home. Not a surveyor. A boundary. It walked out of the Blackwood yesterday, passed two villages without stopping, and is expected at the Margravine's court before supper.",
     "lore": {
-      "history": "Acasia was the first province the Utaran Empire swallowed when it turned its eyes east. The legions marched through the Pale Causeway, crushed the hill-kings, and planted their eagles in the Blackwood. For centuries, Acasia was the empire's eastern breadbasket and its first line of defense. Grain flowed west; coin flowed east. The roads were straight, the bridges paid, and the Curse was just a farmer's whisper. Then the empire rotted from within. When the last Utaran emperor died and the provinces broke away, Acasia lingered for another hundred years — a ghost province whose governors still stamped Utaran seals, whose courts still cited Utaran law, whose coins still bore the emperor's face. No one came from the west to collect the taxes. No one sent legions to enforce the peace. The Acasians kept the forms, because they had never learned to keep anything else. They had no native king, no unifying faith, no common tongue beyond the legionary's Utaran. They were the empire's children, and when the empire died, they became orphans. For a century they clung to the ruins. Then the plagues came. Then the famines. Then the Curse — a slow rot of roads that led nowhere, bridges that looped back on themselves, villages that woke to find their neighbors' houses standing empty. The old imperial surveys became maps of places that no longer existed. The grain blights turned the storehouses to dust. The free companies, once hired to keep the peace, became the only law. That was two hundred years ago.",
+      "history": "Acasia was conquered early and abandoned late. This is the first fact every claimant agrees upon, although each dates both events differently. The legions entered through the Pale Causeway, broke the hill-kings, and taught the valleys to send grain west along roads straight enough to shame a plumb line. They left milestones, bridges, a language for petitions, and an appetite for signatures. They did not leave anyone authorized to say when their authority had ended.\n\nFor a century after the last emperor died, Acasian governors continued to stamp his face into wax. Courts cited decrees whose issuing offices had burned. Tax was assessed, collected, and sometimes even remitted toward a capital from which no receipt returned. This was not simple foolishness. Imperial law was the one instrument rival valleys shared, and a dead empire could arbitrate without favoring a living neighbor. The forms persisted because they were useful. They became dangerous for the same reason.\n\nThen plague emptied the posting stations. Blight made the western grain quotas obscene. Surveyors arrived to reconcile the maps with the surviving villages and discovered that the roads had begun reconciling the villages with the maps. A bridge returned travelers to the bank they had left. A boundary crossed a field overnight. One hamlet woke to find itself omitted and was gone by the next census. People call this the Curse, although the word disguises an argument: whether the land is sick from empire, grieving it, or continuing its work without human supervision.\n\nAcasia now belongs, depending on the document, to a Margravine with the last credible seal, a lame king whose throne travels farther than his writ, several free companies paid to confuse possession with peace, and thousands of people planting crops under whichever flag did not burn them last winter. The old roads still run west. On certain mornings they are found a little farther west than before.",
       "first_notice": "The smell of mildew on old parchment and wet ash. The way every milestone has been recarved — first in Utaran, then in a half-dozen failed scripts. The silence of a village that heard you coming and chose not to open its gates.",
       "rule_that_kills": "Never sign a contract on a bridge. The river is a witness, and it never forgets a signature. The Empire's last governor signed a treaty on the Pont-du-Tithe. No one knows what it said. The bridge remembers.",
       "curse_explanation": "The Curse is not ancient. It is a legacy. Some say it began with the last Imperial Survey, when the surveyors tried to map every bridge, every ford, every toll—and in the measuring, broke something. Others say it was the plagues, when the dead were buried in unmarked pits and the priests forgot the proper rites. The hedge-witches say it was the empire's own fault: they ruled Acasia for centuries but never taught the Acasians to rule themselves. When the empire left, the land had no king, no law, no memory. The Curse filled the gap. Now the Margravine and the Lame King fight over the scraps, while free companies sell their swords to whichever claimant pays first. The hedge-witches tie red thread around bridges and leave offerings of salt at crossroads, hoping to keep the Curse from spreading. The villagers pray to saints the Empire forgot. And the roads — the old imperial roads — still march west toward a capital that no longer exists. The capital does not answer. But the roads keep marching."
@@ -138,10 +138,10 @@
       "quirk": "She knows which bridges eat travelers, and her price is a story that ends badly. Her grandmother witnessed the last imperial survey."
     },
     {
-      "name": "The Bride",
-      "role": "Dowry chest claimant (Blackwood matriarch's heir)",
+      "name": "Adelas of the Drowned Span",
+      "role": "Heir to an unrecognized bridge-charter",
       "motivation": "Recover the chest before the Margravine's feast day",
-      "quirk": "She carries a dagger in her wedding veil. The claim is to a bridge that drowned. The bridge was built by the Utaran legions."
+      "quirk": "She carries the original toll-key on a butcher's cord. The bridge named in her charter drowned before she was born; on rainless nights, its bell still summons her family to collect."
     },
     {
       "name": "Vladan",
@@ -377,7 +377,7 @@
       "subtitle": "[NOBLE] [VENGEANCE]",
       "description": "Tends the feud like a garden.",
       "flavor": "Her garden grows tombstones. She waters them with tears—her enemies'. Her grandmother was the last Acasian to hold an imperial title. The empire took it back. She has not forgotten.",
-      "debt": "The empire stole her grandmother's title. If you recover the original charter (in the Sealed Dowry Chest), she will name you her heir.",
+      "debt": "The empire stole her grandmother's title. If you recover the original charter (in the Sealed Claim-Coffer), she will name you her heir.",
       "price": "A lock of hair from a blood enemy. She will not say whose."
     },
     {
@@ -403,12 +403,12 @@
     {
       "rank": 11,
       "suit": "heart",
-      "title": "Bride with No Dowry but a Claim",
+      "title": "Dispossessed Heir",
       "subtitle": "[CLAIM] [DESPERATION]",
-      "description": "Daggers in the wedding chest.",
-      "flavor": "The claim is to a bridge that drowned. The bride intends to collect. The bridge was built by the legions. The legions are gone. The bridge is not.",
-      "debt": "Her dowry was the bridge's toll. The Margravine seized it. If you help her collect, she will give you a **Bridge Token** (Diamond).",
-      "price": "A dagger from her chest. Using it in a duel gives +1 die, but the bridge's ghost will claim the loser."
+      "description": "An heir with a toll-key to a bridge beneath the river.",
+      "flavor": "Adelas inherited an office the Margravine abolished and a bridge the flood removed. The office still issues demands. The bridge still rings its bell.",
+      "debt": "The Margravine seized her family's toll-right. If you force a hearing, Adelas will give you a **Bridge Token** (Diamond).",
+      "price": "Carry her iron toll-key across the ford. It grants +1 die at the crossing, but the drowned bridge will recognize you as its keeper."
     },
     {
       "rank": 12,
@@ -490,10 +490,10 @@
     {
       "rank": 7,
       "suit": "club",
-      "title": "Wedding Turns Ambush",
+      "title": "Ceremony Turns Ambush",
       "subtitle": "[SOCIAL] [TRAP]",
-      "description": "You are caught between two bloodlines.",
-      "flavor": "The bride's veil is a shroud. The groom's ring is a knife. The feud began when the empire divided the valley. The valley has not healed.",
+      "description": "A boundary-walking ends with arrows from both banks.",
+      "flavor": "Two villages came to renew their shared grazing stones. Each brought the map on which it owns the opposite bank. The first arrow struck the imperial marker, which has begun bleeding rust.",
       "mechanical_hook": "You must choose a side or flee. Choosing a side gives you an ally (Cap 2) but starts a **Feud Spiral [6]** timer with the other. Fleeing costs 1 Fatigue and ticks **Curse Awakening +1**."
     },
     {
@@ -627,7 +627,7 @@
     {
       "rank": 9,
       "suit": "diamond",
-      "title": "Sealed Dowry Chest",
+      "title": "Sealed Claim-Coffer",
       "subtitle": "[CLAIM] [MYSTERY]",
       "description": "Of claims, not coin; certain doors open.",
       "flavor": "The chest is locked with a riddle. The answer is a name you do not know. The name is the last imperial governor's. He wrote it on the inside. He is the only one who has seen it.",
@@ -654,11 +654,11 @@
     {
       "rank": 12,
       "suit": "diamond",
-      "title": "Marriage Proxy",
+      "title": "Proxy of Office",
       "subtitle": "[SOCIAL] [ALLIANCE]",
-      "description": "From the Margravine; bind a hill-king to your cause.",
-      "flavor": "The proxy is a wedding veil. The veil was worn by a ghost. The ghost was the Margravine's grandmother. She married an imperial legate. The legate never came home.",
-      "curse_cost": "Using the proxy binds the hill-king to you — but the ghost will appear at your own wedding (or any celebration). She will ask for a dance. Refusing costs 1 Boon and ticks **Curse Awakening +1**."
+      "description": "A dead governor's seal appoints a living stranger.",
+      "flavor": "The lead seal bears an office omitted from every surviving lawbook. Pressed into wax, it appoints its holder Warden of the Western Abutment. No bridge in Acasia admits to having one.",
+      "curse_cost": "Using the proxy binds a claimant to your cause, but transfers the office's neglected duties to you. At the next public celebration, an imperial clerk arrives to inspect your abutment. Refusal costs 1 Boon and ticks **Curse Awakening +1**."
     },
     {
       "rank": 13,
@@ -782,7 +782,7 @@
       ],
       "cracks": [
         "a **Blood-Peace Charter** suspends his authority",
-        "a **Marriage Proxy** binds him to a rival"
+        "a **Proxy of Office** binds him to a rival"
       ]
     },
     {
@@ -849,7 +849,7 @@
         "The Emperor's Peace"
       ],
       "cracks": [
-        "produce the original imperial charter (in the Sealed Dowry Chest)",
+        "produce the original imperial charter (in the Sealed Claim-Coffer)",
         "pay a wergild in the empire's own debased coinage",
         "convince the ghost that the empire is truly dead"
       ]
@@ -857,8 +857,8 @@
   ],
   "encounter_seeds": [
     {
-      "title": "The Dowry That Walked",
-      "description": "A Blackwood matriarch's dowry chest has been stolen. The chest contains a claim to a bridge that never floods—and a curse that the Margravine wants broken. The chest was last seen in the hands of a free company captain who claims he is the heir to the empire."
+      "title": "The Boundary That Walked",
+      "description": "An imperial boundary stone has uprooted itself and is traveling west one muddy field at a time. Farms wake under new taxes; villages discover they belong to yesterday's enemy. The Margravine wants it stopped before it reaches her court. A free-company captain follows close behind, collecting allegiance wherever the stone comes to rest."
     },
     {
       "title": "The Lame King's Feast",

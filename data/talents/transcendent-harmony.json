@@ -5,11 +5,17 @@
   "tier": "epic",
   "activation": "passive",
   "category": "monk-unarmed",
-  "tags": ["passive", "unarmed", "monk", "epic", "capstone"],
+  "tags": [
+    "passive",
+    "unarmed",
+    "monk",
+    "epic",
+    "capstone"
+  ],
   "useLimit": "passive",
-  "prerequisites": "Requires: Disciplined Body, Tier V",
-  "effect": "",
+  "prerequisites": "Flowing Spirit Technique + Perfect Timing Technique, Spirit 4+",
+  "effect": "Passive + Active. Convert 2 Harm into Fatigue; once per session become immune to Harm; allies gain +1 defense.",
   "effects": [],
-  "description": "The Monk path's capstone Way, representing complete mastery of body and spirit. See the Player's Guide Monk Talents table for full write-up.",
-  "source": "guide"
+  "description": "Passive + Active. Convert 2 Harm into Fatigue; once per session become immune to Harm; allies gain +1 defense.From the Book of Talents (Talents and Special Abilities).",
+  "source": "talents-and-special-abilities"
 }

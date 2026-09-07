@@ -1,8 +1,8 @@
 {
   "id": "iron-skin",
   "name": "Iron Skin",
-  "cost": 7,
-  "tier": "prestige",
+  "cost": 2,
+  "tier": "minor",
   "activation": "passive",
   "category": "defense",
   "tags": [
@@ -12,8 +12,8 @@
     "prestige"
   ],
   "useLimit": "passive",
-  "prerequisites": "",
-  "effect": "Reduce all physical harm by one level (severe becomes moderate, etc.)",
-  "description": "Reduce all physical harm by one level (severe becomes moderate, etc.). Adapted from the Fate's Edge Expanded Talents splatbook.",
-  "source": "splatbook"
+  "prerequisites": "Body 2+",
+  "effect": "When you take physical Harm, you may convert the first point of Harm each scene to Fatigue instead.",
+  "description": "When you take physical Harm, you may convert the first point of Harm each scene to Fatigue instead.From the Book of Talents (Talents and Special Abilities).",
+  "source": "talents-and-special-abilities"
 }

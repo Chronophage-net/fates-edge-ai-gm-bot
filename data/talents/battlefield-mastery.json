@@ -1,15 +1,21 @@
 {
   "id": "battlefield-mastery",
   "name": "Battlefield Mastery",
-  "cost": 8,
-  "tier": "prestige",
-  "activation": "passive",
+  "cost": 6,
+  "tier": "major",
+  "activation": "active",
   "category": "combat",
-  "tags": ["passive", "melee", "combat", "prestige", "surrounded"],
+  "tags": [
+    "passive",
+    "melee",
+    "combat",
+    "prestige",
+    "surrounded"
+  ],
   "useLimit": "passive",
-  "prerequisites": "Requires: Tier III",
-  "effect": "Enhanced combat flow when surrounded",
+  "prerequisites": "Melee 4+, Wits 4+, Sway 2+",
+  "effect": "When engaged with 3+ opponents, for the next 3 exchanges: all melee attacks gain +1 Effect, enemies act at -1 die, your Position improves by one step, and you may convert one Harm 1 per exchange to Fatigue.",
   "effects": [],
-  "description": "Being outnumbered sharpens rather than dulls you — the GM should apply reduced Position penalties and let you flow between engaged opponents smoothly when surrounded.",
-  "source": "guide"
+  "description": "When engaged with 3+ opponents, for the next 3 exchanges: all melee attacks gain +1 Effect, enemies act at -1 die, your Position improves by one step, and you may convert one Harm 1 per exchange to Fatigue.From the Book of Talents (Talents and Special Abilities).",
+  "source": "talents-and-special-abilities"
 }

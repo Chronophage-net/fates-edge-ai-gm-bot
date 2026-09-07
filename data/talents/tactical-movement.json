@@ -5,11 +5,16 @@
   "tier": "major",
   "activation": "active",
   "category": "movement",
-  "tags": ["active", "movement", "combat", "major"],
+  "tags": [
+    "active",
+    "movement",
+    "combat",
+    "major"
+  ],
   "useLimit": "unlimited",
-  "prerequisites": "",
-  "effect": "Move within engagement zone as a Move action",
+  "prerequisites": "Athletics 2+",
+  "effect": "Passive + Active. Move within engagement zone as Move action (instead of full action). Once per scene, disengage from Close as Move action.",
   "effects": [],
-  "description": "You reposition fluidly in melee, repositioning within an engagement zone as a Move action without provoking the usual complications.",
-  "source": "guide"
+  "description": "Passive + Active. Move within engagement zone as Move action (instead of full action). Once per scene, disengage from Close as Move action.From the Book of Talents (Talents and Special Abilities).",
+  "source": "talents-and-special-abilities"
 }

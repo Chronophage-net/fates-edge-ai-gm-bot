@@ -33,7 +33,7 @@
         {
           "faction": "The Federate King's Court (Marble)",
           "goal": "Preserve imperial forms, patents, and the marble bench's authority",
-          "method": "Charters, patents, Utaran precedent, the Queen's audience",
+          "method": "Charters, patents, Utaran precedent, and private audience",
           "why_players_care": "Marble-High status grants +1 Effect citing charters and patents"
         },
         {
@@ -676,9 +676,9 @@
     {
       "rank": 12,
       "suit": "diamond",
-      "title": "Queen's Audience",
+      "title": "Private Audience",
       "subtitle": "[SOCIAL]",
-      "description": "Private; a whisper becomes policy.",
+      "description": "The Elder receives you in a half-dug garden where every quiet word acquires witnesses.",
       "flavor": "Held in the garden, where the hedges are kept low enough to see over and the gardener never quite finishes the same bed. Whatever you whisper becomes policy for everyone, your rivals included.",
       "curse_cost": "What is whispered becomes policy for everyone, not just the asker, and can be reversed by rivals with better arguments."
     },
@@ -751,7 +751,7 @@
       {
         "roll": 4,
         "omen": "Queen's Dove",
-        "effect": "a message arrives; +1d on the next Queen's Audience."
+        "effect": "a message arrives; +1d on the next Private Audience."
       },
       {
         "roll": 5,
@@ -814,7 +814,7 @@
       ],
       "cracks": [
         "produce a Foedus Seal to quiet him",
-        "a Queen's Audience overrules his filing",
+        "a Private Audience overrules his filing",
         "if the Witness Fading Timer is at 6+, he gains +1 die in all phases (the stone supports him)"
       ]
     },

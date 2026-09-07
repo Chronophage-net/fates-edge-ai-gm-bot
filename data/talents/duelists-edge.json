@@ -1,17 +1,28 @@
 {
   "id": "duelists-edge",
   "name": "Duelist's Edge",
-  "cost": 8,
-  "tier": "prestige",
+  "cost": 6,
+  "tier": "major",
   "activation": "passive",
   "category": "combat",
-  "tags": ["passive", "melee", "combat", "prestige", "one-on-one"],
-  "useLimit": "passive",
-  "prerequisites": "Requires: Tier III",
-  "effect": "+1d Melee vs a single opponent | ignore first Harm",
-  "effects": [
-    { "type": "die_bonus", "scope": "skill", "key": "melee", "amount": 1 }
+  "tags": [
+    "passive",
+    "melee",
+    "combat",
+    "prestige",
+    "one-on-one"
   ],
-  "description": "When locked in a duel against a single opponent, you fight with unmatched focus: +1 die to Melee, and you ignore the first point of Harm you take in the engagement.",
-  "source": "guide"
+  "useLimit": "passive",
+  "prerequisites": "Melee 3+, Wits 3+",
+  "effect": "Passive + Active. When engaged with a single opponent: +1 die to all melee rolls. Once per scene, ignore first Harm 1 or 2 from that opponent.",
+  "effects": [
+    {
+      "type": "die_bonus",
+      "scope": "skill",
+      "key": "melee",
+      "amount": 1
+    }
+  ],
+  "description": "Passive + Active. When engaged with a single opponent: +1 die to all melee rolls. Once per scene, ignore first Harm 1 or 2 from that opponent.From the Book of Talents (Talents and Special Abilities).",
+  "source": "talents-and-special-abilities"
 }

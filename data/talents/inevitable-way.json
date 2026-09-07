@@ -5,11 +5,16 @@
   "tier": "epic",
   "activation": "passive",
   "category": "monk-unarmed",
-  "tags": ["passive", "unarmed", "monk", "epic"],
+  "tags": [
+    "passive",
+    "unarmed",
+    "monk",
+    "epic"
+  ],
   "useLimit": "passive",
   "prerequisites": "Requires: Disciplined Body, Tier IV",
-  "effect": "",
+  "effect": "+2 dice to unarmed attacks; ignore 1 Armor; you may counterattack when an enemy's attack on you misses.",
   "effects": [],
-  "description": "A legendary Monk Way; your strikes become nearly impossible to avoid. See the Player's Guide Monk Talents table for full write-up.",
-  "source": "guide"
+  "description": "+2 dice to unarmed attacks; ignore 1 Armor; you may counterattack when an enemy's attack on you misses. From the Book of Talents (Talents and Special Abilities).",
+  "source": "talents-and-special-abilities"
 }

@@ -1,15 +1,21 @@
 {
   "id": "flurry-strike",
   "name": "Flurry Strike",
-  "cost": 7,
-  "tier": "prestige",
+  "cost": 6,
+  "tier": "major",
   "activation": "active",
   "category": "combat",
-  "tags": ["active", "melee", "combat", "prestige", "multi-target"],
+  "tags": [
+    "active",
+    "melee",
+    "combat",
+    "prestige",
+    "multi-target"
+  ],
   "useLimit": "unlimited",
-  "prerequisites": "Requires: Tier III",
-  "effect": "Attack 2 opponents as one action",
+  "prerequisites": "Melee 3+, Body 3+",
+  "effect": "When engaged with multiple opponents, make 2 attacks as one action. Each attack at -1 die.",
   "effects": [],
-  "description": "A single decisive action lets you strike two opponents within reach, resolved as one combined attack.",
-  "source": "guide"
+  "description": "When engaged with multiple opponents, make 2 attacks as one action. Each attack at -1 die.From the Book of Talents (Talents and Special Abilities).",
+  "source": "talents-and-special-abilities"
 }

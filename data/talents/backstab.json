@@ -1,17 +1,27 @@
 {
   "id": "backstab",
   "name": "Backstab",
-  "cost": 8,
-  "tier": "prestige",
-  "activation": "reactive",
+  "cost": 6,
+  "tier": "major",
+  "activation": "active",
   "category": "rogue-thief",
   "useLimit": "once-scene",
-  "prerequisites": "Stealth 3+, Requires: Tier III",
-  "effect": "+1d Melee or Unarmed once per scene when attacking from Stealth",
+  "prerequisites": "Stealth 2+, Melee 2+, light weapon",
+  "effect": "When you attack an Unaware or Engaged foe from Stealth, deal +1 Harm and ignore 1 point of their Armor. On a miss, you are Exposed (Desperate Position or mark 1 Harm).",
   "effects": [
-    { "type": "die_bonus", "scope": "skill", "key": "melee", "amount": 1 },
-    { "type": "die_bonus", "scope": "skill", "key": "unarmed", "amount": 1 }
+    {
+      "type": "die_bonus",
+      "scope": "skill",
+      "key": "melee",
+      "amount": 1
+    },
+    {
+      "type": "die_bonus",
+      "scope": "skill",
+      "key": "unarmed",
+      "amount": 1
+    }
   ],
-  "description": "Once per scene, when you attack a target that hasn't noticed you, add the bonus to that single strike. The GM should confirm the target is genuinely unaware before this applies.",
-  "source": "guide"
+  "description": "When you attack an Unaware or Engaged foe from Stealth, deal +1 Harm and ignore 1 point of their Armor. On a miss, you are Exposed (Desperate Position or mark 1 Harm).From the Book of Talents (Talents and Special Abilities).",
+  "source": "talents-and-special-abilities"
 }

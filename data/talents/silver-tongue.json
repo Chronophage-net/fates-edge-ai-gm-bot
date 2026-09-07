@@ -7,10 +7,15 @@
   "category": "social",
   "useLimit": "passive",
   "prerequisites": "",
-  "effect": "+1d Sway",
+  "effect": "+1 die on persuasion attempts.",
   "effects": [
-    { "type": "die_bonus", "scope": "skill", "key": "sway", "amount": 1 }
+    {
+      "type": "die_bonus",
+      "scope": "skill",
+      "key": "sway",
+      "amount": 1
+    }
   ],
-  "description": "Words come easily to you, and people tend to want to agree with the last thing you said.",
-  "source": "guide"
+  "description": "+1 die on persuasion attempts.From the Book of Talents (Talents and Special Abilities).",
+  "source": "talents-and-special-abilities"
 }

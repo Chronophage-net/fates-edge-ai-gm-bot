@@ -3,7 +3,7 @@
   "name": "Combat Momentum",
   "cost": 9,
   "tier": "prestige",
-  "activation": "reactive",
+  "activation": "passive",
   "category": "combat",
   "tags": [
     "reactive",
@@ -14,7 +14,7 @@
   ],
   "useLimit": "unlimited",
   "prerequisites": "",
-  "effect": "After a successful attack, +1d on your next action if it is also an attack",
-  "description": "After a successful attack, +1d on your next action if it is also an attack. Adapted from the Fate's Edge Expanded Talents splatbook.",
-  "source": "splatbook"
+  "effect": "After an attack that lands, +1 die on your next action if that action is also an attack.",
+  "description": "After an attack that lands, +1 die on your next action if that action is also an attack. From the Book of Talents (Talents and Special Abilities).",
+  "source": "talents-and-special-abilities"
 }

@@ -1,16 +1,21 @@
 {
   "id": "cavalier",
   "name": "Cavalier",
-  "cost": 6,
+  "cost": 4,
   "tier": "major",
   "activation": "passive",
   "category": "movement",
   "useLimit": "passive",
-  "prerequisites": "Requires: mounted War Mount asset",
-  "effect": "+2d Melee when moving Near→Far on a mount",
+  "prerequisites": "War Mount Asset, Melee 2+ or Ranged 2+",
+  "effect": "Passive while mounted. Gain +2 dice to melee attacks when moving Far$\\rightarrow$Near, or +2 dice to ranged attacks when moving Near$\\rightarrow$Far.",
   "effects": [
-    { "type": "die_bonus", "scope": "skill", "key": "melee", "amount": 2 }
+    {
+      "type": "die_bonus",
+      "scope": "skill",
+      "key": "melee",
+      "amount": 2
+    }
   ],
-  "description": "You fight best in the saddle, striking as you close distance. Matches the mechanical shorthand already used in the War Mount asset write-up.",
-  "source": "wiki"
+  "description": "Passive while mounted. Gain +2 dice to melee attacks when moving Far$\\rightarrow$Near, or +2 dice to ranged attacks when moving Near$\\rightarrow$Far.From the Book of Talents (Talents and Special Abilities).",
+  "source": "talents-and-special-abilities"
 }

@@ -1,15 +1,20 @@
 {
   "id": "flowing-spirit-way",
-  "name": "Flowing Spirit Way",
-  "cost": 8,
-  "tier": "prestige",
+  "name": "Flowing Spirit Technique",
+  "cost": 6,
+  "tier": "major",
   "activation": "passive",
   "category": "monk-unarmed",
-  "tags": ["passive", "unarmed", "monk", "prestige"],
+  "tags": [
+    "passive",
+    "unarmed",
+    "monk",
+    "prestige"
+  ],
   "useLimit": "passive",
-  "prerequisites": "Requires: Disciplined Body, Tier III",
-  "effect": "",
+  "prerequisites": "Spirit 2+, Melee 2+",
+  "effect": "Passive + Active. Convert up to 1 Harm into Fatigue per attack; +1 die against fear or charm effects.",
   "effects": [],
-  "description": "An advanced Monk Way focused on mobility and evasion. See the Player's Guide Monk Talents table for full write-up.",
-  "source": "guide"
+  "description": "Passive + Active. Convert up to 1 Harm into Fatigue per attack; +1 die against fear or charm effects.From the Book of Talents (Talents and Special Abilities).",
+  "source": "talents-and-special-abilities"
 }

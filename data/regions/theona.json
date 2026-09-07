@@ -13,7 +13,7 @@
     "mood": "Three Greens, No Ninth — and a gray thread waiting at the threshold.",
     "starting_location": "A Moot Hill under rain, where vows are carved into standing stone and blackthorn knives gleam beside the ogham pillar. A Bride-Peacemaker draws a blade between two bloodlines. \"The ninth vow was never spoken,\" she says. \"But the Green Host remembers. Bring us the head of the slaver who burned the eastern strand, and the feud will end. Fail, and your name will join the uncounted. Or the sheriff will take you for vagrancy — the crown has declared our moots unlawful assemblies. Or the Abbess will call it heresy. Or, if you listen closely, the Confessor's bell will ring for you. The bell has not rung in seven years. She is waiting.\"",
     "lore": {
-      "history": "The isles of Theona rise green and jagged from the Dolmis, their basalt cliffs wrapped in mists and moorland song. Nominally a duchy sworn to Viterra, in truth the Three Greens heed no crown but their own moots, no law but their taboos. The greatest of these is the silence of Nine: no bell tolls a ninth, no bridge counts that span, no oath dares its syllable. It is said that those who break the ban invite the Green Host — the Aos Sí, the elder folk who were here before the first Viterran longship. The Viterran crown claims the isles by right of conquest and papal bull. Its sheriffs impose common law, its bishops raise stone steeples. But the Church of the Everflame watches from Whiterick Abbey. The Abbess schemes to preserve power by pitting Viterra, the native factions, and raiders against each other, seeking to purge the 'pagan' taboos and impose imperial orthodoxy. And in the mist, a quieter power waits: the Gray Liturgy. Its Confessors carry the weight of the dead; its Gray Walkers guide the dying across; its Well-Walkers descend into the Ninth and return. It offers no gold, no land, no writs — only a gray thread and a cracked bell. For those who have lost too much, that is enough. To break a taboo is to invite not only the fae but the inquisitor. The sheriff leaves a noose. The Host leaves a hollow in the mist where your name used to be. The Abbess leaves a brand that burns until confession. The Confessor leaves a thread — and a question.",
+      "history": "Theona appears from the Dolmis in three greens: pasture under rain, gorse in bloom, and the dark color of a hill when something passes over the sun. Viterran charts call the islands a duchy. The islanders call them the Three Greens and will ask which one the chart proposes to arrest.\n\nFour laws meet here and none is merely ceremonial. The crown sends sheriffs with warrants written for roads that end at the tide. Whiterick Abbey keeps the Everflame behind thick walls and insists the old prohibitions are rustic errors, except for the prohibitions the Abbess has found politically useful. The moots judge by kin, injury, sanctuary, satire, and the remembered decisions of people who may interrupt through a well or a dream. The Green Host observes courtesies older than all three and punishes breaches nobody living recalls agreeing to. A person may be innocent before one law, condemned by another, and urgently needed by the remaining two.\n\nThis is why Theonan peace is made rather than declared. Bríd's wooden knife draws blood without carrying iron's insult. Gray thread turns enemies into ritual kin for a season, long enough to pasture cattle or bury sons. A marriage may close a feud, but so may fosterage, shared mourning, a poem cruel enough to make vengeance ridiculous, or two houses agreeing that a dead woman had better judgment than either chief. None erases the injury. The island achievement is smaller and harder: tomorrow arrives with fewer graves prepared for it.\n\nOver everything lies the silence of Nine. Bells stop. Bridges lose a span in the telling. The ninth cup goes into earth already wet with rain. Scholars explain this as fear of the Host; priests as evidence of corruption; sheriffs as obstruction. Islanders rarely explain it. They have noticed that explanations travel.\n\nThe Gray Liturgy works in what the other laws leave unattended. Confessors hear the dead without promising pardon. Gray Walkers accompany those no family will claim. Well-Walkers descend where a reflection continues after the face has gone. They offer no throne and settle no theology. They tie a thread around the wrist of the bereaved and ask whom grief has made them willing to harm.",
       "first_notice": "The smell of wet peat and salt. The silence that follows every eighth bell-ring. The hawthorn and blackthorn trees at every crossroads — the fairy thorns that no local will touch, and that Viterran surveyors learn to skirt after the first one disappears. The gray threads on the wrists of those who carry weight.",
       "rule_that_kills": "Never pour the ninth cup at a feast. Never speak the ninth name in a bargain. Never step where a step is missing. The Green Host rides for those who complete what should remain incomplete. The Viterran sheriff will hang you for the same offense — but the Host takes your name, not your neck. The Everflame Inquisitor will burn you for the silence itself. The Confessor will ring for you once, and the dead will listen."
     },
@@ -359,9 +359,9 @@
     {
       "rank": 11,
       "suit": "heart",
-      "title": "Bríd, the Bride-Peacemaker",
+      "title": "Peacemaker",
       "subtitle": "[LAW] [FEUD]",
-      "description": "Walks between bloodlines with a wooden knife; peace in marriage.",
+      "description": "Bríd walks between bloodlines with a wooden knife and binds peace through chosen kinship.",
       "flavor": "Families cut their palms with wood, not iron — blood without a weapon's weight. A Viterran magistrate's confiscated knife is now his letter opener. The Abbess calls the blade 'unconsecrated'; it cuts her robes anyway. Bríd ties a gray thread around the hands of the wed. The knot never loosens. She learned the knot from a Confessor, who learned it from the dead.",
       "debt": "She needs a witness of standing to make a peace binding. Serve as one and she owes the party a future favor.",
       "price": "A blood-price paid in coin, labor, or a public oath."
@@ -482,7 +482,7 @@
     {
       "rank": 11,
       "suit": "club",
-      "title": "Bride-Theft",
+      "title": "Broken Joining",
       "subtitle": "[FEUD] [LAW]",
       "description": "At a moot, peace flips to feud — you're caught mid-ritual.",
       "flavor": "The stolen bride's hand is cold; she has been dead for a year. A Viterran sheriff who tried to stop the theft now wears a wedding ring he doesn't remember accepting. The Confessor rings her bell at the wedding, and the dead bride hears, but does not answer. The Gray Walkers sing the keening; the stolen bride's ghost follows the song, and the feud quiets.",
@@ -601,9 +601,9 @@
     {
       "rank": 11,
       "suit": "diamond",
-      "title": "Bride-Charter",
+      "title": "Seasonal Peace-Charter",
       "subtitle": "[LAW] [ONCE]",
-      "description": "Two feuding houses sheath knives for a season; peace in marriage.",
+      "description": "Two feuding houses accept one another as ritual kin until the year turns.",
       "flavor": "The charter is written on a wedding veil stained with the first cut of peace. Viterran peace commissioners' copies burn; the Abbess's consecration caught the veil on fire. A gray thread tied to the veil kept it from burning, and the peace held. The Gray Liturgy's charters are tied with gray threads; the peace holds until the thread is cut.",
       "curse_cost": "The truce lasts one season. Afterward, both houses expect a wergild payment from whoever benefited most from the peace."
     },
