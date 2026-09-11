@@ -1,0 +1,107 @@
+{
+  "id": "twin-flames",
+  "type": "religion",
+  "title": "The Twin Flames",
+  "subtitle": "The Pereshi Faith",
+  "version": "1.0.0",
+  "tags": [
+    "fire",
+    "dualism",
+    "purity",
+    "daily-practice",
+    "lay-assembly",
+    "pereshi",
+    "towers-of-silence",
+    "no-intercessor"
+  ],
+  "lore": {
+    "description": "In the Pereshi highlands the fire is doubled. The universe is a contest between the Pure Flame — truth, order, growth — and the Consuming Flame — deceit, decay, appetite. Both are sacred; only one is to be fed. There is no single god but a host of radiant spirits, and no salvation anyone can grant: every person carries a spark, and the spark grows or dims by what they do this week. Nothing is deferred to a court or a procedure. It is a daily faith, it is exhausting, and its adherents are among the most stubbornly decent people in the world.",
+    "followers": "Householders, lamp-keepers, archivists, and the Watchers who burn what the Consuming Flame has touched. A Pereshi will argue theology with a stranger for four hours and then give them their bed.",
+    "names_across_regions": {
+      "pereshi": "The Twin Flames; the majority faith of the highlands",
+      "zakov": "The Lamp-Folk, a tolerated minority with their own quarter and their own dead",
+      "kahfagia": "The Oil-Bearers, respected as archivists and distrusted as fire-handlers aboard ship",
+      "ecktoria": "Tolerated as a provincial superstition; its Watchers quietly hired all the same",
+      "viterra": "Viewed with suspicion — a faith that says the divine has two faces reads as heresy to a lens"
+    },
+    "quote": "Feed one. Starve the other. Today, and again tomorrow, and no one can do it for you."
+  },
+  "domain_focus": [
+    "The Two Fires: the Pure Flame is fed, the Consuming Flame starved; both are sacred and neither is denied",
+    "The Spark: every person carries one; it grows and dims by daily act, not by rite or ruling",
+    "The Eternal Lamps: never extinguished, and any traveller may light a wick from one",
+    "The Twenty-One Names of Radiance: recited over an offering of oil or clarified butter",
+    "The Towers of Silence: open-topped stone cylinders where the dead are given to the elements and the birds"
+  ],
+  "doctrines": [
+    "Both flames are sacred. Only one is fed.",
+    "Every person carries a spark. Good deeds grow it; lies and cruelty dim it.",
+    "There is no intercessor. No priest can tend your flame for you.",
+    "The dead belong to the air and the birds. No ground is to be made unclean and no family beggared by a funeral.",
+    "An assembly speaks for as long as its own oil lasts."
+  ],
+  "salvation": {
+    "name": "The Feeding",
+    "shape": "A daily practice, with no intercessor and no purchase price.",
+    "description": "Nothing is conferred and nothing is administered. The spark you were born with is brighter or dimmer this evening than it was this morning, entirely because of what you did between. There is no rite that restores it and no official who can. There is only tomorrow.",
+    "why_it_is_beautiful": "It cannot be bought, inherited, withheld by an institution, or lost through a clerical error. The poorest household in the highlands keeps the same lamp as the richest and its flame is worth exactly as much.",
+    "why_it_is_terrible": "A faith that says the spark dims by your own acts has no comfort at all for the person to whom something terrible was simply done. The highlands are full of people quietly certain that what happened to them was a dimming they earned."
+  },
+  "orders": [
+    {
+      "id": "keepers_of_the_pure_flame",
+      "name": "Keepers of the Pure Flame",
+      "role": "Priests, healers, archivists",
+      "patrons": [
+        "Oath of Flame & Light",
+        "The Witness"
+      ],
+      "description": "Tend the eternal lamps, copy the texts, recite the Twenty-One Names. Their Rites grant +1 die to preserve, record, or restore."
+    },
+    {
+      "id": "watchers_against_the_maw",
+      "name": "Watchers Against the Maw",
+      "role": "Hunters of corruption",
+      "patrons": [
+        "The Pale Shepherd",
+        "Inquisitor Prime"
+      ],
+      "description": "Hunt the undead, the possessed and the corrupted, and burn what the Consuming Flame has touched. Their Rites grant +1 die against the unclean dead. They are why the faith is tolerated in Ecktoria and distrusted in Viterra."
+    },
+    {
+      "id": "the_oil_bearers",
+      "name": "The Oil-Bearers",
+      "role": "Lay assembly",
+      "patrons": [],
+      "description": "Not clergy: householders who keep a lamp and may speak in assembly for as long as their own oil lasts. The closest thing the Amaranthine has to a franchise. The rich buy very large lamps."
+    }
+  ],
+  "orders_are_masks": "An Order is not a department of this faith. It is the shape a specific Patron takes inside it — the office through which that presence is approached, named and made respectable. This is why the same Order appears in faiths that despise each other, and why it does not hold the same rank in each. Where an Order sits in the hierarchy is a claim about what the faith is for, and most schisms begin as a quarrel over which Order speaks first.",
+  "beauty": [
+    "An ethic with no intercessor and no purchase price.",
+    "The eternal lamps, from which any traveller may light a wick without asking.",
+    "The Towers of Silence: no ground made unclean, no family beggared by a funeral.",
+    "A lay assembly in which a smallholder may speak as long as her oil lasts."
+  ],
+  "ugliness": [
+    "Purity as daily performance, and performance makes informers; highland villages keep score of one another's sparks.",
+    "The Watchers burn corpses on suspicion, and have burned the houses around them.",
+    "The very large lamps of the very rich, and what they do to an assembly.",
+    "No consolation whatsoever for the person who was simply wronged."
+  ],
+  "internal_schism": {
+    "name": "The Ash-Readers",
+    "claim": "The Consuming Flame must also be fed — sparingly, deliberately, on a schedule.",
+    "description": "A hunger starved entirely, they say, will feed itself elsewhere. The Watchers consider this the single most dangerous idea in the highlands. The Ash-Readers point out that villages keeping the old ash-rites have fewer hauntings, and the Watchers have no answer for that, which is why the argument is conducted at such volume."
+  },
+  "adventure_seed": {
+    "title": "The Lamp That Would Not Take Oil",
+    "description": "A village's eternal lamp has begun refusing oil — it burns, but the oil is not consumed. The Keepers call it a blessing and have started charging pilgrims. The Watchers call it a Consuming Flame wearing the right colour and want the village burned to the sills. An Ash-Reader says both are wrong and will explain, at length, for a price. The party arrive on the third day of the argument.",
+    "quote": "It has not taken oil in nine days. Nine. You understand why I did not write it down."
+  },
+  "sample_npc": {
+    "name": "Oil-Bearer Sevana",
+    "description": "A widow with the largest lamp in her valley, which she inherited and is embarrassed by. She speaks last in assembly and for a long time, and has never once used the full measure of her oil."
+  },
+  "_license": "Fate's Edge Copyright – © 2024 - 2026 Nicholas A. Gasper. Used with permission, All rights reserved."
+}

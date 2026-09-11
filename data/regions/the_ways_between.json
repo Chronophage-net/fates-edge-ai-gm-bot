@@ -97,15 +97,42 @@
     ],
     "accidental_crossing_mechanics": "When a character is in a thin place and the conditions align, the GM may call for a Spirit + Endurance test (DV 4–6, depending on the thinness). On a failure, the character crosses into the Ways Between — not by choice, but by accident. **Partial success:** the character feels the pull; they may step back (mark 1 Fatigue) or let themselves cross (gain 1 Boon, but enter the Ways). **Miss:** the character crosses involuntarily, arriving at a random location (see accidental crossing destinations). **Critical failure:** the character crosses — and something crosses with them: an Oath-Keeper, a Counting Wraith, or worse. Once crossed, the character must navigate the Ways Between using standard travel procedures. They cannot simply 'turn back' — the threshold that opened may close behind them. Finding the way home requires a balance: a story, a memory, or a name offered to the road.",
     "known_thin_places_by_region": [
-      { "region": "Aeler", "hazard": "The Bell-Crypts. Bells ring without clappers. A ninth tone pulls listeners into a dream-echo of the mountain's first collapse." },
-      { "region": "Mistlands", "hazard": "The Ninth Plank. Step where the plank is missing, and you step into the fog of Obishaal. The Hollow Bride sometimes waits on the far side." },
-      { "region": "Ykrul", "hazard": "The Star-Road Scar. Where the grass grows in spirals. Crossing at dusk may lead to the Long Mile of Temptation." },
-      { "region": "Linn", "hazard": "The Beacon That Remembers. When the beacon burns green, the dead can see you. When it burns blue, they can touch you." },
-      { "region": "Acasia", "hazard": "The Causeway of Broken Promises. Every milestone is a broken oath. Walk it at dusk, and the Walking Scale may find you." },
-      { "region": "Valewood", "hazard": "The Spire's Shadow. When the spire phases, its shadow becomes a stair. Climb it, and you enter the Stone Circle of Forgotten Villages." },
-      { "region": "Aelaerem", "hazard": "The Field of Uncounted Steps. Step nine times in a straight line, and the Hollow Field becomes the Mist-Ford of First Doubt." },
-      { "region": "Silkstrand", "hazard": "The Ninth Bridge. Cross it at midnight, and you walk the Promise Bridge of the Unsettled." },
-      { "region": "Theona", "hazard": "The Cliff of Nine Views. From here you can see the Green Host riding — and sometimes the Fossil Stairs rising beside them." }
+      {
+        "region": "Aeler",
+        "hazard": "The Bell-Crypts. Bells ring without clappers. A ninth tone pulls listeners into a dream-echo of the mountain's first collapse."
+      },
+      {
+        "region": "Mistlands",
+        "hazard": "The Ninth Plank. Step where the plank is missing, and you step into the fog of Obishaal. The Hollow Bride sometimes waits on the far side."
+      },
+      {
+        "region": "Ykrul",
+        "hazard": "The Star-Road Scar. Where the grass grows in spirals. Crossing at dusk may lead to the Long Mile of Temptation."
+      },
+      {
+        "region": "Linn",
+        "hazard": "The Beacon That Remembers. When the beacon burns green, the dead can see you. When it burns blue, they can touch you."
+      },
+      {
+        "region": "Acasia",
+        "hazard": "The Causeway of Broken Promises. Every milestone is a broken oath. Walk it at dusk, and the Walking Scale may find you."
+      },
+      {
+        "region": "Valewood",
+        "hazard": "The Spire's Shadow. When the spire phases, its shadow becomes a stair. Climb it, and you enter the Stone Circle of Forgotten Villages."
+      },
+      {
+        "region": "Aelaerem",
+        "hazard": "The Field of Uncounted Steps. Step nine times in a straight line, and the Hollow Field becomes the Mist-Ford of First Doubt."
+      },
+      {
+        "region": "Silkstrand",
+        "hazard": "The Ninth Bridge. Cross it at midnight, and you walk the Promise Bridge of the Unsettled."
+      },
+      {
+        "region": "Theona",
+        "hazard": "The Cliff of Nine Views. From here you can see the Green Host riding — and sometimes the Fossil Stairs rising beside them."
+      }
     ],
     "accidental_crossing_destinations": [
       "The Mist-Ford of First Doubt (Class III Procession site). Water runs uphill. Footsteps echo backwards. The dead march here at midnight.",
@@ -702,31 +729,71 @@
   "boss_archetypes": [
     {
       "name": "The Archivist of Unmade Roads",
-      "tags": ["Bureaucracy", "Threshold"],
+      "tags": [
+        "Bureaucracy",
+        "Threshold"
+      ],
       "description": "A cloak stitched from surveyor's cords — the keeper of every road never taken.",
-      "phases": ["Receipts of Refusal", "Stay of Journey", "Unfiled Options"],
-      "cracks": ["a Choice Compass reveals the true path", "a Scale-Clearing voids his claim"]
+      "phases": [
+        "Receipts of Refusal",
+        "Stay of Journey",
+        "Unfiled Options"
+      ],
+      "cracks": [
+        "a Choice Compass reveals the true path",
+        "a Scale-Clearing voids his claim"
+      ]
     },
     {
       "name": "The Toll-Matriarch Beneath the Bridge",
-      "tags": ["Threshold", "Judgment"],
+      "tags": [
+        "Threshold",
+        "Judgment"
+      ],
       "description": "Many hands, one voice like wet stone — she collects what is owed.",
-      "phases": ["Truth Payment", "Scale-Clearing", "Forbidden Path"],
-      "cracks": ["a Passage Token marks you as belonging", "a Road's Name commands her to stand aside"]
+      "phases": [
+        "Truth Payment",
+        "Scale-Clearing",
+        "Forbidden Path"
+      ],
+      "cracks": [
+        "a Passage Token marks you as belonging",
+        "a Road's Name commands her to stand aside"
+      ]
     },
     {
       "name": "The Wayfinder's Shadow",
-      "tags": ["Legend", "Pursuit"],
+      "tags": [
+        "Legend",
+        "Pursuit"
+      ],
       "description": "Your silhouette, two steps ahead — a decision that has already been made without you.",
-      "phases": ["Crossroads Judgment", "Guide-Light", "Haste Mark"],
-      "cracks": ["a Memory-Anchor keeps you grounded", "a Grace Passage slips past its gaze"]
+      "phases": [
+        "Crossroads Judgment",
+        "Guide-Light",
+        "Haste Mark"
+      ],
+      "cracks": [
+        "a Memory-Anchor keeps you grounded",
+        "a Grace Passage slips past its gaze"
+      ]
     },
     {
       "name": "Ikasha's Nightmare (Dream-Eater)",
-      "tags": ["Deep Layer", "Cosmic"],
+      "tags": [
+        "Deep Layer",
+        "Cosmic"
+      ],
       "description": "Appears only in the deepest layer — the hunger beneath the sleeping goddess.",
-      "phases": ["Whispers", "Temptation", "Consumption"],
-      "cracks": ["a filled Virtue timer can be spent to reject the nightmare", "a memory of true self-sacrifice (cost 1 permanent Bond) banishes it entirely"]
+      "phases": [
+        "Whispers",
+        "Temptation",
+        "Consumption"
+      ],
+      "cracks": [
+        "a filled Virtue timer can be spent to reject the nightmare",
+        "a memory of true self-sacrifice (cost 1 permanent Bond) banishes it entirely"
+      ]
     }
   ],
   "encounter_seeds": [
@@ -748,11 +815,36 @@
     }
   ],
   "index": [
-    "Ways Between", "Obishaal", "Ikasha", "Dreams and Death", "Virtue and Vice", "Theme generator", "Spiritways and Veilways generator",
-    "Places!Obishaal", "People!Obishaal", "Complications!Obishaal", "Rewards!Obishaal", "The Wayfinder", "Dead-Road Keeper",
-    "Road's Child", "Soul-Ferryman", "Toll-Taker", "Thirteenth Stone", "Long Mile", "Promise Bridge", "Crossroads",
-    "Memory Tunnel", "Fossil Stairs", "Choice Compass", "Passage Token", "Dream-Catcher", "Truth-Compass",
-    "Memory-Anchor", "Road's Name", "Grace Passage", "Local Patrons!Obishaal"
+    "Ways Between",
+    "Obishaal",
+    "Ikasha",
+    "Dreams and Death",
+    "Virtue and Vice",
+    "Theme generator",
+    "Spiritways and Veilways generator",
+    "Places!Obishaal",
+    "People!Obishaal",
+    "Complications!Obishaal",
+    "Rewards!Obishaal",
+    "The Wayfinder",
+    "Dead-Road Keeper",
+    "Road's Child",
+    "Soul-Ferryman",
+    "Toll-Taker",
+    "Thirteenth Stone",
+    "Long Mile",
+    "Promise Bridge",
+    "Crossroads",
+    "Memory Tunnel",
+    "Fossil Stairs",
+    "Choice Compass",
+    "Passage Token",
+    "Dream-Catcher",
+    "Truth-Compass",
+    "Memory-Anchor",
+    "Road's Name",
+    "Grace Passage",
+    "Local Patrons!Obishaal"
   ],
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Copyright – © 2024 - 2026 Nicholas A. Gasper. Used with permission, All rights reserved."
 }

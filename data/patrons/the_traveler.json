@@ -301,7 +301,20 @@
     "description": "A stretch of the King's High Road has begun to forget itself. Travelers report walking for days and arriving back where they started, or finding bridges that lead to empty air. The local waystone-carvers are baffled; the road's memory is fading. The party must walk the road, find the source of the forgetting — a forgotten oath, a broken waystone, or something older — and restore the path before the road forgets itself entirely. The Traveler's servants are divided: some believe the road must be re-consecrated; others believe it must be allowed to become something new.",
     "quote": "A road that forgets itself is a road that has been betrayed. Find the broken promise, mend it, and the way will remember. But some roads are better left forgotten — and the Traveler does not always answer the ones who call."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "_license": "Fate's Edge Copyright – © 2024 - 2026 Nicholas A. Gasper. Used with permission, All rights reserved.",
   "order": "empyreal",
-  "register": "mystery"
+  "register": "mystery",
+  "appears_in_religions": [
+    {
+      "religion": "still-road",
+      "order": "The Traveler",
+      "note": "Mendicants who own a bowl and walk; the reason the Road spread further than any army marched."
+    },
+    {
+      "religion": "little-flame",
+      "order": "(unnamed)",
+      "note": "Answers on the roads, at the eighth-waystation lamps."
+    }
+  ],
+  "orders_are_masks": "An Order is the shape this Patron takes inside a religion — the office through which it is approached, named and made respectable. The same Patron therefore appears in faiths that despise each other, and rarely at the same rank."
 }

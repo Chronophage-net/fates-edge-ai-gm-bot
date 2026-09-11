@@ -1,0 +1,93 @@
+{
+  "id": "little-flame",
+  "type": "religion",
+  "title": "The Little Flame",
+  "subtitle": "A Candle in a Window",
+  "version": "1.0.0",
+  "tags": [
+    "syncretic",
+    "folk",
+    "hospitality",
+    "no-clergy",
+    "urban",
+    "way-of-silk",
+    "mob",
+    "sanctuary"
+  ],
+  "parent_traditions": [
+    "The Everflame",
+    "household hearth-cults of a hundred harbours"
+  ],
+  "lore": {
+    "description": "The poor people's fire: a candle in a window, a lamp at a door, and no clergy whatsoever. It is what happened when the Everflame's public rites met a hundred household hearth-cults in a hundred ports and lost the argument about who owns a flame. Its only doctrine is that a lit window is a promise of one night's shelter and that the promise is owed to anyone. Its only rite is lighting one.",
+    "followers": "Everyone and no one: dockers, carters, laundresses, runaway apprentices, deserters, and any householder who has ever put a light in an upper window without being able to say quite why.",
+    "names_across_regions": {
+      "ecktoria": "An unlicensed devotion the Censorate periodically declares extinguished",
+      "silkstrand": "The Window Custom, so ordinary that most who keep it deny it is a faith at all",
+      "way_of_silk": "Roadside lamps at every eighth waystation, kept by nobody in particular",
+      "zakov": "Overlaps the Salt-Fire; a lit window and a named dead are held to be the same courtesy"
+    },
+    "quote": "There is no congregation. There is a street, and tonight some of it is lit."
+  },
+  "domain_focus": [
+    "The Lit Window: a promise of one night's shelter, owed to anyone who sees it",
+    "No clergy, no buildings, no scripture, and no way to be expelled",
+    "The Passing of the Light: a candle lit from another candle, never from a new flame",
+    "Street congregations: whoever is holding a candle in that street tonight",
+    "The Season of a Prophet: any loud voice may preach, and most do not last a winter"
+  ],
+  "doctrines": [
+    "A lit window is a promise. The promise is owed to anyone.",
+    "Light your candle from another candle. A flame struck new is a flame with no debt behind it.",
+    "There is nobody to join and nobody to expel you.",
+    "Whoever is holding a candle is the congregation.",
+    "One night. Nobody promised more than one night."
+  ],
+  "salvation": {
+    "name": "The Passing",
+    "shape": "Handed on, not attained.",
+    "description": "Nothing is achieved. A flame you were given is a flame you pass on, and the faith holds that this is the entire content of being saved and that anyone arguing otherwise wants something.",
+    "why_it_is_beautiful": "It costs nothing, excludes no one, and has fed and hidden every kind of person the great faiths struck off their books. In a strange city, a lit window in an upper storey is the most reliable sanctuary in the Amaranthine, and it is kept by people with nothing.",
+    "why_it_is_terrible": "No clergy means no restraint. A congregation is whoever is holding candles in that street tonight, and it can become a mob between one hour and the next. Every port has a year it does not discuss."
+  },
+  "orders": [
+    {
+      "id": "none",
+      "name": "None",
+      "role": "There are no Orders",
+      "patrons": [
+        "Oath of Mercy and Grace",
+        "The Traveler"
+      ],
+      "description": "The Little Flame is the only major devotion with no Order structure at all, which the great faiths consider proof that it is not a religion and its keepers consider the point. Patrons answer at lit windows anyway — Mercy and Grace most often, the Traveler on the roads — and nobody in the street could tell you which, or would care to be told."
+    }
+  ],
+  "orders_are_masks": "The Little Flame is the exception that shows the rule: with no Orders, there is no mask, and so no rank to argue about, no seat to claim, and no schism to have. It is also why it has no brake. The great faiths quarrel about which Order speaks first; a lit street has already started walking.",
+  "beauty": [
+    "Sanctuary that costs nothing and asks nothing, kept by people who have nothing.",
+    "No membership, no rolls, no way to be struck off.",
+    "The Passing of the Light, which makes every candle in a city a descendant of some older kindness.",
+    "It shelters precisely the people the registers exclude, which is most of the reason it exists."
+  ],
+  "ugliness": [
+    "A congregation that assembles in an hour and can be a mob by the next.",
+    "Every port's unmentioned year.",
+    "Prophets by acclamation, who last a season and are believed absolutely while they last.",
+    "One night, and not one hour more, enforced by neighbours who mean it."
+  ],
+  "internal_schism": {
+    "name": "There cannot be one",
+    "claim": "You cannot split what was never joined.",
+    "description": "What the Little Flame has instead of schism is the Quarrel of the Second Night — whether the promise can ever be extended. Streets differ. The argument is conducted door to door and has never been settled, because there is nobody who could settle it."
+  },
+  "adventure_seed": {
+    "title": "The Street That Stayed Lit",
+    "description": "A ward of the city has kept its candles burning for nine nights running, which nobody has ever done. A preacher nobody knew last month is being listened to. The Flame-Wardens want a name to arrest and there is no name to give them, because there is no one in charge — and the party will be asked, by frightened neighbours, to invent one.",
+    "quote": "Nine nights. You know what happens on the tenth, and so do I, and so does he."
+  },
+  "sample_npc": {
+    "name": "Vessa of the Upper Window",
+    "description": "A laundress who has kept a light for twenty-two years and sheltered perhaps six hundred people, and who will tell you flatly that she is not religious and does not know what you mean."
+  },
+  "_license": "Fate's Edge Copyright – © 2024 - 2026 Nicholas A. Gasper. Used with permission, All rights reserved."
+}

@@ -1,6 +1,6 @@
 {
   "id": "viterra-hedge-law-realm",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "generator",
   "title": "Viterra — The Hedge-Law Realm",
   "label": "chap:viterra",
@@ -23,7 +23,8 @@
       "north": "Ubral — The highland clans owe the crown nothing they have not been made to owe. Tax collectors go armed, in company, and in daylight.",
       "south": "Thepyrgos — The Black River bounds Synod law, and fugitives cross it in both directions with the same relief. A Viterran warrant is kindling south of it.",
       "theona": "The eastern Earls want the isles and have wanted them for a century. The Abbess is playing all of them and is running out of room to do it in."
-    }
+    },
+    "gm_guidance": "A judgment somebody must carry out\n\nViterra puts authority into use: whose boundary is recognized, who may muster, and whether a judgment protects anyone beyond the courtroom. Its ties to Vhasia remain important, but a local case can stand on its own. Winning the argument and securing a workable settlement are different achievements.\n\nBegin with two households using the same flooded meadow. An old survey supports one; years of witnessed use support the other. The official needs the road reopened before a muster. Ask what remedy each side would accept, not simply which document wins.\n\nState the disputed fact, the recognized authority, and the remedy sought. If sustained work is needed, use Establish the boundary [6] against The levy occupies the meadow [4]; bring forward Succession’s Shadow only when royal legitimacy is actually implicated. Use normal social, investigation, or combat procedures; a legal duel needs no separate mini-game.\n\nA hedge cut overnight, an old witness refusing a chair, or a seal no one wants to break can carry the unease. Do not make every case a hidden succession plot. If a charter plainly settles a right, honor it, then ask who will respect that right in practice."
   },
   "regional_diagnostic": {
     "current_hook": "Every hedge is a boundary, every boundary a claim, and every claim ends in a court or a field.",
@@ -910,7 +911,7 @@
     "Queen's Peace front",
     "Queen's Dial"
   ],
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "_license": "Fate's Edge Copyright – © 2024 - 2026 Nicholas A. Gasper. Used with permission, All rights reserved.",
   "named_lineage_cross_reference": {
     "note": "For GMs running the FIXED (non-random) history from The Fenwood-Everblood Chronicles (reference/expansions/fenwood-everblood-chronicles.tex). Duke Braedyn Fenwood dies soon after Veralyn is crowned Queen of Viterra.",
     "warrior_queen": "Veralyn \"Demoneye\" Everblood, Duchess of Aberiel, Queen of Viterra",
@@ -974,5 +975,6 @@
       "domain": "clauses, ledgers, patience",
       "note": "Played openly as a board game at court; practiced silently as a philosophy of rule."
     }
-  ]
+  ],
+  "the_scar_and_thornwood": "The Scar is the meeting place of two tributary valleys on the Belworth: one stream drains Viterra, the other Vhasia. Their channels have cut facing valleys into the riverbanks. Thornwood Manor stands on the Viterran lip above the confluence; its dependent holdings, mill rights, and tenants extend into both valleys. Crossing between those holdings can mean crossing jurisdictions. A title recognized on one bank does not automatically carry the same authority on the other."
 }

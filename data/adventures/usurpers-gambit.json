@@ -112,7 +112,7 @@
         {
           "id": "scene-1-2-statues-and-sashes",
           "title": "Statues and Sashes",
-          "description": "Overnight, imperial statues have new crimson sashes and unfamiliar militia stand where grey-sashed Standard-Bearers once did — a subtle, deniable, unsettling shift.",
+          "description": "Overnight, imperial statues have new crimson sashes and unfamiliar militia stand where gray-sashed Standard-Bearers once did — a subtle, deniable, unsettling shift.",
           "timers": [
             {
               "name": "Legitimacy",
@@ -425,31 +425,51 @@
       "id": "loc-grand-forum",
       "name": "The Grand Forum",
       "description": "Marble theater of politics; public opinion lives and dies here.",
-      "tags": ["forum", "public", "political"]
+      "tags": [
+        "forum",
+        "public",
+        "political"
+      ]
     },
     {
       "id": "loc-imperial-arena",
       "name": "Imperial Arena",
       "description": "Site of trials by ordeal and ceremonial oaths, heavily guarded.",
-      "tags": ["arena", "trials", "guarded"]
+      "tags": [
+        "arena",
+        "trials",
+        "guarded"
+      ]
     },
     {
       "id": "loc-coin-house",
       "name": "Coin-House Floor",
       "description": "Byzantine financial temple that can bankrupt provinces or fund armies.",
-      "tags": ["finance", "temple", "merchants"]
+      "tags": [
+        "finance",
+        "temple",
+        "merchants"
+      ]
     },
     {
       "id": "loc-censors-hall",
       "name": "Censor's Hall",
       "description": "Labyrinth of red-lacquered tablets and censored histories.",
-      "tags": ["archive", "history", "censored"]
+      "tags": [
+        "archive",
+        "history",
+        "censored"
+      ]
     },
     {
       "id": "loc-basilica",
       "name": "The Fire-Blessed Basilica",
       "description": "Spiritual heart of Ecktoria; any coronation must be sanctified here.",
-      "tags": ["basilica", "coronation", "sacred"]
+      "tags": [
+        "basilica",
+        "coronation",
+        "sacred"
+      ]
     }
   ],
   "factions": [
@@ -534,7 +554,9 @@
       "player": "King Aldric appears to be the legitimate heir, but his documents may have been expedited.",
       "revealed": false,
       "revealCondition": "When the party succeeds an Investigation or Lore roll in the Censor's Hall, or when they confront Aldric directly with evidence.",
-      "tags": ["npc-secret"]
+      "tags": [
+        "npc-secret"
+      ]
     },
     {
       "id": "logan-secret",
@@ -543,7 +565,9 @@
       "player": "Duke Logan's public claim may be exaggerated; his bloodline might be thinner than he admits.",
       "revealed": false,
       "revealCondition": "When the party deciphers the genealogical records or hears a confession from a disgruntled herald.",
-      "tags": ["npc-secret"]
+      "tags": [
+        "npc-secret"
+      ]
     },
     {
       "id": "thorne-secret",
@@ -552,7 +576,9 @@
       "player": "Grand Magistrate Thorne may be hiding something about Aldric's claim.",
       "revealed": false,
       "revealCondition": "When the party earns her trust or succeeds an Insight roll after her attack.",
-      "tags": ["npc-secret"]
+      "tags": [
+        "npc-secret"
+      ]
     },
     {
       "id": "dominicus-secret",
@@ -561,7 +587,9 @@
       "player": "High Priest Dominicus may be holding a private judgment that could sway the coronation.",
       "revealed": false,
       "revealCondition": "When the party converses with him in the Basilica and earns his confidence, or in Act IV.",
-      "tags": ["npc-secret"]
+      "tags": [
+        "npc-secret"
+      ]
     },
     {
       "id": "envoy-secret",
@@ -570,7 +598,9 @@
       "player": "The Lame King's Envoy may have his own agenda.",
       "revealed": false,
       "revealCondition": "When the party succeeds an Insight roll against him or discovers his correspondence.",
-      "tags": ["npc-secret"]
+      "tags": [
+        "npc-secret"
+      ]
     },
     {
       "id": "plot-both-claims-flawed",
@@ -579,7 +609,9 @@
       "player": null,
       "revealed": false,
       "revealCondition": "Reveal only after the party completes the genealogical puzzle in Act II.",
-      "tags": ["plot-secret"]
+      "tags": [
+        "plot-secret"
+      ]
     },
     {
       "id": "plot-thorne-knows",
@@ -588,7 +620,9 @@
       "player": null,
       "revealed": false,
       "revealCondition": "Reveal when the party earns her trust (e.g., saving her life) and asks directly.",
-      "tags": ["plot-secret"]
+      "tags": [
+        "plot-secret"
+      ]
     },
     {
       "id": "plot-dominicus-decision",
@@ -597,7 +631,9 @@
       "player": null,
       "revealed": false,
       "revealCondition": "Reveal in Act IV during the reckoning, or earlier if the party gains his confidence.",
-      "tags": ["plot-secret"]
+      "tags": [
+        "plot-secret"
+      ]
     },
     {
       "id": "plot-silent-opposition",
@@ -606,7 +642,9 @@
       "player": null,
       "revealed": false,
       "revealCondition": "Reveal through investigation and successful Influence rolls with key NPCs, not through exposition.",
-      "tags": ["plot-secret"]
+      "tags": [
+        "plot-secret"
+      ]
     }
   ],
   "currentAct": 0,
@@ -615,5 +653,6 @@
   "completedAt": null,
   "status": "planned",
   "createdAt": "2026-08-15T00:00:00.000Z",
-  "updatedAt": "2026-08-15T00:00:00.000Z"
+  "updatedAt": "2026-08-15T00:00:00.000Z",
+  "_license": "Fate's Edge Copyright – © 2024 - 2026 Nicholas A. Gasper. Used with permission, All rights reserved."
 }

@@ -259,7 +259,35 @@
     "description": "A village on the edge of the Mistlands has been harboring a fugitive witch who fled the Inquisition. The Inquisitor Prime has dispatched a Censer-Knight to bring her to justice. The party must decide: protect the witch, who claims she is innocent, or aid the Inquisitor in their hunt. The village's bell-line is failing, and the fog is rising. Whoever wins, the dead will not stay quiet for long.",
     "quote": "The flame that reveals the truth also burns the hand that holds it. Choose carefully, for the Inquisitor does not forgive."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "_license": "Fate's Edge Copyright – © 2024 - 2026 Nicholas A. Gasper. Used with permission, All rights reserved.",
   "order": "seraphic",
-  "register": "conviction"
+  "register": "conviction",
+  "appears_in_religions": [
+    {
+      "religion": "everflame",
+      "order": "Inquisitor Prime (Flame-Wardens)",
+      "note": "Iron masks, blessed coal, and jurisdiction that does not stop at a border."
+    },
+    {
+      "religion": "temple-of-light",
+      "order": "Inquisitor Prime (Chain-Lanterns)",
+      "note": "Lanterns carried on chains as a reminder of restraint that has never once stopped them."
+    },
+    {
+      "religion": "covenant-of-mykkiel",
+      "order": "Inquisitor Prime (the Accuser)",
+      "note": "Investigates broken oaths and brings the suit, including against the faith's own officers."
+    },
+    {
+      "religion": "twin-flames",
+      "order": "Watchers Against the Maw",
+      "note": "Invoked with the Pale Shepherd by those who burn what the Consuming Flame has touched."
+    },
+    {
+      "religion": "salt-fire",
+      "order": "Brine-Wardens",
+      "note": "The Flame-Wardens' coastal cousins, who drown rather than burn and call it a mercy."
+    }
+  ],
+  "orders_are_masks": "An Order is the shape this Patron takes inside a religion — the office through which it is approached, named and made respectable. The same Patron therefore appears in faiths that despise each other, and rarely at the same rank."
 }

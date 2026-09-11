@@ -1,0 +1,160 @@
+{
+  "id": "still-road",
+  "type": "religion",
+  "title": "The Still Road",
+  "subtitle": "The Faith of the Eastern Realms",
+  "version": "1.0.0",
+  "tags": [
+    "eastern",
+    "practice",
+    "restraint",
+    "monastic",
+    "non-theistic",
+    "unbroken-way",
+    "mendicant",
+    "regional-variation"
+  ],
+  "lore": {
+    "description": "East of the Amaranthine the argument changes entirely. The Still Road does not ask who judges you, or whether the light has met you, or which fire you have fed. It asks what you are holding, and whether you could put it down. Its founding teaching is that suffering is grip — the clenched hand, the drawn blade, the promise squeezed until it bleeds — and that the way out is not a verdict, a procedure or a rescue, but practice: attention, restraint, and the long unlearning of the reflex to seize. It has no creator-god and does not miss one.",
+    "followers": "Monastics, mendicants with a bowl, householders who sit an hour before dawn, mediators hired by feuding villages, and a great many people who would describe themselves as not especially devout and would nonetheless never break a fast day.",
+    "names_across_regions": {
+      "himadri_foothills": "The Road, in its austere source form; monasteries that own nothing",
+      "ayokha": "The Radiant Road, magnificent and royal, its merit built in stone and water",
+      "sihai": "The Registered Road; ordination by examination, monasteries under imperial charter",
+      "nihori": "The Road With No Books; one teacher, one student, one question",
+      "eastern_boundary": "Sensible people who understand about chores, according to the Aelaerem",
+      "way_of_silk": "Roadside shrines and a borrowed lamp, kept by caravans that could not name the doctrine"
+    },
+    "quote": "You are not asked to win. You are asked to open your hand."
+  },
+  "domain_focus": [
+    "Grip as the root of suffering: the clenched fist, the drawn blade, the promise squeezed",
+    "Practice over verdict: nothing is conferred and nothing is administered",
+    "Patrons approached as aspects of practice rather than as counterparties to a bargain",
+    "The alms round: teaching given, food received, and neither counted as payment",
+    "Regional divergence held not as corruption but as plain reading"
+  ],
+  "doctrines": [
+    "Suffering is grip. The way out is to open the hand.",
+    "The blade that is not drawn cannot be broken.",
+    "No one is saved by another. A teacher can only show you where you are holding.",
+    "A practice you have memorised is a thing you are carrying.",
+    "There is no creator to appeal to, and this is a relief, not a loss."
+  ],
+  "salvation": {
+    "name": "The Opening",
+    "shape": "A practice, not an outcome.",
+    "description": "There is no state to be granted and no register to be entered on. There is what you are gripping this morning and whether the grip is looser than it was. The Road is candid that this is slower than a verdict and less comforting than a rescue, and holds that it is the only one of the three that does not require somebody else's permission.",
+    "why_it_is_beautiful": "It cannot be revoked, sold, inherited or struck from a list. A prisoner can practise. So can an illiterate. So can someone whose faith struck them off its rolls.",
+    "why_it_is_terrible": "A doctrine of letting go, in the mouth of the comfortable, becomes an instruction to the robbed to stop minding. Every branch of the Road has been used this way by somebody's landlord, and the Riven Path exists because of it."
+  },
+  "orders": [
+    {
+      "id": "the_unbroken_way",
+      "name": "The Unbroken Way",
+      "role": "Discipline and mediation",
+      "patrons": [
+        "The Unbroken Way"
+      ],
+      "description": "The disciplinary and martial Order, and the one outsiders always meet first. Monks of the Still Point mediate feuds, guard roads, and are famous for winning fights they did not start by declining to have them. Their Rites grant +1 die to redirect, restrain or de-escalate, and they lose the benefit for the scene if they strike first."
+    },
+    {
+      "id": "the_silver_quiet",
+      "name": "The Silver Quiet",
+      "role": "Contemplatives",
+      "patrons": [
+        "Lunara, the Silver Quiet",
+        "Solara, the Still Mirror"
+      ],
+      "description": "Night-keepers and long-sitters: the unlit hall, and the practice of watching a thought arrive without going with it. Rites grant +1 die to Insight when acting without haste."
+    },
+    {
+      "id": "the_traveler_order",
+      "name": "The Traveler",
+      "role": "Mendicants",
+      "patrons": [
+        "The Traveler"
+      ],
+      "description": "They own a bowl and walk. They take alms and give teaching, and their circuits are why the Road has spread further than any army has marched."
+    },
+    {
+      "id": "the_pale_shepherd_order",
+      "name": "The Pale Shepherd",
+      "role": "Funerary",
+      "patrons": [
+        "The Pale Shepherd"
+      ],
+      "description": "Sit with the dying, walk the dead out, and are welcome in villages that will not let a monk past the gate."
+    },
+    {
+      "id": "the_riven_path",
+      "name": "The Riven Path",
+      "role": "Heterodox",
+      "patrons": [
+        "The Riven Path"
+      ],
+      "description": "Those who hold that a chain is not untied but broken, and that quietism is a comfortable posture for people who have never been owned. Formally not an Order. Present in every monastery."
+    }
+  ],
+  "orders_are_masks": "An Order is not a department of this faith. It is the shape a specific Patron takes inside it — the office through which that presence is approached, named and made respectable. The Still Road differs from the western faiths in what it does with that: its Orders are approached as aspects of practice rather than as powers to be bargained with, which the west finds either admirably clean or deeply suspicious depending on how much it has riding on bargains. The rank quarrels are the same everywhere.",
+  "regional_variation": [
+    {
+      "region": "The Himadri foothills",
+      "character": "The source: austere, monastic, world-renouncing.",
+      "beauty": "The discipline is real and it works.",
+      "ugliness": "A tradition that renounces property has no defence against a patron who owns the granary. The monasteries own nothing, which means in practice they are owned by whoever feeds them."
+    },
+    {
+      "region": "Ayokha",
+      "character": "Absorbed into the God-King's court and made magnificent; merit is public and built.",
+      "beauty": "Water tanks, shade trees, hospitals and roads, all endowed for the good of the endower's practice, all genuinely built, all holding water in the dry season.",
+      "ugliness": "When merit is something you can be seen to make, the people who cannot afford to be seen making it are quietly understood to have less."
+    },
+    {
+      "region": "Sihai",
+      "character": "Examined, licensed, registered; fused with ancestor veneration and the Mandate.",
+      "beauty": "The ordination examinations are genuinely open and have raised farmers' sons to abbot.",
+      "ugliness": "A licensed renunciate is a state employee, and the charter can be pulled."
+    },
+    {
+      "region": "Nihori",
+      "character": "Stripped to nothing: no scripture, one teacher, one student, one question; awakening is sudden or it is not awakening.",
+      "beauty": "Nothing stands between a student and the practice.",
+      "ugliness": "Nothing stands between a student and a teacher either, and there is no appeal from a bad one. The Unbroken Way here is a sword school that has not drawn in three generations and is the most feared institution on the islands."
+    },
+    {
+      "region": "The eastern boundary (among the Aelaerem)",
+      "character": "Mendicants join the boundary work-parties.",
+      "beauty": "A Traveler-Order monk who walks a week of the rota is fed and housed all season and asked nothing about doctrine, which suits both parties exactly.",
+      "ugliness": "Nothing much, which is why both peoples are faintly smug about it."
+    }
+  ],
+  "beauty": [
+    "A salvation that cannot be revoked, sold, inherited, or struck from a list.",
+    "Mediators who will walk into a feud unarmed and have a record of walking back out of it.",
+    "Alms rounds that have carried teaching, medicine and news further than any road-building programme.",
+    "Funerary monks welcome where no other clergy are."
+  ],
+  "ugliness": [
+    "Letting go, preached at the robbed by the comfortable.",
+    "Monasteries owned in fact by whoever feeds them.",
+    "Merit made visible, and therefore purchasable, and therefore unavailable to the poor.",
+    "Teachers with no appeal above them, in a tradition that has abolished the appeal on principle."
+  ],
+  "internal_schism": {
+    "name": "The Books Question",
+    "claim": "Whether a text is the practice's memory or one more held object.",
+    "description": "The mainland holds that the texts are the memory of the practice and cannot be discarded. Nihori holds that a memorised practice is a held object like any other. Both sides are polite about this in public and neither has visited the other in forty years."
+  },
+  "relationship_to_western_faiths": "The western faiths share a conviction that witness is binding — that the divine is whatever will not let you pretend it did not happen. The Still Road does not share it, and this is the deepest fault line in the world. To a Covenanter, a wrong unwitnessed is a wrong unremedied; to a monk of the Still Point, a wrong you will not put down is a wrong you have chosen to keep carrying. Neither has ever convinced the other, and the argument is at least four hundred years old, and it is still the best one anybody has.",
+  "adventure_seed": {
+    "title": "The Monk Who Would Not Mediate",
+    "description": "Two villages have been feuding for a season and have jointly paid for a Still Point mediator, as is customary. She has arrived, listened for four days, and refused the case — which is not customary and which nobody can compel. Both villages now believe she has been bought by the other. A Riven Path novice in her own retinue is quietly offering the villages a faster answer.",
+    "quote": "I was asked what is fair. I have not been asked what either of them is holding."
+  },
+  "sample_npc": {
+    "name": "Still Point Adept Naru of the Fourth Terrace",
+    "description": "Walks the Aelaerem boundary rota one week a year and has done for thirty years. Has never drawn. Has twice put a man down with a bucket and apologised at length afterward, which the hedge-keepers consider the funniest thing that has ever happened to them."
+  },
+  "_license": "Fate's Edge Copyright – © 2024 - 2026 Nicholas A. Gasper. Used with permission, All rights reserved."
+}

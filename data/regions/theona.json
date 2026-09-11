@@ -141,10 +141,42 @@
     }
   ],
   "names": {
-    "first_male": ["Conall", "Cormac", "Iarlath", "Turlough", "Lorcán", "Fínan", "Eamon"],
-    "first_female": ["Eithne", "Bríd", "Cera", "Ríona", "Máire", "Gobnait", "Malla"],
-    "surnames": ["O'Malloy", "Mac Gowan", "Ó hAodha", "Ó Braonáin", "Ó Dálaigh", "Ó Cuilinn", "Mac an Bhaird"],
-    "epithets": ["the Ninth", "Well-Sworn", "Hawthorn", "the Uncounted", "Fog-Born", "Ash-Finger", "Bell-Ringer"]
+    "first_male": [
+      "Conall",
+      "Cormac",
+      "Iarlath",
+      "Turlough",
+      "Lorcán",
+      "Fínan",
+      "Eamon"
+    ],
+    "first_female": [
+      "Eithne",
+      "Bríd",
+      "Cera",
+      "Ríona",
+      "Máire",
+      "Gobnait",
+      "Malla"
+    ],
+    "surnames": [
+      "O'Malloy",
+      "Mac Gowan",
+      "Ó hAodha",
+      "Ó Braonáin",
+      "Ó Dálaigh",
+      "Ó Cuilinn",
+      "Mac an Bhaird"
+    ],
+    "epithets": [
+      "the Ninth",
+      "Well-Sworn",
+      "Hawthorn",
+      "the Uncounted",
+      "Fog-Born",
+      "Ash-Finger",
+      "Bell-Ringer"
+    ]
   },
   "places": [
     {
@@ -708,39 +740,120 @@
       }
     ],
     "clergy": [
-      { "role": "Gray Walker", "irish_title": "Tréadaí", "meaning": "Herdsman", "patron_saint": "Naomh Aodhán an Tréadaí" },
-      { "role": "Confessor", "irish_title": "Clogaire", "meaning": "Bell-Ringer", "patron_saint": "Naomh Lasaíocht na gClog" },
-      { "role": "Well-Walker", "irish_title": "Cothromóir", "meaning": "Balancer", "patron_saint": "Naomh Ciarán na Cothroime" },
-      { "role": "Truth-Teller", "irish_title": "Scríobhaí", "meaning": "Scribe", "patron_saint": "Naomh Fíonntan an Leabhair" },
-      { "role": "Taboo-Breaker", "irish_title": "Caillteoir", "meaning": "Loser (one who is lost)", "patron_saint": "An Caillte (no saint)" },
-      { "role": "Shadow-Walker (optional)", "irish_title": "Scáthánach", "meaning": "Shadow-caster", "patron_saint": "Naomh Scáthach na Seift" }
+      {
+        "role": "Gray Walker",
+        "irish_title": "Tréadaí",
+        "meaning": "Herdsman",
+        "patron_saint": "Naomh Aodhán an Tréadaí"
+      },
+      {
+        "role": "Confessor",
+        "irish_title": "Clogaire",
+        "meaning": "Bell-Ringer",
+        "patron_saint": "Naomh Lasaíocht na gClog"
+      },
+      {
+        "role": "Well-Walker",
+        "irish_title": "Cothromóir",
+        "meaning": "Balancer",
+        "patron_saint": "Naomh Ciarán na Cothroime"
+      },
+      {
+        "role": "Truth-Teller",
+        "irish_title": "Scríobhaí",
+        "meaning": "Scribe",
+        "patron_saint": "Naomh Fíonntan an Leabhair"
+      },
+      {
+        "role": "Taboo-Breaker",
+        "irish_title": "Caillteoir",
+        "meaning": "Loser (one who is lost)",
+        "patron_saint": "An Caillte (no saint)"
+      },
+      {
+        "role": "Shadow-Walker (optional)",
+        "irish_title": "Scáthánach",
+        "meaning": "Shadow-caster",
+        "patron_saint": "Naomh Scáthach na Seift"
+      }
     ],
     "practices": [
-      { "name": "The Ninth Cup Ritual", "irish_name": "Deoch na gCuig (Cup of the Ninth)", "description": "Poured at the dark moon onto a grave. If the earth drinks, the dead are at peace. If the water pools, the dead are restless." },
-      { "name": "The Confession of the Dying", "irish_name": "Faoistin an Bháis (Confession of Death)", "description": "The dying speak every secret. The Confessor listens and rings a small iron bell once. The weight transfers." },
-      { "name": "The Well-Walk", "irish_name": "Siúilóid an Tobair (Walk of the Well)", "description": "Descent into a sacred well until dawn. If you emerge, you have seen the Ninth and returned." },
-      { "name": "The Keening", "irish_name": "An Caoineadh (The Weeping)", "description": "A wordless melody that guides the dead. The Gray Walker sings; the dead follow." },
-      { "name": "The Gray Thread", "irish_name": "Snáithe Liath (Gray Thread)", "description": "Tied around the wrist of the dying; cut when they pass. The thread is burned at the Ninth Cup Ritual." },
-      { "name": "The Bell-Shrine", "irish_name": "Clochán na gClog (Stone of the Bells)", "description": "A small stone hut where a bell hangs. Confessors ring it when a burden is transferred." }
+      {
+        "name": "The Ninth Cup Ritual",
+        "irish_name": "Deoch na gCuig (Cup of the Ninth)",
+        "description": "Poured at the dark moon onto a grave. If the earth drinks, the dead are at peace. If the water pools, the dead are restless."
+      },
+      {
+        "name": "The Confession of the Dying",
+        "irish_name": "Faoistin an Bháis (Confession of Death)",
+        "description": "The dying speak every secret. The Confessor listens and rings a small iron bell once. The weight transfers."
+      },
+      {
+        "name": "The Well-Walk",
+        "irish_name": "Siúilóid an Tobair (Walk of the Well)",
+        "description": "Descent into a sacred well until dawn. If you emerge, you have seen the Ninth and returned."
+      },
+      {
+        "name": "The Keening",
+        "irish_name": "An Caoineadh (The Weeping)",
+        "description": "A wordless melody that guides the dead. The Gray Walker sings; the dead follow."
+      },
+      {
+        "name": "The Gray Thread",
+        "irish_name": "Snáithe Liath (Gray Thread)",
+        "description": "Tied around the wrist of the dying; cut when they pass. The thread is burned at the Ninth Cup Ritual."
+      },
+      {
+        "name": "The Bell-Shrine",
+        "irish_name": "Clochán na gClog (Stone of the Bells)",
+        "description": "A small stone hut where a bell hangs. Confessors ring it when a burden is transferred."
+      }
     ],
     "sprinkle_cards": {
       "description": "Additional cards for GMs running Gray Liturgy-heavy scenes — sprinkle into draws alongside the standard 13-card suits rather than replacing them.",
       "places": [
-        { "title": "Clochán na gClog (Bell-Shrine)", "description": "A small stone hut on a misty headland holding a single cracked, silent bell. Confessors ring it when a burden is transferred. The crown declared it a nuisance; it rings anyway. The Abbess's attempt to melt it down went cold in the forge." },
-        { "title": "Tobar an Chaillte (Well of the Lost One)", "description": "A sacred well no one admits exists. The water is black and still. Taboo-Breakers drink from it before a Well-Walk. Neither surveyors nor clerics can find it on any map. The Lady Beneath drinks from it too." }
+        {
+          "title": "Clochán na gClog (Bell-Shrine)",
+          "description": "A small stone hut on a misty headland holding a single cracked, silent bell. Confessors ring it when a burden is transferred. The crown declared it a nuisance; it rings anyway. The Abbess's attempt to melt it down went cold in the forge."
+        },
+        {
+          "title": "Tobar an Chaillte (Well of the Lost One)",
+          "description": "A sacred well no one admits exists. The water is black and still. Taboo-Breakers drink from it before a Well-Walk. Neither surveyors nor clerics can find it on any map. The Lady Beneath drinks from it too."
+        }
       ],
       "people": [
-        { "title": "Clogaire (a Confessor)", "description": "A bell-ringer who carries the weight of the dead. Her hands are scarred from ringing. She never speaks of what she has heard." },
-        { "title": "Tréadaí (a Gray Walker)", "description": "A guide for the dying, carrying a lantern with a single gray flame, singing the keening at deathbeds." }
+        {
+          "title": "Clogaire (a Confessor)",
+          "description": "A bell-ringer who carries the weight of the dead. Her hands are scarred from ringing. She never speaks of what she has heard."
+        },
+        {
+          "title": "Tréadaí (a Gray Walker)",
+          "description": "A guide for the dying, carrying a lantern with a single gray flame, singing the keening at deathbeds."
+        }
       ],
       "complications": [
-        { "title": "The Unsung Bell (1 SB)", "description": "A confession is not enough. The Confessor cannot ring her bell. The weight must be carried until a witness volunteers." },
-        { "title": "The Ninth Knock (2 SB)", "description": "An Caillte knocks at the threshold. A door that was closed now rattles. The Gray Liturgy waits. The Green Host listens." },
-        { "title": "The Burdened Confessor (3 SB)", "description": "A Confessor collapses under the weight of unspoken sins. She cannot ring. She cannot speak. She can only wait for someone to carry her." }
+        {
+          "title": "The Unsung Bell (1 SB)",
+          "description": "A confession is not enough. The Confessor cannot ring her bell. The weight must be carried until a witness volunteers."
+        },
+        {
+          "title": "The Ninth Knock (2 SB)",
+          "description": "An Caillte knocks at the threshold. A door that was closed now rattles. The Gray Liturgy waits. The Green Host listens."
+        },
+        {
+          "title": "The Burdened Confessor (3 SB)",
+          "description": "A Confessor collapses under the weight of unspoken sins. She cannot ring. She cannot speak. She can only wait for someone to carry her."
+        }
       ],
       "rewards": [
-        { "title": "Bell-Ringer's Blessing", "description": "Once, ignore a Condition caused by guilt or despair. The Confessor rings her bell for you, flat and mournful and final." },
-        { "title": "Gray Thread", "description": "A gray thread tied around your wrist. Cut it to transfer a burden to a willing Confessor. The thread cannot be cut by the same hand that tied it." }
+        {
+          "title": "Bell-Ringer's Blessing",
+          "description": "Once, ignore a Condition caused by guilt or despair. The Confessor rings her bell for you, flat and mournful and final."
+        },
+        {
+          "title": "Gray Thread",
+          "description": "A gray thread tied around your wrist. Cut it to transfer a burden to a willing Confessor. The thread cannot be cut by the same hand that tied it."
+        }
       ]
     }
   },
@@ -839,48 +952,126 @@
     ]
   },
   "pursuit_ladder": [
-    { "move": "Advance/Withdraw (Wits + Stealth)", "effect": "On a hit, shift one range band. On a strong hit, also impose Fog Bank." },
-    { "move": "Cut the Writ (Presence + Sway)", "effect": "On a hit, freeze range for one exchange; if a moot token is in your possession, +1 die." },
-    { "move": "Weather the Host (Endurance + Spirit)", "effect": "On a hit during Green Host Rides, you pick who is named; on a Miss, the GM does." },
-    { "move": "Defy the Abbess (Spirit + Deception)", "effect": "On a hit, hide a taboo act from the Inquisition; on a Miss, gain the Condition Marked for Purity." },
-    { "move": "Ring the Bell (Spirit + Lore)", "effect": "On a hit during a Gray Liturgy scene, transfer a Condition to a willing Confessor; on a Miss, the Confessor cannot ring — the weight doubles." },
-    { "move": "Tie the Thread (Spirit + Endurance)", "effect": "On a hit during a taboo scene, tie a gray thread instead of speaking a ninth name; gain +1 die on the next roll. On a Miss, the thread is cut — the Confessor will not answer." }
+    {
+      "move": "Advance/Withdraw (Wits + Stealth)",
+      "effect": "On a hit, shift one range band. On a strong hit, also impose Fog Bank."
+    },
+    {
+      "move": "Cut the Writ (Presence + Sway)",
+      "effect": "On a hit, freeze range for one exchange; if a moot token is in your possession, +1 die."
+    },
+    {
+      "move": "Weather the Host (Endurance + Spirit)",
+      "effect": "On a hit during Green Host Rides, you pick who is named; on a Miss, the GM does."
+    },
+    {
+      "move": "Defy the Abbess (Spirit + Deception)",
+      "effect": "On a hit, hide a taboo act from the Inquisition; on a Miss, gain the Condition Marked for Purity."
+    },
+    {
+      "move": "Ring the Bell (Spirit + Lore)",
+      "effect": "On a hit during a Gray Liturgy scene, transfer a Condition to a willing Confessor; on a Miss, the Confessor cannot ring — the weight doubles."
+    },
+    {
+      "move": "Tie the Thread (Spirit + Endurance)",
+      "effect": "On a hit during a taboo scene, tie a gray thread instead of speaking a ninth name; gain +1 die on the next roll. On a Miss, the thread is cut — the Confessor will not answer."
+    }
   ],
   "boss_archetypes": [
     {
       "name": "The Unsung Bell",
-      "tags": ["Fae", "Curse"],
+      "tags": [
+        "Fae",
+        "Curse"
+      ],
       "description": "A forbidden note given will — a bell that should never have rung a ninth time.",
-      "phases": ["Hum in Mist", "Echo Under Well-Stone", "Command of Fog"],
-      "cracks": ["bind its clapper with eight ribbons", "let a rival speak the ninth and pay the price instead", "drown the echo at the Sea-Cave Harp", "**Gray Liturgy variant:** let a Confessor ring it once — it will shatter or sing, and no one knows which"]
+      "phases": [
+        "Hum in Mist",
+        "Echo Under Well-Stone",
+        "Command of Fog"
+      ],
+      "cracks": [
+        "bind its clapper with eight ribbons",
+        "let a rival speak the ninth and pay the price instead",
+        "drown the echo at the Sea-Cave Harp",
+        "**Gray Liturgy variant:** let a Confessor ring it once — it will shatter or sing, and no one knows which"
+      ]
     },
     {
       "name": "Bride-Thief of the Green Host",
-      "tags": ["Fae", "Dream"],
+      "tags": [
+        "Fae",
+        "Dream"
+      ],
       "description": "A dream raider of the Host, come to claim a bride who never agreed to the marriage.",
-      "phases": ["Invitation in Sleep", "Procession Across Moor", "Feast Without Ninth Cup"],
-      "cracks": ["cut the dream-veil with silver", "sing satire at the Green Moot Hill", "trade a Bride-Charter", "**Gray Liturgy variant:** offer a gray thread instead of a bride — the Host may accept, tying it around the King in Green's wrist instead"]
+      "phases": [
+        "Invitation in Sleep",
+        "Procession Across Moor",
+        "Feast Without Ninth Cup"
+      ],
+      "cracks": [
+        "cut the dream-veil with silver",
+        "sing satire at the Green Moot Hill",
+        "trade a Bride-Charter",
+        "**Gray Liturgy variant:** offer a gray thread instead of a bride — the Host may accept, tying it around the King in Green's wrist instead"
+      ]
     },
     {
       "name": "The Sheriff's Black Assize",
-      "tags": ["Authority", "Law"],
+      "tags": [
+        "Authority",
+        "Law"
+      ],
       "description": "A Viterran enforcer escalating from decree to hanging.",
-      "phases": ["Plantation Decree", "Common Law Assize", "The Ninth Hanging"],
-      "cracks": ["produce a witnessed Brehon judgment older than the crown's claim", "make the kin-whole with cattle, not counted coin", "let the Green Host take his name", "**Gray Liturgy variant:** tie a gray thread around the noose — the rope will not tighten"]
+      "phases": [
+        "Plantation Decree",
+        "Common Law Assize",
+        "The Ninth Hanging"
+      ],
+      "cracks": [
+        "produce a witnessed Brehon judgment older than the crown's claim",
+        "make the kin-whole with cattle, not counted coin",
+        "let the Green Host take his name",
+        "**Gray Liturgy variant:** tie a gray thread around the noose — the rope will not tighten"
+      ]
     },
     {
       "name": "The Abbess's Golden Inquisition",
-      "tags": ["Faith", "Zeal"],
+      "tags": [
+        "Faith",
+        "Zeal"
+      ],
       "description": "An Everflame purifier escalating from doctrine to brand.",
-      "phases": ["Doctrine of Silence", "Trial by Censer", "Brand of Orthodoxy"],
-      "cracks": ["expose her pact with raiders", "turn her own clerics against her with truth", "let the Green Host ride during the trial", "**Gray Liturgy variant:** ring a Confessor's bell in the cathedral — the Abbess will hear, and will not confess, but the bell rings anyway"]
+      "phases": [
+        "Doctrine of Silence",
+        "Trial by Censer",
+        "Brand of Orthodoxy"
+      ],
+      "cracks": [
+        "expose her pact with raiders",
+        "turn her own clerics against her with truth",
+        "let the Green Host ride during the trial",
+        "**Gray Liturgy variant:** ring a Confessor's bell in the cathedral — the Abbess will hear, and will not confess, but the bell rings anyway"
+      ]
     },
     {
       "name": "The Missing Step",
-      "tags": ["Fae", "Mystery"],
+      "tags": [
+        "Fae",
+        "Mystery"
+      ],
       "description": "A living omission — a vanished witness, an unread clause, an unwalkable bridge.",
-      "phases": ["Vanished Witness", "Unread Clause", "Unwalkable Bridge"],
-      "cracks": ["invite a Taboo-Witness to count aloud", "spill nine drops into Saint's Well but name only eight", "let the Lady Beneath keep a memory", "**Gray Liturgy variant:** step where the step is missing — you will fall, land on a gray thread, and be pulled back by a Confessor, though you won't remember where you fell"]
+      "phases": [
+        "Vanished Witness",
+        "Unread Clause",
+        "Unwalkable Bridge"
+      ],
+      "cracks": [
+        "invite a Taboo-Witness to count aloud",
+        "spill nine drops into Saint's Well but name only eight",
+        "let the Lady Beneath keep a memory",
+        "**Gray Liturgy variant:** step where the step is missing — you will fall, land on a gray thread, and be pulled back by a Confessor, though you won't remember where you fell"
+      ]
     }
   ],
   "patronage_and_power": "In Theona, power flows through ancient custom, sacred spaces, and the careful observance of taboo. The Three Greens maintain their independence through a web of moots, well-keepers, and geas-keepers who ensure the old laws are honored. The King and Matron rule by consensus and tradition, while the unseen Lady Beneath influences events through dreams and whispers. Against them stands the Viterran crown — sheriffs, bishops, and undertakers who seek to replace Brehon law with common law, hawthorn with church stone, and the Green Host with the White Flame. And watching from Whiterick Abbey, the Everflame Abbess schemes to preserve power by pitting Viterra, the native factions, and raiders against each other. In the mist, a quieter power waits: the Gray Liturgy does not scheme — it rings, it carries, it listens. Its Confessors hold the weight of the dead; its Gray Walkers guide the dying across; its Well-Walkers descend into the Ninth and return. It offers no gold, no land, no writs — only a gray thread and a cracked bell. For those who have lost too much, that is enough. **For the GM:** tie rewards to visible symbols (ribbons, tokens, blessings, gray threads) that can be challenged, stolen, or voided by crown officials; let the crown, the Host, the Abbess, and the Gray Liturgy grant conflicting protections so players must choose whose favor matters more; use moots, wells, and causeways as arenas for social contests weighing Brehon law against Viterran common law and Everflame orthodoxy; and remember the Viterran Plantation, Everflame Orthodoxy, and Unringing Bell timers are visible campaign fronts — once they fill, the isles change forever. The Gray Liturgy's timer is the quietest, and the most patient.",
@@ -935,5 +1126,5 @@
     "The Unringing Bell",
     "The Ninth in Theona"
   ],
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Copyright – © 2024 - 2026 Nicholas A. Gasper. Used with permission, All rights reserved."
 }

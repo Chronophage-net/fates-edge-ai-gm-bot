@@ -245,7 +245,25 @@
     "description": "A small village has been plagued by a strange malady: its inhabitants are forgetting their own names, their loved ones' faces, and the way home. The local priest believes it is a curse, but the Pale Shepherd's followers know it is a threshold—a door that has been left open too long. The party must find the forgotten threshold, close it, and help the villagers remember who they are before the forgetting consumes them all.",
     "quote": "The door is never locked. We only hold it open. But some doors are better left closed."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "_license": "Fate's Edge Copyright – © 2024 - 2026 Nicholas A. Gasper. Used with permission, All rights reserved.",
   "order": "chthonic",
-  "register": "fear"
+  "register": "fear",
+  "appears_in_religions": [
+    {
+      "religion": "twin-flames",
+      "order": "Watchers Against the Maw",
+      "note": "Invoked with the Inquisitor Prime against the unclean dead."
+    },
+    {
+      "religion": "salt-fire",
+      "order": "The Namers",
+      "note": "Keeps the Roll and walks the drowned out."
+    },
+    {
+      "religion": "still-road",
+      "order": "The Pale Shepherd",
+      "note": "Funerary Order; welcome in villages that will not let a monk past the gate."
+    }
+  ],
+  "orders_are_masks": "An Order is the shape this Patron takes inside a religion — the office through which it is approached, named and made respectable. The same Patron therefore appears in faiths that despise each other, and rarely at the same rank."
 }

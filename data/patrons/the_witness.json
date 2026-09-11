@@ -17,7 +17,7 @@
     "unmasking"
   ],
   "lore": {
-    "description": "The Witness remembers what others bury. Every shadow cast and oath broken is a line in her unending ledger. She is the keeper of inconvenient truths, the patron of those who seek to expose lies or recover forgotten knowledge. Her followers learn that knowledge comes with a price—the weight of remembering what others would forget. The Witness has no will, only a ledger; no mercy, only accuracy. She does not demand confessions, but she ensures that every lie leaves a stain, every secret a trace. Those who serve her become archivists of the uncomfortable, witnesses to the truths that others would kill to keep hidden. To walk her path is to accept that some truths are weapons, and that the truth teller is never loved.",
+    "description": "The Witness remembers what others bury. Every shadow cast and oath broken is a line in her unending ledger. She is the keeper of inconvenient truths, the patron of those who seek to expose lies or recover forgotten knowledge. Her followers learn that knowledge comes with a price—the weight of remembering what others would forget. The Witness has no will, only recollection; no mercy, only accuracy. She does not demand confessions, but she ensures that every lie leaves a stain, every secret a trace. Those who serve her become archivists of the uncomfortable, witnesses to the truths that others would kill to keep hidden. To walk her path is to accept that some truths are weapons, and that the truth teller is never loved.",
     "followers": "Among the peoples of Fate's Edge, the Witness is known by many names. In Ecktoria, she is the Ink_Eye, the Censor's clerk who copies every redacted line onto a private scroll. In Vhasia, she is the Fractured Mirror, prayed to by spies who seek to reveal a rival's true loyalty. In the Mistlands, she is the Fog_Scribe, whose name is whispered when a bell line fails and the dead must be identified by their secrets. And in the shadows of every great city, there are those who follow the Apocalyptic Witness—a doomsaying cult that believes the world will end when the last hidden truth is finally spoken aloud, and who work to hasten that revelation by exposing every lie, no matter the cost.",
     "signs": [
       "A scrap of parchment with a name you recognise, found where you least expect it",
@@ -199,7 +199,7 @@
   "cantors_and_cults": {
     "cantors": {
       "name": "The Cantor's Song",
-      "description": "A Cantor of the Witness sings in truth-tolling—clear, piercing melodies that cut through evasion, harmonies that make the hidden surface. Their voice is used to compel a confession, to sound an alarm that a secret is about to be spoken, or to sing a historical record into being, each note a word in a ledger. The Witness's Cantors are often found in courtrooms, in archive vaults, and at the bedsides of the dying, singing the last truth."
+      "description": "A Cantor of the Witness sings in truth-tolling—clear, piercing melodies that cut through evasion, harmonies that make the hidden surface. Their voice is used to compel a confession, to sound an alarm that a secret is about to be spoken, or to sing a historical record into being, each note a word that will not come unsaid. The Witness's Cantors are often found in courtrooms, in archive vaults, and at the bedsides of the dying, singing the last truth."
     },
     "cult": {
       "name": "The Congregation of the Unmasking",
@@ -316,7 +316,20 @@
     "description": "A powerful noble has been murdered, and the party is hired to investigate. But every clue leads to a dead end—until they discover that the noble was killed to protect a secret that could topple a kingdom. The party must decide: expose the secret and risk war, or bury it and become complicit in the very lies they swore to reveal. The Witness watches, and she will not forget which path they choose.",
     "quote": "I will show you what you would rather forget. But first, you must forget what you think you know."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "_license": "Fate's Edge Copyright – © 2024 - 2026 Nicholas A. Gasper. Used with permission, All rights reserved.",
   "order": "seraphic",
-  "register": "conviction"
+  "register": "conviction",
+  "appears_in_religions": [
+    {
+      "religion": "twin-flames",
+      "order": "Keepers of the Pure Flame",
+      "note": "Invoked with the Oath of Flame & Light over the lamps and the texts."
+    },
+    {
+      "religion": "salt-fire",
+      "order": "The Namers",
+      "note": "Invoked with the Pale Shepherd over the Roll of the Drowned."
+    }
+  ],
+  "orders_are_masks": "An Order is the shape this Patron takes inside a religion — the office through which it is approached, named and made respectable. The same Patron therefore appears in faiths that despise each other, and rarely at the same rank."
 }

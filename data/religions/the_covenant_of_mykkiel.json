@@ -2,7 +2,7 @@
   "id": "covenant-of-mykkiel",
   "type": "religion",
   "title": "The Covenant of Mykkiel",
-  "subtitle": "The Faith of the Contract",
+  "subtitle": "The Faith Founded on a Verdict",
   "version": "1.0.0",
   "tags": [
     "law",
@@ -12,10 +12,14 @@
     "ledger",
     "arbiter",
     "witness",
-    "justice"
+    "justice",
+    "verdict",
+    "founding-judgment",
+    "no-messenger",
+    "mykkiel"
   ],
   "lore": {
-    "description": "The Covenant is the faith of the Pereshi highlands, of Galanina and the Fhara trade routes. It is legalistic, stern, and uncompromising. Its God is the Law—not human law, but the divine order that underpins reality. Its symbol is a broken chain, signifying that even when empires fall, the law remains. The Covenant teaches that the universe is a contract. In the beginning, the great powers entered into a binding agreement to govern the chaos of existence. That contract is the Covenant, and it endures not because it is enforced but because it is true.",
+    "description": "Every other faith in the Amaranthine begins with a message. The Covenant begins with a ruling. It does not hold that a messenger came down with words to be recited; it holds that a woman of the Sidhi diaspora, dispossessed and without recourse, brought a grievance — and that Mykkiel, the Arbiter, heard the case and found for her. The founding document of the faith is not a revelation. It is a judgment, with a plaintiff, a respondent, findings and a remedy. The first Covenanter was not a prophet. She was a litigant, and she won, and the faith has never entirely recovered from the confidence of that.",
     "followers": "Mykkiel, called the Arbiter, is the living seal of this contract. He does not create law; he remembers it. His followers are judges, not legislators. They do not interpret the Covenant; they apply it. There is a terrible beauty in that. There is also a terrible coldness.",
     "names_across_regions": {
       "pereshi": "The Covenant, the ancient law of the highlands and trade routes",
@@ -23,7 +27,7 @@
       "ashaan": "The Oath-Keeper, viewed with suspicion by the Veiled Sisters' remnants",
       "thepyrgos": "The Law-Bringers, mediators in disputes between the Two Fires"
     },
-    "quote": "The law is not written in sand, but in stone. The Covenant is not suggestion, but command. Transgressors shall be purged, the faithful exalted."
+    "quote": "We were not told. We were heard, and the finding was entered."
   },
   "domain_focus": [
     "The Divine Contract: the universe is an agreement; those who honor it align with reality",
@@ -96,5 +100,35 @@
     "name": "A Covenant Judge",
     "description": "A judge who carries an iron seal and a copy of the Canons of Obligation. They do not smile. They do not weep. They weigh testimony, pronounce judgment, and strike names from the Grand Ledger. The silence in their court is heavier than any flame."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Copyright – © 2024 - 2026 Nicholas A. Gasper. Used with permission, All rights reserved.",
+  "founding": {
+    "founder": "Mykkiel, the Arbiter",
+    "character_of_the_founding": "A judgment, not a recitation.",
+    "description": "The Covenant has no messenger-angel and is proud of it. To a Covenanter, a faith founded on a recitation asks you to believe a speaker; a faith founded on a verdict asks you to read the reasoning and check it. Covenant children are taught the founding judgment the way Temple children are taught letters: as a text you are expected to argue with. The accusation that a faith without a messenger is a faith without a word from on high has been made by the Everflame for three centuries and still lands, which is why Covenant scholars answer it at such length."
+  },
+  "salvation": {
+    "name": "Standing",
+    "shape": "A status under the terms, not a state of the soul.",
+    "description": "One is not purified and not personally met. One is either in good faith under the covenant or in breach of it, and either condition can be argued, evidenced and cured. Breach is remediable; what is not remediable is refusing to appear.",
+    "why_it_is_beautiful": "The Covenant will hear anyone. Its courts take the case of a servant against a house, a wife against a husband, a tenant against a landlord — seriously, for free — and their judgments have been enforced against people who were confident they could not be. In three regions the Covenant is the only body that will write down what a poor person says and treat the writing as binding.",
+    "why_it_is_terrible": "A faith founded on a winning verdict believes it has already prevailed, and treats every disagreement as an appeal it expects to dismiss. Its judgments bind the losing side absolutely and forever, including descendants who were not present. Its formal position is that the unbound are not wicked but unheard, which sounds gentle until you notice that it makes the rest of the world a list of matters not yet reached."
+  },
+  "beauty": [
+    "Courts that will hear a servant against a house, for free, and mean it.",
+    "A founding text every child is taught to argue with rather than recite.",
+    "The Accuser's standing duty to bring the case against the faith's own officers when the case is good.",
+    "Hospitallers who have spent two centuries arguing how small a healing's terms may honourably be, and have got it down to a promise to eat."
+  ],
+  "ugliness": [
+    "Judgments that bind the descendants of the losing party, who were not present and cannot appeal.",
+    "The certainty of a faith that opened with a win, and answers dissent as though it were a rehearing.",
+    "Standing that can be lost on a technicality argued by people who were trained to argue technicalities.",
+    "Its total absence of a mercy Order, which its rivals never stop mentioning and its own healers quietly resent."
+  ],
+  "orders_are_masks": "An Order is not a department of this faith. It is the shape a specific Patron takes inside it — the office through which that presence is approached, named and made respectable. This is why the same Order appears in faiths that despise each other, and why it does not hold the same rank in each. Where an Order sits in the hierarchy is a claim about what the faith is for, and most schisms begin as a quarrel over which Order speaks first.",
+  "internal_schism": {
+    "name": "The Recusants",
+    "claim": "A judge who founds a faith cannot then preside over it.",
+    "description": "They hold that Mykkiel is obliged to recuse himself from all matters touching the Covenant. Nobody has found the flaw in the argument and nobody with a position will say so aloud. Recusant congregations keep an empty seat on the bench, and are considered either the most rigorous Covenanters alive or a nest of sophists, depending entirely on who is asked."
+  }
 }

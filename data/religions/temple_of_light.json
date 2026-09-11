@@ -2,7 +2,7 @@
   "id": "temple-of-light",
   "type": "religion",
   "title": "The Temple of Light",
-  "subtitle": "The Faith of Viterra and Thepyrgos",
+  "subtitle": "The Unmediated Faith of Viterra and Thepyrgos",
   "version": "1.0.0",
   "tags": [
     "illumination",
@@ -11,17 +11,21 @@
     "reform",
     "truth",
     "refraction",
-    "compassion"
+    "compassion",
+    "protestant",
+    "unmediated",
+    "vernacular-scripture",
+    "congregational"
   ],
   "lore": {
-    "description": "The Temple of Light is the faith of Viterra and Thepyrgos, born from a reform movement that refused to burn. Its priests are teachers. Its knights are protectors. Its inquisitors are called Chain-Lanterns, and they carry lanterns on chains to remind themselves that power must be restrained. The Temple teaches that the divine is not a single flame but a spectrum. It refracts into three aspects: Gold (justice), Silver (truth), and White (mercy). No single aspect is complete without the others.",
+    "description": "The Temple began as a reform movement inside the Everflame and broke from it over a single question: whether a soul needs an institution in order to be met. The Temple's answer is no. Light is not administered — it falls on you. Every member of the Temple is expected to have, and is examined on having, a personal relationship with the light, unmediated by any priest, and the entire apparatus of the faith exists to put people in the way of that and then get out of it. The divine is not a single flame but a lens, refracting into Gold (justice), Silver (truth) and White (mercy).",
     "followers": "The Temple is evangelical—it sends missionaries to the Linn, the Mistlands, and the Thepyrgosian countryside, offering medicine, education, and catechism. The Temple's mercy has teeth, and those teeth are sharp. Its healers are beloved. Its Chain-Lanterns are feared. Both are necessary.",
     "names_across_regions": {
       "viterra": "The Temple of Light, the official faith of the hedge-law kingdom",
       "thepyrgos": "The City of Two Fires—the Temple's heart and the Everflame's foothold",
       "linn": "The Light-Bringers, missionaries who offer grain and catechism"
     },
-    "quote": "The Light is not a flame but a lens. The divine shines through all things, refracted into Gold, Silver, and White."
+    "quote": "Light is not given to you by a man in a robe. It falls on you. Stand where it falls."
   },
   "domain_focus": [
     "The Refraction of the Divine: the divine is a spectrum, refracted into Gold (justice), Silver (truth), and White (mercy)",
@@ -31,10 +35,11 @@
     "The White Mirror: a polished silver surface used to detect unsanctioned magic; the reflection is slightly delayed"
   ],
   "doctrines": [
-    "The divine is a spectrum, not a single flame. It refracts into Gold, Silver, and White.",
-    "No single aspect is complete without the others. Justice without mercy is cruelty. Mercy without truth is weakness.",
-    "Confession is private. The priest does not report what is heard. The goal is reintegration.",
-    "Heretics are not burned. They are re-educated. The Temple maintains sanctuaries for the possessed and the wayward."
+    "Light is not administered. It falls on you.",
+    "Every member has a personal relationship with the light, unmediated by any priest.",
+    "The divine is a spectrum, not a single flame. Justice without mercy is cruelty; mercy without truth is weakness.",
+    "There is no confession to a priest, because there is nobody in between. There is the morning candle, and you, and the plain and terrible business of being honest by yourself.",
+    "A congregation calls its own minister, and may dismiss him."
   ],
   "practices": [
     "The Bell-Toll Ordeal: a suspect is placed in a chamber with a single bell; each lie causes the bell to ring—or so they are told",
@@ -95,5 +100,30 @@
     "name": "A Chain-Lantern",
     "description": "Conscripted at seven. Forty now. Has never slept without a candle burning. She does not know why. She carries a white mirror and a bell on a chain. She has never failed to find what she was looking for."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Copyright – © 2024 - 2026 Nicholas A. Gasper. Used with permission, All rights reserved.",
+  "salvation": {
+    "name": "The Personal Light",
+    "shape": "A relationship, not a procedure.",
+    "description": "Nothing is conferred and nothing is processed. The Temple holds that the light meets each person directly and that the only question is whether you are standing where it falls and willing to be honest about what it shows. A priest can teach you to read, sit with you, and argue with you. He cannot do it for you and does not claim to.",
+    "why_it_is_beautiful": "The Codex of Illumination is in the vernacular and deliberately cheap; Temple presses have run for a century to keep it cheap. Households own one. Children learn their letters on it, which is why literacy in rural Viterra runs ahead of the imperial cities. The Temple trusted ordinary people with its own scripture and has never once taken it back.",
+    "why_it_is_terrible": "When everyone reads for themselves, everyone is a potential heretic, and discipline falls to the congregation — which is to say to your neighbours, who know what your marriage is like. Temple shunning is administered by people who have eaten at your table. It is more intimate and far more effective than any inquisitor, and there is no appeal from it, because there is no one above it."
+  },
+  "beauty": [
+    "Free schools, free clinics, and the best-run hospices in the west.",
+    "Scripture in the vernacular, cheap, and in the hands of farmers.",
+    "Congregational self-government: ministers are called by the people they serve and can be sent away by them.",
+    "A hundred small chapels that quietly sheltered exactly the people the Everflame struck off its registers."
+  ],
+  "ugliness": [
+    "Shunning by neighbours, which is crueller than any tribunal and cannot be appealed.",
+    "Constant fission: three chapels in one market town, none speaking, all certain.",
+    "The Chain-Lanterns, whose chain was meant to be a reminder of restraint and has become a tool.",
+    "The rehabilitation of arcane-talented children: taken from their mothers into schools that are genuinely kind, genuinely well-fed, and from which the child comes home a stranger who thanks you for it. The most disturbing thing any faith in the Amaranthine does, precisely because no one involved believes they are being cruel."
+  ],
+  "orders_are_masks": "An Order is not a department of this faith. It is the shape a specific Patron takes inside it — the office through which that presence is approached, named and made respectable. This is why the same Order appears in faiths that despise each other, and why it does not hold the same rank in each. Where an Order sits in the hierarchy is a claim about what the faith is for, and most schisms begin as a quarrel over which Order speaks first.",
+  "internal_schism": {
+    "name": "The Plain Meeting",
+    "claim": "Ministers, buildings and hymns are all mediation, and must go.",
+    "description": "They sit in silence in barns until someone is moved to speak. The Temple has never suppressed them and finds them insufferable, chiefly because they are the Temple's own argument taken one step further and everybody knows it."
+  }
 }

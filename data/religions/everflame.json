@@ -11,10 +11,13 @@
     "censure",
     "record-keeping",
     "fire",
-    "truth"
+    "truth",
+    "state-religion",
+    "salvation-as-process",
+    "ecktoria"
   ],
   "lore": {
-    "description": "The Everflame is the faith of Ecktoria, and Ecktoria is the remnant of an empire that refuses to admit it has fallen. Its priests carry censers and gavels in equal measure. Its cathedrals are courthouses. Its saints are magistrates. The Everflame teaches that the world was kindled by a single fire, which then divided into three aspects: the Gleaming (justice, oaths, protection), the Searing (purification, judgment, truth), and the Warming (mercy, healing, forgiveness). Each aspect is embodied by a Patron, but the Patrons are not worshipped as gods—they are witnesses.",
+    "description": "The Everflame is the state religion of the Ecktorian Empire, and the distinction matters: it is not merely the faith most Ecktorians hold, it is an organ of the state. Its basilicas are courthouses, its magistrates are ordained, and its perpetual fires are maintained at public expense — the extinction of a city's flame is a constitutional event, not a religious one. The Everflame teaches that the world was kindled by a single fire which divided into three aspects: the Gleaming (justice), the Searing (purification) and the Warming (mercy). The flame does not judge. The flame witnesses. The judge is the empire.",
     "followers": "The flame does not judge. The flame witnesses. The judge is the empire. The Everflame's followers are magistrates, inquisitors, soldiers, and bureaucrats who believe that justice requires memory. A crime forgotten is a crime unpunished, and a crime unpunished is an invitation. In a world of broken oaths and forgotten debts, the Everflame keeps the ledger.",
     "names_across_regions": {
       "ecktoria": "The Everflame, the state religion of the Ecktorian Empire",
@@ -32,9 +35,10 @@
   ],
   "doctrines": [
     "The flame does not judge. The flame witnesses. The judge is the empire.",
+    "Purification is not a verdict. It is a sequence, and the sequence is published.",
     "Confession must be public. A candle lit in testimony cannot be extinguished until the truth is spoken.",
-    "Censure is public and permanent. A heretic's name is struck from the parish registry. Their family may not pray for them.",
-    "There is no hell. There is only record-keeping."
+    "Censure is public and permanent. A heretic's name is struck from the parish register, and their family may not pray for them.",
+    "A stage performed imperfectly is performed again from the beginning."
   ],
   "practices": [
     "The Candle Test: a suspected heretic is seated in a room with a single candle; the flame's behavior reveals truth or deception",
@@ -90,5 +94,30 @@
     "name": "Brother Mavron",
     "description": "A former prisoner of Rothari's camp, now a scribe and confessor. He has worn chains beneath four faiths and written this treatise as an act of witness. He is not neutral—he is proximate."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved."
+  "_license": "Fate's Edge Copyright – © 2024 - 2026 Nicholas A. Gasper. Used with permission, All rights reserved.",
+  "salvation": {
+    "name": "The Refinement",
+    "shape": "A process, not a judgement.",
+    "description": "The Everflame's central claim is that purification is a known procedure with published stages, performed in a fixed order, through which any soul can be brought: confession, restitution, the vigil, the Warming, the Searing, and the reading of the name back to the penitent. Perform the stages correctly and completely and you are clean. This is not a priest's opinion and is not his to withhold.",
+    "why_it_is_beautiful": "It is the most genuinely democratic doctrine in the Amaranthine. It does not matter who your parents were or what you can pay; the stages are the stages. Beggars have been carried through the Refinement in full, publicly, by an empire that despised them, because the procedure has no clause for despising people. A parish will feed and shelter a stranger indefinitely while they are in the middle of it.",
+    "why_it_is_terrible": "A stage performed imperfectly must be repeated from the beginning, and whether it was performed imperfectly is determined by the Censorate. A Refinement can therefore be extended, without malice and without any rule being broken, until the penitent dies inside it — whereupon the family may pay to have the remainder completed on the dead person's behalf. The most feared words in Ecktoria are not a sentence of death. They are 'we will begin again.'"
+  },
+  "beauty": [
+    "The Refinement itself: a road out that cannot lawfully be closed to the poor.",
+    "The perpetual fires, which any freezing person may sit at by right, in any city, at any hour.",
+    "Four centuries of parish registers, which have reunited more separated families than any army has.",
+    "The Warming: a rite that consists of being fed and sat with by strangers until you can speak again."
+  ],
+  "ugliness": [
+    "The Censorate, which decides what counts as a completed stage and has never been reviewed by anyone outside itself.",
+    "The Unspoken Ninth Citation: a redacted procedural clause permitting execution without confession, never read aloud.",
+    "Censure, which strikes a name from the register so that the person's family may not pray for them — a punishment aimed entirely at the survivors.",
+    "Completion fees paid on behalf of the dead, which are not quite a fraud and are most of the income of several dioceses."
+  ],
+  "orders_are_masks": "An Order is not a department of this faith. It is the shape a specific Patron takes inside it — the office through which that presence is approached, named and made respectable. This is why the same Order appears in faiths that despise each other, and why it does not hold the same rank in each. Where an Order sits in the hierarchy is a claim about what the faith is for, and most schisms begin as a quarrel over which Order speaks first.",
+  "internal_schism": {
+    "name": "The Ember Prefects",
+    "claim": "A fire kept in a basilica is a fire being hoarded.",
+    "description": "Street clergy who carry candles into the alleys and run the Refinement for anyone, free, without the Censorate's leave. They are correct about the doctrine and unbearable about it, roughly a third of them are extortionists with a candle, and in the poor wards they are frequently the only clergy who came. Their symbol is a candle burning from both ends."
+  }
 }

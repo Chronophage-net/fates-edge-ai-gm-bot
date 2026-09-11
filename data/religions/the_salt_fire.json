@@ -1,0 +1,110 @@
+{
+  "id": "salt-fire",
+  "type": "religion",
+  "title": "The Salt-Fire",
+  "subtitle": "The Everflame as It Came Ashore",
+  "version": "1.0.0",
+  "tags": [
+    "syncretic",
+    "fire",
+    "sea",
+    "the-dead",
+    "naming",
+    "zakov",
+    "dolmis",
+    "informers"
+  ],
+  "parent_traditions": [
+    "The Everflame",
+    "the Dolmis tide-cults",
+    "The Pale Shepherd"
+  ],
+  "lore": {
+    "description": "Everflame doctrine crossed salt water and came ashore married to the tide-cults and the Pale Shepherd. The Salt-Fire keeps the Refinement and has quietly rewritten its last stage: the Searing is performed with brine rather than flame, because on this coast the sea is what purifies and fire is what a ship most fears. Its priests are called Namers, and its whole teaching on the dead is one sentence — you are saved if your name is said aloud after you die.",
+    "followers": "Dockhands, netmen, wreckers, widows, and the Syndicate factors who find the Namers' knowledge useful. Almost nobody on the coast formally converts; almost everybody attends the Reading.",
+    "names_across_regions": {
+      "zakov": "The Salt-Fire; the coast's own faith, and the only clergy the Syndicates cannot buy outright",
+      "theona": "The Naming, kept alongside the Ninth Taboo and not confused with it",
+      "ecktoria": "A coastal deviation the Censorate has been meaning to correct for ninety years",
+      "kahfagia": "The Brine Rite, practised quietly by crews who will not say so at home"
+    },
+    "quote": "Say it aloud. It does not count in the head."
+  },
+  "domain_focus": [
+    "The Brine Searing: the Refinement's final stage performed with sea water, not flame",
+    "The Roll of the Drowned: the coast's register of everyone lost to the water",
+    "The Reading: the annual recitation of the entire Roll, which in a bad year takes three days",
+    "Namers: priests who take no fee and have refused one publicly often enough that offering is now an insult",
+    "Driftwood marks: a name cut into wood and left at the tideline until the sea takes it"
+  ],
+  "doctrines": [
+    "You are saved if your name is said aloud after you die.",
+    "Fire purifies inland. On this coast the sea does it.",
+    "No one is buried unnamed, however poor, however foreign, however badly they died.",
+    "A Namer takes no fee. A Namer who takes a fee is not a Namer.",
+    "The Roll must be complete. An incomplete Roll is a lie told to the sea."
+  ],
+  "salvation": {
+    "name": "The Naming",
+    "shape": "Being spoken, by someone, afterward.",
+    "description": "There is no stage of the soul to reach. There is only whether your name is on the Roll and whether it is read. The Namers therefore keep the coast's register of the drowned and read all of it, once a year, for as long as it takes.",
+    "why_it_is_beautiful": "It is the one salvation in the Amaranthine that costs the dead nothing and can be given to a stranger. Every year, on that coast, the poorest and most anonymous people who ever lived are spoken aloud in front of a crowd standing in the rain.",
+    "why_it_is_terrible": "A faith whose sacrament is a list runs on informers, because the list must be complete. The Namers know who sailed with whom, who owed whom, and who did not come back, and the Syndicates have found this useful for a century. Being left off the Roll is the coast's severest punishment and is entirely at a Namer's discretion."
+  },
+  "orders": [
+    {
+      "id": "the_namers",
+      "name": "The Namers",
+      "role": "Priests of the Roll",
+      "patrons": [
+        "The Pale Shepherd",
+        "The Witness"
+      ],
+      "description": "Keep the Roll, perform the Brine Searing, and read the drowned. Their Rites grant +1 die to learn a true name or to be believed while speaking one."
+    },
+    {
+      "id": "brine_wardens",
+      "name": "Brine-Wardens",
+      "role": "Inquisitorial, in a coastal key",
+      "patrons": [
+        "Inquisitor Prime"
+      ],
+      "description": "The Flame-Wardens' cousins, who drown rather than burn and consider this a mercy and a mark of civilization. Ecktoria considers it a doctrinal error and has never pressed the point where the tide comes in."
+    },
+    {
+      "id": "the_uncounted",
+      "name": "The Uncounted",
+      "role": "Lay volunteers",
+      "patrons": [],
+      "description": "Those who walk the tideline after a storm and carry back what they find so it can be named. Unpaid, unranked, and the most respected people on the coast."
+    }
+  ],
+  "orders_are_masks": "An Order is not a department of this faith. It is the shape a specific Patron takes inside it — the office through which that presence is approached, named and made respectable. This is why the same Order appears in faiths that despise each other, and why it does not hold the same rank in each. Where an Order sits in the hierarchy is a claim about what the faith is for, and most schisms begin as a quarrel over which Order speaks first.",
+  "beauty": [
+    "Nobody on that coast is buried unnamed.",
+    "The Reading: three days, in the rain, for people no one else would have mentioned.",
+    "Namers who cannot be bought, in a place where everything else can.",
+    "The Uncounted, who walk the tideline for strangers."
+  ],
+  "ugliness": [
+    "A sacrament that requires a complete list, and therefore requires informers.",
+    "A century of Syndicate use of what the Namers know about who sailed with whom.",
+    "Striking a name from the Roll: the coast's severest punishment, at one priest's discretion, with no appeal.",
+    "Brine-Wardens, who drown people and have persuaded themselves it is the humane option."
+  ],
+  "internal_schism": {
+    "name": "The Silent Reading",
+    "claim": "The Roll should be read without an audience.",
+    "description": "A minority hold that the Reading has become a spectacle and that the Syndicates attend it to take notes, which they do. They read the Roll alone, at night, and are accused of not reading it at all. Nobody can prove otherwise, which is precisely the objection."
+  },
+  "adventure_seed": {
+    "title": "The Name That Was Not Read",
+    "description": "A family swears their son's name was on the Roll and was skipped. The Namer says the name was never entered. The harbour ledger says the boy sailed; the crew list says he did not. Someone has been paid, or someone is protecting a crew, or the boy is alive and does not wish to be read. All three are true of somebody in this town.",
+    "quote": "He was thirteen. It takes four seconds to say a name. Four seconds, and they had three days."
+  },
+  "sample_npc": {
+    "name": "Namer Odhrai",
+    "description": "Forty years on the Roll, no fee ever taken, and a memory the Syndicates have tried three times to buy. She has struck exactly one name from the Roll in her life and will not say whose."
+  },
+  "_license": "Fate's Edge Copyright – © 2024 - 2026 Nicholas A. Gasper. Used with permission, All rights reserved."
+}

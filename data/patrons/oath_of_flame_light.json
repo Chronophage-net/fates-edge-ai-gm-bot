@@ -292,7 +292,30 @@
     "description": "A knight of the Unquenched Flame swore to hold a village and rode out when the raiders came. The village burned. The survivors have walked four days to ask for her, and they are not asking politely. She says a shadow-touched relic took her, and she may believe it. The relic is real and the party can find it, and what they will not be able to find is anyone at the abbey willing to say out loud whether that changes anything.",
     "quote": "She says the thing took her. Perhaps it did. She still has to stand in the light and say what she did, and so do the rest of us who let her ride out alone."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "_license": "Fate's Edge Copyright – © 2024 - 2026 Nicholas A. Gasper. Used with permission, All rights reserved.",
   "order": "seraphic",
-  "register": "conviction"
+  "register": "conviction",
+  "appears_in_religions": [
+    {
+      "religion": "everflame",
+      "order": "Oath of Flame & Light (Orthodox)",
+      "note": "Clergy and knightly orders; the public face of the state religion."
+    },
+    {
+      "religion": "temple-of-light",
+      "order": "Oath of Flame & Light (Orthodox)",
+      "note": "Parish teachers, wandering preachers and the Dawn-Knights who escort them."
+    },
+    {
+      "religion": "covenant-of-mykkiel",
+      "order": "Oath of Flame & Light (Hospitalier)",
+      "note": "The healer's path, and the only Order the Covenant borrowed from its rivals. Healing is given under terms."
+    },
+    {
+      "religion": "twin-flames",
+      "order": "Keepers of the Pure Flame",
+      "note": "Invoked alongside the Witness by the lamp-tenders and archivists."
+    }
+  ],
+  "orders_are_masks": "An Order is the shape this Patron takes inside a religion — the office through which it is approached, named and made respectable. The same Patron therefore appears in faiths that despise each other, and rarely at the same rank."
 }

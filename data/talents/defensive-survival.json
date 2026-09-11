@@ -13,7 +13,7 @@
   ],
   "useLimit": "passive",
   "prerequisites": "Melee 2+",
-  "effect": "Passive + Active. +1 to defense DV while engaged in melee. Once per scene, convert first Harm 1 from melee to Fatigue.",
+  "effect": "Passive + Active. +1 die to Defend rolls while engaged in melee. Once per scene, convert first Harm 1 from melee to Fatigue.",
   "effects": [
     {
       "type": "ignore_penalty",
@@ -21,6 +21,7 @@
       "amount": 1
     }
   ],
-  "description": "Passive + Active. +1 to defense DV while engaged in melee. Once per scene, convert first Harm 1 from melee to Fatigue.From the Book of Talents (Talents and Special Abilities).",
-  "source": "talents-and-special-abilities"
+  "description": "Passive + Active. +1 die to Defend rolls while engaged in melee. Once per scene, convert first Harm 1 from melee to Fatigue.From the Book of Talents (Talents and Special Abilities).",
+  "source": "talents-and-special-abilities",
+  "_license": "Fate's Edge Copyright – © 2024 - 2026 Nicholas A. Gasper. Used with permission, All rights reserved."
 }

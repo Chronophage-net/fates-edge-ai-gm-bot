@@ -239,7 +239,25 @@
     "description": "A village healer has been unable to cure a mysterious wasting sickness that afflicts the children. The local lord blames the Oath of Mercy and Grace, claiming its followers have failed. The party must investigate the source of the sickness—perhaps it is a curse from a rival cult, a broken promise from the lord's past, or a natural plague that requires a different kind of healing. They must decide whether to offer mercy to the lord or seek justice for the afflicted.",
     "quote": "To heal is not to erase the wound, but to sit beside it until it becomes bearable."
   },
-  "_license": "Fate's Edge Proprietary Content – © 2024 Nicholas A. Gasper. All rights reserved.",
+  "_license": "Fate's Edge Copyright – © 2024 - 2026 Nicholas A. Gasper. Used with permission, All rights reserved.",
   "order": "beyond_the_triune",
-  "register": "unclassifiable"
+  "register": "unclassifiable",
+  "appears_in_religions": [
+    {
+      "religion": "everflame",
+      "order": "Oath of Mercy and Grace (Hospitalier)",
+      "note": "Supervised by the Inquisitor Prime, and required to report the heretics they treat."
+    },
+    {
+      "religion": "temple-of-light",
+      "order": "Oath of Mercy and Grace (Hospitallers)",
+      "note": "Autonomous, beloved, and the best-run institution in Viterra."
+    },
+    {
+      "religion": "little-flame",
+      "order": "(unnamed)",
+      "note": "Answers at lit windows, to people who could not tell you which Patron came."
+    }
+  ],
+  "orders_are_masks": "An Order is the shape this Patron takes inside a religion — the office through which it is approached, named and made respectable. The same Patron therefore appears in faiths that despise each other, and rarely at the same rank."
 }
