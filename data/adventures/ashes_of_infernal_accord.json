@@ -42,7 +42,9 @@
           "effect": "The Collector invokes a hard trigger: the target must perform a costly service immediately or be marked In Default (a Condition that worsens all future bargains with that patron)."
         }
       ],
-      "lore": "No one has ever seen the Silent Collector make a bargain of his own. Cinderites whisper that he was once a mortal moneylender so scrupulously fair that both Mor'iraath and Maelstraeus wanted him — and that he now serves whichever patron currently holds his own debt, a detail he has never confirmed or denied."
+      "lore": "No one has ever seen the Silent Collector make a bargain of his own. Cinderites whisper that he was once a mortal moneylender so scrupulously fair that both Mor'iraath and Maelstraeus wanted him — and that he now serves whichever patron currently holds his own debt, a detail he has never confirmed or denied.",
+      "pool": 5,
+      "resilience": "8 (advanced)"
     },
     {
       "id": "avatar-of-moriraath",
@@ -75,7 +77,9 @@
           "effect": "The Avatar consumes a nearby Asset, structure, or minor NPC outright, denying it to everyone; gain 1 Boon for Mor'iraath's worshippers present."
         }
       ],
-      "lore": "The Avatar is not sent to kill — killing is inefficient, and Mor'iraath despises waste born of haste rather than purpose. It is sent to force a closing: to make a deal happen faster and worse than it would have otherwise, because a rushed bargain is a bad bargain, and bad bargains burn brightest."
+      "lore": "The Avatar is not sent to kill — killing is inefficient, and Mor'iraath despises waste born of haste rather than purpose. It is sent to force a closing: to make a deal happen faster and worse than it would have otherwise, because a rushed bargain is a bad bargain, and bad bargains burn brightest.",
+      "pool": 7,
+      "resilience": "8 (advanced)"
     },
     {
       "id": "ember-scribe",
@@ -102,7 +106,9 @@
           "effect": "The Scribe reveals what they know to a rival faction instead, changing that faction's Relationship track."
         }
       ],
-      "lore": "Ember-Scribes answer the right question for the right price — but every answer is itself logged, and every log is itself for sale. Asking one a question about someone is, functionally, telling Cinder that you're interested in them."
+      "lore": "Ember-Scribes answer the right question for the right price — but every answer is itself logged, and every log is itself for sale. Asking one a question about someone is, functionally, telling Cinder that you're interested in them.",
+      "pool": 3,
+      "resilience": "3 (standard)"
     }
   ],
   "acts": [

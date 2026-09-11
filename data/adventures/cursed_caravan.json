@@ -35,7 +35,9 @@
           "name": "Manifest Hunger",
           "effect": "The entity manifests partially, dealing Harm 2 to all in zone and advancing the Curse Escalation timer by 1."
         }
-      ]
+      ],
+      "pool": 5,
+      "resilience": "8 (advanced)"
     },
     {
       "id": "mistwraith",
@@ -55,7 +57,9 @@
           "name": "Ethereal Touch",
           "effect": "Target loses 1 Fatigue and gains a Condition: Haunted."
         }
-      ]
+      ],
+      "pool": 4,
+      "resilience": "3 (standard)"
     },
     {
       "id": "shadewalker",
@@ -75,7 +79,9 @@
           "name": "Relentless Advance",
           "effect": "Ignore one point of Fatigue and gain +1 die to next attack."
         }
-      ]
+      ],
+      "pool": 4,
+      "resilience": "3 (standard)"
     }
   ],
   "acts": [

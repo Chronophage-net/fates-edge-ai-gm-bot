@@ -38,7 +38,9 @@
           "effect": "The Wraith shakes itself, releasing a cloud of rust; all in Near range must test Body+Endurance or gain 1 Fatigue."
         }
       ],
-      "lore": "The Aeler didn't just build guards – they built accountants of violence. Each Wraith was once a Spirit Shield warrior, bound to the armor after death to continue their duty. They don't remember their names, but they remember their oaths."
+      "lore": "The Aeler didn't just build guards – they built accountants of violence. Each Wraith was once a Spirit Shield warrior, bound to the armor after death to continue their duty. They don't remember their names, but they remember their oaths.",
+      "pool": 4,
+      "resilience": "3 (standard)"
     },
     {
       "id": "rune-wisp",
@@ -58,7 +60,9 @@
           "name": "Flash of Light",
           "effect": "A PC is Blinded for one exchange (all actions at Desperate)."
         }
-      ]
+      ],
+      "pool": 2,
+      "resilience": "3 (standard)"
     },
     {
       "id": "ward-primus",
@@ -91,7 +95,9 @@
           "effect": "The Primus seals a door or passage, trapping a PC away from the group."
         }
       ],
-      "lore": "The Primus was not built to fight – it was built to enforce the vault's internal laws. It doesn't hate you; it simply cannot allow you to leave with what is not yours. It can be reasoned with, if you offer it something it values more than the keystone – like a fresh memory of a sunrise, or a promise to destroy a rival's ward elsewhere."
+      "lore": "The Primus was not built to fight – it was built to enforce the vault's internal laws. It doesn't hate you; it simply cannot allow you to leave with what is not yours. It can be reasoned with, if you offer it something it values more than the keystone – like a fresh memory of a sunrise, or a promise to destroy a rival's ward elsewhere.",
+      "pool": 6,
+      "resilience": "8 (advanced)"
     }
   ],
   "acts": [

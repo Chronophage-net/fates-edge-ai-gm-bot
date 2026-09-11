@@ -56,7 +56,9 @@
           "effect": "Target loses access to one skill for 24 hours (GM chooses)."
         }
       ],
-      "lore": "It was bound by the ancient Aelerians with a ritual of blood and silence. The ritual is failing. It remembers every mind that has touched these stones – and it knows your fears intimately."
+      "lore": "It was bound by the ancient Aelerians with a ritual of blood and silence. The ritual is failing. It remembers every mind that has touched these stones – and it knows your fears intimately.",
+      "pool": 7,
+      "resilience": "8 (advanced)"
     },
     {
       "id": "drakespawn-stage1",
@@ -82,7 +84,9 @@
           "name": "Whisper Echo",
           "effect": "A PC hears their own voice whispering terrible truths; they lose their next action unless they test Resolve (DV 3)."
         }
-      ]
+      ],
+      "pool": 3,
+      "resilience": "3 (standard)"
     },
     {
       "id": "drakespawn-stage2",
@@ -108,7 +112,9 @@
           "name": "Phase Walk",
           "effect": "The Drakespawn becomes intangible for one exchange, avoiding all physical attacks."
         }
-      ]
+      ],
+      "pool": 4,
+      "resilience": "3 (standard)"
     },
     {
       "id": "drakespawn-stage3",
@@ -139,7 +145,9 @@
           "name": "Invoke the Drake",
           "effect": "Advance the Deep Drake Awakening timer by 2 segments."
         }
-      ]
+      ],
+      "pool": 6,
+      "resilience": "8 (advanced)"
     },
     {
       "id": "whispering-shade",
@@ -159,7 +167,9 @@
           "name": "False Warning",
           "effect": "The Shade points at a safe route, which is actually a trap; a PC must test Wits+Insight or walk into danger."
         }
-      ]
+      ],
+      "pool": 3,
+      "resilience": "3 (standard)"
     },
     {
       "id": "corrupted-guard",
@@ -180,7 +190,9 @@
           "name": "Drake's Coordination",
           "effect": "The Guard grants +1 die to all nearby Drakespawn for the next exchange."
         }
-      ]
+      ],
+      "pool": 3,
+      "resilience": "3 (standard)"
     },
     {
       "id": "rennik-stoneheart",
@@ -202,7 +214,9 @@
           "effect": "Rennik notices a hidden danger; the party gains +1 die to avoid the next trap."
         }
       ],
-      "lore": "He knows the tunnel system intimately. If saved, he can guide the party to safety. If corrupted, he becomes a powerful Stage 2 Drakespawn."
+      "lore": "He knows the tunnel system intimately. If saved, he can guide the party to safety. If corrupted, he becomes a powerful Stage 2 Drakespawn.",
+      "pool": 3,
+      "resilience": "3 (standard)"
     },
     {
       "id": "captain-mira-deeproad",
@@ -228,7 +242,9 @@
           "name": "Heroic Stand",
           "effect": "Mira holds off a wave of Drakespawn, buying the party one free exchange."
         }
-      ]
+      ],
+      "pool": 4,
+      "resilience": "3 (standard)"
     }
   ],
   "acts": [

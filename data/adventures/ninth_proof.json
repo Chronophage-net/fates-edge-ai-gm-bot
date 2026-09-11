@@ -36,7 +36,9 @@
           "effect": "Target is bound by a geas until they complete a task. Breaking it costs 1 Corruption."
         }
       ],
-      "weakness": "Cannot cross a line of salt. Cannot harm those who speak a true regret aloud."
+      "weakness": "Cannot cross a line of salt. Cannot harm those who speak a true regret aloud.",
+      "pool": 5,
+      "resilience": "8 (advanced)"
     },
     {
       "id": "voice-of-the-ninth",
@@ -67,7 +69,9 @@
           "name": "The Ninth's Authority",
           "effect": "Target must obey one command or take Harm 2 (Mental)."
         }
-      ]
+      ],
+      "pool": 4,
+      "resilience": "3 (standard)"
     },
     {
       "id": "paper-wraith",
@@ -97,7 +101,9 @@
           "name": "Erasure",
           "effect": "Target loses one skill die for the scene."
         }
-      ]
+      ],
+      "pool": 4,
+      "resilience": "3 (standard)"
     },
     {
       "id": "archive-guardian",
@@ -123,7 +129,9 @@
           "name": "Silent Alarm",
           "effect": "Summon 1d4 additional guardians; ticks Witness's Vigil +1."
         }
-      ]
+      ],
+      "pool": 4,
+      "resilience": "3 (standard)"
     },
     {
       "id": "echo-scholar",
@@ -149,7 +157,9 @@
           "name": "Echo of Memory",
           "effect": "The scholar remembers a name. That name is now a target for the Ninth."
         }
-      ]
+      ],
+      "pool": 3,
+      "resilience": "3 (standard)"
     }
   ],
   "acts": [

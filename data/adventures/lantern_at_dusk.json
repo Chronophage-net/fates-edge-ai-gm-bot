@@ -49,7 +49,9 @@
           "effect": "The Duskwight becomes incorporeal for one exchange, avoiding all physical attacks."
         }
       ],
-      "lore": "They were once guardians of the lantern, sworn to protect it from those who would misuse its power. They do not remember their names, only their duty."
+      "lore": "They were once guardians of the lantern, sworn to protect it from those who would misuse its power. They do not remember their names, only their duty.",
+      "pool": 2,
+      "resilience": "3 (standard)"
     },
     {
       "id": "quick-lena",
@@ -81,7 +83,9 @@
           "effect": "Lena insults a PC, goading them into a reckless action; their next attack is at -1 die."
         }
       ],
-      "lore": "She's been chasing legends since she was a child. She doesn't know what the lantern does—she just knows it's worth something to someone."
+      "lore": "She's been chasing legends since she was a child. She doesn't know what the lantern does—she just knows it's worth something to someone.",
+      "pool": 2,
+      "resilience": "3 (standard)"
     },
     {
       "id": "barrow-guardian",
@@ -114,7 +118,9 @@
           "effect": "The Guardian charges in a straight line; any PC in its path must test Body+Athletics (DV 4) or take Harm 2."
         }
       ],
-      "lore": "It was built to protect the lantern, but it has stood so long that it has forgotten its purpose. It attacks anything that moves, hoping to remember why it exists."
+      "lore": "It was built to protect the lantern, but it has stood so long that it has forgotten its purpose. It attacks anything that moves, hoping to remember why it exists.",
+      "pool": 3,
+      "resilience": "3 (standard)"
     }
   ],
   "acts": [

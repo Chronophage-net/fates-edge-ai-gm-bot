@@ -41,7 +41,9 @@
           "effect": "The forest shifts; all navigation rolls are Desperate for the scene."
         }
       ],
-      "weakness": "Running water. The Alder King cannot cross a stream or river that flows toward the sea."
+      "weakness": "Running water. The Alder King cannot cross a stream or river that flows toward the sea.",
+      "pool": 6,
+      "resilience": "8 (advanced)"
     },
     {
       "id": "hazel-queen",
@@ -73,7 +75,9 @@
           "effect": "Target loses a memory (GM chooses). The Queen gains 1 Boon."
         }
       ],
-      "weakness": "Salt. The Hazel Queen cannot cross a line of salt. She will not bargain with someone who carries a handful of salt."
+      "weakness": "Salt. The Hazel Queen cannot cross a line of salt. She will not bargain with someone who carries a handful of salt.",
+      "pool": 6,
+      "resilience": "8 (advanced)"
     },
     {
       "id": "huntsman",
@@ -105,7 +109,9 @@
           "effect": "Target must sacrifice a memory or be caught (the Hunt Timer fills immediately)."
         }
       ],
-      "weakness": "A true name. If the party discovers the Huntsman's true name and speaks it, the Hunt ends. The name is lost somewhere in the Thornwood."
+      "weakness": "A true name. If the party discovers the Huntsman's true name and speaks it, the Hunt ends. The name is lost somewhere in the Thornwood.",
+      "pool": 5,
+      "resilience": "8 (advanced)"
     },
     {
       "id": "pathweaver",
@@ -137,7 +143,9 @@
           "effect": "Permanently repair a broken threshold — but cost a memory."
         }
       ],
-      "weakness": "She cannot refuse a true request made at a crossroads — but she will exact a price for her aid."
+      "weakness": "She cannot refuse a true request made at a crossroads — but she will exact a price for her aid.",
+      "pool": 5,
+      "resilience": "8 (advanced)"
     },
     {
       "id": "briar-wight",
@@ -164,7 +172,9 @@
           "effect": "All within Close take Harm 1 (thorns)."
         }
       ],
-      "weakness": "Fire. A Briar Wight exposed to fire must test Spirit (DV 3) or flee."
+      "weakness": "Fire. A Briar Wight exposed to fire must test Spirit (DV 3) or flee.",
+      "pool": 4,
+      "resilience": "3 (standard)"
     }
   ],
   "acts": [

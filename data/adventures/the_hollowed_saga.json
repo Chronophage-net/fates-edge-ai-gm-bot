@@ -683,7 +683,9 @@
         }
       ],
       "lore": "The Worn remember just enough of who they were to resent it. They do not speak, but they follow orders with an unsettling discipline that was never theirs in life. Fire unravels the ichor that holds them together; put them to the torch and they do not rise again.",
-      "weakness": "Fire. A Worn that takes any fire damage cannot use Ichor Hunger for the rest of the scene."
+      "weakness": "Fire. A Worn that takes any fire damage cannot use Ichor Hunger for the rest of the scene.",
+      "pool": 3,
+      "resilience": "3 (standard)"
     },
     {
       "id": "worn-captain",
@@ -717,7 +719,9 @@
         }
       ],
       "lore": "Some of the Captains were officers who died defending the very garrisons they now lead against. They remember command. They do not remember why they wanted to keep it.",
-      "weakness": "Decapitation. A called shot that removes the Captain's head (DV 5) ends its regeneration permanently and it collapses at end of scene."
+      "weakness": "Decapitation. A called shot that removes the Captain's head (DV 5) ends its regeneration permanently and it collapses at end of scene.",
+      "pool": 5,
+      "resilience": "8 (advanced)"
     },
     {
       "id": "hungry-hollowed",
@@ -745,7 +749,9 @@
         }
       ],
       "lore": "They do not lie, and they cannot be talked out of what they have already seen. This is what makes them dangerous — not malice, but perfect, merciless memory.",
-      "weakness": "Cannot cross a threshold of running water. A Hungry Hollowed will not follow the party across a stream, moat, or flooded doorway."
+      "weakness": "Cannot cross a threshold of running water. A Hungry Hollowed will not follow the party across a stream, moat, or flooded doorway.",
+      "pool": 4,
+      "resilience": "3 (standard)"
     },
     {
       "id": "hungry-hollowed-judge",
@@ -778,7 +784,9 @@
         }
       ],
       "lore": "It genuinely believes it is being fair. That belief is the most dangerous thing about it.",
-      "weakness": "Cannot harm anyone who has publicly confessed a debt to it. A PC who names a true debt aloud, in the Judge's presence, is protected from its attacks for the rest of the scene."
+      "weakness": "Cannot harm anyone who has publicly confessed a debt to it. A PC who names a true debt aloud, in the Judge's presence, is protected from its attacks for the rest of the scene.",
+      "pool": 5,
+      "resilience": "8 (advanced)"
     },
     {
       "id": "collector-prime",
@@ -812,7 +820,9 @@
         }
       ],
       "lore": "It was the first Silent One to speak in a decade, and what it chose to say was 'yes' to Malachai. It does not regret this. It does not feel much of anything anymore, which it describes, when pressed, as a kindness.",
-      "weakness": "A Thread of the Cord, held and named aloud, forces Collector Prime to answer one direct question truthfully before it can act again."
+      "weakness": "A Thread of the Cord, held and named aloud, forces Collector Prime to answer one direct question truthfully before it can act again.",
+      "pool": 6,
+      "resilience": "8 (advanced)"
     }
   ],
   "notes": "Run as one campaign or as two. Part One stands alone and ends decisively; Part Two only makes sense downstream of it, because its opening act asks what the party did and builds the rest of the adventure out of the answer.\n\nThe legacy tracker (`persistence`, schema hollowed-legacy-v1) is what makes that automatic rather than a matter of the GM's memory. Set `hollowed_resolution` during Part One's Act III — `!gm fact hollowed_resolution first_needle` — and Part Two opens knowing which world it is in. `reset_on_complete` is true because the saga's final act settles the debt: the thread does not continue past it.\n\nA direct sequel to The Hollowed Plague with a branching hook determined by that adventure's ending: the Cord Path leads to the Worn Tide (Path A, a siege-and-rescue structure returning to Zahk'Kozahn), the Malachai Path leads to the Hollowed Hunger (Path B, a threshold-trial-and-judgment structure returning to the House Without Doors), and the Catastrophe branch (doing nothing) redirects to a shorter, tragic Appendix C epilogue rather than the full three-act structure. Only one branch is run per table. Debts throughout are social and narrative — promises, witnessed oaths, surrendered memories, spared enemies — never coin or ledger language. The central twist across both branches is the same one the prior adventure set up: freedom and judgment are not opposites, and neither the Cord nor its absence produces a clean outcome. Designed for 3-4 sessions; can be trimmed to a single dense session by running only the branch-appropriate Act I hook scene, one Act II step, and the Act III epilogue.",

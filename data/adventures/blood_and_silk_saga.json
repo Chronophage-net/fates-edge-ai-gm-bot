@@ -43,7 +43,9 @@
           "effect": "When wounded to Harm 2, gains +1 die to all attacks but loses defensive options."
         }
       ],
-      "lore": "A faded brand on his forearm marks him as a deserter from the Vhasian army – a secret he kills to protect."
+      "lore": "A faded brand on his forearm marks him as a deserter from the Vhasian army – a secret he kills to protect.",
+      "pool": 4,
+      "resilience": "3 (standard)"
     },
     {
       "id": "ursillo-bandit",
@@ -64,7 +66,9 @@
           "name": "Rough Tackle",
           "effect": "Knock a target Prone."
         }
-      ]
+      ],
+      "pool": 3,
+      "resilience": "3 (standard)"
     },
     {
       "id": "voss-aeler",
@@ -79,7 +83,9 @@
         "Command": 2,
         "hp": 15
       },
-      "sb_spends": []
+      "sb_spends": [],
+      "pool": 3,
+      "resilience": "3 (standard)"
     },
     {
       "id": "captain-rusk",
@@ -106,7 +112,9 @@
           "effect": "Summon a squad of mercenaries (Cap 2) to assist."
         }
       ],
-      "lore": "He carries Varus's badge of rank and owes a debt to a smuggler named Peyton."
+      "lore": "He carries Varus's badge of rank and owes a debt to a smuggler named Peyton.",
+      "pool": 4,
+      "resilience": "3 (standard)"
     },
     {
       "id": "khatun-sarnai",
@@ -133,7 +141,9 @@
           "effect": "The party gains Dominant Position for the next exchange."
         }
       ],
-      "secret": "Her daughter Yelü is the child of a legionary who defected."
+      "secret": "Her daughter Yelü is the child of a legionary who defected.",
+      "pool": 4,
+      "resilience": "3 (standard)"
     },
     {
       "id": "quick-lena",
@@ -160,7 +170,9 @@
           "effect": "Escape a scene without a roll (once per session)."
         }
       ],
-      "secret": "She was an apprentice of the Silk Coin who ran when the Velvet Court came."
+      "secret": "She was an apprentice of the Silk Coin who ran when the Velvet Court came.",
+      "pool": 3,
+      "resilience": "3 (standard)"
     },
     {
       "id": "prefect-marcellus",
@@ -187,7 +199,9 @@
           "effect": "Target must test Resolve or gain Varus's Whispers ( –1 die to resist persuasion)."
         }
       ],
-      "secret": "He leads a cult of oathbreakers who worship Varus's ghost. His younger brother died in a Ykrul raid."
+      "secret": "He leads a cult of oathbreakers who worship Varus's ghost. His younger brother died in a Ykrul raid.",
+      "pool": 5,
+      "resilience": "8 (advanced)"
     },
     {
       "id": "censor-cassia",
@@ -214,7 +228,9 @@
           "effect": "Gain +2 dice on Lore rolls for the rest of the scene."
         }
       ],
-      "secret": "She is dying of a slow fever; destroying the seal is her last act."
+      "secret": "She is dying of a slow fever; destroying the seal is her last act.",
+      "pool": 4,
+      "resilience": "3 (standard)"
     },
     {
       "id": "varus-ghost",
@@ -239,7 +255,9 @@
           "name": "The Ninth Clause",
           "effect": "If the ghost speaks his own name, the curse ends."
         }
-      ]
+      ],
+      "pool": 6,
+      "resilience": "8 (advanced)"
     },
     {
       "id": "silken-blade",
@@ -265,7 +283,9 @@
           "name": "Shadow Meld",
           "effect": "Become invisible until you attack."
         }
-      ]
+      ],
+      "pool": 5,
+      "resilience": "8 (advanced)"
     },
     {
       "id": "black-banner-squad",
@@ -286,7 +306,9 @@
           "name": "Coordinated Strike",
           "effect": "Gain +1 die on all attacks for the round."
         }
-      ]
+      ],
+      "pool": 3,
+      "resilience": "3 (standard)"
     }
   ],
   "acts": [

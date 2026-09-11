@@ -37,7 +37,9 @@
           "name": "Fanatical Scream",
           "effect": "The cultist's shriek draws 1d4 more cultists from the shadows."
         }
-      ]
+      ],
+      "pool": 3,
+      "resilience": "3 (standard)"
     },
     {
       "id": "fang-bearer",
@@ -63,7 +65,9 @@
           "name": "Unnatural Regeneration",
           "effect": "The Fang Bearer heals 2 Harm at the start of its turn."
         }
-      ]
+      ],
+      "pool": 4,
+      "resilience": "3 (standard)"
     },
     {
       "id": "serpent-spawn",
@@ -94,7 +98,9 @@
           "name": "Acid Spray",
           "effect": "The Spawn vomits acid; all in Near range mark 1 Fatigue."
         }
-      ]
+      ],
+      "pool": 4,
+      "resilience": "3 (standard)"
     },
     {
       "id": "thaliss-high-priest",
@@ -126,7 +132,9 @@
           "effect": "He summons a Serpent Spawn to defend him."
         }
       ],
-      "lore": "He genuinely believes he is the chosen one. He is not. His cultists are just too afraid to tell him."
+      "lore": "He genuinely believes he is the chosen one. He is not. His cultists are just too afraid to tell him.",
+      "pool": 5,
+      "resilience": "8 (advanced)"
     },
     {
       "id": "isoka-projection",
@@ -158,7 +166,9 @@
           "effect": "Isoka offers a PC a deal; if they accept, they gain 3 Serpent's Favor and 2 Corruption."
         }
       ],
-      "lore": "She did not start the cult. She is curious to see what happens. The real question isn't whether the heroes will change—it's whether they'll notice, and whether they'll care."
+      "lore": "She did not start the cult. She is curious to see what happens. The real question isn't whether the heroes will change—it's whether they'll notice, and whether they'll care.",
+      "pool": 7,
+      "resilience": "8 (advanced)"
     },
     {
       "id": "palace-guard",
@@ -184,7 +194,9 @@
           "name": "Call the Watch",
           "effect": "The guard sounds an alarm; 1d4 more guards arrive in 2 rounds."
         }
-      ]
+      ],
+      "pool": 3,
+      "resilience": "3 (standard)"
     },
     {
       "id": "yara-cultist",
@@ -211,7 +223,9 @@
           "effect": "Yara summons a Serpent Spawn to defend her."
         }
       ],
-      "lore": "She genuinely believes the transformation is an honor. She needs a lecture about why this is a bad idea. With small words."
+      "lore": "She genuinely believes the transformation is an honor. She needs a lecture about why this is a bad idea. With small words.",
+      "pool": 3,
+      "resilience": "3 (standard)"
     }
   ],
   "acts": [

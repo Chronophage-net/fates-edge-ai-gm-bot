@@ -44,7 +44,9 @@
         }
       ],
       "lore": "She did not choose this life. The calliope chose her. Two-finger bell count before a hard turn.",
-      "secret": "She is the carnival's heart—and its prisoner. She has tried to leave three times. The calliope always calls her back."
+      "secret": "She is the carnival's heart—and its prisoner. She has tried to leave three times. The calliope always calls her back.",
+      "pool": 4,
+      "resilience": "3 (standard)"
     },
     {
       "id": "mr-vellum",
@@ -77,7 +79,9 @@
         }
       ],
       "lore": "He checks his quill nib before lying. He writes the carnival's prices in negative space—only those who know where to look can read them.",
-      "secret": "He was a Silkstrand notary who made a wish he couldn't afford. Now he writes the carnival's prices to pay the debt."
+      "secret": "He was a Silkstrand notary who made a wish he couldn't afford. Now he writes the carnival's prices to pay the debt.",
+      "pool": 3,
+      "resilience": "3 (standard)"
     },
     {
       "id": "cotton-witch",
@@ -110,7 +114,9 @@
         }
       ],
       "lore": "She was once a Thepyrgos academic who craved popularity. The carnival gave her an audience that never leaves. She hums when you hesitate.",
-      "secret": "She was once a Thepyrgos academic who craved popularity. The carnival gave her an audience that never leaves—but she cannot leave either."
+      "secret": "She was once a Thepyrgos academic who craved popularity. The carnival gave her an audience that never leaves—but she cannot leave either.",
+      "pool": 4,
+      "resilience": "3 (standard)"
     },
     {
       "id": "harlequin-courts",
@@ -143,7 +149,9 @@
         }
       ],
       "lore": "They bow before cuts. They are not cruel—they serve a court that demands obedience.",
-      "secret": "They are not truly cruel—they serve a court that demands obedience, and the carnival is their only escape from endless etiquette."
+      "secret": "They are not truly cruel—they serve a court that demands obedience, and the carnival is their only escape from endless etiquette.",
+      "pool": 4,
+      "resilience": "3 (standard)"
     },
     {
       "id": "ticket-twins",
@@ -176,7 +184,9 @@
         }
       ],
       "lore": "Synchronized blinks before speaking. They have never known a world without the calliope.",
-      "secret": "They are the carnival's children—foundlings raised in the tents. They have never known a world without the calliope."
+      "secret": "They are the carnival's children—foundlings raised in the tents. They have never known a world without the calliope.",
+      "pool": 2,
+      "resilience": "3 (standard)"
     },
     {
       "id": "carnival-staff",
@@ -197,7 +207,9 @@
           "name": "Crowd Control",
           "effect": "The staff redirects the crowd; one PC is separated from the group."
         }
-      ]
+      ],
+      "pool": 2,
+      "resilience": "3 (standard)"
     }
   ],
   "acts": [

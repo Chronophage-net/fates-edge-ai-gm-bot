@@ -66,7 +66,9 @@
           "effect": "Harperar speaks through the host and recites the true name of a PC's greatest failure. The PC must test Spirit+Endurance (DV 5) or be Stunned for one exchange."
         }
       ],
-      "lore": "Harperar was once a contract clause—a hidden interest rate on a loan that could never be repaid. When the original debtor died, the clause didn't vanish. It learned to walk, then to speak, then to wear faces. Now it feeds on obligation, growing stronger with each unpaid promise. Its true name is the interest rate itself, the first lie it told to enter the world."
+      "lore": "Harperar was once a contract clause—a hidden interest rate on a loan that could never be repaid. When the original debtor died, the clause didn't vanish. It learned to walk, then to speak, then to wear faces. Now it feeds on obligation, growing stronger with each unpaid promise. Its true name is the interest rate itself, the first lie it told to enter the world.",
+      "pool": 5,
+      "resilience": "8 (advanced)"
     },
     {
       "id": "weeping-shade",
@@ -106,7 +108,9 @@
           "effect": "It offers to reveal a hidden door or passage if a PC swears to carry its message to the living."
         }
       ],
-      "lore": "The Weeping Shade was once a maid who witnessed a murder in the Censor's house. She swore to tell the truth, but the murderer silenced her before she could speak. Now she haunts the archives, waiting for someone to speak the words she could not."
+      "lore": "The Weeping Shade was once a maid who witnessed a murder in the Censor's house. She swore to tell the truth, but the murderer silenced her before she could speak. Now she haunts the archives, waiting for someone to speak the words she could not.",
+      "pool": 3,
+      "resilience": "3 (standard)"
     },
     {
       "id": "flame-warden-zealot",
@@ -152,7 +156,9 @@
           "effect": "The Warden invokes the forbidden passage; one PC is marked for execution without trial."
         }
       ],
-      "lore": "The Flame-Wardens are the iron fist of the Everflame, trained to root out heresy wherever it hides. They have no mercy because mercy is weakness. They carry the weight of every heretic they have burned, and they call it faith."
+      "lore": "The Flame-Wardens are the iron fist of the Everflame, trained to root out heresy wherever it hides. They have no mercy because mercy is weakness. They carry the weight of every heretic they have burned, and they call it faith.",
+      "pool": 4,
+      "resilience": "3 (standard)"
     }
   ],
   "acts": [
