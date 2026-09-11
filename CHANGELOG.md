@@ -4,6 +4,21 @@ All notable changes to this project will be documented here.
 Format loosely follows [Keep a Changelog](https://keepachangelog.com/), versions follow [Semantic Versioning](https://semver.org/).
 
 
+## [4.18.1] - 2026-09-11
+
+### Fixed
+- read bestiary entries from the new {_license, data} envelope
+
+### Chore
+- add canonical pool and resilience to adventure-embedded bestiaries
+- apply canonical bestiary schema to data/bestiary.json
+- normalize copyright license strings and wrap bestiary in versioned envelope
+
+### Other
+- sync the reconciled talent corpus
+- Merge branch 'main' of github.com:Chronophage-net/fates-edge-ai-gm-bot
+- Add workflow to delete Actions caches
+
 ## [4.18.0] - 2026-09-07
 
 Player and passive bot seats: several AI seats at one table, with private per-seat dossiers and a spoiler-firewalled rules oracle.
