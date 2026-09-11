@@ -22,7 +22,7 @@ function loadReferences(root = path.join(__dirname, '..', 'data')) {
     refs.push({ name, source: `${kind}: ${name}`, text: JSON.stringify(clean) });
   };
   for (const s of read('spells.json')?.spells || []) add('Spell', s.name, s, ['category', 'tags', 'dv', 'effect', 'notes']);
-  for (const row of read('bestiary.json') || []) for (const [name, value] of Object.entries(row)) add('Bestiary', name, value, ['summary', 'resilience', 'clock', 'resolution', 'armor', 'tl', 'harm', 'fatigue']);
+  for (const row of read('bestiary.json')?.data || []) for (const [name, value] of Object.entries(row)) add('Bestiary', name, value, ['summary', 'resilience', 'clock', 'resolution', 'armor', 'tl', 'harm', 'fatigue']);
   for (const folder of ['talents', 'regions']) {
     let files = []; try { files = fs.readdirSync(path.join(root, folder)); } catch {}
     for (const file of files.filter(f => f.endsWith('.json') && !f.includes('manifest'))) {
