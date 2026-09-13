@@ -22,7 +22,10 @@ function loadReferences(root = path.join(__dirname, '..', 'data')) {
     refs.push({ name, source: `${kind}: ${name}`, text: JSON.stringify(clean) });
   };
   for (const s of read('spells.json')?.spells || []) add('Spell', s.name, s, ['category', 'tags', 'dv', 'effect', 'notes']);
-  for (const row of read('bestiary.json')?.data || []) for (const [name, value] of Object.entries(row)) add('Bestiary', name, value, ['summary', 'resilience', 'clock', 'resolution', 'armor', 'tl', 'harm', 'fatigue']);
+  // bestiary.json is a bare array; an old copyright-stamping script briefly
+  // wrapped it as { _license, data: [...] }, so accept either shape.
+  const asArray = p => Array.isArray(p) ? p : (p?.data ?? []);
+  for (const row of asArray(read('bestiary.json'))) for (const [name, value] of Object.entries(row)) add('Bestiary', name, value, ['summary', 'resilience', 'clock', 'resolution', 'armor', 'tl', 'harm', 'fatigue']);
   for (const folder of ['talents', 'regions']) {
     let files = []; try { files = fs.readdirSync(path.join(root, folder)); } catch {}
     for (const file of files.filter(f => f.endsWith('.json') && !f.includes('manifest'))) {
