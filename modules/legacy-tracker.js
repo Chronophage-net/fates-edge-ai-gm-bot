@@ -193,7 +193,13 @@ async function finalizeLegacy(context, finishedState) {
         return; // this adventure never opted into the legacy tracker
     }
     const extracted = extractCarryover(context.orchestrator, persistenceSpec, finishedState);
+    const state = context.orchestrator.campaign.state;
+    const key = JSON.stringify([persistenceSpec.schema, finishedState.moduleId || finishedState.title, finishedState.startedAt]);
+    state.finalizedLegacy ||= [];
+    if (state.finalizedLegacy.includes(key)) return;
     applyCarryover(context.orchestrator, persistenceSpec, extracted, finishedState.title);
+    state.finalizedLegacy.push(key);
+    state.finalizedLegacy = state.finalizedLegacy.slice(-100);
 }
 
 /**

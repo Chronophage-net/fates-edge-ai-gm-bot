@@ -326,6 +326,10 @@ const delegatedTasks = new DelegatedTasks({
 });
 const { TableSeats } = require('./modules/table-seats');
 const tableSeats = new TableSeats({ mode: MODE, seat: BOT_SEAT, room: ROOM_CODE, roomId: process.env.ROOM_ID, driver, send: sendWS, api: apiRequest, disconnect: () => ws?.close(4003,'Seat identity rejected'), audit: event => logger.info(`[private-seat] ${event}`) });
+const { AdventureRecovery } = require('./modules/adventure-recovery');
+const recoveryContext = { get orchestrator() { return orchestrator; }, apiRequest, logger };
+const adventureRecovery = new AdventureRecovery(recoveryContext);
+let firstRecoveryHandshake = true;
 let connected = false;
 let myRole = 'player';
 let reconnectTimer = null;
@@ -577,6 +581,7 @@ function connect() {
   ws.on('close', (code, reason) => {
     connected = false;
     delegatedTasks.disconnect();
+    adventureRecovery.disconnect();
     console.log(`🔌 Disconnected (code ${code})${reason ? `: ${reason}` : ''}`);
     stopAggressiveSync();
     scheduleReconnect();
@@ -629,6 +634,7 @@ async function apiRequest(method, pathSegments, body = null) {
   const url = `${API_BASE}/rooms/${tableSeats.roomId}/${pathSegments.join('/')}`;
   const options = {
     method,
+    signal: AbortSignal.timeout(8000),
     headers: {
       'Content-Type': 'application/json',
       'x-api-key': API_KEY,
@@ -678,7 +684,10 @@ async function initGame() {
     roomCode: ROOM_CODE,
     serverUrl: serverUrl,
     defaultRegion: process.env.DEFAULT_REGION || 'acasia-broken-marches',
-    apiKey: API_KEY
+    apiKey: API_KEY,
+    roomId: tableSeats.roomId,
+    snapshotProvider: () => adventureContext.snapshotAdventure(recoveryContext),
+    snapshotRevision: adventureContext.getSnapshotRevision
   });
 
   await orchestrator.initialize();
@@ -878,6 +887,7 @@ function generateCrownSpreadInterpretation(positions, regionData, regionName, wo
 async function handleMessage(msg) {
   if (await tableSeats.handle(msg)) return;
   if (await delegatedTasks.handleSource(msg)) return;
+  if (/^(adventure-|timers?-)/.test(msg.type || '')) adventureContext.invalidate();
   // ─── STATE UPDATED – auto‑sync characters ──────────────────────────
   if (msg.type === 'state-updated') {
     let charList = null;
@@ -1015,6 +1025,17 @@ async function handleMessage(msg) {
 
   // ─── HANDSHAKE ACK ────────────────────────────────────────────────
   if (msg.type === 'handshake_ack') {
+    if (!msg.success) return;
+    if (!orchestrator) await initGame();
+    if (firstRecoveryHandshake) {
+      await orchestrator.campaign.load();
+      firstRecoveryHandshake = orchestrator.campaign.loadFailed === true;
+      if (firstRecoveryHandshake) {
+        logger.warn('Campaign could not be loaded. Reconnect to retry before resuming play.');
+        return;
+      }
+    }
+    await adventureRecovery.handshake(msg.room_id);
     myRole = msg.clientRole || msg.role || 'player';
     mySocketId = msg.clientId || null;
     console.log(`🤝 Handshake OK. Role: ${myRole}, ClientID: ${mySocketId}`);
@@ -1189,6 +1210,7 @@ async function handleMessage(msg) {
   // bug. The only thing that actually means "not a real chat message" is
   // an empty `text`; `sender` being 'Unknown' is irrelevant to that.
   if (!text) return;
+  if (adventureRecovery.inFlight) await adventureRecovery.inFlight;
 
   logger.debug(`Chat received from ${sender}`);
 
@@ -1265,6 +1287,8 @@ async function handleMessage(msg) {
         apiRequest,
         myRole,
         roomId: tableSeats.roomId,
+        senderIsGM: (msg.message || msg.value || msg).verifiedGM === true,
+        adventureRecovery,
         seedCampaign: () => seedCampaign(),
         driver,
         playerCount,
@@ -1295,6 +1319,8 @@ async function handleMessage(msg) {
   // back the narrative-authority ones (FACT/NPC CREATE/SCENE COMPLETE)
   // into the suggestion queue when context.myRole === 'assistant-gm'.
   if (myRole !== 'gm' && myRole !== 'assistant-gm') return;
+  if (orchestrator?.campaign.pendingAdventureSnapshot || adventureRecovery.inFlight) return;
+  if (orchestrator?.campaign.loadFailed) return;
 
   if (!orchestrator) {
     await initGame();

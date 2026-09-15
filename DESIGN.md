@@ -15,6 +15,21 @@ It assumes you've read the "Architecture" and "Modules" sections of the README f
 
 ## 1. Two kinds of adventures, one state machine
 
+### Adventure State Recovery
+
+`CampaignManager.save()` captures `GET /api/rooms/:id/adventure/full` and stores the versioned
+snapshot in `state.adventureSnapshot`. The startup/reconnect controller restores it through
+`POST /api/rooms/:id/adventure/restore`, using the same persistence queue as saves. It preserves
+conversation and summary, validates room identity, prevents accidental overwrites, and retries
+once after five seconds. Snapshot capture is throttled with mutation invalidation and failure
+backoff; the last successful capture is retained during outages.
+
+The recovery window is the last successful save plus up to five seconds of capture reuse under
+normal operation, and can be longer during outages. Grid tokens, unacknowledged mid-exchange
+character Harm, and narration improvised between saves are outside that guarantee. See
+[the recovery contract](docs/adventure-recovery.md) for validation, custom-content retention,
+archive/legacy idempotency, persistence boundaries, and executable crash tests.
+
 Every adventure the bot runs — whether a hand-authored JSON module in the server's
 `data/adventures/` folder (or installed via `POST /api/modules`) or one
 generated on the fly from a Crown Spread draw — passes through the same server-side status
@@ -32,13 +47,13 @@ Don't confuse the bot's own `campaigns/` folder with adventure module storage �
 (`this.codeFilePath`) is set in the constructor and never touched again. Auto-save/auto-load now
 go through a *deterministic* per-room slot on the socket server itself
 (`POST`/`GET /api/rooms/:code/campaigns/auto-save`, called after nearly every command via
-`orchestrator.campaign.save()`), keyed by the room code rather than a random generated code, so
+`orchestrator.campaign.save()`), keyed by the stable room UUID rather than a random generated code, so
 there's no local pointer file needed to know which save is current any more — see the
 `_loadAutoSave()`/`save()` comments in `world-manager.js` for the full before/after. The old
 random-code endpoint (`POST/GET /api/rooms/:code/campaigns[/:code]`) still exists, but only for
 the explicit, opt-in manual share flow (`!gm upload` / `!gm load <code>`, `exportSnapshot()`/
 `importSnapshot()`), a deliberately different mechanism from automatic restart-survival
-persistence. It has never contained adventure content. The bot repo also
+persistence. Auto-saves now include the live adventure snapshot and its custom source content. The bot repo also
 carries its own local mirror of `data/adventures/*.json` plus `data/docs/adventures/*.html`, but
 that copy exists only so `adventure-context.js` can read `getAdventureDoc()`'s full prose text and
 the manifest for the LLM prompt — the module the server actually *loads and runs* always comes

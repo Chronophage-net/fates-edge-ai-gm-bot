@@ -497,9 +497,16 @@ class CampaignManager {
      * @param {string} wsUrl - The WebSocket URL (e.g., 'ws://localhost:10000') – used to derive HTTP API base.
      * @param {string} apiKey - The API key for authentication.
      */
-    constructor(world, roomCode, wsUrl = null, apiKey = '') {
+    constructor(world, roomCode, wsUrl = null, apiKey = '', options = {}) {
         this.world = world;
         this.roomCode = roomCode.toUpperCase();
+        this.roomId = options.roomId || null;
+        this.snapshotProvider = options.snapshotProvider;
+        this.snapshotRevision = options.snapshotRevision || (() => 0);
+        this.persistenceQueue = Promise.resolve();
+        this.pendingAdventureSnapshot = null;
+        this.lastSnapshotAt = 0;
+        this.snapshotFailures = 0;
 
         // Derive HTTP API base from WebSocket URL, or fallback to env or default
         if (!wsUrl) {
@@ -574,21 +581,24 @@ class CampaignManager {
 
     /** NEW: load from the deterministic per-room auto-save slot. */
     async _loadAutoSave() {
-        const url = `${this.apiBase}/rooms/${this.roomCode}/campaigns/auto-save`;
+        const url = `${this.apiBase}/rooms/${this.roomId || this.roomCode}/campaigns/auto-save`;
         try {
             const response = await fetch(url, {
+                signal: AbortSignal.timeout(8000),
                 headers: { 'x-api-key': this.apiKey }
             });
             if (!response.ok) {
                 if (response.status === 404) {
                     console.log(`📭 No auto-saved campaign found for room ${this.roomCode}. Starting fresh.`);
                     this.loaded = true;
+                    this.loadFailed = false;
                     return this;
                 }
                 throw new Error(`HTTP ${response.status}: ${await response.text()}`);
             }
             const data = await response.json();
             this._applyLoadedData(data);
+            this.loadFailed = false;
             console.log(`✅ Auto-loaded campaign for room ${this.roomCode}`);
             return this;
         } catch (e) {
@@ -596,6 +606,7 @@ class CampaignManager {
             // Don't block bot startup on a persistence hiccup -- start
             // fresh rather than crash.
             this.loaded = true;
+            this.loadFailed = true;
             return this;
         }
     }
@@ -628,12 +639,14 @@ class CampaignManager {
 
     /** Shared field-restoration logic for both load paths above. */
     _applyLoadedData(data) {
+        this.loadFailed = false;
         this.characters = data.characters || {};
         this.narrativeSummary = data.narrativeSummary || '';
         // FIXED: this.state was never restored before at all.
         if (data.state) {
             this.state = data.state;
         }
+        this.pendingAdventureSnapshot = data.state?.adventureSnapshot || null;
         this.loaded = true;
     }
 
@@ -654,7 +667,43 @@ class CampaignManager {
      *
      * @returns {Promise<void>}
      */
-    async save() {
+    withPersistenceLock(operation) {
+        const pending = this.persistenceQueue.then(operation);
+        this.persistenceQueue = pending.catch(() => {});
+        return pending;
+    }
+
+    clearAdventureSnapshot() {
+        this.pendingAdventureSnapshot = null;
+        if (this.state) delete this.state.adventureSnapshot;
+        this.lastSnapshotAt = 0;
+        this.snapshotFailures = 0;
+    }
+
+    save() { return this.withPersistenceLock(() => this._save()); }
+
+    async _save() {
+        if (this.loadFailed) throw new Error('Campaign load failed; refusing to overwrite the saved campaign. Reconnect to retry.');
+        const revision = this.snapshotRevision();
+        const interval = this.snapshotFailures >= 3 ? 60000 : 5000;
+        const stale = Date.now() - this.lastSnapshotAt >= interval;
+        if (this.snapshotProvider && !this.pendingAdventureSnapshot &&
+            (stale || (this.snapshotFailures < 3 && revision !== this.lastSnapshotRevision))) {
+            let snapshot = null;
+            try { snapshot = await this.snapshotProvider(); } catch { /* Save narrative even when capture fails. */ }
+            this.lastSnapshotAt = Date.now();
+            this.lastSnapshotRevision = revision;
+            if (snapshot?.moduleId && (!this.roomId || snapshot.roomId === this.roomId)) {
+                this.state ||= {};
+                const archived = snapshot.status === 'completed' && (this.state.adventureArchive || []).some(entry =>
+                    entry.moduleId === snapshot.moduleId && entry.startedAt === snapshot.startedAt);
+                if (archived) delete this.state.adventureSnapshot;
+                else this.state.adventureSnapshot = snapshot;
+                this.snapshotFailures = 0;
+            } else if (++this.snapshotFailures === 3) {
+                console.warn('[AdventureRecovery] Snapshot unavailable three times; retrying at most once per minute. Last good snapshot retained.');
+            }
+        }
         const payload = {
             characters: this.characters,
             narrativeSummary: this.narrativeSummary,
@@ -662,10 +711,11 @@ class CampaignManager {
             timestamp: Date.now()
         };
 
-        const url = `${this.apiBase}/rooms/${this.roomCode}/campaigns/auto-save`;
+        const url = `${this.apiBase}/rooms/${this.roomId || this.roomCode}/campaigns/auto-save`;
         try {
             const response = await fetch(url, {
                 method: 'POST',
+                signal: AbortSignal.timeout(8000),
                 headers: {
                     'Content-Type': 'application/json',
                     'x-api-key': this.apiKey

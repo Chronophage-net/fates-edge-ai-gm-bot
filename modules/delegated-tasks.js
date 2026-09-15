@@ -88,7 +88,7 @@ class DelegatedTasks {
             const task = { id: randomBytes(6).toString('hex'), supervisor: owner, participants, brief, status: 'paused', history: [], turns: 0, createdAt: new Date().toISOString() };
             this.tasks.set(task.id, task); this.save();
             try { await this.open(task, chat.senderClientId); }
-            catch (error) { task.status = 'paused'; this.save(); throw new Error(`Task ${task.id} paused: ${error.message}. Resume or cancel it.`); }
+            catch (error) { throw new Error(`Task ${task.id} ${task.status}: ${error.message}. Resume or cancel it.`); }
             return `Task ${task.id} started in ${task.room}. Private invitations sent. Use a second client so the original room keeps running.`;
         }
         const task = this.tasks.get(id);
@@ -124,6 +124,9 @@ class DelegatedTasks {
             await this.connectSide(task);
             await this.request({ action: 'invite', taskId: task.id, delegationToken: task.token });
             await this.report(task, `Side room ${task.room} ready. Brief: ${task.brief}`);
+        } catch (error) {
+            this.pause(task);
+            throw error;
         } finally { delete task.opening; this.save(); }
     }
     connectSide(task) {
@@ -171,6 +174,8 @@ class DelegatedTasks {
         const socket = task.socket; delete task.socket; socket?.close(); this.save();
     }
     async playerTurn(task, chat) {
+        // A whisper must never become shared narration or enter the group recap.
+        if (chat.whisper || chat.privateOnly) return;
         const text = String(chat.text || '').trim();
         if (!text || text.length > 6000) return;
         if (/^!task pause\b/i.test(text)) { this.pause(task); await this.report(task, 'A participant requested a pause.'); return; }

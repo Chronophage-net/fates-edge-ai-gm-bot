@@ -135,6 +135,17 @@ shows the same live status view pictured above the moment the bot connects.
 
 ## 🧱 Architecture
 
+### Adventure crash recovery
+
+Campaign saves include a full adventure snapshot alongside conversation history, narrative
+summary and campaign facts. After a server restart, the bot restores it on reconnect using the
+stable room ID. Capture is reused for up to five seconds unless adventure state changes; failed
+captures retain the last good copy. See [recovery behavior and tests](docs/adventure-recovery.md).
+
+Verified human GMs can use `!gm adventure snapshot` to inspect the saved time and position,
+`!gm adventure recover` to retry, or `!gm adventure recover --force` to explicitly replace an
+already-loaded adventure. Restored encounters require their grid tokens to be replaced.
+
 ```
 players in VTT / terminal
         │
@@ -703,6 +714,9 @@ it with `STATUS_SERVER=false` if you don't want it running (e.g. a locked-down h
 ---
 
 ## 🤝 Assistant GM Mode
+
+Pending suggestions are not persisted across bot restarts. If the bot crashes with suggestions
+pending, they are lost and the AI GM will need to propose them again.
 
 A middle tier between full GM (this bot narrates, and every `[TAG ...]` it emits applies
 immediately) and an ordinary player/spectator (it does nothing at all). A GM hands the bot this

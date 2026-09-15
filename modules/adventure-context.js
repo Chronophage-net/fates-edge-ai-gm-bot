@@ -55,10 +55,25 @@ let timersFetchedAt = 0;
  *  encounter start/resolve, timer tick, load, reset) so the next read
  *  picks up the change immediately instead of waiting out the TTL. */
 function invalidate() {
+    snapshotRevision++;
     stateFetchedAt = 0;
     referenceFetchedAt = 0;
     docFetchedAt = 0; // also clear doc cache
     timersFetchedAt = 0; // also clear the (adventure-independent) ad-hoc timer cache
+}
+
+let snapshotRevision = 0;
+async function snapshotAdventure(context) {
+    try { return await context.apiRequest('GET', ['adventure', 'full']); }
+    catch (error) { context.logger?.debug?.(`[AdventureRecovery] Snapshot unavailable: ${error.message}`); return null; }
+}
+async function recoverAdventure(context, snapshot, { force = false } = {}) {
+    try {
+        const result = await context.apiRequest('POST', ['adventure', 'restore'], { snapshot, force });
+        context.recoveryError = result?.ok ? null : (result?.error || 'Restore rejected');
+        if (result?.warning) context.logger?.warn?.(result.warning);
+        return result?.ok === true;
+    } catch (error) { context.recoveryError = error.message; return false; }
 }
 
 /**
@@ -754,6 +769,9 @@ async function resolveAmbienceEventAsync(mood, { force = false } = {}) {
 }
 
 module.exports = {
+    snapshotAdventure,
+    recoverAdventure,
+    getSnapshotRevision: () => snapshotRevision,
     invalidate,
     hasActiveAdventure,
     isAdventureActive,       // NEW export -- shared source of truth for adventure-director.js

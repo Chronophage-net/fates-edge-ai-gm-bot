@@ -249,6 +249,7 @@ async function processSpecialTags(text, context, senderName = null) {
                     context.apiRequest('POST', ['characters', encodeURIComponent(name), serverField], { delta: amount }),
                     5000
                 );
+                if (type === 'harm' || type === 'fatigue') await saveCampaign();
             } catch (e) {
                 console.warn(`[APPLY ${type.toUpperCase()}] failed to push "${name}" to server:`, e.message);
             }

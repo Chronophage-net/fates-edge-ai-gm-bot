@@ -93,10 +93,16 @@ function getDirectorState(orchestrator) {
 
 function pushCustomAdventure(orchestrator, entry) {
     const dir = getDirectorState(orchestrator);
-    dir.customAdventures.unshift(entry);
-    if (dir.customAdventures.length > MAX_CUSTOM_ADVENTURES) {
-        dir.customAdventures.length = MAX_CUSTOM_ADVENTURES;
+    if (dir.customAdventures.length >= MAX_CUSTOM_ADVENTURES) {
+        const index = dir.customAdventures.findLastIndex(item => !item.pinned);
+        if (index < 0) throw new Error('All saved custom adventures are pinned; finish or abandon one first.');
+        dir.customAdventures.splice(index, 1);
     }
+    dir.customAdventures.unshift(entry);
+}
+
+function pinCustomAdventure(orchestrator, id) {
+    for (const entry of getDirectorState(orchestrator).customAdventures) entry.pinned = entry.id === id;
 }
 
 /**
@@ -124,7 +130,9 @@ function pushCustomAdventure(orchestrator, entry) {
  * those describe the overall campaign, not a specific adventure, and a
  * mid-campaign adventure swap shouldn't erase that framing.
  */
-function resetNarrativeState(orchestrator) {
+function resetNarrativeState(orchestrator, { recovering = false } = {}) {
+    if (recovering) return;
+    orchestrator.campaign.clearAdventureSnapshot?.();
     const state = orchestrator.campaign.state;
     state.conversation = [];
     state.messagesSinceLastSummary = 0;
@@ -240,6 +248,7 @@ function formatSelectionMenu(options) {
  * client).
  */
 async function maybePromptOnStartup(context) {
+    if (context.orchestrator.campaign.pendingAdventureSnapshot) return;
     let current;
     try {
         current = await context.apiRequest('GET', ['adventure']);
@@ -560,6 +569,7 @@ async function runCrownSpreadFlow(context, regionArg) {
         });
         adventureContext.invalidate();
         resetNarrativeState(context.orchestrator); // NEW: clear stale chat history from any prior adventure
+        pinCustomAdventure(context.orchestrator, customId);
     } catch (e) {
         context.sendChat(`*Built the adventure but couldn't load it: ${e.message}*`);
         return;
@@ -596,6 +606,7 @@ async function handleAbandonVote(sender, context) {
         await context.apiRequest('POST', ['adventure', 'reset']);
         adventureContext.invalidate();
         resetNarrativeState(context.orchestrator); // NEW: the party is abandoning this story -- don't let the LLM keep narrating it
+        pinCustomAdventure(context.orchestrator, null);
     } catch (e) {
         // Reset failing isn't fatal to the abandon flow -- still re-prompt.
         console.warn('[AdventureDirector] adventure/reset failed during abandon:', e.message);
@@ -622,8 +633,26 @@ async function handleAdventureCommand(sender, args, context) {
     // the whole point of it being a vote), and the bare status command
     // (`!gm adventure` with no args) is read-only so it's fine for anyone.
     const gmOnlySubs = ['choose', 'region', 'crown', 'reset', 'debug', 'legacy'];
+    if (['snapshot', 'recover'].includes(sub) && context.senderIsGM !== true) return '*Only a verified GM can inspect or recover an adventure snapshot.*';
     if (gmOnlySubs.includes(sub) && context.myRole !== 'gm') {
         return '*Only the Game Master can manage adventure selection. Players can use `!gm adventure vote abandon`.*';
+    }
+
+    if (sub === 'snapshot') {
+        const campaign = context.orchestrator.campaign;
+        const pending = campaign.pendingAdventureSnapshot;
+        const snapshot = pending || await adventureContext.snapshotAdventure(context);
+        if (!snapshot) return '*No adventure snapshot is available.*';
+        const active = snapshot.module?.acts?.[snapshot.currentAct]?.scenes?.[snapshot.currentScene];
+        const timers = [...(snapshot.module?.campaignTimers || []), ...(active?.timers || []), ...(snapshot.adhocTimers?.list || [])];
+        const age = Date.now() - snapshot.savedAt;
+        return `${pending ? 'Pending recovery' : 'Live capture'} — ${snapshot.moduleId}\nSaved: ${new Date(snapshot.savedAt).toISOString()}${age > 86400000 ? ' — older than 24 hours; review before recovery' : ''}\nAct ${snapshot.currentAct + 1}, scene ${snapshot.currentScene + 1}\nTimers: ${timers.map(t => `${t.name} ${t.current}/${t.segments}`).join(', ') || 'none'}\nSessions: ${snapshot.sessionsPlayed}/${snapshot.climaxAfterSessions}; encounter: ${snapshot.activeEncounterRef ? 'active (grid tokens need replacement)' : 'none'}`;
+    }
+    if (sub === 'recover') {
+        if (!context.orchestrator.campaign.pendingAdventureSnapshot) return 'No pending snapshot; nothing to recover.';
+        if (!context.adventureRecovery) return '*Recovery controller is unavailable.*';
+        const ok = await context.adventureRecovery.attempt({ force: args.includes('--force') });
+        return ok ? '♻️ Recovered adventure state from snapshot. Conversation and campaign facts preserved.' : `Recovery failed: ${context.adventureRecovery.context.recoveryError || 'snapshot retained; try again when the server is ready.'}`;
     }
 
     // ─── !gm adventure  (no args -- status, or re-show the menu) ───
@@ -686,6 +715,7 @@ async function handleAdventureCommand(sender, args, context) {
                 await context.apiRequest('POST', ['adventure', 'load'], { moduleId: chosen.moduleId });
                 adventureContext.invalidate();
                 resetNarrativeState(context.orchestrator); // NEW: clear stale chat history from any prior adventure
+                pinCustomAdventure(context.orchestrator, null);
             } catch (e) {
                 return `*Failed to load "${chosen.label}": ${e.message}*`;
             }
@@ -703,6 +733,7 @@ async function handleAdventureCommand(sender, args, context) {
                 await context.apiRequest('POST', ['adventure', 'load-custom'], { content: saved.content, id: saved.id });
                 adventureContext.invalidate();
                 resetNarrativeState(context.orchestrator); // NEW: clear stale chat history from any prior adventure
+                pinCustomAdventure(context.orchestrator, saved.id);
             } catch (e) {
                 return `*Failed to load "${saved.title}": ${e.message}*`;
             }
@@ -934,6 +965,9 @@ async function handleAdventureCommand(sender, args, context) {
 }
 
 module.exports = {
+    resetNarrativeState,
+    pushCustomAdventure,
+    finalizeAdventure,
     handleAdventureCommand,
     maybePromptOnStartup,
     handleSceneComplete,
@@ -1297,6 +1331,18 @@ Output ONLY the JSON object.`;
  * a short summary per completed adventure, not raw transcript.
  */
 async function finalizeAdventure(context, finishedState) {
+    const campaign = context.orchestrator.campaign;
+    campaign.finalizations ||= new Map();
+    const key = JSON.stringify([finishedState.moduleId, finishedState.startedAt]);
+    if (campaign.finalizations.has(key)) return campaign.finalizations.get(key);
+    const operation = finalizeAdventureOnce(context, finishedState).finally(() => campaign.finalizations.delete(key));
+    campaign.finalizations.set(key, operation);
+    return operation;
+}
+
+async function finalizeAdventureOnce(context, finishedState) {
+    const prior = context.orchestrator.campaign.state.adventureArchive || [];
+    if (prior.some(entry => entry.moduleId === finishedState.moduleId && entry.startedAt === finishedState.startedAt)) return;
     // NEW: LEGACY TRACKER -- extract this adventure's declared carryover
     // (if any -- see modules/legacy-tracker.js) BEFORE anything else, while
     // the module's reference data (and its `persistence` declaration) is
@@ -1327,6 +1373,8 @@ async function finalizeAdventure(context, finishedState) {
     const state = context.orchestrator.campaign.state;
     if (!state.adventureArchive) state.adventureArchive = [];
     state.adventureArchive.push({
+        moduleId: finishedState.moduleId,
+        startedAt: finishedState.startedAt,
         title: finishedState.title || 'Untitled Adventure',
         summary: summaryText,
         completedAt: Date.now(),
@@ -1336,6 +1384,8 @@ async function finalizeAdventure(context, finishedState) {
     }
 
     resetNarrativeState(context.orchestrator);
+    pinCustomAdventure(context.orchestrator, null);
+    await context.orchestrator.campaign.save();
     context.sendChat(`📖 **"${finishedState.title || 'The adventure'}" concludes.**\n\n${summaryText}\n\n*A new road awaits.*`);
     await promptSelection(context);
 }

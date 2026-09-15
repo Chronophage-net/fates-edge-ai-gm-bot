@@ -10,6 +10,7 @@
     "configure": "node configure-bot.js",
     "manage": "node bot-manager.js",
     "test": "node --test",
+    "test:recovery": "node scripts/recovery-smoke.cjs",
     "version:bump": "node tools/bump-version.mjs"
   },
   "repository": {

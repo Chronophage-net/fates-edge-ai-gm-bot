@@ -180,7 +180,8 @@ class Orchestrator {
         this.world,
         this.options.roomCode,
         this.options.serverUrl,
-        this.options.apiKey || ''
+        this.options.apiKey || '',
+        this.options
       );
     }
 
