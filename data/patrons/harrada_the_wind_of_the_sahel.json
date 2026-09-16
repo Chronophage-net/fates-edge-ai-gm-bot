@@ -1,0 +1,270 @@
+{
+  "id": "harrada-wind-of-the-sahel",
+  "type": "patron",
+  "title": "Harrada, the Wind of the Sahel",
+  "subtitle": "Liberation & Dust",
+  "version": "1.0.0",
+  "tags": [
+    "wind",
+    "dust",
+    "liberation",
+    "change",
+    "cleansing",
+    "Scour",
+    "erasure",
+    "sahel"
+  ],
+  "lore": {
+    "description": "This is how she is met, and it is the only way anyone has ever met her. A bad year, an Oshiiran village in a district the Tally has quietly stopped reaching, and a broker at the end of the lane with a lawful paper. Somebody pours a handful of red dust into an open palm and blows it across the threshold. Nobody says a name. The broker stands in the doorway and cannot recall what he came for, and goes away; the paper is still in his coat and the paper is still correct, but the entry behind it has gone soft, and softens further each time it is read. The person in the house is free. Something, somewhere, is one tick closer. And when a neighbour asks afterwards who did that, the answer that is given — flatly, the way you give a fact and not a confession — is: the wind.\n\nHarrada is not a god of weather, though she is only ever met in weather. In Ashaan a name can be lifted off the rolls so cleanly that the grammar closes over the gap — the entry does not read as altered, it reads as though nothing was ever there — and the man it belonged to goes on standing in the street with nothing left to appeal to. The Black Hand has done this for three hundred years and files it under administration. The Scour is the only other power in that country that does the same work, and it does it to everyone, without price or preference or a petition to sign: the dry wind out of the interior that takes the tracks off the ground in a morning and the ink off a boundary-board in a season. People who had been erased began speaking to the wind, because it was the only thing they had ever seen erase upward. What answers is called Harrada. She is neither cruel nor kind. She does not build. She makes room for those who will.",
+    "followers": "Chain-cutters, bonded labourers off the caravan road, iconoclasts, and clerks who have read a ledger they cannot unread. They are not revolutionaries — a revolution wants to be remembered, and wants its enemies remembered too. Harrada's people want the thing to have never been provable. In Ashaan she is whispered as the Dust-Rider, faceless, who comes into a sandstorm to cut the bound loose and is gone before the air clears. In the Sahel she is the Cleansing Wind, called on the night before a contract burns. In Ngomebe, where the walking cities run on a keystone and a bearing set in perfect trust, her name is scratched on the keystones that cracked. A cracked keystone is not a masonry problem in that country; it is a building the Tally cannot account for. There is a structure standing in eastern Oshiira that no engineer will certify and no engineer can explain — the stone is sound, the load is right, the arithmetic closes, and the keystone is split top to bottom and has been for ninety years, and the building has not moved. Three surveys are on file and all three reconcile and all three are wrong. The locals do not survey it. They say Harrada taught the stone to break, and they go in at need, and they do not say what is under it.",
+    "quote": "“The Hand takes a name off a roll and the clerks call it order. I take the roll and they call it ruin. Child, look at the two hands. It is the same work. The only argument is over whose turn it is.”"
+  },
+  "domain_focus": [
+    "Dust and Wind: the Scour, sandstorms, the dry breath of the Sahel",
+    "Change: destroying the old to make way for the new",
+    "Liberation: breaking chains, opening locked doors, scattering what binds",
+    "Cleansing: burning corrupt contracts, erasing false ledgers, the red dust that covers old tracks"
+  ],
+  "runekeeper_options": {
+    "thiasos": {
+      "description": "Harrada's Thiasos is a small beast or mythological being that embodies the Scour: a sand-colored gecko that sheds its skin twice as fast as any other, a small horned viper that leaves no tracks in loose sand, a dust-bathed finch that appears only after a windstorm, a scarab beetle that rolls dry dung across the hottest plains, or a pale mouse that nests in abandoned grain silos and vanishes when the wind shifts.",
+      "care": "Beyond its ordinary care, this Thiasos must be allowed to feel the dry wind each day — a sealed room suffocates it. If that need goes unmet, the Thiasos becomes Compromised: its color fades, and its bearer suffers –1 die on all rolls involving escape or evasion until it next tastes a dust storm."
+    },
+    "codex": {
+      "description": "Harrada's Codex is never a book kept indoors. It may be a collection of cracked clay tablets that must be read in the wind, a scroll of desert leather that crumbles if not exposed to dry air, a bundle of dried reeds tied with red thread, or a single shard of green glass that holds the memory of a storm.",
+      "upkeep": "Because the Scour erases what is written, the Codex requires upkeep: the Runekeeper must spend an hour each week in a dry, windy place, allowing the dust to resettle on the pages, or the Rites stored there become faint (treat as Compromised until re-swept)."
+    }
+  },
+  "patrons_gift": {
+    "name": "Harrada's Breath",
+    "description": "Once per scene as an action, a Runekeeper of Harrada may touch a held item (weapon, tool, or garment) and whisper a word of the Scour.",
+    "effect": "For the rest of the scene, the item grants +1 die to Stealth or Escape rolls in dry or dusty environments, and the first time each scene the bearer would be restrained (by chains, ropes, or a grapple), they may reroll the escape check (the wind loosens what binds).",
+    "cost": "After the scene, the user marks +1 Obligation to Harrada."
+  },
+  "rites": [
+    {
+      "name": "Rite of Harrada's Breath",
+      "tier": "Low",
+      "xp": 4,
+      "action": "Scene",
+      "range": "Zone",
+      "resist": "No",
+      "tags": [
+        "WIND",
+        "STEALTH",
+        "DECEPTION"
+      ],
+      "materials": "A pinch of red dust blown from the palm, or a dry leaf that has never been wet.",
+      "effect": "For one scene, you may extinguish any non-magical fire in a zone. The extinguishing is silent and leaves no smoke. Additionally, any open flame within Near range gutters and may be snuffed with a gesture.",
+      "push_it": "The wind carries the extinguishing effect to all fires in Near range. Magical fires are suppressed for one exchange (they flicker but do not go out). Mark 1 SB (Spades) as the unnatural stillness draws attention. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of the Dust Mask",
+      "tier": "Low",
+      "xp": 8,
+      "action": "Scene",
+      "range": "Self or Ally",
+      "resist": "No",
+      "tags": [
+        "PROTECT",
+        "WEATHER",
+        "SURVIVAL"
+      ],
+      "materials": "A strip of cloth that has been dried in the Scour for nine days.",
+      "effect": "You or an ally within Near becomes immune to the effects of sandstorms, dust clouds, and airborne irritants for one scene. Visibility is unaffected for you; you can see through blowing dust as if it were clear air. The cloth wraps itself around your face, cool and dry.",
+      "push_it": "Extend the effect to all allies within Near. The cloth becomes permanently stained red; it may be recognized by those who know Harrada's sign. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Scene."
+    },
+    {
+      "name": "Rite of Scattered Chains",
+      "tier": "Standard",
+      "xp": 9,
+      "action": "Scene",
+      "range": "Touch",
+      "resist": "Yes",
+      "tags": [
+        "LIBERATE",
+        "WIND",
+        "BOOST"
+      ],
+      "materials": "A length of chain, rope, or a physical restraint no longer in use.",
+      "effect": "Touch a restrained creature (mundane bonds, a locked cage, a shackle) and unmake the binding as if the wind had loosened every knot and hinge at once. The target is freed and gains +1 die on their next action taken to flee or resist recapture.",
+      "push_it": "Free all restrained creatures within Near, and mark the area with a haze of drifting red dust that lingers for an hour, marking it visibly as Harrada's work. Mark 1 SB (Clubs). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "cost": "Mark +1 Obligation.",
+      "requires": "Familiar + Codex (Invoke: 1 Boon).",
+      "invoke": "1 action.",
+      "duration": "Instant."
+    },
+    {
+      "name": "Rite of the Cleansing Wind",
+      "tier": "High",
+      "xp": 14,
+      "action": "Extended",
+      "range": "Zone",
+      "resist": "No",
+      "tags": [
+        "WIND",
+        "ERASURE",
+        "DEBT",
+        "FEAR"
+      ],
+      "materials": "A corrupt contract, a slave collar, or a false ledger; and a handful of red dust from the Ashaani desert.",
+      "effect": "Summon a dust storm that lasts one hour within a zone (approximately a city block). All actions within are Desperate due to poor visibility. The storm scatters one specific piece of evidence — a single document, a set of tracks, or a witness's memory of a specific event — as chosen by the caster. The evidence is carried away by the wind and cannot be recovered by mundane means.",
+      "push_it": "The dust storm also reveals one hidden truth — a secret door, a buried body, a false wall — as the wind strips away what was hidden. The caster gains the Dust-Marked condition (a red stain on their hands that cannot be washed off for one month; imposes –1 die on social rolls with those who recognize the mark). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "Extended action.",
+      "duration": "1 hour."
+    },
+    {
+      "name": "Rite of the Scour's Judgment",
+      "tier": "High",
+      "xp": 13,
+      "action": "Extended",
+      "range": "Zone",
+      "resist": "Yes",
+      "tags": [
+        "WIND",
+        "LIBERATE",
+        "FEAR",
+        "AREA"
+      ],
+      "materials": "The broken links of a chain that once bound many, scattered to the four directions.",
+      "effect": "Call the full weight of the Scour down upon a single site of oppression. For one hour, all locks, chains, cages, and mundane restraints within the zone spring open of their own accord, and every corrupt document within it is scoured of ink. Those who would re-bind the freed suffer –2 dice to any roll to restrain, imprison, or coerce for the duration.",
+      "push_it": "The wind marks every oppressor present with the Dust-Marked condition, and the site itself becomes known as a place Harrada has claimed — locals will whisper of it for a generation. Mark 2 SB (Spades) as the Hollow takes note of so much erased at once. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "cost": "Mark +2 Obligation.",
+      "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
+      "invoke": "Extended action.",
+      "duration": "1 hour."
+    }
+  ],
+  "cantors_and_cults": {
+    "cantors": {
+      "name": "The Cantor's Song",
+      "description": "A Cantor of Harrada sings in dry tones — melodies that crackle like dust on the tongue, harmonies that feel like a parched throat. Their voice is used to call the Scour, to make a guard's eyes sting so they cannot see, or to sing a locked door open by vibrating the latch. Harrada's Cantors are often found in deserts, on the edge of mines, or in the company of those who are about to burn a bridge."
+    },
+    "cult": {
+      "name": "The Cult of the Red Dust",
+      "description": "Harrada's cults meet in places where the wind never stops: dry riverbeds, abandoned quarries, the lee side of tall buildings during a sandstorm. The Red Dust is a fellowship of iconoclasts, ex-slaves, and those who have destroyed a contract that bound them. A ritual involves each member writing a binding obligation on a piece of parchment, then throwing it into the wind. If the parchment is carried away, the obligation is considered voided — by Harrada, not by law. If it falls back to the ground, the debtor must perform a service before the next storm. Their creed is written in dust on a single stone: 'What the wind scatters, no chain can gather.' Outsiders are welcome if they bring something they wish to see destroyed — a letter, a collar, a memory. The Red Dust exists in answer to a specific sentence. The Grain Covenant holds that the book is true or people starve, and four hundred years of a thousand tribes have eaten on that bet. The Red Dust does not dispute it. It says only: the book is true, and some starve anyway, and the wind is what is left to a man who owes what he cannot pay and what the book correctly says he owes. Their own answer to the Covenant's tally is four words and they will not explain them either — *what the wind scatters, no chain can gather.*"
+    }
+  },
+  "witchcraft": {
+    "name": "The Art of the Dust-Weaver",
+    "description": "A witch who walks with Harrada is a dust-weaver or wind-caller — one who crafts erasure. Their magic works through the tools of dispersal: a small leather pouch of red dust from a weigh-house whose figure would not reconcile, a fan made of dried palm fronds, a whistle that mimics the sound of the Scour. Their tools are never permanent; a fan is burned after its seventh use, a whistle cracks after the ninth. In the Brass Coast, a Sidhi witch might scatter red dust at a customs post to make the officers forget a smuggler's face; in Ashaan, a Breath-less agent uses Harrada's rites to erase a name from the Black Hand's ledger.",
+    "color": "#c1793a",
+    "lore": "The dust-weaver's path is impermanence made useful. They learn that nothing built to last forever deserves to, that a chain rusts faster than the wind forgets, and that the surest way to end an injustice is to make it impossible to prove it ever happened. Harrada's witches are patient in a way fire is not — they wait for the season, then scatter everything at once. The trade's oldest boast is aimed at the weavers of Morag, who cut their terms into a board so that the terms cannot afterwards be argued with, and who keep every word they say. A dust-weaver does not argue with the board. She is what happens to the board.",
+    "signature_rite": "Rite of Harrada's Breath",
+    "quote": "What the wind scatters, no chain can gather.",
+    "tools": {
+      "dust_pouch": {
+        "name": "The Dust Pouch",
+        "description": "A small leather pouch filled with red dust collected from a place where the Tally has visibly failed — a weigh-house where the figure would not reconcile, a granary that stood empty in a year the book called full, the ground of the short take-out in the second bad harvest. Once per session, the witch may scatter the dust in a line across a threshold. For the next hour, any who cross that threshold forget why they entered (Resolve DV 4 to resist). The pouch can also be used to 'clean' a document: sprinkling dust on a contract erases one clause permanently. The dust is consumed on use."
+      }
+    },
+    "hedge_gifts": [
+      {
+        "name": "Scatter the Tracks",
+        "xp": 4,
+        "description": "Once per scene, the witch may touch a set of tracks (footprints, wheel ruts, blood trails) and whisper a word of the Scour. The tracks are erased as if a wind had passed — no mundane tracker can follow them. The Hollow, however, notices the absence; the GM gains 1 SB to spend on a pursuit complication later in the session."
+      },
+      {
+        "name": "Breath of Release",
+        "xp": 3,
+        "description": "Once per scene, blow gently across a knot, lock, or simple binding; it loosens as if worn by years of dry wind. Works only on mundane fastenings and takes one full action to complete."
+      },
+      {
+        "name": "Dry Season Ward",
+        "xp": 3,
+        "description": "Once per day, mark a small object (a bead, a coin, a knot of cord) with dust and give it to another. For the day, the bearer gains +1 die to resist heat, thirst, and exhaustion in arid conditions."
+      }
+    ]
+  },
+  "monastic_tradition": {
+    "name": "The Way of the Scour",
+    "description": "Monks of the Scour train in open, wind-scoured places, learning to move as the dry wind moves — never resting in one spot long enough to be pinned down, never striking with more force than is needed to loosen what should already be broken. They are teachers to the enslaved and thorns in the side of anyone who mistakes stillness for permanence.",
+    "color": "#c1793a",
+    "prerequisites": "Body 2+, Spirit 3+, Rite of Harrada's Breath or Cantor of Harrada.",
+    "quote": "The dust settles on new ground. That is not destruction. That is preparation.",
+    "debt_resistant_frame": "Monks of the Scour treat every chain, contract, and coerced promise as something the wind is already unmaking. They gain +1 die to resist any Obligation or geas rooted in captivity, coercion, or unjust hierarchy. If they succeed, the binding's physical token (a document, a collar, a seal) visibly frays at the edges, as if aged a decade in a moment.",
+    "techniques": {
+      "basic": {
+        "name": "Dust Step",
+        "xp": 5,
+        "description": "Once per scene, move through a crowd, a narrow gap, or difficult terrain as if it offered no resistance, leaving no dust or footprint behind.",
+        "cost": "1 Boon",
+        "prereq": "Body 2+"
+      },
+      "advanced": {
+        "name": "Loosen the Latch",
+        "xp": 8,
+        "description": "Once per scene, touch a lock, chain, or restraint and cause it to fail at the worst possible moment for its owner — not immediately, but within the scene, at the GM's discretion.",
+        "cost": "1 Fatigue",
+        "prereq": "Tier II, Spirit 3+"
+      },
+      "master": {
+        "name": "Herald of the Storm",
+        "xp": 13,
+        "description": "Once per session, call a localized dust storm into being over a zone for one exchange, granting all allies within +2 dice to Stealth and Escape while foes suffer -2 dice to Notice and pursuit. Afterward, you mark +1 permanent Corruption (a faint red tint settles permanently into your skin and hair) and +1 Obligation to Harrada.",
+        "cost": "1 permanent Corruption and +1 Obligation to Harrada",
+        "prereq": "Tier III, Spirit 4+"
+      }
+    },
+    "corruption_note": "Monks follow the patron's general Corruption track; the monastic path does not add a second one. Where a tradition needs its own, it must differ from the general track in kind, not degree."
+  },
+  "corruption": [
+    {
+      "tier": 1,
+      "benefit": "Dust-Sense: +1 die to detect secret doors, hidden compartments, or buried objects.",
+      "cost": "Dry Throat: –1 die to social rolls requiring a smooth voice; you cough when you lie."
+    },
+    {
+      "tier": 2,
+      "benefit": "Scatter the Wind: Once per scene, treat a failed Stealth or Escape roll as a success (you vanish in a puff of dust).",
+      "cost": "Dust-Marked: Red dust clings to your clothes no matter how you brush it; –1 die to social rolls with authorities who notice."
+    },
+    {
+      "tier": 3,
+      "benefit": "Eraser's Hand: +2 dice to Forgery or Deception when destroying evidence.",
+      "cost": "Compulsive Erasure: You must erase one written lie you see; if you cannot, mark 1 Fatigue."
+    },
+    {
+      "tier": 4,
+      "benefit": "Dust Storm's Eye: Once per session, see through any dust, fog, or smoke as if it were clear air.",
+      "cost": "Wind-Blown: –1 die to resist being moved or knocked prone; you are lighter than you seem."
+    },
+    {
+      "tier": 5,
+      "benefit": "Cleansing Wind: Once per session, destroy one non-magical document, lock, or chain by touch.",
+      "cost": "Oblivion's Scent: Every object you destroy adds 1 tick to a Hollow Attention timer. The Hollow wants to know why you are erasing."
+    },
+    {
+      "tier": "6+",
+      "benefit": "Avatar of the Scour: Once per session, become immaterial for one exchange — you are a cloud of red dust. You cannot be harmed, but you cannot attack.",
+      "cost": "Dust to Dust: Mark +3 Obligation. You begin to forget your own past — memories crumble like dry parchment. Your eyes are the color of dried blood, and your voice sounds like wind over sand. Once per week, you must destroy something of personal value or suffer 2 Fatigue. Lost memories may be recovered through quests or significant roleplay, but the process is never complete."
+    }
+  ],
+  "playstyle_notes": {
+    "description": "Harrada rewards decisive destruction of corrupt instruments and the nerve to trust that the evidence will not survive. What she does not offer is aim. The wind does not read: it takes the debt-broker's ledger and the parish register on the same shelf, the indenture and the manumission, the false figure and the true one beside it. Every table running this patron should know early that a scattered debt is not a paid debt and has to go somewhere — and that the Hollow is interested in exactly that kind of somewhere. Playing Harrada well means being willing to say who you are content to have forgotten.",
+    "emphasizes": [
+      "Dust and Wind: the Scour, sandstorms, the dry breath of the Sahel",
+      "Liberation: breaking chains, opening locked doors, scattering what binds",
+      "Cleansing: burning corrupt contracts, erasing false ledgers",
+      "The Hollow's Interest: erasure attracts the Hollow, which collects forgotten debts"
+    ]
+  },
+  "sample_adventure": {
+    "title": "The Ledger That Would Not Burn",
+    "description": "A debt-broker in a border town below the Brass Gate — close enough to the caravan road that the Vermilion Corps keep a standing watch on it, far enough out that the Covenant's tally does not reach the private lanes — keeps a ledger of every soul sold into indenture along that road. The ledger is warded against fire, water and theft, and it is perfectly correct: every name in it is owed, lawfully, by the terms each person agreed to. That is the difficulty. Nobody in the town is doing anything wrong. The Corps will not act on a private book. The Covenant has no clause for an individual it has already counted and closed. The Cult of the Red Dust has an answer and it is the only answer on offer, and it costs the town its own record of who was born there.",
+    "quote": "You want to know what the wind spares? Nothing. That is the mercy of it. Nothing gets to keep what it took unfairly — not even us."
+  },
+  "_license": "Fate's Edge Copyright – © 2024 - 2026 Nicholas A. Gasper. Used with permission, All rights reserved.",
+  "order": "beyond_the_triune",
+  "register": "unclassifiable"
+}
