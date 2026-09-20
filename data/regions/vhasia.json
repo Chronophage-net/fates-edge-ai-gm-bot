@@ -23,7 +23,7 @@
       "north": "Aeler / Ubral — High passes funnel mercenaries and exiles into the fractured sun-kingdom. The mountain holds are a sieve, not a wall.",
       "south": "Thepyrgos (via Viterra) — Synod law and the Chain-Lanterns rarely venture this far north, but their scholars collect Vhasian ballads. The ninth verse is always censored."
     },
-    "gm_guidance": "Honor that costs something\n\nVhasia asks whom people will follow when lawful claims and honorable conduct point in different directions. Keep birth, reputation, and public allegiance distinct. A convincing performance can win supporters without proving ancestry; proof can be genuine and politically unwelcome.\n\nBegin with a household offering shelter to an enemy’s wounded retainer on the eve of a claimant’s visit. Alain’s song can recall a disputed event or give someone courage to speak, but it need not function as a magical answer key. Let the players decide whether to protect a person, preserve an alliance, or expose a claim.\n\nTrack an immediate effort and the pressure opposing it; bring forward Armor Closes or Song Escapes when that front is relevant, rather than displaying every regional timer. Apply their existing triggers in context. Investigation does not itself manufacture the truth or require the realm to fracture.\n\nKeep the established Wymund → Harald → Baldvyn lineage and Valdais’s disputed paternity intact. Separate what an informant witnessed from what they infer. Decide what evidence can establish before using it, and leave the disputed Blood heir uncertain where the setting leaves it uncertain. A song heard through a closed door can carry more weight than a supernatural verdict."
+    "gm_guidance": "Honor that costs something\n\nVhasia asks whom people will follow when lawful claims and honorable conduct point in different directions. Keep birth, reputation, and public allegiance distinct. A convincing performance can win supporters without proving ancestry; proof can be genuine and politically unwelcome.\n\nBegin with a household offering shelter to an enemy’s wounded retainer on the eve of a claimant’s visit. Alain’s song can recall a disputed event or give someone courage to speak, but it need not function as a magical answer key. Let the players decide whether to protect a person, preserve an alliance, or expose a claim.\n\nTrack an immediate effort and the pressure opposing it; bring forward Armor Closes or Song Escapes when that front is relevant, rather than displaying every regional timer. Apply their existing triggers in context. Investigation does not itself manufacture the truth or require the realm to fracture.\n\nKeep the established Wymund → Harald → Baldvyn lineage and Valdais’s disputed paternity intact. Separate what an informant witnessed from what they infer. Decide what evidence can establish before using it, and leave the disputed Blood heir uncertain where the setting leaves it uncertain. A song heard through a closed door can carry more weight than a supernatural verdict.\n\nNobody asks Elianor directly about the boy. People avoid even loud speculation. Valdais does not ask because it would upset his mother and he considers the answer immaterial. Let players break the convention if they choose, but an audience is not an automatic confession. Investigate bounded testimony and obligations, not a mandatory answer key."
   },
   "regional_diagnostic": {
     "current_hook": "The sun shattered at Lence. The pieces are still falling. Which shadow will catch you?",
@@ -34,9 +34,9 @@
     "faction_triad": [
       {
         "faction": "Queen-Mother's Ethor",
-        "goal": "Restore the Dauphin (real or false) to the throne",
+        "goal": "Protect the household and refuse a forced declaration about the boy",
         "method": "Marriage alliances, spies, and the careful management of doubt",
-        "why_players_care": "She holds the secret of the succession"
+        "why_players_care": "Her displeasure can close lodging, credit and supplies without a public accusation"
       },
       {
         "faction": "Valdais Longblood",
@@ -66,7 +66,7 @@
     "vacant_throne": {
       "name": "Vacant Throne",
       "max_segments": 10,
-      "description": "Advances when a claimant gains a major advantage (battle, noble defection, foreign alliance). Retreats when the party brokers a truce or exposes a weakness. When full, a claimant takes Lence and declares themselves king. The Queen-Mother will not live to see it. She will die the day the sun rises whole again."
+      "description": "Advances when a claimant gains a major advantage (battle, noble defection, foreign alliance). Retreats when the party brokers a truce or exposes a weakness. When full, a claimant takes Lence and declares themselves king. A coronation does not settle every household’s allegiance."
     },
     "armor_closes": {
       "name": "Armor Closes",
@@ -81,7 +81,7 @@
     "claimants_coup": {
       "name": "Claimant's Coup (per claimant)",
       "max_segments": 6,
-      "description": "Advances when that claimant wins a Parlement vote, a joust, or a skirmish. When full, they march on Lence. The Dauphin—real or false—watches from the Queen-Mother's keep. He does not know if he should cheer or weep."
+      "description": "Advances when that claimant wins a Parlement vote, a joust, or a skirmish. When full, they march on Lence. People demand a declaration from Ethor; Elianor has promised none."
     },
     "lence_reckoning": {
       "name": "Lence's Reckoning",
@@ -91,16 +91,16 @@
   },
   "npcs": [
     {
-      "name": "Elianor Everblood",
-      "role": "Queen-Mother of Ethor",
-      "motivation": "Restore the last Blood King’s alleged son (real or false) to the throne—and prove, at last, whose blood truly flows in Valdais's veins. She has outlived three husbands and two sons. She is not mourning—she is planning, and waiting for the moment the doubt ends.",
-      "quirk": "Her shadow has begun to drift independently—sometimes toward Ethor, sometimes toward the memory of Wymund IV's court, sometimes toward the empty space where Baldvyn II's queen should stand."
+      "name": "Elianor Longblood",
+      "role": "Duchess of Ethor; Queen-Mother",
+      "motivation": "Protect her household and retain the choice of what, if anything, to declare about the boy.",
+      "quirk": "A merchant will discuss her prices but lowers his voice at her ward’s name."
     },
     {
       "name": "Valdais Longblood",
       "role": "Duke of Adria, western claimant",
-      "motivation": "Unite Vhasia under a strong western crown—and silence the whispers about his parentage once and for all.",
-      "quirk": "He has never lost a joust. His opponents have a habit of falling ill before the tilt. He does not poison them. His mother's spies do. He carries a shard of Wymund IV's coronation sword in his boot—a reminder that the first throne he ever knew may not have been his by right."
+      "motivation": "Pursue the Vhasian crown through his mother’s Blood kin. He does not ask about her ward: it would upset her, and he thinks the answer would change nothing.",
+      "quirk": "His officers are less certain that leaving the question alone is wise; they may act without his authority."
     },
     {
       "name": "The Red Marshal",
@@ -127,10 +127,10 @@
       "quirk": "Feathers grow from his temples; his shadow moves a half-step behind him. His songs are the only honest history left in Vhasia. He sings the names of the dead every dusk. The dead listen—and sometimes, they answer."
     },
     {
-      "name": "The Dauphin (Child)",
-      "role": "A child of nine, hidden in the Queen-Mother's keep",
-      "motivation": "Survive—and perhaps, one day, answer the question that has haunted Elianor since Valdais was in swaddling clothes.",
-      "quirk": "He has never seen the sun. He knows three languages, the lineage of every noble house, and the taste of every poison. He does not know if he is a prince or a puppet. He dreams every night of a knight with an unbuckled gorget—and of a queen who wore two crowns, wondering which throne was truly hers."
+      "name": "The Alleged Blood Dauphin",
+      "role": "A boy in Elianor’s household; identity unconfirmed",
+      "motivation": "Give him ordinary wants before assigning him a political role. Neither his own beliefs nor Elianor’s knowledge is settled.",
+      "quirk": "Tutors, servants and visitors give incompatible accounts of his upbringing. No single account proves royal birth."
     }
   ],
   "names": {
@@ -399,7 +399,7 @@
       "title": "Queen-Mother",
       "subtitle": "",
       "description": "Riverside keep in the west; weaves alliances as if they were dowries.",
-      "flavor": "She has outlived three husbands and two sons. She is not mourning. She is waiting. The last Blood King’s alleged son—real or false—will sit on the Sun Court. She will not live to see it. She has made her peace with that. The peace tastes of Lence.",
+      "flavor": "Her household needs a discreet escort for a servant. The payment is generous; the instruction is to ask about the road, not the boy. A rival wants to know why the servant travels.",
       "what_they_carry": "An audience with her can grant a Regent's Confidence (Diamond), but she always expects a favour in return.",
       "what_they_ask": "A secret. She will know if it is true. She always knows."
     },
@@ -419,7 +419,7 @@
       "title": "Last Dauphin",
       "subtitle": "",
       "description": "A rumor with a birthmark; armies march for whispers alone.",
-      "flavor": "He may be a baker's son. The armies don't care. They need a sun to follow. He has never seen the sun. He knows three languages, the lineage of every noble house, and the taste of every poison. He does not know if he is a prince or a puppet. He does not ask. He dreams every night of a knight with an unbuckled gorget.",
+      "flavor": "Someone offers payment for the name of a boy’s former nurse. Another offers safe passage if the nurse never arrives. Neither can prove who the boy is.",
       "what_they_carry": "Meeting him may reveal the truth of his legitimacy; protecting him is a major campaign goal.",
       "what_they_ask": "A name. He will ask you to tell him who he truly is. He hopes you know."
     }
@@ -863,20 +863,20 @@
       ]
     },
     {
-      "name": "The Queen-Mother (Elianor Everblood)",
+      "name": "The Queen-Mother (Elianor Longblood)",
       "tags": [
         "weaver of webs"
       ],
-      "description": "The dowager who holds the Dauphin and the secret of the succession.",
+      "description": "The Duchess of Ethor protects a household whose ward others call the Dauphin; she has made no public declaration.",
       "phases": [
-        "Weave the Web",
-        "Unveil the Dauphin",
-        "The Sun Rises Again"
+        "Withdraw Hospitality",
+        "Call Obligations",
+        "Close the Household"
       ],
       "cracks": [
-        "produce proof of the Dauphin's illegitimacy",
-        "convince Valdais to kneel",
-        "find the old king's true heir"
+        "Discharge a genuine debt",
+        "Protect someone under her care",
+        "Persuade an intermediary to reopen negotiations"
       ]
     },
     {
@@ -911,40 +911,40 @@
     "**Thepyrgos (South via Viterra):** Synod law and Chain-Lanterns collect Vhasian ballads—the ninth verse is always censored."
   ],
   "succession_mini_campaign": {
-    "title": "The Succession Mini-Campaign: The Dauphin's Truth",
-    "description": "The central question of any Vhasian campaign is whether the Dauphin is truly of the Blood. This is not predetermined. Each campaign generates its own truth.",
+    "title": "The Succession Mini-Campaign: A Question Nobody Asks",
+    "description": "The boy’s identity remains unresolved in shared canon. Generate pressures and bounded evidence; resolving the pedigree is optional and specific to a campaign.",
     "determine_legitimacy": {
-      "method": "At the start of the campaign, roll 1d6 on the table below to determine the Dauphin's true nature and the secret the Queen-Mother has been keeping.",
+      "method": "Roll or choose a disputed lead, not a canonical truth. The legacy table field names do not make these claims facts.",
       "table": [
         {
           "roll": 1,
-          "legitimacy": "True Heir",
-          "truth": "The Dauphin is exactly who the Queen-Mother claims: the last Blood King’s son, the last of the old Sun King's line. The blood is true. The problem is that Valdais's claim is also true, and the realm must choose."
+          "legitimacy": "The Tutor",
+          "truth": "A tutor needs an escort; a rival pays for an account of the pupil’s lessons. Neither can compel Elianor to name him."
         },
         {
           "roll": 2,
-          "legitimacy": "False Heir (Known)",
-          "truth": "The Queen-Mother knows the Dauphin is a commoner—an orphan with a convincing birthmark. She maintains the fiction because without a claimant, the realm falls to Valdais, whom she does not trust. The child does not know."
+          "legitimacy": "The Carter",
+          "truth": "A carrier remembers taking a child out of the war. His route can be checked; the name supplied years later cannot. Someone has paid his oldest debt."
         },
         {
           "roll": 3,
-          "legitimacy": "False Heir (Unknown)",
-          "truth": "The Dauphin is a changeling, placed in the cradle by agents of the Ninth to destabilize the succession. The Queen-Mother suspects but cannot prove it. She has dreamed of Sir Corin, whose rescue of a child at Rouen is retold at court as a rescue at Lence—and the child in the dream has the Dauphin's face."
+          "legitimacy": "The Nurse’s Account",
+          "truth": "Two sealed copies disagree about one nurse’s wages. The clerk wants his daughter brought home before explaining the difference."
         },
         {
           "roll": 4,
-          "legitimacy": "Uncertain",
-          "truth": "The Queen-Mother genuinely does not know. The child was brought to her by a dying servant who claimed he was the Dauphin. She has raised him as her own, hoping the doubt will never be tested. She has outlived three husbands and two sons. She cannot bear another loss."
+          "legitimacy": "A Purchased Discovery",
+          "truth": "An agent offers money to present already prepared evidence of substitution as an independent discovery."
         },
         {
           "roll": 5,
-          "legitimacy": "Double Claim",
-          "truth": "There are two Dauphins. A second child, hidden in the Mistlands, also bears the birthmark and the blood-right. The Queen-Mother knows of this child but has not acknowledged them. The realm may split again."
+          "legitimacy": "Empty Larders",
+          "truth": "A trader’s deliveries fail after he repeats a rumour. Was it Ethor, an overzealous agent, or his business partner?"
         },
         {
           "roll": 6,
-          "legitimacy": "The Blood Remembers",
-          "truth": "The Dauphin carries the blood of the old Sun King—but also the blood of a Fenwood. The sack of Lence was not just a conquest; it was a family feud. The child is the living proof of a union that should never have happened."
+          "legitimacy": "Another Child",
+          "truth": "A rival plans to present another child under the Blood name. The guardian wants safe passage before the sponsor arrives."
         }
       ]
     }
@@ -1001,19 +1001,18 @@
       "name": "The Longblood Court",
       "figurehead": "Valdais Longblood",
       "base": [
-        "Adria",
-        "Ethor"
+        "Adria"
       ],
-      "aim": "Prove the western line's legitimacy beyond doubt; unite Vhasia under a strong crown."
+      "aim": "Pursue Valdais’s claim while leaving his mother’s household unchallenged."
     },
     {
       "id": "queen-mothers-household",
       "name": "The Queen-Mother's Household",
-      "figurehead": "Elianor Everblood",
+      "figurehead": "Elianor Longblood",
       "base": [
         "Ethor"
       ],
-      "aim": "Protect the Dauphin (real, false, or useful) until the realm chooses whose blood to believe."
+      "aim": "Protect the household and retain the choice of what to declare about the boy."
     },
     {
       "id": "fenwood-interest",
