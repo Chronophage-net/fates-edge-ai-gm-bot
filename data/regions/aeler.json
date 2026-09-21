@@ -2,7 +2,7 @@
   "id": "aeler-crowns-under-vaults",
   "version": "1.0.0",
   "type": "generator",
-  "title": "Aeler (Dwarves) — Crowns & Under-Vaults",
+  "title": "Aeler — Crowns & Under-Vaults",
   "label": "chap:aeler",
   "key_demographic": "Aeler (Dwarfs)",
   "capital": "Khaz-Veltrum (Arguable)",
@@ -181,7 +181,7 @@
   },
   "places": [
     {
-      "rank": 1,
+      "rank": 2,
       "suit": "spade",
       "title": "Vaultmouth Gate",
       "subtitle": "[SECURITY] [GATEKEEPING]",
@@ -190,7 +190,7 @@
       "mechanical_hook": "To pass, a character must submit to a breath-test (Endurance DV 3). On success, gain +1 die to all actions in the vault for the scene (your breath is 'measured true'). On failure, you are marked as 'thin-breath' — all social rolls in the vault suffer –1 Position."
     },
     {
-      "rank": 2,
+      "rank": 3,
       "suit": "spade",
       "title": "Crown-Crypt Porch",
       "subtitle": "[TRADITION] [OATHS]",
@@ -199,7 +199,7 @@
       "mechanical_hook": "Swearing an oath here gives +1 die to any roll made in fulfillment of that oath. Breaking it ticks **Pressure Awakening +2** and the crypt will send a dream to remind you."
     },
     {
-      "rank": 3,
+      "rank": 4,
       "suit": "spade",
       "title": "Under-Market",
       "subtitle": "[COMMERCE] [UNDERGROUND]",
@@ -208,7 +208,7 @@
       "mechanical_hook": "Haggling here is a Sway+Lore test (DV 4). On success, prices are fair. On failure, you are overcharged — lose 1 Boon. On a critical, you draw an assessor's suspicion (start a **Market Audit [4]** timer)."
     },
     {
-      "rank": 4,
+      "rank": 5,
       "suit": "spade",
       "title": "Smoke-Shaft Stair",
       "subtitle": "[LABOR] [DANGER]",
@@ -217,7 +217,7 @@
       "mechanical_hook": "Climbing the stair requires Endurance+Body (DV 4). On failure, you inhale soot — mark 1 Fatigue and gain the Condition **Black-Lunged** (all physical actions in confined spaces suffer –1 die until you clear your lungs)."
     },
     {
-      "rank": 5,
+      "rank": 6,
       "suit": "spade",
       "title": "Gloam Cistern",
       "subtitle": "[MYSTERY] [WHISPERS]",
@@ -227,7 +227,7 @@
       "gm_note": "Drinking returns a memory of rain, not water. The character is not refreshed; they are briefly somewhere else, and they lose the thread of whatever they were arguing about. Useful for defusing a scene, and a real problem if they were mid-negotiation."
     },
     {
-      "rank": 6,
+      "rank": 7,
       "suit": "spade",
       "title": "Lamplighter's Mile",
       "subtitle": "[MAINTENANCE] [TRAVEL]",
@@ -236,7 +236,7 @@
       "mechanical_hook": "Traveling the mile requires 1 Supply (oil) or 1 Boon. If you have neither, you walk in darkness — all rolls on the mile are Desperate. The lamplighters will remember your debt."
     },
     {
-      "rank": 7,
+      "rank": 8,
       "suit": "spade",
       "title": "Measure Vault",
       "subtitle": "[PRECISION] [AUTHORITY]",
@@ -246,7 +246,7 @@
       "gm_note": "The chains are the memory of every oath ever broken, which means the vault can tell you who broke one. It will only answer about oaths sworn on stone, and it answers by weight - a heavier chain, not a name. Someone still has to do the arithmetic."
     },
     {
-      "rank": 8,
+      "rank": 9,
       "suit": "spade",
       "title": "Reliquary Arcade",
       "subtitle": "[SACRED] [KNOWLEDGE]",
@@ -255,7 +255,7 @@
       "mechanical_hook": "A character who prays here (Spirit+Lore DV 3) may ask one question of a saint. The answer is a riddle. On failure, the saint asks for a memory (lose 1 XP, refundable by a quest)."
     },
     {
-      "rank": 9,
+      "rank": 10,
       "suit": "spade",
       "title": "Twin-Throne Gate",
       "subtitle": "[MILITARY] [STRATEGIC]",
@@ -302,7 +302,7 @@
   ],
   "people_and_factions": [
     {
-      "rank": 1,
+      "rank": 2,
       "suit": "heart",
       "title": "Lamplighter Apprentice",
       "subtitle": "[APPRENTICESHIP] [DEDICATION]",
@@ -312,7 +312,7 @@
       "what_they_ask": "A story about a light that went out. She will remember it."
     },
     {
-      "rank": 2,
+      "rank": 3,
       "suit": "heart",
       "title": "Under-Mason",
       "subtitle": "[CRAFT] [KNOWLEDGE]",
@@ -322,7 +322,7 @@
       "what_they_ask": "A day of silence. If you can keep it, he will teach you how to hear the mountain's warnings."
     },
     {
-      "rank": 3,
+      "rank": 4,
       "suit": "heart",
       "title": "Vault Warden",
       "subtitle": "[AUTHORITY] [DUTY]",
@@ -332,7 +332,7 @@
       "what_they_ask": "A true count of your breaths. He will verify it. If you lie, he will know."
     },
     {
-      "rank": 4,
+      "rank": 5,
       "suit": "heart",
       "title": "Censer-Knight of the Dawn",
       "subtitle": "[PROTECTION] [FAITH]",
@@ -342,7 +342,7 @@
       "what_they_ask": "A confession of a broken promise. She will absolve you — but she will remember."
     },
     {
-      "rank": 5,
+      "rank": 6,
       "suit": "heart",
       "title": "Key-Sister",
       "subtitle": "[SACRED] [CRAFT]",
@@ -352,7 +352,7 @@
       "what_they_ask": "A name she does not know. She will carve it into her key-ring."
     },
     {
-      "rank": 6,
+      "rank": 7,
       "suit": "heart",
       "title": "Under-Market Assessor",
       "subtitle": "[COMMERCE] [AUTHORITY]",
@@ -362,7 +362,7 @@
       "what_they_ask": "A true measure of your trust. He will test it. If you fail, he will stamp you 'counterfeit.'"
     },
     {
-      "rank": 7,
+      "rank": 8,
       "suit": "heart",
       "title": "Engineer of Underways (Geometer)",
       "subtitle": "[ENGINEERING] [EXPERTISE]",
@@ -372,7 +372,7 @@
       "what_they_ask": "A true map of your journey. He will compare it to his own. If they do not match, he will ask why."
     },
     {
-      "rank": 8,
+      "rank": 9,
       "suit": "heart",
       "title": "Oath-Keeper of the Crown Crypt",
       "subtitle": "[TRADITION] [LAW]",
@@ -382,7 +382,7 @@
       "what_they_ask": "A vow of silence. She will hold you to it. If you break it, she will remember."
     },
     {
-      "rank": 9,
+      "rank": 10,
       "suit": "heart",
       "title": "Legate of the Under-Seal",
       "subtitle": "[DIPLOMACY] [AUTHORITY]",
@@ -434,7 +434,7 @@
   ],
   "complications": [
     {
-      "rank": 1,
+      "rank": 2,
       "suit": "club",
       "title": "Bad Air Pocket",
       "subtitle": "[DANGER] [DISORIENTATION]",
@@ -443,7 +443,7 @@
       "mechanical_hook": "All rolls in the affected zone are Desperate. On a Miss, a character loses 1 Supply (coughing) and gains the Condition **Thin-Breath** (all exertion tests suffer –1 die until the air clears)."
     },
     {
-      "rank": 2,
+      "rank": 3,
       "suit": "club",
       "title": "Drip-Flood",
       "subtitle": "[DISRUPTION] [FLOOD]",
@@ -452,7 +452,7 @@
       "mechanical_hook": "Lose 1 Supply (drowned) or find high ground (Body+Athletics DV 3). On failure, you are swept to an unknown location — start a **Lost in the Deep [4]** timer."
     },
     {
-      "rank": 3,
+      "rank": 4,
       "suit": "club",
       "title": "Gas Flare",
       "subtitle": "[ACCIDENT] [DESTRUCTION]",
@@ -461,7 +461,7 @@
       "mechanical_hook": "All characters in the scene must test Body (DV 4) or take 1 Harm (burns). Additionally, any writs or papers carried are destroyed — lose 1 Diamond (you may recover it with a quest)."
     },
     {
-      "rank": 4,
+      "rank": 5,
       "suit": "club",
       "title": "Seal Misread",
       "subtitle": "[ERROR] [SECURITY]",
@@ -470,7 +470,7 @@
       "mechanical_hook": "The party is barred from their intended destination. They must find another way (increase travel timer by 2 segments) or pay a toll (1 Boon) to correct the seal."
     },
     {
-      "rank": 5,
+      "rank": 6,
       "suit": "club",
       "title": "Under-Mold Quarantine",
       "subtitle": "[QUARANTINE] [DELAY]",
@@ -479,7 +479,7 @@
       "mechanical_hook": "You cannot trade in the market for 1 scene. If you try to smuggle, roll Stealth (DV 4). On failure, you are expelled from the hold — start a **Smuggler's Hunt [4]** timer."
     },
     {
-      "rank": 6,
+      "rank": 7,
       "suit": "club",
       "title": "Settling Crack",
       "subtitle": "[DANGER] [WARNING]",
@@ -488,7 +488,7 @@
       "mechanical_hook": "Characters must test Resolve (DV 4) or freeze. On a failure, gain the Condition **Crack-Watched** (the mountain has noticed you; the GM may spend 1 SB to trigger a cave-in)."
     },
     {
-      "rank": 7,
+      "rank": 8,
       "suit": "club",
       "title": "Stolen Key",
       "subtitle": "[ACCUSATION] [SUSPICION]",
@@ -497,7 +497,7 @@
       "mechanical_hook": "You are accused of theft. Roll Presence+Sway (DV 5) to clear your name. On failure, you are exiled from the hold — or worse, taken to the deep."
     },
     {
-      "rank": 8,
+      "rank": 9,
       "suit": "club",
       "title": "Bell-Code Conflict",
       "subtitle": "[CONFLICT] [JURISDICTION]",
@@ -506,7 +506,7 @@
       "mechanical_hook": "You must choose a side. The losing side becomes a permanent enemy (start a **Feud of the Bells [6]** timer). Choosing poorly ticks **Pressure Awakening +1**."
     },
     {
-      "rank": 9,
+      "rank": 10,
       "suit": "club",
       "title": "Vault-Right Feud",
       "subtitle": "[POLITICAL CONFLICT] [VIOLENCE]",
@@ -553,7 +553,7 @@
   ],
   "rewards": [
     {
-      "rank": 1,
+      "rank": 2,
       "suit": "diamond",
       "title": "Lamp-Priority Tally",
       "subtitle": "[UTILITY] [TIME]",
@@ -562,7 +562,7 @@
       "curse_cost": "Using the tally ticks **Pressure Awakening +1** (you have taken a breath that was not yours)."
     },
     {
-      "rank": 2,
+      "rank": 3,
       "suit": "diamond",
       "title": "Breath-Measure Allotment",
       "subtitle": "[SAFETY] [ACCESS]",
@@ -571,7 +571,7 @@
       "curse_cost": "After use, the mountain will ask for a memory (lose 1 XP). Refusal ticks **Pressure Awakening +2**."
     },
     {
-      "rank": 3,
+      "rank": 4,
       "suit": "diamond",
       "title": "Key-Writ",
       "subtitle": "[SECURITY] [AUTHORITY]",
@@ -580,7 +580,7 @@
       "curse_cost": "If you use the writ to open a lock you were not meant to open, the mountain will mark you. The GM gains a String on you."
     },
     {
-      "rank": 4,
+      "rank": 5,
       "suit": "diamond",
       "title": "Underway Pass",
       "subtitle": "[TRAVEL] [SECURITY]",
@@ -589,7 +589,7 @@
       "curse_cost": "The escort will remember you. If you ever break an oath in their presence, they will tell the mountain. Ticks **Pressure Awakening +2**."
     },
     {
-      "rank": 5,
+      "rank": 6,
       "suit": "diamond",
       "title": "Stall-Right",
       "subtitle": "[COMMERCE] [RIGHTS]",
@@ -598,7 +598,7 @@
       "curse_cost": "You are now a market-watcher. If you fail to report a violation, you are complicit. The assessor will know. The mountain will remember."
     },
     {
-      "rank": 6,
+      "rank": 7,
       "suit": "diamond",
       "title": "Engineer Shoring",
       "subtitle": "[ENGINEERING] [SAFETY]",
@@ -607,7 +607,7 @@
       "curse_cost": "If a collapse occurs in the shored area, you are responsible. Ticks **Pressure Awakening +3** and you are marked as 'crack-breaker.'"
     },
     {
-      "rank": 7,
+      "rank": 8,
       "suit": "diamond",
       "title": "Assay Mark",
       "subtitle": "[COMMERCE] [TRUST]",
@@ -616,7 +616,7 @@
       "curse_cost": "If you pass counterfeit coin, the mark is revoked. You are banned from the under-market and gain the Condition **Untrusted**."
     },
     {
-      "rank": 8,
+      "rank": 9,
       "suit": "diamond",
       "title": "Crypt Asylum",
       "subtitle": "[PROTECTION] [LAW]",
@@ -625,7 +625,7 @@
       "curse_cost": "The dead will remember you. After use, you will dream of the crypt for a week. The GM gains 1 SB per dream."
     },
     {
-      "rank": 9,
+      "rank": 10,
       "suit": "diamond",
       "title": "Vault Inventory License",
       "subtitle": "[AUTHORITY] [ACCESS]",

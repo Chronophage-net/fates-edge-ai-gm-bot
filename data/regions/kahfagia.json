@@ -231,7 +231,7 @@
       "rank": 2,
       "suit": "spade",
       "title": "Tidal Mudflat",
-      "subtitle": "[STEALTH]",
+      "subtitle": "[STEALTH] [SECRET]",
       "description": "Hidden plank-way at low water; smugglers' shortcut.",
       "flavor": "At ebb, the planks rise like the ribs of a drowned whale. The mud is thick with salt and the memory of old cargoes.",
       "mechanical_hook": "To use the mudflat, roll Stealth DV 3. On success, you avoid customs. On failure, you are mired — lose 1 Supply and gain the Condition **Salt-Crusted** (all social rolls with officials suffer –1 die until you wash)."
@@ -240,7 +240,7 @@
       "rank": 3,
       "suit": "spade",
       "title": "Salt-Scar Pier",
-      "subtitle": "[TRADE]",
+      "subtitle": "[TRADE] [THRESHOLD]",
       "description": "Behind dawn spice auctions; where fortunes wash ashore.",
       "flavor": "Inspectors check the salt-scars — white crust that proves cargo was cleaned, not stolen. The scars are a lie; the cargo was stolen, cleaned, and scarred by a factor who owns the inspector.",
       "mechanical_hook": "A character with a legitimate stamp may trade here without scrutiny. Without one, you must bribe the factor (1 Boon) or risk confiscation."
@@ -249,7 +249,7 @@
       "rank": 4,
       "suit": "spade",
       "title": "Reedbelt Creeks",
-      "subtitle": "[STEALTH]",
+      "subtitle": "[STEALTH] [TRADE]",
       "description": "Smuggler paths where tax boats won't follow.",
       "flavor": "A hanged man's boots hang from a piling; those who pass tug their collars. The boots belong to the last smuggler who sold his route to the Admiralty.",
       "mechanical_hook": "Navigation here requires Wits+Insight DV 4. On success, you find a safe passage. On failure, you emerge in the middle of a customs patrol — start a **Customs Hunt [4]** timer."
@@ -258,7 +258,7 @@
       "rank": 5,
       "suit": "spade",
       "title": "Breakwater Gap",
-      "subtitle": "[TRAVEL]",
+      "subtitle": "[TRAVEL] [TRADE]",
       "description": "Under repair; cutters slip at dusk through the works.",
       "flavor": "The stone is still loose. A wrong step, and the sea claims another toll. The gap is a secret known only to the pilots — and the Lethai-ar, who have already marked it on their charts.",
       "mechanical_hook": "Crossing the gap at dusk grants +1 Position on stealth, but if you are spotted, the Admiralty will seize your vessel.",
@@ -268,7 +268,7 @@
       "rank": 6,
       "suit": "spade",
       "title": "Dredged Channel",
-      "subtitle": "[TRAVEL]",
+      "subtitle": "[TRAVEL] [THRESHOLD]",
       "description": "Fresh with temporary beacons; tomorrow's safe water.",
       "flavor": "The buoys are painted yellow — the color of 'maybe.' They have been 'maybe' for a month. The Lethai-ar have been redirecting the dredging for weeks.",
       "mechanical_hook": "Navigating the channel is Desperate. On a Miss, you run aground — lose 1 Supply and start a **Stranded [4]** timer."
@@ -277,7 +277,7 @@
       "rank": 7,
       "suit": "spade",
       "title": "River Sluice",
-      "subtitle": "[AUTHORITY]",
+      "subtitle": "[AUTHORITY] [LAW]",
       "description": "Tide-gate and boom-chain; access controlled by rope and writ.",
       "flavor": "The chain has a notch where a slaver's ship tried to flee. It still drips oil. The gatekeeper has a silver tooth and a brother in the Red Vigil.",
       "mechanical_hook": "To pass, you need a writ from the harbor master (1 Boon) or a bribe (1 Supply). A failed bribe ticks **Web's Patience +1**."
@@ -286,7 +286,7 @@
       "rank": 8,
       "suit": "spade",
       "title": "Cutter Yard",
-      "subtitle": "[LABOR]",
+      "subtitle": "[LABOR] [TABOO]",
       "description": "Narrow-keel vessels; apprentices work night shifts.",
       "flavor": "They sing old work songs — the kind that skip the ninth beat. The ninth beat is the beat where the shipwright's apprentice fell into the dry-dock. She is still singing.",
       "mechanical_hook": "A character who works a shift (Labor DV 3) earns 1 Boon, but gains the Condition **Night-Shift** (all social rolls suffer –1 die until they rest).",
@@ -296,7 +296,7 @@
       "rank": 9,
       "suit": "spade",
       "title": "Lantern Alley",
-      "subtitle": "[WEATHER]",
+      "subtitle": "[WEATHER] [THRESHOLD]",
       "description": "Fog-lane where beacons migrate with the tide.",
       "flavor": "Follow the lights. Two blinks means you're expected. Three? You're prey. The Lethai-ar have been leaving false lights for a decade.",
       "mechanical_hook": "Navigating the alley requires a Sail+Wits DV 5. On a strong success, you find a safe channel. On a miss, you are led into a trap — start a **Pursuit Ladder**."
@@ -305,7 +305,7 @@
       "rank": 10,
       "suit": "spade",
       "title": "Admiralty Quay",
-      "subtitle": "[AUTHORITY]",
+      "subtitle": "[AUTHORITY] [LAW]",
       "description": "Bonded warehouses under seal; law walks the decks.",
       "flavor": "The seal on the door changes with the tide. Today it's a serpent eating its tail. The Lethai-ar have a copy of every seal.",
       "mechanical_hook": "Access to the quay requires a Seal-Rod (Diamond). Without one, you are challenged — roll Presence+Sway DV 4 or be arrested."
@@ -314,7 +314,7 @@
       "rank": 11,
       "suit": "spade",
       "title": "Red Shoal",
-      "subtitle": "[SOCIAL]",
+      "subtitle": "[SOCIAL] [LAW]",
       "description": "Quiet water, loud reputations; where deals are made.",
       "flavor": "Old barges moored together; a floating court with no bailiff. The water is red with rust and rumor.",
       "mechanical_hook": "A character who negotiates here (Sway+Lore DV 4) can secure a deal worth 1 Boon. On failure, they lose 1 Boon to a rival."
@@ -323,7 +323,7 @@
       "rank": 12,
       "suit": "spade",
       "title": "Mirror Tower",
-      "subtitle": "[JUSTICE]",
+      "subtitle": "[JUSTICE] [SPIRIT]",
       "description": "Pilot station that certifies safe water — today.",
       "flavor": "The mirror at the top shows not the sea, but the face of the last captain who argued. The Lethai-ar have a wire running from the mirror to a room with no windows.",
       "mechanical_hook": "A character who consults the Mirror-Keeper (Spirit+Lore DV 3) gains +1 die on navigation for the next leg. On failure, the Mirror-Keeper reports them to the Admiralty."
@@ -332,7 +332,7 @@
       "rank": 13,
       "suit": "spade",
       "title": "Kassamira Port",
-      "subtitle": "[TRADE]",
+      "subtitle": "[TRADE] [LAW]",
       "description": "Presidial; auctions at dawn, courts by noon.",
       "flavor": "The auctioneer's gavel is wrapped in a page torn from a voided manifest. The Lethai-ar own three of the auction houses.",
       "mechanical_hook": "To bid at auction, you need 2 Supply or 1 Boon. A successful bid grants a cargo of 2 Supply or a Diamond. A failed bid marks **Oligarchic Standing –1**."
@@ -341,7 +341,7 @@
       "rank": 14,
       "suit": "spade",
       "title": "The Pointe",
-      "subtitle": "[DEATH]",
+      "subtitle": "[DEATH] [WEATHER]",
       "description": "Strait of storm-lights and wreckers' tales.",
       "flavor": "On still nights, you can hear the drowned singing the names of those who bear heavy burdens. The Lethai-ar have left a rowboat at the Pointe — it is always there, always empty.",
       "mechanical_hook": "Crossing the Pointe at night requires Resolve DV 4. On failure, you are haunted by the drowned — all rolls in the next scene are Desperate."
@@ -352,7 +352,7 @@
       "rank": 2,
       "suit": "heart",
       "title": "Tide-Runner",
-      "subtitle": "[TRAVEL]",
+      "subtitle": "[TRAVEL] [KNOWLEDGE]",
       "description": "Bell and rope; knows every tide-table by heart.",
       "flavor": "'The table says high water at noon. The moon lies. Trust my rope.'",
       "what_they_carry": "A rope that has never failed. It can hold a ship — or a promise.",
@@ -362,7 +362,7 @@
       "rank": 3,
       "suit": "heart",
       "title": "Pilot's Apprentice",
-      "subtitle": "[TRAVEL]",
+      "subtitle": "[TRAVEL] [KNOWLEDGE]",
       "description": "Perfect memory for shoals; tomorrow's navigator.",
       "flavor": "Touches a brass talisman before every sounding. No one knows why.",
       "what_they_carry": "A brass talisman that hums when a shoal is false. It has never hummed.",
@@ -372,7 +372,7 @@
       "rank": 4,
       "suit": "heart",
       "title": "Lantern Clerk",
-      "subtitle": "[AUTHORITY]",
+      "subtitle": "[AUTHORITY] [KNOWLEDGE]",
       "description": "Knows which lights moved, and why; keeper of the shifts.",
       "flavor": "Docks with a manifest that smells of smoke. Adds a surcharge for 'recent adjustments.'",
       "what_they_carry": "A manifest that has never been audited. It can prove any cargo legal — once.",
@@ -382,7 +382,7 @@
       "rank": 5,
       "suit": "heart",
       "title": "Vilikari Factor",
-      "subtitle": "[TRADE]",
+      "subtitle": "[TRADE] [TABOO]",
       "description": "Two sets of books; one for Kahfagia, one for truth.",
       "flavor": "The left column records bribes as 'conciliation fees.' The right one is never shown.",
       "what_they_carry": "A book that records every bribe paid in Kassamira. It is worth more than gold.",
@@ -392,7 +392,7 @@
       "rank": 6,
       "suit": "heart",
       "title": "Dock-Syndic",
-      "subtitle": "[SOCIAL]",
+      "subtitle": "[SOCIAL] [TABOO]",
       "description": "Makes queues vanish; power in the pause.",
       "flavor": "He never raises his voice. The harbor master listens anyway.",
       "what_they_carry": "A whistle that can call a squad of Thalassoi — once per day.",
@@ -402,7 +402,7 @@
       "rank": 7,
       "suit": "heart",
       "title": "Lantern Advocate",
-      "subtitle": "[JUSTICE]",
+      "subtitle": "[JUSTICE] [LAW]",
       "description": "'Jurisdiction moves like tide'; law in flux.",
       "flavor": "She carries a water-timer in her sleeve to measure the shifting of legal moods.",
       "what_they_carry": "A precedent that has never been overturned. It can win any case — once.",
@@ -412,7 +412,7 @@
       "rank": 8,
       "suit": "heart",
       "title": "Privateer Captain",
-      "subtitle": "[COMBAT]",
+      "subtitle": "[COMBAT] [SOCIAL]",
       "description": "'Crooked' letter of convoy; profit in the margins.",
       "flavor": "Her ship flies three flags; the one she lowers last is the one that matters.",
       "what_they_carry": "A letter of marque that is valid in every port — if you know the signal.",
@@ -422,7 +422,7 @@
       "rank": 9,
       "suit": "heart",
       "title": "Thalassoi Sergeant",
-      "subtitle": "[COMBAT]",
+      "subtitle": "[COMBAT] [SOCIAL]",
       "description": "Shore leave but still on duty; marine precision.",
       "flavor": "A tattoo of a lighthouse on his forearm; the light is his wife's name.",
       "what_they_carry": "A lamp that burns even in a storm. It can guide a boat to safety — once.",
@@ -432,7 +432,7 @@
       "rank": 10,
       "suit": "heart",
       "title": "Admiralty Magistrate",
-      "subtitle": "[JUSTICE]",
+      "subtitle": "[JUSTICE] [LAW]",
       "description": "Rules fast, travels faster; justice in a hurry.",
       "flavor": "She once sentenced a man to the galleys and boarded the ship before he did.",
       "what_they_carry": "A gavel that can open any lock — once per day.",
@@ -442,7 +442,7 @@
       "rank": 11,
       "suit": "heart",
       "title": "Dredging Foreman",
-      "subtitle": "[LABOR]",
+      "subtitle": "[LABOR] [TRADE]",
       "description": "Channel follows their purse; water reshaped.",
       "flavor": "His crew are ex-criminals; he pays them in salt pork and absolution.",
       "what_they_carry": "A dredge that can carve a new channel — but the crew will demand a bonus.",
@@ -452,7 +452,7 @@
       "rank": 12,
       "suit": "heart",
       "title": "Mirror-Keeper",
-      "subtitle": "[AUTHORITY]",
+      "subtitle": "[AUTHORITY] [TABOO]",
       "description": "Commodore's confidante; places beacons that bind.",
       "flavor": "Their faces are never seen — only reflected. Some say they have none.",
       "what_they_carry": "A beacon that can be moved — once per season. The lane will follow.",
@@ -462,7 +462,7 @@
       "rank": 13,
       "suit": "heart",
       "title": "Kahfagian Commodore",
-      "subtitle": "[AUTHORITY]",
+      "subtitle": "[AUTHORITY] [KNOWLEDGE]",
       "description": "Off the books but on the water; shadow admiral.",
       "flavor": "His flagship is a fishing smack. Its nets drag up letters of marque.",
       "what_they_carry": "A fleet that does not exist. He can conjure three ships — once.",
@@ -472,7 +472,7 @@
       "rank": 14,
       "suit": "heart",
       "title": "Admiral of Red Shoal",
-      "subtitle": "[LEGEND]",
+      "subtitle": "[LEGEND] [TRADE]",
       "description": "Offers wine, figs — once. Price in stories.",
       "flavor": "She pours the first cup herself. If she pours a second, you've already agreed.",
       "what_they_carry": "A cup that never empties. It can seal a promise — once.",
@@ -484,7 +484,7 @@
       "rank": 2,
       "suit": "club",
       "title": "Early Tide",
-      "subtitle": "[WEATHER]",
+      "subtitle": "[WEATHER] [DANGER]",
       "description": "Turns two bells early; grounding risk rises like the sea.",
       "flavor": "Someone bribed the tide-clerk — or the moon is angry.",
       "mechanical_hook": "Navigation rolls are Desperate. On a Miss, you run aground — lose 1 Supply."
@@ -493,7 +493,7 @@
       "rank": 3,
       "suit": "club",
       "title": "Smothering Fog",
-      "subtitle": "[WEATHER]",
+      "subtitle": "[WEATHER] [TRAVEL]",
       "description": "Sound travels, sight does not; navigation by ear alone.",
       "flavor": "You hear oars. Then you don't. Then they're behind you.",
       "mechanical_hook": "All rolls in the fog suffer –1 die. The GM gains 1 SB per scene."
@@ -502,7 +502,7 @@
       "rank": 4,
       "suit": "club",
       "title": "Boom Slam",
-      "subtitle": "[AUTHORITY]",
+      "subtitle": "[AUTHORITY] [TRADE]",
       "description": "Harbor chain slams shut; wrong side means delay or danger.",
       "flavor": "The chain's links are inscribed with names of those who defied the Admiralty. Each one rattles differently.",
       "mechanical_hook": "You are locked out. Pay 1 Boon to reopen the chain, or find another way."
@@ -511,7 +511,7 @@
       "rank": 5,
       "suit": "club",
       "title": "Light Shift",
-      "subtitle": "[TRAVEL]",
+      "subtitle": "[TRAVEL] [DANGER]",
       "description": "Beacons change mid-approach; your lane just moved.",
       "flavor": "Someone paid the Lantern Clerk. Find out who — or drift into the reefs.",
       "mechanical_hook": "Navigation DV +2. On failure, you are lost — start a **Lost in the Channels [4]** timer."
@@ -520,7 +520,7 @@
       "rank": 6,
       "suit": "club",
       "title": "Pilot Strike",
-      "subtitle": "[LABOR]",
+      "subtitle": "[LABOR] [TRAVEL]",
       "description": "No escorts available; wages unpaid, risk assumed.",
       "flavor": "The pilots sit in their guildhall, drinking tea, watching ships founder.",
       "mechanical_hook": "You must navigate alone. All navigation rolls are Desperate until the strike ends."
@@ -529,7 +529,7 @@
       "rank": 7,
       "suit": "club",
       "title": "Customs Inspection",
-      "subtitle": "[AUTHORITY]",
+      "subtitle": "[AUTHORITY] [TRADE]",
       "description": "Ladder audits cargo and crew; delays bite deep.",
       "flavor": "The inspector has a silver tooth. He smiles when he sees a manifest.",
       "mechanical_hook": "Pay 1 Supply or 1 Boon to pass. Refusing starts a **Customs Hunt [4]** timer."
@@ -538,7 +538,7 @@
       "rank": 8,
       "suit": "club",
       "title": "Reef-Runners",
-      "subtitle": "[COMBAT]",
+      "subtitle": "[COMBAT] [DANGER]",
       "description": "Corsair skiffs circle with boarding hooks; steel in the spray.",
       "flavor": "Their leader wears a Mirror-Keeper's badge — stolen or earned, you cannot tell.",
       "mechanical_hook": "Combat scene. Cap 2. If you lose, you are boarded and lose 1 Supply."
@@ -547,7 +547,7 @@
       "rank": 9,
       "suit": "club",
       "title": "Jurisdiction Flip",
-      "subtitle": "[JUSTICE]",
+      "subtitle": "[JUSTICE] [LAW]",
       "description": "Lantern-law shifts; your writ no longer bites.",
       "flavor": "The tide turned. So did the magistrate. Your safe-conduct is now kindling.",
       "mechanical_hook": "Your documents are void. You must find a new patron (1 Boon) or be arrested."
@@ -556,7 +556,7 @@
       "rank": 10,
       "suit": "club",
       "title": "Fire Risk",
-      "subtitle": "[DISASTER]",
+      "subtitle": "[DISASTER] [KNOWLEDGE]",
       "description": "Alchemical cargo aboard; quarantine if anything spills.",
       "flavor": "A single spark and the whole quay becomes a crater. The factor wants you to know this.",
       "mechanical_hook": "All rolls in the vicinity are Desperate. On a Miss, the cargo ignites — lose 2 Supply and take 1 Harm."
@@ -565,7 +565,7 @@
       "rank": 11,
       "suit": "club",
       "title": "Quartermaster Betrayal",
-      "subtitle": "[SOCIAL]",
+      "subtitle": "[SOCIAL] [OATH]",
       "description": "Tide-tables sold to rival; route compromised.",
       "flavor": "The betrayal is written in lemon juice; heat reveals the name.",
       "mechanical_hook": "You are led into a trap. Start a **Pursuit Ladder**."
@@ -574,7 +574,7 @@
       "rank": 12,
       "suit": "club",
       "title": "Yellow Flag",
-      "subtitle": "[DEATH]",
+      "subtitle": "[DEATH] [DANGER]",
       "description": "Port quarantine; deadlines rot on the hook.",
       "flavor": "The flag is dyed with turmeric and something else — something that smells sweet.",
       "mechanical_hook": "You cannot enter the port. Find another way, or wait 1 scene (and lose 1 Supply)."
@@ -583,7 +583,7 @@
       "rank": 13,
       "suit": "club",
       "title": "Fleet Redeploy",
-      "subtitle": "[AUTHORITY]",
+      "subtitle": "[AUTHORITY] [DANGER]",
       "description": "'Safe' corridor becomes parade ground; chaos in formation.",
       "flavor": "Admirals play chess with real ships, and you are a pawn.",
       "mechanical_hook": "Navigation DV +3. On failure, you are boarded by a naval patrol."
@@ -596,15 +596,6 @@
       "description": "Scatters ships and stories alike.",
       "flavor": "This is no natural storm. The water hisses. Something below is waking.",
       "mechanical_hook": "All rolls are Desperate. On a Miss, your ship is damaged — lose 2 Supply and take 1 Harm."
-    },
-    {
-      "rank": 15,
-      "suit": "club",
-      "title": "Web Unravelled",
-      "subtitle": "[POLITICS] [FEAR]",
-      "description": "A Lethai-ar agent is exposed. The oligarchs turn on each other, accusing every rival of being a spider.",
-      "flavor": "Silk threads appear on every doorknob. No one trusts their shadow.",
-      "mechanical_hook": "Tick **Web's Patience +2**. All social rolls suffer –1 die until the crisis passes."
     }
   ],
   "rewards": [
@@ -612,7 +603,7 @@
       "rank": 2,
       "suit": "diamond",
       "title": "Mooring Chit",
-      "subtitle": "[TRAVEL]",
+      "subtitle": "[TRAVEL] [ONCE]",
       "description": "Skip the Mooring Roll once; harbor favors you.",
       "flavor": "The chit is a dried seahorse shell. Keep it away from salt.",
       "curse_cost": "Using the chit ticks **Web's Patience +1** (the Lethai-ar note your privilege)."
@@ -621,7 +612,7 @@
       "rank": 3,
       "suit": "diamond",
       "title": "Pilotage Token",
-      "subtitle": "[TRAVEL]",
+      "subtitle": "[TRAVEL] [ONCE]",
       "description": "One certified escort through a bad channel.",
       "flavor": "The pilot who accepts it must touch your shoulder before speaking.",
       "curse_cost": "The pilot will remember your face. The Lethai-ar will ask them about it."
@@ -630,7 +621,7 @@
       "rank": 4,
       "suit": "diamond",
       "title": "Fee Waiver",
-      "subtitle": "[TRADE]",
+      "subtitle": "[TRADE] [ONCE]",
       "description": "Cargo cleared today; no questions asked.",
       "flavor": "The clerk stamps it twice — once for the crown, once for the Hollow.",
       "curse_cost": "The stamp leaves a faint mark that only Mirror-Keepers can see. They will ask questions later."
@@ -639,7 +630,7 @@
       "rank": 5,
       "suit": "diamond",
       "title": "Safe-Conduct",
-      "subtitle": "[TRAVEL]",
+      "subtitle": "[TRAVEL] [LAW]",
       "description": "Along specific beaconed lane; law walks with you.",
       "flavor": "The commodore's seal is warm. It cools as the exit nears.",
       "curse_cost": "The seal must be renewed every moon. If you miss the renewal, you are flagged as a smuggler."
@@ -648,7 +639,7 @@
       "rank": 6,
       "suit": "diamond",
       "title": "Salvage Rights",
-      "subtitle": "[TRADE]",
+      "subtitle": "[TRADE] [ONCE]",
       "description": "On named quay or reach; flotsam becomes fortune.",
       "flavor": "You must name each piece before touching it. The wrong word forfeits the claim.",
       "curse_cost": "The Admiralty may audit your salvage. If you cannot prove provenance, you lose it all."
@@ -657,7 +648,7 @@
       "rank": 7,
       "suit": "diamond",
       "title": "Warehouse Access",
-      "subtitle": "[TRADE]",
+      "subtitle": "[TRADE] [COMBAT]",
       "description": "Bonded storage; seal prize before rivals sniff.",
       "flavor": "The key is a bronze finger. It fits only one lock — and breaks after use.",
       "curse_cost": "The lock has a second key, held by a Lethai-ar agent. They will visit your cargo."
@@ -666,7 +657,7 @@
       "rank": 8,
       "suit": "diamond",
       "title": "Lantern Code",
-      "subtitle": "[TRAVEL]",
+      "subtitle": "[TRAVEL] [ONCE]",
       "description": "Tonight's signals revealed; navigation advantage.",
       "flavor": "Three quick flashes: safe passage. One long, two short: the Admiralty is watching.",
       "curse_cost": "Using the code marks you as a 'person of interest' to the Mirror-Keepers."
@@ -675,7 +666,7 @@
       "rank": 9,
       "suit": "diamond",
       "title": "Dredging Grant",
-      "subtitle": "[AUTHORITY]",
+      "subtitle": "[AUTHORITY] [OATH]",
       "description": "You decide where next channel runs; reshape the sea.",
       "flavor": "The dredgers are convicts. They work faster if you promise a name in their favor.",
       "curse_cost": "A rival oligarch will challenge your grant. You must defend it in court (Sway+Lore DV 4)."
@@ -684,7 +675,7 @@
       "rank": 10,
       "suit": "diamond",
       "title": "Letter of Marque",
-      "subtitle": "[COMBAT]",
+      "subtitle": "[COMBAT] [ONCE]",
       "description": "Convoy protection for one season; legal blades.",
       "flavor": "The ink is mixed with gunpowder. It smokes slightly when read.",
       "curse_cost": "The Lethai-ar have a copy. They will use it to blackmail you."
@@ -693,7 +684,7 @@
       "rank": 11,
       "suit": "diamond",
       "title": "Admiralty Judgment",
-      "subtitle": "[JUSTICE]",
+      "subtitle": "[JUSTICE] [LAW]",
       "description": "Precedent travels with you; law bends.",
       "flavor": "The case number is burned into a leather tag. Tie it to a belt loop.",
       "curse_cost": "The precedent can be overturned by a higher court. The Lethai-ar control the higher court."
@@ -702,7 +693,7 @@
       "rank": 12,
       "suit": "diamond",
       "title": "Mirror Warrant",
-      "subtitle": "[AUTHORITY]",
+      "subtitle": "[AUTHORITY] [LAW]",
       "description": "Legal right to post a beacon; redraw the map.",
       "flavor": "The Mirror-Keeper's seal, still warm. The channel you mark becomes law — until challenged.",
       "curse_cost": "The Mirror-Keeper who sealed it is a Lethai-ar agent. The channel will serve the Web."
@@ -711,7 +702,7 @@
       "rank": 13,
       "suit": "diamond",
       "title": "Spice Share",
-      "subtitle": "[TRADE]",
+      "subtitle": "[TRADE] [COMBAT]",
       "description": "Stake in Kassamira auction floor; profit in pepper.",
       "flavor": "The share is a peppercorn sealed in wax. Bite it to test authenticity.",
       "curse_cost": "House al-Kassam will demand a cut of your profits (1 Supply per season). Refusal starts a **Trade War [6]**."
@@ -720,7 +711,7 @@
       "rank": 14,
       "suit": "diamond",
       "title": "Lantern License",
-      "subtitle": "[AUTHORITY]",
+      "subtitle": "[AUTHORITY] [ONCE]",
       "description": "Temporary authority to redefine the lane.",
       "flavor": "The harbor master spits when he hands it over. Use it wisely — or not at all.",
       "curse_cost": "The license is valid for one use. The Lethai-ar will attempt to steal it before you can use it."
@@ -1071,5 +1062,21 @@
     "Silk Vigil",
     "Western Reach Rumors"
   ],
-  "_license": "Fate's Edge Copyright – © 2024 - 2026 Nicholas A. Gasper. Used with permission, All rights reserved."
+  "_license": "Fate's Edge Copyright – © 2024 - 2026 Nicholas A. Gasper. Used with permission, All rights reserved.",
+  "bonus_cards": {
+    "complications": [
+      {
+        "rank": 15,
+        "suit": "club",
+        "title": "Web Unravelled",
+        "subtitle": "[POLITICS] [FEAR]",
+        "description": "A Lethai-ar agent is exposed. The oligarchs turn on each other, accusing every rival of being a spider.",
+        "flavor": "Silk threads appear on every doorknob. No one trusts their shadow.",
+        "mechanical_hook": "Tick **Web's Patience +2**. All social rolls suffer –1 die until the crisis passes."
+      }
+    ]
+  },
+  "_notes": {
+    "bonus_cards": "Cards written above Ace rank. They sit outside the standard 13-card draw (2–14); deal one deliberately when the thread it belongs to is live."
+  }
 }

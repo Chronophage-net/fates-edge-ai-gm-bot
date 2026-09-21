@@ -178,7 +178,7 @@
       "rank": 2,
       "suit": "spade",
       "title": "Violet Bazaar",
-      "subtitle": "[TRADE]",
+      "subtitle": "[TRADE] [TRAVEL]",
       "description": "Felt stalls, chalk circles, horse traders and rumor merchants. The Gate's shadow falls here at dusk.",
       "flavor": "The chalk circles are for disputes. Step inside and speak truth—or settle in grass. Blood washes off the chalk, but the stain stays. The Gate watches. It always watches.",
       "mechanical_hook": "Gossip and trade flow freely; a successful Wits+Sway (DV 4) reveals a local rumor or a hidden market deal. At dusk, the Gate's shadow makes all deals binding—breaking one ticks a Grass Mark."
@@ -187,7 +187,7 @@
       "rank": 3,
       "suit": "spade",
       "title": "Bronze Court",
-      "subtitle": "[JUSTICE]",
+      "subtitle": "[JUSTICE] [TABOO]",
       "description": "Tariff court under a canvas dome; scales of bronze and iron. The Gate's shadow does not reach here—the clerks built the tent to keep it out.",
       "flavor": "The scales were blessed by a dying Sky-Speaker. They tip even when the wind is still. The clerk has never smiled. She has seen what happens when the Gate takes an interest.",
       "mechanical_hook": "To settle a dispute, you must present evidence (a token or witness). Roll Presence+Sway (DV 4); on success, the scale tips in your favor. On a miss, you owe a Grass Mark."
@@ -196,7 +196,7 @@
       "rank": 4,
       "suit": "spade",
       "title": "Oasis Well",
-      "subtitle": "[SURVIVAL]",
+      "subtitle": "[SURVIVAL] [TRAVEL]",
       "description": "Stone-rimmed pool, token-keeper with a leather bag of water rights. The water is said to come from the Gate's shadow.",
       "flavor": "Each token is a carved pebble. Lose it, and your herd drinks dust. The keeper's knife is sharper than his tongue. He has three fingers on his left hand—he lost the others defending the well from a demon.",
       "mechanical_hook": "To draw water, present a token. Without one, you must bargain or steal. A successful Wits+Stealth test (DV 4) can acquire a token. Drinking water without a token ticks the Violet Gate's attention."
@@ -205,7 +205,7 @@
       "rank": 5,
       "suit": "spade",
       "title": "Steppe Ranger Camp",
-      "subtitle": "[WILD]",
+      "subtitle": "[WILD] [TABOO]",
       "description": "Tent line on the eastern edge; trackers, scouts, feud mediators. The Gate's shadow does not reach here at dawn.",
       "flavor": "The rangers wear wolf tails. They do not smile—they wait. Their campfire is never allowed to go out. They are the only ones who hunt the things that come from the Gate at night.",
       "mechanical_hook": "Rangers can provide a guide or tracking service. Offering 1 Supply or a favor secures their help. They will not enter the Gate's shadow after dusk."
@@ -214,7 +214,7 @@
       "rank": 6,
       "suit": "spade",
       "title": "Caravan Rings",
-      "subtitle": "[TRAVEL]",
+      "subtitle": "[TRAVEL] [OATH]",
       "description": "Concentric circles of wagon shelters; fires lit inward, watch posts on ox carts. The outer ring is where the desperate sleep.",
       "flavor": "The inner ring is for sworn allies. Outsiders sleep in the second ring, uneasy—and a knife in the boot. The outermost ring is for those who have nowhere else to go. They are the Gate's preferred prey.",
       "mechanical_hook": "Rest in the outer ring; a successful Resolve test (DV 4) avoids a night ambush. Inner ring grants safe rest. The outermost ring is Desperate; on a miss, something visits your camp."
@@ -223,7 +223,7 @@
       "rank": 7,
       "suit": "spade",
       "title": "Sky-Speaker's Cairn",
-      "subtitle": "[RITUAL]",
+      "subtitle": "[RITUAL] [TRAVEL]",
       "description": "Stone heap atop a low hill; wind-knot ropes and bones. The Gate's shadow does not reach this hill.",
       "flavor": "The shaman leaves offerings of horsehair. The wind carries his prayers to Kuva—and sometimes his curses. He is the only one who claims to know what the Gate wants.",
       "mechanical_hook": "Offer a Boon to gain a weather omen (automatic success on next navigation check in steppe). Also, the Sky-Speaker may warn you of the Gate's attention."
@@ -232,7 +232,7 @@
       "rank": 8,
       "suit": "spade",
       "title": "Dust Market",
-      "subtitle": "[UNDERWORLD]",
+      "subtitle": "[UNDERWORLD] [TRAVEL]",
       "description": "No-questions auction at the city's edge; stolen goods, cursed relics, bad memories. The Gate's shadow is longest here.",
       "flavor": "The auctioneer wears a hooded mask. No one knows his face. No one has asked twice. He is said to be the Gate's favorite child.",
       "mechanical_hook": "You can buy any item (GM's discretion) for 1-3 Boon, but every purchase may come with a complication (roll on a minor complication table). Items bought here may be cursed—roll a die; on a 1, the item is tainted by the Gate."
@@ -241,7 +241,7 @@
       "rank": 9,
       "suit": "spade",
       "title": "Silver Stall Stable",
-      "subtitle": "[TRAVEL]",
+      "subtitle": "[TRAVEL] [FEAR]",
       "description": "Remount station; horses for hire, gossip for free, blood for more. The stable was built with stone from the Gate's foundation.",
       "flavor": "The stable master has three fingers on his left hand. He lost the others in a bet over a mare. He won the bet. The horses here are the only ones that will enter the Gate's shadow willingly.",
       "mechanical_hook": "Hire a horse for 1 Supply. Stable master offers a rumor for free. Horses from the Silver Stall are immune to the Gate's fear effect."
@@ -250,7 +250,7 @@
       "rank": 10,
       "suit": "spade",
       "title": "Grass Ring",
-      "subtitle": "[COMBAT]",
+      "subtitle": "[COMBAT] [DEATH]",
       "description": "Ritual dueling ground; mourners and bookies share benches. The grass here grows violet at the root.",
       "flavor": "The grass grows back faster after a duel. The dead fertilize the peace. The Gate's shadow falls here at twilight—duels fought in the shadow are to the death.",
       "mechanical_hook": "Settle disputes here via duel (see Quick Duels). Winners gain social standing. Duels at dusk in the Gate's shadow are Desperate—losers die."
@@ -259,7 +259,7 @@
       "rank": 11,
       "suit": "spade",
       "title": "Foreign Quarter",
-      "subtitle": "[POLITICS]",
+      "subtitle": "[POLITICS] [TRADE]",
       "description": "Ecktorian, Vhasian, and Viterran merchants in permanent felt mansions. They built their walls facing away from the Gate.",
       "flavor": "The Ecktorian envoy winters here. He has not left in five years. He has a name on a list in three countries—but Midh Ahkaz does not extradite. He is afraid of the Gate. He does not say why.",
       "mechanical_hook": "Access to foreign goods and intelligence. Approach requires a letter of introduction or a bribe of 2 Supply. The envoy will trade secrets about the Gate—for a price."
@@ -268,7 +268,7 @@
       "rank": 12,
       "suit": "spade",
       "title": "Khatun's Ring",
-      "subtitle": "[AUTHORITY]",
+      "subtitle": "[AUTHORITY] [TRAVEL]",
       "description": "Largest tent, carpeted with woven battle scenes; the old chieftain's seat. The tent's entrance faces away from the Gate.",
       "flavor": "The carpet is made of enemy cloaks. Each sash is a surrendered banner. The air smells of smoke, old blood, and the fear of petitioners. The Khatun has not left her tent in a month.",
       "mechanical_hook": "To gain an audience, you must offer a gift or a petition. Presence+Sway (DV 5) to sway the Khatun. She will not discuss the Gate—she will only warn you away from it."
@@ -277,7 +277,7 @@
       "rank": 13,
       "suit": "spade",
       "title": "Under-Arcades",
-      "subtitle": "[STEALTH]",
+      "subtitle": "[STEALTH] [TABOO]",
       "description": "Earthen tunnels below the bazaar; root-walled, bone-dusted. The tunnels are said to lead to the Gate's foundation.",
       "flavor": "The walls are packed with bone dust and old burrows. The dead whisper route tips—for a price. The trade is never silver. The tunnels are the Cult's territory; the Shedder's children guard them.",
       "mechanical_hook": "Gain a stealthy route through the bazaar, but test Resolve (DV 4) to avoid becoming lost or haunted. On a miss, gain a Contamination Token from the Cult.",
@@ -287,7 +287,7 @@
       "rank": 14,
       "suit": "spade",
       "title": "Iron Well",
-      "subtitle": "[DEATH]",
+      "subtitle": "[DEATH] [TABOO]",
       "description": "Ancient Aeler shaft, now used for vengeance contracts and whispered names. The well is said to connect to the Gate's foundation.",
       "flavor": "The water tastes of rust and memory. Those who drink never lie again—or never speak. The keeper writes the names of the condemned in ash. The ash floats. The Gate drinks the ash.",
       "mechanical_hook": "You may offer a name in ash to the Iron Well Keeper; he will take vengeance for you (cost: 3 Supply or a memory). The Gate will remember your name.",
@@ -308,7 +308,7 @@
       "rank": 2,
       "suit": "heart",
       "title": "Horse-Braid Apprentice",
-      "subtitle": "[TRADE]",
+      "subtitle": "[TRADE] [OATH]",
       "description": "Young Ykrul with a head full of trade routes and a knot diary. She was born under the Gate's shadow.",
       "flavor": "She ties a new braid for every paying passenger. Her hair is a map of promises—and grudges. She has a scar on her palm from touching the Gate's foundation.",
       "what_they_carry": "Knows the best caravans and safest routes; will share for 1 Supply.",
@@ -318,7 +318,7 @@
       "rank": 3,
       "suit": "heart",
       "title": "Ostrikari Arms-Master",
-      "subtitle": "[COMBAT]",
+      "subtitle": "[COMBAT] [TABOO]",
       "description": "Selling short bows and longer grudges; fights for coin. His shop is built with stone from the Gate.",
       "flavor": "He names each bow after a dead rival. The bows never miss. His left ear is missing—a score he settled in flesh. He has a bow named 'Gate-Killer.' It has never been fired.",
       "what_they_carry": "Sells quality bows (DV +1 on ranged rolls) for 2 Supply.",
@@ -328,7 +328,7 @@
       "rank": 4,
       "suit": "heart",
       "title": "Bronze Court Clerk",
-      "subtitle": "[JUSTICE]",
+      "subtitle": "[JUSTICE] [TABOO]",
       "description": "Ink-stained, patient, scales in her eyes; never lies, never forgives. She knows the Gate's true name.",
       "flavor": "She records weights in blood. A single drop seals a verdict. She has never been wrong—or so she says. Her ledger's ninth column is blank. She knows what will fill it.",
       "what_they_carry": "She can expedite a court ruling for a bribe of 1 Boon.",
@@ -338,7 +338,7 @@
       "rank": 5,
       "suit": "heart",
       "title": "Vilikari Factor",
-      "subtitle": "[TRADE]",
+      "subtitle": "[TRADE] [TABOO]",
       "description": "Braided, oiled, quick with a smile and a second set of weights. He has never seen the Gate. He refuses to.",
       "flavor": "His caravan has three names. Only the real one buys safe passage. The other two are for the tax man and the grave. He pays the cult to keep the Gate away from him.",
       "what_they_carry": "Offers a discount on goods if you help smuggle a package (no questions).",
@@ -348,7 +348,7 @@
       "rank": 6,
       "suit": "heart",
       "title": "Steppe Ranger",
-      "subtitle": "[WILD]",
+      "subtitle": "[WILD] [TABOO]",
       "description": "Tracker with a wolf-tail cloak and a blood-oath to the Sky-Speaker. He has hunted things that came from the Gate.",
       "flavor": "He never draws his bow unless watched. Hunger is his real weapon. His arrows are fletched with crow feathers. He has seen the Gate move.",
       "what_they_carry": "Can track anyone across the steppe for 1 Supply.",
@@ -358,7 +358,7 @@
       "rank": 7,
       "suit": "heart",
       "title": "Tokan (Ykrul Scout)",
-      "subtitle": "[STEALTH]",
+      "subtitle": "[STEALTH] [DEATH]",
       "description": "Mute, sharp-eyed, always smelling the wind; her ears miss nothing. She was found as a child near the Gate.",
       "flavor": "She signs with her knuckles. Three taps is 'danger.' One tap is 'run.' No taps means you are already dead. She has no memory of before the Gate.",
       "what_they_carry": "She will warn you of hidden threats for 1 Supply.",
@@ -368,7 +368,7 @@
       "rank": 8,
       "suit": "heart",
       "title": "Ecktoria Emissary",
-      "subtitle": "[POLITICS]",
+      "subtitle": "[POLITICS] [TABOO]",
       "description": "Proud, wax-sealed, fuming at the 'primitive' customs. He has never seen the Gate. He has nightmares about it.",
       "flavor": "He carries a copy of Imperial Code that he has never opened. The flies love his ink. The locals love his purse. He has been trying to leave for three years. The Gate will not let him.",
       "what_they_carry": "Offers a Census Waiver (Diamond) for 2 Supply.",
@@ -378,7 +378,7 @@
       "rank": 9,
       "suit": "heart",
       "title": "Sky-Speaker's Shadow",
-      "subtitle": "[RITUAL]",
+      "subtitle": "[RITUAL] [TRAVEL]",
       "description": "Elder's quiet apprentice; listens more than the wind. She was raised in the Gate's shadow.",
       "flavor": "She can name every clan's sky-omen. She cannot name her own origin. Her eyes are the color of ash. She knows what the Gate wants.",
       "what_they_carry": "She offers a free omen reading if you share a secret.",
@@ -388,7 +388,7 @@
       "rank": 10,
       "suit": "heart",
       "title": "Knot-Keeper (Tulkani)",
-      "subtitle": "[SOCIAL]",
+      "subtitle": "[SOCIAL] [OATH]",
       "description": "Counts caravan promises with a rope of nine strands. She came to Midh Ahkaz to escape the Curse.",
       "flavor": "Each knot is a promise. Untie one and the bond dissolves. Cut one and the one who swore dies in his sleep. No one knows how. She does not speak of the Gate.",
       "what_they_carry": "Can bind a promise between two parties for 1 Supply.",
@@ -398,7 +398,7 @@
       "rank": 11,
       "suit": "heart",
       "title": "Dust Market Auctioneer",
-      "subtitle": "[UNDERWORLD]",
+      "subtitle": "[UNDERWORLD] [TRADE]",
       "description": "Hooded, genderless voice; knows the weight of every sin. They are the Gate's voice in the market.",
       "flavor": "The hammer is a thigh bone. The block is a skull altar from the Direwood. The skull's jaw moves when the price is right. The auctioneer has not left the Dust Market in a decade.",
       "what_they_carry": "Can procure any item for a price (3 Boon).",
@@ -408,7 +408,7 @@
       "rank": 12,
       "suit": "heart",
       "title": "Khatun of the Ring",
-      "subtitle": "[AUTHORITY]",
+      "subtitle": "[AUTHORITY] [DEATH]",
       "description": "Gray-haired, one-eyed, still deadly at sixty; speaks for seven clans. She is dying. The Gate is waiting.",
       "flavor": "She lost her eye to a Linn raider. She killed him with his own hook. She keeps the hook on her belt. She has been coughing blood for a year. She will not see the next Grass Moon.",
       "what_they_carry": "Can grant a Grass Right (Diamond) for a significant service.",
@@ -418,7 +418,7 @@
       "rank": 13,
       "suit": "heart",
       "title": "Kuva's Voice (Wandering Priest)",
-      "subtitle": "[RITUAL]",
+      "subtitle": "[RITUAL] [TABOO]",
       "description": "Weathered, ash-marked, offers omen readings for grass. He is the only one who claims to have survived the Gate.",
       "flavor": "He prays to the sky by throwing bones. The bones never lie—they just mislead. The ash on his forehead is from a fire that hasn't been lit yet. He wears a scar on his chest—the Gate's mark.",
       "what_they_carry": "Reads omens for 1 Supply; grants a +1 die to next navigation roll.",
@@ -428,7 +428,7 @@
       "rank": 14,
       "suit": "heart",
       "title": "Iron Well Keeper",
-      "subtitle": "[DEATH]",
+      "subtitle": "[DEATH] [LAW]",
       "description": "Mute, scarred, accepts names written in ash. He is the Gate's jailer.",
       "flavor": "A drink from the well costs a memory. A death costs a fortune. His mark is carved on his own arm—the names move. He has not spoken in twenty years. The Gate speaks for him.",
       "what_they_carry": "He will take a name in ash and exact vengeance (cost: 3 Supply or a memory).",
@@ -581,34 +581,34 @@
       "subtitle": "[TRAVEL] [SOCIAL]",
       "description": "One season of grazing on a named meadow; herders pay you tribute.",
       "flavor": "The right is a branded stick. Burn it to end the lease—or renew. The brand is a wolf's head. It howls when the meadow is overgrazed. The brand came from the Gate.",
-      "cost": "If you abuse the right, you lose standing with the Oasis Compact (-1 Position on all trade rolls)."
+      "curse_cost": "If you abuse the right, you lose standing with the Oasis Compact (-1 Position on all trade rolls)."
     },
     {
       "rank": 3,
       "suit": "diamond",
       "title": "Oath-Bead",
-      "subtitle": "[JUSTICE]",
+      "subtitle": "[JUSTICE] [TABOO]",
       "description": "A single knot of horsehair; compels a Kon'reh master to arbitrate your dispute.",
       "flavor": "The bead grows warm when the master speaks truth. Cold when he lies. He has never felt it grow cold. The bead was blessed by the Gate.",
-      "cost": "Using it binds you to accept the master's ruling. Breaking it incurs a Blood-Claim Feud."
+      "curse_cost": "Using it binds you to accept the master's ruling. Breaking it incurs a Blood-Claim Feud."
     },
     {
       "rank": 4,
       "suit": "diamond",
       "title": "Water Share",
-      "subtitle": "[SURVIVAL]",
+      "subtitle": "[SURVIVAL] [TRADE]",
       "description": "Priority access to a well during drought; token from the Oasis Compact.",
       "flavor": "The token is a polished pebble. Drop it in the well to claim your draw. The well will remember your face. The Gate will remember your thirst.",
-      "cost": "If you lose the token, you must pay 2 Supply to replace it."
+      "curse_cost": "If you lose the token, you must pay 2 Supply to replace it."
     },
     {
       "rank": 5,
       "suit": "diamond",
       "title": "Steppe Ranger Favor",
-      "subtitle": "[WILD]",
+      "subtitle": "[WILD] [TABOO]",
       "description": "One dangerous tracking job resolved off-screen.",
       "flavor": "The ranger marks your name on his tent pole. He never forgets a favor. He also never forgets a slight. He has seen the Gate.",
-      "cost": "If you refuse a future request, the favor becomes a Blood-Claim."
+      "curse_cost": "If you refuse a future request, the favor becomes a Blood-Claim."
     },
     {
       "rank": 6,
@@ -617,43 +617,43 @@
       "subtitle": "[TRADE] [STEALTH]",
       "description": "No-questions cargo space on three caravans; smuggle as you will.",
       "flavor": "The voucher is a strip of oiled leather. The factor's scent guides the mules. The mules are smarter than the factor. The factor has never seen the Gate.",
-      "cost": "Each use may attract attention from the Bronze Court (risk of inspection)."
+      "curse_cost": "Each use may attract attention from the Bronze Court (risk of inspection)."
     },
     {
       "rank": 7,
       "suit": "diamond",
       "title": "Census Waiver",
-      "subtitle": "[AUTHORITY]",
+      "subtitle": "[AUTHORITY] [TRAVEL]",
       "description": "Ecktorian patrol leaves you alone for one crossing; paper shield.",
       "flavor": "The waiver is stamped with a bear. The bear's eyes follow you. The stamp is a lie. The waiver still works. The bear is the Gate's symbol.",
-      "cost": "Using it may draw suspicion from the actual Ecktorian authorities; a Sway test may be needed to maintain the ruse."
+      "curse_cost": "Using it may draw suspicion from the actual Ecktorian authorities; a Sway test may be needed to maintain the ruse."
     },
     {
       "rank": 8,
       "suit": "diamond",
       "title": "Khatun's Whistle",
-      "subtitle": "[COMBAT]",
+      "subtitle": "[COMBAT] [TRAVEL]",
       "description": "Summon a small warband once (Cap 3) for a single scene.",
       "flavor": "The whistle is a hollow horse tooth. Blow it and the grass shivers. The riders come. They expect to be repaid in stories. The stories are the Gate's due.",
-      "cost": "After use, you owe the Khatun a tale of valor; if it's not impressive, you lose standing."
+      "curse_cost": "After use, you owe the Khatun a tale of valor; if it's not impressive, you lose standing."
     },
     {
       "rank": 9,
       "suit": "diamond",
       "title": "Sky-Speaker's Omen",
-      "subtitle": "[WEATHER]",
+      "subtitle": "[WEATHER] [TRAVEL]",
       "description": "One weather forecast that cannot fail; plan your escape.",
       "flavor": "The omen is a bone thrown into fire. Read the cracks—carefully. The fire will answer. It will also ask. The fire is the Gate's breath.",
-      "cost": "The fire demands a small offering (1 Supply) each time you consult it."
+      "curse_cost": "The fire demands a small offering (1 Supply) each time you consult it."
     },
     {
       "rank": 10,
       "suit": "diamond",
       "title": "Silver Stall Chit",
-      "subtitle": "[TRAVEL]",
+      "subtitle": "[TRAVEL] [TABOO]",
       "description": "One free remount exchange; never be horseless.",
       "flavor": "The chit is a brass hoof. Present it and the stable master nods once. The horse will be fast. The horse may also be cursed. The stable master has seen the Gate.",
-      "cost": "If the horse is cursed, you may suffer a minor hex (GM's choice)."
+      "curse_cost": "If the horse is cursed, you may suffer a minor hex (GM's choice)."
     },
     {
       "rank": 11,
@@ -662,16 +662,16 @@
       "subtitle": "[WEIGHT] [SOCIAL]",
       "description": "A written promise from a rival, witnessed by three camp elders.",
       "flavor": "The mark is burned into a leather strip. Wash it and the vow dissolves. Burn it and the rival dies in his sleep. No one knows why. The Gate knows.",
-      "cost": "Using it for blackmail may start a Blood-Claim Feud."
+      "curse_cost": "Using it for blackmail may start a Blood-Claim Feud."
     },
     {
       "rank": 12,
       "suit": "diamond",
       "title": "Dust Market Share",
-      "subtitle": "[TRADE]",
+      "subtitle": "[TRADE] [TRAVEL]",
       "description": "A portion of the auctioneer's commission for a season; wealth in sin.",
       "flavor": "The share is paid in mismatched coins. Spend them fast before they curse you. The auctioneer's mask has a new scratch every week. The mask is the Gate.",
-      "cost": "The coins are cursed; any major purchase with them may attract the auctioneer's attention."
+      "curse_cost": "The coins are cursed; any major purchase with them may attract the auctioneer's attention."
     },
     {
       "rank": 13,
@@ -680,7 +680,7 @@
       "subtitle": "[DEATH] [WEIGHT]",
       "description": "A criminal clan owes you a life; they will kill once for you—or die trying.",
       "flavor": "The bond is a braid of enemy hair. Cut it to call the blood. The clan's matriarch will come. She will ask whose. She has seen the Gate.",
-      "cost": "If you call it, you owe the clan a life in return; they will remember."
+      "curse_cost": "If you call it, you owe the clan a life in return; they will remember."
     },
     {
       "rank": 14,
@@ -689,7 +689,7 @@
       "subtitle": "[JUSTICE] [AUTHORITY]",
       "description": "Casting vote on any water right dispute. Once.",
       "flavor": "The seal is a bronze well with a snake curled at the bottom. Turn it and the water booms. The snake will bite if you turn it back. The snake is the Gate.",
-      "cost": "After use, the seal is void and the snake may seek revenge."
+      "curse_cost": "After use, the seal is void and the snake may seek revenge."
     },
     {
       "rank": "S",
@@ -697,7 +697,8 @@
       "title": "Cup of Renewal (Cult Favor)",
       "subtitle": "[MAGIC] [DANGER]",
       "description": "A single sip from the Shedder's cup. You may reroll any failed Body or Spirit roll once, but gain a permanent snake-scale mark on your palm. The mark will itch when the cult calls.",
-      "cost": "The mark allows the cult to track you; you may be called upon for a favor at any time. Refusal costs 1 Corruption."
+      "curse_cost": "The mark allows the cult to track you; you may be called upon for a favor at any time. Refusal costs 1 Corruption.",
+      "flavor": "The mark comes up under the skin over about nine days, scale by scale, and does not hurt. Shedders show theirs at the Pit without being asked. Everyone else keeps a glove, and the glove is how the cult knows who is still deciding."
     }
   ],
   "quick_use_notes": {

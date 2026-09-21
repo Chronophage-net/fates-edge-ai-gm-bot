@@ -283,6 +283,78 @@
       "description": "Red-lacquered tablets record every name, every shame. The tablets are redacted in invisible ink.",
       "flavor": "The truth is underneath. The Vigil has the reagent. The reagent is made from the tears of the last censor who told the truth. He is still crying.",
       "mechanical_hook": "Searching the hall requires Wits+Lore DV 5. On success, you find a name that can be used as leverage. On failure, the Vigil notes your interest — start a **Vigil Interest [4]** timer."
+    },
+    {
+      "rank": 7,
+      "suit": "spade",
+      "title": "Coin-House Floor",
+      "subtitle": "[FINANCE] [MEMORY]",
+      "description": "Marble cracked with soot lines, votive candles guttering beside melted icons, and the loudest room in the city.",
+      "flavor": "Contracts signed on this floor forget a clause. Not a random one: the clause that would have protected the weaker party. The factors know, and price it in, and call the discount 'the draught'.",
+      "mechanical_hook": "Wits+Lore (DV 4) to read which clause a contract has already forgotten before you sign it. On a Miss you sign anyway and the GM gains 1 SB to spend the day it matters."
+    },
+    {
+      "rank": 8,
+      "suit": "spade",
+      "title": "The Arena (Statue Gallery)",
+      "subtitle": "[LEGEND] [FEAR]",
+      "description": "Tiers of imperial statuary above a sand floor nobody has fought on in ninety years. The statues have been whispering.",
+      "flavor": "They are whispering names. Attendants who have listened longest agree on two things: the names are of people still alive, and the list is alphabetical, and it has reached the letter that begins the Lame King's.",
+      "mechanical_hook": "Spend a scene listening (Spirit+Insight DV 4) to catch one name. Whoever's name you hear learns that you heard it, by a route nobody has ever traced. Tick **Vigil Interest** +1."
+    },
+    {
+      "rank": 9,
+      "suit": "spade",
+      "title": "The Amber Palace",
+      "subtitle": "[ROYALTY] [CORRUPTION]",
+      "description": "The patrician quarter, walled from the inside, where the Unburdened have not answered a summons in a month.",
+      "flavor": "The mirrors in the long gallery no longer blink when their owners do. Nobody has commented on this within the walls, which is itself the most alarming report the Vigil has had out of the place in a decade.",
+      "mechanical_hook": "Getting in is Presence+Sway (DV 5) with an invitation or Finesse+Stealth (DV 6) without. Inside, every social roll gains +1 die and every Resolve test to leave when you meant to is Desperate."
+    },
+    {
+      "rank": 10,
+      "suit": "spade",
+      "title": "The Redacted Archive",
+      "subtitle": "[KNOWLEDGE] [SECRET]",
+      "description": "Cellar stacks beneath the Censor's Hall where struck precedent is kept rather than destroyed, because destroying it would be a decision.",
+      "flavor": "The Vigil redacts by pasting over. Hold a redacted tablet to a candle and the older law shows through, and both readings are then true, and a court will accept whichever the Vigil accepted last.",
+      "mechanical_hook": "Wits+Lore (DV 5) to recover a struck precedent. Using it in court cites at eight; citing the ninth voids everything and the laughter starts."
+    },
+    {
+      "rank": 11,
+      "suit": "spade",
+      "title": "The Basilica of the Lame King",
+      "subtitle": "[FAITH] [RUIN]",
+      "description": "A burning basilica that has been burning for eleven days without being consumed, and which the Everflame has declared a sign.",
+      "flavor": "The fire is warm, orderly and will not spread. Three separate orders have claimed it and each claim has made the flame brighter, which all three have read as endorsement. Nobody has asked what happens when the claims stop.",
+      "mechanical_hook": "Entering (Endurance DV 4) is survivable; what is inside is a congregation that has not left in eleven days and does not appear hungry. Tick **Everflame Orthodoxy** +1 for any PC who takes communion."
+    },
+    {
+      "rank": 12,
+      "suit": "spade",
+      "title": "The Unburdened Gardens",
+      "subtitle": "[SOCIAL] [CURSE]",
+      "description": "Terraced gardens behind the Amber Palace where the patricians hold the season's only parties that matter.",
+      "flavor": "Weight is the local obscenity. Guests do not carry, do not queue, do not grieve out loud, and do not say the word debt. A guest who forgets and says it is not thrown out. They are simply not invited again, and then not remembered.",
+      "mechanical_hook": "Presence+Sway (DV 5) to leave the gardens with an obligation from a patrician instead of to one. A Miss costs you a memory the table has previously established."
+    },
+    {
+      "rank": 13,
+      "suit": "spade",
+      "title": "The Ash Quarter",
+      "subtitle": "[RUIN] [COMMUNITY]",
+      "description": "Last year's fashionable district, reclassified, and the people who did not move out when the mortgages did.",
+      "flavor": "The reclassification was legal and was signed and was correct. The Torchbearer children know every shortcut because the shortcuts are their front doors. Ash lines every step here and the wind brings more from somewhere uphill.",
+      "mechanical_hook": "Any social roll with an Ash Quarter local gains +1 die if you have paid for something at full price in their hearing. Vigil informers are thick here; tick **Vigil Interest** +1 for any open enquiry."
+    },
+    {
+      "rank": 14,
+      "suit": "spade",
+      "title": "The Ninth Citation",
+      "subtitle": "[TABOO] [LAW]",
+      "description": "Not a place. A moment in any Ecktorian court, reachable from anywhere, entered on purpose only by the desperate and the Vigil.",
+      "flavor": "Cite eight precedents and settle and you are a lawyer. Cite the ninth and every precedent before it voids, including the ones your opponent relied on, and the marble laughs, and your case is never heard again — but neither is theirs.",
+      "mechanical_hook": "Declare it and the scene changes: all standing claims in the matter are void, every faction must re-open from nothing, and the GM gains 3 SB. Any PC who spoke it may not be a party to an Ecktorian suit again."
     }
   ],
   "people_and_factions": [
@@ -316,6 +388,106 @@
       "flavor": "His shadow has two heads — one for each faction he has betrayed. He does not see the third head. The third head is his own, from a timeline where he kept his oath. It is weeping.",
       "what_they_carry": "He carries a green lantern that can reveal the truth of a single statement (once per scene). The truth always costs a memory.",
       "what_they_ask": "A secret about the Amber Palace. He will trade his lantern's light for it."
+    },
+    {
+      "rank": 5,
+      "suit": "heart",
+      "title": "Coin-House Factor",
+      "subtitle": "[FINANCE] [DECEPTION]",
+      "description": "Smoke-stained fingers, a folded note, and rates that are always exactly fair.",
+      "flavor": "He has never cheated anybody and has never once been on the losing side of a contract, and he has stopped finding that odd. He is one of Maelstraeus's, and does not know the name, and would be relieved to learn there was one.",
+      "what_they_carry": "A rate nobody else can get, a berth, and the name of whoever is short this month.",
+      "what_they_ask": "One clause of your choosing, struck from a document he has not seen. He will not say which document."
+    },
+    {
+      "rank": 6,
+      "suit": "heart",
+      "title": "Vigil Auditor",
+      "subtitle": "[AUTHORITY] [MEMORY]",
+      "description": "Grey coat, no insignia, a wax tablet, and the institutional patience of something already dead.",
+      "flavor": "The Vigil was the empire's secret police and is now a fractured ghost of one, which makes it worse rather than better: three of its fragments do not know the others exist and all three are auditing you.",
+      "what_they_carry": "Protection from the other two fragments, and a redaction on your behalf.",
+      "what_they_ask": "An accurate account of a thing you did, in writing, in your own hand."
+    },
+    {
+      "rank": 7,
+      "suit": "heart",
+      "title": "Unburdened Patrician",
+      "subtitle": "[ROYALTY] [SOCIAL]",
+      "description": "Laurel-pinned, beautifully bored, wine that costs a village's harvest, and a reflection that is slightly late.",
+      "flavor": "She married for influence and divorced for scandal and can tell you the exact date of both without feeling either. She is not cruel. She has forgotten what weight feels like and would genuinely like to be reminded, once, briefly, at a safe distance.",
+      "what_they_carry": "An introduction that opens the Amber Palace.",
+      "what_they_ask": "A grief of yours, described out loud, at a party."
+    },
+    {
+      "rank": 8,
+      "suit": "heart",
+      "title": "Everflame Confessor",
+      "subtitle": "[FAITH] [JUDGMENT]",
+      "description": "Green-lit lantern, ash thumbprint, and a doctrine that has hardened since the Basilica caught.",
+      "flavor": "He believes the burning basilica endorses his fragment of the orthodoxy, and the belief is making him generous and then frightening in about that order. He is the only cleric in the city who still does free absolutions, and he does them at speed.",
+      "what_they_carry": "Absolution that a magistrate will honour, and the Everflame's protection in a mob.",
+      "what_they_ask": "Attendance. He wants you seen, in the procession, where the other fragments can count you."
+    },
+    {
+      "rank": 9,
+      "suit": "heart",
+      "title": "Black Banner Paymaster",
+      "subtitle": "[MERCENARY] [FINANCE]",
+      "description": "A Ykrul campaign ledger and an Ecktorian seal, doing arithmetic on the city's purse in a rented room.",
+      "flavor": "The Banners are not besieging Ecktoria. They are invoicing it, on schedule, with interest, avenging an old Ykrul wound by the one instrument the city cannot argue with. He is polite, exact and has never raised his voice.",
+      "what_they_carry": "Passage through any Banner line, and an honest answer about who has paid whom.",
+      "what_they_ask": "Nothing on credit. Ever. He will explain why, once, and it is the clearest thing anybody says in this city."
+    },
+    {
+      "rank": 10,
+      "suit": "heart",
+      "title": "Decumanus Guild-Master",
+      "subtitle": "[CRAFT] [CORRUPTION]",
+      "description": "Rod of finger bone, a surveyor's chain, and the authority to move a stone three feet east.",
+      "flavor": "Every boundary in the city was set by his guild and can be reset by it. He does not consider this corruption; the stones were always approximate, the ledgers were always the real boundary, and he is merely keeping the two in agreement.",
+      "what_they_carry": "A boundary moved, a quarter reclassified, a road that now runs through somewhere useful.",
+      "what_they_ask": "A reason he can write down. It does not have to be a good one; it has to be writable."
+    },
+    {
+      "rank": 11,
+      "suit": "heart",
+      "title": "The Redactor",
+      "subtitle": "[SECRET] [LAW]",
+      "description": "A Vigil archivist with paste, a brush, and a list of what the city is no longer to have happened.",
+      "flavor": "She has redacted eleven thousand tablets and can recite every one. That is the flaw in the method and she is the only person who knows it, which makes her the most valuable person in Ecktoria and the least safe.",
+      "what_they_carry": "Any struck precedent, recited accurately, in exchange for a straight trade.",
+      "what_they_ask": "Something to redact that she has not been ordered to. She is collecting them."
+    },
+    {
+      "rank": 12,
+      "suit": "heart",
+      "title": "Livaea's Mirror-Keeper",
+      "subtitle": "[PATRON] [DECEPTION]",
+      "description": "The Amber Palace's glazier, who maintains four hundred mirrors and has never been seen in one.",
+      "flavor": "Silk, flattery and an eye for exactly what a person wishes were true about them. She serves the Velvet Court's patron at a long distance and would say so if asked directly, which nobody does.",
+      "what_they_carry": "An introduction to anyone's better opinion of themselves, including yours.",
+      "what_they_ask": "One honest sentence about what you want. She will not accept a second-best answer and she can tell."
+    },
+    {
+      "rank": 13,
+      "suit": "heart",
+      "title": "The Lame King",
+      "subtitle": "[AUTHORITY] [TRAGEDY]",
+      "description": "The city's nominal sovereign, moving tonight, with a legitimacy nobody contests and an authority nobody obeys.",
+      "flavor": "He is not a fool and not a puppet. He is a man holding an office whose powers were each individually reassigned, legally, over three centuries, by people who meant no harm, and he has read every one of the instruments.",
+      "what_they_carry": "Legitimacy — the real article, which no faction here can manufacture.",
+      "what_they_ask": "That you be seen to have asked him. In public. That is the whole price and it is not small."
+    },
+    {
+      "rank": 14,
+      "suit": "heart",
+      "title": "Maelstraeus, at the Ledger",
+      "subtitle": "[PATRON] [FORBIDDEN]",
+      "description": "The demon of commerce, encountered as an auditor's voice over your shoulder in a room where the accounts do not balance.",
+      "flavor": "He does not tempt and does not bargain in the way stories promise. He offers terms, the terms are genuinely favourable, and the clause that would have protected you was forgotten before you arrived.",
+      "what_they_carry": "Anything with a price, at a price, correctly stated.",
+      "what_they_ask": "The clause. He never says which one and he has never once been accused of lying."
     }
   ],
   "complications": [
@@ -336,6 +508,105 @@
       "description": "A surveyor has moved a boundary stone three feet east.",
       "flavor": "The new map shows your warehouse now stands on a public thoroughfare. The old map is in the archive. The archive wing collapsed last spring. The memory of the boundary now exists only in the cracked floor of the basilica, and the basilica is accepting sealed bids for 'reparative memory.' The Vigil has already bid.",
       "mechanical_hook": "You must either bribe the surveyor (1 Boon), challenge the map (Wits+Lore DV 5), or accept the loss (lose 1 Supply or 1 Boon). The Vigil will remember your choice."
+    },
+    {
+      "rank": 4,
+      "suit": "club",
+      "title": "Reclassification Notice",
+      "subtitle": "[LAW] [BURDEN]",
+      "description": "A quarter is reclassified overnight; the paperwork is correct and predates the decision.",
+      "flavor": "Everyone in four streets is now in arrears on a building they own. The notices were printed before the vote, which three people noticed and one reported.",
+      "mechanical_hook": "Wits+Lore (DV 4) to find the printing date and make it matter, or Presence+Sway (DV 5) to get one household exempted. Tick **Vigil Interest** +1 either way."
+    },
+    {
+      "rank": 5,
+      "suit": "club",
+      "title": "The Ninth Step",
+      "subtitle": "[TABOO] [CURSE]",
+      "description": "Somebody in the party sets foot on the ninth of the Triumph Stairs, and the city notices.",
+      "flavor": "It is not a dramatic curse. Doors are answered a little more slowly. Names are heard a little less clearly. It compounds.",
+      "mechanical_hook": "Until cleansed at the Everflame Cloister (Spirit+Lore DV 4 and 1 Supply), the named PC's social rolls in Ecktoria are Desperate."
+    },
+    {
+      "rank": 6,
+      "suit": "club",
+      "title": "Vigil Audit",
+      "subtitle": "[AUTHORITY] [FEAR]",
+      "description": "A grey coat asks the party to account for a day they have not thought about in weeks.",
+      "flavor": "The Vigil fragment auditing you is not the fragment that has your file. Whichever way you answer, you are lying to somebody.",
+      "mechanical_hook": "Each PC must answer once. Wits+Insight (DV 4) to give an account that both fragments will accept; a Miss ticks **Vigil Interest** +2 and produces a second auditor."
+    },
+    {
+      "rank": 7,
+      "suit": "club",
+      "title": "Procession Stops",
+      "subtitle": "[RITUAL] [DANGER]",
+      "description": "The sacred flame is carried into a quarter and the procession halts, and processions do not halt.",
+      "flavor": "The bearers will not say why and the crowd behind them is still arriving. The flame is steady. It has simply declined to go further up this street.",
+      "mechanical_hook": "One scene to find what is up that street (Wits+Perception DV 5) before the crowd behind resolves the problem itself. Tick **Everflame Orthodoxy** +1 if a cleric decides first."
+    },
+    {
+      "rank": 8,
+      "suit": "club",
+      "title": "Amber Silence",
+      "subtitle": "[POLITICS] [MYSTERY]",
+      "description": "The Amber Palace fails to answer a summons for the second month, and the Lame King has to decide whether to notice.",
+      "flavor": "Every faction has asked someone to go in and look. At least three of those someones are already inside and have not come out and have not been reported missing.",
+      "mechanical_hook": "Presence+Sway (DV 5) to be the party sent in officially rather than the party found inside. A Miss means you go in anyway, unrecorded, and tick **Vigil Interest** +2."
+    },
+    {
+      "rank": 9,
+      "suit": "club",
+      "title": "Statue Names a PC",
+      "subtitle": "[LEGEND] [FEAR]",
+      "description": "The Arena statues reach a letter, and the name is one of the party's.",
+      "flavor": "Whoever it names learns something true about themselves that they had successfully not thought about. So does everyone in the gallery.",
+      "mechanical_hook": "Resolve (DV 5) or mark a Condition of the GM's choosing drawn from the PC's own backstory. The GM gains 1 SB regardless."
+    },
+    {
+      "rank": 10,
+      "suit": "club",
+      "title": "Banner Invoice",
+      "subtitle": "[MERCENARY] [DEBT]",
+      "description": "The Black Banners present a quarterly account to a body that cannot pay it and cannot dispute it.",
+      "flavor": "The arithmetic is correct. That is the problem. Three factions would each rather the city defaulted than that a rival paid it.",
+      "mechanical_hook": "Wits+Lore (DV 4) to find which faction is quietly funding the default. Whoever you expose gains a grudge; whoever you protect gains a claim on you."
+    },
+    {
+      "rank": 11,
+      "suit": "club",
+      "title": "Forgotten Clause",
+      "subtitle": "[TRADE] [BETRAYAL]",
+      "description": "A contract the party relied on turns out to have lost the clause that protected them, and the loss is not provable.",
+      "flavor": "It happened on the Coin-House floor and everyone involved acted in good faith and the document has always read this way.",
+      "mechanical_hook": "Wits+Lore (DV 5) to reconstruct the clause from a counterpart copy; a Miss means the counterpart copy has forgotten it too, and now two documents agree."
+    },
+    {
+      "rank": 12,
+      "suit": "club",
+      "title": "The Mirrors Are Late",
+      "subtitle": "[HORROR] [CORRUPTION]",
+      "description": "In the Amber Palace gallery, a reflection finishes a movement after the person does, and a guest says so out loud.",
+      "flavor": "Saying it out loud is the event. The room handles it with perfect courtesy and the guest is not seen again, and nobody in that room will be able to tell you their name by morning.",
+      "mechanical_hook": "Resolve (DV 5) for any PC in the gallery to say nothing. A Miss means they said it, and the room is perfectly courteous about it, and the GM gains 2 SB."
+    },
+    {
+      "rank": 13,
+      "suit": "club",
+      "title": "Redaction Reversed",
+      "subtitle": "[SECRET] [CRISIS]",
+      "description": "A struck precedent is restored in open court, and every judgment made under the redaction becomes arguable.",
+      "flavor": "Eleven years of settled matters reopen at once. The Redactor did not do this and can prove it, which means someone has her method.",
+      "mechanical_hook": "Wits+Insight (DV 5) over a scene to establish who has the Redactor's method before she does. Succeed and you choose who learns; fail and she concludes it was you."
+    },
+    {
+      "rank": 14,
+      "suit": "club",
+      "title": "The Marble Laughs",
+      "subtitle": "[APOCALYPSE] [TABOO]",
+      "description": "Somebody cites the ninth, and it is not the party, and it is not in a small matter.",
+      "flavor": "Every precedent in the chain voids. The Censor's Hall tablets go blank in sequence, quietly, over an afternoon, and the city discovers how much of itself was only ever written down.",
+      "mechanical_hook": "No roll prevents it. For the rest of the arc, no Ecktorian institution can enforce anything by precedent, which is a disaster for the powerful and the first good week the Ash Quarter has had in a decade."
     }
   ],
   "rewards": [
@@ -356,6 +627,105 @@
       "description": "An exception carved in marble; precedent travels like law.",
       "flavor": "The edict is a crack. The crack in the law is now an opening. The Vigil is already inside. They will leave a note. The note will say: 'We remember. Do you?'",
       "curse_cost": "Using the edict grants you immunity from one law — but the Vigil will remember your name and may call in a favor."
+    },
+    {
+      "rank": 4,
+      "suit": "diamond",
+      "title": "Clerk's Countersign",
+      "subtitle": "[ACCESS] [ONCE]",
+      "description": "A dead clerk's mark, still honoured, that moves one document to the top of one pile.",
+      "flavor": "He died three years ago and his ghost still signs, and the Censor's Hall has never formally established which of those facts is the awkward one.",
+      "curse_cost": "The document is expedited and noticed. Whoever it is aimed at learns it was expedited, and by whose mark."
+    },
+    {
+      "rank": 5,
+      "suit": "diamond",
+      "title": "Ash Quarter Welcome",
+      "subtitle": "[COMMUNITY] [ONGOING]",
+      "description": "A standing invitation in four reclassified streets: a roof, a warning, and children who will run for you.",
+      "flavor": "It cannot be bought, and it is withdrawn instantly and permanently the first time you bargain a local down.",
+      "curse_cost": "You are now known in the Ash Quarter, and so is anyone who asks about you there."
+    },
+    {
+      "rank": 6,
+      "suit": "diamond",
+      "title": "Struck Precedent",
+      "subtitle": "[LAW] [ONCE]",
+      "description": "A law the Vigil removed, recovered and recited accurately, usable once in open court.",
+      "flavor": "It wins the case. It also demonstrates in public that the redactions are recoverable, which is information three parties would have paid to keep buried.",
+      "curse_cost": "The Redactor's method is now suspected to be in other hands. She will come to find out whose, and she is patient and she is owed favours."
+    },
+    {
+      "rank": 7,
+      "suit": "diamond",
+      "title": "Patrician's Favour",
+      "subtitle": "[SOCIAL] [ONCE]",
+      "description": "An Unburdened will do one thing for you, personally, and be charming about it.",
+      "flavor": "They do not consider it a debt because they do not consider anything a debt. They will however remember that you were interesting, which is the currency up there.",
+      "curse_cost": "Calling it in makes you legible to the Amber Palace. Whatever is wrong in that building now knows your name."
+    },
+    {
+      "rank": 8,
+      "suit": "diamond",
+      "title": "Everflame Absolution",
+      "subtitle": "[FAITH] [ONCE]",
+      "description": "A green-lit confessor's absolution, valid before any Ecktorian magistrate, for one act already committed.",
+      "flavor": "The Everflame is not pretending this is theology. It is jurisdiction, and it works, and the fragment that issues it gets to count you.",
+      "curse_cost": "Tick **Everflame Orthodoxy** +1. You are expected in the next procession, and expected is the correct word."
+    },
+    {
+      "rank": 9,
+      "suit": "diamond",
+      "title": "Banner Safe-Conduct",
+      "subtitle": "[MILITARY] [ONGOING]",
+      "description": "A Black Banner chit, honoured at every Banner line around the city, paid for and not gifted.",
+      "flavor": "The paymaster does not do credit and does not do sentiment, which is why the chit is worth something: nobody has ever had one on any basis but payment.",
+      "curse_cost": "Every Ecktorian faction that sees it concludes you are paying the besiegers. They are right, and it does not matter that it was for passage."
+    },
+    {
+      "rank": 10,
+      "suit": "diamond",
+      "title": "Moved Stone",
+      "subtitle": "[CRAFT] [ONGOING]",
+      "description": "A boundary reset in your favour by the Decumanus guild, correct in the ledger and therefore correct.",
+      "flavor": "Somebody's yard is smaller this morning, and legally always was, and the marble will crack in a pattern that maps the difference within a year.",
+      "curse_cost": "Geometric decay records it. Anyone who reads the cracks — and the Vigil does — can see exactly what was moved and when."
+    },
+    {
+      "rank": 11,
+      "suit": "diamond",
+      "title": "Mirror-Keeper's Word",
+      "subtitle": "[DECEPTION] [ONCE]",
+      "description": "One person, once, will believe the version of you that you would most like to be true.",
+      "flavor": "It is not a charm and not a lie. It is an introduction to their own better opinion of you, which they then defend as their own.",
+      "curse_cost": "Livaea is owed. Not by the target. By you, and she does not send an invoice, and the terms arrive later and in a form you chose."
+    },
+    {
+      "rank": 12,
+      "suit": "diamond",
+      "title": "The King's Asking",
+      "subtitle": "[AUTHORITY] [ONCE]",
+      "description": "The Lame King has been seen to be asked, in public, and has been seen to agree.",
+      "flavor": "It is the only genuine legitimacy available in Ecktoria and every faction knows it and none of them can manufacture it, which is why they have all stopped asking.",
+      "curse_cost": "Every faction that had been ignoring him now has to decide about you instead, this week, in public."
+    },
+    {
+      "rank": 13,
+      "suit": "diamond",
+      "title": "Maelstraeus's Terms",
+      "subtitle": "[PATRON] [ONGOING]",
+      "description": "Terms on anything with a price, stated correctly, favourable, and honoured to the letter.",
+      "flavor": "He has never been caught lying. That is not a compliment to him; it is a description of how the mechanism works.",
+      "curse_cost": "A clause is forgotten. Not now, and not by you, and not one you will be able to name until the day it would have saved you."
+    },
+    {
+      "rank": 14,
+      "suit": "diamond",
+      "title": "Voided Chain",
+      "subtitle": "[JUSTICE] [ONCE]",
+      "description": "The record of an entire chain of precedent, void, with your matter the last thing standing in it.",
+      "flavor": "It is what the ninth citation is for, and it is why nobody sane uses it, and it is the only instrument in this city that the powerful cannot redact.",
+      "curse_cost": "You may never again be a party to an Ecktorian suit. Neither may your opponent. The Ash Quarter will know your name for a generation."
     }
   ],
   "quick_use_notes": {
