@@ -1,7 +1,7 @@
 {
   "id": "gallows-bell-justice-judgment",
   "type": "patron",
-  "title": "The Gallow's Bell",
+  "title": "The Gallows Bell",
   "subtitle": "Justice & Judgment",
   "version": "1.0.0",
   "tags": [
@@ -17,7 +17,7 @@
   ],
   "lore": {
     "description": "The Bell does not rage; it tolls. Cold and impartial, it measures all accounts in time. Its keepers are silent arbiters who weigh deeds against consequence, not out of anger but out of inevitability. To call upon the Bell is to bind oneself to the gravity of truth, where even silence is judged, and every oath leaves a resonance in iron.",
-    "followers": "The Gallow's Bell is the patron of judges, notaries, and those who speak final words. In Ecktoria, the Bell is invoked by Censor's clerks who stamp death warrants. In Viterra, hedge-courts ring a small iron bell to seal a verdict. In Linn, a broken bell at a Thing-holm is a sign that a judgment was unjust and the spirits are still listening. Wherever a reckoning must be witnessed, the Gallow's Bell tolls.",
+    "followers": "The Gallows Bell is the patron of judges, notaries, and those who speak final words. In Ecktoria, the Bell is invoked by Censor's clerks who stamp death warrants. In Viterra, hedge-courts ring a small iron bell to seal a verdict. In Linn, a broken bell at a Thing-holm is a sign that a judgment was unjust and the spirits are still listening. Wherever a reckoning must be witnessed, the Gallows Bell tolls.",
     "quote": "What is broken must be mended, what is owed must be paid. The Bell remembers all reckonings."
   },
   "domain_focus": [
@@ -28,19 +28,19 @@
   ],
   "runekeeper_options": {
     "thiasos": {
-      "description": "The Gallow's Bell's Thiasos is a small beast or mythological being that embodies impartial witness: a gray mouse that lives in courthouses and never cheeps false testimony, a small brass-bell frog whose croak sounds like a distant chime, a black-and-white cat that sits on the judge's bench and stares at those who lie, or a white owl that gives a bell-like cry each time a promise is broken.",
+      "description": "The Gallows Bell's Thiasos is a small beast or mythological being that embodies impartial witness: a gray mouse that lives in courthouses and never cheeps false testimony, a small brass-bell frog whose croak sounds like a distant chime, a black-and-white cat that sits on the judge's bench and stares at those who lie, or a white owl that gives a bell-like cry each time a promise is broken.",
       "care": "Beyond its ordinary care, this Thiasos must witness a formal promise or a judgment each day. If that need goes unmet, the Thiasos becomes Compromised: it rings at the wrong moment or remains silent when truth is spoken, imposing –1 die on all social rolls involving oaths or honesty for its bearer."
     },
     "codex": {
-      "description": "One will not find the Gallow's Bell's Codex written as a book of spells alone. It may be a court ledger bound in iron, each page sealed with a drop of wax for every case heard; a set of bronze bells, each inscribed with a precedent; or a slate tablet that records the last verdict as a faint, glowing chime.",
+      "description": "One will not find the Gallows Bell's Codex written as a book of spells alone. It may be a court ledger bound in iron, each page sealed with a drop of wax for every case heard; a set of bronze bells, each inscribed with a precedent; or a slate tablet that records the last verdict as a faint, glowing chime.",
       "upkeep": "Because the Bell's judgments are final, the Codex requires upkeep: the Runekeeper must spend an hour each week ringing each bell or re-reading each precedent, or the Rites stored there become uncertain (treat as Compromised until re-rung)."
     }
   },
   "patrons_gift": {
     "name": "The Bell's Verdict",
-    "description": "Once per scene as an action, a Runekeeper of the Gallow's Bell may touch a held item (weapon, shield, or tool) and speak a single word of judgment.",
+    "description": "Once per scene as an action, a Runekeeper of the Gallows Bell may touch a held item (weapon, shield, or tool) and speak a single word of judgment.",
     "effect": "For the rest of the scene, the item grants +1 die to Command or Insight rolls when delivering a verdict, enforcing an oath, or uncovering a lie. Additionally, the first time each scene the bearer would be deceived by a lie, they may reroll the opposed check (the Bell's resonance warns them).",
-    "cost": "After the scene, the user marks +1 Obligation to the Gallow's Bell."
+    "cost": "After the scene, the user marks +1 Obligation to the Gallows Bell."
   },
   "rites": [
     {
@@ -193,7 +193,7 @@
     "description": "Monks of the Iron Clapper serve as the Bell's hands where its voice cannot reach — traveling arbiters who walk into feuds, blood-debts, and broken contracts and render judgment where no court exists. They train in stillness first, learning to hold silence the way a bell holds its shape until struck, and in speech second, learning that a verdict spoken once, calmly, carries more weight than a threat repeated. Their order maintains way-stations at crossroads throughout the land, each marked by a single unstruck bell.",
     "color": "#4a4a55",
     "quote": "What is broken must be mended, what is owed must be paid.",
-    "prerequisites": "Presence 3+, Resolve 2+, Rite of the Measured Debt or Cantor of the Gallow's Bell.",
+    "prerequisites": "Presence 3+, Resolve 2+, Rite of the Measured Debt or Cantor of the Gallows Bell.",
     "debt_resistant_frame": "A debt weighed honestly cannot be doubled by trickery. Monks of the Iron Clapper gain +1 die to resist any magical debt, geas, or contract whose terms were misrepresented or concealed at the time of swearing. If they succeed, the deceptive clause is struck as though it were never spoken — the Bell does not honor a lie.",
     "techniques": {
       "basic": {
@@ -214,7 +214,7 @@
         "name": "The Final Toll",
         "xp": 14,
         "description": "Once per session, render an unappealable verdict on a single dispute you have fully witnessed. All parties present must abide by its terms for the remainder of the session or suffer Harm 2 as the Bell's judgment falls upon them. After the scene, you gain a permanent Debt Scar (a faint bell-shaped mark that appears whenever you speak a lie) but you may ignore one Obligation owed for a judgment you rendered fairly.",
-        "cost": "2 Fatigue and +1 Obligation to the Gallow's Bell",
+        "cost": "2 Fatigue and +1 Obligation to the Gallows Bell",
         "prereq": "Tier III, Presence 4+"
       }
     },
@@ -253,7 +253,7 @@
     }
   ],
   "playstyle_notes": {
-    "description": "The Gallow's Bell rewards those who speak truth, enforce oaths, and deliver justice without cruelty. Its followers are not executioners — they are arbiters who ensure that every debt is weighed and every consequence is fair. The Bell does not punish the desperate; it punishes the deceiver. Intrusions often take the form of an unexpected witness (a bell that rings at the wrong moment, a forgotten promise resurfacing) or a demand to judge a dispute that cannot be settled by silence. Ideal for characters who serve as magistrates, justiciars, or honest mediators in a world of broken oaths.",
+    "description": "The Bell supports sworn testimony, mediation, and the enforcement of verdicts. Its keepers seek impartial judgment; that aim does not make every court that invokes it just. Put evidence and precedent under pressure, and let an unexpected witness reopen a decision the follower thought settled. Distinguish the Bell's demand for truth from a magistrate's claim to speak for it.",
     "emphasizes": [
       "Solemn Judgment: verdicts that cannot be appealed",
       "Compelled Truth: forcing honesty under the threat of the Bell",

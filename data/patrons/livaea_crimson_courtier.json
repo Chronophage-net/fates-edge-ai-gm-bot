@@ -43,7 +43,7 @@
     },
     "codex": {
       "description": "The Codex kept in Livaea's name is never a book of dry ink. It may be a velvet-bound journal whose pages stain with the reader's own lipstick, a collection of love letters that rewrite themselves each night, a sheaf of pressed flowers whose petals hold whispered secrets, or a mirror that shows not the face but the heart's most secret desire.",
-      "upkeep": "Because Livaea's truths are written in desire, the Codex requires upkeep: the Runekeeper must spend an hour each week whispering a confession of longing into its pages, or the Rites stored there fade (treat as Compromised until re_seduced)."
+      "upkeep": "Because Livaea's truths are written in desire, the Codex requires upkeep: the Runekeeper must spend an hour each week whispering a confession of longing into its pages, or the Rites stored there fade (treat as Compromised until re-seduced)."
     }
   },
   "patrons_gift": {
@@ -107,7 +107,7 @@
         "FEAR"
       ],
       "materials": "Token exchanged between parties – a ring, a lock of hair, a signed letter, or a knotted ribbon from a lover's garter.",
-      "effect": "Forge a magical promise of affection or loyalty. Both gain +1 Effect when cooperating; breach inflicts 1 SB (Hearts) and a phantom kiss of betrayal (the oathbreaker feels a cold emptiness where warmth once was). Create a 6_segment Vow Strength timer.",
+      "effect": "Forge a magical promise of affection or loyalty. Both gain +1 Effect when cooperating; breach inflicts 1 SB (Hearts) and a phantom kiss of betrayal (the oathbreaker feels a cold emptiness where warmth once was). Create a 6-segment Vow Strength timer.",
       "push_it": "Breach also causes a visible social stain (a blush that will not fade, a nervous tic, or an inability to look certain people in the eye). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
       "requires": "Familiar + Codex (Invoke: 1 Boon).",
@@ -149,7 +149,7 @@
         "DEBT"
       ],
       "materials": "A throne draped in scarlet, an assembled court (real or imagined), and a drop of blood from each participant mixed into wine – or a single tear of jealousy.",
-      "effect": "You become the social sovereign of the zone. For the scene: (a) You gain +1 Effect on all social rolls, and opponents suffer –1 die. (b) Anyone who attempts to deceive you must test Resolve (DV 4) or reveal a hidden desire – the one thing they crave most in the dark. (c) Allies who drink from the shared cup regain 1 Fatigue (the wine of adoration, warm and sweet on the tongue). Start a 10_segment Court Dominion timer; when it fills, you may declare one irrevocable social judgment (exile, scandal, or a binding oath of fealty) that the zone's inhabitants will enforce for one month. Those who defy it feel a phantom longing for your approval.",
+      "effect": "You become the social sovereign of the zone. For the scene: (a) You gain +1 Effect on all social rolls, and opponents suffer –1 die. (b) Anyone who attempts to deceive you must test Resolve (DV 4) or reveal a hidden desire – the one thing they crave most in the dark. (c) Allies who drink from the shared cup regain 1 Fatigue (the wine of adoration, warm and sweet on the tongue). Start a 10-segment Court Dominion timer; when it fills, you may declare one irrevocable social judgment (exile, scandal, or a binding oath of fealty) that the zone's inhabitants will enforce for one month. Those who defy it feel a phantom longing for your approval.",
       "push_it": "Newcomers must test Resolve (DV 4) or become briefly devoted – they will follow one simple social command, such as 'introduce me to your patron' or 'whisper your lover's name in my ear.' Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
       "cost": "Mark +2 Obligation.",
       "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
@@ -169,7 +169,7 @@
   },
   "witchcraft": {
     "name": "The Art of Social Weaving",
-    "description": "A witch who walks with Livaea is a gossip-scribe or perfume-smith – one who crafts social reality from threads of rumor, scent, and gesture. Their magic works with the tools of influence: a letter that cannot be forgotten, a perfume that makes the wearer irresistibly charming, or a needle that sews a promise into a dress's hem. Their tools are never hammers; they use quills, vials, and the subtle art of a well-timed whisper. In Ecktoria, a Livaean witch might be a letter writer for the powerful, sealing each envelope with a kiss that binds the reader's loyalty. In Aeler, a True_Mason might carve a keystone that makes every handshake struck beneath it unbreakable.",
+    "description": "A witch who walks with Livaea is a gossip-scribe or perfume-smith – one who crafts social reality from threads of rumor, scent, and gesture. Their magic works with the tools of influence: a letter that cannot be forgotten, a perfume that makes the wearer irresistibly charming, or a needle that sews a promise into a dress's hem. Their tools are never hammers; they use quills, vials, and the subtle art of a well-timed whisper. In Ecktoria, a Livaean witch might be a letter writer for the powerful, sealing each envelope with a kiss that binds the reader's loyalty. In Aeler, a True-Mason might carve a keystone that makes every handshake struck beneath it unbreakable.",
     "color": "#8b0000",
     "lore": "The gossip-scribe's path is the art of desire. They learn that every glance is a negotiation, every touch a contract, and every lover a potential pawn. To serve Livaea is to understand that the velvet glove hides the iron hand—and that the smile that sells secrets is the same that closes the cage.",
     "signature_rite": "Rite of the Velvet Whisper",
@@ -216,7 +216,7 @@
       "advanced": {
         "name": "Binding Vow",
         "xp": 8,
-        "effect": "Forge a magical promise of affection or loyalty. Both gain +1 Effect when cooperating; breach inflicts 1 SB (Hearts). Create a 6_segment Vow Strength timer.",
+        "effect": "Forge a magical promise of affection or loyalty. Both gain +1 Effect when cooperating; breach inflicts 1 SB (Hearts). Create a 6-segment Vow Strength timer.",
         "cost": "1 Boon",
         "prereq": "Spirit 3+"
       },
@@ -263,7 +263,7 @@
     }
   ],
   "playstyle_notes": {
-    "description": "Livaea excels in social manipulation, courtly intrigue, and the darker arts of seduction. Followers become masters of persuasion, binding others through desire, jealousy, and obligation. The corruption progression leads toward a social virtuoso who cannot function without admiration and connection – a velvet cage of their own making. Ideal for players who enjoy social combat, political maneuvering, and characters who wield influence and longing as their primary weapons. As with all mature themes, use Lines & Veils to ensure the table's comfort.",
+    "description": "Livaea's rites make attention and desire instruments of court politics. Give the follower people with loyalties beyond their attraction, and let those loyalties complicate every success. Corruption turns the need for admiration back on the character. Use Lines & Veils and agreed boundaries for seduction and coercion; a character's supernatural influence never settles a player's consent.",
     "emphasizes": [
       "Seduction as Power: charm, allure, reading desire",
       "Social Binding: oaths of affection, emotional debts, possessiveness",

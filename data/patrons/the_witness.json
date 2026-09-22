@@ -17,8 +17,8 @@
     "unmasking"
   ],
   "lore": {
-    "description": "The Witness remembers what others bury. Every shadow cast and oath broken is a line in her unending ledger. She is the keeper of inconvenient truths, the patron of those who seek to expose lies or recover forgotten knowledge. Her followers learn that knowledge comes with a price—the weight of remembering what others would forget. The Witness has no will, only recollection; no mercy, only accuracy. She does not demand confessions, but she ensures that every lie leaves a stain, every secret a trace. Those who serve her become archivists of the uncomfortable, witnesses to the truths that others would kill to keep hidden. To walk her path is to accept that some truths are weapons, and that the truth teller is never loved.",
-    "followers": "Among the peoples of Fate's Edge, the Witness is known by many names. In Ecktoria, she is the Ink_Eye, the Censor's clerk who copies every redacted line onto a private scroll. In Vhasia, she is the Fractured Mirror, prayed to by spies who seek to reveal a rival's true loyalty. In the Mistlands, she is the Fog_Scribe, whose name is whispered when a bell line fails and the dead must be identified by their secrets. And in the shadows of every great city, there are those who follow the Apocalyptic Witness—a doomsaying cult that believes the world will end when the last hidden truth is finally spoken aloud, and who work to hasten that revelation by exposing every lie, no matter the cost.",
+    "description": "The Witness preserves what happened after everyone with power has agreed on another account. Her followers keep the torn letter, remember who stood at the door, and learn the names omitted from the public memorial. Her gifts make evidence difficult to bury; they do not decide whom it is wise to tell. The faithful must live with knowledge they cannot comfortably forget, including truths that expose their own part in a wrong. Some become relentless accusers. Others keep a testimony safe until its speaker can survive being heard.",
+    "followers": "Among the peoples of Fate's Edge, the Witness is known by many names. In Ecktoria, she is the Ink-Eye, the Censor's clerk who copies every redacted line onto a private scroll. In Vhasia, she is the Fractured Mirror, prayed to by spies who seek to reveal a rival's true loyalty. In the Mistlands, she is the Fog-Scribe, whose name is whispered when a bell line fails and the dead must be identified by their secrets. And in the shadows of every great city, there are those who follow the Apocalyptic Witness—a doomsaying cult that believes the world will end when the last hidden truth is finally spoken aloud, and who work to hasten that revelation by exposing every lie, no matter the cost.",
     "signs": [
       "A scrap of parchment with a name you recognise, found where you least expect it",
       "A sudden, vivid memory of a lie you told years ago",
@@ -188,7 +188,7 @@
         "FEAR"
       ],
       "materials": "A formally called gathering (court, council, family meeting) within the consecrated zone.",
-      "effect": "All present must speak their greatest debt, wrongdoing, or hidden truth related to the gathering's purpose. Those who lie or withhold suffer Harm 2 (Stress/Reputation). Truth_tellers gain +2 dice to social actions for the remainder of the scene within the zone.",
+      "effect": "All present must speak their greatest debt, wrongdoing, or hidden truth related to the gathering's purpose. Those who lie or withhold suffer Harm 2 (Stress/Reputation). Truth-tellers gain +2 dice to social actions for the remainder of the scene within the zone.",
       "push_it": "The truth becomes inescapable—even indirect lies or evasions related to the core topic suffer the Harm 2 penalty. The absolute nature of the revelation creates 2 SB (Diamonds) as the disruption to fates and secrets resonates. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
       "cost": "Mark +2 Obligation.",
       "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
@@ -226,7 +226,7 @@
         "description": "Once per scene, the witch may hold a blank piece of parchment up to a person's lips as they speak. The parchment absorbs the spoken words, recording them exactly as they were said—including tone, hesitation, and any unconscious meaning. The parchment can be read by anyone (the words appear in the speaker's own handwriting), but it crumbles to dust after being read aloud. The witch may also use this ability to record the final words of the dying, preserving them for one day."
       },
       {
-        "name": "The Truth_Teller's Eye",
+        "name": "The Truth-Teller's Eye",
         "xp": 3,
         "description": "When you look into someone's eyes, you may ask the GM one yes/no question about a lie they are currently telling. The GM must answer truthfully, but the question must be specific (e.g., 'Are they lying about where they were last night?'). Once per scene."
       },
@@ -283,7 +283,7 @@
     {
       "tier": 3,
       "benefit": "Revelation's Power: +2 dice to rolls involving exposing secrets, uncovering lies, or forcing confessions.",
-      "cost": "Truth_Blind: Suffer 1 Fatigue when exposed to comforting lies or willful ignorance."
+      "cost": "Truth-Blind: Suffer 1 Fatigue when exposed to comforting lies or willful ignorance."
     },
     {
       "tier": 4,
@@ -302,7 +302,7 @@
     }
   ],
   "playstyle_notes": {
-    "description": "The Witness rewards curiosity, patience, and a willingness to bear uncomfortable knowledge. Her followers are not merely investigators but archivists of the real—they record what others would erase. The Witness does not demand that you expose every secret; she simply ensures that you cannot forget the ones you learn. Intrusions often take the form of dreams showing a hidden crime, a sudden memory of a lie you told years ago, or the appearance of a scrap of parchment containing a truth you wish you had never read. High_Tier followers may find that secrets begin to seek them out—people confess unprompted, documents fall open to damning pages, and the world becomes a book that cannot be closed.",
+    "description": "The Witness rewards curiosity, patience, and a willingness to bear uncomfortable knowledge. Her followers are not merely investigators but archivists of the real—they record what others would erase. The Witness does not demand that you expose every secret; she simply ensures that you cannot forget the ones you learn. Intrusions often take the form of dreams showing a hidden crime, a sudden memory of a lie you told years ago, or the appearance of a scrap of parchment containing a truth you wish you had never read. High-Tier followers may find that secrets begin to seek them out—people confess unprompted, documents fall open to damning pages, and the world becomes a book that cannot be closed.",
     "emphasizes": [
       "Truth as Burden: every secret known is a weight carried",
       "Investigation as Ritual: uncovering lies is a sacred act",

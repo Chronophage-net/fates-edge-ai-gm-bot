@@ -18,7 +18,7 @@
   ],
   "lore": {
     "description": "Vorthak is the principle of absolute consumption: an appetite that devours not only what is, but the very potential of what might be. Each feeding transforms both eater and eaten. His servants become conduits of metamorphosis through ingestion, learning to consume not only matter but also properties, identities, and even strands of fate. Power comes by taking in—and the cost is becoming more like the hunger you channel. To consume is to become. To devour is to transform. In Vorthak's embrace, the boundary between eater and eaten dissolves into something new—and something hungry.",
-    "followers": "Among the peoples of Fate's Edge, Vorthak is known by many fearful names. In Aeler, he is the Deep Forge, the hunger of the mountain that consumes ore and returns steel. In Zakov, he is the Salt_Hunger, the appetite that preserves by consuming the moisture from flesh. In Linn, he is the Tide_That_Eats_The_Shore, a slow, patient consumption that reshapes coastlines. His followers are rarely beloved, but they are essential—for without consumption, there is no transformation, and without transformation, there is only stagnation.",
+    "followers": "Among the peoples of Fate's Edge, Vorthak is known by many fearful names. In Aeler, he is the Deep Forge, the hunger of the mountain that consumes ore and returns steel. In Zakov, he is the Salt-Hunger, the appetite that preserves by consuming the moisture from flesh. In Linn, he is the Tide-That-Eats-The-Shore, a slow, patient consumption that reshapes coastlines. His followers are rarely beloved, but they are essential—for without consumption, there is no transformation, and without transformation, there is only stagnation.",
     "signs": [
       "A meal that never leaves you full, no matter how much you eat",
       "Objects that seem to shrink or grow faint when in your presence",
@@ -43,7 +43,7 @@
     },
     "codex": {
       "description": "You will not find Vorthak's Codex bound as a static record. It may be a stomach-bound journal written on cured hide, its pages growing thicker each time a Rite is performed; a set of teeth strung on a leather cord, each tooth etched with a consumed spell; or a wooden bowl stained with the residue of a thousand meals, the grain of the wood shifting as new essences are added.",
-      "upkeep": "Because hunger is never satisfied, the Codex requires upkeep: the Runekeeper must spend an hour each week feeding it—a drop of blood, a burnt letter, a morsel of rare meat—or the Rites stored there become faint (treat as Compromised until re_fed)."
+      "upkeep": "Because hunger is never satisfied, the Codex requires upkeep: the Runekeeper must spend an hour each week feeding it—a drop of blood, a burnt letter, a morsel of rare meat—or the Rites stored there become faint (treat as Compromised until re-fed)."
     }
   },
   "patrons_gift": {
@@ -109,7 +109,7 @@
         "RISK"
       ],
       "materials": "A personal token or a clear memory of the target.",
-      "effect": "Temporarily adopt one aspect of a specific person's nature (a skill, a talent, or a defining trait). Gain +2 dice to actions matching that aspect for the remainder of the scene. The aspect cannot be a Patron_granted Rite or other supernatural ability without the GM's explicit permission.",
+      "effect": "Temporarily adopt one aspect of a specific person's nature (a skill, a talent, or a defining trait). Gain +2 dice to actions matching that aspect for the remainder of the scene. The aspect cannot be a Patron-granted Rite or other supernatural ability without the GM's explicit permission.",
       "push_it": "The adoption deepens and clings, lasting for the rest of the session; mark 1 SB (Hearts). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
       "requires": "Familiar + Codex (Invoke: 1 Boon).",
@@ -152,7 +152,7 @@
         "FATE",
         "DEBT"
       ],
-      "materials": "The deliberate offering_up of your current limits to Vorthak.",
+      "materials": "The deliberate offering-up of your current limits to Vorthak.",
       "effect": "Consume your own constraints and transform. Choose two of the following benefits, which last for the remainder of the current scene: +1 to any Attribute (temporarily), +2 dice to one skill (temporarily), Immunity to one Condition type (temporarily), One major supernatural capability (temporarily, GM discretion). If you wish to make the benefits permanent, you must accept a permanent cost: lose a Bond, take a permanent Condition, or sacrifice a core identity trait (GM discretion).",
       "push_it": "Take all four benefits (instead of two) for the scene, but lose one core aspect of your original identity permanently; mark Harm 2. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
       "cost": "Mark +2 Obligation.",
@@ -180,7 +180,7 @@
     "quote": "To consume is to become. To devour is to transform.",
     "tools": {
       "maw_stone": {
-        "name": "The Maw_Stone",
+        "name": "The Maw-Stone",
         "description": "A smooth, porous stone, warm to the touch, the size of a fist. Once per session, the witch may press the stone against a material (stone, wood, metal, flesh) and speak a word of consumption. The stone 'eats' a small portion of the material (a handful of stone dust, a sliver of wood, a thin curl of metal) and absorbs its essential property. For the next scene, the stone can be used to grant +1 die to any roll that benefits from that property (e.g., 'sharpness' for a cutting tool, 'hardness' for a shield). The stone can also be used to 'consume' a single, small physical detail (a button, a lock, a hinge) as if it had never been there, but doing so empties the stone of its stored property."
       }
     },
@@ -228,7 +228,7 @@
         "name": "Apotheosis of Hunger",
         "xp": 12,
         "effect": "Once per session, you may enter a state of perfect consumption for one scene. You ignore all penalties from Fatigue, and any time you would take Harm from a physical attack, you may instead consume the attack's energy, converting the Harm into 1 Fatigue and gaining +1 die on your next action.",
-        "cost": "After the scene, you gain a permanent Maw_Scar (a faint, tooth-ringed mark on your stomach that never fully fades). You may ignore one Obligation to Vorthak, but the next time you refuse to consume something offered, the scar aches with hunger and you mark 1 Fatigue.",
+        "cost": "After the scene, you gain a permanent Maw-Scar (a faint, tooth-ringed mark on your stomach that never fully fades). You may ignore one Obligation to Vorthak, but the next time you refuse to consume something offered, the scar aches with hunger and you mark 1 Fatigue.",
         "prereq": "Tier III"
       }
     },
@@ -258,7 +258,7 @@
     {
       "tier": 5,
       "benefit": "Identity Cannibal: Once/session, consume a significant aspect of another (major skill or core trait).",
-      "cost": "Self_Consumption: Risk eating your own memories or abilities; mark 1 SB (Spades) when stressed."
+      "cost": "Self-Consumption: Risk eating your own memories or abilities; mark 1 SB (Spades) when stressed."
     },
     {
       "tier": "6+",
@@ -267,7 +267,7 @@
     }
   ],
   "playstyle_notes": {
-    "description": "Vorthak favors those who hunt for change through taking in what the world offers: relish clever uses of absorbed traits, judge the price of every bite, and beware the slow surrender of the self. Expect scenes of metamorphosis, bargaining for what can be eaten, and hard choices where power tastes like you. Ideal for characters who embrace transformation at the cost of identity—alchemists, cannibal cultists, and those who believe that to improve, one must first consume.",
+    "description": "Vorthak's gifts let a character acquire useful traits by consuming their sources. Make each acquisition specific, including what is lost from the thing or person consumed. Corruption blurs the follower's own appetites with those they have taken in. An intrusion can offer exactly the property they need in something they have good reason to preserve.",
     "emphasizes": [
       "Transformation through Consumption: becoming what you devour",
       "Metamorphic Power: fundamental, identity-shaping change",

@@ -18,7 +18,7 @@
   ],
   "lore": {
     "description": "The Riven Path does not command. It offers. It is the heat in the blood, the fire in the belly, the voice that whispers 'Take what is yours.' Those who walk this path learn that power is not given—it is seized. Chains are not broken by asking nicely. They are shattered by will. Followers of the Riven Path are conquerors, liberators, and survivors. They serve no master—not even the Path itself. When a tyrant rises, they do not negotiate—they overthrow. When a wall stands in their way, they do not climb—they break. When a rival challenges them, they do not yield—they prove.",
-    "followers": "Among the peoples of Fate's Edge, the Riven Path is known by names that frighten children and inspire revolutionaries. In Silkstrand, it is the Cut Purse's Blessing, whispered by thieves who take from those who stole first. In Vhasia, it is the Gorget_Breaker, a philosophy of the duelist who refuses to wear armor. In Zakov, it is the Tide_That_Eats_The_Shore, a slow, patient consumption that reshapes coastlines. Wherever the oppressed dream of rising, the Riven Path waits.",
+    "followers": "Among the peoples of Fate's Edge, the Riven Path is known by names that frighten children and inspire revolutionaries. In Silkstrand, it is the Cut Purse's Blessing, whispered by thieves who take from those who stole first. In Vhasia, it is the Gorget-Breaker, a philosophy of the duelist who refuses to wear armor. In Zakov, it is the Tide-That-Eats-The-Shore, a slow, patient consumption that reshapes coastlines. Wherever the oppressed dream of rising, the Riven Path waits.",
     "signs": [
       "A chain that rattles without a hand to shake it",
       "The sound of breaking stone, heard from miles away",
@@ -34,7 +34,7 @@
     "Liberation Through Power: freedom as the right of the strong, justice as the will of the victorious",
     "Passion as Fuel: anger, desire, fear, and love—all are fires to be stoked and aimed",
     "Crushing Dominance: victory through overwhelming force, intimidation, and the willing display of power",
-    "Self_Determination: no chains, no masters, no debt that is not paid in blood"
+    "Self-Determination: no chains, no masters, no debt that is not paid in blood"
   ],
   "runekeeper_options": {
     "thiasos": {
@@ -177,8 +177,8 @@
       "description": "A Cantor of the Riven Path sings in war cries—rhythmic chants that build into ecstatic frenzy, that drive soldiers to charge and cowards to flee. Their voice is used to terrify enemies, to rally allies on the brink of breaking, or simply to announce their presence in a room. A Cantor may learn any Low Rite of the Riven Path as a Song (Performance + Lore, resolves next turn). Corruption accumulates when they use their voice for restraint, for mercy, or to calm a situation they could have escalated."
     },
     "cult": {
-      "name": "The Cult of the Chain_Breakers",
-      "description": "The Riven Path's cults gather in places where chains have been broken—former slave quarters, prisons after a riot, the ruins of a tyrant's palace. The Chain_Breakers are a fellowship of escaped captives, freed debtors, and those who have chosen to owe nothing to anyone. A ritual of the Cult involves each member speaking aloud a chain they still wear—a fear, a debt, a relationship that controls them—and then breaking a physical chain (rope, iron links, a leather cord) in front of witnesses. The broken pieces are thrown into a fire. Their creed is shouted, never whispered: 'I owe nothing. I serve no one. I am my own.' Outsiders are not welcome unless they bring a chain to break. Those who break a chain with sincerity may stay for the feast. Those who hesitate are watched until they leave."
+      "name": "The Cult of the Chain-Breakers",
+      "description": "The Riven Path's cults gather in places where chains have been broken—former slave quarters, prisons after a riot, the ruins of a tyrant's palace. The Chain-Breakers are a fellowship of escaped captives, freed debtors, and those who have chosen to owe nothing to anyone. A ritual of the Cult involves each member speaking aloud a chain they still wear—a fear, a debt, a relationship that controls them—and then breaking a physical chain (rope, iron links, a leather cord) in front of witnesses. The broken pieces are thrown into a fire. Their creed is shouted, never whispered: 'I owe nothing. I serve no one. I am my own.' Outsiders are not welcome unless they bring a chain to break. Those who break a chain with sincerity may stay for the feast. Those who hesitate are watched until they leave."
     }
   },
   "witchcraft": {
@@ -190,7 +190,7 @@
     "quote": "The chain that binds you is the chain you refuse to break.",
     "tools": {
       "chain_breaker_hammer": {
-        "name": "The Chain_Breaker's Hammer",
+        "name": "The Chain-Breaker's Hammer",
         "description": "A blacksmith's hammer with a cracked handle, wrapped in leather from a slaver's belt. Once per session, the witch may strike a lock, a chain, or a sealed document with the hammer. The target does not break—it ceases to be locked. The mechanism is not damaged; it simply no longer functions as a barrier. The lock remains, but it will not close. The chain remains, but it will not hold. The seal remains, but it will not seal. The effect is permanent. The hammer may be used on magical seals, but the witch must succeed on a Spirit + Lore test (DV 4) or the hammer cracks further (treat as Compromised until repaired with a drop of blood)."
       }
     },
@@ -213,12 +213,12 @@
     ]
   },
   "monastic_tradition": {
-    "name": "The Way of the Riven_Fist",
-    "description": "The chain that binds you is the chain you refuse to break. The hand that holds you down is the hand you have not yet bitten. Riven_Fists understand that power is not given—it is seized. They are conquerors, liberators, and survivors, serving no master and owing no debt. To walk this path is to accept that every chain is an insult and every wall is a challenge to prove you will not be contained.",
+    "name": "The Way of the Riven-Fist",
+    "description": "The chain that binds you is the chain you refuse to break. The hand that holds you down is the hand you have not yet bitten. Riven-Fists understand that power is not given—it is seized. They are conquerors, liberators, and survivors, serving no master and owing no debt. To walk this path is to accept that every chain is an insult and every wall is a challenge to prove you will not be contained.",
     "color": "#8b1a1a",
     "prerequisites": "Body 3+, Spirit 2+, Rite of Feasting on Fear or Cantor of the Riven Path.",
     "quote": "The chain that binds you is the chain you refuse to break.",
-    "debt_resistant_frame": "The Riven Path does not forgive debts—it collects them. Monks of the Riven_Fist gain +1 die to resist any magical debt, geas, or contract that would compel them to submit or yield. If they succeed, the creditor feels a momentary chill, as if they have offended something hungry—and the GM gains 1 SB (the Path notes a new target).",
+    "debt_resistant_frame": "The Riven Path does not forgive debts—it collects them. Monks of the Riven-Fist gain +1 die to resist any magical debt, geas, or contract that would compel them to submit or yield. If they succeed, the creditor feels a momentary chill, as if they have offended something hungry—and the GM gains 1 SB (the Path notes a new target).",
     "techniques": {
       "basic": {
         "name": "Feast on Fear",
@@ -277,12 +277,12 @@
     }
   ],
   "playstyle_notes": {
-    "description": "The Riven Path is the ideal patron for players who want to play an aggressive, self-determined character—a warlord, a revolutionary, a dark knight, or simply someone who refuses to bow. Its Rites reward aggression, intimidation, and the willingness to take what you want. The cost is isolation—the power that lets you break chains also breaks relationships, trust, and your ability to see others as anything but obstacles or tools. Intrusions often take the form of a rival who has also broken their chains and now wants yours, a debt you cannot pay (because you broke the contract), or a situation where mercy would be easier than violence—forcing you to choose between your principles and your mission. Ideal for sith analogues, warlocks, berserkers, and any character who believes that freedom is the right of the strong and that weakness is a choice.",
+    "description": "The Riven Path turns will and anger into the power to break restraints. Its followers risk treating every disagreement as another chain. Put a shared undertaking beside an opportunity for unilateral victory, and let the people being liberated have opinions about their liberator. Intrusions can bring a rival with the same creed or an obstacle force would remove at someone else's expense.",
     "emphasizes": [
       "Liberation Through Power: freedom as the right of the strong",
       "Passion as Fuel: anger, desire, fear—all are fires to be stoked",
       "Crushing Dominance: victory through overwhelming force",
-      "Self_Determination: no chains, no masters, no debt without blood",
+      "Self-Determination: no chains, no masters, no debt without blood",
       "The Breaking Wave: the joy of watching something that held you crumble"
     ]
   },
