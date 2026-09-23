@@ -13,7 +13,7 @@
     "mood": "The Queen's Long Shadow",
     "starting_location": "The Hall of Dawning tilt-yard at first light. Dawn-knights drill in armor kept mirror-bright, every dent in it from a licensed duel rather than a war. Advocates rehearse along the same rail with the same white knuckles. A Queen's Justiciar slides parchment across the oak, her seal ring catching the light. 'Three charters, one road over the Belworth. The Baron's man says the bridge is his by ancient right. The reeve says crown land. The abbey says it is a pilgrim way and no toll lies upon it. Carry the Queen's writ and make them agree, by clause or by cut — I do not much mind which, and neither will the record. The Earls are watching from the north. They are patient men. Give them nothing to be patient about.'",
     "lore": {
-      "history": "Viterra threw off the Utaran yoke and has spent every year since discovering how much of the empire it kept. Its hedge-laws and parish courts outlasted the legions and gave the kingdom something to be, and they are now the instrument by which it is being taken apart from the inside.\n\nThe crown is two years old. Veralyn Everblood came to it after her brother, King Baldwyn Brightstide, took a swift illness at the end of a two-year reign, and every household in the kingdom has done the arithmetic and none of them will say the total out loud. She was a Fenwood ward at sixteen, she took the walls of Lence for her guardian, and she is Duchess of Aberiel in Vhasia besides, which is three separate reasons for a Viterran earl to keep his own counsel.\n\nTo the north and east sit the Earls, old hill-king stock, plain in tongue and plainer in temper, obedient in every particular that costs them nothing. Some of them paid the fanatics who killed her father Wyllmot five years ago, and she has finished proving which, with steel and with statute in that order. To the west along the Belworth sit the Barons, who speak Vhasi at table, marry into Vhasia, and produce charters that are always older than yours. Between the two lie the Hedges, and every party with an interest is trying to get around them rather than through.\n\nUnderstand what the quarrel is actually about. Nobody in Viterra argues that the Queen has no right. Degree, order, and obedience are held here to be the shape God gave the world, and to break them is not politics but sin — which is exactly why the crown finds the doctrine so useful, and exactly why the Earls will not move until they can show that the sin is hers.\n\nViterra does not knight women. A lord's daughter may be taught arms by a good master in a courtyard with the door shut, and a queen may command an army by right of blood. There is no Viterran patent for a woman knight, and a justicar knighted in Vhasia has her foreign patent entered separately from her office. Nobody says this to the queen's face.",
+      "history": "Viterra threw off the Utaran yoke and has spent every year since discovering how much of the empire it kept. Its hedge-laws and parish courts outlasted the legions and gave the kingdom something to be, and they are now the instrument by which it is being taken apart from the inside.\n\nThe crown is two years old. Veralyn Everblood came to it after her brother, King Baldvyn Brightstride, took a swift illness at the end of a two-year reign, and every household in the kingdom has done the arithmetic and none of them will say the total out loud. She was a Fenwood ward at sixteen, she took the walls of Lence for her guardian, and she is Duchess of Aberiel in Vhasia besides, which is three separate reasons for a Viterran earl to keep his own counsel.\n\nTo the north and east sit the Earls, old hill-king stock, plain in tongue and plainer in temper, obedient in every particular that costs them nothing. Some of them paid the fanatics who killed her father Wyllmot five years ago, and she has finished proving which, with steel and with statute in that order. To the west along the Belworth sit the Barons, who speak Vhasi at table, marry into Vhasia, and produce charters that are always older than yours. Between the two lie the Hedges, and every party with an interest is trying to get around them rather than through.\n\nUnderstand what the quarrel is actually about. Nobody in Viterra argues that the Queen has no right. Degree, order, and obedience are held here to be the shape God gave the world, and to break them is not politics but sin — which is exactly why the crown finds the doctrine so useful, and exactly why the Earls will not move until they can show that the sin is hers.\n\nViterra does not knight women. A lord's daughter may be taught arms by a good master in a courtyard with the door shut, and a queen may command an army by right of blood. There is no Viterran patent for a woman knight, and a justicar knighted in Vhasia has her foreign patent entered separately from her office. Nobody says this to the queen's face.",
       "first_notice": "Damp parchment and old iron. Writ-runners' boots on wet cobble at hours when no honest business is done. And the way a stranger's question is answered by first establishing who is asking, under whose authority, and whether the exchange is likely to be reported.",
       "rule_that_kills": "Never cross the Belworth without a charter that will be honored on both banks. Viterran law and Baronial right contest every crossing, and the river settles the cases the courts cannot."
     },
@@ -67,19 +67,19 @@
     "name": "Succession's Shadow",
     "max_segments": 6,
     "advance_on": [
-      "A document bearing Baldwyn Brightstide's seal surfaces (+1)",
+      "A document bearing Baldvyn Brightstride's seal surfaces (+1)",
       "A northern earl or eastern baron defies the crown (+1)",
       "A legal duel is lost by the Queen's champion (+1)",
       "The GM spends 2 SB to introduce a related complication (+1)"
     ],
     "thresholds": {
       "3": "Viterran officials suffer -1 die to social rolls (the crown's authority is weakening).",
-      "6": "A serious claimant emerges—the Brightstide Claimant. The Queen's enemies rally around them, and the Succession Crisis begins."
+      "6": "A serious claimant emerges—the Brightstride Claimant. The Queen's enemies rally around them, and the Succession Crisis begins."
     },
     "stirrs_table": [
       {
         "roll": 1,
-        "complication": "A faded seal is discovered—Baldwyn's personal seal, long thought lost. Its authenticity is debated, but its weight is felt."
+        "complication": "A faded seal is discovered—Baldvyn's personal seal, long thought lost. Its authenticity is debated, but its weight is felt."
       },
       {
         "roll": 2,
@@ -87,11 +87,11 @@
       },
       {
         "roll": 3,
-        "complication": "A rumor surfaces that Baldwyn was poisoned—and that the Queen knew. The rumor is false. The weight of it is not."
+        "complication": "A rumor surfaces that Baldvyn was poisoned—and that the Queen knew. The rumor is false. The weight of it is not."
       },
       {
         "roll": 4,
-        "complication": "A legal duel is challenged in the Queen's name. The challenger wears a sunburst brooch—the symbol of the Brightstide claimant."
+        "complication": "A legal duel is challenged in the Queen's name. The challenger wears a sunburst brooch—the symbol of the Brightstride claimant."
       },
       {
         "roll": 5,
@@ -114,7 +114,7 @@
       "name": "Justiciar Elodie Venn",
       "role": "Queen's Justiciar",
       "motivation": "Raised from the fen marshes; defeats opponents legally and socially, leaving them ashamed.",
-      "quirk": "Carries a writ signed in Baldwyn Brightstide's blood as a lucky charm; has never lost a duel."
+      "quirk": "Carries a writ signed in Baldvyn Brightstride's blood as a lucky charm; has never lost a duel."
     },
     {
       "name": "Baron Aldric",
@@ -155,7 +155,7 @@
   ],
   "names": {
     "first_male": [
-      "Baldwyn",
+      "Baldvyn",
       "Cuthbert",
       "Roran",
       "Morcar",
@@ -424,7 +424,7 @@
       "suit": "heart",
       "title": "Crown Council",
       "subtitle": "[POLITICS] [LAW]",
-      "description": "Fenwood dukes, guild envoys, abbots; weighing grain against glory and the shadow of Baldwyn Brightstide against them all. Legal battles fought through proxy advocates.",
+      "description": "Fenwood dukes, guild envoys, abbots; weighing grain against glory and the shadow of Baldvyn Brightstride against them all. Legal battles fought through proxy advocates.",
       "flavor": "The council has a standing rule: no weapons within the chamber. The advocates have found seventeen loopholes—and eighteen reasons to break it.",
       "what_they_carry": "Can grant a writ or a pardon for 2 Supply.",
       "what_they_ask": "A vote—and a promise to honor the council's ruling."
@@ -689,7 +689,7 @@
     "river_right_window": "At a ferry, tidework, or customs stair, play any Diamond tied to crossings or seals to open a short window of lawful passage: one convoy passes uninspected, or one cargo clears at priority. The window closes immediately if a storm, audit, or levy card is revealed.",
     "legal_duel_protocol": "When legal disputes cannot be resolved through argument, parties may challenge each other to a duel. The winner's position becomes legally binding. Requires proper sanction and seconds (see Duel Sanction Diamond). If either party lacks a sanction, the duel is treated as assault under crown law.",
     "vhasian_claims": "Any Viterran noble with land across the Belworth may invoke a Ducal Warrant to attempt to collect rents or enforce judgments in Vhasia. Doing so starts a Border Snarl complication (or ticks Border-Lace), as Vhasian claimants are unlikely to cooperate. The Queen's own Vhasian title (Duchess of Aberiel) adds a layer of irony—and suspicion.",
-    "succession_shadow": "Any legal dispute touching on inheritance, legitimacy, or royal authority is automatically one step more volatile. The GM may spend 1 SB to introduce a witness, document, or rumor related to Baldwyn Brightstide's death or the northern earls' secret funding of King Wyllmot's murder.",
+    "succession_shadow": "Any legal dispute touching on inheritance, legitimacy, or royal authority is automatically one step more volatile. The GM may spend 1 SB to introduce a witness, document, or rumor related to Baldvyn Brightstride's death or the northern earls' secret funding of King Wyllmot's murder.",
     "courtroom_mini_game": "Lay three stones: Precedent, Equity, Force. Argue a point (roll Wits + Sway vs. DV 3). On a hit, move one stone to your side. On a miss, the opposing advocate gains Citation Edge. Win two stones to secure a temporary Court Ruling (treat as a Diamond for one scene). Halric's Interjection (2 SB): flip Precedent, but start Whispered Precedent [2] with the losing side.",
     "cross_border_tensions": "Two opposed timers: Queen's Peace vs. Border Fire (size by highest rank in the seed). Each leg, choose Viterran Road (safe, slow), Vhasian Claim (fast, risky), or Ubral Pass (hidden, costly). Advantage: Vhasian Claim → Viterran Road (shortcuts), Ubral Pass → Vhasian Claim (concealment), Viterran Road → Ubral Pass (supplies). Spend a Ducal Warrant to shift one segment from Border Fire to Queen's Peace.",
     "the_queens_dial": "Track the party's footing between upholding the Queen's authority and making pragmatic compromises. Legitimacy High: +1 Position when invoking royal writs, crown law, or the Queen's name. First compromise or pragmatic choice each session starts one step worse. Pragmatism High: +1 Effect when brokering deals, accepting bribes, or negotiating with rivals. First appeal to royal authority each session starts one step worse. Center the dial by resolving a dispute in a way that satisfies both the Queen's law and local custom, or by winning a legal duel in the Queen's name.",
@@ -698,7 +698,7 @@
     ],
     "timers": {
       "border_lace": "**[4]** Tracks competing legal claims. Ticks when a second valid writ is presented, a player steps up Position using Hedge-Law Momentum, or a Vhasian authority disputes a crown document. At 4: dispute escalates to riot, duel, or jurisdictional void.",
-      "succession_shadow": "**[6]** Tracks erosion of Queen Veralyn's legitimacy. Ticks when a document bearing Baldwyn's seal surfaces, a northern earl or eastern baron defies the crown, a legal duel is lost by the Queen's champion, or the GM spends 2 SB to introduce a related complication. At 3: Viterran officials suffer -1 die to social rolls. At 6: a serious claimant emerges.",
+      "succession_shadow": "**[6]** Tracks erosion of Queen Veralyn's legitimacy. Ticks when a document bearing Baldvyn's seal surfaces, a northern earl or eastern baron defies the crown, a legal duel is lost by the Queen's champion, or the GM spends 2 SB to introduce a related complication. At 3: Viterran officials suffer -1 die to social rolls. At 6: a serious claimant emerges.",
       "queens_peace": "**[Front]** Once per session, if the party resolves a cross-border dispute in the Queen's favor without bloodshed, advance this front. If they escalate violence or validate a Vhasian claim, tick Succession's Shadow instead."
     }
   },
@@ -721,7 +721,7 @@
     },
     {
       "title": "The Ninth",
-      "description": "In any Viterran court, the ninth citation of precedent voids all previous citations. The wise stop at eight and settle out of court. Those who cite the ninth are said to hear faint laughter from the marble walls—and their cases are never heard again. Some say the laughter is Baldwyn Brightstide's, still judging from the shadow of the throne."
+      "description": "In any Viterran court, the ninth citation of precedent voids all previous citations. The wise stop at eight and settle out of court. Those who cite the ninth are said to hear faint laughter from the marble walls—and their cases are never heard again. Some say the laughter is Baldvyn Brightstride's, still judging from the shadow of the throne."
     }
   ],
   "superstitions": [
@@ -741,12 +741,12 @@
       "cost": "Burn for +1 die once"
     },
     {
-      "name": "The Brightstide Candle",
-      "effect": "Light a candle in memory of King Baldwyn before a difficult legal proceeding. On a roll that includes a 1, you may reroll that die once. If you still fail, the GM banks 1 SB.",
+      "name": "The Brightstride Candle",
+      "effect": "Light a candle in memory of King Baldvyn before a difficult legal proceeding. On a roll that includes a 1, you may reroll that die once. If you still fail, the GM banks 1 SB.",
       "cost": "Burn for +1 die once"
     }
   ],
-  "decline_and_patronage": "In Viterra, power flows through the careful application of law—but beneath every charter runs the threat of steel. The Warrior Queen maintains authority through a combination of military might and legal precision, but the throne is fragile. The old duchies and local officials wield influence through knowledge of hedge-law and ancient custom. The true power lies not in the documents alone, but in the will to enforce them when the parchment fails. **For the GM:** Tie rewards to visible symbols (seals, writs, charters) that can be challenged, stolen, or voided. Let rival duchies and Vhasian claimants issue conflicting authorities, forcing players to choose whose favor matters more. Use the courts, parishes, and muster grounds as arenas for social contests, where knowledge of law and custom determines success. When legal conflicts escalate beyond words, transition naturally to physical confrontation with appropriate stakes. Introduce the Succession's Shadow as a recurring complication: old loyalties, forged documents, the ghost of Baldwyn Brightstide, and the secret funding of King Wyllmot's murder can upend any legal certainty.",
+  "decline_and_patronage": "In Viterra, power flows through the careful application of law—but beneath every charter runs the threat of steel. The Warrior Queen maintains authority through a combination of military might and legal precision, but the throne is fragile. The old duchies and local officials wield influence through knowledge of hedge-law and ancient custom. The true power lies not in the documents alone, but in the will to enforce them when the parchment fails. **For the GM:** Tie rewards to visible symbols (seals, writs, charters) that can be challenged, stolen, or voided. Let rival duchies and Vhasian claimants issue conflicting authorities, forcing players to choose whose favor matters more. Use the courts, parishes, and muster grounds as arenas for social contests, where knowledge of law and custom determines success. When legal conflicts escalate beyond words, transition naturally to physical confrontation with appropriate stakes. Introduce the Succession's Shadow as a recurring complication: old loyalties, forged documents, the ghost of Baldvyn Brightstride, and the secret funding of King Wyllmot's murder can upend any legal certainty.",
   "sb_spend_table": {
     "minor_complications": [
       "**Exposure:** Crown officials or rival advocates take notice.",
@@ -780,7 +780,7 @@
       "**Hedge Shift (1 SB):** A boundary stone shifts; increase DV by 1 for navigation or legal rolls this scene.",
       "**Citation War (2 SB):** Increase DV by 1 unless you produce a precedent (spend a Diamond or recall a past ruling).",
       "**Seal Crack (3+ SB):** A writ loses half its value until re-witnessed.",
-      "**Succession's Whisper (2 SB, Viterra only):** A document or rumor tied to Baldwyn Brightstide's death surfaces. The GM must answer one yes/no question about royal legitimacy or introduce a related complication. Earl Morcar's involvement may also be hinted."
+      "**Succession's Whisper (2 SB, Viterra only):** A document or rumor tied to Baldvyn Brightstride's death surfaces. The GM must answer one yes/no question about royal legitimacy or introduce a related complication. Earl Morcar's involvement may also be hinted."
     ]
   },
   "boss_archetypes": [
@@ -836,7 +836,7 @@
       ]
     },
     {
-      "name": "The Brightstide Claimant",
+      "name": "The Brightstride Claimant",
       "tags": [
         "Pretender"
       ],
@@ -873,7 +873,7 @@
       "Let rival duchies and Vhasian claimants issue conflicting authorities, forcing players to choose whose favor matters more.",
       "Use the courts, parishes, and muster grounds as arenas for social contests, where knowledge of law and custom determines success.",
       "When legal conflicts escalate beyond words, transition naturally to physical confrontation with appropriate stakes.",
-      "Introduce the Succession's Shadow as a recurring complication: old loyalties, forged documents, the ghost of Baldwyn Brightstide, and the secret funding of King Wyllmot's murder can upend any legal certainty."
+      "Introduce the Succession's Shadow as a recurring complication: old loyalties, forged documents, the ghost of Baldvyn Brightstride, and the secret funding of King Wyllmot's murder can upend any legal certainty."
     ]
   },
   "index": [
@@ -884,7 +884,7 @@
     "Complications!Viterra",
     "Rewards!Viterra",
     "Warrior Queen",
-    "King Baldwyn Brightstide",
+    "King Baldvyn Brightstride",
     "King Wyllmot",
     "Crown Council",
     "Fenwood dukes",
@@ -900,7 +900,7 @@
     "Duel Sanction",
     "Vhasian claims",
     "Succession crisis",
-    "Brightstide claimant",
+    "Brightstride claimant",
     "Local Patrons!Viterra",
     "Saint Elodie",
     "Hedge-Seal Covenant",
