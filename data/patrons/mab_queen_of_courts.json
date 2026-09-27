@@ -16,20 +16,20 @@
     "wit"
   ],
   "lore": {
-    "description": "Mab keeps the Hazel Court, and she keeps it the way a very good hostess does: by arranging things so that no one can say afterward at what moment they became a guest. She does not command. She invites, she notices, she remembers — and by the time you understand that she has been holding the shape of your evening for you, you are standing inside it.\n\nShe is an Archfae, bound by rules she did not write and cannot step around. She cannot lie. She has never once needed to. She can set true things in an order that leaves you nowhere sensible to stand, and then look sorry about it, and mean that too.\n\nAgainst her sisters in method: Inaea also never states a falsehood, but that is a technique she chose because a web with a lie in it does not hold; Mab's is a rule she cannot step around. Morag discloses the cost in plain language and means it. Mab arranges the order of true things; Morag arranges the terms; Inaea arranges the people.",
+    "description": "Mab keeps the Hazel Court, and she keeps it the way a very good hostess does: by arranging things so that no one can say afterward at what moment they became a guest. She does not command. She invites, she notices, she remembers — and by the time you understand that she has been holding the shape of your evening for you, you are standing inside it.\n\nShe is an Archfae, bound by rules she did not write and cannot step around. She cannot lie. She has never once needed to. She can set true things in an order that leaves you nowhere sensible to stand, and then look sorry about it, and mean that too.\n\nHer methods differ from those of Inaea and Morag: Inaea also never states a falsehood, but that is a technique she chose because a web with a lie in it does not hold; Mab's is a rule she cannot step around. Morag discloses the cost in plain language and means it. Mab arranges the order of true things; Morag arranges the terms; Inaea arranges the people.",
     "followers": "Courtiers, players, and anyone whose living depends on being welcome. In Aelinnel she is the Unbounded Guest, and her arrival is announced by laughter and the sound of a glass going over. In the Vilikari salons she is the Gilded Tongue, named quietly before anyone sits down to talk terms. Wherever a mask is worn without apology and a sentence can be meant two ways, she is somewhere in the room, and generally enjoying herself.",
     "quote": "You were not tricked. You were charmed, and you agreed, and I have the whole evening by heart."
   },
   "domain_focus": [
     "Fae Glamour: illusions, enchantments, the art of seeming",
-    "Social Bargains: oaths, promises, debt as social glue",
+    "Social Bargains: promises, invitations, and what accepting them permits",
     "Courtly Intrigue: etiquette, wordplay, the game of masks",
     "Trickster Arts: mischief, cleverness, the twist in the tale"
   ],
   "runekeeper_options": {
     "thiasos": {
       "description": "The Hazel Court sends companions rather than servants, and they arrive already knowing your name. A cricket that answers a question with a better one. A cat with mismatched eyes that attends masquerades and nothing else. A fox that takes small bright things and leaves notes about it. A white jay with a talent for other people's voices and no discretion at all.",
-      "care": "Once a day it wants to see something worth repeating — a promise, a performance, a good lie well told. Neglected a week it starts editorializing: a tug at the sleeve mid-untruth, a glass knocked over on the turn of a sentence (–1 die on Deception and Performance rolls for its bearer until it witnesses a genuine oath)."
+      "care": "Once a day it wants to see something worth repeating — a promise, a performance, a good lie well told. Neglected a week it starts interrupting: a tug at the sleeve mid-untruth, a glass knocked over on the turn of a sentence (–1 die on Deception and Performance rolls for its bearer until it witnesses a genuine oath)."
     },
     "codex": {
       "description": "Nothing she gives you reads straight through. A deck whose suits rearrange while you are not looking at it. A mirror that shows the backs of words. Silk handkerchiefs knotted into an argument. A scroll that only makes sense to someone who is dancing.",
@@ -162,7 +162,7 @@
   },
   "witchcraft": {
     "name": "The Art of Glamour and Toy",
-    "description": "A witch who walks with Mab is a glamour-weaver or a toy-maker, making things that are never quite what they appear. The craft works by misdirection: a doll that laughs when a promise goes bad, a mirror that gives a flattering reflection and no other information, a mask that lets its wearer say anything and be believed. Needles, masks, and a well-placed reflection. In Aeler a True-Mason carves a cornerstone that makes everyone forget where the building is weak; a witch of Mab sews a glamour seam into that cornerstone's shadow instead, and lets the mason take the credit.",
+    "description": "A glamour-weaver works at a guest's eye level: the seam of a mask, a doll set beside a place card, the angle of a mirror over a door. The doll may laugh when a promise is broken; the mirror supplies a flattering face when its owner needs composure. A toy-maker asks who will handle the object and who will be watching when they do. A mask can change how a statement is received without making the statement true.",
     "color": "#a94ba8",
     "lore": "The glamour-weaver's path is the art of seeming, and its first lesson is that seeming is not the opposite of truth. A mask worn honestly says more than a bare face. A kind lie is sometimes the only door left standing. Mab's witches keep court in miniature — a table, a deck, a room of guests who do not yet know what they have agreed to and will not be told until it would be rude to mention.",
     "signature_rite": "Rite of Courtly Guise",
@@ -256,18 +256,18 @@
     }
   ],
   "playstyle_notes": {
-    "description": "Mab is for tables that would rather win a room than a fight. Her power is social, indirect, and almost never announces itself; her corruption runs toward the fae, which is to say toward finding mortal limits arbitrary and then saying so out loud at dinner. Her intrusions are courtesies: an old favor calling at the wrong hour, a guest you cannot refuse without becoming the villain of the evening, a jest that lands harder than the teller intended and cannot now be taken back.",
+    "description": "Mab makes the wording of a welcome matter. An old favor arrives with the next guest; a compliment establishes a rank its speaker did not intend to acknowledge. Her followers need to know who heard a promise and what was actually offered. Give them invitations to compare, witnesses with different interests, and a chance to ask the question everyone else has avoided.\n\nKeep her rules consistent even when their origin remains unexplained. Establish the relevant promise before the players investigate it; finding a way to satisfy its wording is progress, not a reason to invent a new condition. Mab cannot lie, and an encounter should not require her to. Her attention can be unwelcome without making every choice the party makes a mistake.",
     "emphasizes": [
-      "Sovereignty by invitation — her word governs her Court, and you walked in",
-      "Glamour as leverage — illusions that hold because people want them to",
-      "Courtesy with teeth — etiquette, wording, and the long memory of a hostess",
-      "The gap in the sentence — victory found in how a thing was phrased",
-      "Nothing quite provable — the party knows what happened and cannot demonstrate it"
+      "Sovereignty by invitation — establish when a visitor became a guest",
+      "Glamour as leverage — appearances change who is heard and believed",
+      "Courtesy with consequences — give a promise exact words and a witness",
+      "Room to answer — fulfillment, reinterpretation, refusal, or a different offer",
+      "Mystery without a moving target — keep the terms discoverable and consistent"
     ]
   },
   "sample_adventure": {
     "title": "The Guest Who Would Not Leave",
-    "description": "A minor noble threw a masquerade in Mab's honor, hoping it would help with a contested inheritance. An uninvited guest arrived at midnight, laughing, and has not left. Every attempt to put them out has produced an accident, a scandal, or an old favor surfacing at exactly the wrong hour, and the household has begun setting a place. The party is hired to end it. The guest cannot be removed — only out-talked, out-waited, or given precisely what the Court has decided they are owed, which nobody has yet been brave enough to ask about.",
+    "description": "A minor noble threw a masquerade in Mab's honor, hoping it would help with a contested inheritance. An uninvited guest arrived at midnight, laughing, and has not left. Every attempt to put them out has produced an accident, a scandal, or an old favor surfacing at the wrong hour. The household has begun setting a place. The party is hired to end the visit.\n\nPeople: the host wants the guest gone without damaging the inheritance claim. The steward wants the household staff spared the next attempt at an eviction. The guest maintains that a welcome has not yet been honored and will repeat its wording when asked the right question.\n\nBefore play: choose the exact welcome, who gave it, and what would complete it. An invitation's wording, a changed place card, and a servant who heard the exchange give the party different ways to establish those facts. Do not change the promise after the players find an answer to it.\n\nPressure: another formal supper is approaching. A rival claimant has accepted an invitation, and the host insists the guest must be gone before the first course. The steward knows which member of staff will be blamed if the evening goes badly.\n\nWays forward: fulfill the welcome, demonstrate that its condition has already been met, negotiate the guest's departure, or expose what the host offered. Forcible expulsion remains a choice with consequences the party can investigate; a failed attempt should follow an established rule rather than reveal a fresh immunity. The players need enough evidence to choose. They do not need an explanation of how Mab makes hospitality hold.",
     "quote": "You did not read the invitation closely. Nobody does. That is rather what it is for."
   },
   "_license": "Fate's Edge Copyright – © 2024 - 2026 Nicholas A. Gasper. Used with permission, All rights reserved.",
