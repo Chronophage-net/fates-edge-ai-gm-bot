@@ -16,8 +16,8 @@
     "chivalry"
   ],
   "lore": {
-    "description": "Mykkiel is the unwavering judge of covenants, the divine lawgiver whose scales and sword uphold sacred order. He is not good, nor evil – he is the law. Mercy without justice is weakness; justice without law is chaos. His followers are judges, templars, and scribes who enforce divine law with zealous devotion, seeing the world in absolutes of sanctity and transgression.",
-    "followers": "The Covenant, the great faith that bears his name, was revealed not through a prophet of soft words, but through a commander of hosts – a figure of burning authority who carved the first covenant into stone with a sword. Mykkiel does not negotiate. He commands. The faithful do not interpret; they obey.",
+    "description": "Mykkiel is approached as the Arbiter who hears a claim and binds a judgment. His Covenant teaches that law must outlast the power of the person accused. The promise draws people denied an ordinary hearing, and officials who believe no exception can be permitted once a rule has been established. His scales and sword can become protection, or the means by which a lawful remedy is withheld until it is useless. His devotees must answer for whose testimony they admit and whose standing they deny.\n\n**The plaintiff before the throne.**\n\nThe Covenant begins with a dispossessed Sidhi woman who brought a grievance and was heard. The founding record is a judgment with a plaintiff, a respondent, findings, and a remedy. It is not a commander's revelation or a prophet's proclamation. For families who have been told they have no standing, the distinction is the center of the faith: its first remembered victory belongs to someone seeking a hearing.\n\nGalanina's keepers preserve the judgment alongside later applications of it. Some household images show the Arbiter's open hand before his sword. Military patrons have commissioned images that reverse the emphasis. Neither change proves the original litigant commanded an army. A judge asked to bless such an image may have to choose between the institution funding the court and the founding account the court exists to remember.\n\n**The Judge of the Seal on the roads.**\n\nCircuit judges carried Covenant practice along Pereshi trade routes in the company of people who needed testimony recognized beyond one ruler's reach. A disputed delivery could be heard by someone who expected to leave with the next caravan. The independence was useful and incomplete: the judge still needed food, shelter, and someone willing to enforce the remedy.\n\nPermanent courts inherited both the authority and those dependencies. Their records can preserve a poor person's successful claim and also show how often a wealthy respondent postponed appearing. The teaching that judges apply remembered law rather than legislate does not prevent disagreement over which case is relevant. It makes the history of each ruling worth fighting over.\n\n**Seint Michel and the unarmed Accuser.**\n\nWestern chivalric devotion addresses Seint Michel before vows to protect the innocent. Knights may place their swords beside the seal and consider force indispensable to a judgment's meaning. The Covenant's Inquisitor Prime is approached as the Accuser: an investigator and prosecutor, not the executioner of every accusation. Iron scales and testimony belong to that office even when a neighboring faith dresses the same Patron's servants for a purge.\n\nA knight who has brought a prisoner a long way may find the Accuser demanding evidence the knight considers an insult to his honor. A working invocation does not decide which office has overreached. The prisoner remains someone for whom the founding promise of a hearing either matters or does not.\n\n**The old houses of Taharka.**\n\nTaharka gave Covenant houses land, and they retain forms of worship that later authorities elsewhere have revised. Their hospitality to a visiting judge does not concede that the visitor can replace their liturgy or decide a local case. A delegation seeking uniform practice may be confronted with an older judgment its own copy omits.\n\nThe local disagreement is not reducible to foreign law against native custom. Taharkan Covenant families have inherited the houses, argued their cases, and maintained their schools. Some want wider recognition for their rulings; others fear that recognition will cost the independence that made a hearing possible. Start with a remedy already granted but not enforced. The party may need a witness, an absent respondent, or a person willing to carry out the finding. Mykkiel's devotion offers no excuse to replace that work with a proclamation that the law is the law.",
+    "followers": "The Covenant traces its founding to a dispossessed woman of the Sidhi diaspora who brought a grievance before Mykkiel and won. Its first document is a judgment with findings and a remedy, not a revelation delivered by a commander. Judges, notaries, circuit keepers, and sworn protectors preserve that confidence in a hearing. Their claim to apply remembered law rather than legislate is also a source of rigidity, especially when an established procedure excludes the person seeking help.",
     "names_across_regions": {
       "western_chivalry": "Seint Michel, the patron of knights who swear to protect the innocent and uphold the code",
       "eastern_deserts": "The Judge of the Seal, whose name is invoked before every contract"
@@ -255,5 +255,46 @@
       "note": "Founder and orthodoxy both: the Arbiter who heard the founding case and found for the plaintiff."
     }
   ],
-  "orders_are_masks": "An Order is the shape this Patron takes inside a religion — the office through which it is approached, named and made respectable. The same Patron therefore appears in faiths that despise each other, and rarely at the same rank."
+  "orders_are_masks": "An Order is the shape this Patron takes inside a religion — the office through which it is approached, named and made respectable. The same Patron therefore appears in faiths that despise each other, and rarely at the same rank.",
+  "guises": [
+    {
+      "among": "Western Covenant congregations",
+      "name": "Seint Michel of the Drawn Sword",
+      "note": "The sword is shown upright before a closed book. Congregations invoke him when an oath must stand against a ruler's convenience. Rulers commission the same image above places where their judgments are executed. A petitioner may arrive believing the sword protects them from the official who believes it authorizes him."
+    },
+    {
+      "among": "The desert Covenant houses",
+      "name": "The Judge of the Seal",
+      "note": "The seal is carried wrapped until the words to be witnessed have been read. Commentators insist that they are preserving the command, not interpreting it, while disputing which inherited reading is faithful. A traveler can repeat a formula exactly and discover that the receiving house recognizes a different precedent for its use."
+    },
+    {
+      "among": "Taharka's early Covenant foundations",
+      "name": "The Witness on Granted Ground",
+      "note": "Foundations established by grant retain old liturgies and the testimony of the communities that received them. Visiting reformers sometimes demand a corrected service. Local clergy answer that the correction would discard the very words under which their house was admitted. Their neighbors care because land, refuge, and mutual duties were promised in those words."
+    },
+    {
+      "among": "Ecktoria's charter courts",
+      "name": "The Sword Above the Seal",
+      "note": "Gilded Scale notaries place his sign beside a sworn instrument without claiming every imperial order is his revelation. That distinction becomes dangerous when an order bears the correct seals but contradicts an older guarantee. A clerk may face punishment for reading the guarantee aloud, and disgrace among co-religionists for failing to read it."
+    },
+    {
+      "among": "Aelerian foothill Covenant communities",
+      "name": "The Unbent Witness",
+      "note": "A command is carved rather than preserved only on parchment. The oldest stones sometimes retain formulae the neighboring human temple no longer uses. Foothill clergy share work and meals with those neighbors while refusing to recut the stones. Their refusal is a local religious dispute, not proof that all Aeler owe allegiance to Mykkiel."
+    }
+  ],
+  "provenance": {
+    "origin": "The Covenant's revealed lawgiver; his worship has several remembered centers of transmission, none of which changes the claim that the command precedes its custodians.",
+    "summary": "Accounts of the fiery sword and first stone are recited as revelation. The archives that record how a particular congregation acquired its copy are more ordinary: teachers arrived, a household offered rooms, a local ruler granted ground, and pupils copied what they had received. Custodians sometimes treat the age of their copy as though it established authority over every other house.",
+    "the_migration": "Western congregations carried the name Seint Michel with military chaplains, judges, and displaced households. Desert houses retained seal-centered observances; Taharkan foundations preserved versions their homelands later revised. The spread was not one uninterrupted conquest. A community admitted under a grant could later defend the Covenant against the descendants of those who granted it, or appeal to those descendants against an intrusive foreign superior.",
+    "why_it_took": "The Gilded Scale gave revelation a daily presence in testimony and witnessed instruments. It also created people whose livelihood depended on deciding which words counted as binding. Their disputes are expressed as obedience: each accuses the other of bending what neither claims a right to alter. An exact copy, a damaged seal, or testimony about the circumstances of an oath can therefore become more important than an eloquent appeal for compassion.",
+    "note": "Mykkiel remains the severe lawgiver of the existing entry. Shared institutions or similar images do not make him the Oath of Flame and Light, and a borrowed ritual does not extend his jurisdiction over every power another religion places beneath its Light."
+  },
+  "philosophy": {
+    "name": "The Command and Its Custodian",
+    "summary": "The Covenant places law beyond the convenience of its keeper. Its servants are most dangerous when they become unable to distinguish that claim from their own authority.",
+    "the_point": "Some cruelty can be laid at the interpreter's door. Other cruelty may follow the command exactly. A story that always discovers a forged order whenever obedience would hurt someone has spared the faith its central difficulty.",
+    "the_third_thing": "A servant can be sincere, exact, and responsible for harm. Defiance may have a real cost. Mercy cannot be smuggled in as proof that the lawgiver secretly meant the opposite of what was revealed.",
+    "at_the_table": "Establish the relevant command and its evidence before the dispute. A party may expose a misuse, fulfill an older guarantee, or choose costly disobedience. Do not ensure that every hard judgment evaporates under a convenient textual loophole."
+  }
 }

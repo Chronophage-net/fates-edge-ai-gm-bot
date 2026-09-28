@@ -16,7 +16,7 @@
     "outcast"
   ],
   "lore": {
-    "description": "Aveh is the faceless rider at the horizon's edge, neither man nor woman, both and neither. The Ykrul call them Aveh, a liminal spirit beyond hearth and vow, a storm-shadow that offers liberty at the cost of belonging. To travel with Aveh is to taste unchained freedom — and to risk being erased by the storm that follows. They are the patron of the outcast, the non-conforming, the genderless, and the forgotten. Aveh asks no oath and demands no loyalty, but every gift leaves a scar of absence.",
+    "description": "Aveh is the faceless rider at the horizon's edge, neither man nor woman, both and neither. The Ykrul call them Aveh, a liminal spirit beyond hearth and vow, a storm-shadow that offers liberty at the cost of belonging. To travel with Aveh is to taste unchained freedom — and to risk being erased by the storm that follows. They are the patron of the outcast, the non-conforming, the genderless, and the forgotten. Aveh asks no oath and demands no loyalty, but every gift leaves a scar of absence.\n\n**The place beyond the tethering lines.**\n\nYkrul do not need a temple to recognize the Unbannered. A rider who has left a camp can be fed beyond the tethering lines without being invited to swear themselves into another household. The custom is disputed wherever it is practiced. One elder sees shelter from a cruel kinship; another sees a way to abandon dependents without answering for them. Aveh supplies no list separating those travelers. The person bringing the bowl must decide whom they are helping.\n\nThe absence of a banner has acquired different meanings along the western and eastern steppe routes. In the west it can be read against companies that make a name by standing beneath a pole. Farther east, hosts may ask which fosterage and riding ties the traveler has left. Neither test can discover everything. A rider can refuse the name they were given while still returning to feed the horse of someone who gave it.\n\n**A road practice becomes a refuge.**\n\nCaravan workers carried the custom into towns where leaving a household did not leave its claims behind. In back courtyards along the Way of Silk, an unused tethering ring may mark a place where a traveler is fed before being asked for a name. Some attendants are former runaways; others have never left the street. Their disagreements are practical: how long to shelter someone, whether a child may be taken onward, and which pursuer is trying to recover a person rather than property.\n\nAshaani escape networks sometimes invoke Aveh beside Harrada. They distinguish the work carefully. Harrada's followers seek to destroy the claim that held a person; Aveh's guides seek a road by which the person can leave its reach. Those aims can conflict when destroying a document would expose everyone named alongside the fugitive. Neither devotion requires the guide to pretend that disappearance is painless.\n\n**Freedom and the people left behind.**\n\nSome of the Unbannered refuse any enduring recognition. Others remember chosen names precisely because the storm is dangerous to them. A circle may keep an empty place for a missing traveler while declining to say the name by which pursuers would know them. Belonging can be remade without declaring the old wound healed.\n\nAveh's neither-man-nor-woman image matters deeply to some devotees and little to others. Gender variance is not evidence that someone has rejected family, nor does it make them a follower by default. The cult's most bitter dispute is whether a person can accept its freedom and choose lasting ties afterward. A returning guide who wants their child to know them gives that question a face. Aveh's established gifts can still erode recognition; a compassionate community cannot vote that danger away.",
     "followers": "Aveh's followers are outcasts, runaways, spies, and those who have rejected the bonds of family, nation, or gender. They gather at crossroads rather than temples, marked by no banner and no fixed name. Some are gentle path-cutters who help the desperate vanish from cruel pursuers; others are the Unbannered, who erase themselves entirely and are never seen again by anyone who knew them.",
     "quote": "I am the track the storm devours. I am the freedom you fear and the silence you crave. To ride with me is to be unbound, and to be unbound is to vanish."
   },
@@ -271,5 +271,41 @@
   },
   "_license": "Fate's Edge Copyright – © 2024 - 2026 Nicholas A. Gasper. Used with permission, All rights reserved.",
   "order": "empyreal",
-  "register": "mystery"
+  "register": "mystery",
+  "guises": [
+    {
+      "among": "Western Ykrul border camps",
+      "name": "The Rider Without a Pole",
+      "note": "A scrap of cloth is flown where a banner should be. People fleeing a household or a commander look for it; those searching for them do too. Its keepers speak of departure without requiring an oath to remain together. Some former guests return years later with gifts. Others cannot remember which camp received them."
+    },
+    {
+      "among": "Eastern steppe caravan margins",
+      "name": "The Name Left in the Rain",
+      "note": "Aveh is spoken of with changing pronouns, or only as the rider. Guides resent merchants who translate that variation into a fixed secret identity. A wet cord tied where a name-token hung marks an abandoned allegiance. It may belong to someone escaping cruelty or to someone whose dependants will now have to answer for a missing rider."
+    },
+    {
+      "among": "Sihai's unregistered roads",
+      "name": "The Unposted Rider",
+      "note": "Official descriptions call the cult a method of evasion. People between names call it a way to reach the next town. An Unbannered shelter may contain examination brushes beside saddle gear. Some guests seek new registration as soon as they are safe. Aveh's most devoted followers regard the replacement file with the same unease the guest once felt toward the old one."
+    },
+    {
+      "among": "The approaches to Ashaan",
+      "name": "The One Who Will Not Be Called Back",
+      "note": "Stories circulate among caravan hands of a rider crossing a storm with people hidden in its wake. The stories disagree about which of those people arrived. Aveh does not become an agent of the Black Hand or a reliable cure for the Maeri's erasures merely because escape and lost names occur in both accounts. A rescuer who promises everyone their old name back is promising beyond the cult's knowledge."
+    }
+  ],
+  "provenance": {
+    "origin": "A cult encountered repeatedly among people leaving attachments; no surviving list can establish its first company.",
+    "summary": "The Unbannered resist genealogies. Their own witnesses can remember a shared escape and disagree about who rode beside them. Eastern and western steppe accounts preserve different marks and riding songs, while both insist that Aveh was already there when a pursued traveler first needed the storm. That is a belief about the Patron's availability, not evidence that all those escapes happened in one migration.",
+    "the_migration": "Caravan workers brought temporary refuges into towns where a rider could no longer disappear over a ridge. A spare sleeping place behind a stable became as useful as a hidden remount. In Sihai, the practice developed around gaps between postings and households unable to prove whom they had received. Those practical accommodations never became a stable roster. An organization that could identify every person it had sheltered would have built exactly what many of them fled.",
+    "why_it_took": "That absence creates its own injuries. A family seeking a lost child may hear the same refusal as a violent employer seeking a fugitive. Some helpers retain private signs by which a guest can later find them; more absolute devotees destroy even these. They disagree over whether a way back is an act of care or the beginning of another tether.",
+    "note": "Storm imagery can cause outsiders to place Aveh beside Kuva in a single sky family. No such kinship is established. Kuva witnesses a spoken attachment; Aveh can make its former bearer increasingly difficult to find."
+  },
+  "philosophy": {
+    "name": "Freedom After the Farewell",
+    "summary": "Aveh offers release from claims that have become intolerable. The danger is that a person is made of attachments as well as restrictions.",
+    "the_point": "A departure can be necessary even when someone grieves it. The Unbannered become cruel when they treat grief as proof that the attachment deserved erasure, or accuse a rescued person of cowardice for wanting a settled home afterward.",
+    "the_third_thing": "Their best kindness may be to help someone leave their company. The Patron's attention does not necessarily leave with them. Familiar people begin hesitating before a name; an old joke receives a polite smile from someone who once told it.",
+    "at_the_table": "Let a former guest seek proof of a rescue so they can reclaim an ordinary place in a household. The witnesses want to help but cannot agree whom they remember. Do not make remaining permanently unbound the only valid outcome."
+  }
 }

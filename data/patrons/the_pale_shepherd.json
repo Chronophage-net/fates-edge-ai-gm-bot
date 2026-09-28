@@ -16,7 +16,7 @@
     "transition"
   ],
   "lore": {
-    "description": "The Pale Shepherd walks the seam between all things – life and death, joy and sorrow, memory and forgetting, the known and the unmarked. Neither wholly kind nor cruel, the Shepherd guides those who must pass through the hardest doors. Cloaked, with shadow-sheep that bear the shed wool of old possibilities, the Shepherd offers safe conduct through liminal space for a price paid in memory, feeling, or fate. Those who walk this road learn the hidden routes between states of being and can lead others through their hardest crossings – but each passage leaves them more attuned to endings than beginnings.",
+    "description": "The Pale Shepherd walks the seam between all things – life and death, joy and sorrow, memory and forgetting, the known and the unmarked. Neither wholly kind nor cruel, the Shepherd guides those who must pass through the hardest doors. Cloaked, with shadow-sheep that bear the shed wool of old possibilities, the Shepherd offers safe conduct through liminal space for a price paid in memory, feeling, or fate. Those who walk this road learn the hidden routes between states of being and can lead others through their hardest crossings – but each passage leaves them more attuned to endings than beginnings.\n\n**A garden, a breath, a name.**\n\nAelaerem Pale Gardener observances are kept by households whose dead may have died beyond the hedges. A place can be prepared without insisting that a body must first be recovered. Those who arrive to help still bring food for the living. The welcome remains warm, even when an empty place has become difficult to look at.\n\nAeler Breath-Watchers inherit bedside customs shaped by their ranges and by particular losses. The same title is used in some traditions of Mercy. A family knows whether the keeper has come to support recovery or accompany departure, even when an outsider confuses the words. In a mixed foothill settlement, human relatives may introduce a sung farewell into a vigil formerly kept in silence. The resulting argument can concern the dead person's wishes rather than a hostility between whole peoples.\n\n**The Silent Notary in Viterra.**\n\nViterrans ask the Silent Notary to attend a deathbed testament when an ordinary witness may be challenged. Its keepers have consequently become familiar with households whose members want different things remembered. Some attend anyone who calls; others refuse to witness a disposition that excludes someone they know was promised a share. The second practice can protect a dependent or make the keeper a participant in the inheritance.\n\nAs villages acquired more formal courts, old bedside observances continued alongside written wills. A clerk might accept the keeper's account of the words spoken while denying that the speaker had authority to give the property. The Shepherd's presence does not make the court's question vanish. The person dying should not become a prop in a dispute conducted as though they have already left.\n\n**The Road enters through a funeral.**\n\nStill Road funerary keepers have been welcomed where other monastics were refused. Their practice spread through tending someone whom a village could not abandon, followed by returning when the next household called. A long-established funeral house may therefore have neighbors who respect its work without accepting its account of release.\n\nHimadri austerity, Ayokhan endowed ceremonies, and Sihai's registered monasteries have changed how that care is supported. They have not made every mourning family identical. An imperial form can omit someone whom the household insists must be named. A royal benefaction can demand a public ceremony where the deceased asked for quiet. The keeper has duties to the living as well as to the patron paying for the roof.\n\n**The drowned and those who remain.**\n\nZakov's Namers pair the Shepherd with the Witness. Preserving a name and walking the drowned out are related tasks, not interchangeable powers. Pereshi Watchers approach the Shepherd with the Inquisitor against corruption of the dead. Both traditions can help a bereaved household and disagree over what should happen to the recovered remains.\n\nThe Shepherd's chthonic character should survive these gentle practices. A keeper can become so accustomed to endings that they begin preparing people to leave before anyone has asked to go. They may show great patience at a deathbed and none with a survivor who wants to begin again. Start with a recovered traveler whose funeral has already been completed. The household must make room for a return its most compassionate attendant no longer knows how to welcome.",
     "followers": "Among the Aelaerem, the Shepherd is called the Pale Gardener, who walks the hedgerows at twilight, collecting the souls of those who die far from home. In Aeler, the Breath-Watcher weighs the last exhalation of the dying. In Linn, the Fog-Walker appears on the horizon before a storm. In Viterra, the Silent Notary witnesses deathbed testaments. Wherever mortals face the hardest thresholds, the Pale Shepherd is there – not to judge, not to command, but to accompany.",
     "names_across_regions": {
       "aelaerem": "The Pale Gardener, who walks the hedgerows at twilight",
@@ -265,5 +265,46 @@
       "note": "Funerary Order; welcome in villages that will not let a monk past the gate."
     }
   ],
-  "orders_are_masks": "An Order is the shape this Patron takes inside a religion — the office through which it is approached, named and made respectable. The same Patron therefore appears in faiths that despise each other, and rarely at the same rank."
+  "orders_are_masks": "An Order is the shape this Patron takes inside a religion — the office through which it is approached, named and made respectable. The same Patron therefore appears in faiths that despise each other, and rarely at the same rank.",
+  "guises": [
+    {
+      "among": "Aelaerem households",
+      "name": "The Pale Gardener",
+      "note": "Flowers are placed beside a dark doorway and removed before they dry. Families speak of being gathered with the same courtesy they offer a visitor. Their warmth should not be written as proof that the thing beyond the doorway shares it. An attendant may suddenly address a living relative as someone they buried years before and see no reason to apologize."
+    },
+    {
+      "among": "Aeler death watches",
+      "name": "The Breath-Watcher Beyond the Lintel",
+      "note": "A lamp is moved from bedside to threshold after the last breath. The distinction from the healing Breath-Watcher is understood locally: one stays with the living; the other is expected to lead away. A visitor confusing the two titles is corrected quietly. A watch can preserve its sequence even when the people in the room cease to agree whose breath they counted."
+    },
+    {
+      "among": "Linn shores",
+      "name": "The Fog-Walker",
+      "note": "The missing are given a place beside the named dead without pretending a body has been found. A returned sailor may discover that someone has carried out the rite in their name. Most families undo the ordinary mourning and welcome them home. The returned person does not always recognize which parts of that home were once theirs."
+    },
+    {
+      "among": "Viterran households and burial grounds",
+      "name": "The Silent Notary",
+      "note": "The title arose among people concerned that a passage be properly witnessed. Household attendants sometimes keep a mark for the dead beside formal burial records, but the Patron issues no judgment about inheritance. A claimant who treats the mark as a legal signature has confused a frightening observance with an official able to answer questions."
+    },
+    {
+      "among": "Sihai and Nihori travel shrines",
+      "name": "The Guide at the Closed Crossing",
+      "note": "Foreign funerary images are sometimes identified with the Shepherd by itinerant Invokers. Local keepers may honor their own compassionate guides and reject the comparison. Where the Shepherd is actually approached, a traveler can return unable to recall an ordinary bond that once made the destination matter. A guide's outline is not enough to identify what has led someone."
+    }
+  ],
+  "provenance": {
+    "origin": "Death-watch practices give the Shepherd familiar names; they do not establish a human past or a reassuring purpose for the presence they address.",
+    "summary": "The Gray Flock's histories are lists of people who kept watch, inherited objects, and rooms in which someone should not have been able to enter. A later copy may preserve every stroke while its readers disagree about whose household it records. Some attendants avoid a continuous history for that reason. Others continue copying with a steadiness their relatives find increasingly difficult to share.",
+    "the_migration": "Funeral workers, migrants, and households carrying their dead into unfamiliar ground transported local names. The rites acquired features of nearby shrines and courts without making the Shepherd one of their officials. The Viterran notarial title and Aeler bedside vocabulary are accommodations made by the living. Neither demonstrates that the thing they encounter understands the relationship in the same way.",
+    "why_it_took": "The Gray Flock can provide real, ordinary care at a deathbed. Its longer-serving attendants are noticed first through small failures of recognition: a favorite food laid before a person who never liked it, a child received with perfect tenderness under the wrong name. Nobody is necessarily distressed when the error is made. That calm is worse than a warning that would let the household agree something had happened.",
+    "note": "The Shepherd is not an assessor of worth and does not supply every culture's final destination. Similar psychopomp images in foreign traditions are partial comparisons, not evidence that every benevolent guide of the dead is this Chthonic Patron. Keep existing memory costs and passage powers within their published limits."
+  },
+  "philosophy": {
+    "name": "The Person Who Is Led Away",
+    "summary": "The living ask for a passage to be gentle. The Shepherd's presence leaves a different uncertainty: how much of the person who arrives is still attached to what they left.",
+    "the_point": "There is no court in which to appeal that uncertainty and no promise of moral balance. A meticulous attendant can perform the rite correctly without being able to guarantee what correct performance preserves.",
+    "the_third_thing": "The cost should appear in particular relationships rather than a speech about death. Someone remembers the route to a childhood house but not why they would enter it. Their family is relieved they can still give directions.",
+    "at_the_table": "Show a recognizable omission before explaining it as a cost. Give the living practical choices about care, testimony, and a dangerous return. Do not make the Shepherd a kindly counselor who explains its methods, or an evil judge punishing an insufficiently virtuous life."
+  }
 }

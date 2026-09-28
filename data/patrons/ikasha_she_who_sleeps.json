@@ -15,7 +15,7 @@
     "darkness"
   ],
   "lore": {
-    "description": "Ikasha is the hush between footfalls, the patience of dark water, the black-feathered watcher at every threshold. In stillness she gathers what might be, at crossroads she whispers of what may yet come. Ravens circle her, bearing secrets between worlds. Her followers learn to move unseen and speak unremembered, becoming shadows that slip between what is and what could be.",
+    "description": "Ikasha is the hush between footfalls, the patience of dark water, the black-feathered watcher at every threshold. In stillness she gathers what might be, at crossroads she whispers of what may yet come. Ravens circle her, bearing secrets between worlds. Her followers learn to move unseen and speak unremembered, becoming shadows that slip between what is and what could be.\n\n**The name left unspoken in company.**\n\nSome Tulkani households speak of Ikasha as an aunt who must not be woken, though the relationship belongs to their telling and does not supply a universal divine family tree. A child learns to lower their voice beside a sleeping traveler before learning any prayer. The space given to someone who cannot yet speak becomes a way to approach She Who Sleeps.\n\nThese household observances traveled with people taking shelter beyond their own circles. A host who leaves a guest unquestioned may be honoring Ikasha or simply observing courtesy. The distinction often matters less to the guest than it does to an official seeking a testimony. Nobody acquires the right to someone's hidden history by offering a bed.\n\n**The Bell-Shrouded and the Deep Listener.**\n\nMistlands keepers know the Bell-Shrouded at the pause in work when a sound should have reached the next station and has not. They check the rope, ask who last heard the bell, and lower their voices. The unknotted rope carries its established meaning without requiring a theory of the fog. An outsider who names every silence an omen is less useful than a neighbor who notices which silence is new.\n\nAeler Deep Listener observances developed around descents into unfamiliar workings. One person remains above long enough to hear the first report. The role is inherited differently across ranges: a severe high hold may insist on a keeper's silence, while a foothill crew talks until the signal arrives. Both make space for information that has not yet returned. Forgotten undervaults give the practice local histories; they are not all chambers in one known design.\n\n**The Tide Watcher in Zakov.**\n\nZakov's smugglers carried the Unlit Candle into rooms where a stranger could wait for a boat without being visible from the quay. Older attendants remember the practice as shelter for people escaping searches. Later patrons have used the same rooms to store illicit cargo and call that continuity. The keepers disagree over whether they are preserving a refuge or renting its reputation.\n\nA successful Tide Watcher may know exactly which official searches a door and still refuse a client's request to have that official killed. The practice preserves an opening. It does not require eliminating everyone who might close it. Another keeper may regard that distinction as a luxury bought with somebody else's danger.\n\n**A silence with an ending.**\n\nOn Sihai's caravan approaches, Ikasha's quiet rooms shelter people whose documents cannot yet establish where they belong. Some attendants work discreetly with clerks to recover a record; others believe any returned record will restore the danger. The person waiting may want recognition more than either helper expects.\n\nAveh can offer departure from a former identity; Ikasha's followers can keep a possibility open until a person chooses. Neither course is harmless by definition. Begin with a witness hiding under a borrowed name who now wants to speak for a condemned relative. Their host knows what the disclosure could destroy. Ikasha does not issue an order deciding which silence should end, and the host's fear must not become proof that the witness has no choice.",
     "followers": "Ikasha does not act; she waits. She does not command; she suggests. Her power is not in force but in possibility – the hidden door, the forgotten name, the secret that, if spoken, would change everything. Those who serve her become keepers of thresholds, listeners at the edge of sleep, and witnesses to the shape of things not yet born. She is the patron of spies, dreamers, outcasts, and those who know that the darkest shadow is also the safest cloak.",
     "names_across_regions": {
       "mistlands": "The Bell-Shrouded, whose unknotted rope holds the fog at bay",
@@ -301,5 +301,46 @@
   },
   "_license": "Fate's Edge Copyright – © 2024 - 2026 Nicholas A. Gasper. Used with permission, All rights reserved.",
   "order": "empyreal",
-  "register": "mystery"
+  "register": "mystery",
+  "guises": [
+    {
+      "among": "Aeler deep workings",
+      "name": "The Deep Listener",
+      "note": "A dark recess is left beside the place where a shift reports what it encountered. The speaker names the working, not the thing that may be listening. A keeper can preserve a report their superior refused to hear. They cannot demonstrate that everything omitted from the official account has therefore reached a benevolent listener."
+    },
+    {
+      "among": "Mistland bell-lines",
+      "name": "The Bell-Shrouded",
+      "note": "A cloth is laid across a bell that should remain silent that night. People attend to the road, the weather, and the person who has not come home. They do not explain the sleep beneath the custom. A sound from under the cloth is not automatically an invitation to remove it."
+    },
+    {
+      "among": "Zakov's night crossings",
+      "name": "The Tide-Watcher",
+      "note": "A raven on a dark post marks a place where people wait without lighting the landing. Some seek passage, others news of a vessel. A message can arrive in a familiar voice from an unoccupied boat. The keepers ask what it said before asking whom it sounded like, and seldom settle the second question."
+    },
+    {
+      "among": "Ashaan's concealed households",
+      "name": "The Listener Without a Roll",
+      "note": "The Unlit Candle reaches people afraid to say a name where an Esoiti may hear it. A whispered plea can be an act of resistance without becoming a reliable escape route. Black Hand agents, the magi, and those hiding from them do not form one interest merely because they all value secrecy. An answer that names a danger does not promise protection from it."
+    },
+    {
+      "among": "Sihai's private reading rooms",
+      "name": "The Keeper of the Unspoken Page",
+      "note": "Some keepers preserve a blank leaf between copied passages and remember why it was left there. Others insist this is a local archive practice mistakenly attributed to Ikasha by foreigners. The disagreement has not prevented a whispered question from being heard in a room whose occupants all believed they were alone."
+    }
+  ],
+  "provenance": {
+    "origin": "Her public cults inherit accounts of the Sleeper rather than a complete history of why she sleeps.",
+    "summary": "Some prayers ask that Ikasha remain undisturbed; others that she hear without waking. The difference has produced arguments among people who have received answers neither can explain. Temple compilers have tried to turn these fragments into a continuous divine biography. Her keepers preserve the fragments, including incompatible ones, and generally decline to endorse the finished account.",
+    "the_migration": "Night workers, travelers, and households concealing a persecuted guest carried the Unlit Candle's observances across borders. The object is small enough to hide and ordinary enough to explain. Along Zakov's crossings, waiting for a boat gave the Sleeper a maritime title. In Ashaan, people facing the removal of names found a listener who did not demand that a public office first recognize the speaker. That is a reason for the cult's appeal, not an immunity to erasure.",
+    "why_it_took": "Keeping a secret can shelter someone or preserve a wrong. The Unlit Candle's houses disagree about when testimony must be brought into daylight. Some have saved people whose names they never recorded; others have enabled a protector to control every account of what happened inside. A listener who never asks whether the speaker may leave has made silence serve a different purpose.",
+    "note": "Preserve the boundary around Ikasha's deeper history. These local beliefs do not disclose a hidden cosmological identity, resolve the origin of her sleep, or make every raven, shadow, or absent name her deliberate intervention."
+  },
+  "philosophy": {
+    "name": "A Place to Speak Quietly",
+    "summary": "Ikasha offers the possibility of being heard without being displayed. What hears is not necessarily accountable to the person who needed that shelter.",
+    "the_point": "Her devotees can confuse secrecy with safety. A person protected from an official's scrutiny may become dependent on a keeper whose conduct nobody else can examine.",
+    "the_third_thing": "The useful distinction is between controlling access to one's own account and giving someone else the only surviving version. Silence chosen in danger need not become silence owed for life.",
+    "at_the_table": "Introduce an answer that can be checked in part: a location, a name, or a detail of an event. Leave the answering presence uncertain. Let characters decide whom to trust with what they learn rather than forcing revelation or concealment as the only faithful response."
+  }
 }

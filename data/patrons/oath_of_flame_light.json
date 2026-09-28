@@ -18,7 +18,7 @@
     "monastic"
   ],
   "lore": {
-    "description": "There is a kind of person who cannot bear to be doubted, and a kind who cannot bear to have doubted themselves. The Oath takes both.\n\nIt is not a god and has never claimed to be. It is what happens when a promise is spoken aloud, in front of witnesses, in the first light — the moment the words stop belonging to you and become a thing in the world that other people are entitled to hold you to. The fire is only the visible part of it.\n\nTo swear in it is to give up the ordinary mercies: the second thought, the quiet revision, the kinder version of the story told afterward. The sworn stand where they can be seen. That is the whole discipline. The smiting, the healing, the light that finds a lie in a crowded room — all of it comes out of that, and not the other way around.",
+    "description": "There is a kind of person who cannot bear to be doubted, and a kind who cannot bear to have doubted themselves. The Oath takes both.\n\nIt is not a god and has never claimed to be. It is what happens when a promise is spoken aloud, in front of witnesses, in the first light — the moment the words stop belonging to you and become a thing in the world that other people are entitled to hold you to. The fire is only the visible part of it.\n\nTo swear in it is to give up the ordinary mercies: the second thought, the quiet revision, the kinder version of the story told afterward. The sworn stand where they can be seen. That is the whole discipline. The smiting, the healing, the light that finds a lie in a crowded room — all of it comes out of that, and not the other way around.\n\n**The same vow across the schism.**\n\nIn Ecktoria the Oath stands within the Everflame as a warrior's path. Its sworn can be posted beside a public fire whose maintenance is an act of government. A promise to defend the flame may be heard as defense of the city's people, its institutions, or the officers administering them. A soldier does not have to be insincere to discover those purposes separating during a riot.\n\nThe Synod of Thepyrgos broke from the Everflame in 478 AR. The Temple of Light retained the Oath while teaching a different account of who could stand before its light. Its Dawn-Knights emphasize protection and are forbidden to initiate violence. Border communities have inherited shrines from before the separation. An old inscription can be acceptable to both sides while neither accepts the other's right to read it. Families divided by the schism may recognize a grandparent's vow in the mouth of someone they have been told is a heretic.\n\n**The healer's sworn promise.**\n\nWithin the Covenant, the same Patron is approached by healers who bind care to a promise of more lawful living. They are not simply Everflame crusaders with another badge. Their clinics draw people whom no military order would recruit, and the disagreement concerns what a sick person can meaningfully promise. One keeper demands the spoken undertaking before treatment; another begins care while a relative finds someone able to hear it. The covenant remains binding where its rites make it so. The bedside argument does not abolish the cost.\n\nVhasian Watchfire observances place the emphasis differently again. A healing vow and a vow to refrain from harm can be honored in a household whose knight sincerely believes a punitive campaign lawful. The wound brought home from that campaign gives the household something it cannot settle by repeating the same prayer more loudly.\n\n**The Pereshi lamp and the Taharkan house.**\n\nPereshi Keepers of the Pure Flame invoke the Oath with the Witness while tending lamps and preserving texts. Daily conduct feeds the spark; no imperial officer supplies a completed salvation. The first wick a traveler lights from an eternal lamp can be the beginning of devotion without admission to a warrior order.\n\nTaharka preserves early houses of the northern faiths on land granted rather than conquered. An Everflame delegation can arrive expecting deference and find its own older liturgy still being practiced by people who have never accepted the delegation's revisions. Their dispute is about precedence, language, and who has cared for the house through lean years. The hosts are not a provincial echo waiting to be corrected.\n\n**Adur and Adar.**\n\nThe Aeler sun church's Adur and the Vilikari Dawnfire's Adar are established approaches to the Oath. Their resemblance gives translators useful words; it does not grant a foreign priest authority over a hold or an oak-ring. Vilikari should not be treated as displaced Ykrul simply because a fire is kindled outside.\n\nWhen two sworn people invoke the same Patron for opposing obligations, a working rite does not settle which faith is the rightful institution. Put the conflict where the promises meet: a sanctuary at a border, a prisoner both sides claim to protect, or a healer unable to give the assurance a magistrate demands. The Oath makes their commitment consequential. It does not relieve them of choosing what to do.",
     "followers": "The Oath answers to many names and does not appear to mind which. It is called on most by the magic-workers of the Church of Flame and the Temple of Light, though any faith that keeps a fire keeps some part of it. What its people share is not doctrine. It is a particular restlessness — the condition of having said a thing out loud and now having to be the person who said it, every morning, in front of everyone.",
     "names_across_regions": {
       "everflame": "The Everflame — the unquenchable fire of promise, carried from shrine to shrine by wandering priests of the Church of Flame. Its censers never cool.",
@@ -317,5 +317,51 @@
       "note": "Invoked alongside the Witness by the lamp-tenders and archivists."
     }
   ],
-  "orders_are_masks": "An Order is the shape this Patron takes inside a religion — the office through which it is approached, named and made respectable. The same Patron therefore appears in faiths that despise each other, and rarely at the same rank."
+  "orders_are_masks": "An Order is the shape this Patron takes inside a religion — the office through which it is approached, named and made respectable. The same Patron therefore appears in faiths that despise each other, and rarely at the same rank.",
+  "guises": [
+    {
+      "among": "The Church of Flame",
+      "name": "The Everflame",
+      "note": "A wandering priest carries a coal from the last household that received them. The Church teaches that the gods are faces of the True God and can recognize another community's sacred fire within that claim. Recognition may feel generous to a visitor and possessive to the keeper whose god has just been explained as somebody else's face."
+    },
+    {
+      "among": "The Temple of Light",
+      "name": "The Witnessing Light",
+      "note": "Temple teachers place divine powers beneath the Light rather than treating each as its face. An oath is made visible before it is defended by doctrine. Disputations with Flame priests can begin over a shared brazier and continue through the meal afterward. Their practitioners can invoke the same Oath without resolving what either institution believes has answered."
+    },
+    {
+      "among": "Aelerian and Himadri holds",
+      "name": "Adur, the Light of Aeler",
+      "note": "Oaths are struck into stone with a brand. An Aelerian household may keep the branded piece where visitors eat; a severe Himadri community may preserve it beside the work for which the promise was made. The latter's austerity does not make it the source of the former's rite. Foothill Aeler carry these practices into mixed communities without requiring their neighbors to adopt the hold's entire discipline."
+    },
+    {
+      "among": "Vilikari war gatherings",
+      "name": "Adar, the Dawnfire",
+      "note": "A single burning arrow precedes the vow. Those attending remember who named a limited aim and who promised an enemy's destruction. The war-god interpretation is sincerely held, though an Invoker may describe the answering power as the Oath. A mounted lord cannot quietly exchange one account for the other when the promise becomes inconvenient."
+    },
+    {
+      "among": "Vhasian houses of healing",
+      "name": "The Watchfire",
+      "note": "Healers keep a flame beside the person who must not die alone. Their refusal to harm is the undertaking, not a claim that every servant of Flame is peaceful. A knight can honor the same fire before riding against a village that shelters a fugitive. Both must account for what they swore; shared light does not reconcile their purposes."
+    },
+    {
+      "among": "Taharkan old foundations",
+      "name": "The Fire on Granted Ground",
+      "note": "The oldest Everflame houses outside its homeland retain words that visiting delegations have revised away. The Pereshi Fire and Covenant also have early foundations here, on granted land, without becoming names for the Everflame. A local keeper produces the grant when a foreign superior treats the house as a dependent outpost. The district remembers who gave the land."
+    }
+  ],
+  "provenance": {
+    "origin": "The Oath is not a personified god with a single birth narrative. Institutions disagree about the source of the fire through which it answers.",
+    "summary": "Church chronicles begin with an enduring flame carried from house to house. Temple accounts begin with a public promise whose speakers could no longer pretend it had remained private. Aeler dedication stones and Vilikari arrow customs preserve other histories. These differences are not merely decorative names for an agreed theology. Practitioners can recognize the same working while maintaining incompatible accounts of what stands behind it.",
+    "the_migration": "Priests carried fire across borders; soldiers brought vows home; healers adopted a night watch that continued when an army moved on. In Taharka, grants to foreign faiths created settled houses that kept their own liturgical descendants. Later reforms in the homelands therefore encountered observances that were older than the reformers' books and supported by communities with no reason to surrender their place.",
+    "why_it_took": "Public witness made the Oath useful to rulers, guilds, and households. It also gave listeners something to hold against them. A ceremony can become coercive when a powerful speaker dictates who must swear, who may hear, and which witnesses will be admitted afterward. Reformers disagree about whether to withdraw from such ceremonies or remain where the false claim can be challenged.",
+    "note": "The shared invocation does not merge the Church, Temple, Pereshi Fire, and Covenant into one organization. Nor do Adur and Adar become proof that every local war or sun deity is one personal being. The distinctions matter to the people keeping the fires."
+  },
+  "philosophy": {
+    "name": "A Promise Kept in Public",
+    "summary": "The Oath binds a speaker to what others heard. It does not guarantee that the promise was wise, freely made, or compatible with another promise.",
+    "the_point": "Its hardest disputes concern a faithful person who has undertaken something harmful. Breaking the vow has a cost; keeping it has victims. Calling the fire pure does not remove either fact.",
+    "the_third_thing": "Witnesses have responsibilities too. Those who demanded an impossible promise may prefer to watch its maker suffer rather than admit what they asked. A congregation can love a steadfast person and still use that steadfastness to avoid changing its own conduct.",
+    "at_the_table": "Place an old vow beside a present need, with identifiable witnesses and the actual words available. Preserve existing rules for breaking it. Offer room for confession, restitution, refusal, or a different undertaking without making clever wording an automatic escape from every cost."
+  }
 }

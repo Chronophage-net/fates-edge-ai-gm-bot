@@ -16,7 +16,7 @@
     "silver"
   ],
   "lore": {
-    "description": "Lunara walks where torchlight falters: crossroads, tidal edges, shadowed sanctuaries. She is the whisper beneath silver skies, a torch-bearing guide to mysteries that lie between waking and dream. The ancients know her as triple-formed: maiden of new light, mother of full radiance, crone of waning shadow. Her gifts are gentle yet perilous: a mirror that reveals as much of the seeker as the sought, a key that opens ways better left closed, a light that makes the unseen plain. Her sigil is the silver spiral, etched in water, mirror, or stone.",
+    "description": "Lunara walks where torchlight falters: crossroads, tidal edges, shadowed sanctuaries. She is the whisper beneath silver skies, a torch-bearing guide to mysteries that lie between waking and dream. The ancients know her as triple-formed: maiden of new light, mother of full radiance, crone of waning shadow. Her gifts are gentle yet perilous: a mirror that reveals as much of the seeker as the sought, a key that opens ways better left closed, a light that makes the unseen plain. Her sigil is the silver spiral, etched in water, mirror, or stone.\n\n**Three forms, several histories.**\n\nLunara's maiden, mother, and crone are established forms within her worship. Temples do not agree that the three must stand in the same order or represent every worshipper's life. Some coastal houses keep three images around a basin; a lone night-keeper may carry one small mirror and recognize all three without depicting them. A collector arranging the images into a neat sequence can misunderstand how a household actually uses them.\n\nThe Silver Spiral spread along routes used by night travelers, diviners, and people carrying private messages. A household image may therefore have arrived with a marriage rather than a missionary. Descendants can preserve an unfamiliar title because it was spoken by someone they loved, even after the local temple has supplied a more respectable explanation.\n\n**Deep Silver in a mountain house.**\n\nAeler address Deep Silver at places where daylight cannot establish direction. Mirrors and polished stone bring an image of the upper world into rooms below it. A hold may regard a bright shaft as an occasion for silence; a mixed foothill household may keep a small night window open during a family vigil. Their manners follow their ranges as much as a shared devotion.\n\nIn the Kazurai, some keepers watch the returning light on snow after the upper paths close. Wenkar households bring a basin into a sheltered court and wait for rain to stop disturbing its surface. These observances express different relationships with waiting. They do not grant a free passage or replace the costs of Lunara's rites.\n\n**The Silver Quiet on the Still Road.**\n\nWithin the Still Road, Lunara and Solara are approached by contemplatives as aspects of practice. No creator must be installed above the empty hall. The practitioner watches a thought arrive without being required to follow it. Solara's Still Mirror and Lunara's Aelinnel title Silent Mirror can resemble one another in translation while remaining distinct approaches.\n\nHimadri houses brought their austere disciplines to Sihai and Ayokha through mendicants and teachers. Imperial charters and royal endowments subsequently gave some halls the resources to keep many students. They also created a person who could threaten to withdraw those resources. A long-sitting keeper may owe a patron gratitude without believing gratitude entitles the patron to choose what is taught.\n\n**The Fog-Guide and the unfinished vigil.**\n\nMistlands families call the Fog-Guide when a return is overdue. They know which lantern was taken out and which coat belongs on the peg; the vigil is particular before it is mysterious. A traveling scholar who copies the observance into a universal rite loses the person for whom the household kept it.\n\nLunara's disagreements are often about when looking becomes intrusion. A night-scholar seeks a private message because its discovery could prevent a harm; the keeper who helped conceal it knows why its writer needed privacy. Neither need be ignorant of the danger. Give them evidence they can share and something they will not expose casually. Revelation can be precious without making every hidden room available to anyone with a mirror.",
     "followers": "Her worshippers — night-scholars, dream-walkers, and hedge-priests — seek her not for power over others, but for passage, reflection, and revelation. Among the peoples of Fate's Edge, Lunara is called by many names. In Aeler, she is the Deep Silver, whose light guides miners through unlit shafts. In Aelinnel, she is the Silent Mirror, invoked by those who seek truth without violence. In the Mistlands, she is the Fog-Guide, whose pale radiance parts the mist for those who walk with pure intent. Wherever the moon casts its silver light on a hidden door, Lunara watches.",
     "quote": "Three faces gaze from the moon. Which one watches you tonight?"
   },
@@ -270,5 +270,46 @@
       "note": "Contemplatives and night-keepers; the long sit and the unlit hall."
     }
   ],
-  "orders_are_masks": "An Order is the shape this Patron takes inside a religion — the office through which it is approached, named and made respectable. The same Patron therefore appears in faiths that despise each other, and rarely at the same rank."
+  "orders_are_masks": "An Order is the shape this Patron takes inside a religion — the office through which it is approached, named and made respectable. The same Patron therefore appears in faiths that despise each other, and rarely at the same rank.",
+  "guises": [
+    {
+      "among": "Aelerian holds",
+      "name": "The Deep Silver",
+      "note": "A polished plate is kept where a shaft admits moonlight. It is brought down to the person who cannot reach the opening. Older versions show one figure whose face changes with the viewing angle; some newer triptychs place maiden, mother, and crone side by side. The images disagree less about the moon than about whether a life can be understood all at once."
+    },
+    {
+      "among": "Mistland households",
+      "name": "The Fog-Guide",
+      "note": "A bowl is set by a shutter during the nights when a traveler is expected. A neighbor refills it without asking whether the expected person is still alive. The keeper can describe the road and the weather. Asked what the moon sees through the bowl, they resume what they were doing before the question."
+    },
+    {
+      "among": "Inland Sea Aelinnel",
+      "name": "The Silent Mirror",
+      "note": "A mirror is turned after the bells have been checked. Reflections are compared on specified nights; arguments over what was observed are kept separate from the maintenance of the shrine. The office has careful procedures for recording an uncertain sight. It has no procedure that makes an uncertain sight certain merely because a magistrate needs an answer."
+    },
+    {
+      "among": "Sihai's scholarly and domestic circles",
+      "name": "The Moon in the Unopened Room",
+      "note": "Images arrived with astronomical instruments, travelers' mirrors, and household gifts. Some observances honor Lunara by name; others address a local lunar presence and reject the foreign identification. A learned keeper can acknowledge the same phase calculations without conceding that the calculation identifies the being reflected in the water."
+    },
+    {
+      "among": "Kazurai valley communities",
+      "name": "The Light Kept on Snow",
+      "note": "Winter gatherings use a pale cloth instead of a visible disc. At thaw the cloth is washed and brought outside. A family can become expansive when the pass reopens without losing its spare winter manner. The cult's changes belong to this range; they are not an imitation of Himadri severity."
+    }
+  ],
+  "provenance": {
+    "origin": "Several lunar traditions have gathered around the Silver Quiet; agreement about the moon does not produce agreement about its worship.",
+    "summary": "Lunara's own received image embraces maiden, mother, and crone. Some communities have always recited the three together; others adopted the triptych from traveling keepers while retaining older single mirrors. Temple writers sometimes claim that the threefold image proves all lunar observance descended from their house. The worn single plates and their household histories resist that tidy account.",
+    "the_migration": "Mirrors traveled readily as gifts. A person who brought one home could retain the night observance of a foreign household without bringing its entire doctrine. Aelinnel Bell-Tenders gave such observances schedules and comparative records. Mistland families kept the inherited action and declined the imported explanation. Sihai's specialists could exchange calculations while disagreeing over which rites had any place beside them.",
+    "why_it_took": "The Silver Quiet's circles grew where people needed room to reconsider without immediately defending the change in public. Widowed households, people returning from long illness, and apprentices uncertain of a chosen life could sit before the same water. Some keepers offered that pause without conditions. Others developed a reputation for discerning a person's true nature and began treating every hesitation as confirmation of their own reading.",
+    "note": "Reflection does not supply infallible knowledge. The symbolic phases and regional images add no new divination procedure. A keeper's account of what a reflection means can be sincere and mistaken, even where Lunara's actual Rites work."
+  },
+  "philosophy": {
+    "name": "The Face Allowed to Change",
+    "summary": "Lunara makes room for a self that cannot be understood from one moment. That permission can become an excuse to postpone every decision until a more certain face appears.",
+    "the_point": "A reflection is persuasive partly because the viewer recognizes it. Keepers must distinguish attending to a person from presenting that person's expectations back as revelation.",
+    "the_third_thing": "The difficult kindness is sometimes to end the vigil. A person may have learned enough to act without acquiring a final account of who they are.",
+    "at_the_table": "Give two witnesses an honestly different reading of an observation, with a practical decision that cannot wait for unanimity. Let the moon remain strange. Do not make every disagreement resolve into one keeper secretly possessing an omniscient answer."
+  }
 }

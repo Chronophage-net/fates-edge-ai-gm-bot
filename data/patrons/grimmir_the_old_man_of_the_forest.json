@@ -15,7 +15,7 @@
     "wild"
   ],
   "lore": {
-    "description": "Grimmir is the Old Man of the Forest, the Alder King, the presence that watches from the shadow of the oldest oak, the cold breath on the back of the neck when the path grows dark. He is not kind, nor is he cruel—he is wild, and the wild does not negotiate. It demands, and it takes. His followers learn to read the language of blood on snow, the geometry of root and stone, and the weight of a heart offered at the turning of the year. Grimmir does not teach harmony; he teaches respect through fear, and fear through sacrifice.",
+    "description": "Grimmir is the Old Man of the Forest, the Alder King, the presence that watches from the shadow of the oldest oak, the cold breath on the back of the neck when the path grows dark. He is not kind, nor is he cruel—he is wild, and the wild does not negotiate. It demands, and it takes. His followers learn to read the language of blood on snow, the geometry of root and stone, and the weight of a heart offered at the turning of the year. Grimmir does not teach harmony; he teaches respect through fear, and fear through sacrifice.\n\n**The Thorn-Father at an inhabited boundary.**\n\nAelaerem do not cease to enjoy a hedgerow because it requires care. Berries are gathered, children know the sheltered places, and the person tying a red thread may also be the person who brought lunch. A Thorn-Father observance can be part of the same afternoon. When the necessary work becomes terrible, that household warmth need not turn out to have been false. Someone carries it through because a neighbor would otherwise have to.\n\nRoot-Moot practices passed between villages through seasonal work and marriage. A hedge laid by one family may preserve an observance their descendants no longer perform at home. Disputes concern which household will tend it and whose account of the last winter is trusted. They do not require a visiting priest to explain why the Alder King wants what he wants.\n\n**The Root-Father below the tree line.**\n\nAeler Root-Father shrines attend fungus beds and stone-lichen as well as wooded slopes. A hold that reveres old growth below ground need not admit outsiders to its upper forest. In the Aelerian foothills, keepers have negotiated gathering rights with human households for generations; those agreements govern the people, not Grimmir. A paper allowing a tree to be cut does not make the grove approve.\n\nThe same devotion acquires a different scale in the Yundrath. A family's grove can lie below its dwelling across a gorge, and two relatives may reach it by different routes. When a bridge fails, the nearer human settlement can become responsible for work the hold previously insisted only its own keepers could perform. Gratitude and a quarrel about authority can arrive together.\n\n**The wolf without a forest.**\n\nYkrul Sky-Wolf observances place seasonal movement where a forest village would place a boundary. The grass and the herds can be read without supposing a hidden oak behind every rite. Some camp keepers recognize Grimmir in the wolf that herds the seasons; others use the name only when speaking to outsiders and regard the comparison as incomplete.\n\nSuch identifications spread through shared winter camps and returned fosterlings. They need not demonstrate that one culture borrowed its entire religion from another. A keeper who learned a song among rivals may preserve it because it marked a season survived, while refusing to adopt the rivals' account of who first sang it.\n\n**The old wood beside a new shrine.**\n\nIn Nihori, some forest shrines acknowledge Grimmir as the Elder at the Root. Their local kami remain local presences with their own standing. A grove can receive both observances without becoming an eastern province of the Alder King's Court. Processional visitors may leave an offering in a form the resident household finds unfamiliar but recognizes as careful.\n\nThe difficult history is often in an abandoned approach. A new road has made the old offering place inconvenient; a shrine household has served travelers for generations at the replacement. When the old growth begins intruding on the maintained road, no one needs to have lied. Decide what the grove requires and what can be learned before asking the party to intervene. The villagers' affection for their home and their fear of the wood should both survive the encounter.",
     "followers": "Those who walk his path become keepers of the old ways: druids who know when a grove must be fed, rangers who leave the first kill for the soil, and hedge-folk who whisper the names of spirits not to be spoken aloud. Their magic is not the gentle coaxing of garden plants but the raw, patient hunger of the forest floor—a hunger that swallows bones and grows mushrooms in the shape of the dead.",
     "names_across_regions": {
       "aeler": "The Root-Father, a patron of deep fungus and stone-lichen whose shrines are carved into living rock",
@@ -321,5 +321,46 @@
   },
   "_license": "Fate's Edge Copyright – © 2024 - 2026 Nicholas A. Gasper. Used with permission, All rights reserved.",
   "order": "empyreal",
-  "register": "mystery"
+  "register": "mystery",
+  "guises": [
+    {
+      "among": "Valewood margins",
+      "name": "The Alder King",
+      "note": "A household leaves the oldest tree out of its account of what may be cut. The wood around it can be worked, argued over, and inherited; the tree is addressed differently. A newcomer who asks which lord owns it may receive a useful answer about every other tree on the slope. Nobody supplies a genealogy to make that answer easier."
+    },
+    {
+      "among": "Aelaerem hedges",
+      "name": "The Thorn-Father",
+      "note": "His sign is allowed to grow crooked. Hedge-cutting gathers neighbors who disagree about nearly everything except where the work must stop. A gap is not improved merely because a cart would pass more easily through it. When something stands beyond the hedge after dusk, the household continues the meal without asking it to identify itself."
+    },
+    {
+      "among": "Aeler mountain and foothill communities",
+      "name": "The Root-Father",
+      "note": "Small shrines stand among fungus and lichen where the living growth reaches stone. Aelerian keepers honor persistence under a sheltered slope; Tavarun households attend to roots pressing into wet masonry. Their observances answer different mountains. They do not identify every root that enters an undervault as a message from one king."
+    },
+    {
+      "among": "Ykrul seasonal gatherings",
+      "name": "The Sky-Wolf",
+      "note": "The figure follows the herds rather than a forest boundary. Hunts remember where game returned after a hard season and where it did not. This name links Grimmir to the movement of living country; it does not make him Kuva or assign him sovereignty over every steppe spirit. A hunter may honor both without placing either in the other's household."
+    },
+    {
+      "among": "Thepyrgos's rural estates",
+      "name": "The Keeper Outside the Wall",
+      "note": "Estate sanctuaries place a rough branch beside polished agricultural images. Learned owners compare the figure to several ancient rustic powers; workers know which strip was left uncut before the estate acquired a name. A patron's description of picturesque wilderness can be younger than the household whose work has kept it there."
+    }
+  ],
+  "provenance": {
+    "origin": "His cults remember boundaries and encounters more readily than a first foundation.",
+    "summary": "The Root-Moot preserves a tradition of masked gatherings beneath old trees. Its songs change with the country and often refuse a sequence that would turn them into a king's life. Some singers say Grimmir was waiting when their people arrived. Others say he has always belonged to the place and find the distinction unnecessary. A temple catalogue that gives him one birthplace has obtained a neater answer than the keepers provide.",
+    "the_migration": "Migrants took a branch, a mask, or a season's refrain into new country. The observance did not always settle there unchanged. An Aeler household finding roots beneath a new threshold could recognize the Root-Father without possessing its neighbor's Thorn-Father custom. Hunters on the steppe translated a figure encountered at the forest edge into the Sky-Wolf following the herds. These recognitions are not proof that every landscape has agreed to the same terms.",
+    "why_it_took": "Landholders adopted the cult where an older boundary constrained a claim. Some observed it faithfully. Others offered an impressive new sanctuary while clearing the place people had actually avoided. The quarrel is not always between ignorant laborers and an enlightened protector of nature: a family may need fuel, a proprietor may need a boundary moved, and the thing in the uncut ground has not explained its interest to either.",
+    "note": "Keep Grimmir distinct from local spirits, the Ukwe's powers, and the Couatl. A shared concern with living country does not reduce Sekogo or every forest people to worshippers of the Alder King. Nor does a rural title turn him into a safe agricultural benefactor."
+  },
+  "philosophy": {
+    "name": "What the Clearing Leaves Outside",
+    "summary": "Grimmir's followers live by taking from country that has other inhabitants. Respect is not a guarantee that the taking will be permitted.",
+    "the_point": "It is tempting to turn him into the spokesman for whatever management plan seems best. That gives a human argument an authority the Patron has not supplied. A careful forester may still meet something their careful practice cannot placate.",
+    "the_third_thing": "The useful humility is to acknowledge a limit without pretending to understand all of it. A boundary can be observed for generations while its keeper remains unable to explain what stands on the other side.",
+    "at_the_table": "Put a needed resource across an old limit. Establish observable warnings and consequences, but do not require a speech in which the Alder King explains the correct policy. Negotiating with the people affected should remain meaningful even when the supernatural question remains open."
+  }
 }
