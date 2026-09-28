@@ -16,8 +16,8 @@
     "immediate"
   ],
   "lore": {
-    "description": "Before words, there was thunder. Before scripture, lightning carved its commandments into the bones of the world. Xhak'Thul is the Voice That Splits Mountains, the Drum That Shakes Foundations, a power born from the first storm that ever raged across the primal earth. His faithful are whirlwinds of action — they do not study; they dance, they shout, they move with the sky's fury. His gifts are not gentle miracles but raw terror, awe, and vitality ripped from nature's heart.",
-    "followers": "Among the peoples of Fate's Edge, Xhak'Thul is the patron of the pre-literate, the neolithic, those who have not yet built walls against the wild. In the deep Vhasian highlands, he is the Storm-Father, invoked by herders who watch lightning split the sky. In Ykrul, he is the Thunder-Hoof, the sound of a thousand horses stampeding. In Linn, he is the Raging Tide, the storm that comes without warning. His followers are not scholars; they are dancers, drummers, shamans, and warriors who feel the storm in their bones before they hear it in the sky. He favors those who act without hesitation, who embrace chaos, and who understand that the loudest voice is often the truest.",
+    "description": "Before words, there was thunder. Before scripture, lightning carved its commandments into the bones of the world. Xhak'Thul is the Voice That Splits Mountains, the Drum That Shakes Foundations, a power born from the first storm that ever raged across the primal earth. His faithful learn through performance: they drum, dance, and train themselves to answer danger before a long explanation could be heard. His gifts are not gentle miracles but raw terror, awe, and vitality ripped from nature's heart.",
+    "followers": "Xhak'Thul is invoked by herders, storm-callers, performers, and warriors who learn through rhythm, breath, and practiced movement. In the deep Vhasian highlands he is the Storm-Father; among the Ykrul, the Thunder-Hoof; in Linn, the Raging Tide. Some devotees preserve written observations while others teach through repeated demonstration. Neither literacy nor life behind a town wall determines who can learn the work. His call favors decisive force and can make hesitation intolerable. Followers who mistake loudness for truth give that pressure a dangerous authority of their own.",
     "quote": "Feel the drum in your bones before you hear it in the sky. When the storm speaks, you will already be dancing to its rhythm."
   },
   "domain_focus": [
@@ -286,5 +286,41 @@
   },
   "_license": "Fate's Edge Copyright – © 2024 - 2026 Nicholas A. Gasper. Used with permission, All rights reserved.",
   "order": "beyond_the_triune",
-  "register": "unclassifiable"
+  "register": "unclassifiable",
+  "guises": [
+    {
+      "among": "Vhasian upland herders",
+      "name": "The Storm-Father",
+      "note": "A drum is repaired before the flocks move into exposed country. Households know whose hands stretched its skin and whose account of a past storm it carries. Some callers treat the first thunder as an instruction to begin. Others wait until the people and animals are sheltered. Both may be accused of cowardice by someone who has never had to bring the flock home."
+    },
+    {
+      "among": "Ykrul mounted companies",
+      "name": "The Thunder-Hoof",
+      "note": "The company's rhythm passes between riders rather than belonging to one drummer. A leader may use it to bring frightened people into motion. Veterans also remember occasions when the rhythm continued after somebody needed the company to stop. Their training includes listening for the break as well as answering the call."
+    },
+    {
+      "among": "Linn shore gatherings",
+      "name": "The Raging Tide",
+      "note": "A storm drum is carried to the hall's open side. Participants can be frightened and still choose to answer it together. The person too shaken to play may hold the frame while another strikes. A First Drum initiate who demands collapse as proof of devotion can encounter opposition from hosts whose own courage is beyond dispute."
+    },
+    {
+      "among": "Nihori's mountain and island performance schools",
+      "name": "The Drum Above the Ridge",
+      "note": "A thunder figure is shown within an arc of drums. Visiting callers associated it with Xhak'Thul; local shrine attendants also name powers belonging to particular storms and peaks. Performers may learn the foreign rhythm without accepting the identification. Akazun companies favor an expansive public procession, while Kazurai schools can keep the same force contained within a spare winter practice."
+    }
+  ],
+  "provenance": {
+    "origin": "The First Drum attributes its power to the world's first storm. Histories of particular drums and teachers remain shorter, contested, and human.",
+    "summary": "Callers preserve the moment somebody answered a storm instead of waiting for it to pass. Their descendants can identify the drum or the place and disagree about what the answer accomplished. A household says the flocks were saved; a later company celebrates an act of defiance. The difference matters when a new caller proposes the same act under different weather.",
+    "the_migration": "Rhythms traveled with herders, escorts, and hired performers. They had to be learned through bodies and breath even where pupils also kept written notes. Nihori's schools adapted imported calls around local thunder images; Ykrul companies retained patterns suited to riders separating and returning. A master who could not read the receiving language could still teach a precise variation and hear when a pupil had altered it.",
+    "why_it_took": "A shared beat can make coordinated action possible before a long explanation would be heard. That usefulness draws rescue crews as well as challengers. The First Drum's more absolute gatherings turn immediacy into a virtue detached from its purpose. A caller becomes unable to distinguish overcoming paralysis from overriding someone who has noticed a real danger. The successful intervention is remembered; the ignored warning may be preserved only in another household's version.",
+    "note": "Embodied and oral practice is learned discipline, not a stage of civilization or a lack of intelligence. Xhak'Thul's religious method favors performed force; neither literacy nor life in a town excludes a devotee. The Patron's noise does not prove that its loudest follower is telling the truth."
+  },
+  "philosophy": {
+    "name": "The Beat That Can Hear an Answer",
+    "summary": "An immediate response can save the time in which lives would otherwise be lost. Making immediacy compulsory removes the time in which another person can object.",
+    "the_point": "A caller who becomes indispensable in crises may begin needing the next crisis to sustain their place. Quiet no longer feels like a result worth achieving; it feels like being unheard.",
+    "the_third_thing": "Some companies end by passing the drum to somebody who did not call the opening. That person decides whether another response is needed. In stricter gatherings the original caller keeps it until exhaustion, and the company calls the exhaustion sacred.",
+    "at_the_table": "Give decisive action a real advantage and make its consequences audible afterward. Another person's warning can be useful without being a rival challenge. Keep thunder imagery distinct from a claim that literacy, ancestry, or one region determines who can possess learned rhythmic skill."
+  }
 }

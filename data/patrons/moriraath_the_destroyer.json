@@ -18,7 +18,7 @@
   ],
   "lore": {
     "description": "Mor'iraath is the demon of absolute destruction—not the slow decay of rot, nor the patient erosion of water, but the joyful, all-consuming fire that leaves neither remains nor memory. He delights not in the process of ruination, but in the perfect moment of combustion, when something that was becomes something that never will be again. His followers become agents of finality, wielding flame that leaves no trace, no remains, and no possibility of reconstruction. To serve him is to embrace the beauty of endings and the power that comes from making things never have been. Where Malachai corrupts and Khemesh crushes, Mor'iraath ignites.",
-    "followers": "Among the peoples of Fate's Edge, Mor'iraath is known by fearful names. In Zakov, he is the Sea-Scourge, invoked by pirates who burn their prizes to the waterline. In Aeler, he is the Deep Forge that consumes ore and returns only slag. In Linn, he is the Tide-That-Eats-The-Shore, a slow, patient consumption that reshapes coastlines. His followers are rarely beloved, but they are essential—for without destruction, there is no room for creation.",
+    "followers": "Among the peoples of Fate's Edge, Mor'iraath is known by fearful names. In Zakov he is the Sea-Scourge, invoked by pirates who burn their prizes to the waterline. Aeler call him the Deep Forge that consumes what is offered and leaves nothing usable. Linn's Tide-That-Eats-The-Shore recalls a shore lost beyond rebuilding, not the patient erosion of ordinary water. His followers claim that an absolute ending makes room for creation. The claim does not guarantee that anything will follow what they destroy.",
     "signs": [
       "A fire that burns without fuel, consuming only what is intended",
       "Ash that forms into shapes of what was lost, then crumbles at a touch",
@@ -300,5 +300,41 @@
   },
   "_license": "Fate's Edge Copyright – © 2024 - 2026 Nicholas A. Gasper. Used with permission, All rights reserved.",
   "order": "chthonic",
-  "register": "fear"
+  "register": "fear",
+  "guises": [
+    {
+      "among": "Zakov crews burning a captured vessel",
+      "name": "The Sea-Scourge",
+      "note": "Some crews break a small model after dividing the ordinary salvage. The Final Breath's devotees object to the division: something intended for the Scourge should not be saved as profit. A captain can honor the destruction of a dangerous ship while refusing to include the people aboard. The distinction may become harder to maintain after another successful invocation."
+    },
+    {
+      "among": "Abandoned Aeler furnaces",
+      "name": "The Forge That Returns Nothing",
+      "note": "The chamber is recognized by the absence of the work for which it was built. Households bring stories of tools deliberately destroyed rather than leave them usable by an enemy. Later visitors sometimes confuse the old Deep Forge title with Vorthak's. A keeper who retains even a defective casting is preserving something the Final Breath would prefer ended."
+    },
+    {
+      "among": "Linn's lost shore settlements",
+      "name": "The Tide That Leaves No Landing",
+      "note": "A memorial can be made to a place whose remaining neighbors disagree about where it stood. The old Tide-That-Eats-The-Shore name recalls the night of disappearance, rather than making ordinary gradual erosion a new rite. A devotee may ask why a family keeps repairing a boat destined eventually to be gone. The family is trying to fish tomorrow."
+    },
+    {
+      "among": "Sihai's condemned collections",
+      "name": "The Last Brazier",
+      "note": "A keeper may be ordered to destroy an object judged too dangerous to preserve. The Final Breath finds listeners among those tired of guarding the same harm through another generation. A complete destruction can accomplish exactly what they sought and leave no evidence with which to challenge the order's wider reach. The keeper who agreed to one object is then asked about the collection."
+    }
+  ],
+  "provenance": {
+    "origin": "The cult remembers the things its first practitioners meant to end; successful invocations make those beginnings unusually difficult to document.",
+    "summary": "Final Breath accounts survive most clearly where a destruction was interrupted. An unfinished list, an unconsumed handle, or testimony from somebody who left can establish the occasion. Completed acts may leave witnesses who disagree about what was present. The cult treats the loss of a reliable memorial as part of the achievement. Outsiders cannot always distinguish that claim from a convenient excuse for a false story.",
+    "the_migration": "The practice traveled with people carrying something they wished no successor to possess: a condemned instrument, a pursuing claim, a weapon that had survived too many armies. Some helpers entered the cult after seeing a genuine threat ended. Others returned to ordinary work. Their departure created a persistent argument over whether the first success required them to become agents of finality everywhere.",
+    "why_it_took": "The promise is strongest when preservation has become an exhausting duty. A community guarding a dangerous object may have lost several keepers already. Destruction can be a real release. A follower's corruption appears when they cease distinguishing that particular burden from the labor of maintaining anything at all. A mended sleeve, an archive, and a remembered name begin to look like postponed endings.",
+    "note": "Nothing here makes Mor'iraath the necessary servant of another god's renewal. The Final Breath's claim that destruction creates room for new life is its justification; the Patron's absolute ending does not guarantee a replacement. The attraction can be real without the justification being complete."
+  },
+  "philosophy": {
+    "name": "The Thing That Cannot Be Repaired",
+    "summary": "Some things should not be restored. The ability to end them permanently can become an inability to tolerate anything that asks to be repaired.",
+    "the_point": "A follower may first be welcomed for ending a torment. Later the same follower offers the same calm remedy for a task others still find worth doing. They have not necessarily become angrier. They have become less able to imagine a reason to continue.",
+    "the_third_thing": "Witnesses sometimes preserve a small unrelated object from the day of an ending. A keeper of the Final Breath may consider even that attachment suspect. The household considers it the cup they drank from when the danger was finally over.",
+    "at_the_table": "Make the proposed permanent solution genuinely remove a named threat. Put something valued within the intended scope before acceptance, not in a hidden after-the-fact clause. Allow repair, continued containment, or refusal to demand work rather than treating them as foolish delays."
+  }
 }
