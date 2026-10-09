@@ -4,6 +4,41 @@ All notable changes to this project will be documented here.
 Format loosely follows [Keep a Changelog](https://keepachangelog.com/), versions follow [Semantic Versioning](https://semver.org/).
 
 
+## [4.18.2] - 2026-10-09
+
+Stop automatic retries after permanent room admission failures.
+
+- Stop reconnecting after incorrect passwords, bans, invalid room/seat configuration, or rejected seat identity. Log an actionable instruction to correct access/configuration and restart.
+- Keep retries for transient outages, full rooms, and handshake timeouts; GM-seat conflict remains a recoverable admission warning.
+- Add retry-policy regression tests. This release excludes the separate, uncommitted dashboard/security review work.
+
+### Fixed
+- remove stray factions-manifest.json / velvet-court.json.tmp
+- sync corrected talents-manifest.json (52 talents, was 10)
+
+### Chore
+- sync docs data from fates-edge-docs
+- sync docs data from fates-edge-docs
+- sync docs data from fates-edge-docs
+- sync region corrections
+- sync Harrada and Awenji patron rename from docs
+- Herald -> Harald in the Vhasia region sync
+- sync region GM notes from fates-edge-docs
+
+### Other
+- Sync final sixteen Patron regional histories
+- Sync reviewed Patron histories from canonical sources
+- Sync Theona political setting revision
+- Sync reviewed Mab editorial revision
+- Clarify Ubral's established dwarf minority
+- Sync data: Brightstride spelling (Viterra region)
+- Sync data: women in arms on the two banks (Vhasia, Viterra regions)
+- Document update
+- Sync docs canon reconciliation backport from fates-edge-docs
+- Sync Vhasia region data from fates-edge-docs
+- More recovery work.
+- Fixed json files.
+
 ## [4.18.1] - 2026-09-11
 
 ### Fixed
@@ -302,4 +337,3 @@ Driver/module test suite (120 tests), commands.js tag-parser regex-desync fix ac
 - Updated commands to process tags better.
 - Major updates
 - First commit
-

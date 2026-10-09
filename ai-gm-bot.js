@@ -19,6 +19,7 @@ const statusServer = require('./modules/status-server');
 const knowledgeIndex = require('./modules/knowledge-index');
 const assistantSuggestions = require('./modules/assistant-suggestions');
 const wsCorrelator = require('./modules/ws-correlator');
+const { isPermanentAdmissionFailure, shouldReconnect } = require('./modules/connection-retry');
 const ttsClient = require('./modules/tts-client');
 const { mergeCharacterFromServerData } = require('./modules/commands/characters-sync');
 const { generateStartupMessage, generateEtiquetteReminder } = commandHandler;
@@ -533,6 +534,7 @@ function stopAggressiveSync() {
 }
 
 function connect() {
+  let admissionRejected = false;
   if (reconnectTimer) { clearTimeout(reconnectTimer); reconnectTimer = null; }
   console.log(`🔌 Connecting to ${WS_URL}?room=${ROOM_CODE}`);
   ws = new WebSocket(`${WS_URL}?room=${tableSeats.id ? tableSeats.roomId : ROOM_CODE}`);
@@ -561,6 +563,7 @@ function connect() {
       let msg;
       try {
         msg = JSON.parse(line);
+        admissionRejected ||= isPermanentAdmissionFailure(msg);
       } catch (e) {
         console.warn('⚠️  Non‑JSON message:', line);
         continue;
@@ -584,7 +587,11 @@ function connect() {
     adventureRecovery.disconnect();
     console.log(`🔌 Disconnected (code ${code})${reason ? `: ${reason}` : ''}`);
     stopAggressiveSync();
-    scheduleReconnect();
+    if (shouldReconnect({ code, admissionRejected, identityRejected: tableSeats.identityRejected })) {
+      scheduleReconnect();
+    } else {
+      logger.error('Room admission rejected. Check room credentials, access and bot seat configuration, then restart the bot.');
+    }
   });
   ws.on('error', (err) => console.error('🔴 WebSocket error:', err.message));
 }

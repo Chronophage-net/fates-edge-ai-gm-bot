@@ -1081,3 +1081,7 @@ to report it privately rather than filing a public issue.
 ---
 
 **Enjoy your fully automated tabletop RPG experience!**
+
+## Connection recovery
+
+Temporary outages, full rooms, and handshake timeouts retry automatically. Incorrect passwords, bans, invalid room/seat configuration, and rejected seat identity stop automatic retries and log an action-needed message. Correct the configuration or access problem, then restart the bot.
