@@ -1085,3 +1085,15 @@ to report it privately rather than filing a public issue.
 ## Connection recovery
 
 Temporary outages, full rooms, and handshake timeouts retry automatically. Incorrect passwords, bans, invalid room/seat configuration, and rejected seat identity stop automatic retries and log an action-needed message. Correct the configuration or access problem, then restart the bot.
+
+## Dashboard and bot review (September 2026)
+
+The status dashboard and multi-bot supervisor bind to loopback by default. Both validate the request host, reject cross-origin control requests, escape displayed campaign data, and use a script nonce. A remote bind now requires a private password of at least 32 characters: `STATUS_TOKEN` for a bot dashboard, `MANAGER_TOKEN` for the supervisor. Enter any username and that token as the password in the browser prompt. Put remotely exposed dashboards behind HTTPS or use an SSH tunnel; the built-in HTTP listener does not provide TLS. The supervisor's embedded dashboards remain local to the host running the browser.
+
+Bot restarts wait for the previous process to exit and overlapping restart requests share one restart. Manifest room codes are normalized to uppercase; duplicate seats, invalid ports and port collisions are rejected before starting bots.
+
+Set `ROOM_PASSWORD` to join a password-protected unmanaged room. Whitespace in the password is preserved. The bot reports connected only after admission, rejects malformed server messages, and clears pending socket requests on disconnect.
+
+Human `[ROLL ...]` requests accept only roll directives, up to ten per message. Mixing campaign directives into a roll request is rejected before any roll or campaign change occurs. Ordinary whispers never enter public GM narration. Private player-seat and delegation commands keep their dedicated private handling; other campaign commands must be sent in public table chat.
+
+`npm test` now includes local HTTP dashboard tests and requires permission to open local listeners. `npm run test:recovery` uses temporary socket-server processes and SQLite data, without making paid AI requests.

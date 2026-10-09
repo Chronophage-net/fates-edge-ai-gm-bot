@@ -10,7 +10,11 @@ Stop automatic retries after permanent room admission failures.
 
 - Stop reconnecting after incorrect passwords, bans, invalid room/seat configuration, or rejected seat identity. Log an actionable instruction to correct access/configuration and restart.
 - Keep retries for transient outages, full rooms, and handshake timeouts; GM-seat conflict remains a recoverable admission warning.
-- Add retry-policy regression tests. This release excludes the separate, uncommitted dashboard/security review work.
+- Add retry-policy regression tests and include the completed dashboard/security review work (see REVIEW.md).
+- Harden dashboard markup, Host/origin checks, remote authentication, and SSE cleanup; serialize supervisor restarts and validate seat manifests.
+- Validate incoming socket frames, preserve URL query parameters, support room passwords, confirm admission before reporting connected, and cancel pending socket requests on disconnect.
+- Restrict human roll directives and prevent private chat from falling through to public narration; include regression tests for both paths.
+- Release validation: all 281 tests passed, plus the isolated killed-server/SQLite/room-rotation recovery smoke test. No live AI provider calls were made.
 
 ### Fixed
 - remove stray factions-manifest.json / velvet-court.json.tmp

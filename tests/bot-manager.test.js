@@ -215,7 +215,8 @@ test('legacy - declaring ONLY a mode is enough to leave legacy mode', () => {
 });
 
 test('legacy - a room name cannot escape the logs directory', () => {
-    const [entry] = normalizeEntries([{ room: '../../etc/passwd', mode: 'gm' }]);
+    assert.throws(() => normalizeEntries([{ room: '../../etc/passwd', mode: 'gm' }]), /Invalid room code/);
+    const entry = { room: '../../etc/passwd', mode: 'gm', seat: 0 };
     const logPath = logPathFor(entry);
     // The property that matters is containment, not the absence of dots: the
     // result must resolve to a direct child of logs/.
@@ -318,4 +319,11 @@ test('bots.example.json - is valid, seats a full table, and ships two idle playe
     assert.strictEqual(xy99.mode, 'gm');
     assert.strictEqual(xy99.seat, 0);
     assert.strictEqual(xy99._legacy, true);
+});
+
+test('manifest normalizes room identity and rejects conflicting ports and malformed entries', () => {
+    assert.throws(() => normalizeEntries([{ room: 'live' }, { room: 'LIVE' }]), /gm/);
+    assert.throws(() => normalizeEntries([{ room: 'A', statusPort: 4200 }, { room: 'B', statusPort: 4200 }]), /ports/);
+    assert.throws(() => normalizeEntries([{ room: 'A', statusPort: 65536 }]), /statusPort/);
+    assert.throws(() => normalizeEntries([null]), /missing/);
 });

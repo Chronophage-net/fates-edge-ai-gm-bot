@@ -53,7 +53,7 @@ class TableSeats {
     if(!['chat-message','chat_message'].includes(msg.type)) return this.mode!=='gm';
     const chat=msg.message || msg.value || msg;
     const actor=this.roster.find(c=>c.id===chat.senderClientId);
-    if(!chat.text || chat.senderClientId===this.id) return this.mode!=='gm';
+    if(typeof chat.text !== 'string' || !chat.text || chat.senderClientId===this.id) return this.mode!=='gm';
     // Transport identity only: a name saying "GM" confers no authority.
     const publicChat=!chat.whisper && !chat.privateOnly && (!chat.recipient || chat.recipient==='all');
     if(publicChat && !this.forgotten.some(q=>chat.text.toLowerCase().includes(q))) {
@@ -65,6 +65,7 @@ class TableSeats {
       if(publicChat && !actor?.botMode && this.player && this.queuedTurns<20) {
         this.queuedTurns++;this.turnQueue=this.turnQueue.then(()=>this.player.turn(chat,gmIds)).catch(()=>this.audit('player-turn-failed')).finally(()=>this.queuedTurns--);
       }
+      if (!publicChat) return true; // Never feed whispers into public GM narration.
       return this.mode!=='gm';
     }
     const chosen=chat.privateOnly && chat.recipient===this.id && verbIsPlayer(text) ? this.id : responder(text,this.roster);
@@ -91,7 +92,7 @@ class TableSeats {
       for(const hit of hits)if(!this.forgotten.some(q=>hit.text.toLowerCase().includes(q)))this.memory.add({id:hit.id,text:hit.text,timestamp:hit.at});
       let ownSheet=null;
       if(actor?.id){try{ownSheet=await this.api('GET',['public-sheet',encodeURIComponent(actor.id)]);}catch{}}
-      try {const answer=await this.passive.run(text,{senderId:actor?.userId || actor?.id || 'anonymous',ownSheet});if(answer){if(verb==='roll')this.say(answer);else if(!publicChat)this.whisper(actor?.id,answer);else this.say(answer);}}
+      try {const answer=await this.passive.run(text,{senderId:actor?.userId || actor?.id || 'anonymous',ownSheet});if(answer){if(!publicChat)this.whisper(actor?.id,answer);else this.say(answer);}}
       catch {this.whisper(actor?.id,'The reference service is unavailable. Try !gm look.');}return true;
     }
     if(this.mode==='passive' && verb==='deck' && sub==='draw'){this.send('deck-draw',{count:1});return true;}
@@ -99,6 +100,10 @@ class TableSeats {
     // New GM-only commands must be authorized by the human sender, not this bot's role.
     if(['recall','knowledge','fact','approve','reject','confirm-takeover','create','delete','load','seed','spend'].includes(verb) && !gmLike(actor?.role)) {
       this.whisper(actor?.id,'Only the GM or Assistant GM may use that command.');return true;
+    }
+    if (!publicChat && verb !== 'delegate') {
+      this.whisper(actor?.id, 'Use public table chat for this command. Private player-seat and delegation commands remain private.');
+      return true;
     }
     return false;
   }

@@ -85,6 +85,22 @@ async function processSpecialTags(text, context, senderName = null) {
         return formatted;
     }
 
+    // Human roll requests must never enter the general narration directive path.
+    // Validate the entire message before rolling so mixed directives have no effects.
+    if (context.rollOnly) {
+        const rolls = [...text.matchAll(/\[ROLL\s*"([^"\[\]]+)"\s*([A-Za-z\+]+)\s*DV\s*(\d+)\s*([A-Za-z]+)\s*\]/gi)];
+        let remainder = text;
+        for (const roll of rolls) remainder = remainder.replace(roll[0], '');
+        if (!rolls.length || rolls.length > 10 || /[\[\]]/.test(remainder)) {
+            throw new Error('Send only ROLL tags in a roll request (at most 10). Other directives require a GM command.');
+        }
+        for (const roll of rolls) {
+            const result = await processRollTag(roll[1], roll[2], Number(roll[3]), roll[4], roll[0]);
+            output = output.replace(roll[0], result);
+        }
+        return output;
+    }
+
     let match;
 
     // ─── [CALL FOR ROLL ...] – GM calls for a roll, does NOT resolve it ──

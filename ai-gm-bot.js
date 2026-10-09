@@ -19,6 +19,7 @@ const statusServer = require('./modules/status-server');
 const knowledgeIndex = require('./modules/knowledge-index');
 const assistantSuggestions = require('./modules/assistant-suggestions');
 const wsCorrelator = require('./modules/ws-correlator');
+const { decodeFrames, roomSocketUrl } = require('./modules/socket-input');
 const { isPermanentAdmissionFailure, shouldReconnect } = require('./modules/connection-retry');
 const ttsClient = require('./modules/tts-client');
 const { mergeCharacterFromServerData } = require('./modules/commands/characters-sync');
@@ -536,38 +537,18 @@ function stopAggressiveSync() {
 function connect() {
   let admissionRejected = false;
   if (reconnectTimer) { clearTimeout(reconnectTimer); reconnectTimer = null; }
-  console.log(`🔌 Connecting to ${WS_URL}?room=${ROOM_CODE}`);
-  ws = new WebSocket(`${WS_URL}?room=${tableSeats.id ? tableSeats.roomId : ROOM_CODE}`);
+  console.log('🔌 Connecting to the room server');
+  ws = new WebSocket(roomSocketUrl(WS_URL, tableSeats.id ? tableSeats.roomId : ROOM_CODE), { handshakeTimeout: 10000, maxPayload: 8 * 1024 * 1024 });
 
   ws.on('open', () => {
-    connected = true;
-    reconnectAttempts = 0;
+    connected = false; // Admission is confirmed by handshake_ack, not TCP open.
     console.log('🟢 WebSocket connected');
-    ws.send(JSON.stringify({ type: 'handshake', campaignCode: ROOM_CODE, clientName: BOT_NAME, role: MODE === 'gm' ? 'gm' : 'player', botMode: MODE, botSeat: BOT_SEAT, botKey: API_KEY, authToken: process.env.AUTH_TOKEN || '', password: '', clientEmail: '' }));
+    ws.send(JSON.stringify({ type: 'handshake', campaignCode: ROOM_CODE, clientName: BOT_NAME, role: MODE === 'gm' ? 'gm' : 'player', botMode: MODE, botSeat: BOT_SEAT, botKey: API_KEY, authToken: process.env.AUTH_TOKEN || '', password: process.env.ROOM_PASSWORD || '', clientEmail: '' }));
   });
 
   ws.on('message', async (data) => {
-    const raw = data.toString();
-    const lines = raw.split('\n').filter(line => line.trim());
-    for (const line of lines) {
-      // BUG FIX: JSON.parse(line) and await handleMessage(msg) used to
-      // share one try/catch, so any runtime error INSIDE handleMessage()
-      // (a real bug -- e.g. a null-deref while whispering a join greeting)
-      // was caught by the same handler as a malformed WS frame and logged
-      // as "⚠️ Non-JSON message" -- true, but misleading: it hid the real
-      // exception (and its stack trace) behind a message that points
-      // entirely the wrong direction, so a genuine handleMessage() bug
-      // could silently no-op forever without ever surfacing what broke.
-      // Parsing and handling are now two separate try/catches so each
-      // failure mode is logged for what it actually is.
-      let msg;
-      try {
-        msg = JSON.parse(line);
-        admissionRejected ||= isPermanentAdmissionFailure(msg);
-      } catch (e) {
-        console.warn('⚠️  Non‑JSON message:', line);
-        continue;
-      }
+    for (const msg of decodeFrames(data, () => logger.warn('Ignored malformed server message'))) {
+      admissionRejected ||= isPermanentAdmissionFailure(msg);
       // DEBUG: every inbound WS frame, including presence pings and
       // state-updated broadcasts that can fire multiple times a
       // second -- the single noisiest line in the whole bot. Set
@@ -583,6 +564,7 @@ function connect() {
 
   ws.on('close', (code, reason) => {
     connected = false;
+    wsCorrelator.cancelAll();
     delegatedTasks.disconnect();
     adventureRecovery.disconnect();
     console.log(`🔌 Disconnected (code ${code})${reason ? `: ${reason}` : ''}`);
@@ -892,7 +874,12 @@ function generateCrownSpreadInterpretation(positions, regionData, regionName, wo
 // 9. Message handler – UPDATED with whisper, GM takeover, and aggressive sync
 // -------------------------------------------------------------------
 async function handleMessage(msg) {
-  if (await tableSeats.handle(msg)) return;
+  const seatHandled = await tableSeats.handle(msg);
+  if (msg.type === 'handshake_ack' && msg.success && !tableSeats.identityRejected) {
+    connected = true;
+    reconnectAttempts = 0;
+  }
+  if (seatHandled) return;
   if (await delegatedTasks.handleSource(msg)) return;
   if (/^(adventure-|timers?-)/.test(msg.type || '')) adventureContext.invalidate();
   // ─── STATE UPDATED – auto‑sync characters ──────────────────────────
@@ -1254,6 +1241,7 @@ async function handleMessage(msg) {
       // player staring at nothing. See that call site's comment for why.
       const processed = await Promise.race([
         commandHandler.processSpecialTags(text, {
+          rollOnly: true,
           orchestrator,
           charactersModule: characters,
           sendChat,

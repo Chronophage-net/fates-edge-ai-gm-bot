@@ -92,3 +92,16 @@ test('P7: a state file with widened permissions is refused', t => {
     say: () => {}, whisper: () => {}, announce: () => {}, publishSheet: async () => {} }),
     /private file permissions/);
 });
+
+test('private chat and private campaign commands cannot fall through to public GM narration', async () => {
+  const sent = [];
+  const s = seat({ mode: 'gm', send: (type, data) => sent.push({ type, ...data }) });
+  s.id = 'bot'; s.roster = [{ id: 'bot', botMode: 'gm', botSeat: 0, role: 'gm' }, { id: 'human', role: 'gm' }];
+  for (const text of ['Secret campaign detail', '!gm fact secret hidden']) {
+    assert.strictEqual(await s.handle({ type: 'chat-message', message: { text, senderClientId: 'human', whisper: true, recipient: 'bot' } }), true);
+  }
+  assert.strictEqual(s.memory.entries().length, 0);
+  assert.ok(sent.every(event => event.message.whisper && event.message.recipient === 'human'));
+  // Delegation has its own private, authenticated dispatcher after TableSeats.
+  assert.strictEqual(await s.handle({ type: 'chat-message', message: { text: '!gm delegate status', senderClientId: 'human', whisper: true, recipient: 'bot' } }), false);
+});

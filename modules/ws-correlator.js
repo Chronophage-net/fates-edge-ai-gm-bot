@@ -56,10 +56,18 @@ function resolve(responseType, data) {
     return true;
 }
 
+function cancelAll(reason = 'Connection closed') {
+    for (const waiter of pending.values()) {
+        clearTimeout(waiter.timer);
+        waiter.reject(new Error(reason));
+    }
+    pending.clear();
+}
+
 // Exposed for tests only.
 function _resetForTests() {
     pending.forEach(w => clearTimeout(w.timer));
     pending.clear();
 }
 
-module.exports = { waitFor, resolve, _resetForTests };
+module.exports = { waitFor, resolve, cancelAll, _resetForTests };

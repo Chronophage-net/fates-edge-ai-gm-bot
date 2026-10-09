@@ -428,3 +428,15 @@ test('processSpecialTags - ENCOUNTER RESOLVE with a non-combat type on the retur
   assert.match(result, /🔓/);
   assert.match(result, /The Vault Door/);
 });
+
+test('human roll requests cannot smuggle campaign directives alongside a valid roll', async () => {
+  const context = buildMockContext(); context.rollOnly = true;
+  let mutations = 0;
+  context.charactersModule.applyDelta = () => mutations++;
+  context.orchestrator.campaign.save = async () => mutations++;
+  for (const extra of ['[FACT weather stormy]', '[SCENE COMPLETE]', '[NPC CREATE "Attacker" "Boss"]']) {
+    await assert.rejects(processSpecialTags('[ROLL "Levi" Body+Melee DV 3 Controlled] ' + extra, context, 'Tester'), /only ROLL/);
+  }
+  assert.strictEqual(mutations, 0);
+  assert.match(await processSpecialTags('[ROLL "Levi" Body + Melee DV 3 Controlled]', context, 'Tester'), /rolls/);
+});

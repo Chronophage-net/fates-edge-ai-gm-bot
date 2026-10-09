@@ -66,15 +66,22 @@ const fs = require('fs');
 const path = require('path');
 const http = require('http');
 const os = require('os');
-const { fork, exec } = require('child_process');
+const { fork, execFile } = require('child_process');
+const { dashboardGuard } = require('./modules/dashboard-security');
 const dotenv = require('dotenv');
 
 const REPO_ROOT = __dirname;
 const LOG_DIR = path.join(REPO_ROOT, 'logs');
-const MAX_BOTS = parseInt(process.env.MAX_BOTS || '12', 10);
-const MANAGER_PORT = parseInt(process.env.MANAGER_PORT || '4140', 10);
+function setting(name, fallback, max = 65535) {
+    const raw = process.env[name] ?? String(fallback);
+    const value = Number(raw);
+    if (!/^\d+$/.test(raw) || !Number.isSafeInteger(value) || value < 1 || value > max) throw new Error(`${name} must be between 1 and ${max}`);
+    return value;
+}
+const MAX_BOTS = setting('MAX_BOTS', 12, 1000);
+const MANAGER_PORT = setting('MANAGER_PORT', 4140);
 const MANAGER_HOST = process.env.MANAGER_HOST || '127.0.0.1';
-const BASE_BOT_STATUS_PORT = parseInt(process.env.BASE_BOT_STATUS_PORT || '4150', 10);
+const BASE_BOT_STATUS_PORT = setting('BASE_BOT_STATUS_PORT', 4150);
 const LOG_RING_SIZE = 500; // lines kept in memory per bot for the dashboard's live pane; full history is still on disk
 
 if (!fs.existsSync(LOG_DIR)) fs.mkdirSync(LOG_DIR, { recursive: true });
@@ -127,10 +134,12 @@ function normalizeEntries(bots, manifestPath) {
     const out = [];
 
     for (const raw of bots) {
-        if (!raw.room || typeof raw.room !== 'string') {
+        if (!raw || typeof raw !== 'object' || !raw.room || typeof raw.room !== 'string') {
             throw new Error(`Manifest entry missing a "room" string: ${JSON.stringify(raw)}`);
         }
-        const entry = { ...raw };
+        const entry = { ...raw, room: raw.room.trim().toUpperCase() };
+        if (!/^[A-Z0-9][A-Z0-9_-]{0,63}$/.test(entry.room)) throw new Error('Invalid room code in manifest');
+        if (raw.statusPort !== undefined && (!Number.isInteger(raw.statusPort) || raw.statusPort < 1 || raw.statusPort > 65535)) throw new Error('Invalid statusPort in manifest');
 
         // An entry that declares none of these is a pre-seats manifest entry
         // and is kept bit-for-bit compatible.
@@ -179,6 +188,8 @@ function normalizeEntries(bots, manifestPath) {
 
         out.push(entry);
     }
+    const ports = out.map((entry, index) => entry.statusPort ?? BASE_BOT_STATUS_PORT + index);
+    if (ports.some(port => port > 65535 || port === MANAGER_PORT) || new Set(ports).size !== ports.length) throw new Error('Dashboard ports must be valid and distinct');
     return out;
 }
 
@@ -284,7 +295,7 @@ function startBot(entry, index) {
     pipe(child.stderr, '[stderr] ');
 
     child.on('exit', (code, signal) => {
-        bot.status = 'crashed';
+        if (bot.child === child) bot.status = 'crashed';
         appendRing(bot, `[manager] process exited (code=${code}, signal=${signal})`);
         console.warn(`🔴 Bot for ${label} exited (code=${code}, signal=${signal}).`);
         logStream.end();
@@ -309,20 +320,43 @@ function resolveBot(key) {
     return null;
 }
 
-function restartBot(key) {
-    const bot = resolveBot(key);
-    if (!bot) return false;
-    try { bot.child.kill(); } catch (e) { /* already dead */ }
-    bot.restarts += 1;
-    startBot(bot.entry, bot.index);
-    return true;
+async function stopBot(bot) {
+    const child = bot.child;
+    if (!child || child.exitCode != null || child.signalCode != null) return;
+    await new Promise((resolve, reject) => {
+        let timer;
+        const done = () => { clearTimeout(timer); child.off('error', failed); resolve(); };
+        const failed = error => { clearTimeout(timer); child.off('exit', done); reject(error); };
+        child.once('exit', done); child.once('error', failed);
+        timer = setTimeout(() => {
+            child.kill('SIGKILL');
+            timer = setTimeout(() => failed(new Error('Bot did not stop')), 3000);
+        }, 3000);
+        child.kill('SIGTERM');
+    });
 }
 
-function stopAll() {
-    for (const bot of bots.values()) {
-        try { bot.child.kill(); } catch (e) { /* already dead */ }
-        try { bot.logStream.end(); } catch (e) { /* already closed */ }
-    }
+async function restartBot(key, launch = startBot) {
+    const bot = resolveBot(key);
+    if (!bot) return false;
+    if (bot.restarting) return bot.restarting;
+    bot.status = 'restarting';
+    bot.restarting = (async () => {
+        await stopBot(bot);
+        bot.restarts += 1;
+        launch(bot.entry, bot.index);
+        return true;
+    })();
+    try { return await bot.restarting; }
+    finally { bot.restarting = null; }
+}
+
+async function stopAll() {
+    await Promise.all([...bots.values()].map(async bot => {
+        if (bot.restarting) await bot.restarting;
+        await stopBot(bot);
+        bot.logStream?.end();
+    }));
 }
 
 // ============================================================
@@ -341,7 +375,7 @@ function stopAll() {
 function samplePids(pids) {
     return new Promise((resolve) => {
         if (!pids.length) return resolve({});
-        exec(`ps -o pid=,pcpu=,rss= -p ${pids.join(',')}`, (err, stdout) => {
+        execFile('ps', ['-o', 'pid=,pcpu=,rss=', '-p', pids.join(',')], { timeout: 2000 }, (err, stdout) => {
             const result = {};
             if (err || !stdout) return resolve(result);
             stdout.trim().split('\n').forEach(line => {
@@ -415,12 +449,12 @@ function escapeHtml(s) {
     return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
-function renderShell() {
+function renderShell(nonce) {
     const tabs = [...bots.values()].map(b =>
         `<button class="tab-btn" data-room="${escapeHtml(b.key)}">${escapeHtml(b.label)} <span class="mode mode-${escapeHtml(b.entry.mode)}">${escapeHtml(b.entry.mode)}</span></button>`
     ).join('');
     return `<!doctype html>
-<html><head><meta charset="utf-8"><title>AI GM Bot Manager</title>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI GM Bot Manager</title>
 <style>
   body { font-family: -apple-system, sans-serif; margin: 0; background: #1a1a1a; color: #eee; }
   header { padding: 0.6rem 1rem; background: #222; border-bottom: 1px solid #333; display: flex; align-items: center; gap: 1rem; }
@@ -428,7 +462,11 @@ function renderShell() {
   #tabs { display: flex; gap: 0.3rem; padding: 0.5rem 1rem; background: #1e1e1e; flex-wrap: wrap; }
   .tab-btn { background: #2a2a2a; color: #ccc; border: 1px solid #3a3a3a; border-radius: 5px; padding: 0.3rem 0.8rem; cursor: pointer; }
   .tab-btn.active { background: #d4af37; color: #111; font-weight: 600; }
-  #overview { padding: 1rem; }
+  #overview { padding: 1rem; overflow-x: auto; }
+  #notice { margin: 0; padding: .6rem 1rem; color: #e8c86a; }
+  button:focus-visible, a:focus-visible { outline: 2px solid #e8c86a; outline-offset: 3px; }
+  button { min-height: 40px; }
+  @media (max-width: 600px) { header { flex-wrap: wrap; } #summary { font-size: .8rem; } }
   table { border-collapse: collapse; width: 100%; font-size: 0.85rem; }
   th, td { border-bottom: 1px solid #333; padding: 0.3rem 0.6rem; text-align: left; }
   th { color: #d4af37; }
@@ -444,17 +482,18 @@ function renderShell() {
 <body>
 <header><h1>🤖 AI GM Bot Manager</h1><span id="summary"></span></header>
 <div id="tabs"><button class="tab-btn active" data-room="__overview">Overview</button>${tabs}</div>
-<div id="content"></div>
-<script>
+<p id="notice" role="status" aria-live="polite"></p><div id="content"></div>
+<script nonce="${nonce}">
+const escapeHtml = ${escapeHtml.toString()};
 let currentRoom = '__overview';
 function renderOverview(data) {
   const m = data.manager;
   document.getElementById('summary').textContent = m.botCount + '/' + m.maxBots + ' bots · load ' + m.loadAvg.map(n=>n.toFixed(2)).join('/') + ' · mem ' + (m.totalMemMb - m.freeMemMb) + '/' + m.totalMemMb + ' MB';
   let rows = data.bots.map(b => \`<tr>
-    <td>\${b.room}</td>
+    <td>\${escapeHtml(b.room)}</td>
     <td>\${b.seat}</td>
     <td><span class="mode mode-\${b.mode}">\${b.mode}</span></td>
-    <td class="mono">\${b.roomId ?? '-'}</td>
+    <td class="mono">\${escapeHtml(b.roomId ?? '-')}</td>
     <td class="status-\${b.status}">\${b.status}</td>
     <td>\${b.pid ?? '-'}</td>
     <td>\${b.cpuPercent != null ? b.cpuPercent.toFixed(1) + '%' : 'n/a'}</td>
@@ -462,7 +501,7 @@ function renderOverview(data) {
     <td>\${b.diskIo ? ('R ' + b.diskIo.readMb + 'MB / W ' + b.diskIo.writeMb + 'MB') : 'n/a'}</td>
     <td>\${b.uptimeSec}s</td>
     <td>\${b.restarts}</td>
-    <td><a href="http://127.0.0.1:\${b.statusPort}/" target="_blank">dashboard</a> · <button class="action" onclick="restartBot('\${b.key}')">Restart</button></td>
+    <td><a href="http://127.0.0.1:\${b.statusPort}/" target="_blank" rel="noopener">dashboard</a> · <button class="action" data-restart="\${escapeHtml(b.key)}">Restart</button></td>
   </tr>\`).join('');
   document.getElementById('content').innerHTML = \`<div id="overview">
     <table><thead><tr><th>Room</th><th>Seat</th><th>Mode</th><th>Room ID</th><th>Status</th><th>PID</th><th>CPU</th><th>RAM</th><th>Disk I/O</th><th>Uptime</th><th>Restarts</th><th></th></tr></thead>
@@ -472,14 +511,14 @@ function renderOverview(data) {
 function renderBotTab(key) {
   document.getElementById('content').innerHTML = \`
     <div style="padding:1rem;">
-      <iframe src="http://127.0.0.1:\${window.__statusPorts[key]}/"></iframe>
+      <iframe title="Bot status dashboard" src="http://127.0.0.1:\${window.__statusPorts[key]}/"></iframe>
       <div id="log">(loading log…)</div>
     </div>\`;
   refreshLog(key);
 }
 window.__statusPorts = {};
 async function refreshOverview() {
-  const res = await fetch('/api/overview'); const data = await res.json();
+  const res = await fetch('/api/overview'); if (!res.ok) throw new Error('Status unavailable'); const data = await res.json();
   data.bots.forEach(b => window.__statusPorts[b.key] = b.statusPort);
   if (currentRoom === '__overview') renderOverview(data);
 }
@@ -488,11 +527,20 @@ async function refreshLog(key) {
   const res = await fetch('/api/bots/' + encodeURIComponent(key) + '/log');
   const text = await res.text();
   const el = document.getElementById('log');
-  if (el) { el.textContent = text; el.scrollTop = el.scrollHeight; }
+  if (el && currentRoom === key) { el.textContent = text; el.scrollTop = el.scrollHeight; }
 }
 async function restartBot(key) {
-  await fetch('/api/bots/' + encodeURIComponent(key) + '/restart', { method: 'POST' });
+  document.getElementById('notice').textContent = 'Restarting bot…';
+  const res = await fetch('/api/bots/' + encodeURIComponent(key) + '/restart', { method: 'POST', headers: { 'X-Dashboard-Request': '1' } });
+  if (!res.ok) throw new Error('Restart failed. Check the manager log.');
+  document.getElementById('notice').textContent = 'Bot restarted.';
+  await refreshOverview();
 }
+document.getElementById('content').addEventListener('click', async e => {
+  const button = e.target.closest('[data-restart]'); if (!button) return;
+  button.disabled = true;
+  try { await restartBot(button.dataset.restart); } catch (error) { document.getElementById('notice').textContent = error.message; } finally { button.disabled = false; }
+});
 document.getElementById('tabs').addEventListener('click', (e) => {
   const btn = e.target.closest('.tab-btn'); if (!btn) return;
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -500,19 +548,22 @@ document.getElementById('tabs').addEventListener('click', (e) => {
   currentRoom = btn.dataset.room;
   if (currentRoom === '__overview') refreshOverview(); else renderBotTab(currentRoom);
 });
-refreshOverview();
-setInterval(() => { if (currentRoom === '__overview') refreshOverview(); else refreshLog(currentRoom); }, 3000);
+async function refresh() { try { if (currentRoom === '__overview') await refreshOverview(); else await refreshLog(currentRoom); } catch { document.getElementById('notice').textContent = 'Connection interrupted. Retrying…'; } }
+refresh().finally(() => setInterval(refresh, 3000));
 </script>
 </body></html>`;
 }
 
-function startDashboard() {
+function startDashboard({ port = MANAGER_PORT, host = MANAGER_HOST, token = process.env.MANAGER_TOKEN || '' } = {}) {
+    const guard = dashboardGuard({ host, token });
     const server = http.createServer(async (req, res) => {
-        const url = new URL(req.url, `http://${req.headers.host}`);
+        const nonce = guard(req, res); if (!nonce) return;
+        try {
+        const url = new URL(req.url, 'http://localhost');
 
         if (url.pathname === '/' ) {
             res.writeHead(200, { 'Content-Type': 'text/html' });
-            res.end(renderShell());
+            res.end(renderShell(nonce));
             return;
         }
         if (url.pathname === '/api/overview') {
@@ -530,7 +581,7 @@ function startDashboard() {
         }
         const restartMatch = url.pathname.match(/^\/api\/bots\/([^/]+)\/restart$/);
         if (restartMatch && req.method === 'POST') {
-            const ok = restartBot(decodeURIComponent(restartMatch[1]));
+            const ok = await restartBot(decodeURIComponent(restartMatch[1]));
             res.writeHead(ok ? 200 : 404, { 'Content-Type': 'application/json' });
             res.end(JSON.stringify({ ok }));
             return;
@@ -538,9 +589,13 @@ function startDashboard() {
 
         res.writeHead(404);
         res.end('Not found');
+        } catch (error) {
+            res.writeHead(error instanceof URIError ? 400 : 500, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: error instanceof URIError ? 'Invalid request path' : 'The request could not be completed' }));
+        }
     });
-    server.listen(MANAGER_PORT, MANAGER_HOST, () => {
-        console.log(`📊 Bot Manager dashboard: http://${MANAGER_HOST}:${MANAGER_PORT}/`);
+    server.listen(port, host, () => {
+        console.log(`📊 Bot Manager dashboard: http://${host}:${server.address().port}/`);
     });
     return server;
 }
@@ -559,14 +614,17 @@ function main() {
         process.exit(1);
     }
 
+    dashboardGuard({ host: MANAGER_HOST, token: process.env.MANAGER_TOKEN || '' });
     const manifest = loadManifest(manifestPath);
     manifest.forEach((entry, index) => startBot(entry, index));
-    startDashboard();
+    const dashboard = startDashboard();
 
-    const shutdown = () => {
+    let stopping = false;
+    const shutdown = async () => {
+        if (stopping) return; stopping = true;
+        dashboard.close();
         console.log('\n🛑 Shutting down all bots...');
-        stopAll();
-        process.exit(0);
+        try { await stopAll(); process.exit(0); } catch (error) { console.error(error.message); process.exit(1); }
     };
     process.on('SIGINT', shutdown);
     process.on('SIGTERM', shutdown);
@@ -577,6 +635,9 @@ if (require.main === module) {
 }
 
 module.exports = {
+    startDashboard,
+    stopBot,
+    stopAll,
     loadManifest,
     normalizeEntries,
     loadBotEnv,

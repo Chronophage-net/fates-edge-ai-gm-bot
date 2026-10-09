@@ -26,6 +26,7 @@
 //   statusServer.start({ getState: () => ({...}) , port: STATUS_PORT });
 
 const http = require('http');
+const { dashboardGuard } = require('./dashboard-security');
 const logger = require('./logger');
 const assistantSuggestions = require('./assistant-suggestions');
 
@@ -33,8 +34,10 @@ let server = null;
 let sseClients = [];
 let getStateFn = () => ({});
 let startedAt = null;
+let pushTimer = null;
+let logListener = null;
 
-function renderPage() {
+function renderPage(nonce) {
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,7 +46,7 @@ function renderPage() {
 <title>AI GM Bot – Status</title>
 <style>
   :root {
-    --bg: #0f1115; --panel: #161a22; --fg: #d8dee9; --dim: #6b7280;
+    --bg: #0f1115; --panel: #161a22; --fg: #d8dee9; --dim: #a2abbc;
     --accent: #7aa2f7; --ok: #9ece6a; --warn: #e0af68; --err: #f7768e; --border: #262b36;
   }
   * { box-sizing: border-box; }
@@ -124,9 +127,14 @@ function renderPage() {
   .suggestion-row button.approve { color: var(--ok); border-color: var(--ok); }
   .suggestion-row button.reject { color: var(--err); border-color: var(--err); }
   .suggestion-row button:hover { filter: brightness(1.2); }
+  #dashboard-notice { padding: 8px 20px; background: var(--panel); color: var(--dim); font-size: 12px; }
+  button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .kv dd, .fact-row dd { overflow-wrap: anywhere; min-width: 0; }
+  button { min-height: 40px; }
 </style>
 </head>
 <body>
+<div id="dashboard-notice" role="status" aria-live="polite"></div>
 <header>
   <span class="dot off" id="conn-dot"></span>
   <h1>🤖 AI GM Bot Status</h1>
@@ -180,7 +188,7 @@ function renderPage() {
     </div>
   </div>
 </div>
-<script>
+<script nonce="${nonce}">
 function fmtDuration(ms) {
   var s = Math.floor(ms / 1000);
   var h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), sec = s % 60;
@@ -188,7 +196,7 @@ function fmtDuration(ms) {
 }
 
 function kv(pairs) {
-  return pairs.map(function(p) { return '<dt>' + p[0] + '</dt><dd>' + p[1] + '</dd>'; }).join('');
+  return pairs.map(function(p) { return '<dt>' + escapeHtml(p[0]) + '</dt><dd>' + escapeHtml(p[1]) + '</dd>'; }).join('');
 }
 
 function escapeHtml(s) {
@@ -202,8 +210,8 @@ function renderState(s) {
   dot.className = 'dot ' + (s.connected ? 'on' : 'off');
 
   document.getElementById('conn-kv').innerHTML = kv([
-    ['Status', s.connected ? '<span class="badge ok">connected</span>' : '<span class="badge bad">disconnected</span>'],
-    ['Role', s.role === 'gm' ? '<span class="badge gm">GM</span>' : (s.role || 'player')],
+    ['Status', s.connected ? 'Connected' : 'Disconnected'],
+    ['Role', s.role || 'player'],
     ['WS URL', s.wsUrl || '–'],
     ['Room', s.room || '–'],
     ['Driver', (s.driverName || '–') + (s.driverModel ? ' (' + s.driverModel + ')' : '')],
@@ -255,7 +263,7 @@ function renderState(s) {
     : '<dd class="empty">No characters synced yet.</dd>';
 
   document.getElementById('sb-bank').innerHTML =
-    '<span class="badge sb">' + (s.sbBank || 0) + ' SB</span>';
+    '<span class="badge sb">' + escapeHtml(s.sbBank ?? 0) + ' SB</span>';
 
   var facts = s.facts || {};
   var factKeys = Object.keys(facts);
@@ -268,8 +276,8 @@ function renderState(s) {
     ? obligations.map(function(o) {
         return '<div class="obligation-row">' +
           '<div><div class="patron-name">' + escapeHtml(o.patron) + '</div>' +
-          '<div class="patron-chars">' + (o.characters || []).map(function(c) { return escapeHtml(c.name) + ' (' + c.obligation + ')'; }).join(', ') + '</div></div>' +
-          '<div class="patron-total">' + o.total + '</div>' +
+          '<div class="patron-chars">' + (o.characters || []).map(function(c) { return escapeHtml(c.name) + ' (' + escapeHtml(c.obligation) + ')'; }).join(', ') + '</div></div>' +
+          '<div class="patron-total">' + escapeHtml(o.total) + '</div>' +
         '</div>';
       }).join('')
     : '<div class="empty">No Obligation tracked yet.</div>';
@@ -337,8 +345,11 @@ document.getElementById('suggestions-list').addEventListener('click', function(e
   var id = btn.getAttribute('data-id');
   var action = btn.getAttribute('data-action');
   if (id && action) {
-    fetch('/api/suggestions/' + encodeURIComponent(id) + '/' + action, { method: 'POST' })
-      .catch(function(err) { console.warn('Failed to ' + action + ' suggestion:', err); });
+    btn.disabled = true;
+    fetch('/api/suggestions/' + encodeURIComponent(id) + '/' + action, { method: 'POST', headers: { 'X-Dashboard-Request': '1' } })
+      .then(async function(res) { const data = await res.json(); if (!res.ok) throw new Error(data.error || 'Action failed'); document.getElementById('dashboard-notice').textContent = 'Suggestion ' + (action === 'approve' ? 'approved.' : 'rejected.'); })
+      .catch(function(err) { document.getElementById('dashboard-notice').textContent = err.message; })
+      .finally(function() { btn.disabled = false; });
   }
 });
 
@@ -349,11 +360,13 @@ function bootstrap() {
       renderState(data.state);
       (data.log || []).forEach(appendLine);
     })
-    .catch(function() {});
+    .catch(function() { document.getElementById('dashboard-notice').textContent = 'Unable to load status. Reconnecting…'; });
 }
 bootstrap();
 
 var es = new EventSource('/events');
+es.onopen = function() { document.getElementById('dashboard-notice').textContent = 'Live updates connected'; };
+es.onerror = function() { document.getElementById('dashboard-notice').textContent = 'Live updates interrupted. Reconnecting…'; };
 es.addEventListener('state', function(e) { renderState(JSON.parse(e.data)); });
 es.addEventListener('log', function(e) { appendLine(JSON.parse(e.data)); });
 </script>
@@ -364,7 +377,7 @@ es.addEventListener('log', function(e) { appendLine(JSON.parse(e.data)); });
 function broadcastSSE(event, data) {
   const payload = `event: ${event}\ndata: ${JSON.stringify(data)}\n\n`;
   for (const res of sseClients) {
-    res.write(payload);
+    if (!res.write(payload)) res.destroy(); // Disconnect slow readers instead of buffering forever.
   }
 }
 
@@ -381,13 +394,16 @@ function start({ getState, port, pushIntervalMs = 4000 } = {}) {
   if (server) return server;
   if (typeof getState === 'function') getStateFn = getState;
   startedAt = Date.now();
-  const PORT = port || parseInt(process.env.STATUS_PORT || '4141', 10);
+  const PORT = port ?? parseInt(process.env.STATUS_PORT || '4141', 10);
   const HOST = process.env.STATUS_HOST || '127.0.0.1';
 
+  const guard = dashboardGuard({ host: HOST, token: process.env.STATUS_TOKEN || '', frame: true });
   server = http.createServer((req, res) => {
+    const nonce = guard(req, res);
+    if (!nonce) return;
     if (req.url === '/' || req.url === '/index.html') {
       res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
-      res.end(renderPage());
+      res.end(renderPage(nonce));
       return;
     }
     if (req.url === '/api/state') {
@@ -408,7 +424,7 @@ function start({ getState, port, pushIntervalMs = 4000 } = {}) {
         broadcastSSE('state', snapshot());
       })().catch(e => {
         res.writeHead(500, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ ok: false, error: e.message }));
+        res.end(JSON.stringify({ ok: false, error: 'The suggestion could not be applied. Check the bot log.' }));
       });
       return;
     }
@@ -429,14 +445,18 @@ function start({ getState, port, pushIntervalMs = 4000 } = {}) {
     res.end('Not found');
   });
 
-  logger.on('entry', entry => broadcastSSE('log', entry));
-  const pushTimer = setInterval(() => broadcastSSE('state', snapshot()), pushIntervalMs);
-  server.on('close', () => clearInterval(pushTimer));
+  logListener = entry => broadcastSSE('log', entry);
+  logger.on('entry', logListener);
+  pushTimer = setInterval(() => broadcastSSE('state', snapshot()), pushIntervalMs);
+  const timer = pushTimer, listener = logListener;
+  const cleanup = () => { clearInterval(timer); logger.off('entry', listener); };
+  server.on('close', cleanup);
 
   server.listen(PORT, HOST, () => {
-    console.log(`📊 Status dashboard: http://${HOST === '0.0.0.0' ? 'localhost' : HOST}:${PORT}${HOST === '0.0.0.0' ? ' (reachable on your LAN — STATUS_HOST=0.0.0.0)' : ''}`);
+    console.log(`📊 Status dashboard: http://${HOST === '0.0.0.0' ? 'localhost' : HOST}:${server.address().port}${HOST === '0.0.0.0' ? ' (reachable on your LAN — STATUS_HOST=0.0.0.0)' : ''}`);
   });
   server.on('error', (e) => {
+    cleanup();
     console.warn(`⚠️  Status dashboard failed to start on port ${PORT}: ${e.message}`);
   });
 
@@ -449,6 +469,9 @@ function snapshot() {
 }
 
 function stop() {
+  clearInterval(pushTimer);
+  if (logListener) logger.off('entry', logListener);
+  for (const client of sseClients) client.end();
   if (server) {
     server.close();
     server = null;
