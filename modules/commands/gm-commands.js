@@ -1231,9 +1231,10 @@ async function handleBotCommand(sender, text, context) {
                 // wait for that draw's response and, in Assistant GM mode,
                 // run it through an LLM synthesis pass instead of just
                 // letting the templated broadcast speak for itself.
-                const waitP = wsCorrelator.waitFor('crown-spread', 15000);
+                const requestId = require('node:crypto').randomUUID();
+                const waitP = wsCorrelator.waitFor('crown-spread', 15000, requestId);
                 waitP.catch(() => {}); // avoid an unhandled rejection when the full-GM branch below never awaits it
-                ws.send(JSON.stringify({ type: 'crown-spread', region }));
+                ws.send(JSON.stringify({ type: 'crown-spread', region, requestId }));
                 if (!isAssistant) {
                     // Full GM: unchanged behavior, fire-and-forget -- the
                     // server's broadcast (and web client's toast/chat card)

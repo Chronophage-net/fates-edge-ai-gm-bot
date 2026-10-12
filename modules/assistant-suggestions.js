@@ -161,7 +161,7 @@ async function approve(id) {
         emit('assistant-suggestion-resolved', { id: entry.id, outcome: 'approved', result: (typeof result === 'string') ? result : null });
         return { ok: true, result, entry, autoRejected };
     } catch (e) {
-        emit('assistant-suggestion-resolved', { id: entry.id, outcome: 'approved', result: null });
+        emit('assistant-suggestion-resolved', { id: entry.id, outcome: 'failed', result: 'The action failed. Check the table state before proposing it again.' });
         return { ok: false, error: e.message, entry, autoRejected };
     }
 }

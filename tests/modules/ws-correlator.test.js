@@ -18,6 +18,17 @@ test('resolve() returns false when nothing is waiting', () => {
   assert.strictEqual(wsCorrelator.resolve('deck-drawn', {}), false);
 });
 
+test('request IDs isolate simultaneous draws and ignore unrelated broadcasts', async () => {
+  const a = wsCorrelator.waitFor('crown-spread', 1000, 'a');
+  const b = wsCorrelator.waitFor('crown-spread', 1000, 'b');
+  assert.equal(wsCorrelator.resolve('crown-spread', {}), false);
+  assert.equal(wsCorrelator.resolve('crown-spread', { requestId: 'other' }), false);
+  wsCorrelator.resolve('crown-spread', { requestId: 'b' });
+  wsCorrelator.resolve('crown-spread', { requestId: 'a' });
+  assert.equal((await a).requestId, 'a');
+  assert.equal((await b).requestId, 'b');
+});
+
 test('waitFor rejects on timeout', async () => {
   const p = wsCorrelator.waitFor('crown-spread', 20);
   await assert.rejects(p, /Timed out/);

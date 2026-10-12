@@ -1,6 +1,20 @@
 # Changelog
 All notable changes to this project will be documented here.
 
+## [4.18.3] - 2026-10-12
+
+Serialized GM turns, cancellation safety, correlated draws, and reliable shutdown.
+
+- Serialize GM chat turns with a bounded queue; invalidate stale work on disconnect/role changes and guard tag contexts after cancellation or deadlines.
+- Propagate turn cancellation to room HTTP requests, clear action deadline timers, and report uncertain partial completion without publishing unresolved directives.
+- Handle SIGINT/SIGTERM through shared bounded cleanup, preventing reconnect during shutdown.
+- Broadcast failed suggestion applications accurately and await fact persistence before reporting approval.
+- Correlate deck synthesis and seed draws by request ID; requires the companion server update for ID-based responses.
+- Reset queue capacity on invalidation even with a full stale queue; reject deadlines from cancelled parents and prevent turn-bound proxies from leaking into saved state.
+- Propagate failed NPC/knowledge writes and scene-completion exceptions to suggestion outcomes instead of reporting approval.
+- Upgrade socket server to 5.14.1 before updating this bot. Cancellation cannot roll back writes or forcibly stop an in-flight AI provider request.
+- Validation: 292 tests and the isolated restart/SQLite/room-rotation recovery smoke test passed; no live AI provider calls were made.
+
 Format loosely follows [Keep a Changelog](https://keepachangelog.com/), versions follow [Semantic Versioning](https://semver.org/).
 
 

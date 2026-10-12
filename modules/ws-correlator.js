@@ -1,9 +1,12 @@
 // modules/ws-correlator.js
 //
 // Tiny request/response correlator for the bot's single WebSocket
-// connection. Some server responses (crown-spread, deck-drawn) arrive as
+// connection. ID-bearing requests are keyed by BOTH response type and ID;
+// broadcasts without that ID never complete them. The legacy no-ID API
+// below remains for older internal consumers/tests, with one waiter per type.
+// Historically server responses (crown-spread, deck-drawn) arrived as
 // a broadcast on the *same* connection that requested them, with no
-// per-request id anywhere in the wire protocol -- so this assumes at
+// per-request id anywhere in the wire protocol -- that legacy mode assumes at
 // most one in-flight request per response `type` at a time, matching the
 // existing seedCampaign()/seedRequested single-in-flight pattern already
 // in ai-gm-bot.js (this module generalizes that pattern instead of
@@ -25,19 +28,20 @@ const pending = new Map(); // responseType -> { resolve, reject, timer }
  * @returns {Promise<Object>} resolves with the full message object handed
  *   to resolve() below.
  */
-function waitFor(responseType, timeoutMs = 15000) {
+function waitFor(responseType, timeoutMs = 15000, requestId = null) {
+    const key = JSON.stringify([responseType, requestId]);
     return new Promise((resolvePromise, rejectPromise) => {
-        const existing = pending.get(responseType);
+        const existing = pending.get(key);
         if (existing) {
             clearTimeout(existing.timer);
-            pending.delete(responseType);
+            pending.delete(key);
             existing.reject(new Error(`Superseded by a newer "${responseType}" request`));
         }
         const timer = setTimeout(() => {
-            pending.delete(responseType);
+            pending.delete(key);
             rejectPromise(new Error(`Timed out waiting for "${responseType}"`));
         }, timeoutMs);
-        pending.set(responseType, { resolve: resolvePromise, reject: rejectPromise, timer });
+        pending.set(key, { resolve: resolvePromise, reject: rejectPromise, timer });
     });
 }
 
@@ -48,10 +52,11 @@ function waitFor(responseType, timeoutMs = 15000) {
  * whatever they already did with the message either way).
  */
 function resolve(responseType, data) {
-    const waiter = pending.get(responseType);
+    const key = JSON.stringify([responseType, data?.requestId ?? null]);
+    const waiter = pending.get(key);
     if (!waiter) return false;
     clearTimeout(waiter.timer);
-    pending.delete(responseType);
+    pending.delete(key);
     waiter.resolve(data);
     return true;
 }

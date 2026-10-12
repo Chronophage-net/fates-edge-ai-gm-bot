@@ -20,6 +20,7 @@ const { repairAITagSyntax } = require('./tag-repair');
 const { encounterIcon, placeOrUpdateToken, moveToken, removeToken, clearEnemyTokens, inferFaction } = require('./tokens');
 
 async function processSpecialTags(text, context, senderName = null) {
+    context = require('../turn-lifecycle').guard(context);
     const charactersModule = context.charactersModule;
     if (!charactersModule) {
         return text;
@@ -38,12 +39,8 @@ async function processSpecialTags(text, context, senderName = null) {
 
     // ─── Timeout helper ──────────────────────────────────────────────
     // Prevents any individual API request from hanging the entire function.
-    const withTimeout = (promise, ms = 5000, fallback = null) => {
-        return Promise.race([
-            promise,
-            new Promise((resolve) => setTimeout(() => resolve(fallback), ms))
-        ]).catch(() => fallback);
-    };
+    const withTimeout = (promise, ms = 5000, fallback = null) => require('../turn-lifecycle').wait(promise, ms, fallback);
+    const requiredAction = promise => require('../turn-lifecycle').wait(promise, 5000, null, true);
 
     // ─── Assistant GM mode ──────────────────────────────────────────
     const isAssistant = context.myRole === 'assistant-gm';
@@ -81,7 +78,7 @@ async function processSpecialTags(text, context, senderName = null) {
             charactersModule.applyDelta(name, 'boons', outcome.boonGain, saveCampaign);
         }
         campaignState.sb = (campaignState.sb || 0) + result.sb;
-        saveCampaign();
+        await saveCampaign();
         return formatted;
     }
 
@@ -204,7 +201,7 @@ async function processSpecialTags(text, context, senderName = null) {
     while ((match = posRegex.exec(output)) !== null) {
         const pos = match[1];
         campaignState.scene.position = pos;
-        saveCampaign();
+        await saveCampaign();
         output = output.replace(match[0], `*(Position set to ${pos})*`);
         posRegex.lastIndex = 0;
     }
@@ -214,7 +211,7 @@ async function processSpecialTags(text, context, senderName = null) {
     while ((match = dvRegex.exec(output)) !== null) {
         const dv = parseInt(match[1]);
         campaignState.scene.defaultDV = dv;
-        saveCampaign();
+        await saveCampaign();
         output = output.replace(match[0], `*(Default DV set to ${dv})*`);
         dvRegex.lastIndex = 0;
     }
@@ -462,7 +459,7 @@ async function processSpecialTags(text, context, senderName = null) {
         const cost = parseInt(match[1]);
         if (campaignState.sb >= cost) {
             campaignState.sb -= cost;
-            saveCampaign();
+            await saveCampaign();
             output = output.replace(match[0], `*(Spent ${cost} Story Beat${cost > 1 ? 's' : ''})*`);
         } else {
             output = output.replace(match[0], '*(Not enough SB)*');
@@ -480,7 +477,7 @@ async function processSpecialTags(text, context, senderName = null) {
     while ((match = addSbRegex.exec(output)) !== null) {
         const gain = parseInt(match[1]);
         campaignState.sb = (campaignState.sb || 0) + gain;
-        saveCampaign();
+        await saveCampaign();
         output = output.replace(match[0], `*(Banked ${gain} Story Beat${gain > 1 ? 's' : ''})*`);
         addSbRegex.lastIndex = 0;
     }
@@ -497,13 +494,13 @@ async function processSpecialTags(text, context, senderName = null) {
                 preview: `${key}: ${value}`,
                 apply: async () => {
                     campaignState.facts[key] = value;
-                    saveCampaign();
+                    await saveCampaign();
                     knowledgeIndex.indexFact((context.roomId || context.orchestrator?.campaign?.roomCode), key, value).catch(() => {});
                 },
             });
         } else {
             campaignState.facts[key] = value;
-            saveCampaign();
+            await saveCampaign();
             knowledgeIndex.indexFact((context.roomId || context.orchestrator?.campaign?.roomCode), key, value).catch(() => {});
         }
         output = output.replace(match[0], '');
@@ -550,7 +547,7 @@ async function processSpecialTags(text, context, senderName = null) {
         } else {
             resultMsg += ` – The Weave answers.`;
         }
-        saveCampaign();
+        await saveCampaign();
         output = output.replace(match[0], resultMsg);
         npcCastRegex.lastIndex = 0;
     }
@@ -565,16 +562,7 @@ async function processSpecialTags(text, context, senderName = null) {
                 label: `Advance the scene${notes ? ` — ${notes}` : ''}`,
                 preview: notes ? `Advance the scene — ${notes}` : 'Advance the scene',
                 apply: async () => {
-                    try {
-                        // Timeout the scene completion call to avoid hanging
-                        return await withTimeout(
-                            adventureDirector.handleSceneComplete(context, notes),
-                            5000,
-                            '*(Scene completion timed out – please try again)*'
-                        );
-                    } catch (e) {
-                        return `*(Scene completion error: ${e.message})*`;
-                    }
+                    return requiredAction(adventureDirector.handleSceneComplete(context, notes));
                 },
             });
             output = output.replace(match[0], '');
@@ -605,12 +593,12 @@ async function processSpecialTags(text, context, senderName = null) {
         const registerNpc = async () => {
             try {
                 // Timeout the API call to avoid hanging
-                await withTimeout(
+                await requiredAction(
                     context.apiRequest('POST', ['adventure', 'npc'], { npc: { name, role, motivation, location } }),
-                    5000
                 );
             } catch (e) {
                 console.warn(`[NPC CREATE] failed to register "${name}":`, e.message);
+                throw e;
             }
             // Best-effort token placement and indexing – these are fire-and-forget with .catch()
             placeOrUpdateToken(context, { name, faction: inferFaction(role, motivation) }).catch(() => {});
@@ -649,13 +637,13 @@ async function processSpecialTags(text, context, senderName = null) {
         const doReveal = async () => {
             try {
                 // Timeout the API call to avoid hanging
-                await withTimeout(
+                await requiredAction(
                     context.apiRequest('POST', ['adventure', 'knowledge', 'reveal'], { id, by: context.myRole === 'assistant-gm' ? 'AI_GM (assistant)' : 'AI_GM' }),
-                    5000
                 );
                 adventureContext.invalidate();
             } catch (e) {
                 console.warn(`[REVEAL] failed to reveal "${id}":`, e.message);
+                throw e;
             }
         };
         if (isAssistant) {
@@ -673,13 +661,13 @@ async function processSpecialTags(text, context, senderName = null) {
         const doHide = async () => {
             try {
                 // Timeout the API call to avoid hanging
-                await withTimeout(
+                await requiredAction(
                     context.apiRequest('POST', ['adventure', 'knowledge', 'hide'], { id, by: context.myRole === 'assistant-gm' ? 'AI_GM (assistant)' : 'AI_GM' }),
-                    5000
                 );
                 adventureContext.invalidate();
             } catch (e) {
                 console.warn(`[HIDE] failed to hide "${id}":`, e.message);
+                throw e;
             }
         };
         if (isAssistant) {

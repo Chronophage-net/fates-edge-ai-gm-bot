@@ -1084,6 +1084,14 @@ to report it privately rather than filing a public issue.
 
 ## Connection recovery
 
+GM chat turns run in a bounded FIFO queue (20 outstanding turns); control messages and deck replies remain responsive. Disconnecting or changing role invalidates old work so stale replies and guarded tag operations cannot continue into the new session. Tag deadlines cancel subsequent processing and room HTTP requests. Already committed operations cannot be rolled back; check table state before retrying a timed-out action. A provider may still finish generation, but its stale result is discarded.
+
+SIGTERM (including container/supervisor stop) and Ctrl+C share bounded, idempotent shutdown: stop reconnecting, cancel pending work, save campaign state, and clean up the driver. Failed suggestion applications display a failed status rather than approved.
+
+Deck synthesis and seeding use request IDs. For bot **4.18.3**, deploy socket server **5.14.1** first, then update the bot and web client. An older server that does not echo IDs will time out rather than accidentally use another participant's draw. Legacy clients without IDs can still draw on the updated server. Back up campaign data and preserve Docker volumes before recreating containers.
+
+Cancellation is not a transaction: a write or driver operation already underway may finish. The queue resets its capacity on reconnect/role change, but an AI provider request may still consume tokens until it finishes. Failed NPC/knowledge writes are not reported as approved. Shutdown allows five seconds for cleanup before exiting with a failure status; allow at least ten seconds of container stop grace time.
+
 Temporary outages, full rooms, and handshake timeouts retry automatically. Incorrect passwords, bans, invalid room/seat configuration, and rejected seat identity stop automatic retries and log an action-needed message. Correct the configuration or access problem, then restart the bot.
 
 ## Dashboard and bot review (September 2026)

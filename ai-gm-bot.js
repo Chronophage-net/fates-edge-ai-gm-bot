@@ -19,6 +19,8 @@ const statusServer = require('./modules/status-server');
 const knowledgeIndex = require('./modules/knowledge-index');
 const assistantSuggestions = require('./modules/assistant-suggestions');
 const wsCorrelator = require('./modules/ws-correlator');
+const turns = require('./modules/turn-lifecycle');
+let stopping = false;
 const { decodeFrames, roomSocketUrl } = require('./modules/socket-input');
 const { isPermanentAdmissionFailure, shouldReconnect } = require('./modules/connection-retry');
 const ttsClient = require('./modules/tts-client');
@@ -343,6 +345,7 @@ let playerCount = 0;
 let charactersExist = false;
 let campaignSeeded = false;
 let seedRequested = false;
+let seedRequestId = null;
 // NEW: guards against re-scheduling the seed/adventure-prompt startup
 // timers every time this bot reconnects and re-claims GM within the same
 // process lifetime (WS drops and re-handshakes happen far more often
@@ -535,6 +538,7 @@ function stopAggressiveSync() {
 }
 
 function connect() {
+  if (stopping) return;
   let admissionRejected = false;
   if (reconnectTimer) { clearTimeout(reconnectTimer); reconnectTimer = null; }
   console.log('🔌 Connecting to the room server');
@@ -555,7 +559,11 @@ function connect() {
       // LOG_LEVEL=debug to see the raw wire traffic.
       logger.debug(`⬇️  ${msg.type}`, JSON.stringify(msg).slice(0, 120));
       try {
-        await handleMessage(msg);
+        if (MODE === 'gm' && ['chat-message', 'chat_message'].includes(msg.type)) {
+          void turns.run(() => handleMessage(msg)).catch(error => {
+            if (error.name !== 'AbortError') logger.warn(error.message);
+          });
+        } else await handleMessage(msg);
       } catch (e) {
         console.error(`🔴 handleMessage() threw while processing a "${msg.type}" message:`, e);
       }
@@ -563,15 +571,18 @@ function connect() {
   });
 
   ws.on('close', (code, reason) => {
+    turns.invalidate();
+    seedRequested = false;
+    seedRequestId = null;
     connected = false;
     wsCorrelator.cancelAll();
     delegatedTasks.disconnect();
     adventureRecovery.disconnect();
     console.log(`🔌 Disconnected (code ${code})${reason ? `: ${reason}` : ''}`);
     stopAggressiveSync();
-    if (shouldReconnect({ code, admissionRejected, identityRejected: tableSeats.identityRejected })) {
+    if (!stopping && shouldReconnect({ code, admissionRejected, identityRejected: tableSeats.identityRejected })) {
       scheduleReconnect();
-    } else {
+    } else if (!stopping) {
       logger.error('Room admission rejected. Check room credentials, access and bot seat configuration, then restart the bot.');
     }
   });
@@ -585,6 +596,8 @@ function scheduleReconnect() {
 }
 
 function sendWS(type, data = {}) {
+  turns.check();
+  if (stopping) return;
   if (ws && ws.readyState === WebSocket.OPEN) {
     const payload = JSON.stringify({ type, ...data });
     ws.send(payload);
@@ -620,17 +633,30 @@ function sendChat(text) {
 // 6. API helpers
 // -------------------------------------------------------------------
 async function apiRequest(method, pathSegments, body = null) {
+  turns.check();
+  const controller = new AbortController();
+  const parentSignal = turns.signal();
+  const abort = () => controller.abort();
+  parentSignal?.addEventListener('abort', abort, { once: true });
+  const timeout = setTimeout(abort, 8000);
   const url = `${API_BASE}/rooms/${tableSeats.roomId}/${pathSegments.join('/')}`;
   const options = {
     method,
-    signal: AbortSignal.timeout(8000),
+    signal: controller.signal,
     headers: {
       'Content-Type': 'application/json',
       'x-api-key': API_KEY,
     },
   };
   if (body) options.body = JSON.stringify(body);
-  const response = await fetch(url, options);
+  let response, raw;
+  try {
+    response = await fetch(url, options);
+    raw = await response.text();
+  } finally {
+    clearTimeout(timeout);
+    parentSignal?.removeEventListener('abort', abort);
+  }
 
   // CHANGED: response.json() used to be called unconditionally, so any
   // non-JSON body (most commonly an HTML fallback/404 page from a route
@@ -642,7 +668,7 @@ async function apiRequest(method, pathSegments, body = null) {
   // as exactly that -- with the real HTTP status and a snippet of what
   // came back -- instead of a JSON-parser error that gives no clue this
   // was actually a routing problem, not a data problem.
-  const raw = await response.text();
+  turns.check();
   let data;
   try {
     data = raw ? JSON.parse(raw) : {};
@@ -724,18 +750,20 @@ async function seedCampaign(region = null) {
   const regionName = region || orchestrator.options.defaultRegion || 'Acasia';
   console.log(`🌱 Seeding campaign with Crown Spread for ${regionName}...`);
   seedRequested = true;
-  sendWS('crown-spread', { region: regionName });
+  const requestId = require('node:crypto').randomUUID();
+  seedRequestId = requestId;
+  sendWS('crown-spread', { region: regionName, requestId });
   setTimeout(() => {
-    if (seedRequested) {
+    if (seedRequested && seedRequestId === requestId) {
       seedRequested = false;
       console.warn('Crown Spread request timed out – seeding cancelled.');
-      sendChat('*Crown Spread request timed out. Please try !gm seed manually.*');
+      try { sendChat('*Crown Spread request timed out. Please try !gm seed manually.*'); } catch (error) { if (error.name !== 'AbortError') throw error; }
     }
   }, 15000);
 }
 
 function processCrownSpread(data) {
-  if (!seedRequested) return;
+  if (!seedRequested || data.requestId !== seedRequestId) return;
   seedRequested = false;
   if (campaignSeeded) return;
 
@@ -977,6 +1005,7 @@ async function handleMessage(msg) {
     const myClient = clients.find(c => c.id === mySocketId);
     if (myClient && myClient.role !== myRole) {
       const previousRole = myRole;
+      turns.invalidate();
       myRole = myClient.role;
       console.log(`🔁 Role updated from presence: ${myRole}`);
       if (myRole === 'gm' || myRole === 'assistant-gm') {
@@ -1122,6 +1151,7 @@ async function handleMessage(msg) {
     } else if (newRole !== 'gm' && myRole === 'gm') {
       stopAggressiveSync();
     }
+    if (myRole !== newRole) turns.invalidate();
     myRole = newRole;
     console.log(`🔁 Role changed to: ${myRole}`);
     return;
@@ -1239,8 +1269,7 @@ async function handleMessage(msg) {
       // a single well-formed roll tag should resolve almost instantly,
       // but this still guards against a hang instead of leaving the
       // player staring at nothing. See that call site's comment for why.
-      const processed = await Promise.race([
-        commandHandler.processSpecialTags(text, {
+      const processed = await turns.deadline(() => commandHandler.processSpecialTags(text, {
           rollOnly: true,
           orchestrator,
           charactersModule: characters,
@@ -1249,9 +1278,7 @@ async function handleMessage(msg) {
           apiRequest,
           myRole,
           driver, // NEW: [SCENE COMPLETE] may need to generate new content
-        }, sender),
-        new Promise((_, reject) => setTimeout(() => reject(new Error('processSpecialTags timed out after 20s')), 20000)),
-      ]);
+        }, sender), 20000);
       if (processed !== text) {
         sendChat(processed);
         recordRollResultInHistory(`${sender}: ${text}`, processed);
@@ -1274,7 +1301,7 @@ async function handleMessage(msg) {
   // ─── !GM COMMAND ──────────────────────────────────────────────────
   if (text.startsWith('!gm')) {
     try {
-      const response = await commandHandler.handleBotCommand(sender, text, {
+      const response = await commandHandler.handleBotCommand(sender, text, turns.guard({
         orchestrator,
         charactersModule: characters,
         sendChat,
@@ -1288,7 +1315,7 @@ async function handleMessage(msg) {
         driver,
         playerCount,
         globalApiRequest: commandHandler.globalApiRequest,
-      });
+      }));
       if (response && typeof response === 'string') {
         sendChat(response);
         // NEW: a `!gm roll ...` command resolves a real roll the exact
@@ -1738,7 +1765,7 @@ async function handleMessage(msg) {
   // message-editing support; this is the practical stopgap within
   // today's protocol.
   const typingTimer = setTimeout(() => {
-    sendChat('*(The GM is composing a reply...)*');
+    try { sendChat('*(The GM is composing a reply...)*'); } catch (error) { if (error.name !== 'AbortError') logger.warn(error.message); }
   }, 2500);
 
   try {
@@ -1746,6 +1773,7 @@ async function handleMessage(msg) {
       systemPrompt: fullSystemPrompt,
       messages: conv.slice(-MAX_HISTORY)
     });
+    turns.check();
     clearTimeout(typingTimer);
 
     let clean = reply.trim();
@@ -1777,12 +1805,10 @@ async function handleMessage(msg) {
     // unusual number of tags or an edge case those inner guards don't
     // anticipate, and a chain of several sequential 5s waits already
     // reads as "frozen" to someone watching chat. If tag processing
-    // hasn't finished within 20s, give up on it and send the raw
-    // (untagged) reply rather than leaving the table staring at nothing.
-    const rawBeforeTags = clean;
+    // hasn't finished within 20s, cancel subsequent guarded operations
+    // and warn of possible partial completion without exposing raw tags.
     try {
-      clean = await Promise.race([
-        commandHandler.processSpecialTags(clean, {
+      clean = await turns.deadline(() => commandHandler.processSpecialTags(clean, {
           orchestrator,
           charactersModule: characters,
           sendChat,
@@ -1790,12 +1816,11 @@ async function handleMessage(msg) {
           apiRequest,
           myRole,
           driver, // NEW: [SCENE COMPLETE] may need to generate new content
-        }, sender), // NEW: pass sender through so "me" resolves consistently here too
-        new Promise((_, reject) => setTimeout(() => reject(new Error('processSpecialTags timed out after 20s')), 20000)),
-      ]);
+        }, sender), 20000);
     } catch (e) {
-      console.error('⚠️ Tag processing did not finish in time, sending unresolved reply:', e.message);
-      clean = rawBeforeTags;
+      console.error('⚠️ Tag processing failed; reporting possible partial completion:', e.message);
+      turns.check();
+      clean = '*(The action could not finish safely. Some earlier steps may have completed; please check the table state before retrying.)*';
     }
 
     // NEW: catch any tag-shaped text that survived processing --
@@ -1862,6 +1887,7 @@ async function handleMessage(msg) {
     }
   } catch (err) {
     clearTimeout(typingTimer);
+    if (err.name === 'AbortError') return;
     console.error('❌ LLM error:', err.message);
     sendChat('*The story pauses. (AI error)*');
   }
@@ -1881,6 +1907,7 @@ async function summariseStory() {
       systemPrompt: 'You are a summariser. Output only the summary text.',
       messages: [{ role: 'user', content: prompt }]
     });
+    turns.check();
     if (fresh && fresh.trim()) {
       orchestrator.campaign.setNarrativeSummary(fresh.trim());
       // Indexed into Elasticsearch too, if configured (see
@@ -1892,6 +1919,7 @@ async function summariseStory() {
       knowledgeIndex.indexSummary(tableSeats.roomId, fresh.trim()).catch(() => {});
     }
   } catch (e) {
+    if (e.name === 'AbortError') throw e;
     console.error('Summarisation failed:', e.message);
   }
 }
@@ -2085,16 +2113,27 @@ async function main() {
   connect();
 }
 
-process.on('SIGINT', async () => {
+async function shutdown() {
+  if (stopping) return;
+  stopping = true;
+  turns.invalidate();
+  clearTimeout(reconnectTimer);
+  cancelGmTakeoverTimer();
+  wsCorrelator.cancelAll('Bot shutting down');
+  const exitTimer = setTimeout(() => process.exit(1), 5000);
   console.log('\n🛑 Shutting down…');
   stopAggressiveSync();
   statusServer.stop();
-  if (orchestrator) {
-    await orchestrator.campaign.save();
-  }
-  if (ws && ws.readyState === WebSocket.OPEN) ws.close(1000, 'Shutdown');
-  setTimeout(() => process.exit(0), 1000);
-});
+  try {
+    if (orchestrator) await orchestrator.campaign.save();
+    await driver.shutdown?.();
+    if (ws) ws.close(1000, 'Shutdown');
+    clearTimeout(exitTimer);
+    process.exit(0);
+  } catch (error) { logger.error(error.message); process.exit(1); }
+}
+process.on('SIGINT', shutdown);
+process.on('SIGTERM', shutdown);
 
 main().catch(err => {
   console.error('Fatal error:', err);
