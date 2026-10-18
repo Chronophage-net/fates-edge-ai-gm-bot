@@ -116,7 +116,7 @@ All seats receive every `!gm` command. Exactly one must answer, decided without 
 Ownership is announced on connect and re-announced on reconnect, so a seat that restarts
 mid-session **reclaims** its character rather than duplicating it.
 
-Silence is the correct behaviour for a bot that does not own a command. Do not emit "not mine"
+Silence is the correct behavior for a bot that does not own a command. Do not emit "not mine"
 replies — a three-bot table would produce two error messages per command.
 
 **Known blocker:** `sendWhisper()` hardcodes `sender: 'GM'`. A player seat speaking or whispering
@@ -279,7 +279,7 @@ The plumbing exists. `!gm recall` already searches the Elasticsearch knowledge i
 
 ### 3.9 Command surface
 
-| Command | Gate | Behaviour |
+| Command | Gate | Behavior |
 |---|---|---|
 | `!gm player new <brief>` | GM | Claims the lowest idle player seat. Brief → sheet posted publicly, dossier whispered to GM/AGM. A secret named in the brief goes to the dossier and never to chat. |
 | `!gm player seats` | GM | Which seats are configured, claimed, idle. First thing to check when `new` refuses. |
@@ -317,7 +317,7 @@ DOSSIER · Vessa Corrin
 The public block is a legal 32 XP Tier I build the GM can hand to a human if the bot is retired.
 The private block is the feature.
 
-*(Note: the flavour Bond line above is characterisation in the sheet's notes, not a mechanical Bond
+*(Note: the flavor Bond line above is characterisation in the sheet's notes, not a mechanical Bond
 — see §3.8.)*
 
 ---
@@ -371,11 +371,11 @@ a separate assembly that has nothing to filter.
 Two verbs carry most of it. `ask` is fuzzy and costs an LLM call; `look` is exact, deterministic and
 free. Prefer routing to `look` when the query resolves cleanly.
 
-| Command | Gate | Behaviour |
+| Command | Gate | Behavior |
 |---|---|---|
 | `!gm ask <question>` | any | Rules question in plain language. Cited, spoiler-free, refuses rather than invents. |
 | `!gm look <term>` | any | Exact lookup across spells, talents, tags, creatures, regions, rules sections. No model call. |
-| `!gm quickref [topic]` | any | SRD reference tables — DV ladder, Position & Effect, Outcome Matrix, armour conversion, SB spend menu. |
+| `!gm quickref [topic]` | any | SRD reference tables — DV ladder, Position & Effect, Outcome Matrix, armor conversion, SB spend menu. |
 | `!gm dice <NdN>` | any | Already exists and is already ungated. Keep. |
 | `!gm roll <name> <pool> DV <n> <pos>` | any | Already exists. Full resolution with Position and Outcome Matrix. |
 | `!gm sheet [name]` | any | Your own sheet in full; anyone else's reduced to what is public. |
@@ -455,7 +455,7 @@ Sequenced so the lowest-risk, most-useful thing ships first and each stage is in
 | 5 | `MODE=passive` posture | A bot that only answers. Shippable to real tables |
 | 6 | Seats: manifest, identity, routing | Relax one-bot-per-room, add `mode`/`seat`, ownership announce, speak under own name |
 | 7 | Player Mode: sheet, dossier, whisper | Creation and inspection only; the seat does not yet speak |
-| 8 | Player Mode: turns, leash, hidden timer | Ship `speak` and `hold` in the same stage — the manual overrides make the automatic behaviour safe to try |
+| 8 | Player Mode: turns, leash, hidden timer | Ship `speak` and `hold` in the same stage — the manual overrides make the automatic behavior safe to try |
 | ∥ | `room_id` everywhere the code is load-bearing | Independent; safe any time. **Do it before offshoot rooms, not after** |
 
 ---

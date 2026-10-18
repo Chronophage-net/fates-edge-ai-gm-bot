@@ -154,7 +154,7 @@ The **Barrow Collapse** timer continues ticking on failures.
 
 **Quick Lena** appears. This is a social encounter with a rival. The bot can handle negotiation, intimidation, or combat. Outcomes:
 - Clean: She leaves peacefully, warning of others.
-- Partial: She agrees to split reward, but demands a favour (starts a Debt timer).
+- Partial: She agrees to split reward, but demands a favor (starts a Debt timer).
 - Miss: She triggers a trap, ticking the collapse timer.
 
 Additionally, a second timer **Lena’s Agenda** is present. It ticks at the end of each scene inside the barrow. If it fills before the party resolves this scene, Lena has already taken the lantern – raising the stakes. The bot manages this automatically.

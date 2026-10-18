@@ -4,7 +4,7 @@
   "//_seat": "Integer >= 0, unique WITHIN a room. Omit it and the manager assigns the lowest free seat in manifest order, so a one-bot-per-room manifest needs no seats at all.",
   "//_mode": "'gm' | 'player' | 'passive'. Defaults to 'gm', which is what a lone bot has always been. Exactly one 'gm' seat per room.",
   "//_roomId": "Optional opaque durable room id (UUIDv7 recommended). Passed to the bot as ROOM_ID. See fates-edge-docs/SAAS_MANAGER.md: the UUID is the room's identity, the room code is a rotatable human locator. Omit it entirely for a self-hosted table.",
-  "//_envFile": "Path (relative to the repo root, or absolute) to a .env-style file for this bot -- same format as the repo's own .env. Omit to just inherit this process's own environment. ROOM, STATUS_PORT and BOT_SEAT in the file are ignored: the manager assigns those. MODE and ROOM_ID in the file are honoured unless this entry declares them.",
+  "//_envFile": "Path (relative to the repo root, or absolute) to a .env-style file for this bot -- same format as the repo's own .env. Omit to just inherit this process's own environment. ROOM, STATUS_PORT and BOT_SEAT in the file are ignored: the manager assigns those. MODE and ROOM_ID in the file are honored unless this entry declares them.",
 
   "//_example_one_table": "A full table: a GM bot, two idle player seats ready for `!gm player new`, and a rules oracle. The player seats hold no character until one is created -- they simply sit there.",
 

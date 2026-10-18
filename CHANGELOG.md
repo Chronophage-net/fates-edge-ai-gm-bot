@@ -10,7 +10,7 @@ Serialized GM turns, cancellation safety, correlated draws, and reliable shutdow
 - Handle SIGINT/SIGTERM through shared bounded cleanup, preventing reconnect during shutdown.
 - Broadcast failed suggestion applications accurately and await fact persistence before reporting approval.
 - Correlate deck synthesis and seed draws by request ID; requires the companion server update for ID-based responses.
-- Reset queue capacity on invalidation even with a full stale queue; reject deadlines from cancelled parents and prevent turn-bound proxies from leaking into saved state.
+- Reset queue capacity on invalidation even with a full stale queue; reject deadlines from canceled parents and prevent turn-bound proxies from leaking into saved state.
 - Propagate failed NPC/knowledge writes and scene-completion exceptions to suggestion outcomes instead of reporting approval.
 - Upgrade socket server to 5.14.1 before updating this bot. Cancellation cannot roll back writes or forcibly stop an in-flight AI provider request.
 - Validation: 292 tests and the isolated restart/SQLite/room-rotation recovery smoke test passed; no live AI provider calls were made.
