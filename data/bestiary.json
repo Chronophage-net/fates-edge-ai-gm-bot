@@ -1771,18 +1771,15 @@
       }
     },
     {
-      "Goblin Scavenger": {
+      "Varkh Scavenger": {
         "id": "goblin-scavenger",
-        "page": "Goblin_Scavenger",
-        "summary": "Common pests in the Crown Spread, known for their greed and cowardice.",
-        "lore": "Hunger's fingers. Can be bribed, threatened, or tricked.",
+        "page": "Varkh_Scavenger",
+        "summary": "A small Varkh scavenger or scout in the distant western lands.",
+        "lore": "Quick and lightly equipped; bargains depend on the crew’s supplies and purpose.",
         "locations": [
-          "The Mudflats",
-          "Old Dwarven Road"
+          "Distant West across the Great Sea"
         ],
-        "connections": [
-          "The Hunger Beneath"
-        ],
+        "connections": [],
         "tl": 1,
         "harm": 1,
         "fatigue": 2,
@@ -1793,8 +1790,8 @@
         "sb_spends": [
           {
             "cost": 1,
-            "name": "[REINFORCEMENT] More pests",
-            "effect": "Its shrieks summon 1d6 more scavengers."
+            "name": "[REINFORCEMENT] Call the crew",
+            "effect": "Its warning calls summon 1d6 more scavengers."
           },
           {
             "cost": 1,
@@ -1813,17 +1810,15 @@
       }
     },
     {
-      "Tunnel-Goblin": {
+      "Deepway Varkh": {
         "id": "tunnel-goblin",
-        "page": "Tunnel-Goblin",
-        "summary": "Pale, blind, and skittering goblins adapted to the darkness of the deep ways.",
-        "lore": "Navigate by echolocation. Weak to bright light.",
+        "page": "Deepway_Varkh",
+        "summary": "A pale, blind western deepway Varkh adapted to darkness.",
+        "lore": "Navigates by echolocation and is vulnerable to bright light; not an inhabitant of Aeler underways.",
         "locations": [
-          "Aeler Underways"
+          "Western Deepways"
         ],
-        "connections": [
-          "The Hunger Beneath"
-        ],
+        "connections": [],
         "tl": 1,
         "harm": 1,
         "fatigue": 2,
@@ -1835,7 +1830,7 @@
           {
             "cost": 1,
             "name": "[REINFORCEMENT] Echolocation call",
-            "effect": "Its clicking calls more tunnel-goblins from the dark."
+            "effect": "Its clicking calls more deepway Varkh from the dark."
           },
           {
             "cost": 1,
@@ -1854,18 +1849,15 @@
       }
     },
     {
-      "Ember-Goblin": {
+      "Ember-Touched Varkh": {
         "id": "ember-goblin",
-        "page": "Ember-Goblin",
-        "summary": "Goblins touched by the fires of Zahk'Kozahn, carrying the heat of Malachai's forge.",
-        "lore": "Explode in a burst of ash and heat when killed. Weak to water.",
+        "page": "Ember-Touched_Varkh",
+        "summary": "A western Varkh altered by a magical fire.",
+        "lore": "Optional supernatural variant, not a people’s origin. Bursts into ash and heat when killed; vulnerable to water.",
         "locations": [
-          "Zahk'Kozahn Fringes"
+          "Distant West — sites of magical fire"
         ],
-        "connections": [
-          "The Hunger Beneath",
-          "Malachai"
-        ],
+        "connections": [],
         "tl": 2,
         "harm": 2,
         "fatigue": 2,
@@ -1877,7 +1869,7 @@
           {
             "cost": 1,
             "name": "[FIRE] Ember burst",
-            "effect": "A dying Ember-Goblin explodes, dealing Fatigue to all in Close."
+            "effect": "A dying Ember-Touched Varkh explodes, dealing Fatigue to all in Close."
           },
           {
             "cost": 2,
@@ -1887,7 +1879,7 @@
           {
             "cost": 1,
             "name": "[REINFORCEMENT] Forge-kin arrive",
-            "effect": "The heat calls more Ember-Goblins from the cracks."
+            "effect": "The heat calls more Ember-Touched Varkh from the cracks."
           }
         ],
         "category": "humanoid",
@@ -1901,17 +1893,15 @@
       }
     },
     {
-      "Sea-Goblin": {
+      "Tide-Touched Varkh": {
         "id": "sea-goblin",
-        "page": "Sea-Goblin",
-        "summary": "Webbed-fingered goblins that patrol the tide-lines, scavenging what the sea brings.",
-        "lore": "Amphibious and opportunistic.",
+        "page": "Tide-Touched_Varkh",
+        "summary": "An amphibious western Varkh altered by sea magic.",
+        "lore": "Optional supernatural variant, not a Linn coastal population.",
         "locations": [
-          "Linn Coast"
+          "Distant Western Shores"
         ],
-        "connections": [
-          "The Hunger Beneath"
-        ],
+        "connections": [],
         "tl": 1,
         "harm": 1,
         "fatigue": 2,
@@ -1923,7 +1913,7 @@
           {
             "cost": 1,
             "name": "[REINFORCEMENT] Tide brings more",
-            "effect": "A wave deposits more Sea-Goblins on the shore."
+            "effect": "A wave deposits more Tide-Touched Varkh on the shore."
           },
           {
             "cost": 1,
@@ -1942,17 +1932,15 @@
       }
     },
     {
-      "Star-Goblin": {
+      "Star-Touched Varkh": {
         "id": "star-goblin",
-        "page": "Star-Goblin",
-        "summary": "Dust-gray goblins living in the high passes, their eyes reflecting constellations.",
-        "lore": "Star-touched, leaving behind a glowing crystal shard when killed.",
+        "page": "Star-Touched_Varkh",
+        "summary": "A western Varkh altered by magic in the high passes.",
+        "lore": "Optional supernatural variant; leaves a glowing crystal shard when killed.",
         "locations": [
-          "High Passes"
+          "Distant Western High Passes"
         ],
-        "connections": [
-          "The Hunger Beneath"
-        ],
+        "connections": [],
         "tl": 2,
         "harm": 2,
         "fatigue": 2,
@@ -1964,7 +1952,7 @@
           {
             "cost": 1,
             "name": "[ENVIRONMENT] Crystal lure",
-            "effect": "A dead Star-Goblin's crystal glows, drawing predators."
+            "effect": "A dead Star-Touched Varkh's crystal glows, drawing predators."
           },
           {
             "cost": 1,
@@ -1983,20 +1971,16 @@
       }
     },
     {
-      "Hobgoblin": {
+      "Varkh Warrior": {
         "id": "hobgoblin",
-        "page": "Hobgoblin",
-        "summary": "Taller, disciplined goblinoids acting as the Hunger's enforcers and sell-swords.",
-        "lore": "Hunger's fist. Respect strength and order. Can be reasoned with from a position of strength.",
+        "page": "Varkh_Warrior",
+        "summary": "A trained soldier of the tall, broad-jawed Varkh branch.",
+        "lore": "Most Varkh live beyond the Great Sea. The isolated northern Grímhúð have their own household fighters; neither population is born to serve the Hunger.",
         "locations": [
-          "Broken Marches",
-          "Black Banners camps",
-          "Where order has broken down"
+          "Distant West across the Great Sea",
+          "Far North — isolated Grímhúð oath-clans"
         ],
-        "connections": [
-          "The Hunger Beneath",
-          "The Black Banners"
-        ],
+        "connections": [],
         "tl": 2,
         "harm": 2,
         "fatigue": 2,
@@ -2008,12 +1992,12 @@
           {
             "cost": 2,
             "name": "[REINFORCEMENT] Call the squad",
-            "effect": "It blows a horn and 1d4 hobgoblins arrive."
+            "effect": "It blows a horn and 1d4 Varkh warriors arrive."
           },
           {
             "cost": 1,
             "name": "[TACTICS] Flank and pin",
-            "effect": "It orders goblins into flanking positions; the party's Position worsens."
+            "effect": "It orders Varkh skirmishers into flanking positions; the party's Position worsens."
           },
           {
             "cost": 1,
@@ -2032,18 +2016,15 @@
       }
     },
     {
-      "Mirk-Stalker": {
+      "Varkh Stalker": {
         "id": "mirk-stalker",
-        "page": "Mirk-Stalker",
-        "summary": "Large, silent hunters of the goblinoid kind, patient and relentless.",
-        "lore": "Hunger's stalker. Cannot be bargained with; can only be distracted or out-hunted.",
+        "page": "Varkh_Stalker",
+        "summary": "A large, furred Varkh hunter of the distant western lands.",
+        "lore": "Patient fieldcraft and quiet movement. Establish a quarry and a personal purpose; the hunter can negotiate or withdraw.",
         "locations": [
-          "Wilderness",
-          "Where something has been lost"
+          "Distant Western Wilds"
         ],
-        "connections": [
-          "The Hunger Beneath"
-        ],
+        "connections": [],
         "tl": 3,
         "harm": 2,
         "fatigue": 3,
@@ -2060,7 +2041,7 @@
           {
             "cost": 2,
             "name": "[REINFORCEMENT] Howl for kin",
-            "effect": "Its hunting call brings a second Mirk-Stalker."
+            "effect": "Its hunting call brings a second Varkh Stalker."
           },
           {
             "cost": 1,
