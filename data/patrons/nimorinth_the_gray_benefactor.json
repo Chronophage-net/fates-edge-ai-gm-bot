@@ -32,7 +32,7 @@
   "runekeeper_options": {
     "thiasos": {
       "description": "Nimorith's Thiasos is a creature of silence and gaps: a moth that flies only in the blind spot of the eye, a spider that weaves webs only in unlit corners, a mouse that is only ever heard, never seen, or a patch of shadow that moves against the light.",
-      "care": "Beyond its ordinary care, this Thiasos must be offered a silence daily — a minute of absolute stillness and quiet contemplation from its bearer. If that need goes unmet, the Thiasos becomes Compromised: it fades, imposing –1 die on all Stealth or Subterfuge rolls for its bearer until a significant silence is given."
+      "care": "Beyond its ordinary care, this Thiasos must be offered a silence daily — a minute of absolute stillness and quiet contemplation from its bearer. If that need goes unmet, the Thiasos becomes Compromised: it fades, imposing –1 die on all Stealth or Deception rolls for its bearer until a significant silence is given."
     },
     "codex": {
       "description": "Nimorith's Codex is never a whole book. It may be a collection of blank vellum pages that reveal writing only when held in a specific type of shadow, a slate that must be dusted with ash from an extinguished lamp, or a key that unlocks a non-existent drawer.",
@@ -42,7 +42,7 @@
   "patrons_gift": {
     "name": "Nimorith's Absence",
     "description": "Once per scene as an action, a Runekeeper of Nimorith may focus on a specific absence — a missing object, a silent moment, an unlit lamp.",
-    "effect": "For the rest of the scene, they gain +1 die to Stealth or Subterfuge rolls that exploit that absence, and the first time each scene they would fail to move unseen through a threshold, they may reroll the check (the shadows part for them).",
+    "effect": "For the rest of the scene, they gain +1 die to Stealth or Deception rolls that exploit that absence, and the first time each scene they would fail to move unseen through a threshold, they may reroll the check (the shadows part for them).",
     "cost": "After the scene, the user marks +1 Obligation to Nimorith."
   },
   "rites": [
@@ -203,7 +203,7 @@
         "xp": 8,
         "description": "When you would be noticed, you may spend a Boon to have the observer simply overlook you, as if your presence was a trick of the light.",
         "cost": "1 Boon",
-        "prereq": "Wits 3+, Subterfuge 2+"
+        "prereq": "Wits 3+, Deception 2+"
       },
       "master": {
         "name": "Keeper of the Unlit Pipe",
@@ -221,7 +221,7 @@
       },
       {
         "tier": 2,
-        "benefit": "Gap-Sense: +1 die to Notice when something vital is missing or altered.",
+        "benefit": "Gap-Sense: +1 die to Insight when something vital is missing or altered.",
         "cost": "Blind Spot: You may miss the obvious present while hunting absences."
       },
       {
@@ -254,7 +254,7 @@
     },
     {
       "tier": 2,
-      "benefit": "Gap-Sense: +1 die to Notice when something vital is missing or altered.",
+      "benefit": "Gap-Sense: +1 die to Insight when something vital is missing or altered.",
       "cost": "Blind Spot: You may miss the obvious present while hunting absences."
     },
     {

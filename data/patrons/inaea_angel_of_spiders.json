@@ -65,7 +65,7 @@
         "HEAL"
       ],
       "materials": "A thread tied around a wrist or shared cup.",
-      "effect": "Bind yourself and one willing target (ally or neutral) with a sympathetic thread. Both gain +1 die to Aid each other this scene. Additionally, if either takes Harm, the other may reduce it by 1 (to a minimum of 0) by suffering that same Harm instead. This transfer is voluntary for an ally; for an unwilling target, you must succeed on a Resolve test (DV 3) to force the link.",
+      "effect": "Bind yourself and one willing target (ally or neutral) with a sympathetic thread. Both gain +1 die to Aid each other this scene. Additionally, if either takes Harm, the other may reduce it by 1 (to a minimum of 0) by suffering that same Harm instead. This transfer is voluntary for an ally; for an unwilling target, you must succeed on a Spirit + Endurance test (DV 3) to force the link.",
       "push_it": "Extend to two allies; mark 1 SB (Hearts) as your own lifeline strains. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
       "requires": "Familiar (Invoke: 1 Boon).",
@@ -85,7 +85,7 @@
         "BIND"
       ],
       "materials": "A knotted cord or woven scrap.",
-      "effect": "Lay an invisible snare in a lane, doorway, or narrow passage. The first hostile creature to cross suffers –2 dice on their next action and must succeed on a Resolve test (DV 2) or lose their movement for that turn (tangled). The snare lasts for the scene or until triggered.",
+      "effect": "Lay an invisible snare in a lane, doorway, or narrow passage. The first hostile creature to cross suffers –2 dice on their next action and must succeed on a Spirit + Endurance test (DV 2) or lose their movement for that turn (tangled). The snare lasts for the scene or until triggered.",
       "push_it": "Lay a second snare elsewhere, but allies risk entanglement if they forget its location; mark 1 SB (Spades) as the web spreads thin. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
       "requires": "Familiar (Invoke: 1 Boon).",
@@ -187,7 +187,7 @@
         "DEBT"
       ],
       "materials": "A white thread burned to ash, spoken with a name.",
-      "effect": "Sever one harmful tie—a curse, a toxic obsession, a coercive bond, or a supernatural debt. Remove one Condition or 1 SB tied to it (if removing a Story Beat, the GM replaces it with a narrative complication of equal weight; the pressure does not vanish, it merely changes form). This is an act of genuine mercy; the target may be unwilling, but the thread can still be cut (Resolve test DV 4 to resist).",
+      "effect": "Sever one harmful tie—a curse, a toxic obsession, a coercive bond, or a supernatural debt. Remove one Condition or 1 SB tied to it (if removing a Story Beat, the GM replaces it with a narrative complication of equal weight; the pressure does not vanish, it merely changes form). This is an act of genuine mercy; the target may be unwilling, but the thread can still be cut (Spirit + Endurance test DV 4 to resist).",
       "push_it": "Sever a tie without the target's consent or knowledge; they will not know who cut them free, but you mark +2 Obligation as the web recoils against you, and the severed strand may attach to you instead (GM's discretion). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
       "cost": "Mark +2 Obligation.",
       "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
@@ -208,7 +208,7 @@
         "FEAR"
       ],
       "materials": "A complete spider's web, stolen at dawn, and a lullaby hummed into it.",
-      "effect": "Weave an area of drowsy stillness. For the next hour, any creature entering the zone must succeed on a Resolve test (DV 4) or fall into a light trance, losing their next action and suffering –1 die to all perception rolls while inside. Allies you touch beforehand are immune. The web is invisible until triggered.",
+      "effect": "Weave an area of drowsy stillness. For the next hour, any creature entering the zone must succeed on a Spirit + Endurance test (DV 4) or fall into a light trance, losing their next action and suffering –1 die to all Insight rolls while inside. Allies you touch beforehand are immune. The web is invisible until triggered.",
       "push_it": "The trance becomes deeper—sleeping creatures cannot be woken by non-magical means for the duration. Mark 2 SB (Spades/Hearts) as the web draws hungry attention. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
       "cost": "Mark +2 Obligation.",
       "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
@@ -243,7 +243,7 @@
       {
         "name": "Bind the Threshold",
         "xp": 2,
-        "description": "Once per scene, the witch may tie a simple knot in a cord, ribbon, or strand of hair and place it on a threshold (a doorstep, a gate, a bridge). For the next hour, anyone crossing that threshold must succeed on a Resolve test (DV 2) if they intend to break an oath, tell a lie, or harm someone inside. The knot visibly tightens if a violation is attempted."
+        "description": "Once per scene, the witch may tie a simple knot in a cord, ribbon, or strand of hair and place it on a threshold (a doorstep, a gate, a bridge). For the next hour, anyone crossing that threshold must succeed on a Spirit + Endurance test (DV 2) if they intend to break an oath, tell a lie, or harm someone inside. The knot visibly tightens if a violation is attempted."
       },
       {
         "name": "Thread-Sense",
@@ -302,7 +302,7 @@
     },
     {
       "tier": 3,
-      "benefit": "Binding Presence: Once/session, compel a promise unless target passes Resolve DV 4.",
+      "benefit": "Binding Presence: Once/session, compel a promise unless target passes Spirit + Endurance DV 4.",
       "cost": "Over-Attachment: –1 die when abandoning those you've aided or bound."
     },
     {

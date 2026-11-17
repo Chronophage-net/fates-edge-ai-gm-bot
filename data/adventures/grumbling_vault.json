@@ -301,7 +301,7 @@
       "notes_phase": "This is a one-shot; don't overcomplicate. If the party is stuck, Durin can grumble a half-truth that points them in the right direction (at the cost of ticking his Debt timer). The Ward-Primus is immune to magic, but it can be reasoned with—offer it something it values more than the keystone (a memory, a promise, a rival's ward). This is a fun 'aha' moment for players who think outside the combat box. The ending is simple: the party gets the keystone, Durin pays them (or tries to skip out on payment), and the vault collapses behind them—or doesn't, if they want to return for more loot."
     },
     "npcSecrets": {
-      "durin-stoneshield": "He is a fraud—a cook who tells tall tales. This is a comedic reveal, not a tragic one. He genuinely believes he was an Iron Avenger, but his stories are full of holes. Players who roll Lore or Investigation might notice the inconsistencies. His 'debt' is to a tavern owner who he owes for three years of ale. The keystone is his ticket to paying that debt—or at least to getting another round. Don't reveal this too early; let him be the grumpy, authoritative quest-giver until the party either fact-checks him or reaches the end."
+      "durin-stoneshield": "He is a fraud—a cook who tells tall tales. This is a comedic reveal, not a tragic one. He genuinely believes he was an Iron Avenger, but his stories are full of holes. Players who roll Lore or Insight might notice the inconsistencies. His 'debt' is to a tavern owner who he owes for three years of ale. The keystone is his ticket to paying that debt—or at least to getting another round. Don't reveal this too early; let him be the grumpy, authoritative quest-giver until the party either fact-checks him or reaches the end."
     },
     "forbiddenEarlyRevelations": [
       "That Durin was never an Iron Avenger — this is the capstone joke; let it land at the end",
@@ -329,10 +329,10 @@
     {
       "id": "durin-stoneshield-secret",
       "subject": "npc-durin-stoneshield",
-      "gm": "He is a fraud—a cook who tells tall tales. This is a comedic reveal, not a tragic one. He genuinely believes he was an Iron Avenger, but his stories are full of holes. Players who roll Lore or Investigation might notice the inconsistencies. His 'debt' is to a tavern owner who he owes for three years of ale. The keystone is his ticket to paying that debt—or at least to getting another round. Don't reveal this too early; let him be the grumpy, authoritative quest-giver until the party either fact-checks him or reaches the end.",
+      "gm": "He is a fraud—a cook who tells tall tales. This is a comedic reveal, not a tragic one. He genuinely believes he was an Iron Avenger, but his stories are full of holes. Players who roll Lore or Insight might notice the inconsistencies. His 'debt' is to a tavern owner who he owes for three years of ale. The keystone is his ticket to paying that debt—or at least to getting another round. Don't reveal this too early; let him be the grumpy, authoritative quest-giver until the party either fact-checks him or reaches the end.",
       "player": "Durin Stoneshield plays the part everyone assumes: Iron Avenger (Retired, Drunk). Nothing about their manner invites a second look.",
       "revealed": false,
-      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "revealCondition": "When a player succeeds an Insight or Lore roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
       "tags": [
         "npc-secret"
       ]

@@ -339,7 +339,7 @@
       "name": "Vault-Queen Thora Stonebeard",
       "role": "Leader of House Khaz-Vurim",
       "motivation": "Honor her house's obligations while preserving what dignity and tradition she can, even as the house's fortunes decline around her.",
-      "stats": "Command 4, Lore 3, Craft 3",
+      "stats": "Presence 4, Lore 3, Craft 3",
       "secret": "She privately suspects the Forgefather's Voice was never fully her house's to pledge in the first place, but has kept quiet about it — admitting the original bargain was flawed feels, to her, like one more crack in a house that can't afford any more."
     },
     {
@@ -347,7 +347,7 @@
       "name": "Clan-Speaker Thrain Ironhold",
       "role": "Diplomatic representative of House Khaz-Vurim",
       "motivation": "Resolve the situation without conflict, for the sake of both his house's honor and the party's standing among the dwarven holds.",
-      "stats": "Sway 3, Lore 3, Command 2",
+      "stats": "Sway 3, Lore 3, Presence 2",
       "secret": "He genuinely likes the party (or their patron) and would rather find a resolution that costs them little — but he is bound by his role to enforce the house's rights if it comes to that, and he knows it."
     },
     {
@@ -363,7 +363,7 @@
       "name": "Guild-Master Thorek Deepdelver",
       "role": "Leader of the Edgewalkers Guild, rival prospector",
       "motivation": "Profit and reputation for his guild, tempered by a genuine (if flexible) sense of dwarven solidarity.",
-      "stats": "Survival 4, Sway 3, Wits 3",
+      "stats": "Endurance 4, Sway 3, Wits 3",
       "secret": "He isn't after the hammer for its power — he wants the credit and standing that comes with being the guild that solved a problem House Khaz-Vurim couldn't solve alone. He can be turned into an ally if the party offers him a share of that credit honestly."
     }
   ],
@@ -487,7 +487,7 @@
       "gm": "Privately suspects the original bargain was flawed but has avoided examining it too closely — not out of dishonesty, but because her house genuinely cannot afford another crack in its foundation right now. She is sympathetic, not duplicitous.",
       "player": "Vault-Queen Thora Stonebeard plays the part everyone assumes: Leader of House Khaz-Vurim. Nothing about their manner invites a second look.",
       "revealed": false,
-      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "revealCondition": "When a player succeeds an Insight or Lore roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
       "tags": [
         "npc-secret"
       ]
@@ -498,7 +498,7 @@
       "gm": "Genuinely likes the party and would rather find a generous resolution, but his role requires him to enforce the house's rights if pushed to it. His conflict is professional duty vs. personal warmth, not hidden villainy.",
       "player": "Clan-Speaker Thrain Ironhold plays the part everyone assumes: Diplomatic representative of House Khaz-Vurim. Nothing about their manner invites a second look.",
       "revealed": false,
-      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "revealCondition": "When a player succeeds an Insight or Lore roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
       "tags": [
         "npc-secret"
       ]
@@ -509,7 +509,7 @@
       "gm": "Has always known the hammer's true nature but withheld it out of loyalty. His arc across the adventure is about his conscience winning out — reward players who earn his trust rather than pressure him into revealing his secret.",
       "player": "Forge-Master Durin Emberheart plays the part everyone assumes: Elder master smith, keeper of the hammer's true history. Nothing about their manner invites a second look.",
       "revealed": false,
-      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "revealCondition": "When a player succeeds an Insight or Lore roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
       "tags": [
         "npc-secret"
       ]
@@ -520,7 +520,7 @@
       "gm": "He isn't after the hammer for its power — he wants the credit and standing that comes with being the guild that solved a problem House Khaz-Vurim couldn't solve alone. He can be turned into an ally if the party offers him a share of that credit honestly.",
       "player": "Guild-Master Thorek Deepdelver plays the part everyone assumes: Leader of the Edgewalkers Guild, rival prospector. Nothing about their manner invites a second look.",
       "revealed": false,
-      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "revealCondition": "When a player succeeds an Insight or Lore roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
       "tags": [
         "npc-secret"
       ]

@@ -374,7 +374,7 @@
       "subtitle": "[THRESHOLD] [MYSTERY]",
       "description": "A hidden flight that appears only to those who have asked a question the Synod cannot answer.",
       "flavor": "The stairs have no end. Each step is a different year. At the top, the Ninth and the Witness are playing knucklebones with forgotten names.",
-      "mechanical_hook": "Climbing the stair requires a Resolve test (DV 5). On success, the party may ask one question of the Ninth. On failure, they lose 1 Fatigue and tick the Unfinished Stair Timer +2."
+      "mechanical_hook": "Climbing the stair requires a Spirit + Endurance test (DV 5). On success, the party may ask one question of the Ninth. On failure, they lose 1 Fatigue and tick the Unfinished Stair Timer +2."
     }
   ],
   "people_and_factions": [
@@ -553,7 +553,7 @@
       "subtitle": "[PROOF] [TRADE]",
       "description": "Sour water; inspectors padlock spouts, thirst rises.",
       "flavor": "The taint is sweet—too sweet. Someone poisoned the cistern to flush out a talent. The talent is a stair.",
-      "mechanical_hook": "You must find water elsewhere (Survival test DV 3) or pay double for water (2 Supply)."
+      "mechanical_hook": "You must find water elsewhere (Wits + Insight test DV 3) or pay double for water (2 Supply)."
     },
     {
       "rank": 7,
@@ -625,7 +625,7 @@
       "subtitle": "[THRESHOLD] [BOSS]",
       "description": "A hidden flight appears in the middle of a crowded tier. The Ninth's attention falls.",
       "flavor": "The stairs have no end. The Witness is writing. The Ninth is counting. You are already on the third step.",
-      "mechanical_hook": "The party is drawn onto the stair. A Resolve test (DV 5) to resist; on failure, you must climb one step per scene. The Ninth will ask a question at the top."
+      "mechanical_hook": "The party is drawn onto the stair. A Spirit + Endurance test (DV 5) to resist; on failure, you must climb one step per scene. The Ninth will ask a question at the top."
     }
   ],
   "rewards": [
@@ -793,7 +793,7 @@
         "roll": 1,
         "name": "The Echo Forge",
         "description": "A chamber of black glass gears that still turn. The forge produces a single perfect bell every nine years.",
-        "weapon": "A bell that, when rung, forces all who hear it to speak one true name (Resolve DV 4 to resist).",
+        "weapon": "A bell that, when rung, forces all who hear it to speak one true name (Spirit + Endurance DV 4 to resist).",
         "guardian": "A ghost-smith who does not attack—it asks you to complete the bell.",
         "cost": "A year of your life to finish the forging."
       },
@@ -842,7 +842,7 @@
       "**Counting Obsession:** The guardian will not attack unless you interrupt its count. It counts in eights. If you join the count correctly, it will give you a boon. If you miscount, it takes a memory.",
       "**The Witness's Seal:** The guardian is bound by a Witness-branded wax seal. If you present a truth the Seal cannot refute, the guardian must let you pass. The truth must be witnessed by another living soul.",
       "**Ninth's Silence:** The guardian only speaks in gaps—silences between words, spaces between steps. If you can answer a question in the silence, it will let you pass. If you speak over the silence, it attacks.",
-      "**Pressure Echo:** The guardian is a pressure-spirit; it only attacks when you are afraid. If you can pass a Resolve test (DV 4) and show no fear, it will let you pass. On a failure, it manifests and attacks (Cap 3).",
+      "**Pressure Echo:** The guardian is a pressure-spirit; it only attacks when you are afraid. If you can pass a Spirit + Endurance test (DV 4) and show no fear, it will let you pass. On a failure, it manifests and attacks (Cap 3).",
       "**Archivist's Grief:** The guardian is the ghost of an archivist who failed to save a vault. It will let you pass if you can prove you have failed something important—a promise, a mission, a person. It will judge your failure. If it deems it worthy, you pass.",
       "**The Hollow's Claim:** The guardian is Hollow-touched. It does not attack; it offers a bargain: one memory from each intruder, and the vault opens. Refusal means it takes a name instead."
     ],

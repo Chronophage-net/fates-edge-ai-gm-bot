@@ -16,7 +16,7 @@
         {
           "cost": 1,
           "name": "Whisper of Despair",
-          "effect": "Target gains 1 Fatigue and must test Resolve or mark Dread."
+          "effect": "Target gains 1 Fatigue and must test Spirit + Endurance or mark Dread."
         },
         {
           "cost": 2,
@@ -269,7 +269,7 @@
       "name": "Merchant Aldric Thorne",
       "role": "Caravan Leader",
       "motivation": "Save his livelihood and family reputation",
-      "stats": "Command 3, Lore 3, Sway 2",
+      "stats": "Presence 3, Lore 3, Sway 2",
       "secret": "He knows the chest was given to him by a stranger who warned him not to open it."
     },
     {
@@ -285,7 +285,7 @@
       "name": "Margravine Xara Rothari",
       "role": "Regional Ruler",
       "motivation": "Maintain order and authority",
-      "stats": "Command 4, Insight 3, Sway 3",
+      "stats": "Presence 4, Insight 3, Sway 3",
       "secret": "She is aware of the curse but sees it as a tool to control the region."
     }
   ],
@@ -386,7 +386,7 @@
       "gm": "His secret is a hook, not a reveal. He will not volunteer the stranger's identity unless pressed or given reason to trust. If the party saves the caravan, he may confess in Act III as a moment of redemption.",
       "player": "Merchant Aldric Thorne plays the part everyone assumes: Caravan Leader. Nothing about their manner invites a second look.",
       "revealed": false,
-      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "revealCondition": "When a player succeeds an Insight or Lore roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
       "tags": [
         "npc-secret"
       ]
@@ -397,7 +397,7 @@
       "gm": "Her personal stake is a late Act II or Act III revelation. She is a guide in Act I, a ritualist in Act II, and a potential sacrifice or ally in Act III depending on the party's choices. Do not reveal her secret until she has reason to share it.",
       "player": "Hedge-Witch Mira Blackwood plays the part everyone assumes: Local Supernatural Practitioner. Nothing about their manner invites a second look.",
       "revealed": false,
-      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "revealCondition": "When a player succeeds an Insight or Lore roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
       "tags": [
         "npc-secret"
       ]
@@ -408,7 +408,7 @@
       "gm": "She is a background threat. Her secret (using the curse as a tool) is a late Act III revelation if the party investigates regional politics. She is not a primary antagonist unless the party makes her one.",
       "player": "Margravine Xara Rothari plays the part everyone assumes: Regional Ruler. Nothing about their manner invites a second look.",
       "revealed": false,
-      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "revealCondition": "When a player succeeds an Insight or Lore roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
       "tags": [
         "npc-secret"
       ]

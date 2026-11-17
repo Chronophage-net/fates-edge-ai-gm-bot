@@ -81,7 +81,7 @@
   "thin_places": {
     "description": "Not every threshold is a door. Some are a crack — a place where the world forgot to finish its seam. The Pereshi call them breath-holes, where the mountain's exhalation smells of yesterday. The Tulkani knot a thread and leave it untied, marking where the Hollow's attention wanders. The Aeler do not name them at all. They simply count to eight and leave the ninth breath unspoken. A thin place is a location where the boundary between the waking world and the Ways Between is unusually permeable. Crossing is not a matter of ritual or intent — it is a matter of being in the wrong place at the wrong angle. A wrong step. A miscounted breath. A name spoken at the wrong hour.",
     "when_a_thin_place_opens": [
-      "A character rolls a critical failure (all 1s) on a navigation or survival test in a liminal region (Valewood, Mistlands, high passes, deep mines, ancient ruins).",
+      "A character rolls a critical failure (all 1s) on a Wits + Insight route-finding test in a liminal region (Valewood, Mistlands, high passes, deep mines, ancient ruins).",
       "The party camps at a crossroads, bridge, or ford during a new moon, an eclipse, or the ninth hour.",
       "A character breaks a taboo (pours the ninth cup, takes the ninth step, speaks the ninth name) in a region where the Hollow is strong.",
       "The GM spends 3+ Story Beats to introduce a supernatural complication, and the fiction supports a threshold crossing.",
@@ -151,7 +151,7 @@
       "subtitle": "[THRESHOLD] [TRAVEL]",
       "description": "Water runs uphill; footsteps echo backwards through time.",
       "flavor": "The ford shows you wading through your own past. Do not look down at the water.",
-      "mechanical_hook": "Crossing requires a Spirit or Resolve roll (DV 4); a Miss forces the character to relive a past failure as a brief, disorienting vision."
+      "mechanical_hook": "Crossing requires a Spirit or Spirit + Endurance test (DV 4); a Miss forces the character to relive a past failure as a brief, disorienting vision."
     },
     {
       "rank": 3,
@@ -215,7 +215,7 @@
       "subtitle": "[MEMORY] [TRAVEL]",
       "description": "Hear the thoughts of those who passed here; the past as an echo.",
       "flavor": "The thoughts are in a language you almost understand. One word is your name.",
-      "mechanical_hook": "Listening grants a genuine clue relevant to the current plot, but the character must resist (Resolve DV 4) or lose a minor personal memory."
+      "mechanical_hook": "Listening grants a genuine clue relevant to the current plot, but the character must resist (Spirit + Endurance DV 4) or lose a minor personal memory."
     },
     {
       "rank": 10,
@@ -224,7 +224,7 @@
       "subtitle": "[FEAR] [THRESHOLD]",
       "description": "Each step is an eye that watches your ascent; the climb as scrutiny.",
       "flavor": "The eyes belong to those who fell here. They blink in sequence.",
-      "mechanical_hook": "Climbing under scrutiny requires a Resolve roll (DV 5) each landing; failure ticks Vice by 1 (fear curdling into despair)."
+      "mechanical_hook": "Climbing under scrutiny requires a Spirit + Endurance test (DV 5) each landing; failure ticks Vice by 1 (fear curdling into despair)."
     },
     {
       "rank": 11,
@@ -404,7 +404,7 @@
       "subtitle": "[DEATH] [FEAR]",
       "description": "The path shows your funeral preparations; death as a destination.",
       "flavor": "The mourners are people you have not met yet. They seem to know you well.",
-      "mechanical_hook": "Witnessing your own funeral forces a Resolve roll (DV 4); failure ticks Vice by 1 (despair)."
+      "mechanical_hook": "Witnessing your own funeral forces a Spirit + Endurance test (DV 4); failure ticks Vice by 1 (despair)."
     },
     {
       "rank": 3,
@@ -467,7 +467,7 @@
       "subtitle": "[MAGIC] [TRAVEL]",
       "description": "You arrive before you left; paradox shadows follow.",
       "flavor": "Your past self waves at you. Do not wave back.",
-      "mechanical_hook": "Interacting with the paradox self forces a Resolve roll (DV 5) or the character loses a segment of continuity on their travel timer (arriving later than expected)."
+      "mechanical_hook": "Interacting with the paradox self forces a Spirit + Endurance test (DV 5) or the character loses a segment of continuity on their travel timer (arriving later than expected)."
     },
     {
       "rank": 10,

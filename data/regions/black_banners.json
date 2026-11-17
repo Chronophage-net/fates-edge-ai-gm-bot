@@ -85,7 +85,7 @@
       "subtitle": "[DEATH] [HARVEST]",
       "description": "Field hospital; flies, tinctures, fever-prayers.",
       "flavor": "The dead whisper the names of the careless. The wind carries them to the Hollow.",
-      "mechanical_hook": "Start a Camp Fever [4] timer. Each failed Medicine roll ticks it."
+      "mechanical_hook": "Start a Camp Fever [4] timer. Each failed Craft roll ticks it."
     },
     {
       "rank": 3,
@@ -582,11 +582,11 @@
   "camp_event_generator_d8": [
     "**Deserter's Tale.** A soldier tries to flee with a payroll satchel. If caught, the company demands a public flogging. Intervening costs 1 Boon but earns a loyalty share (+1 Cohesion). If ignored, tick Payday +1 and Cohesion −1. The deserter's name is scratched from the roll — and the Hollow writes it in another book.",
     "**Surgeon's Lottery.** The camp surgeon runs a lottery for medical priority. Those who pay 1 Boon jump the queue. Those who refuse may lose a wounded ally to infection (lose 1 Supplies or a follower). The surgeon's ledger grows longer — and her smile thinner. The Hollow reads her ledger.",
-    "**Muster of the Fallen.** A ghostly formation marches through camp at midnight. Veterans take it as an omen. Each PC must test Resolve (DV 3) or gain the Haunted condition (−1 die on initiative for one day). On a success, gain +1 die on the next morale check. The dead are counting — and the Hollow is their standard-bearer.",
+    "**Muster of the Fallen.** A ghostly formation marches through camp at midnight. Veterans take it as an omen. Each PC must test Spirit + Endurance (DV 3) or gain the Haunted condition (−1 die on initiative for one day). On a success, gain +1 die on the next morale check. The dead are counting — and the Hollow is their standard-bearer.",
     "**Brawl Over Bread.** A fight erupts over the last rations. Choose: Break it up (costs 1 Fatigue, no change), Take sides (gain a small faction's favor but tick Cohesion −1), or Let it burn (lose 1 Supplies to spoilage). The loser's face stays in the mud — and the Hollow knows his name.",
     "**Pardoner's Visit.** A traveling pardoner offers absolutions for past sins. Pay 1 Boon to clear one Black Mark. Refuse, and the pardoner's curse gives −1 Position on the next social roll against clergy. His book has many names — some are older than the war.",
     "**Desertion Ring.** An informant reveals a plot to desert en masse. Pay arrears (clear 1 Payday), execute the ringleaders (gain a Black Mark but tick Cohesion +1), or ignore it (tick Payday +2 as half the camp vanishes overnight). The informant wants a horse — and the Hollow wants the informant.",
-    "**Camp-Fever Peak.** The surgeon's tent overflows. Mark 1 Fatigue for each PC. A successful Medicine test (DV 4) reduces the effect by half. On a critical failure, a key NPC dies. The fever has a name — and the Hollow whispers it.",
+    "**Camp-Fever Peak.** The surgeon's tent overflows. Mark 1 Fatigue for each PC. A successful Craft test (DV 4) reduces the effect by half. On a critical failure, a key NPC dies. The fever has a name — and the Hollow whispers it.",
     "**The Bannerless One Visits.** The mysterious figure appears at the edge of the firelight. She offers to clear 2 pay cycle segments in exchange for a Price of Mercy [4] timer. The timer advances each time the party shows mercy to an enemy. When full, she asks for a prisoner — or a promise. Her eyes are old — older than the camp, older than the war. The Hollow sent her."
   ],
   "allegiances_in_flux_d6": [
@@ -621,7 +621,7 @@
   ],
   "pursuit_ladder": [
     {
-      "move": "Advance/Withdraw (Wits + Ride or Stealth)",
+      "move": "Advance/Withdraw (Wits + Athletics or Stealth)",
       "effect": "On a hit, shift one band. On a strong hit, also impose Dust Cloud (cover retreat)."
     },
     {
@@ -629,7 +629,7 @@
       "effect": "On a hit, freeze range for one exchange; if a Condotta Rider's Pass is in your possession, +1 die."
     },
     {
-      "move": "Weather the Blizzard (Endurance + Survival)",
+      "move": "Weather the Blizzard (Body + Endurance)",
       "effect": "On a hit in Blizzard Pins, you pick who finds shelter; on a miss, the GM does."
     }
   ],

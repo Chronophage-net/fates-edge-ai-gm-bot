@@ -57,7 +57,7 @@
         "ANALYSIS"
       ],
       "materials": "A flawed or incomplete version of the intended item, or a sequence of progressively refined tools.",
-      "effect": "Choose one: Enhance Creation: Gain +1 die to Craft/Craft when modifying or extending a device. On success, the piece gains one minor enhancement. Analyze Improvement: Gain +2 dice to Investigation when analyzing how to enhance a design. You perceive the next logical improvement.",
+      "effect": "Choose one: Enhance Creation: Gain +1 die to Craft/Craft when modifying or extending a device. On success, the piece gains one minor enhancement. Analyze Improvement: Gain +2 dice to Insight when analyzing how to enhance a design. You perceive the next logical improvement.",
       "push_it": "(Analyze only) Improvement becomes contagious: nearby devices opportunistically optimize; mark 1 SB (Diamonds) as the cascade ripples. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
       "requires": "Familiar (Invoke: 1 Boon).",
@@ -269,7 +269,7 @@
       "Choose a Base Object: Any mundane item (weapon, shield, tool, armor, or a small device like a lantern or lockpick).",
       "Declare the Animus Effect: Choose one from the standard menu, or work with your GM to design a custom effect (should be comparable in power to a Low Rite).",
       "Pay the Cost: Mark +1 Obligation to the Clockwork Monad.",
-      "Roll to Imbue: Roll Lore + Craft (or appropriate skill) vs. DV set by the infusion's complexity (typically DV 3 for standard infusions, DV 4 for powerful ones). On a success, the infusion takes effect. On a failure, the base object is not infused, but you may try again (costing another Obligation).",
+      "Roll to Imbue: Roll Wits + Craft for careful construction, or Spirit + Arcana for magical shaping vs. DV set by the infusion's complexity (typically DV 3 for standard infusions, DV 4 for powerful ones). On a success, the infusion takes effect. On a failure, the base object is not infused, but you may try again (costing another Obligation).",
       "Set the Duration: Most infusions last one scene. With your GM's agreement, you can extend the duration to one session by marking +1 additional Obligation (total +2)."
     ],
     "effects": [
@@ -295,7 +295,7 @@
       },
       {
         "name": "Glowstone Lens",
-        "effect": "A lantern or torch burns without fuel and casts far light for one scene. It also reveals hidden doors or traps within Near range (granting +1 die to Investigation to find them). At the end of the scene, the lens shatters."
+        "effect": "A lantern or torch burns without fuel and casts far light for one scene. It also reveals hidden doors or traps within Near range (granting +1 die to Insight to find them). At the end of the scene, the lens shatters."
       },
       {
         "name": "Self-Adjusting Calipers",

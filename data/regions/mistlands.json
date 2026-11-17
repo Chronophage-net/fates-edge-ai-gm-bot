@@ -251,7 +251,7 @@
       "subtitle": "[TRAVEL] [DEATH]",
       "description": "Old imperial ditch; patrolled by eel boats and law.",
       "flavor": "The eels have eyes like men. Fishermen throw back any that blink. The canal was dug by the first Aeler settlers. They did not ask permission. The mist remembered.",
-      "mechanical_hook": "Travel by boat; roll Wits+Navigation (DV 4) to avoid inspection. On failure, you are stopped by a Protectorate patrol. They demand a tithe of 1 Supply or a valid writ."
+      "mechanical_hook": "Travel by boat; roll Wits + Insight (DV 4) to avoid inspection. On failure, you are stopped by a Protectorate patrol. They demand a tithe of 1 Supply or a valid writ."
     },
     {
       "rank": 8,
@@ -296,7 +296,7 @@
       "subtitle": "[THRESHOLD] [TABOO]",
       "description": "Over black runnel; ninth plank 'counted' but unseen.",
       "flavor": "The missing plank is there—you just can't see it. Step where it should be, or don't step at all. The witchlights are counting. They are very patient.",
-      "mechanical_hook": "Crossing requires a Resolve test (DV 5). On failure, you lose 1 Fatigue and are counted by the witchlights. The GM gains a String on you."
+      "mechanical_hook": "Crossing requires a Spirit + Endurance test (DV 5). On failure, you lose 1 Fatigue and are counted by the witchlights. The GM gains a String on you."
     },
     {
       "rank": 13,
@@ -466,7 +466,7 @@
       "subtitle": "[MAGIC] [FEAR]",
       "description": "Trying to count you; step wrong and bridge forgets your path.",
       "flavor": "The lights flicker in a pattern—two short, two long. They're signaling someone. That someone is the mist.",
-      "mechanical_hook": "You must test Resolve (DV 4) or be counted by the witchlights. On failure, the mist knows your location and gains a String on you."
+      "mechanical_hook": "You must test Spirit + Endurance (DV 4) or be counted by the witchlights. On failure, the mist knows your location and gains a String on you."
     },
     {
       "rank": 4,
@@ -795,9 +795,9 @@
     ]
   },
   "pursuit_ladder": [
-    "**Advance/Withdraw (Wits + Navigation):** On a hit, shift one band. On a strong hit, also impose *Fog Bank*.",
+    "**Advance/Withdraw (Wits + Insight):** On a hit, shift one band. On a strong hit, also impose *Fog Bank*.",
     "**Silence the Bell (Presence + Stealth):** On a hit, freeze range for one exchange; if a ward-salt pouch is in your possession, +1 die.",
-    "**Weather the Tide (Endurance + Survival):** On a hit in *Tide-Mist*, you pick who keeps their bearings; on a miss, the GM does."
+    "**Weather the Tide (Wits + Insight):** On a hit in *Tide-Mist*, you pick who keeps their bearings; on a miss, the GM does."
   ],
   "boss_archetypes": [
     {

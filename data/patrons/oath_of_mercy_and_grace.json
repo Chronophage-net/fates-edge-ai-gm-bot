@@ -43,7 +43,7 @@
   "patrons_gift": {
     "name": "The Unbroken Thread",
     "description": "Once per scene as an action, a Runekeeper of Mercy and Grace may touch a held item (weapon, tool, or garment) and breathe a single word of 'remain.'",
-    "effect": "For the rest of the scene, the item grants +1 die to Sway or Medicine rolls, and the first time each scene the bearer makes eye contact with a target they wish to comfort, the target must test Resolve (DV 3) or feel a wave of profound ease (suffer –1 die to resist the bearer's next supportive action).",
+    "effect": "For the rest of the scene, the item grants +1 die to Sway or Craft rolls, and the first time each scene the bearer makes eye contact with a target they wish to comfort, the target must test Spirit + Endurance (DV 3) or feel a wave of profound ease (suffer –1 die to resist the bearer's next supportive action).",
     "cost": "After the scene, the user marks +1 Obligation to the Oath of Mercy and Grace."
   },
   "rites": [
@@ -121,8 +121,8 @@
         "SOCIAL"
       ],
       "materials": "A blanket shared during storytelling, or a meal prepared while humming a tune of quiet joy.",
-      "effect": "Assume an aura of profound calm and magnetic steadiness. Gain +2 dice to Sway or Medicine in settings of distress or vulnerability. Your presence lingers in the memory like a safe harbor remembered in storm.",
-      "push_it": "Become the emotional anchor; all who seek comfort gravitate toward you with +1 Effect. Those who confide in you may feel a shiver of relief (Resolve DV 2 to resist sharing deeper burdens). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "effect": "Assume an aura of profound calm and magnetic steadiness. Gain +2 dice to Sway or Craft (medicine) in settings of distress or vulnerability. Your presence lingers in the memory like a safe harbor remembered in storm.",
+      "push_it": "Become the emotional anchor; all who seek comfort gravitate toward you with +1 Effect. Those who confide in you may feel a shiver of relief (Spirit + Endurance DV 2 to resist sharing deeper burdens). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
       "requires": "Familiar + Codex (Invoke: 1 Boon).",
       "invoke": "1 action.",
@@ -195,7 +195,7 @@
   "corruption": [
     {
       "tier": 1,
-      "benefit": "Healer's Touch: +1 die to Medicine or Sway when comforting or aiding.",
+      "benefit": "Healer's Touch: +1 die to Craft (medicine) or Sway when comforting or aiding.",
       "cost": "Empathic Overload: Suffer 1 Fatigue when immersed in strong conflict or grief."
     },
     {

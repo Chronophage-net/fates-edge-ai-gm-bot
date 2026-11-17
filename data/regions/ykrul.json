@@ -224,7 +224,7 @@
       "subtitle": "[DEATH] [SPIRIT]",
       "description": "Low barrows; horse-bones bead the grass like prayer beads.",
       "flavor": "The bones were placed by a bone-singer. Each bead is a name.",
-      "mechanical_hook": "Sleeping here may invite a Spirit encounter; a successful Resolve (DV 4) avoids nightmares."
+      "mechanical_hook": "Sleeping here may invite a Spirit encounter; a successful Spirit + Endurance (DV 4) avoids nightmares."
     },
     {
       "rank": 10,
@@ -242,7 +242,7 @@
       "subtitle": "[TRAVEL] [DEATH]",
       "description": "Laced hides creak; the current speaks fast and hungry.",
       "flavor": "The hides are from horses that died crossing. Their ghosts still pull.",
-      "mechanical_hook": "Crossing requires a successful Wits+Ride (DV 5); failure may result in losing 1 Supply to the river."
+      "mechanical_hook": "Crossing requires a successful Wits + Athletics (DV 5); failure may result in losing 1 Supply to the river."
     },
     {
       "rank": 12,
@@ -441,7 +441,7 @@
       "subtitle": "[WEIGHT] [DEATH]",
       "description": "Meat spoils; tempers thin like winter air.",
       "flavor": "The salt was cut with grave dust. Someone wanted the winter to be hard.",
-      "mechanical_hook": "Supplies cost double; a successful Wits+Trade (DV 4) finds an alternative source."
+      "mechanical_hook": "Supplies cost double; a successful Wits + Lore (DV 4) finds an alternative source."
     },
     {
       "rank": 6,
@@ -468,7 +468,7 @@
       "subtitle": "[DISASTER] [WEATHER]",
       "description": "Runs with the wind faster than horses; escape as a prayer.",
       "flavor": "The fire has a face. It is the face of a Khagan who burned a village.",
-      "mechanical_hook": "The party must flee; a successful Ride test (DV 5) escapes, failure costs 1 Supply."
+      "mechanical_hook": "The party must flee; a successful Body + Athletics test (DV 5) escapes, failure costs 1 Supply."
     },
     {
       "rank": 9,
@@ -495,7 +495,7 @@
       "subtitle": "[COMBAT] [WEATHER]",
       "description": "Another banner follows at a patient distance.",
       "flavor": "They are not attacking. They are waiting for you to make a mistake.",
-      "mechanical_hook": "A raiding party stalks the party; a successful Wits+Scout (DV 4) evades them."
+      "mechanical_hook": "A raiding party stalks the party; a successful Wits + Insight (DV 4) evades them."
     },
     {
       "rank": 12,
@@ -680,7 +680,7 @@
     },
     {
       "name": "Pursuit Ladder (Near / Mid / Far)",
-      "description": "Advance/Withdraw (Wits + Ride): On a hit, shift one band. On a strong hit, also impose Dust Cloud. Cut the Herd (Presence + Sway): On a hit, freeze range for one exchange; if a remount chit is in your possession, +1 die. Weather the Squall (Endurance + Survival): On a hit in White Squall, you pick who keeps their bearings; on a miss, the GM does."
+      "description": "Advance/Withdraw (Wits + Athletics): On a hit, shift one band. On a strong hit, also impose Dust Cloud. Cut the Herd (Presence + Sway): On a hit, freeze range for one exchange; if a remount chit is in your possession, +1 die. Weather the Squall (Wits + Insight): On a hit in White Squall, you pick who keeps their bearings; on a miss, the GM does."
     },
     {
       "name": "Terrain Stock (d20)",
@@ -747,7 +747,7 @@
       {
         "roll": 1,
         "name": "Frost-Rime Grass",
-        "description": "The grass is coated in a crystalline frost that cuts horse legs. Travel speed halved for one leg. On a failed Survival roll, one mount goes lame (mark 1 Fatigue or lose 1 Supply)."
+        "description": "The grass is coated in a crystalline frost that cuts horse legs. Travel speed halved for one leg. On a failed Body + Endurance roll, one mount goes lame (mark 1 Fatigue or lose 1 Supply)."
       },
       {
         "roll": 2,
@@ -856,7 +856,7 @@
       },
       {
         "name": "Braid the Tail",
-        "effect": "Tie a single knot in a horse's tail hair. Cancel Wolf Howl at Dusk or take –1 die on your next survival roll (your choice)."
+        "effect": "Tie a single knot in a horse's tail hair. Cancel Wolf Howl at Dusk or take –1 die on your next Wits + Insight roll (your choice)."
       },
       {
         "name": "Name to the Hollow",

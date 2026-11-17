@@ -38,7 +38,7 @@
   "patrons_gift": {
     "name": "The Word of Remaining",
     "description": "Once per scene as an action, a Runekeeper of Venara may touch a held item (weapon, tool, or garment) and breathe a single word of 'remain'.",
-    "effect": "For the rest of the scene, the item grants +1 die to Sway or Medicine rolls, and the first time each scene the bearer makes eye contact with a target they wish to comfort, the target must test Resolve (DV 3) or feel a wave of profound ease (suffer –1 die to resist the bearer's next supportive action).",
+    "effect": "For the rest of the scene, the item grants +1 die to Sway or Craft rolls, and the first time each scene the bearer makes eye contact with a target they wish to comfort, the target must test Spirit + Endurance (DV 3) or feel a wave of profound ease (suffer –1 die to resist the bearer's next supportive action).",
     "cost": "After the scene, the user marks +1 Obligation to Venara."
   },
   "rites": [
@@ -116,8 +116,8 @@
         "SOCIAL"
       ],
       "materials": "A blanket shared during storytelling, or a meal prepared while humming a tune of quiet joy.",
-      "effect": "Assume an aura of profound calm and magnetic steadiness. Gain +2 dice to Sway or Medicine in settings of distress or vulnerability. Your presence lingers in the memory like a safe harbor remembered in storm.",
-      "push_it": "Become the emotional anchor; all who seek comfort gravitate toward you with +1 Effect. Those who confide in you may feel a shiver of relief (Resolve DV 2 to resist sharing deeper burdens). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "effect": "Assume an aura of profound calm and magnetic steadiness. Gain +2 dice to Sway or Craft (medicine) in settings of distress or vulnerability. Your presence lingers in the memory like a safe harbor remembered in storm.",
+      "push_it": "Become the emotional anchor; all who seek comfort gravitate toward you with +1 Effect. Those who confide in you may feel a shiver of relief (Spirit + Endurance DV 2 to resist sharing deeper burdens). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
       "requires": "Familiar + Codex (Invoke: 1 Boon).",
       "invoke": "1 action.",
@@ -138,8 +138,8 @@
         "DEBT"
       ],
       "materials": "A circle of stones, each touched by a participant's tear; a shared loaf broken and passed hand to hand; a vial of water mixed from each person's source.",
-      "effect": "You become the heart of a healing zone. For the scene: you gain +1 Effect on all social rolls focused on care or healing, and opponents suffer –1 die when attempting to sow discord. Anyone who attempts to deceive you about their emotional state must test Resolve (DV 4) or reveal a hidden pain. Allies who share food or drink from the communal offerings regain 1 Fatigue. Start a 10-segment Circle of Care timer; when it fills, you may declare one irrevocable communal judgment that the zone's inhabitants will uphold for one month.",
-      "push_it": "Newcomers must test Resolve (DV 4) or become briefly inclined toward peace. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "effect": "You become the heart of a healing zone. For the scene: you gain +1 Effect on all social rolls focused on care or healing, and opponents suffer –1 die when attempting to sow discord. Anyone who attempts to deceive you about their emotional state must test Spirit + Endurance (DV 4) or reveal a hidden pain. Allies who share food or drink from the communal offerings regain 1 Fatigue. Start a 10-segment Circle of Care timer; when it fills, you may declare one irrevocable communal judgment that the zone's inhabitants will uphold for one month.",
+      "push_it": "Newcomers must test Spirit + Endurance (DV 4) or become briefly inclined toward peace. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
       "cost": "Mark +2 Obligation.",
       "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
       "invoke": "Extended action.",
@@ -178,7 +178,7 @@
       {
         "name": "Bread Left on the Doorstep",
         "xp": 3,
-        "description": "Once per session, leave a simple prepared gift (bread, a mended garment, a small remedy) for someone without being asked. If they accept it, they clear 1 Fatigue and gain +1 die to their next Resolve test against despair. The gift must be genuine — this does not work as a manipulative gesture."
+        "description": "Once per session, leave a simple prepared gift (bread, a mended garment, a small remedy) for someone without being asked. If they accept it, they clear 1 Fatigue and gain +1 die to their next Spirit + Endurance test against despair. The gift must be genuine — this does not work as a manipulative gesture."
       },
       {
         "name": "The Vigil Kept",
@@ -205,7 +205,7 @@
       "advanced": {
         "name": "Hearth's Embrace",
         "xp": 7,
-        "description": "Assume an aura of profound calm and magnetic steadiness. Gain +2 dice to Sway or Medicine in settings of distress or vulnerability for the scene.",
+        "description": "Assume an aura of profound calm and magnetic steadiness. Gain +2 dice to Sway or Craft (medicine) in settings of distress or vulnerability for the scene.",
         "cost": "1 Boon",
         "prereq": "Tier II"
       },
@@ -222,7 +222,7 @@
   "corruption": [
     {
       "tier": 1,
-      "benefit": "Healer's Touch: +1 die to Medicine or Sway when comforting or aiding.",
+      "benefit": "Healer's Touch: +1 die to Craft (medicine) or Sway when comforting or aiding.",
       "cost": "Need to Be Needed: –1 die when acting alone or unacknowledged."
     },
     {
@@ -247,7 +247,7 @@
     },
     {
       "tier": "6+",
-      "benefit": "Sovereign Stillness: Once/session, dominate a gathering in crisis; all who meet your eyes must test Resolve (DV 5) or feel compelled to seek your calm.",
+      "benefit": "Sovereign Stillness: Once/session, dominate a gathering in crisis; all who meet your eyes must test Spirit + Endurance (DV 5) or feel compelled to seek your calm.",
       "cost": "The Empty Harbor: Mark +2 Obligation; suffer if denied the chance to hold space for others. Your presence becomes a void when you cannot give — and you cannot stop trying to fill it."
     }
   ],

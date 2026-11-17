@@ -184,7 +184,7 @@
         {
           "cost": 1,
           "name": "Light Fingers",
-          "effect": "Steal a weapon mid‑combat (Wits+Deception vs target's Wits+Notice)."
+          "effect": "Steal a weapon mid‑combat (Wits+Deception vs target's Wits + Insight)."
         },
         {
           "cost": 2,
@@ -224,7 +224,7 @@
         {
           "cost": 3,
           "name": "Invoke the Curse",
-          "effect": "Target must test Resolve or gain Varus's Whispers ( –1 die to resist persuasion)."
+          "effect": "Target must test Spirit + Endurance or gain Varus's Whispers ( –1 die to resist persuasion)."
         }
       ],
       "secret": "He leads a cult of oathbreakers who worship Varus's ghost. His younger brother died in a Ykrul raid.",
@@ -323,7 +323,7 @@
         {
           "cost": 1,
           "name": "Poisoned Blade",
-          "effect": "Target tests Resolve or gains 1 Fatigue."
+          "effect": "Target tests Spirit + Endurance or gains 1 Fatigue."
         },
         {
           "cost": 2,
@@ -917,7 +917,7 @@
       "name": "Elder Thorne",
       "role": "Village Leader of Millhaven",
       "motivation": "Protect his people at all costs",
-      "stats": "Presence 2, Spirit 3, Command 2, Lore 1",
+      "stats": "Presence 2, Spirit 3, Lore 1",
       "secret": "He knows the old Imperial bridge was the site of a broken promise. He still leaves milk on the bridge steps every full moon."
     },
     {
@@ -933,14 +933,14 @@
       "name": "Tom the Smith",
       "role": "Village Defender",
       "motivation": "Protect his forge and the tools that feed his family",
-      "stats": "Body 3, Melee 2, Craft 2, Command 1"
+      "stats": "Body 3, Melee 2, Craft 2, Presence 1"
     },
     {
       "id": "npc-tema",
       "name": "Tema",
       "role": "Vilikari Merchant",
       "motivation": "Open the steppe trade route, save her business",
-      "stats": "Presence 2, Sway 2, Commerce 2",
+      "stats": "Presence 2, Sway 2",
       "secret": "She has invested everything in this trade route. If the seal is not recovered, she will be ruined."
     },
     {
@@ -948,14 +948,14 @@
       "name": "Sorian Tabb",
       "role": "Vilikari Caravan Master",
       "motivation": "Get the grain seeds to the monastery before the first frost",
-      "stats": "Body 2, Presence 3, Command 2, Commerce 2"
+      "stats": "Body 2, Presence 3, Sway 2"
     },
     {
       "id": "npc-yelu",
       "name": "Yelü",
       "role": "Sarnai's Daughter",
       "motivation": "Prove herself worthy of leadership",
-      "stats": "Body 3, Melee 2, Ride 3"
+      "stats": "Body 3, Melee 2, Athletics 3"
     },
     {
       "id": "npc-old-kes",
@@ -1009,7 +1009,7 @@
     {
       "id": "loc-pale-causeway",
       "name": "The Pale Causeway",
-      "description": "The last high road that survives the spring thaws in Acasia. The causeway is made of bones - the bones of the workers who built it. Crossing the Causeway at dusk forces a Resolve test (DV 4).",
+      "description": "The last high road that survives the spring thaws in Acasia. The causeway is made of bones - the bones of the workers who built it. Crossing the Causeway at dusk forces a Spirit + Endurance test (DV 4).",
       "tags": [
         "road",
         "bones",
@@ -1195,7 +1195,7 @@
       "gm": "His secret about the old Imperial bridge is a hook, not a reveal. He may share his ritual (leaving milk on the bridge) as a strange local custom, but the full story of the broken promise should only emerge if players investigate the bridge directly or earn his complete trust.",
       "player": "Elder Thorne plays the part everyone assumes: Village Leader of Millhaven. Nothing about their manner invites a second look.",
       "revealed": false,
-      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "revealCondition": "When a player succeeds an Insight or Lore roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
       "tags": [
         "npc-secret"
       ]
@@ -1206,7 +1206,7 @@
       "gm": "Her grandmother's knowledge of the vanished tax collector is a clue that leads to the bridge's curse. This should surface in Act I if players ask about the village's history, but the connection to the Curse of Acasia is an Act II/III realization.",
       "player": "Mira the Baker plays the part everyone assumes: Village Representative. Nothing about their manner invites a second look.",
       "revealed": false,
-      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "revealCondition": "When a player succeeds an Insight or Lore roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
       "tags": [
         "npc-secret"
       ]
@@ -1217,7 +1217,7 @@
       "gm": "Her desperation is visible from Act II onward, but her ruin-level investment should be revealed gradually. In Act II, she is a hopeful merchant. In Act III, her urgency reveals the full stakes—if the seal is not recovered, she loses everything.",
       "player": "Tema plays the part everyone assumes: Vilikari Merchant. Nothing about their manner invites a second look.",
       "revealed": false,
-      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "revealCondition": "When a player succeeds an Insight or Lore roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
       "tags": [
         "npc-secret"
       ]
@@ -1228,7 +1228,7 @@
       "gm": "He is already deceased by the start of the campaign. His legacy is carried by the players. His secret (the principles of the Silk Coin) is the party's inheritance—it defines their moral compass, not a plot twist.",
       "player": "Old Kes plays the part everyone assumes: Silk Coin Fence (Deceased). Nothing about their manner invites a second look.",
       "revealed": false,
-      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "revealCondition": "When a player succeeds an Insight or Lore roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
       "tags": [
         "npc-secret"
       ]
@@ -1239,7 +1239,7 @@
       "gm": "Their past as a Runekeeper of the Traveler is a private burden. They may reveal it slowly over the campaign, especially if the party encounters way-routes or gets lost. It is not a secret to guard tightly, but it should be earned through trust and shared hardship.",
       "player": "Mareth plays the part everyone assumes: Exiled Scholar of Thepyrgos. Nothing about their manner invites a second look.",
       "revealed": false,
-      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "revealCondition": "When a player succeeds an Insight or Lore roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
       "tags": [
         "npc-secret"
       ]

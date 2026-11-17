@@ -44,7 +44,7 @@
   "patrons_gift": {
     "name": "The Iron Hand",
     "description": "Once per scene as an action, a Runekeeper of the Inquisitor Prime may touch a held item (weapon, shield, or badge of office) and speak a word of judgment.",
-    "effect": "For the rest of the scene, the item grants +1 die to Investigation or Command rolls when confronting supernatural creatures, and the first time each scene the bearer would be affected by a magical illusion or fear effect, they may reroll the resistance check (the Prime's light burns through deception).",
+    "effect": "For the rest of the scene, the item grants +1 die to Insight or Presence + Sway rolls when confronting supernatural creatures, and the first time each scene the bearer would be affected by a magical illusion or fear effect, they may reroll the resistance check (the Prime's light burns through deception).",
     "cost": "After the scene, the user marks +1 Obligation to the Inquisitor Prime."
   },
   "rites": [
@@ -185,14 +185,14 @@
     "name": "The Iron Hand",
     "description": "Monks of the Iron Hand are living weapons of purity—trained to root out corruption, resist the taint of the supernatural, and deliver judgment without hesitation. They are relentless, incorruptible, and utterly without mercy for the guilty.",
     "color": "#6b3a2a",
-    "prerequisites": "Spirit 3+, Resolve 2+, Rite of the Pure Flame or Cantor of the Inquisitor Prime.",
+    "prerequisites": "Spirit 3+, Endurance 2+, Rite of the Pure Flame or Cantor of the Inquisitor Prime.",
     "quote": "What is pure endures. What is not is fuel.",
     "debt_resistant_frame": "The Iron Hand does not borrow—it confiscates. Monks of the Inquisitor Prime gain +1 die to resist any magical debt, geas, or contract that would compel them to tolerate corruption or spare the guilty. If they succeed, the creditor's demand burns away in the light of purity—the obligation is annulled.",
     "techniques": {
       "basic": {
         "name": "Hunter's Instinct",
         "xp": 5,
-        "effect": "You gain +1 die to Investigation and Notice when tracking or detecting supernatural creatures. Once per scene, you may ask the GM one yes/no question about a creature's nature or weakness.",
+        "effect": "You gain +1 die to Insight and Notice when tracking or detecting supernatural creatures. Once per scene, you may ask the GM one yes/no question about a creature's nature or weakness.",
         "cost": "Passive",
         "prereq": "Spirit 3+"
       },
@@ -216,7 +216,7 @@
   "corruption": [
     {
       "tier": 1,
-      "benefit": "Hunter's Instinct: +1 die to Notice magical auras or traps.",
+      "benefit": "Hunter's Instinct: +1 die to Insight magical auras or traps.",
       "cost": "Black-and-White Thinking: Must label others 'pure' or 'corrupt'; –1 die when navigating moral nuance."
     },
     {
@@ -231,7 +231,7 @@
     },
     {
       "tier": 4,
-      "benefit": "Burning Truth: Once/session, compel one target to answer truthfully (Resolve DV 4).",
+      "benefit": "Burning Truth: Once/session, compel one target to answer truthfully (Spirit + Endurance DV 4).",
       "cost": "Compulsion: Cannot ignore supernatural activity; hesitation costs 1 SB (Clubs)."
     },
     {

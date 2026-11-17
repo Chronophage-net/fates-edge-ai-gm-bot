@@ -336,7 +336,7 @@
               "outcomes": {
                 "clean": "You fully understand the proof's nature. You gain +1 die on all rolls involving Kon'reh for the rest of the adventure.",
                 "partial": "You understand the basics, but the deeper implications elude you. The GM may spend 1 SB to confuse a key detail.",
-                "miss": "Lerris's explanation is fragmented by fear. You gain the condition 'Haunted by the Ninth' (-1 die to Resolve tests)."
+                "miss": "Lerris's explanation is fragmented by fear. You gain the condition 'Haunted by the Ninth' (-1 die to Spirit + Endurance test)."
               }
             }
           ],
@@ -540,7 +540,7 @@
       "name": "Keeper Lian",
       "role": "High Archivist, Library of Keys",
       "motivation": "Seal the proof, protect the University",
-      "stats": "Wits 4, Lore 5, Command 3",
+      "stats": "Wits 4, Lore 5, Presence 3",
       "secret": "She has not spoken aloud in twenty years. She writes on water. Her silence is a judgment."
     },
     {
@@ -704,7 +704,7 @@
       "gm": "Markus is cautious, broken, and seeking new purpose. He is not a hero—he is a man who has failed before and fears failing again. His father's Concordance haunts him—he will not speak of it unless pressed. He is loyal to Lerris, but his loyalty is tinged with guilt. Play him as restrained, watchful, and quietly desperate. His arc is about finding purpose in helping his brother—not about saving the world.",
       "player": "Markus Fenwood plays the part everyone assumes: Junior Archivist, Valvano Bequest. Nothing about their manner invites a second look.",
       "revealed": false,
-      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "revealCondition": "When a player succeeds an Insight or Lore roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
       "tags": [
         "npc-secret"
       ]
@@ -715,7 +715,7 @@
       "gm": "Lerris is hopelessly naive, adventurous, and wry. He genuinely believes the proof will set him free—he does not understand what he is playing with. In Act I, he is bright-eyed and curious. In Act II, he is changed—haunted by what he has seen. In Act III, he may be lost to the game entirely. His transformation into a haunted monster hunter is far in the future—do not foreshadow it heavily; let it be a tragic possibility, not an inevitability. He is not the hero; he is the victim who might become something else.",
       "player": "Lerris Fenwood plays the part everyone assumes: Scholar, Ninth's Coterie. Nothing about their manner invites a second look.",
       "revealed": false,
-      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "revealCondition": "When a player succeeds an Insight or Lore roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
       "tags": [
         "npc-secret"
       ]
@@ -726,7 +726,7 @@
       "gm": "He knows the proof's true nature. He will not speak of it unless asked thrice—this is not a game; it is a test of sincerity. He is the keeper of knowledge that is too dangerous to share freely. He is not withholding to be cruel—he is withholding because the truth is a burden.",
       "player": "Aqyl, Son of Aqyl plays the part everyone assumes: Tutor, Keeper of the Salt-Pressed Leaves. Nothing about their manner invites a second look.",
       "revealed": false,
-      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "revealCondition": "When a player succeeds an Insight or Lore roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
       "tags": [
         "npc-secret"
       ]
@@ -737,7 +737,7 @@
       "gm": "She speaks in paradoxes. She offers bargains that seem fair—but every bargain erases a memory. She is not evil; she is a function of the Ninth. She remembers every name spoken in her presence. She is patient. She is waiting.",
       "player": "The Voice of the Ninth plays the part everyone assumes: Avatar of the Ninth's Coterie. Nothing about their manner invites a second look.",
       "revealed": false,
-      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "revealCondition": "When a player succeeds an Insight or Lore roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
       "tags": [
         "npc-secret"
       ]
@@ -748,7 +748,7 @@
       "gm": "She has not spoken aloud in twenty years. She writes on water. Her silence is a judgment. She is not cold—she is burdened by the weight of what she knows. She will help the party if they prove worthy of the truth.",
       "player": "Keeper Lian plays the part everyone assumes: High Archivist, Library of Keys. Nothing about their manner invites a second look.",
       "revealed": false,
-      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "revealCondition": "When a player succeeds an Insight or Lore roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
       "tags": [
         "npc-secret"
       ]
@@ -759,7 +759,7 @@
       "gm": "She is a figure of folklore—the Hollow Bride appears in stories told to children, a cautionary tale about bargains and promises. When she appears in this adventure, she should feel wildly out of place—like a fairy tale intruding on a rationalist's nightmare. She is not a monster to be fought; she is a presence to be negotiated with. Her voice is honey and razors. She will offer a bargain—and collect the price.",
       "player": "The Hollow Bride plays the part everyone assumes: Manifestation of the Ninth. Nothing about their manner invites a second look.",
       "revealed": false,
-      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "revealCondition": "When a player succeeds an Insight or Lore roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
       "tags": [
         "npc-secret"
       ]

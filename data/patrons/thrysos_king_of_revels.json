@@ -71,7 +71,7 @@
       ],
       "materials": "A brimming vessel of wine (or a more intimate offering).",
       "effect": "Allies who drink gain +1 die to social rolls this scene; enemies who drink suffer –1 die. Those who drink deeply may find their inhibitions loosened in other ways (GM's discretion for romantic or scandalous complications).",
-      "push_it": "All in Near must test Resolve (DV 3) or be swept into revelry, possibly leading to unplanned liaisons or public confessions; mark 1 SB (Hearts). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "push_it": "All in Near must test Spirit + Endurance (DV 3) or be swept into revelry, possibly leading to unplanned liaisons or public confessions; mark 1 SB (Hearts). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
       "requires": "Familiar (Invoke: 1 Boon).",
       "invoke": "1 action.",
@@ -131,7 +131,7 @@
       ],
       "materials": "A horn sounded thrice (or a kiss passed around a circle).",
       "effect": "Summon spectral revelers — satyrs, dancers, horned riders, and a few figures whose embraces are more than friendly. For the scene, the zone is [WARD]ed: hostile entry forces 1 SB (Spades); allies gain +1 die to resist compulsion or fear. The revelers may also grant a boon of Vigor to one couple (restore 1 Fatigue to two allies who share a bond of intimacy).",
-      "push_it": "The procession spills beyond the zone; outsiders in Near must test Resolve (DV 4) or join the dance — and perhaps the revel's other activities. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "push_it": "The procession spills beyond the zone; outsiders in Near must test Spirit + Endurance (DV 4) or join the dance — and perhaps the revel's other activities. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
       "requires": "Familiar + Codex (Invoke: 1 Boon).",
       "invoke": "1 action.",
@@ -151,7 +151,7 @@
         "BURDEN"
       ],
       "materials": "A feast laid for twelve, with wine, music, and comfortable cushions.",
-      "effect": "For one scene, the zone floods with plenty: allies restore Fatigue; all rolls tied to appetite or indulgence gain +2 dice. Leaving requires Resolve (DV 3) — the comforts are hard to abandon. The feast also grants a temporary Heightened Desire condition: the first seduction or intimidation roll each ally makes gains +1 die.",
+      "effect": "For one scene, the zone floods with plenty: allies restore Fatigue; all rolls tied to appetite or indulgence gain +2 dice. Leaving requires Spirit + Endurance (DV 3) — the comforts are hard to abandon. The feast also grants a temporary Heightened Desire condition: the first seduction or Presence + Sway rolls each ally makes gains +1 die.",
       "push_it": "The feast persists as a hunger-haunt; start Hedonist's Curse [6]. Participants may find themselves unable to derive pleasure from mundane means, always craving the excess of that night. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
       "cost": "Mark +2 Obligation.",
       "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
@@ -172,7 +172,7 @@
         "SACRIFICE"
       ],
       "materials": "A crown of twisted vines that bleed when touched, the first laugh of a newborn, a promise broken at a crossroads, and the willing touch of a lover.",
-      "effect": "Grant the ultimate reveler's gift — transformation into pure ecstatic essence. The target becomes immune to fear and despair, gains +3 dice to performance or frenzy, and can inspire allies within Near (+1 die to all rolls). Their aura also carries a scent of desire; anyone within Near who sees them must test Resolve (DV 3) or be mildly infatuated (disadvantage on hostile actions).",
+      "effect": "Grant the ultimate reveler's gift — transformation into pure ecstatic essence. The target becomes immune to fear and despair, gains +3 dice to performance or frenzy, and can inspire allies within Near (+1 die to all rolls). Their aura also carries a scent of desire; anyone within Near who sees them must test Spirit + Endurance (DV 3) or be mildly infatuated (disadvantage on hostile actions).",
       "push_it": "The transformation becomes contagious — nearby allies may also transform but risk losing their humanity (their sense of self blurs into the ecstatic mob); mark +2 Obligation. Cost: Mark +1 Obligation (total +4) or Mark +1 Fatigue.",
       "cost": "Mark +2 Obligation.",
       "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
@@ -200,14 +200,14 @@
     "tools": {
       "thyrsus": {
         "name": "The Thyrsus of the Unbound",
-        "description": "A staff of fennel or oak, topped with a pine cone and bound with ivy, often with a ribbon from a lover's garment. Once per session, the witch may strike the thyrsus against the ground three times. For the next scene, any creature within Near who is engaged in revelry (dancing, drinking, performing, or any act of intimacy) gains +1 die to social and physical actions, but any attempt to leave the zone requires a Resolve test (DV 3) — the revel holds them. The thyrsus can also be used to draw a circle on the ground; any mask placed within the circle becomes 'true' for one night — the wearer cannot be recognized by anyone who was not present at the drawing, and their inhibitions are lowered (they may act on desires they would normally suppress)."
+        "description": "A staff of fennel or oak, topped with a pine cone and bound with ivy, often with a ribbon from a lover's garment. Once per session, the witch may strike the thyrsus against the ground three times. For the next scene, any creature within Near who is engaged in revelry (dancing, drinking, performing, or any act of intimacy) gains +1 die to social and physical actions, but any attempt to leave the zone requires a Spirit + Endurance test (DV 3) — the revel holds them. The thyrsus can also be used to draw a circle on the ground; any mask placed within the circle becomes 'true' for one night — the wearer cannot be recognized by anyone who was not present at the drawing, and their inhibitions are lowered (they may act on desires they would normally suppress)."
       }
     },
     "hedge_gifts": [
       {
         "name": "Dancer's Cramp",
         "xp": 4,
-        "description": "Once per scene, the witch may snap their fingers and whisper a dancer's rhythm. One target within Near range feels an irresistible urge to move — they must tap a foot, sway, or take a step. This cannot force them into danger, but it can ruin stealth, break a staredown, or distract a guard for one exchange. The target may resist with Resolve (DV 3) to ignore the urge. A more salacious version (Lover's Cramp) might be used in seduction scenes, forcing an unintended compliment or touch."
+        "description": "Once per scene, the witch may snap their fingers and whisper a dancer's rhythm. One target within Near range feels an irresistible urge to move — they must tap a foot, sway, or take a step. This cannot force them into danger, but it can ruin stealth, break a staredown, or distract a guard for one exchange. The target may resist with Spirit + Endurance (DV 3) to ignore the urge. A more salacious version (Lover's Cramp) might be used in seduction scenes, forcing an unintended compliment or touch."
       },
       {
         "name": "Mask of the Moment",
@@ -286,7 +286,7 @@
     },
     {
       "tier": "6+",
-      "benefit": "Satyr King's Mantle: For one scene, become an avatar of revels; all allies gain +2 dice, enemies suffer –2 dice. Your presence also inspires desire: once during the scene, compel one target to act on a hidden passion (Resolve DV 4).",
+      "benefit": "Satyr King's Mantle: For one scene, become an avatar of revels; all allies gain +2 dice, enemies suffer –2 dice. Your presence also inspires desire: once during the scene, compel one target to act on a hidden passion (Spirit + Endurance DV 4).",
       "cost": "Tyrant of Pleasure: Mark +3 Obligation; the revel grows monstrous, demanding a sacrifice (an oath, a relationship, or a life). Beast of Endless Revel: Permanent transformation — your mortal form becomes optional; must make Presence+Performance (DV 4) to appear civilized or risk terrifying (or entrancing) all who see you into joining your eternal celebration. You are always at least mildly intoxicated, and sobriety causes you physical pain (1 Fatigue per hour)."
     }
   ],

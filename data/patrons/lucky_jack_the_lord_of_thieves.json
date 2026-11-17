@@ -209,7 +209,7 @@
   "cantors_and_cults": {
     "cantors": {
       "name": "The Cantor's Song",
-      "description": "A Cantor of Lucky Jack sings in working chants — rhythms that synchronize a crew's movements, melodies that calm a mark's suspicions, and harmonies that mask the sound of a lock turning. Their voice is used to coordinate a heist, to lull a guard into inattention, or to signal a getaway without a single word spoken aloud. A Cantor may learn any Basic Rite of Lucky Jack as a Song (Performance + Lore, resolves next turn). Corruption accumulates when they use their voice for a heist that leaves victims, rather than marks."
+      "description": "A Cantor of Lucky Jack sings in working chants — rhythms that synchronize a crew's movements, melodies that calm a mark's suspicions, and harmonies that mask the sound of a lock turning. Their voice is used to coordinate a heist, to lull a guard into inattention, or to signal a getaway without a single word spoken aloud. A Cantor may learn any Basic Rite of Lucky Jack as a Song (Wits + Performance, resolves next turn). Corruption accumulates when they use their voice for a heist that leaves victims, rather than marks."
     },
     "cult": {
       "name": "The Cult of the Unlucky Coin",
@@ -251,7 +251,7 @@
     "name": "The Way of the Magpie Monk",
     "description": "Monks of the Magpie Monk tradition embody Lucky Jack's philosophy of cleverness over strength. They move through the world like shadows, seeing every lock as a puzzle, every guard as a distraction, and every plan as a prayer. They are not fighters — they are professionals. They know that the greatest heist is the one that leaves no trace, no victims, and no debts. In the quiet of the monastery, they practice the art of the perfect plan, learning that the best way to avoid a debt is to be someone else when the collector arrives.",
     "color": "#d4af37",
-    "prerequisites": "Wits 3+, Subterfuge 2+, Rite of the Lucky Coin or Cantor of Lucky Jack.",
+    "prerequisites": "Wits 3+, Deception 2+, Rite of the Lucky Coin or Cantor of Lucky Jack.",
     "quote": "The plan is the prayer. The heist is the sacrament. The getaway is the blessing.",
     "debt_resistant_frame": "Jack teaches that the best way to avoid a debt is to be someone else when the collector arrives. Monks of the Magpie Monk gain +1 die to resist any magical debt or obligation that would compel them to repay a favor or reveal a confidence. If they succeed, the creditor finds that the monk's signature is slightly wrong — the debt was never theirs to owe.",
     "techniques": {
@@ -267,7 +267,7 @@
         "xp": 8,
         "description": "Pick one lock, disarm one trap, or bypass one guard as if you had +2 dice. The hand that cannot be seen cannot be stopped.",
         "cost": "1 Boon",
-        "prereq": "Tier II, Subterfuge 3+"
+        "prereq": "Tier II, Deception 3+"
       }
     },
     "master_technique": {
@@ -282,7 +282,7 @@
   "corruption": [
     {
       "tier": 1,
-      "benefit": "Thief's Instinct: +1 die to Notice traps, hidden doors, and valuable objects.",
+      "benefit": "Thief's Instinct: +1 die to Insight traps, hidden doors, and valuable objects.",
       "cost": "Compulsive Gambler: Must take a risk when one is presented; –1 die to refuse a bet."
     },
     {
@@ -297,7 +297,7 @@
     },
     {
       "tier": 4,
-      "benefit": "Unseen Step: Once/session, automatically succeed on one escape or evasion roll.",
+      "benefit": "Unseen Step: Once/session, automatically succeed on one Athletics roll.",
       "cost": "Marked by the Coin: A rival thief knows your face; the GM gains 1 SB per session to spend on their pursuit."
     },
     {

@@ -39,7 +39,7 @@
   "patrons_gift": {
     "name": "Gaila's Spark",
     "description": "Once per scene as an action, a Runekeeper of Gaila may touch a held item (weapon, tool, or garment) and breathe a single word of \"laugh.\"",
-    "effect": "For the rest of the scene, the item grants +1 die to Sway or Performance rolls, and the first time each scene the bearer shares a moment of genuine joy with a target they wish to charm (a shared laugh, a silly exchange, mutual delight in simplicity), the target must test Resolve (DV 3) or feel a wave of lighthearted warmth (suffer –1 die to resist the bearer's next social action).",
+    "effect": "For the rest of the scene, the item grants +1 die to Sway or Performance rolls, and the first time each scene the bearer shares a moment of genuine joy with a target they wish to charm (a shared laugh, a silly exchange, mutual delight in simplicity), the target must test Spirit + Endurance (DV 3) or feel a wave of lighthearted warmth (suffer –1 die to resist the bearer's next social action).",
     "cost": "After the scene, the user marks +1 Obligation to Gaila."
   },
   "rites": [
@@ -97,7 +97,7 @@
       ],
       "materials": "Perfume applied while recalling a joyful memory, or a garment worn that feels like a second skin of happiness.",
       "effect": "Assume an aura of effortless charm and magnetic lightness. Gain +2 dice to Sway or Performance in settings of playfulness or shared delight. Your presence lingers in the memory like a half-remembered giggle.",
-      "push_it": "Become the embodiment of joy; all who interact with you feel a shiver of \"more, please\" (Resolve DV 2 to resist seeking deeper connection). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "push_it": "Become the embodiment of joy; all who interact with you feel a shiver of \"more, please\" (Spirit + Endurance DV 2 to resist seeking deeper connection). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
       "requires": "Familiar + Codex (Invoke: 1 Boon).",
       "invoke": "1 action.",
@@ -139,8 +139,8 @@
         "DEBT"
       ],
       "materials": "A circle of stones, each touched by a participant's tear of laughter; a chalice filled with sparkling cider shared sip by sip; a length of silk woven from threads spun in mutual silliness.",
-      "effect": "You become the heart of a joyful zone. For the scene: you gain +1 Effect on all social rolls focused on playfulness or mutual delight, and opponents suffer –1 die when attempting to impose seriousness or demand solemnity. Anyone who attempts to deceive you about their emotional state must test Resolve (DV 4) or reveal a hidden sorrow. Allies who share a ritual of pure joy regain 1 Fatigue. Start a 10-segment Circle of Giggles timer; when it fills, you may declare one irrevocable social judgment that the zone's inhabitants will uphold for one month.",
-      "push_it": "Newcomers must test Resolve (DV 4) or become briefly inclined toward joy — they will accept one simple act of mutual delight. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "effect": "You become the heart of a joyful zone. For the scene: you gain +1 Effect on all social rolls focused on playfulness or mutual delight, and opponents suffer –1 die when attempting to impose seriousness or demand solemnity. Anyone who attempts to deceive you about their emotional state must test Spirit + Endurance (DV 4) or reveal a hidden sorrow. Allies who share a ritual of pure joy regain 1 Fatigue. Start a 10-segment Circle of Giggles timer; when it fills, you may declare one irrevocable social judgment that the zone's inhabitants will uphold for one month.",
+      "push_it": "Newcomers must test Spirit + Endurance (DV 4) or become briefly inclined toward joy — they will accept one simple act of mutual delight. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
       "cost": "Mark +2 Obligation.",
       "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
       "invoke": "Extended action.",
@@ -204,7 +204,7 @@
       "basic": {
         "name": "Disarming Grin",
         "xp": 5,
-        "description": "Once per scene, in place of an attack, you may offer a target a genuine moment of levity. They must test Resolve (DV 3) or lose their next action to a startled laugh (they are not harmed, merely delighted).",
+        "description": "Once per scene, in place of an attack, you may offer a target a genuine moment of levity. They must test Spirit + Endurance (DV 3) or lose their next action to a startled laugh (they are not harmed, merely delighted).",
         "cost": "1 Boon",
         "prereq": "Presence 3+"
       },
@@ -253,7 +253,7 @@
     },
     {
       "tier": "6+",
-      "benefit": "Sovereign Merriment: Once/session, dominate a gathering in joy; all who meet your eyes must test Resolve (DV 5) or feel compelled to seek your lightness.",
+      "benefit": "Sovereign Merriment: Once/session, dominate a gathering in joy; all who meet your eyes must test Spirit + Endurance (DV 5) or feel compelled to seek your lightness.",
       "cost": "The Eternal Giggle: Mark +2 Obligation; your presence becomes a tease when you cannot delight, and you cannot stop chasing the shimmer just out of reach."
     }
   ],

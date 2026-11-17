@@ -38,7 +38,7 @@
   "patrons_gift": {
     "name": "The Word of Almost",
     "description": "Once per scene as an action, a Runekeeper of Zephyria may touch a held item (weapon, tool, or garment) and breathe a single word of 'almost'.",
-    "effect": "For the rest of the scene, the item grants +1 die to Sway or Performance rolls, and the first time each scene the bearer engages in a ritual of near-intimacy with a target they wish to charm (prolonged eye contact, hands near but not touching, sharing breath), the target must test Resolve (DV 3) or feel a wave of poignant longing (suffer –1 die to resist the bearer's next social action).",
+    "effect": "For the rest of the scene, the item grants +1 die to Sway or Performance rolls, and the first time each scene the bearer engages in a ritual of near-intimacy with a target they wish to charm (prolonged eye contact, hands near but not touching, sharing breath), the target must test Spirit + Endurance (DV 3) or feel a wave of poignant longing (suffer –1 die to resist the bearer's next social action).",
     "cost": "After the scene, the user marks +1 Obligation to Zephyria."
   },
   "rites": [
@@ -117,7 +117,7 @@
       ],
       "materials": "Perfume applied while imagining a future touch, or a garment worn that hints at what lies beneath.",
       "effect": "Assume an aura of magnetic potential and poised allure. Gain +2 dice to Sway or Performance in settings of flirtation or courtship. Your presence lingers in the memory like a half-remembered dream of what could be.",
-      "push_it": "Become the embodiment of possibility; all who interact with you feel a shiver of 'what if' (Resolve DV 2 to resist imagining deeper connection). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "push_it": "Become the embodiment of possibility; all who interact with you feel a shiver of 'what if' (Spirit + Endurance DV 2 to resist imagining deeper connection). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
       "requires": "Familiar + Codex (Invoke: 1 Boon).",
       "invoke": "1 action.",
@@ -138,8 +138,8 @@
         "DEBT"
       ],
       "materials": "A path lined with flowers that bloom only at twilight; two cups filled from different sources but meant to be shared; a length of ribbon wound around both participants' wrists then loosened.",
-      "effect": "You become the sovereign of romantic potential. For the scene: you gain +1 Effect on all social rolls focused on flirtation or mutual discovery, and opponents suffer –1 die when attempting to rush or demand commitment. Anyone who attempts to deceive you about their intentions must test Resolve (DV 4) or reveal a hidden hope. Allies who share a ritual of near-intimacy regain 1 Fatigue. Start a 10-segment Garden of Almost timer; when it fills, you may declare one irrevocable social judgment that the zone's inhabitants will uphold for one month.",
-      "push_it": "Newcomers must test Resolve (DV 4) or become briefly inclined toward courtship. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "effect": "You become the sovereign of romantic potential. For the scene: you gain +1 Effect on all social rolls focused on flirtation or mutual discovery, and opponents suffer –1 die when attempting to rush or demand commitment. Anyone who attempts to deceive you about their intentions must test Spirit + Endurance (DV 4) or reveal a hidden hope. Allies who share a ritual of near-intimacy regain 1 Fatigue. Start a 10-segment Garden of Almost timer; when it fills, you may declare one irrevocable social judgment that the zone's inhabitants will uphold for one month.",
+      "push_it": "Newcomers must test Spirit + Endurance (DV 4) or become briefly inclined toward courtship. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
       "cost": "Mark +2 Obligation.",
       "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
       "invoke": "Extended action.",
@@ -198,7 +198,7 @@
       "basic": {
         "name": "The Pulled Strike",
         "xp": 5,
-        "description": "Once per scene, you may declare an attack 'withheld' after it hits — deal no Harm, but the target must test Resolve (DV 3) or be Rattled (–1 die on their next action), unnerved by how close they came.",
+        "description": "Once per scene, you may declare an attack 'withheld' after it hits — deal no Harm, but the target must test Spirit + Endurance (DV 3) or be Rattled (–1 die on their next action), unnerved by how close they came.",
         "cost": "1 Fatigue",
         "prereq": "Presence 3+"
       },
@@ -247,7 +247,7 @@
     },
     {
       "tier": "6+",
-      "benefit": "Sovereign Anticipation: Once/session, dominate a gathering in courtship; all who meet your eyes must test Resolve (DV 5) or feel compelled to seek your nearness.",
+      "benefit": "Sovereign Anticipation: Once/session, dominate a gathering in courtship; all who meet your eyes must test Spirit + Endurance (DV 5) or feel compelled to seek your nearness.",
       "cost": "The Eternal Almost: Mark +2 Obligation; suffer if denied the chance to linger in threshold. Your presence becomes a tease when you cannot promise — and you cannot stop chasing the shimmer just out of reach."
     }
   ],

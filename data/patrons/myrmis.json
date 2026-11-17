@@ -36,7 +36,7 @@
   "runekeeper_options": {
     "thiasos": {
       "description": "Myrmis's Thiasos is a companion that embodies the stillness before the strike: a gray wolf with one ear missing, a hooded crow that perches on the bearer's shoulder and watches without blinking, an iron-black scorpion that clicks its claws in a rhythm that mimics a heartbeat, or a moth whose wings are marked with the eight-pointed star of the Pereshi highlands.",
-      "care": "Beyond its ordinary care, this Thiasos must be offered a drop of blood each week—not from the bearer, but from an enemy or a sacrifice. If that need goes unmet, the Thiasos becomes Compromised: it grows listless, and the bearer suffers –1 die on all Intimidation and Command rolls until a suitable offering is made."
+      "care": "Beyond its ordinary care, this Thiasos must be offered a drop of blood each week—not from the bearer, but from an enemy or a sacrifice. If that need goes unmet, the Thiasos becomes Compromised: it grows listless, and the bearer suffers –1 die on all Intimidation and Presence + Sway rolls until a suitable offering is made."
     },
     "codex": {
       "description": "A Codex sworn to Myrmis is never a book of prayers. It is a roll of the fallen—a list of names, each marked with the price paid. It may be a scroll of vellum stained with blood, a stack of iron nails driven into a plank of old oak, a set of bone tallies threaded on a leather cord, or a cloth-of-battle that records each death in thread as dark as dried blood.",
@@ -46,7 +46,7 @@
   "patrons_gift": {
     "name": "The Matron's Resolve",
     "description": "Once per scene as an action, a Runekeeper of Myrmis may touch a held weapon and whisper the name of a sacrifice.",
-    "effect": "For the rest of the scene, the weapon grants +1 die to Melee or Command rolls, and the first time each scene the bearer would hesitate in battle (a moral quandary, a fear check, a moment of mercy), they may reroll the resistance check (the Matron's resolve steels them).",
+    "effect": "For the rest of the scene, the weapon grants +1 die to Melee or Presence + Sway rolls, and the first time each scene the bearer would hesitate in battle (a moral quandary, a fear check, a moment of mercy), they may reroll the resistance check (the Matron's resolve steels them).",
     "cost": "After the scene, the user marks +1 Obligation to Myrmis."
   },
   "rites": [
@@ -63,7 +63,7 @@
         "REVELATION"
       ],
       "materials": "A reckoning-stick marked with eight notches, or a knife that has drawn blood in battle.",
-      "effect": "Choose one: Reckon the Debt: Gain +1 die to Investigation or Insight when reading the cost of a battle, a feud, or a political maneuver. You see not just the outcome, but the price paid. OR Offer the Sacrifice: Gain +2 dice to Intimidation or Command when threatening a target with a cost they cannot bear. The Matron's arithmetic is terrifying in its clarity.",
+      "effect": "Choose one: Reckon the Debt: Gain +1 die to Insight when reading the cost of a battle, a feud, or a political maneuver. You see not just the outcome, but the price paid. OR Offer the Sacrifice: Gain +2 dice to Intimidation or Command when threatening a target with a cost they cannot bear. The Matron's arithmetic is terrifying in its clarity.",
       "push_it": "(Reckon only) The debt is not yet paid. You glimpse the target's next move—gain +2 dice to your next roll against them in this scene. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
       "requires": "Familiar (Invoke: 1 Boon).",
@@ -147,7 +147,7 @@
         "FATE"
       ],
       "materials": "A banner that has flown over a battlefield, and a promise made in the moment before death.",
-      "effect": "Consecrate a zone of final resistance. All allies within the zone gain +2 dice to Melee and Resolve rolls. The first time each ally would fall in this scene, they may instead stand for one more exchange, their wounds held closed by the Matron's grace. At the end of the scene, each ally who used this grace must mark +1 Obligation—the Matron's debt is never free.",
+      "effect": "Consecrate a zone of final resistance. All allies within the zone gain +2 dice to Melee and Spirit + Endurance test. The first time each ally would fall in this scene, they may instead stand for one more exchange, their wounds held closed by the Matron's grace. At the end of the scene, each ally who used this grace must mark +1 Obligation—the Matron's debt is never free.",
       "push_it": "The zone extends for the entire session, but every ally who uses the grace also marks Harm 1 (spiritual exhaustion). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
       "cost": "Mark +2 Obligation.",
       "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
@@ -215,7 +215,7 @@
       "master": {
         "name": "Judgment's Hand",
         "xp": 12,
-        "description": "Once per session, declare a judgment that the Matron will enforce. The target must test Resolve (DV 5) or suffer Harm 2 (spiritual punishment). If they succeed, you must face them in combat—but you gain +1 die to all attacks against them for the scene. After using this technique, you gain a permanent Cairn-Scar (a mark on your palm that resembles a reckoning-stick, and the GM gains 1 SB per session to use against you in judgments). You may ignore one Obligation to the Matron—but she will remember, and the next judgment she places before you will be heavier.",
+        "description": "Once per session, declare a judgment that the Matron will enforce. The target must test Spirit + Endurance (DV 5) or suffer Harm 2 (spiritual punishment). If they succeed, you must face them in combat—but you gain +1 die to all attacks against them for the scene. After using this technique, you gain a permanent Cairn-Scar (a mark on your palm that resembles a reckoning-stick, and the GM gains 1 SB per session to use against you in judgments). You may ignore one Obligation to the Matron—but she will remember, and the next judgment she places before you will be heavier.",
         "cost": "2 Fatigue and +1 Obligation to Myrmis",
         "prereq": "Tier III, Spirit 3+"
       }
@@ -250,7 +250,7 @@
     },
     {
       "tier": "6+",
-      "benefit": "Shadow-Court's Hand: Once/session, declare a judgment that the Matron will enforce. The target must test Resolve (DV 5) or suffer Harm 2 (spiritual punishment).",
+      "benefit": "Shadow-Court's Hand: Once/session, declare a judgment that the Matron will enforce. The target must test Spirit + Endurance (DV 5) or suffer Harm 2 (spiritual punishment).",
       "cost": "The Reckoning is Complete: Mark +3 Obligation. You are now the Matron's instrument, and you cannot refuse a judgment she places before you. Your face begins to be forgotten by those who have not paid their debts."
     }
   ],

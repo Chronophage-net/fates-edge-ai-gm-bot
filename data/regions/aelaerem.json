@@ -118,7 +118,7 @@
     },
     {
       "roll": 4,
-      "consequence": "The watch-geese chase you from the village. Gain a **Marked by Geese** condition (animals are hostile; +1 DV to all Beastcraft rolls)."
+      "consequence": "The watch-geese chase you from the village. Gain a **Marked by Geese** condition (animals are hostile; +1 DV to all Insight rolls)."
     },
     {
       "roll": 5,
@@ -218,7 +218,7 @@
       "subtitle": "[HARVEST] [MEMORY]",
       "description": "Sweet reek, old songs, doors that stick after dusk.",
       "flavor": "The press was built from a barrow oak. The oak still dreams. The dreams are not of leaves.",
-      "mechanical_hook": "Sleeping here gives you dreams of the barrow. On a Spirit+Lore test (DV 4), you learn a secret of the dead (a Clue). On failure, the dream follows you — gain the Condition **Barrow-Dreamt** (—1 die on all Resolve tests for a day)."
+      "mechanical_hook": "Sleeping here gives you dreams of the barrow. On a Spirit+Lore test (DV 4), you learn a secret of the dead (a Clue). On failure, the dream follows you — gain the Condition **Barrow-Dreamt** (—1 die on all Spirit + Endurance test for a day)."
     },
     {
       "rank": 4,
@@ -247,7 +247,7 @@
       "subtitle": "[FOREST] [WARD]",
       "description": "Rabbit-gates and snares set by careful hands.",
       "flavor": "The snares are for the Hollow. They catch only shadows—mostly. The shadows have been growing heavier.",
-      "mechanical_hook": "A character who trips a snare (failed Stealth) must test Resolve (DV 4) or lose their shadow for one scene (—1 Position on stealth). On a success, the snare catches a shadow — the Hollow gains +1 SB."
+      "mechanical_hook": "A character who trips a snare (failed Stealth) must test Spirit + Endurance (DV 4) or lose their shadow for one scene (—1 Position on stealth). On a success, the snare catches a shadow — the Hollow gains +1 SB."
     },
     {
       "rank": 7,
@@ -319,7 +319,7 @@
       "subtitle": "[CURSE] [DANGER]",
       "description": "A ring where no plow will hold a line, not for any coin.",
       "flavor": "The field is a mouth. It has not fed in a century. It is patient.",
-      "mechanical_hook": "Entering the field forces a Resolve test (DV 4). On failure, you lose your appetite for a week (—1 die to all Endurance tests). The field can be fed a story or a memory to make it dormant for a year—but it will remember your taste."
+      "mechanical_hook": "Entering the field forces a Spirit + Endurance test (DV 4). On failure, you lose your appetite for a week (—1 die to all Endurance tests). The field can be fed a story or a memory to make it dormant for a year—but it will remember your taste."
     }
   ],
   "people_and_factions": [
@@ -489,7 +489,7 @@
       "subtitle": "[CURSE] [OMEN]",
       "description": "Hooves scuff every charm.",
       "flavor": "The sow was a woman once. She broke a vow. The orchard remembered. The orchard transformed her.",
-      "mechanical_hook": "The sow curses anyone who harms her. If you attack her, you gain the Condition **Sow's Mark** (animals are hostile; +1 DV to all Beastcraft rolls). You can lift the curse by keeping a promise you have been avoiding."
+      "mechanical_hook": "The sow curses anyone who harms her. If you attack her, you gain the Condition **Sow's Mark** (animals are hostile; +1 DV to all Insight rolls). You can lift the curse by keeping a promise you have been avoiding."
     },
     {
       "rank": 6,
@@ -507,7 +507,7 @@
       "subtitle": "[MEMORY] [TABOO]",
       "description": "Adults remember the verse none should sing.",
       "flavor": "The verse is about a barrow that opened. The children think it is a lullaby. The adults know it is a warning.",
-      "mechanical_hook": "Any adult who hears the song must test Resolve (DV 4) or sing along. Singing ticks **Hollow Attention +1** and gives the GM a String on the singer (the barrow knows your name)."
+      "mechanical_hook": "Any adult who hears the song must test Spirit + Endurance (DV 4) or sing along. Singing ticks **Hollow Attention +1** and gives the GM a String on the singer (the barrow knows your name)."
     },
     {
       "rank": 8,
@@ -543,7 +543,7 @@
       "subtitle": "[OMEN] [SPIRIT]",
       "description": "Something attends the sermon.",
       "flavor": "The thirteenth pew is empty. The dust on it is fresh. The dust is from the barrow.",
-      "mechanical_hook": "The Hollow is in the church. Anyone who prays here must test Resolve (DV 4) or the Hollow answers. On failure, the Hollow offers a bargain: a secret in exchange for a memory. Refusal ticks **Hollow Attention +2**."
+      "mechanical_hook": "The Hollow is in the church. Anyone who prays here must test Spirit + Endurance (DV 4) or the Hollow answers. On failure, the Hollow offers a bargain: a secret in exchange for a memory. Refusal ticks **Hollow Attention +2**."
     },
     {
       "rank": 12,
@@ -570,7 +570,7 @@
       "subtitle": "[CURSE] [DIMENSION]",
       "description": "Burrows and barrows connect; footfalls answer underground.",
       "flavor": "The footsteps are counting. They stop at eight. They are waiting for the ninth.",
-      "mechanical_hook": "The Hollow is crossing. Any character who steps on a barrow must test Resolve (DV 5) or be pulled underground. The party has one scene to rescue them before they become a Neighbor. Tick **Hollow Attention** to zero — the Hollow has fed."
+      "mechanical_hook": "The Hollow is crossing. Any character who steps on a barrow must test Spirit + Endurance (DV 5) or be pulled underground. The party has one scene to rescue them before they become a Neighbor. Tick **Hollow Attention** to zero — the Hollow has fed."
     }
   ],
   "rewards": [
@@ -864,7 +864,7 @@
   "faction_entanglements": [
     "**Wold-Wardens:** Honor hedge-law (count stiles, turn stones inward) or suffer +1 SB on each night march; bringing steel disputes to the Moot Oak reduces the next travel DV by 1. The hedges have opinions.",
     "**Mummers' Companies:** Travel under mask grants advantage crossing parochial borders; anger them (perform out of season) and village gates close at dusk (Position —). The masks remember every slight.",
-    "**Lantern-Wardens:** Donate oil or heal lamps to earn an escort marker; ignore a lit-lane and pay a 'darkness toll' (first Stealth/Scout roll each night suffers —1 die). The lamps are not forgiving.",
+    "**Lantern-Wardens:** Donate oil or heal lamps to earn an escort marker; ignore a lit-lane and pay a 'darkness toll' (first Stealth/Insight roll each night suffers —1 die). The lamps are not forgiving.",
     "**Apple-Matron Circles:** Feast-days open barns and purses; snub an invitation and local prices double until amends are made. The matron's memory is long.",
     "**Neighbors (quiet powers):** Leave butter at cup-marks to cancel the first supernatural SB this leg; break taboo and the Hollow stirs (add a **Hollow Attention** tick). The Neighbors are always watching."
   ],

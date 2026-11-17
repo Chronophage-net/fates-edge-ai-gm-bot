@@ -39,7 +39,7 @@
   "patrons_gift": {
     "name": "The Confessor's Silence",
     "description": "Once per scene as an action, a Runekeeper of the Confessor may touch a held item (weapon, shield, or tool) and whisper a single confessed sin.",
-    "effect": "For the rest of the scene, the item grants +1 die to Insight or Command rolls when dealing with guilt, secrets, or coercion, and the first time each scene the bearer would be forced to tell a lie by magical compulsion, they may ignore it (the Confessor's silence protects them).",
+    "effect": "For the rest of the scene, the item grants +1 die to Insight or Presence + Sway rolls when dealing with guilt, secrets, or coercion, and the first time each scene the bearer would be forced to tell a lie by magical compulsion, they may ignore it (the Confessor's silence protects them).",
     "cost": "After the scene, the user marks +1 Obligation to the Confessor."
   },
   "rites": [
@@ -99,7 +99,7 @@
         "COMMAND"
       ],
       "materials": "Shared confession whispered into an object or tattooed sigil.",
-      "effect": "Create a bond between you and the confessor; you may suffer 1 Fatigue to grant +2 dice to their Resolve test. If they fail, you suffer 1 Harm instead of them.",
+      "effect": "Create a bond between you and the confessor; you may suffer 1 Fatigue to grant +2 dice to their Spirit + Endurance test. If they fail, you suffer 1 Harm instead of them.",
       "push_it": "You may take both Harm and a Condition; mark 1 SB (Clubs). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
       "requires": "Familiar + Codex (Invoke: 1 Boon).",
@@ -142,7 +142,7 @@
         "FEAR"
       ],
       "materials": "An ancient bell that has tolled for every execution in a kingdom, a chain forged from confession nails, the ashes of a martyr who died for silence.",
-      "effect": "Transfer accumulated guilt of generations to a single target. Target must make Spirit+Endurance (DV 5) or become overwhelmed by ancestral shame, suffering automatic Harm 2. Alternatively, release all burdens at once: clear all absorbed SB and Obligation. Every affected ally rolls Resolve (DV 4) or relives their confessed sin as hallucination.",
+      "effect": "Transfer accumulated guilt of generations to a single target. Target must make Spirit+Endurance (DV 5) or become overwhelmed by ancestral shame, suffering automatic Harm 2. Alternatively, release all burdens at once: clear all absorbed SB and Obligation. Every affected ally rolls Spirit + Endurance (DV 4) or relives their confessed sin as hallucination.",
       "push_it": "(Transfer) The target's guilt infects their bloodline; mark 3 SB (Spades). (Release) Bind a spirit or soul within the toll; mark 1 SB (Spades) and +1 Obligation permanently. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
       "cost": "Mark +2 Obligation.",
       "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
@@ -187,7 +187,7 @@
       {
         "name": "The Penitent's Coin",
         "xp": 3,
-        "description": "Once per scene, offer a small coin in exchange for a truth. The target may refuse, but if they accept the coin, they must answer one question honestly (Resolve DV 3 to resist). The coin then feels unnaturally heavy to them until they spend it."
+        "description": "Once per scene, offer a small coin in exchange for a truth. The target may refuse, but if they accept the coin, they must answer one question honestly (Spirit + Endurance DV 3 to resist). The coin then feels unnaturally heavy to them until they spend it."
       },
       {
         "name": "Weighed Breath",
@@ -201,7 +201,7 @@
     "description": "The bell tolls for thee — and I answer. Your sin becomes my silence. Your shame becomes my scar. Monks of the Unburdened Bell take vows of carrying: they walk into disasters, deathbeds, and prison cells not to heal wounds of the body but to take on the weight no one else can bear. Their order maintains no grand cathedral, only a single tolling bell hung above a bare stone floor where the newly ordained lie for a night listening to it ring for sins not yet their own.",
     "color": "#6b5a4a",
     "quote": "The bell tolls for thee — and I answer. Your sin becomes my silence. Your shame becomes my scar.",
-    "prerequisites": "Spirit 3+, Resolve 2+, Rite of the Absorbed Sin or Rite of Absolution by Ash.",
+    "prerequisites": "Spirit 3+, Endurance 2+, Rite of the Absorbed Sin or Rite of Absolution by Ash.",
     "debt_resistant_frame": "The unburdened carry only what they choose. Monks of the Order of the Unburdened Bell gain +1 die to resist magical compulsion that would force them to reveal a secret or break a confession's sanctity. If they succeed, the compulsion fades into a soft bell-tone — the secret remains theirs.",
     "techniques": {
       "basic": {
@@ -246,7 +246,7 @@
     },
     {
       "tier": 4,
-      "benefit": "The Bell Answers: Once/session, ring a bell and name a sin; all who share that sin within Near must test Resolve (DV 3) or admit it aloud.",
+      "benefit": "The Bell Answers: Once/session, ring a bell and name a sin; all who share that sin within Near must test Spirit + Endurance (DV 3) or admit it aloud.",
       "cost": "Echoing Skin: Your body remembers every burden carried; touching you inflicts 1 Fatigue on the other party."
     },
     {

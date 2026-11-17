@@ -56,7 +56,7 @@
         "FEAR"
       ],
       "materials": "A pinch of ash thrown upward, or a single breath spoken into a knot.",
-      "effect": "For one scene, when you speak a promise outdoors, any listener who hears it must test Resolve (DV 3) to lie about that promise. If you break your own promise, the GM gains 2 Story Beats to spend on a sky-related complication (lightning, sudden fog, a hawk stealing your food).",
+      "effect": "For one scene, when you speak a promise outdoors, any listener who hears it must test Spirit + Endurance (DV 3) to lie about that promise. If you break your own promise, the GM gains 2 Story Beats to spend on a sky-related complication (lightning, sudden fog, a hawk stealing your food).",
       "push_it": "The oath is witnessed by a passing storm — the liar suffers –2 dice to all rolls until they make amends under open sky. Mark 1 SB (Diamonds). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
       "requires": "Familiar (Invoke: 1 Boon).",
@@ -201,14 +201,14 @@
       "basic": {
         "name": "Storm-Reader's Stance",
         "xp": 5,
-        "description": "Once per scene while outdoors, gain +2 dice to Notice or Lore rolls related to weather, terrain, or approaching danger, as the sky itself seems to lean toward you with warning.",
+        "description": "Once per scene while outdoors, gain +2 dice to Insight or Lore rolls related to weather, terrain, or approaching danger, as the sky itself seems to lean toward you with warning.",
         "cost": "Passive",
         "prereq": "Wits 3+"
       },
       "advanced": {
         "name": "Thunder's Voice",
         "xp": 9,
-        "description": "Once per scene outdoors, your voice carries with the authority of rolling thunder. Gain +2 dice to Command or Intimidation, and the first target to defy you this scene must test Resolve (DV 3) or hesitate a beat before acting.",
+        "description": "Once per scene outdoors, your voice carries with the authority of rolling thunder. Gain +2 dice to Command or Intimidation, and the first target to defy you this scene must test Spirit + Endurance (DV 3) or hesitate a beat before acting.",
         "cost": "1 Fatigue",
         "prereq": "Tier II, Spirit 3+"
       },

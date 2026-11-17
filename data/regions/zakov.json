@@ -67,7 +67,7 @@
     "advance_on": [
       "A character accepts a bargain from the Salt Prince or a Syndicate factor (+1)",
       "A character uses a Serpent's Mark or a salt coin (+1)",
-      "A character fails a Resolve test while in Zakov (drowning dreams, crystalline whispers) (+1)",
+      "A character fails a Spirit + Endurance test while in Zakov (drowning dreams, crystalline whispers) (+1)",
       "The party lingers in the Sunken Quarter or the Serpent's Spine for more than a scene (+1)",
       "The party handles an Astroegro artifact without protective measures (+1)",
       "The party accepts aid from Naval Intelligence, the Oligarchs, or the Salt-Bitten (+1)"
@@ -221,7 +221,7 @@
       "subtitle": "[TRAVEL] [KNOWLEDGE]",
       "description": "A reef-ridden cut only locals dare; navigation as survival.",
       "flavor": "The reef has a name: the Serpent's Spine. It grows longer each year. At night, it sings — a harmonic hum that draws ships onto the crystal teeth. The Gray Lady's cutter knows the passages. The Oligarchs have bribed the reef-captains. The reef does not accept bribes.",
-      "mechanical_hook": "Navigating requires a successful Wits+Ride (DV 5) or a Reef Guide (costs 1 Supply)."
+      "mechanical_hook": "Navigating requires a successful Wits + Athletics (DV 5) or a Reef Guide (costs 1 Supply)."
     },
     {
       "rank": 6,
@@ -454,7 +454,7 @@
       "subtitle": "[DISASTER] [WEIGHT]",
       "description": "A rival syndicate burns it; your goods are inside.",
       "flavor": "The fire is green. It burns paper and wood — and secrets. The smoke leaves a crystalline residue on the skin. The residue hums. The Oligarchs' factors were seen leaving the scene. Naval Intelligence was seen arriving.",
-      "mechanical_hook": "Lose 1 Supply; a successful Wits+Investigate (DV 4) may reveal who started it."
+      "mechanical_hook": "Lose 1 Supply; a successful Wits + Insight (DV 4) may reveal who started it."
     },
     {
       "rank": 4,
@@ -544,7 +544,7 @@
       "subtitle": "[AUTHORITY] [COMBAT]",
       "description": "No ships in or out without a fight.",
       "flavor": "The blockade is a fae illusion. The ships are real. The captains are hollow. Something else steers. Their eyes are crystal. Their orders come from the deep. The Gray Lady commanded the blockade. She is looking for something.",
-      "mechanical_hook": "Running the blockade requires a successful Wits+Ride (DV 5); failure means capture."
+      "mechanical_hook": "Running the blockade requires a successful Wits + Athletics (DV 5); failure means capture."
     },
     {
       "rank": 14,

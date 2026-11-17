@@ -41,7 +41,7 @@
         {
           "cost": 1,
           "name": "Whisper the Ledger",
-          "effect": "Harperar recites a forgotten debt; a PC must test Resolve (DV 3) or mark 1 Fatigue."
+          "effect": "Harperar recites a forgotten debt; a PC must test Spirit + Endurance (DV 3) or mark 1 Fatigue."
         },
         {
           "cost": 2,
@@ -89,7 +89,7 @@
       ],
       "attacks": {
         "Manifestation": "DV 3, Fatigue 1",
-        "Touch of Silence": "Target cannot speak for one exchange (Resolve DV 4)"
+        "Touch of Silence": "Target cannot speak for one exchange (Spirit + Endurance DV 4)"
       },
       "complications": [
         "Cannot be reasoned with directly; it cannot speak"
@@ -139,7 +139,7 @@
       ],
       "attacks": {
         "Censer Strike": "DV 3, Harm 1 + Fatigue 1 (holy smoke)",
-        "Brand of Purity": "DV 4, Harm 1 + Shaken (Resolve DV 3)"
+        "Brand of Purity": "DV 4, Harm 1 + Shaken (Spirit + Endurance DV 3)"
       },
       "complications": [
         "Will not negotiate with heretics",
@@ -760,7 +760,7 @@
       "gm": "She has known the demon's name for three years but cannot speak it. This is her tragedy, not a plot convenience. If the party tries to pressure her for information, the demon speaks instead. Her moments of clarity are rare and precious—treat them as gifts, not guarantees. She is not the demon; she is its cage.",
       "player": "Livia Valerius plays the part everyone assumes: Possessed Child, Daughter of the Censor. Nothing about their manner invites a second look.",
       "revealed": false,
-      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "revealCondition": "When a player succeeds an Insight or Lore roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
       "tags": [
         "npc-secret"
       ]
@@ -771,7 +771,7 @@
       "gm": "His secret (the loan, the hidden interest rate) is the heart of the mystery. He will not confess it easily—shame and denial have calcified over three years. He needs to be confronted with evidence, not persuasion. When he breaks, it should feel like a dam bursting, not a casual admission. He is not evil; he is a man who made one terrible mistake and has been paying for it ever since.",
       "player": "Fabius Valerius plays the part everyone assumes: Censor, Father of Livia. Nothing about their manner invites a second look.",
       "revealed": false,
-      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "revealCondition": "When a player succeeds an Insight or Lore roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
       "tags": [
         "npc-secret"
       ]
@@ -782,7 +782,7 @@
       "gm": "His cameo is optional—he is the Invoker of The Witness, and his presence implies the party has earned the attention of something older than the Inquisition. His secret (he has forgotten his daughter's face) is a mirror to Fabius's story: both men have paid a price for their debts. If he appears, he should feel like a figure from a fable, not an ordinary NPC.",
       "player": "Saikou Ira (Optional Cameo) plays the part everyone assumes: Invoker of The Witness. Nothing about their manner invites a second look.",
       "revealed": false,
-      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "revealCondition": "When a player succeeds an Insight or Lore roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
       "tags": [
         "npc-secret"
       ]
@@ -793,7 +793,7 @@
       "gm": "He is a zealot, but he is not a monster. His secret (he knows the Ninth Citation and has used it twice) suggests a man who has seen too much and sleeps poorly. He can be bargained with if the party has leverage—but he will never betray his faith directly. He is a wall, not a door.",
       "player": "Flame-Warden Ervin plays the part everyone assumes: Inquisitor of the Everflame. Nothing about their manner invites a second look.",
       "revealed": false,
-      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "revealCondition": "When a player succeeds an Insight or Lore roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
       "tags": [
         "npc-secret"
       ]
@@ -804,7 +804,7 @@
       "gm": "She is an ally with an agenda. Her secret (she was conscripted at seven, she does not remember her name before the Temple) makes her sympathetic but also dangerous—she will sacrifice the party if it serves her goal of exposing the Inquisition. She is not trustworthy, but she is reliable in her own way.",
       "player": "Chain-Lantern Silva plays the part everyone assumes: Agent of the Quiet Seal. Nothing about their manner invites a second look.",
       "revealed": false,
-      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "revealCondition": "When a player succeeds an Insight or Lore roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
       "tags": [
         "npc-secret"
       ]

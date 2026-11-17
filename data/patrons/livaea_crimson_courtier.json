@@ -49,7 +49,7 @@
   "patrons_gift": {
     "name": "Word of Yearning",
     "description": "Once per scene as an action, a Runekeeper of Livaea may touch a held item (weapon, tool, or garment) and breathe a single word of yearning.",
-    "effect": "For the rest of the scene, the item grants +1 die to Sway or Performance rolls, and the first time each scene the bearer makes eye contact with a target they wish to charm, the target must test Resolve (DV 3) or be captivated (suffer –1 die to resist the bearer's next social action).",
+    "effect": "For the rest of the scene, the item grants +1 die to Sway or Performance rolls, and the first time each scene the bearer makes eye contact with a target they wish to charm, the target must test Spirit + Endurance (DV 3) or be captivated (suffer –1 die to resist the bearer's next social action).",
     "cost": "After the scene, the user marks +1 Obligation to Livaea."
   },
   "rites": [
@@ -128,7 +128,7 @@
       ],
       "materials": "Perfume or cosmetics applied ritually, preferably while humming a tune of longing.",
       "effect": "Assume perfect social poise and an aura of magnetic attraction. Gain +2 dice to Sway or Performance in refined settings. Your presence lingers in the memory like a half-remembered dream.",
-      "push_it": "Become the social centerpiece; all attention focuses on you with +1 Effect. Those who meet your gaze may feel a shiver of desire (Resolve DV 2 to ignore). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "push_it": "Become the social centerpiece; all attention focuses on you with +1 Effect. Those who meet your gaze may feel a shiver of desire (Spirit + Endurance DV 2 to ignore). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
       "requires": "Familiar + Codex (Invoke: 1 Boon).",
       "invoke": "1 action.",
@@ -149,8 +149,8 @@
         "DEBT"
       ],
       "materials": "A throne draped in scarlet, an assembled court (real or imagined), and a drop of blood from each participant mixed into wine – or a single tear of jealousy.",
-      "effect": "You become the social sovereign of the zone. For the scene: (a) You gain +1 Effect on all social rolls, and opponents suffer –1 die. (b) Anyone who attempts to deceive you must test Resolve (DV 4) or reveal a hidden desire – the one thing they crave most in the dark. (c) Allies who drink from the shared cup regain 1 Fatigue (the wine of adoration, warm and sweet on the tongue). Start a 10-segment Court Dominion timer; when it fills, you may declare one irrevocable social judgment (exile, scandal, or a binding oath of fealty) that the zone's inhabitants will enforce for one month. Those who defy it feel a phantom longing for your approval.",
-      "push_it": "Newcomers must test Resolve (DV 4) or become briefly devoted – they will follow one simple social command, such as 'introduce me to your patron' or 'whisper your lover's name in my ear.' Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "effect": "You become the social sovereign of the zone. For the scene: (a) You gain +1 Effect on all social rolls, and opponents suffer –1 die. (b) Anyone who attempts to deceive you must test Spirit + Endurance (DV 4) or reveal a hidden desire – the one thing they crave most in the dark. (c) Allies who drink from the shared cup regain 1 Fatigue (the wine of adoration, warm and sweet on the tongue). Start a 10-segment Court Dominion timer; when it fills, you may declare one irrevocable social judgment (exile, scandal, or a binding oath of fealty) that the zone's inhabitants will enforce for one month. Those who defy it feel a phantom longing for your approval.",
+      "push_it": "Newcomers must test Spirit + Endurance (DV 4) or become briefly devoted – they will follow one simple social command, such as 'introduce me to your patron' or 'whisper your lover's name in my ear.' Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
       "cost": "Mark +2 Obligation.",
       "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
       "invoke": "Extended action.",
@@ -189,12 +189,12 @@
       {
         "name": "The Perfume of Longing",
         "xp": 3,
-        "description": "Once per session, you may apply a perfume that lingers for the scene. Any creature within Near that smells it must test Resolve (DV 3) or suffer –1 die to resist your Sway or Performance actions."
+        "description": "Once per session, you may apply a perfume that lingers for the scene. Any creature within Near that smells it must test Spirit + Endurance (DV 3) or suffer –1 die to resist your Sway or Performance actions."
       },
       {
         "name": "The Kiss of Memory",
         "xp": 4,
-        "description": "When you kiss someone (on the lips, cheek, or hand), you may imprint a single, fleeting emotion on them – longing, regret, desire, or trust. This emotion lasts for the scene and grants +1 die to any social roll that exploits it. The target may resist with Resolve (DV 3)."
+        "description": "When you kiss someone (on the lips, cheek, or hand), you may imprint a single, fleeting emotion on them – longing, regret, desire, or trust. This emotion lasts for the scene and grants +1 die to any social roll that exploits it. The target may resist with Spirit + Endurance (DV 3)."
       }
     ]
   },
@@ -223,7 +223,7 @@
       "master": {
         "name": "Sovereign Allure",
         "xp": 12,
-        "effect": "Once per session, dominate a social gathering; all who meet your eyes must test Resolve (DV 5) or be captivated. You may also sever one emotional bond or promise of intimacy, releasing both parties from its hold.",
+        "effect": "Once per session, dominate a social gathering; all who meet your eyes must test Spirit + Endurance (DV 5) or be captivated. You may also sever one emotional bond or promise of intimacy, releasing both parties from its hold.",
         "cost": "After the scene, you gain a permanent Desire Scar (a faint red mark on your lips). You may ignore one obligation that would require you to reject a genuine advance—Livaea's mark ensures you are never truly unattached.",
         "prereq": "Tier III"
       }
@@ -258,7 +258,7 @@
     },
     {
       "tier": "6+",
-      "benefit": "Sovereign Allure: Once/session, dominate a social gathering; all who meet your eyes must test Resolve (DV 5) or be captivated.",
+      "benefit": "Sovereign Allure: Once/session, dominate a social gathering; all who meet your eyes must test Spirit + Endurance (DV 5) or be captivated.",
       "cost": "Addicted to Adoration: Mark +2 Obligation; suffer if denied praise or touch. Your lovers leave you, and you leave them, but the hunger never fades."
     }
   ],

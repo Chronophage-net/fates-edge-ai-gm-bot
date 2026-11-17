@@ -39,7 +39,7 @@
   "patrons_gift": {
     "name": "Lunara's Silver Word",
     "description": "Once per scene as an action, a Runekeeper of Lunara may touch a held item (weapon, tool, or mirror) and whisper a silver word.",
-    "effect": "For the rest of the scene, the item grants +1 die to Investigation or Stealth rolls made in dim light or darkness, and the first time each scene the bearer would be surprised by a hidden threat, they may roll Notice with +1 die (the moonlight warns them).",
+    "effect": "For the rest of the scene, the item grants +1 die to Insight or Stealth rolls made in dim light or darkness, and the first time each scene the bearer would be surprised by a hidden threat, they may roll Insight with +1 die (the moonlight warns them).",
     "cost": "After the scene, the user marks +1 Obligation to Lunara."
   },
   "rites": [
@@ -193,7 +193,7 @@
       "basic": {
         "name": "Maiden's Glance",
         "xp": 5,
-        "description": "Once per scene, study a person, object, or scene for a moment; gain +1 die to your next Investigation or Notice roll about it, as if seen by pale new light.",
+        "description": "Once per scene, study a person, object, or scene for a moment; gain +1 die to your next Insight roll about it, as if seen by pale new light.",
         "cost": "Passive",
         "prereq": "Wits 3+"
       },
@@ -207,7 +207,7 @@
       "master": {
         "name": "Crone's Verdict",
         "xp": 13,
-        "description": "Once per session, pass judgment on a lie spoken in your presence within the last scene. The speaker must test Resolve (DV 4) or publicly recant, their voice catching as if the moon itself withdrew its favor.",
+        "description": "Once per session, pass judgment on a lie spoken in your presence within the last scene. The speaker must test Spirit + Endurance (DV 4) or publicly recant, their voice catching as if the moon itself withdrew its favor.",
         "cost": "2 Fatigue and +1 Obligation to Lunara",
         "prereq": "Tier III, Wits 4+"
       }
@@ -242,7 +242,7 @@
     },
     {
       "tier": "6+",
-      "benefit": "Silver Ascendancy: Once per session, unveil hidden truths of an entire scene (+3 dice to perception/investigation).",
+      "benefit": "Silver Ascendancy: Once per session, unveil hidden truths of an entire scene (+3 dice to Insight).",
       "cost": "Bound to the Veil: Mark +2 Obligation. Your presence slips between worlds, inviting lunar forces to notice you."
     }
   ],

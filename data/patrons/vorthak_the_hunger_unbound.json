@@ -67,7 +67,7 @@
         "RISK"
       ],
       "materials": "A fragment of the thing to be consumed (food, substance, symbol); or an empty vessel or a place where something was devoured.",
-      "effect": "Choose one: (a) Metabolic Touch: Absorb an essential trait of the target. Gain +1 die to actions aligned with the absorbed property for one scene. (b) Hunger's Whisper: Sense what in the area may be consumed and the benefit it offers. Gain +1 die to Investigation when seeking consumable resources.",
+      "effect": "Choose one: (a) Metabolic Touch: Absorb an essential trait of the target. Gain +1 die to actions aligned with the absorbed property for one scene. (b) Hunger's Whisper: Sense what in the area may be consumed and the benefit it offers. Gain +1 die to Insight when seeking consumable resources.",
       "push_it": "(Whisper only) The hunger turns contagious: nearby feel your appetite; mark 1 SB (Clubs). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
       "requires": "Familiar (Invoke: 1 Boon).",
@@ -193,7 +193,7 @@
       {
         "name": "Hunger's Scent",
         "xp": 3,
-        "description": "You can smell the 'ripeness' of any object or creature—how much they have to offer to a hungry consumer. This grants +1 die to Appraise or Survival rolls when determining what is valuable to consume."
+        "description": "You can smell the 'ripeness' of any object or creature—how much they have to offer to a hungry consumer. This grants +1 die to Insight or Endurance rolls when determining what is valuable to consume."
       },
       {
         "name": "Metabolic Overdrive",
@@ -237,7 +237,7 @@
   "corruption": [
     {
       "tier": 1,
-      "benefit": "Hunger's Sight: +1 die to Notice consumable properties in objects, beings, or ideas.",
+      "benefit": "Hunger's Sight: +1 die to Insight consumable properties in objects, beings, or ideas.",
       "cost": "Metabolic Craving: Must consume something significant daily or suffer Fatigue 1."
     },
     {

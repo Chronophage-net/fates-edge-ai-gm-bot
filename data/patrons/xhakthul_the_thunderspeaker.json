@@ -39,7 +39,7 @@
   "patrons_gift": {
     "name": "Xhak'Thul's Blessing",
     "description": "Once per scene as an action, a Runekeeper of Xhak'Thul may touch a held item (weapon, shield, or drum) and whisper a thunder-name.",
-    "effect": "For the rest of the scene, the item grants +1 die to Intimidation or Command rolls, and the first time each scene the bearer would be surprised or lose initiative, they may act as if they were not surprised (the storm warns them).",
+    "effect": "For the rest of the scene, the item grants +1 die to Intimidation or Presence + Sway rolls, and the first time each scene the bearer would be surprised or lose initiative, they may act as if they were not surprised (the storm warns them).",
     "cost": "After the scene, the user marks +1 Obligation to Xhak'Thul."
   },
   "rites": [
@@ -57,7 +57,7 @@
         "PRESSURE"
       ],
       "materials": "A drum made from storm-felled wood or any suitable improvised percussion.",
-      "effect": "Your presence becomes overwhelming. All NPCs within Near range must test Resolve (DV 2) or suffer –1 die to social actions due to awe or terror for the scene. Allies gain +1 die to Intimidation or Command actions.",
+      "effect": "Your presence becomes overwhelming. All NPCs within Near range must test Spirit + Endurance (DV 2) or suffer –1 die to social actions due to awe or terror for the scene. Allies gain +1 die to Intimidation or Command actions.",
       "push_it": "Extend the effect to Far range, but you mark 1 Fatigue and mark 1 SB (Hearts) as your presence becomes difficult to control. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
       "requires": "Familiar (Invoke: 1 Boon).",
@@ -141,7 +141,7 @@
         "WEATHER"
       ],
       "materials": "A drum fashioned from lightning-struck wood, with a hide from a beast killed by natural force.",
-      "effect": "You become an incarnation of the storm for one scene: Gain +2 dice to rolls based on strength, speed, and intimidation. Your anger echoes as thunder; attacks against you may be answered by lightning (GM decides, usually 1 SB and Harm 1 to the attacker). Enemies must test Resolve at –2 dice to resist Fear effects you create. Start a 6-segment Natural Disasters timer; when it fills, the storm's wrath manifests as a random environmental hazard (landslide, lightning strike, flash flood).",
+      "effect": "You become an incarnation of the storm for one scene: Gain +2 dice to rolls based on strength, speed, and intimidation. Your anger echoes as thunder; attacks against you may be answered by lightning (GM decides, usually 1 SB and Harm 1 to the attacker). Enemies must test Spirit + Endurance at –2 dice to resist Fear effects you create. Start a 6-segment Natural Disasters timer; when it fills, the storm's wrath manifests as a random environmental hazard (landslide, lightning strike, flash flood).",
       "push_it": "The transformation lingers after the scene, and your emotional state causes minor environmental effects (windows rattle, small fires flicker). Mark 2 SB (Diamonds) and advance the timer by 2 segments. Cost: Mark +1 Obligation (total +4) or Mark +1 Fatigue.",
       "cost": "Mark +3 Obligation.",
       "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
@@ -169,7 +169,7 @@
     "tools": {
       "storm_drum": {
         "name": "The Storm-Drum",
-        "description": "A hand-drum made from lightning-struck wood and the hide of an animal killed by a natural disaster (flood, fire, landslide). The drum's surface is painted with a spiral that represents the eye of the storm. Once per session, the witch may strike the drum with a single, thunderous beat. All creatures within Near range must test Resolve (DV 3) or be Shaken (–1 die to all actions) for one exchange. The drum can also be used to 'call the storm' — beating a steady rhythm for a full minute (out of combat) grants +1 die to all weather-related rolls for the next hour."
+        "description": "A hand-drum made from lightning-struck wood and the hide of an animal killed by a natural disaster (flood, fire, landslide). The drum's surface is painted with a spiral that represents the eye of the storm. Once per session, the witch may strike the drum with a single, thunderous beat. All creatures within Near range must test Spirit + Endurance (DV 3) or be Shaken (–1 die to all actions) for one exchange. The drum can also be used to 'call the storm' — beating a steady rhythm for a full minute (out of combat) grants +1 die to all weather-related rolls for the next hour."
       }
     },
     "hedge_gifts": [
@@ -181,7 +181,7 @@
       {
         "name": "The Crack of Thunder",
         "xp": 2,
-        "description": "When you speak or shout, your voice carries unnaturally far, mimicking the rumble of distant thunder. You can be heard by any willing listener within Far range without rolling. Additionally, you gain +1 die to Intimidation rolls when using your voice as a weapon. Passive."
+        "description": "When you speak or shout, your voice carries unnaturally far, mimicking the rumble of distant thunder. You can be heard by any willing listener within Far range without rolling. Additionally, you gain +1 die to Presence + Sway rolls when using your voice as a weapon. Passive."
       },
       {
         "name": "Storm-Reader",
@@ -206,7 +206,7 @@
       "basic": {
         "name": "Thunder Palm",
         "xp": 5,
-        "description": "Unarmed strike deals +1 Harm and forces a Resolve test (DV 3) or the target loses their next minor action. The thunder's echo lingers in their bones.",
+        "description": "Unarmed strike deals +1 Harm and forces a Spirit + Endurance test (DV 3) or the target loses their next minor action. The thunder's echo lingers in their bones.",
         "cost": "1 Fatigue",
         "prereq": "Body 3+"
       },
@@ -220,7 +220,7 @@
       "master": {
         "name": "Eye of the Storm",
         "xp": 12,
-        "description": "Once per session, become the calm center of a supernatural storm for one scene. Allies within Near ignore fear and weather penalties. You gain +2 dice to physical and intimidation rolls, and any enemy that attacks you suffers a lightning counter (Harm 1, ignores armor). After the scene, you collapse with Fatigue 3. Gain a permanent Debt Scar — a lightning-bolt pattern on your chest — but you may ignore one forced Obligation or debt call (the creditor sees only static).",
+        "description": "Once per session, become the calm center of a supernatural storm for one scene. Allies within Near ignore fear and weather penalties. You gain +2 dice to physical and Presence + Sway rolls, and any enemy that attacks you suffers a lightning counter (Harm 1, ignores armor). After the scene, you collapse with Fatigue 3. Gain a permanent Debt Scar — a lightning-bolt pattern on your chest — but you may ignore one forced Obligation or debt call (the creditor sees only static).",
         "cost": "2 Fatigue and +1 Obligation to Xhak'Thul",
         "prereq": "Tier III, Body 4+"
       }

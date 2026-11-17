@@ -581,7 +581,7 @@
       "name": "Maestra Pann",
       "role": "Ringmaster",
       "motivation": "Growth, clean shows, no scandal",
-      "stats": "Presence 4, Sway 3, Command 3",
+      "stats": "Presence 4, Sway 3",
       "secret": "She is the carnival's heart—and its prisoner. She did not choose this life. The calliope chose her.",
       "tell": "Two-finger bell count before a hard turn."
     },
@@ -590,7 +590,7 @@
       "name": "Mr. Vellum",
       "role": "Ledger-Clerk",
       "motivation": "Balanced books (on their terms)",
-      "stats": "Wits 4, Lore 3, Investigation 3",
+      "stats": "Wits 4, Lore 3, Insight 3",
       "secret": "He was a Silkstrand notary who made a wish he couldn't afford. Now he writes the carnival's prices.",
       "tell": "Checks quill nib before lying."
     },
@@ -771,7 +771,7 @@
       "gm": "Do not reveal she is a prisoner of the calliope until Act III. In Acts I-II, present her as a confident, commanding ringmaster. She may hint at 'the weight of the show' but never explicitly say she cannot leave.",
       "player": "Maestra Pann plays the part everyone assumes: Ringmaster. Nothing about their manner invites a second look.",
       "revealed": false,
-      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "revealCondition": "When a player succeeds an Insight or Lore roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
       "tags": [
         "npc-secret"
       ]
@@ -782,7 +782,7 @@
       "gm": "His past as a Silkstrand notary who made a wish he couldn't afford is a clue players can discover via investigation (e.g., reading the Ledger Wagon or questioning him directly). Do not offer this freely in Act I. He is simply 'the ledger-clerk' until players dig deeper.",
       "player": "Mr. Vellum plays the part everyone assumes: Ledger-Clerk. Nothing about their manner invites a second look.",
       "revealed": false,
-      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "revealCondition": "When a player succeeds an Insight or Lore roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
       "tags": [
         "npc-secret"
       ]
@@ -793,7 +793,7 @@
       "gm": "Her origin as a Thepyrgos academic who craved popularity is a tragic backstory, not a front-facing threat. In Acts I-II, she is the 'sugared enchantress' who feeds desire. Her academic past should only surface if players research her or push her emotionally.",
       "player": "The Cotton Witch plays the part everyone assumes: Livaea-touched Enchantress. Nothing about their manner invites a second look.",
       "revealed": false,
-      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "revealCondition": "When a player succeeds an Insight or Lore roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
       "tags": [
         "npc-secret"
       ]
@@ -804,7 +804,7 @@
       "gm": "Their secret—that they serve Mab and the carnival is their only escape from endless etiquette—is a sympathetic vulnerability. Do not reveal this unless players earn their trust or witness a moment of private exhaustion.",
       "player": "Harlequin of Courts plays the part everyone assumes: Mab's Envoy. Nothing about their manner invites a second look.",
       "revealed": false,
-      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "revealCondition": "When a player succeeds an Insight or Lore roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
       "tags": [
         "npc-secret"
       ]
@@ -815,7 +815,7 @@
       "gm": "Their origin as foundlings raised in the tents is not a secret to hide, but it's also not something they volunteer. They have never known a world without the calliope; this colors their worldview. Reveal it naturally if the party forms a bond with them.",
       "player": "The Ticket Twins plays the part everyone assumes: Ushers. Nothing about their manner invites a second look.",
       "revealed": false,
-      "revealCondition": "When a player succeeds an Investigation, Lore, or Insight roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
+      "revealCondition": "When a player succeeds an Insight or Lore roll against them, when they're confronted directly with contradicting evidence, or when the story naturally reaches this secret's planned reveal beat.",
       "tags": [
         "npc-secret"
       ]

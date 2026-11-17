@@ -390,7 +390,7 @@
               "dv": 5,
               "outcomes": {
                 "clean": "The cathedral's outer defenders fall. The path to the rift is clear.",
-                "partial": "The defenders fall, but Malachai's free arm lashes out at the nearest PC — Resolve DV 5 or take Harm 2 (Mental) and gain a minor curse.",
+                "partial": "The defenders fall, but Malachai's free arm lashes out at the nearest PC — Spirit + Endurance DV 5 or take Harm 2 (Mental) and gain a minor curse.",
                 "miss": "The party is pinned down; Collector Prime arrives to reinforce the defenders."
               }
             }
@@ -540,7 +540,7 @@
       "name": "Sister Vorna",
       "role": "Winter of the Cord, Wounded Survivor",
       "motivation": "Rebuild something from the wreckage of her coven; keep faith with the party even as her faith in the Cord curdles",
-      "stats": "Presence 3, Lore 4, Resolve 4",
+      "stats": "Presence 3, Lore 4, Endurance 4",
       "secret": "She no longer believes the Needle was mercy. She has not said this aloud to another Daughter, and saying it to the party first is a genuine risk for her."
     },
     {
@@ -564,7 +564,7 @@
       "name": "Malachai",
       "role": "The Chained Angel, chained but no longer wholly contained",
       "motivation": "Break fully free of the Aetherium chain and finish what the rift started",
-      "stats": "Spirit 6, Presence 5, Resolve 6",
+      "stats": "Spirit 6, Presence 5, Endurance 6",
       "secret": "One arm free is enough for her to reach the Worn's minds directly. She is patient; she has already won more than the party realizes."
     },
     {
@@ -830,7 +830,7 @@
         {
           "cost": 2,
           "name": "Echo of the Thread",
-          "effect": "Target must test Resolve (DV 4) or be shaken (-1 die to their next roll)."
+          "effect": "Target must test Spirit + Endurance (DV 4) or be shaken (-1 die to their next roll)."
         }
       ],
       "lore": "It was the first Silent One to speak in a decade, and what it chose to say was 'yes' to Malachai. It does not regret this. It does not feel much of anything anymore, which it describes, when pressed, as a kindness.",

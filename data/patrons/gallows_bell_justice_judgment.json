@@ -75,7 +75,7 @@
       ],
       "materials": "A small brass scale touched briefly to the chest.",
       "effect": "Sense if the target acts against their nature or oath. Gain +1 die when pressing them.",
-      "push_it": "Target must test Resolve (DV 3) or disclose a hidden conflict. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "push_it": "Target must test Spirit + Endurance (DV 3) or disclose a hidden conflict. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
       "requires": "Familiar (Invoke: 1 Boon).",
       "invoke": "1 action.",
@@ -95,7 +95,7 @@
       ],
       "materials": "A set of scales inscribed with runes of parity.",
       "effect": "Exchange a burden between two willing parties (Harm for Fatigue, Debt for Favor, etc.). Both gain +1 die to cooperate.",
-      "push_it": "May compel an unwilling exchange with contested Command + Wits. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "push_it": "May compel an unwilling exchange with contested Presence + Sway. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
       "requires": "Familiar + Codex (Invoke: 1 Boon).",
       "invoke": "1 action.",
@@ -193,7 +193,7 @@
     "description": "Monks of the Iron Clapper serve as the Bell's hands where its voice cannot reach — traveling arbiters who walk into feuds, blood-debts, and broken contracts and render judgment where no court exists. They train in stillness first, learning to hold silence the way a bell holds its shape until struck, and in speech second, learning that a verdict spoken once, calmly, carries more weight than a threat repeated. Their order maintains way-stations at crossroads throughout the land, each marked by a single unstruck bell.",
     "color": "#4a4a55",
     "quote": "What is broken must be mended, what is owed must be paid.",
-    "prerequisites": "Presence 3+, Resolve 2+, Rite of the Measured Debt or Cantor of the Gallows Bell.",
+    "prerequisites": "Presence 3+, Endurance 2+, Rite of the Measured Debt or Cantor of the Gallows Bell.",
     "debt_resistant_frame": "A debt weighed honestly cannot be doubled by trickery. Monks of the Iron Clapper gain +1 die to resist any magical debt, geas, or contract whose terms were misrepresented or concealed at the time of swearing. If they succeed, the deceptive clause is struck as though it were never spoken — the Bell does not honor a lie.",
     "techniques": {
       "basic": {
@@ -208,7 +208,7 @@
         "xp": 9,
         "description": "Once per scene, when adjudicating a dispute or delivering a verdict, gain +2 dice to Command or Insight, and the first attempt to intimidate or bribe you away from a fair ruling automatically fails.",
         "cost": "1 Fatigue",
-        "prereq": "Tier II, Resolve 3+"
+        "prereq": "Tier II, Endurance 3+"
       },
       "master": {
         "name": "The Final Toll",

@@ -217,7 +217,7 @@
       "subtitle": "[TRAVEL] [OATH]",
       "description": "Concentric circles of wagon shelters; fires lit inward, watch posts on ox carts. The outer ring is where the desperate sleep.",
       "flavor": "The inner ring is for sworn allies. Outsiders sleep in the second ring, uneasy—and a knife in the boot. The outermost ring is for those who have nowhere else to go. They are the Gate's preferred prey.",
-      "mechanical_hook": "Rest in the outer ring; a successful Resolve test (DV 4) avoids a night ambush. Inner ring grants safe rest. The outermost ring is Desperate; on a miss, something visits your camp."
+      "mechanical_hook": "Rest in the outer ring; a successful Spirit + Endurance test (DV 4) avoids a night ambush. Inner ring grants safe rest. The outermost ring is Desperate; on a miss, something visits your camp."
     },
     {
       "rank": 7,
@@ -280,7 +280,7 @@
       "subtitle": "[STEALTH] [TABOO]",
       "description": "Earthen tunnels below the bazaar; root-walled, bone-dusted. The tunnels are said to lead to the Gate's foundation.",
       "flavor": "The walls are packed with bone dust and old burrows. The dead whisper route tips—for a price. The trade is never silver. The tunnels are the Cult's territory; the Shedder's children guard them.",
-      "mechanical_hook": "Gain a stealthy route through the bazaar, but test Resolve (DV 4) to avoid becoming lost or haunted. On a miss, gain a Contamination Token from the Cult.",
+      "mechanical_hook": "Gain a stealthy route through the bazaar, but test Spirit + Endurance (DV 4) to avoid becoming lost or haunted. On a miss, gain a Contamination Token from the Cult.",
       "gm_note": "Bone dust in the walls, tunnels that are said to reach the foundation. Every route through comes out somewhere slightly further from where it should. Let the party succeed at navigating and arrive late anyway."
     },
     {
@@ -489,7 +489,7 @@
       "subtitle": "[WEATHER] [DISASTER]",
       "description": "Wind-whipped flame from the east; evacuations, scorched trade paths.",
       "flavor": "The smoke spells a name. Yours. Or your enemy's. Hard to tell. The fire moves against the wind. The Gate is laughing.",
-      "mechanical_hook": "You must flee; test Ride or Athletics (DV 5). On failure, lose 1 Supply and gain 1 Fatigue."
+      "mechanical_hook": "You must flee; test Body + Athletics (DV 5). On failure, lose 1 Supply and gain 1 Fatigue."
     },
     {
       "rank": 7,
@@ -841,9 +841,9 @@
     ]
   },
   "pursuit_ladder": [
-    "**Advance/Withdraw (Wits + Ride):** On a hit, shift one band. On a strong hit, also impose *Dust Cloud*.",
+    "**Advance/Withdraw (Wits + Athletics):** On a hit, shift one band. On a strong hit, also impose *Dust Cloud*.",
     "**Cut the Herd (Presence + Sway):** On a hit, freeze range for one exchange; if a Grass Right is in your possession, +1 die.",
-    "**Weather the Stampede (Endurance + Survival):** On a hit in *Horse Sickness*, you pick which mount survives; on a miss, the GM does."
+    "**Weather the Stampede (Body + Endurance):** On a hit in *Horse Sickness*, you pick which mount survives; on a miss, the GM does."
   ],
   "boss_archetypes": [
     {

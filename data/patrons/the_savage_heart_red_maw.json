@@ -75,7 +75,7 @@
         "TRACK"
       ],
       "materials": "A fresh kill's blood smeared on your face.",
-      "effect": "You scent the air like a beast. Gain +2 dice to Investigation or Survival when tracking by smell. You may also detect fear — you sense if a creature within Near is Frightened.",
+      "effect": "You scent the air like a beast. Gain +2 dice to Insight or Survival when tracking by smell. You may also detect fear — you sense if a creature within Near is Frightened.",
       "push_it": "Your sense expands to Far, but you are overwhelmed by the smell of blood; mark 1 SB (Hearts) and suffer –1 die to social rolls until the end of the scene. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
       "requires": "Familiar (Invoke: 1 Boon).",
@@ -176,7 +176,7 @@
       {
         "name": "Claw Ward",
         "xp": 3,
-        "description": "Once per session, draw a line of ash and blood before a threshold. For the rest of the scene, any predator (mundane or supernatural) attempting to cross it must test Resolve (DV 3) or turn away, unnerved by an unseen larger presence."
+        "description": "Once per session, draw a line of ash and blood before a threshold. For the rest of the scene, any predator (mundane or supernatural) attempting to cross it must test Spirit + Endurance (DV 3) or turn away, unnerved by an unseen larger presence."
       },
       {
         "name": "Sinew Binding",
@@ -240,7 +240,7 @@
     },
     {
       "tier": 5,
-      "benefit": "Alpha's Roar: Once/session, make a terrifying sound that forces all nearby prey to test Resolve (DV 4) or flee.",
+      "benefit": "Alpha's Roar: Once/session, make a terrifying sound that forces all nearby prey to test Spirit + Endurance (DV 4) or flee.",
       "cost": "Lone Wolf: –2 dice to cooperate with those who have not proven themselves in battle."
     },
     {

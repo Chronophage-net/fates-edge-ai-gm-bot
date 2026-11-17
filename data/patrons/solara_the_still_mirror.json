@@ -38,7 +38,7 @@
   "patrons_gift": {
     "name": "The Word of Seeing",
     "description": "Once per scene as an action, a Runekeeper of Solara may touch a held item (weapon, tool, or garment) and breathe a single word of 'see'.",
-    "effect": "For the rest of the scene, the item grants +1 die to Sway or Medicine rolls, and the first time each scene the bearer engages in a ritual of mutual witnessing with a target they wish to comfort (prolonged eye-contact seeking understanding, sharing a hard truth and listening), the target must test Resolve (DV 3) or feel a wave of profound relief (suffer –1 die to resist the bearer's next supportive action).",
+    "effect": "For the rest of the scene, the item grants +1 die to Sway or Craft rolls, and the first time each scene the bearer engages in a ritual of mutual witnessing with a target they wish to comfort (prolonged eye-contact seeking understanding, sharing a hard truth and listening), the target must test Spirit + Endurance (DV 3) or feel a wave of profound relief (suffer –1 die to resist the bearer's next supportive action).",
     "cost": "After the scene, the user marks +1 Obligation to Solara."
   },
   "rites": [
@@ -116,8 +116,8 @@
         "SOCIAL"
       ],
       "materials": "A stone held during shared silence, or a garment worn that feels like a second skin.",
-      "effect": "Assume an aura of profound calm and magnetic authenticity. Gain +2 dice to Sway or Medicine in settings of distress or vulnerability. Your presence lingers in the memory like a safe harbor remembered in storm.",
-      "push_it": "Become the emotional anchor; all who seek comfort gravitate toward you with +1 Effect. Those who confide in you may feel a shiver of relief (Resolve DV 2 to resist sharing deeper burdens). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "effect": "Assume an aura of profound calm and magnetic authenticity. Gain +2 dice to Sway or Craft (medicine) in settings of distress or vulnerability. Your presence lingers in the memory like a safe harbor remembered in storm.",
+      "push_it": "Become the emotional anchor; all who seek comfort gravitate toward you with +1 Effect. Those who confide in you may feel a shiver of relief (Spirit + Endurance DV 2 to resist sharing deeper burdens). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
       "requires": "Familiar + Codex (Invoke: 1 Boon).",
       "invoke": "1 action.",
@@ -138,8 +138,8 @@
         "DEBT"
       ],
       "materials": "A circle of stones, each touched by a participant's tear during a truth shared; a bowl of water where each person has gazed into their reflection; a length of silk woven from threads spun in mutual silence.",
-      "effect": "You become the heart of a witnessing zone. For the scene: you gain +1 Effect on all social rolls focused on truth-sharing or healing, and opponents suffer –1 die when attempting to sow deception or distraction. Anyone who attempts to deceive you about their emotional state must test Resolve (DV 4) or reveal a hidden pain (–1 die on their next action as guilt wells up). Allies who share a ritual of mutual witnessing regain 1 Fatigue. Start a 10-segment Circle of Witness timer; when it fills, you may declare one irrevocable communal judgment that the zone's inhabitants will uphold for one month.",
-      "push_it": "Newcomers must test Resolve (DV 4) or become briefly inclined toward witnessing. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
+      "effect": "You become the heart of a witnessing zone. For the scene: you gain +1 Effect on all social rolls focused on truth-sharing or healing, and opponents suffer –1 die when attempting to sow deception or distraction. Anyone who attempts to deceive you about their emotional state must test Spirit + Endurance (DV 4) or reveal a hidden pain (–1 die on their next action as guilt wells up). Allies who share a ritual of mutual witnessing regain 1 Fatigue. Start a 10-segment Circle of Witness timer; when it fills, you may declare one irrevocable communal judgment that the zone's inhabitants will uphold for one month.",
+      "push_it": "Newcomers must test Spirit + Endurance (DV 4) or become briefly inclined toward witnessing. Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
       "cost": "Mark +2 Obligation.",
       "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
       "invoke": "Extended action.",
@@ -183,7 +183,7 @@
       {
         "name": "Held Breath",
         "xp": 4,
-        "description": "Once per session, sit in silence with a distressed person for one uninterrupted minute (no talking, no rolling). At the end, they clear 1 Fatigue and gain +1 die to their next Resolve test against fear or despair."
+        "description": "Once per session, sit in silence with a distressed person for one uninterrupted minute (no talking, no rolling). At the end, they clear 1 Fatigue and gain +1 die to their next Spirit + Endurance test against fear or despair."
       }
     ]
   },
@@ -198,14 +198,14 @@
       "basic": {
         "name": "Unflinching Gaze",
         "xp": 5,
-        "description": "Once per scene, meet a target's eyes and hold them for a full exchange. The target must test Resolve (DV 3) or be unable to lie to you for the rest of the scene.",
+        "description": "Once per scene, meet a target's eyes and hold them for a full exchange. The target must test Spirit + Endurance (DV 3) or be unable to lie to you for the rest of the scene.",
         "cost": "1 Fatigue",
         "prereq": "Presence 3+"
       },
       "advanced": {
         "name": "The Still Point",
         "xp": 8,
-        "description": "Assume an aura of profound calm and magnetic authenticity. Gain +2 dice to Sway or Medicine in settings of distress or vulnerability for the scene.",
+        "description": "Assume an aura of profound calm and magnetic authenticity. Gain +2 dice to Sway or Craft (medicine) in settings of distress or vulnerability for the scene.",
         "cost": "1 Boon",
         "prereq": "Tier II"
       },
@@ -222,7 +222,7 @@
   "corruption": [
     {
       "tier": 1,
-      "benefit": "Witness's Touch: +1 die to Medicine or Sway when witnessing or comforting.",
+      "benefit": "Witness's Touch: +1 die to Craft (medicine) or Sway when witnessing or comforting.",
       "cost": "Need to Be Seen: –1 die when acting without genuine connection or mutual recognition."
     },
     {
@@ -247,7 +247,7 @@
     },
     {
       "tier": "6+",
-      "benefit": "Sovereign Stillness: Once/session, dominate a gathering in crisis; all who meet your eyes must test Resolve (DV 5) or feel compelled to seek your calm.",
+      "benefit": "Sovereign Stillness: Once/session, dominate a gathering in crisis; all who meet your eyes must test Spirit + Endurance (DV 5) or feel compelled to seek your calm.",
       "cost": "The Empty Mirror: Mark +2 Obligation; suffer if denied the chance to hold space for witnessing. Your presence becomes a void when you cannot give — and you cannot stop trying to fill the silence."
     }
   ],

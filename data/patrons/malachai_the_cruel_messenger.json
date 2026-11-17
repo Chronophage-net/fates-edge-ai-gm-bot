@@ -29,7 +29,7 @@
   "runekeeper_options": {
     "thiasos": {
       "description": "Malachai's Thiasos is a small creature touched by her corruption: a black rat with one red eye that gnaws at the bars of its cage, a crow with a broken feather that always points toward the nearest corpse, a toad that secretes a toxin causing fever dreams, a small bat that drinks blood from a silver dish, or a moth whose wing dust leaves a rash that itches for a week.",
-      "care": "Beyond its ordinary care, this Thiasos must be given a small sacrifice of pain (a pinprick, a pinch of salt in a wound) each day. If that need goes unmet, the Thiasos becomes Compromised: it grows sullen and its aura of despair thickens, imposing –1 die on all Resolve rolls for its bearer until a proper curse is laid."
+      "care": "Beyond its ordinary care, this Thiasos must be given a small sacrifice of pain (a pinprick, a pinch of salt in a wound) each day. If that need goes unmet, the Thiasos becomes Compromised: it grows sullen and its aura of despair thickens, imposing –1 die on all Spirit + Endurance test for its bearer until a proper curse is laid."
     },
     "codex": {
       "description": "No Codex of Malachai takes the form of a book of hope. It may be a chain of iron links, each etched with a curse; a box of cracked bells that toll when a Rite is spoken; a scroll of skin from a sinner who died unshriven; or a set of silver nails driven into a board, each nail a promise broken.",
@@ -193,7 +193,7 @@
     "name": "The Order of the Unshriven",
     "description": "Monks of the Unshriven Order train in places others abandon — plague wards, execution grounds, the cells beneath courthouses. They believe that suffering, faced honestly and without flinching, is the only true purification, and that Malachai's curses are simply the world's ledger made visible. Their discipline is grim and exact: they learn to carry pain without breaking, to inflict it without cruelty, and to recognize when a curse has become a mercy in disguise.",
     "color": "#7a1f1f",
-    "prerequisites": "Spirit 3+, Resolve 2+, Rite of the Honeyed Binding or Cantor of Malachai.",
+    "prerequisites": "Spirit 3+, Endurance 2+, Rite of the Honeyed Binding or Cantor of Malachai.",
     "quote": "We are the knife that cuts the rot.",
     "debt_resistant_frame": "The Unshriven have already paid their worst debts in advance, in pain freely offered. Monks gain +1 die to resist any curse, geas, or Obligation that would be inflicted upon them involuntarily. If they succeed, the curse instead marks a small, visible toll on the one who tried to inflict it — a bruise, a cough, a moment of their own despair made plain.",
     "techniques": {
@@ -202,7 +202,7 @@
         "xp": 5,
         "description": "Once per scene, mark 1 Fatigue to gain +2 dice on a single roll to endure, resist, or push through pain, fear, or a supernatural affliction.",
         "cost": "1 Fatigue",
-        "prereq": "Resolve 2+"
+        "prereq": "Endurance 2+"
       },
       "advanced": {
         "name": "Reader of Debts",
@@ -224,7 +224,7 @@
   "corruption": [
     {
       "tier": 1,
-      "benefit": "Sharpened Senses: +1 die to Notice in dim light.",
+      "benefit": "Sharpened Senses: +1 die to Insight in dim light.",
       "cost": "Unsettling Presence: –1 die to social warmth checks."
     },
     {

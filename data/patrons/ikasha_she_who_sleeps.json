@@ -60,7 +60,7 @@
         "SHADOW"
       ],
       "materials": "A candle snuffed with a whisper.",
-      "effect": "You step into the space between notices. Gain +1 die to a single Stealth or Subterfuge roll, and if you succeed, you may also declare one minor detail 'forgotten' by any observer (e.g., 'they don't remember my face,' 'they left the key in the lock').",
+      "effect": "You step into the space between notices. Gain +1 die to a single Stealth or Deception roll, and if you succeed, you may also declare one minor detail 'forgotten' by any observer (e.g., 'they don't remember my face,' 'they left the key in the lock').",
       "push_it": "Extend the effect to one ally within Near, but your shadow lingers independently for a moment – the GM gains 1 SB (Diamonds) as evidence remains. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
       "requires": "Familiar (Invoke: 1 Boon).",
@@ -100,7 +100,7 @@
         "BOOST"
       ],
       "materials": "Water gathered on a moonless night, held in a black vessel.",
-      "effect": "Draw on deep reserves of patience and shadow. Choose one: Gain +2 dice on your next Stealth, Deception, or Resolve roll; Clear 1 Fatigue from yourself or a touched ally; Gain one free success on an attempt to escape restraint or pursuit (no roll needed).",
+      "effect": "Draw on deep reserves of patience and shadow. Choose one: Gain +2 dice on your next Stealth, Deception, or Spirit + Endurance test; Clear 1 Fatigue from yourself or a touched ally; Gain one free success on an attempt to escape restraint or pursuit (no roll needed).",
       "push_it": "Apply two benefits instead of one, but you mark +1 Obligation and the GM gains 1 SB (Clubs) as the shadow's debt comes due. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
       "requires": "Familiar + Codex (Invoke: 1 Boon).",
@@ -121,7 +121,7 @@
         "READ"
       ],
       "materials": "A key that has never been used, bent in a circle, or a lock of hair / personal token / name written on black paper.",
-      "effect": "Choose one: Unlatched Door: Persuade a mundane threshold to open. One lock, seal, or barrier (door, chain, shutter, even a pursuer's grip) opens or loosens as if never secured. Does not work on magical wards. Secret Keeper: Compel a truthful answer to one direct question about a secret the target knows. They resist with Resolve (DV 4). On failure, they answer truthfully (cryptically permitted). On success, they suffer 1 Fatigue from concealment.",
+      "effect": "Choose one: Unlatched Door: Persuade a mundane threshold to open. One lock, seal, or barrier (door, chain, shutter, even a pursuer's grip) opens or loosens as if never secured. Does not work on magical wards. Secret Keeper: Compel a truthful answer to one direct question about a secret the target knows. They resist with Spirit + Endurance (DV 4). On failure, they answer truthfully (cryptically permitted). On success, they suffer 1 Fatigue from concealment.",
       "push_it": "If you chose Unlatched Door, you may also silence any noise the opening makes, but the threshold 'remembers' you – the GM gains 1 SB (Spades) for a later complication. If you chose Secret Keeper, you also learn a hidden emotion or related secret (GM's choice), but the target learns one of your secrets – the GM gains 1 SB (Hearts) to reveal it later. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
       "requires": "Familiar + Codex (Invoke: 1 Boon).",
@@ -171,7 +171,7 @@
     "tools": {
       "ravens_quill": {
         "name": "The Raven's Quill",
-        "description": "A quill carved from a raven's primary feather, dipped not in ink but in the absence of light. Once per session, when used to write a name on a threshold (a doorframe, a gatepost, a windowsill), that name becomes 'forgotten' for a scene: the person whose name is written cannot be perceived by those who cross that threshold until they succeed on a Resolve test (DV 3). The quill can also erase a single word from a written document (it becomes a smudge of shadow)."
+        "description": "A quill carved from a raven's primary feather, dipped not in ink but in the absence of light. Once per session, when used to write a name on a threshold (a doorframe, a gatepost, a windowsill), that name becomes 'forgotten' for a scene: the person whose name is written cannot be perceived by those who cross that threshold until they succeed on a Spirit + Endurance test (DV 3). The quill can also erase a single word from a written document (it becomes a smudge of shadow)."
       }
     },
     "hedge_gifts": [
@@ -261,7 +261,7 @@
     },
     {
       "tier": 2,
-      "benefit": "Umbral Sight: Once per scene, gain +2 dice to Notice hidden threats or ambushes in dim light.",
+      "benefit": "Umbral Sight: Once per scene, gain +2 dice to Insight hidden threats or ambushes in dim light.",
       "cost": "Light Sensitivity: –1 die to rolls requiring keen vision in bright conditions."
     },
     {

@@ -117,7 +117,7 @@
         "CURSE"
       ],
       "materials": "A drop of venom from a serpent that has shed its skin within the last day.",
-      "effect": "Inflict or cure through poison's paradox. Choose one: Cursed Venom: Touch a creature and inject venom. They suffer +1 Harm (poison) and must test Resolve (DV 4) or gain the Poisoned Condition (–1 die to physical actions until cured). Mercy's Antidote: Touch a poisoned or diseased creature. The venom neutralizes the malady; remove one Poisoned or Diseased Condition, and the target clears 1 Fatigue.",
+      "effect": "Inflict or cure through poison's paradox. Choose one: Cursed Venom: Touch a creature and inject venom. They suffer +1 Harm (poison) and must test Spirit + Endurance (DV 4) or gain the Poisoned Condition (–1 die to physical actions until cured). Mercy's Antidote: Touch a poisoned or diseased creature. The venom neutralizes the malady; remove one Poisoned or Diseased Condition, and the target clears 1 Fatigue.",
       "push_it": "Apply both effects to the same target (curse and cleanse in a painful purge, representing a violent rebirth), or affect two different targets. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
       "requires": "Familiar + Codex (Invoke: 1 Boon).",
@@ -172,7 +172,7 @@
       {
         "name": "Venom's Mercy",
         "xp": 5,
-        "description": "Once per scene, the witch may apply a drop of harmless (or carefully dosed) venom to a wound, a drink, or a lock. Choose one effect: remove 1 Fatigue from an ally (as a mild stimulant), impose –1 die on a target's next physical roll (a mild paralytic), or force a target to speak a single truthful sentence (a truth serum). The victim may resist with a Resolve test (DV 3) if they are aware of the venom."
+        "description": "Once per scene, the witch may apply a drop of harmless (or carefully dosed) venom to a wound, a drink, or a lock. Choose one effect: remove 1 Fatigue from an ally (as a mild stimulant), impose –1 die on a target's next physical roll (a mild paralytic), or force a target to speak a single truthful sentence (a truth serum). The victim may resist with a Spirit + Endurance test (DV 3) if they are aware of the venom."
       },
       {
         "name": "Shedding Skin",
@@ -182,7 +182,7 @@
       {
         "name": "Venomous Alchemy",
         "xp": 4,
-        "description": "You may brew a single dose of a transformative potion during downtime. Choose one: a healing tincture (clears 1 Fatigue), a truth serum (target must test Resolve DV 3 to lie), or a mild poison (imposes –1 die on a target's next physical action). Requires an alembic and one scene of work."
+        "description": "You may brew a single dose of a transformative potion during downtime. Choose one: a healing tincture (clears 1 Fatigue), a truth serum (target must test Spirit + Endurance DV 3 to lie), or a mild poison (imposes –1 die on a target's next physical action). Requires an alembic and one scene of work."
       },
       {
         "name": "Serpent's Grace",
@@ -202,14 +202,14 @@
       "basic": {
         "name": "Venom Strike",
         "xp": 5,
-        "description": "Unarmed hit can inject poison: choose –1 die to target's physical actions, or the target must speak a single truthful sentence (Resolve DV 3 to resist).",
+        "description": "Unarmed hit can inject poison: choose –1 die to target's physical actions, or the target must speak a single truthful sentence (Spirit + Endurance DV 3 to resist).",
         "cost": "1 Boon",
         "prereq": "Spirit 3+"
       },
       "advanced": {
         "name": "Hypnotic Sway",
         "xp": 8,
-        "description": "Once per scene, roll Presence + Lore vs. Resolve (DV 3) to mesmerize a single target. Your serpentine gaze holds them in thrall.",
+        "description": "Once per scene, roll Presence + Lore vs. Spirit + Endurance (DV 3) to mesmerize a single target. Your serpentine gaze holds them in thrall.",
         "cost": "Free",
         "prereq": "Tier II, Spirit 3+"
       },
@@ -241,12 +241,12 @@
     },
     {
       "tier": 4,
-      "benefit": "Serpentine Grace: +2 dice to Stealth or Evasion rolls, ignore minor movement penalties.",
-      "cost": "Slitted Eyes: Bright light imposes –1 die on Notice rolls."
+      "benefit": "Serpentine Grace: +2 dice to Stealth or Athletics rolls, ignore minor movement penalties.",
+      "cost": "Slitted Eyes: Bright light imposes –1 die on Insight rolls."
     },
     {
       "tier": 5,
-      "benefit": "Hypnotic Sway: Once/scene, roll Presence + Lore vs. Resolve (DV 3) to mesmerize a single target.",
+      "benefit": "Hypnotic Sway: Once/scene, roll Presence + Lore vs. Spirit + Endurance (DV 3) to mesmerize a single target.",
       "cost": "Forked Tongue: –1 die on Deception when attempting warmth or sincerity."
     },
     {

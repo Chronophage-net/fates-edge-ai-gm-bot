@@ -39,7 +39,7 @@
   "runekeeper_options": {
     "thiasos": {
       "description": "The Unbroken Way's Thiasos is a tranquil animal whose presence encourages discipline: a pale tortoise that breathes in time with meditation, a crane that holds one posture for hours, a mountain hare that becomes still when danger approaches, or a smooth-scaled lizard whose quiet hum settles a racing mind.",
-      "care": "It needs ordinary care, and its Runekeeper must meditate beside it for one hour each day. After a week without shared meditation, it becomes Clouded: its calm breaks and it imposes –1 die on the Runekeeper's Resolve rolls until they spend a scene meditating together."
+      "care": "It needs ordinary care, and its Runekeeper must meditate beside it for one hour each day. After a week without shared meditation, it becomes Clouded: its calm breaks and it imposes –1 die on the Runekeeper's Spirit + Endurance test until they spend a scene meditating together."
     },
     "codex": {
       "description": "the Unbroken Way keeps no Codex that resembles a book of spells. It is a meditation manual—a collection of koans, breathing exercises, and ethical precepts. It cannot be read in the usual way; the follower must practice each Rite before it becomes legible.",
@@ -171,7 +171,7 @@
   "cantors_and_cults": {
     "cantors": {
       "name": "The Cantor's Song",
-      "description": "A Cantor of the Unbroken Way sings in hummed koans—melodic fragments that have no resolution, no cadence, no satisfying end. Their voice is used to calm a riot, to focus a meditation circle, or to signal an ally across a battlefield without drawing the enemy's attention. A Cantor may learn any Low Rite of the Unbroken Way as a Song (Performance + Lore, resolves next turn). Corruption accumulates when they use their voice for selfish ends, for violence, or to manipulate the innocent."
+      "description": "A Cantor of the Unbroken Way sings in hummed koans—melodic fragments that have no resolution, no cadence, no satisfying end. Their voice is used to calm a riot, to focus a meditation circle, or to signal an ally across a battlefield without drawing the enemy's attention. A Cantor may learn any Low Rite of the Unbroken Way as a Song (Spirit + Performance, resolves next turn). Corruption accumulates when they use their voice for selfish ends, for violence, or to manipulate the innocent."
     },
     "cult": {
       "name": "The Cult of the Watchers",
@@ -195,7 +195,7 @@
       {
         "name": "The Unstruck Note",
         "xp": 4,
-        "description": "Once per scene, the witch may snap their fingers. For the next exchange, they may treat any failed Resolve, Insight, or Perception roll as a Partial Success instead of a Miss. The GM gains 1 SB (the world notices the stillness bending around you)."
+        "description": "Once per scene, the witch may snap their fingers. For the next exchange, they may treat any failed Resolve, Insight, or Insight rolls as a Partial Success instead of a Miss. The GM gains 1 SB (the world notices the stillness bending around you)."
       },
       {
         "name": "Stillness of Breath",
@@ -205,7 +205,7 @@
       {
         "name": "The Open Hand",
         "xp": 4,
-        "description": "You may render a weapon (or a hostile creature's hand) as 'not a threat' for one exchange. The target cannot use that weapon or hand for that exchange unless they succeed on a Resolve test (DV 3)."
+        "description": "You may render a weapon (or a hostile creature's hand) as 'not a threat' for one exchange. The target cannot use that weapon or hand for that exchange unless they succeed on a Spirit + Endurance test (DV 3)."
       }
     ]
   },
@@ -249,7 +249,7 @@
     },
     {
       "tier": 2,
-      "benefit": "Clarity of Purpose: Once/scene, reroll a failed Resolve test.",
+      "benefit": "Clarity of Purpose: Once/scene, reroll a failed Spirit + Endurance test.",
       "cost": "Detachment: –1 die to empathize with others' suffering or to share genuine emotional connection."
     },
     {

@@ -247,7 +247,7 @@
       "subtitle": "[MILITARY] [ONCE]",
       "description": "Barracks with a tile roof; spear racks where olives once slept.",
       "flavor": "The olive press still runs, though it turns out lamp oil now and the pressers have become armorers. Same men, same arms, different month.",
-      "mechanical_hook": "Requisitioning supplies here requires a Sway or Command roll (DV 4); success grants 1 Supply, failure ticks Annona Late."
+      "mechanical_hook": "Requisitioning supplies here requires a Sway or Presence + Sway rolls (DV 4); success grants 1 Supply, failure ticks Annona Late."
     },
     {
       "rank": 6,
@@ -473,7 +473,7 @@
       "subtitle": "[SUPPLY] [SOCIAL]",
       "description": "Grain stipend misses the comitatus; tempers quicken like flint.",
       "flavor": "The granary is full and the keys are in the wrong vault, and somebody downriver is waiting for the price to move. The comitatus does not have that kind of patience.",
-      "mechanical_hook": "Resolving the shortage requires a Sway or Investigation roll (DV 4); failure ticks a relevant Supply timer by 1."
+      "mechanical_hook": "Resolving the shortage requires a Sway or Insight roll (DV 4); failure ticks a relevant Supply timer by 1."
     },
     {
       "rank": 3,
@@ -545,7 +545,7 @@
       "subtitle": "[LAW] [TRADE]",
       "description": "Lantern-law vs. street-law; confiscations bloom.",
       "flavor": "The lanterns were shifted in the night, which makes the old safe channel a reef and every honest pilot a smuggler by dawn. The harbor master is unavailable and expected to remain so.",
-      "mechanical_hook": "Navigating the port without a Foedus Seal or lantern-law chit forces a Desperate Boating or Subterfuge roll (DV 5)."
+      "mechanical_hook": "Navigating the port without a Foedus Seal or lantern-law chit forces a Desperate Boating or Deception roll (DV 5)."
     },
     {
       "rank": 11,
@@ -563,7 +563,7 @@
       "subtitle": "[SOCIAL] [FEAR]",
       "description": "Stirs crowds against the 'barbarian king in purple.'",
       "flavor": "His preaching license is signed by an abbot who died in the spring, and the wax on it is fresh. The crowd is four hundred deep and in no mood to hear about provenance.",
-      "mechanical_hook": "Exposing the preacher's forged license (Investigation DV 5) disperses the crowd; failure risks a riot (Cap 2)."
+      "mechanical_hook": "Exposing the preacher's forged license (Wits + Insight DV 5) disperses the crowd; failure risks a riot (Cap 2)."
     },
     {
       "rank": 13,
@@ -725,7 +725,7 @@
     "two_law_dial": "**Oak High:** +1 Position when invoking mallus, blood-price, or tribal custom; the first basilica petition starts one step worse. **Marble High:** +1 Effect when citing charters, patents, or Utaran precedent; the first mallus oath starts one step worse. Center the dial by offering a wergild recognized by both sides or hosting a joint moot. If Witness Fading is at 4+, centering requires a sacrifice (a memory, a name, or a drop of blood on the stone).",
     "frontier_diplomacy": "If a Heart card involves a foreign envoy, a federate, or a mixed-blood courtier, treat the first Diamond played in the scene as doubled leverage. If Witness Fading is at 6+, the deal also ticks the timer by 1.",
     "march_markets": "At any Staple Market, Stone Ford, or Repaired Bridge, Diamonds tied to rights or escorts may be cashed as currency in lieu of coin, one-for-one. Doing so creates a Stone Weight the GM may call in later through factions or raiders.",
-    "vilikari_diaspora": "Vilikari characters in Ecktoria gain +1 die on Subterfuge checks but −1 die on social rolls with Old Blood patricians. In Acasia, they gain +1 die on Survival checks but −1 die on social rolls with the Curse-touched. A Vilikari character may start with one 'family tally' — a minor asset tracking a single unpaid favor across generations. If Witness Fading ever fills, the tally turns to ash.",
+    "vilikari_diaspora": "Vilikari characters in Ecktoria gain +1 die on Deception checks but −1 die on social rolls with Old Blood patricians. In Acasia, they gain +1 die on Endurance checks but −1 die on social rolls with the Curse-touched. A Vilikari character may start with one 'family tally' — a minor asset tracking a single unpaid favor across generations. If Witness Fading ever fills, the tally turns to ash.",
     "treaty_feast_procedure": [
       "Set the Table: name 2–3 terms (what both sides want) and 1 taboo (off-limits).",
       "First Cup (Position): roll a social test; success grants +1 die to bargain, failure grants the host 1 SB.",
@@ -905,7 +905,7 @@
       "**Trace:** Trackers or treaty keepers mark your route.",
       "**Delay:** Lose a favorable legal window or crucial time.",
       "**Supply Strain:** Mark +1 segment on a relevant resource timer.",
-      "**Crack Whispers (Vilikari only):** A character hears the stone whispering a forgotten promise. Test Resolve (DV 3) or mark 1 Fatigue."
+      "**Crack Whispers (Vilikari only):** A character hears the stone whispering a forgotten promise. test Spirit + Endurance (DV 3) or mark 1 Fatigue."
     ],
     "moderate_setbacks": [
       "**Alarm Raised:** The Horse-Reeve or March Notary responds.",

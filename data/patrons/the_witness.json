@@ -40,7 +40,7 @@
   "runekeeper_options": {
     "thiasos": {
       "description": "The Witness's Thiasos is a small creature that embodies memory and revelation: a raven that collects shiny objects and recites forgotten names, a silverfish that eats lies from parchment and leaves truth behind, a small brass beetle whose shell opens to reveal a perfect mirror, a white mouse that nests in archive drawers and remembers every page it has slept upon, or a cricket that chirps in the key of the last secret spoken nearby.",
-      "care": "Beyond its ordinary care, this Thiasos must witness something significant (a lie told, a secret revealed, a confession made) each week. If that need goes unmet, the Thiasos becomes Compromised: it grows silent and still, and its bearer loses +1 die on all Investigation rolls until it is shown a hidden truth."
+      "care": "Beyond its ordinary care, this Thiasos must witness something significant (a lie told, a secret revealed, a confession made) each week. If that need goes unmet, the Thiasos becomes Compromised: it grows silent and still, and its bearer loses +1 die on all Insight rolls until it is shown a hidden truth."
     },
     "codex": {
       "description": "A Codex sworn to the Witness is never a book that can be closed. It may be a set of loose leaf pages that reorganise themselves each dawn, a scroll that writes itself when no one is looking, a chalkboard that cannot be erased, or a stack of wax tablets that melt and reset each season.",
@@ -50,7 +50,7 @@
   "patrons_gift": {
     "name": "Word of Truth",
     "description": "Once per scene as an action, a Runekeeper of the Witness may touch a held item (weapon, tool, or writing implement) and whisper a word of truth.",
-    "effect": "For the rest of the scene, the item grants +1 die to Insight or Investigation rolls, and the first time each scene the bearer would be deceived by an illusion or a lie, they may roll twice and take the better result.",
+    "effect": "For the rest of the scene, the item grants +1 die to Insight or Insight rolls, and the first time each scene the bearer would be deceived by an illusion or a lie, they may roll twice and take the better result.",
     "cost": "After the scene, the user marks +1 Obligation to the Witness."
   },
   "rites": [
@@ -67,7 +67,7 @@
       ],
       "materials": "A trace of the thing to be remembered (hair, dust, a spoken name).",
       "effect": "You follow a hidden thread. Gain +1 die to investigate or notice something directly related to the trace within the current scene. Additionally, you may ask the GM one yes/no question about whether the trace is connected to a specific person, event, or object.",
-      "push_it": "Gain +2 dice instead, but mark 1 segment on a Memory Strain Timer [4]. If the timer fills, you gain Fatigue 1 and suffer –1 die on Investigation/Notice rolls until the end of the next scene (the Witness taxes your mind). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "push_it": "Gain +2 dice instead, but mark 1 segment on a Memory Strain Timer [4]. If the timer fills, you gain Fatigue 1 and suffer –1 die on Investigation/Insight rolls until the end of the next scene (the Witness taxes your mind). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
       "requires": "Familiar (Invoke: 1 Boon).",
       "invoke": "1 action.",
@@ -106,8 +106,8 @@
         "FEAR"
       ],
       "materials": "A reflective surface (mirror, still water, polished metal) used to focus on the target.",
-      "effect": "The target must make a Resolve test (DV 3) or suffer –1 die to rolls involving memory, deception, or resisting interrogation for the scene. If they fail, you may ask one specific, factual question about something they know, and they must answer truthfully or suffer 1 SB (Hearts) as the memory is forcibly drawn forth.",
-      "push_it": "If the target fails their Resolve test, you may ask a second question, but the mental intrusion causes them Harm 1 (Stress). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
+      "effect": "The target must make a Spirit + Endurance test (DV 3) or suffer –1 die to rolls involving memory, deception, or resisting interrogation for the scene. If they fail, you may ask one specific, factual question about something they know, and they must answer truthfully or suffer 1 SB (Hearts) as the memory is forcibly drawn forth.",
+      "push_it": "If the target fails their Spirit + Endurance test, you may ask a second question, but the mental intrusion causes them Harm 1 (Stress). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
       "requires": "Familiar + Codex (Invoke: 1 Boon).",
       "invoke": "1 action.",
@@ -146,7 +146,7 @@
         "READ"
       ],
       "materials": "A written secret (yours or another's) and a candle.",
-      "effect": "You transfer the weight of a truth. Choose one: you may remove a Guilty Tell, Haunted, or similar psychological Condition from yourself and give it to a willing or unwilling target (they resist with Resolve DV 4). Alternatively, you may share a secret with an ally; both of you clear 1 Fatigue as the burden is halved.",
+      "effect": "You transfer the weight of a truth. Choose one: you may remove a Guilty Tell, Haunted, or similar psychological Condition from yourself and give it to a willing or unwilling target (they resist with Spirit + Endurance DV 4). Alternatively, you may share a secret with an ally; both of you clear 1 Fatigue as the burden is halved.",
       "push_it": "Transfer a Condition without the target's consent (they automatically resist, but on failure they gain it). Mark 1 SB (Spades) as the secret stains them. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
       "requires": "Familiar + Codex (Invoke: 1 Boon).",
@@ -216,7 +216,7 @@
     "tools": {
       "quill_of_unwritten_truths": {
         "name": "The Quill of Unwritten Truths",
-        "description": "A quill carved from a raven's feather, its nib dipped in ink made from lampblack and a drop of the witch's blood. Once per session, the witch may write a single sentence on a piece of parchment, then seal it with a drop of wax. For the next day, anyone other than the witch who reads the sentence must make a Resolve test (DV 3) or forget it immediately after reading. The witch may also use the quill to 'seal' a spoken secret, causing the speaker's voice to catch if they try to repeat it for the rest of the scene."
+        "description": "A quill carved from a raven's feather, its nib dipped in ink made from lampblack and a drop of the witch's blood. Once per session, the witch may write a single sentence on a piece of parchment, then seal it with a drop of wax. For the next day, anyone other than the witch who reads the sentence must make a Spirit + Endurance test (DV 3) or forget it immediately after reading. The witch may also use the quill to 'seal' a spoken secret, causing the speaker's voice to catch if they try to repeat it for the rest of the scene."
       }
     },
     "hedge_gifts": [
@@ -287,7 +287,7 @@
     },
     {
       "tier": 4,
-      "benefit": "Witness's Authority: Once/session, force one target to make a Resolve test (DV 4) or reveal a significant hidden truth.",
+      "benefit": "Witness's Authority: Once/session, force one target to make a Spirit + Endurance test (DV 4) or reveal a significant hidden truth.",
       "cost": "Isolation: –1 die to rolls requiring trust or close relationships; others fear your ability to uncover their secrets."
     },
     {

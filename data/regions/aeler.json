@@ -205,7 +205,7 @@
       "subtitle": "[COMMERCE] [UNDERGROUND]",
       "description": "Lantern alleys between cistern pillars; damp coin, dry wit.",
       "flavor": "The market is a lung. It breathes in coin and breathes out rumor. The assessors are the diaphragm.",
-      "mechanical_hook": "Haggling here is a Sway+Lore test (DV 4). On success, prices are fair. On failure, you are overcharged — lose 1 Boon. On a critical, you draw an assessor's suspicion (start a **Market Audit [4]** timer)."
+      "mechanical_hook": "Haggling here is a Presence + Sway test (DV 4). On success, prices are fair. On failure, you are overcharged — lose 1 Boon. On a critical, you draw an assessor's suspicion (start a **Market Audit [4]** timer)."
     },
     {
       "rank": 5,
@@ -485,7 +485,7 @@
       "subtitle": "[DANGER] [WARNING]",
       "description": "Dust snow warns the roof wants down.",
       "flavor": "The crack is a question. The mountain is asking. You must answer before it asks again.",
-      "mechanical_hook": "Characters must test Resolve (DV 4) or freeze. On a failure, gain the Condition **Crack-Watched** (the mountain has noticed you; the GM may spend 1 SB to trigger a cave-in)."
+      "mechanical_hook": "Characters must test Spirit + Endurance (DV 4) or freeze. On a failure, gain the Condition **Crack-Watched** (the mountain has noticed you; the GM may spend 1 SB to trigger a cave-in)."
     },
     {
       "rank": 8,
@@ -691,7 +691,7 @@
     },
     {
       "name": "The Ninth Breath (Cultural Tic)",
-      "description": "An Aeler character never counts to nine aloud. If forced to do so (or if they deliberately break the taboo), they must test Resolve (DV 3) or gain the **Marked by the Pressure** condition (the next environmental hazard automatically triggers a complication). This is not a mechanical resource; it is a narrative and cultural constraint."
+      "description": "An Aeler character never counts to nine aloud. If forced to do so (or if they deliberately break the taboo), they must test Spirit + Endurance (DV 3) or gain the **Marked by the Pressure** condition (the next environmental hazard automatically triggers a complication). This is not a mechanical resource; it is a narrative and cultural constraint."
     },
     {
       "name": "Grain Reserves Timer [8]",
@@ -728,7 +728,7 @@
       "**Major Twist:** The situation fundamentally changes - **seal misread/cave-in/flare ignites**.",
       "**Rail Tick:** Advance a relevant campaign/front timer by 1 segment.",
       "**Condition Applied:** Mark **Fatigue 1/Harm 1/Condition** appropriate to fiction.",
-      "**Pressure Whispers:** A character hears their name spoken from a crack in the stone. They must test Resolve (DV 3) or be compelled to move toward the sound."
+      "**Pressure Whispers:** A character hears their name spoken from a crack in the stone. They must test Spirit + Endurance (DV 3) or be compelled to move toward the sound."
     ],
     "major_turns": [
       "**Trap Springs:** A prepared danger activates with full effect.",
@@ -817,7 +817,7 @@
     },
     {
       "name": "The Knock in Threes",
-      "description": "If a character hears three knocks from the darkness, they must test Resolve (DV 3) or be compelled to walk toward the sound. The knock may be the pressure — or it may be a lost miner. The difference is not always clear."
+      "description": "If a character hears three knocks from the darkness, they must test Spirit + Endurance (DV 3) or be compelled to walk toward the sound. The knock may be the pressure — or it may be a lost miner. The difference is not always clear."
     }
   ],
   "diplomatic_favor": {
@@ -964,7 +964,7 @@
       "**Blackout/Glare:** Snuff or flare lamps; impose Disorient (–1 die) until a **Lamplighter Action** restores balance.",
       "**Bell Overrule:** Swap which faction's law applies; social actions vs. boss gain +1 DV this round.",
       "**White Flood Surge:** Advance environment timer; force Move/Wreck or be Separated.",
-      "**Pressure's Knock (Deep Drake only):** A character hears three knocks. They must test Resolve (DV 4) or be compelled to move one range band toward the sound."
+      "**Pressure's Knock (Deep Drake only):** A character hears three knocks. They must test Spirit + Endurance (DV 4) or be compelled to move one range band toward the sound."
     ],
     "phase_triggers": "Environment bosses phase when Air hits 2/4, Water hits 3/6, or Light hits 0; Conspiracy bosses phase when Audit or Permit timers fill.",
     "truth_and_measure": "Producing a certified rod/weight cancels the first commerce/jurisdiction SB each phase; forging one gives the boss 1 SB and a free **Expose Fraud** reaction.",
