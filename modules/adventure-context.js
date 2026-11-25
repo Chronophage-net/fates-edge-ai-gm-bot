@@ -507,13 +507,18 @@ async function getAdventureDoc(context) {
             return null;
         }
 
-        const docPath = path.join(ADVENTURES_DOC_DIR, entry.docFile);
-        if (!fs.existsSync(docPath)) {
-            console.warn(`[AdventureContext] Doc file not found: ${docPath}`);
+        // A saga is documented as its parts (entry.docFiles, in story order);
+        // read all of them so the GM does not narrate from one half only.
+        const docFiles = Array.isArray(entry.docFiles) && entry.docFiles.length ? entry.docFiles : [entry.docFile];
+        const docPaths = docFiles.map(f => path.join(ADVENTURES_DOC_DIR, f));
+        const missing = docPaths.filter(p => !fs.existsSync(p));
+        if (missing.length === docPaths.length) {
+            console.warn(`[AdventureContext] Doc file not found: ${missing.join(', ')}`);
             return null;
         }
+        for (const p of missing) console.warn(`[AdventureContext] Doc file not found: ${p}`);
 
-        const html = fs.readFileSync(docPath, 'utf-8');
+        const html = docPaths.filter(p => fs.existsSync(p)).map(p => fs.readFileSync(p, 'utf-8')).join('\n');
 
         // Strip HTML tags to plain text
         const plainText = html

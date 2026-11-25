@@ -2,136 +2,115 @@
 
 /**
  * Build Adventure Manifest
- * 
- * Scans data/docs/adventures/*.html, extracts the title using regex,
- * and writes a manifest to data/adventures/manifest.json.
- * 
+ *
+ * Writes data/adventures/manifest.json, keyed by adventure id (the stem of each
+ * data/adventures/*.json file), mapping each adventure to the document(s) in
+ * data/docs/adventures/ that adventure-context.js narrates from:
+ *
+ *   { "<id>": { "title", "docFile", "docPath", "docFiles"? } }
+ *
+ * docFiles appears only for a saga documented as its parts, in story order;
+ * docFile is always the first of them.
+ *
+ * This mirrors write_bot_adventure_manifest() in fates-edge-docs'
+ * tools/sync_data_to_consumers.py, which writes the same file on every sync, so
+ * running this by hand produces the same manifest. Documents are matched to
+ * adventures by title words, not by guessing ids from document filenames:
+ * the old filename rule produced keys like "ashes_of_the_infernal_accord" for
+ * the adventure "ashes_of_infernal_accord", and every such lookup failed.
+ *
  * Usage: node scripts/build-adventure-manifest.js
  */
 
 const fs = require('fs');
 const path = require('path');
 
+const DATA_DIR = path.resolve(process.cwd(), 'data', 'adventures');
 const DOCS_DIR = path.resolve(process.cwd(), 'data', 'docs', 'adventures');
-const MANIFEST_PATH = path.resolve(process.cwd(), 'data', 'adventures', 'manifest.json');
+const MANIFEST_PATH = path.join(DATA_DIR, 'manifest.json');
 
-// Map of adventure ID (filename without extension) to doc filename
-function getAdventureIdFromDocFilename(docFilename) {
-    // Remove "Fates_-_Edge_-_" prefix and ".html" suffix
-    let id = docFilename
-        .replace(/^Fates_-_Edge_-_/, '')
-        .replace(/\.html$/, '')
-        .replace(/'/g, '') // Remove apostrophes
-        .replace(/-/g, '_') // Convert dashes to underscores
-        .toLowerCase();
+const STOPWORDS = new Set(['the', 'a', 'an', 'of', 'and', 'at', 'in']);
 
-    // BUGFIX: filenames like 'Fates_-_Edge_-_-The-_-Grumbling-_-Vault.html'
-    // leave a leading '-' after the prefix strip (the prefix regex above
-    // doesn't consume it), and every '-_-' separator becomes three
-    // underscores once dashes are converted. That produced ids like
-    // '_the___grumbling___vault' instead of 'the_grumbling_vault', which
-    // never matched any specialCases key below (they all use single,
-    // non-leading underscores) -- so the fallback (the mangled id itself)
-    // silently became the real manifest key for every adventure, and
-    // getAdventureDoc()'s manifest[moduleId] lookup could never succeed.
-    // Collapse runs of underscores and trim leading/trailing ones so the
-    // id matches the same filename-stem convention used everywhere else
-    // in this codebase (see world-manager.js's region-loading bugfix for
-    // the same pattern).
-    id = id.replace(/_+/g, '_').replace(/^_+|_+$/g, '');
-
-    // Handle special cases
-    const specialCases = {
-        'blood_and_silk_saga': 'blood_and_silk_saga',
-        'canival_of_broken_dreams': 'carnival_of_broken_dreams',
-        'lantern_at_dusk': 'lantern_at_dusk',
-        'the_cursed_caravan': 'cursed_caravan',
-        'the_grumbling_vault': 'grumbling_vault',
-        'the_hazel_root': 'hazel_root',
-        'the_nameless': 'nameless',
-        'the_ninth_proof': 'ninth_proof',
-        'the_serpents_coil': 'serpents_coil',
-        'whispers_in_the_tunnels': 'whispers_in_the_tunnels'
-    };
-    
-    return specialCases[id] || id;
+function titleTokens(text) {
+    const parts = String(text || '').replace(/[’']/g, '').toLowerCase().split(/[^a-z0-9]+/);
+    return new Set(parts.filter(p => p && !STOPWORDS.has(p)));
 }
 
-function extractTitleFromHtml(htmlContent) {
-    // Try to find <h1> tag first (most common)
-    const h1Match = htmlContent.match(/<h1[^>]*>([^<]+)<\/h1>/i);
-    if (h1Match) {
-        return h1Match[1].trim();
-    }
-    
-    // Try to find <title> tag
-    const titleMatch = htmlContent.match(/<title[^>]*>([^<]+)<\/title>/i);
-    if (titleMatch) {
-        return titleMatch[1].trim();
-    }
-    
-    // Try to find first heading
-    const headingMatch = htmlContent.match(/<h[2-6][^>]*>([^<]+)<\/h[2-6]>/i);
-    if (headingMatch) {
-        return headingMatch[1].trim();
-    }
-    
-    // Fallback: use the filename
-    return null;
+function docTokens(file) {
+    const stem = path.basename(file, '.html').replace(/^Fates\s*_?-_?\s*Edge\s*_?-_?\s*-?/, '');
+    return titleTokens(stem);
+}
+
+const isSubset = (a, b) => [...a].every(x => b.has(x));
+
+// Same scoring as the docs sync: exact match wins; otherwise one title must
+// contain the other, with at least two words of signal.
+function score(tt, dt) {
+    if (!tt.size || !dt.size) return -1;
+    const same = tt.size === dt.size && isSubset(tt, dt);
+    if (same) return 100;
+    if (!(isSubset(dt, tt) || isSubset(tt, dt))) return -1;
+    if (Math.min(tt.size, dt.size) < 2) return -1;
+    const inter = [...tt].filter(x => dt.has(x)).length;
+    const sym = tt.size + dt.size - 2 * inter;
+    return 10 * inter - sym;
 }
 
 function buildManifest() {
     console.log('📚 Building adventure manifest...');
-    
-    if (!fs.existsSync(DOCS_DIR)) {
-        console.warn(`⚠️ Docs directory not found: ${DOCS_DIR}`);
+    if (!fs.existsSync(DATA_DIR) || !fs.existsSync(DOCS_DIR)) {
+        console.warn(`⚠️ Missing ${!fs.existsSync(DATA_DIR) ? DATA_DIR : DOCS_DIR}`);
         return;
     }
-    
-    const files = fs.readdirSync(DOCS_DIR).filter(f => f.endsWith('.html'));
-    
-    if (files.length === 0) {
-        console.warn('⚠️ No HTML files found in docs directory.');
-        return;
-    }
-    
-    console.log(`📄 Found ${files.length} HTML files.`);
-    
+
+    const docs = fs.readdirSync(DOCS_DIR).filter(f => f.endsWith('.html'));
+    const ids = fs.readdirSync(DATA_DIR)
+        .filter(f => f.endsWith('.json') && f !== 'manifest.json')
+        .map(f => f.slice(0, -5))
+        .sort();
+
     const manifest = {};
-    let parsedCount = 0;
-    
-    for (const file of files) {
-        const filePath = path.join(DOCS_DIR, file);
-        const content = fs.readFileSync(filePath, 'utf-8');
-        const title = extractTitleFromHtml(content);
-        const adventureId = getAdventureIdFromDocFilename(file);
-        
-        if (title) {
-            manifest[adventureId] = {
-                title: title,
-                docFile: file,
-                docPath: `/data/docs/adventures/${file}`
+    for (const id of ids) {
+        let adv = {};
+        try { adv = JSON.parse(fs.readFileSync(path.join(DATA_DIR, `${id}.json`), 'utf-8')); } catch { /* keep id */ }
+        const parts = (adv.sagaParts || []).map(p => titleTokens(String(p).replace(/[-_]/g, ' ')));
+        const sets = [titleTokens(adv.title), ...parts].filter(s => s.size);
+
+        let files;
+        if (parts.length) {
+            // A saga takes every document one of its titles matches, in part order.
+            files = docs.filter(d => sets.some(t => score(t, docTokens(d)) > 0));
+            const partIndex = d => {
+                const dt = docTokens(d);
+                let best = 0, bestOverlap = -1;
+                parts.forEach((pt, i) => {
+                    const o = [...pt].filter(x => dt.has(x)).length;
+                    if (o > bestOverlap) { bestOverlap = o; best = i; }
+                });
+                return best;
             };
-            parsedCount++;
-            console.log(`  ✅ ${adventureId} → "${title}"`);
+            files.sort((a, b) => partIndex(a) - partIndex(b));
         } else {
-            console.warn(`  ⚠️ Could not extract title from ${file}`);
+            let best = null, bestScore = 0;
+            for (const t of sets) for (const d of docs) {
+                const s = score(t, docTokens(d));
+                if (s > bestScore) { best = d; bestScore = s; }
+            }
+            files = best ? [best] : [];
         }
+
+        if (!files.length) {
+            console.warn(`  ⚠️ ${id}: no document matches "${adv.title || id}"`);
+            continue;
+        }
+        const entry = { title: adv.title || id, docFile: files[0], docPath: `/data/docs/adventures/${files[0]}` };
+        if (files.length > 1) entry.docFiles = files;
+        manifest[id] = entry;
+        console.log(`  ✅ ${id} → ${files.join(', ')}`);
     }
-    
-    // Write manifest
-    const manifestDir = path.dirname(MANIFEST_PATH);
-    if (!fs.existsSync(manifestDir)) {
-        fs.mkdirSync(manifestDir, { recursive: true });
-    }
-    
-    fs.writeFileSync(MANIFEST_PATH, JSON.stringify(manifest, null, 2));
-    console.log(`✅ Manifest written to ${MANIFEST_PATH} (${parsedCount} entries)`);
+
+    fs.writeFileSync(MANIFEST_PATH, JSON.stringify(manifest, null, 2) + '\n');
+    console.log(`✅ Manifest written to ${MANIFEST_PATH} (${Object.keys(manifest).length} entries)`);
 }
 
-// Run if called directly
-if (require.main === module) {
-    buildManifest();
-}
-
-module.exports = { buildManifest, extractTitleFromHtml, getAdventureIdFromDocFilename };
+buildManifest();
