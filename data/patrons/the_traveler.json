@@ -34,7 +34,7 @@
   "runekeeper_options": {
     "thiasos": {
       "description": "The Traveler's Thiasos is a small beast or mythological being that embodies movement and guidance: a gray hare that never tires, a sparrow that knows every shortcut, a small fox that leaves no tracks, a dung beetle that rolls its ball unerringly toward the nearest water, or a homing pigeon that always knows the road back.",
-      "care": "Beyond its ordinary care, this Thiasos must walk at least a mile each day (or be allowed to roam freely in a new place). If confined for more than a day, it becomes Compromised (it grows lethargic and its guidance becomes unreliable, imposing –1 die on all Navigation and Lore rolls for its bearer until it is exercised)."
+      "care": "Beyond its ordinary care, this Thiasos must walk at least a mile each day (or be allowed to roam freely in a new place). If confined for more than a day, it becomes Compromised (it grows lethargic and its guidance becomes unreliable, imposing –1 die on all Insight and Lore rolls for its bearer until it is exercised)."
     },
     "codex": {
       "description": "There is no Codex of the Traveler that looks like a stationary book. It may be a leather strap knotted with directions, a set of scrolls kept in different saddlebags, a map that redraws itself after each journey, or a pilgrim's diary whose blank pages fill with route descriptions as the bearer walks.",
@@ -44,7 +44,7 @@
   "patrons_gift": {
     "name": "Traveler's Blessing",
     "description": "Once per scene as an action, a Runekeeper of the Traveler may touch a held item (weapon, tool, or cloak) and whisper a waymark.",
-    "effect": "For the rest of the scene, the item grants +1 die to Navigation or Lore rolls, and the first time each scene the bearer would be slowed by difficult terrain or a bureaucratic delay, they may ignore it (the road opens for them).",
+    "effect": "For the rest of the scene, the item grants +1 die to Insight or Lore rolls, and the first time each scene the bearer would be slowed by difficult terrain or a bureaucratic delay, they may ignore it (the road opens for them).",
     "cost": "After the scene, the user marks +1 Obligation to the Traveler."
   },
   "rites": [
@@ -202,7 +202,7 @@
       {
         "name": "Wind-Reader",
         "xp": 2,
-        "description": "You can read the wind and weather to predict the best time to travel. You gain +1 die to Navigation rolls when traveling outdoors, and you can ask the GM one question about upcoming weather conditions. Passive."
+        "description": "You can read the wind and weather to predict the best time to travel. You gain +1 die to Insight rolls to find the way when traveling outdoors, and you can ask the GM one question about upcoming weather conditions. Passive."
       },
       {
         "name": "Threshold-Knowing",
@@ -251,7 +251,7 @@
   "corruption": [
     {
       "tier": 1,
-      "benefit": "Pathfinding Instinct: +1 die to Navigation and movement rolls in familiar territory.",
+      "benefit": "Pathfinding Instinct: +1 die to Insight and movement rolls in familiar territory.",
       "cost": "Restless Spirit: You feel the urge to keep moving. Staying in one place for too long makes you slightly uncomfortable, but this imposes no mechanical penalty."
     },
     {

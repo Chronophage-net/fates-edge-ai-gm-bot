@@ -65,7 +65,7 @@
         "BOOST"
       ],
       "materials": "A moment of stillness, eyes closed, breath held for one heartbeat.",
-      "effect": "For the next scene, gain +1 die to all Perception and Insight rolls. You feel the presence of living things within Near range and can sense strong emotions (fear, rage, joy) as faint temperature changes.",
+      "effect": "For the next scene, gain +1 die to all Insight rolls. You feel the presence of living things within Near range and can sense strong emotions (fear, rage, joy) as faint temperature changes.",
       "push_it": "Extend the effect to the full session. Cost: Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
       "requires": "Familiar (Invoke: 1 Boon).",
@@ -195,7 +195,7 @@
       {
         "name": "The Unstruck Note",
         "xp": 4,
-        "description": "Once per scene, the witch may snap their fingers. For the next exchange, they may treat any failed Resolve or Insight rolls as a Partial Success instead of a Miss. The GM gains 1 SB (the world notices the stillness bending around you)."
+        "description": "Once per scene, the witch may snap their fingers. For the next exchange, they may treat any failed Endurance or Insight rolls as a Partial Success instead of a Miss. The GM gains 1 SB (the world notices the stillness bending around you)."
       },
       {
         "name": "Stillness of Breath",
@@ -220,7 +220,7 @@
       "basic": {
         "name": "Sensing Current",
         "xp": 4,
-        "effect": "For one scene, gain +1 die to all Perception and Insight rolls. You sense living creatures and strong emotions within Near.",
+        "effect": "For one scene, gain +1 die to all Insight rolls. You sense living creatures and strong emotions within Near.",
         "cost": "1 Fatigue",
         "prereq": "Wits 3+"
       },

@@ -48,7 +48,7 @@
   "patrons_gift": {
     "name": "The Maker's Spark",
     "description": "Once per scene as an action, a Runekeeper of the Breath of the First Forge may touch a held item (weapon, tool, or piece of armor) and whisper a word of creation.",
-    "effect": "For the rest of the scene, the item glows faintly with the warmth of a just-lit forge. It grants: +1 die to any roll involving creative use of the item (improvisation, unconventional applications, or first-time attempts). The first time each scene the bearer would fail a Craft or Craft roll, they may reroll it (the item briefly 'suggests' a new approach).",
+    "effect": "For the rest of the scene, the item glows faintly with the warmth of a just-lit forge. It grants: +1 die to any roll involving creative use of the item (improvisation, unconventional applications, or first-time attempts). The first time each scene the bearer would fail a Craft roll, they may reroll it (the item briefly 'suggests' a new approach).",
     "cost": "After the scene, the user marks +1 Obligation to the Breath of the First Forge. If they spend the downtime following the scene working on a new creation, they may clear this Obligation for free (the Breath is satisfied by the act of making)."
   },
   "rites": [
@@ -65,7 +65,7 @@
         "HEAT"
       ],
       "materials": "A cold hearth, a dead forge, or a project that has stalled.",
-      "effect": "Choose one: Spark the Forge: Relight any non-magical fire or forge as if it had been tended for hours. Gain +2 dice to the next Craft or Craft roll made at that forge. Inspire the Maker: A touched ally gains +1 die to their next creative or skill roll and may reroll one failure on that roll. The Breath delights in seeing what they will make.",
+      "effect": "Choose one: Spark the Forge: Relight any non-magical fire or forge as if it had been tended for hours. Gain +2 dice to the next Craft roll made at that forge. Inspire the Maker: A touched ally gains +1 die to their next creative or skill roll and may reroll one failure on that roll. The Breath delights in seeing what they will make.",
       "push_it": "The spark leaps—the fire catches in an unexpected way. Mark 1 SB (Diamonds) as the Breath's enthusiasm spreads beyond your control. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
       "requires": "Familiar (Invoke: 1 Boon).",
@@ -85,7 +85,7 @@
         "BOOST"
       ],
       "materials": "A failed attempt—a cracked pot, a misshapen blade, a smeared sketch.",
-      "effect": "When you fail a Craft, Craft, or creative roll, you may invoke this Rite to turn the failure into a discovery. The Breath reveals a hidden lesson in the wreckage: Gain +1 die on your next attempt at the same task. Or, gain a Boon (the failure was educational). Or, learn a minor secret about the materials you were working with (GM grants a hint).",
+      "effect": "When you fail a Craft, or creative roll, you may invoke this Rite to turn the failure into a discovery. The Breath reveals a hidden lesson in the wreckage: Gain +1 die on your next attempt at the same task. Or, gain a Boon (the failure was educational). Or, learn a minor secret about the materials you were working with (GM grants a hint).",
       "push_it": "The failure is so spectacular it inspires a completely new approach. Gain +2 dice on your next attempt, but the Breath's enthusiasm marks 1 SB (Clubs) as your improvisation draws attention. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
       "requires": "Familiar (Invoke: 1 Boon).",
@@ -125,7 +125,7 @@
         "BOOST"
       ],
       "materials": "A workshop or space littered with half-finished projects.",
-      "effect": "The Breath blesses a space where making is happening. For the scene: All Craft, Craft, and creative rolls in the zone gain +1 die. Any failure in the zone yields +1 Boon (the Breath loves a learning moment). Start a [4] Inspiration Flood timer. When it fills, the Breath's enthusiasm becomes overwhelming—everyone in the zone must make a creative roll (any skill) or mark Fatigue from the pressure of too many ideas.",
+      "effect": "The Breath blesses a space where making is happening. For the scene: All Craft, and creative rolls in the zone gain +1 die. Any failure in the zone yields +1 Boon (the Breath loves a learning moment). Start a [4] Inspiration Flood timer. When it fills, the Breath's enthusiasm becomes overwhelming—everyone in the zone must make a creative roll (any skill) or mark Fatigue from the pressure of too many ideas.",
       "push_it": "The inspiration flood is immediate. Everyone in the zone gains +2 dice to their next creative roll, but they also gain a Compulsion: Create (must attempt at least one creative act before the scene ends). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
       "cost": "Mark +2 Obligation.",
       "requires": "Familiar + Codex (Invoke: 1 Boon).",
@@ -199,7 +199,7 @@
   "corruption": [
     {
       "tier": 1,
-      "benefit": "The Spark of Inspiration: +1 die to Craft/Craft when starting a new project.",
+      "benefit": "The Spark of Inspiration: +1 die to Craft when starting a new project.",
       "cost": "Restless Hands: You must be making something. Sitting idle costs 1 SB (Spades)."
     },
     {

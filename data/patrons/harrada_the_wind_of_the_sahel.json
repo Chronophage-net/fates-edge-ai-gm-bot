@@ -38,7 +38,7 @@
   "patrons_gift": {
     "name": "Harrada's Breath",
     "description": "Once per scene as an action, a Runekeeper of Harrada may touch a held item (weapon, tool, or garment) and whisper a word of the Scour.",
-    "effect": "For the rest of the scene, the item grants +1 die to Stealth or Escape rolls in dry or dusty environments, and the first time each scene the bearer would be restrained (by chains, ropes, or a grapple), they may reroll the escape check (the wind loosens what binds).",
+    "effect": "For the rest of the scene, the item grants +1 die to Stealth or Athletics rolls in dry or dusty environments, and the first time each scene the bearer would be restrained (by chains, ropes, or a grapple), they may reroll the escape check (the wind loosens what binds).",
     "cost": "After the scene, the user marks +1 Obligation to Harrada."
   },
   "rites": [
@@ -211,7 +211,7 @@
       "master": {
         "name": "Herald of the Storm",
         "xp": 13,
-        "description": "Once per session, call a localized dust storm into being over a zone for one exchange, granting all allies within +2 dice to Stealth and Escape while foes suffer -2 dice to Notice and pursuit. Afterward, you mark +1 permanent Corruption (a faint red tint settles permanently into your skin and hair) and +1 Obligation to Harrada.",
+        "description": "Once per session, call a localized dust storm into being over a zone for one exchange, granting all allies within +2 dice to Stealth and Athletics while foes suffer -2 dice to Notice and pursuit. Afterward, you mark +1 permanent Corruption (a faint red tint settles permanently into your skin and hair) and +1 Obligation to Harrada.",
         "cost": "1 permanent Corruption and +1 Obligation to Harrada",
         "prereq": "Tier III, Spirit 4+"
       }
@@ -226,12 +226,12 @@
     },
     {
       "tier": 2,
-      "benefit": "Scatter the Wind: Once per scene, treat a failed Stealth or Escape roll as a success (you vanish in a puff of dust).",
+      "benefit": "Scatter the Wind: Once per scene, treat a failed Stealth or Athletics roll as a success (you vanish in a puff of dust).",
       "cost": "Dust-Marked: Red dust clings to your clothes no matter how you brush it; –1 die to social rolls with authorities who notice."
     },
     {
       "tier": 3,
-      "benefit": "Eraser's Hand: +2 dice to Forgery or Deception when destroying evidence.",
+      "benefit": "Eraser's Hand: +2 dice to Deception when destroying evidence.",
       "cost": "Compulsive Erasure: You must erase one written lie you see; if you cannot, mark 1 Fatigue."
     },
     {

@@ -39,7 +39,7 @@
   "patrons_gift": {
     "name": "Isoka's Blessing",
     "description": "Once per scene as an action, a Runekeeper of Isoka may touch a held item (weapon, tool, or garment) and whisper a word of shedding.",
-    "effect": "For the rest of the scene, the item grants +1 die to Escape or Deception rolls, and the first time each scene the bearer would be bound, grappled, or restrained, they may break free as a free action (shedding the constraint like a snake sheds its skin).",
+    "effect": "For the rest of the scene, the item grants +1 die to Athletics or Deception rolls, and the first time each scene the bearer would be bound, grappled, or restrained, they may break free as a free action (shedding the constraint like a snake sheds its skin).",
     "cost": "After the scene, the user marks +1 Obligation to Isoka."
   },
   "rites": [
@@ -226,8 +226,8 @@
   "corruption": [
     {
       "tier": 1,
-      "benefit": "Serpent's Gaze: +1 die on Intimidation or social rolls using menace.",
-      "cost": "Cold-Blooded: –1 die on Empathy or warmth-based Persuasion."
+      "benefit": "Serpent's Gaze: +1 die on Sway or social rolls using menace.",
+      "cost": "Cold-Blooded: –1 die on Insight or warmth-based Persuasion."
     },
     {
       "tier": 2,

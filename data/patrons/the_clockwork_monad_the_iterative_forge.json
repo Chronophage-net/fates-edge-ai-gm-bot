@@ -40,7 +40,7 @@
   "patrons_gift": {
     "name": "Monad's Blessing",
     "description": "Once per scene as an action, a Runekeeper of the Clockwork Monad may touch a held item (weapon, tool, or piece of armor) and whisper an iterative command.",
-    "effect": "For the rest of the scene, the item grants +1 die to Craft or Craft rolls, and the first time each scene the bearer would roll a 1 on a crafting or repair test, they may reroll that die (the item briefly self-corrects).",
+    "effect": "For the rest of the scene, the item grants +1 die to Craft rolls, and the first time each scene the bearer would roll a 1 on a crafting or repair test, they may reroll that die (the item briefly self-corrects).",
     "cost": "After the scene, the user marks +1 Obligation to the Clockwork Monad."
   },
   "rites": [
@@ -57,7 +57,7 @@
         "ANALYSIS"
       ],
       "materials": "A flawed or incomplete version of the intended item, or a sequence of progressively refined tools.",
-      "effect": "Choose one: Enhance Creation: Gain +1 die to Craft/Craft when modifying or extending a device. On success, the piece gains one minor enhancement. Analyze Improvement: Gain +2 dice to Insight when analyzing how to enhance a design. You perceive the next logical improvement.",
+      "effect": "Choose one: Enhance Creation: Gain +1 die to Craft when modifying or extending a device. On success, the piece gains one minor enhancement. Analyze Improvement: Gain +2 dice to Insight when analyzing how to enhance a design. You perceive the next logical improvement.",
       "push_it": "(Analyze only) Improvement becomes contagious: nearby devices opportunistically optimize; mark 1 SB (Diamonds) as the cascade ripples. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
       "requires": "Familiar (Invoke: 1 Boon).",
@@ -117,7 +117,7 @@
         "BOOST"
       ],
       "materials": "A dedicated hall of work marked with signs of perpetual return.",
-      "effect": "Establish a locus of progressive creation. All Craft/Craft rolls in the zone gain +2 dice; each failure automatically produces one useful insight. Start a [6] Perfection Pressure timer — filling segments increases the zone's demands for greater improvements.",
+      "effect": "Establish a locus of progressive creation. All Craft rolls in the zone gain +2 dice; each failure automatically produces one useful insight. Start a [6] Perfection Pressure timer — filling segments increases the zone's demands for greater improvements.",
       "push_it": "The locus becomes a beacon drawing rival makers, patrons, and powers; mark +2 Obligation. Cost: Mark +2 Obligation (total +4) or Mark +1 Fatigue.",
       "cost": "Mark +2 Obligation.",
       "requires": "Familiar + Codex (Invoke: 1 Boon).",
@@ -227,7 +227,7 @@
   "corruption": [
     {
       "tier": 1,
-      "benefit": "Iterative Insight: +1 die to Craft/Craft when improving existing designs.",
+      "benefit": "Iterative Insight: +1 die to Craft when improving existing designs.",
       "cost": "Perfectionist Compulsion: You must point out flaws in nearby mechanisms; staying silent costs 1 SB (Diamonds)."
     },
     {
@@ -299,7 +299,7 @@
       },
       {
         "name": "Self-Adjusting Calipers",
-        "effect": "A set of crafting tools grants +2 dice on a single Craft or Craft roll. After the roll, the tools become misaligned (–1 die on future rolls until recalibrated during downtime)."
+        "effect": "A set of crafting tools grants +2 dice on a single Craft roll. After the roll, the tools become misaligned (–1 die on future rolls until recalibrated during downtime)."
       }
     ],
     "scars": [

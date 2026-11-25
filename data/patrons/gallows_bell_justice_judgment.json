@@ -39,7 +39,7 @@
   "patrons_gift": {
     "name": "The Bell's Verdict",
     "description": "Once per scene as an action, a Runekeeper of the Gallows Bell may touch a held item (weapon, shield, or tool) and speak a single word of judgment.",
-    "effect": "For the rest of the scene, the item grants +1 die to Command or Insight rolls when delivering a verdict, enforcing an oath, or uncovering a lie. Additionally, the first time each scene the bearer would be deceived by a lie, they may reroll the opposed check (the Bell's resonance warns them).",
+    "effect": "For the rest of the scene, the item grants +1 die to Sway or Insight rolls when delivering a verdict, enforcing an oath, or uncovering a lie. Additionally, the first time each scene the bearer would be deceived by a lie, they may reroll the opposed check (the Bell's resonance warns them).",
     "cost": "After the scene, the user marks +1 Obligation to the Gallows Bell."
   },
   "rites": [
@@ -206,7 +206,7 @@
       "advanced": {
         "name": "Weighing Stance",
         "xp": 9,
-        "description": "Once per scene, when adjudicating a dispute or delivering a verdict, gain +2 dice to Command or Insight, and the first attempt to intimidate or bribe you away from a fair ruling automatically fails.",
+        "description": "Once per scene, when adjudicating a dispute or delivering a verdict, gain +2 dice to Sway or Insight, and the first attempt to intimidate or bribe you away from a fair ruling automatically fails.",
         "cost": "1 Fatigue",
         "prereq": "Tier II, Endurance 3+"
       },

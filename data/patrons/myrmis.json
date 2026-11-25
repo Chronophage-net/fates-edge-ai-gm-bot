@@ -36,7 +36,7 @@
   "runekeeper_options": {
     "thiasos": {
       "description": "Myrmis's Thiasos is a companion that embodies the stillness before the strike: a gray wolf with one ear missing, a hooded crow that perches on the bearer's shoulder and watches without blinking, an iron-black scorpion that clicks its claws in a rhythm that mimics a heartbeat, or a moth whose wings are marked with the eight-pointed star of the Pereshi highlands.",
-      "care": "Beyond its ordinary care, this Thiasos must be offered a drop of blood each week—not from the bearer, but from an enemy or a sacrifice. If that need goes unmet, the Thiasos becomes Compromised: it grows listless, and the bearer suffers –1 die on all Intimidation and Presence + Sway rolls until a suitable offering is made."
+      "care": "Beyond its ordinary care, this Thiasos must be offered a drop of blood each week—not from the bearer, but from an enemy or a sacrifice. If that need goes unmet, the Thiasos becomes Compromised: it grows listless, and the bearer suffers –1 die on all Presence + Sway rolls until a suitable offering is made."
     },
     "codex": {
       "description": "A Codex sworn to Myrmis is never a book of prayers. It is a roll of the fallen—a list of names, each marked with the price paid. It may be a scroll of vellum stained with blood, a stack of iron nails driven into a plank of old oak, a set of bone tallies threaded on a leather cord, or a cloth-of-battle that records each death in thread as dark as dried blood.",
@@ -63,7 +63,7 @@
         "REVELATION"
       ],
       "materials": "A reckoning-stick marked with eight notches, or a knife that has drawn blood in battle.",
-      "effect": "Choose one: Reckon the Debt: Gain +1 die to Insight when reading the cost of a battle, a feud, or a political maneuver. You see not just the outcome, but the price paid. OR Offer the Sacrifice: Gain +2 dice to Intimidation or Command when threatening a target with a cost they cannot bear. The Matron's arithmetic is terrifying in its clarity.",
+      "effect": "Choose one: Reckon the Debt: Gain +1 die to Insight when reading the cost of a battle, a feud, or a political maneuver. You see not just the outcome, but the price paid. OR Offer the Sacrifice: Gain +2 dice to Sway when threatening a target with a cost they cannot bear. The Matron's arithmetic is terrifying in its clarity.",
       "push_it": "(Reckon only) The debt is not yet paid. You glimpse the target's next move—gain +2 dice to your next roll against them in this scene. Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
       "requires": "Familiar (Invoke: 1 Boon).",
@@ -235,7 +235,7 @@
     },
     {
       "tier": 3,
-      "benefit": "The Reckoning's Grip: +2 dice to Intimidation and Command when threatening a specific cost or sacrifice.",
+      "benefit": "The Reckoning's Grip: +2 dice to Sway when threatening a specific cost or sacrifice.",
       "cost": "Relentless Arithmetic: –1 die to social rolls that require leniency or patience. You see the price, and you are not willing to waive it."
     },
     {

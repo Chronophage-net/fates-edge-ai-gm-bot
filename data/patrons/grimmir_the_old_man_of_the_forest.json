@@ -60,7 +60,7 @@
         "STEALTH"
       ],
       "materials": "A drop of your own blood (1 Fatigue) or the blood of a freshly killed animal.",
-      "effect": "The forest accepts your offering. For the remainder of the scene, you gain +1 die to all Survival and Stealth rolls in natural terrain. Additionally, you may ask the GM one yes/no question about a threat hidden in the wilderness (e.g., 'Is there a predator watching us?').",
+      "effect": "The forest accepts your offering. For the remainder of the scene, you gain +1 die to all Insight and Stealth rolls in natural terrain. Additionally, you may ask the GM one yes/no question about a threat hidden in the wilderness (e.g., 'Is there a predator watching us?').",
       "push_it": "The offering is accepted with hunger—you gain +2 dice instead, but you must leave a visible token (a hair, a scrap of clothing) on the ground. That token can be used by the GM later as a sympathetic link (spend 1 SB to have an animal or spirit track you). Cost: Mark +1 Obligation (total +2) or Mark +1 Fatigue.",
       "cost": "Mark +1 Obligation.",
       "requires": "Familiar (Invoke: 1 Boon).",
@@ -141,7 +141,7 @@
         "TERRAIN"
       ],
       "materials": "A sacred grove-site, a circle of stones, an offering of blood or seed.",
-      "effect": "Heal a blighted place or quicken a damaged ecosystem. Clear taint, restore fertility, awaken dormant forces. Gain +2 dice to related Lore/Nature actions in the region. Start an Ecosystem Restoration [8] timer.",
+      "effect": "Heal a blighted place or quicken a damaged ecosystem. Clear taint, restore fertility, awaken dormant forces. Gain +2 dice to related Lore actions in the region. Start an Ecosystem Restoration [8] timer.",
       "push_it": "The cure spreads to adjacent areas but unbalances another; mark 2 SB (Diamonds). Cost: Mark +1 Obligation (total +3) or Mark +1 Fatigue.",
       "cost": "Mark +2 Obligation.",
       "requires": "Familiar + Codex + Tier III (Invoke: 2 Boons).",
@@ -242,7 +242,7 @@
     "corruption": [
       {
         "tier": 1,
-        "benefit": "+1 die to Survival and Nature rolls in forested terrain.",
+        "benefit": "+1 die to Insight and Lore rolls in forested terrain.",
         "cost": "You feel uncomfortable in open spaces without trees; -1 die to rolls in plains or deserts."
       },
       {
