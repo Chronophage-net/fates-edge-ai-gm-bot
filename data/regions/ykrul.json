@@ -645,7 +645,7 @@
     }
   ],
   "quick_use_notes": {
-    "draw_rules": "Draw until you have all four suits: Spade = place, Heart = actor, Club = pressure, Diamond = leverage. Highest rank sets the main Timer (2–5 → 4, 6–10 → 6, J/Q/K → 8, A → 10).",
+    "draw_rules": "Draw until you have all four suits: Spade = place, Heart = actor, Club = pressure, Diamond = leverage. The Club's rank sets the main Timer (2–5 → 4, 6–10 → 6, J/Q/K → 8, A → 10).",
     "diamonds": "Diamonds are codified outcomes (passes/remounts/truces) that change position rather than call for a roll.",
     "ace_rule": "If any Ace appears, echo steppe and sky motifs—wind that speaks, horses that remember, treaties that bind across generations, and the cold arithmetic of Kon'reh made manifest."
   },
@@ -715,7 +715,7 @@
       {
         "roll": 1,
         "name": "Frost-Bitten",
-        "description": "The clan survives on the edge of the permafrost. +1 die to Survival in cold weather, but –1 die to all social rolls with lowlanders (they stink of frozen horse)."
+        "description": "The clan survives on the edge of the permafrost. +1 die to Endurance in cold weather, but –1 die to all social rolls with lowlanders (they stink of frozen horse)."
       },
       {
         "roll": 2,
@@ -757,7 +757,7 @@
       {
         "roll": 3,
         "name": "Ice Lens Mirage",
-        "description": "The flat steppe plays tricks. Navigation rolls suffer –1 die for the leg. On a miss, the party wanders into a kurgan field—the dead are restless. Start a Spirit Attention [4] timer."
+        "description": "The flat steppe plays tricks. Insight rolls to find the way suffer –1 die for the leg. On a miss, the party wanders into a kurgan field—the dead are restless. Start a Spirit Attention [4] timer."
       },
       {
         "roll": 4,

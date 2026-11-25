@@ -462,7 +462,7 @@
       "subtitle": "[WEATHER] [TRAP]",
       "description": "The road walks you back to your own gate.",
       "flavor": "The gate is closed. The latch is red. Do not touch it. It is still warm.",
-      "mechanical_hook": "Navigation rolls are Desperate. On a Miss, you find yourself at the gate of a house that does not exist. The door opens. Inside, the Hollow waits. Offer a story or lose 1 Boon. The house will remember what you offer."
+      "mechanical_hook": "Insight rolls to find the way are Desperate. On a Miss, you find yourself at the gate of a house that does not exist. The door opens. Inside, the Hollow waits. Offer a story or lose 1 Boon. The house will remember what you offer."
     },
     {
       "rank": 3,
@@ -693,7 +693,7 @@
     }
   ],
   "quick_use_notes": {
-    "draw_rules": "Draw until you have all four suits: Spade = place, Heart = actor, Club = pressure, Diamond = treasure. Highest rank sets the main Timer (2–5 → 4, 6–10 → 6, J/Q/K → 8, A → 10).",
+    "draw_rules": "Draw until you have all four suits: Spade = place, Heart = actor, Club = pressure, Diamond = treasure. The Club's rank sets the main Timer (2–5 → 4, 6–10 → 6, J/Q/K → 8, A → 10).",
     "diamonds": "Treasures (Diamonds) are codified outcomes (blessings/tokens/host-rights) that change position rather than call for a roll.",
     "ace_rule": "If any A appears, echo Hearth & Hollow motifs—quiet bells, red thread, watch-geese, footsteps under the soil—so the dread feels woven through the hedges. The Hollow is always closer than you think.",
     "hollow_tracking": "Track the **Hollow Attention [8]** timer as a campaign-wide pressure. Use the **Hollow Stirrs** table when it reaches 8."

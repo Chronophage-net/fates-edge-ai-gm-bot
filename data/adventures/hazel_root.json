@@ -395,7 +395,7 @@
               "creatureId": "alder-king",
               "quantity": 1,
               "position": "Desperate",
-              "dv": 6,
+              "dv": 5,
               "outcomes": {
                 "clean": "You negotiate a fair bargain: the Alder King will give you a thorn in exchange for a seed from the Hazel Queen's Hedge. He also warns you that the Huntsman is already here — and that he is not the only one hunting you.",
                 "partial": "The King agrees, but he demands a service: bring him the head of the Huntsman. The party must choose between the King and the Hunt.",
@@ -464,7 +464,7 @@
               "creatureId": "huntsman",
               "quantity": 1,
               "position": "Desperate",
-              "dv": 6,
+              "dv": 5,
               "outcomes": {
                 "clean": "You find the Huntsman's true name (hidden in a Briar Wight's memory) and speak it. The Huntsman retreats. The Hunt ends. Tick The Hunt Timer to 0.",
                 "partial": "You speak the name, but it is corrupted. The Huntsman is weakened, but not banished. Tick The Hunt Timer -4.",
@@ -492,7 +492,7 @@
             },
             {
               "name": "The Huntsman's Service",
-              "dv": 6,
+              "dv": 5,
               "position": "Desperate",
               "outcomes": {
                 "clean": "The Huntsman is bound to the party's service. He will hunt the party's enemies — but the price is a memory each season. Award 18-20 XP.",
@@ -502,7 +502,7 @@
             },
             {
               "name": "The Hollow's Bargain",
-              "dv": 6,
+              "dv": 5,
               "position": "Desperate",
               "outcomes": {
                 "clean": "The party offers a memory to the Hollow to settle the war. The King and Queen are both diminished. Award 12-15 XP. The party is marked by the Hollow.",

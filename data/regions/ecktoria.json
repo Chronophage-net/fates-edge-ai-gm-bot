@@ -309,7 +309,7 @@
       "subtitle": "[ROYALTY] [CORRUPTION]",
       "description": "The patrician quarter, walled from the inside, where the Unburdened have not answered a summons in a month.",
       "flavor": "The mirrors in the long gallery no longer blink when their owners do. Nobody has commented on this within the walls, which is itself the most alarming report the Vigil has had out of the place in a decade.",
-      "mechanical_hook": "Getting in is Presence+Sway (DV 5) with an invitation or Wits + Stealth (DV 6) without. Inside, every social roll gains +1 die and every Spirit + Endurance test to leave when you meant to is Desperate."
+      "mechanical_hook": "Getting in is Presence+Sway (DV 5) with an invitation or Wits + Stealth (DV 5, Desperate) without. Inside, every social roll gains +1 die and every Spirit + Endurance test to leave when you meant to is Desperate."
     },
     {
       "rank": 10,
@@ -729,7 +729,7 @@
     }
   ],
   "quick_use_notes": {
-    "draw_rules": "Draw until you have all four suits: Spade = place, Heart = actor, Club = pressure, Diamond = leverage. Highest rank sets the main Timer (2–5 → 4, 6–10 → 6, J/Q/K → 8, A → 10).",
+    "draw_rules": "Draw until you have all four suits: Spade = place, Heart = actor, Club = pressure, Diamond = leverage. The Club's rank sets the main Timer (2–5 → 4, 6–10 → 6, J/Q/K → 8, A → 10).",
     "diamonds": "Diamonds are codified outcomes (papers/favor/precedence) that change position rather than call for a roll.",
     "ace_rule": "If any A appears, echo **marble and fire** motifs — statues that turn their heads, flames that burn blue, law that remembers every name — and also echo the **Vigil's presence**: a cough in the crowd, a seal on a document you did not stamp, a mirror that shows a different face. The different face is always older. It is always watching."
   },

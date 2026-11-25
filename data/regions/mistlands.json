@@ -457,7 +457,7 @@
       "subtitle": "[WEATHER] [DEATH]",
       "description": "Lifts from fen; eats tracks by the yard, names by the breath.",
       "flavor": "Your footfalls vanish behind you. The mist is following, not rising. It has a name for you already.",
-      "mechanical_hook": "Navigation rolls are Desperate. On a Miss, you lose your way and gain 1 Fatigue."
+      "mechanical_hook": "Insight rolls to find the way are Desperate. On a Miss, you lose your way and gain 1 Fatigue."
     },
     {
       "rank": 3,
@@ -511,7 +511,7 @@
       "subtitle": "[WEATHER] [MAGIC]",
       "description": "Crosses Aberderrin; voices sweet, landmarks false.",
       "flavor": "The wind smells of honey and rot. Do not follow it. It is not the forest—it is the memory of the forest.",
-      "mechanical_hook": "Navigation rolls are at +1 DV. On a Miss, you follow a false landmark and lose 1 segment of progress."
+      "mechanical_hook": "Insight rolls to find the way are at +1 DV. On a Miss, you follow a false landmark and lose 1 segment of progress."
     },
     {
       "rank": 9,
@@ -688,7 +688,7 @@
     }
   ],
   "quick_use_notes": {
-    "draw_rules": "Draw until you have all four suits: Spade = place, Heart = actor, Club = pressure, Diamond = leverage. Highest rank sets the main Timer (2–5 → 4, 6–10 → 6, J/Q/K → 8, A → 10).",
+    "draw_rules": "Draw until you have all four suits: Spade = place, Heart = actor, Club = pressure, Diamond = leverage. The Club's rank sets the main Timer (2–5 → 4, 6–10 → 6, J/Q/K → 8, A → 10).",
     "diamonds": "Diamonds are codified outcomes (passes/seals/tokens) that change position rather than call for a roll.",
     "ace_rule": "If any A appears, echo breath and boundary—bells answering across water, salt that won't dry, voices returning late. Also echo the Direwood's breath—a cold wind, a whisper of leaves, the smell of damp earth."
   },

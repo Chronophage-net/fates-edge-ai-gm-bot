@@ -299,7 +299,7 @@
       "subtitle": "[DUNGEON] [TABOO]",
       "description": "Vine-choked streets shift on the hour; a ruin as a living thing.",
       "flavor": "The vines pulse with a slow heartbeat. The city is sleeping, not dead. It was the Lethai-thora's capital. It never stopped breathing.",
-      "mechanical_hook": "Navigation rolls are Desperate; on a success, you find a useful ruin; on failure, you trigger a Ward-Trap."
+      "mechanical_hook": "Insight rolls to find the way are Desperate; on a success, you find a useful ruin; on failure, you trigger a Ward-Trap."
     },
     {
       "rank": 11,
@@ -487,7 +487,7 @@
       "subtitle": "[MAGIC] [DANGER]",
       "description": "Footprints vote to go elsewhere; direction as democracy.",
       "flavor": "Your tracks point the way you came—even when you haven't turned. The forest is testing your resolve.",
-      "mechanical_hook": "Navigation rolls are Desperate; on a Miss, you retrace your steps (lose 1 segment of progress)."
+      "mechanical_hook": "Insight rolls to find the way are Desperate; on a Miss, you retrace your steps (lose 1 segment of progress)."
     },
     {
       "rank": 4,
@@ -709,7 +709,7 @@
     }
   ],
   "quick_use_notes": {
-    "draw_rules": "Draw until you have all four suits: Spade = place, Heart = actor, Club = pressure, Diamond = leverage. Highest rank sets the main Timer (2–5 → 4, 6–10 → 6, J/Q/K → 8, A → 10).",
+    "draw_rules": "Draw until you have all four suits: Spade = place, Heart = actor, Club = pressure, Diamond = leverage. The Club's rank sets the main Timer (2–5 → 4, 6–10 → 6, J/Q/K → 8, A → 10).",
     "diamonds": "Diamonds are codified outcomes (charms/keys/passes) that change position rather than call for a roll.",
     "empire_echo": "When a J/Q/K is the highest rank in your seed, add one visible relic-logic (floating stairs, singing locks, patrol shades).",
     "ace_rule": "If any A appears, echo leaf and light motifs—paths that remember, leaves that whisper, light that moves like water."
