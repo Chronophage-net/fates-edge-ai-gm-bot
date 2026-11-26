@@ -153,25 +153,75 @@ class AIDriver {
         return { systemPrompt, messages: kept };
     }
 
+    // ── Cancellation ───────────────────────────────────────────────
+
+    /**
+     * The abort signal of the GM turn this call belongs to, if any
+     * (modules/turn-lifecycle.js). When a turn is superseded -- a newer
+     * message, a role change, a reconnect -- its in-flight model request
+     * is cancelled instead of running on and billing tokens nobody reads.
+     */
+    _turnSignal() {
+        try { return require('../modules/turn-lifecycle').signal() || null; } catch { return null; }
+    }
+
+    /**
+     * An abort signal that fires on the turn's cancellation or after
+     * `timeoutMs` of inactivity. Call touch() whenever data arrives
+     * (streaming) to restart the idle clock, and done() when finished.
+     */
+    _requestGuard(timeoutMs) {
+        const controller = new AbortController();
+        let timedOut = false;
+        let timer = null;
+        const arm = () => {
+            clearTimeout(timer);
+            timer = setTimeout(() => { timedOut = true; controller.abort(); }, timeoutMs);
+        };
+        arm();
+        const turn = this._turnSignal();
+        const onTurnAbort = () => controller.abort();
+        if (turn) {
+            if (turn.aborted) controller.abort();
+            else turn.addEventListener('abort', onTurnAbort, { once: true });
+        }
+        return {
+            signal: controller.signal,
+            touch: arm,
+            timedOut: () => timedOut,
+            cancelled: () => !!turn?.aborted,
+            done: () => { clearTimeout(timer); turn?.removeEventListener('abort', onTurnAbort); },
+        };
+    }
+
+    /** The error to throw when a guarded request was aborted. */
+    _abortError(guard, url, timeoutMs) {
+        if (guard.cancelled()) {
+            const err = new Error('Model request cancelled: the turn was superseded.');
+            err.name = 'AbortError';
+            return err;
+        }
+        return new Error(`Request to ${url} timed out after ${timeoutMs}ms without a response.`);
+    }
+
     // ── Shared HTTP retry/backoff/timeout helper ───────────────────
 
     /**
-     * Fetch JSON from a raw HTTP API with timeout + retry/backoff on
-     * transient failures (429/5xx/network errors). Shared so this logic
-     * doesn't have to be hand-rolled (and drift) in every driver that
-     * talks to a plain HTTP API instead of an SDK — see review feedback:
-     * DeepSeek had this, OpenAI/Ollama didn't.
+     * Fetch from a raw HTTP API with timeout, cancellation and
+     * retry/backoff on transient failures (429/5xx/network errors).
+     * Honors a 429/503 Retry-After header. Returns the Response; for a
+     * streamed body pass `{ stream: true }` and read it with the returned
+     * guard (`response.guard`) so the idle timeout keeps running until the
+     * stream ends -- call guard.done() when finished.
      *
      * @param {string} url
-     * @param {object} fetchOptions - passed to fetch() as-is (method,
-     *   headers, body, ...). `signal` is added/overridden internally.
+     * @param {object} fetchOptions - passed to fetch() (signal is managed here)
      * @param {object} [opts]
      * @param {number} [opts.retries=2]
-     * @param {number} [opts.timeoutMs=30000]
-     * @param {Set<number>} [opts.retryableStatuses] - HTTP statuses worth
-     *   retrying. Defaults to {429,500,502,503,504}.
+     * @param {number} [opts.timeoutMs=30000] - idle timeout
+     * @param {boolean} [opts.stream=false]
+     * @param {Set<number>} [opts.retryableStatuses]
      * @param {(status:number, bodyText:string) => string} [opts.describeError]
-     *   - formats a human-readable error message for a non-ok response.
      */
     async _fetchWithRetries(url, fetchOptions = {}, opts = {}) {
         const retries = opts.retries ?? 2;
@@ -179,54 +229,114 @@ class AIDriver {
         const retryableStatuses = opts.retryableStatuses || new Set([429, 500, 502, 503, 504]);
         const describeError = opts.describeError || ((status, text) => `HTTP ${status}: ${text}`);
 
-        let attempt = 0;
         let lastErr;
-
-        while (attempt <= retries) {
-            const controller = new AbortController();
-            const timer = setTimeout(() => controller.abort(), timeoutMs);
-
+        for (let attempt = 0; attempt <= retries; attempt++) {
+            const guard = this._requestGuard(timeoutMs);
+            let keepGuard = false;
             try {
-                const response = await fetch(url, { ...fetchOptions, signal: controller.signal });
-                clearTimeout(timer);
-
+                const response = await fetch(url, { ...fetchOptions, signal: guard.signal });
                 if (!response.ok) {
                     const errText = await response.text().catch(() => '(no body)');
                     const err = new Error(describeError(response.status, errText));
                     err.status = response.status;
                     if (retryableStatuses.has(response.status) && attempt < retries) {
                         lastErr = err;
-                        attempt++;
-                        await this._backoff(attempt);
+                        await this._backoff(attempt + 1, response.headers?.get?.('retry-after'));
                         continue;
                     }
                     throw err;
                 }
-
+                if (opts.stream) { keepGuard = true; response.guard = guard; }
                 return response;
             } catch (e) {
-                clearTimeout(timer);
                 if (e.name === 'AbortError') {
-                    lastErr = new Error(`Request to ${url} timed out after ${timeoutMs}ms.`);
+                    const err = this._abortError(guard, url, timeoutMs);
+                    if (err.name === 'AbortError') throw err; // cancelled: never retry
+                    lastErr = err;
                 } else {
                     lastErr = e;
                 }
-                // Retry network-level failures too (e.g. ECONNRESET), not just HTTP statuses.
-                if (attempt < retries && (e.name === 'AbortError' || !e.status)) {
-                    attempt++;
-                    await this._backoff(attempt);
+                // Retry timeouts and network failures (e.g. ECONNRESET), not 4xx.
+                if (attempt < retries && !lastErr.status) {
+                    await this._backoff(attempt + 1);
                     continue;
                 }
                 throw lastErr;
+            } finally {
+                if (!keepGuard) guard.done();
             }
         }
         throw lastErr;
     }
 
-    _backoff(attempt) {
-        const delay = Math.min(1000 * 2 ** attempt, 8000);
+    /**
+     * Exponential backoff with jitter, capped at 8s. A server-sent
+     * Retry-After (seconds or an HTTP date) wins when present, capped at 30s.
+     */
+    _backoff(attempt, retryAfter = null) {
+        let delay = Math.min(1000 * 2 ** attempt, 8000) * (0.75 + Math.random() * 0.5);
+        if (retryAfter) {
+            const seconds = Number(retryAfter);
+            const ms = Number.isFinite(seconds) ? seconds * 1000 : Date.parse(retryAfter) - Date.now();
+            if (Number.isFinite(ms) && ms > 0) delay = Math.min(ms, 30000);
+        }
         return new Promise(resolve => setTimeout(resolve, delay));
     }
 }
 
+/**
+ * Parse an OpenAI-style SSE body ("data: {...}" frames separated by a
+ * blank line, LF or CRLF) into an async iterator of data payload strings.
+ * Calls `onData` for every received chunk so a caller's idle timeout can
+ * be refreshed.
+ */
+async function* parseSSEStream(body, onData = null) {
+    const decoder = new TextDecoder();
+    let buffer = '';
+    for await (const bytes of body) {
+        onData?.();
+        buffer += decoder.decode(bytes, { stream: true }).replace(/\r\n?/g, '\n');
+        let idx;
+        while ((idx = buffer.indexOf('\n\n')) !== -1) {
+            const frame = buffer.slice(0, idx);
+            buffer = buffer.slice(idx + 2);
+            const data = frame.split('\n').filter(line => line.startsWith('data:')).map(line => line.slice(5).replace(/^ /, '')).join('\n');
+            if (data) yield data.trim();
+        }
+    }
+    const tail = buffer.split('\n').filter(line => line.startsWith('data:')).map(line => line.slice(5).trim()).join('\n');
+    if (tail) yield tail;
+}
+
+/**
+ * Parse a newline-delimited JSON body (Ollama) into an async iterator of
+ * objects; `onData` as above. Lines that are not JSON are skipped.
+ */
+async function* parseNDJSONStream(body, onData = null) {
+    const decoder = new TextDecoder();
+    let buffer = '';
+    const parse = line => { try { return JSON.parse(line); } catch { return undefined; } };
+    for await (const bytes of body) {
+        onData?.();
+        buffer += decoder.decode(bytes, { stream: true });
+        let idx;
+        while ((idx = buffer.indexOf('\n')) !== -1) {
+            const line = buffer.slice(0, idx).trim();
+            buffer = buffer.slice(idx + 1);
+            const obj = line ? parse(line) : undefined;
+            if (obj !== undefined) yield obj;
+        }
+    }
+    const obj = buffer.trim() ? parse(buffer.trim()) : undefined;
+    if (obj !== undefined) yield obj;
+}
+
+/** Drop any <think>...</think> block a local model writes into its reply. */
+function stripThinking(text) {
+    return String(text || '').replace(/<think>[\s\S]*?(<\/think>|$)/gi, '').trim();
+}
+
 module.exports = AIDriver;
+module.exports.parseSSEStream = parseSSEStream;
+module.exports.parseNDJSONStream = parseNDJSONStream;
+module.exports.stripThinking = stripThinking;

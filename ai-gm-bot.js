@@ -115,15 +115,17 @@ try {
   if (AI_PROVIDER === 'ollama') {
     const OllamaDriver = require('./drivers/ollama-driver');
     driver = new OllamaDriver();
-    console.log(`🤖 Loaded Ollama driver (model: ${process.env.OLLAMA_MODEL})`);
+    console.log(`🤖 Loaded Ollama driver (model: ${driver.model})`);
   } else if (AI_PROVIDER === 'openai') {
     const OpenAIDriver = require('./drivers/openai-driver');
-    driver = new OpenAIDriver(process.env.OPENAI_API_KEY, process.env.AI_MODEL || 'gpt-4o-mini');
+    // AI_MODEL (legacy) wins, then OPENAI_MODEL, then the driver's default.
+    // The old hard-coded 'gpt-4o-mini' fallback here made OPENAI_MODEL a no-op.
+    driver = new OpenAIDriver(process.env.OPENAI_API_KEY, process.env.AI_MODEL || undefined);
     console.log(`🤖 Loaded OpenAI driver (model: ${driver.model})`);
   } else if (AI_PROVIDER === 'deepseek') {
     const DeepSeekDriver = require('./drivers/deepseek-driver');
     driver = new DeepSeekDriver();
-    console.log(`🤖 Loaded DeepSeek driver (model: ${process.env.DEEPSEEK_MODEL || 'deepseek-v4-pro'})`);
+    console.log(`🤖 Loaded DeepSeek driver (model: ${driver.model})`);
   } else {
     console.error(`❌ Unsupported AI provider: ${AI_PROVIDER}`);
     process.exit(1);

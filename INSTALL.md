@@ -15,7 +15,7 @@ seat, and runs the game.
 - [ ] **Your Socket Server's address and a room code** — the same
       address/room your players use in the Web Client. If it's running
       on the same machine, that's `ws://localhost:10000` by default.
-- [ ] **Node.js 18+**, or **Docker** if you'd rather containerize it
+- [ ] **Node.js 22+**, or **Docker** if you'd rather containerize it
       (same choice as the other two guides).
 - [ ] **An AI "brain" for it to use** — pick one before you start the
       setup wizard, since it'll ask:
@@ -24,7 +24,7 @@ seat, and runs the game.
     fractions of a cent), runs in the cloud.
   - **Ollama** — free and fully private (runs on your own hardware), but
     you install [Ollama](https://ollama.com) separately first and pull
-    a model (`ollama pull mistral`, or similar). Needs a reasonably
+    a model (`ollama pull gemma3:12b`, or `gemma3:4b` on a smaller machine). Needs a reasonably
     capable machine/GPU for good response times.
 - [ ] **The Socket Server's `API_KEY`** — needed so the bot can save/load
       campaign data. Whoever set up the Socket Server has this (see that

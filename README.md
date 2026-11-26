@@ -338,7 +338,7 @@ startup. Example for OpenAI:
 ```
 AI_PROVIDER=openai
 OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxx
-AI_MODEL=gpt-4o-mini
+OPENAI_MODEL=gpt-6.1-terra
 WS_URL=ws://localhost:10000
 ROOM=AC12
 BOT_NAME=AI_GM
@@ -349,7 +349,7 @@ For Ollama (local or cloud):
 ```
 AI_PROVIDER=ollama
 OLLAMA_BASE_URL=http://localhost:11434
-OLLAMA_MODEL=mistral
+OLLAMA_MODEL=gemma3:12b
 WS_URL=ws://localhost:10000
 ROOM=AC12
 ```
@@ -359,7 +359,7 @@ For DeepSeek:
 ```
 AI_PROVIDER=deepseek
 DEEPSEEK_API_KEY=sk-xxxxxxxxxxxxxxxx
-DEEPSEEK_MODEL=deepseek-chat
+DEEPSEEK_MODEL=deepseek-v4-pro
 WS_URL=ws://localhost:10000
 ROOM=AC12
 ```
@@ -399,14 +399,38 @@ so behavior doesn't drift between backends:
 - **`_fetchWithRetries(url, options, opts)`** – shared retry/backoff/timeout helper for drivers
   that call a raw HTTP API (DeepSeek, Ollama) instead of an SDK with its own retry handling
   (OpenAI, which is configured via the SDK's own `timeout`/`maxRetries` client options instead).
+  Backoff has jitter and honours a server's `Retry-After`. The timeout is an **idle** timeout:
+  a streamed reply that keeps arriving is never cut off, only a stalled one.
+- **Turn cancellation** – every built-in driver cancels its request when the GM turn it belongs
+  to is superseded (a newer message, a role change, a reconnect), so abandoned replies stop
+  generating and stop billing tokens.
+- **`parseSSEStream` / `parseNDJSONStream` / `stripThinking`** – shared stream parsers (LF or
+  CRLF) and a filter for `<think>` text a local model writes into its reply.
 
 ### Built‑in Drivers
 
 | Driver | File | Retries/Timeout | Context Window | Streaming |
 |--------|------|------------------|-----------------|-----------|
-| **OpenAI** | `openai-driver.js` | Via SDK (`OPENAI_MAX_RETRIES`, `OPENAI_TIMEOUT_MS`) | `OPENAI_CONTEXT_WINDOW` (default 128000) | ✅ |
+| **OpenAI** | `openai-driver.js` | Via SDK (`OPENAI_MAX_RETRIES`, `OPENAI_TIMEOUT_MS`) | `OPENAI_CONTEXT_WINDOW` (default 128000 — a prompt budget, not the model's ceiling) | ✅ |
 | **Ollama** | `ollama-driver.js` | `OLLAMA_MAX_RETRIES`, `OLLAMA_TIMEOUT_MS` | `OLLAMA_CONTEXT_WINDOW` (default 8192 — sent to Ollama as `num_ctx` on every request, **set this to match your actual model**, check with `ollama show <model>`) | ✅ |
-| **DeepSeek** | `deepseek-driver.js` | `DEEPSEEK_MAX_RETRIES`, `DEEPSEEK_TIMEOUT_MS` | `DEEPSEEK_CONTEXT_WINDOW` (default 64000) | ✅ |
+| **DeepSeek** | `deepseek-driver.js` | `DEEPSEEK_MAX_RETRIES`, `DEEPSEEK_TIMEOUT_MS` | `DEEPSEEK_CONTEXT_WINDOW` (default 128000 — the models accept 1M, but every prompt token is billed every turn) | ✅ |
+
+**Models and speed.** Defaults are chosen for a live table, where a quick reply matters more
+than deep deliberation:
+
+- **OpenAI** defaults to `gpt-6.1-terra` with `reasoning_effort: none`. Every current OpenAI
+  model reasons; models that refuse `none` (Astra, Sol) get `low`, and reasoning tokens get
+  their own allowance (`OPENAI_REASONING_TOKENS`, default 4000) on top of the reply budget so a
+  reply is never spent before it is written. If a model or an OpenAI-compatible server
+  (`OPENAI_BASE_URL`) rejects a parameter (`temperature`, `max_completion_tokens`,
+  `reasoning_effort`), the driver adapts once and remembers.
+- **DeepSeek** defaults to `deepseek-v4-pro` (`deepseek-flash` is faster and cheaper) with
+  thinking **off**; `DEEPSEEK_THINKING=enabled` turns it on, with `DEEPSEEK_REASONING_EFFORT`
+  (`low`/`high`/`max`). The legacy name `deepseek-v4-flash` is mapped to `deepseek-flash`.
+- **Ollama** uses `/api/chat`, so the model's own chat template is applied, keeps the model
+  loaded between turns (`OLLAMA_KEEP_ALIVE`, default `30m`), and turns thinking off for
+  thinking models (`OLLAMA_THINK`). The default model is `gemma3:12b`; use `gemma3:4b` on
+  smaller machines.
 
 All three now handle transient failures (429/5xx/network errors) with exponential backoff
 the same way, instead of that behavior depending on which driver you picked.
@@ -643,13 +667,26 @@ A few things worth knowing before adding to this suite:
 |----------|-----------|---------|---------|
 | `HEADLESS` / `OLLAMA_NONINTERACTIVE` | Ollama | off | Skip interactive model-recovery prompts; fail fast instead. **Required for any unattended deployment.** |
 | `OLLAMA_CONTEXT_WINDOW` | Ollama | `8192` | Sent to Ollama as `num_ctx` on every request (not just this bot's local trimming budget) — set to your actual model's real context window; check with `ollama show <model>`. |
-| `OLLAMA_TIMEOUT_MS` | Ollama | `60000` | Per-request timeout (local models are slow). |
+| `OLLAMA_MODEL` | Ollama | `gemma3:12b` | Model to run. |
+| `OLLAMA_TIMEOUT_MS` | Ollama | `120000` | Idle timeout (local models can be slow to load and start). |
+| `OLLAMA_KEEP_ALIVE` | Ollama | `30m` | How long Ollama keeps the model loaded after a reply. Ollama's own default (5m) reloads the model after every quiet spell. |
+| `OLLAMA_THINK` | Ollama | `false` | `true` or `low`/`medium`/`high` lets a thinking model think (slower). |
+| `OLLAMA_TEMPERATURE` | Ollama | `0.8` | Sampling temperature. |
 | `OLLAMA_MAX_RETRIES` | Ollama | `1` | Retries on transient HTTP/network failures. |
-| `OPENAI_CONTEXT_WINDOW` | OpenAI | `128000` | Context window for the configured model. |
-| `OPENAI_TIMEOUT_MS` | OpenAI | `30000` | Passed to the OpenAI SDK client. |
+| `OPENAI_MODEL` | OpenAI | `gpt-6.1-terra` | Model to use (`AI_MODEL` still works and wins if set). |
+| `OPENAI_BASE_URL` | OpenAI | unset | Any OpenAI-compatible server (a proxy, vLLM, LM Studio, ...). |
+| `OPENAI_REASONING_EFFORT` | OpenAI | `none`, or `low` for models that refuse `none` | Reasoning effort for reasoning models. |
+| `OPENAI_REASONING_TOKENS` | OpenAI | `4000` | Extra completion budget for reasoning tokens when effort is above `none`. |
+| `OPENAI_CONTEXT_WINDOW` | OpenAI | `128000` | Prompt budget `trimToFit()` works to. |
+| `OPENAI_TIMEOUT_MS` | OpenAI | `60000` | Passed to the OpenAI SDK client. |
 | `OPENAI_MAX_RETRIES` | OpenAI | `2` | Passed to the OpenAI SDK client (handles 429/5xx internally). |
-| `DEEPSEEK_CONTEXT_WINDOW` | DeepSeek | `64000` | Context window for the configured model. |
-| `DEEPSEEK_TIMEOUT_MS` | DeepSeek | `30000` | Per-request timeout. |
+| `DEEPSEEK_MODEL` | DeepSeek | `deepseek-v4-pro` | `deepseek-flash` for speed. |
+| `DEEPSEEK_BASE_URL` | DeepSeek | `https://api.deepseek.com` | OpenAI-format endpoint. |
+| `DEEPSEEK_THINKING` | DeepSeek | `disabled` | `enabled` turns on thinking mode (slower; ignores temperature). |
+| `DEEPSEEK_REASONING_EFFORT` | DeepSeek | `low` when thinking | `low`, `high` or `max`. |
+| `DEEPSEEK_REASONING_TOKENS` | DeepSeek | `4000` | Extra completion budget for reasoning when thinking is on. |
+| `DEEPSEEK_CONTEXT_WINDOW` | DeepSeek | `128000` | Prompt budget `trimToFit()` works to (models accept up to 1M). |
+| `DEEPSEEK_TIMEOUT_MS` | DeepSeek | `60000` | Idle timeout. |
 | `DEEPSEEK_MAX_RETRIES` | DeepSeek | `2` | Retries on transient HTTP/network failures. |
 | `LOG_LEVEL` | All | `info` | `error` \| `warn` \| `info` \| `debug`. `debug` also unlocks aggressive-sync ticks and raw inbound WebSocket traffic, both silenced at `info` since they fire constantly. |
 | `LOG_RING_SIZE` | All | `300` | How many recent log entries `modules/logger.js` keeps in memory for the status dashboard's feed. |

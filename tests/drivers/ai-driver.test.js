@@ -75,3 +75,34 @@ test('generateResponse throws if not overridden by a subclass', async () => {
   const driver = new AIDriver();
   await assert.rejects(() => driver.generateResponse({ systemPrompt: '', messages: [] }), /generateResponse\(\) must be implemented/);
 });
+
+test('_fetchWithRetries honours Retry-After on a 429', async () => {
+  const AIDriver = require('../../drivers/ai-driver');
+  const driver = new AIDriver();
+  const waits = [];
+  driver._backoff = async (attempt, retryAfter) => { waits.push(retryAfter); };
+  let calls = 0;
+  const original = global.fetch;
+  global.fetch = async () => (++calls === 1
+    ? { ok: false, status: 429, headers: new Map([['retry-after', '2']]), text: async () => 'slow down' }
+    : { ok: true, status: 200 });
+  try {
+    await driver._fetchWithRetries('https://example.invalid', {}, { retries: 1 });
+  } finally { global.fetch = original; }
+  assert.deepStrictEqual(waits, ['2']);
+});
+
+test('_fetchWithRetries stops at once, without retrying, when the turn is cancelled', async () => {
+  const AIDriver = require('../../drivers/ai-driver');
+  const turns = require('../../modules/turn-lifecycle');
+  const driver = new AIDriver();
+  let calls = 0;
+  const original = global.fetch;
+  global.fetch = (url, opts) => { calls++; return new Promise((_, reject) => opts.signal.addEventListener('abort', () => { const e = new Error('aborted'); e.name = 'AbortError'; reject(e); })); };
+  try {
+    const run = turns.run(() => driver._fetchWithRetries('https://example.invalid', {}, { retries: 3 }));
+    setTimeout(() => turns.invalidate(), 20);
+    await assert.rejects(run, err => err.name === 'AbortError');
+  } finally { global.fetch = original; }
+  assert.strictEqual(calls, 1);
+});

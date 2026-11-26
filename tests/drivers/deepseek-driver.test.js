@@ -86,3 +86,57 @@ test('_describeError - formats 401 and 429 messages', () => {
   assert.match(driver._describeError(401, 'nope'), /invalid \(401\)/);
   assert.match(driver._describeError(429, 'slow down'), /rate limit exceeded \(429\)/);
 });
+
+test('thinking is off by default and temperature is sent; legacy flash name is mapped', async () => {
+  let body, url;
+  process.env.DEEPSEEK_MODEL = 'deepseek-v4-flash';
+  try {
+    await withMockFetch(
+      async (u, opts) => { url = u; body = JSON.parse(opts.body); return makeJsonResponse(200, { choices: [{ message: { content: 'x' }, finish_reason: 'stop' }] }); },
+      async () => {
+        const driver = new DeepSeekDriver();
+        await driver.generateResponse({ systemPrompt: 'sys', messages: [] });
+      }
+    );
+  } finally { delete process.env.DEEPSEEK_MODEL; }
+  assert.strictEqual(url, 'https://api.deepseek.com/chat/completions');
+  assert.strictEqual(body.model, 'deepseek-flash');
+  assert.deepStrictEqual(body.thinking, { type: 'disabled' });
+  assert.strictEqual(body.temperature, 0.8);
+  assert.ok(!('reasoning_effort' in body));
+});
+
+test('thinking enabled sends effort, drops temperature and adds reasoning room', async () => {
+  let body;
+  process.env.DEEPSEEK_THINKING = 'enabled';
+  try {
+    await withMockFetch(
+      async (u, opts) => { body = JSON.parse(opts.body); return makeJsonResponse(200, { choices: [{ message: { content: 'x' }, finish_reason: 'stop' }] }); },
+      async () => { await new DeepSeekDriver().generateResponse({ systemPrompt: 'sys', messages: [] }); }
+    );
+  } finally { delete process.env.DEEPSEEK_THINKING; }
+  assert.deepStrictEqual(body.thinking, { type: 'enabled' });
+  assert.strictEqual(body.reasoning_effort, 'low');
+  assert.ok(!('temperature' in body));
+  assert.ok(body.max_tokens > 1200);
+});
+
+test('streaming handles CRLF frames and a stream longer than the idle timeout', async () => {
+  const frames = ['Rain ', 'on ', 'the ', 'gate.'].map(t => `data: ${JSON.stringify({ choices: [{ delta: { content: t } }] })}\r\n\r\n`);
+  frames.push('data: [DONE]\r\n\r\n');
+  async function* body() {
+    const enc = new TextEncoder();
+    for (const f of frames) { await new Promise(r => setTimeout(r, 40)); yield enc.encode(f); }
+  }
+  await withMockFetch(
+    async () => ({ ok: true, status: 200, body: body(), headers: new Map() }),
+    async () => {
+      const driver = new DeepSeekDriver();
+      driver.timeoutMs = 100; // shorter than the whole stream, longer than any gap
+      const tokens = [];
+      const out = await driver.generateResponse({ systemPrompt: 's', messages: [] }, t => tokens.push(t));
+      assert.strictEqual(out, 'Rain on the gate.');
+      assert.strictEqual(tokens.length, 4);
+    }
+  );
+});

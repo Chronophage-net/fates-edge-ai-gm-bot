@@ -7,7 +7,7 @@
 # reachable from outside the container if you map the port; set
 # STATUS_SERVER=false to disable it and skip the mapping entirely.
 # ---------------------------------------------------------------
-FROM node:20-alpine
+FROM node:22-alpine
 
 WORKDIR /app
 

@@ -13,62 +13,66 @@ function ask(query) {
     });
 }
 
+const { parseNDJSONStream, stripThinking } = AIDriver;
+
+// Is this error Ollama saying the model is missing (vs. a timeout, an
+// overloaded server, or a bad prompt)? Only then is model recovery useful.
+const isMissingModelError = e => e?.status === 404 || /model ['"]?[^'"\s]*['"]? not found|try pulling it|pull model/i.test(String(e?.message || ''));
+
 class OllamaDriver extends AIDriver {
     constructor() {
         super();
-        this.baseUrl = process.env.OLLAMA_BASE_URL || 'http://localhost:11434';
-        this.model = process.env.OLLAMA_MODEL || 'mistral';
+        this.baseUrl = (process.env.OLLAMA_BASE_URL || 'http://localhost:11434').replace(/\/+$/, '');
+        // gemma3 is a current, non-thinking chat model that narrates well;
+        // 12b needs roughly 8 GB of VRAM. Use gemma3:4b on smaller machines.
+        this.model = process.env.OLLAMA_MODEL || 'gemma3:12b';
         this.apiKey = process.env.OLLAMA_API_KEY || null;
-        this.timeoutMs = parseInt(process.env.OLLAMA_TIMEOUT_MS || '60000', 10); // local models are slow
+        // Idle timeout: local models can take a while to load and start.
+        this.timeoutMs = parseInt(process.env.OLLAMA_TIMEOUT_MS || '120000', 10);
         this.maxRetries = parseInt(process.env.OLLAMA_MAX_RETRIES || '1', 10);
-        // Highly model-dependent -- operators running Ollama should set
-        // this to match whatever OLLAMA_MODEL actually is. Defaults
-        // conservative. Two different things read this value, and both
-        // matter:
-        //   1. ai-driver.js's trimToFit() uses it as the client-side
-        //      budget for how much system prompt + history to send at all.
-        //   2. CHANGED: it's now ALSO sent to Ollama itself as `num_ctx`
-        //      on every request (see _makeRequest()/_makeStreamingRequest()
-        //      below) -- previously this.contextWindow only drove #1, so
-        //      even a correctly-sized prompt could still get silently
-        //      truncated server-side by Ollama's own default num_ctx
-        //      (commonly 2048-4096 depending on the model/Modelfile,
-        //      regardless of that model's real max context) rather than
-        //      whatever was configured here. Now the two stay in sync by
-        //      construction instead of requiring an operator to separately
-        //      configure Ollama's Modelfile to match.
-        // Note this is genuinely model-specific, not just size-class-
-        // specific -- e.g. Llama 3.2 1B/3B both officially support up to
-        // 128K tokens, but that's irrelevant if you don't raise this to
-        // match; conversely raising this far past what your hardware/model
-        // can actually hold just wastes RAM/VRAM reserving KV-cache space.
-        // Check `ollama show <model>` for a given model's real ceiling.
+        this.temperature = parseFloat(process.env.OLLAMA_TEMPERATURE || '0.8');
+        // Sent to Ollama as num_ctx AND used by trimToFit(), so the prompt
+        // the bot builds and the window Ollama allocates always match.
+        // Set it to what your model and memory support (`ollama show`).
         this.contextWindow = parseInt(process.env.OLLAMA_CONTEXT_WINDOW || '8192', 10);
-        // CHANGED: this was never actually read anywhere -- generateResponse()
-        // below hardcoded 400 directly at both call sites regardless of what
-        // an operator set, and trimToFit()'s reserve (ai-driver.js) silently
-        // fell back to its own default since this.maxTokens didn't exist. Wire
-        // it up like the other drivers so OLLAMA_MAX_TOKENS actually does
-        // something, and default it higher -- 400 routinely truncated
-        // responses mid-tag (see deepseek-driver.js for the fuller story).
         this.maxTokens = parseInt(process.env.OLLAMA_MAX_TOKENS || '1200', 10);
+        // Keep the model in memory between turns. Ollama's default is 5m,
+        // which meant the first message after a quiet spell waited for a
+        // full model reload.
+        this.keepAlive = process.env.OLLAMA_KEEP_ALIVE || '30m';
+        // Thinking models (qwen3.x, gemma4, deepseek-r1, gpt-oss) think by
+        // default, which is slow at a live table. OLLAMA_THINK=true or
+        // low|medium|high turns it on; models without the switch ignore it.
+        const think = (process.env.OLLAMA_THINK || 'false').toLowerCase();
+        this.think = think === 'true' ? true : think === 'false' ? false : think;
+        this.sendThink = true;
 
-        // CHANGED: the interactive recovery flow below (readline prompts
-        // for "pull this model?" / "choose a model") is genuinely good UX
-        // for a developer running this at a terminal, but it is a
-        // deployment hazard for a headless process (systemd service,
-        // Docker without -it, nohup, ...): process.stdin is closed or
-        // never produces input in those contexts, so `rl.question()`
-        // never resolves and the bot hangs forever instead of failing
-        // fast where a process supervisor could restart it. Set
-        // HEADLESS=true (or the more specific OLLAMA_NONINTERACTIVE=true)
-        // in production to skip the prompts and throw immediately instead.
+        // HEADLESS=true (or OLLAMA_NONINTERACTIVE=true) skips the
+        // interactive model-recovery prompts, which would hang a service
+        // with no terminal attached.
         this.headless = process.env.HEADLESS === 'true' || process.env.OLLAMA_NONINTERACTIVE === 'true';
+    }
+
+    _headers() {
+        const headers = { 'Content-Type': 'application/json' };
+        if (this.apiKey) headers['Authorization'] = `Bearer ${this.apiKey}`;
+        return headers;
+    }
+
+    _body(messages, numPredict, stream) {
+        return {
+            model: this.model,
+            messages,
+            stream,
+            keep_alive: this.keepAlive,
+            ...(this.sendThink ? { think: this.think } : {}),
+            options: { temperature: this.temperature, num_predict: numPredict, num_ctx: this.contextWindow },
+        };
     }
 
     async initialize() {
         try {
-            await this._makeRequest('Hello', 1);
+            await this._chat([{ role: 'user', content: 'Hello' }], 1);
             console.log(`✅ Ollama connection OK (model: ${this.model})`);
         } catch (e) {
             console.error(`❌ Ollama initialization error: ${e.message}`);
@@ -77,175 +81,84 @@ class OllamaDriver extends AIDriver {
     }
 
     async generateResponse(context, onToken) {
-        // Trim to fit this model's real context window before sending --
-        // see ai-driver.js's trimToFit(). This matters MORE for Ollama
-        // than the hosted APIs: a local model's context window is often
-        // small (4k-8k), and the Ollama API will otherwise silently
-        // truncate the oldest part of the prompt itself -- which, given
-        // how ai-gm-bot.js orders the system prompt, tends to mean the
-        // rules/character data goes first, leaving the model to narrate
-        // with no mechanical grounding at all.
+        // Trimming matters most here: local context windows are small, and
+        // Ollama would otherwise cut the start of the prompt (the rules and
+        // character sheets) itself.
         const { systemPrompt, messages } = this.trimToFit(context);
-        const prompt = systemPrompt + '\n\n' +
-            messages.map(m => `${m.role}: ${m.content}`).join('\n') +
-            '\nassistant:';
-
+        const chat = [{ role: 'system', content: systemPrompt }, ...messages.map(m => ({ role: m.role, content: m.content }))];
         try {
-            if (onToken && typeof onToken === 'function') {
-                return await this._makeStreamingRequest(prompt, this.maxTokens, 0.8, onToken);
-            }
-            const data = await this._makeRequest(prompt, this.maxTokens, 0.8);
-            // NEW: mirror deepseek-driver.js's finish_reason warning --
-            // Ollama's equivalent is done_reason === 'length' (hit
-            // num_predict before the model naturally stopped). Computed
-            // BEFORE recordUsage() now so it can be passed through and
-            // counted toward the dashboard's "Truncated replies" stat.
-            const truncated = !!(data.done_reason && data.done_reason !== 'stop');
-            if (truncated) {
-                console.warn(`⚠️  Ollama done_reason was "${data.done_reason}" (model: ${this.model}) — response may be truncated.`);
-            }
-            // Ollama's non-streaming /api/generate reports real counts
-            // (prompt_eval_count / eval_count) once done: true fires --
-            // no need to estimate when they're present.
-            if (typeof data.prompt_eval_count === 'number' || typeof data.eval_count === 'number') {
-                this.recordUsage({
-                    promptTokens: data.prompt_eval_count || 0,
-                    completionTokens: data.eval_count || 0,
-                    truncated
-                });
-            } else {
-                this.recordUsage({
-                    promptTokens: this.estimateTokens(prompt),
-                    completionTokens: this.estimateTokens(data.response || ''),
-                    estimated: true,
-                    truncated
-                });
-            }
-            return (data.response || '').trim();
+            return await this._chat(chat, this.maxTokens, typeof onToken === 'function' ? onToken : null);
         } catch (e) {
-            console.error(`❌ Ollama generation error: ${e.message}`);
-            if (e.message.includes('410') || e.message.includes('retired') || e.message.includes('not found') || e.message.includes('model')) {
-                await this._recoverModel(e.message, false);
+            if (e.name !== 'AbortError') console.error(`❌ Ollama generation error: ${e.message}`);
+            // Only a missing model is worth recovery; a timeout or a busy
+            // server is not, and recovery may prompt at the terminal.
+            if (isMissingModelError(e)) await this._recoverModel(e.message, false);
+            throw e;
+        }
+    }
+
+    /**
+     * One /api/chat call, streamed or not. Retries once without `think`
+     * if the server rejects it (older Ollama, or a model without the
+     * switch), and remembers that.
+     */
+    async _chat(messages, numPredict, onToken = null) {
+        try {
+            return await this._chatOnce(messages, numPredict, onToken);
+        } catch (e) {
+            if (this.sendThink && e.status === 400 && /think/i.test(e.message)) {
+                this.sendThink = false;
+                console.warn(`⚠️  Ollama model "${this.model}" does not take the think option; sending without it.`);
+                return this._chatOnce(messages, numPredict, onToken);
             }
             throw e;
         }
     }
 
-    async _makeRequest(prompt, numPredict = 400, temperature = 0.8) {
-        const headers = { 'Content-Type': 'application/json' };
-        if (this.apiKey) headers['Authorization'] = `Bearer ${this.apiKey}`;
+    async _chatOnce(messages, numPredict, onToken) {
+        const stream = !!onToken;
+        const response = await this._fetchWithRetries(`${this.baseUrl}/api/chat`, {
+            method: 'POST', headers: this._headers(), body: JSON.stringify(this._body(messages, numPredict, stream)),
+        }, { retries: stream ? 0 : this.maxRetries, timeoutMs: this.timeoutMs, stream });
 
-        // CHANGED: previously a bare fetch() with no timeout and no
-        // retry -- a hung or transiently-erroring local Ollama server
-        // (model still loading, brief resource contention, etc.) would
-        // just throw once and give up, unlike deepseek-driver.js's
-        // retry/backoff. Now uses the same shared helper.
-        const response = await this._fetchWithRetries(
-            `${this.baseUrl}/api/generate`,
-            {
-                method: 'POST',
-                headers,
-                body: JSON.stringify({
-                    model: this.model,
-                    prompt,
-                    stream: false,
-                    options: { temperature, num_predict: numPredict, num_ctx: this.contextWindow }
-                })
-            },
-            {
-                retries: this.maxRetries,
-                timeoutMs: this.timeoutMs,
-                describeError: (status, text) => `HTTP ${status}: ${text}`
-            }
-        );
-
-        const data = await response.json();
-        if (data.error) {
-            throw new Error(data.error);
+        if (!stream) {
+            const data = await response.json();
+            if (data.error) throw new Error(data.error);
+            const content = stripThinking(data.message?.content);
+            this._finish(data, messages, content);
+            return content;
         }
-        return data;
-    }
 
-    /**
-     * Streaming path -- Ollama's /api/generate with stream:true returns
-     * newline-delimited JSON objects (one per token), not SSE. No retry
-     * here for the same reason as deepseek-driver.js's streaming path: a
-     * partially-consumed stream can't be transparently resumed. Always
-     * resolves with the full assembled text.
-     */
-    async _makeStreamingRequest(prompt, numPredict, temperature, onToken) {
-        const headers = { 'Content-Type': 'application/json' };
-        if (this.apiKey) headers['Authorization'] = `Bearer ${this.apiKey}`;
-
-        const controller = new AbortController();
-        const timer = setTimeout(() => controller.abort(), this.timeoutMs);
+        const guard = response.guard;
         let full = '';
         try {
-            const response = await fetch(`${this.baseUrl}/api/generate`, {
-                method: 'POST',
-                headers,
-                body: JSON.stringify({
-                    model: this.model,
-                    prompt,
-                    stream: true,
-                    options: { temperature, num_predict: numPredict, num_ctx: this.contextWindow }
-                }),
-                signal: controller.signal
-            });
-
-            if (!response.ok) {
-                const errBody = await response.text().catch(() => '');
-                throw new Error(`HTTP ${response.status}: ${errBody}`);
+            if (!response.body) throw new Error('Ollama streaming response had no body.');
+            for await (const part of parseNDJSONStream(response.body, guard.touch)) {
+                if (part.error) throw new Error(part.error);
+                const delta = part.message?.content;
+                if (delta) { full += delta; onToken(delta); }
+                if (part.done) { const content = stripThinking(full); this._finish(part, messages, content); return content; }
             }
-            if (!response.body) {
-                throw new Error('Ollama streaming response had no body.');
-            }
-
-            const decoder = new TextDecoder();
-            let buffer = '';
-            for await (const bytes of response.body) {
-                buffer += decoder.decode(bytes, { stream: true });
-                let idx;
-                while ((idx = buffer.indexOf('\n')) !== -1) {
-                    const line = buffer.slice(0, idx).trim();
-                    buffer = buffer.slice(idx + 1);
-                    if (!line) continue;
-                    try {
-                        const parsed = JSON.parse(line);
-                        if (parsed.error) throw new Error(parsed.error);
-                        if (parsed.response) {
-                            full += parsed.response;
-                            onToken(parsed.response);
-                        }
-                        if (parsed.done) {
-                            const truncated = !!(parsed.done_reason && parsed.done_reason !== 'stop');
-                            if (truncated) {
-                                console.warn(`⚠️  Ollama (streaming) done_reason was "${parsed.done_reason}" (model: ${this.model}) — response may be truncated.`);
-                            }
-                            if (typeof parsed.prompt_eval_count === 'number' || typeof parsed.eval_count === 'number') {
-                                this.recordUsage({
-                                    promptTokens: parsed.prompt_eval_count || 0,
-                                    completionTokens: parsed.eval_count || 0,
-                                    truncated
-                                });
-                            } else {
-                                this.recordUsage({
-                                    promptTokens: this.estimateTokens(prompt),
-                                    completionTokens: this.estimateTokens(full),
-                                    estimated: true,
-                                    truncated
-                                });
-                            }
-                            return full.trim();
-                        }
-                    } catch (e) {
-                        if (e.message && !e.message.startsWith('Unexpected')) throw e; // real API error, not a JSON parse hiccup
-                    }
-                }
-            }
-            return full.trim();
+            return stripThinking(full);
+        } catch (e) {
+            if (e.name === 'AbortError') throw this._abortError(guard, `${this.baseUrl}/api/chat`, this.timeoutMs);
+            throw e;
         } finally {
-            clearTimeout(timer);
+            guard.done();
+        }
+    }
+
+    /** Usage and truncation bookkeeping from Ollama's final object. */
+    _finish(data, messages, content) {
+        const truncated = !!(data.done_reason && !['stop', 'load', 'unload'].includes(data.done_reason));
+        if (truncated) console.warn(`⚠️  Ollama done_reason was "${data.done_reason}" (model: ${this.model}) — response may be truncated.`);
+        if (typeof data.prompt_eval_count === 'number' || typeof data.eval_count === 'number') {
+            this.recordUsage({ promptTokens: data.prompt_eval_count || 0, completionTokens: data.eval_count || 0, truncated });
+        } else {
+            this.recordUsage({
+                promptTokens: messages.reduce((n, m) => n + this.estimateTokens(m.content), 0),
+                completionTokens: this.estimateTokens(content), estimated: true, truncated,
+            });
         }
     }
 
@@ -358,7 +271,7 @@ class OllamaDriver extends AIDriver {
                     'Content-Type': 'application/json',
                     ...(this.apiKey ? { 'Authorization': `Bearer ${this.apiKey}` } : {})
                 },
-                body: JSON.stringify({ name: modelName, stream: false })
+                body: JSON.stringify({ model: modelName, stream: false })
             });
 
             if (!pullRes.ok) {
@@ -399,7 +312,7 @@ class OllamaDriver extends AIDriver {
 
     async _testNewModel() {
         try {
-            await this._makeRequest('Hello', 1);
+            await this._chat([{ role: 'user', content: 'Hello' }], 1);
             console.log(`✅ New model "${this.model}" is working.\n`);
         } catch (testErr) {
             console.error(`⚠️  New model test failed: ${testErr.message}`);

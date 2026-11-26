@@ -36,14 +36,14 @@
   "dependencies": {
     "@elastic/elasticsearch": "^8.19.2",
     "dotenv": "^16.4.5",
-    "openai": "^4.0.0",
+    "openai": "^7.65.0",
     "ws": "^8.17.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.0"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=22.0.0"
   },
   "_license": "Code: AGPL-3.0-or-later, with a commercial license available for embedding/OEM/proprietary-fork use -- see COMMERCIAL.md. Bundled game data (data/regions, data/patrons, campaigns/, etc.): CC BY-NC-SA 4.0 for SRD-marked material, All Rights Reserved otherwise, used by permission of the author. See LICENSE. © 2024-2026 Nicholas A. Gasper."
 }
