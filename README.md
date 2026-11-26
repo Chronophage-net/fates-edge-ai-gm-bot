@@ -688,7 +688,9 @@ A few things worth knowing before adding to this suite:
 | `DEEPSEEK_CONTEXT_WINDOW` | DeepSeek | `128000` | Prompt budget `trimToFit()` works to (models accept up to 1M). |
 | `DEEPSEEK_TIMEOUT_MS` | DeepSeek | `60000` | Idle timeout. |
 | `DEEPSEEK_MAX_RETRIES` | DeepSeek | `2` | Retries on transient HTTP/network failures. |
-| `LOG_LEVEL` | All | `info` | `error` \| `warn` \| `info` \| `debug`. `debug` also unlocks aggressive-sync ticks and raw inbound WebSocket traffic, both silenced at `info` since they fire constantly. |
+| `LOG_LEVEL` | All | `info` | `error` \| `warn` \| `info` \| `debug`. `debug` also unlocks aggressive-sync ticks and raw inbound WebSocket traffic, both silenced at `info` since they fire constantly. Also adjustable live from the status dashboard. |
+| `LOG_FORMAT` | All | text | Terminal lines are `time LEVEL message` (coloured on a terminal); `json` prints one JSON object per line for log collectors. |
+| `AI_PRICE_PER_1M_PROMPT` / `_COMPLETION` / `_CACHED` | All | unset | Your provider's prices per million tokens, for the dashboard's cost estimate (`DEEPSEEK_PRICE_PER_1M_*` still work). |
 | `LOG_RING_SIZE` | All | `300` | How many recent log entries `modules/logger.js` keeps in memory for the status dashboard's feed. |
 | `STATUS_SERVER` | All | `true` (any value other than `false`) | Set to `false` to disable the status dashboard entirely. |
 | `STATUS_PORT` | All | `4141` | Port for the status dashboard (see "Status Dashboard" below). |
@@ -722,14 +724,23 @@ The bot starts a small local web dashboard at **http://localhost:4141** (configu
 `STATUS_PORT`) alongside the terminal. It shows, live:
 
 - **Latest messages** — the same output as the terminal, minus DEBUG-level noise (aggressive
-  sync ticks, raw per-message WebSocket traffic) which is pruned by default. Set `LOG_LEVEL=debug`
-  to see everything, in both the terminal and here.
-- **Connection** — connected/disconnected, GM/player role, driver + model in use.
-- **Adventure Module** — currently loaded adventure title, status, act, and scene.
+  sync ticks, raw per-message WebSocket traffic) which is pruned by default. Filter by level
+  (everything / warnings and errors / errors only) or by text, pause the feed while reading, and
+  switch the bot's log level on the fly (until restart) without editing `LOG_LEVEL`.
+- **Connection** — connected/disconnected, GM/player role, driver + model in use, the driver's
+  generation settings (reasoning effort, thinking, keep-alive, context), and reply time (last and
+  average, and how long ago the last reply was).
+- **Adventure Module** — currently loaded adventure title, status, act, scene, active encounter,
+  every scene and campaign clock as a progress bar, and growth/climax progress for AI-built
+  adventures.
 - **Session Token Usage** — prompt/completion/total tokens across the session, from the active
   driver's real API-reported usage where the provider supplies it (OpenAI, DeepSeek, and Ollama's
   non-streaming path all do), falling back to a `~` estimate otherwise.
-- **Party** — synced characters and a one-line Harm/Fatigue status for each.
+- **Party** — synced characters with Harm (marked when down at Harm 3, or dead past it),
+  Fatigue, Boons and Obligation.
+- **Cost** — set `AI_PRICE_PER_1M_PROMPT` and `AI_PRICE_PER_1M_COMPLETION` (and optionally
+  `AI_PRICE_PER_1M_CACHED`) to your provider's rates to see an estimated session cost; cached
+  prompt tokens are shown as a share of the prompt.
 - **AI GM Session Panel** — a GM-facing view of bot state, distinct from the VTT chat itself:
   - **Story Beats Bank** — the current campaign-wide SB total.
   - **Campaign Facts** — every fact the AI has recorded (`!gm fact <key> <value>` / `[FACT ...]`).

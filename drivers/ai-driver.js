@@ -50,12 +50,29 @@ class AIDriver {
         this.usage.totalTokens += promptTokens + completionTokens;
         this.usage.calls += 1;
         if (estimated) this.usage.estimated = true;
+        // Reply latency, timed from trimToFit() (the first thing every
+        // built-in driver's generateResponse() does) to this call.
+        if (this._callStartedAt) {
+            const ms = Date.now() - this._callStartedAt;
+            this._callStartedAt = null;
+            this.usage.lastLatencyMs = ms;
+            this.usage.avgLatencyMs = Math.round(((this.usage.avgLatencyMs || 0) * (this.usage.calls - 1) + ms) / this.usage.calls);
+            this.usage.lastCallAt = Date.now();
+        }
         // NEW: surfaces on the status dashboard as "Truncated replies" --
         // a call whose provider-reported finish_reason wasn't "stop"
         // (hit the max_tokens ceiling, or was filtered) hit a real ceiling
         // regardless of how short the average completion length looks in
         // the aggregate totals above.
         if (truncated) this.usage.truncatedCalls += 1;
+    }
+
+    /**
+     * Short description of this driver's generation settings for the
+     * status dashboard (e.g. { reasoning: 'none' }). Drivers override.
+     */
+    describe() {
+        return {};
     }
 
     /** Current session usage totals, for the status dashboard. */
@@ -117,6 +134,7 @@ class AIDriver {
      *   driver set one, else 500).
      */
     trimToFit(context, opts = {}) {
+        this._callStartedAt = Date.now();
         const reserve = opts.reserveTokens || this.maxTokens || 500;
         // Small fixed safety margin — token estimate is approximate, and
         // providers count a few extra tokens per message for role/formatting.

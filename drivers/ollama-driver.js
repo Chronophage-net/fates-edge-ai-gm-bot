@@ -53,6 +53,15 @@ class OllamaDriver extends AIDriver {
         this.headless = process.env.HEADLESS === 'true' || process.env.OLLAMA_NONINTERACTIVE === 'true';
     }
 
+    describe() {
+        return {
+            endpoint: this.baseUrl,
+            context: `${this.contextWindow} tokens`,
+            keepAlive: this.keepAlive,
+            thinking: this.think === false ? 'off' : String(this.think),
+        };
+    }
+
     _headers() {
         const headers = { 'Content-Type': 'application/json' };
         if (this.apiKey) headers['Authorization'] = `Bearer ${this.apiKey}`;

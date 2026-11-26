@@ -131,6 +131,24 @@ function renderPage(nonce) {
   button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
   .kv dd, .fact-row dd { overflow-wrap: anywhere; min-width: 0; }
   button { min-height: 40px; }
+  .feed-tools { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 10px; }
+  .feed-tools select, .feed-tools input, .feed-tools button {
+    background: var(--bg); color: var(--fg); border: 1px solid var(--border); border-radius: 6px;
+    padding: 4px 8px; font: inherit; font-size: 12.5px; min-height: 32px;
+  }
+  .feed-tools input { flex: 1; min-width: 120px; }
+  .feed-tools label { color: var(--dim); font-size: 12px; display: flex; gap: 6px; align-items: center; }
+  .clock { margin: 6px 0; font-size: 12.5px; }
+  .clock .row { display: flex; justify-content: space-between; gap: 8px; }
+  .clock .scope { color: var(--dim); font-size: 11px; }
+  .clock .bar { height: 6px; border-radius: 3px; background: #0b0d12; border: 1px solid var(--border); overflow: hidden; margin-top: 3px; }
+  .clock .fill { height: 100%; background: var(--warn); }
+  .clock.full .fill { background: var(--err); }
+  .party-row { display: flex; justify-content: space-between; gap: 10px; border-bottom: 1px solid var(--border); padding: 4px 0; font-size: 13px; }
+  .party-row:last-child { border-bottom: none; }
+  .party-row .stats { color: var(--dim); font-variant-numeric: tabular-nums; text-align: right; }
+  .party-row.down .name { color: var(--warn); }
+  .party-row.dead .name { color: var(--err); text-decoration: line-through; }
 </style>
 </head>
 <body>
@@ -144,8 +162,18 @@ function renderPage(nonce) {
   <div class="stack">
     <div class="panel">
       <h2>Latest Messages <span class="footer-note" id="loglevel-note"></span></h2>
-      <div id="feed"><div class="empty">Waiting for log entries…</div></div>
-      <div class="footer-note">Aggressive-sync / raw wire traffic is DEBUG-level and pruned from this feed by default. Set LOG_LEVEL=debug to see everything.</div>
+      <div class="feed-tools">
+        <label>Show <select id="feed-filter" aria-label="Show messages of level">
+          <option value="all">everything</option><option value="warn">warnings and errors</option><option value="error">errors only</option>
+        </select></label>
+        <input id="feed-search" type="search" placeholder="Filter text…" aria-label="Filter messages by text">
+        <button id="feed-pause" type="button" aria-pressed="false">Pause</button>
+        <label>Bot log level <select id="log-level" aria-label="Bot log level">
+          <option value="error">error</option><option value="warn">warn</option><option value="info">info</option><option value="debug">debug</option>
+        </select></label>
+      </div>
+      <div id="feed" role="log" aria-live="off"><div class="empty">Waiting for log entries…</div></div>
+      <div class="footer-note">Aggressive-sync and raw wire traffic are DEBUG level, hidden unless the bot log level is debug. Changing the level here lasts until the bot restarts.</div>
     </div>
     <div class="panel">
       <h2>Recent AI Memory <span class="footer-note">— the model's actual conversation window</span></h2>
@@ -214,18 +242,30 @@ function renderState(s) {
     ['Role', s.role || 'player'],
     ['WS URL', s.wsUrl || '–'],
     ['Room', s.room || '–'],
-    ['Driver', (s.driverName || '–') + (s.driverModel ? ' (' + s.driverModel + ')' : '')],
+    ['Driver', (s.driverName || '–') + (s.driverModel ? ' (' + s.driverModel + ')' : '')]
+  ].concat(Object.keys(s.driverSettings || {}).map(function(k) { return ['  ' + k, s.driverSettings[k]]; })).concat([
+    ['Reply time', latency(s.tokenUsage)],
     ['Log level', s.logLevel || 'info']
-  ]);
+  ]));
+  var levelSelect = document.getElementById('log-level');
+  if (levelSelect && s.logLevel && document.activeElement !== levelSelect) levelSelect.value = s.logLevel;
 
   var adv = s.adventure;
-  document.getElementById('adv-kv').innerHTML = (adv && adv.title) ? kv([
-    ['Title', adv.title],
-    ['Status', adv.status || '–'],
-    ['Act', adv.act || '–'],
-    ['Scene', adv.scene || '–'],
+  var advRows = [
+    ['Title', adv && adv.title],
+    ['Status', adv && adv.status || '–'],
+    ['Act', adv && adv.act || '–'],
+    ['Scene', adv && adv.scene || '–'],
     ['Region', s.region || '–']
-  ]) : '<dd class="empty">No adventure loaded.</dd>';
+  ];
+  if (adv && adv.encounter) advRows.push(['Encounter', adv.encounter]);
+  if (adv && adv.growth) advRows.push(['Growing', 'session ' + adv.growth.sessions + (adv.growth.climaxAfter ? ' of ' + adv.growth.climaxAfter : '') + (adv.growth.climax ? ' · climax under way' : '')]);
+  var clocks = (adv && adv.clocks) || [];
+  document.getElementById('adv-kv').innerHTML = (adv && adv.title) ? kv(advRows) + clocks.map(function(c) {
+    var seg = Math.max(1, Number(c.segments) || 1), cur = Math.min(seg, Number(c.current) || 0);
+    return '<div class="clock' + (cur >= seg ? ' full' : '') + '"><div class="row"><span>' + escapeHtml(c.name) + ' <span class="scope">' + escapeHtml(c.scope) + '</span></span><span>' + cur + ' / ' + seg + '</span></div>' +
+      '<div class="bar"><div class="fill" style="width:' + Math.round(cur / seg * 100) + '%"></div></div></div>';
+  }).join('') : '<dd class="empty">No adventure loaded.</dd>';
 
   var u = s.tokenUsage || {};
   var tokRows = [
@@ -241,6 +281,9 @@ function renderState(s) {
     // real count directly instead of leaving it buried in console logs.
     ['Truncated replies', (u.truncatedCalls || 0) + (u.calls ? (' / ' + u.calls) : '')]
   ];
+  if (u.cachedPromptTokens) {
+    tokRows.splice(1, 0, ['  cached', u.cachedPromptTokens.toLocaleString() + ' (' + Math.round(u.cachedPromptTokens / Math.max(1, u.promptTokens) * 100) + '% of prompt)']);
+  }
   // NEW: only DeepSeekDriver currently sets this (the empty-content-on-
   // truncation retry -- see drivers/deepseek-driver.js), so only show
   // the row when it's actually present rather than always printing 0
@@ -259,7 +302,11 @@ function renderState(s) {
 
   var party = s.party || [];
   document.getElementById('party-kv').innerHTML = party.length
-    ? kv(party.map(function(p) { return [p.name, p.summary || '']; }))
+    ? party.map(function(p) {
+        var cls = p.dead ? ' dead' : (p.harm >= 3 ? ' down' : '');
+        return '<div class="party-row' + cls + '"><span class="name">' + escapeHtml(p.name) + '</span><span class="stats">' + escapeHtml(p.summary || '') +
+          (p.obligation ? ' · Obligation ' + escapeHtml(p.obligation) : '') + '</span></div>';
+      }).join('')
     : '<dd class="empty">No characters synced yet.</dd>';
 
   document.getElementById('sb-bank').innerHTML =
@@ -323,20 +370,70 @@ function renderState(s) {
     : '<div class="empty">No conversation yet.</div>';
 }
 
-function appendLine(entry) {
+function latency(u) {
+  if (!u || !u.lastLatencyMs) return '–';
+  var ago = u.lastCallAt ? ' · last reply ' + fmtDuration(Date.now() - u.lastCallAt) + ' ago' : '';
+  return (u.lastLatencyMs / 1000).toFixed(1) + 's (avg ' + ((u.avgLatencyMs || 0) / 1000).toFixed(1) + 's)' + ago;
+}
+
+// Log feed: every entry is kept (up to 500) so the filter and search
+// can be changed after the fact; Pause stops auto-scrolling and holds
+// new lines until resumed.
+var logEntries = [];
+var feedFilter = 'all', feedSearch = '', feedPaused = false;
+var LEVEL_RANK = { debug: 0, info: 1, warn: 2, error: 3 };
+
+function visible(entry) {
+  if (feedFilter === 'warn' && LEVEL_RANK[entry.level] < 2) return false;
+  if (feedFilter === 'error' && entry.level !== 'error') return false;
+  return !feedSearch || String(entry.text).toLowerCase().indexOf(feedSearch) !== -1;
+}
+
+function redrawFeed() {
   var feed = document.getElementById('feed');
-  if (feed.querySelector('.empty')) feed.innerHTML = '';
+  feed.innerHTML = '';
+  var shown = logEntries.filter(visible);
+  if (!shown.length) { feed.innerHTML = '<div class="empty">' + (logEntries.length ? 'No messages match.' : 'Waiting for log entries…') + '</div>'; return; }
+  shown.slice(-300).forEach(function(e) { drawLine(e, false); });
+  feed.scrollTop = feed.scrollHeight;
+}
+
+function appendLine(entry) {
+  logEntries.push(entry);
+  if (logEntries.length > 500) logEntries.shift();
+  if (feedPaused || !visible(entry)) return;
+  drawLine(entry, true);
+}
+
+function drawLine(entry, follow) {
+  var feed = document.getElementById('feed');
+  if (feed.querySelector && feed.querySelector('.empty')) feed.innerHTML = '';
   var div = document.createElement('div');
   div.className = 'line';
   var t = new Date(entry.time).toLocaleTimeString();
   var colorVar = entry.level === 'error' ? 'var(--err)' : entry.level === 'warn' ? 'var(--warn)' : 'var(--fg)';
   div.innerHTML = '<span class="time">' + t + '</span><span style="color:' + colorVar + '">' +
     escapeHtml(entry.text) + '</span>';
-  feed.appendChild(div);
   var atBottom = feed.scrollHeight - feed.scrollTop - feed.clientHeight < 40;
+  feed.appendChild(div);
   while (feed.children.length > 300) feed.removeChild(feed.firstChild);
-  if (atBottom) feed.scrollTop = feed.scrollHeight;
+  if (follow && atBottom) feed.scrollTop = feed.scrollHeight;
 }
+
+document.getElementById('feed-filter').addEventListener('change', function(e) { feedFilter = e.target.value; redrawFeed(); });
+document.getElementById('feed-search').addEventListener('input', function(e) { feedSearch = e.target.value.trim().toLowerCase(); redrawFeed(); });
+document.getElementById('feed-pause').addEventListener('click', function(e) {
+  feedPaused = !feedPaused;
+  e.target.textContent = feedPaused ? 'Resume' : 'Pause';
+  e.target.setAttribute('aria-pressed', String(feedPaused));
+  if (!feedPaused) redrawFeed();
+});
+document.getElementById('log-level').addEventListener('change', function(e) {
+  var level = e.target.value;
+  fetch('/api/log-level', { method: 'POST', headers: { 'X-Dashboard-Request': '1', 'Content-Type': 'application/json' }, body: JSON.stringify({ level: level }) })
+    .then(function(res) { if (!res.ok) throw new Error('Could not change the log level.'); document.getElementById('dashboard-notice').textContent = 'Bot log level is now ' + level + ' (until restart).'; })
+    .catch(function(err) { document.getElementById('dashboard-notice').textContent = err.message; });
+});
 
 // Event Delegation for Suggestions
 document.getElementById('suggestions-list').addEventListener('click', function(e) {
@@ -425,6 +522,25 @@ function start({ getState, port, pushIntervalMs = 4000 } = {}) {
       })().catch(e => {
         res.writeHead(500, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({ ok: false, error: 'The suggestion could not be applied. Check the bot log.' }));
+      });
+      return;
+    }
+    if (req.method === 'POST' && req.url === '/api/log-level') {
+      let body = '';
+      req.on('data', chunk => { body += chunk; if (body.length > 1024) req.destroy(); });
+      req.on('end', () => {
+        let level;
+        try { level = JSON.parse(body || '{}').level; } catch { level = null; }
+        if (!['error', 'warn', 'info', 'debug'].includes(level)) {
+          res.writeHead(400, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ ok: false, error: 'level must be error, warn, info or debug' }));
+          return;
+        }
+        logger.setLevel(level);
+        console.warn(`📊 Log level set to ${level} from the status dashboard (until restart).`);
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ ok: true, level }));
+        broadcastSSE('state', snapshot());
       });
       return;
     }

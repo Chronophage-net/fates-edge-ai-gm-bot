@@ -56,6 +56,13 @@ class DeepSeekDriver extends AIDriver {
         this.emptyRetryEnabled = process.env.DEEPSEEK_EMPTY_RETRY_ENABLED !== 'false';
     }
 
+    describe() {
+        return {
+            thinking: this.thinking ? `on (${this.reasoningEffort || 'high'})` : 'off',
+            budget: `${this.maxTokens} tokens`,
+        };
+    }
+
     _headers() {
         return { 'Content-Type': 'application/json', Authorization: `Bearer ${this.apiKey}` };
     }

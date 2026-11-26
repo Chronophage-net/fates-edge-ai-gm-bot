@@ -34,6 +34,25 @@ const _origLog = console.log.bind(console);
 const _origWarn = console.warn.bind(console);
 const _origError = console.error.bind(console);
 
+// Terminal formatting, matching the socket server's console:
+//   16:56:33.248 INFO  🤝 Handshake OK. Role: gm
+// Coloured on a terminal, ISO time elsewhere (Docker, systemd, files);
+// LOG_FORMAT=json prints one JSON object per line for log collectors.
+const COLORS = { debug: '\x1b[90m', info: '\x1b[36m', warn: '\x1b[33m', error: '\x1b[31m' };
+const JSON_FORMAT = String(process.env.LOG_FORMAT || '').toLowerCase() === 'json';
+const COLOR = !process.env.NO_COLOR && (!!process.env.FORCE_COLOR || !!process.stdout.isTTY);
+
+function print(printFn, level, args) {
+    const now = new Date();
+    if (JSON_FORMAT) {
+        printFn(JSON.stringify({ time: now.toISOString(), level, msg: args.map(a => (typeof a === 'string' ? a : safeStringify(a))).join(' ') }));
+        return;
+    }
+    const time = COLOR ? now.toTimeString().slice(0, 8) + '.' + String(now.getMilliseconds()).padStart(3, '0') : now.toISOString();
+    const tag = level.toUpperCase().padEnd(5);
+    printFn(COLOR ? `\x1b[2m${time}\x1b[0m ${COLORS[level]}${tag}\x1b[0m` : `${time} ${tag}`, ...args);
+}
+
 class Logger extends EventEmitter {
     constructor() {
         super();
@@ -71,7 +90,7 @@ class Logger extends EventEmitter {
         // watching the terminal right now would actually see.
         if (shouldPrint) {
             this._record(level, args);
-            printFn(...args);
+            print(printFn, level, args);
         }
     }
 
@@ -105,13 +124,13 @@ const logger = new Logger();
 console.log = (...args) => {
     if (LEVELS.info <= logger.levelValue) {
         logger._record('info', args);
-        _origLog(...args);
+        print(_origLog, 'info', args);
     }
 };
 console.warn = (...args) => {
     if (LEVELS.warn <= logger.levelValue) {
         logger._record('warn', args);
-        _origWarn(...args);
+        print(_origWarn, 'warn', args);
     }
 };
 console.error = (...args) => {
@@ -119,7 +138,7 @@ console.error = (...args) => {
     // real errors because someone turned logging down is exactly the
     // kind of surprise a GM bot running unattended shouldn't spring.
     logger._record('error', args);
-    _origError(...args);
+    print(_origError, 'error', args);
 };
 
 module.exports = logger;

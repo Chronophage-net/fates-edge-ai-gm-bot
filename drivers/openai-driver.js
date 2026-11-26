@@ -56,6 +56,14 @@ class OpenAIDriver extends AIDriver {
         });
     }
 
+    describe() {
+        return {
+            ...(this.reasoningEffort && this.params.effort ? { reasoning: this.reasoningEffort } : {}),
+            ...(process.env.OPENAI_BASE_URL ? { endpoint: process.env.OPENAI_BASE_URL } : {}),
+            budget: `${this.maxTokens} tokens`,
+        };
+    }
+
     _budget() {
         const reasons = this.params.effort && this.reasoningEffort && this.reasoningEffort !== 'none';
         return this.maxTokens + (reasons ? this.reasoningTokens : 0);

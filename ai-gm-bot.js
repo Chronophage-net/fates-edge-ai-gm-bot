@@ -1976,11 +1976,18 @@ function buildTokenUsageForDashboard() {
   if (!driver || typeof driver.getUsage !== 'function') return null;
   const usage = driver.getUsage();
 
-  const promptPrice = parseFloat(process.env.DEEPSEEK_PRICE_PER_1M_PROMPT || '');
-  const completionPrice = parseFloat(process.env.DEEPSEEK_PRICE_PER_1M_COMPLETION || '');
+  // AI_PRICE_PER_1M_* work for every provider; the older DeepSeek-only
+  // names are still honoured. Cached prompt tokens (reported by OpenAI
+  // and DeepSeek) are billed at AI_PRICE_PER_1M_CACHED when it is set.
+  const price = name => parseFloat(process.env[`AI_PRICE_PER_1M_${name}`] || process.env[`DEEPSEEK_PRICE_PER_1M_${name}`] || '');
+  const promptPrice = price('PROMPT');
+  const completionPrice = price('COMPLETION');
+  const cachedPrice = price('CACHED');
   if (!isNaN(promptPrice) && !isNaN(completionPrice)) {
+    const cached = Math.min(usage.cachedPromptTokens || 0, usage.promptTokens || 0);
     const estimatedCostUSD =
-      (usage.promptTokens || 0) / 1_000_000 * promptPrice +
+      ((usage.promptTokens || 0) - (isNaN(cachedPrice) ? 0 : cached)) / 1_000_000 * promptPrice +
+      (isNaN(cachedPrice) ? 0 : cached / 1_000_000 * cachedPrice) +
       (usage.completionTokens || 0) / 1_000_000 * completionPrice;
     return { ...usage, estimatedCostUSD, priceConfigured: true };
   }
@@ -1996,12 +2003,19 @@ function buildTokenUsageForDashboard() {
 function buildStatusSnapshot() {
   const adv = adventureContext.getCachedStateSync();
   const allChars = characters.getAll ? characters.getAll() : {};
+  // SRD 09: Harm 3 is incapacitated; Harm past 3 is death.
   const party = Object.values(allChars || {}).map(c => ({
     name: c.name,
-    summary: [
-      c.harm ? `harm ${c.harm}` : null,
-      c.fatigue ? `fatigue ${c.fatigue}` : null,
-    ].filter(Boolean).join(', ') || 'unharmed'
+    harm: c.harm || 0,
+    fatigue: c.fatigue || 0,
+    boons: c.boons || 0,
+    obligation: c.obligation || 0,
+    dead: !!c.dead,
+    summary: c.dead ? 'dead' : [
+      c.harm ? `Harm ${c.harm}${c.harm >= 3 ? ' (down)' : ''}` : null,
+      c.fatigue ? `Fatigue ${c.fatigue}` : null,
+      c.boons ? `${c.boons} Boon${c.boons === 1 ? '' : 's'}` : null,
+    ].filter(Boolean).join(' · ') || 'unharmed'
   }));
 
   // ─── AI GM Session Panel data ────────────────────────────────────
@@ -2055,12 +2069,19 @@ function buildStatusSnapshot() {
     botName: BOT_NAME,
     driverName: driver ? (driver.constructor?.meta?.name || driver.constructor?.name) : null,
     driverModel: driver ? driver.model : null,
+    driverSettings: driver?.describe?.() || {},
     tokenUsage: buildTokenUsageForDashboard(),
     adventure: adv ? {
       title: adv.title,
       status: adv.status,
       act: adv.currentAct?.title || null,
       scene: adv.currentScene?.title || orchestrator?.currentScene?.title || null,
+      encounter: adv.activeEncounter?.name || null,
+      clocks: [
+        ...(adv.currentScene?.timers || []).map(t => ({ name: t.name, current: t.current || 0, segments: t.segments || 1, scope: 'scene' })),
+        ...(adv.campaignTimers || []).map(t => ({ name: t.name, current: t.current || 0, segments: t.segments || 1, scope: 'campaign' })),
+      ],
+      growth: adv.dynamicGrowth ? { sessions: adv.sessionsPlayed || 0, climaxAfter: adv.climaxAfterSessions || null, climax: !!adv.climaxTriggered } : null,
     } : (orchestrator?.currentScene ? { title: null, status: 'active', act: null, scene: orchestrator.currentScene.title } : null),
     region: orchestrator?.currentScene?.region || orchestrator?.options?.defaultRegion || null,
     party,

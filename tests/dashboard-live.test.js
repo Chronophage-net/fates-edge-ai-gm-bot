@@ -94,3 +94,34 @@ test('restarts wait for the old child to exit and coalesce overlapping requests'
         assert.equal(kills, 1); assert.equal(starts, 1);
     } finally { manager.bots.clear(); }
 });
+
+test('status dashboard shows clocks and party safely and changes the log level only same-origin', async t => {
+    const server = status.start({ port: 0, getState: () => ({ connected: true }), pushIntervalMs: 100 });
+    const before = logger.level;
+    t.after(() => { logger.setLevel(before); status.stop(); });
+    const base = await listening(server);
+    const { context, element } = scriptContext(await (await fetch(base)).text());
+    context.state = {
+        adventure: { title: 'Salt', clocks: [{ name: '<img src=x>', current: 2, segments: 4, scope: 'scene' }], encounter: '<svg>' },
+        party: [{ name: 'Wren', harm: 3, summary: 'Harm 3 (down)', obligation: 2 }, { name: '<img>', dead: true, summary: 'dead' }],
+        driverSettings: { reasoning: '<b>none</b>' },
+        tokenUsage: { promptTokens: 1000, cachedPromptTokens: 400, lastLatencyMs: 1500, avgLatencyMs: 2000 },
+    };
+    vm.runInContext('renderState(state)', context);
+    assert(element('adv-kv').innerHTML.includes('width:50%'), 'clock progress drawn');
+    assert(!element('adv-kv').innerHTML.includes('<img'));
+    assert(!element('adv-kv').innerHTML.includes('<svg'));
+    assert(element('party-kv').innerHTML.includes('party-row down'));
+    assert(element('party-kv').innerHTML.includes('party-row dead'));
+    assert(!element('party-kv').innerHTML.includes('<img'));
+    assert(element('conn-kv').innerHTML.includes('1.5s (avg 2.0s)'));
+    assert(!element('conn-kv').innerHTML.includes('<b>'));
+    assert(element('tok-kv').innerHTML.includes('40% of prompt'));
+
+    const post = (headers, level) => fetch(`${base}/api/log-level`, { method: 'POST', headers: { 'Content-Type': 'application/json', ...headers }, body: JSON.stringify({ level }) });
+    assert.equal((await post({}, 'debug')).status, 403);
+    assert.equal((await post({ 'X-Dashboard-Request': '1', Origin: 'https://attacker.example' }, 'debug')).status, 403);
+    assert.equal((await post({ 'X-Dashboard-Request': '1', Origin: base }, 'loud')).status, 400);
+    assert.equal((await post({ 'X-Dashboard-Request': '1', Origin: base }, 'debug')).status, 200);
+    assert.equal(logger.level, 'debug');
+});
