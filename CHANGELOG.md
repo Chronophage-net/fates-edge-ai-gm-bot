@@ -1,6 +1,19 @@
 # Changelog
 All notable changes to this project will be documented here.
 
+## [4.19.0] - 2026-11-26
+
+Current AI models, SRD-correct rules with server sync, better consoles, and clean headless starts.
+
+- **Drivers.** OpenAI defaults to `gpt-6.1-terra` with reasoning `none` and adapts to rejected parameters (`max_completion_tokens`, `temperature`, `reasoning_effort`); `OPENAI_BASE_URL` for compatible servers; OpenAI SDK 7. DeepSeek uses the current endpoint with thinking off by default (`DEEPSEEK_THINKING=enabled`) and maps `deepseek-v4-flash` to `deepseek-flash`. Ollama uses `/api/chat`, keeps the model loaded (`OLLAMA_KEEP_ALIVE`), turns thinking off and defaults to `gemma3:12b`. All drivers cancel superseded turns, use an idle (not total) stream timeout, and honour `Retry-After`.
+- **Fix:** `OPENAI_MODEL` had no effect (a hard-coded `gpt-4o-mini` overrode it). `AI_MODEL` still wins when set.
+- **Rules.** Armor conversion, Fatigue overflow, the Harm 3 ceiling (death past it), tier Boon and pool caps, and case-insensitive Position follow the SRD. Character tracks are pushed to the server as final values, so the server no longer records raw Harm or uncapped Boons and overwrites the bot's state.
+- **Adventures.** Scenes and acts grown during play are kept in the saved adventure.
+- **Consoles.** Terminal lines carry time and level (`LOG_FORMAT=json`); the status dashboard shows driver settings, reply time, cached tokens, adventure clocks and growth, party Boons and Obligation, log filters and a live log-level switch, and explains where the bot is ("Not in a room. Lost AC12; reconnecting in 4s"). Bot Manager shows each bot's room state and a stopped bot's last log lines with Restart. Cost estimates for any provider via `AI_PRICE_PER_1M_*`.
+- **Startup.** Ollama needs no settings; without a terminal the bot explains missing configuration and exits instead of waiting on the setup wizard; the adventure-manifest call that threw at startup is fixed.
+- **Install.** Works with the toolkit's `npm run setup` / `npm start` / `npm run doctor` (fates-edge-apps 5.16.0).
+- Requires **Node.js 22** or newer (OpenAI SDK 7). Upgrade the socket server to 5.16.0 first.
+
 ## [4.18.3] - 2026-10-12
 
 Serialized GM turns, cancellation safety, correlated draws, and reliable shutdown.
