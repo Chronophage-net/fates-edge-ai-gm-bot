@@ -56,8 +56,12 @@ function score(tt, dt) {
     return 10 * inter - sym;
 }
 
+// Every adventure is listed when this script is run on its own (or at
+// LOG_LEVEL=debug); at bot startup a one-line summary is enough.
+const VERBOSE = require.main === module || String(process.env.LOG_LEVEL || '').toLowerCase() === 'debug';
+
 function buildManifest() {
-    console.log('📚 Building adventure manifest...');
+    if (VERBOSE) console.log('📚 Building adventure manifest...');
     if (!fs.existsSync(DATA_DIR) || !fs.existsSync(DOCS_DIR)) {
         console.warn(`⚠️ Missing ${!fs.existsSync(DATA_DIR) ? DATA_DIR : DOCS_DIR}`);
         return;
@@ -106,11 +110,16 @@ function buildManifest() {
         const entry = { title: adv.title || id, docFile: files[0], docPath: `/data/docs/adventures/${files[0]}` };
         if (files.length > 1) entry.docFiles = files;
         manifest[id] = entry;
-        console.log(`  ✅ ${id} → ${files.join(', ')}`);
+        if (VERBOSE) console.log(`  ✅ ${id} → ${files.join(', ')}`);
     }
 
     fs.writeFileSync(MANIFEST_PATH, JSON.stringify(manifest, null, 2) + '\n');
-    console.log(`✅ Manifest written to ${MANIFEST_PATH} (${Object.keys(manifest).length} entries)`);
+    console.log(VERBOSE ? `✅ Manifest written to ${MANIFEST_PATH} (${Object.keys(manifest).length} entries)`
+        : `📚 Adventure manifest: ${Object.keys(manifest).length} adventures`);
+    return manifest;
 }
 
-buildManifest();
+// The bot requires this module and calls buildManifest() itself; it used to
+// run on load and export nothing, so that call threw.
+module.exports = { buildManifest };
+if (require.main === module) buildManifest();

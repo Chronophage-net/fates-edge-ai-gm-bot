@@ -192,7 +192,7 @@ before. The short version below still works fine too.
 
 ## 📦 Prerequisites
 
-- **Node.js** ≥ 18 (includes built‑in `fetch`; no extra dependencies needed for most drivers)
+- **Node.js** 22 or newer
 - **A Fate's Edge WebSocket server** — the socket server from the sibling [`fates-edge-apps`](https://github.com/Chronophage-net/fates-edge-apps) repo (`utilities/javascript/fates-edge-socket-server/`), not part of this repo
 - **An API key for your chosen AI service** (or a local LLM running via Ollama)
 
@@ -298,10 +298,28 @@ mix — those are where an actual resource ceiling is likely to show up first.
 
 ## 🚀 Installation
 
+**With the toolkit (easiest).** Clone this repository next to `fates-edge-apps`, then run the
+toolkit's setup from there. It installs the bot, writes its `.env` pointing at the local server
+with the server's admin key, and `npm start` runs the bot together with the server and web client:
+
+```bash
+git clone https://github.com/Chronophage-net/fates-edge-apps.git
+git clone https://github.com/Chronophage-net/fates-edge-ai-gm-bot.git
+cd fates-edge-apps
+npm run setup              # or: npm run setup -- --provider=openai   (or deepseek)
+npm start
+```
+
+`npm run doctor` in `fates-edge-apps` checks the bot's settings too: its server address and key,
+and that Ollama is running with the model, or that the provider key is set.
+
+**On its own** (for a server elsewhere):
+
 ```bash
 git clone https://github.com/Chronophage-net/fates-edge-ai-gm-bot.git
 cd fates-edge-ai-gm-bot
-npm install
+npm ci
+node configure-bot.js      # or write .env by hand, see below
 ```
 
 Core runtime dependencies: `ws` (WebSocket), `dotenv`, and `openai` (used by the OpenAI driver).

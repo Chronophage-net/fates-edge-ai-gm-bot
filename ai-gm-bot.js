@@ -59,8 +59,10 @@ knowledgeIndex.init();
 // -------------------------------------------------------------------
 function envIsReady() {
   const provider = (process.env.AI_PROVIDER || 'ollama').toLowerCase();
+  // Ollama needs nothing: the driver defaults to a local server
+  // (http://localhost:11434) and a current model.
   const requiredVars = {
-    ollama: ['OLLAMA_BASE_URL', 'OLLAMA_MODEL'],
+    ollama: [],
     openai: ['OPENAI_API_KEY'],
     deepseek: ['DEEPSEEK_API_KEY']
   };
@@ -76,6 +78,13 @@ function envIsReady() {
     }
   }
   return true;
+}
+if (!envIsReady() && !process.stdin.isTTY) {
+  // No terminal (Docker, systemd, `npm start` at the toolkit root): the
+  // interactive helper would wait forever. Say what to set and stop.
+  console.error('❌ The AI provider is not configured. Set AI_PROVIDER and its key in this bot\'s .env');
+  console.error('   (or run `npm run setup` at the toolkit root, or `node configure-bot.js` in a terminal).');
+  process.exit(1);
 }
 if (!envIsReady()) {
   console.warn('\n⚠️  .env missing or incomplete – launching configuration helper…\n');
@@ -305,7 +314,6 @@ const BASE_SYSTEM_PROMPT = (process.env.SYSTEM_PROMPT ||
 try {
   const { buildManifest } = require('./scripts/build-adventure-manifest');
   buildManifest();
-  console.log('📚 Adventure manifest built.');
 } catch (e) {
   console.warn('⚠️ Could not build adventure manifest:', e.message);
 }
