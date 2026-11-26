@@ -1,4 +1,10 @@
 const { test } = require('node:test');
+// Keep this file's stdout silent. node:test reads each test file's
+// results from that process's stdout; this file's own info lines (the
+// dashboards announcing their URLs) interleaving with that stream made it
+// fail intermittently in CI with "Unable to deserialize cloned data".
+// Errors still print, on stderr. Must be set before the logger loads.
+process.env.LOG_LEVEL = 'error';
 const assert = require('node:assert/strict');
 const { once, EventEmitter } = require('node:events');
 const vm = require('node:vm');
