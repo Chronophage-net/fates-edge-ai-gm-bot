@@ -9,6 +9,7 @@
 // restructuring than a mechanical extraction.
 
 const diceModule = require('../dice');
+const { pushCharacterState } = require('./characters-sync');
 const adventureDirector = require('../adventure-director');
 const rulesModule = require('../rules-index');
 const { getVocab, encounterType } = require('../objective-types');
@@ -70,12 +71,13 @@ async function processSpecialTags(text, context, senderName = null) {
             return `*(Could not resolve dice pool for ${name} with "${poolExpr}". Check attribute/skill names.)*`;
         }
 
-        let result = diceModule.rollDice(diceCount);
+        let result = diceModule.rollDice(diceCount, null, diceModule.maxPoolFor(char));
         result = diceModule.applyPosition(result, position);
         const formatted = diceModule.formatRollResult(name, poolExpr, diceCount, result, dv, position, char);
         const outcome = diceModule.determineOutcome(result.successes, dv, result.sb);
         if (outcome.boonGain > 0) {
             charactersModule.applyDelta(name, 'boons', outcome.boonGain, saveCampaign);
+            await pushCharacterState(name, context);
         }
         campaignState.sb = (campaignState.sb || 0) + result.sb;
         await saveCampaign();
@@ -199,10 +201,16 @@ async function processSpecialTags(text, context, senderName = null) {
     // ─── [SET POSITION ...] ────────────────────────────────────────
     const posRegex = /\[SET POSITION ([A-Za-z]+)\]/gi;
     while ((match = posRegex.exec(output)) !== null) {
-        const pos = match[1];
-        campaignState.scene.position = pos;
-        await saveCampaign();
-        output = output.replace(match[0], `*(Position set to ${pos})*`);
+        // SRD 02 has three Positions; anything else (e.g. another game's
+        // "Risky") is refused rather than stored.
+        const pos = ['Dominant', 'Controlled', 'Desperate'].find(p => p.toLowerCase() === match[1].toLowerCase());
+        if (pos) {
+            campaignState.scene.position = pos;
+            await saveCampaign();
+            output = output.replace(match[0], `*(Position set to ${pos})*`);
+        } else {
+            output = output.replace(match[0], `*(Unknown Position "${match[1]}": use Dominant, Controlled or Desperate)*`);
+        }
         posRegex.lastIndex = 0;
     }
 
@@ -241,27 +249,26 @@ async function processSpecialTags(text, context, senderName = null) {
         let name = match[2];
         name = resolveCharName(name);
         const amount = parseInt(match[3]);
-        const extra = match[4] ? parseInt(match[4]) : null;
+        // Armor Step 0 is a real value (no armor), not "missing".
+        const extra = match[4] !== undefined && match[4] !== '' ? parseInt(match[4]) : null;
         // Server field names: 'boon' (this tag's own vocabulary) maps to
         // the server's 'boons' (see CHAR_FIELDS in server/api.js, and
         // gm-commands.js's slash-command equivalent) -- every other name
         // matches as-is.
         const serverField = type === 'boon' ? 'boons' : type;
         if (type === 'harm') {
-            const armorStep = extra || 1;
+            const armorStep = extra ?? 1;
             const char = charactersModule.get(name);
-            diceModule.applyHarmAndFatigue(char, amount, armorStep, saveCampaign);
-            output = output.replace(match[0], `*(${name} took ${amount} Harm, armor step ${armorStep})*`);
+            const hit = diceModule.applyHarmAndFatigue(char, amount, armorStep, saveCampaign);
+            const state = hit?.dead ? ' — Harm past 3: dead' : hit?.incapacitated ? ' — incapacitated' : '';
+            output = output.replace(match[0], `*(${name} took ${amount} Harm, armor step ${armorStep}${state})*`);
         } else {
             charactersModule.applyDelta(name, type, amount, saveCampaign);
             output = output.replace(match[0], `*(${name} ${type} ${amount >= 0 ? '+' : ''}${amount})*`);
         }
         if (context.apiRequest) {
             try {
-                await withTimeout(
-                    context.apiRequest('POST', ['characters', encodeURIComponent(name), serverField], { delta: amount }),
-                    5000
-                );
+                await withTimeout(pushCharacterState(name, context), 5000);
                 if (type === 'harm' || type === 'fatigue') await saveCampaign();
             } catch (e) {
                 console.warn(`[APPLY ${type.toUpperCase()}] failed to push "${name}" to server:`, e.message);

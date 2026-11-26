@@ -179,3 +179,64 @@ test('applyPosition - Desperate re-rolls one successful die (>= 6)', () => {
     'no other die may move'
   );
 });
+
+// ─── SRD 09 Harm procedure (worked examples from the SRD) ────────────
+test('applyHarmAndFatigue: Light armor vs Harm 2 is Harm 1 + Fatigue 1', () => {
+  const c = { harm: 0, fatigue: 0, attributes: { Body: 3 } };
+  dice.applyHarmAndFatigue(c, 2, 1);
+  assert.strictEqual(c.harm, 1);
+  assert.strictEqual(c.fatigue, 1);
+});
+
+test('applyHarmAndFatigue: Heavy armor vs Harm 3 is Fatigue 2, no Harm', () => {
+  const c = { harm: 0, fatigue: 0, attributes: { Body: 3 } };
+  dice.applyHarmAndFatigue(c, 3, 3);
+  assert.strictEqual(c.harm, 0);
+  assert.strictEqual(c.fatigue, 2);
+});
+
+test('applyHarmAndFatigue: SRD overflow example (Heavy, Body 2, Fatigue 1, Harm 3)', () => {
+  const c = { harm: 0, fatigue: 1, attributes: { Body: 2 } };
+  const r = dice.applyHarmAndFatigue(c, 3, 3);
+  assert.strictEqual(c.harm, 1);
+  assert.strictEqual(c.fatigue, 0);
+  assert.strictEqual(r.overflow, true);
+});
+
+test('applyHarmAndFatigue: a wound that gets through clears existing Fatigue', () => {
+  const c = { harm: 0, fatigue: 2, attributes: { Body: 4 } };
+  dice.applyHarmAndFatigue(c, 3, 1); // H > S: Fatigue max(1, 0) = 1, Harm 2
+  assert.strictEqual(c.harm, 2);
+  assert.strictEqual(c.fatigue, 1);
+});
+
+test('applyHarmAndFatigue: Harm stops at 3 and Harm past 3 kills', () => {
+  const c = { harm: 2, fatigue: 0, attributes: { Body: 3 } };
+  const r = dice.applyHarmAndFatigue(c, 3, 0);
+  assert.strictEqual(c.harm, 3);
+  assert.strictEqual(r.dead, true);
+});
+
+test('applyHarmAndFatigue: armor Step 0 is honoured, not treated as 1', () => {
+  const c = { harm: 0, fatigue: 0, attributes: { Body: 3 } };
+  dice.applyHarmAndFatigue(c, 1, 0);
+  assert.strictEqual(c.harm, 1);
+});
+
+// ─── SRD 02 pool cap and Position spelling ───────────────────────────
+test('rollDice caps the pool and banks the overflow as automatic successes', () => {
+  for (let i = 0; i < 20; i++) {
+    const r = dice.rollDice(13);
+    assert.strictEqual(r.dice.length, 10);
+    assert.strictEqual(r.autoSuccesses, 3);
+    assert.ok(r.successes >= 3);
+    assert.ok(dice.applyPosition(r, 'controlled').successes >= 3, 'Position keeps automatic successes');
+  }
+  assert.strictEqual(dice.rollDice(9, null, dice.maxPoolFor({ xp: 0 })).dice.length, 8);
+});
+
+test('applyPosition accepts any case', () => {
+  const base = dice.rollDice(0, [2, 7]);
+  assert.strictEqual(dice.applyPosition(base, 'dominant').reRolled.length, 1);
+  assert.strictEqual(dice.applyPosition(base, 'DESPERATE').reRolled.length, 1);
+});

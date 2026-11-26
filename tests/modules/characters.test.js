@@ -97,9 +97,10 @@ test('applyDelta boons clamps at BOONS_MAX and floors at 0', () => {
 test('applyDelta fatigue overflows into harm once fatigue reaches Body attribute value', () => {
   const char = characters.get('Levi');
   char.attributes.Body = 3;
-  // Adding 5 fatigue with Body=3: fatigue=5 >= 3 -> fatigue -= 3 (2), harm += 1.
+  // SRD 09: Fatigue 5 on a Body-3 track overflows once -- Harm +1, all
+  // Fatigue clears, the excess is lost.
   characters.applyDelta('Levi', 'fatigue', 5);
-  assert.strictEqual(char.fatigue, 2);
+  assert.strictEqual(char.fatigue, 0);
   assert.strictEqual(char.harm, 1);
 });
 

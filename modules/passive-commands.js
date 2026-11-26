@@ -32,7 +32,7 @@ class PassiveCommands {
       const get = (obj,key) => Object.entries(obj || {}).find(([k])=>k.toLowerCase()===key.toLowerCase())?.[1];
       const attribute = get(ownSheet.attributes,m[2]), skill = get(ownSheet.skills,m[3]); const count = Number(attribute)+Number(skill);
       if (!Number.isInteger(count) || count < 1 || count > 50 || +m[4] < 1 || +m[4] > 20) return 'Invalid pool or DV.';
-      const pos = m[5][0].toUpperCase()+m[5].slice(1).toLowerCase(); const roll = dice.applyPosition(dice.rollDice(count),pos);
+      const pos = m[5][0].toUpperCase()+m[5].slice(1).toLowerCase(); const roll = dice.applyPosition(dice.rollDice(count, null, dice.maxPoolFor(ownSheet)),pos);
       const outcome = dice.determineOutcome(roll.successes,+m[4],roll.sb);
       return `${ownSheet.name}: ${roll.dice.join(', ')} — ${roll.successes} successes, ${roll.sb} SB. ${outcome.outcome}. Boons earned: ${outcome.boonGain}. GM applies resource changes.`;
     }

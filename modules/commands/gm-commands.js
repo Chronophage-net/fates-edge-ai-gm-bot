@@ -22,7 +22,7 @@ const WebSocket = require('ws');
 const { globalApiRequest } = require('./api-client');
 const { soundLicenseLabel } = require('../sound-license');
 const { encounterIcon, placeOrUpdateToken, moveToken, removeToken, clearEnemyTokens, inferFaction } = require('./tokens');
-const { ensureCharacterOnServer, syncCharactersFromServer } = require('./characters-sync');
+const { ensureCharacterOnServer, syncCharactersFromServer, pushCharacterState } = require('./characters-sync');
 const { resolveNPCAction } = require('./npc-actions');
 
 function parseArgs(text) {
@@ -299,16 +299,14 @@ async function handleBotCommand(sender, text, context) {
         }
         const diceCount = charactersModule.getPool(name, poolExpr);
         if (diceCount === 0) return `Could not resolve dice pool for ${name} with expression ${poolExpr}.`;
-        let result = diceModule.rollDice(diceCount);
-        result = diceModule.applyPosition(result, position);
         const char = charactersModule.get(name);
+        let result = diceModule.rollDice(diceCount, null, diceModule.maxPoolFor(char));
+        result = diceModule.applyPosition(result, position);
         const formatted = diceModule.formatRollResult(name, poolExpr, diceCount, result, dv, position, char);
         const outcome = diceModule.determineOutcome(result.successes, dv, result.sb);
         if (outcome.boonGain > 0) {
             charactersModule.applyDelta(name, 'boons', outcome.boonGain, saveCampaign);
-            try {
-                await context.apiRequest('POST', ['characters', encodeURIComponent(name), 'boons'], { delta: outcome.boonGain });
-            } catch (e) { /* ignore */ }
+            await pushCharacterState(name, context);
         }
         campaignState.sb = (campaignState.sb || 0) + result.sb;
         await saveCampaign();
@@ -344,11 +342,10 @@ async function handleBotCommand(sender, text, context) {
         let result = '';
         if (cmd === 'harm') {
             const armorStep = args[2] ? parseInt(args[2]) : 1;
-            diceModule.applyHarmAndFatigue(char, amount, armorStep, saveCampaign);
-            result = `${name} took ${amount} Harm (armor step ${armorStep}). New Harm: ${char.harm}, Fatigue: ${char.fatigue}`;
-            try {
-                await context.apiRequest('POST', ['characters', encodeURIComponent(name), 'harm'], { delta: amount });
-            } catch (e) { /* ignore */ }
+            const hit = diceModule.applyHarmAndFatigue(char, amount, armorStep, saveCampaign);
+            result = `${name} took ${amount} Harm (armor step ${armorStep}). New Harm: ${char.harm}, Fatigue: ${char.fatigue}` +
+                (hit?.dead ? ' — Harm past 3: dead.' : hit?.incapacitated ? ' — incapacitated.' : '');
+            await pushCharacterState(name, context);
         } else {
             charactersModule.applyDelta(name, cmd, amount, saveCampaign);
             result = `${name}'s ${cmd} changed by ${amount >= 0 ? '+' : ''}${amount} → now ${char[cmd]}`;
@@ -359,11 +356,7 @@ async function handleBotCommand(sender, text, context) {
             // staying bot-local-only while harm/fatigue/boons/obligation
             // correctly pushed to the server (the actual source of truth
             // a human GM's own client reads).
-            if (['fatigue', 'boons', 'obligation', 'corruption', 'leash'].includes(cmd)) {
-                try {
-                    await context.apiRequest('POST', ['characters', encodeURIComponent(name), cmd], { delta: amount });
-                } catch (e) { /* ignore */ }
-            }
+            await pushCharacterState(name, context);
         }
         return result;
     }

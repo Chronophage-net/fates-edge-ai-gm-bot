@@ -303,11 +303,14 @@ test('processSpecialTags - APPLY with "me" placeholder resolves to sender', asyn
 
 test('processSpecialTags - SET POSITION updates campaign scene state', async () => {
   const context = buildMockContext();
-  const input = '[SET POSITION Risky]';
+  const input = '[SET POSITION desperate]';
   const result = await processSpecialTags(input, context, 'Tester');
   assert.doesNotMatch(result, /\[SET POSITION/);
-  assert.match(result, /Position set to Risky/);
-  assert.strictEqual(context.orchestrator.campaign.state.scene.position, 'Risky');
+  assert.match(result, /Position set to Desperate/);
+  assert.strictEqual(context.orchestrator.campaign.state.scene.position, 'Desperate');
+  const refused = await processSpecialTags('[SET POSITION Risky]', context, 'Tester');
+  assert.match(refused, /Unknown Position "Risky"/);
+  assert.strictEqual(context.orchestrator.campaign.state.scene.position, 'Desperate');
 });
 
 test('processSpecialTags - SET DV updates campaign scene state', async () => {
@@ -439,4 +442,23 @@ test('human roll requests cannot smuggle campaign directives alongside a valid r
   }
   assert.strictEqual(mutations, 0);
   assert.match(await processSpecialTags('[ROLL "Levi" Body + Melee DV 3 Controlled]', context, 'Tester'), /rolls/);
+});
+
+// ------------------------------------------------------------------
+// Server sync sends the rule-applied values, never a raw delta
+// ------------------------------------------------------------------
+test('processSpecialTags - APPLY HARM pushes converted Harm/Fatigue to the server', async () => {
+  const context = buildMockContext();
+  const levi = { name: 'Levi', attributes: { Body: 3 }, skills: {}, harm: 0, fatigue: 0, boons: 0 };
+  context.charactersModule.get = () => levi;
+  const calls = [];
+  context.apiRequest = async (method, path, body) => { calls.push({ method, path, body }); return {}; };
+  // SRD 09: Light armor (Step 1) vs Harm 2 is Harm 1 + Fatigue 1.
+  await processSpecialTags('[APPLY HARM Levi 2 1]', context, 'Tester');
+  assert.strictEqual(levi.harm, 1);
+  assert.strictEqual(levi.fatigue, 1);
+  const push = calls.find(c => c.path.join('/') === 'characters/update');
+  assert.ok(push, 'tracks are pushed through characters/update');
+  assert.deepStrictEqual(push.body.updates.Levi, { harm: 1, fatigue: 1, boons: 0 });
+  assert.ok(!calls.some(c => c.path.includes('harm')), 'no raw delta to the per-field route');
 });

@@ -101,6 +101,17 @@ function pushCustomAdventure(orchestrator, entry) {
     dir.customAdventures.unshift(entry);
 }
 
+/**
+ * Apply a growth step to the saved copy of the adventure being played (the
+ * pinned custom entry), so choosing it again from the menu replays the
+ * scenes and acts that grew during play, not only its opening version.
+ */
+function recordGrowth(orchestrator, mutate) {
+    const entry = getDirectorState(orchestrator).customAdventures.find(c => c.pinned);
+    if (!entry?.content || !Array.isArray(entry.content.acts)) return;
+    try { mutate(entry.content); } catch (e) { console.warn('[AdventureDirector] Could not record growth in saved adventure:', e.message); }
+}
+
 function pinCustomAdventure(orchestrator, id) {
     for (const entry of getDirectorState(orchestrator).customAdventures) entry.pinned = entry.id === id;
 }
@@ -1178,6 +1189,7 @@ Write ONE new scene that continues this act naturally from here. Respond with ON
             actIndex: state.currentActIndex,
             scene: sceneContent,
         });
+        recordGrowth(context.orchestrator, c => c.acts[state.currentActIndex]?.scenes?.push(sceneContent));
         // Appending BEFORE advancing means the server's own ordinary
         // sequential-advance logic naturally lands on the new scene --
         // no explicit actIndex/sceneIndex needed here.
@@ -1250,6 +1262,7 @@ Output ONLY the JSON object.`;
 
     try {
         await context.apiRequest('POST', ['adventure', 'act', 'append'], { act: actContent });
+        recordGrowth(context.orchestrator, c => c.acts.push(actContent));
         await context.apiRequest('POST', ['adventure', 'climax-triggered'], {});
         // Same append-before-advance trick as generateAndAppendScene --
         // ordinary sequential advance now lands in the new act's first scene.
@@ -1312,6 +1325,7 @@ Output ONLY the JSON object.`;
             actIndex: state.currentActIndex,
             scene: sceneContent,
         });
+        recordGrowth(context.orchestrator, c => c.acts[state.currentActIndex]?.scenes?.push(sceneContent));
         await context.apiRequest('POST', ['adventure', 'climax-forced'], {});
         await advanceScene(context);
         return `*(${notes ? notes + ' ' : ''}The climax forces itself forward: "${sceneContent.title}".)*`;

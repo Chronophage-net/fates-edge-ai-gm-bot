@@ -90,6 +90,7 @@ function mergeCharacterFromServerData(charactersModule, data) {
     if (data.boons !== undefined) char.boons = data.boons;
     if (data.leash !== undefined) char.leash = data.leash;
     if (data.corruption !== undefined) char.corruption = data.corruption;
+    if (data.dead !== undefined) char.dead = data.dead;
     if (data.attributes) char.attributes = { ...char.attributes, ...data.attributes };
     if (data.skills) char.skills = { ...char.skills, ...data.skills };
     if (data.talents) char.talents = data.talents;
@@ -116,6 +117,31 @@ async function syncCharactersFromServer(context) {
     return { synced };
 }
 
-// ─── Helper: NPC action resolver (unchanged) ──────────────────────
+const TRACK_FIELDS = ['harm', 'fatigue', 'boons', 'obligation', 'corruption', 'leash', 'dead'];
 
-module.exports = { ensureCharacterOnServer, syncCharactersFromServer, mergeCharacterFromServerData };
+/**
+ * Send a character's resource tracks to the room server as absolute
+ * values, after the bot has applied the rules locally (armor conversion,
+ * Fatigue overflow, Boon and Harm caps).
+ *
+ * The per-field routes (POST characters/:name/harm etc.) only add a raw
+ * delta, so the server used to record unconverted Harm, uncapped Boons and
+ * Fatigue with no overflow -- and its next state-updated broadcast then
+ * overwrote the bot's correct values with them.
+ */
+async function pushCharacterState(name, context) {
+    if (!context?.apiRequest || !context.charactersModule) return false;
+    const char = context.charactersModule.get(name);
+    if (!char) return false;
+    const values = {};
+    for (const field of TRACK_FIELDS) if (char[field] !== undefined) values[field] = char[field];
+    try {
+        await context.apiRequest('POST', ['characters', 'update'], { updates: { [char.name || name]: values } });
+        return true;
+    } catch (e) {
+        console.warn(`Failed to sync ${name}'s tracks to the server: ${e.message}`);
+        return false;
+    }
+}
+
+module.exports = { ensureCharacterOnServer, syncCharactersFromServer, mergeCharacterFromServerData, pushCharacterState };

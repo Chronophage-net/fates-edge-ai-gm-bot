@@ -20,8 +20,15 @@ const SKILL_NAMES = [
   'Arcana'
 ];
 
+// SRD 02: hold at most 5 Boons (6 at Tier IV, 7 at Tier V).
 const BOONS_MAX = 5;
-const HARM_MAX = 5;
+// SRD 09: three Harm levels; Harm 3 is incapacitated, more is death.
+const HARM_MAX = 3;
+
+function maxBoonsFor(char) {
+  const xp = Number(char?.xp) || 0;
+  return xp >= 221 ? 7 : xp >= 151 ? 6 : BOONS_MAX;
+}
 
 const DEFAULT_ATTRIBUTES = { Body: 2, Wits: 2, Spirit: 2, Presence: 2 };
 const DEFAULT_SKILLS = Object.fromEntries(SKILL_NAMES.map(s => [s, 0]));
@@ -157,20 +164,25 @@ function applyDelta(name, field, delta, saveCallback) {
 
   switch (field) {
     case 'harm': {
-      char.harm = Math.min(HARM_MAX, Math.max(0, char.harm + delta));
+      const target = (char.harm || 0) + delta;
+      if (target > HARM_MAX) char.dead = true;
+      char.harm = Math.min(HARM_MAX, Math.max(0, target));
       break;
     }
     case 'fatigue': {
-      char.fatigue = Math.max(0, char.fatigue + delta);
-      const body = char.attributes.Body || 2;
-      while (char.fatigue >= body && body > 0) {
-        char.fatigue -= body;
-        char.harm = Math.min(HARM_MAX, char.harm + 1);
+      // SRD 09 overflow: when the track (Body) fills, Harm rises one level,
+      // all Fatigue clears and the excess is lost -- once, not per Body.
+      char.fatigue = Math.max(0, (char.fatigue || 0) + delta);
+      const body = Math.max(1, char.attributes.Body || 2);
+      if (delta > 0 && char.fatigue >= body) {
+        char.fatigue = 0;
+        if ((char.harm || 0) >= HARM_MAX) char.dead = true;
+        char.harm = Math.min(HARM_MAX, (char.harm || 0) + 1);
       }
       break;
     }
     case 'boons': {
-      char.boons = Math.min(BOONS_MAX, Math.max(0, char.boons + delta));
+      char.boons = Math.min(maxBoonsFor(char), Math.max(0, (char.boons || 0) + delta));
       break;
     }
     case 'obligation': {
@@ -218,4 +230,5 @@ module.exports = {
   SKILL_NAMES,
   BOONS_MAX,
   HARM_MAX,
+  maxBoonsFor,
 };

@@ -599,7 +599,9 @@ function sendWS(type, data = {}) {
   turns.check();
   if (stopping) return;
   if (ws && ws.readyState === WebSocket.OPEN) {
-    const payload = JSON.stringify({ type, ...data });
+    // `type` last: a payload that carries its own `type` field must not
+    // silently rename the message.
+    const payload = JSON.stringify({ ...data, type });
     ws.send(payload);
     console.log(`⬆️  Sent: ${type}`);
   }
@@ -1169,7 +1171,8 @@ async function handleMessage(msg) {
 
   // ─── ROLL RESULT ──────────────────────────────────────────────────
   if (msg.type === 'roll-result' || msg.type === 'roll-dice') {
-    const outcome = msg.outcome || '';
+    // Outcome names vary in case between rollers ('Miss' vs 'miss').
+    const outcome = String(msg.outcome || '').toLowerCase();
     const storyBeats = msg.storyBeats || 0;
 
     // CHANGED: previously hardcoded `ref: 'Scene Progress'`, a timer
@@ -1182,7 +1185,7 @@ async function handleMessage(msg) {
     // called and use that instead. If the scene has no timers at all (or
     // no adventure is loaded), we skip the call entirely rather than
     // firing a request we know will fail.
-    if (outcome === 'Partial' || outcome === 'Miss') {
+    if (outcome === 'partial' || outcome === 'miss') {
       try {
         const timerName = await adventureContext.getFirstSceneTimerName({ apiRequest });
         if (timerName) {

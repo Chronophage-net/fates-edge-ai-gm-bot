@@ -3,6 +3,7 @@
 // NPC attack/social/spell action resolver used by !gm npc and [NPC CAST ...].
 
 const diceModule = require('../dice');
+const { pushCharacterState } = require('./characters-sync');
 
 async function resolveNPCAction(actionType, npcName, target, context, options = {}) {
     const charactersModule = context.charactersModule;
@@ -35,7 +36,7 @@ async function resolveNPCAction(actionType, npcName, target, context, options = 
                 diceModule.applyHarmAndFatigue(targetChar, harm, options.armorStep || 1, saveCampaign);
                 result = `${npcName} attacks ${target} for ${harm} Harm.`;
                 if (options.fatigue) {
-                    targetChar.fatigue = (targetChar.fatigue || 0) + 1;
+                    charactersModule.applyDelta(target, 'fatigue', 1, saveCampaign);
                     result += ` ${target} also marks 1 Fatigue.`;
                 }
             } else {
@@ -57,16 +58,12 @@ async function resolveNPCAction(actionType, npcName, target, context, options = 
             const spellName = options.spell || 'Light';
             const spell = orchestrator.world.getSpell(spellName);
             if (!spell) return `❌ Spell "${spellName}" not found.`;
-            const tagCount = spell.tags ? spell.tags.length : 1;
-            let cost = Math.min(Math.max(tagCount, 2), 5);
-            const dangerous = ['LEAP', 'FOLD', 'GATE', 'TRANSFORM', 'CREATE', 'SUMMON', 'DOMINATE', 'REVIVE'];
-            if (spell.tags && spell.tags.some(t => dangerous.includes(t.toUpperCase()))) cost = Math.min(cost + 1, 6);
             if (isPlayer) {
                 if (spell.tags.includes('HARM')) {
                     diceModule.applyHarmAndFatigue(targetChar, 1, 1, saveCampaign);
                     result = `${npcName} casts ${spell.name} on ${target} – ${target} takes 1 Harm.`;
                 } else if (spell.tags.includes('FATIGUE')) {
-                    targetChar.fatigue = (targetChar.fatigue || 0) + 1;
+                    charactersModule.applyDelta(target, 'fatigue', 1, saveCampaign);
                     result = `${npcName} casts ${spell.name} on ${target} – ${target} marks 1 Fatigue.`;
                 } else {
                     result = `${npcName} casts ${spell.name} on ${target} – the Weave shifts.`;
@@ -81,6 +78,7 @@ async function resolveNPCAction(actionType, npcName, target, context, options = 
     }
 
     await saveCampaign();
+    if (isPlayer) await pushCharacterState(target, context);
     return result;
 }
 

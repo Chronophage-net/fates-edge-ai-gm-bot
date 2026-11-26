@@ -7,17 +7,28 @@
 
 // ─── Core dice rolling ──────────────────────────────────────────────
 
+const MAX_POOL = 10;
+
+/** Pool cap for a character's tier (SRD 02/15): 8 at Tier I, 9 at II, 10 above. */
+function maxPoolFor(character) {
+    const xp = Number(character?.xp) || 0;
+    return xp <= 40 ? 8 : xp <= 90 ? 9 : MAX_POOL;
+}
+
 /**
  * Roll a pool of d10s.
  * @param {number} count - Number of dice to roll.
  * @param {Array} existingDice - Optional array of pre-rolled dice (for re-rolls).
  * @returns {object} { dice: number[], successes: number, sb: number, results: number[] }
  */
-function rollDice(count, existingDice = null) {
+function rollDice(count, existingDice = null, maxPool = MAX_POOL) {
     const dice = existingDice || [];
+    // SRD 02 Maximum Dice Pool: at most 10d10 (8 at Tier I, 9 at Tier II);
+    // each die past the cap is an automatic success instead.
+    const autoSuccesses = existingDice ? 0 : Math.max(0, count - maxPool);
     // If no existing dice provided, generate new rolls
     if (dice.length === 0) {
-        for (let i = 0; i < count; i++) {
+        for (let i = 0; i < count - autoSuccesses; i++) {
             dice.push(Math.floor(Math.random() * 10) + 1);
         }
     }
@@ -32,7 +43,8 @@ function rollDice(count, existingDice = null) {
     }
     return {
         dice,
-        successes,
+        successes: successes + autoSuccesses,
+        autoSuccesses,
         sb: storyBeats,
         results: dice.slice(), // shallow copy
         count: dice.length
@@ -48,6 +60,8 @@ function rollDice(count, existingDice = null) {
  * @returns {object} Modified result with new dice and updated successes/sb.
  */
 function applyPosition(result, position) {
+    // Tags and commands arrive in any case ("dominant", "DESPERATE").
+    position = typeof position === 'string' ? position.charAt(0).toUpperCase() + position.slice(1).toLowerCase() : position;
     const dice = result.dice.slice();
     const reRolled = [];
 
@@ -88,7 +102,8 @@ function applyPosition(result, position) {
         // dice as they stand, so counting them is always correct; the
         // previous incremental arithmetic also got 10s wrong on Desperate
         // (a 10 is worth 2, and it subtracted 1).
-        successes: countSuccesses(dice),
+        successes: countSuccesses(dice) + (result.autoSuccesses || 0),
+        autoSuccesses: result.autoSuccesses || 0,
         // Story Beats are NOT recounted. SRD 18.1: "Re-rolling a 1 does
         // not erase its SB; if the re-rolled die also shows 1, it
         // generates additional SB." A beat is owed for every 1 the dice
@@ -237,85 +252,48 @@ function formatRollResult(characterName, poolExpr, diceCount, result, dv, positi
 // ─── Harm and Fatigue application ──────────────────────────────────
 
 /**
- * Apply Harm to a character with armor conversion and fatigue overflow.
- * Implements the "roller-coaster" effect.
- * @param {object} character - The character object (mutated).
- * @param {number} incomingHarm - Raw harm value before armor.
- * @param {number} armorStep - Armor step (1=Light, 2=Medium, 3=Heavy).
- * @param {Function} saveCallback - Optional function to save character state.
+ * Apply Harm from one hit, following the SRD procedure (09 Health, Fatigue
+ * and Harm). Compare incoming Harm H with armor Step S:
+ *   H <= S: mark max(1, H-1) Fatigue, take no Harm.
+ *   H >  S: mark max(1, S-1) Fatigue and take H-S Harm; a wound that gets
+ *           through clears all existing Fatigue first.
+ * Then add the Fatigue; if the track (Body) fills, raise Harm one level,
+ * clear Fatigue and discard the excess -- once per hit, never looped.
+ * Harm levels stop at 3 (incapacitated); Harm taken at 3 kills.
+ * @returns {{harmTaken:number, fatigueGained:number, overflow:boolean, incapacitated:boolean, dead:boolean}}
  */
 function applyHarmAndFatigue(character, incomingHarm, armorStep = 1, saveCallback = null) {
-    if (!character) return;
-    // Step 1: Convert harm to fatigue based on armor
-    let remainingHarm = incomingHarm;
-    if (armorStep >= 1) {
-        // Step 1: if Harm <= Step, mark 1 Fatigue, Harm = 0
-        // Step 2: if Harm == Step, mark Step-1 Fatigue (min 1), Harm=0
-        // Step 3: if Harm > Step, mark 1 Fatigue, Harm = Harm - 1
-        // We'll implement a simplified version.
-        if (remainingHarm <= armorStep) {
-            // Gain Fatigue = armorStep - 1 (min 1)
-            const fatigueGain = Math.max(1, armorStep - 1);
-            character.fatigue = (character.fatigue || 0) + fatigueGain;
-            remainingHarm = 0;
-        } else {
-            // Harm > Armor
-            character.fatigue = (character.fatigue || 0) + 1;
-            remainingHarm = remainingHarm - 1;
-        }
-    } else {
-        // No armor, apply harm directly
-        // But still might convert to fatigue if harm < some threshold? For simplicity, apply harm.
-        // Actually, core rule: if no armor, Harm applies directly to Harm track.
-        // We'll just add to harm.
-        character.harm = (character.harm || 0) + remainingHarm;
-        remainingHarm = 0;
-    }
-    // Now apply any remaining harm to the harm track
-    if (remainingHarm > 0) {
-        character.harm = (character.harm || 0) + remainingHarm;
-    }
+    if (!character) return null;
+    const H = Math.max(0, Number(incomingHarm) || 0);
+    const S = Math.max(0, Number.isFinite(Number(armorStep)) ? Number(armorStep) : 1);
+    if (H === 0) return { harmTaken: 0, fatigueGained: 0, overflow: false, incapacitated: (character.harm || 0) >= 3, dead: !!character.dead };
 
-    // Step 2: Check fatigue overflow -> convert to harm
-    // Fatigue track is up to Body attribute. If fatigue > Body, convert to harm and clear fatigue.
-    const body = character.attributes?.Body || 2;
-    while ((character.fatigue || 0) > body) {
-        // Convert one overflow to harm
-        character.harm = (character.harm || 0) + 1;
-        character.fatigue = (character.fatigue || 0) - body; // Clear fatigue? Actually we clear all fatigue and add harm.
-        // But the rule: when fatigue fills (>= Body), increase harm by 1 and clear fatigue.
-        // So we need to handle.
-        // This is a more accurate approach.
-        character.harm = (character.harm || 0) + 1;
-        character.fatigue = Math.max(0, (character.fatigue || 0) - body);
-    }
-
-    // Step 3: Roller-coaster: Taking Harm can clear Fatigue if Harm is applied.
-    // Actually, the rule: When a character takes Harm, any existing Fatigue is cleared.
-    // But we already applied harm and fatigue. We need to clear fatigue if harm was applied.
-    // However, we only clear fatigue if the character actually took harm (not just fatigue).
-    // Let's implement: if incomingHarm > 0, and character.harm increased, clear fatigue.
-    // We can detect if harm increased.
-    // For simplicity, we'll just clear fatigue if any harm was applied.
-    // But careful: if armor converted harm to fatigue, the character didn't take harm.
-    // So we should only clear fatigue if the character actually gained harm.
-    // We'll check if the character's harm increased.
-    // But we don't have the old harm. We can compare.
-    // Actually, we can just check if remainingHarm > 0 before applying.
-    // If remainingHarm > 0, that means harm was actually applied.
-    // So we can clear fatigue in that case.
-    if (remainingHarm > 0) {
-        // Clear fatigue (the shock of injury)
+    const fatigueGained = H <= S ? Math.max(1, H - 1) : Math.max(1, S - 1);
+    const woundHarm = H <= S ? 0 : H - S;
+    let harmTaken = 0;
+    if (woundHarm > 0) {
         character.fatigue = 0;
+        harmTaken += addHarm(character, woundHarm);
     }
-
-    // Ensure values are non-negative
-    character.harm = Math.max(0, character.harm || 0);
-    character.fatigue = Math.max(0, character.fatigue || 0);
-
-    if (saveCallback) {
-        saveCallback(character);
+    character.fatigue = (character.fatigue || 0) + fatigueGained;
+    const body = Math.max(1, character.attributes?.Body || 2);
+    let overflow = false;
+    if (character.fatigue >= body) {
+        overflow = true;
+        character.fatigue = 0;
+        harmTaken += addHarm(character, 1);
     }
+    if (saveCallback) saveCallback(character);
+    return { harmTaken, fatigueGained, overflow, incapacitated: character.harm >= 3, dead: !!character.dead };
+}
+
+/** Raise Harm by `amount` levels, capped at 3; Harm past 3 marks death. */
+function addHarm(character, amount) {
+    const before = character.harm || 0;
+    const target = before + amount;
+    if (target > 3) character.dead = true;
+    character.harm = Math.min(3, target);
+    return character.harm - before;
 }
 
 // ─── Helpers to get dice pool from character ──────────────────────
@@ -348,5 +326,7 @@ module.exports = {
     getOutcomeLabel,
     getOutcomeClass,
     applyHarmAndFatigue,
+    maxPoolFor,
+    MAX_POOL,
     getPoolFromCharacter
 };
