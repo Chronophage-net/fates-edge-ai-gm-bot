@@ -282,6 +282,8 @@ function startBot(entry, index) {
     bot.status = 'running';
     bot.startedAt = Date.now();
     bot.statusPort = statusPort;
+    bot.roomStatus = { state: 'connecting', since: Date.now() };
+    child.on('message', msg => { if (msg && msg.type === 'room-status' && msg.roomStatus) bot.roomStatus = msg.roomStatus; });
     bots.set(key, bot);
 
     const pipe = (stream, tag) => {
@@ -418,6 +420,7 @@ async function buildOverview() {
             seat: b.entry.seat,
             mode: b.entry.mode,
             status: b.status,
+            roomStatus: b.status === 'running' ? (b.roomStatus || null) : null,
             pid: b.child ? b.child.pid : null,
             statusPort: b.statusPort,
             restarts: b.restarts,
@@ -471,6 +474,9 @@ function renderShell(nonce) {
   th, td { border-bottom: 1px solid #333; padding: 0.3rem 0.6rem; text-align: left; }
   th { color: #d4af37; }
   .status-running { color: #2ecc71; } .status-crashed { color: #e74c3c; }
+  .where { font-size: 0.75rem; color: #aaa; } .where-ok { color: #2ecc71; } .where-waiting { color: #e8c86a; } .where-stopped { color: #e74c3c; }
+  .empty { color: #aaa; font-style: italic; }
+  .stopped-panel { border: 1px solid #5a3a3a; border-radius: 6px; padding: 1rem; background: #241a1a; }
   .mode { font-size: 0.72em; text-transform: uppercase; letter-spacing: 0.06em; opacity: 0.85; }
   .mode-gm { color: #d4af37; } .mode-player { color: #e08a72; } .mode-passive { color: #6bb8bd; }
   .tab-btn.active .mode { color: #111; }
@@ -489,8 +495,12 @@ let currentRoom = '__overview';
 function renderOverview(data) {
   const m = data.manager;
   document.getElementById('summary').textContent = m.botCount + '/' + m.maxBots + ' bots · load ' + m.loadAvg.map(n=>n.toFixed(2)).join('/') + ' · mem ' + (m.totalMemMb - m.freeMemMb) + '/' + m.totalMemMb + ' MB';
+  if (!data.bots.length) {
+    document.getElementById('content').innerHTML = '<div id="overview"><p class="empty">No bots are configured. Add rooms to bots.json, then restart the manager.</p></div>';
+    return;
+  }
   let rows = data.bots.map(b => \`<tr>
-    <td>\${escapeHtml(b.room)}</td>
+    <td>\${escapeHtml(b.room)}<div class="where where-\${escapeHtml(whereClass(b))}">\${escapeHtml(whereText(b))}</div></td>
     <td>\${b.seat}</td>
     <td><span class="mode mode-\${b.mode}">\${b.mode}</span></td>
     <td class="mono">\${escapeHtml(b.roomId ?? '-')}</td>
@@ -508,10 +518,30 @@ function renderOverview(data) {
     <tbody>\${rows}</tbody></table>
   </div>\`;
 }
+// Where a bot is, in words. Not being in a room is reported, not shown
+// as a broken dashboard.
+function whereText(b) {
+  if (b.status !== 'running') return 'Not running (' + b.status + ')';
+  const rs = b.roomStatus || {};
+  if (rs.state === 'in-room') return 'In room';
+  if (rs.state === 'rejected') return 'Not in a room: admission refused';
+  if (rs.state === 'reconnecting') return 'Not in a room: reconnecting';
+  if (rs.state === 'unconfigured') return 'No room configured';
+  return 'Not in a room yet: connecting';
+}
+function whereClass(b) {
+  if (b.status !== 'running' || (b.roomStatus || {}).state === 'rejected') return 'stopped';
+  return (b.roomStatus || {}).state === 'in-room' ? 'ok' : 'waiting';
+}
 function renderBotTab(key) {
+  const b = (window.__bots || {})[key];
+  const running = b && b.status === 'running';
   document.getElementById('content').innerHTML = \`
     <div style="padding:1rem;">
-      <iframe title="Bot status dashboard" src="http://127.0.0.1:\${window.__statusPorts[key]}/"></iframe>
+      \${running
+        ? '<iframe title="Bot status dashboard" src="http://127.0.0.1:' + Number(b.statusPort) + '/"></iframe>'
+        : '<div class="stopped-panel"><p>' + escapeHtml(b ? ('This bot is not running (' + b.status + '), so its dashboard is offline. Its last log lines are below.') : 'This bot is no longer configured.') + '</p>' +
+          (b ? '<button class="action" data-restart="' + escapeHtml(key) + '">Restart</button>' : '') + '</div>'}
       <div id="log">(loading log…)</div>
     </div>\`;
   refreshLog(key);
@@ -519,8 +549,16 @@ function renderBotTab(key) {
 window.__statusPorts = {};
 async function refreshOverview() {
   const res = await fetch('/api/overview'); if (!res.ok) throw new Error('Status unavailable'); const data = await res.json();
-  data.bots.forEach(b => window.__statusPorts[b.key] = b.statusPort);
+  const before = window.__bots || {};
+  window.__bots = {};
+  data.bots.forEach(b => { window.__statusPorts[b.key] = b.statusPort; window.__bots[b.key] = b; });
   if (currentRoom === '__overview') renderOverview(data);
+  else {
+    // A bot tab swaps between its live dashboard and the "not running"
+    // panel when the bot stops or starts again.
+    const was = before[currentRoom], now = window.__bots[currentRoom];
+    if (!was || !now || was.status !== now.status) renderBotTab(currentRoom);
+  }
 }
 async function refreshLog(key) {
   if (currentRoom !== key) return;
@@ -548,7 +586,7 @@ document.getElementById('tabs').addEventListener('click', (e) => {
   currentRoom = btn.dataset.room;
   if (currentRoom === '__overview') refreshOverview(); else renderBotTab(currentRoom);
 });
-async function refresh() { try { if (currentRoom === '__overview') await refreshOverview(); else await refreshLog(currentRoom); } catch { document.getElementById('notice').textContent = 'Connection interrupted. Retrying…'; } }
+async function refresh() { try { await refreshOverview(); if (currentRoom !== '__overview') await refreshLog(currentRoom); document.getElementById('notice').textContent = ''; } catch { document.getElementById('notice').textContent = 'Connection interrupted. Retrying…'; } }
 refresh().finally(() => setInterval(refresh, 3000));
 </script>
 </body></html>`;

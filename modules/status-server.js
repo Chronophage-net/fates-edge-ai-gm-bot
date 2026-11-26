@@ -131,6 +131,10 @@ function renderPage(nonce) {
   button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
   .kv dd, .fact-row dd { overflow-wrap: anywhere; min-width: 0; }
   button { min-height: 40px; }
+  .room-state { margin: 0 0 10px; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--border); font-size: 13px; }
+  .room-state.in-room { border-color: var(--ok); }
+  .room-state.waiting { border-color: var(--warn); }
+  .room-state.stopped { border-color: var(--err); }
   .feed-tools { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 10px; }
   .feed-tools select, .feed-tools input, .feed-tools button {
     background: var(--bg); color: var(--fg); border: 1px solid var(--border); border-radius: 6px;
@@ -184,6 +188,7 @@ function renderPage(nonce) {
   <div class="stack">
     <div class="panel">
       <h2>Connection</h2>
+      <p class="room-state" id="room-state" role="status"></p>
       <dl class="kv" id="conn-kv"></dl>
     </div>
     <div class="panel">
@@ -231,9 +236,30 @@ function escapeHtml(s) {
   return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
+// One plain sentence for where the bot is. Not being in a room is a
+// state to explain, not an error to dump.
+function describeRoom(s) {
+  var rs = s.roomStatus || { state: s.connected ? 'in-room' : 'connecting' };
+  var room = s.room || '';
+  var why = rs.detail ? ' (' + rs.detail + ')' : '';
+  switch (rs.state) {
+    case 'in-room': return { cls: 'in-room', text: 'In room ' + room + ' as ' + (s.role || 'player') + '.' };
+    case 'unconfigured': return { cls: 'stopped', text: 'No room configured. Set ROOM in the .env file of this bot and restart it.' };
+    case 'rejected': return { cls: 'stopped', text: 'Not in a room. The server would not admit the bot to ' + room + why + '. Check ROOM, the room password and the bot key, then restart the bot.' };
+    case 'reconnecting':
+      var secs = rs.retryAt ? Math.max(0, Math.round((rs.retryAt - Date.now()) / 1000)) : null;
+      return { cls: 'waiting', text: 'Not in a room. Lost ' + room + why + '; ' + (secs ? 'reconnecting in ' + secs + 's.' : 'reconnecting now.') };
+    default: return { cls: 'waiting', text: 'Not in a room yet. Connecting to ' + room + why + '…' };
+  }
+}
+
 function renderState(s) {
+  var where = describeRoom(s);
+  var roomState = document.getElementById('room-state');
+  roomState.className = 'room-state ' + where.cls;
+  roomState.textContent = where.text;
   document.getElementById('header-sub').textContent =
-    (s.botName || 'AI_GM') + ' · room ' + (s.room || '?') + ' · uptime ' + fmtDuration(s.uptimeMs || 0);
+    (s.botName || 'AI_GM') + ' · ' + (s.connected ? 'room ' + (s.room || '?') : 'no room') + ' · uptime ' + fmtDuration(s.uptimeMs || 0);
   var dot = document.getElementById('conn-dot');
   dot.className = 'dot ' + (s.connected ? 'on' : 'off');
 

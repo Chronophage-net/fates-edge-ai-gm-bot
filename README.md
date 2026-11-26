@@ -727,6 +727,11 @@ The bot starts a small local web dashboard at **http://localhost:4141** (configu
   sync ticks, raw per-message WebSocket traffic) which is pruned by default. Filter by level
   (everything / warnings and errors / errors only) or by text, pause the feed while reading, and
   switch the bot's log level on the fly (until restart) without editing `LOG_LEVEL`.
+- **Where the bot is** — one sentence: in its room, connecting, reconnecting (with the reason and
+  when it retries), refused admission (check ROOM, the room password and the bot key), or no room
+  configured. Being out of a room is explained rather than shown as an error. The Bot Manager's
+  overview shows the same per bot, says when no bots are configured, and shows a stopped bot's
+  last log lines with a Restart button instead of its offline dashboard.
 - **Connection** — connected/disconnected, GM/player role, driver + model in use, the driver's
   generation settings (reasoning effort, thinking, keep-alive, context), and reply time (last and
   average, and how long ago the last reply was).

@@ -539,8 +539,19 @@ function stopAggressiveSync() {
     }
 }
 
+// Why the bot is not in its room, for the status dashboard.
+let roomStatus = { state: 'connecting', since: Date.now(), detail: null, retryAt: null };
+function setRoomStatus(state, detail = null, retryAt = null) {
+  roomStatus = { state, since: Date.now(), detail, retryAt };
+  // Under bot-manager.js, report it to the manager's overview too.
+  if (typeof process.send === 'function' && process.connected) {
+    try { process.send({ type: 'room-status', roomStatus }); } catch { /* manager gone */ }
+  }
+}
+
 function connect() {
   if (stopping) return;
+  if (roomStatus.state !== 'connecting') setRoomStatus('connecting');
   let admissionRejected = false;
   if (reconnectTimer) { clearTimeout(reconnectTimer); reconnectTimer = null; }
   console.log('🔌 Connecting to the room server');
@@ -582,13 +593,19 @@ function connect() {
     adventureRecovery.disconnect();
     console.log(`🔌 Disconnected (code ${code})${reason ? `: ${reason}` : ''}`);
     stopAggressiveSync();
+    const why = `code ${code}${reason ? `: ${reason}` : ''}`;
     if (!stopping && shouldReconnect({ code, admissionRejected, identityRejected: tableSeats.identityRejected })) {
       scheduleReconnect();
+      setRoomStatus('reconnecting', why, Date.now() + Math.min(1000 * 2 ** reconnectAttempts, MAX_RECONNECT_DELAY));
     } else if (!stopping) {
+      setRoomStatus('rejected', why);
       logger.error('Room admission rejected. Check room credentials, access and bot seat configuration, then restart the bot.');
     }
   });
-  ws.on('error', (err) => console.error('🔴 WebSocket error:', err.message));
+  ws.on('error', (err) => {
+    console.error('🔴 WebSocket error:', err.message);
+    if (!connected) roomStatus = { ...roomStatus, detail: err.message };
+  });
 }
 
 function scheduleReconnect() {
@@ -910,6 +927,7 @@ async function handleMessage(msg) {
   if (msg.type === 'handshake_ack' && msg.success && !tableSeats.identityRejected) {
     connected = true;
     reconnectAttempts = 0;
+    setRoomStatus('in-room');
   }
   if (seatHandled) return;
   if (await delegatedTasks.handleSource(msg)) return;
@@ -2063,6 +2081,7 @@ function buildStatusSnapshot() {
 
   return {
     connected,
+    roomStatus: ROOM_CODE ? roomStatus : { state: 'unconfigured', since: roomStatus.since, detail: 'ROOM is not set', retryAt: null },
     role: myRole,
     wsUrl: WS_URL,
     room: ROOM_CODE,

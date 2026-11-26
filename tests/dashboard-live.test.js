@@ -131,3 +131,46 @@ test('status dashboard shows clocks and party safely and changes the log level o
     assert.equal((await post({ 'X-Dashboard-Request': '1', Origin: base }, 'debug')).status, 200);
     assert.equal(logger.level, 'debug');
 });
+
+test('status dashboard explains why the bot is not in a room instead of showing an error', async t => {
+    const server = status.start({ port: 0, getState: () => ({}), pushIntervalMs: 100 });
+    t.after(() => status.stop());
+    const { context, element } = scriptContext(await (await fetch(await listening(server))).text());
+    const show = state => { context.state = state; vm.runInContext('renderState(state)', context); return element('room-state').textContent; };
+    assert.match(show({ connected: true, room: 'SALT', role: 'gm', roomStatus: { state: 'in-room' } }), /^In room SALT as gm\./);
+    assert.match(show({ room: 'SALT', roomStatus: { state: 'reconnecting', detail: 'code 1006', retryAt: Date.now() + 4000 } }), /Not in a room\. Lost SALT \(code 1006\); reconnecting in \ds\./);
+    assert.match(show({ room: 'SALT', roomStatus: { state: 'rejected', detail: '<img src=x>' } }), /would not admit the bot to SALT/);
+    assert.equal(element('room-state').className, 'room-state stopped');
+    assert.match(show({ roomStatus: { state: 'unconfigured' } }), /No room configured/);
+    assert.match(element('header-sub').textContent, /no room/);
+});
+
+test('supervisor dashboard reports no bots, no room and stopped bots in words', async t => {
+    const server = manager.startDashboard({ port: 0 });
+    t.after(() => new Promise(resolve => { server.closeAllConnections(); server.close(resolve); }));
+    const { context, element } = scriptContext(await (await fetch(await listening(server))).text());
+    const mgr = { botCount: 0, maxBots: 12, loadAvg: [0], totalMemMb: 1, freeMemMb: 1 };
+    context.data = { manager: mgr, bots: [] };
+    vm.runInContext('renderOverview(data)', context);
+    assert.match(element('content').innerHTML, /No bots are configured/);
+
+    const bot = (over) => ({ room: 'SALT', key: 'SALT#0', seat: 0, mode: 'gm', statusPort: 4150, uptimeSec: 1, restarts: 0, ...over });
+    context.data = { manager: mgr, bots: [
+        bot({ status: 'running', roomStatus: { state: 'in-room' } }),
+        bot({ key: 'GATE#0', room: 'GATE', status: 'running', roomStatus: { state: 'reconnecting' } }),
+        bot({ key: 'FOG#0', room: 'FOG', status: 'crashed', roomStatus: null }),
+    ] };
+    vm.runInContext('renderOverview(data)', context);
+    const html = element('content').innerHTML;
+    assert.match(html, /where-ok">In room</);
+    assert.match(html, /where-waiting">Not in a room: reconnecting</);
+    assert.match(html, /where-stopped">Not running \(crashed\)</);
+
+    vm.runInContext("window.__bots = { \"FOG#0\": data.bots[2], \"<b>x\": { status: 'stopped', statusPort: 1 } }; renderBotTab('FOG#0')", context);
+    assert.match(element('content').innerHTML, /This bot is not running \(crashed\)/);
+    assert(!element('content').innerHTML.includes('<iframe'), 'no dead dashboard embedded');
+    vm.runInContext("renderBotTab('<b>x')", context);
+    assert(!element('content').innerHTML.includes('data-restart="<b>'), 'key escaped');
+    vm.runInContext("window.__bots['SALT#0'] = data.bots[0]; renderBotTab('SALT#0')", context);
+    assert.match(element('content').innerHTML, /<iframe title="Bot status dashboard" src="http:\/\/127\.0\.0\.1:4150\/">/);
+});
