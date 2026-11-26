@@ -38,9 +38,11 @@ jobs:
       - name: Prune to production deps for the release tarball
         run: npm prune --production
 
+      # Written outside the directory being archived: tar reading its own
+      # growing output failed with "file changed as we read it".
       - name: Package source tarball
         run: |
-          tar -czf fates-edge-ai-gm-bot.tar.gz \
+          tar -czf "$RUNNER_TEMP/fates-edge-ai-gm-bot.tar.gz" \
             --exclude='.git' \
             --exclude='.github' \
             --exclude='*.env' \
@@ -52,7 +54,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: fates-edge-ai-gm-bot-package
-          path: fates-edge-ai-gm-bot.tar.gz
+          path: ${{ runner.temp }}/fates-edge-ai-gm-bot.tar.gz
 
   # ─── Build & push Docker image to Docker Hub + GHCR ──────────────
   docker-push:

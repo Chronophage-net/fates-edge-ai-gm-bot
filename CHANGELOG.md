@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented here.
 
+## [4.19.1] - 2026-11-26
+
+- Release packaging: the source tarball is written outside the directory it archives (tar failed with "file changed as we read it", so 4.19.0 produced no release). Same code as 4.19.0.
+
 ## [4.19.0] - 2026-11-26
 
 Current AI models, SRD-correct rules with server sync, better consoles, and clean headless starts.
